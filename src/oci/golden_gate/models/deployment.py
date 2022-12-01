@@ -246,6 +246,10 @@ class Deployment(object):
             The value to assign to the ogg_data property of this Deployment.
         :type ogg_data: oci.golden_gate.models.OggDeployment
 
+        :param deployment_diagnostic_data:
+            The value to assign to the deployment_diagnostic_data property of this Deployment.
+        :type deployment_diagnostic_data: oci.golden_gate.models.DeploymentDiagnosticData
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -277,7 +281,8 @@ class Deployment(object):
             'storage_utilization_in_bytes': 'int',
             'is_storage_utilization_limit_exceeded': 'bool',
             'deployment_type': 'str',
-            'ogg_data': 'OggDeployment'
+            'ogg_data': 'OggDeployment',
+            'deployment_diagnostic_data': 'DeploymentDiagnosticData'
         }
 
         self.attribute_map = {
@@ -310,7 +315,8 @@ class Deployment(object):
             'storage_utilization_in_bytes': 'storageUtilizationInBytes',
             'is_storage_utilization_limit_exceeded': 'isStorageUtilizationLimitExceeded',
             'deployment_type': 'deploymentType',
-            'ogg_data': 'oggData'
+            'ogg_data': 'oggData',
+            'deployment_diagnostic_data': 'deploymentDiagnosticData'
         }
 
         self._id = None
@@ -343,6 +349,7 @@ class Deployment(object):
         self._is_storage_utilization_limit_exceeded = None
         self._deployment_type = None
         self._ogg_data = None
+        self._deployment_diagnostic_data = None
 
     @property
     def id(self):
@@ -1151,6 +1158,26 @@ class Deployment(object):
         :type: oci.golden_gate.models.OggDeployment
         """
         self._ogg_data = ogg_data
+
+    @property
+    def deployment_diagnostic_data(self):
+        """
+        Gets the deployment_diagnostic_data of this Deployment.
+
+        :return: The deployment_diagnostic_data of this Deployment.
+        :rtype: oci.golden_gate.models.DeploymentDiagnosticData
+        """
+        return self._deployment_diagnostic_data
+
+    @deployment_diagnostic_data.setter
+    def deployment_diagnostic_data(self, deployment_diagnostic_data):
+        """
+        Sets the deployment_diagnostic_data of this Deployment.
+
+        :param deployment_diagnostic_data: The deployment_diagnostic_data of this Deployment.
+        :type: oci.golden_gate.models.DeploymentDiagnosticData
+        """
+        self._deployment_diagnostic_data = deployment_diagnostic_data
 
     def __repr__(self):
         return formatted_flat_dict(self)

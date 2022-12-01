@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SingleSelectionSourcePolicy(SelectionSourcePolicy):
     """
-    Information around selector used for branching among routes/ authentication servers in dynamic routing/ authentication where we are allowed to specify only a single context variable as selector.
+    The single context variable in an incoming request to match against specified selection keys when dynamically routing and dynamically authenticating requests.
     """
 
     def __init__(self, **kwargs):

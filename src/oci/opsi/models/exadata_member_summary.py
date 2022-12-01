@@ -45,6 +45,10 @@ class ExadataMemberSummary(object):
     #: This constant has a value of "HOST"
     ENTITY_TYPE_HOST = "HOST"
 
+    #: A constant which can be used with the entity_type property of a ExadataMemberSummary.
+    #: This constant has a value of "VM_CLUSTER"
+    ENTITY_TYPE_VM_CLUSTER = "VM_CLUSTER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ExadataMemberSummary object with values from keyword arguments.
@@ -60,7 +64,7 @@ class ExadataMemberSummary(object):
 
         :param entity_type:
             The value to assign to the entity_type property of this ExadataMemberSummary.
-            Allowed values for this property are: "DATABASE", "ILOM_SERVER", "PDU", "STORAGE_SERVER", "CLUSTER_ASM", "INFINIBAND_SWITCH", "ETHERNET_SWITCH", "HOST", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DATABASE", "ILOM_SERVER", "PDU", "STORAGE_SERVER", "CLUSTER_ASM", "INFINIBAND_SWITCH", "ETHERNET_SWITCH", "HOST", "VM_CLUSTER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_type: str
 
@@ -135,7 +139,7 @@ class ExadataMemberSummary(object):
         **[Required]** Gets the entity_type of this ExadataMemberSummary.
         Entity type of exadata member target
 
-        Allowed values for this property are: "DATABASE", "ILOM_SERVER", "PDU", "STORAGE_SERVER", "CLUSTER_ASM", "INFINIBAND_SWITCH", "ETHERNET_SWITCH", "HOST", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DATABASE", "ILOM_SERVER", "PDU", "STORAGE_SERVER", "CLUSTER_ASM", "INFINIBAND_SWITCH", "ETHERNET_SWITCH", "HOST", "VM_CLUSTER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -154,7 +158,7 @@ class ExadataMemberSummary(object):
         :param entity_type: The entity_type of this ExadataMemberSummary.
         :type: str
         """
-        allowed_values = ["DATABASE", "ILOM_SERVER", "PDU", "STORAGE_SERVER", "CLUSTER_ASM", "INFINIBAND_SWITCH", "ETHERNET_SWITCH", "HOST"]
+        allowed_values = ["DATABASE", "ILOM_SERVER", "PDU", "STORAGE_SERVER", "CLUSTER_ASM", "INFINIBAND_SWITCH", "ETHERNET_SWITCH", "HOST", "VM_CLUSTER"]
         if not value_allowed_none_or_none_sentinel(entity_type, allowed_values):
             entity_type = 'UNKNOWN_ENUM_VALUE'
         self._entity_type = entity_type

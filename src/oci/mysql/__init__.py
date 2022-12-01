@@ -13,8 +13,10 @@ from .db_system_client import DbSystemClient
 from .db_system_client_composite_operations import DbSystemClientCompositeOperations
 from .mysqlaas_client import MysqlaasClient
 from .mysqlaas_client_composite_operations import MysqlaasClientCompositeOperations
+from .replicas_client import ReplicasClient
+from .replicas_client_composite_operations import ReplicasClientCompositeOperations
 from .work_requests_client import WorkRequestsClient
 from .work_requests_client_composite_operations import WorkRequestsClientCompositeOperations
 from . import models
 
-__all__ = ["ChannelsClient", "ChannelsClientCompositeOperations", "DbBackupsClient", "DbBackupsClientCompositeOperations", "DbSystemClient", "DbSystemClientCompositeOperations", "MysqlaasClient", "MysqlaasClientCompositeOperations", "WorkRequestsClient", "WorkRequestsClientCompositeOperations", "models"]
+__all__ = ["ChannelsClient", "ChannelsClientCompositeOperations", "DbBackupsClient", "DbBackupsClientCompositeOperations", "DbSystemClient", "DbSystemClientCompositeOperations", "MysqlaasClient", "MysqlaasClientCompositeOperations", "ReplicasClient", "ReplicasClientCompositeOperations", "WorkRequestsClient", "WorkRequestsClientCompositeOperations", "models"]

@@ -21,7 +21,7 @@ class HTTPBackend(ApiSpecificationRouteBackend):
 
         :param type:
             The value to assign to the type property of this HTTPBackend.
-            Allowed values for this property are: "ORACLE_FUNCTIONS_BACKEND", "HTTP_BACKEND", "STOCK_RESPONSE_BACKEND", "DYNAMIC_ROUTING_BACKEND"
+            Allowed values for this property are: "ORACLE_FUNCTIONS_BACKEND", "HTTP_BACKEND", "STOCK_RESPONSE_BACKEND", "DYNAMIC_ROUTING_BACKEND", "OAUTH2_LOGOUT_BACKEND"
         :type type: str
 
         :param url:

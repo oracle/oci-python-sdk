@@ -38,6 +38,14 @@ class CreateAnnouncementSubscriptionDetails(object):
             The value to assign to the filter_groups property of this CreateAnnouncementSubscriptionDetails.
         :type filter_groups: dict(str, FilterGroupDetails)
 
+        :param preferred_language:
+            The value to assign to the preferred_language property of this CreateAnnouncementSubscriptionDetails.
+        :type preferred_language: str
+
+        :param preferred_time_zone:
+            The value to assign to the preferred_time_zone property of this CreateAnnouncementSubscriptionDetails.
+        :type preferred_time_zone: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateAnnouncementSubscriptionDetails.
         :type freeform_tags: dict(str, str)
@@ -53,6 +61,8 @@ class CreateAnnouncementSubscriptionDetails(object):
             'compartment_id': 'str',
             'ons_topic_id': 'str',
             'filter_groups': 'dict(str, FilterGroupDetails)',
+            'preferred_language': 'str',
+            'preferred_time_zone': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -63,6 +73,8 @@ class CreateAnnouncementSubscriptionDetails(object):
             'compartment_id': 'compartmentId',
             'ons_topic_id': 'onsTopicId',
             'filter_groups': 'filterGroups',
+            'preferred_language': 'preferredLanguage',
+            'preferred_time_zone': 'preferredTimeZone',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -72,6 +84,8 @@ class CreateAnnouncementSubscriptionDetails(object):
         self._compartment_id = None
         self._ons_topic_id = None
         self._filter_groups = None
+        self._preferred_language = None
+        self._preferred_time_zone = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -202,6 +216,54 @@ class CreateAnnouncementSubscriptionDetails(object):
         :type: dict(str, FilterGroupDetails)
         """
         self._filter_groups = filter_groups
+
+    @property
+    def preferred_language(self):
+        """
+        Gets the preferred_language of this CreateAnnouncementSubscriptionDetails.
+        (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+
+
+        :return: The preferred_language of this CreateAnnouncementSubscriptionDetails.
+        :rtype: str
+        """
+        return self._preferred_language
+
+    @preferred_language.setter
+    def preferred_language(self, preferred_language):
+        """
+        Sets the preferred_language of this CreateAnnouncementSubscriptionDetails.
+        (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+
+
+        :param preferred_language: The preferred_language of this CreateAnnouncementSubscriptionDetails.
+        :type: str
+        """
+        self._preferred_language = preferred_language
+
+    @property
+    def preferred_time_zone(self):
+        """
+        Gets the preferred_time_zone of this CreateAnnouncementSubscriptionDetails.
+        The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+
+
+        :return: The preferred_time_zone of this CreateAnnouncementSubscriptionDetails.
+        :rtype: str
+        """
+        return self._preferred_time_zone
+
+    @preferred_time_zone.setter
+    def preferred_time_zone(self, preferred_time_zone):
+        """
+        Sets the preferred_time_zone of this CreateAnnouncementSubscriptionDetails.
+        The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+
+
+        :param preferred_time_zone: The preferred_time_zone of this CreateAnnouncementSubscriptionDetails.
+        :type: str
+        """
+        self._preferred_time_zone = preferred_time_zone
 
     @property
     def freeform_tags(self):

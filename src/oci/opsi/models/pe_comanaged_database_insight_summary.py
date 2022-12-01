@@ -106,6 +106,14 @@ class PeComanagedDatabaseInsightSummary(DatabaseInsightSummary):
             The value to assign to the opsi_private_endpoint_id property of this PeComanagedDatabaseInsightSummary.
         :type opsi_private_endpoint_id: str
 
+        :param parent_id:
+            The value to assign to the parent_id property of this PeComanagedDatabaseInsightSummary.
+        :type parent_id: str
+
+        :param root_id:
+            The value to assign to the root_id property of this PeComanagedDatabaseInsightSummary.
+        :type root_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -128,7 +136,9 @@ class PeComanagedDatabaseInsightSummary(DatabaseInsightSummary):
             'lifecycle_details': 'str',
             'database_connection_status_details': 'str',
             'database_resource_type': 'str',
-            'opsi_private_endpoint_id': 'str'
+            'opsi_private_endpoint_id': 'str',
+            'parent_id': 'str',
+            'root_id': 'str'
         }
 
         self.attribute_map = {
@@ -152,7 +162,9 @@ class PeComanagedDatabaseInsightSummary(DatabaseInsightSummary):
             'lifecycle_details': 'lifecycleDetails',
             'database_connection_status_details': 'databaseConnectionStatusDetails',
             'database_resource_type': 'databaseResourceType',
-            'opsi_private_endpoint_id': 'opsiPrivateEndpointId'
+            'opsi_private_endpoint_id': 'opsiPrivateEndpointId',
+            'parent_id': 'parentId',
+            'root_id': 'rootId'
         }
 
         self._id = None
@@ -176,6 +188,8 @@ class PeComanagedDatabaseInsightSummary(DatabaseInsightSummary):
         self._database_connection_status_details = None
         self._database_resource_type = None
         self._opsi_private_endpoint_id = None
+        self._parent_id = None
+        self._root_id = None
         self._entity_source = 'PE_COMANAGED_DATABASE'
 
     @property
@@ -229,6 +243,62 @@ class PeComanagedDatabaseInsightSummary(DatabaseInsightSummary):
         :type: str
         """
         self._opsi_private_endpoint_id = opsi_private_endpoint_id
+
+    @property
+    def parent_id(self):
+        """
+        Gets the parent_id of this PeComanagedDatabaseInsightSummary.
+        The `OCID`__ of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The parent_id of this PeComanagedDatabaseInsightSummary.
+        :rtype: str
+        """
+        return self._parent_id
+
+    @parent_id.setter
+    def parent_id(self, parent_id):
+        """
+        Sets the parent_id of this PeComanagedDatabaseInsightSummary.
+        The `OCID`__ of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param parent_id: The parent_id of this PeComanagedDatabaseInsightSummary.
+        :type: str
+        """
+        self._parent_id = parent_id
+
+    @property
+    def root_id(self):
+        """
+        Gets the root_id of this PeComanagedDatabaseInsightSummary.
+        The `OCID`__ of the root resource for a composite target. e.g. for ExaCS members the rootId will be the OCID of the Exadata Infrastructure resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The root_id of this PeComanagedDatabaseInsightSummary.
+        :rtype: str
+        """
+        return self._root_id
+
+    @root_id.setter
+    def root_id(self, root_id):
+        """
+        Sets the root_id of this PeComanagedDatabaseInsightSummary.
+        The `OCID`__ of the root resource for a composite target. e.g. for ExaCS members the rootId will be the OCID of the Exadata Infrastructure resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param root_id: The root_id of this PeComanagedDatabaseInsightSummary.
+        :type: str
+        """
+        self._root_id = root_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

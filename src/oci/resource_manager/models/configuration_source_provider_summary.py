@@ -19,6 +19,8 @@ class ConfigurationSourceProviderSummary(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.resource_manager.models.GitlabAccessTokenConfigurationSourceProviderSummary`
+        * :class:`~oci.resource_manager.models.BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary`
+        * :class:`~oci.resource_manager.models.BitbucketServerAccessTokenConfigurationSourceProviderSummary`
         * :class:`~oci.resource_manager.models.GithubAccessTokenConfigurationSourceProviderSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -111,6 +113,12 @@ class ConfigurationSourceProviderSummary(object):
 
         if type == 'GITLAB_ACCESS_TOKEN':
             return 'GitlabAccessTokenConfigurationSourceProviderSummary'
+
+        if type == 'BITBUCKET_CLOUD_USERNAME_APPPASSWORD':
+            return 'BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary'
+
+        if type == 'BITBUCKET_SERVER_ACCESS_TOKEN':
+            return 'BitbucketServerAccessTokenConfigurationSourceProviderSummary'
 
         if type == 'GITHUB_ACCESS_TOKEN':
             return 'GithubAccessTokenConfigurationSourceProviderSummary'
@@ -292,6 +300,8 @@ class ConfigurationSourceProviderSummary(object):
         """
         **[Required]** Gets the config_source_provider_type of this ConfigurationSourceProviderSummary.
         The type of configuration source provider.
+        The `BITBUCKET_CLOUD_USERNAME_APPPASSWORD` type corresponds to Bitbucket Cloud.
+        The `BITBUCKET_SERVER_ACCESS_TOKEN` type corresponds to Bitbucket Server.
         The `GITLAB_ACCESS_TOKEN` type corresponds to GitLab.
         The `GITHUB_ACCESS_TOKEN` type corresponds to GitHub.
 
@@ -306,6 +316,8 @@ class ConfigurationSourceProviderSummary(object):
         """
         Sets the config_source_provider_type of this ConfigurationSourceProviderSummary.
         The type of configuration source provider.
+        The `BITBUCKET_CLOUD_USERNAME_APPPASSWORD` type corresponds to Bitbucket Cloud.
+        The `BITBUCKET_SERVER_ACCESS_TOKEN` type corresponds to Bitbucket Server.
         The `GITLAB_ACCESS_TOKEN` type corresponds to GitLab.
         The `GITHUB_ACCESS_TOKEN` type corresponds to GitHub.
 

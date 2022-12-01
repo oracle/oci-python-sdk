@@ -17,6 +17,7 @@ from .alert_policy_rule_summary import AlertPolicyRuleSummary
 from .alert_policy_summary import AlertPolicySummary
 from .alert_summary import AlertSummary
 from .alerts_aggregation_dimension import AlertsAggregationDimension
+from .alerts_update_details import AlertsUpdateDetails
 from .apply_discovery_job_results_details import ApplyDiscoveryJobResultsDetails
 from .audit_archive_retrieval import AuditArchiveRetrieval
 from .audit_archive_retrieval_collection import AuditArchiveRetrievalCollection
@@ -193,6 +194,7 @@ from .patch_masking_columns_details import PatchMaskingColumnsDetails
 from .patch_merge_instruction import PatchMergeInstruction
 from .patch_remove_instruction import PatchRemoveInstruction
 from .patch_sensitive_column_details import PatchSensitiveColumnDetails
+from .patch_target_alert_policy_association_details import PatchTargetAlertPolicyAssociationDetails
 from .preserve_original_data_format_entry import PreserveOriginalDataFormatEntry
 from .private_endpoint import PrivateEndpoint
 from .profile_details import ProfileDetails
@@ -212,11 +214,14 @@ from .report_collection import ReportCollection
 from .report_definition import ReportDefinition
 from .report_definition_collection import ReportDefinitionCollection
 from .report_definition_summary import ReportDefinitionSummary
+from .report_details import ReportDetails
 from .report_summary import ReportSummary
 from .role_summary import RoleSummary
 from .run_security_assessment_details import RunSecurityAssessmentDetails
 from .run_user_assessment_details import RunUserAssessmentDetails
 from .sql_expression_format_entry import SQLExpressionFormatEntry
+from .schedule_audit_report_details import ScheduleAuditReportDetails
+from .schedule_report_details import ScheduleReportDetails
 from .schema_summary import SchemaSummary
 from .section_statistics import SectionStatistics
 from .security_assessment import SecurityAssessment
@@ -302,6 +307,7 @@ data_safe_type_mapping = {
     "AlertPolicySummary": AlertPolicySummary,
     "AlertSummary": AlertSummary,
     "AlertsAggregationDimension": AlertsAggregationDimension,
+    "AlertsUpdateDetails": AlertsUpdateDetails,
     "ApplyDiscoveryJobResultsDetails": ApplyDiscoveryJobResultsDetails,
     "AuditArchiveRetrieval": AuditArchiveRetrieval,
     "AuditArchiveRetrievalCollection": AuditArchiveRetrievalCollection,
@@ -478,6 +484,7 @@ data_safe_type_mapping = {
     "PatchMergeInstruction": PatchMergeInstruction,
     "PatchRemoveInstruction": PatchRemoveInstruction,
     "PatchSensitiveColumnDetails": PatchSensitiveColumnDetails,
+    "PatchTargetAlertPolicyAssociationDetails": PatchTargetAlertPolicyAssociationDetails,
     "PreserveOriginalDataFormatEntry": PreserveOriginalDataFormatEntry,
     "PrivateEndpoint": PrivateEndpoint,
     "ProfileDetails": ProfileDetails,
@@ -497,11 +504,14 @@ data_safe_type_mapping = {
     "ReportDefinition": ReportDefinition,
     "ReportDefinitionCollection": ReportDefinitionCollection,
     "ReportDefinitionSummary": ReportDefinitionSummary,
+    "ReportDetails": ReportDetails,
     "ReportSummary": ReportSummary,
     "RoleSummary": RoleSummary,
     "RunSecurityAssessmentDetails": RunSecurityAssessmentDetails,
     "RunUserAssessmentDetails": RunUserAssessmentDetails,
     "SQLExpressionFormatEntry": SQLExpressionFormatEntry,
+    "ScheduleAuditReportDetails": ScheduleAuditReportDetails,
+    "ScheduleReportDetails": ScheduleReportDetails,
     "SchemaSummary": SchemaSummary,
     "SectionStatistics": SectionStatistics,
     "SecurityAssessment": SecurityAssessment,

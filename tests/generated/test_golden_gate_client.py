@@ -244,6 +244,48 @@ def test_change_deployment_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_collect_deployment_diagnostic(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'CollectDeploymentDiagnostic'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'CollectDeploymentDiagnostic')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='CollectDeploymentDiagnostic')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.collect_deployment_diagnostic(
+                deployment_id=request.pop(util.camelize('deploymentId')),
+                collect_deployment_diagnostic_details=request.pop(util.camelize('CollectDeploymentDiagnosticDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'CollectDeploymentDiagnostic',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'collect_deployment_diagnostic',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
 def test_create_connection(testing_service_client):
     if not testing_service_client.is_api_enabled('golden_gate', 'CreateConnection'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

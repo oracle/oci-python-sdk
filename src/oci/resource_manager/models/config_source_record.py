@@ -14,8 +14,20 @@ class ConfigSourceRecord(object):
     """
 
     #: A constant which can be used with the config_source_record_type property of a ConfigSourceRecord.
+    #: This constant has a value of "BITBUCKET_CLOUD_CONFIG_SOURCE"
+    CONFIG_SOURCE_RECORD_TYPE_BITBUCKET_CLOUD_CONFIG_SOURCE = "BITBUCKET_CLOUD_CONFIG_SOURCE"
+
+    #: A constant which can be used with the config_source_record_type property of a ConfigSourceRecord.
+    #: This constant has a value of "BITBUCKET_SERVER_CONFIG_SOURCE"
+    CONFIG_SOURCE_RECORD_TYPE_BITBUCKET_SERVER_CONFIG_SOURCE = "BITBUCKET_SERVER_CONFIG_SOURCE"
+
+    #: A constant which can be used with the config_source_record_type property of a ConfigSourceRecord.
     #: This constant has a value of "COMPARTMENT_CONFIG_SOURCE"
     CONFIG_SOURCE_RECORD_TYPE_COMPARTMENT_CONFIG_SOURCE = "COMPARTMENT_CONFIG_SOURCE"
+
+    #: A constant which can be used with the config_source_record_type property of a ConfigSourceRecord.
+    #: This constant has a value of "DEVOPS_CONFIG_SOURCE"
+    CONFIG_SOURCE_RECORD_TYPE_DEVOPS_CONFIG_SOURCE = "DEVOPS_CONFIG_SOURCE"
 
     #: A constant which can be used with the config_source_record_type property of a ConfigSourceRecord.
     #: This constant has a value of "GIT_CONFIG_SOURCE"
@@ -34,15 +46,18 @@ class ConfigSourceRecord(object):
         Initializes a new ConfigSourceRecord object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.resource_manager.models.DevOpsConfigSourceRecord`
         * :class:`~oci.resource_manager.models.GitConfigSourceRecord`
         * :class:`~oci.resource_manager.models.ZipUploadConfigSourceRecord`
+        * :class:`~oci.resource_manager.models.BitbucketCloudConfigSourceRecord`
+        * :class:`~oci.resource_manager.models.BitbucketServerConfigSourceRecord`
         * :class:`~oci.resource_manager.models.ObjectStorageConfigSourceRecord`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param config_source_record_type:
             The value to assign to the config_source_record_type property of this ConfigSourceRecord.
-            Allowed values for this property are: "COMPARTMENT_CONFIG_SOURCE", "GIT_CONFIG_SOURCE", "OBJECT_STORAGE_CONFIG_SOURCE", "ZIP_UPLOAD", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "BITBUCKET_CLOUD_CONFIG_SOURCE", "BITBUCKET_SERVER_CONFIG_SOURCE", "COMPARTMENT_CONFIG_SOURCE", "DEVOPS_CONFIG_SOURCE", "GIT_CONFIG_SOURCE", "OBJECT_STORAGE_CONFIG_SOURCE", "ZIP_UPLOAD", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type config_source_record_type: str
 
@@ -65,11 +80,20 @@ class ConfigSourceRecord(object):
         """
         type = object_dictionary['configSourceRecordType']
 
+        if type == 'DEVOPS_CONFIG_SOURCE':
+            return 'DevOpsConfigSourceRecord'
+
         if type == 'GIT_CONFIG_SOURCE':
             return 'GitConfigSourceRecord'
 
         if type == 'ZIP_UPLOAD':
             return 'ZipUploadConfigSourceRecord'
+
+        if type == 'BITBUCKET_CLOUD_CONFIG_SOURCE':
+            return 'BitbucketCloudConfigSourceRecord'
+
+        if type == 'BITBUCKET_SERVER_CONFIG_SOURCE':
+            return 'BitbucketServerConfigSourceRecord'
 
         if type == 'OBJECT_STORAGE_CONFIG_SOURCE':
             return 'ObjectStorageConfigSourceRecord'
@@ -82,7 +106,7 @@ class ConfigSourceRecord(object):
         **[Required]** Gets the config_source_record_type of this ConfigSourceRecord.
         The type of configuration source to use for the Terraform configuration.
 
-        Allowed values for this property are: "COMPARTMENT_CONFIG_SOURCE", "GIT_CONFIG_SOURCE", "OBJECT_STORAGE_CONFIG_SOURCE", "ZIP_UPLOAD", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "BITBUCKET_CLOUD_CONFIG_SOURCE", "BITBUCKET_SERVER_CONFIG_SOURCE", "COMPARTMENT_CONFIG_SOURCE", "DEVOPS_CONFIG_SOURCE", "GIT_CONFIG_SOURCE", "OBJECT_STORAGE_CONFIG_SOURCE", "ZIP_UPLOAD", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -101,7 +125,7 @@ class ConfigSourceRecord(object):
         :param config_source_record_type: The config_source_record_type of this ConfigSourceRecord.
         :type: str
         """
-        allowed_values = ["COMPARTMENT_CONFIG_SOURCE", "GIT_CONFIG_SOURCE", "OBJECT_STORAGE_CONFIG_SOURCE", "ZIP_UPLOAD"]
+        allowed_values = ["BITBUCKET_CLOUD_CONFIG_SOURCE", "BITBUCKET_SERVER_CONFIG_SOURCE", "COMPARTMENT_CONFIG_SOURCE", "DEVOPS_CONFIG_SOURCE", "GIT_CONFIG_SOURCE", "OBJECT_STORAGE_CONFIG_SOURCE", "ZIP_UPLOAD"]
         if not value_allowed_none_or_none_sentinel(config_source_record_type, allowed_values):
             config_source_record_type = 'UNKNOWN_ENUM_VALUE'
         self._config_source_record_type = config_source_record_type

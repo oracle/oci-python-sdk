@@ -8208,7 +8208,7 @@ class DevopsClient(object):
         :param str status: (optional)
             A filter to return only resources where the lifecycle state matches the given operation status.
 
-            Allowed values are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
+            Allowed values are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "WAITING", "NEEDS_ATTENTION"
 
         :param str resource_id: (optional)
             The ID of the resource affected by the work request.
@@ -8274,7 +8274,7 @@ class DevopsClient(object):
                 "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'status' in kwargs:
-            status_allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
+            status_allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "WAITING", "NEEDS_ATTENTION"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
                     "Invalid value for `status`, must be one of {0}".format(status_allowed_values)

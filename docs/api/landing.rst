@@ -46,6 +46,7 @@ API Reference
 * :doc:`Plugin <compute_instance_agent/client/oci.compute_instance_agent.PluginClient>`
 * :doc:`Pluginconfig <compute_instance_agent/client/oci.compute_instance_agent.PluginconfigClient>`
 * :doc:`Container Engine <container_engine/client/oci.container_engine.ContainerEngineClient>`
+* :doc:`Container Instance <container_instances/client/oci.container_instances.ContainerInstanceClient>`
 * :doc:`Block Storage <core/client/oci.core.BlockstorageClient>`
 * :doc:`Compute <core/client/oci.core.ComputeClient>`
 * :doc:`Compute Management <core/client/oci.core.ComputeManagementClient>`
@@ -116,6 +117,7 @@ API Reference
 * :doc:`Db Backups <mysql/client/oci.mysql.DbBackupsClient>`
 * :doc:`Db System <mysql/client/oci.mysql.DbSystemClient>`
 * :doc:`Mysqlaas <mysql/client/oci.mysql.MysqlaasClient>`
+* :doc:`Replicas <mysql/client/oci.mysql.ReplicasClient>`
 * :doc:`Work Requests <mysql/client/oci.mysql.WorkRequestsClient>`
 * :doc:`Network Firewall <network_firewall/client/oci.network_firewall.NetworkFirewallClient>`
 * :doc:`Network Load Balancer <network_load_balancer/client/oci.network_load_balancer.NetworkLoadBalancerClient>`
@@ -241,6 +243,7 @@ API Reference
     cloud_migrations
     compute_instance_agent
     container_engine
+    container_instances
     core
     dashboard_service
     data_catalog

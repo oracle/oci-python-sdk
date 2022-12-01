@@ -163,3 +163,4 @@
 ^src/oci/cloud_migrations/.*\.py$
 ^src/oci/cloud_bridge/.*\.py$
 ^src/oci/disaster_recovery/.*\.py$
+^src/oci/container_instances/.*\.py$

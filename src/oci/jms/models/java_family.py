@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class JavaFamily(object):
     """
-    Complete information of a specific Java release family.
+    Metadata associated with a specific Java release family.
+    A Java release family is typically a major version in the Java version identifier.
     """
 
     #: A constant which can be used with the support_type property of a JavaFamily.

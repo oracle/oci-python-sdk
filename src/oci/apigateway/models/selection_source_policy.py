@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SelectionSourcePolicy(object):
     """
-    Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
+    The type of selector to use when dynamically routing and dynamically authenticating requests.
     """
 
     #: A constant which can be used with the type property of a SelectionSourcePolicy.

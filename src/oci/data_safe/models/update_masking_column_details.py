@@ -138,7 +138,8 @@ class UpdateMaskingColumnDetails(object):
     def sensitive_type_id(self):
         """
         Gets the sensitive_type_id of this UpdateMaskingColumnDetails.
-        The OCID of the sensitive type to be associated with the masking column.
+        The OCID of the sensitive type to be associated with the masking column. Note that there will be no change in
+        assigned masking format when sensitive type is changed.
 
 
         :return: The sensitive_type_id of this UpdateMaskingColumnDetails.
@@ -150,7 +151,8 @@ class UpdateMaskingColumnDetails(object):
     def sensitive_type_id(self, sensitive_type_id):
         """
         Sets the sensitive_type_id of this UpdateMaskingColumnDetails.
-        The OCID of the sensitive type to be associated with the masking column.
+        The OCID of the sensitive type to be associated with the masking column. Note that there will be no change in
+        assigned masking format when sensitive type is changed.
 
 
         :param sensitive_type_id: The sensitive_type_id of this UpdateMaskingColumnDetails.

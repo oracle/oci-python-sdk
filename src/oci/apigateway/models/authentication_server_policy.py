@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AuthenticationServerPolicy(object):
     """
-    Information around an authentication server for dynamic authentication.
+    Policy for the details regarding each authentication server under dynamic authentication. We specify the value of selectors for which this authentication server must be selected for a request under keys. We specify the configuration details of authentication server under authenticationServerDetail.
     """
 
     def __init__(self, **kwargs):

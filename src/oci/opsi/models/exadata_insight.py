@@ -17,6 +17,10 @@ class ExadataInsight(object):
     #: This constant has a value of "EM_MANAGED_EXTERNAL_EXADATA"
     ENTITY_SOURCE_EM_MANAGED_EXTERNAL_EXADATA = "EM_MANAGED_EXTERNAL_EXADATA"
 
+    #: A constant which can be used with the entity_source property of a ExadataInsight.
+    #: This constant has a value of "PE_COMANAGED_EXADATA"
+    ENTITY_SOURCE_PE_COMANAGED_EXADATA = "PE_COMANAGED_EXADATA"
+
     #: A constant which can be used with the exadata_type property of a ExadataInsight.
     #: This constant has a value of "DBMACHINE"
     EXADATA_TYPE_DBMACHINE = "DBMACHINE"
@@ -44,6 +48,10 @@ class ExadataInsight(object):
     #: A constant which can be used with the exadata_rack_type property of a ExadataInsight.
     #: This constant has a value of "EIGHTH"
     EXADATA_RACK_TYPE_EIGHTH = "EIGHTH"
+
+    #: A constant which can be used with the exadata_rack_type property of a ExadataInsight.
+    #: This constant has a value of "FLEX"
+    EXADATA_RACK_TYPE_FLEX = "FLEX"
 
     #: A constant which can be used with the status property of a ExadataInsight.
     #: This constant has a value of "DISABLED"
@@ -87,12 +95,13 @@ class ExadataInsight(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.opsi.models.EmManagedExternalExadataInsight`
+        * :class:`~oci.opsi.models.PeComanagedExadataInsight`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param entity_source:
             The value to assign to the entity_source property of this ExadataInsight.
-            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_source: str
 
@@ -120,7 +129,7 @@ class ExadataInsight(object):
 
         :param exadata_rack_type:
             The value to assign to the exadata_rack_type property of this ExadataInsight.
-            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type exadata_rack_type: str
 
@@ -230,6 +239,9 @@ class ExadataInsight(object):
 
         if type == 'EM_MANAGED_EXTERNAL_EXADATA':
             return 'EmManagedExternalExadataInsight'
+
+        if type == 'PE_COMANAGED_EXADATA':
+            return 'PeComanagedExadataInsight'
         else:
             return 'ExadataInsight'
 
@@ -239,7 +251,7 @@ class ExadataInsight(object):
         **[Required]** Gets the entity_source of this ExadataInsight.
         Source of the Exadata system.
 
-        Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -258,7 +270,7 @@ class ExadataInsight(object):
         :param entity_source: The entity_source of this ExadataInsight.
         :type: str
         """
-        allowed_values = ["EM_MANAGED_EXTERNAL_EXADATA"]
+        allowed_values = ["EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA"]
         if not value_allowed_none_or_none_sentinel(entity_source, allowed_values):
             entity_source = 'UNKNOWN_ENUM_VALUE'
         self._entity_source = entity_source
@@ -395,7 +407,7 @@ class ExadataInsight(object):
         Gets the exadata_rack_type of this ExadataInsight.
         Exadata rack type.
 
-        Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -414,7 +426,7 @@ class ExadataInsight(object):
         :param exadata_rack_type: The exadata_rack_type of this ExadataInsight.
         :type: str
         """
-        allowed_values = ["FULL", "HALF", "QUARTER", "EIGHTH"]
+        allowed_values = ["FULL", "HALF", "QUARTER", "EIGHTH", "FLEX"]
         if not value_allowed_none_or_none_sentinel(exadata_rack_type, allowed_values):
             exadata_rack_type = 'UNKNOWN_ENUM_VALUE'
         self._exadata_rack_type = exadata_rack_type

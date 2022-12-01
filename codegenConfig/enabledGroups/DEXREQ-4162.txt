@@ -1,0 +1,16 @@
+# This configuration file determines which conditional groups are enabled.
+# Use --group_file enabled.txt or -f enabled.txt
+#
+# The hash '#' character starts a comment
+#
+# Group names can contain the characters A-Z, a-z, 0-9 and the underscore '_' and the hyphen '-'.
+# Whitespace before or after the group name is ignored.
+#
+# GROUP1 # comment
+# GROUP2 # comment
+udx-20990-aj-7919
+udx-20990-aj-7706
+udx-20990-aj-6915
+udx-20990-aj-7708
+udx-20990-aj-7709
+udx-20990-aj-7608

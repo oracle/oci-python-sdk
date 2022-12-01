@@ -25,7 +25,7 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
 
         :param entity_source:
             The value to assign to the entity_source property of this ExadataDatabaseMachineConfigurationSummary.
-            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA"
+            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA"
         :type entity_source: str
 
         :param compartment_id:
@@ -47,7 +47,7 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
 
         :param exadata_rack_type:
             The value to assign to the exadata_rack_type property of this ExadataDatabaseMachineConfigurationSummary.
-            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH"
+            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX"
         :type exadata_rack_type: str
 
         :param defined_tags:
@@ -57,6 +57,10 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ExadataDatabaseMachineConfigurationSummary.
         :type freeform_tags: dict(str, str)
+
+        :param vmcluster_details:
+            The value to assign to the vmcluster_details property of this ExadataDatabaseMachineConfigurationSummary.
+        :type vmcluster_details: list[oci.opsi.models.VmClusterSummary]
 
         :param enterprise_manager_identifier:
             The value to assign to the enterprise_manager_identifier property of this ExadataDatabaseMachineConfigurationSummary.
@@ -77,6 +81,7 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
             'exadata_rack_type': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
+            'vmcluster_details': 'list[VmClusterSummary]',
             'enterprise_manager_identifier': 'str',
             'enterprise_manager_bridge_id': 'str'
         }
@@ -91,6 +96,7 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
             'exadata_rack_type': 'exadataRackType',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
+            'vmcluster_details': 'vmclusterDetails',
             'enterprise_manager_identifier': 'enterpriseManagerIdentifier',
             'enterprise_manager_bridge_id': 'enterpriseManagerBridgeId'
         }
@@ -104,6 +110,7 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
         self._exadata_rack_type = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._vmcluster_details = None
         self._enterprise_manager_identifier = None
         self._enterprise_manager_bridge_id = None
         self._entity_source = 'EM_MANAGED_EXTERNAL_EXADATA'

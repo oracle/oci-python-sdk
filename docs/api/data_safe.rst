@@ -31,6 +31,7 @@ Data Safe
     oci.data_safe.models.AlertPolicySummary
     oci.data_safe.models.AlertSummary
     oci.data_safe.models.AlertsAggregationDimension
+    oci.data_safe.models.AlertsUpdateDetails
     oci.data_safe.models.ApplyDiscoveryJobResultsDetails
     oci.data_safe.models.AuditArchiveRetrieval
     oci.data_safe.models.AuditArchiveRetrievalCollection
@@ -207,6 +208,7 @@ Data Safe
     oci.data_safe.models.PatchMergeInstruction
     oci.data_safe.models.PatchRemoveInstruction
     oci.data_safe.models.PatchSensitiveColumnDetails
+    oci.data_safe.models.PatchTargetAlertPolicyAssociationDetails
     oci.data_safe.models.PreserveOriginalDataFormatEntry
     oci.data_safe.models.PrivateEndpoint
     oci.data_safe.models.ProfileDetails
@@ -226,11 +228,14 @@ Data Safe
     oci.data_safe.models.ReportDefinition
     oci.data_safe.models.ReportDefinitionCollection
     oci.data_safe.models.ReportDefinitionSummary
+    oci.data_safe.models.ReportDetails
     oci.data_safe.models.ReportSummary
     oci.data_safe.models.RoleSummary
     oci.data_safe.models.RunSecurityAssessmentDetails
     oci.data_safe.models.RunUserAssessmentDetails
     oci.data_safe.models.SQLExpressionFormatEntry
+    oci.data_safe.models.ScheduleAuditReportDetails
+    oci.data_safe.models.ScheduleReportDetails
     oci.data_safe.models.SchemaSummary
     oci.data_safe.models.SectionStatistics
     oci.data_safe.models.SecurityAssessment

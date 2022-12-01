@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.aj</groupId>
         <artifactId>aj-control-plane-spec</artifactId>
-        <version>4.1.335</version>
+        <version>5.0.402</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

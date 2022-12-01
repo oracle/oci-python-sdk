@@ -26,7 +26,7 @@ class CustomAuthenticationPolicy(AuthenticationPolicy):
 
         :param type:
             The value to assign to the type property of this CustomAuthenticationPolicy.
-            Allowed values for this property are: "CUSTOM_AUTHENTICATION", "JWT_AUTHENTICATION"
+            Allowed values for this property are: "CUSTOM_AUTHENTICATION", "JWT_AUTHENTICATION", "TOKEN_AUTHENTICATION"
         :type type: str
 
         :param function_id:

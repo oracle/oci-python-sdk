@@ -11,6 +11,7 @@ from oci.decorators import init_model_state_from_kwargs
 class JavaFamilySummary(object):
     """
     A summary of the Java release family information.
+    A Java release family is typically a major version in the Java version identifier.
     """
 
     #: A constant which can be used with the support_type property of a JavaFamilySummary.

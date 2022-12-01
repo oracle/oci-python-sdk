@@ -72,6 +72,18 @@ class AuditTrail(object):
     #: This constant has a value of "RETRYING"
     STATUS_RETRYING = "RETRYING"
 
+    #: A constant which can be used with the status property of a AuditTrail.
+    #: This constant has a value of "NOT_STARTED"
+    STATUS_NOT_STARTED = "NOT_STARTED"
+
+    #: A constant which can be used with the status property of a AuditTrail.
+    #: This constant has a value of "STOPPED_NEEDS_ATTN"
+    STATUS_STOPPED_NEEDS_ATTN = "STOPPED_NEEDS_ATTN"
+
+    #: A constant which can be used with the status property of a AuditTrail.
+    #: This constant has a value of "STOPPED_FAILED"
+    STATUS_STOPPED_FAILED = "STOPPED_FAILED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AuditTrail object with values from keyword arguments.
@@ -109,7 +121,7 @@ class AuditTrail(object):
 
         :param status:
             The value to assign to the status property of this AuditTrail.
-            Allowed values for this property are: "STARTING", "COLLECTING", "RECOVERING", "IDLE", "STOPPING", "STOPPED", "RESUMING", "RETRYING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STARTING", "COLLECTING", "RECOVERING", "IDLE", "STOPPING", "STOPPED", "RESUMING", "RETRYING", "NOT_STARTED", "STOPPED_NEEDS_ATTN", "STOPPED_FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -141,6 +153,10 @@ class AuditTrail(object):
             The value to assign to the compartment_id property of this AuditTrail.
         :type compartment_id: str
 
+        :param time_last_collected:
+            The value to assign to the time_last_collected property of this AuditTrail.
+        :type time_last_collected: datetime
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this AuditTrail.
         :type freeform_tags: dict(str, str)
@@ -170,6 +186,7 @@ class AuditTrail(object):
             'audit_collection_start_time': 'datetime',
             'work_request_id': 'str',
             'compartment_id': 'str',
+            'time_last_collected': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -191,6 +208,7 @@ class AuditTrail(object):
             'audit_collection_start_time': 'auditCollectionStartTime',
             'work_request_id': 'workRequestId',
             'compartment_id': 'compartmentId',
+            'time_last_collected': 'timeLastCollected',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -211,6 +229,7 @@ class AuditTrail(object):
         self._audit_collection_start_time = None
         self._work_request_id = None
         self._compartment_id = None
+        self._time_last_collected = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -395,7 +414,7 @@ class AuditTrail(object):
         **[Required]** Gets the status of this AuditTrail.
         The current sub-state of the audit trail.
 
-        Allowed values for this property are: "STARTING", "COLLECTING", "RECOVERING", "IDLE", "STOPPING", "STOPPED", "RESUMING", "RETRYING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STARTING", "COLLECTING", "RECOVERING", "IDLE", "STOPPING", "STOPPED", "RESUMING", "RETRYING", "NOT_STARTED", "STOPPED_NEEDS_ATTN", "STOPPED_FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -414,7 +433,7 @@ class AuditTrail(object):
         :param status: The status of this AuditTrail.
         :type: str
         """
-        allowed_values = ["STARTING", "COLLECTING", "RECOVERING", "IDLE", "STOPPING", "STOPPED", "RESUMING", "RETRYING"]
+        allowed_values = ["STARTING", "COLLECTING", "RECOVERING", "IDLE", "STOPPING", "STOPPED", "RESUMING", "RETRYING", "NOT_STARTED", "STOPPED_NEEDS_ATTN", "STOPPED_FAILED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
@@ -592,6 +611,32 @@ class AuditTrail(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def time_last_collected(self):
+        """
+        Gets the time_last_collected of this AuditTrail.
+        The date and time until which the audit events are collected from target database by Data Safe audit trail
+        collection process, in the format defined by RFC3339.
+
+
+        :return: The time_last_collected of this AuditTrail.
+        :rtype: datetime
+        """
+        return self._time_last_collected
+
+    @time_last_collected.setter
+    def time_last_collected(self, time_last_collected):
+        """
+        Sets the time_last_collected of this AuditTrail.
+        The date and time until which the audit events are collected from target database by Data Safe audit trail
+        collection process, in the format defined by RFC3339.
+
+
+        :param time_last_collected: The time_last_collected of this AuditTrail.
+        :type: datetime
+        """
+        self._time_last_collected = time_last_collected
 
     @property
     def freeform_tags(self):

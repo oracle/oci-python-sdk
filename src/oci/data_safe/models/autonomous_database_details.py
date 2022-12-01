@@ -54,7 +54,7 @@ class AutonomousDatabaseDetails(DatabaseDetails):
     @property
     def autonomous_database_id(self):
         """
-        Gets the autonomous_database_id of this AutonomousDatabaseDetails.
+        **[Required]** Gets the autonomous_database_id of this AutonomousDatabaseDetails.
         The OCID of the autonomous database registered as a target database in Data Safe.
 
 

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DynamicRoutingTypeRoutingBackend(object):
     """
-    Information around a routing backend for dynamic routing.
+    Policy for the details regarding each routing backend under dynamic routing. We specify the value of selectors for which this routing backend must be selected for a request under keys. We specify the configuration details of routing backend under backend.
     """
 
     def __init__(self, **kwargs):

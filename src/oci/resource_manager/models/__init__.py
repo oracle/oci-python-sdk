@@ -11,6 +11,14 @@ from .apply_rollback_job_operation_details import ApplyRollbackJobOperationDetai
 from .apply_rollback_job_operation_details_summary import ApplyRollbackJobOperationDetailsSummary
 from .associated_resource_summary import AssociatedResourceSummary
 from .associated_resources_collection import AssociatedResourcesCollection
+from .bitbucket_cloud_config_source import BitbucketCloudConfigSource
+from .bitbucket_cloud_config_source_record import BitbucketCloudConfigSourceRecord
+from .bitbucket_cloud_username_app_password_configuration_source_provider import BitbucketCloudUsernameAppPasswordConfigurationSourceProvider
+from .bitbucket_cloud_username_app_password_configuration_source_provider_summary import BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary
+from .bitbucket_server_access_token_configuration_source_provider import BitbucketServerAccessTokenConfigurationSourceProvider
+from .bitbucket_server_access_token_configuration_source_provider_summary import BitbucketServerAccessTokenConfigurationSourceProviderSummary
+from .bitbucket_server_config_source import BitbucketServerConfigSource
+from .bitbucket_server_config_source_record import BitbucketServerConfigSourceRecord
 from .cancellation_details import CancellationDetails
 from .change_configuration_source_provider_compartment_details import ChangeConfigurationSourceProviderCompartmentDetails
 from .change_private_endpoint_compartment_details import ChangePrivateEndpointCompartmentDetails
@@ -24,10 +32,15 @@ from .configuration_source_provider_collection import ConfigurationSourceProvide
 from .configuration_source_provider_summary import ConfigurationSourceProviderSummary
 from .create_apply_job_operation_details import CreateApplyJobOperationDetails
 from .create_apply_rollback_job_operation_details import CreateApplyRollbackJobOperationDetails
+from .create_bitbucket_cloud_config_source_details import CreateBitbucketCloudConfigSourceDetails
+from .create_bitbucket_cloud_username_app_password_configuration_source_provider_details import CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails
+from .create_bitbucket_server_access_token_configuration_source_provider_details import CreateBitbucketServerAccessTokenConfigurationSourceProviderDetails
+from .create_bitbucket_server_config_source_details import CreateBitbucketServerConfigSourceDetails
 from .create_compartment_config_source_details import CreateCompartmentConfigSourceDetails
 from .create_config_source_details import CreateConfigSourceDetails
 from .create_configuration_source_provider_details import CreateConfigurationSourceProviderDetails
 from .create_destroy_job_operation_details import CreateDestroyJobOperationDetails
+from .create_dev_ops_config_source_details import CreateDevOpsConfigSourceDetails
 from .create_git_config_source_details import CreateGitConfigSourceDetails
 from .create_github_access_token_configuration_source_provider_details import CreateGithubAccessTokenConfigurationSourceProviderDetails
 from .create_gitlab_access_token_configuration_source_provider_details import CreateGitlabAccessTokenConfigurationSourceProviderDetails
@@ -48,6 +61,8 @@ from .custom_terraform_provider import CustomTerraformProvider
 from .destroy_job_operation_details import DestroyJobOperationDetails
 from .destroy_job_operation_details_summary import DestroyJobOperationDetailsSummary
 from .detect_stack_drift_details import DetectStackDriftDetails
+from .dev_ops_config_source import DevOpsConfigSource
+from .dev_ops_config_source_record import DevOpsConfigSourceRecord
 from .failure_details import FailureDetails
 from .git_config_source import GitConfigSource
 from .git_config_source_record import GitConfigSourceRecord
@@ -91,8 +106,13 @@ from .template_zip_upload_config_source import TemplateZipUploadConfigSource
 from .terraform_advanced_options import TerraformAdvancedOptions
 from .terraform_version_collection import TerraformVersionCollection
 from .terraform_version_summary import TerraformVersionSummary
+from .update_bitbucket_cloud_config_source_details import UpdateBitbucketCloudConfigSourceDetails
+from .update_bitbucket_cloud_username_app_password_configuration_source_provider_details import UpdateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails
+from .update_bitbucket_server_access_token_configuration_source_provider_details import UpdateBitbucketServerAccessTokenConfigurationSourceProviderDetails
+from .update_bitbucket_server_config_source_details import UpdateBitbucketServerConfigSourceDetails
 from .update_config_source_details import UpdateConfigSourceDetails
 from .update_configuration_source_provider_details import UpdateConfigurationSourceProviderDetails
+from .update_dev_ops_config_source_details import UpdateDevOpsConfigSourceDetails
 from .update_git_config_source_details import UpdateGitConfigSourceDetails
 from .update_github_access_token_configuration_source_provider_details import UpdateGithubAccessTokenConfigurationSourceProviderDetails
 from .update_gitlab_access_token_configuration_source_provider_details import UpdateGitlabAccessTokenConfigurationSourceProviderDetails
@@ -121,6 +141,14 @@ resource_manager_type_mapping = {
     "ApplyRollbackJobOperationDetailsSummary": ApplyRollbackJobOperationDetailsSummary,
     "AssociatedResourceSummary": AssociatedResourceSummary,
     "AssociatedResourcesCollection": AssociatedResourcesCollection,
+    "BitbucketCloudConfigSource": BitbucketCloudConfigSource,
+    "BitbucketCloudConfigSourceRecord": BitbucketCloudConfigSourceRecord,
+    "BitbucketCloudUsernameAppPasswordConfigurationSourceProvider": BitbucketCloudUsernameAppPasswordConfigurationSourceProvider,
+    "BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary": BitbucketCloudUsernameAppPasswordConfigurationSourceProviderSummary,
+    "BitbucketServerAccessTokenConfigurationSourceProvider": BitbucketServerAccessTokenConfigurationSourceProvider,
+    "BitbucketServerAccessTokenConfigurationSourceProviderSummary": BitbucketServerAccessTokenConfigurationSourceProviderSummary,
+    "BitbucketServerConfigSource": BitbucketServerConfigSource,
+    "BitbucketServerConfigSourceRecord": BitbucketServerConfigSourceRecord,
     "CancellationDetails": CancellationDetails,
     "ChangeConfigurationSourceProviderCompartmentDetails": ChangeConfigurationSourceProviderCompartmentDetails,
     "ChangePrivateEndpointCompartmentDetails": ChangePrivateEndpointCompartmentDetails,
@@ -134,10 +162,15 @@ resource_manager_type_mapping = {
     "ConfigurationSourceProviderSummary": ConfigurationSourceProviderSummary,
     "CreateApplyJobOperationDetails": CreateApplyJobOperationDetails,
     "CreateApplyRollbackJobOperationDetails": CreateApplyRollbackJobOperationDetails,
+    "CreateBitbucketCloudConfigSourceDetails": CreateBitbucketCloudConfigSourceDetails,
+    "CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails": CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails,
+    "CreateBitbucketServerAccessTokenConfigurationSourceProviderDetails": CreateBitbucketServerAccessTokenConfigurationSourceProviderDetails,
+    "CreateBitbucketServerConfigSourceDetails": CreateBitbucketServerConfigSourceDetails,
     "CreateCompartmentConfigSourceDetails": CreateCompartmentConfigSourceDetails,
     "CreateConfigSourceDetails": CreateConfigSourceDetails,
     "CreateConfigurationSourceProviderDetails": CreateConfigurationSourceProviderDetails,
     "CreateDestroyJobOperationDetails": CreateDestroyJobOperationDetails,
+    "CreateDevOpsConfigSourceDetails": CreateDevOpsConfigSourceDetails,
     "CreateGitConfigSourceDetails": CreateGitConfigSourceDetails,
     "CreateGithubAccessTokenConfigurationSourceProviderDetails": CreateGithubAccessTokenConfigurationSourceProviderDetails,
     "CreateGitlabAccessTokenConfigurationSourceProviderDetails": CreateGitlabAccessTokenConfigurationSourceProviderDetails,
@@ -158,6 +191,8 @@ resource_manager_type_mapping = {
     "DestroyJobOperationDetails": DestroyJobOperationDetails,
     "DestroyJobOperationDetailsSummary": DestroyJobOperationDetailsSummary,
     "DetectStackDriftDetails": DetectStackDriftDetails,
+    "DevOpsConfigSource": DevOpsConfigSource,
+    "DevOpsConfigSourceRecord": DevOpsConfigSourceRecord,
     "FailureDetails": FailureDetails,
     "GitConfigSource": GitConfigSource,
     "GitConfigSourceRecord": GitConfigSourceRecord,
@@ -201,8 +236,13 @@ resource_manager_type_mapping = {
     "TerraformAdvancedOptions": TerraformAdvancedOptions,
     "TerraformVersionCollection": TerraformVersionCollection,
     "TerraformVersionSummary": TerraformVersionSummary,
+    "UpdateBitbucketCloudConfigSourceDetails": UpdateBitbucketCloudConfigSourceDetails,
+    "UpdateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails": UpdateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails,
+    "UpdateBitbucketServerAccessTokenConfigurationSourceProviderDetails": UpdateBitbucketServerAccessTokenConfigurationSourceProviderDetails,
+    "UpdateBitbucketServerConfigSourceDetails": UpdateBitbucketServerConfigSourceDetails,
     "UpdateConfigSourceDetails": UpdateConfigSourceDetails,
     "UpdateConfigurationSourceProviderDetails": UpdateConfigurationSourceProviderDetails,
+    "UpdateDevOpsConfigSourceDetails": UpdateDevOpsConfigSourceDetails,
     "UpdateGitConfigSourceDetails": UpdateGitConfigSourceDetails,
     "UpdateGithubAccessTokenConfigurationSourceProviderDetails": UpdateGithubAccessTokenConfigurationSourceProviderDetails,
     "UpdateGitlabAccessTokenConfigurationSourceProviderDetails": UpdateGitlabAccessTokenConfigurationSourceProviderDetails,

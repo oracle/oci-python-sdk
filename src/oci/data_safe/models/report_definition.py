@@ -53,6 +53,14 @@ class ReportDefinition(object):
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
 
+    #: A constant which can be used with the scheduled_report_mime_type property of a ReportDefinition.
+    #: This constant has a value of "PDF"
+    SCHEDULED_REPORT_MIME_TYPE_PDF = "PDF"
+
+    #: A constant which can be used with the scheduled_report_mime_type property of a ReportDefinition.
+    #: This constant has a value of "XLS"
+    SCHEDULED_REPORT_MIME_TYPE_XLS = "XLS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ReportDefinition object with values from keyword arguments.
@@ -132,6 +140,36 @@ class ReportDefinition(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param schedule:
+            The value to assign to the schedule property of this ReportDefinition.
+        :type schedule: str
+
+        :param scheduled_report_mime_type:
+            The value to assign to the scheduled_report_mime_type property of this ReportDefinition.
+            Allowed values for this property are: "PDF", "XLS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type scheduled_report_mime_type: str
+
+        :param scheduled_report_row_limit:
+            The value to assign to the scheduled_report_row_limit property of this ReportDefinition.
+        :type scheduled_report_row_limit: int
+
+        :param scheduled_report_name:
+            The value to assign to the scheduled_report_name property of this ReportDefinition.
+        :type scheduled_report_name: str
+
+        :param scheduled_report_compartment_id:
+            The value to assign to the scheduled_report_compartment_id property of this ReportDefinition.
+        :type scheduled_report_compartment_id: str
+
+        :param record_time_span:
+            The value to assign to the record_time_span property of this ReportDefinition.
+        :type record_time_span: str
+
+        :param compliance_standards:
+            The value to assign to the compliance_standards property of this ReportDefinition.
+        :type compliance_standards: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ReportDefinition.
         :type freeform_tags: dict(str, str)
@@ -163,6 +201,13 @@ class ReportDefinition(object):
             'summary': 'list[Summary]',
             'compartment_id': 'str',
             'lifecycle_state': 'str',
+            'schedule': 'str',
+            'scheduled_report_mime_type': 'str',
+            'scheduled_report_row_limit': 'int',
+            'scheduled_report_name': 'str',
+            'scheduled_report_compartment_id': 'str',
+            'record_time_span': 'str',
+            'compliance_standards': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -186,6 +231,13 @@ class ReportDefinition(object):
             'summary': 'summary',
             'compartment_id': 'compartmentId',
             'lifecycle_state': 'lifecycleState',
+            'schedule': 'schedule',
+            'scheduled_report_mime_type': 'scheduledReportMimeType',
+            'scheduled_report_row_limit': 'scheduledReportRowLimit',
+            'scheduled_report_name': 'scheduledReportName',
+            'scheduled_report_compartment_id': 'scheduledReportCompartmentId',
+            'record_time_span': 'recordTimeSpan',
+            'compliance_standards': 'complianceStandards',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -208,6 +260,13 @@ class ReportDefinition(object):
         self._summary = None
         self._compartment_id = None
         self._lifecycle_state = None
+        self._schedule = None
+        self._scheduled_report_mime_type = None
+        self._scheduled_report_row_limit = None
+        self._scheduled_report_name = None
+        self._scheduled_report_compartment_id = None
+        self._record_time_span = None
+        self._compliance_standards = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -637,6 +696,228 @@ class ReportDefinition(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def schedule(self):
+        """
+        Gets the schedule of this ReportDefinition.
+        Schedule to generate the report periodically in the specified format:
+        <version-string>;<version-specific-schedule>
+
+        Allowed version strings - \"v1\"
+        v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month>
+        Each of the above fields potentially introduce constraints. A workrequest is created only
+        when clock time satisfies all the constraints. Constraints introduced:
+        1. seconds = <ss> (So, the allowed range for <ss> is [0, 59])
+        2. minutes = <mm> (So, the allowed range for <mm> is [0, 59])
+        3. hours = <hh> (So, the allowed range for <hh> is [0, 23])
+        4. <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday))
+        No constraint introduced when it is '*'. When not, day of week must equal the given value
+        5. <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
+        No constraint introduced when it is '*'. When not, day of month must equal the given value
+
+
+        :return: The schedule of this ReportDefinition.
+        :rtype: str
+        """
+        return self._schedule
+
+    @schedule.setter
+    def schedule(self, schedule):
+        """
+        Sets the schedule of this ReportDefinition.
+        Schedule to generate the report periodically in the specified format:
+        <version-string>;<version-specific-schedule>
+
+        Allowed version strings - \"v1\"
+        v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month>
+        Each of the above fields potentially introduce constraints. A workrequest is created only
+        when clock time satisfies all the constraints. Constraints introduced:
+        1. seconds = <ss> (So, the allowed range for <ss> is [0, 59])
+        2. minutes = <mm> (So, the allowed range for <mm> is [0, 59])
+        3. hours = <hh> (So, the allowed range for <hh> is [0, 23])
+        4. <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday))
+        No constraint introduced when it is '*'. When not, day of week must equal the given value
+        5. <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
+        No constraint introduced when it is '*'. When not, day of month must equal the given value
+
+
+        :param schedule: The schedule of this ReportDefinition.
+        :type: str
+        """
+        self._schedule = schedule
+
+    @property
+    def scheduled_report_mime_type(self):
+        """
+        Gets the scheduled_report_mime_type of this ReportDefinition.
+        Specifies the format of report to be excel or pdf
+
+        Allowed values for this property are: "PDF", "XLS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The scheduled_report_mime_type of this ReportDefinition.
+        :rtype: str
+        """
+        return self._scheduled_report_mime_type
+
+    @scheduled_report_mime_type.setter
+    def scheduled_report_mime_type(self, scheduled_report_mime_type):
+        """
+        Sets the scheduled_report_mime_type of this ReportDefinition.
+        Specifies the format of report to be excel or pdf
+
+
+        :param scheduled_report_mime_type: The scheduled_report_mime_type of this ReportDefinition.
+        :type: str
+        """
+        allowed_values = ["PDF", "XLS"]
+        if not value_allowed_none_or_none_sentinel(scheduled_report_mime_type, allowed_values):
+            scheduled_report_mime_type = 'UNKNOWN_ENUM_VALUE'
+        self._scheduled_report_mime_type = scheduled_report_mime_type
+
+    @property
+    def scheduled_report_row_limit(self):
+        """
+        Gets the scheduled_report_row_limit of this ReportDefinition.
+        Specifies the limit on number of rows in report.
+
+
+        :return: The scheduled_report_row_limit of this ReportDefinition.
+        :rtype: int
+        """
+        return self._scheduled_report_row_limit
+
+    @scheduled_report_row_limit.setter
+    def scheduled_report_row_limit(self, scheduled_report_row_limit):
+        """
+        Sets the scheduled_report_row_limit of this ReportDefinition.
+        Specifies the limit on number of rows in report.
+
+
+        :param scheduled_report_row_limit: The scheduled_report_row_limit of this ReportDefinition.
+        :type: int
+        """
+        self._scheduled_report_row_limit = scheduled_report_row_limit
+
+    @property
+    def scheduled_report_name(self):
+        """
+        Gets the scheduled_report_name of this ReportDefinition.
+        The name of the report to be scheduled.
+
+
+        :return: The scheduled_report_name of this ReportDefinition.
+        :rtype: str
+        """
+        return self._scheduled_report_name
+
+    @scheduled_report_name.setter
+    def scheduled_report_name(self, scheduled_report_name):
+        """
+        Sets the scheduled_report_name of this ReportDefinition.
+        The name of the report to be scheduled.
+
+
+        :param scheduled_report_name: The scheduled_report_name of this ReportDefinition.
+        :type: str
+        """
+        self._scheduled_report_name = scheduled_report_name
+
+    @property
+    def scheduled_report_compartment_id(self):
+        """
+        Gets the scheduled_report_compartment_id of this ReportDefinition.
+        The `OCID`__ of the compartment
+        in which the scheduled resource should be created.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The scheduled_report_compartment_id of this ReportDefinition.
+        :rtype: str
+        """
+        return self._scheduled_report_compartment_id
+
+    @scheduled_report_compartment_id.setter
+    def scheduled_report_compartment_id(self, scheduled_report_compartment_id):
+        """
+        Sets the scheduled_report_compartment_id of this ReportDefinition.
+        The `OCID`__ of the compartment
+        in which the scheduled resource should be created.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param scheduled_report_compartment_id: The scheduled_report_compartment_id of this ReportDefinition.
+        :type: str
+        """
+        self._scheduled_report_compartment_id = scheduled_report_compartment_id
+
+    @property
+    def record_time_span(self):
+        """
+        Gets the record_time_span of this ReportDefinition.
+        The time span of records in report to be scheduled.
+        <period-value><period>
+        Allowed period strings - \"H\",\"D\",\"M\",\"Y\"
+        Each of the above fields potentially introduce constraints. A workRequest is created only
+        when period-value satisfies all the constraints. Constraints introduced:
+        1. period = H (The allowed range for period-value is [1, 23])
+        2. period = D (The allowed range for period-value is [1, 30])
+        3. period = M (The allowed range for period-value is [1, 11])
+        4. period = Y (The minimum period-value is 1)
+
+
+        :return: The record_time_span of this ReportDefinition.
+        :rtype: str
+        """
+        return self._record_time_span
+
+    @record_time_span.setter
+    def record_time_span(self, record_time_span):
+        """
+        Sets the record_time_span of this ReportDefinition.
+        The time span of records in report to be scheduled.
+        <period-value><period>
+        Allowed period strings - \"H\",\"D\",\"M\",\"Y\"
+        Each of the above fields potentially introduce constraints. A workRequest is created only
+        when period-value satisfies all the constraints. Constraints introduced:
+        1. period = H (The allowed range for period-value is [1, 23])
+        2. period = D (The allowed range for period-value is [1, 30])
+        3. period = M (The allowed range for period-value is [1, 11])
+        4. period = Y (The minimum period-value is 1)
+
+
+        :param record_time_span: The record_time_span of this ReportDefinition.
+        :type: str
+        """
+        self._record_time_span = record_time_span
+
+    @property
+    def compliance_standards(self):
+        """
+        Gets the compliance_standards of this ReportDefinition.
+        The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+
+
+        :return: The compliance_standards of this ReportDefinition.
+        :rtype: list[str]
+        """
+        return self._compliance_standards
+
+    @compliance_standards.setter
+    def compliance_standards(self, compliance_standards):
+        """
+        Sets the compliance_standards of this ReportDefinition.
+        The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+
+
+        :param compliance_standards: The compliance_standards of this ReportDefinition.
+        :type: list[str]
+        """
+        self._compliance_standards = compliance_standards
 
     @property
     def freeform_tags(self):

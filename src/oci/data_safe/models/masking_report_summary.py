@@ -13,6 +13,34 @@ class MaskingReportSummary(object):
     Summary of a masking report.
     """
 
+    #: A constant which can be used with the lifecycle_state property of a MaskingReportSummary.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a MaskingReportSummary.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a MaskingReportSummary.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a MaskingReportSummary.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a MaskingReportSummary.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the lifecycle_state property of a MaskingReportSummary.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
+    #: A constant which can be used with the lifecycle_state property of a MaskingReportSummary.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MaskingReportSummary object with values from keyword arguments.
@@ -66,6 +94,16 @@ class MaskingReportSummary(object):
             The value to assign to the time_masking_finished property of this MaskingReportSummary.
         :type time_masking_finished: datetime
 
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this MaskingReportSummary.
+            Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "NEEDS_ATTENTION", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param time_created:
+            The value to assign to the time_created property of this MaskingReportSummary.
+        :type time_created: datetime
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -79,7 +117,9 @@ class MaskingReportSummary(object):
             'total_masked_columns': 'int',
             'total_masked_values': 'int',
             'time_masking_started': 'datetime',
-            'time_masking_finished': 'datetime'
+            'time_masking_finished': 'datetime',
+            'lifecycle_state': 'str',
+            'time_created': 'datetime'
         }
 
         self.attribute_map = {
@@ -94,7 +134,9 @@ class MaskingReportSummary(object):
             'total_masked_columns': 'totalMaskedColumns',
             'total_masked_values': 'totalMaskedValues',
             'time_masking_started': 'timeMaskingStarted',
-            'time_masking_finished': 'timeMaskingFinished'
+            'time_masking_finished': 'timeMaskingFinished',
+            'lifecycle_state': 'lifecycleState',
+            'time_created': 'timeCreated'
         }
 
         self._id = None
@@ -109,6 +151,8 @@ class MaskingReportSummary(object):
         self._total_masked_values = None
         self._time_masking_started = None
         self._time_masking_finished = None
+        self._lifecycle_state = None
+        self._time_created = None
 
     @property
     def id(self):
@@ -405,6 +449,64 @@ class MaskingReportSummary(object):
         :type: datetime
         """
         self._time_masking_finished = time_masking_finished
+
+    @property
+    def lifecycle_state(self):
+        """
+        **[Required]** Gets the lifecycle_state of this MaskingReportSummary.
+        The current state of the masking report.
+
+        Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "NEEDS_ATTENTION", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_state of this MaskingReportSummary.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this MaskingReportSummary.
+        The current state of the masking report.
+
+
+        :param lifecycle_state: The lifecycle_state of this MaskingReportSummary.
+        :type: str
+        """
+        allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "NEEDS_ATTENTION", "FAILED"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_state = lifecycle_state
+
+    @property
+    def time_created(self):
+        """
+        Gets the time_created of this MaskingReportSummary.
+        The date and time the masking report was created, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_created of this MaskingReportSummary.
+        :rtype: datetime
+        """
+        return self._time_created
+
+    @time_created.setter
+    def time_created(self, time_created):
+        """
+        Sets the time_created of this MaskingReportSummary.
+        The date and time the masking report was created, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_created: The time_created of this MaskingReportSummary.
+        :type: datetime
+        """
+        self._time_created = time_created
 
     def __repr__(self):
         return formatted_flat_dict(self)

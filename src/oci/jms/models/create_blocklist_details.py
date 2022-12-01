@@ -41,6 +41,22 @@ class CreateBlocklistDetails(object):
     #: This constant has a value of "CREATE_JAVA_INSTALLATION"
     OPERATION_CREATE_JAVA_INSTALLATION = "CREATE_JAVA_INSTALLATION"
 
+    #: A constant which can be used with the operation property of a CreateBlocklistDetails.
+    #: This constant has a value of "COLLECT_JFR"
+    OPERATION_COLLECT_JFR = "COLLECT_JFR"
+
+    #: A constant which can be used with the operation property of a CreateBlocklistDetails.
+    #: This constant has a value of "REQUEST_CRYPTO_EVENT_ANALYSIS"
+    OPERATION_REQUEST_CRYPTO_EVENT_ANALYSIS = "REQUEST_CRYPTO_EVENT_ANALYSIS"
+
+    #: A constant which can be used with the operation property of a CreateBlocklistDetails.
+    #: This constant has a value of "SCAN_JAVA_SERVER_USAGE"
+    OPERATION_SCAN_JAVA_SERVER_USAGE = "SCAN_JAVA_SERVER_USAGE"
+
+    #: A constant which can be used with the operation property of a CreateBlocklistDetails.
+    #: This constant has a value of "SCAN_LIBRARY_USAGE"
+    OPERATION_SCAN_LIBRARY_USAGE = "SCAN_LIBRARY_USAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateBlocklistDetails object with values from keyword arguments.
@@ -52,7 +68,7 @@ class CreateBlocklistDetails(object):
 
         :param operation:
             The value to assign to the operation property of this CreateBlocklistDetails.
-            Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION"
+            Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE"
         :type operation: str
 
         :param reason:
@@ -102,7 +118,7 @@ class CreateBlocklistDetails(object):
         **[Required]** Gets the operation of this CreateBlocklistDetails.
         The operation type
 
-        Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION"
+        Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE"
 
 
         :return: The operation of this CreateBlocklistDetails.
@@ -120,7 +136,7 @@ class CreateBlocklistDetails(object):
         :param operation: The operation of this CreateBlocklistDetails.
         :type: str
         """
-        allowed_values = ["CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION"]
+        allowed_values = ["CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE"]
         if not value_allowed_none_or_none_sentinel(operation, allowed_values):
             raise ValueError(
                 "Invalid value for `operation`, must be None or one of {0}"

@@ -6,6 +6,7 @@ from __future__ import absolute_import
 
 from .add_em_managed_external_exadata_insight_members_details import AddEmManagedExternalExadataInsightMembersDetails
 from .add_exadata_insight_members_details import AddExadataInsightMembersDetails
+from .add_pe_comanaged_exadata_insight_members_details import AddPeComanagedExadataInsightMembersDetails
 from .autonomous_database_configuration_summary import AutonomousDatabaseConfigurationSummary
 from .autonomous_database_insight import AutonomousDatabaseInsight
 from .autonomous_database_insight_summary import AutonomousDatabaseInsightSummary
@@ -65,6 +66,8 @@ from .create_operations_insights_private_endpoint_details import CreateOperation
 from .create_operations_insights_warehouse_details import CreateOperationsInsightsWarehouseDetails
 from .create_operations_insights_warehouse_user_details import CreateOperationsInsightsWarehouseUserDetails
 from .create_pe_comanaged_database_insight_details import CreatePeComanagedDatabaseInsightDetails
+from .create_pe_comanaged_exadata_insight_details import CreatePeComanagedExadataInsightDetails
+from .create_pe_comanaged_exadata_vmcluster_details import CreatePeComanagedExadataVmclusterDetails
 from .credential_by_vault import CredentialByVault
 from .credential_details import CredentialDetails
 from .credentials_by_source import CredentialsBySource
@@ -114,6 +117,7 @@ from .enable_host_insight_details import EnableHostInsightDetails
 from .enable_macs_managed_cloud_host_insight_details import EnableMacsManagedCloudHostInsightDetails
 from .enable_macs_managed_external_host_insight_details import EnableMacsManagedExternalHostInsightDetails
 from .enable_pe_comanaged_database_insight_details import EnablePeComanagedDatabaseInsightDetails
+from .enable_pe_comanaged_exadata_insight_details import EnablePeComanagedExadataInsightDetails
 from .enterprise_manager_bridge import EnterpriseManagerBridge
 from .enterprise_manager_bridge_collection import EnterpriseManagerBridgeCollection
 from .enterprise_manager_bridge_summary import EnterpriseManagerBridgeSummary
@@ -124,6 +128,7 @@ from .exadata_database_machine_configuration_summary import ExadataDatabaseMachi
 from .exadata_database_statistics_summary import ExadataDatabaseStatisticsSummary
 from .exadata_details import ExadataDetails
 from .exadata_diskgroup_statistics_summary import ExadataDiskgroupStatisticsSummary
+from .exadata_exacs_configuration_summary import ExadataExacsConfigurationSummary
 from .exadata_host_statistics_summary import ExadataHostStatisticsSummary
 from .exadata_insight import ExadataInsight
 from .exadata_insight_resource_capacity_trend_aggregation import ExadataInsightResourceCapacityTrendAggregation
@@ -222,6 +227,8 @@ from .pe_comanaged_database_connection_details import PeComanagedDatabaseConnect
 from .pe_comanaged_database_host_details import PeComanagedDatabaseHostDetails
 from .pe_comanaged_database_insight import PeComanagedDatabaseInsight
 from .pe_comanaged_database_insight_summary import PeComanagedDatabaseInsightSummary
+from .pe_comanaged_exadata_insight import PeComanagedExadataInsight
+from .pe_comanaged_exadata_insight_summary import PeComanagedExadataInsightSummary
 from .pe_comanaged_host_configuration_summary import PeComanagedHostConfigurationSummary
 from .pe_comanaged_managed_external_database_configuration_summary import PeComanagedManagedExternalDatabaseConfigurationSummary
 from .projected_data_item import ProjectedDataItem
@@ -313,6 +320,8 @@ from .update_operations_insights_private_endpoint_details import UpdateOperation
 from .update_operations_insights_warehouse_details import UpdateOperationsInsightsWarehouseDetails
 from .update_operations_insights_warehouse_user_details import UpdateOperationsInsightsWarehouseUserDetails
 from .update_pe_comanaged_database_insight_details import UpdatePeComanagedDatabaseInsightDetails
+from .update_pe_comanaged_exadata_insight_details import UpdatePeComanagedExadataInsightDetails
+from .vm_cluster_summary import VmClusterSummary
 from .work_request import WorkRequest
 from .work_request_collection import WorkRequestCollection
 from .work_request_error import WorkRequestError
@@ -326,6 +335,7 @@ from .work_requests import WorkRequests
 opsi_type_mapping = {
     "AddEmManagedExternalExadataInsightMembersDetails": AddEmManagedExternalExadataInsightMembersDetails,
     "AddExadataInsightMembersDetails": AddExadataInsightMembersDetails,
+    "AddPeComanagedExadataInsightMembersDetails": AddPeComanagedExadataInsightMembersDetails,
     "AutonomousDatabaseConfigurationSummary": AutonomousDatabaseConfigurationSummary,
     "AutonomousDatabaseInsight": AutonomousDatabaseInsight,
     "AutonomousDatabaseInsightSummary": AutonomousDatabaseInsightSummary,
@@ -385,6 +395,8 @@ opsi_type_mapping = {
     "CreateOperationsInsightsWarehouseDetails": CreateOperationsInsightsWarehouseDetails,
     "CreateOperationsInsightsWarehouseUserDetails": CreateOperationsInsightsWarehouseUserDetails,
     "CreatePeComanagedDatabaseInsightDetails": CreatePeComanagedDatabaseInsightDetails,
+    "CreatePeComanagedExadataInsightDetails": CreatePeComanagedExadataInsightDetails,
+    "CreatePeComanagedExadataVmclusterDetails": CreatePeComanagedExadataVmclusterDetails,
     "CredentialByVault": CredentialByVault,
     "CredentialDetails": CredentialDetails,
     "CredentialsBySource": CredentialsBySource,
@@ -434,6 +446,7 @@ opsi_type_mapping = {
     "EnableMacsManagedCloudHostInsightDetails": EnableMacsManagedCloudHostInsightDetails,
     "EnableMacsManagedExternalHostInsightDetails": EnableMacsManagedExternalHostInsightDetails,
     "EnablePeComanagedDatabaseInsightDetails": EnablePeComanagedDatabaseInsightDetails,
+    "EnablePeComanagedExadataInsightDetails": EnablePeComanagedExadataInsightDetails,
     "EnterpriseManagerBridge": EnterpriseManagerBridge,
     "EnterpriseManagerBridgeCollection": EnterpriseManagerBridgeCollection,
     "EnterpriseManagerBridgeSummary": EnterpriseManagerBridgeSummary,
@@ -444,6 +457,7 @@ opsi_type_mapping = {
     "ExadataDatabaseStatisticsSummary": ExadataDatabaseStatisticsSummary,
     "ExadataDetails": ExadataDetails,
     "ExadataDiskgroupStatisticsSummary": ExadataDiskgroupStatisticsSummary,
+    "ExadataExacsConfigurationSummary": ExadataExacsConfigurationSummary,
     "ExadataHostStatisticsSummary": ExadataHostStatisticsSummary,
     "ExadataInsight": ExadataInsight,
     "ExadataInsightResourceCapacityTrendAggregation": ExadataInsightResourceCapacityTrendAggregation,
@@ -542,6 +556,8 @@ opsi_type_mapping = {
     "PeComanagedDatabaseHostDetails": PeComanagedDatabaseHostDetails,
     "PeComanagedDatabaseInsight": PeComanagedDatabaseInsight,
     "PeComanagedDatabaseInsightSummary": PeComanagedDatabaseInsightSummary,
+    "PeComanagedExadataInsight": PeComanagedExadataInsight,
+    "PeComanagedExadataInsightSummary": PeComanagedExadataInsightSummary,
     "PeComanagedHostConfigurationSummary": PeComanagedHostConfigurationSummary,
     "PeComanagedManagedExternalDatabaseConfigurationSummary": PeComanagedManagedExternalDatabaseConfigurationSummary,
     "ProjectedDataItem": ProjectedDataItem,
@@ -633,6 +649,8 @@ opsi_type_mapping = {
     "UpdateOperationsInsightsWarehouseDetails": UpdateOperationsInsightsWarehouseDetails,
     "UpdateOperationsInsightsWarehouseUserDetails": UpdateOperationsInsightsWarehouseUserDetails,
     "UpdatePeComanagedDatabaseInsightDetails": UpdatePeComanagedDatabaseInsightDetails,
+    "UpdatePeComanagedExadataInsightDetails": UpdatePeComanagedExadataInsightDetails,
+    "VmClusterSummary": VmClusterSummary,
     "WorkRequest": WorkRequest,
     "WorkRequestCollection": WorkRequestCollection,
     "WorkRequestError": WorkRequestError,

@@ -117,6 +117,47 @@ def test_add_masking_columns_from_sdm(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_alerts_update(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'AlertsUpdate'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'AlertsUpdate')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='AlertsUpdate')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.alerts_update(
+                alerts_update_details=request.pop(util.camelize('AlertsUpdateDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'AlertsUpdate',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'alerts_update',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_apply_discovery_job_results(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'ApplyDiscoveryJobResults'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7604,6 +7645,47 @@ def test_patch_sensitive_columns(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_patch_target_alert_policy_association(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'PatchTargetAlertPolicyAssociation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'PatchTargetAlertPolicyAssociation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='PatchTargetAlertPolicyAssociation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.patch_target_alert_policy_association(
+                patch_target_alert_policy_association_details=request.pop(util.camelize('PatchTargetAlertPolicyAssociationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'PatchTargetAlertPolicyAssociation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'patch_target_alert_policy_association',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_provision_audit_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'ProvisionAuditPolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7730,6 +7812,47 @@ def test_refresh_user_assessment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_remove_schedule_report(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'RemoveScheduleReport'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'RemoveScheduleReport')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='RemoveScheduleReport')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.remove_schedule_report(
+                report_definition_id=request.pop(util.camelize('reportDefinitionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'RemoveScheduleReport',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'remove_schedule_report',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_resume_audit_trail(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'ResumeAuditTrail'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7847,6 +7970,48 @@ def test_retrieve_audit_policies(testing_service_client):
             result,
             service_error,
             'retrieve_audit_policies',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_schedule_report(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ScheduleReport'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ScheduleReport')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ScheduleReport')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.schedule_report(
+                report_definition_id=request.pop(util.camelize('reportDefinitionId')),
+                schedule_report_details=request.pop(util.camelize('ScheduleReportDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ScheduleReport',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'schedule_report',
             False,
             False
         )
