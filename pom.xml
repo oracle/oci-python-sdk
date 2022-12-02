@@ -63,6 +63,7 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/ai_document/pom.xml</module>
     <module>poms/container_instances/pom.xml</module>
     <module>poms/disaster_recovery/pom.xml</module>
     <module>poms/cloud_bridge/pom.xml</module>
