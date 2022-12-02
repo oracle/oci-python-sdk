@@ -1,0 +1,11 @@
+Table
+=====
+
+.. currentmodule:: oci.ai_document.models
+
+.. autoclass:: Table
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

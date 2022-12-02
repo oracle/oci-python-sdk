@@ -5,6 +5,7 @@ API Reference
 
 * :doc:`Application Dependency Management <adm/client/oci.adm.ApplicationDependencyManagementClient>`
 * :doc:`Anomaly Detection <ai_anomaly_detection/client/oci.ai_anomaly_detection.AnomalyDetectionClient>`
+* :doc:`Ai Service Document <ai_document/client/oci.ai_document.AIServiceDocumentClient>`
 * :doc:`Ai Service Language <ai_language/client/oci.ai_language.AIServiceLanguageClient>`
 * :doc:`Ai Service Speech <ai_speech/client/oci.ai_speech.AIServiceSpeechClient>`
 * :doc:`Ai Service Vision <ai_vision/client/oci.ai_vision.AIServiceVisionClient>`
@@ -216,6 +217,7 @@ API Reference
 
     adm
     ai_anomaly_detection
+    ai_document
     ai_language
     ai_speech
     ai_vision
