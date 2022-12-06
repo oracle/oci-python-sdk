@@ -46,7 +46,7 @@ class PrivateEndpoint(ConnectionOption):
     @property
     def datasafe_private_endpoint_id(self):
         """
-        Gets the datasafe_private_endpoint_id of this PrivateEndpoint.
+        **[Required]** Gets the datasafe_private_endpoint_id of this PrivateEndpoint.
         The OCID of the Data Safe private endpoint.
 
 

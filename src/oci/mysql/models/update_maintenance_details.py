@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateMaintenanceDetails(object):
     """
-    The Maintenance Policy for the DB System.
+    The Maintenance Policy for the DB System or Read Replica that this model is included in.
     """
 
     def __init__(self, **kwargs):
@@ -45,6 +45,9 @@ class UpdateMaintenanceDetails(object):
 
         \"{time-of-day}\" is the \"Time\" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
 
+        If you set the read replica maintenance window to \"\", the read replica is set same as the DB system maintenance window. If not specific by the user,
+        there will be no changes to the maintenace window.
+
 
         :return: The window_start_time of this UpdateMaintenanceDetails.
         :rtype: str
@@ -62,6 +65,9 @@ class UpdateMaintenanceDetails(object):
         \"{day-of-week}\" is a case-insensitive string like \"mon\", \"tue\", &c.
 
         \"{time-of-day}\" is the \"Time\" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+
+        If you set the read replica maintenance window to \"\", the read replica is set same as the DB system maintenance window. If not specific by the user,
+        there will be no changes to the maintenace window.
 
 
         :param window_start_time: The window_start_time of this UpdateMaintenanceDetails.

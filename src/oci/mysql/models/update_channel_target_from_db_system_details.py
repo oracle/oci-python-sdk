@@ -31,22 +31,29 @@ class UpdateChannelTargetFromDbSystemDetails(UpdateChannelTargetDetails):
             The value to assign to the applier_username property of this UpdateChannelTargetFromDbSystemDetails.
         :type applier_username: str
 
+        :param filters:
+            The value to assign to the filters property of this UpdateChannelTargetFromDbSystemDetails.
+        :type filters: list[oci.mysql.models.ChannelFilter]
+
         """
         self.swagger_types = {
             'target_type': 'str',
             'channel_name': 'str',
-            'applier_username': 'str'
+            'applier_username': 'str',
+            'filters': 'list[ChannelFilter]'
         }
 
         self.attribute_map = {
             'target_type': 'targetType',
             'channel_name': 'channelName',
-            'applier_username': 'applierUsername'
+            'applier_username': 'applierUsername',
+            'filters': 'filters'
         }
 
         self._target_type = None
         self._channel_name = None
         self._applier_username = None
+        self._filters = None
         self._target_type = 'DBSYSTEM'
 
     @property
@@ -104,6 +111,30 @@ class UpdateChannelTargetFromDbSystemDetails(UpdateChannelTargetDetails):
         :type: str
         """
         self._applier_username = applier_username
+
+    @property
+    def filters(self):
+        """
+        Gets the filters of this UpdateChannelTargetFromDbSystemDetails.
+        Replication filter rules to be applied at the DB System Channel target.
+
+
+        :return: The filters of this UpdateChannelTargetFromDbSystemDetails.
+        :rtype: list[oci.mysql.models.ChannelFilter]
+        """
+        return self._filters
+
+    @filters.setter
+    def filters(self, filters):
+        """
+        Sets the filters of this UpdateChannelTargetFromDbSystemDetails.
+        Replication filter rules to be applied at the DB System Channel target.
+
+
+        :param filters: The filters of this UpdateChannelTargetFromDbSystemDetails.
+        :type: list[oci.mysql.models.ChannelFilter]
+        """
+        self._filters = filters
 
     def __repr__(self):
         return formatted_flat_dict(self)

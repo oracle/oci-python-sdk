@@ -47,6 +47,10 @@ class CreateSingleDeployStageDeploymentDetails(CreateDeploymentDetails):
             The value to assign to the deployment_arguments property of this CreateSingleDeployStageDeploymentDetails.
         :type deployment_arguments: oci.devops.models.DeploymentArgumentCollection
 
+        :param deploy_stage_override_arguments:
+            The value to assign to the deploy_stage_override_arguments property of this CreateSingleDeployStageDeploymentDetails.
+        :type deploy_stage_override_arguments: oci.devops.models.DeployStageOverrideArgumentCollection
+
         :param deploy_artifact_override_arguments:
             The value to assign to the deploy_artifact_override_arguments property of this CreateSingleDeployStageDeploymentDetails.
         :type deploy_artifact_override_arguments: oci.devops.models.DeployArtifactOverrideArgumentCollection
@@ -60,6 +64,7 @@ class CreateSingleDeployStageDeploymentDetails(CreateDeploymentDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'deploy_stage_id': 'str',
             'deployment_arguments': 'DeploymentArgumentCollection',
+            'deploy_stage_override_arguments': 'DeployStageOverrideArgumentCollection',
             'deploy_artifact_override_arguments': 'DeployArtifactOverrideArgumentCollection'
         }
 
@@ -71,6 +76,7 @@ class CreateSingleDeployStageDeploymentDetails(CreateDeploymentDetails):
             'defined_tags': 'definedTags',
             'deploy_stage_id': 'deployStageId',
             'deployment_arguments': 'deploymentArguments',
+            'deploy_stage_override_arguments': 'deployStageOverrideArguments',
             'deploy_artifact_override_arguments': 'deployArtifactOverrideArguments'
         }
 
@@ -81,6 +87,7 @@ class CreateSingleDeployStageDeploymentDetails(CreateDeploymentDetails):
         self._defined_tags = None
         self._deploy_stage_id = None
         self._deployment_arguments = None
+        self._deploy_stage_override_arguments = None
         self._deploy_artifact_override_arguments = None
         self._deployment_type = 'SINGLE_STAGE_DEPLOYMENT'
 
@@ -127,6 +134,26 @@ class CreateSingleDeployStageDeploymentDetails(CreateDeploymentDetails):
         :type: oci.devops.models.DeploymentArgumentCollection
         """
         self._deployment_arguments = deployment_arguments
+
+    @property
+    def deploy_stage_override_arguments(self):
+        """
+        Gets the deploy_stage_override_arguments of this CreateSingleDeployStageDeploymentDetails.
+
+        :return: The deploy_stage_override_arguments of this CreateSingleDeployStageDeploymentDetails.
+        :rtype: oci.devops.models.DeployStageOverrideArgumentCollection
+        """
+        return self._deploy_stage_override_arguments
+
+    @deploy_stage_override_arguments.setter
+    def deploy_stage_override_arguments(self, deploy_stage_override_arguments):
+        """
+        Sets the deploy_stage_override_arguments of this CreateSingleDeployStageDeploymentDetails.
+
+        :param deploy_stage_override_arguments: The deploy_stage_override_arguments of this CreateSingleDeployStageDeploymentDetails.
+        :type: oci.devops.models.DeployStageOverrideArgumentCollection
+        """
+        self._deploy_stage_override_arguments = deploy_stage_override_arguments
 
     @property
     def deploy_artifact_override_arguments(self):

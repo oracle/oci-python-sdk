@@ -102,6 +102,10 @@ class DiscoveryJobResultSummary(object):
             The value to assign to the is_result_applied property of this DiscoveryJobResultSummary.
         :type is_result_applied: bool
 
+        :param discovery_job_id:
+            The value to assign to the discovery_job_id property of this DiscoveryJobResultSummary.
+        :type discovery_job_id: str
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -118,7 +122,8 @@ class DiscoveryJobResultSummary(object):
             'estimated_data_value_count': 'int',
             'sample_data_values': 'list[str]',
             'planned_action': 'str',
-            'is_result_applied': 'bool'
+            'is_result_applied': 'bool',
+            'discovery_job_id': 'str'
         }
 
         self.attribute_map = {
@@ -136,7 +141,8 @@ class DiscoveryJobResultSummary(object):
             'estimated_data_value_count': 'estimatedDataValueCount',
             'sample_data_values': 'sampleDataValues',
             'planned_action': 'plannedAction',
-            'is_result_applied': 'isResultApplied'
+            'is_result_applied': 'isResultApplied',
+            'discovery_job_id': 'discoveryJobId'
         }
 
         self._key = None
@@ -154,6 +160,7 @@ class DiscoveryJobResultSummary(object):
         self._sample_data_values = None
         self._planned_action = None
         self._is_result_applied = None
+        self._discovery_job_id = None
 
     @property
     def key(self):
@@ -552,6 +559,30 @@ class DiscoveryJobResultSummary(object):
         :type: bool
         """
         self._is_result_applied = is_result_applied
+
+    @property
+    def discovery_job_id(self):
+        """
+        **[Required]** Gets the discovery_job_id of this DiscoveryJobResultSummary.
+        The OCID of the discovery job.
+
+
+        :return: The discovery_job_id of this DiscoveryJobResultSummary.
+        :rtype: str
+        """
+        return self._discovery_job_id
+
+    @discovery_job_id.setter
+    def discovery_job_id(self, discovery_job_id):
+        """
+        Sets the discovery_job_id of this DiscoveryJobResultSummary.
+        The OCID of the discovery job.
+
+
+        :param discovery_job_id: The discovery_job_id of this DiscoveryJobResultSummary.
+        :type: str
+        """
+        self._discovery_job_id = discovery_job_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

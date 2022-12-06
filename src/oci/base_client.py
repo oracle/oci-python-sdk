@@ -379,6 +379,15 @@ class BaseClient(object):
     def allow_control_chars(self, bool):
         self._allow_control_chars = bool
 
+    def is_instance_principal_or_resource_principal_signer(self):
+        if (isinstance(self.signer, signers.InstancePrincipalsSecurityTokenSigner) or
+                isinstance(self.signer, signers.ResourcePrincipalsFederationSigner) or
+                isinstance(self.signer, signers.EphemeralResourcePrincipalSigner) or
+                isinstance(self.signer, signers.EphemeralResourcePrincipalV21Signer)):
+            return True
+        else:
+            return False
+
     def call_api(self, resource_path, method,
                  path_params=None,
                  query_params=None,
@@ -459,10 +468,7 @@ class BaseClient(object):
             enforce_content_headers=enforce_content_headers
         )
 
-        if isinstance(self.signer, signers.InstancePrincipalsSecurityTokenSigner) or \
-                isinstance(self.signer, signers.ResourcePrincipalsFederationSigner) or \
-                isinstance(self.signer, signers.EphemeralResourcePrincipalSigner) or \
-                isinstance(self.signer, signers.EphemeralResourcePrincipalV21Signer):
+        if self.is_instance_principal_or_resource_principal_signer():
             call_attempts = 0
             while call_attempts < 2:
                 try:

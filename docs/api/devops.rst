@@ -203,6 +203,8 @@ Devops
     oci.devops.models.DeployStageExecutionProgress
     oci.devops.models.DeployStageExecutionProgressDetails
     oci.devops.models.DeployStageExecutionStep
+    oci.devops.models.DeployStageOverrideArgument
+    oci.devops.models.DeployStageOverrideArgumentCollection
     oci.devops.models.DeployStagePredecessor
     oci.devops.models.DeployStagePredecessorCollection
     oci.devops.models.DeployStageRollbackPolicy

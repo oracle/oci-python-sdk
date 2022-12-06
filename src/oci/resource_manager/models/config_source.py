@@ -14,8 +14,20 @@ class ConfigSource(object):
     """
 
     #: A constant which can be used with the config_source_type property of a ConfigSource.
+    #: This constant has a value of "BITBUCKET_CLOUD_CONFIG_SOURCE"
+    CONFIG_SOURCE_TYPE_BITBUCKET_CLOUD_CONFIG_SOURCE = "BITBUCKET_CLOUD_CONFIG_SOURCE"
+
+    #: A constant which can be used with the config_source_type property of a ConfigSource.
+    #: This constant has a value of "BITBUCKET_SERVER_CONFIG_SOURCE"
+    CONFIG_SOURCE_TYPE_BITBUCKET_SERVER_CONFIG_SOURCE = "BITBUCKET_SERVER_CONFIG_SOURCE"
+
+    #: A constant which can be used with the config_source_type property of a ConfigSource.
     #: This constant has a value of "COMPARTMENT_CONFIG_SOURCE"
     CONFIG_SOURCE_TYPE_COMPARTMENT_CONFIG_SOURCE = "COMPARTMENT_CONFIG_SOURCE"
+
+    #: A constant which can be used with the config_source_type property of a ConfigSource.
+    #: This constant has a value of "DEVOPS_CONFIG_SOURCE"
+    CONFIG_SOURCE_TYPE_DEVOPS_CONFIG_SOURCE = "DEVOPS_CONFIG_SOURCE"
 
     #: A constant which can be used with the config_source_type property of a ConfigSource.
     #: This constant has a value of "GIT_CONFIG_SOURCE"
@@ -35,7 +47,10 @@ class ConfigSource(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.resource_manager.models.GitConfigSource`
+        * :class:`~oci.resource_manager.models.DevOpsConfigSource`
         * :class:`~oci.resource_manager.models.ObjectStorageConfigSource`
+        * :class:`~oci.resource_manager.models.BitbucketServerConfigSource`
+        * :class:`~oci.resource_manager.models.BitbucketCloudConfigSource`
         * :class:`~oci.resource_manager.models.CompartmentConfigSource`
         * :class:`~oci.resource_manager.models.ZipUploadConfigSource`
 
@@ -43,7 +58,7 @@ class ConfigSource(object):
 
         :param config_source_type:
             The value to assign to the config_source_type property of this ConfigSource.
-            Allowed values for this property are: "COMPARTMENT_CONFIG_SOURCE", "GIT_CONFIG_SOURCE", "OBJECT_STORAGE_CONFIG_SOURCE", "ZIP_UPLOAD", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "BITBUCKET_CLOUD_CONFIG_SOURCE", "BITBUCKET_SERVER_CONFIG_SOURCE", "COMPARTMENT_CONFIG_SOURCE", "DEVOPS_CONFIG_SOURCE", "GIT_CONFIG_SOURCE", "OBJECT_STORAGE_CONFIG_SOURCE", "ZIP_UPLOAD", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type config_source_type: str
 
@@ -76,8 +91,17 @@ class ConfigSource(object):
         if type == 'GIT_CONFIG_SOURCE':
             return 'GitConfigSource'
 
+        if type == 'DEVOPS_CONFIG_SOURCE':
+            return 'DevOpsConfigSource'
+
         if type == 'OBJECT_STORAGE_CONFIG_SOURCE':
             return 'ObjectStorageConfigSource'
+
+        if type == 'BITBUCKET_SERVER_CONFIG_SOURCE':
+            return 'BitbucketServerConfigSource'
+
+        if type == 'BITBUCKET_CLOUD_CONFIG_SOURCE':
+            return 'BitbucketCloudConfigSource'
 
         if type == 'COMPARTMENT_CONFIG_SOURCE':
             return 'CompartmentConfigSource'
@@ -93,7 +117,7 @@ class ConfigSource(object):
         **[Required]** Gets the config_source_type of this ConfigSource.
         The type of configuration source to use for the Terraform configuration.
 
-        Allowed values for this property are: "COMPARTMENT_CONFIG_SOURCE", "GIT_CONFIG_SOURCE", "OBJECT_STORAGE_CONFIG_SOURCE", "ZIP_UPLOAD", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "BITBUCKET_CLOUD_CONFIG_SOURCE", "BITBUCKET_SERVER_CONFIG_SOURCE", "COMPARTMENT_CONFIG_SOURCE", "DEVOPS_CONFIG_SOURCE", "GIT_CONFIG_SOURCE", "OBJECT_STORAGE_CONFIG_SOURCE", "ZIP_UPLOAD", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -112,7 +136,7 @@ class ConfigSource(object):
         :param config_source_type: The config_source_type of this ConfigSource.
         :type: str
         """
-        allowed_values = ["COMPARTMENT_CONFIG_SOURCE", "GIT_CONFIG_SOURCE", "OBJECT_STORAGE_CONFIG_SOURCE", "ZIP_UPLOAD"]
+        allowed_values = ["BITBUCKET_CLOUD_CONFIG_SOURCE", "BITBUCKET_SERVER_CONFIG_SOURCE", "COMPARTMENT_CONFIG_SOURCE", "DEVOPS_CONFIG_SOURCE", "GIT_CONFIG_SOURCE", "OBJECT_STORAGE_CONFIG_SOURCE", "ZIP_UPLOAD"]
         if not value_allowed_none_or_none_sentinel(config_source_type, allowed_values):
             config_source_type = 'UNKNOWN_ENUM_VALUE'
         self._config_source_type = config_source_type

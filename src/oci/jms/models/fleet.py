@@ -78,6 +78,10 @@ class Fleet(object):
             The value to assign to the approximate_managed_instance_count property of this Fleet.
         :type approximate_managed_instance_count: int
 
+        :param approximate_java_server_count:
+            The value to assign to the approximate_java_server_count property of this Fleet.
+        :type approximate_java_server_count: int
+
         :param inventory_log:
             The value to assign to the inventory_log property of this Fleet.
         :type inventory_log: oci.jms.models.CustomLog
@@ -122,6 +126,7 @@ class Fleet(object):
             'approximate_installation_count': 'int',
             'approximate_application_count': 'int',
             'approximate_managed_instance_count': 'int',
+            'approximate_java_server_count': 'int',
             'inventory_log': 'CustomLog',
             'operation_log': 'CustomLog',
             'is_advanced_features_enabled': 'bool',
@@ -141,6 +146,7 @@ class Fleet(object):
             'approximate_installation_count': 'approximateInstallationCount',
             'approximate_application_count': 'approximateApplicationCount',
             'approximate_managed_instance_count': 'approximateManagedInstanceCount',
+            'approximate_java_server_count': 'approximateJavaServerCount',
             'inventory_log': 'inventoryLog',
             'operation_log': 'operationLog',
             'is_advanced_features_enabled': 'isAdvancedFeaturesEnabled',
@@ -159,6 +165,7 @@ class Fleet(object):
         self._approximate_installation_count = None
         self._approximate_application_count = None
         self._approximate_managed_instance_count = None
+        self._approximate_java_server_count = None
         self._inventory_log = None
         self._operation_log = None
         self._is_advanced_features_enabled = None
@@ -377,6 +384,32 @@ class Fleet(object):
         self._approximate_managed_instance_count = approximate_managed_instance_count
 
     @property
+    def approximate_java_server_count(self):
+        """
+        **[Required]** Gets the approximate_java_server_count of this Fleet.
+        The approximate count of all unique Java servers in the Fleet in the past seven days.
+        This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+
+
+        :return: The approximate_java_server_count of this Fleet.
+        :rtype: int
+        """
+        return self._approximate_java_server_count
+
+    @approximate_java_server_count.setter
+    def approximate_java_server_count(self, approximate_java_server_count):
+        """
+        Sets the approximate_java_server_count of this Fleet.
+        The approximate count of all unique Java servers in the Fleet in the past seven days.
+        This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+
+
+        :param approximate_java_server_count: The approximate_java_server_count of this Fleet.
+        :type: int
+        """
+        self._approximate_java_server_count = approximate_java_server_count
+
+    @property
     def inventory_log(self):
         """
         Gets the inventory_log of this Fleet.
@@ -420,7 +453,8 @@ class Fleet(object):
     def is_advanced_features_enabled(self):
         """
         Gets the is_advanced_features_enabled of this Fleet.
-        Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        Whether or not advanced features are enabled in this fleet.
+        Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
 
 
         :return: The is_advanced_features_enabled of this Fleet.
@@ -432,7 +466,8 @@ class Fleet(object):
     def is_advanced_features_enabled(self, is_advanced_features_enabled):
         """
         Sets the is_advanced_features_enabled of this Fleet.
-        Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        Whether or not advanced features are enabled in this fleet.
+        Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
 
 
         :param is_advanced_features_enabled: The is_advanced_features_enabled of this Fleet.

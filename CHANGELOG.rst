@@ -4,6 +4,45 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.89.0 - 2022-12-06
+====================
+
+Added
+-----
+* Support for the Container Instances service
+* Support for the Document Understanding service
+* Support for creating stacks from OCI DevOps service and Bitbucket Cloud/Server as source control management in the Resource Manager service
+* Support for deployment stage level parameters in the DevOps service
+* Support for PeopleSoft discovery in the Stack Monitoring service
+* Support for Apache Tomcat discovery in the Stack Monitoring service
+* Support for SQL Server discovery in the Stack Monitoring service
+* Support for OpenId Connect in the API Gateway service
+* Support for returning compartment ids when listing backups in the MySQL Database service
+* Support for adding a load balancer endpoint to a DB system in the MySQL Database service
+* Support for managed read replicas in the MySQL Database service
+* Support for setting replication filters on channels in the MySQL Database service
+* Support for replicating from a source configured without global transaction identifiers into a channel in the MySQL Database service
+* Support for time zone and language preferences in the Announcements service
+* Support for adding report schedules for activity auditing and alerts reports in the Data Safe service
+* Support for bulk operations on alerts in the Data Safe service
+* Support for Java server usage reporting in the Java Management service
+* Support for Java library usage reporting in the Java Management service
+* Support for cryptographic roadmap impact analysis in the Java Management service
+* Support for Java Flight Recorder recordings in the Java Management service
+* Support for post-installation steps in the Java Management service
+* Support for restricting management of advanced functionality in the Java Management service
+* Support for plugin improvements in the Java Management service
+* Support for collecting diagnostics on deployments in the GoldenGate service
+* Support for onboarding Exadata Public Cloud (ExaCS) targets to the Operations Insights service  
+ 
+Breaking
+--------
+* Parameter `autonomous_database_id` of model `AutonomousDatabaseDetails` changed from optional to required in the Data Safe service
+* Parameter `listener_port` of model `InstalledDatabaseDetails` changed from optional to required in the Data Safe service
+* Parameter `service_name` of model `InstalledDatabaseDetails` changed from optional to required in the Data Safe service
+* Parameter `compartment_id` of model `PatchAlertsDetails` changed from optional to required in the Data Safe service
+ 
+====================
 2.88.2 - 2022-11-22
 ====================
 

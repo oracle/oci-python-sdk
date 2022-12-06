@@ -46,7 +46,7 @@ class OnPremiseConnector(ConnectionOption):
     @property
     def on_prem_connector_id(self):
         """
-        Gets the on_prem_connector_id of this OnPremiseConnector.
+        **[Required]** Gets the on_prem_connector_id of this OnPremiseConnector.
         The OCID of the on-premises connector.
 
 

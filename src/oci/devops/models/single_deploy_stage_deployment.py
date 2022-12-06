@@ -73,6 +73,10 @@ class SingleDeployStageDeployment(Deployment):
             The value to assign to the deployment_arguments property of this SingleDeployStageDeployment.
         :type deployment_arguments: oci.devops.models.DeploymentArgumentCollection
 
+        :param deploy_stage_override_arguments:
+            The value to assign to the deploy_stage_override_arguments property of this SingleDeployStageDeployment.
+        :type deploy_stage_override_arguments: oci.devops.models.DeployStageOverrideArgumentCollection
+
         :param deploy_artifact_override_arguments:
             The value to assign to the deploy_artifact_override_arguments property of this SingleDeployStageDeployment.
         :type deploy_artifact_override_arguments: oci.devops.models.DeployArtifactOverrideArgumentCollection
@@ -112,6 +116,7 @@ class SingleDeployStageDeployment(Deployment):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'deployment_arguments': 'DeploymentArgumentCollection',
+            'deploy_stage_override_arguments': 'DeployStageOverrideArgumentCollection',
             'deploy_artifact_override_arguments': 'DeployArtifactOverrideArgumentCollection',
             'deployment_execution_progress': 'DeploymentExecutionProgress',
             'freeform_tags': 'dict(str, str)',
@@ -134,6 +139,7 @@ class SingleDeployStageDeployment(Deployment):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'deployment_arguments': 'deploymentArguments',
+            'deploy_stage_override_arguments': 'deployStageOverrideArguments',
             'deploy_artifact_override_arguments': 'deployArtifactOverrideArguments',
             'deployment_execution_progress': 'deploymentExecutionProgress',
             'freeform_tags': 'freeformTags',
@@ -155,6 +161,7 @@ class SingleDeployStageDeployment(Deployment):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._deployment_arguments = None
+        self._deploy_stage_override_arguments = None
         self._deploy_artifact_override_arguments = None
         self._deployment_execution_progress = None
         self._freeform_tags = None

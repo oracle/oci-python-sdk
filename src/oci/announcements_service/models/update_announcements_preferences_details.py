@@ -36,25 +36,32 @@ class UpdateAnnouncementsPreferencesDetails(BaseCreateAnnouncementsPreferencesDe
             Allowed values for this property are: "OPT_IN_TENANT_ANNOUNCEMENTS", "OPT_IN_TENANT_AND_INFORMATIONAL_ANNOUNCEMENTS", "OPT_OUT_ALL_ANNOUNCEMENTS"
         :type preference_type: str
 
+        :param preferred_time_zone:
+            The value to assign to the preferred_time_zone property of this UpdateAnnouncementsPreferencesDetails.
+        :type preferred_time_zone: str
+
         """
         self.swagger_types = {
             'type': 'str',
             'is_unsubscribed': 'bool',
             'compartment_id': 'str',
-            'preference_type': 'str'
+            'preference_type': 'str',
+            'preferred_time_zone': 'str'
         }
 
         self.attribute_map = {
             'type': 'type',
             'is_unsubscribed': 'isUnsubscribed',
             'compartment_id': 'compartmentId',
-            'preference_type': 'preferenceType'
+            'preference_type': 'preferenceType',
+            'preferred_time_zone': 'preferredTimeZone'
         }
 
         self._type = None
         self._is_unsubscribed = None
         self._compartment_id = None
         self._preference_type = None
+        self._preferred_time_zone = None
         self._type = 'UpdateAnnouncementsPreferencesDetails'
 
     def __repr__(self):

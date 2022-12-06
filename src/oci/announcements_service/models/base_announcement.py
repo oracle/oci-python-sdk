@@ -45,6 +45,10 @@ class BaseAnnouncement(object):
     #: This constant has a value of "NEW_END_TIME"
     TIME_TWO_TYPE_NEW_END_TIME = "NEW_END_TIME"
 
+    #: A constant which can be used with the time_two_type property of a BaseAnnouncement.
+    #: This constant has a value of "ESTIMATED_END_TIME"
+    TIME_TWO_TYPE_ESTIMATED_END_TIME = "ESTIMATED_END_TIME"
+
     #: A constant which can be used with the announcement_type property of a BaseAnnouncement.
     #: This constant has a value of "ACTION_RECOMMENDED"
     ANNOUNCEMENT_TYPE_ACTION_RECOMMENDED = "ACTION_RECOMMENDED"
@@ -162,7 +166,7 @@ class BaseAnnouncement(object):
 
         :param time_two_type:
             The value to assign to the time_two_type property of this BaseAnnouncement.
-            Allowed values for this property are: "END_TIME", "NEW_END_TIME"
+            Allowed values for this property are: "END_TIME", "NEW_END_TIME", "ESTIMATED_END_TIME"
         :type time_two_type: str
 
         :param time_two_value:
@@ -506,7 +510,7 @@ class BaseAnnouncement(object):
         The type of a time associated with second time value. If the `timeTwoTitle` attribute is present, then the `timeTwoTitle` attribute contains a label of `timeTwoType` in English.
         Example: `END_TIME`
 
-        Allowed values for this property are: "END_TIME", "NEW_END_TIME"
+        Allowed values for this property are: "END_TIME", "NEW_END_TIME", "ESTIMATED_END_TIME"
 
 
         :return: The time_two_type of this BaseAnnouncement.
@@ -525,7 +529,7 @@ class BaseAnnouncement(object):
         :param time_two_type: The time_two_type of this BaseAnnouncement.
         :type: str
         """
-        allowed_values = ["END_TIME", "NEW_END_TIME"]
+        allowed_values = ["END_TIME", "NEW_END_TIME", "ESTIMATED_END_TIME"]
         if not value_allowed_none_or_none_sentinel(time_two_type, allowed_values):
             raise ValueError(
                 "Invalid value for `time_two_type`, must be None or one of {0}"

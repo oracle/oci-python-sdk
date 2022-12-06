@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AnyOfSelectionKey(DynamicSelectionKey):
     """
-    Information around the set of string values for selector of a dynamic authentication/ routing branch. Selector should match any one of the values present in set of string values.
+    When dynamically routing and dynamically authenticating requests, the route or authentication server associated with a set of selection keys is used if the context variable in an incoming request exactly matches one of the keys in the set.
     """
 
     def __init__(self, **kwargs):
@@ -61,7 +61,7 @@ class AnyOfSelectionKey(DynamicSelectionKey):
     def values(self):
         """
         Gets the values of this AnyOfSelectionKey.
-        Information regarding the set of values of selector for which this branch should be selected.
+        The set of selection keys to match with the context variable in an incoming request. If the context variable exactly matches one of the keys in the set, the request is sent to the route or authentication server associated with the set.
 
 
         :return: The values of this AnyOfSelectionKey.
@@ -73,7 +73,7 @@ class AnyOfSelectionKey(DynamicSelectionKey):
     def values(self, values):
         """
         Sets the values of this AnyOfSelectionKey.
-        Information regarding the set of values of selector for which this branch should be selected.
+        The set of selection keys to match with the context variable in an incoming request. If the context variable exactly matches one of the keys in the set, the request is sent to the route or authentication server associated with the set.
 
 
         :param values: The values of this AnyOfSelectionKey.

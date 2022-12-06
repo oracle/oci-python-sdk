@@ -19,6 +19,7 @@ Jms
     :template: autosummary/model_class.rst
 
     oci.jms.models.AddFleetInstallationSitesDetails
+    oci.jms.models.AdvancedUsageTracking
     oci.jms.models.ApplicationUsage
     oci.jms.models.ApplicationUsageCollection
     oci.jms.models.Blocklist
@@ -28,9 +29,16 @@ Jms
     oci.jms.models.ChangeFleetCompartmentDetails
     oci.jms.models.CreateBlocklistDetails
     oci.jms.models.CreateFleetDetails
+    oci.jms.models.CryptoAnalysisResult
+    oci.jms.models.CryptoAnalysisResultCollection
+    oci.jms.models.CryptoAnalysisResultSummary
+    oci.jms.models.CryptoEventAnalysis
     oci.jms.models.CustomLog
+    oci.jms.models.DeployedApplicationUsage
+    oci.jms.models.DeployedApplicationUsageCollection
     oci.jms.models.ExistingInstallationSiteId
     oci.jms.models.Fleet
+    oci.jms.models.FleetAdvancedFeatureConfiguration
     oci.jms.models.FleetAgentConfiguration
     oci.jms.models.FleetAgentOsConfiguration
     oci.jms.models.FleetCollection
@@ -50,15 +58,33 @@ Jms
     oci.jms.models.JavaReleaseCollection
     oci.jms.models.JavaReleaseSummary
     oci.jms.models.JavaRuntimeId
+    oci.jms.models.JavaServerInstanceUsage
+    oci.jms.models.JavaServerInstanceUsageCollection
+    oci.jms.models.JavaServerUsage
+    oci.jms.models.JavaServerUsageCollection
+    oci.jms.models.JfrAttachmentTarget
+    oci.jms.models.JfrRecording
     oci.jms.models.JreUsage
     oci.jms.models.JreUsageCollection
+    oci.jms.models.KeySizeAlgorithm
+    oci.jms.models.Lcm
+    oci.jms.models.LibraryUsage
+    oci.jms.models.LibraryUsageCollection
     oci.jms.models.ManagedInstanceUsage
     oci.jms.models.ManagedInstanceUsageCollection
+    oci.jms.models.MinimumKeySizeSettings
     oci.jms.models.NewInstallationSite
     oci.jms.models.OperatingSystem
+    oci.jms.models.PostInstallationActionSettings
     oci.jms.models.Principal
     oci.jms.models.RemoveFleetInstallationSitesDetails
+    oci.jms.models.RequestCryptoAnalysesDetails
+    oci.jms.models.RequestJfrRecordingsDetails
     oci.jms.models.ResourceInventory
+    oci.jms.models.ScanJavaServerUsageDetails
+    oci.jms.models.ScanLibraryUsageDetails
+    oci.jms.models.SummarizedEventsLog
+    oci.jms.models.UpdateFleetAdvancedFeatureConfigurationDetails
     oci.jms.models.UpdateFleetAgentConfigurationDetails
     oci.jms.models.UpdateFleetDetails
     oci.jms.models.WorkItemCollection

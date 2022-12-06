@@ -48,6 +48,10 @@ class UpdateChannelSourceFromMysqlDetails(UpdateChannelSourceDetails):
             The value to assign to the ssl_ca_certificate property of this UpdateChannelSourceFromMysqlDetails.
         :type ssl_ca_certificate: oci.mysql.models.CaCertificate
 
+        :param anonymous_transactions_handling:
+            The value to assign to the anonymous_transactions_handling property of this UpdateChannelSourceFromMysqlDetails.
+        :type anonymous_transactions_handling: oci.mysql.models.AnonymousTransactionsHandling
+
         """
         self.swagger_types = {
             'source_type': 'str',
@@ -56,7 +60,8 @@ class UpdateChannelSourceFromMysqlDetails(UpdateChannelSourceDetails):
             'username': 'str',
             'password': 'str',
             'ssl_mode': 'str',
-            'ssl_ca_certificate': 'CaCertificate'
+            'ssl_ca_certificate': 'CaCertificate',
+            'anonymous_transactions_handling': 'AnonymousTransactionsHandling'
         }
 
         self.attribute_map = {
@@ -66,7 +71,8 @@ class UpdateChannelSourceFromMysqlDetails(UpdateChannelSourceDetails):
             'username': 'username',
             'password': 'password',
             'ssl_mode': 'sslMode',
-            'ssl_ca_certificate': 'sslCaCertificate'
+            'ssl_ca_certificate': 'sslCaCertificate',
+            'anonymous_transactions_handling': 'anonymousTransactionsHandling'
         }
 
         self._source_type = None
@@ -76,6 +82,7 @@ class UpdateChannelSourceFromMysqlDetails(UpdateChannelSourceDetails):
         self._password = None
         self._ssl_mode = None
         self._ssl_ca_certificate = None
+        self._anonymous_transactions_handling = None
         self._source_type = 'MYSQL'
 
     @property
@@ -231,6 +238,26 @@ class UpdateChannelSourceFromMysqlDetails(UpdateChannelSourceDetails):
         :type: oci.mysql.models.CaCertificate
         """
         self._ssl_ca_certificate = ssl_ca_certificate
+
+    @property
+    def anonymous_transactions_handling(self):
+        """
+        Gets the anonymous_transactions_handling of this UpdateChannelSourceFromMysqlDetails.
+
+        :return: The anonymous_transactions_handling of this UpdateChannelSourceFromMysqlDetails.
+        :rtype: oci.mysql.models.AnonymousTransactionsHandling
+        """
+        return self._anonymous_transactions_handling
+
+    @anonymous_transactions_handling.setter
+    def anonymous_transactions_handling(self, anonymous_transactions_handling):
+        """
+        Sets the anonymous_transactions_handling of this UpdateChannelSourceFromMysqlDetails.
+
+        :param anonymous_transactions_handling: The anonymous_transactions_handling of this UpdateChannelSourceFromMysqlDetails.
+        :type: oci.mysql.models.AnonymousTransactionsHandling
+        """
+        self._anonymous_transactions_handling = anonymous_transactions_handling
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -80,6 +80,10 @@ class PeComanagedManagedExternalDatabaseConfigurationSummary(DatabaseConfigurati
             The value to assign to the instances property of this PeComanagedManagedExternalDatabaseConfigurationSummary.
         :type instances: list[oci.opsi.models.HostInstanceMap]
 
+        :param exadata_details:
+            The value to assign to the exadata_details property of this PeComanagedManagedExternalDatabaseConfigurationSummary.
+        :type exadata_details: oci.opsi.models.ExadataDetails
+
         """
         self.swagger_types = {
             'database_insight_id': 'str',
@@ -96,7 +100,8 @@ class PeComanagedManagedExternalDatabaseConfigurationSummary(DatabaseConfigurati
             'database_id': 'str',
             'parent_id': 'str',
             'opsi_private_endpoint_id': 'str',
-            'instances': 'list[HostInstanceMap]'
+            'instances': 'list[HostInstanceMap]',
+            'exadata_details': 'ExadataDetails'
         }
 
         self.attribute_map = {
@@ -114,7 +119,8 @@ class PeComanagedManagedExternalDatabaseConfigurationSummary(DatabaseConfigurati
             'database_id': 'databaseId',
             'parent_id': 'parentId',
             'opsi_private_endpoint_id': 'opsiPrivateEndpointId',
-            'instances': 'instances'
+            'instances': 'instances',
+            'exadata_details': 'exadataDetails'
         }
 
         self._database_insight_id = None
@@ -132,6 +138,7 @@ class PeComanagedManagedExternalDatabaseConfigurationSummary(DatabaseConfigurati
         self._parent_id = None
         self._opsi_private_endpoint_id = None
         self._instances = None
+        self._exadata_details = None
         self._entity_source = 'PE_COMANAGED_DATABASE'
 
     @property
@@ -241,6 +248,26 @@ class PeComanagedManagedExternalDatabaseConfigurationSummary(DatabaseConfigurati
         :type: list[oci.opsi.models.HostInstanceMap]
         """
         self._instances = instances
+
+    @property
+    def exadata_details(self):
+        """
+        **[Required]** Gets the exadata_details of this PeComanagedManagedExternalDatabaseConfigurationSummary.
+
+        :return: The exadata_details of this PeComanagedManagedExternalDatabaseConfigurationSummary.
+        :rtype: oci.opsi.models.ExadataDetails
+        """
+        return self._exadata_details
+
+    @exadata_details.setter
+    def exadata_details(self, exadata_details):
+        """
+        Sets the exadata_details of this PeComanagedManagedExternalDatabaseConfigurationSummary.
+
+        :param exadata_details: The exadata_details of this PeComanagedManagedExternalDatabaseConfigurationSummary.
+        :type: oci.opsi.models.ExadataDetails
+        """
+        self._exadata_details = exadata_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

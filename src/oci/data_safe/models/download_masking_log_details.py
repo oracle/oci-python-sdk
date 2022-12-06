@@ -22,16 +22,23 @@ class DownloadMaskingLogDetails(object):
             The value to assign to the target_id property of this DownloadMaskingLogDetails.
         :type target_id: str
 
+        :param masking_work_request_id:
+            The value to assign to the masking_work_request_id property of this DownloadMaskingLogDetails.
+        :type masking_work_request_id: str
+
         """
         self.swagger_types = {
-            'target_id': 'str'
+            'target_id': 'str',
+            'masking_work_request_id': 'str'
         }
 
         self.attribute_map = {
-            'target_id': 'targetId'
+            'target_id': 'targetId',
+            'masking_work_request_id': 'maskingWorkRequestId'
         }
 
         self._target_id = None
+        self._masking_work_request_id = None
 
     @property
     def target_id(self):
@@ -56,6 +63,30 @@ class DownloadMaskingLogDetails(object):
         :type: str
         """
         self._target_id = target_id
+
+    @property
+    def masking_work_request_id(self):
+        """
+        Gets the masking_work_request_id of this DownloadMaskingLogDetails.
+        The OCID of the masking work request that resulted in this masking log.
+
+
+        :return: The masking_work_request_id of this DownloadMaskingLogDetails.
+        :rtype: str
+        """
+        return self._masking_work_request_id
+
+    @masking_work_request_id.setter
+    def masking_work_request_id(self, masking_work_request_id):
+        """
+        Sets the masking_work_request_id of this DownloadMaskingLogDetails.
+        The OCID of the masking work request that resulted in this masking log.
+
+
+        :param masking_work_request_id: The masking_work_request_id of this DownloadMaskingLogDetails.
+        :type: str
+        """
+        self._masking_work_request_id = masking_work_request_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -110,6 +110,14 @@ class PeComanagedDatabaseInsight(DatabaseInsight):
             The value to assign to the database_resource_type property of this PeComanagedDatabaseInsight.
         :type database_resource_type: str
 
+        :param parent_id:
+            The value to assign to the parent_id property of this PeComanagedDatabaseInsight.
+        :type parent_id: str
+
+        :param root_id:
+            The value to assign to the root_id property of this PeComanagedDatabaseInsight.
+        :type root_id: str
+
         """
         self.swagger_types = {
             'entity_source': 'str',
@@ -133,7 +141,9 @@ class PeComanagedDatabaseInsight(DatabaseInsight):
             'database_id': 'str',
             'database_name': 'str',
             'database_display_name': 'str',
-            'database_resource_type': 'str'
+            'database_resource_type': 'str',
+            'parent_id': 'str',
+            'root_id': 'str'
         }
 
         self.attribute_map = {
@@ -158,7 +168,9 @@ class PeComanagedDatabaseInsight(DatabaseInsight):
             'database_id': 'databaseId',
             'database_name': 'databaseName',
             'database_display_name': 'databaseDisplayName',
-            'database_resource_type': 'databaseResourceType'
+            'database_resource_type': 'databaseResourceType',
+            'parent_id': 'parentId',
+            'root_id': 'rootId'
         }
 
         self._entity_source = None
@@ -183,6 +195,8 @@ class PeComanagedDatabaseInsight(DatabaseInsight):
         self._database_name = None
         self._database_display_name = None
         self._database_resource_type = None
+        self._parent_id = None
+        self._root_id = None
         self._entity_source = 'PE_COMANAGED_DATABASE'
 
     @property
@@ -352,6 +366,62 @@ class PeComanagedDatabaseInsight(DatabaseInsight):
         :type: str
         """
         self._database_resource_type = database_resource_type
+
+    @property
+    def parent_id(self):
+        """
+        Gets the parent_id of this PeComanagedDatabaseInsight.
+        The `OCID`__ of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The parent_id of this PeComanagedDatabaseInsight.
+        :rtype: str
+        """
+        return self._parent_id
+
+    @parent_id.setter
+    def parent_id(self, parent_id):
+        """
+        Sets the parent_id of this PeComanagedDatabaseInsight.
+        The `OCID`__ of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param parent_id: The parent_id of this PeComanagedDatabaseInsight.
+        :type: str
+        """
+        self._parent_id = parent_id
+
+    @property
+    def root_id(self):
+        """
+        Gets the root_id of this PeComanagedDatabaseInsight.
+        The `OCID`__ of the Exadata Infrastructure.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The root_id of this PeComanagedDatabaseInsight.
+        :rtype: str
+        """
+        return self._root_id
+
+    @root_id.setter
+    def root_id(self, root_id):
+        """
+        Sets the root_id of this PeComanagedDatabaseInsight.
+        The `OCID`__ of the Exadata Infrastructure.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param root_id: The root_id of this PeComanagedDatabaseInsight.
+        :type: str
+        """
+        self._root_id = root_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

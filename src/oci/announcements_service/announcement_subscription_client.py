@@ -90,7 +90,7 @@ class AnnouncementSubscriptionClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20180904',
-            'service_endpoint_template': 'https://announcements.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template': 'https://announcements.{region}.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False),
             'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
         }

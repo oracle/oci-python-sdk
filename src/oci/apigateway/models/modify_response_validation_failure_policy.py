@@ -21,7 +21,7 @@ class ModifyResponseValidationFailurePolicy(ValidationFailurePolicy):
 
         :param type:
             The value to assign to the type property of this ModifyResponseValidationFailurePolicy.
-            Allowed values for this property are: "MODIFY_RESPONSE"
+            Allowed values for this property are: "MODIFY_RESPONSE", "OAUTH2"
         :type type: str
 
         :param response_code:

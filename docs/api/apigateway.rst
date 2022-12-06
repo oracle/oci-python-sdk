@@ -29,6 +29,7 @@ Apigateway
     :template: autosummary/model_class.rst
 
     oci.apigateway.models.AccessLogPolicy
+    oci.apigateway.models.AdditionalValidationPolicy
     oci.apigateway.models.AnonymousRouteAuthorizationPolicy
     oci.apigateway.models.AnyOfRouteAuthorizationPolicy
     oci.apigateway.models.AnyOfSelectionKey
@@ -63,6 +64,7 @@ Apigateway
     oci.apigateway.models.ChangeSubscriberCompartmentDetails
     oci.apigateway.models.ChangeUsagePlanCompartmentDetails
     oci.apigateway.models.Client
+    oci.apigateway.models.ClientAppDetails
     oci.apigateway.models.ClientSummary
     oci.apigateway.models.ContentValidation
     oci.apigateway.models.CorsPolicy
@@ -74,9 +76,11 @@ Apigateway
     oci.apigateway.models.CreateSubscriberDetails
     oci.apigateway.models.CreateUsagePlanDetails
     oci.apigateway.models.CustomAuthenticationPolicy
+    oci.apigateway.models.CustomClientAppDetails
     oci.apigateway.models.Deployment
     oci.apigateway.models.DeploymentCollection
     oci.apigateway.models.DeploymentSummary
+    oci.apigateway.models.DiscoveryUriSourceUriDetails
     oci.apigateway.models.DynamicAuthenticationPolicy
     oci.apigateway.models.DynamicRoutingBackend
     oci.apigateway.models.DynamicRoutingTypeRoutingBackend
@@ -107,6 +111,8 @@ Apigateway
     oci.apigateway.models.MutualTlsDetails
     oci.apigateway.models.NoCache
     oci.apigateway.models.NoContentValidation
+    oci.apigateway.models.OAuth2LogoutBackend
+    oci.apigateway.models.OAuth2ResponseValidationFailurePolicy
     oci.apigateway.models.OracleFunctionBackend
     oci.apigateway.models.PemEncodedPublicKey
     oci.apigateway.models.PublicKeySet
@@ -142,12 +148,18 @@ Apigateway
     oci.apigateway.models.SetQueryParameterPolicyItem
     oci.apigateway.models.SimpleLookupPolicy
     oci.apigateway.models.SingleSelectionSourcePolicy
+    oci.apigateway.models.SourceUriDetails
     oci.apigateway.models.StaticPublicKey
     oci.apigateway.models.StaticPublicKeySet
     oci.apigateway.models.StockResponseBackend
     oci.apigateway.models.Subscriber
     oci.apigateway.models.SubscriberCollection
     oci.apigateway.models.SubscriberSummary
+    oci.apigateway.models.TokenAuthenticationPolicy
+    oci.apigateway.models.TokenAuthenticationRemoteDiscoveryValidationPolicy
+    oci.apigateway.models.TokenAuthenticationRemoteJWKSValidationPolicy
+    oci.apigateway.models.TokenAuthenticationStaticKeysValidationPolicy
+    oci.apigateway.models.TokenAuthenticationValidationPolicy
     oci.apigateway.models.UpdateApiDetails
     oci.apigateway.models.UpdateCertificateDetails
     oci.apigateway.models.UpdateDeploymentDetails
@@ -159,6 +171,8 @@ Apigateway
     oci.apigateway.models.UsagePlanCollection
     oci.apigateway.models.UsagePlanSummary
     oci.apigateway.models.UsagePlansPolicy
+    oci.apigateway.models.ValidationBlockClientAppDetails
+    oci.apigateway.models.ValidationBlockSourceUriDetails
     oci.apigateway.models.ValidationFailurePolicy
     oci.apigateway.models.ValidationRequestPolicy
     oci.apigateway.models.WildcardSelectionKey

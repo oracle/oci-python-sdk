@@ -108,6 +108,14 @@ class ReportDefinitionSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param schedule:
+            The value to assign to the schedule property of this ReportDefinitionSummary.
+        :type schedule: str
+
+        :param compliance_standards:
+            The value to assign to the compliance_standards property of this ReportDefinitionSummary.
+        :type compliance_standards: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ReportDefinitionSummary.
         :type freeform_tags: dict(str, str)
@@ -129,6 +137,8 @@ class ReportDefinitionSummary(object):
             'compartment_id': 'str',
             'data_source': 'str',
             'lifecycle_state': 'str',
+            'schedule': 'str',
+            'compliance_standards': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -145,6 +155,8 @@ class ReportDefinitionSummary(object):
             'compartment_id': 'compartmentId',
             'data_source': 'dataSource',
             'lifecycle_state': 'lifecycleState',
+            'schedule': 'schedule',
+            'compliance_standards': 'complianceStandards',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -160,6 +172,8 @@ class ReportDefinitionSummary(object):
         self._compartment_id = None
         self._data_source = None
         self._lifecycle_state = None
+        self._schedule = None
+        self._compliance_standards = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -444,6 +458,80 @@ class ReportDefinitionSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def schedule(self):
+        """
+        Gets the schedule of this ReportDefinitionSummary.
+        Schedule to generate the report periodically in the specified format:
+        <version-string>;<version-specific-schedule>
+
+        Allowed version strings - \"v1\"
+        v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month>
+        Each of the above fields potentially introduce constraints. A workrequest is created only
+        when clock time satisfies all the constraints. Constraints introduced:
+        1. seconds = <ss> (So, the allowed range for <ss> is [0, 59])
+        2. minutes = <mm> (So, the allowed range for <mm> is [0, 59])
+        3. hours = <hh> (So, the allowed range for <hh> is [0, 23])
+        4. <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday))
+        No constraint introduced when it is '*'. When not, day of week must equal the given value
+        5. <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
+        No constraint introduced when it is '*'. When not, day of month must equal the given value
+
+
+        :return: The schedule of this ReportDefinitionSummary.
+        :rtype: str
+        """
+        return self._schedule
+
+    @schedule.setter
+    def schedule(self, schedule):
+        """
+        Sets the schedule of this ReportDefinitionSummary.
+        Schedule to generate the report periodically in the specified format:
+        <version-string>;<version-specific-schedule>
+
+        Allowed version strings - \"v1\"
+        v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month>
+        Each of the above fields potentially introduce constraints. A workrequest is created only
+        when clock time satisfies all the constraints. Constraints introduced:
+        1. seconds = <ss> (So, the allowed range for <ss> is [0, 59])
+        2. minutes = <mm> (So, the allowed range for <mm> is [0, 59])
+        3. hours = <hh> (So, the allowed range for <hh> is [0, 23])
+        4. <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday))
+        No constraint introduced when it is '*'. When not, day of week must equal the given value
+        5. <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
+        No constraint introduced when it is '*'. When not, day of month must equal the given value
+
+
+        :param schedule: The schedule of this ReportDefinitionSummary.
+        :type: str
+        """
+        self._schedule = schedule
+
+    @property
+    def compliance_standards(self):
+        """
+        Gets the compliance_standards of this ReportDefinitionSummary.
+        The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+
+
+        :return: The compliance_standards of this ReportDefinitionSummary.
+        :rtype: list[str]
+        """
+        return self._compliance_standards
+
+    @compliance_standards.setter
+    def compliance_standards(self, compliance_standards):
+        """
+        Sets the compliance_standards of this ReportDefinitionSummary.
+        The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+
+
+        :param compliance_standards: The compliance_standards of this ReportDefinitionSummary.
+        :type: list[str]
+        """
+        self._compliance_standards = compliance_standards
 
     @property
     def freeform_tags(self):

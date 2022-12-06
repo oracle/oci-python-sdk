@@ -47,6 +47,10 @@ class AnnouncementsPreferencesSummary(BaseAnnouncementsPreferences):
             The value to assign to the preference_type property of this AnnouncementsPreferencesSummary.
         :type preference_type: str
 
+        :param preferred_time_zone:
+            The value to assign to the preferred_time_zone property of this AnnouncementsPreferencesSummary.
+        :type preferred_time_zone: str
+
         """
         self.swagger_types = {
             'type': 'str',
@@ -55,7 +59,8 @@ class AnnouncementsPreferencesSummary(BaseAnnouncementsPreferences):
             'is_unsubscribed': 'bool',
             'time_created': 'datetime',
             'time_updated': 'datetime',
-            'preference_type': 'str'
+            'preference_type': 'str',
+            'preferred_time_zone': 'str'
         }
 
         self.attribute_map = {
@@ -65,7 +70,8 @@ class AnnouncementsPreferencesSummary(BaseAnnouncementsPreferences):
             'is_unsubscribed': 'isUnsubscribed',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
-            'preference_type': 'preferenceType'
+            'preference_type': 'preferenceType',
+            'preferred_time_zone': 'preferredTimeZone'
         }
 
         self._type = None
@@ -75,6 +81,7 @@ class AnnouncementsPreferencesSummary(BaseAnnouncementsPreferences):
         self._time_created = None
         self._time_updated = None
         self._preference_type = None
+        self._preferred_time_zone = None
         self._type = 'AnnouncementsPreferencesSummary'
 
     def __repr__(self):

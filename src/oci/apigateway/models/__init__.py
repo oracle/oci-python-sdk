@@ -5,6 +5,7 @@
 from __future__ import absolute_import
 
 from .access_log_policy import AccessLogPolicy
+from .additional_validation_policy import AdditionalValidationPolicy
 from .anonymous_route_authorization_policy import AnonymousRouteAuthorizationPolicy
 from .any_of_route_authorization_policy import AnyOfRouteAuthorizationPolicy
 from .any_of_selection_key import AnyOfSelectionKey
@@ -39,6 +40,7 @@ from .change_gateway_compartment_details import ChangeGatewayCompartmentDetails
 from .change_subscriber_compartment_details import ChangeSubscriberCompartmentDetails
 from .change_usage_plan_compartment_details import ChangeUsagePlanCompartmentDetails
 from .client import Client
+from .client_app_details import ClientAppDetails
 from .client_summary import ClientSummary
 from .content_validation import ContentValidation
 from .cors_policy import CorsPolicy
@@ -50,9 +52,11 @@ from .create_sdk_details import CreateSdkDetails
 from .create_subscriber_details import CreateSubscriberDetails
 from .create_usage_plan_details import CreateUsagePlanDetails
 from .custom_authentication_policy import CustomAuthenticationPolicy
+from .custom_client_app_details import CustomClientAppDetails
 from .deployment import Deployment
 from .deployment_collection import DeploymentCollection
 from .deployment_summary import DeploymentSummary
+from .discovery_uri_source_uri_details import DiscoveryUriSourceUriDetails
 from .dynamic_authentication_policy import DynamicAuthenticationPolicy
 from .dynamic_routing_backend import DynamicRoutingBackend
 from .dynamic_routing_type_routing_backend import DynamicRoutingTypeRoutingBackend
@@ -83,6 +87,8 @@ from .modify_response_validation_failure_policy import ModifyResponseValidationF
 from .mutual_tls_details import MutualTlsDetails
 from .no_cache import NoCache
 from .no_content_validation import NoContentValidation
+from .o_auth2_logout_backend import OAuth2LogoutBackend
+from .o_auth2_response_validation_failure_policy import OAuth2ResponseValidationFailurePolicy
 from .oracle_function_backend import OracleFunctionBackend
 from .pem_encoded_public_key import PemEncodedPublicKey
 from .public_key_set import PublicKeySet
@@ -118,12 +124,18 @@ from .set_query_parameter_policy import SetQueryParameterPolicy
 from .set_query_parameter_policy_item import SetQueryParameterPolicyItem
 from .simple_lookup_policy import SimpleLookupPolicy
 from .single_selection_source_policy import SingleSelectionSourcePolicy
+from .source_uri_details import SourceUriDetails
 from .static_public_key import StaticPublicKey
 from .static_public_key_set import StaticPublicKeySet
 from .stock_response_backend import StockResponseBackend
 from .subscriber import Subscriber
 from .subscriber_collection import SubscriberCollection
 from .subscriber_summary import SubscriberSummary
+from .token_authentication_policy import TokenAuthenticationPolicy
+from .token_authentication_remote_discovery_validation_policy import TokenAuthenticationRemoteDiscoveryValidationPolicy
+from .token_authentication_remote_jwks_validation_policy import TokenAuthenticationRemoteJWKSValidationPolicy
+from .token_authentication_static_keys_validation_policy import TokenAuthenticationStaticKeysValidationPolicy
+from .token_authentication_validation_policy import TokenAuthenticationValidationPolicy
 from .update_api_details import UpdateApiDetails
 from .update_certificate_details import UpdateCertificateDetails
 from .update_deployment_details import UpdateDeploymentDetails
@@ -135,6 +147,8 @@ from .usage_plan import UsagePlan
 from .usage_plan_collection import UsagePlanCollection
 from .usage_plan_summary import UsagePlanSummary
 from .usage_plans_policy import UsagePlansPolicy
+from .validation_block_client_app_details import ValidationBlockClientAppDetails
+from .validation_block_source_uri_details import ValidationBlockSourceUriDetails
 from .validation_failure_policy import ValidationFailurePolicy
 from .validation_request_policy import ValidationRequestPolicy
 from .wildcard_selection_key import WildcardSelectionKey
@@ -150,6 +164,7 @@ from .work_request_summary import WorkRequestSummary
 # Maps type names to classes for apigateway services.
 apigateway_type_mapping = {
     "AccessLogPolicy": AccessLogPolicy,
+    "AdditionalValidationPolicy": AdditionalValidationPolicy,
     "AnonymousRouteAuthorizationPolicy": AnonymousRouteAuthorizationPolicy,
     "AnyOfRouteAuthorizationPolicy": AnyOfRouteAuthorizationPolicy,
     "AnyOfSelectionKey": AnyOfSelectionKey,
@@ -184,6 +199,7 @@ apigateway_type_mapping = {
     "ChangeSubscriberCompartmentDetails": ChangeSubscriberCompartmentDetails,
     "ChangeUsagePlanCompartmentDetails": ChangeUsagePlanCompartmentDetails,
     "Client": Client,
+    "ClientAppDetails": ClientAppDetails,
     "ClientSummary": ClientSummary,
     "ContentValidation": ContentValidation,
     "CorsPolicy": CorsPolicy,
@@ -195,9 +211,11 @@ apigateway_type_mapping = {
     "CreateSubscriberDetails": CreateSubscriberDetails,
     "CreateUsagePlanDetails": CreateUsagePlanDetails,
     "CustomAuthenticationPolicy": CustomAuthenticationPolicy,
+    "CustomClientAppDetails": CustomClientAppDetails,
     "Deployment": Deployment,
     "DeploymentCollection": DeploymentCollection,
     "DeploymentSummary": DeploymentSummary,
+    "DiscoveryUriSourceUriDetails": DiscoveryUriSourceUriDetails,
     "DynamicAuthenticationPolicy": DynamicAuthenticationPolicy,
     "DynamicRoutingBackend": DynamicRoutingBackend,
     "DynamicRoutingTypeRoutingBackend": DynamicRoutingTypeRoutingBackend,
@@ -228,6 +246,8 @@ apigateway_type_mapping = {
     "MutualTlsDetails": MutualTlsDetails,
     "NoCache": NoCache,
     "NoContentValidation": NoContentValidation,
+    "OAuth2LogoutBackend": OAuth2LogoutBackend,
+    "OAuth2ResponseValidationFailurePolicy": OAuth2ResponseValidationFailurePolicy,
     "OracleFunctionBackend": OracleFunctionBackend,
     "PemEncodedPublicKey": PemEncodedPublicKey,
     "PublicKeySet": PublicKeySet,
@@ -263,12 +283,18 @@ apigateway_type_mapping = {
     "SetQueryParameterPolicyItem": SetQueryParameterPolicyItem,
     "SimpleLookupPolicy": SimpleLookupPolicy,
     "SingleSelectionSourcePolicy": SingleSelectionSourcePolicy,
+    "SourceUriDetails": SourceUriDetails,
     "StaticPublicKey": StaticPublicKey,
     "StaticPublicKeySet": StaticPublicKeySet,
     "StockResponseBackend": StockResponseBackend,
     "Subscriber": Subscriber,
     "SubscriberCollection": SubscriberCollection,
     "SubscriberSummary": SubscriberSummary,
+    "TokenAuthenticationPolicy": TokenAuthenticationPolicy,
+    "TokenAuthenticationRemoteDiscoveryValidationPolicy": TokenAuthenticationRemoteDiscoveryValidationPolicy,
+    "TokenAuthenticationRemoteJWKSValidationPolicy": TokenAuthenticationRemoteJWKSValidationPolicy,
+    "TokenAuthenticationStaticKeysValidationPolicy": TokenAuthenticationStaticKeysValidationPolicy,
+    "TokenAuthenticationValidationPolicy": TokenAuthenticationValidationPolicy,
     "UpdateApiDetails": UpdateApiDetails,
     "UpdateCertificateDetails": UpdateCertificateDetails,
     "UpdateDeploymentDetails": UpdateDeploymentDetails,
@@ -280,6 +306,8 @@ apigateway_type_mapping = {
     "UsagePlanCollection": UsagePlanCollection,
     "UsagePlanSummary": UsagePlanSummary,
     "UsagePlansPolicy": UsagePlansPolicy,
+    "ValidationBlockClientAppDetails": ValidationBlockClientAppDetails,
+    "ValidationBlockSourceUriDetails": ValidationBlockSourceUriDetails,
     "ValidationFailurePolicy": ValidationFailurePolicy,
     "ValidationRequestPolicy": ValidationRequestPolicy,
     "WildcardSelectionKey": WildcardSelectionKey,

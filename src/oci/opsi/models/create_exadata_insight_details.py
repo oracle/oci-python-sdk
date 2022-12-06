@@ -17,18 +17,23 @@ class CreateExadataInsightDetails(object):
     #: This constant has a value of "EM_MANAGED_EXTERNAL_EXADATA"
     ENTITY_SOURCE_EM_MANAGED_EXTERNAL_EXADATA = "EM_MANAGED_EXTERNAL_EXADATA"
 
+    #: A constant which can be used with the entity_source property of a CreateExadataInsightDetails.
+    #: This constant has a value of "PE_COMANAGED_EXADATA"
+    ENTITY_SOURCE_PE_COMANAGED_EXADATA = "PE_COMANAGED_EXADATA"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateExadataInsightDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.opsi.models.CreateEmManagedExternalExadataInsightDetails`
+        * :class:`~oci.opsi.models.CreatePeComanagedExadataInsightDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param entity_source:
             The value to assign to the entity_source property of this CreateExadataInsightDetails.
-            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA"
+            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA"
         :type entity_source: str
 
         :param compartment_id:
@@ -73,6 +78,9 @@ class CreateExadataInsightDetails(object):
 
         if type == 'EM_MANAGED_EXTERNAL_EXADATA':
             return 'CreateEmManagedExternalExadataInsightDetails'
+
+        if type == 'PE_COMANAGED_EXADATA':
+            return 'CreatePeComanagedExadataInsightDetails'
         else:
             return 'CreateExadataInsightDetails'
 
@@ -82,7 +90,7 @@ class CreateExadataInsightDetails(object):
         **[Required]** Gets the entity_source of this CreateExadataInsightDetails.
         Source of the Exadata system.
 
-        Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA"
+        Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA"
 
 
         :return: The entity_source of this CreateExadataInsightDetails.
@@ -100,7 +108,7 @@ class CreateExadataInsightDetails(object):
         :param entity_source: The entity_source of this CreateExadataInsightDetails.
         :type: str
         """
-        allowed_values = ["EM_MANAGED_EXTERNAL_EXADATA"]
+        allowed_values = ["EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA"]
         if not value_allowed_none_or_none_sentinel(entity_source, allowed_values):
             raise ValueError(
                 "Invalid value for `entity_source`, must be None or one of {0}"

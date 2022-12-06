@@ -51,6 +51,10 @@ class BaseAnnouncementsPreferences(object):
             The value to assign to the preference_type property of this BaseAnnouncementsPreferences.
         :type preference_type: str
 
+        :param preferred_time_zone:
+            The value to assign to the preferred_time_zone property of this BaseAnnouncementsPreferences.
+        :type preferred_time_zone: str
+
         """
         self.swagger_types = {
             'type': 'str',
@@ -59,7 +63,8 @@ class BaseAnnouncementsPreferences(object):
             'is_unsubscribed': 'bool',
             'time_created': 'datetime',
             'time_updated': 'datetime',
-            'preference_type': 'str'
+            'preference_type': 'str',
+            'preferred_time_zone': 'str'
         }
 
         self.attribute_map = {
@@ -69,7 +74,8 @@ class BaseAnnouncementsPreferences(object):
             'is_unsubscribed': 'isUnsubscribed',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
-            'preference_type': 'preferenceType'
+            'preference_type': 'preferenceType',
+            'preferred_time_zone': 'preferredTimeZone'
         }
 
         self._type = None
@@ -79,6 +85,7 @@ class BaseAnnouncementsPreferences(object):
         self._time_created = None
         self._time_updated = None
         self._preference_type = None
+        self._preferred_time_zone = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -267,6 +274,30 @@ class BaseAnnouncementsPreferences(object):
         :type: str
         """
         self._preference_type = preference_type
+
+    @property
+    def preferred_time_zone(self):
+        """
+        Gets the preferred_time_zone of this BaseAnnouncementsPreferences.
+        The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+
+
+        :return: The preferred_time_zone of this BaseAnnouncementsPreferences.
+        :rtype: str
+        """
+        return self._preferred_time_zone
+
+    @preferred_time_zone.setter
+    def preferred_time_zone(self, preferred_time_zone):
+        """
+        Sets the preferred_time_zone of this BaseAnnouncementsPreferences.
+        The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+
+
+        :param preferred_time_zone: The preferred_time_zone of this BaseAnnouncementsPreferences.
+        :type: str
+        """
+        self._preferred_time_zone = preferred_time_zone
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -5,6 +5,7 @@ API Reference
 
 * :doc:`Application Dependency Management <adm/client/oci.adm.ApplicationDependencyManagementClient>`
 * :doc:`Anomaly Detection <ai_anomaly_detection/client/oci.ai_anomaly_detection.AnomalyDetectionClient>`
+* :doc:`Ai Service Document <ai_document/client/oci.ai_document.AIServiceDocumentClient>`
 * :doc:`Ai Service Language <ai_language/client/oci.ai_language.AIServiceLanguageClient>`
 * :doc:`Ai Service Speech <ai_speech/client/oci.ai_speech.AIServiceSpeechClient>`
 * :doc:`Ai Service Vision <ai_vision/client/oci.ai_vision.AIServiceVisionClient>`
@@ -46,6 +47,7 @@ API Reference
 * :doc:`Plugin <compute_instance_agent/client/oci.compute_instance_agent.PluginClient>`
 * :doc:`Pluginconfig <compute_instance_agent/client/oci.compute_instance_agent.PluginconfigClient>`
 * :doc:`Container Engine <container_engine/client/oci.container_engine.ContainerEngineClient>`
+* :doc:`Container Instance <container_instances/client/oci.container_instances.ContainerInstanceClient>`
 * :doc:`Block Storage <core/client/oci.core.BlockstorageClient>`
 * :doc:`Compute <core/client/oci.core.ComputeClient>`
 * :doc:`Compute Management <core/client/oci.core.ComputeManagementClient>`
@@ -116,6 +118,7 @@ API Reference
 * :doc:`Db Backups <mysql/client/oci.mysql.DbBackupsClient>`
 * :doc:`Db System <mysql/client/oci.mysql.DbSystemClient>`
 * :doc:`Mysqlaas <mysql/client/oci.mysql.MysqlaasClient>`
+* :doc:`Replicas <mysql/client/oci.mysql.ReplicasClient>`
 * :doc:`Work Requests <mysql/client/oci.mysql.WorkRequestsClient>`
 * :doc:`Network Firewall <network_firewall/client/oci.network_firewall.NetworkFirewallClient>`
 * :doc:`Network Load Balancer <network_load_balancer/client/oci.network_load_balancer.NetworkLoadBalancerClient>`
@@ -214,6 +217,7 @@ API Reference
 
     adm
     ai_anomaly_detection
+    ai_document
     ai_language
     ai_speech
     ai_vision
@@ -241,6 +245,7 @@ API Reference
     cloud_migrations
     compute_instance_agent
     container_engine
+    container_instances
     core
     dashboard_service
     data_catalog

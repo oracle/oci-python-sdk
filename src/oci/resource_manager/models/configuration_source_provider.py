@@ -22,6 +22,14 @@ class ConfigurationSourceProvider(object):
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
 
     #: A constant which can be used with the config_source_provider_type property of a ConfigurationSourceProvider.
+    #: This constant has a value of "BITBUCKET_CLOUD_USERNAME_APPPASSWORD"
+    CONFIG_SOURCE_PROVIDER_TYPE_BITBUCKET_CLOUD_USERNAME_APPPASSWORD = "BITBUCKET_CLOUD_USERNAME_APPPASSWORD"
+
+    #: A constant which can be used with the config_source_provider_type property of a ConfigurationSourceProvider.
+    #: This constant has a value of "BITBUCKET_SERVER_ACCESS_TOKEN"
+    CONFIG_SOURCE_PROVIDER_TYPE_BITBUCKET_SERVER_ACCESS_TOKEN = "BITBUCKET_SERVER_ACCESS_TOKEN"
+
+    #: A constant which can be used with the config_source_provider_type property of a ConfigurationSourceProvider.
     #: This constant has a value of "GITLAB_ACCESS_TOKEN"
     CONFIG_SOURCE_PROVIDER_TYPE_GITLAB_ACCESS_TOKEN = "GITLAB_ACCESS_TOKEN"
 
@@ -36,6 +44,8 @@ class ConfigurationSourceProvider(object):
 
         * :class:`~oci.resource_manager.models.GithubAccessTokenConfigurationSourceProvider`
         * :class:`~oci.resource_manager.models.GitlabAccessTokenConfigurationSourceProvider`
+        * :class:`~oci.resource_manager.models.BitbucketServerAccessTokenConfigurationSourceProvider`
+        * :class:`~oci.resource_manager.models.BitbucketCloudUsernameAppPasswordConfigurationSourceProvider`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -67,13 +77,21 @@ class ConfigurationSourceProvider(object):
 
         :param config_source_provider_type:
             The value to assign to the config_source_provider_type property of this ConfigurationSourceProvider.
-            Allowed values for this property are: "GITLAB_ACCESS_TOKEN", "GITHUB_ACCESS_TOKEN", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "BITBUCKET_CLOUD_USERNAME_APPPASSWORD", "BITBUCKET_SERVER_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN", "GITHUB_ACCESS_TOKEN", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type config_source_provider_type: str
 
         :param private_server_config_details:
             The value to assign to the private_server_config_details property of this ConfigurationSourceProvider.
         :type private_server_config_details: oci.resource_manager.models.PrivateServerConfigDetails
+
+        :param username:
+            The value to assign to the username property of this ConfigurationSourceProvider.
+        :type username: str
+
+        :param secret_id:
+            The value to assign to the secret_id property of this ConfigurationSourceProvider.
+        :type secret_id: str
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ConfigurationSourceProvider.
@@ -93,6 +111,8 @@ class ConfigurationSourceProvider(object):
             'lifecycle_state': 'str',
             'config_source_provider_type': 'str',
             'private_server_config_details': 'PrivateServerConfigDetails',
+            'username': 'str',
+            'secret_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -106,6 +126,8 @@ class ConfigurationSourceProvider(object):
             'lifecycle_state': 'lifecycleState',
             'config_source_provider_type': 'configSourceProviderType',
             'private_server_config_details': 'privateServerConfigDetails',
+            'username': 'username',
+            'secret_id': 'secretId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -118,6 +140,8 @@ class ConfigurationSourceProvider(object):
         self._lifecycle_state = None
         self._config_source_provider_type = None
         self._private_server_config_details = None
+        self._username = None
+        self._secret_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -134,6 +158,12 @@ class ConfigurationSourceProvider(object):
 
         if type == 'GITLAB_ACCESS_TOKEN':
             return 'GitlabAccessTokenConfigurationSourceProvider'
+
+        if type == 'BITBUCKET_SERVER_ACCESS_TOKEN':
+            return 'BitbucketServerAccessTokenConfigurationSourceProvider'
+
+        if type == 'BITBUCKET_CLOUD_USERNAME_APPPASSWORD':
+            return 'BitbucketCloudUsernameAppPasswordConfigurationSourceProvider'
         else:
             return 'ConfigurationSourceProvider'
 
@@ -312,10 +342,12 @@ class ConfigurationSourceProvider(object):
         """
         **[Required]** Gets the config_source_provider_type of this ConfigurationSourceProvider.
         The type of configuration source provider.
+        The `BITBUCKET_CLOUD_USERNAME_APPPASSWORD` type corresponds to Bitbucket Cloud.
+        The `BITBUCKET_SERVER_ACCESS_TOKEN` type corresponds to Bitbucket Server.
         The `GITLAB_ACCESS_TOKEN` type corresponds to GitLab.
         The `GITHUB_ACCESS_TOKEN` type corresponds to GitHub.
 
-        Allowed values for this property are: "GITLAB_ACCESS_TOKEN", "GITHUB_ACCESS_TOKEN", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "BITBUCKET_CLOUD_USERNAME_APPPASSWORD", "BITBUCKET_SERVER_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN", "GITHUB_ACCESS_TOKEN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -329,6 +361,8 @@ class ConfigurationSourceProvider(object):
         """
         Sets the config_source_provider_type of this ConfigurationSourceProvider.
         The type of configuration source provider.
+        The `BITBUCKET_CLOUD_USERNAME_APPPASSWORD` type corresponds to Bitbucket Cloud.
+        The `BITBUCKET_SERVER_ACCESS_TOKEN` type corresponds to Bitbucket Server.
         The `GITLAB_ACCESS_TOKEN` type corresponds to GitLab.
         The `GITHUB_ACCESS_TOKEN` type corresponds to GitHub.
 
@@ -336,7 +370,7 @@ class ConfigurationSourceProvider(object):
         :param config_source_provider_type: The config_source_provider_type of this ConfigurationSourceProvider.
         :type: str
         """
-        allowed_values = ["GITLAB_ACCESS_TOKEN", "GITHUB_ACCESS_TOKEN"]
+        allowed_values = ["BITBUCKET_CLOUD_USERNAME_APPPASSWORD", "BITBUCKET_SERVER_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN", "GITHUB_ACCESS_TOKEN"]
         if not value_allowed_none_or_none_sentinel(config_source_provider_type, allowed_values):
             config_source_provider_type = 'UNKNOWN_ENUM_VALUE'
         self._config_source_provider_type = config_source_provider_type
@@ -360,6 +394,54 @@ class ConfigurationSourceProvider(object):
         :type: oci.resource_manager.models.PrivateServerConfigDetails
         """
         self._private_server_config_details = private_server_config_details
+
+    @property
+    def username(self):
+        """
+        Gets the username of this ConfigurationSourceProvider.
+        Username which is used to authorize the user.
+
+
+        :return: The username of this ConfigurationSourceProvider.
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """
+        Sets the username of this ConfigurationSourceProvider.
+        Username which is used to authorize the user.
+
+
+        :param username: The username of this ConfigurationSourceProvider.
+        :type: str
+        """
+        self._username = username
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this ConfigurationSourceProvider.
+        Secret ocid which is used to authorize the user.
+
+
+        :return: The secret_id of this ConfigurationSourceProvider.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this ConfigurationSourceProvider.
+        Secret ocid which is used to authorize the user.
+
+
+        :param secret_id: The secret_id of this ConfigurationSourceProvider.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     @property
     def freeform_tags(self):

@@ -29,6 +29,14 @@ class ReportSummary(object):
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
 
+    #: A constant which can be used with the type property of a ReportSummary.
+    #: This constant has a value of "GENERATED"
+    TYPE_GENERATED = "GENERATED"
+
+    #: A constant which can be used with the type property of a ReportSummary.
+    #: This constant has a value of "SCHEDULED"
+    TYPE_SCHEDULED = "SCHEDULED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ReportSummary object with values from keyword arguments.
@@ -70,6 +78,12 @@ class ReportSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param type:
+            The value to assign to the type property of this ReportSummary.
+            Allowed values for this property are: "GENERATED", "SCHEDULED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type type: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ReportSummary.
         :type freeform_tags: dict(str, str)
@@ -88,6 +102,7 @@ class ReportSummary(object):
             'time_generated': 'datetime',
             'compartment_id': 'str',
             'lifecycle_state': 'str',
+            'type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -101,6 +116,7 @@ class ReportSummary(object):
             'time_generated': 'timeGenerated',
             'compartment_id': 'compartmentId',
             'lifecycle_state': 'lifecycleState',
+            'type': 'type',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -113,6 +129,7 @@ class ReportSummary(object):
         self._time_generated = None
         self._compartment_id = None
         self._lifecycle_state = None
+        self._type = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -319,6 +336,36 @@ class ReportSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def type(self):
+        """
+        Gets the type of this ReportSummary.
+        The type of the report.
+
+        Allowed values for this property are: "GENERATED", "SCHEDULED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The type of this ReportSummary.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this ReportSummary.
+        The type of the report.
+
+
+        :param type: The type of this ReportSummary.
+        :type: str
+        """
+        allowed_values = ["GENERATED", "SCHEDULED"]
+        if not value_allowed_none_or_none_sentinel(type, allowed_values):
+            type = 'UNKNOWN_ENUM_VALUE'
+        self._type = type
 
     @property
     def freeform_tags(self):

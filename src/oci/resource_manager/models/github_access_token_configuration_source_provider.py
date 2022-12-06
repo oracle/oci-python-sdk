@@ -47,12 +47,20 @@ class GithubAccessTokenConfigurationSourceProvider(ConfigurationSourceProvider):
 
         :param config_source_provider_type:
             The value to assign to the config_source_provider_type property of this GithubAccessTokenConfigurationSourceProvider.
-            Allowed values for this property are: "GITLAB_ACCESS_TOKEN", "GITHUB_ACCESS_TOKEN"
+            Allowed values for this property are: "BITBUCKET_CLOUD_USERNAME_APPPASSWORD", "BITBUCKET_SERVER_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN", "GITHUB_ACCESS_TOKEN"
         :type config_source_provider_type: str
 
         :param private_server_config_details:
             The value to assign to the private_server_config_details property of this GithubAccessTokenConfigurationSourceProvider.
         :type private_server_config_details: oci.resource_manager.models.PrivateServerConfigDetails
+
+        :param username:
+            The value to assign to the username property of this GithubAccessTokenConfigurationSourceProvider.
+        :type username: str
+
+        :param secret_id:
+            The value to assign to the secret_id property of this GithubAccessTokenConfigurationSourceProvider.
+        :type secret_id: str
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this GithubAccessTokenConfigurationSourceProvider.
@@ -76,6 +84,8 @@ class GithubAccessTokenConfigurationSourceProvider(ConfigurationSourceProvider):
             'lifecycle_state': 'str',
             'config_source_provider_type': 'str',
             'private_server_config_details': 'PrivateServerConfigDetails',
+            'username': 'str',
+            'secret_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'api_endpoint': 'str'
@@ -90,6 +100,8 @@ class GithubAccessTokenConfigurationSourceProvider(ConfigurationSourceProvider):
             'lifecycle_state': 'lifecycleState',
             'config_source_provider_type': 'configSourceProviderType',
             'private_server_config_details': 'privateServerConfigDetails',
+            'username': 'username',
+            'secret_id': 'secretId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'api_endpoint': 'apiEndpoint'
@@ -103,6 +115,8 @@ class GithubAccessTokenConfigurationSourceProvider(ConfigurationSourceProvider):
         self._lifecycle_state = None
         self._config_source_provider_type = None
         self._private_server_config_details = None
+        self._username = None
+        self._secret_id = None
         self._freeform_tags = None
         self._defined_tags = None
         self._api_endpoint = None

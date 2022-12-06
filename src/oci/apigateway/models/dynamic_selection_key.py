@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DynamicSelectionKey(object):
     """
-    Information around the values for selector of an authentication/ routing branch.
+    Base policy for defining how to match the context variable in an incoming request with selection keys when dynamically routing and dynamically authenticating requests.
     """
 
     #: A constant which can be used with the type property of a DynamicSelectionKey.
@@ -82,7 +82,7 @@ class DynamicSelectionKey(object):
     def type(self):
         """
         Gets the type of this DynamicSelectionKey.
-        Information regarding type of the selection key.
+        Type of the selection key.
 
         Allowed values for this property are: "ANY_OF", "WILDCARD", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -97,7 +97,7 @@ class DynamicSelectionKey(object):
     def type(self, type):
         """
         Sets the type of this DynamicSelectionKey.
-        Information regarding type of the selection key.
+        Type of the selection key.
 
 
         :param type: The type of this DynamicSelectionKey.
@@ -112,7 +112,7 @@ class DynamicSelectionKey(object):
     def is_default(self):
         """
         Gets the is_default of this DynamicSelectionKey.
-        Information regarding whether this is the default branch.
+        Specifies whether to use the route or authentication server associated with this selection key as the default. The default is used if the value of a context variable in an incoming request does not match any of the other selection key values when dynamically routing and dynamically authenticating requests.
 
 
         :return: The is_default of this DynamicSelectionKey.
@@ -124,7 +124,7 @@ class DynamicSelectionKey(object):
     def is_default(self, is_default):
         """
         Sets the is_default of this DynamicSelectionKey.
-        Information regarding whether this is the default branch.
+        Specifies whether to use the route or authentication server associated with this selection key as the default. The default is used if the value of a context variable in an incoming request does not match any of the other selection key values when dynamically routing and dynamically authenticating requests.
 
 
         :param is_default: The is_default of this DynamicSelectionKey.

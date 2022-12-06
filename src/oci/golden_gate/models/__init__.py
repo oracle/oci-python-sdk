@@ -9,6 +9,7 @@ from .change_connection_compartment_details import ChangeConnectionCompartmentDe
 from .change_database_registration_compartment_details import ChangeDatabaseRegistrationCompartmentDetails
 from .change_deployment_backup_compartment_details import ChangeDeploymentBackupCompartmentDetails
 from .change_deployment_compartment_details import ChangeDeploymentCompartmentDetails
+from .collect_deployment_diagnostic_details import CollectDeploymentDiagnosticDetails
 from .connection import Connection
 from .connection_assignment import ConnectionAssignment
 from .connection_assignment_collection import ConnectionAssignmentCollection
@@ -38,6 +39,7 @@ from .deployment_backup import DeploymentBackup
 from .deployment_backup_collection import DeploymentBackupCollection
 from .deployment_backup_summary import DeploymentBackupSummary
 from .deployment_collection import DeploymentCollection
+from .deployment_diagnostic_data import DeploymentDiagnosticData
 from .deployment_message_collection import DeploymentMessageCollection
 from .deployment_summary import DeploymentSummary
 from .deployment_type_collection import DeploymentTypeCollection
@@ -91,6 +93,7 @@ golden_gate_type_mapping = {
     "ChangeDatabaseRegistrationCompartmentDetails": ChangeDatabaseRegistrationCompartmentDetails,
     "ChangeDeploymentBackupCompartmentDetails": ChangeDeploymentBackupCompartmentDetails,
     "ChangeDeploymentCompartmentDetails": ChangeDeploymentCompartmentDetails,
+    "CollectDeploymentDiagnosticDetails": CollectDeploymentDiagnosticDetails,
     "Connection": Connection,
     "ConnectionAssignment": ConnectionAssignment,
     "ConnectionAssignmentCollection": ConnectionAssignmentCollection,
@@ -120,6 +123,7 @@ golden_gate_type_mapping = {
     "DeploymentBackupCollection": DeploymentBackupCollection,
     "DeploymentBackupSummary": DeploymentBackupSummary,
     "DeploymentCollection": DeploymentCollection,
+    "DeploymentDiagnosticData": DeploymentDiagnosticData,
     "DeploymentMessageCollection": DeploymentMessageCollection,
     "DeploymentSummary": DeploymentSummary,
     "DeploymentTypeCollection": DeploymentTypeCollection,
