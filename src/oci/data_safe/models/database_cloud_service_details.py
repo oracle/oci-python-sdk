@@ -37,6 +37,10 @@ class DatabaseCloudServiceDetails(DatabaseDetails):
             The value to assign to the db_system_id property of this DatabaseCloudServiceDetails.
         :type db_system_id: str
 
+        :param listener_port:
+            The value to assign to the listener_port property of this DatabaseCloudServiceDetails.
+        :type listener_port: int
+
         :param service_name:
             The value to assign to the service_name property of this DatabaseCloudServiceDetails.
         :type service_name: str
@@ -47,6 +51,7 @@ class DatabaseCloudServiceDetails(DatabaseDetails):
             'infrastructure_type': 'str',
             'vm_cluster_id': 'str',
             'db_system_id': 'str',
+            'listener_port': 'int',
             'service_name': 'str'
         }
 
@@ -55,6 +60,7 @@ class DatabaseCloudServiceDetails(DatabaseDetails):
             'infrastructure_type': 'infrastructureType',
             'vm_cluster_id': 'vmClusterId',
             'db_system_id': 'dbSystemId',
+            'listener_port': 'listenerPort',
             'service_name': 'serviceName'
         }
 
@@ -62,6 +68,7 @@ class DatabaseCloudServiceDetails(DatabaseDetails):
         self._infrastructure_type = None
         self._vm_cluster_id = None
         self._db_system_id = None
+        self._listener_port = None
         self._service_name = None
         self._database_type = 'DATABASE_CLOUD_SERVICE'
 
@@ -114,9 +121,33 @@ class DatabaseCloudServiceDetails(DatabaseDetails):
         self._db_system_id = db_system_id
 
     @property
+    def listener_port(self):
+        """
+        Gets the listener_port of this DatabaseCloudServiceDetails.
+        The port number of the database listener.
+
+
+        :return: The listener_port of this DatabaseCloudServiceDetails.
+        :rtype: int
+        """
+        return self._listener_port
+
+    @listener_port.setter
+    def listener_port(self, listener_port):
+        """
+        Sets the listener_port of this DatabaseCloudServiceDetails.
+        The port number of the database listener.
+
+
+        :param listener_port: The listener_port of this DatabaseCloudServiceDetails.
+        :type: int
+        """
+        self._listener_port = listener_port
+
+    @property
     def service_name(self):
         """
-        Gets the service_name of this DatabaseCloudServiceDetails.
+        **[Required]** Gets the service_name of this DatabaseCloudServiceDetails.
         The database service name.
 
 

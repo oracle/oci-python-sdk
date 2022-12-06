@@ -123,7 +123,7 @@ class InstalledDatabaseDetails(DatabaseDetails):
     @property
     def listener_port(self):
         """
-        Gets the listener_port of this InstalledDatabaseDetails.
+        **[Required]** Gets the listener_port of this InstalledDatabaseDetails.
         The port number of the database listener.
 
 
@@ -147,7 +147,7 @@ class InstalledDatabaseDetails(DatabaseDetails):
     @property
     def service_name(self):
         """
-        Gets the service_name of this InstalledDatabaseDetails.
+        **[Required]** Gets the service_name of this InstalledDatabaseDetails.
         The service name of the database registered as target database.
 
 

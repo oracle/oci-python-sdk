@@ -26,7 +26,7 @@ class JwtAuthenticationPolicy(AuthenticationPolicy):
 
         :param type:
             The value to assign to the type property of this JwtAuthenticationPolicy.
-            Allowed values for this property are: "CUSTOM_AUTHENTICATION", "JWT_AUTHENTICATION"
+            Allowed values for this property are: "CUSTOM_AUTHENTICATION", "JWT_AUTHENTICATION", "TOKEN_AUTHENTICATION"
         :type type: str
 
         :param token_header:
@@ -41,6 +41,10 @@ class JwtAuthenticationPolicy(AuthenticationPolicy):
             The value to assign to the token_auth_scheme property of this JwtAuthenticationPolicy.
         :type token_auth_scheme: str
 
+        :param max_clock_skew_in_seconds:
+            The value to assign to the max_clock_skew_in_seconds property of this JwtAuthenticationPolicy.
+        :type max_clock_skew_in_seconds: float
+
         :param issuers:
             The value to assign to the issuers property of this JwtAuthenticationPolicy.
         :type issuers: list[str]
@@ -53,10 +57,6 @@ class JwtAuthenticationPolicy(AuthenticationPolicy):
             The value to assign to the verify_claims property of this JwtAuthenticationPolicy.
         :type verify_claims: list[oci.apigateway.models.JsonWebTokenClaim]
 
-        :param max_clock_skew_in_seconds:
-            The value to assign to the max_clock_skew_in_seconds property of this JwtAuthenticationPolicy.
-        :type max_clock_skew_in_seconds: float
-
         :param public_keys:
             The value to assign to the public_keys property of this JwtAuthenticationPolicy.
         :type public_keys: oci.apigateway.models.PublicKeySet
@@ -68,10 +68,10 @@ class JwtAuthenticationPolicy(AuthenticationPolicy):
             'token_header': 'str',
             'token_query_param': 'str',
             'token_auth_scheme': 'str',
+            'max_clock_skew_in_seconds': 'float',
             'issuers': 'list[str]',
             'audiences': 'list[str]',
             'verify_claims': 'list[JsonWebTokenClaim]',
-            'max_clock_skew_in_seconds': 'float',
             'public_keys': 'PublicKeySet'
         }
 
@@ -81,10 +81,10 @@ class JwtAuthenticationPolicy(AuthenticationPolicy):
             'token_header': 'tokenHeader',
             'token_query_param': 'tokenQueryParam',
             'token_auth_scheme': 'tokenAuthScheme',
+            'max_clock_skew_in_seconds': 'maxClockSkewInSeconds',
             'issuers': 'issuers',
             'audiences': 'audiences',
             'verify_claims': 'verifyClaims',
-            'max_clock_skew_in_seconds': 'maxClockSkewInSeconds',
             'public_keys': 'publicKeys'
         }
 
@@ -93,10 +93,10 @@ class JwtAuthenticationPolicy(AuthenticationPolicy):
         self._token_header = None
         self._token_query_param = None
         self._token_auth_scheme = None
+        self._max_clock_skew_in_seconds = None
         self._issuers = None
         self._audiences = None
         self._verify_claims = None
-        self._max_clock_skew_in_seconds = None
         self._public_keys = None
         self._type = 'JWT_AUTHENTICATION'
 
@@ -175,6 +175,32 @@ class JwtAuthenticationPolicy(AuthenticationPolicy):
         self._token_auth_scheme = token_auth_scheme
 
     @property
+    def max_clock_skew_in_seconds(self):
+        """
+        Gets the max_clock_skew_in_seconds of this JwtAuthenticationPolicy.
+        The maximum expected time difference between the system clocks
+        of the token issuer and the API Gateway.
+
+
+        :return: The max_clock_skew_in_seconds of this JwtAuthenticationPolicy.
+        :rtype: float
+        """
+        return self._max_clock_skew_in_seconds
+
+    @max_clock_skew_in_seconds.setter
+    def max_clock_skew_in_seconds(self, max_clock_skew_in_seconds):
+        """
+        Sets the max_clock_skew_in_seconds of this JwtAuthenticationPolicy.
+        The maximum expected time difference between the system clocks
+        of the token issuer and the API Gateway.
+
+
+        :param max_clock_skew_in_seconds: The max_clock_skew_in_seconds of this JwtAuthenticationPolicy.
+        :type: float
+        """
+        self._max_clock_skew_in_seconds = max_clock_skew_in_seconds
+
+    @property
     def issuers(self):
         """
         **[Required]** Gets the issuers of this JwtAuthenticationPolicy.
@@ -245,32 +271,6 @@ class JwtAuthenticationPolicy(AuthenticationPolicy):
         :type: list[oci.apigateway.models.JsonWebTokenClaim]
         """
         self._verify_claims = verify_claims
-
-    @property
-    def max_clock_skew_in_seconds(self):
-        """
-        Gets the max_clock_skew_in_seconds of this JwtAuthenticationPolicy.
-        The maximum expected time difference between the system clocks
-        of the token issuer and the API Gateway.
-
-
-        :return: The max_clock_skew_in_seconds of this JwtAuthenticationPolicy.
-        :rtype: float
-        """
-        return self._max_clock_skew_in_seconds
-
-    @max_clock_skew_in_seconds.setter
-    def max_clock_skew_in_seconds(self, max_clock_skew_in_seconds):
-        """
-        Sets the max_clock_skew_in_seconds of this JwtAuthenticationPolicy.
-        The maximum expected time difference between the system clocks
-        of the token issuer and the API Gateway.
-
-
-        :param max_clock_skew_in_seconds: The max_clock_skew_in_seconds of this JwtAuthenticationPolicy.
-        :type: float
-        """
-        self._max_clock_skew_in_seconds = max_clock_skew_in_seconds
 
     @property
     def public_keys(self):

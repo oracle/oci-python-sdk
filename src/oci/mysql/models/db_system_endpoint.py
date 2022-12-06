@@ -33,6 +33,18 @@ class DbSystemEndpoint(object):
     #: This constant has a value of "UPDATING"
     STATUS_UPDATING = "UPDATING"
 
+    #: A constant which can be used with the resource_type property of a DbSystemEndpoint.
+    #: This constant has a value of "DBSYSTEM"
+    RESOURCE_TYPE_DBSYSTEM = "DBSYSTEM"
+
+    #: A constant which can be used with the resource_type property of a DbSystemEndpoint.
+    #: This constant has a value of "READ_REPLICA"
+    RESOURCE_TYPE_READ_REPLICA = "READ_REPLICA"
+
+    #: A constant which can be used with the resource_type property of a DbSystemEndpoint.
+    #: This constant has a value of "LOAD_BALANCER"
+    RESOURCE_TYPE_LOAD_BALANCER = "LOAD_BALANCER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DbSystemEndpoint object with values from keyword arguments.
@@ -70,6 +82,16 @@ class DbSystemEndpoint(object):
             The value to assign to the status_details property of this DbSystemEndpoint.
         :type status_details: str
 
+        :param resource_type:
+            The value to assign to the resource_type property of this DbSystemEndpoint.
+            Allowed values for this property are: "DBSYSTEM", "READ_REPLICA", "LOAD_BALANCER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type resource_type: str
+
+        :param resource_id:
+            The value to assign to the resource_id property of this DbSystemEndpoint.
+        :type resource_id: str
+
         """
         self.swagger_types = {
             'hostname': 'str',
@@ -78,7 +100,9 @@ class DbSystemEndpoint(object):
             'port_x': 'int',
             'modes': 'list[str]',
             'status': 'str',
-            'status_details': 'str'
+            'status_details': 'str',
+            'resource_type': 'str',
+            'resource_id': 'str'
         }
 
         self.attribute_map = {
@@ -88,7 +112,9 @@ class DbSystemEndpoint(object):
             'port_x': 'portX',
             'modes': 'modes',
             'status': 'status',
-            'status_details': 'statusDetails'
+            'status_details': 'statusDetails',
+            'resource_type': 'resourceType',
+            'resource_id': 'resourceId'
         }
 
         self._hostname = None
@@ -98,6 +124,8 @@ class DbSystemEndpoint(object):
         self._modes = None
         self._status = None
         self._status_details = None
+        self._resource_type = None
+        self._resource_id = None
 
     @property
     def hostname(self):
@@ -280,6 +308,60 @@ class DbSystemEndpoint(object):
         :type: str
         """
         self._status_details = status_details
+
+    @property
+    def resource_type(self):
+        """
+        Gets the resource_type of this DbSystemEndpoint.
+        The type of endpoint that clients and connectors can connect to.
+
+        Allowed values for this property are: "DBSYSTEM", "READ_REPLICA", "LOAD_BALANCER", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The resource_type of this DbSystemEndpoint.
+        :rtype: str
+        """
+        return self._resource_type
+
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """
+        Sets the resource_type of this DbSystemEndpoint.
+        The type of endpoint that clients and connectors can connect to.
+
+
+        :param resource_type: The resource_type of this DbSystemEndpoint.
+        :type: str
+        """
+        allowed_values = ["DBSYSTEM", "READ_REPLICA", "LOAD_BALANCER"]
+        if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
+            resource_type = 'UNKNOWN_ENUM_VALUE'
+        self._resource_type = resource_type
+
+    @property
+    def resource_id(self):
+        """
+        Gets the resource_id of this DbSystemEndpoint.
+        The OCID of the resource that this endpoint is attached to.
+
+
+        :return: The resource_id of this DbSystemEndpoint.
+        :rtype: str
+        """
+        return self._resource_id
+
+    @resource_id.setter
+    def resource_id(self, resource_id):
+        """
+        Sets the resource_id of this DbSystemEndpoint.
+        The OCID of the resource that this endpoint is attached to.
+
+
+        :param resource_id: The resource_id of this DbSystemEndpoint.
+        :type: str
+        """
+        self._resource_id = resource_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

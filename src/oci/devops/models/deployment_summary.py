@@ -65,6 +65,10 @@ class DeploymentSummary(object):
             The value to assign to the deployment_arguments property of this DeploymentSummary.
         :type deployment_arguments: oci.devops.models.DeploymentArgumentCollection
 
+        :param deploy_stage_override_arguments:
+            The value to assign to the deploy_stage_override_arguments property of this DeploymentSummary.
+        :type deploy_stage_override_arguments: oci.devops.models.DeployStageOverrideArgumentCollection
+
         :param deploy_artifact_override_arguments:
             The value to assign to the deploy_artifact_override_arguments property of this DeploymentSummary.
         :type deploy_artifact_override_arguments: oci.devops.models.DeployArtifactOverrideArgumentCollection
@@ -97,6 +101,7 @@ class DeploymentSummary(object):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'deployment_arguments': 'DeploymentArgumentCollection',
+            'deploy_stage_override_arguments': 'DeployStageOverrideArgumentCollection',
             'deploy_artifact_override_arguments': 'DeployArtifactOverrideArgumentCollection',
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -115,6 +120,7 @@ class DeploymentSummary(object):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'deployment_arguments': 'deploymentArguments',
+            'deploy_stage_override_arguments': 'deployStageOverrideArguments',
             'deploy_artifact_override_arguments': 'deployArtifactOverrideArguments',
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
@@ -132,6 +138,7 @@ class DeploymentSummary(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._deployment_arguments = None
+        self._deploy_stage_override_arguments = None
         self._deploy_artifact_override_arguments = None
         self._lifecycle_details = None
         self._freeform_tags = None
@@ -403,6 +410,26 @@ class DeploymentSummary(object):
         :type: oci.devops.models.DeploymentArgumentCollection
         """
         self._deployment_arguments = deployment_arguments
+
+    @property
+    def deploy_stage_override_arguments(self):
+        """
+        Gets the deploy_stage_override_arguments of this DeploymentSummary.
+
+        :return: The deploy_stage_override_arguments of this DeploymentSummary.
+        :rtype: oci.devops.models.DeployStageOverrideArgumentCollection
+        """
+        return self._deploy_stage_override_arguments
+
+    @deploy_stage_override_arguments.setter
+    def deploy_stage_override_arguments(self, deploy_stage_override_arguments):
+        """
+        Sets the deploy_stage_override_arguments of this DeploymentSummary.
+
+        :param deploy_stage_override_arguments: The deploy_stage_override_arguments of this DeploymentSummary.
+        :type: oci.devops.models.DeployStageOverrideArgumentCollection
+        """
+        self._deploy_stage_override_arguments = deploy_stage_override_arguments
 
     @property
     def deploy_artifact_override_arguments(self):

@@ -18,7 +18,10 @@ class CreateConfigSourceDetails(object):
         Initializes a new CreateConfigSourceDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.resource_manager.models.CreateDevOpsConfigSourceDetails`
+        * :class:`~oci.resource_manager.models.CreateBitbucketCloudConfigSourceDetails`
         * :class:`~oci.resource_manager.models.CreateZipUploadConfigSourceDetails`
+        * :class:`~oci.resource_manager.models.CreateBitbucketServerConfigSourceDetails`
         * :class:`~oci.resource_manager.models.CreateGitConfigSourceDetails`
         * :class:`~oci.resource_manager.models.CreateObjectStorageConfigSourceDetails`
         * :class:`~oci.resource_manager.models.CreateCompartmentConfigSourceDetails`
@@ -56,8 +59,17 @@ class CreateConfigSourceDetails(object):
         """
         type = object_dictionary['configSourceType']
 
+        if type == 'DEVOPS_CONFIG_SOURCE':
+            return 'CreateDevOpsConfigSourceDetails'
+
+        if type == 'BITBUCKET_CLOUD_CONFIG_SOURCE':
+            return 'CreateBitbucketCloudConfigSourceDetails'
+
         if type == 'ZIP_UPLOAD':
             return 'CreateZipUploadConfigSourceDetails'
+
+        if type == 'BITBUCKET_SERVER_CONFIG_SOURCE':
+            return 'CreateBitbucketServerConfigSourceDetails'
 
         if type == 'GIT_CONFIG_SOURCE':
             return 'CreateGitConfigSourceDetails'

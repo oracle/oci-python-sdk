@@ -202,7 +202,8 @@ class CreateFleetDetails(object):
     def is_advanced_features_enabled(self):
         """
         Gets the is_advanced_features_enabled of this CreateFleetDetails.
-        Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        Whether or not advanced features are enabled in this fleet.
+        Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
 
 
         :return: The is_advanced_features_enabled of this CreateFleetDetails.
@@ -214,7 +215,8 @@ class CreateFleetDetails(object):
     def is_advanced_features_enabled(self, is_advanced_features_enabled):
         """
         Sets the is_advanced_features_enabled of this CreateFleetDetails.
-        Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        Whether or not advanced features are enabled in this fleet.
+        Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
 
 
         :param is_advanced_features_enabled: The is_advanced_features_enabled of this CreateFleetDetails.

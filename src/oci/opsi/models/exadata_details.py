@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExadataDetails(object):
     """
-    Partial information about the exadata which includes id and name.
+    Partial information about the exadata which includes id, name and vmclusterNames.
     """
 
     def __init__(self, **kwargs):
@@ -26,19 +26,26 @@ class ExadataDetails(object):
             The value to assign to the name property of this ExadataDetails.
         :type name: str
 
+        :param vmcluster_names:
+            The value to assign to the vmcluster_names property of this ExadataDetails.
+        :type vmcluster_names: list[str]
+
         """
         self.swagger_types = {
             'id': 'str',
-            'name': 'str'
+            'name': 'str',
+            'vmcluster_names': 'list[str]'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'name': 'name'
+            'name': 'name',
+            'vmcluster_names': 'vmclusterNames'
         }
 
         self._id = None
         self._name = None
+        self._vmcluster_names = None
 
     @property
     def id(self):
@@ -91,6 +98,30 @@ class ExadataDetails(object):
         :type: str
         """
         self._name = name
+
+    @property
+    def vmcluster_names(self):
+        """
+        Gets the vmcluster_names of this ExadataDetails.
+        Array of vm cluster names. Applicable for ExaCC and ExaCS.
+
+
+        :return: The vmcluster_names of this ExadataDetails.
+        :rtype: list[str]
+        """
+        return self._vmcluster_names
+
+    @vmcluster_names.setter
+    def vmcluster_names(self, vmcluster_names):
+        """
+        Sets the vmcluster_names of this ExadataDetails.
+        Array of vm cluster names. Applicable for ExaCC and ExaCS.
+
+
+        :param vmcluster_names: The vmcluster_names of this ExadataDetails.
+        :type: list[str]
+        """
+        self._vmcluster_names = vmcluster_names
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DynamicRoutingBackend(ApiSpecificationRouteBackend):
     """
-    Send the request to a Dynamic Routing backend.
+    Send the request to the backend dynamically selected based on the incoming request's context.
     """
 
     def __init__(self, **kwargs):
@@ -21,7 +21,7 @@ class DynamicRoutingBackend(ApiSpecificationRouteBackend):
 
         :param type:
             The value to assign to the type property of this DynamicRoutingBackend.
-            Allowed values for this property are: "ORACLE_FUNCTIONS_BACKEND", "HTTP_BACKEND", "STOCK_RESPONSE_BACKEND", "DYNAMIC_ROUTING_BACKEND"
+            Allowed values for this property are: "ORACLE_FUNCTIONS_BACKEND", "HTTP_BACKEND", "STOCK_RESPONSE_BACKEND", "DYNAMIC_ROUTING_BACKEND", "OAUTH2_LOGOUT_BACKEND"
         :type type: str
 
         :param selection_source:

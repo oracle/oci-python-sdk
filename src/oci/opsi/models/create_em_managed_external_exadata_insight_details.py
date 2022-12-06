@@ -21,7 +21,7 @@ class CreateEmManagedExternalExadataInsightDetails(CreateExadataInsightDetails):
 
         :param entity_source:
             The value to assign to the entity_source property of this CreateEmManagedExternalExadataInsightDetails.
-            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA"
+            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA"
         :type entity_source: str
 
         :param compartment_id:

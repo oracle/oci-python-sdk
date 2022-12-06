@@ -45,6 +45,18 @@ class AuditTrailSummary(object):
     #: This constant has a value of "RETRYING"
     STATUS_RETRYING = "RETRYING"
 
+    #: A constant which can be used with the status property of a AuditTrailSummary.
+    #: This constant has a value of "NOT_STARTED"
+    STATUS_NOT_STARTED = "NOT_STARTED"
+
+    #: A constant which can be used with the status property of a AuditTrailSummary.
+    #: This constant has a value of "STOPPED_NEEDS_ATTN"
+    STATUS_STOPPED_NEEDS_ATTN = "STOPPED_NEEDS_ATTN"
+
+    #: A constant which can be used with the status property of a AuditTrailSummary.
+    #: This constant has a value of "STOPPED_FAILED"
+    STATUS_STOPPED_FAILED = "STOPPED_FAILED"
+
     #: A constant which can be used with the lifecycle_state property of a AuditTrailSummary.
     #: This constant has a value of "INACTIVE"
     LIFECYCLE_STATE_INACTIVE = "INACTIVE"
@@ -96,7 +108,7 @@ class AuditTrailSummary(object):
 
         :param status:
             The value to assign to the status property of this AuditTrailSummary.
-            Allowed values for this property are: "STARTING", "COLLECTING", "RECOVERING", "IDLE", "STOPPING", "STOPPED", "RESUMING", "RETRYING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STARTING", "COLLECTING", "RECOVERING", "IDLE", "STOPPING", "STOPPED", "RESUMING", "RETRYING", "NOT_STARTED", "STOPPED_NEEDS_ATTN", "STOPPED_FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -324,7 +336,7 @@ class AuditTrailSummary(object):
         **[Required]** Gets the status of this AuditTrailSummary.
         The current sub-state of the audit trail.
 
-        Allowed values for this property are: "STARTING", "COLLECTING", "RECOVERING", "IDLE", "STOPPING", "STOPPED", "RESUMING", "RETRYING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STARTING", "COLLECTING", "RECOVERING", "IDLE", "STOPPING", "STOPPED", "RESUMING", "RETRYING", "NOT_STARTED", "STOPPED_NEEDS_ATTN", "STOPPED_FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -343,7 +355,7 @@ class AuditTrailSummary(object):
         :param status: The status of this AuditTrailSummary.
         :type: str
         """
-        allowed_values = ["STARTING", "COLLECTING", "RECOVERING", "IDLE", "STOPPING", "STOPPED", "RESUMING", "RETRYING"]
+        allowed_values = ["STARTING", "COLLECTING", "RECOVERING", "IDLE", "STOPPING", "STOPPED", "RESUMING", "RETRYING", "NOT_STARTED", "STOPPED_NEEDS_ATTN", "STOPPED_FAILED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status

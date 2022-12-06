@@ -842,7 +842,7 @@ class AuditEventSummary(object):
     def audit_trail_id(self):
         """
         Gets the audit_trail_id of this AuditEventSummary.
-        The OCID of the audit trail that generated this audit event.
+        The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
 
 
         :return: The audit_trail_id of this AuditEventSummary.
@@ -854,7 +854,7 @@ class AuditEventSummary(object):
     def audit_trail_id(self, audit_trail_id):
         """
         Sets the audit_trail_id of this AuditEventSummary.
-        The OCID of the audit trail that generated this audit event.
+        The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
 
 
         :param audit_trail_id: The audit_trail_id of this AuditEventSummary.

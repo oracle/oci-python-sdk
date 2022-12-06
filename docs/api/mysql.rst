@@ -10,11 +10,13 @@ Mysql
     oci.mysql.DbBackupsClient
     oci.mysql.DbSystemClient
     oci.mysql.MysqlaasClient
+    oci.mysql.ReplicasClient
     oci.mysql.WorkRequestsClient
     oci.mysql.ChannelsClientCompositeOperations
     oci.mysql.DbBackupsClientCompositeOperations
     oci.mysql.DbSystemClientCompositeOperations
     oci.mysql.MysqlaasClientCompositeOperations
+    oci.mysql.ReplicasClientCompositeOperations
     oci.mysql.WorkRequestsClientCompositeOperations
 
 --------
@@ -34,12 +36,16 @@ Mysql
     oci.mysql.models.AnalyticsClusterSchemaMemoryEstimate
     oci.mysql.models.AnalyticsClusterSummary
     oci.mysql.models.AnalyticsClusterTableMemoryEstimate
+    oci.mysql.models.AnonymousTransactionsHandling
+    oci.mysql.models.AssignManualUuidHandling
+    oci.mysql.models.AssignTargetUuidHandling
     oci.mysql.models.Backup
     oci.mysql.models.BackupPolicy
     oci.mysql.models.BackupSummary
     oci.mysql.models.CaCertificate
     oci.mysql.models.ChangeBackupCompartmentDetails
     oci.mysql.models.Channel
+    oci.mysql.models.ChannelFilter
     oci.mysql.models.ChannelSource
     oci.mysql.models.ChannelSourceMysql
     oci.mysql.models.ChannelSummary
@@ -64,6 +70,7 @@ Mysql
     oci.mysql.models.CreateDbSystemSourceImportFromUrlDetails
     oci.mysql.models.CreateDeletionPolicyDetails
     oci.mysql.models.CreateMaintenanceDetails
+    oci.mysql.models.CreateReplicaDetails
     oci.mysql.models.DbSystem
     oci.mysql.models.DbSystemEndpoint
     oci.mysql.models.DbSystemPlacement
@@ -75,6 +82,7 @@ Mysql
     oci.mysql.models.DbSystemSourceImportFromUrl
     oci.mysql.models.DbSystemSummary
     oci.mysql.models.DeletionPolicyDetails
+    oci.mysql.models.ErrorOnAnonymousHandling
     oci.mysql.models.HeatWaveCluster
     oci.mysql.models.HeatWaveClusterMemoryEstimate
     oci.mysql.models.HeatWaveClusterSchemaMemoryEstimate
@@ -86,6 +94,8 @@ Mysql
     oci.mysql.models.PemCaCertificate
     oci.mysql.models.PitrPolicy
     oci.mysql.models.PointInTimeRecoveryDetails
+    oci.mysql.models.Replica
+    oci.mysql.models.ReplicaSummary
     oci.mysql.models.RestartDbSystemDetails
     oci.mysql.models.ShapeSummary
     oci.mysql.models.StopDbSystemDetails
@@ -102,6 +112,7 @@ Mysql
     oci.mysql.models.UpdateDeletionPolicyDetails
     oci.mysql.models.UpdateHeatWaveClusterDetails
     oci.mysql.models.UpdateMaintenanceDetails
+    oci.mysql.models.UpdateReplicaDetails
     oci.mysql.models.Version
     oci.mysql.models.VersionSummary
     oci.mysql.models.WorkRequest

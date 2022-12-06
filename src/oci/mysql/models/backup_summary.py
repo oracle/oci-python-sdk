@@ -57,6 +57,10 @@ class BackupSummary(object):
             The value to assign to the db_system_id property of this BackupSummary.
         :type db_system_id: str
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this BackupSummary.
+        :type compartment_id: str
+
         :param data_storage_size_in_gbs:
             The value to assign to the data_storage_size_in_gbs property of this BackupSummary.
         :type data_storage_size_in_gbs: int
@@ -95,6 +99,7 @@ class BackupSummary(object):
             'backup_type': 'str',
             'creation_type': 'str',
             'db_system_id': 'str',
+            'compartment_id': 'str',
             'data_storage_size_in_gbs': 'int',
             'backup_size_in_gbs': 'int',
             'retention_in_days': 'int',
@@ -113,6 +118,7 @@ class BackupSummary(object):
             'backup_type': 'backupType',
             'creation_type': 'creationType',
             'db_system_id': 'dbSystemId',
+            'compartment_id': 'compartmentId',
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
             'backup_size_in_gbs': 'backupSizeInGBs',
             'retention_in_days': 'retentionInDays',
@@ -130,6 +136,7 @@ class BackupSummary(object):
         self._backup_type = None
         self._creation_type = None
         self._db_system_id = None
+        self._compartment_id = None
         self._data_storage_size_in_gbs = None
         self._backup_size_in_gbs = None
         self._retention_in_days = None
@@ -329,6 +336,30 @@ class BackupSummary(object):
         :type: str
         """
         self._db_system_id = db_system_id
+
+    @property
+    def compartment_id(self):
+        """
+        **[Required]** Gets the compartment_id of this BackupSummary.
+        The OCID of the compartment the backup exists in.
+
+
+        :return: The compartment_id of this BackupSummary.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this BackupSummary.
+        The OCID of the compartment the backup exists in.
+
+
+        :param compartment_id: The compartment_id of this BackupSummary.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     @property
     def data_storage_size_in_gbs(self):

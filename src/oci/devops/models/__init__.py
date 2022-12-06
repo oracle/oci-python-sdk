@@ -189,6 +189,8 @@ from .deploy_stage_collection import DeployStageCollection
 from .deploy_stage_execution_progress import DeployStageExecutionProgress
 from .deploy_stage_execution_progress_details import DeployStageExecutionProgressDetails
 from .deploy_stage_execution_step import DeployStageExecutionStep
+from .deploy_stage_override_argument import DeployStageOverrideArgument
+from .deploy_stage_override_argument_collection import DeployStageOverrideArgumentCollection
 from .deploy_stage_predecessor import DeployStagePredecessor
 from .deploy_stage_predecessor_collection import DeployStagePredecessorCollection
 from .deploy_stage_rollback_policy import DeployStageRollbackPolicy
@@ -621,6 +623,8 @@ devops_type_mapping = {
     "DeployStageExecutionProgress": DeployStageExecutionProgress,
     "DeployStageExecutionProgressDetails": DeployStageExecutionProgressDetails,
     "DeployStageExecutionStep": DeployStageExecutionStep,
+    "DeployStageOverrideArgument": DeployStageOverrideArgument,
+    "DeployStageOverrideArgumentCollection": DeployStageOverrideArgumentCollection,
     "DeployStagePredecessor": DeployStagePredecessor,
     "DeployStagePredecessorCollection": DeployStagePredecessorCollection,
     "DeployStageRollbackPolicy": DeployStageRollbackPolicy,

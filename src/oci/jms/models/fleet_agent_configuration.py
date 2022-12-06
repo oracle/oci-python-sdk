@@ -26,6 +26,14 @@ class FleetAgentConfiguration(object):
             The value to assign to the java_usage_tracker_processing_frequency_in_minutes property of this FleetAgentConfiguration.
         :type java_usage_tracker_processing_frequency_in_minutes: int
 
+        :param work_request_validity_period_in_days:
+            The value to assign to the work_request_validity_period_in_days property of this FleetAgentConfiguration.
+        :type work_request_validity_period_in_days: int
+
+        :param agent_polling_interval_in_minutes:
+            The value to assign to the agent_polling_interval_in_minutes property of this FleetAgentConfiguration.
+        :type agent_polling_interval_in_minutes: int
+
         :param linux_configuration:
             The value to assign to the linux_configuration property of this FleetAgentConfiguration.
         :type linux_configuration: oci.jms.models.FleetAgentOsConfiguration
@@ -42,6 +50,8 @@ class FleetAgentConfiguration(object):
         self.swagger_types = {
             'jre_scan_frequency_in_minutes': 'int',
             'java_usage_tracker_processing_frequency_in_minutes': 'int',
+            'work_request_validity_period_in_days': 'int',
+            'agent_polling_interval_in_minutes': 'int',
             'linux_configuration': 'FleetAgentOsConfiguration',
             'windows_configuration': 'FleetAgentOsConfiguration',
             'time_last_modified': 'datetime'
@@ -50,6 +60,8 @@ class FleetAgentConfiguration(object):
         self.attribute_map = {
             'jre_scan_frequency_in_minutes': 'jreScanFrequencyInMinutes',
             'java_usage_tracker_processing_frequency_in_minutes': 'javaUsageTrackerProcessingFrequencyInMinutes',
+            'work_request_validity_period_in_days': 'workRequestValidityPeriodInDays',
+            'agent_polling_interval_in_minutes': 'agentPollingIntervalInMinutes',
             'linux_configuration': 'linuxConfiguration',
             'windows_configuration': 'windowsConfiguration',
             'time_last_modified': 'timeLastModified'
@@ -57,6 +69,8 @@ class FleetAgentConfiguration(object):
 
         self._jre_scan_frequency_in_minutes = None
         self._java_usage_tracker_processing_frequency_in_minutes = None
+        self._work_request_validity_period_in_days = None
+        self._agent_polling_interval_in_minutes = None
         self._linux_configuration = None
         self._windows_configuration = None
         self._time_last_modified = None
@@ -108,6 +122,54 @@ class FleetAgentConfiguration(object):
         :type: int
         """
         self._java_usage_tracker_processing_frequency_in_minutes = java_usage_tracker_processing_frequency_in_minutes
+
+    @property
+    def work_request_validity_period_in_days(self):
+        """
+        Gets the work_request_validity_period_in_days of this FleetAgentConfiguration.
+        The validity period in days for work requests.
+
+
+        :return: The work_request_validity_period_in_days of this FleetAgentConfiguration.
+        :rtype: int
+        """
+        return self._work_request_validity_period_in_days
+
+    @work_request_validity_period_in_days.setter
+    def work_request_validity_period_in_days(self, work_request_validity_period_in_days):
+        """
+        Sets the work_request_validity_period_in_days of this FleetAgentConfiguration.
+        The validity period in days for work requests.
+
+
+        :param work_request_validity_period_in_days: The work_request_validity_period_in_days of this FleetAgentConfiguration.
+        :type: int
+        """
+        self._work_request_validity_period_in_days = work_request_validity_period_in_days
+
+    @property
+    def agent_polling_interval_in_minutes(self):
+        """
+        Gets the agent_polling_interval_in_minutes of this FleetAgentConfiguration.
+        Agent polling interval in minutes
+
+
+        :return: The agent_polling_interval_in_minutes of this FleetAgentConfiguration.
+        :rtype: int
+        """
+        return self._agent_polling_interval_in_minutes
+
+    @agent_polling_interval_in_minutes.setter
+    def agent_polling_interval_in_minutes(self, agent_polling_interval_in_minutes):
+        """
+        Sets the agent_polling_interval_in_minutes of this FleetAgentConfiguration.
+        Agent polling interval in minutes
+
+
+        :param agent_polling_interval_in_minutes: The agent_polling_interval_in_minutes of this FleetAgentConfiguration.
+        :type: int
+        """
+        self._agent_polling_interval_in_minutes = agent_polling_interval_in_minutes
 
     @property
     def linux_configuration(self):

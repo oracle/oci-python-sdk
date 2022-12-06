@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class JavaReleaseCollection(object):
     """
-    Collection of information about the Java releases.
+    Collection of Java releases information.
     """
 
     def __init__(self, **kwargs):

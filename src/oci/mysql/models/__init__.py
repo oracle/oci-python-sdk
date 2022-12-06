@@ -12,12 +12,16 @@ from .analytics_cluster_node import AnalyticsClusterNode
 from .analytics_cluster_schema_memory_estimate import AnalyticsClusterSchemaMemoryEstimate
 from .analytics_cluster_summary import AnalyticsClusterSummary
 from .analytics_cluster_table_memory_estimate import AnalyticsClusterTableMemoryEstimate
+from .anonymous_transactions_handling import AnonymousTransactionsHandling
+from .assign_manual_uuid_handling import AssignManualUuidHandling
+from .assign_target_uuid_handling import AssignTargetUuidHandling
 from .backup import Backup
 from .backup_policy import BackupPolicy
 from .backup_summary import BackupSummary
 from .ca_certificate import CaCertificate
 from .change_backup_compartment_details import ChangeBackupCompartmentDetails
 from .channel import Channel
+from .channel_filter import ChannelFilter
 from .channel_source import ChannelSource
 from .channel_source_mysql import ChannelSourceMysql
 from .channel_summary import ChannelSummary
@@ -42,6 +46,7 @@ from .create_db_system_source_from_pitr_details import CreateDbSystemSourceFromP
 from .create_db_system_source_import_from_url_details import CreateDbSystemSourceImportFromUrlDetails
 from .create_deletion_policy_details import CreateDeletionPolicyDetails
 from .create_maintenance_details import CreateMaintenanceDetails
+from .create_replica_details import CreateReplicaDetails
 from .db_system import DbSystem
 from .db_system_endpoint import DbSystemEndpoint
 from .db_system_placement import DbSystemPlacement
@@ -53,6 +58,7 @@ from .db_system_source_from_pitr import DbSystemSourceFromPitr
 from .db_system_source_import_from_url import DbSystemSourceImportFromUrl
 from .db_system_summary import DbSystemSummary
 from .deletion_policy_details import DeletionPolicyDetails
+from .error_on_anonymous_handling import ErrorOnAnonymousHandling
 from .heat_wave_cluster import HeatWaveCluster
 from .heat_wave_cluster_memory_estimate import HeatWaveClusterMemoryEstimate
 from .heat_wave_cluster_schema_memory_estimate import HeatWaveClusterSchemaMemoryEstimate
@@ -64,6 +70,8 @@ from .maintenance_details import MaintenanceDetails
 from .pem_ca_certificate import PemCaCertificate
 from .pitr_policy import PitrPolicy
 from .point_in_time_recovery_details import PointInTimeRecoveryDetails
+from .replica import Replica
+from .replica_summary import ReplicaSummary
 from .restart_db_system_details import RestartDbSystemDetails
 from .shape_summary import ShapeSummary
 from .stop_db_system_details import StopDbSystemDetails
@@ -80,6 +88,7 @@ from .update_db_system_details import UpdateDbSystemDetails
 from .update_deletion_policy_details import UpdateDeletionPolicyDetails
 from .update_heat_wave_cluster_details import UpdateHeatWaveClusterDetails
 from .update_maintenance_details import UpdateMaintenanceDetails
+from .update_replica_details import UpdateReplicaDetails
 from .version import Version
 from .version_summary import VersionSummary
 from .work_request import WorkRequest
@@ -98,12 +107,16 @@ mysql_type_mapping = {
     "AnalyticsClusterSchemaMemoryEstimate": AnalyticsClusterSchemaMemoryEstimate,
     "AnalyticsClusterSummary": AnalyticsClusterSummary,
     "AnalyticsClusterTableMemoryEstimate": AnalyticsClusterTableMemoryEstimate,
+    "AnonymousTransactionsHandling": AnonymousTransactionsHandling,
+    "AssignManualUuidHandling": AssignManualUuidHandling,
+    "AssignTargetUuidHandling": AssignTargetUuidHandling,
     "Backup": Backup,
     "BackupPolicy": BackupPolicy,
     "BackupSummary": BackupSummary,
     "CaCertificate": CaCertificate,
     "ChangeBackupCompartmentDetails": ChangeBackupCompartmentDetails,
     "Channel": Channel,
+    "ChannelFilter": ChannelFilter,
     "ChannelSource": ChannelSource,
     "ChannelSourceMysql": ChannelSourceMysql,
     "ChannelSummary": ChannelSummary,
@@ -128,6 +141,7 @@ mysql_type_mapping = {
     "CreateDbSystemSourceImportFromUrlDetails": CreateDbSystemSourceImportFromUrlDetails,
     "CreateDeletionPolicyDetails": CreateDeletionPolicyDetails,
     "CreateMaintenanceDetails": CreateMaintenanceDetails,
+    "CreateReplicaDetails": CreateReplicaDetails,
     "DbSystem": DbSystem,
     "DbSystemEndpoint": DbSystemEndpoint,
     "DbSystemPlacement": DbSystemPlacement,
@@ -139,6 +153,7 @@ mysql_type_mapping = {
     "DbSystemSourceImportFromUrl": DbSystemSourceImportFromUrl,
     "DbSystemSummary": DbSystemSummary,
     "DeletionPolicyDetails": DeletionPolicyDetails,
+    "ErrorOnAnonymousHandling": ErrorOnAnonymousHandling,
     "HeatWaveCluster": HeatWaveCluster,
     "HeatWaveClusterMemoryEstimate": HeatWaveClusterMemoryEstimate,
     "HeatWaveClusterSchemaMemoryEstimate": HeatWaveClusterSchemaMemoryEstimate,
@@ -150,6 +165,8 @@ mysql_type_mapping = {
     "PemCaCertificate": PemCaCertificate,
     "PitrPolicy": PitrPolicy,
     "PointInTimeRecoveryDetails": PointInTimeRecoveryDetails,
+    "Replica": Replica,
+    "ReplicaSummary": ReplicaSummary,
     "RestartDbSystemDetails": RestartDbSystemDetails,
     "ShapeSummary": ShapeSummary,
     "StopDbSystemDetails": StopDbSystemDetails,
@@ -166,6 +183,7 @@ mysql_type_mapping = {
     "UpdateDeletionPolicyDetails": UpdateDeletionPolicyDetails,
     "UpdateHeatWaveClusterDetails": UpdateHeatWaveClusterDetails,
     "UpdateMaintenanceDetails": UpdateMaintenanceDetails,
+    "UpdateReplicaDetails": UpdateReplicaDetails,
     "Version": Version,
     "VersionSummary": VersionSummary,
     "WorkRequest": WorkRequest,

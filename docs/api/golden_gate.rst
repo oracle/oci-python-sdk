@@ -23,6 +23,7 @@ Golden Gate
     oci.golden_gate.models.ChangeDatabaseRegistrationCompartmentDetails
     oci.golden_gate.models.ChangeDeploymentBackupCompartmentDetails
     oci.golden_gate.models.ChangeDeploymentCompartmentDetails
+    oci.golden_gate.models.CollectDeploymentDiagnosticDetails
     oci.golden_gate.models.Connection
     oci.golden_gate.models.ConnectionAssignment
     oci.golden_gate.models.ConnectionAssignmentCollection
@@ -52,6 +53,7 @@ Golden Gate
     oci.golden_gate.models.DeploymentBackupCollection
     oci.golden_gate.models.DeploymentBackupSummary
     oci.golden_gate.models.DeploymentCollection
+    oci.golden_gate.models.DeploymentDiagnosticData
     oci.golden_gate.models.DeploymentMessageCollection
     oci.golden_gate.models.DeploymentSummary
     oci.golden_gate.models.DeploymentTypeCollection

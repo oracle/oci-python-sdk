@@ -41,6 +41,10 @@ class ExadataMemberCollection(object):
     #: This constant has a value of "EIGHTH"
     EXADATA_RACK_TYPE_EIGHTH = "EIGHTH"
 
+    #: A constant which can be used with the exadata_rack_type property of a ExadataMemberCollection.
+    #: This constant has a value of "FLEX"
+    EXADATA_RACK_TYPE_FLEX = "FLEX"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ExadataMemberCollection object with values from keyword arguments.
@@ -66,7 +70,7 @@ class ExadataMemberCollection(object):
 
         :param exadata_rack_type:
             The value to assign to the exadata_rack_type property of this ExadataMemberCollection.
-            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type exadata_rack_type: str
 
@@ -212,7 +216,7 @@ class ExadataMemberCollection(object):
         **[Required]** Gets the exadata_rack_type of this ExadataMemberCollection.
         Exadata rack type.
 
-        Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -231,7 +235,7 @@ class ExadataMemberCollection(object):
         :param exadata_rack_type: The exadata_rack_type of this ExadataMemberCollection.
         :type: str
         """
-        allowed_values = ["FULL", "HALF", "QUARTER", "EIGHTH"]
+        allowed_values = ["FULL", "HALF", "QUARTER", "EIGHTH", "FLEX"]
         if not value_allowed_none_or_none_sentinel(exadata_rack_type, allowed_values):
             exadata_rack_type = 'UNKNOWN_ENUM_VALUE'
         self._exadata_rack_type = exadata_rack_type

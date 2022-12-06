@@ -55,7 +55,7 @@ class AnnouncementSummary(BaseAnnouncement):
 
         :param time_two_type:
             The value to assign to the time_two_type property of this AnnouncementSummary.
-            Allowed values for this property are: "END_TIME", "NEW_END_TIME", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "END_TIME", "NEW_END_TIME", "ESTIMATED_END_TIME", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type time_two_type: str
 

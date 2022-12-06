@@ -19,7 +19,9 @@ class CreateConfigurationSourceProviderDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.resource_manager.models.CreateGitlabAccessTokenConfigurationSourceProviderDetails`
+        * :class:`~oci.resource_manager.models.CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails`
         * :class:`~oci.resource_manager.models.CreateGithubAccessTokenConfigurationSourceProviderDetails`
+        * :class:`~oci.resource_manager.models.CreateBitbucketServerAccessTokenConfigurationSourceProviderDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -91,8 +93,14 @@ class CreateConfigurationSourceProviderDetails(object):
         if type == 'GITLAB_ACCESS_TOKEN':
             return 'CreateGitlabAccessTokenConfigurationSourceProviderDetails'
 
+        if type == 'BITBUCKET_CLOUD_USERNAME_APPPASSWORD':
+            return 'CreateBitbucketCloudUsernameAppPasswordConfigurationSourceProviderDetails'
+
         if type == 'GITHUB_ACCESS_TOKEN':
             return 'CreateGithubAccessTokenConfigurationSourceProviderDetails'
+
+        if type == 'BITBUCKET_SERVER_ACCESS_TOKEN':
+            return 'CreateBitbucketServerAccessTokenConfigurationSourceProviderDetails'
         else:
             return 'CreateConfigurationSourceProviderDetails'
 
@@ -181,6 +189,8 @@ class CreateConfigurationSourceProviderDetails(object):
         The type of configuration source provider.
         The `GITLAB_ACCESS_TOKEN` type corresponds to GitLab.
         The `GITHUB_ACCESS_TOKEN` type corresponds to GitHub.
+        The `BITBUCKET_CLOUD_USERNAME_APPPASSWORD` type corresponds to Bitbucket Cloud.
+        The `BITBUCKET_SERVER_ACCESS_TOKEN` type corresponds to Bitbucket Server.
 
 
         :return: The config_source_provider_type of this CreateConfigurationSourceProviderDetails.
@@ -195,6 +205,8 @@ class CreateConfigurationSourceProviderDetails(object):
         The type of configuration source provider.
         The `GITLAB_ACCESS_TOKEN` type corresponds to GitLab.
         The `GITHUB_ACCESS_TOKEN` type corresponds to GitHub.
+        The `BITBUCKET_CLOUD_USERNAME_APPPASSWORD` type corresponds to Bitbucket Cloud.
+        The `BITBUCKET_SERVER_ACCESS_TOKEN` type corresponds to Bitbucket Server.
 
 
         :param config_source_provider_type: The config_source_provider_type of this CreateConfigurationSourceProviderDetails.

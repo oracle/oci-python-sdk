@@ -57,6 +57,18 @@ class JavaReleaseSummary(object):
     #: This constant has a value of "RESTRICTED"
     LICENSE_TYPE_RESTRICTED = "RESTRICTED"
 
+    #: A constant which can be used with the artifact_content_types property of a JavaReleaseSummary.
+    #: This constant has a value of "JDK"
+    ARTIFACT_CONTENT_TYPES_JDK = "JDK"
+
+    #: A constant which can be used with the artifact_content_types property of a JavaReleaseSummary.
+    #: This constant has a value of "JRE"
+    ARTIFACT_CONTENT_TYPES_JRE = "JRE"
+
+    #: A constant which can be used with the artifact_content_types property of a JavaReleaseSummary.
+    #: This constant has a value of "SERVER_JRE"
+    ARTIFACT_CONTENT_TYPES_SERVER_JRE = "SERVER_JRE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new JavaReleaseSummary object with values from keyword arguments.
@@ -108,6 +120,12 @@ class JavaReleaseSummary(object):
             The value to assign to the release_notes_url property of this JavaReleaseSummary.
         :type release_notes_url: str
 
+        :param artifact_content_types:
+            The value to assign to the artifact_content_types property of this JavaReleaseSummary.
+            Allowed values for items in this list are: "JDK", "JRE", "SERVER_JRE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type artifact_content_types: list[str]
+
         """
         self.swagger_types = {
             'release_version': 'str',
@@ -119,7 +137,8 @@ class JavaReleaseSummary(object):
             'family_details': 'JavaFamily',
             'license_details': 'JavaLicense',
             'release_date': 'datetime',
-            'release_notes_url': 'str'
+            'release_notes_url': 'str',
+            'artifact_content_types': 'list[str]'
         }
 
         self.attribute_map = {
@@ -132,7 +151,8 @@ class JavaReleaseSummary(object):
             'family_details': 'familyDetails',
             'license_details': 'licenseDetails',
             'release_date': 'releaseDate',
-            'release_notes_url': 'releaseNotesUrl'
+            'release_notes_url': 'releaseNotesUrl',
+            'artifact_content_types': 'artifactContentTypes'
         }
 
         self._release_version = None
@@ -145,6 +165,7 @@ class JavaReleaseSummary(object):
         self._license_details = None
         self._release_date = None
         self._release_notes_url = None
+        self._artifact_content_types = None
 
     @property
     def release_version(self):
@@ -399,6 +420,36 @@ class JavaReleaseSummary(object):
         :type: str
         """
         self._release_notes_url = release_notes_url
+
+    @property
+    def artifact_content_types(self):
+        """
+        **[Required]** Gets the artifact_content_types of this JavaReleaseSummary.
+        Artifact content types for the Java version.
+
+        Allowed values for items in this list are: "JDK", "JRE", "SERVER_JRE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The artifact_content_types of this JavaReleaseSummary.
+        :rtype: list[str]
+        """
+        return self._artifact_content_types
+
+    @artifact_content_types.setter
+    def artifact_content_types(self, artifact_content_types):
+        """
+        Sets the artifact_content_types of this JavaReleaseSummary.
+        Artifact content types for the Java version.
+
+
+        :param artifact_content_types: The artifact_content_types of this JavaReleaseSummary.
+        :type: list[str]
+        """
+        allowed_values = ["JDK", "JRE", "SERVER_JRE"]
+        if artifact_content_types:
+            artifact_content_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in artifact_content_types]
+        self._artifact_content_types = artifact_content_types
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -149,6 +149,10 @@ class DiscoveryJobResult(object):
             The value to assign to the is_result_applied property of this DiscoveryJobResult.
         :type is_result_applied: bool
 
+        :param discovery_job_id:
+            The value to assign to the discovery_job_id property of this DiscoveryJobResult.
+        :type discovery_job_id: str
+
         :param modified_attributes:
             The value to assign to the modified_attributes property of this DiscoveryJobResult.
         :type modified_attributes: oci.data_safe.models.ModifiedAttributes
@@ -173,6 +177,7 @@ class DiscoveryJobResult(object):
             'db_defined_child_column_keys': 'list[str]',
             'planned_action': 'str',
             'is_result_applied': 'bool',
+            'discovery_job_id': 'str',
             'modified_attributes': 'ModifiedAttributes'
         }
 
@@ -195,6 +200,7 @@ class DiscoveryJobResult(object):
             'db_defined_child_column_keys': 'dbDefinedChildColumnKeys',
             'planned_action': 'plannedAction',
             'is_result_applied': 'isResultApplied',
+            'discovery_job_id': 'discoveryJobId',
             'modified_attributes': 'modifiedAttributes'
         }
 
@@ -216,6 +222,7 @@ class DiscoveryJobResult(object):
         self._db_defined_child_column_keys = None
         self._planned_action = None
         self._is_result_applied = None
+        self._discovery_job_id = None
         self._modified_attributes = None
 
     @property
@@ -699,6 +706,30 @@ class DiscoveryJobResult(object):
         :type: bool
         """
         self._is_result_applied = is_result_applied
+
+    @property
+    def discovery_job_id(self):
+        """
+        **[Required]** Gets the discovery_job_id of this DiscoveryJobResult.
+        The OCID of the discovery job.
+
+
+        :return: The discovery_job_id of this DiscoveryJobResult.
+        :rtype: str
+        """
+        return self._discovery_job_id
+
+    @discovery_job_id.setter
+    def discovery_job_id(self, discovery_job_id):
+        """
+        Sets the discovery_job_id of this DiscoveryJobResult.
+        The OCID of the discovery job.
+
+
+        :param discovery_job_id: The discovery_job_id of this DiscoveryJobResult.
+        :type: str
+        """
+        self._discovery_job_id = discovery_job_id
 
     @property
     def modified_attributes(self):

@@ -17,6 +17,10 @@ class ExadataConfigurationSummary(object):
     #: This constant has a value of "EM_MANAGED_EXTERNAL_EXADATA"
     ENTITY_SOURCE_EM_MANAGED_EXTERNAL_EXADATA = "EM_MANAGED_EXTERNAL_EXADATA"
 
+    #: A constant which can be used with the entity_source property of a ExadataConfigurationSummary.
+    #: This constant has a value of "PE_COMANAGED_EXADATA"
+    ENTITY_SOURCE_PE_COMANAGED_EXADATA = "PE_COMANAGED_EXADATA"
+
     #: A constant which can be used with the exadata_type property of a ExadataConfigurationSummary.
     #: This constant has a value of "DBMACHINE"
     EXADATA_TYPE_DBMACHINE = "DBMACHINE"
@@ -45,12 +49,17 @@ class ExadataConfigurationSummary(object):
     #: This constant has a value of "EIGHTH"
     EXADATA_RACK_TYPE_EIGHTH = "EIGHTH"
 
+    #: A constant which can be used with the exadata_rack_type property of a ExadataConfigurationSummary.
+    #: This constant has a value of "FLEX"
+    EXADATA_RACK_TYPE_FLEX = "FLEX"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ExadataConfigurationSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.opsi.models.ExadataDatabaseMachineConfigurationSummary`
+        * :class:`~oci.opsi.models.ExadataExacsConfigurationSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -60,7 +69,7 @@ class ExadataConfigurationSummary(object):
 
         :param entity_source:
             The value to assign to the entity_source property of this ExadataConfigurationSummary.
-            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_source: str
 
@@ -84,7 +93,7 @@ class ExadataConfigurationSummary(object):
 
         :param exadata_rack_type:
             The value to assign to the exadata_rack_type property of this ExadataConfigurationSummary.
-            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type exadata_rack_type: str
 
@@ -96,6 +105,10 @@ class ExadataConfigurationSummary(object):
             The value to assign to the freeform_tags property of this ExadataConfigurationSummary.
         :type freeform_tags: dict(str, str)
 
+        :param vmcluster_details:
+            The value to assign to the vmcluster_details property of this ExadataConfigurationSummary.
+        :type vmcluster_details: list[oci.opsi.models.VmClusterSummary]
+
         """
         self.swagger_types = {
             'exadata_insight_id': 'str',
@@ -106,7 +119,8 @@ class ExadataConfigurationSummary(object):
             'exadata_type': 'str',
             'exadata_rack_type': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
-            'freeform_tags': 'dict(str, str)'
+            'freeform_tags': 'dict(str, str)',
+            'vmcluster_details': 'list[VmClusterSummary]'
         }
 
         self.attribute_map = {
@@ -118,7 +132,8 @@ class ExadataConfigurationSummary(object):
             'exadata_type': 'exadataType',
             'exadata_rack_type': 'exadataRackType',
             'defined_tags': 'definedTags',
-            'freeform_tags': 'freeformTags'
+            'freeform_tags': 'freeformTags',
+            'vmcluster_details': 'vmclusterDetails'
         }
 
         self._exadata_insight_id = None
@@ -130,6 +145,7 @@ class ExadataConfigurationSummary(object):
         self._exadata_rack_type = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._vmcluster_details = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -141,6 +157,9 @@ class ExadataConfigurationSummary(object):
 
         if type == 'EM_MANAGED_EXTERNAL_EXADATA':
             return 'ExadataDatabaseMachineConfigurationSummary'
+
+        if type == 'PE_COMANAGED_EXADATA':
+            return 'ExadataExacsConfigurationSummary'
         else:
             return 'ExadataConfigurationSummary'
 
@@ -178,7 +197,7 @@ class ExadataConfigurationSummary(object):
         **[Required]** Gets the entity_source of this ExadataConfigurationSummary.
         Source of the exadata entity.
 
-        Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -197,7 +216,7 @@ class ExadataConfigurationSummary(object):
         :param entity_source: The entity_source of this ExadataConfigurationSummary.
         :type: str
         """
-        allowed_values = ["EM_MANAGED_EXTERNAL_EXADATA"]
+        allowed_values = ["EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA"]
         if not value_allowed_none_or_none_sentinel(entity_source, allowed_values):
             entity_source = 'UNKNOWN_ENUM_VALUE'
         self._entity_source = entity_source
@@ -314,7 +333,7 @@ class ExadataConfigurationSummary(object):
         **[Required]** Gets the exadata_rack_type of this ExadataConfigurationSummary.
         Exadata rack type.
 
-        Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -333,7 +352,7 @@ class ExadataConfigurationSummary(object):
         :param exadata_rack_type: The exadata_rack_type of this ExadataConfigurationSummary.
         :type: str
         """
-        allowed_values = ["FULL", "HALF", "QUARTER", "EIGHTH"]
+        allowed_values = ["FULL", "HALF", "QUARTER", "EIGHTH", "FLEX"]
         if not value_allowed_none_or_none_sentinel(exadata_rack_type, allowed_values):
             exadata_rack_type = 'UNKNOWN_ENUM_VALUE'
         self._exadata_rack_type = exadata_rack_type
@@ -389,6 +408,30 @@ class ExadataConfigurationSummary(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def vmcluster_details(self):
+        """
+        Gets the vmcluster_details of this ExadataConfigurationSummary.
+        Array of objects containing VM cluster information.
+
+
+        :return: The vmcluster_details of this ExadataConfigurationSummary.
+        :rtype: list[oci.opsi.models.VmClusterSummary]
+        """
+        return self._vmcluster_details
+
+    @vmcluster_details.setter
+    def vmcluster_details(self, vmcluster_details):
+        """
+        Sets the vmcluster_details of this ExadataConfigurationSummary.
+        Array of objects containing VM cluster information.
+
+
+        :param vmcluster_details: The vmcluster_details of this ExadataConfigurationSummary.
+        :type: list[oci.opsi.models.VmClusterSummary]
+        """
+        self._vmcluster_details = vmcluster_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

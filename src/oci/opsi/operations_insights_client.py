@@ -6353,6 +6353,9 @@ class OperationsInsightsClient(object):
         :param bool compartment_id_in_subtree: (optional)
             A flag to search all resources within a given compartment and all sub-compartments.
 
+        :param list[str] vmcluster_name: (optional)
+            Optional list of Exadata Insight VM cluster name.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -6397,7 +6400,8 @@ class OperationsInsightsClient(object):
             "freeform_tag_equals",
             "defined_tag_exists",
             "freeform_tag_exists",
-            "compartment_id_in_subtree"
+            "compartment_id_in_subtree",
+            "vmcluster_name"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -6443,7 +6447,8 @@ class OperationsInsightsClient(object):
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
-            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -7378,6 +7383,9 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param list[str] vmcluster_name: (optional)
+            Optional list of Exadata Insight VM cluster name.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -7421,7 +7429,8 @@ class OperationsInsightsClient(object):
             "freeform_tag_exists",
             "compartment_id_in_subtree",
             "host_type",
-            "host_id"
+            "host_id",
+            "vmcluster_name"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -7466,7 +7475,8 @@ class OperationsInsightsClient(object):
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
             "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
-            "hostId": kwargs.get("host_id", missing)
+            "hostId": kwargs.get("host_id", missing),
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -12226,6 +12236,9 @@ class OperationsInsightsClient(object):
         :param bool compartment_id_in_subtree: (optional)
             A flag to search all resources within a given compartment and all sub-compartments.
 
+        :param list[str] vmcluster_name: (optional)
+            Optional list of Exadata Insight VM cluster name.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -12273,7 +12286,8 @@ class OperationsInsightsClient(object):
             "freeform_tag_equals",
             "defined_tag_exists",
             "freeform_tag_exists",
-            "compartment_id_in_subtree"
+            "compartment_id_in_subtree",
+            "vmcluster_name"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -12331,7 +12345,8 @@ class OperationsInsightsClient(object):
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
-            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -12515,6 +12530,9 @@ class OperationsInsightsClient(object):
         :param bool compartment_id_in_subtree: (optional)
             A flag to search all resources within a given compartment and all sub-compartments.
 
+        :param list[str] vmcluster_name: (optional)
+            Optional list of Exadata Insight VM cluster name.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -12564,7 +12582,8 @@ class OperationsInsightsClient(object):
             "freeform_tag_equals",
             "defined_tag_exists",
             "freeform_tag_exists",
-            "compartment_id_in_subtree"
+            "compartment_id_in_subtree",
+            "vmcluster_name"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -12624,7 +12643,8 @@ class OperationsInsightsClient(object):
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
-            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -12802,6 +12822,9 @@ class OperationsInsightsClient(object):
         :param bool compartment_id_in_subtree: (optional)
             A flag to search all resources within a given compartment and all sub-compartments.
 
+        :param list[str] vmcluster_name: (optional)
+            Optional list of Exadata Insight VM cluster name.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -12851,7 +12874,8 @@ class OperationsInsightsClient(object):
             "freeform_tag_equals",
             "defined_tag_exists",
             "freeform_tag_exists",
-            "compartment_id_in_subtree"
+            "compartment_id_in_subtree",
+            "vmcluster_name"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -12904,7 +12928,8 @@ class OperationsInsightsClient(object):
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
-            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -13054,6 +13079,9 @@ class OperationsInsightsClient(object):
         :param bool compartment_id_in_subtree: (optional)
             A flag to search all resources within a given compartment and all sub-compartments.
 
+        :param list[str] vmcluster_name: (optional)
+            Optional list of Exadata Insight VM cluster name.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -13097,7 +13125,8 @@ class OperationsInsightsClient(object):
             "freeform_tag_equals",
             "defined_tag_exists",
             "freeform_tag_exists",
-            "compartment_id_in_subtree"
+            "compartment_id_in_subtree",
+            "vmcluster_name"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -13130,7 +13159,8 @@ class OperationsInsightsClient(object):
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
-            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -13286,6 +13316,9 @@ class OperationsInsightsClient(object):
         :param bool compartment_id_in_subtree: (optional)
             A flag to search all resources within a given compartment and all sub-compartments.
 
+        :param list[str] vmcluster_name: (optional)
+            Optional list of Exadata Insight VM cluster name.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -13330,7 +13363,8 @@ class OperationsInsightsClient(object):
             "freeform_tag_equals",
             "defined_tag_exists",
             "freeform_tag_exists",
-            "compartment_id_in_subtree"
+            "compartment_id_in_subtree",
+            "vmcluster_name"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -13378,7 +13412,8 @@ class OperationsInsightsClient(object):
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
-            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -13526,6 +13561,9 @@ class OperationsInsightsClient(object):
         :param bool compartment_id_in_subtree: (optional)
             A flag to search all resources within a given compartment and all sub-compartments.
 
+        :param list[str] vmcluster_name: (optional)
+            Optional list of Exadata Insight VM cluster name.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -13569,7 +13607,8 @@ class OperationsInsightsClient(object):
             "freeform_tag_equals",
             "defined_tag_exists",
             "freeform_tag_exists",
-            "compartment_id_in_subtree"
+            "compartment_id_in_subtree",
+            "vmcluster_name"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -13602,7 +13641,8 @@ class OperationsInsightsClient(object):
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
-            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -15884,6 +15924,9 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param list[str] vmcluster_name: (optional)
+            Optional list of Exadata Insight VM cluster name.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -15928,7 +15971,8 @@ class OperationsInsightsClient(object):
             "freeform_tag_exists",
             "compartment_id_in_subtree",
             "host_type",
-            "host_id"
+            "host_id",
+            "vmcluster_name"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -15983,7 +16027,8 @@ class OperationsInsightsClient(object):
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
             "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
-            "hostId": kwargs.get("host_id", missing)
+            "hostId": kwargs.get("host_id", missing),
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -16159,6 +16204,9 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param list[str] vmcluster_name: (optional)
+            Optional list of Exadata Insight VM cluster name.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -16205,7 +16253,8 @@ class OperationsInsightsClient(object):
             "freeform_tag_exists",
             "compartment_id_in_subtree",
             "host_type",
-            "host_id"
+            "host_id",
+            "vmcluster_name"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -16262,7 +16311,8 @@ class OperationsInsightsClient(object):
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
             "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
-            "hostId": kwargs.get("host_id", missing)
+            "hostId": kwargs.get("host_id", missing),
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -16435,6 +16485,9 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param list[str] vmcluster_name: (optional)
+            Optional list of Exadata Insight VM cluster name.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -16482,7 +16535,8 @@ class OperationsInsightsClient(object):
             "freeform_tag_exists",
             "compartment_id_in_subtree",
             "host_type",
-            "host_id"
+            "host_id",
+            "vmcluster_name"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -16533,7 +16587,8 @@ class OperationsInsightsClient(object):
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
             "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
-            "hostId": kwargs.get("host_id", missing)
+            "hostId": kwargs.get("host_id", missing),
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -16681,6 +16736,9 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param list[str] vmcluster_name: (optional)
+            Optional list of Exadata Insight VM cluster name.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -16723,7 +16781,8 @@ class OperationsInsightsClient(object):
             "freeform_tag_exists",
             "compartment_id_in_subtree",
             "host_type",
-            "host_id"
+            "host_id",
+            "vmcluster_name"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -16755,7 +16814,8 @@ class OperationsInsightsClient(object):
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
             "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
-            "hostId": kwargs.get("host_id", missing)
+            "hostId": kwargs.get("host_id", missing),
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -16909,6 +16969,9 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param list[str] vmcluster_name: (optional)
+            Optional list of Exadata Insight VM cluster name.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -16952,7 +17015,8 @@ class OperationsInsightsClient(object):
             "freeform_tag_exists",
             "compartment_id_in_subtree",
             "host_type",
-            "host_id"
+            "host_id",
+            "vmcluster_name"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -16999,7 +17063,8 @@ class OperationsInsightsClient(object):
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
             "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
-            "hostId": kwargs.get("host_id", missing)
+            "hostId": kwargs.get("host_id", missing),
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -17145,6 +17210,9 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param list[str] vmcluster_name: (optional)
+            Optional list of Exadata Insight VM cluster name.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -17187,7 +17255,8 @@ class OperationsInsightsClient(object):
             "freeform_tag_exists",
             "compartment_id_in_subtree",
             "host_type",
-            "host_id"
+            "host_id",
+            "vmcluster_name"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -17219,7 +17288,8 @@ class OperationsInsightsClient(object):
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
             "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
-            "hostId": kwargs.get("host_id", missing)
+            "hostId": kwargs.get("host_id", missing),
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -18331,6 +18401,9 @@ class OperationsInsightsClient(object):
         :param bool compartment_id_in_subtree: (optional)
             A flag to search all resources within a given compartment and all sub-compartments.
 
+        :param list[str] vmcluster_name: (optional)
+            Optional list of Exadata Insight VM cluster name.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -18379,7 +18452,8 @@ class OperationsInsightsClient(object):
             "freeform_tag_equals",
             "defined_tag_exists",
             "freeform_tag_exists",
-            "compartment_id_in_subtree"
+            "compartment_id_in_subtree",
+            "vmcluster_name"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -18438,7 +18512,8 @@ class OperationsInsightsClient(object):
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
-            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -18575,6 +18650,9 @@ class OperationsInsightsClient(object):
         :param bool compartment_id_in_subtree: (optional)
             A flag to search all resources within a given compartment and all sub-compartments.
 
+        :param list[str] vmcluster_name: (optional)
+            Optional list of Exadata Insight VM cluster name.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -18616,7 +18694,8 @@ class OperationsInsightsClient(object):
             "freeform_tag_equals",
             "defined_tag_exists",
             "freeform_tag_exists",
-            "compartment_id_in_subtree"
+            "compartment_id_in_subtree",
+            "vmcluster_name"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -18639,7 +18718,8 @@ class OperationsInsightsClient(object):
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
-            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

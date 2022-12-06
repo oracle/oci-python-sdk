@@ -22,16 +22,23 @@ class AddFleetInstallationSitesDetails(object):
             The value to assign to the installation_sites property of this AddFleetInstallationSitesDetails.
         :type installation_sites: list[oci.jms.models.NewInstallationSite]
 
+        :param post_installation_actions:
+            The value to assign to the post_installation_actions property of this AddFleetInstallationSitesDetails.
+        :type post_installation_actions: list[oci.jms.models.PostInstallationActions]
+
         """
         self.swagger_types = {
-            'installation_sites': 'list[NewInstallationSite]'
+            'installation_sites': 'list[NewInstallationSite]',
+            'post_installation_actions': 'list[PostInstallationActions]'
         }
 
         self.attribute_map = {
-            'installation_sites': 'installationSites'
+            'installation_sites': 'installationSites',
+            'post_installation_actions': 'postInstallationActions'
         }
 
         self._installation_sites = None
+        self._post_installation_actions = None
 
     @property
     def installation_sites(self):
@@ -56,6 +63,30 @@ class AddFleetInstallationSitesDetails(object):
         :type: list[oci.jms.models.NewInstallationSite]
         """
         self._installation_sites = installation_sites
+
+    @property
+    def post_installation_actions(self):
+        """
+        Gets the post_installation_actions of this AddFleetInstallationSitesDetails.
+        Optional list of post java installation actions
+
+
+        :return: The post_installation_actions of this AddFleetInstallationSitesDetails.
+        :rtype: list[oci.jms.models.PostInstallationActions]
+        """
+        return self._post_installation_actions
+
+    @post_installation_actions.setter
+    def post_installation_actions(self, post_installation_actions):
+        """
+        Sets the post_installation_actions of this AddFleetInstallationSitesDetails.
+        Optional list of post java installation actions
+
+
+        :param post_installation_actions: The post_installation_actions of this AddFleetInstallationSitesDetails.
+        :type: list[oci.jms.models.PostInstallationActions]
+        """
+        self._post_installation_actions = post_installation_actions
 
     def __repr__(self):
         return formatted_flat_dict(self)
