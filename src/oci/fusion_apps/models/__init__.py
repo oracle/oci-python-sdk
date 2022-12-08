@@ -45,6 +45,7 @@ from .refresh_activity import RefreshActivity
 from .refresh_activity_collection import RefreshActivityCollection
 from .refresh_activity_summary import RefreshActivitySummary
 from .refresh_details import RefreshDetails
+from .refresh_issue_details import RefreshIssueDetails
 from .reset_fusion_environment_password_details import ResetFusionEnvironmentPasswordDetails
 from .rule import Rule
 from .rule_condition import RuleCondition
@@ -66,6 +67,7 @@ from .time_available_for_refresh_summary import TimeAvailableForRefreshSummary
 from .update_family_maintenance_policy_details import UpdateFamilyMaintenancePolicyDetails
 from .update_fusion_environment_details import UpdateFusionEnvironmentDetails
 from .update_fusion_environment_family_details import UpdateFusionEnvironmentFamilyDetails
+from .update_refresh_activity_details import UpdateRefreshActivityDetails
 from .upgrade_action import UpgradeAction
 from .vertex_action import VertexAction
 from .work_request import WorkRequest
@@ -120,6 +122,7 @@ fusion_apps_type_mapping = {
     "RefreshActivityCollection": RefreshActivityCollection,
     "RefreshActivitySummary": RefreshActivitySummary,
     "RefreshDetails": RefreshDetails,
+    "RefreshIssueDetails": RefreshIssueDetails,
     "ResetFusionEnvironmentPasswordDetails": ResetFusionEnvironmentPasswordDetails,
     "Rule": Rule,
     "RuleCondition": RuleCondition,
@@ -141,6 +144,7 @@ fusion_apps_type_mapping = {
     "UpdateFamilyMaintenancePolicyDetails": UpdateFamilyMaintenancePolicyDetails,
     "UpdateFusionEnvironmentDetails": UpdateFusionEnvironmentDetails,
     "UpdateFusionEnvironmentFamilyDetails": UpdateFusionEnvironmentFamilyDetails,
+    "UpdateRefreshActivityDetails": UpdateRefreshActivityDetails,
     "UpgradeAction": UpgradeAction,
     "VertexAction": VertexAction,
     "WorkRequest": WorkRequest,

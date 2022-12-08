@@ -36,7 +36,7 @@ class CreateVirtualServiceRouteTableDetails(object):
 
         :param route_rules:
             The value to assign to the route_rules property of this CreateVirtualServiceRouteTableDetails.
-        :type route_rules: list[oci.service_mesh.models.VirtualServiceTrafficRouteRule]
+        :type route_rules: list[oci.service_mesh.models.VirtualServiceTrafficRouteRuleDetails]
 
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateVirtualServiceRouteTableDetails.
@@ -56,7 +56,7 @@ class CreateVirtualServiceRouteTableDetails(object):
             'name': 'str',
             'description': 'str',
             'priority': 'int',
-            'route_rules': 'list[VirtualServiceTrafficRouteRule]',
+            'route_rules': 'list[VirtualServiceTrafficRouteRuleDetails]',
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -198,7 +198,7 @@ class CreateVirtualServiceRouteTableDetails(object):
 
 
         :return: The route_rules of this CreateVirtualServiceRouteTableDetails.
-        :rtype: list[oci.service_mesh.models.VirtualServiceTrafficRouteRule]
+        :rtype: list[oci.service_mesh.models.VirtualServiceTrafficRouteRuleDetails]
         """
         return self._route_rules
 
@@ -210,7 +210,7 @@ class CreateVirtualServiceRouteTableDetails(object):
 
 
         :param route_rules: The route_rules of this CreateVirtualServiceRouteTableDetails.
-        :type: list[oci.service_mesh.models.VirtualServiceTrafficRouteRule]
+        :type: list[oci.service_mesh.models.VirtualServiceTrafficRouteRuleDetails]
         """
         self._route_rules = route_rules
 

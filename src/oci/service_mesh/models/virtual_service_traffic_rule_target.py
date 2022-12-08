@@ -61,7 +61,7 @@ class VirtualServiceTrafficRuleTarget(TrafficRuleTarget):
     @property
     def virtual_service_id(self):
         """
-        **[Required]** Gets the virtual_service_id of this VirtualServiceTrafficRuleTarget.
+        Gets the virtual_service_id of this VirtualServiceTrafficRuleTarget.
         The OCID of the virtual service where the request will be routed.
 
 

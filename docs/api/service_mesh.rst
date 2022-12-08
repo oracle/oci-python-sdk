@@ -22,9 +22,12 @@ Service Mesh
     oci.service_mesh.models.AccessPolicy
     oci.service_mesh.models.AccessPolicyCollection
     oci.service_mesh.models.AccessPolicyRule
+    oci.service_mesh.models.AccessPolicyRuleDetails
     oci.service_mesh.models.AccessPolicySummary
     oci.service_mesh.models.AccessPolicyTarget
+    oci.service_mesh.models.AccessPolicyTargetDetails
     oci.service_mesh.models.AllVirtualServicesAccessPolicyTarget
+    oci.service_mesh.models.AllVirtualServicesAccessPolicyTargetDetails
     oci.service_mesh.models.CaBundle
     oci.service_mesh.models.CertificateAuthority
     oci.service_mesh.models.ChangeAccessPolicyCompartmentDetails
@@ -36,30 +39,35 @@ Service Mesh
     oci.service_mesh.models.ChangeVirtualServiceRouteTableCompartmentDetails
     oci.service_mesh.models.CreateAccessPolicyDetails
     oci.service_mesh.models.CreateIngressGatewayDetails
-    oci.service_mesh.models.CreateIngressGatewayMutualTransportLayerSecurityDetails
     oci.service_mesh.models.CreateIngressGatewayRouteTableDetails
     oci.service_mesh.models.CreateMeshDetails
-    oci.service_mesh.models.CreateMutualTransportLayerSecurityDetails
     oci.service_mesh.models.CreateVirtualDeploymentDetails
     oci.service_mesh.models.CreateVirtualServiceDetails
     oci.service_mesh.models.CreateVirtualServiceRouteTableDetails
     oci.service_mesh.models.DefaultVirtualServiceRoutingPolicy
+    oci.service_mesh.models.DisabledServiceDiscoveryConfiguration
     oci.service_mesh.models.DnsServiceDiscoveryConfiguration
     oci.service_mesh.models.ExternalServiceAccessPolicyTarget
+    oci.service_mesh.models.ExternalServiceAccessPolicyTargetDetails
     oci.service_mesh.models.HttpIngressGatewayTrafficRouteRule
+    oci.service_mesh.models.HttpIngressGatewayTrafficRouteRuleDetails
     oci.service_mesh.models.HttpVirtualServiceTrafficRouteRule
+    oci.service_mesh.models.HttpVirtualServiceTrafficRouteRuleDetails
     oci.service_mesh.models.IngressGateway
     oci.service_mesh.models.IngressGatewayAccessPolicyTarget
+    oci.service_mesh.models.IngressGatewayAccessPolicyTargetDetails
     oci.service_mesh.models.IngressGatewayCollection
     oci.service_mesh.models.IngressGatewayHost
     oci.service_mesh.models.IngressGatewayHostRef
     oci.service_mesh.models.IngressGatewayListener
     oci.service_mesh.models.IngressGatewayMutualTransportLayerSecurity
+    oci.service_mesh.models.IngressGatewayMutualTransportLayerSecurityDetails
     oci.service_mesh.models.IngressGatewayRouteTable
     oci.service_mesh.models.IngressGatewayRouteTableCollection
     oci.service_mesh.models.IngressGatewayRouteTableSummary
     oci.service_mesh.models.IngressGatewaySummary
     oci.service_mesh.models.IngressGatewayTrafficRouteRule
+    oci.service_mesh.models.IngressGatewayTrafficRouteRuleDetails
     oci.service_mesh.models.IngressListenerClientValidationConfig
     oci.service_mesh.models.IngressListenerTlsConfig
     oci.service_mesh.models.LocalFileCaBundle
@@ -74,11 +82,16 @@ Service Mesh
     oci.service_mesh.models.ProxyDetails
     oci.service_mesh.models.ServiceDiscoveryConfiguration
     oci.service_mesh.models.TcpIngressGatewayTrafficRouteRule
+    oci.service_mesh.models.TcpIngressGatewayTrafficRouteRuleDetails
     oci.service_mesh.models.TcpVirtualServiceTrafficRouteRule
+    oci.service_mesh.models.TcpVirtualServiceTrafficRouteRuleDetails
     oci.service_mesh.models.TlsCertificate
     oci.service_mesh.models.TlsPassthroughIngressGatewayTrafficRouteRule
+    oci.service_mesh.models.TlsPassthroughIngressGatewayTrafficRouteRuleDetails
     oci.service_mesh.models.TlsPassthroughVirtualServiceTrafficRouteRule
+    oci.service_mesh.models.TlsPassthroughVirtualServiceTrafficRouteRuleDetails
     oci.service_mesh.models.TrafficRuleTarget
+    oci.service_mesh.models.TrafficRuleTargetDetails
     oci.service_mesh.models.UpdateAccessPolicyDetails
     oci.service_mesh.models.UpdateIngressGatewayDetails
     oci.service_mesh.models.UpdateIngressGatewayRouteTableDetails
@@ -91,15 +104,20 @@ Service Mesh
     oci.service_mesh.models.VirtualDeploymentListener
     oci.service_mesh.models.VirtualDeploymentSummary
     oci.service_mesh.models.VirtualDeploymentTrafficRuleTarget
+    oci.service_mesh.models.VirtualDeploymentTrafficRuleTargetDetails
     oci.service_mesh.models.VirtualService
     oci.service_mesh.models.VirtualServiceAccessPolicyTarget
+    oci.service_mesh.models.VirtualServiceAccessPolicyTargetDetails
     oci.service_mesh.models.VirtualServiceCollection
+    oci.service_mesh.models.VirtualServiceMutualTransportLayerSecurityDetails
     oci.service_mesh.models.VirtualServiceRouteTable
     oci.service_mesh.models.VirtualServiceRouteTableCollection
     oci.service_mesh.models.VirtualServiceRouteTableSummary
     oci.service_mesh.models.VirtualServiceSummary
     oci.service_mesh.models.VirtualServiceTrafficRouteRule
+    oci.service_mesh.models.VirtualServiceTrafficRouteRuleDetails
     oci.service_mesh.models.VirtualServiceTrafficRuleTarget
+    oci.service_mesh.models.VirtualServiceTrafficRuleTargetDetails
     oci.service_mesh.models.WorkRequest
     oci.service_mesh.models.WorkRequestCollection
     oci.service_mesh.models.WorkRequestError

@@ -69,7 +69,7 @@ class CreateDirectoryObject(object):
     @property
     def path(self):
         """
-        **[Required]** Gets the path of this CreateDirectoryObject.
+        Gets the path of this CreateDirectoryObject.
         Absolute path of directory on database server
 
 

@@ -195,6 +195,7 @@ Database
     oci.database.models.EnableExternalPluggableDatabaseDatabaseManagementDetails
     oci.database.models.EnableExternalPluggableDatabaseOperationsInsightsDetails
     oci.database.models.EnableExternalPluggableDatabaseStackMonitoringDetails
+    oci.database.models.EnablePluggableDatabaseManagementDetails
     oci.database.models.EstimatedPatchingTime
     oci.database.models.ExadataDbSystemMigration
     oci.database.models.ExadataDbSystemMigrationSummary
@@ -243,6 +244,7 @@ Database
     oci.database.models.MaintenanceWindow
     oci.database.models.MigrateVaultKeyDetails
     oci.database.models.ModifyDatabaseManagementDetails
+    oci.database.models.ModifyPluggableDatabaseManagementDetails
     oci.database.models.Month
     oci.database.models.MountTypeDetails
     oci.database.models.NodeDetails
@@ -259,6 +261,7 @@ Database
     oci.database.models.PeerAutonomousContainerDatabaseBackupConfig
     oci.database.models.PluggableDatabase
     oci.database.models.PluggableDatabaseConnectionStrings
+    oci.database.models.PluggableDatabaseManagementConfig
     oci.database.models.PluggableDatabaseSummary
     oci.database.models.RefreshableCloneCollection
     oci.database.models.RefreshableCloneSummary

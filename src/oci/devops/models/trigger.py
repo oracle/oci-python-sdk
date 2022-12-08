@@ -45,6 +45,10 @@ class Trigger(object):
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
 
+    #: A constant which can be used with the lifecycle_state property of a Trigger.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Trigger object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -96,7 +100,7 @@ class Trigger(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Trigger.
-            Allowed values for this property are: "ACTIVE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACTIVE", "DELETING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -413,7 +417,7 @@ class Trigger(object):
         Gets the lifecycle_state of this Trigger.
         The current state of the trigger.
 
-        Allowed values for this property are: "ACTIVE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACTIVE", "DELETING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -432,7 +436,7 @@ class Trigger(object):
         :param lifecycle_state: The lifecycle_state of this Trigger.
         :type: str
         """
-        allowed_values = ["ACTIVE"]
+        allowed_values = ["ACTIVE", "DELETING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

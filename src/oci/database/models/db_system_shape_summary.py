@@ -27,6 +27,10 @@ class DbSystemShapeSummary(object):
     #: This constant has a value of "INTEL"
     SHAPE_TYPE_INTEL = "INTEL"
 
+    #: A constant which can be used with the shape_type property of a DbSystemShapeSummary.
+    #: This constant has a value of "INTEL_FLEX_X9"
+    SHAPE_TYPE_INTEL_FLEX_X9 = "INTEL_FLEX_X9"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DbSystemShapeSummary object with values from keyword arguments.
@@ -42,7 +46,7 @@ class DbSystemShapeSummary(object):
 
         :param shape_type:
             The value to assign to the shape_type property of this DbSystemShapeSummary.
-            Allowed values for this property are: "AMD", "INTEL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AMD", "INTEL", "INTEL_FLEX_X9", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type shape_type: str
 
@@ -248,9 +252,9 @@ class DbSystemShapeSummary(object):
     def shape_type(self):
         """
         Gets the shape_type of this DbSystemShapeSummary.
-        The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` and `INTEL`.
+        The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` , `INTEL` or `INTEL_FLEX_X9`.
 
-        Allowed values for this property are: "AMD", "INTEL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AMD", "INTEL", "INTEL_FLEX_X9", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -263,13 +267,13 @@ class DbSystemShapeSummary(object):
     def shape_type(self, shape_type):
         """
         Sets the shape_type of this DbSystemShapeSummary.
-        The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` and `INTEL`.
+        The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` , `INTEL` or `INTEL_FLEX_X9`.
 
 
         :param shape_type: The shape_type of this DbSystemShapeSummary.
         :type: str
         """
-        allowed_values = ["AMD", "INTEL"]
+        allowed_values = ["AMD", "INTEL", "INTEL_FLEX_X9"]
         if not value_allowed_none_or_none_sentinel(shape_type, allowed_values):
             shape_type = 'UNKNOWN_ENUM_VALUE'
         self._shape_type = shape_type

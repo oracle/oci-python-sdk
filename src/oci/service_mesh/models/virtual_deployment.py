@@ -296,7 +296,7 @@ class VirtualDeployment(object):
     @property
     def service_discovery(self):
         """
-        **[Required]** Gets the service_discovery of this VirtualDeployment.
+        Gets the service_discovery of this VirtualDeployment.
 
         :return: The service_discovery of this VirtualDeployment.
         :rtype: oci.service_mesh.models.ServiceDiscoveryConfiguration
@@ -316,7 +316,7 @@ class VirtualDeployment(object):
     @property
     def listeners(self):
         """
-        **[Required]** Gets the listeners of this VirtualDeployment.
+        Gets the listeners of this VirtualDeployment.
         The listeners for the virtual deployment
 
 

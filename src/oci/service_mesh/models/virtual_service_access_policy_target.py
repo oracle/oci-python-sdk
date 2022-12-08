@@ -46,7 +46,7 @@ class VirtualServiceAccessPolicyTarget(AccessPolicyTarget):
     @property
     def virtual_service_id(self):
         """
-        **[Required]** Gets the virtual_service_id of this VirtualServiceAccessPolicyTarget.
+        Gets the virtual_service_id of this VirtualServiceAccessPolicyTarget.
         The OCID of the virtual service resource.
 
 

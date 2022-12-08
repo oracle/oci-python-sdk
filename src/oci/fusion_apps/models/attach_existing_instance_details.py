@@ -76,7 +76,7 @@ class AttachExistingInstanceDetails(CreateServiceAttachmentDetails):
     @property
     def service_instance_type(self):
         """
-        Gets the service_instance_type of this AttachExistingInstanceDetails.
+        **[Required]** Gets the service_instance_type of this AttachExistingInstanceDetails.
         Type of the ServiceInstance being attached.
 
         Allowed values for this property are: "INTEGRATION_CLOUD", "ANALYTICS_WAREHOUSE"
@@ -108,7 +108,7 @@ class AttachExistingInstanceDetails(CreateServiceAttachmentDetails):
     @property
     def instance_id(self):
         """
-        Gets the instance_id of this AttachExistingInstanceDetails.
+        **[Required]** Gets the instance_id of this AttachExistingInstanceDetails.
         The service instance OCID of the instance being attached
 
 

@@ -110,6 +110,10 @@ class MonitorSummary(object):
             The value to assign to the target property of this MonitorSummary.
         :type target: str
 
+        :param maintenance_window_schedule:
+            The value to assign to the maintenance_window_schedule property of this MonitorSummary.
+        :type maintenance_window_schedule: oci.apm_synthetics.models.MaintenanceWindowSchedule
+
         :param time_created:
             The value to assign to the time_created property of this MonitorSummary.
         :type time_created: datetime
@@ -154,6 +158,7 @@ class MonitorSummary(object):
             'is_run_once': 'bool',
             'timeout_in_seconds': 'int',
             'target': 'str',
+            'maintenance_window_schedule': 'MaintenanceWindowSchedule',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'freeform_tags': 'dict(str, str)',
@@ -176,6 +181,7 @@ class MonitorSummary(object):
             'is_run_once': 'isRunOnce',
             'timeout_in_seconds': 'timeoutInSeconds',
             'target': 'target',
+            'maintenance_window_schedule': 'maintenanceWindowSchedule',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'freeform_tags': 'freeformTags',
@@ -197,6 +203,7 @@ class MonitorSummary(object):
         self._is_run_once = None
         self._timeout_in_seconds = None
         self._target = None
+        self._maintenance_window_schedule = None
         self._time_created = None
         self._time_updated = None
         self._freeform_tags = None
@@ -473,7 +480,8 @@ class MonitorSummary(object):
     def timeout_in_seconds(self):
         """
         **[Required]** Gets the timeout_in_seconds of this MonitorSummary.
-        Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+        Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+        If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors.
         Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors.
         Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 
@@ -487,7 +495,8 @@ class MonitorSummary(object):
     def timeout_in_seconds(self, timeout_in_seconds):
         """
         Sets the timeout_in_seconds of this MonitorSummary.
-        Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+        Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+        If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors.
         Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors.
         Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 
@@ -526,6 +535,26 @@ class MonitorSummary(object):
         :type: str
         """
         self._target = target
+
+    @property
+    def maintenance_window_schedule(self):
+        """
+        Gets the maintenance_window_schedule of this MonitorSummary.
+
+        :return: The maintenance_window_schedule of this MonitorSummary.
+        :rtype: oci.apm_synthetics.models.MaintenanceWindowSchedule
+        """
+        return self._maintenance_window_schedule
+
+    @maintenance_window_schedule.setter
+    def maintenance_window_schedule(self, maintenance_window_schedule):
+        """
+        Sets the maintenance_window_schedule of this MonitorSummary.
+
+        :param maintenance_window_schedule: The maintenance_window_schedule of this MonitorSummary.
+        :type: oci.apm_synthetics.models.MaintenanceWindowSchedule
+        """
+        self._maintenance_window_schedule = maintenance_window_schedule
 
     @property
     def time_created(self):

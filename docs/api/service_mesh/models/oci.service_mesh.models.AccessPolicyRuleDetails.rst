@@ -1,0 +1,11 @@
+AccessPolicyRuleDetails
+=======================
+
+.. currentmodule:: oci.service_mesh.models
+
+.. autoclass:: AccessPolicyRuleDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

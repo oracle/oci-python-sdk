@@ -21,7 +21,7 @@ class UpdateKafkaConnectionDetails(UpdateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this UpdateKafkaConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS"
         :type connection_type: str
 
         :param display_name:
@@ -407,7 +407,7 @@ class UpdateKafkaConnectionDetails(UpdateConnectionDetails):
     def ssl_key_password(self):
         """
         Gets the ssl_key_password of this UpdateKafkaConnectionDetails.
-        The password for the cert inside of of the KeyStore.
+        The password for the cert inside of the KeyStore.
         In case it differs from the KeyStore password, it should be provided.
 
 
@@ -420,7 +420,7 @@ class UpdateKafkaConnectionDetails(UpdateConnectionDetails):
     def ssl_key_password(self, ssl_key_password):
         """
         Sets the ssl_key_password of this UpdateKafkaConnectionDetails.
-        The password for the cert inside of of the KeyStore.
+        The password for the cert inside of the KeyStore.
         In case it differs from the KeyStore password, it should be provided.
 
 

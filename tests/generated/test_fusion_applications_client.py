@@ -450,6 +450,48 @@ def test_delete_fusion_environment_family(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="fa-control-plane_us_grp@oracle.com" jiraProject="FACP" opsJiraProject="FACP"
+def test_delete_refresh_activity(testing_service_client):
+    if not testing_service_client.is_api_enabled('fusion_apps', 'DeleteRefreshActivity'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('fusion_apps', util.camelize('fusion_applications'), 'DeleteRefreshActivity')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='fusion_apps', api_name='DeleteRefreshActivity')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.fusion_apps.FusionApplicationsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_refresh_activity(
+                fusion_environment_id=request.pop(util.camelize('fusionEnvironmentId')),
+                refresh_activity_id=request.pop(util.camelize('refreshActivityId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'fusion_apps',
+            'DeleteRefreshActivity',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_refresh_activity',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="fa-control-plane_us_grp@oracle.com" jiraProject="FACP" opsJiraProject="FACP"
 def test_get_data_masking_activity(testing_service_client):
     if not testing_service_client.is_api_enabled('fusion_apps', 'GetDataMaskingActivity'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1656,6 +1698,49 @@ def test_update_fusion_environment_family(testing_service_client):
             result,
             service_error,
             'update_fusion_environment_family',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="fa-control-plane_us_grp@oracle.com" jiraProject="FACP" opsJiraProject="FACP"
+def test_update_refresh_activity(testing_service_client):
+    if not testing_service_client.is_api_enabled('fusion_apps', 'UpdateRefreshActivity'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('fusion_apps', util.camelize('fusion_applications'), 'UpdateRefreshActivity')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='fusion_apps', api_name='UpdateRefreshActivity')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.fusion_apps.FusionApplicationsClient(config, service_endpoint=service_endpoint)
+            response = client.update_refresh_activity(
+                fusion_environment_id=request.pop(util.camelize('fusionEnvironmentId')),
+                refresh_activity_id=request.pop(util.camelize('refreshActivityId')),
+                update_refresh_activity_details=request.pop(util.camelize('UpdateRefreshActivityDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'fusion_apps',
+            'UpdateRefreshActivity',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'refreshActivity',
             False,
             False
         )

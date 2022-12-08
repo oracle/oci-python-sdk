@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.facontrolplane</groupId>
         <artifactId>facp-control-plane-spec</artifactId>
-        <version>0.3.5909</version>
+        <version>1.3.65</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -104,6 +104,14 @@ class CreateMonitorDetails(object):
             The value to assign to the configuration property of this CreateMonitorDetails.
         :type configuration: oci.apm_synthetics.models.MonitorConfiguration
 
+        :param availability_configuration:
+            The value to assign to the availability_configuration property of this CreateMonitorDetails.
+        :type availability_configuration: oci.apm_synthetics.models.AvailabilityConfiguration
+
+        :param maintenance_window_schedule:
+            The value to assign to the maintenance_window_schedule property of this CreateMonitorDetails.
+        :type maintenance_window_schedule: oci.apm_synthetics.models.MaintenanceWindowSchedule
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateMonitorDetails.
         :type freeform_tags: dict(str, str)
@@ -138,6 +146,8 @@ class CreateMonitorDetails(object):
             'target': 'str',
             'script_parameters': 'list[MonitorScriptParameter]',
             'configuration': 'MonitorConfiguration',
+            'availability_configuration': 'AvailabilityConfiguration',
+            'maintenance_window_schedule': 'MaintenanceWindowSchedule',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'is_run_now': 'bool',
@@ -157,6 +167,8 @@ class CreateMonitorDetails(object):
             'target': 'target',
             'script_parameters': 'scriptParameters',
             'configuration': 'configuration',
+            'availability_configuration': 'availabilityConfiguration',
+            'maintenance_window_schedule': 'maintenanceWindowSchedule',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'is_run_now': 'isRunNow',
@@ -175,6 +187,8 @@ class CreateMonitorDetails(object):
         self._target = None
         self._script_parameters = None
         self._configuration = None
+        self._availability_configuration = None
+        self._maintenance_window_schedule = None
         self._freeform_tags = None
         self._defined_tags = None
         self._is_run_now = None
@@ -379,7 +393,8 @@ class CreateMonitorDetails(object):
     def timeout_in_seconds(self):
         """
         Gets the timeout_in_seconds of this CreateMonitorDetails.
-        Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+        Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+        If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors.
         Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors.
         Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 
@@ -393,7 +408,8 @@ class CreateMonitorDetails(object):
     def timeout_in_seconds(self, timeout_in_seconds):
         """
         Sets the timeout_in_seconds of this CreateMonitorDetails.
-        Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+        Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+        If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors.
         Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors.
         Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 
@@ -480,6 +496,46 @@ class CreateMonitorDetails(object):
         :type: oci.apm_synthetics.models.MonitorConfiguration
         """
         self._configuration = configuration
+
+    @property
+    def availability_configuration(self):
+        """
+        Gets the availability_configuration of this CreateMonitorDetails.
+
+        :return: The availability_configuration of this CreateMonitorDetails.
+        :rtype: oci.apm_synthetics.models.AvailabilityConfiguration
+        """
+        return self._availability_configuration
+
+    @availability_configuration.setter
+    def availability_configuration(self, availability_configuration):
+        """
+        Sets the availability_configuration of this CreateMonitorDetails.
+
+        :param availability_configuration: The availability_configuration of this CreateMonitorDetails.
+        :type: oci.apm_synthetics.models.AvailabilityConfiguration
+        """
+        self._availability_configuration = availability_configuration
+
+    @property
+    def maintenance_window_schedule(self):
+        """
+        Gets the maintenance_window_schedule of this CreateMonitorDetails.
+
+        :return: The maintenance_window_schedule of this CreateMonitorDetails.
+        :rtype: oci.apm_synthetics.models.MaintenanceWindowSchedule
+        """
+        return self._maintenance_window_schedule
+
+    @maintenance_window_schedule.setter
+    def maintenance_window_schedule(self, maintenance_window_schedule):
+        """
+        Sets the maintenance_window_schedule of this CreateMonitorDetails.
+
+        :param maintenance_window_schedule: The maintenance_window_schedule of this CreateMonitorDetails.
+        :type: oci.apm_synthetics.models.MaintenanceWindowSchedule
+        """
+        self._maintenance_window_schedule = maintenance_window_schedule
 
     @property
     def freeform_tags(self):

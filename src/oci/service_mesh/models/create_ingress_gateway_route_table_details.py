@@ -36,7 +36,7 @@ class CreateIngressGatewayRouteTableDetails(object):
 
         :param route_rules:
             The value to assign to the route_rules property of this CreateIngressGatewayRouteTableDetails.
-        :type route_rules: list[oci.service_mesh.models.IngressGatewayTrafficRouteRule]
+        :type route_rules: list[oci.service_mesh.models.IngressGatewayTrafficRouteRuleDetails]
 
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateIngressGatewayRouteTableDetails.
@@ -56,7 +56,7 @@ class CreateIngressGatewayRouteTableDetails(object):
             'name': 'str',
             'description': 'str',
             'priority': 'int',
-            'route_rules': 'list[IngressGatewayTrafficRouteRule]',
+            'route_rules': 'list[IngressGatewayTrafficRouteRuleDetails]',
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -198,7 +198,7 @@ class CreateIngressGatewayRouteTableDetails(object):
 
 
         :return: The route_rules of this CreateIngressGatewayRouteTableDetails.
-        :rtype: list[oci.service_mesh.models.IngressGatewayTrafficRouteRule]
+        :rtype: list[oci.service_mesh.models.IngressGatewayTrafficRouteRuleDetails]
         """
         return self._route_rules
 
@@ -210,7 +210,7 @@ class CreateIngressGatewayRouteTableDetails(object):
 
 
         :param route_rules: The route_rules of this CreateIngressGatewayRouteTableDetails.
-        :type: list[oci.service_mesh.models.IngressGatewayTrafficRouteRule]
+        :type: list[oci.service_mesh.models.IngressGatewayTrafficRouteRuleDetails]
         """
         self._route_rules = route_rules
 

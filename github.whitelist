@@ -165,3 +165,4 @@
 ^src/oci/disaster_recovery/.*\.py$
 ^src/oci/container_instances/.*\.py$
 ^src/oci/ai_document/.*\.py$
+^src/oci/queue/.*\.py$

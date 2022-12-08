@@ -22,6 +22,10 @@ class ConnectionSummary(object):
     CONNECTION_TYPE_KAFKA = "KAFKA"
 
     #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "KAFKA_SCHEMA_REGISTRY"
+    CONNECTION_TYPE_KAFKA_SCHEMA_REGISTRY = "KAFKA_SCHEMA_REGISTRY"
+
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
     #: This constant has a value of "MYSQL"
     CONNECTION_TYPE_MYSQL = "MYSQL"
 
@@ -33,22 +37,38 @@ class ConnectionSummary(object):
     #: This constant has a value of "ORACLE"
     CONNECTION_TYPE_ORACLE = "ORACLE"
 
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "AZURE_DATA_LAKE_STORAGE"
+    CONNECTION_TYPE_AZURE_DATA_LAKE_STORAGE = "AZURE_DATA_LAKE_STORAGE"
+
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "POSTGRESQL"
+    CONNECTION_TYPE_POSTGRESQL = "POSTGRESQL"
+
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "AZURE_SYNAPSE_ANALYTICS"
+    CONNECTION_TYPE_AZURE_SYNAPSE_ANALYTICS = "AZURE_SYNAPSE_ANALYTICS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ConnectionSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.golden_gate.models.GoldenGateConnectionSummary`
+        * :class:`~oci.golden_gate.models.KafkaSchemaRegistryConnectionSummary`
+        * :class:`~oci.golden_gate.models.PostgresqlConnectionSummary`
         * :class:`~oci.golden_gate.models.OracleConnectionSummary`
         * :class:`~oci.golden_gate.models.MysqlConnectionSummary`
         * :class:`~oci.golden_gate.models.KafkaConnectionSummary`
         * :class:`~oci.golden_gate.models.OciObjectStorageConnectionSummary`
+        * :class:`~oci.golden_gate.models.AzureDataLakeStorageConnectionSummary`
+        * :class:`~oci.golden_gate.models.AzureSynapseConnectionSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param connection_type:
             The value to assign to the connection_type property of this ConnectionSummary.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -186,6 +206,12 @@ class ConnectionSummary(object):
         if type == 'GOLDENGATE':
             return 'GoldenGateConnectionSummary'
 
+        if type == 'KAFKA_SCHEMA_REGISTRY':
+            return 'KafkaSchemaRegistryConnectionSummary'
+
+        if type == 'POSTGRESQL':
+            return 'PostgresqlConnectionSummary'
+
         if type == 'ORACLE':
             return 'OracleConnectionSummary'
 
@@ -197,6 +223,12 @@ class ConnectionSummary(object):
 
         if type == 'OCI_OBJECT_STORAGE':
             return 'OciObjectStorageConnectionSummary'
+
+        if type == 'AZURE_DATA_LAKE_STORAGE':
+            return 'AzureDataLakeStorageConnectionSummary'
+
+        if type == 'AZURE_SYNAPSE_ANALYTICS':
+            return 'AzureSynapseConnectionSummary'
         else:
             return 'ConnectionSummary'
 
@@ -206,7 +238,7 @@ class ConnectionSummary(object):
         **[Required]** Gets the connection_type of this ConnectionSummary.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -225,7 +257,7 @@ class ConnectionSummary(object):
         :param connection_type: The connection_type of this ConnectionSummary.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             connection_type = 'UNKNOWN_ENUM_VALUE'
         self._connection_type = connection_type

@@ -160,6 +160,47 @@ def test_cancel_deployment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_devlifecycle_group_us_grp@oracle.com" jiraProject="JIRA" opsJiraProject="JIRA-OPS"
+def test_cancel_scheduled_cascading_project_deletion(testing_service_client):
+    if not testing_service_client.is_api_enabled('devops', 'CancelScheduledCascadingProjectDeletion'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('devops', util.camelize('devops'), 'CancelScheduledCascadingProjectDeletion')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='devops', api_name='CancelScheduledCascadingProjectDeletion')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
+            response = client.cancel_scheduled_cascading_project_deletion(
+                project_id=request.pop(util.camelize('projectId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'devops',
+            'CancelScheduledCascadingProjectDeletion',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cancel_scheduled_cascading_project_deletion',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_devlifecycle_group_us_grp@oracle.com" jiraProject="JIRA" opsJiraProject="JIRA-OPS"
 def test_change_project_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('devops', 'ChangeProjectCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3517,6 +3558,47 @@ def test_put_repository_ref(testing_service_client):
             result,
             service_error,
             'repositoryRef',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_devlifecycle_group_us_grp@oracle.com" jiraProject="JIRA" opsJiraProject="JIRA-OPS"
+def test_schedule_cascading_project_deletion(testing_service_client):
+    if not testing_service_client.is_api_enabled('devops', 'ScheduleCascadingProjectDeletion'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('devops', util.camelize('devops'), 'ScheduleCascadingProjectDeletion')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='devops', api_name='ScheduleCascadingProjectDeletion')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
+            response = client.schedule_cascading_project_deletion(
+                project_id=request.pop(util.camelize('projectId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'devops',
+            'ScheduleCascadingProjectDeletion',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'schedule_cascading_project_deletion',
             False,
             False
         )

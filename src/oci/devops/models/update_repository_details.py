@@ -151,7 +151,9 @@ class UpdateRepositoryDetails(object):
     def repository_type(self):
         """
         Gets the repository_type of this UpdateRepositoryDetails.
-        Type of repository.
+        Type of repository. Allowed values:
+        `MIRRORED`
+        `HOSTED`
 
 
         :return: The repository_type of this UpdateRepositoryDetails.
@@ -163,7 +165,9 @@ class UpdateRepositoryDetails(object):
     def repository_type(self, repository_type):
         """
         Sets the repository_type of this UpdateRepositoryDetails.
-        Type of repository.
+        Type of repository. Allowed values:
+        `MIRRORED`
+        `HOSTED`
 
 
         :param repository_type: The repository_type of this UpdateRepositoryDetails.

@@ -46,7 +46,7 @@ class SourceIpAddressCondition(RuleCondition):
     @property
     def attribute_value(self):
         """
-        Gets the attribute_value of this SourceIpAddressCondition.
+        **[Required]** Gets the attribute_value of this SourceIpAddressCondition.
         An IPv4 or IPv6 address range that the source IP address of an incoming packet must match.
         The service accepts only classless inter-domain routing (CIDR) format (x.x.x.x/y or x:x::x/y) strings.
         Specify 0.0.0.0/0 or ::/0 to match all incoming traffic.

@@ -160,6 +160,8 @@ API Reference
 * :doc:`Ratecard <osub_subscription/client/oci.osub_subscription.RatecardClient>`
 * :doc:`Subscription <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.SubscriptionClient>`
 * :doc:`Computed Usage <osub_usage/client/oci.osub_usage.ComputedUsageClient>`
+* :doc:`Queue Admin <queue/client/oci.queue.QueueAdminClient>`
+* :doc:`Queue <queue/client/oci.queue.QueueClient>`
 * :doc:`Resource Manager <resource_manager/client/oci.resource_manager.ResourceManagerClient>`
 * :doc:`Resource Search <resource_search/client/oci.resource_search.ResourceSearchClient>`
 * :doc:`Rover Cluster <rover/client/oci.rover.RoverClusterClient>`
@@ -313,6 +315,7 @@ API Reference
     osub_organization_subscription
     osub_subscription
     osub_usage
+    queue
     resource_manager
     resource_search
     rover

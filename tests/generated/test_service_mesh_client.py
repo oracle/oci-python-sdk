@@ -34,6 +34,47 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="oci_servicemesh_ww_grp@oracle.com" jiraProject="MESH" opsJiraProject="MESH"
+def test_cancel_work_request(testing_service_client):
+    if not testing_service_client.is_api_enabled('service_mesh', 'CancelWorkRequest'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('service_mesh', util.camelize('service_mesh'), 'CancelWorkRequest')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='service_mesh', api_name='CancelWorkRequest')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
+            response = client.cancel_work_request(
+                work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'service_mesh',
+            'CancelWorkRequest',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cancel_work_request',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_servicemesh_ww_grp@oracle.com" jiraProject="MESH" opsJiraProject="MESH"
 def test_change_access_policy_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('service_mesh', 'ChangeAccessPolicyCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

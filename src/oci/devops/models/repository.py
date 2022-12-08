@@ -33,6 +33,10 @@ class Repository(object):
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
 
+    #: A constant which can be used with the lifecycle_state property of a Repository.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
     #: A constant which can be used with the trigger_build_events property of a Repository.
     #: This constant has a value of "PUSH"
     TRIGGER_BUILD_EVENTS_PUSH = "PUSH"
@@ -106,7 +110,7 @@ class Repository(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Repository.
-            Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -577,7 +581,7 @@ class Repository(object):
         Gets the lifecycle_state of this Repository.
         The current state of the repository.
 
-        Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -596,7 +600,7 @@ class Repository(object):
         :param lifecycle_state: The lifecycle_state of this Repository.
         :type: str
         """
-        allowed_values = ["ACTIVE", "CREATING", "DELETED"]
+        allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

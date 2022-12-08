@@ -60,7 +60,7 @@ class CreateNewInstanceDetails(CreateServiceAttachmentDetails):
     @property
     def details(self):
         """
-        Gets the details of this CreateNewInstanceDetails.
+        **[Required]** Gets the details of this CreateNewInstanceDetails.
 
         :return: The details of this CreateNewInstanceDetails.
         :rtype: oci.fusion_apps.models.CreateServiceInstanceDetails
