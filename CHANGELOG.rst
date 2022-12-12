@@ -4,13 +4,53 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.89.1 - TBD
+2.90.0 - 2022-12-13
 ====================
 
 Added
 -----
-* TBD
-
+* Support for the Queue service
+* Support for Intel X9 shapes when launching VM database systems in the Database service
+* Support for enabling, disabling, and editing Database Management service connections on pluggable databases in the Database service
+* Support for availability configurations and maintenance window schedules on synthetic monitors in the Application Performance Monitoring service
+* Support for scheduling cascading deletes on a project in the DevOps service
+* Support for cancelling a scheduled cascading delete on a project in the DevOps service
+* Support for issue and action fields on job phases of validation and migration processes in the Database Migration service
+* Support for cluster profiles in the Big Data service
+* Support for egress-only services in the Service Mesh service
+* Support for optional listeners and service discovery metadata on virtual deployments in the Service Mesh service
+* Support for canceling work requests in the accepted state in the Service Mesh service
+* Support for filtering work requests on associated resource id and operation status in the Service Mesh service
+* Support for sorting while listing work requests, listing work request logs, and listing work request errors in the Service Mesh service
+* Support for Oracle Managed Access integration in the Fusion Apps as a Service service
+* Support for refresh scheduling in the Fusion Apps as a Service service
+* Support for additional connections types on database resources in the GoldenGate service
+* Support for retries by default on operations of the Fusion Apps as a Service service
+* Support for retries by default on operations of the Database Migration service
+* Support for retries by default on operations of the Service Mesh service    
+ 
+Breaking
+--------
+* Support for default retries on operations of the Service Mesh service
+* Support for default retries on operations of the Database Migration service
+* Support for default retries on operations of the Fusion Apps as a Service service
+* The property `service_instance_type` changed from optional to required in the model `AttachExistingInstanceDetails` in Fusion Apps as a Service service
+* The property `instance_id` changed from optional to required in the model `AttachExistingInstanceDetails` in Fusion Apps as a Service service
+* The property `details` changed from optional to required in the model `CreateNewInstanceDetails` in Fusion Apps as a Service service
+* The property `name` changed from optional to required in the model `CreateOaxServiceInstanceDetails` in Fusion Apps as a Service service
+* The property `adw_admin_pass` changed from optional to required in the model `FawAdminInfoDetails` in Fusion Apps as a Service service
+* The property `notification_email` changed from optional to required in the model `FawAdminInfoDetails` in Fusion Apps as a Service service
+* The type of property `rules` changed from a list of `AccessPolicyRule` to list of `AccessPolicyRuleDetails` for model `CreateAccessPolicyDetails` in the Service Mesh service
+* The type of property `rules` changed from a list of `AccessPolicyRule` to list of `AccessPolicyRuleDetails` for model `UpdateAccessPolicyDetails` in the Service Mesh service
+* The type of property `mtls` changed from `CreateIngressGatewayMutualTransportLayerSecurityDetails` to `IngressGatewayMutualTransportLayerSecurityDetails` for model `CreateIngressGatewayDetails` in the Service Mesh service
+* The type of property `mtls` changed from `CreateIngressGatewayMutualTransportLayerSecurityDetails` to `IngressGatewayMutualTransportLayerSecurityDetails` for model `UpdateIngressGatewayDetails` in the Service Mesh service
+* The type of property `mtls` changed from `CreateMutualTransportLayerSecurityDetails` to `VirtualServiceMutualTransportLayerSecurityDetails` for model `CreateVirtualServiceDetails` in the Service Mesh service
+* The type of property `mtls` changed from `CreateMutualTransportLayerSecurityDetails` to `VirtualServiceMutualTransportLayerSecurityDetails` for model `UpdateVirtualServiceDetails` in the Service Mesh service
+* The type of property `route_rules` changed from list of `IngressGatewayTrafficRouteRule` to list of `IngressGatewayTrafficRouteRuleDetails` for model `CreateIngressGatewayRouteTableDetails` in the Service Mesh service
+* The type of property `route_rules` changed from list of `IngressGatewayTrafficRouteRule` to list of `IngressGatewayTrafficRouteRuleDetails` for model `UpdateIngressGatewayRouteTableDetails` in the Service Mesh service
+* The type of property `route_rules` changed from list of `VirtualServiceTrafficRouteRule` to list of `VirtualServiceTrafficRouteRuleDetails` for model `CreateVirtualServiceRouteTableDetails` in the Service Mesh service
+* The type of property `route_rules` changed from list of `VirtualServiceTrafficRouteRule` to list of `VirtualServiceTrafficRouteRuleDetails` for model `UpdateVirtualServiceRouteTableDetails` in the Service Mesh service
+ 
 ====================
 2.89.0 - 2022-12-06
 ====================
