@@ -146,7 +146,7 @@ class ContainerInstanceClient(object):
         resource_path = "/containerInstances/{containerInstanceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_container_instance_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/ChangeContainerInstanceCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -249,7 +249,7 @@ class ContainerInstanceClient(object):
         resource_path = "/containerInstances"
         method = "POST"
         operation_name = "create_container_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/CreateContainerInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -343,7 +343,7 @@ class ContainerInstanceClient(object):
         resource_path = "/containerInstances/{containerInstanceId}"
         method = "DELETE"
         operation_name = "delete_container_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/DeleteContainerInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -437,7 +437,7 @@ class ContainerInstanceClient(object):
         resource_path = "/containers/{containerId}"
         method = "GET"
         operation_name = "get_container"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/Container/GetContainer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -531,7 +531,7 @@ class ContainerInstanceClient(object):
         resource_path = "/containerInstances/{containerInstanceId}"
         method = "GET"
         operation_name = "get_container_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/GetContainerInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -625,7 +625,7 @@ class ContainerInstanceClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -730,7 +730,7 @@ class ContainerInstanceClient(object):
         resource_path = "/containerInstanceShapes"
         method = "GET"
         operation_name = "list_container_instance_shapes"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstanceShapeCollection/ListContainerInstanceShapes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -854,7 +854,7 @@ class ContainerInstanceClient(object):
         resource_path = "/containerInstances"
         method = "GET"
         operation_name = "list_container_instances"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstanceCollection/ListContainerInstances"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1010,7 +1010,7 @@ class ContainerInstanceClient(object):
         resource_path = "/containers"
         method = "GET"
         operation_name = "list_containers"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerCollection/ListContainers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1142,7 +1142,7 @@ class ContainerInstanceClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/WorkRequestErrorCollection/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1252,7 +1252,7 @@ class ContainerInstanceClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/WorkRequestLogEntryCollection/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1365,7 +1365,7 @@ class ContainerInstanceClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/WorkRequestSummaryCollection/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1467,7 +1467,7 @@ class ContainerInstanceClient(object):
         resource_path = "/containerInstances/{containerInstanceId}/actions/restart"
         method = "POST"
         operation_name = "restart_container_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/RestartContainerInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1561,7 +1561,7 @@ class ContainerInstanceClient(object):
         resource_path = "/containers/{containerId}/actions/retrieveLogs"
         method = "POST"
         operation_name = "retrieve_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/Container/RetrieveLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1662,7 +1662,7 @@ class ContainerInstanceClient(object):
         resource_path = "/containerInstances/{containerInstanceId}/actions/start"
         method = "POST"
         operation_name = "start_container_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/StartContainerInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1763,7 +1763,7 @@ class ContainerInstanceClient(object):
         resource_path = "/containerInstances/{containerInstanceId}/actions/stop"
         method = "POST"
         operation_name = "stop_container_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/StopContainerInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1867,7 +1867,7 @@ class ContainerInstanceClient(object):
         resource_path = "/containers/{containerId}"
         method = "PUT"
         operation_name = "update_container"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/Container/UpdateContainer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1973,7 +1973,7 @@ class ContainerInstanceClient(object):
         resource_path = "/containerInstances/{containerInstanceId}"
         method = "PUT"
         operation_name = "update_container_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/container-instances/20210415/ContainerInstance/UpdateContainerInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

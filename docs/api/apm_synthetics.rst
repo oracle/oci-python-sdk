@@ -21,6 +21,7 @@ Apm Synthetics
     oci.apm_synthetics.models.AggregateNetworkDataDetails
     oci.apm_synthetics.models.AggregatedNetworkData
     oci.apm_synthetics.models.AggregatedNetworkDataResult
+    oci.apm_synthetics.models.AvailabilityConfiguration
     oci.apm_synthetics.models.BrowserMonitorConfiguration
     oci.apm_synthetics.models.CreateDedicatedVantagePointDetails
     oci.apm_synthetics.models.CreateMonitorDetails
@@ -33,6 +34,7 @@ Apm Synthetics
     oci.apm_synthetics.models.GeoSummary
     oci.apm_synthetics.models.Header
     oci.apm_synthetics.models.Link
+    oci.apm_synthetics.models.MaintenanceWindowSchedule
     oci.apm_synthetics.models.Monitor
     oci.apm_synthetics.models.MonitorCollection
     oci.apm_synthetics.models.MonitorConfiguration

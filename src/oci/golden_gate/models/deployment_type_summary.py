@@ -37,6 +37,10 @@ class DeploymentTypeSummary(object):
     #: This constant has a value of "DATABASE_MYSQL"
     DEPLOYMENT_TYPE_DATABASE_MYSQL = "DATABASE_MYSQL"
 
+    #: A constant which can be used with the deployment_type property of a DeploymentTypeSummary.
+    #: This constant has a value of "DATABASE_POSTGRESQL"
+    DEPLOYMENT_TYPE_DATABASE_POSTGRESQL = "DATABASE_POSTGRESQL"
+
     #: A constant which can be used with the connection_types property of a DeploymentTypeSummary.
     #: This constant has a value of "GOLDENGATE"
     CONNECTION_TYPES_GOLDENGATE = "GOLDENGATE"
@@ -44,6 +48,10 @@ class DeploymentTypeSummary(object):
     #: A constant which can be used with the connection_types property of a DeploymentTypeSummary.
     #: This constant has a value of "KAFKA"
     CONNECTION_TYPES_KAFKA = "KAFKA"
+
+    #: A constant which can be used with the connection_types property of a DeploymentTypeSummary.
+    #: This constant has a value of "KAFKA_SCHEMA_REGISTRY"
+    CONNECTION_TYPES_KAFKA_SCHEMA_REGISTRY = "KAFKA_SCHEMA_REGISTRY"
 
     #: A constant which can be used with the connection_types property of a DeploymentTypeSummary.
     #: This constant has a value of "MYSQL"
@@ -56,6 +64,18 @@ class DeploymentTypeSummary(object):
     #: A constant which can be used with the connection_types property of a DeploymentTypeSummary.
     #: This constant has a value of "ORACLE"
     CONNECTION_TYPES_ORACLE = "ORACLE"
+
+    #: A constant which can be used with the connection_types property of a DeploymentTypeSummary.
+    #: This constant has a value of "AZURE_DATA_LAKE_STORAGE"
+    CONNECTION_TYPES_AZURE_DATA_LAKE_STORAGE = "AZURE_DATA_LAKE_STORAGE"
+
+    #: A constant which can be used with the connection_types property of a DeploymentTypeSummary.
+    #: This constant has a value of "POSTGRESQL"
+    CONNECTION_TYPES_POSTGRESQL = "POSTGRESQL"
+
+    #: A constant which can be used with the connection_types property of a DeploymentTypeSummary.
+    #: This constant has a value of "AZURE_SYNAPSE_ANALYTICS"
+    CONNECTION_TYPES_AZURE_SYNAPSE_ANALYTICS = "AZURE_SYNAPSE_ANALYTICS"
 
     def __init__(self, **kwargs):
         """
@@ -74,13 +94,13 @@ class DeploymentTypeSummary(object):
 
         :param deployment_type:
             The value to assign to the deployment_type property of this DeploymentTypeSummary.
-            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MYSQL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type deployment_type: str
 
         :param connection_types:
             The value to assign to the connection_types property of this DeploymentTypeSummary.
-            Allowed values for items in this list are: "GOLDENGATE", "KAFKA", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_types: list[str]
 
@@ -182,7 +202,7 @@ class DeploymentTypeSummary(object):
         NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged
               in favor of the equivalent 'DATABASE_ORACLE' value.
 
-        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MYSQL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -203,7 +223,7 @@ class DeploymentTypeSummary(object):
         :param deployment_type: The deployment_type of this DeploymentTypeSummary.
         :type: str
         """
-        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MYSQL"]
+        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"]
         if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
             deployment_type = 'UNKNOWN_ENUM_VALUE'
         self._deployment_type = deployment_type
@@ -214,7 +234,7 @@ class DeploymentTypeSummary(object):
         Gets the connection_types of this DeploymentTypeSummary.
         An array of connectionTypes.
 
-        Allowed values for items in this list are: "GOLDENGATE", "KAFKA", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -233,7 +253,7 @@ class DeploymentTypeSummary(object):
         :param connection_types: The connection_types of this DeploymentTypeSummary.
         :type: list[str]
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS"]
         if connection_types:
             connection_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in connection_types]
         self._connection_types = connection_types

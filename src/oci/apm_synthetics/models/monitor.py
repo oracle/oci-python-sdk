@@ -118,6 +118,14 @@ class Monitor(object):
             The value to assign to the configuration property of this Monitor.
         :type configuration: oci.apm_synthetics.models.MonitorConfiguration
 
+        :param availability_configuration:
+            The value to assign to the availability_configuration property of this Monitor.
+        :type availability_configuration: oci.apm_synthetics.models.AvailabilityConfiguration
+
+        :param maintenance_window_schedule:
+            The value to assign to the maintenance_window_schedule property of this Monitor.
+        :type maintenance_window_schedule: oci.apm_synthetics.models.MaintenanceWindowSchedule
+
         :param time_created:
             The value to assign to the time_created property of this Monitor.
         :type time_created: datetime
@@ -164,6 +172,8 @@ class Monitor(object):
             'target': 'str',
             'script_parameters': 'list[MonitorScriptParameterInfo]',
             'configuration': 'MonitorConfiguration',
+            'availability_configuration': 'AvailabilityConfiguration',
+            'maintenance_window_schedule': 'MaintenanceWindowSchedule',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'freeform_tags': 'dict(str, str)',
@@ -188,6 +198,8 @@ class Monitor(object):
             'target': 'target',
             'script_parameters': 'scriptParameters',
             'configuration': 'configuration',
+            'availability_configuration': 'availabilityConfiguration',
+            'maintenance_window_schedule': 'maintenanceWindowSchedule',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'freeform_tags': 'freeformTags',
@@ -211,6 +223,8 @@ class Monitor(object):
         self._target = None
         self._script_parameters = None
         self._configuration = None
+        self._availability_configuration = None
+        self._maintenance_window_schedule = None
         self._time_created = None
         self._time_updated = None
         self._freeform_tags = None
@@ -487,7 +501,8 @@ class Monitor(object):
     def timeout_in_seconds(self):
         """
         **[Required]** Gets the timeout_in_seconds of this Monitor.
-        Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+        Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+        If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors.
         Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors.
         Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 
@@ -501,7 +516,8 @@ class Monitor(object):
     def timeout_in_seconds(self, timeout_in_seconds):
         """
         Sets the timeout_in_seconds of this Monitor.
-        Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+        Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
+        If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors.
         Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors.
         Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 
@@ -584,6 +600,46 @@ class Monitor(object):
         :type: oci.apm_synthetics.models.MonitorConfiguration
         """
         self._configuration = configuration
+
+    @property
+    def availability_configuration(self):
+        """
+        Gets the availability_configuration of this Monitor.
+
+        :return: The availability_configuration of this Monitor.
+        :rtype: oci.apm_synthetics.models.AvailabilityConfiguration
+        """
+        return self._availability_configuration
+
+    @availability_configuration.setter
+    def availability_configuration(self, availability_configuration):
+        """
+        Sets the availability_configuration of this Monitor.
+
+        :param availability_configuration: The availability_configuration of this Monitor.
+        :type: oci.apm_synthetics.models.AvailabilityConfiguration
+        """
+        self._availability_configuration = availability_configuration
+
+    @property
+    def maintenance_window_schedule(self):
+        """
+        Gets the maintenance_window_schedule of this Monitor.
+
+        :return: The maintenance_window_schedule of this Monitor.
+        :rtype: oci.apm_synthetics.models.MaintenanceWindowSchedule
+        """
+        return self._maintenance_window_schedule
+
+    @maintenance_window_schedule.setter
+    def maintenance_window_schedule(self, maintenance_window_schedule):
+        """
+        Sets the maintenance_window_schedule of this Monitor.
+
+        :param maintenance_window_schedule: The maintenance_window_schedule of this Monitor.
+        :type: oci.apm_synthetics.models.MaintenanceWindowSchedule
+        """
+        self._maintenance_window_schedule = maintenance_window_schedule
 
     @property
     def time_created(self):

@@ -61,7 +61,7 @@ class VirtualDeploymentTrafficRuleTarget(TrafficRuleTarget):
     @property
     def virtual_deployment_id(self):
         """
-        **[Required]** Gets the virtual_deployment_id of this VirtualDeploymentTrafficRuleTarget.
+        Gets the virtual_deployment_id of this VirtualDeploymentTrafficRuleTarget.
         The OCID of the virtual deployment where the request will be routed.
 
 

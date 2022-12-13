@@ -115,6 +115,10 @@ class PluggableDatabase(object):
             The value to assign to the defined_tags property of this PluggableDatabase.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param pluggable_database_management_config:
+            The value to assign to the pluggable_database_management_config property of this PluggableDatabase.
+        :type pluggable_database_management_config: oci.database.models.PluggableDatabaseManagementConfig
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -128,7 +132,8 @@ class PluggableDatabase(object):
             'is_restricted': 'bool',
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'pluggable_database_management_config': 'PluggableDatabaseManagementConfig'
         }
 
         self.attribute_map = {
@@ -143,7 +148,8 @@ class PluggableDatabase(object):
             'is_restricted': 'isRestricted',
             'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'pluggable_database_management_config': 'pluggableDatabaseManagementConfig'
         }
 
         self._id = None
@@ -158,6 +164,7 @@ class PluggableDatabase(object):
         self._compartment_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._pluggable_database_management_config = None
 
     @property
     def id(self):
@@ -484,6 +491,26 @@ class PluggableDatabase(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def pluggable_database_management_config(self):
+        """
+        Gets the pluggable_database_management_config of this PluggableDatabase.
+
+        :return: The pluggable_database_management_config of this PluggableDatabase.
+        :rtype: oci.database.models.PluggableDatabaseManagementConfig
+        """
+        return self._pluggable_database_management_config
+
+    @pluggable_database_management_config.setter
+    def pluggable_database_management_config(self, pluggable_database_management_config):
+        """
+        Sets the pluggable_database_management_config of this PluggableDatabase.
+
+        :param pluggable_database_management_config: The pluggable_database_management_config of this PluggableDatabase.
+        :type: oci.database.models.PluggableDatabaseManagementConfig
+        """
+        self._pluggable_database_management_config = pluggable_database_management_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

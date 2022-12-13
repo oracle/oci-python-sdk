@@ -128,6 +128,10 @@ class ConnectionSummary(object):
             The value to assign to the system_tags property of this ConnectionSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this ConnectionSummary.
+        :type nsg_ids: list[str]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -143,7 +147,8 @@ class ConnectionSummary(object):
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'nsg_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -160,7 +165,8 @@ class ConnectionSummary(object):
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'nsg_ids': 'nsgIds'
         }
 
         self._id = None
@@ -177,6 +183,7 @@ class ConnectionSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._nsg_ids = None
 
     @property
     def id(self):
@@ -539,6 +546,30 @@ class ConnectionSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this ConnectionSummary.
+        An array of Network Security Group OCIDs used to define network access for Connections.
+
+
+        :return: The nsg_ids of this ConnectionSummary.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this ConnectionSummary.
+        An array of Network Security Group OCIDs used to define network access for Connections.
+
+
+        :param nsg_ids: The nsg_ids of this ConnectionSummary.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)

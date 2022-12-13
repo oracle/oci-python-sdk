@@ -100,6 +100,10 @@ class CreateConnectionDetails(object):
             The value to assign to the defined_tags property of this CreateConnectionDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this CreateConnectionDetails.
+        :type nsg_ids: list[str]
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -116,7 +120,8 @@ class CreateConnectionDetails(object):
             'private_endpoint': 'CreatePrivateEndpoint',
             'vault_details': 'CreateVaultDetails',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'nsg_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -134,7 +139,8 @@ class CreateConnectionDetails(object):
             'private_endpoint': 'privateEndpoint',
             'vault_details': 'vaultDetails',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'nsg_ids': 'nsgIds'
         }
 
         self._compartment_id = None
@@ -152,6 +158,7 @@ class CreateConnectionDetails(object):
         self._vault_details = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._nsg_ids = None
 
     @property
     def compartment_id(self):
@@ -514,6 +521,30 @@ class CreateConnectionDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this CreateConnectionDetails.
+        An array of Network Security Group OCIDs used to define network access for Connections.
+
+
+        :return: The nsg_ids of this CreateConnectionDetails.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this CreateConnectionDetails.
+        An array of Network Security Group OCIDs used to define network access for Connections.
+
+
+        :param nsg_ids: The nsg_ids of this CreateConnectionDetails.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)

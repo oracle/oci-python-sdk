@@ -22,6 +22,10 @@ class Connection(object):
     CONNECTION_TYPE_KAFKA = "KAFKA"
 
     #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "KAFKA_SCHEMA_REGISTRY"
+    CONNECTION_TYPE_KAFKA_SCHEMA_REGISTRY = "KAFKA_SCHEMA_REGISTRY"
+
+    #: A constant which can be used with the connection_type property of a Connection.
     #: This constant has a value of "MYSQL"
     CONNECTION_TYPE_MYSQL = "MYSQL"
 
@@ -32,6 +36,18 @@ class Connection(object):
     #: A constant which can be used with the connection_type property of a Connection.
     #: This constant has a value of "ORACLE"
     CONNECTION_TYPE_ORACLE = "ORACLE"
+
+    #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "AZURE_DATA_LAKE_STORAGE"
+    CONNECTION_TYPE_AZURE_DATA_LAKE_STORAGE = "AZURE_DATA_LAKE_STORAGE"
+
+    #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "POSTGRESQL"
+    CONNECTION_TYPE_POSTGRESQL = "POSTGRESQL"
+
+    #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "AZURE_SYNAPSE_ANALYTICS"
+    CONNECTION_TYPE_AZURE_SYNAPSE_ANALYTICS = "AZURE_SYNAPSE_ANALYTICS"
 
     #: A constant which can be used with the lifecycle_state property of a Connection.
     #: This constant has a value of "CREATING"
@@ -63,16 +79,20 @@ class Connection(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.golden_gate.models.KafkaConnection`
+        * :class:`~oci.golden_gate.models.PostgresqlConnection`
         * :class:`~oci.golden_gate.models.OciObjectStorageConnection`
+        * :class:`~oci.golden_gate.models.KafkaSchemaRegistryConnection`
         * :class:`~oci.golden_gate.models.GoldenGateConnection`
         * :class:`~oci.golden_gate.models.MysqlConnection`
         * :class:`~oci.golden_gate.models.OracleConnection`
+        * :class:`~oci.golden_gate.models.AzureDataLakeStorageConnection`
+        * :class:`~oci.golden_gate.models.AzureSynapseConnection`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param connection_type:
             The value to assign to the connection_type property of this Connection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -212,8 +232,14 @@ class Connection(object):
         if type == 'KAFKA':
             return 'KafkaConnection'
 
+        if type == 'POSTGRESQL':
+            return 'PostgresqlConnection'
+
         if type == 'OCI_OBJECT_STORAGE':
             return 'OciObjectStorageConnection'
+
+        if type == 'KAFKA_SCHEMA_REGISTRY':
+            return 'KafkaSchemaRegistryConnection'
 
         if type == 'GOLDENGATE':
             return 'GoldenGateConnection'
@@ -223,6 +249,12 @@ class Connection(object):
 
         if type == 'ORACLE':
             return 'OracleConnection'
+
+        if type == 'AZURE_DATA_LAKE_STORAGE':
+            return 'AzureDataLakeStorageConnection'
+
+        if type == 'AZURE_SYNAPSE_ANALYTICS':
+            return 'AzureSynapseConnection'
         else:
             return 'Connection'
 
@@ -232,7 +264,7 @@ class Connection(object):
         **[Required]** Gets the connection_type of this Connection.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -251,7 +283,7 @@ class Connection(object):
         :param connection_type: The connection_type of this Connection.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             connection_type = 'UNKNOWN_ENUM_VALUE'
         self._connection_type = connection_type

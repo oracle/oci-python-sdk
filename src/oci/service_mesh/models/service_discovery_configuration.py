@@ -17,18 +17,23 @@ class ServiceDiscoveryConfiguration(object):
     #: This constant has a value of "DNS"
     TYPE_DNS = "DNS"
 
+    #: A constant which can be used with the type property of a ServiceDiscoveryConfiguration.
+    #: This constant has a value of "DISABLED"
+    TYPE_DISABLED = "DISABLED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ServiceDiscoveryConfiguration object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.service_mesh.models.DnsServiceDiscoveryConfiguration`
+        * :class:`~oci.service_mesh.models.DisabledServiceDiscoveryConfiguration`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this ServiceDiscoveryConfiguration.
-            Allowed values for this property are: "DNS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DNS", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -53,6 +58,9 @@ class ServiceDiscoveryConfiguration(object):
 
         if type == 'DNS':
             return 'DnsServiceDiscoveryConfiguration'
+
+        if type == 'DISABLED':
+            return 'DisabledServiceDiscoveryConfiguration'
         else:
             return 'ServiceDiscoveryConfiguration'
 
@@ -62,7 +70,7 @@ class ServiceDiscoveryConfiguration(object):
         **[Required]** Gets the type of this ServiceDiscoveryConfiguration.
         Type of service discovery.
 
-        Allowed values for this property are: "DNS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DNS", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -81,7 +89,7 @@ class ServiceDiscoveryConfiguration(object):
         :param type: The type of this ServiceDiscoveryConfiguration.
         :type: str
         """
-        allowed_values = ["DNS"]
+        allowed_values = ["DNS", "DISABLED"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

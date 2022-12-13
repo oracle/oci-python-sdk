@@ -28,7 +28,7 @@ class UpdateIngressGatewayRouteTableDetails(object):
 
         :param route_rules:
             The value to assign to the route_rules property of this UpdateIngressGatewayRouteTableDetails.
-        :type route_rules: list[oci.service_mesh.models.IngressGatewayTrafficRouteRule]
+        :type route_rules: list[oci.service_mesh.models.IngressGatewayTrafficRouteRuleDetails]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateIngressGatewayRouteTableDetails.
@@ -42,7 +42,7 @@ class UpdateIngressGatewayRouteTableDetails(object):
         self.swagger_types = {
             'description': 'str',
             'priority': 'int',
-            'route_rules': 'list[IngressGatewayTrafficRouteRule]',
+            'route_rules': 'list[IngressGatewayTrafficRouteRuleDetails]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -123,7 +123,7 @@ class UpdateIngressGatewayRouteTableDetails(object):
 
 
         :return: The route_rules of this UpdateIngressGatewayRouteTableDetails.
-        :rtype: list[oci.service_mesh.models.IngressGatewayTrafficRouteRule]
+        :rtype: list[oci.service_mesh.models.IngressGatewayTrafficRouteRuleDetails]
         """
         return self._route_rules
 
@@ -135,7 +135,7 @@ class UpdateIngressGatewayRouteTableDetails(object):
 
 
         :param route_rules: The route_rules of this UpdateIngressGatewayRouteTableDetails.
-        :type: list[oci.service_mesh.models.IngressGatewayTrafficRouteRule]
+        :type: list[oci.service_mesh.models.IngressGatewayTrafficRouteRuleDetails]
         """
         self._route_rules = route_rules
 

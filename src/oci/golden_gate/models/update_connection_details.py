@@ -22,6 +22,10 @@ class UpdateConnectionDetails(object):
     CONNECTION_TYPE_KAFKA = "KAFKA"
 
     #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "KAFKA_SCHEMA_REGISTRY"
+    CONNECTION_TYPE_KAFKA_SCHEMA_REGISTRY = "KAFKA_SCHEMA_REGISTRY"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
     #: This constant has a value of "MYSQL"
     CONNECTION_TYPE_MYSQL = "MYSQL"
 
@@ -33,22 +37,38 @@ class UpdateConnectionDetails(object):
     #: This constant has a value of "ORACLE"
     CONNECTION_TYPE_ORACLE = "ORACLE"
 
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "AZURE_DATA_LAKE_STORAGE"
+    CONNECTION_TYPE_AZURE_DATA_LAKE_STORAGE = "AZURE_DATA_LAKE_STORAGE"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "POSTGRESQL"
+    CONNECTION_TYPE_POSTGRESQL = "POSTGRESQL"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "AZURE_SYNAPSE_ANALYTICS"
+    CONNECTION_TYPE_AZURE_SYNAPSE_ANALYTICS = "AZURE_SYNAPSE_ANALYTICS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.golden_gate.models.UpdatePostgresqlConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateOracleConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateKafkaSchemaRegistryConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateOciObjectStorageConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateMysqlConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateKafkaConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateAzureDataLakeStorageConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateGoldenGateConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateAzureSynapseConnectionDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param connection_type:
             The value to assign to the connection_type property of this UpdateConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS"
         :type connection_type: str
 
         :param display_name:
@@ -119,8 +139,14 @@ class UpdateConnectionDetails(object):
         """
         type = object_dictionary['connectionType']
 
+        if type == 'POSTGRESQL':
+            return 'UpdatePostgresqlConnectionDetails'
+
         if type == 'ORACLE':
             return 'UpdateOracleConnectionDetails'
+
+        if type == 'KAFKA_SCHEMA_REGISTRY':
+            return 'UpdateKafkaSchemaRegistryConnectionDetails'
 
         if type == 'OCI_OBJECT_STORAGE':
             return 'UpdateOciObjectStorageConnectionDetails'
@@ -131,8 +157,14 @@ class UpdateConnectionDetails(object):
         if type == 'KAFKA':
             return 'UpdateKafkaConnectionDetails'
 
+        if type == 'AZURE_DATA_LAKE_STORAGE':
+            return 'UpdateAzureDataLakeStorageConnectionDetails'
+
         if type == 'GOLDENGATE':
             return 'UpdateGoldenGateConnectionDetails'
+
+        if type == 'AZURE_SYNAPSE_ANALYTICS':
+            return 'UpdateAzureSynapseConnectionDetails'
         else:
             return 'UpdateConnectionDetails'
 
@@ -142,7 +174,7 @@ class UpdateConnectionDetails(object):
         Gets the connection_type of this UpdateConnectionDetails.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE"
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS"
 
 
         :return: The connection_type of this UpdateConnectionDetails.
@@ -160,7 +192,7 @@ class UpdateConnectionDetails(object):
         :param connection_type: The connection_type of this UpdateConnectionDetails.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             raise ValueError(
                 "Invalid value for `connection_type`, must be None or one of {0}"

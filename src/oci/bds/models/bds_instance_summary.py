@@ -54,6 +54,10 @@ class BdsInstanceSummary(object):
             The value to assign to the is_cloud_sql_configured property of this BdsInstanceSummary.
         :type is_cloud_sql_configured: bool
 
+        :param cluster_profile:
+            The value to assign to the cluster_profile property of this BdsInstanceSummary.
+        :type cluster_profile: str
+
         :param time_created:
             The value to assign to the time_created property of this BdsInstanceSummary.
         :type time_created: datetime
@@ -77,6 +81,7 @@ class BdsInstanceSummary(object):
             'is_high_availability': 'bool',
             'is_secure': 'bool',
             'is_cloud_sql_configured': 'bool',
+            'cluster_profile': 'str',
             'time_created': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -92,6 +97,7 @@ class BdsInstanceSummary(object):
             'is_high_availability': 'isHighAvailability',
             'is_secure': 'isSecure',
             'is_cloud_sql_configured': 'isCloudSqlConfigured',
+            'cluster_profile': 'clusterProfile',
             'time_created': 'timeCreated',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -106,6 +112,7 @@ class BdsInstanceSummary(object):
         self._is_high_availability = None
         self._is_secure = None
         self._is_cloud_sql_configured = None
+        self._cluster_profile = None
         self._time_created = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -325,6 +332,30 @@ class BdsInstanceSummary(object):
         :type: bool
         """
         self._is_cloud_sql_configured = is_cloud_sql_configured
+
+    @property
+    def cluster_profile(self):
+        """
+        Gets the cluster_profile of this BdsInstanceSummary.
+        Profile of the Big Data Service cluster.
+
+
+        :return: The cluster_profile of this BdsInstanceSummary.
+        :rtype: str
+        """
+        return self._cluster_profile
+
+    @cluster_profile.setter
+    def cluster_profile(self, cluster_profile):
+        """
+        Sets the cluster_profile of this BdsInstanceSummary.
+        Profile of the Big Data Service cluster.
+
+
+        :param cluster_profile: The cluster_profile of this BdsInstanceSummary.
+        :type: str
+        """
+        self._cluster_profile = cluster_profile
 
     @property
     def time_created(self):

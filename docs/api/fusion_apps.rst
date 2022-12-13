@@ -59,6 +59,7 @@ Fusion Apps
     oci.fusion_apps.models.RefreshActivityCollection
     oci.fusion_apps.models.RefreshActivitySummary
     oci.fusion_apps.models.RefreshDetails
+    oci.fusion_apps.models.RefreshIssueDetails
     oci.fusion_apps.models.ResetFusionEnvironmentPasswordDetails
     oci.fusion_apps.models.Rule
     oci.fusion_apps.models.RuleCondition
@@ -80,6 +81,7 @@ Fusion Apps
     oci.fusion_apps.models.UpdateFamilyMaintenancePolicyDetails
     oci.fusion_apps.models.UpdateFusionEnvironmentDetails
     oci.fusion_apps.models.UpdateFusionEnvironmentFamilyDetails
+    oci.fusion_apps.models.UpdateRefreshActivityDetails
     oci.fusion_apps.models.UpgradeAction
     oci.fusion_apps.models.VertexAction
     oci.fusion_apps.models.WorkRequest

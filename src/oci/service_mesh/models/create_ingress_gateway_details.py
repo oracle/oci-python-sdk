@@ -40,7 +40,7 @@ class CreateIngressGatewayDetails(object):
 
         :param mtls:
             The value to assign to the mtls property of this CreateIngressGatewayDetails.
-        :type mtls: oci.service_mesh.models.CreateIngressGatewayMutualTransportLayerSecurityDetails
+        :type mtls: oci.service_mesh.models.IngressGatewayMutualTransportLayerSecurityDetails
 
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateIngressGatewayDetails.
@@ -61,7 +61,7 @@ class CreateIngressGatewayDetails(object):
             'mesh_id': 'str',
             'hosts': 'list[IngressGatewayHost]',
             'access_logging': 'AccessLoggingConfiguration',
-            'mtls': 'CreateIngressGatewayMutualTransportLayerSecurityDetails',
+            'mtls': 'IngressGatewayMutualTransportLayerSecurityDetails',
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -223,7 +223,7 @@ class CreateIngressGatewayDetails(object):
         Gets the mtls of this CreateIngressGatewayDetails.
 
         :return: The mtls of this CreateIngressGatewayDetails.
-        :rtype: oci.service_mesh.models.CreateIngressGatewayMutualTransportLayerSecurityDetails
+        :rtype: oci.service_mesh.models.IngressGatewayMutualTransportLayerSecurityDetails
         """
         return self._mtls
 
@@ -233,7 +233,7 @@ class CreateIngressGatewayDetails(object):
         Sets the mtls of this CreateIngressGatewayDetails.
 
         :param mtls: The mtls of this CreateIngressGatewayDetails.
-        :type: oci.service_mesh.models.CreateIngressGatewayMutualTransportLayerSecurityDetails
+        :type: oci.service_mesh.models.IngressGatewayMutualTransportLayerSecurityDetails
         """
         self._mtls = mtls
 

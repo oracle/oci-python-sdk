@@ -53,9 +53,13 @@ class VbsAccessTokenConnection(Connection):
             The value to assign to the time_updated property of this VbsAccessTokenConnection.
         :type time_updated: datetime
 
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this VbsAccessTokenConnection.
+        :type lifecycle_details: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this VbsAccessTokenConnection.
-            Allowed values for this property are: "ACTIVE"
+            Allowed values for this property are: "ACTIVE", "DELETING"
         :type lifecycle_state: str
 
         :param freeform_tags:
@@ -88,6 +92,7 @@ class VbsAccessTokenConnection(Connection):
             'connection_type': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'lifecycle_details': 'str',
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -105,6 +110,7 @@ class VbsAccessTokenConnection(Connection):
             'connection_type': 'connectionType',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'lifecycle_details': 'lifecycleDetails',
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -121,6 +127,7 @@ class VbsAccessTokenConnection(Connection):
         self._connection_type = None
         self._time_created = None
         self._time_updated = None
+        self._lifecycle_details = None
         self._lifecycle_state = None
         self._freeform_tags = None
         self._defined_tags = None

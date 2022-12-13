@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FawAdminInfoDetails(object):
     """
-    Admin information to provision Analytics Warehouse Servcie.
+    Admin information to provision Analytics Warehouse Service.
     """
 
     def __init__(self, **kwargs):
@@ -50,7 +50,7 @@ class FawAdminInfoDetails(object):
     @property
     def adw_admin_pass(self):
         """
-        Gets the adw_admin_pass of this FawAdminInfoDetails.
+        **[Required]** Gets the adw_admin_pass of this FawAdminInfoDetails.
         Password for the ADW to be created in User Tenancy
 
 
@@ -98,7 +98,7 @@ class FawAdminInfoDetails(object):
     @property
     def notification_email(self):
         """
-        Gets the notification_email of this FawAdminInfoDetails.
+        **[Required]** Gets the notification_email of this FawAdminInfoDetails.
         Email ID to send notification for Analytics Warehouse updates.
 
 

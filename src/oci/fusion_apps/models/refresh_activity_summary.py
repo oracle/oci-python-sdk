@@ -66,6 +66,10 @@ class RefreshActivitySummary(object):
             The value to assign to the lifecycle_details property of this RefreshActivitySummary.
         :type lifecycle_details: str
 
+        :param refresh_issue_details_list:
+            The value to assign to the refresh_issue_details_list property of this RefreshActivitySummary.
+        :type refresh_issue_details_list: list[oci.fusion_apps.models.RefreshIssueDetails]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -79,7 +83,8 @@ class RefreshActivitySummary(object):
             'service_availability': 'str',
             'time_accepted': 'datetime',
             'time_updated': 'datetime',
-            'lifecycle_details': 'str'
+            'lifecycle_details': 'str',
+            'refresh_issue_details_list': 'list[RefreshIssueDetails]'
         }
 
         self.attribute_map = {
@@ -94,7 +99,8 @@ class RefreshActivitySummary(object):
             'service_availability': 'serviceAvailability',
             'time_accepted': 'timeAccepted',
             'time_updated': 'timeUpdated',
-            'lifecycle_details': 'lifecycleDetails'
+            'lifecycle_details': 'lifecycleDetails',
+            'refresh_issue_details_list': 'refreshIssueDetailsList'
         }
 
         self._id = None
@@ -109,6 +115,7 @@ class RefreshActivitySummary(object):
         self._time_accepted = None
         self._time_updated = None
         self._lifecycle_details = None
+        self._refresh_issue_details_list = None
 
     @property
     def id(self):
@@ -397,6 +404,30 @@ class RefreshActivitySummary(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def refresh_issue_details_list(self):
+        """
+        Gets the refresh_issue_details_list of this RefreshActivitySummary.
+        Details of refresh investigation information, each item represents a different issue.
+
+
+        :return: The refresh_issue_details_list of this RefreshActivitySummary.
+        :rtype: list[oci.fusion_apps.models.RefreshIssueDetails]
+        """
+        return self._refresh_issue_details_list
+
+    @refresh_issue_details_list.setter
+    def refresh_issue_details_list(self, refresh_issue_details_list):
+        """
+        Sets the refresh_issue_details_list of this RefreshActivitySummary.
+        Details of refresh investigation information, each item represents a different issue.
+
+
+        :param refresh_issue_details_list: The refresh_issue_details_list of this RefreshActivitySummary.
+        :type: list[oci.fusion_apps.models.RefreshIssueDetails]
+        """
+        self._refresh_issue_details_list = refresh_issue_details_list
 
     def __repr__(self):
         return formatted_flat_dict(self)

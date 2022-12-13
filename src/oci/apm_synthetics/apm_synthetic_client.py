@@ -1510,6 +1510,12 @@ class ApmSyntheticClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
+        :param bool is_maintenance_window_active: (optional)
+            A filter to return the monitors whose maintenance window is currently active.
+
+        :param bool is_maintenance_window_set: (optional)
+            A filter to return the monitors whose maintenance window is set.
+
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`). Default sort order is ascending.
 
@@ -1521,7 +1527,7 @@ class ApmSyntheticClient(object):
             Default order of timeCreated and timeUpdated is descending.
             The displayName sort by is case insensitive.
 
-            Allowed values are: "displayName", "timeCreated", "timeUpdated", "status", "monitorType"
+            Allowed values are: "displayName", "timeCreated", "timeUpdated", "status", "monitorType", "maintenanceWindowTimeStarted"
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -1561,6 +1567,8 @@ class ApmSyntheticClient(object):
             "status",
             "limit",
             "page",
+            "is_maintenance_window_active",
+            "is_maintenance_window_set",
             "sort_order",
             "sort_by",
             "opc_request_id"
@@ -1585,7 +1593,7 @@ class ApmSyntheticClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["displayName", "timeCreated", "timeUpdated", "status", "monitorType"]
+            sort_by_allowed_values = ["displayName", "timeCreated", "timeUpdated", "status", "monitorType", "maintenanceWindowTimeStarted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -1600,6 +1608,8 @@ class ApmSyntheticClient(object):
             "status": kwargs.get("status", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
+            "isMaintenanceWindowActive": kwargs.get("is_maintenance_window_active", missing),
+            "isMaintenanceWindowSet": kwargs.get("is_maintenance_window_set", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing)
         }
