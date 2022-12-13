@@ -21,7 +21,7 @@ class CreateMysqlConnectionDetails(CreateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateMysqlConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS"
         :type connection_type: str
 
         :param display_name:

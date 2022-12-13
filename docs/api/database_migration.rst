@@ -45,7 +45,6 @@ Database Migration
     oci.database_migration.models.CreateADBServerlesTablespaceDetails
     oci.database_migration.models.CreateAdminCredentials
     oci.database_migration.models.CreateAdvisorSettings
-    oci.database_migration.models.CreateAgentDetails
     oci.database_migration.models.CreateAwsS3Details
     oci.database_migration.models.CreateConnectDescriptor
     oci.database_migration.models.CreateConnectionDetails
@@ -82,7 +81,6 @@ Database Migration
     oci.database_migration.models.ExcludedObjectSummary
     oci.database_migration.models.ExcludedObjectSummaryCollection
     oci.database_migration.models.Extract
-    oci.database_migration.models.GenerateToken
     oci.database_migration.models.GoldenGateDetails
     oci.database_migration.models.GoldenGateHub
     oci.database_migration.models.GoldenGateSettings
@@ -109,7 +107,6 @@ Database Migration
     oci.database_migration.models.NonADBRemapTablespaceDetails
     oci.database_migration.models.ObjectStoreBucket
     oci.database_migration.models.OciCliDumpTransferDetails
-    oci.database_migration.models.ParLink
     oci.database_migration.models.PhaseExtractEntry
     oci.database_migration.models.PhaseStatus
     oci.database_migration.models.PrivateEndpointDetails

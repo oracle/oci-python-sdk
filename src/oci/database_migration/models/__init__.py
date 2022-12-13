@@ -31,7 +31,6 @@ from .create_adb_dedicated_remap_target_tablespace_details import CreateADBDedic
 from .create_adb_serverles_tablespace_details import CreateADBServerlesTablespaceDetails
 from .create_admin_credentials import CreateAdminCredentials
 from .create_advisor_settings import CreateAdvisorSettings
-from .create_agent_details import CreateAgentDetails
 from .create_aws_s3_details import CreateAwsS3Details
 from .create_connect_descriptor import CreateConnectDescriptor
 from .create_connection_details import CreateConnectionDetails
@@ -68,7 +67,6 @@ from .dump_transfer_details import DumpTransferDetails
 from .excluded_object_summary import ExcludedObjectSummary
 from .excluded_object_summary_collection import ExcludedObjectSummaryCollection
 from .extract import Extract
-from .generate_token import GenerateToken
 from .golden_gate_details import GoldenGateDetails
 from .golden_gate_hub import GoldenGateHub
 from .golden_gate_settings import GoldenGateSettings
@@ -95,7 +93,6 @@ from .non_adb_auto_create_tablespace_details import NonADBAutoCreateTablespaceDe
 from .non_adb_remap_tablespace_details import NonADBRemapTablespaceDetails
 from .object_store_bucket import ObjectStoreBucket
 from .oci_cli_dump_transfer_details import OciCliDumpTransferDetails
-from .par_link import ParLink
 from .phase_extract_entry import PhaseExtractEntry
 from .phase_status import PhaseStatus
 from .private_endpoint_details import PrivateEndpointDetails
@@ -178,7 +175,6 @@ database_migration_type_mapping = {
     "CreateADBServerlesTablespaceDetails": CreateADBServerlesTablespaceDetails,
     "CreateAdminCredentials": CreateAdminCredentials,
     "CreateAdvisorSettings": CreateAdvisorSettings,
-    "CreateAgentDetails": CreateAgentDetails,
     "CreateAwsS3Details": CreateAwsS3Details,
     "CreateConnectDescriptor": CreateConnectDescriptor,
     "CreateConnectionDetails": CreateConnectionDetails,
@@ -215,7 +211,6 @@ database_migration_type_mapping = {
     "ExcludedObjectSummary": ExcludedObjectSummary,
     "ExcludedObjectSummaryCollection": ExcludedObjectSummaryCollection,
     "Extract": Extract,
-    "GenerateToken": GenerateToken,
     "GoldenGateDetails": GoldenGateDetails,
     "GoldenGateHub": GoldenGateHub,
     "GoldenGateSettings": GoldenGateSettings,
@@ -242,7 +237,6 @@ database_migration_type_mapping = {
     "NonADBRemapTablespaceDetails": NonADBRemapTablespaceDetails,
     "ObjectStoreBucket": ObjectStoreBucket,
     "OciCliDumpTransferDetails": OciCliDumpTransferDetails,
-    "ParLink": ParLink,
     "PhaseExtractEntry": PhaseExtractEntry,
     "PhaseStatus": PhaseStatus,
     "PrivateEndpointDetails": PrivateEndpointDetails,

@@ -128,6 +128,14 @@ class FusionEnvironment(object):
             The value to assign to the additional_language_packs property of this FusionEnvironment.
         :type additional_language_packs: list[str]
 
+        :param lockbox_id:
+            The value to assign to the lockbox_id property of this FusionEnvironment.
+        :type lockbox_id: str
+
+        :param is_break_glass_enabled:
+            The value to assign to the is_break_glass_enabled property of this FusionEnvironment.
+        :type is_break_glass_enabled: bool
+
         :param refresh:
             The value to assign to the refresh property of this FusionEnvironment.
         :type refresh: oci.fusion_apps.models.RefreshDetails
@@ -185,6 +193,8 @@ class FusionEnvironment(object):
             'public_url': 'str',
             'dns_prefix': 'str',
             'additional_language_packs': 'list[str]',
+            'lockbox_id': 'str',
+            'is_break_glass_enabled': 'bool',
             'refresh': 'RefreshDetails',
             'rules': 'list[Rule]',
             'time_created': 'datetime',
@@ -214,6 +224,8 @@ class FusionEnvironment(object):
             'public_url': 'publicUrl',
             'dns_prefix': 'dnsPrefix',
             'additional_language_packs': 'additionalLanguagePacks',
+            'lockbox_id': 'lockboxId',
+            'is_break_glass_enabled': 'isBreakGlassEnabled',
             'refresh': 'refresh',
             'rules': 'rules',
             'time_created': 'timeCreated',
@@ -242,6 +254,8 @@ class FusionEnvironment(object):
         self._public_url = None
         self._dns_prefix = None
         self._additional_language_packs = None
+        self._lockbox_id = None
+        self._is_break_glass_enabled = None
         self._refresh = None
         self._rules = None
         self._time_created = None
@@ -661,6 +675,54 @@ class FusionEnvironment(object):
         :type: list[str]
         """
         self._additional_language_packs = additional_language_packs
+
+    @property
+    def lockbox_id(self):
+        """
+        Gets the lockbox_id of this FusionEnvironment.
+        The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+
+
+        :return: The lockbox_id of this FusionEnvironment.
+        :rtype: str
+        """
+        return self._lockbox_id
+
+    @lockbox_id.setter
+    def lockbox_id(self, lockbox_id):
+        """
+        Sets the lockbox_id of this FusionEnvironment.
+        The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+
+
+        :param lockbox_id: The lockbox_id of this FusionEnvironment.
+        :type: str
+        """
+        self._lockbox_id = lockbox_id
+
+    @property
+    def is_break_glass_enabled(self):
+        """
+        Gets the is_break_glass_enabled of this FusionEnvironment.
+        If it's true, then the Break Glass feature is enabled
+
+
+        :return: The is_break_glass_enabled of this FusionEnvironment.
+        :rtype: bool
+        """
+        return self._is_break_glass_enabled
+
+    @is_break_glass_enabled.setter
+    def is_break_glass_enabled(self, is_break_glass_enabled):
+        """
+        Sets the is_break_glass_enabled of this FusionEnvironment.
+        If it's true, then the Break Glass feature is enabled
+
+
+        :param is_break_glass_enabled: The is_break_glass_enabled of this FusionEnvironment.
+        :type: bool
+        """
+        self._is_break_glass_enabled = is_break_glass_enabled
 
     @property
     def refresh(self):

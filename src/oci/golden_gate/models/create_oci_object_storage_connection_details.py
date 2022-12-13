@@ -21,7 +21,7 @@ class CreateOciObjectStorageConnectionDetails(CreateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateOciObjectStorageConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS"
         :type connection_type: str
 
         :param display_name:
@@ -80,6 +80,10 @@ class CreateOciObjectStorageConnectionDetails(CreateConnectionDetails):
             The value to assign to the private_key_file property of this CreateOciObjectStorageConnectionDetails.
         :type private_key_file: str
 
+        :param private_key_passphrase:
+            The value to assign to the private_key_passphrase property of this CreateOciObjectStorageConnectionDetails.
+        :type private_key_passphrase: str
+
         :param public_key_fingerprint:
             The value to assign to the public_key_fingerprint property of this CreateOciObjectStorageConnectionDetails.
         :type public_key_fingerprint: str
@@ -101,6 +105,7 @@ class CreateOciObjectStorageConnectionDetails(CreateConnectionDetails):
             'region': 'str',
             'user_id': 'str',
             'private_key_file': 'str',
+            'private_key_passphrase': 'str',
             'public_key_fingerprint': 'str'
         }
 
@@ -120,6 +125,7 @@ class CreateOciObjectStorageConnectionDetails(CreateConnectionDetails):
             'region': 'region',
             'user_id': 'userId',
             'private_key_file': 'privateKeyFile',
+            'private_key_passphrase': 'privateKeyPassphrase',
             'public_key_fingerprint': 'publicKeyFingerprint'
         }
 
@@ -138,6 +144,7 @@ class CreateOciObjectStorageConnectionDetails(CreateConnectionDetails):
         self._region = None
         self._user_id = None
         self._private_key_file = None
+        self._private_key_passphrase = None
         self._public_key_fingerprint = None
         self._connection_type = 'OCI_OBJECT_STORAGE'
 
@@ -272,6 +279,30 @@ class CreateOciObjectStorageConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._private_key_file = private_key_file
+
+    @property
+    def private_key_passphrase(self):
+        """
+        Gets the private_key_passphrase of this CreateOciObjectStorageConnectionDetails.
+        The passphrase of the private key.
+
+
+        :return: The private_key_passphrase of this CreateOciObjectStorageConnectionDetails.
+        :rtype: str
+        """
+        return self._private_key_passphrase
+
+    @private_key_passphrase.setter
+    def private_key_passphrase(self, private_key_passphrase):
+        """
+        Sets the private_key_passphrase of this CreateOciObjectStorageConnectionDetails.
+        The passphrase of the private key.
+
+
+        :param private_key_passphrase: The private_key_passphrase of this CreateOciObjectStorageConnectionDetails.
+        :type: str
+        """
+        self._private_key_passphrase = private_key_passphrase
 
     @property
     def public_key_fingerprint(self):

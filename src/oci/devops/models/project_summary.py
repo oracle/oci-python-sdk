@@ -50,6 +50,10 @@ class ProjectSummary(object):
             The value to assign to the time_updated property of this ProjectSummary.
         :type time_updated: datetime
 
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this ProjectSummary.
+        :type lifecycle_details: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ProjectSummary.
         :type lifecycle_state: str
@@ -76,6 +80,7 @@ class ProjectSummary(object):
             'notification_config': 'NotificationConfig',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'lifecycle_details': 'str',
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -91,6 +96,7 @@ class ProjectSummary(object):
             'notification_config': 'notificationConfig',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'lifecycle_details': 'lifecycleDetails',
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -105,6 +111,7 @@ class ProjectSummary(object):
         self._notification_config = None
         self._time_created = None
         self._time_updated = None
+        self._lifecycle_details = None
         self._lifecycle_state = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -307,10 +314,34 @@ class ProjectSummary(object):
         self._time_updated = time_updated
 
     @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this ProjectSummary.
+        A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
+
+
+        :return: The lifecycle_details of this ProjectSummary.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this ProjectSummary.
+        A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
+
+
+        :param lifecycle_details: The lifecycle_details of this ProjectSummary.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
+
+    @property
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this ProjectSummary.
-        The current state of the deployment.
+        The current state of the project.
 
 
         :return: The lifecycle_state of this ProjectSummary.
@@ -322,7 +353,7 @@ class ProjectSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ProjectSummary.
-        The current state of the deployment.
+        The current state of the project.
 
 
         :param lifecycle_state: The lifecycle_state of this ProjectSummary.

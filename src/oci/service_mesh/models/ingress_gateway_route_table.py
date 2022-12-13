@@ -313,7 +313,7 @@ class IngressGatewayRouteTable(object):
     @property
     def route_rules(self):
         """
-        **[Required]** Gets the route_rules of this IngressGatewayRouteTable.
+        Gets the route_rules of this IngressGatewayRouteTable.
         The route rules for the ingress gateway.
 
 

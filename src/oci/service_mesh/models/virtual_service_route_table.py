@@ -313,7 +313,7 @@ class VirtualServiceRouteTable(object):
     @property
     def route_rules(self):
         """
-        **[Required]** Gets the route_rules of this VirtualServiceRouteTable.
+        Gets the route_rules of this VirtualServiceRouteTable.
         The route rules for the virtual service.
 
 

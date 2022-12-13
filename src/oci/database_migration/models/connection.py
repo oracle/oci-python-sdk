@@ -156,6 +156,10 @@ class Connection(object):
             The value to assign to the system_tags property of this Connection.
         :type system_tags: dict(str, dict(str, object))
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this Connection.
+        :type nsg_ids: list[str]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -178,7 +182,8 @@ class Connection(object):
             'time_updated': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'nsg_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -202,7 +207,8 @@ class Connection(object):
             'time_updated': 'timeUpdated',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'nsg_ids': 'nsgIds'
         }
 
         self._id = None
@@ -226,6 +232,7 @@ class Connection(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._nsg_ids = None
 
     @property
     def id(self):
@@ -736,6 +743,30 @@ class Connection(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this Connection.
+        An array of Network Security Group OCIDs used to define network access for Connections.
+
+
+        :return: The nsg_ids of this Connection.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this Connection.
+        An array of Network Security Group OCIDs used to define network access for Connections.
+
+
+        :param nsg_ids: The nsg_ids of this Connection.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)

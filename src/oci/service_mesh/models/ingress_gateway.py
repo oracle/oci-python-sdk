@@ -344,7 +344,7 @@ class IngressGateway(object):
     @property
     def hosts(self):
         """
-        **[Required]** Gets the hosts of this IngressGateway.
+        Gets the hosts of this IngressGateway.
         Array of hostnames and their listener configuration that this gateway will bind to.
 
 

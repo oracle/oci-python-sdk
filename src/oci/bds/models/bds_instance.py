@@ -73,6 +73,30 @@ class BdsInstance(object):
     #: This constant has a value of "ODH2_0"
     CLUSTER_VERSION_ODH2_0 = "ODH2_0"
 
+    #: A constant which can be used with the cluster_profile property of a BdsInstance.
+    #: This constant has a value of "HADOOP_EXTENDED"
+    CLUSTER_PROFILE_HADOOP_EXTENDED = "HADOOP_EXTENDED"
+
+    #: A constant which can be used with the cluster_profile property of a BdsInstance.
+    #: This constant has a value of "HADOOP"
+    CLUSTER_PROFILE_HADOOP = "HADOOP"
+
+    #: A constant which can be used with the cluster_profile property of a BdsInstance.
+    #: This constant has a value of "HIVE"
+    CLUSTER_PROFILE_HIVE = "HIVE"
+
+    #: A constant which can be used with the cluster_profile property of a BdsInstance.
+    #: This constant has a value of "SPARK"
+    CLUSTER_PROFILE_SPARK = "SPARK"
+
+    #: A constant which can be used with the cluster_profile property of a BdsInstance.
+    #: This constant has a value of "HBASE"
+    CLUSTER_PROFILE_HBASE = "HBASE"
+
+    #: A constant which can be used with the cluster_profile property of a BdsInstance.
+    #: This constant has a value of "TRINO"
+    CLUSTER_PROFILE_TRINO = "TRINO"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BdsInstance object with values from keyword arguments.
@@ -162,6 +186,12 @@ class BdsInstance(object):
             The value to assign to the kms_key_id property of this BdsInstance.
         :type kms_key_id: str
 
+        :param cluster_profile:
+            The value to assign to the cluster_profile property of this BdsInstance.
+            Allowed values for this property are: "HADOOP_EXTENDED", "HADOOP", "HIVE", "SPARK", "HBASE", "TRINO", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type cluster_profile: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -183,7 +213,8 @@ class BdsInstance(object):
             'bootstrap_script_url': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'kms_key_id': 'str'
+            'kms_key_id': 'str',
+            'cluster_profile': 'str'
         }
 
         self.attribute_map = {
@@ -206,7 +237,8 @@ class BdsInstance(object):
             'bootstrap_script_url': 'bootstrapScriptUrl',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'kms_key_id': 'kmsKeyId'
+            'kms_key_id': 'kmsKeyId',
+            'cluster_profile': 'clusterProfile'
         }
 
         self._id = None
@@ -229,6 +261,7 @@ class BdsInstance(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._kms_key_id = None
+        self._cluster_profile = None
 
     @property
     def id(self):
@@ -713,6 +746,36 @@ class BdsInstance(object):
         :type: str
         """
         self._kms_key_id = kms_key_id
+
+    @property
+    def cluster_profile(self):
+        """
+        Gets the cluster_profile of this BdsInstance.
+        Profile of the Big Data Service cluster.
+
+        Allowed values for this property are: "HADOOP_EXTENDED", "HADOOP", "HIVE", "SPARK", "HBASE", "TRINO", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The cluster_profile of this BdsInstance.
+        :rtype: str
+        """
+        return self._cluster_profile
+
+    @cluster_profile.setter
+    def cluster_profile(self, cluster_profile):
+        """
+        Sets the cluster_profile of this BdsInstance.
+        Profile of the Big Data Service cluster.
+
+
+        :param cluster_profile: The cluster_profile of this BdsInstance.
+        :type: str
+        """
+        allowed_values = ["HADOOP_EXTENDED", "HADOOP", "HIVE", "SPARK", "HBASE", "TRINO"]
+        if not value_allowed_none_or_none_sentinel(cluster_profile, allowed_values):
+            cluster_profile = 'UNKNOWN_ENUM_VALUE'
+        self._cluster_profile = cluster_profile
 
     def __repr__(self):
         return formatted_flat_dict(self)

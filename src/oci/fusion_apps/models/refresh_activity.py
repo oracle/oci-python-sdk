@@ -24,6 +24,10 @@ class RefreshActivity(object):
     LIFECYCLE_STATE_IN_PROGRESS = "IN_PROGRESS"
 
     #: A constant which can be used with the lifecycle_state property of a RefreshActivity.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
+    #: A constant which can be used with the lifecycle_state property of a RefreshActivity.
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
@@ -86,7 +90,7 @@ class RefreshActivity(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this RefreshActivity.
-            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "NEEDS_ATTENTION", "FAILED", "SUCCEEDED", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -116,6 +120,10 @@ class RefreshActivity(object):
             The value to assign to the time_updated property of this RefreshActivity.
         :type time_updated: datetime
 
+        :param refresh_issue_details_list:
+            The value to assign to the refresh_issue_details_list property of this RefreshActivity.
+        :type refresh_issue_details_list: list[oci.fusion_apps.models.RefreshIssueDetails]
+
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this RefreshActivity.
             Allowed values for this property are: "NONE", "ROLLBACKACCEPTED", "ROLLBACKINPROGRESS", "ROLLBACKSUCCEEDED", "ROLLBACKFAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -135,6 +143,7 @@ class RefreshActivity(object):
             'time_finished': 'datetime',
             'time_accepted': 'datetime',
             'time_updated': 'datetime',
+            'refresh_issue_details_list': 'list[RefreshIssueDetails]',
             'lifecycle_details': 'str'
         }
 
@@ -150,6 +159,7 @@ class RefreshActivity(object):
             'time_finished': 'timeFinished',
             'time_accepted': 'timeAccepted',
             'time_updated': 'timeUpdated',
+            'refresh_issue_details_list': 'refreshIssueDetailsList',
             'lifecycle_details': 'lifecycleDetails'
         }
 
@@ -164,6 +174,7 @@ class RefreshActivity(object):
         self._time_finished = None
         self._time_accepted = None
         self._time_updated = None
+        self._refresh_issue_details_list = None
         self._lifecycle_details = None
 
     @property
@@ -268,7 +279,7 @@ class RefreshActivity(object):
         **[Required]** Gets the lifecycle_state of this RefreshActivity.
         The current state of the refreshActivity.
 
-        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "NEEDS_ATTENTION", "FAILED", "SUCCEEDED", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -287,7 +298,7 @@ class RefreshActivity(object):
         :param lifecycle_state: The lifecycle_state of this RefreshActivity.
         :type: str
         """
-        allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED"]
+        allowed_values = ["ACCEPTED", "IN_PROGRESS", "NEEDS_ATTENTION", "FAILED", "SUCCEEDED", "CANCELED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -441,6 +452,30 @@ class RefreshActivity(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def refresh_issue_details_list(self):
+        """
+        Gets the refresh_issue_details_list of this RefreshActivity.
+        Details of refresh investigation information, each item represents a different issue.
+
+
+        :return: The refresh_issue_details_list of this RefreshActivity.
+        :rtype: list[oci.fusion_apps.models.RefreshIssueDetails]
+        """
+        return self._refresh_issue_details_list
+
+    @refresh_issue_details_list.setter
+    def refresh_issue_details_list(self, refresh_issue_details_list):
+        """
+        Sets the refresh_issue_details_list of this RefreshActivity.
+        Details of refresh investigation information, each item represents a different issue.
+
+
+        :param refresh_issue_details_list: The refresh_issue_details_list of this RefreshActivity.
+        :type: list[oci.fusion_apps.models.RefreshIssueDetails]
+        """
+        self._refresh_issue_details_list = refresh_issue_details_list
 
     @property
     def lifecycle_details(self):

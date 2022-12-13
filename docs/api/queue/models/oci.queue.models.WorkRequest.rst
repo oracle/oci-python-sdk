@@ -1,9 +1,9 @@
-ParLink
-=======
+WorkRequest
+===========
 
-.. currentmodule:: oci.database_migration.models
+.. currentmodule:: oci.queue.models
 
-.. autoclass:: ParLink
+.. autoclass:: WorkRequest
     :show-inheritance:
     :special-members: __init__
     :members:

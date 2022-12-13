@@ -1,9 +1,9 @@
-CreateAgentDetails
+CreateQueueDetails
 ==================
 
-.. currentmodule:: oci.database_migration.models
+.. currentmodule:: oci.queue.models
 
-.. autoclass:: CreateAgentDetails
+.. autoclass:: CreateQueueDetails
     :show-inheritance:
     :special-members: __init__
     :members:

@@ -54,7 +54,7 @@ class BitbucketServerTrigger(Trigger):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this BitbucketServerTrigger.
-            Allowed values for this property are: "ACTIVE"
+            Allowed values for this property are: "ACTIVE", "DELETING"
         :type lifecycle_state: str
 
         :param lifecycle_details:

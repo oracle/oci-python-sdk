@@ -1,9 +1,9 @@
-GenerateToken
-=============
+QueueSummary
+============
 
-.. currentmodule:: oci.database_migration.models
+.. currentmodule:: oci.queue.models
 
-.. autoclass:: GenerateToken
+.. autoclass:: QueueSummary
     :show-inheritance:
     :special-members: __init__
     :members:

@@ -130,6 +130,14 @@ class PhaseStatus(object):
             The value to assign to the is_advisor_report_available property of this PhaseStatus.
         :type is_advisor_report_available: bool
 
+        :param issue:
+            The value to assign to the issue property of this PhaseStatus.
+        :type issue: str
+
+        :param action:
+            The value to assign to the action property of this PhaseStatus.
+        :type action: str
+
         :param extract:
             The value to assign to the extract property of this PhaseStatus.
         :type extract: list[oci.database_migration.models.PhaseExtractEntry]
@@ -148,6 +156,8 @@ class PhaseStatus(object):
             'status': 'str',
             'duration_in_ms': 'int',
             'is_advisor_report_available': 'bool',
+            'issue': 'str',
+            'action': 'str',
             'extract': 'list[PhaseExtractEntry]',
             'log_location': 'LogLocationBucketDetails',
             'progress': 'int'
@@ -158,6 +168,8 @@ class PhaseStatus(object):
             'status': 'status',
             'duration_in_ms': 'durationInMs',
             'is_advisor_report_available': 'isAdvisorReportAvailable',
+            'issue': 'issue',
+            'action': 'action',
             'extract': 'extract',
             'log_location': 'logLocation',
             'progress': 'progress'
@@ -167,6 +179,8 @@ class PhaseStatus(object):
         self._status = None
         self._duration_in_ms = None
         self._is_advisor_report_available = None
+        self._issue = None
+        self._action = None
         self._extract = None
         self._log_location = None
         self._progress = None
@@ -278,6 +292,54 @@ class PhaseStatus(object):
         :type: bool
         """
         self._is_advisor_report_available = is_advisor_report_available
+
+    @property
+    def issue(self):
+        """
+        Gets the issue of this PhaseStatus.
+        The text describing the root cause of the reported issue
+
+
+        :return: The issue of this PhaseStatus.
+        :rtype: str
+        """
+        return self._issue
+
+    @issue.setter
+    def issue(self, issue):
+        """
+        Sets the issue of this PhaseStatus.
+        The text describing the root cause of the reported issue
+
+
+        :param issue: The issue of this PhaseStatus.
+        :type: str
+        """
+        self._issue = issue
+
+    @property
+    def action(self):
+        """
+        Gets the action of this PhaseStatus.
+        The text describing the action required to fix the issue
+
+
+        :return: The action of this PhaseStatus.
+        :rtype: str
+        """
+        return self._action
+
+    @action.setter
+    def action(self, action):
+        """
+        Sets the action of this PhaseStatus.
+        The text describing the action required to fix the issue
+
+
+        :param action: The action of this PhaseStatus.
+        :type: str
+        """
+        self._action = action
 
     @property
     def extract(self):

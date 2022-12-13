@@ -21,7 +21,7 @@ class DnsServiceDiscoveryConfiguration(ServiceDiscoveryConfiguration):
 
         :param type:
             The value to assign to the type property of this DnsServiceDiscoveryConfiguration.
-            Allowed values for this property are: "DNS"
+            Allowed values for this property are: "DNS", "DISABLED"
         :type type: str
 
         :param hostname:

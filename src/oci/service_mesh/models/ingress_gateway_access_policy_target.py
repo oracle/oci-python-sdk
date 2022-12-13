@@ -46,7 +46,7 @@ class IngressGatewayAccessPolicyTarget(AccessPolicyTarget):
     @property
     def ingress_gateway_id(self):
         """
-        **[Required]** Gets the ingress_gateway_id of this IngressGatewayAccessPolicyTarget.
+        Gets the ingress_gateway_id of this IngressGatewayAccessPolicyTarget.
         The OCID of the ingress gateway resource.
 
 

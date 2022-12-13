@@ -70,6 +70,14 @@ class FusionEnvironmentSummary(object):
             The value to assign to the additional_language_packs property of this FusionEnvironmentSummary.
         :type additional_language_packs: list[str]
 
+        :param lockbox_id:
+            The value to assign to the lockbox_id property of this FusionEnvironmentSummary.
+        :type lockbox_id: str
+
+        :param is_break_glass_enabled:
+            The value to assign to the is_break_glass_enabled property of this FusionEnvironmentSummary.
+        :type is_break_glass_enabled: bool
+
         :param time_created:
             The value to assign to the time_created property of this FusionEnvironmentSummary.
         :type time_created: datetime
@@ -109,6 +117,8 @@ class FusionEnvironmentSummary(object):
             'public_url': 'str',
             'dns_prefix': 'str',
             'additional_language_packs': 'list[str]',
+            'lockbox_id': 'str',
+            'is_break_glass_enabled': 'bool',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -131,6 +141,8 @@ class FusionEnvironmentSummary(object):
             'public_url': 'publicUrl',
             'dns_prefix': 'dnsPrefix',
             'additional_language_packs': 'additionalLanguagePacks',
+            'lockbox_id': 'lockboxId',
+            'is_break_glass_enabled': 'isBreakGlassEnabled',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -152,6 +164,8 @@ class FusionEnvironmentSummary(object):
         self._public_url = None
         self._dns_prefix = None
         self._additional_language_packs = None
+        self._lockbox_id = None
+        self._is_break_glass_enabled = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -466,6 +480,54 @@ class FusionEnvironmentSummary(object):
         :type: list[str]
         """
         self._additional_language_packs = additional_language_packs
+
+    @property
+    def lockbox_id(self):
+        """
+        Gets the lockbox_id of this FusionEnvironmentSummary.
+        The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+
+
+        :return: The lockbox_id of this FusionEnvironmentSummary.
+        :rtype: str
+        """
+        return self._lockbox_id
+
+    @lockbox_id.setter
+    def lockbox_id(self, lockbox_id):
+        """
+        Sets the lockbox_id of this FusionEnvironmentSummary.
+        The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+
+
+        :param lockbox_id: The lockbox_id of this FusionEnvironmentSummary.
+        :type: str
+        """
+        self._lockbox_id = lockbox_id
+
+    @property
+    def is_break_glass_enabled(self):
+        """
+        Gets the is_break_glass_enabled of this FusionEnvironmentSummary.
+        If it's true, then the Break Glass feature is enabled
+
+
+        :return: The is_break_glass_enabled of this FusionEnvironmentSummary.
+        :rtype: bool
+        """
+        return self._is_break_glass_enabled
+
+    @is_break_glass_enabled.setter
+    def is_break_glass_enabled(self, is_break_glass_enabled):
+        """
+        Sets the is_break_glass_enabled of this FusionEnvironmentSummary.
+        If it's true, then the Break Glass feature is enabled
+
+
+        :param is_break_glass_enabled: The is_break_glass_enabled of this FusionEnvironmentSummary.
+        :type: bool
+        """
+        self._is_break_glass_enabled = is_break_glass_enabled
 
     @property
     def time_created(self):

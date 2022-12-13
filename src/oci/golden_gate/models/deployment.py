@@ -113,6 +113,10 @@ class Deployment(object):
     #: This constant has a value of "DATABASE_MYSQL"
     DEPLOYMENT_TYPE_DATABASE_MYSQL = "DATABASE_MYSQL"
 
+    #: A constant which can be used with the deployment_type property of a Deployment.
+    #: This constant has a value of "DATABASE_POSTGRESQL"
+    DEPLOYMENT_TYPE_DATABASE_POSTGRESQL = "DATABASE_POSTGRESQL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Deployment object with values from keyword arguments.
@@ -238,7 +242,7 @@ class Deployment(object):
 
         :param deployment_type:
             The value to assign to the deployment_type property of this Deployment.
-            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MYSQL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type deployment_type: str
 
@@ -1113,7 +1117,7 @@ class Deployment(object):
         NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged
               in favor of the equivalent 'DATABASE_ORACLE' value.
 
-        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MYSQL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -1134,7 +1138,7 @@ class Deployment(object):
         :param deployment_type: The deployment_type of this Deployment.
         :type: str
         """
-        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MYSQL"]
+        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"]
         if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
             deployment_type = 'UNKNOWN_ENUM_VALUE'
         self._deployment_type = deployment_type

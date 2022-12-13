@@ -181,6 +181,7 @@ from .enable_external_non_container_database_stack_monitoring_details import Ena
 from .enable_external_pluggable_database_database_management_details import EnableExternalPluggableDatabaseDatabaseManagementDetails
 from .enable_external_pluggable_database_operations_insights_details import EnableExternalPluggableDatabaseOperationsInsightsDetails
 from .enable_external_pluggable_database_stack_monitoring_details import EnableExternalPluggableDatabaseStackMonitoringDetails
+from .enable_pluggable_database_management_details import EnablePluggableDatabaseManagementDetails
 from .estimated_patching_time import EstimatedPatchingTime
 from .exadata_db_system_migration import ExadataDbSystemMigration
 from .exadata_db_system_migration_summary import ExadataDbSystemMigrationSummary
@@ -229,6 +230,7 @@ from .maintenance_run_summary import MaintenanceRunSummary
 from .maintenance_window import MaintenanceWindow
 from .migrate_vault_key_details import MigrateVaultKeyDetails
 from .modify_database_management_details import ModifyDatabaseManagementDetails
+from .modify_pluggable_database_management_details import ModifyPluggableDatabaseManagementDetails
 from .month import Month
 from .mount_type_details import MountTypeDetails
 from .node_details import NodeDetails
@@ -245,6 +247,7 @@ from .pdb_conversion_to_new_database_details import PdbConversionToNewDatabaseDe
 from .peer_autonomous_container_database_backup_config import PeerAutonomousContainerDatabaseBackupConfig
 from .pluggable_database import PluggableDatabase
 from .pluggable_database_connection_strings import PluggableDatabaseConnectionStrings
+from .pluggable_database_management_config import PluggableDatabaseManagementConfig
 from .pluggable_database_summary import PluggableDatabaseSummary
 from .refreshable_clone_collection import RefreshableCloneCollection
 from .refreshable_clone_summary import RefreshableCloneSummary
@@ -488,6 +491,7 @@ database_type_mapping = {
     "EnableExternalPluggableDatabaseDatabaseManagementDetails": EnableExternalPluggableDatabaseDatabaseManagementDetails,
     "EnableExternalPluggableDatabaseOperationsInsightsDetails": EnableExternalPluggableDatabaseOperationsInsightsDetails,
     "EnableExternalPluggableDatabaseStackMonitoringDetails": EnableExternalPluggableDatabaseStackMonitoringDetails,
+    "EnablePluggableDatabaseManagementDetails": EnablePluggableDatabaseManagementDetails,
     "EstimatedPatchingTime": EstimatedPatchingTime,
     "ExadataDbSystemMigration": ExadataDbSystemMigration,
     "ExadataDbSystemMigrationSummary": ExadataDbSystemMigrationSummary,
@@ -536,6 +540,7 @@ database_type_mapping = {
     "MaintenanceWindow": MaintenanceWindow,
     "MigrateVaultKeyDetails": MigrateVaultKeyDetails,
     "ModifyDatabaseManagementDetails": ModifyDatabaseManagementDetails,
+    "ModifyPluggableDatabaseManagementDetails": ModifyPluggableDatabaseManagementDetails,
     "Month": Month,
     "MountTypeDetails": MountTypeDetails,
     "NodeDetails": NodeDetails,
@@ -552,6 +557,7 @@ database_type_mapping = {
     "PeerAutonomousContainerDatabaseBackupConfig": PeerAutonomousContainerDatabaseBackupConfig,
     "PluggableDatabase": PluggableDatabase,
     "PluggableDatabaseConnectionStrings": PluggableDatabaseConnectionStrings,
+    "PluggableDatabaseManagementConfig": PluggableDatabaseManagementConfig,
     "PluggableDatabaseSummary": PluggableDatabaseSummary,
     "RefreshableCloneCollection": RefreshableCloneCollection,
     "RefreshableCloneSummary": RefreshableCloneSummary,

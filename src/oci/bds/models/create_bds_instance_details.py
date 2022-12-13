@@ -74,6 +74,10 @@ class CreateBdsInstanceDetails(object):
             The value to assign to the kms_key_id property of this CreateBdsInstanceDetails.
         :type kms_key_id: str
 
+        :param cluster_profile:
+            The value to assign to the cluster_profile property of this CreateBdsInstanceDetails.
+        :type cluster_profile: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -89,7 +93,8 @@ class CreateBdsInstanceDetails(object):
             'kerberos_realm_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'kms_key_id': 'str'
+            'kms_key_id': 'str',
+            'cluster_profile': 'str'
         }
 
         self.attribute_map = {
@@ -106,7 +111,8 @@ class CreateBdsInstanceDetails(object):
             'kerberos_realm_name': 'kerberosRealmName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'kms_key_id': 'kmsKeyId'
+            'kms_key_id': 'kmsKeyId',
+            'cluster_profile': 'clusterProfile'
         }
 
         self._compartment_id = None
@@ -123,6 +129,7 @@ class CreateBdsInstanceDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._kms_key_id = None
+        self._cluster_profile = None
 
     @property
     def compartment_id(self):
@@ -459,6 +466,30 @@ class CreateBdsInstanceDetails(object):
         :type: str
         """
         self._kms_key_id = kms_key_id
+
+    @property
+    def cluster_profile(self):
+        """
+        Gets the cluster_profile of this CreateBdsInstanceDetails.
+        Profile of the Big Data Service cluster.
+
+
+        :return: The cluster_profile of this CreateBdsInstanceDetails.
+        :rtype: str
+        """
+        return self._cluster_profile
+
+    @cluster_profile.setter
+    def cluster_profile(self, cluster_profile):
+        """
+        Sets the cluster_profile of this CreateBdsInstanceDetails.
+        Profile of the Big Data Service cluster.
+
+
+        :param cluster_profile: The cluster_profile of this CreateBdsInstanceDetails.
+        :type: str
+        """
+        self._cluster_profile = cluster_profile
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -22,16 +22,23 @@ class CreateRefreshActivityDetails(object):
             The value to assign to the source_fusion_environment_id property of this CreateRefreshActivityDetails.
         :type source_fusion_environment_id: str
 
+        :param time_scheduled_start:
+            The value to assign to the time_scheduled_start property of this CreateRefreshActivityDetails.
+        :type time_scheduled_start: datetime
+
         """
         self.swagger_types = {
-            'source_fusion_environment_id': 'str'
+            'source_fusion_environment_id': 'str',
+            'time_scheduled_start': 'datetime'
         }
 
         self.attribute_map = {
-            'source_fusion_environment_id': 'sourceFusionEnvironmentId'
+            'source_fusion_environment_id': 'sourceFusionEnvironmentId',
+            'time_scheduled_start': 'timeScheduledStart'
         }
 
         self._source_fusion_environment_id = None
+        self._time_scheduled_start = None
 
     @property
     def source_fusion_environment_id(self):
@@ -60,6 +67,30 @@ class CreateRefreshActivityDetails(object):
         :type: str
         """
         self._source_fusion_environment_id = source_fusion_environment_id
+
+    @property
+    def time_scheduled_start(self):
+        """
+        Gets the time_scheduled_start of this CreateRefreshActivityDetails.
+        Current time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
+
+
+        :return: The time_scheduled_start of this CreateRefreshActivityDetails.
+        :rtype: datetime
+        """
+        return self._time_scheduled_start
+
+    @time_scheduled_start.setter
+    def time_scheduled_start(self, time_scheduled_start):
+        """
+        Sets the time_scheduled_start of this CreateRefreshActivityDetails.
+        Current time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
+
+
+        :param time_scheduled_start: The time_scheduled_start of this CreateRefreshActivityDetails.
+        :type: datetime
+        """
+        self._time_scheduled_start = time_scheduled_start
 
     def __repr__(self):
         return formatted_flat_dict(self)
