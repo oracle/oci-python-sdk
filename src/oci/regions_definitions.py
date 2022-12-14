@@ -36,6 +36,7 @@ REGIONS_SHORT_NAMES = {
     'cdg': 'eu-paris-1',
     'qro': 'mx-queretaro-1',
     'mad': 'eu-madrid-1',
+    'ord': 'us-chicago-1',
     'lfi': 'us-langley-1',
     'luf': 'us-luke-1',
     'ric': 'us-gov-ashburn-1',
@@ -83,6 +84,7 @@ REGION_REALMS = {
     'eu-paris-1': 'oc1',
     'mx-queretaro-1': 'oc1',
     'eu-madrid-1': 'oc1',
+    'us-chicago-1': 'oc1',
 
     'us-langley-1': 'oc2',
     'us-luke-1': 'oc2',
@@ -147,6 +149,7 @@ REGIONS = [
     'eu-paris-1',
     'mx-queretaro-1',
     'eu-madrid-1',
+    'us-chicago-1',
     'us-langley-1',
     'us-luke-1',
     'us-gov-ashburn-1',
