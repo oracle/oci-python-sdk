@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 from __future__ import absolute_import
@@ -139,7 +139,7 @@ class QueueClient(object):
         resource_path = "/queues/{queueId}/messages/{messageReceipt}"
         method = "DELETE"
         operation_name = "delete_message"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/DeleteMessage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -235,7 +235,7 @@ class QueueClient(object):
         resource_path = "/queues/{queueId}/messages/actions/deleteMessages"
         method = "POST"
         operation_name = "delete_messages"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/DeleteMessages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -347,7 +347,7 @@ class QueueClient(object):
         resource_path = "/queues/{queueId}/messages"
         method = "GET"
         operation_name = "get_messages"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/GetMessages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -451,7 +451,7 @@ class QueueClient(object):
         resource_path = "/queues/{queueId}/stats"
         method = "GET"
         operation_name = "get_stats"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/queue/20210201/QueueStats/GetStats"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -548,7 +548,7 @@ class QueueClient(object):
         resource_path = "/queues/{queueId}/messages"
         method = "POST"
         operation_name = "put_messages"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/queue/20210201/PutMessage/PutMessages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -648,7 +648,7 @@ class QueueClient(object):
         resource_path = "/queues/{queueId}/messages/{messageReceipt}"
         method = "PUT"
         operation_name = "update_message"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/queue/20210201/UpdatedMessage/UpdateMessage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -748,7 +748,7 @@ class QueueClient(object):
         resource_path = "/queues/{queueId}/messages/actions/updateMessages"
         method = "POST"
         operation_name = "update_messages"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/queue/20210201/GetMessage/UpdateMessages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
