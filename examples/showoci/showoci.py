@@ -75,6 +75,7 @@
 # - oci.key_management.KmsVaultClient
 # - oci.data_integration.DataIntegrationClient
 # - oci.visual_builder.VbInstanceClient
+# - oci.data_connectivity.models.RegistrySummary
 #
 # Modules Not Yet Covered:
 # - oci.blockchain.BlockchainPlatformClient
@@ -106,7 +107,7 @@ import datetime
 import contextlib
 import os
 
-version = "22.11.15"
+version = "23.01.10"
 
 ##########################################################################
 # check OCI version
