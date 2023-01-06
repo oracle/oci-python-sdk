@@ -4554,15 +4554,18 @@ class ShowOCIService(object):
                                 ##############################
                                 # if policy is ThresholdPolicy
                                 ##############################
-                                if pol.policy_type == "threshold":
-                                    for rule in pol.rules:
-                                        if pol.action and pol.metric:
-                                            valpol['rules'].append(
-                                                str(rule.action.type) + " " +
-                                                str(rule.action.value).ljust(3) + " when " +
-                                                str(rule.metric.metric_type) + " " +
-                                                str(rule.metric.threshold.operator) + " " +
-                                                str(rule.metric.threshold.value))
+                                try:
+                                    if pol.policy_type == "threshold":
+                                        for rule in pol.rules:
+                                            if rule.action and rule.metric:
+                                                valpol['rules'].append(
+                                                    str(rule.action.type) + " " +
+                                                    str(rule.action.value).ljust(3) + " when " +
+                                                    str(rule.metric.metric_type) + " " +
+                                                    str(rule.metric.threshold.operator) + " " +
+                                                    str(rule.metric.threshold.value))
+                                except Exception:
+                                    pass
 
                                 # add policy
                                 val['policies'].append(valpol)
