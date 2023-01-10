@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 from __future__ import absolute_import
@@ -143,7 +143,7 @@ class AIServiceDocumentClient(object):
         resource_path = "/processorJobs/{processorJobId}/actions/cancel"
         method = "POST"
         operation_name = "cancel_processor_job"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/ProcessorJob/CancelProcessorJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -242,7 +242,7 @@ class AIServiceDocumentClient(object):
         resource_path = "/processorJobs"
         method = "POST"
         operation_name = "create_processor_job"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/ProcessorJob/CreateProcessorJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -329,7 +329,7 @@ class AIServiceDocumentClient(object):
         resource_path = "/processorJobs/{processorJobId}"
         method = "GET"
         operation_name = "get_processor_job"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/ProcessorJob/GetProcessorJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

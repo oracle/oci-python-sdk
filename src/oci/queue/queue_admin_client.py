@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 from __future__ import absolute_import
@@ -146,7 +146,7 @@ class QueueAdminClient(object):
         resource_path = "/queues/{queueId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_queue_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/ChangeQueueCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -249,7 +249,7 @@ class QueueAdminClient(object):
         resource_path = "/queues"
         method = "POST"
         operation_name = "create_queue"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/CreateQueue"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -341,7 +341,7 @@ class QueueAdminClient(object):
         resource_path = "/queues/{queueId}"
         method = "DELETE"
         operation_name = "delete_queue"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/DeleteQueue"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -435,7 +435,7 @@ class QueueAdminClient(object):
         resource_path = "/queues/{queueId}"
         method = "GET"
         operation_name = "get_queue"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/GetQueue"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -529,7 +529,7 @@ class QueueAdminClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/queue/20210201/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -650,7 +650,7 @@ class QueueAdminClient(object):
         resource_path = "/queues"
         method = "GET"
         operation_name = "list_queues"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/queue/20210201/QueueCollection/ListQueues"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -781,7 +781,7 @@ class QueueAdminClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/queue/20210201/WorkRequestErrorCollection/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -891,7 +891,7 @@ class QueueAdminClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/queue/20210201/WorkRequestLogEntryCollection/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1004,7 +1004,7 @@ class QueueAdminClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/queue/20210201/WorkRequestSummaryCollection/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1111,7 +1111,7 @@ class QueueAdminClient(object):
         resource_path = "/queues/{queueId}/actions/purge"
         method = "POST"
         operation_name = "purge_queue"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/PurgeQueue"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1217,7 +1217,7 @@ class QueueAdminClient(object):
         resource_path = "/queues/{queueId}"
         method = "PUT"
         operation_name = "update_queue"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/queue/20210201/Queue/UpdateQueue"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

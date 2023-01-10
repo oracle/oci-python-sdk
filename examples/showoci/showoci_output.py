@@ -1049,9 +1049,12 @@ class ShowOCIOutput(object):
                             print(self.tabs + "            Alert  : " + dbs['next_maintenance_run']['maintenance_alert'])
 
                 print("")
+                for index, srv in enumerate(dbs['db_servers'], start=1):
+                    print(self.tabs + "DB Srv " + str(index) + "  : " + srv['desc'])
 
                 # clusters
                 for vm in dbs['vm_clusters']:
+                    print("")
 
                     if 'display_name' in vm:
                         print(self.tabs + "VMCLSTR   : " + str(vm['display_name']) + " (" + vm['lifecycle_state'] + ")")
@@ -2180,6 +2183,13 @@ class ShowOCIOutput(object):
             if not data_ai:
                 return
 
+            # Data Conn Registry
+            if 'data_connectivity_registry' in data_ai:
+                self.print_header("Data Conn. Registry", 2)
+                for val in data_ai['data_connectivity_registry']:
+                    print(self.taba + val['display_name'] + ", (" + val['description'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
+                print("")
+
             # Data Catalog
             if 'data_catalog' in data_ai:
                 self.print_header("Data Catalog", 2)
@@ -2844,6 +2854,8 @@ class ShowOCISummary(object):
                 self.__summary_core_size(data_ai['bds'])
             if 'data_integration' in data_ai:
                 self.__summary_core_size(data_ai['data_integration'])
+            if 'data_connectivity_registry' in data_ai:
+                self.__summary_core_size(data_ai['data_connectivity_registry'])
 
         except Exception as e:
             self.__print_error("__summary_data_ai_main", e)
@@ -3498,6 +3510,7 @@ class ShowOCICSV(object):
     csv_data_science = []
     csv_data_flow = []
     csv_data_catalog = []
+    csv_data_conn_registgry = []
     csv_data_integration = []
     start_time = ""
     csv_add_date_field = True
@@ -3588,6 +3601,7 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("data_science", self.csv_data_science)
             self.__export_to_csv_file("data_flow", self.csv_data_flow)
             self.__export_to_csv_file("data_catalog", self.csv_data_catalog)
+            self.__export_to_csv_file("data_conn_registry", self.csv_data_conn_registgry)
             self.__export_to_csv_file("data_integration", self.csv_data_integration)
             self.__export_to_csv_file("digital_assistance", self.csv_data_ai_oda)
             self.__export_to_csv_file("big_data_service", self.csv_data_ai_bds)
@@ -4415,8 +4429,8 @@ class ShowOCICSV(object):
                         'ntp_server': "",
                         'csi_number': "",
                         'node_count': "",
-                        'db_servers': "",
-                        'db_servers_ids': "",
+                        'db_servers': str(', '.join(x['desc'] for x in dbs['db_servers'])),
+                        'db_servers_ids': str(', '.join(x['id'] for x in dbs['db_servers'])),
                         'cluster_count': len(dbs['vm_clusters']),
                         'cluster_names': str(', '.join(x['display_name'] for x in dbs['vm_clusters'])),
                         'time_created': dbs['time_created'],
@@ -5971,6 +5985,9 @@ class ShowOCICSV(object):
             if 'data_catalog' in data:
                 self.__csv_data_catalog(region_name, data['data_catalog'])
 
+            if 'data_connectivity_registry' in data:
+                self.__csv_data_conn_registry(region_name, data['data_connectivity_registry'])
+
             if 'data_integration' in data:
                 self.__csv_data_integration(region_name, data['data_integration'])
 
@@ -6103,6 +6120,39 @@ class ShowOCICSV(object):
 
         except Exception as e:
             self.__print_error("__csv_data_catalog", e)
+
+    ##########################################################################
+    # Data Connectivity registry
+    ##########################################################################
+    def __csv_data_conn_registry(self, region_name, services):
+        try:
+
+            if len(services) == 0:
+                return
+
+            if services:
+                for ar in services:
+
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
+                        'name': ar['display_name'],
+                        'description': ar['description'],
+                        'time_created': ar['time_created'][0:16],
+                        'time_updated': ar['time_updated'][0:16],
+                        'updated_by': ar['updated_by'],
+                        'lifecycle_state': ar['lifecycle_state'],
+                        'state_message': ar['state_message'],
+                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(ar['defined_tags']),
+                        'id': ar['id']
+                    }
+
+                    self.csv_data_conn_registgry.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_data_conn_registry", e)
 
     ##########################################################################
     # Data Integration

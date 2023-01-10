@@ -22,14 +22,6 @@
 #   Allow group UsageDownloadGroup to inspect compartments in tenancy
 #   Allow group UsageDownloadGroup to inspect tenancies in tenancy
 #
-# config file should contain:
-#     [TENANT_NAME]
-#     user        = user_ocid
-#     fingerprint = fingerprint of the api ssh key
-#     key_file    = the path to the private key
-#     tenancy     = tenancy ocid
-#     region      = region
-#
 ##########################################################################
 # Database user:
 #     create user usage identified by PaSsw0rd2#_#;
@@ -73,7 +65,7 @@ import requests
 import time
 
 
-version = "22.11.22"
+version = "22.12.08"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 
@@ -968,7 +960,7 @@ def update_tenant_id_if_null(connection, tenant_name, short_tenant_id):
 ##########################################################################
 # Check Table Structure Cost
 ##########################################################################
-def check_database_table_structure_cost(connection, tag_special_key, tenant_name):
+def check_database_table_structure_cost(connection, tag_special_key, tag_special_key2, tenant_name):
     try:
         # open cursor
         cursor = connection.cursor()
@@ -1121,7 +1113,7 @@ def check_database_table_structure_cost(connection, tag_special_key, tenant_name
             cursor.execute(sql)
             print("   Table OCI_COST_REFERENCE created")
 
-            update_cost_reference(connection, tag_special_key, tenant_name)
+            update_cost_reference(connection, tag_special_key, tag_special_key2, tenant_name)
         else:
             print("   Table OCI_COST_REFERENCE exist")
 
@@ -1777,7 +1769,7 @@ def main_process():
         # Check tables structure
         print("\nChecking Database Structure...")
         check_database_table_structure_usage(connection, tenancy.name)
-        check_database_table_structure_cost(connection, cmd.tagspecial, tenancy.name)
+        check_database_table_structure_cost(connection, cmd.tagspecial, cmd.tagspecial2, tenancy.name)
         check_database_table_structure_price_list(connection, tenancy.name)
 
         ###############################
