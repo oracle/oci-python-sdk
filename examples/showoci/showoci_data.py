@@ -2300,6 +2300,7 @@ class ShowOCIData(object):
                     'sum_info_storage': 'Database - Storage (GB)',
                     'sum_size_gb': dbs['total_storage_size_in_gbs'],
                     'data': str(dbs['available_storage_size_in_gbs']) + "GB",
+                    'db_servers': [] if not dbs['db_servers'] else sorted(dbs['db_servers'], key=lambda i: i['desc']),
                     'vm_clusters': []
                 }
 
@@ -3872,6 +3873,11 @@ class ShowOCIData(object):
             dc = self.service.search_multi_items(self.service.C_DATA_AI, self.service.C_DATA_AI_CATALOG, 'region_name', region_name, 'compartment_id', compartment['id'])
             if dc:
                 data_ai['data_catalog'] = dc
+
+            # Data Connectivity Registry
+            dc = self.service.search_multi_items(self.service.C_DATA_AI, self.service.C_DATA_AI_DCREGISTRY, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if dc:
+                data_ai['data_connectivity_registry'] = dc
 
             # Data Integration
             di = self.service.search_multi_items(self.service.C_DATA_AI, self.service.C_DATA_AI_DI, 'region_name', region_name, 'compartment_id', compartment['id'])

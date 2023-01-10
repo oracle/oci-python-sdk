@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.90.1 - 2023-01-10
+====================
+
+Security
+--------
+* Upgrade wheel version for applicable Python versions to fix security vulnerability as mentioned in https://github.com/oracle/oci-python-sdk/pull/502
 2.90.0 - 2022-12-13
 ====================
 
