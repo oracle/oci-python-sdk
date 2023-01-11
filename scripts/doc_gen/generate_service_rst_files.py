@@ -189,6 +189,7 @@ for service_for_doc_gen in services.services_for_doc_gen:
 
     # We need these services flattened out for rendering links on the api/landing.rst page
     flattened_services.extend([(landing_page_linkify(s), humanize(s)) for s in service_for_doc_gen['service_names']])
+    flattened_services.sort(key=lambda a: a[1])
 
 # print('Generating single page reference')
 # template = environment.get_template('single_page_reference.rst.j2')
