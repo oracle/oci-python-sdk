@@ -25,6 +25,10 @@ class Entity(object):
     #: This constant has a value of "TEXTSELECTION"
     ENTITY_TYPE_TEXTSELECTION = "TEXTSELECTION"
 
+    #: A constant which can be used with the entity_type property of a Entity.
+    #: This constant has a value of "KEYVALUESELECTION"
+    ENTITY_TYPE_KEYVALUESELECTION = "KEYVALUESELECTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Entity object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -32,13 +36,14 @@ class Entity(object):
 
         * :class:`~oci.data_labeling_service_dataplane.models.ImageObjectSelectionEntity`
         * :class:`~oci.data_labeling_service_dataplane.models.GenericEntity`
+        * :class:`~oci.data_labeling_service_dataplane.models.KeyValueSelectionEntity`
         * :class:`~oci.data_labeling_service_dataplane.models.TextSelectionEntity`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param entity_type:
             The value to assign to the entity_type property of this Entity.
-            Allowed values for this property are: "GENERIC", "IMAGEOBJECTSELECTION", "TEXTSELECTION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GENERIC", "IMAGEOBJECTSELECTION", "TEXTSELECTION", "KEYVALUESELECTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_type: str
 
@@ -67,6 +72,9 @@ class Entity(object):
         if type == 'GENERIC':
             return 'GenericEntity'
 
+        if type == 'KEYVALUESELECTION':
+            return 'KeyValueSelectionEntity'
+
         if type == 'TEXTSELECTION':
             return 'TextSelectionEntity'
         else:
@@ -80,8 +88,9 @@ class Entity(object):
         GENERIC  - An extensible entity type that is the base entity type for some annotation formats.
         IMAGEOBJECTSELECTION- - This allows the labeler to use specify a bounding polygon on the image to represent an object and apply labels to it.
         TEXTSELECTION - This allows the labeler to highlight text, by specifying an offset and a length, and apply labels to it.
+        KEYVALUESELECTION - This allows the labeler to apply label the highlighted text from OCR.
 
-        Allowed values for this property are: "GENERIC", "IMAGEOBJECTSELECTION", "TEXTSELECTION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GENERIC", "IMAGEOBJECTSELECTION", "TEXTSELECTION", "KEYVALUESELECTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -98,12 +107,13 @@ class Entity(object):
         GENERIC  - An extensible entity type that is the base entity type for some annotation formats.
         IMAGEOBJECTSELECTION- - This allows the labeler to use specify a bounding polygon on the image to represent an object and apply labels to it.
         TEXTSELECTION - This allows the labeler to highlight text, by specifying an offset and a length, and apply labels to it.
+        KEYVALUESELECTION - This allows the labeler to apply label the highlighted text from OCR.
 
 
         :param entity_type: The entity_type of this Entity.
         :type: str
         """
-        allowed_values = ["GENERIC", "IMAGEOBJECTSELECTION", "TEXTSELECTION"]
+        allowed_values = ["GENERIC", "IMAGEOBJECTSELECTION", "TEXTSELECTION", "KEYVALUESELECTION"]
         if not value_allowed_none_or_none_sentinel(entity_type, allowed_values):
             entity_type = 'UNKNOWN_ENUM_VALUE'
         self._entity_type = entity_type

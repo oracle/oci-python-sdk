@@ -48,19 +48,33 @@ class VirtualDeploymentListener(object):
             The value to assign to the port property of this VirtualDeploymentListener.
         :type port: int
 
+        :param request_timeout_in_ms:
+            The value to assign to the request_timeout_in_ms property of this VirtualDeploymentListener.
+        :type request_timeout_in_ms: int
+
+        :param idle_timeout_in_ms:
+            The value to assign to the idle_timeout_in_ms property of this VirtualDeploymentListener.
+        :type idle_timeout_in_ms: int
+
         """
         self.swagger_types = {
             'protocol': 'str',
-            'port': 'int'
+            'port': 'int',
+            'request_timeout_in_ms': 'int',
+            'idle_timeout_in_ms': 'int'
         }
 
         self.attribute_map = {
             'protocol': 'protocol',
-            'port': 'port'
+            'port': 'port',
+            'request_timeout_in_ms': 'requestTimeoutInMs',
+            'idle_timeout_in_ms': 'idleTimeoutInMs'
         }
 
         self._protocol = None
         self._port = None
+        self._request_timeout_in_ms = None
+        self._idle_timeout_in_ms = None
 
     @property
     def protocol(self):
@@ -115,6 +129,60 @@ class VirtualDeploymentListener(object):
         :type: int
         """
         self._port = port
+
+    @property
+    def request_timeout_in_ms(self):
+        """
+        Gets the request_timeout_in_ms of this VirtualDeploymentListener.
+        The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.
+        If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.
+        The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.
+        For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+
+
+        :return: The request_timeout_in_ms of this VirtualDeploymentListener.
+        :rtype: int
+        """
+        return self._request_timeout_in_ms
+
+    @request_timeout_in_ms.setter
+    def request_timeout_in_ms(self, request_timeout_in_ms):
+        """
+        Sets the request_timeout_in_ms of this VirtualDeploymentListener.
+        The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.
+        If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.
+        The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.
+        For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+
+
+        :param request_timeout_in_ms: The request_timeout_in_ms of this VirtualDeploymentListener.
+        :type: int
+        """
+        self._request_timeout_in_ms = request_timeout_in_ms
+
+    @property
+    def idle_timeout_in_ms(self):
+        """
+        Gets the idle_timeout_in_ms of this VirtualDeploymentListener.
+        The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+
+
+        :return: The idle_timeout_in_ms of this VirtualDeploymentListener.
+        :rtype: int
+        """
+        return self._idle_timeout_in_ms
+
+    @idle_timeout_in_ms.setter
+    def idle_timeout_in_ms(self, idle_timeout_in_ms):
+        """
+        Sets the idle_timeout_in_ms of this VirtualDeploymentListener.
+        The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+
+
+        :param idle_timeout_in_ms: The idle_timeout_in_ms of this VirtualDeploymentListener.
+        :type: int
+        """
+        self._idle_timeout_in_ms = idle_timeout_in_ms
 
     def __repr__(self):
         return formatted_flat_dict(self)

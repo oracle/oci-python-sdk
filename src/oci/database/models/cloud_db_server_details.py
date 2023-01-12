@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CloudDbServerDetails(object):
     """
-    Details of the ExaCs Db server. Applies to Exadata Cloud instances only.
+    Details of the ExaDB-D DB server. Applies to Exadata Cloud instances only.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class CloudDbServerDetails(object):
     def db_server_id(self):
         """
         **[Required]** Gets the db_server_id of this CloudDbServerDetails.
-        The `OCID`__ of ExaCS Db server.
+        The `OCID`__ of ExaDB-D DB server.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -51,7 +51,7 @@ class CloudDbServerDetails(object):
     def db_server_id(self, db_server_id):
         """
         Sets the db_server_id of this CloudDbServerDetails.
-        The `OCID`__ of ExaCS Db server.
+        The `OCID`__ of ExaDB-D DB server.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

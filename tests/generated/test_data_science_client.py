@@ -407,6 +407,48 @@ def test_change_model_deployment_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_change_model_version_set_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'ChangeModelVersionSetCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'ChangeModelVersionSetCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='ChangeModelVersionSetCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.change_model_version_set_compartment(
+                model_version_set_id=request.pop(util.camelize('modelVersionSetId')),
+                change_model_version_set_compartment_details=request.pop(util.camelize('ChangeModelVersionSetCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'ChangeModelVersionSetCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_model_version_set_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
 def test_change_notebook_session_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('data_science', 'ChangeNotebookSessionCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -781,6 +823,47 @@ def test_create_model_provenance(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_create_model_version_set(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'CreateModelVersionSet'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'CreateModelVersionSet')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='CreateModelVersionSet')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.create_model_version_set(
+                create_model_version_set_details=request.pop(util.camelize('CreateModelVersionSetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'CreateModelVersionSet',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'modelVersionSet',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
 def test_create_notebook_session(testing_service_client):
     if not testing_service_client.is_api_enabled('data_science', 'CreateNotebookSession'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1144,6 +1227,47 @@ def test_delete_model_deployment(testing_service_client):
             result,
             service_error,
             'delete_model_deployment',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_delete_model_version_set(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'DeleteModelVersionSet'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'DeleteModelVersionSet')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='DeleteModelVersionSet')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.delete_model_version_set(
+                model_version_set_id=request.pop(util.camelize('modelVersionSetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'DeleteModelVersionSet',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_model_version_set',
             True,
             False
         )
@@ -1555,6 +1679,47 @@ def test_get_model_provenance(testing_service_client):
             result,
             service_error,
             'modelProvenance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_get_model_version_set(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'GetModelVersionSet'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'GetModelVersionSet')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='GetModelVersionSet')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.get_model_version_set(
+                model_version_set_id=request.pop(util.camelize('modelVersionSetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'GetModelVersionSet',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'modelVersionSet',
             False,
             False
         )
@@ -2186,6 +2351,69 @@ def test_list_model_deployments(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_list_model_version_sets(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'ListModelVersionSets'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'ListModelVersionSets')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='ListModelVersionSets')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.list_model_version_sets(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_model_version_sets(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_model_version_sets(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'ListModelVersionSets',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'modelVersionSetSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
 def test_list_models(testing_service_client):
     if not testing_service_client.is_api_enabled('data_science', 'ListModels'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2787,6 +3015,48 @@ def test_update_model_provenance(testing_service_client):
             result,
             service_error,
             'modelProvenance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_update_model_version_set(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'UpdateModelVersionSet'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'UpdateModelVersionSet')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='UpdateModelVersionSet')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.update_model_version_set(
+                model_version_set_id=request.pop(util.camelize('modelVersionSetId')),
+                update_model_version_set_details=request.pop(util.camelize('UpdateModelVersionSetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'UpdateModelVersionSet',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'modelVersionSet',
             False,
             False
         )

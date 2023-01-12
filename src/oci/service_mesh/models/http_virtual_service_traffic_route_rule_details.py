@@ -45,13 +45,18 @@ class HttpVirtualServiceTrafficRouteRuleDetails(VirtualServiceTrafficRouteRuleDe
             The value to assign to the is_grpc property of this HttpVirtualServiceTrafficRouteRuleDetails.
         :type is_grpc: bool
 
+        :param request_timeout_in_ms:
+            The value to assign to the request_timeout_in_ms property of this HttpVirtualServiceTrafficRouteRuleDetails.
+        :type request_timeout_in_ms: int
+
         """
         self.swagger_types = {
             'type': 'str',
             'destinations': 'list[VirtualDeploymentTrafficRuleTargetDetails]',
             'path': 'str',
             'path_type': 'str',
-            'is_grpc': 'bool'
+            'is_grpc': 'bool',
+            'request_timeout_in_ms': 'int'
         }
 
         self.attribute_map = {
@@ -59,7 +64,8 @@ class HttpVirtualServiceTrafficRouteRuleDetails(VirtualServiceTrafficRouteRuleDe
             'destinations': 'destinations',
             'path': 'path',
             'path_type': 'pathType',
-            'is_grpc': 'isGrpc'
+            'is_grpc': 'isGrpc',
+            'request_timeout_in_ms': 'requestTimeoutInMs'
         }
 
         self._type = None
@@ -67,6 +73,7 @@ class HttpVirtualServiceTrafficRouteRuleDetails(VirtualServiceTrafficRouteRuleDe
         self._path = None
         self._path_type = None
         self._is_grpc = None
+        self._request_timeout_in_ms = None
         self._type = 'HTTP'
 
     @property
@@ -150,6 +157,36 @@ class HttpVirtualServiceTrafficRouteRuleDetails(VirtualServiceTrafficRouteRuleDe
         :type: bool
         """
         self._is_grpc = is_grpc
+
+    @property
+    def request_timeout_in_ms(self):
+        """
+        Gets the request_timeout_in_ms of this HttpVirtualServiceTrafficRouteRuleDetails.
+        The maximum duration in milliseconds for the target service to respond to a request.
+        If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.
+        The value 0 (zero) indicates that the timeout is disabled.
+        For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
+
+
+        :return: The request_timeout_in_ms of this HttpVirtualServiceTrafficRouteRuleDetails.
+        :rtype: int
+        """
+        return self._request_timeout_in_ms
+
+    @request_timeout_in_ms.setter
+    def request_timeout_in_ms(self, request_timeout_in_ms):
+        """
+        Sets the request_timeout_in_ms of this HttpVirtualServiceTrafficRouteRuleDetails.
+        The maximum duration in milliseconds for the target service to respond to a request.
+        If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.
+        The value 0 (zero) indicates that the timeout is disabled.
+        For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
+
+
+        :param request_timeout_in_ms: The request_timeout_in_ms of this HttpVirtualServiceTrafficRouteRuleDetails.
+        :type: int
+        """
+        self._request_timeout_in_ms = request_timeout_in_ms
 
     def __repr__(self):
         return formatted_flat_dict(self)

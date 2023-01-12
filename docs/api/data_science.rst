@@ -27,6 +27,7 @@ Data Science
     oci.data_science.models.ChangeJobRunCompartmentDetails
     oci.data_science.models.ChangeModelCompartmentDetails
     oci.data_science.models.ChangeModelDeploymentCompartmentDetails
+    oci.data_science.models.ChangeModelVersionSetCompartmentDetails
     oci.data_science.models.ChangeNotebookSessionCompartmentDetails
     oci.data_science.models.ChangeProjectCompartmentDetails
     oci.data_science.models.CreateJobDetails
@@ -34,6 +35,7 @@ Data Science
     oci.data_science.models.CreateModelDeploymentDetails
     oci.data_science.models.CreateModelDetails
     oci.data_science.models.CreateModelProvenanceDetails
+    oci.data_science.models.CreateModelVersionSetDetails
     oci.data_science.models.CreateNotebookSessionDetails
     oci.data_science.models.CreateProjectDetails
     oci.data_science.models.DefaultJobConfigurationDetails
@@ -64,6 +66,8 @@ Data Science
     oci.data_science.models.ModelDeploymentSummary
     oci.data_science.models.ModelProvenance
     oci.data_science.models.ModelSummary
+    oci.data_science.models.ModelVersionSet
+    oci.data_science.models.ModelVersionSetSummary
     oci.data_science.models.NotebookSession
     oci.data_science.models.NotebookSessionConfigDetails
     oci.data_science.models.NotebookSessionConfigurationDetails
@@ -86,6 +90,7 @@ Data Science
     oci.data_science.models.UpdateModelDeploymentDetails
     oci.data_science.models.UpdateModelDetails
     oci.data_science.models.UpdateModelProvenanceDetails
+    oci.data_science.models.UpdateModelVersionSetDetails
     oci.data_science.models.UpdateNotebookSessionDetails
     oci.data_science.models.UpdateProjectDetails
     oci.data_science.models.UpdateSingleModelDeploymentConfigurationDetails

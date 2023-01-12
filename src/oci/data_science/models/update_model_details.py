@@ -42,6 +42,14 @@ class UpdateModelDetails(object):
             The value to assign to the defined_metadata_list property of this UpdateModelDetails.
         :type defined_metadata_list: list[oci.data_science.models.Metadata]
 
+        :param model_version_set_id:
+            The value to assign to the model_version_set_id property of this UpdateModelDetails.
+        :type model_version_set_id: str
+
+        :param version_label:
+            The value to assign to the version_label property of this UpdateModelDetails.
+        :type version_label: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -49,7 +57,9 @@ class UpdateModelDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'custom_metadata_list': 'list[Metadata]',
-            'defined_metadata_list': 'list[Metadata]'
+            'defined_metadata_list': 'list[Metadata]',
+            'model_version_set_id': 'str',
+            'version_label': 'str'
         }
 
         self.attribute_map = {
@@ -58,7 +68,9 @@ class UpdateModelDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'custom_metadata_list': 'customMetadataList',
-            'defined_metadata_list': 'definedMetadataList'
+            'defined_metadata_list': 'definedMetadataList',
+            'model_version_set_id': 'modelVersionSetId',
+            'version_label': 'versionLabel'
         }
 
         self._display_name = None
@@ -67,6 +79,8 @@ class UpdateModelDetails(object):
         self._defined_tags = None
         self._custom_metadata_list = None
         self._defined_metadata_list = None
+        self._model_version_set_id = None
+        self._version_label = None
 
     @property
     def display_name(self):
@@ -225,6 +239,54 @@ class UpdateModelDetails(object):
         :type: list[oci.data_science.models.Metadata]
         """
         self._defined_metadata_list = defined_metadata_list
+
+    @property
+    def model_version_set_id(self):
+        """
+        Gets the model_version_set_id of this UpdateModelDetails.
+        The OCID of the model version set that the model is associated to.
+
+
+        :return: The model_version_set_id of this UpdateModelDetails.
+        :rtype: str
+        """
+        return self._model_version_set_id
+
+    @model_version_set_id.setter
+    def model_version_set_id(self, model_version_set_id):
+        """
+        Sets the model_version_set_id of this UpdateModelDetails.
+        The OCID of the model version set that the model is associated to.
+
+
+        :param model_version_set_id: The model_version_set_id of this UpdateModelDetails.
+        :type: str
+        """
+        self._model_version_set_id = model_version_set_id
+
+    @property
+    def version_label(self):
+        """
+        Gets the version_label of this UpdateModelDetails.
+        The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+
+
+        :return: The version_label of this UpdateModelDetails.
+        :rtype: str
+        """
+        return self._version_label
+
+    @version_label.setter
+    def version_label(self, version_label):
+        """
+        Sets the version_label of this UpdateModelDetails.
+        The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+
+
+        :param version_label: The version_label of this UpdateModelDetails.
+        :type: str
+        """
+        self._version_label = version_label
 
     def __repr__(self):
         return formatted_flat_dict(self)
