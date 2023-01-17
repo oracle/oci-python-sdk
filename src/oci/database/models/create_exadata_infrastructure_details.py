@@ -79,6 +79,14 @@ class CreateExadataInfrastructureDetails(object):
             The value to assign to the compute_count property of this CreateExadataInfrastructureDetails.
         :type compute_count: int
 
+        :param is_multi_rack_deployment:
+            The value to assign to the is_multi_rack_deployment property of this CreateExadataInfrastructureDetails.
+        :type is_multi_rack_deployment: bool
+
+        :param multi_rack_configuration_file:
+            The value to assign to the multi_rack_configuration_file property of this CreateExadataInfrastructureDetails.
+        :type multi_rack_configuration_file: str
+
         :param dns_server:
             The value to assign to the dns_server property of this CreateExadataInfrastructureDetails.
         :type dns_server: list[str]
@@ -116,6 +124,8 @@ class CreateExadataInfrastructureDetails(object):
             'maintenance_window': 'MaintenanceWindow',
             'storage_count': 'int',
             'compute_count': 'int',
+            'is_multi_rack_deployment': 'bool',
+            'multi_rack_configuration_file': 'str',
             'dns_server': 'list[str]',
             'ntp_server': 'list[str]',
             'is_cps_offline_report_enabled': 'bool',
@@ -139,6 +149,8 @@ class CreateExadataInfrastructureDetails(object):
             'maintenance_window': 'maintenanceWindow',
             'storage_count': 'storageCount',
             'compute_count': 'computeCount',
+            'is_multi_rack_deployment': 'isMultiRackDeployment',
+            'multi_rack_configuration_file': 'multiRackConfigurationFile',
             'dns_server': 'dnsServer',
             'ntp_server': 'ntpServer',
             'is_cps_offline_report_enabled': 'isCpsOfflineReportEnabled',
@@ -161,6 +173,8 @@ class CreateExadataInfrastructureDetails(object):
         self._maintenance_window = None
         self._storage_count = None
         self._compute_count = None
+        self._is_multi_rack_deployment = None
+        self._multi_rack_configuration_file = None
         self._dns_server = None
         self._ntp_server = None
         self._is_cps_offline_report_enabled = None
@@ -532,6 +546,54 @@ class CreateExadataInfrastructureDetails(object):
         :type: int
         """
         self._compute_count = compute_count
+
+    @property
+    def is_multi_rack_deployment(self):
+        """
+        Gets the is_multi_rack_deployment of this CreateExadataInfrastructureDetails.
+        Indicates if deployment is Multi-Rack or not.
+
+
+        :return: The is_multi_rack_deployment of this CreateExadataInfrastructureDetails.
+        :rtype: bool
+        """
+        return self._is_multi_rack_deployment
+
+    @is_multi_rack_deployment.setter
+    def is_multi_rack_deployment(self, is_multi_rack_deployment):
+        """
+        Sets the is_multi_rack_deployment of this CreateExadataInfrastructureDetails.
+        Indicates if deployment is Multi-Rack or not.
+
+
+        :param is_multi_rack_deployment: The is_multi_rack_deployment of this CreateExadataInfrastructureDetails.
+        :type: bool
+        """
+        self._is_multi_rack_deployment = is_multi_rack_deployment
+
+    @property
+    def multi_rack_configuration_file(self):
+        """
+        Gets the multi_rack_configuration_file of this CreateExadataInfrastructureDetails.
+        The base64 encoded Multi-Rack configuration json file.
+
+
+        :return: The multi_rack_configuration_file of this CreateExadataInfrastructureDetails.
+        :rtype: str
+        """
+        return self._multi_rack_configuration_file
+
+    @multi_rack_configuration_file.setter
+    def multi_rack_configuration_file(self, multi_rack_configuration_file):
+        """
+        Sets the multi_rack_configuration_file of this CreateExadataInfrastructureDetails.
+        The base64 encoded Multi-Rack configuration json file.
+
+
+        :param multi_rack_configuration_file: The multi_rack_configuration_file of this CreateExadataInfrastructureDetails.
+        :type: str
+        """
+        self._multi_rack_configuration_file = multi_rack_configuration_file
 
     @property
     def dns_server(self):

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CloudExadataInfrastructureUnallocatedResources(object):
     """
-    Unallocated resources details of the Cloud Exadata infrastructure. Applies to Cloud Exadata infrastructure instances only.
+    Details of unallocated resources of the Cloud Exadata infrastructure. Applies to Cloud Exadata infrastructure instances only.
     """
 
     def __init__(self, **kwargs):
@@ -131,7 +131,7 @@ class CloudExadataInfrastructureUnallocatedResources(object):
     def local_storage_in_gbs(self):
         """
         Gets the local_storage_in_gbs of this CloudExadataInfrastructureUnallocatedResources.
-        The minimum amount of un allocated storage that is available across all nodes in the infrastructure.
+        The minimum amount of unallocated storage available across all nodes in the infrastructure.
 
 
         :return: The local_storage_in_gbs of this CloudExadataInfrastructureUnallocatedResources.
@@ -143,7 +143,7 @@ class CloudExadataInfrastructureUnallocatedResources(object):
     def local_storage_in_gbs(self, local_storage_in_gbs):
         """
         Sets the local_storage_in_gbs of this CloudExadataInfrastructureUnallocatedResources.
-        The minimum amount of un allocated storage that is available across all nodes in the infrastructure.
+        The minimum amount of unallocated storage available across all nodes in the infrastructure.
 
 
         :param local_storage_in_gbs: The local_storage_in_gbs of this CloudExadataInfrastructureUnallocatedResources.
@@ -155,7 +155,7 @@ class CloudExadataInfrastructureUnallocatedResources(object):
     def ocpus(self):
         """
         Gets the ocpus of this CloudExadataInfrastructureUnallocatedResources.
-        The minimum amount of un allocated ocpus that is available across all nodes in the infrastructure.
+        The minimum amount of unallocated ocpus available across all nodes in the infrastructure.
 
 
         :return: The ocpus of this CloudExadataInfrastructureUnallocatedResources.
@@ -167,7 +167,7 @@ class CloudExadataInfrastructureUnallocatedResources(object):
     def ocpus(self, ocpus):
         """
         Sets the ocpus of this CloudExadataInfrastructureUnallocatedResources.
-        The minimum amount of un allocated ocpus that is available across all nodes in the infrastructure.
+        The minimum amount of unallocated ocpus available across all nodes in the infrastructure.
 
 
         :param ocpus: The ocpus of this CloudExadataInfrastructureUnallocatedResources.
@@ -179,7 +179,7 @@ class CloudExadataInfrastructureUnallocatedResources(object):
     def memory_in_gbs(self):
         """
         Gets the memory_in_gbs of this CloudExadataInfrastructureUnallocatedResources.
-        The minimum amount of un allocated memory that is available across all nodes in the infrastructure.
+        The minimum amount of unallocated memory available across all nodes in the infrastructure.
 
 
         :return: The memory_in_gbs of this CloudExadataInfrastructureUnallocatedResources.
@@ -191,7 +191,7 @@ class CloudExadataInfrastructureUnallocatedResources(object):
     def memory_in_gbs(self, memory_in_gbs):
         """
         Sets the memory_in_gbs of this CloudExadataInfrastructureUnallocatedResources.
-        The minimum amount of un allocated memory that is available across all nodes in the infrastructure.
+        The minimum amount of unallocated memory available across all nodes in the infrastructure.
 
 
         :param memory_in_gbs: The memory_in_gbs of this CloudExadataInfrastructureUnallocatedResources.
@@ -227,7 +227,7 @@ class CloudExadataInfrastructureUnallocatedResources(object):
     def cloud_autonomous_vm_clusters(self):
         """
         Gets the cloud_autonomous_vm_clusters of this CloudExadataInfrastructureUnallocatedResources.
-        The list of Cloud Autonomous VM Clusters on the Infra and their associated unallocated resources details
+        The list of Cloud Autonomous VM Clusters on the Infrastructure and their associated unallocated resources details.
 
 
         :return: The cloud_autonomous_vm_clusters of this CloudExadataInfrastructureUnallocatedResources.
@@ -239,7 +239,7 @@ class CloudExadataInfrastructureUnallocatedResources(object):
     def cloud_autonomous_vm_clusters(self, cloud_autonomous_vm_clusters):
         """
         Sets the cloud_autonomous_vm_clusters of this CloudExadataInfrastructureUnallocatedResources.
-        The list of Cloud Autonomous VM Clusters on the Infra and their associated unallocated resources details
+        The list of Cloud Autonomous VM Clusters on the Infrastructure and their associated unallocated resources details.
 
 
         :param cloud_autonomous_vm_clusters: The cloud_autonomous_vm_clusters of this CloudExadataInfrastructureUnallocatedResources.

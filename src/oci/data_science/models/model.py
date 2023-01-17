@@ -92,6 +92,22 @@ class Model(object):
             The value to assign to the output_schema property of this Model.
         :type output_schema: str
 
+        :param model_version_set_id:
+            The value to assign to the model_version_set_id property of this Model.
+        :type model_version_set_id: str
+
+        :param model_version_set_name:
+            The value to assign to the model_version_set_name property of this Model.
+        :type model_version_set_name: str
+
+        :param version_id:
+            The value to assign to the version_id property of this Model.
+        :type version_id: int
+
+        :param version_label:
+            The value to assign to the version_label property of this Model.
+        :type version_label: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -107,7 +123,11 @@ class Model(object):
             'custom_metadata_list': 'list[Metadata]',
             'defined_metadata_list': 'list[Metadata]',
             'input_schema': 'str',
-            'output_schema': 'str'
+            'output_schema': 'str',
+            'model_version_set_id': 'str',
+            'model_version_set_name': 'str',
+            'version_id': 'int',
+            'version_label': 'str'
         }
 
         self.attribute_map = {
@@ -124,7 +144,11 @@ class Model(object):
             'custom_metadata_list': 'customMetadataList',
             'defined_metadata_list': 'definedMetadataList',
             'input_schema': 'inputSchema',
-            'output_schema': 'outputSchema'
+            'output_schema': 'outputSchema',
+            'model_version_set_id': 'modelVersionSetId',
+            'model_version_set_name': 'modelVersionSetName',
+            'version_id': 'versionId',
+            'version_label': 'versionLabel'
         }
 
         self._id = None
@@ -141,6 +165,10 @@ class Model(object):
         self._defined_metadata_list = None
         self._input_schema = None
         self._output_schema = None
+        self._model_version_set_id = None
+        self._model_version_set_name = None
+        self._version_id = None
+        self._version_label = None
 
     @property
     def id(self):
@@ -517,6 +545,102 @@ class Model(object):
         :type: str
         """
         self._output_schema = output_schema
+
+    @property
+    def model_version_set_id(self):
+        """
+        **[Required]** Gets the model_version_set_id of this Model.
+        The OCID of the model version set that the model is associated to.
+
+
+        :return: The model_version_set_id of this Model.
+        :rtype: str
+        """
+        return self._model_version_set_id
+
+    @model_version_set_id.setter
+    def model_version_set_id(self, model_version_set_id):
+        """
+        Sets the model_version_set_id of this Model.
+        The OCID of the model version set that the model is associated to.
+
+
+        :param model_version_set_id: The model_version_set_id of this Model.
+        :type: str
+        """
+        self._model_version_set_id = model_version_set_id
+
+    @property
+    def model_version_set_name(self):
+        """
+        **[Required]** Gets the model_version_set_name of this Model.
+        The name of the model version set that the model is associated to.
+
+
+        :return: The model_version_set_name of this Model.
+        :rtype: str
+        """
+        return self._model_version_set_name
+
+    @model_version_set_name.setter
+    def model_version_set_name(self, model_version_set_name):
+        """
+        Sets the model_version_set_name of this Model.
+        The name of the model version set that the model is associated to.
+
+
+        :param model_version_set_name: The model_version_set_name of this Model.
+        :type: str
+        """
+        self._model_version_set_name = model_version_set_name
+
+    @property
+    def version_id(self):
+        """
+        **[Required]** Gets the version_id of this Model.
+        Unique identifier assigned to each version of the model.
+
+
+        :return: The version_id of this Model.
+        :rtype: int
+        """
+        return self._version_id
+
+    @version_id.setter
+    def version_id(self, version_id):
+        """
+        Sets the version_id of this Model.
+        Unique identifier assigned to each version of the model.
+
+
+        :param version_id: The version_id of this Model.
+        :type: int
+        """
+        self._version_id = version_id
+
+    @property
+    def version_label(self):
+        """
+        **[Required]** Gets the version_label of this Model.
+        The version label can add an additional description of the lifecycle state of the model or the application using and training the model.
+
+
+        :return: The version_label of this Model.
+        :rtype: str
+        """
+        return self._version_label
+
+    @version_label.setter
+    def version_label(self, version_label):
+        """
+        Sets the version_label of this Model.
+        The version label can add an additional description of the lifecycle state of the model or the application using and training the model.
+
+
+        :param version_label: The version_label of this Model.
+        :type: str
+        """
+        self._version_label = version_label
 
     def __repr__(self):
         return formatted_flat_dict(self)

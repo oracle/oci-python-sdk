@@ -1062,7 +1062,7 @@ class CloudVmCluster(object):
     def db_servers(self):
         """
         Gets the db_servers of this CloudVmCluster.
-        The list of Db servers.
+        The list of DB servers.
 
 
         :return: The db_servers of this CloudVmCluster.
@@ -1074,7 +1074,7 @@ class CloudVmCluster(object):
     def db_servers(self, db_servers):
         """
         Sets the db_servers of this CloudVmCluster.
-        The list of Db servers.
+        The list of DB servers.
 
 
         :param db_servers: The db_servers of this CloudVmCluster.

@@ -21,7 +21,7 @@ class GenericEntity(Entity):
 
         :param entity_type:
             The value to assign to the entity_type property of this GenericEntity.
-            Allowed values for this property are: "GENERIC", "IMAGEOBJECTSELECTION", "TEXTSELECTION"
+            Allowed values for this property are: "GENERIC", "IMAGEOBJECTSELECTION", "TEXTSELECTION", "KEYVALUESELECTION"
         :type entity_type: str
 
         :param labels:

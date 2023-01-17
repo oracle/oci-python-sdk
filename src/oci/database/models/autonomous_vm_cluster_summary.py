@@ -1152,7 +1152,7 @@ class AutonomousVmClusterSummary(object):
     def is_mtls_enabled(self):
         """
         Gets the is_mtls_enabled of this AutonomousVmClusterSummary.
-        Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. Default is TLS.
+        Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
 
 
         :return: The is_mtls_enabled of this AutonomousVmClusterSummary.
@@ -1164,7 +1164,7 @@ class AutonomousVmClusterSummary(object):
     def is_mtls_enabled(self, is_mtls_enabled):
         """
         Sets the is_mtls_enabled of this AutonomousVmClusterSummary.
-        Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. Default is TLS.
+        Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
 
 
         :param is_mtls_enabled: The is_mtls_enabled of this AutonomousVmClusterSummary.

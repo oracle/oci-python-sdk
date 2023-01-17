@@ -13,6 +13,7 @@ from .change_job_compartment_details import ChangeJobCompartmentDetails
 from .change_job_run_compartment_details import ChangeJobRunCompartmentDetails
 from .change_model_compartment_details import ChangeModelCompartmentDetails
 from .change_model_deployment_compartment_details import ChangeModelDeploymentCompartmentDetails
+from .change_model_version_set_compartment_details import ChangeModelVersionSetCompartmentDetails
 from .change_notebook_session_compartment_details import ChangeNotebookSessionCompartmentDetails
 from .change_project_compartment_details import ChangeProjectCompartmentDetails
 from .create_job_details import CreateJobDetails
@@ -20,6 +21,7 @@ from .create_job_run_details import CreateJobRunDetails
 from .create_model_deployment_details import CreateModelDeploymentDetails
 from .create_model_details import CreateModelDetails
 from .create_model_provenance_details import CreateModelProvenanceDetails
+from .create_model_version_set_details import CreateModelVersionSetDetails
 from .create_notebook_session_details import CreateNotebookSessionDetails
 from .create_project_details import CreateProjectDetails
 from .default_job_configuration_details import DefaultJobConfigurationDetails
@@ -50,6 +52,8 @@ from .model_deployment_shape_summary import ModelDeploymentShapeSummary
 from .model_deployment_summary import ModelDeploymentSummary
 from .model_provenance import ModelProvenance
 from .model_summary import ModelSummary
+from .model_version_set import ModelVersionSet
+from .model_version_set_summary import ModelVersionSetSummary
 from .notebook_session import NotebookSession
 from .notebook_session_config_details import NotebookSessionConfigDetails
 from .notebook_session_configuration_details import NotebookSessionConfigurationDetails
@@ -72,6 +76,7 @@ from .update_model_deployment_configuration_details import UpdateModelDeployment
 from .update_model_deployment_details import UpdateModelDeploymentDetails
 from .update_model_details import UpdateModelDetails
 from .update_model_provenance_details import UpdateModelProvenanceDetails
+from .update_model_version_set_details import UpdateModelVersionSetDetails
 from .update_notebook_session_details import UpdateNotebookSessionDetails
 from .update_project_details import UpdateProjectDetails
 from .update_single_model_deployment_configuration_details import UpdateSingleModelDeploymentConfigurationDetails
@@ -92,6 +97,7 @@ data_science_type_mapping = {
     "ChangeJobRunCompartmentDetails": ChangeJobRunCompartmentDetails,
     "ChangeModelCompartmentDetails": ChangeModelCompartmentDetails,
     "ChangeModelDeploymentCompartmentDetails": ChangeModelDeploymentCompartmentDetails,
+    "ChangeModelVersionSetCompartmentDetails": ChangeModelVersionSetCompartmentDetails,
     "ChangeNotebookSessionCompartmentDetails": ChangeNotebookSessionCompartmentDetails,
     "ChangeProjectCompartmentDetails": ChangeProjectCompartmentDetails,
     "CreateJobDetails": CreateJobDetails,
@@ -99,6 +105,7 @@ data_science_type_mapping = {
     "CreateModelDeploymentDetails": CreateModelDeploymentDetails,
     "CreateModelDetails": CreateModelDetails,
     "CreateModelProvenanceDetails": CreateModelProvenanceDetails,
+    "CreateModelVersionSetDetails": CreateModelVersionSetDetails,
     "CreateNotebookSessionDetails": CreateNotebookSessionDetails,
     "CreateProjectDetails": CreateProjectDetails,
     "DefaultJobConfigurationDetails": DefaultJobConfigurationDetails,
@@ -129,6 +136,8 @@ data_science_type_mapping = {
     "ModelDeploymentSummary": ModelDeploymentSummary,
     "ModelProvenance": ModelProvenance,
     "ModelSummary": ModelSummary,
+    "ModelVersionSet": ModelVersionSet,
+    "ModelVersionSetSummary": ModelVersionSetSummary,
     "NotebookSession": NotebookSession,
     "NotebookSessionConfigDetails": NotebookSessionConfigDetails,
     "NotebookSessionConfigurationDetails": NotebookSessionConfigurationDetails,
@@ -151,6 +160,7 @@ data_science_type_mapping = {
     "UpdateModelDeploymentDetails": UpdateModelDeploymentDetails,
     "UpdateModelDetails": UpdateModelDetails,
     "UpdateModelProvenanceDetails": UpdateModelProvenanceDetails,
+    "UpdateModelVersionSetDetails": UpdateModelVersionSetDetails,
     "UpdateNotebookSessionDetails": UpdateNotebookSessionDetails,
     "UpdateProjectDetails": UpdateProjectDetails,
     "UpdateSingleModelDeploymentConfigurationDetails": UpdateSingleModelDeploymentConfigurationDetails,

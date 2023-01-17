@@ -41,6 +41,7 @@ Data Labeling Service Dataplane
     oci.data_labeling_service_dataplane.models.ImageMetadata
     oci.data_labeling_service_dataplane.models.ImageObjectSelectionEntity
     oci.data_labeling_service_dataplane.models.InitialRecordGenerationConfiguration
+    oci.data_labeling_service_dataplane.models.KeyValueSelectionEntity
     oci.data_labeling_service_dataplane.models.Label
     oci.data_labeling_service_dataplane.models.LabelName
     oci.data_labeling_service_dataplane.models.LabelSet

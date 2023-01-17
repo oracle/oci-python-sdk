@@ -119,7 +119,7 @@ class MaintenanceWindow(object):
     @property
     def preference(self):
         """
-        **[Required]** Gets the preference of this MaintenanceWindow.
+        Gets the preference of this MaintenanceWindow.
         The maintenance window scheduling preference.
 
         Allowed values for this property are: "NO_PREFERENCE", "CUSTOM_PREFERENCE", 'UNKNOWN_ENUM_VALUE'.
