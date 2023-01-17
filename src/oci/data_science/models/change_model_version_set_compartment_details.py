@@ -8,58 +8,60 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class CloudDbServerDetails(object):
+class ChangeModelVersionSetCompartmentDetails(object):
     """
-    Details of the ExaDB-D DB server. Applies to Exadata Cloud instances only.
+    Details for changing the compartment of a model version set.
     """
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CloudDbServerDetails object with values from keyword arguments.
+        Initializes a new ChangeModelVersionSetCompartmentDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param db_server_id:
-            The value to assign to the db_server_id property of this CloudDbServerDetails.
-        :type db_server_id: str
+        :param compartment_id:
+            The value to assign to the compartment_id property of this ChangeModelVersionSetCompartmentDetails.
+        :type compartment_id: str
 
         """
         self.swagger_types = {
-            'db_server_id': 'str'
+            'compartment_id': 'str'
         }
 
         self.attribute_map = {
-            'db_server_id': 'dbServerId'
+            'compartment_id': 'compartmentId'
         }
 
-        self._db_server_id = None
+        self._compartment_id = None
 
     @property
-    def db_server_id(self):
+    def compartment_id(self):
         """
-        **[Required]** Gets the db_server_id of this CloudDbServerDetails.
-        The `OCID`__ of ExaDB-D DB server.
+        **[Required]** Gets the compartment_id of this ChangeModelVersionSetCompartmentDetails.
+        The `OCID`__ of the compartment
+        where the resource should be moved to.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
-        :return: The db_server_id of this CloudDbServerDetails.
+        :return: The compartment_id of this ChangeModelVersionSetCompartmentDetails.
         :rtype: str
         """
-        return self._db_server_id
+        return self._compartment_id
 
-    @db_server_id.setter
-    def db_server_id(self, db_server_id):
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
         """
-        Sets the db_server_id of this CloudDbServerDetails.
-        The `OCID`__ of ExaDB-D DB server.
+        Sets the compartment_id of this ChangeModelVersionSetCompartmentDetails.
+        The `OCID`__ of the compartment
+        where the resource should be moved to.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
-        :param db_server_id: The db_server_id of this CloudDbServerDetails.
+        :param compartment_id: The compartment_id of this ChangeModelVersionSetCompartmentDetails.
         :type: str
         """
-        self._db_server_id = db_server_id
+        self._compartment_id = compartment_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

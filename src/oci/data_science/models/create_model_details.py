@@ -58,6 +58,14 @@ class CreateModelDetails(object):
             The value to assign to the output_schema property of this CreateModelDetails.
         :type output_schema: str
 
+        :param model_version_set_id:
+            The value to assign to the model_version_set_id property of this CreateModelDetails.
+        :type model_version_set_id: str
+
+        :param version_label:
+            The value to assign to the version_label property of this CreateModelDetails.
+        :type version_label: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -69,7 +77,9 @@ class CreateModelDetails(object):
             'custom_metadata_list': 'list[Metadata]',
             'defined_metadata_list': 'list[Metadata]',
             'input_schema': 'str',
-            'output_schema': 'str'
+            'output_schema': 'str',
+            'model_version_set_id': 'str',
+            'version_label': 'str'
         }
 
         self.attribute_map = {
@@ -82,7 +92,9 @@ class CreateModelDetails(object):
             'custom_metadata_list': 'customMetadataList',
             'defined_metadata_list': 'definedMetadataList',
             'input_schema': 'inputSchema',
-            'output_schema': 'outputSchema'
+            'output_schema': 'outputSchema',
+            'model_version_set_id': 'modelVersionSetId',
+            'version_label': 'versionLabel'
         }
 
         self._compartment_id = None
@@ -95,6 +107,8 @@ class CreateModelDetails(object):
         self._defined_metadata_list = None
         self._input_schema = None
         self._output_schema = None
+        self._model_version_set_id = None
+        self._version_label = None
 
     @property
     def compartment_id(self):
@@ -357,6 +371,54 @@ class CreateModelDetails(object):
         :type: str
         """
         self._output_schema = output_schema
+
+    @property
+    def model_version_set_id(self):
+        """
+        Gets the model_version_set_id of this CreateModelDetails.
+        The OCID of the model version set that the model is associated to.
+
+
+        :return: The model_version_set_id of this CreateModelDetails.
+        :rtype: str
+        """
+        return self._model_version_set_id
+
+    @model_version_set_id.setter
+    def model_version_set_id(self, model_version_set_id):
+        """
+        Sets the model_version_set_id of this CreateModelDetails.
+        The OCID of the model version set that the model is associated to.
+
+
+        :param model_version_set_id: The model_version_set_id of this CreateModelDetails.
+        :type: str
+        """
+        self._model_version_set_id = model_version_set_id
+
+    @property
+    def version_label(self):
+        """
+        Gets the version_label of this CreateModelDetails.
+        The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+
+
+        :return: The version_label of this CreateModelDetails.
+        :rtype: str
+        """
+        return self._version_label
+
+    @version_label.setter
+    def version_label(self, version_label):
+        """
+        Sets the version_label of this CreateModelDetails.
+        The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+
+
+        :param version_label: The version_label of this CreateModelDetails.
+        :type: str
+        """
+        self._version_label = version_label
 
     def __repr__(self):
         return formatted_flat_dict(self)

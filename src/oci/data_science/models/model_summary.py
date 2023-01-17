@@ -64,6 +64,22 @@ class ModelSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param model_version_set_id:
+            The value to assign to the model_version_set_id property of this ModelSummary.
+        :type model_version_set_id: str
+
+        :param model_version_set_name:
+            The value to assign to the model_version_set_name property of this ModelSummary.
+        :type model_version_set_name: str
+
+        :param version_id:
+            The value to assign to the version_id property of this ModelSummary.
+        :type version_id: int
+
+        :param version_label:
+            The value to assign to the version_label property of this ModelSummary.
+        :type version_label: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ModelSummary.
         :type freeform_tags: dict(str, str)
@@ -81,6 +97,10 @@ class ModelSummary(object):
             'created_by': 'str',
             'time_created': 'datetime',
             'lifecycle_state': 'str',
+            'model_version_set_id': 'str',
+            'model_version_set_name': 'str',
+            'version_id': 'int',
+            'version_label': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -93,6 +113,10 @@ class ModelSummary(object):
             'created_by': 'createdBy',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
+            'model_version_set_id': 'modelVersionSetId',
+            'model_version_set_name': 'modelVersionSetName',
+            'version_id': 'versionId',
+            'version_label': 'versionLabel',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -104,6 +128,10 @@ class ModelSummary(object):
         self._created_by = None
         self._time_created = None
         self._lifecycle_state = None
+        self._model_version_set_id = None
+        self._model_version_set_name = None
+        self._version_id = None
+        self._version_label = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -302,6 +330,102 @@ class ModelSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def model_version_set_id(self):
+        """
+        **[Required]** Gets the model_version_set_id of this ModelSummary.
+        The OCID of the model version set that the model is associated to.
+
+
+        :return: The model_version_set_id of this ModelSummary.
+        :rtype: str
+        """
+        return self._model_version_set_id
+
+    @model_version_set_id.setter
+    def model_version_set_id(self, model_version_set_id):
+        """
+        Sets the model_version_set_id of this ModelSummary.
+        The OCID of the model version set that the model is associated to.
+
+
+        :param model_version_set_id: The model_version_set_id of this ModelSummary.
+        :type: str
+        """
+        self._model_version_set_id = model_version_set_id
+
+    @property
+    def model_version_set_name(self):
+        """
+        **[Required]** Gets the model_version_set_name of this ModelSummary.
+        The name of the model version set that the model is associated to.
+
+
+        :return: The model_version_set_name of this ModelSummary.
+        :rtype: str
+        """
+        return self._model_version_set_name
+
+    @model_version_set_name.setter
+    def model_version_set_name(self, model_version_set_name):
+        """
+        Sets the model_version_set_name of this ModelSummary.
+        The name of the model version set that the model is associated to.
+
+
+        :param model_version_set_name: The model_version_set_name of this ModelSummary.
+        :type: str
+        """
+        self._model_version_set_name = model_version_set_name
+
+    @property
+    def version_id(self):
+        """
+        **[Required]** Gets the version_id of this ModelSummary.
+        Unique identifier assigned to each version of the model.
+
+
+        :return: The version_id of this ModelSummary.
+        :rtype: int
+        """
+        return self._version_id
+
+    @version_id.setter
+    def version_id(self, version_id):
+        """
+        Sets the version_id of this ModelSummary.
+        Unique identifier assigned to each version of the model.
+
+
+        :param version_id: The version_id of this ModelSummary.
+        :type: int
+        """
+        self._version_id = version_id
+
+    @property
+    def version_label(self):
+        """
+        **[Required]** Gets the version_label of this ModelSummary.
+        The version label can add an additional description of the lifecycle state of the model or the application using and training the model.
+
+
+        :return: The version_label of this ModelSummary.
+        :rtype: str
+        """
+        return self._version_label
+
+    @version_label.setter
+    def version_label(self, version_label):
+        """
+        Sets the version_label of this ModelSummary.
+        The version label can add an additional description of the lifecycle state of the model or the application using and training the model.
+
+
+        :param version_label: The version_label of this ModelSummary.
+        :type: str
+        """
+        self._version_label = version_label
 
     @property
     def freeform_tags(self):

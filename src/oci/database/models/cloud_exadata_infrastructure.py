@@ -160,6 +160,22 @@ class CloudExadataInfrastructure(object):
             The value to assign to the customer_contacts property of this CloudExadataInfrastructure.
         :type customer_contacts: list[oci.database.models.CustomerContact]
 
+        :param storage_server_version:
+            The value to assign to the storage_server_version property of this CloudExadataInfrastructure.
+        :type storage_server_version: str
+
+        :param db_server_version:
+            The value to assign to the db_server_version property of this CloudExadataInfrastructure.
+        :type db_server_version: str
+
+        :param monthly_storage_server_version:
+            The value to assign to the monthly_storage_server_version property of this CloudExadataInfrastructure.
+        :type monthly_storage_server_version: str
+
+        :param monthly_db_server_version:
+            The value to assign to the monthly_db_server_version property of this CloudExadataInfrastructure.
+        :type monthly_db_server_version: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -189,7 +205,11 @@ class CloudExadataInfrastructure(object):
             'next_maintenance_run_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'customer_contacts': 'list[CustomerContact]'
+            'customer_contacts': 'list[CustomerContact]',
+            'storage_server_version': 'str',
+            'db_server_version': 'str',
+            'monthly_storage_server_version': 'str',
+            'monthly_db_server_version': 'str'
         }
 
         self.attribute_map = {
@@ -220,7 +240,11 @@ class CloudExadataInfrastructure(object):
             'next_maintenance_run_id': 'nextMaintenanceRunId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'customer_contacts': 'customerContacts'
+            'customer_contacts': 'customerContacts',
+            'storage_server_version': 'storageServerVersion',
+            'db_server_version': 'dbServerVersion',
+            'monthly_storage_server_version': 'monthlyStorageServerVersion',
+            'monthly_db_server_version': 'monthlyDbServerVersion'
         }
 
         self._id = None
@@ -251,6 +275,10 @@ class CloudExadataInfrastructure(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._customer_contacts = None
+        self._storage_server_version = None
+        self._db_server_version = None
+        self._monthly_storage_server_version = None
+        self._monthly_db_server_version = None
 
     @property
     def id(self):
@@ -961,6 +989,110 @@ class CloudExadataInfrastructure(object):
         :type: list[oci.database.models.CustomerContact]
         """
         self._customer_contacts = customer_contacts
+
+    @property
+    def storage_server_version(self):
+        """
+        Gets the storage_server_version of this CloudExadataInfrastructure.
+        The software version of the storage servers (cells) in the cloud Exadata infrastructure.
+        Example: 20.1.15
+
+
+        :return: The storage_server_version of this CloudExadataInfrastructure.
+        :rtype: str
+        """
+        return self._storage_server_version
+
+    @storage_server_version.setter
+    def storage_server_version(self, storage_server_version):
+        """
+        Sets the storage_server_version of this CloudExadataInfrastructure.
+        The software version of the storage servers (cells) in the cloud Exadata infrastructure.
+        Example: 20.1.15
+
+
+        :param storage_server_version: The storage_server_version of this CloudExadataInfrastructure.
+        :type: str
+        """
+        self._storage_server_version = storage_server_version
+
+    @property
+    def db_server_version(self):
+        """
+        Gets the db_server_version of this CloudExadataInfrastructure.
+        The software version of the database servers (dom0) in the cloud Exadata infrastructure.
+        Example: 20.1.15
+
+
+        :return: The db_server_version of this CloudExadataInfrastructure.
+        :rtype: str
+        """
+        return self._db_server_version
+
+    @db_server_version.setter
+    def db_server_version(self, db_server_version):
+        """
+        Sets the db_server_version of this CloudExadataInfrastructure.
+        The software version of the database servers (dom0) in the cloud Exadata infrastructure.
+        Example: 20.1.15
+
+
+        :param db_server_version: The db_server_version of this CloudExadataInfrastructure.
+        :type: str
+        """
+        self._db_server_version = db_server_version
+
+    @property
+    def monthly_storage_server_version(self):
+        """
+        Gets the monthly_storage_server_version of this CloudExadataInfrastructure.
+        The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure.
+        Example: 20.1.15
+
+
+        :return: The monthly_storage_server_version of this CloudExadataInfrastructure.
+        :rtype: str
+        """
+        return self._monthly_storage_server_version
+
+    @monthly_storage_server_version.setter
+    def monthly_storage_server_version(self, monthly_storage_server_version):
+        """
+        Sets the monthly_storage_server_version of this CloudExadataInfrastructure.
+        The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure.
+        Example: 20.1.15
+
+
+        :param monthly_storage_server_version: The monthly_storage_server_version of this CloudExadataInfrastructure.
+        :type: str
+        """
+        self._monthly_storage_server_version = monthly_storage_server_version
+
+    @property
+    def monthly_db_server_version(self):
+        """
+        Gets the monthly_db_server_version of this CloudExadataInfrastructure.
+        The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure.
+        Example: 20.1.15
+
+
+        :return: The monthly_db_server_version of this CloudExadataInfrastructure.
+        :rtype: str
+        """
+        return self._monthly_db_server_version
+
+    @monthly_db_server_version.setter
+    def monthly_db_server_version(self, monthly_db_server_version):
+        """
+        Sets the monthly_db_server_version of this CloudExadataInfrastructure.
+        The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure.
+        Example: 20.1.15
+
+
+        :param monthly_db_server_version: The monthly_db_server_version of this CloudExadataInfrastructure.
+        :type: str
+        """
+        self._monthly_db_server_version = monthly_db_server_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

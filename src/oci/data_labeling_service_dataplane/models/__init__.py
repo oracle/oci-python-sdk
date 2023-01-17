@@ -27,6 +27,7 @@ from .image_dataset_format_details import ImageDatasetFormatDetails
 from .image_metadata import ImageMetadata
 from .image_object_selection_entity import ImageObjectSelectionEntity
 from .initial_record_generation_configuration import InitialRecordGenerationConfiguration
+from .key_value_selection_entity import KeyValueSelectionEntity
 from .label import Label
 from .label_name import LabelName
 from .label_set import LabelSet
@@ -74,6 +75,7 @@ data_labeling_service_dataplane_type_mapping = {
     "ImageMetadata": ImageMetadata,
     "ImageObjectSelectionEntity": ImageObjectSelectionEntity,
     "InitialRecordGenerationConfiguration": InitialRecordGenerationConfiguration,
+    "KeyValueSelectionEntity": KeyValueSelectionEntity,
     "Label": Label,
     "LabelName": LabelName,
     "LabelSet": LabelSet,

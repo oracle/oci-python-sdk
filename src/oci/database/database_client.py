@@ -12387,7 +12387,7 @@ class DatabaseClient(object):
 
     def get_cloud_exadata_infrastructure_unallocated_resources(self, cloud_exadata_infrastructure_id, **kwargs):
         """
-        Gets un allocated resources information for the specified Cloud Exadata infrastructure.
+        Gets unallocated resources information for the specified Cloud Exadata infrastructure.
 
 
         :param str cloud_exadata_infrastructure_id: (required)
@@ -14153,6 +14153,11 @@ class DatabaseClient(object):
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
+        :param list[str] excluded_fields: (optional)
+            If provided, the specified fields will be excluded in the response.
+
+            Allowed values are: "multiRackConfigurationFile"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -14180,7 +14185,8 @@ class DatabaseClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "excluded_fields"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -14196,6 +14202,19 @@ class DatabaseClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'excluded_fields' in kwargs:
+            excluded_fields_allowed_values = ["multiRackConfigurationFile"]
+            for excluded_fields_item in kwargs['excluded_fields']:
+                if excluded_fields_item not in excluded_fields_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `excluded_fields`, must be one of {0}".format(excluded_fields_allowed_values)
+                    )
+
+        query_params = {
+            "excludedFields": self.base_client.generate_collection_format_param(kwargs.get("excluded_fields", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -14218,6 +14237,7 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="ExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -14228,6 +14248,7 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="ExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -21398,6 +21419,11 @@ class DatabaseClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
 
+        :param list[str] excluded_fields: (optional)
+            If provided, the specified fields will be excluded in the response.
+
+            Allowed values are: "multiRackConfigurationFile"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -21431,7 +21457,8 @@ class DatabaseClient(object):
             "sort_by",
             "sort_order",
             "lifecycle_state",
-            "display_name"
+            "display_name",
+            "excluded_fields"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -21459,6 +21486,14 @@ class DatabaseClient(object):
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
                 )
 
+        if 'excluded_fields' in kwargs:
+            excluded_fields_allowed_values = ["multiRackConfigurationFile"]
+            for excluded_fields_item in kwargs['excluded_fields']:
+                if excluded_fields_item not in excluded_fields_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `excluded_fields`, must be one of {0}".format(excluded_fields_allowed_values)
+                    )
+
         query_params = {
             "compartmentId": compartment_id,
             "limit": kwargs.get("limit", missing),
@@ -21466,7 +21501,8 @@ class DatabaseClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
-            "displayName": kwargs.get("display_name", missing)
+            "displayName": kwargs.get("display_name", missing),
+            "excludedFields": self.base_client.generate_collection_format_param(kwargs.get("excluded_fields", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

@@ -57,6 +57,10 @@ class HttpIngressGatewayTrafficRouteRuleDetails(IngressGatewayTrafficRouteRuleDe
             The value to assign to the is_path_rewrite_enabled property of this HttpIngressGatewayTrafficRouteRuleDetails.
         :type is_path_rewrite_enabled: bool
 
+        :param request_timeout_in_ms:
+            The value to assign to the request_timeout_in_ms property of this HttpIngressGatewayTrafficRouteRuleDetails.
+        :type request_timeout_in_ms: int
+
         """
         self.swagger_types = {
             'type': 'str',
@@ -66,7 +70,8 @@ class HttpIngressGatewayTrafficRouteRuleDetails(IngressGatewayTrafficRouteRuleDe
             'path_type': 'str',
             'is_grpc': 'bool',
             'is_host_rewrite_enabled': 'bool',
-            'is_path_rewrite_enabled': 'bool'
+            'is_path_rewrite_enabled': 'bool',
+            'request_timeout_in_ms': 'int'
         }
 
         self.attribute_map = {
@@ -77,7 +82,8 @@ class HttpIngressGatewayTrafficRouteRuleDetails(IngressGatewayTrafficRouteRuleDe
             'path_type': 'pathType',
             'is_grpc': 'isGrpc',
             'is_host_rewrite_enabled': 'isHostRewriteEnabled',
-            'is_path_rewrite_enabled': 'isPathRewriteEnabled'
+            'is_path_rewrite_enabled': 'isPathRewriteEnabled',
+            'request_timeout_in_ms': 'requestTimeoutInMs'
         }
 
         self._type = None
@@ -88,6 +94,7 @@ class HttpIngressGatewayTrafficRouteRuleDetails(IngressGatewayTrafficRouteRuleDe
         self._is_grpc = None
         self._is_host_rewrite_enabled = None
         self._is_path_rewrite_enabled = None
+        self._request_timeout_in_ms = None
         self._type = 'HTTP'
 
     @property
@@ -219,6 +226,36 @@ class HttpIngressGatewayTrafficRouteRuleDetails(IngressGatewayTrafficRouteRuleDe
         :type: bool
         """
         self._is_path_rewrite_enabled = is_path_rewrite_enabled
+
+    @property
+    def request_timeout_in_ms(self):
+        """
+        Gets the request_timeout_in_ms of this HttpIngressGatewayTrafficRouteRuleDetails.
+        The maximum duration in milliseconds for the upstream service to respond to a request.
+        If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.
+        The value 0 (zero) indicates that the timeout is disabled.
+        For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
+
+
+        :return: The request_timeout_in_ms of this HttpIngressGatewayTrafficRouteRuleDetails.
+        :rtype: int
+        """
+        return self._request_timeout_in_ms
+
+    @request_timeout_in_ms.setter
+    def request_timeout_in_ms(self, request_timeout_in_ms):
+        """
+        Sets the request_timeout_in_ms of this HttpIngressGatewayTrafficRouteRuleDetails.
+        The maximum duration in milliseconds for the upstream service to respond to a request.
+        If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.
+        The value 0 (zero) indicates that the timeout is disabled.
+        For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
+
+
+        :param request_timeout_in_ms: The request_timeout_in_ms of this HttpIngressGatewayTrafficRouteRuleDetails.
+        :type: int
+        """
+        self._request_timeout_in_ms = request_timeout_in_ms
 
     def __repr__(self):
         return formatted_flat_dict(self)

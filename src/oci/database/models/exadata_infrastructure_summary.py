@@ -165,6 +165,14 @@ class ExadataInfrastructureSummary(object):
             The value to assign to the compute_count property of this ExadataInfrastructureSummary.
         :type compute_count: int
 
+        :param is_multi_rack_deployment:
+            The value to assign to the is_multi_rack_deployment property of this ExadataInfrastructureSummary.
+        :type is_multi_rack_deployment: bool
+
+        :param multi_rack_configuration_file:
+            The value to assign to the multi_rack_configuration_file property of this ExadataInfrastructureSummary.
+        :type multi_rack_configuration_file: str
+
         :param additional_compute_count:
             The value to assign to the additional_compute_count property of this ExadataInfrastructureSummary.
         :type additional_compute_count: int
@@ -290,6 +298,8 @@ class ExadataInfrastructureSummary(object):
             'additional_storage_count': 'int',
             'activated_storage_count': 'int',
             'compute_count': 'int',
+            'is_multi_rack_deployment': 'bool',
+            'multi_rack_configuration_file': 'str',
             'additional_compute_count': 'int',
             'additional_compute_system_model': 'str',
             'cloud_control_plane_server1': 'str',
@@ -337,6 +347,8 @@ class ExadataInfrastructureSummary(object):
             'additional_storage_count': 'additionalStorageCount',
             'activated_storage_count': 'activatedStorageCount',
             'compute_count': 'computeCount',
+            'is_multi_rack_deployment': 'isMultiRackDeployment',
+            'multi_rack_configuration_file': 'multiRackConfigurationFile',
             'additional_compute_count': 'additionalComputeCount',
             'additional_compute_system_model': 'additionalComputeSystemModel',
             'cloud_control_plane_server1': 'cloudControlPlaneServer1',
@@ -383,6 +395,8 @@ class ExadataInfrastructureSummary(object):
         self._additional_storage_count = None
         self._activated_storage_count = None
         self._compute_count = None
+        self._is_multi_rack_deployment = None
+        self._multi_rack_configuration_file = None
         self._additional_compute_count = None
         self._additional_compute_system_model = None
         self._cloud_control_plane_server1 = None
@@ -882,6 +896,54 @@ class ExadataInfrastructureSummary(object):
         :type: int
         """
         self._compute_count = compute_count
+
+    @property
+    def is_multi_rack_deployment(self):
+        """
+        Gets the is_multi_rack_deployment of this ExadataInfrastructureSummary.
+        Indicates if deployment is Multi-Rack or not.
+
+
+        :return: The is_multi_rack_deployment of this ExadataInfrastructureSummary.
+        :rtype: bool
+        """
+        return self._is_multi_rack_deployment
+
+    @is_multi_rack_deployment.setter
+    def is_multi_rack_deployment(self, is_multi_rack_deployment):
+        """
+        Sets the is_multi_rack_deployment of this ExadataInfrastructureSummary.
+        Indicates if deployment is Multi-Rack or not.
+
+
+        :param is_multi_rack_deployment: The is_multi_rack_deployment of this ExadataInfrastructureSummary.
+        :type: bool
+        """
+        self._is_multi_rack_deployment = is_multi_rack_deployment
+
+    @property
+    def multi_rack_configuration_file(self):
+        """
+        Gets the multi_rack_configuration_file of this ExadataInfrastructureSummary.
+        The base64 encoded Multi-Rack configuration json file.
+
+
+        :return: The multi_rack_configuration_file of this ExadataInfrastructureSummary.
+        :rtype: str
+        """
+        return self._multi_rack_configuration_file
+
+    @multi_rack_configuration_file.setter
+    def multi_rack_configuration_file(self, multi_rack_configuration_file):
+        """
+        Sets the multi_rack_configuration_file of this ExadataInfrastructureSummary.
+        The base64 encoded Multi-Rack configuration json file.
+
+
+        :param multi_rack_configuration_file: The multi_rack_configuration_file of this ExadataInfrastructureSummary.
+        :type: str
+        """
+        self._multi_rack_configuration_file = multi_rack_configuration_file
 
     @property
     def additional_compute_count(self):

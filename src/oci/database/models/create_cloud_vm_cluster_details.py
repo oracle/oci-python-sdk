@@ -115,6 +115,10 @@ class CreateCloudVmClusterDetails(object):
             The value to assign to the scan_listener_port_tcp_ssl property of this CreateCloudVmClusterDetails.
         :type scan_listener_port_tcp_ssl: int
 
+        :param private_zone_id:
+            The value to assign to the private_zone_id property of this CreateCloudVmClusterDetails.
+        :type private_zone_id: str
+
         :param nsg_ids:
             The value to assign to the nsg_ids property of this CreateCloudVmClusterDetails.
         :type nsg_ids: list[str]
@@ -163,6 +167,7 @@ class CreateCloudVmClusterDetails(object):
             'time_zone': 'str',
             'scan_listener_port_tcp': 'int',
             'scan_listener_port_tcp_ssl': 'int',
+            'private_zone_id': 'str',
             'nsg_ids': 'list[str]',
             'backup_network_nsg_ids': 'list[str]',
             'gi_version': 'str',
@@ -194,6 +199,7 @@ class CreateCloudVmClusterDetails(object):
             'time_zone': 'timeZone',
             'scan_listener_port_tcp': 'scanListenerPortTcp',
             'scan_listener_port_tcp_ssl': 'scanListenerPortTcpSsl',
+            'private_zone_id': 'privateZoneId',
             'nsg_ids': 'nsgIds',
             'backup_network_nsg_ids': 'backupNetworkNsgIds',
             'gi_version': 'giVersion',
@@ -224,6 +230,7 @@ class CreateCloudVmClusterDetails(object):
         self._time_zone = None
         self._scan_listener_port_tcp = None
         self._scan_listener_port_tcp_ssl = None
+        self._private_zone_id = None
         self._nsg_ids = None
         self._backup_network_nsg_ids = None
         self._gi_version = None
@@ -455,7 +462,7 @@ class CreateCloudVmClusterDetails(object):
     def db_servers(self):
         """
         Gets the db_servers of this CreateCloudVmClusterDetails.
-        The list of Db servers.
+        The list of DB servers.
 
 
         :return: The db_servers of this CreateCloudVmClusterDetails.
@@ -467,7 +474,7 @@ class CreateCloudVmClusterDetails(object):
     def db_servers(self, db_servers):
         """
         Sets the db_servers of this CreateCloudVmClusterDetails.
-        The list of Db servers.
+        The list of DB servers.
 
 
         :param db_servers: The db_servers of this CreateCloudVmClusterDetails.
@@ -826,6 +833,30 @@ class CreateCloudVmClusterDetails(object):
         :type: int
         """
         self._scan_listener_port_tcp_ssl = scan_listener_port_tcp_ssl
+
+    @property
+    def private_zone_id(self):
+        """
+        Gets the private_zone_id of this CreateCloudVmClusterDetails.
+        The private zone id in which DNS records need to be created.
+
+
+        :return: The private_zone_id of this CreateCloudVmClusterDetails.
+        :rtype: str
+        """
+        return self._private_zone_id
+
+    @private_zone_id.setter
+    def private_zone_id(self, private_zone_id):
+        """
+        Sets the private_zone_id of this CreateCloudVmClusterDetails.
+        The private zone id in which DNS records need to be created.
+
+
+        :param private_zone_id: The private_zone_id of this CreateCloudVmClusterDetails.
+        :type: str
+        """
+        self._private_zone_id = private_zone_id
 
     @property
     def nsg_ids(self):
