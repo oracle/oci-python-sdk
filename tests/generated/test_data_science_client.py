@@ -198,6 +198,47 @@ def test_cancel_job_run(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_cancel_pipeline_run(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'CancelPipelineRun'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'CancelPipelineRun')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='CancelPipelineRun')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.cancel_pipeline_run(
+                pipeline_run_id=request.pop(util.camelize('pipelineRunId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'CancelPipelineRun',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cancel_pipeline_run',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
 def test_cancel_work_request(testing_service_client):
     if not testing_service_client.is_api_enabled('data_science', 'CancelWorkRequest'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -485,6 +526,90 @@ def test_change_notebook_session_compartment(testing_service_client):
             result,
             service_error,
             'change_notebook_session_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_change_pipeline_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'ChangePipelineCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'ChangePipelineCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='ChangePipelineCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.change_pipeline_compartment(
+                pipeline_id=request.pop(util.camelize('pipelineId')),
+                change_pipeline_compartment_details=request.pop(util.camelize('ChangePipelineCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'ChangePipelineCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_pipeline_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_change_pipeline_run_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'ChangePipelineRunCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'ChangePipelineRunCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='ChangePipelineRunCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.change_pipeline_run_compartment(
+                pipeline_run_id=request.pop(util.camelize('pipelineRunId')),
+                change_pipeline_run_compartment_details=request.pop(util.camelize('ChangePipelineRunCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'ChangePipelineRunCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_pipeline_run_compartment',
             False,
             False
         )
@@ -905,6 +1030,88 @@ def test_create_notebook_session(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_create_pipeline(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'CreatePipeline'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'CreatePipeline')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='CreatePipeline')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.create_pipeline(
+                create_pipeline_details=request.pop(util.camelize('CreatePipelineDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'CreatePipeline',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pipeline',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_create_pipeline_run(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'CreatePipelineRun'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'CreatePipelineRun')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='CreatePipelineRun')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.create_pipeline_run(
+                create_pipeline_run_details=request.pop(util.camelize('CreatePipelineRunDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'CreatePipelineRun',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pipelineRun',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
 def test_create_project(testing_service_client):
     if not testing_service_client.is_api_enabled('data_science', 'CreateProject'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -940,6 +1147,49 @@ def test_create_project(testing_service_client):
             result,
             service_error,
             'project',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_create_step_artifact(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'CreateStepArtifact'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'CreateStepArtifact')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='CreateStepArtifact')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.create_step_artifact(
+                pipeline_id=request.pop(util.camelize('pipelineId')),
+                step_name=request.pop(util.camelize('stepName')),
+                step_artifact=request.pop(util.camelize('StepArtifact')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'CreateStepArtifact',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'create_step_artifact',
             False,
             False
         )
@@ -1309,6 +1559,88 @@ def test_delete_notebook_session(testing_service_client):
             result,
             service_error,
             'delete_notebook_session',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_delete_pipeline(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'DeletePipeline'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'DeletePipeline')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='DeletePipeline')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.delete_pipeline(
+                pipeline_id=request.pop(util.camelize('pipelineId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'DeletePipeline',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_pipeline',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_delete_pipeline_run(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'DeletePipelineRun'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'DeletePipelineRun')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='DeletePipelineRun')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.delete_pipeline_run(
+                pipeline_run_id=request.pop(util.camelize('pipelineRunId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'DeletePipelineRun',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_pipeline_run',
             True,
             False
         )
@@ -1767,6 +2099,88 @@ def test_get_notebook_session(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_get_pipeline(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'GetPipeline'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'GetPipeline')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='GetPipeline')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.get_pipeline(
+                pipeline_id=request.pop(util.camelize('pipelineId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'GetPipeline',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pipeline',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_get_pipeline_run(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'GetPipelineRun'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'GetPipelineRun')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='GetPipelineRun')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.get_pipeline_run(
+                pipeline_run_id=request.pop(util.camelize('pipelineRunId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'GetPipelineRun',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pipelineRun',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
 def test_get_project(testing_service_client):
     if not testing_service_client.is_api_enabled('data_science', 'GetProject'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1802,6 +2216,48 @@ def test_get_project(testing_service_client):
             result,
             service_error,
             'project',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_get_step_artifact_content(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'GetStepArtifactContent'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'GetStepArtifactContent')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='GetStepArtifactContent')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.get_step_artifact_content(
+                pipeline_id=request.pop(util.camelize('pipelineId')),
+                step_name=request.pop(util.camelize('stepName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'GetStepArtifactContent',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stream',
             False,
             False
         )
@@ -1925,6 +2381,48 @@ def test_head_model_artifact(testing_service_client):
             result,
             service_error,
             'head_model_artifact',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_head_step_artifact(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'HeadStepArtifact'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'HeadStepArtifact')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='HeadStepArtifact')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.head_step_artifact(
+                pipeline_id=request.pop(util.camelize('pipelineId')),
+                step_name=request.pop(util.camelize('stepName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'HeadStepArtifact',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'head_step_artifact',
             False,
             False
         )
@@ -2603,6 +3101,132 @@ def test_list_notebook_sessions(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_list_pipeline_runs(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'ListPipelineRuns'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'ListPipelineRuns')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='ListPipelineRuns')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.list_pipeline_runs(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_pipeline_runs(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_pipeline_runs(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'ListPipelineRuns',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pipelineRunSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_list_pipelines(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'ListPipelines'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'ListPipelines')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='ListPipelines')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.list_pipelines(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_pipelines(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_pipelines(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'ListPipelines',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pipelineSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
 def test_list_projects(testing_service_client):
     if not testing_service_client.is_api_enabled('data_science', 'ListProjects'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3099,6 +3723,90 @@ def test_update_notebook_session(testing_service_client):
             result,
             service_error,
             'notebookSession',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_update_pipeline(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'UpdatePipeline'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'UpdatePipeline')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='UpdatePipeline')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.update_pipeline(
+                pipeline_id=request.pop(util.camelize('pipelineId')),
+                update_pipeline_details=request.pop(util.camelize('UpdatePipelineDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'UpdatePipeline',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pipeline',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_update_pipeline_run(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'UpdatePipelineRun'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'UpdatePipelineRun')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='UpdatePipelineRun')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.update_pipeline_run(
+                pipeline_run_id=request.pop(util.camelize('pipelineRunId')),
+                update_pipeline_run_details=request.pop(util.camelize('UpdatePipelineRunDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'UpdatePipelineRun',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pipelineRun',
             False,
             False
         )

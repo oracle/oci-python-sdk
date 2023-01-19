@@ -149,6 +149,10 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             The value to assign to the defined_tags property of this CreateRefreshableAutonomousDatabaseCloneDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param private_endpoint_ip:
+            The value to assign to the private_endpoint_ip property of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type private_endpoint_ip: str
+
         :param db_version:
             The value to assign to the db_version property of this CreateRefreshableAutonomousDatabaseCloneDetails.
         :type db_version: str
@@ -228,6 +232,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'private_endpoint_label': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'private_endpoint_ip': 'str',
             'db_version': 'str',
             'source': 'str',
             'customer_contacts': 'list[CustomerContact]',
@@ -272,6 +277,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'private_endpoint_label': 'privateEndpointLabel',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'private_endpoint_ip': 'privateEndpointIp',
             'db_version': 'dbVersion',
             'source': 'source',
             'customer_contacts': 'customerContacts',
@@ -315,6 +321,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
         self._private_endpoint_label = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._private_endpoint_ip = None
         self._db_version = None
         self._source = None
         self._customer_contacts = None

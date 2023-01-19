@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.pic.ocm.migration.sdk</groupId>
         <artifactId>ocm-migration-sdk-api-spec</artifactId>
-        <version>0.1.1176</version>
+        <version>0.1.1414</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

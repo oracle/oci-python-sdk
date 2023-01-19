@@ -439,6 +439,92 @@ class DataScienceClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_pipeline_and_wait_for_state(self, create_pipeline_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_science.DataScienceClient.create_pipeline` and waits for the :py:class:`~oci.data_science.models.Pipeline` acted upon
+        to enter the given state(s).
+
+        :param oci.data_science.models.CreatePipelineDetails create_pipeline_details: (required)
+            Details for the new Pipeline.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.Pipeline.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_science.DataScienceClient.create_pipeline`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_pipeline(create_pipeline_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        pipeline_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_pipeline(pipeline_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def create_pipeline_run_and_wait_for_state(self, create_pipeline_run_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_science.DataScienceClient.create_pipeline_run` and waits for the :py:class:`~oci.data_science.models.PipelineRun` acted upon
+        to enter the given state(s).
+
+        :param oci.data_science.models.CreatePipelineRunDetails create_pipeline_run_details: (required)
+            Details for the new PipelineRun.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.PipelineRun.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_science.DataScienceClient.create_pipeline_run`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_pipeline_run(create_pipeline_run_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        pipeline_run_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_pipeline_run(pipeline_run_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_project_and_wait_for_state(self, create_project_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.data_science.DataScienceClient.create_project` and waits for the :py:class:`~oci.data_science.models.Project` acted upon
@@ -907,6 +993,108 @@ class DataScienceClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def delete_pipeline_and_wait_for_state(self, pipeline_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_science.DataScienceClient.delete_pipeline` and waits for the :py:class:`~oci.data_science.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str pipeline_id: (required)
+            The `OCID`__ of the pipeline.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_science.DataScienceClient.delete_pipeline`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_pipeline(pipeline_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_pipeline_run_and_wait_for_state(self, pipeline_run_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_science.DataScienceClient.delete_pipeline_run` and waits for the :py:class:`~oci.data_science.models.PipelineRun` acted upon
+        to enter the given state(s).
+
+        :param str pipeline_run_id: (required)
+            The `OCID`__ of the pipeline run.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.PipelineRun.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_science.DataScienceClient.delete_pipeline_run`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        initial_get_result = self.client.get_pipeline_run(pipeline_run_id)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_pipeline_run(pipeline_run_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                initial_get_result,  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                succeed_on_not_found=True,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def delete_project_and_wait_for_state(self, project_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.data_science.DataScienceClient.delete_project` and waits for the :py:class:`~oci.data_science.models.WorkRequest`
@@ -1314,6 +1502,102 @@ class DataScienceClientCompositeOperations(object):
             waiter_result = oci.wait_until(
                 self.client,
                 self.client.get_notebook_session(notebook_session_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_pipeline_and_wait_for_state(self, pipeline_id, update_pipeline_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_science.DataScienceClient.update_pipeline` and waits for the :py:class:`~oci.data_science.models.Pipeline` acted upon
+        to enter the given state(s).
+
+        :param str pipeline_id: (required)
+            The `OCID`__ of the pipeline.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.data_science.models.UpdatePipelineDetails update_pipeline_details: (required)
+            The information to be updated.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.Pipeline.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_science.DataScienceClient.update_pipeline`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_pipeline(pipeline_id, update_pipeline_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        pipeline_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_pipeline(pipeline_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_pipeline_run_and_wait_for_state(self, pipeline_run_id, update_pipeline_run_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_science.DataScienceClient.update_pipeline_run` and waits for the :py:class:`~oci.data_science.models.PipelineRun` acted upon
+        to enter the given state(s).
+
+        :param str pipeline_run_id: (required)
+            The `OCID`__ of the pipeline run.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.data_science.models.UpdatePipelineRunDetails update_pipeline_run_details: (required)
+            The information to be updated.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_science.models.PipelineRun.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_science.DataScienceClient.update_pipeline_run`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_pipeline_run(pipeline_run_id, update_pipeline_run_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        pipeline_run_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_pipeline_run(pipeline_run_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
