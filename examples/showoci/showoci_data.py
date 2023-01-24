@@ -1,5 +1,5 @@
 ##########################################################################
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 #
 # showoci_data.py
@@ -127,6 +127,8 @@ class ShowOCIData(object):
             'disclaimer': "This is not an official Oracle application, it is not supported by Oracle. It should NOT be used for utilization calculation purposes. If you run into issues using this, please file an issue at https://github.com/oracle/oci-python-sdk/issues rather than contacting support",
             'config_file': self.service.flags.config_file,
             'config_profile': self.service.flags.config_section,
+            'connection_timeout': self.service.flags.connection_timeout,
+            'read_timeout': self.service.flags.read_timeout,
             'use_instance_principals': self.service.flags.use_instance_principals,
             'use_delegation_token': self.service.flags.use_delegation_token,
             'use_security_token': self.service.flags.use_security_token,
@@ -2701,6 +2703,7 @@ class ShowOCIData(object):
                 value = {'id': str(infra['id']),
                          'name': str(infra['display_name']) + " - " + str(infra['license_model']) + " - " + infra['shape'] + " - " + str(infra['lifecycle_state']),
                          'availability_domain': infra['availability_domain'],
+                         'display_name': infra['display_name'],
                          'subnet_id': infra['subnet_id'],
                          'subnet_name': infra['subnet_name'],
                          'nsg_ids': infra['nsg_ids'],

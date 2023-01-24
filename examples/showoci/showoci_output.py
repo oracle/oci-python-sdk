@@ -130,6 +130,8 @@ class ShowOCIOutput(object):
                 print("Config File     : " + data['config_file'])
                 print("Config Profile  : " + data['config_profile'])
             print("Date/Time       : " + data['datetime'])
+            print("API Conn Timeout: " + str(data['connection_timeout']))
+            print("API Read Timeout: " + str(data['read_timeout']))
             print("Comand Line     : " + data['cmdline'])
             print("Showoci Version : " + data['version'])
             print("OCI SDK Version : " + data['oci_sdk_version'])
@@ -4759,6 +4761,8 @@ class ShowOCICSV(object):
                         'status': dbs['lifecycle_state'],
                         'type': "Autonomous " + dbs['db_workload'],
                         'name': dbs['display_name'],
+                        'infra_name': "",
+                        'container_name': "",
                         'cpu_core_count': dbs['cpu_core_count'],
                         'db_storage_tb': dbs['data_storage_size_in_tbs'],
                         'db_version': dbs['db_version'],
@@ -4807,6 +4811,136 @@ class ShowOCICSV(object):
             self.__print_error("__csv_database_db_autonomous", e)
 
     ##########################################################################
+    # csv database autonouns dedicated
+    ##########################################################################
+
+    def __csv_database_db_autonomous_dedicated(self, region_name, databases):
+        try:
+            for dbs in databases:
+                for vm in dbs['containers']:
+                    for db in vm['databases']:
+                        data = {'region_name': region_name,
+                                'availability_domain': dbs['availability_domain'],
+                                'compartment_name': dbs['compartment_name'],
+                                'compartment_path': dbs['compartment_path'],
+                                'status': dbs['lifecycle_state'],
+                                'type': "Autonomous Dedicated " + str(db['db_workload']),
+                                'name': db['display_name'],
+                                'shape': dbs['shape'],
+                                'cpu_core_count': db['cpu_core_count'],
+                                'db_storage_gb': str(int(db['data_storage_size_in_tbs']) * 1024),
+                                'shape_ocpus': dbs['shape_ocpu'],
+                                'memory_gb': dbs['shape_memory_gb'],
+                                'local_storage_tb': dbs['shape_storage_tb'],
+                                'node_count': "",
+                                'database': db['name'],
+                                'database_edition': 'ADB-D',
+                                'license_model': dbs['license_model'],
+                                'data_subnet': dbs['subnet_name'],
+                                'backup_subnet': "",
+                                'scan_ips': "",
+                                'vip_ips': "",
+                                'pdbs': "",
+                                'vm_name': dbs['name'],
+                                'cluster_name': vm['name'],
+                                'time_created': db['time_created'],
+                                'domain': dbs['domain'],
+                                'auto_backup_enabled': "True",
+                                'db_nodes': "",
+                                'freeform_tags': str(', '.join(key + "=" + db['freeform_tags'][key] for key in db['freeform_tags'].keys())),
+                                'defined_tags': self.__get_defined_tags(db['defined_tags']),
+                                'database_id': db['id'],
+                                'dbsystem_id': dbs['id'],
+                                'db_home': "",
+                                'db_home_version': ""
+                                }
+                        self.csv_database.append(data)
+
+                        # for autonomous only
+                        dadb = {'region_name': region_name,
+                                'compartment_name': dbs['compartment_name'],
+                                'compartment_path': dbs['compartment_path'],
+                                'status': db['lifecycle_state'],
+                                'type': "Autonomous Dedicated " + db['db_workload'],
+                                'name': db['display_name'],
+                                'infra_name': dbs['display_name'],
+                                'container_name': vm['display_name'],
+                                'cpu_core_count': db['cpu_core_count'],
+                                'db_storage_tb': db['data_storage_size_in_tbs'],
+                                'db_version': db['db_version'],
+                                'db_name': db['db_name'],
+                                'version_license_model': dbs['license_model'],
+                                'time_created': db['time_created'],
+                                'data_safe_status': db['data_safe_status'],
+                                'time_maintenance_begin': db['time_maintenance_begin'],
+                                'time_maintenance_end': db['time_maintenance_end'],
+                                'subnet_id': dbs['subnet_id'] if dbs['subnet_id'] != "None" else "",
+                                'subnet_name': dbs['subnet_name'] if dbs['subnet_name'] != "None" else "",
+                                'private_endpoint': db['private_endpoint'] if db['private_endpoint'] != "None" else "",
+                                'private_endpoint_label': db['private_endpoint_label'] if db['private_endpoint_label'] != "None" else "",
+                                'nsg_ids': db['nsg_ids'] if db['nsg_ids'] != "None" else "",
+                                'nsg_names': str(', '.join(x for x in dbs['nsg_names'])),
+                                'whitelisted_ips': db['whitelisted_ips'],
+                                'service_console_url': db['service_console_url'],
+                                'connection_strings': db['connection_strings'],
+                                'is_auto_scaling_enabled': db['is_auto_scaling_enabled'],
+                                'is_dedicated': db['is_dedicated'],
+                                'freeform_tags': str(', '.join(key + "=" + db['freeform_tags'][key] for key in db['freeform_tags'].keys())),
+                                'defined_tags': self.__get_defined_tags(db['defined_tags']),
+                                'id': db['id']
+                                }
+
+                        self.csv_db_autonomous.append(dadb)
+
+                        # database Backups
+                        if 'backups' in dbs:
+                            for backup in db['backups']:
+                                data = {
+                                    'region_name': region_name,
+                                    'compartment_name': dbs['compartment_name'],
+                                    'compartment_path': dbs['compartment_path'],
+                                    'dbs_name': dbs['display_name'],
+                                    'database': dbs['db_name'],
+                                    'shape': 'Autononous',
+                                    'backup_name': ("Automatic Backup - " if backup['is_automatic'] == 'True' else "") + backup['display_name'],
+                                    'time': backup['time'],
+                                    'size': "",
+                                    'lifecycle_state': backup['lifecycle_state']
+                                }
+                                self.csv_database_backups.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_database_db_autonomous_dedicated", e)
+
+    ##########################################################################
+    # database
+    ##########################################################################
+
+    def __csv_database_main(self, region_name, list_databases):
+        try:
+
+            if len(list_databases) == 0:
+                return
+
+            if 'exadata_infrustructure' in list_databases:
+                self.__csv_database_db_exadata(region_name, list_databases['exadata_infrustructure'])
+
+            if 'exacc_infrustructure' in list_databases:
+                self.__csv_database_db_exacc(region_name, list_databases['exacc_infrustructure'])
+
+            if 'db_system' in list_databases:
+                self.__csv_database_db_system(region_name, list_databases['db_system'])
+
+            if 'autonomous' in list_databases:
+                self.__csv_database_db_autonomous(region_name, list_databases['autonomous'])
+
+            if 'autonomous_dedicated' in list_databases:
+                self.__csv_database_db_autonomous_dedicated(region_name, list_databases['autonomous_dedicated'])
+
+        except Exception as e:
+            self.__print_error("__print_database_main", e)
+
+    ##########################################################################
     # Limits
     ##########################################################################
     def __csv_limits_main(self, region_name, limits):
@@ -4831,31 +4965,6 @@ class ShowOCICSV(object):
 
         except Exception as e:
             self.__print_error("__csv_limits_main", e)
-
-    ##########################################################################
-    # database
-    ##########################################################################
-
-    def __csv_database_main(self, region_name, list_databases):
-        try:
-
-            if len(list_databases) == 0:
-                return
-
-            if 'exadata_infrustructure' in list_databases:
-                self.__csv_database_db_exadata(region_name, list_databases['exadata_infrustructure'])
-
-            if 'exacc_infrustructure' in list_databases:
-                self.__csv_database_db_exacc(region_name, list_databases['exacc_infrustructure'])
-
-            if 'db_system' in list_databases:
-                self.__csv_database_db_system(region_name, list_databases['db_system'])
-
-            if 'autonomous' in list_databases:
-                self.__csv_database_db_autonomous(region_name, list_databases['autonomous'])
-
-        except Exception as e:
-            self.__print_error("__print_database_main", e)
 
     ##########################################################################
     # csv compute instances
