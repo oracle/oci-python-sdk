@@ -14,6 +14,7 @@ import os
 import re
 import string
 import uuid
+import copy
 # This was added to address thread safety issues with datetime.strptime
 # See https://bugs.python.org/issue7980.
 import _strptime  # noqa: F401
@@ -619,8 +620,9 @@ class BaseClient(object):
                 self.logger.warning("Recieved a 413/RequestEntityTooLarge from {}, resetting session".format(target_service))
                 _ = response.content  # Read the response content to enable closing the socket.
                 response.close()
+                new_session = copy.copy(self.session)
                 self.session.close()
-                self.session = requests.session()
+                self.session = new_session
             if isinstance(self.circuit_breaker_strategy, CircuitBreakerStrategy) and self.circuit_breaker_strategy.is_transient_error(response.status_code, service_code):
                 new_circuit_breaker_state = CircuitBreakerMonitor.get(self.circuit_breaker_name).state
                 if initial_circuit_breaker_state != new_circuit_breaker_state:

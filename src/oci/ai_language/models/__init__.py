@@ -10,6 +10,8 @@ from .batch_detect_language_entities_details import BatchDetectLanguageEntitiesD
 from .batch_detect_language_entities_result import BatchDetectLanguageEntitiesResult
 from .batch_detect_language_key_phrases_details import BatchDetectLanguageKeyPhrasesDetails
 from .batch_detect_language_key_phrases_result import BatchDetectLanguageKeyPhrasesResult
+from .batch_detect_language_pii_entities_details import BatchDetectLanguagePiiEntitiesDetails
+from .batch_detect_language_pii_entities_result import BatchDetectLanguagePiiEntitiesResult
 from .batch_detect_language_sentiments_details import BatchDetectLanguageSentimentsDetails
 from .batch_detect_language_sentiments_result import BatchDetectLanguageSentimentsResult
 from .batch_detect_language_text_classification_details import BatchDetectLanguageTextClassificationDetails
@@ -68,6 +70,12 @@ from .named_entity_recognition_model_details import NamedEntityRecognitionModelD
 from .named_entity_recognition_model_metrics import NamedEntityRecognitionModelMetrics
 from .object_list_dataset import ObjectListDataset
 from .object_storage_dataset import ObjectStorageDataset
+from .pii_entity import PiiEntity
+from .pii_entity_document_result import PiiEntityDocumentResult
+from .pii_entity_mask import PiiEntityMask
+from .pii_entity_masking import PiiEntityMasking
+from .pii_entity_remove import PiiEntityRemove
+from .pii_entity_replace import PiiEntityReplace
 from .pre_deployed_language_models import PreDeployedLanguageModels
 from .project import Project
 from .project_collection import ProjectCollection
@@ -105,6 +113,8 @@ ai_language_type_mapping = {
     "BatchDetectLanguageEntitiesResult": BatchDetectLanguageEntitiesResult,
     "BatchDetectLanguageKeyPhrasesDetails": BatchDetectLanguageKeyPhrasesDetails,
     "BatchDetectLanguageKeyPhrasesResult": BatchDetectLanguageKeyPhrasesResult,
+    "BatchDetectLanguagePiiEntitiesDetails": BatchDetectLanguagePiiEntitiesDetails,
+    "BatchDetectLanguagePiiEntitiesResult": BatchDetectLanguagePiiEntitiesResult,
     "BatchDetectLanguageSentimentsDetails": BatchDetectLanguageSentimentsDetails,
     "BatchDetectLanguageSentimentsResult": BatchDetectLanguageSentimentsResult,
     "BatchDetectLanguageTextClassificationDetails": BatchDetectLanguageTextClassificationDetails,
@@ -163,6 +173,12 @@ ai_language_type_mapping = {
     "NamedEntityRecognitionModelMetrics": NamedEntityRecognitionModelMetrics,
     "ObjectListDataset": ObjectListDataset,
     "ObjectStorageDataset": ObjectStorageDataset,
+    "PiiEntity": PiiEntity,
+    "PiiEntityDocumentResult": PiiEntityDocumentResult,
+    "PiiEntityMask": PiiEntityMask,
+    "PiiEntityMasking": PiiEntityMasking,
+    "PiiEntityRemove": PiiEntityRemove,
+    "PiiEntityReplace": PiiEntityReplace,
     "PreDeployedLanguageModels": PreDeployedLanguageModels,
     "Project": Project,
     "ProjectCollection": ProjectCollection,

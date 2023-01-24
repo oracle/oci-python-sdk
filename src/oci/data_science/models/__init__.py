@@ -15,6 +15,8 @@ from .change_model_compartment_details import ChangeModelCompartmentDetails
 from .change_model_deployment_compartment_details import ChangeModelDeploymentCompartmentDetails
 from .change_model_version_set_compartment_details import ChangeModelVersionSetCompartmentDetails
 from .change_notebook_session_compartment_details import ChangeNotebookSessionCompartmentDetails
+from .change_pipeline_compartment_details import ChangePipelineCompartmentDetails
+from .change_pipeline_run_compartment_details import ChangePipelineRunCompartmentDetails
 from .change_project_compartment_details import ChangeProjectCompartmentDetails
 from .create_job_details import CreateJobDetails
 from .create_job_run_details import CreateJobRunDetails
@@ -23,6 +25,8 @@ from .create_model_details import CreateModelDetails
 from .create_model_provenance_details import CreateModelProvenanceDetails
 from .create_model_version_set_details import CreateModelVersionSetDetails
 from .create_notebook_session_details import CreateNotebookSessionDetails
+from .create_pipeline_details import CreatePipelineDetails
+from .create_pipeline_run_details import CreatePipelineRunDetails
 from .create_project_details import CreateProjectDetails
 from .default_job_configuration_details import DefaultJobConfigurationDetails
 from .export_model_artifact_details import ExportModelArtifactDetails
@@ -63,6 +67,27 @@ from .notebook_session_runtime_config_details import NotebookSessionRuntimeConfi
 from .notebook_session_shape_config_details import NotebookSessionShapeConfigDetails
 from .notebook_session_shape_summary import NotebookSessionShapeSummary
 from .notebook_session_summary import NotebookSessionSummary
+from .pipeline import Pipeline
+from .pipeline_configuration_details import PipelineConfigurationDetails
+from .pipeline_custom_script_step_details import PipelineCustomScriptStepDetails
+from .pipeline_custom_script_step_run import PipelineCustomScriptStepRun
+from .pipeline_custom_script_step_update_details import PipelineCustomScriptStepUpdateDetails
+from .pipeline_default_configuration_details import PipelineDefaultConfigurationDetails
+from .pipeline_infrastructure_configuration_details import PipelineInfrastructureConfigurationDetails
+from .pipeline_log_configuration_details import PipelineLogConfigurationDetails
+from .pipeline_ml_job_step_details import PipelineMLJobStepDetails
+from .pipeline_ml_job_step_run import PipelineMLJobStepRun
+from .pipeline_ml_job_step_update_details import PipelineMLJobStepUpdateDetails
+from .pipeline_run import PipelineRun
+from .pipeline_run_log_details import PipelineRunLogDetails
+from .pipeline_run_summary import PipelineRunSummary
+from .pipeline_shape_config_details import PipelineShapeConfigDetails
+from .pipeline_step_configuration_details import PipelineStepConfigurationDetails
+from .pipeline_step_details import PipelineStepDetails
+from .pipeline_step_override_details import PipelineStepOverrideDetails
+from .pipeline_step_run import PipelineStepRun
+from .pipeline_step_update_details import PipelineStepUpdateDetails
+from .pipeline_summary import PipelineSummary
 from .project import Project
 from .project_summary import ProjectSummary
 from .scaling_policy import ScalingPolicy
@@ -78,6 +103,8 @@ from .update_model_details import UpdateModelDetails
 from .update_model_provenance_details import UpdateModelProvenanceDetails
 from .update_model_version_set_details import UpdateModelVersionSetDetails
 from .update_notebook_session_details import UpdateNotebookSessionDetails
+from .update_pipeline_details import UpdatePipelineDetails
+from .update_pipeline_run_details import UpdatePipelineRunDetails
 from .update_project_details import UpdateProjectDetails
 from .update_single_model_deployment_configuration_details import UpdateSingleModelDeploymentConfigurationDetails
 from .work_request import WorkRequest
@@ -99,6 +126,8 @@ data_science_type_mapping = {
     "ChangeModelDeploymentCompartmentDetails": ChangeModelDeploymentCompartmentDetails,
     "ChangeModelVersionSetCompartmentDetails": ChangeModelVersionSetCompartmentDetails,
     "ChangeNotebookSessionCompartmentDetails": ChangeNotebookSessionCompartmentDetails,
+    "ChangePipelineCompartmentDetails": ChangePipelineCompartmentDetails,
+    "ChangePipelineRunCompartmentDetails": ChangePipelineRunCompartmentDetails,
     "ChangeProjectCompartmentDetails": ChangeProjectCompartmentDetails,
     "CreateJobDetails": CreateJobDetails,
     "CreateJobRunDetails": CreateJobRunDetails,
@@ -107,6 +136,8 @@ data_science_type_mapping = {
     "CreateModelProvenanceDetails": CreateModelProvenanceDetails,
     "CreateModelVersionSetDetails": CreateModelVersionSetDetails,
     "CreateNotebookSessionDetails": CreateNotebookSessionDetails,
+    "CreatePipelineDetails": CreatePipelineDetails,
+    "CreatePipelineRunDetails": CreatePipelineRunDetails,
     "CreateProjectDetails": CreateProjectDetails,
     "DefaultJobConfigurationDetails": DefaultJobConfigurationDetails,
     "ExportModelArtifactDetails": ExportModelArtifactDetails,
@@ -147,6 +178,27 @@ data_science_type_mapping = {
     "NotebookSessionShapeConfigDetails": NotebookSessionShapeConfigDetails,
     "NotebookSessionShapeSummary": NotebookSessionShapeSummary,
     "NotebookSessionSummary": NotebookSessionSummary,
+    "Pipeline": Pipeline,
+    "PipelineConfigurationDetails": PipelineConfigurationDetails,
+    "PipelineCustomScriptStepDetails": PipelineCustomScriptStepDetails,
+    "PipelineCustomScriptStepRun": PipelineCustomScriptStepRun,
+    "PipelineCustomScriptStepUpdateDetails": PipelineCustomScriptStepUpdateDetails,
+    "PipelineDefaultConfigurationDetails": PipelineDefaultConfigurationDetails,
+    "PipelineInfrastructureConfigurationDetails": PipelineInfrastructureConfigurationDetails,
+    "PipelineLogConfigurationDetails": PipelineLogConfigurationDetails,
+    "PipelineMLJobStepDetails": PipelineMLJobStepDetails,
+    "PipelineMLJobStepRun": PipelineMLJobStepRun,
+    "PipelineMLJobStepUpdateDetails": PipelineMLJobStepUpdateDetails,
+    "PipelineRun": PipelineRun,
+    "PipelineRunLogDetails": PipelineRunLogDetails,
+    "PipelineRunSummary": PipelineRunSummary,
+    "PipelineShapeConfigDetails": PipelineShapeConfigDetails,
+    "PipelineStepConfigurationDetails": PipelineStepConfigurationDetails,
+    "PipelineStepDetails": PipelineStepDetails,
+    "PipelineStepOverrideDetails": PipelineStepOverrideDetails,
+    "PipelineStepRun": PipelineStepRun,
+    "PipelineStepUpdateDetails": PipelineStepUpdateDetails,
+    "PipelineSummary": PipelineSummary,
     "Project": Project,
     "ProjectSummary": ProjectSummary,
     "ScalingPolicy": ScalingPolicy,
@@ -162,6 +214,8 @@ data_science_type_mapping = {
     "UpdateModelProvenanceDetails": UpdateModelProvenanceDetails,
     "UpdateModelVersionSetDetails": UpdateModelVersionSetDetails,
     "UpdateNotebookSessionDetails": UpdateNotebookSessionDetails,
+    "UpdatePipelineDetails": UpdatePipelineDetails,
+    "UpdatePipelineRunDetails": UpdatePipelineRunDetails,
     "UpdateProjectDetails": UpdateProjectDetails,
     "UpdateSingleModelDeploymentConfigurationDetails": UpdateSingleModelDeploymentConfigurationDetails,
     "WorkRequest": WorkRequest,
