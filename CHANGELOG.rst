@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.90.3 - 2023-01-24
+====================
+
+Added
+-----
+* Support for the Cloud Migrations service
+* Support for setting up custom private IPs while creating private endpoints in the Database service
+* Support for machine learning pipelines in the Data Science service
+* Support for personally identifiable information detection in the AI Language service  
+ 
+====================
 2.90.2 - 2023-01-17
 ====================
 

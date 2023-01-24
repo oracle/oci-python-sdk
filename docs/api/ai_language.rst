@@ -24,6 +24,8 @@ Ai Language
     oci.ai_language.models.BatchDetectLanguageEntitiesResult
     oci.ai_language.models.BatchDetectLanguageKeyPhrasesDetails
     oci.ai_language.models.BatchDetectLanguageKeyPhrasesResult
+    oci.ai_language.models.BatchDetectLanguagePiiEntitiesDetails
+    oci.ai_language.models.BatchDetectLanguagePiiEntitiesResult
     oci.ai_language.models.BatchDetectLanguageSentimentsDetails
     oci.ai_language.models.BatchDetectLanguageSentimentsResult
     oci.ai_language.models.BatchDetectLanguageTextClassificationDetails
@@ -82,6 +84,12 @@ Ai Language
     oci.ai_language.models.NamedEntityRecognitionModelMetrics
     oci.ai_language.models.ObjectListDataset
     oci.ai_language.models.ObjectStorageDataset
+    oci.ai_language.models.PiiEntity
+    oci.ai_language.models.PiiEntityDocumentResult
+    oci.ai_language.models.PiiEntityMask
+    oci.ai_language.models.PiiEntityMasking
+    oci.ai_language.models.PiiEntityRemove
+    oci.ai_language.models.PiiEntityReplace
     oci.ai_language.models.PreDeployedLanguageModels
     oci.ai_language.models.Project
     oci.ai_language.models.ProjectCollection
