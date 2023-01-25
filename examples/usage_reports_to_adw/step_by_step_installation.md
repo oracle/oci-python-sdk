@@ -227,6 +227,26 @@ cd ADWCUSG
 
 Edit tnsnames.ora file and change the tnsnames *_low entry host to the private end point specify in the ADW page
 
+## 19. How to add multiple tenants
+
+Login to Usage2adw VM
+
+```
+   # setup oci tenant configuration
+   oci setup config
+   Enter a location for your config [/home/opc/.oci/config]: ( Press Enter) 
+   Do you want add a profile here - Press Y
+   Name of the profile - Enter the tenant name
+   Complete the rest of the questions based on the user authentication
+
+   # update run_multi_daily_usage2adw.sh
+   cd /home/opc/usage_reports_to_adw/shell_scripts
+   vi run_multi_daily_usage2adw.sh
+
+   # scroll to the bottom and add lines per tenant profile, you can specify different tagspecial1 and tagspecial2 if different then the main tenant
+   run_report tenant2 tagspecial1 tagspecial2
+   run_report tenant3 tagspecial1 tagspecial2
+```
 
 ## 20. How to upgrade the usage2adw application and APEX
 ```

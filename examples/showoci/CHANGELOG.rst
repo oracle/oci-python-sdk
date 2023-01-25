@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+23.01.31 - 23.01.31
+=====================
+* Added flag -skipdbhomes to skip database homes and databases
+* Added flag -readtimeout and -conntimeout for read and connection timeout, default=(20,150)
+* Added Autonomous Dedicated to the CSV file.
+
+=====================
 23.01.10 - 23.01.10
 =====================
 * Added ExaCS DB Servers
