@@ -13,6 +13,14 @@ class CreateCloudAutonomousVmClusterDetails(object):
     Details for the create cloud Autonomous VM cluster operation.
     """
 
+    #: A constant which can be used with the compute_model property of a CreateCloudAutonomousVmClusterDetails.
+    #: This constant has a value of "ECPU"
+    COMPUTE_MODEL_ECPU = "ECPU"
+
+    #: A constant which can be used with the compute_model property of a CreateCloudAutonomousVmClusterDetails.
+    #: This constant has a value of "OCPU"
+    COMPUTE_MODEL_OCPU = "OCPU"
+
     #: A constant which can be used with the license_model property of a CreateCloudAutonomousVmClusterDetails.
     #: This constant has a value of "LICENSE_INCLUDED"
     LICENSE_MODEL_LICENSE_INCLUDED = "LICENSE_INCLUDED"
@@ -66,6 +74,11 @@ class CreateCloudAutonomousVmClusterDetails(object):
             The value to assign to the cluster_time_zone property of this CreateCloudAutonomousVmClusterDetails.
         :type cluster_time_zone: str
 
+        :param compute_model:
+            The value to assign to the compute_model property of this CreateCloudAutonomousVmClusterDetails.
+            Allowed values for this property are: "ECPU", "OCPU"
+        :type compute_model: str
+
         :param db_servers:
             The value to assign to the db_servers property of this CreateCloudAutonomousVmClusterDetails.
         :type db_servers: list[str]
@@ -103,6 +116,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
             'memory_per_oracle_compute_unit_in_gbs': 'int',
             'autonomous_data_storage_size_in_tbs': 'float',
             'cluster_time_zone': 'str',
+            'compute_model': 'str',
             'db_servers': 'list[str]',
             'maintenance_window_details': 'MaintenanceWindow',
             'license_model': 'str',
@@ -122,6 +136,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
             'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs',
             'autonomous_data_storage_size_in_tbs': 'autonomousDataStorageSizeInTBs',
             'cluster_time_zone': 'clusterTimeZone',
+            'compute_model': 'computeModel',
             'db_servers': 'dbServers',
             'maintenance_window_details': 'maintenanceWindowDetails',
             'license_model': 'licenseModel',
@@ -140,6 +155,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
         self._memory_per_oracle_compute_unit_in_gbs = None
         self._autonomous_data_storage_size_in_tbs = None
         self._cluster_time_zone = None
+        self._compute_model = None
         self._db_servers = None
         self._maintenance_window_details = None
         self._license_model = None
@@ -402,6 +418,38 @@ class CreateCloudAutonomousVmClusterDetails(object):
         :type: str
         """
         self._cluster_time_zone = cluster_time_zone
+
+    @property
+    def compute_model(self):
+        """
+        Gets the compute_model of this CreateCloudAutonomousVmClusterDetails.
+        The compute model of the Cloud Autonomous VM Cluster.
+
+        Allowed values for this property are: "ECPU", "OCPU"
+
+
+        :return: The compute_model of this CreateCloudAutonomousVmClusterDetails.
+        :rtype: str
+        """
+        return self._compute_model
+
+    @compute_model.setter
+    def compute_model(self, compute_model):
+        """
+        Sets the compute_model of this CreateCloudAutonomousVmClusterDetails.
+        The compute model of the Cloud Autonomous VM Cluster.
+
+
+        :param compute_model: The compute_model of this CreateCloudAutonomousVmClusterDetails.
+        :type: str
+        """
+        allowed_values = ["ECPU", "OCPU"]
+        if not value_allowed_none_or_none_sentinel(compute_model, allowed_values):
+            raise ValueError(
+                "Invalid value for `compute_model`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._compute_model = compute_model
 
     @property
     def db_servers(self):

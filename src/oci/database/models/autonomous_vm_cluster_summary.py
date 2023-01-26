@@ -41,6 +41,14 @@ class AutonomousVmClusterSummary(object):
     #: This constant has a value of "MAINTENANCE_IN_PROGRESS"
     LIFECYCLE_STATE_MAINTENANCE_IN_PROGRESS = "MAINTENANCE_IN_PROGRESS"
 
+    #: A constant which can be used with the compute_model property of a AutonomousVmClusterSummary.
+    #: This constant has a value of "ECPU"
+    COMPUTE_MODEL_ECPU = "ECPU"
+
+    #: A constant which can be used with the compute_model property of a AutonomousVmClusterSummary.
+    #: This constant has a value of "OCPU"
+    COMPUTE_MODEL_OCPU = "OCPU"
+
     #: A constant which can be used with the license_model property of a AutonomousVmClusterSummary.
     #: This constant has a value of "LICENSE_INCLUDED"
     LICENSE_MODEL_LICENSE_INCLUDED = "LICENSE_INCLUDED"
@@ -99,6 +107,12 @@ class AutonomousVmClusterSummary(object):
         :param cpus_enabled:
             The value to assign to the cpus_enabled property of this AutonomousVmClusterSummary.
         :type cpus_enabled: int
+
+        :param compute_model:
+            The value to assign to the compute_model property of this AutonomousVmClusterSummary.
+            Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type compute_model: str
 
         :param ocpus_enabled:
             The value to assign to the ocpus_enabled property of this AutonomousVmClusterSummary.
@@ -207,6 +221,7 @@ class AutonomousVmClusterSummary(object):
             'vm_cluster_network_id': 'str',
             'is_local_backup_enabled': 'bool',
             'cpus_enabled': 'int',
+            'compute_model': 'str',
             'ocpus_enabled': 'float',
             'available_cpus': 'int',
             'total_container_databases': 'int',
@@ -244,6 +259,7 @@ class AutonomousVmClusterSummary(object):
             'vm_cluster_network_id': 'vmClusterNetworkId',
             'is_local_backup_enabled': 'isLocalBackupEnabled',
             'cpus_enabled': 'cpusEnabled',
+            'compute_model': 'computeModel',
             'ocpus_enabled': 'ocpusEnabled',
             'available_cpus': 'availableCpus',
             'total_container_databases': 'totalContainerDatabases',
@@ -280,6 +296,7 @@ class AutonomousVmClusterSummary(object):
         self._vm_cluster_network_id = None
         self._is_local_backup_enabled = None
         self._cpus_enabled = None
+        self._compute_model = None
         self._ocpus_enabled = None
         self._available_cpus = None
         self._total_container_databases = None
@@ -593,6 +610,36 @@ class AutonomousVmClusterSummary(object):
         :type: int
         """
         self._cpus_enabled = cpus_enabled
+
+    @property
+    def compute_model(self):
+        """
+        Gets the compute_model of this AutonomousVmClusterSummary.
+        The compute model of the Autonomous VM Cluster.
+
+        Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The compute_model of this AutonomousVmClusterSummary.
+        :rtype: str
+        """
+        return self._compute_model
+
+    @compute_model.setter
+    def compute_model(self, compute_model):
+        """
+        Sets the compute_model of this AutonomousVmClusterSummary.
+        The compute model of the Autonomous VM Cluster.
+
+
+        :param compute_model: The compute_model of this AutonomousVmClusterSummary.
+        :type: str
+        """
+        allowed_values = ["ECPU", "OCPU"]
+        if not value_allowed_none_or_none_sentinel(compute_model, allowed_values):
+            compute_model = 'UNKNOWN_ENUM_VALUE'
+        self._compute_model = compute_model
 
     @property
     def ocpus_enabled(self):

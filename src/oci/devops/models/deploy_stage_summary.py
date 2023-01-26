@@ -26,6 +26,7 @@ class DeployStageSummary(object):
         * :class:`~oci.devops.models.ComputeInstanceGroupCanaryApprovalDeployStageSummary`
         * :class:`~oci.devops.models.InvokeFunctionDeployStageSummary`
         * :class:`~oci.devops.models.OkeHelmChartDeployStageSummary`
+        * :class:`~oci.devops.models.ShellDeployStageSummary`
         * :class:`~oci.devops.models.OkeCanaryTrafficShiftDeployStageSummary`
         * :class:`~oci.devops.models.ComputeInstanceGroupDeployStageSummary`
         * :class:`~oci.devops.models.ComputeInstanceGroupCanaryDeployStageSummary`
@@ -183,6 +184,9 @@ class DeployStageSummary(object):
 
         if type == 'OKE_HELM_CHART_DEPLOYMENT':
             return 'OkeHelmChartDeployStageSummary'
+
+        if type == 'SHELL':
+            return 'ShellDeployStageSummary'
 
         if type == 'OKE_CANARY_TRAFFIC_SHIFT':
             return 'OkeCanaryTrafficShiftDeployStageSummary'

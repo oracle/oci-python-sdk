@@ -61,7 +61,7 @@ class NginxBlueGreenStrategy(OkeBlueGreenStrategy):
     def namespace_a(self):
         """
         **[Required]** Gets the namespace_a of this NginxBlueGreenStrategy.
-        Namespace A for deployment.
+        Namespace A for deployment. Example: namespaceA - first Namespace name.
 
 
         :return: The namespace_a of this NginxBlueGreenStrategy.
@@ -73,7 +73,7 @@ class NginxBlueGreenStrategy(OkeBlueGreenStrategy):
     def namespace_a(self, namespace_a):
         """
         Sets the namespace_a of this NginxBlueGreenStrategy.
-        Namespace A for deployment.
+        Namespace A for deployment. Example: namespaceA - first Namespace name.
 
 
         :param namespace_a: The namespace_a of this NginxBlueGreenStrategy.
@@ -85,7 +85,7 @@ class NginxBlueGreenStrategy(OkeBlueGreenStrategy):
     def namespace_b(self):
         """
         **[Required]** Gets the namespace_b of this NginxBlueGreenStrategy.
-        Namespace B for deployment.
+        Namespace B for deployment. Example: namespaceB - second Namespace name.
 
 
         :return: The namespace_b of this NginxBlueGreenStrategy.
@@ -97,7 +97,7 @@ class NginxBlueGreenStrategy(OkeBlueGreenStrategy):
     def namespace_b(self, namespace_b):
         """
         Sets the namespace_b of this NginxBlueGreenStrategy.
-        Namespace B for deployment.
+        Namespace B for deployment. Example: namespaceB - second Namespace name.
 
 
         :param namespace_b: The namespace_b of this NginxBlueGreenStrategy.

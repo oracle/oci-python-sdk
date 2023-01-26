@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.pic.elasticsearch.mp</groupId>
         <artifactId>management-plane-spec</artifactId>
-        <version>0.2.394</version>
+        <version>0.2.446</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -58,6 +58,7 @@ class DeployStageExecutionProgress(object):
         * :class:`~oci.devops.models.ComputeInstanceGroupCanaryDeployStageExecutionProgress`
         * :class:`~oci.devops.models.OkeBlueGreenDeployStageExecutionProgress`
         * :class:`~oci.devops.models.ComputeInstanceGroupDeployStageExecutionProgress`
+        * :class:`~oci.devops.models.ShellDeployStageExecutionProgress`
         * :class:`~oci.devops.models.OkeCanaryDeployStageExecutionProgress`
         * :class:`~oci.devops.models.LoadBalancerTrafficShiftDeployStageExecutionProgress`
         * :class:`~oci.devops.models.WaitDeployStageExecutionProgress`
@@ -160,6 +161,9 @@ class DeployStageExecutionProgress(object):
 
         if type == 'COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT':
             return 'ComputeInstanceGroupDeployStageExecutionProgress'
+
+        if type == 'SHELL':
+            return 'ShellDeployStageExecutionProgress'
 
         if type == 'OKE_CANARY_DEPLOYMENT':
             return 'OkeCanaryDeployStageExecutionProgress'

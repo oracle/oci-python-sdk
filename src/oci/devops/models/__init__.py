@@ -95,6 +95,8 @@ from .compute_instance_group_selector_collection import ComputeInstanceGroupSele
 from .connection import Connection
 from .connection_collection import ConnectionCollection
 from .connection_summary import ConnectionSummary
+from .container_config import ContainerConfig
+from .container_instance_config import ContainerInstanceConfig
 from .container_registry_delivered_artifact import ContainerRegistryDeliveredArtifact
 from .count_based_approval_policy import CountBasedApprovalPolicy
 from .create_absolute_wait_criteria_details import CreateAbsoluteWaitCriteriaDetails
@@ -144,6 +146,7 @@ from .create_oke_deploy_stage_details import CreateOkeDeployStageDetails
 from .create_oke_helm_chart_deploy_stage_details import CreateOkeHelmChartDeployStageDetails
 from .create_project_details import CreateProjectDetails
 from .create_repository_details import CreateRepositoryDetails
+from .create_shell_deploy_stage_details import CreateShellDeployStageDetails
 from .create_single_deploy_stage_deployment_details import CreateSingleDeployStageDeploymentDetails
 from .create_single_deploy_stage_redeployment_details import CreateSingleDeployStageRedeploymentDetails
 from .create_trigger_deployment_stage_details import CreateTriggerDeploymentStageDetails
@@ -335,6 +338,10 @@ from .repository_summary import RepositorySummary
 from .repository_tag import RepositoryTag
 from .repository_tag_summary import RepositoryTagSummary
 from .service_vnic_channel import ServiceVnicChannel
+from .shape_config import ShapeConfig
+from .shell_deploy_stage import ShellDeployStage
+from .shell_deploy_stage_execution_progress import ShellDeployStageExecutionProgress
+from .shell_deploy_stage_summary import ShellDeployStageSummary
 from .single_deploy_stage_deployment import SingleDeployStageDeployment
 from .single_deploy_stage_deployment_summary import SingleDeployStageDeploymentSummary
 from .single_deploy_stage_redeployment import SingleDeployStageRedeployment
@@ -398,6 +405,7 @@ from .update_oke_deploy_stage_details import UpdateOkeDeployStageDetails
 from .update_oke_helm_chart_deploy_stage_details import UpdateOkeHelmChartDeployStageDetails
 from .update_project_details import UpdateProjectDetails
 from .update_repository_details import UpdateRepositoryDetails
+from .update_shell_deploy_stage_details import UpdateShellDeployStageDetails
 from .update_single_deploy_stage_deployment_details import UpdateSingleDeployStageDeploymentDetails
 from .update_single_deploy_stage_redeployment_details import UpdateSingleDeployStageRedeploymentDetails
 from .update_trigger_deployment_stage_details import UpdateTriggerDeploymentStageDetails
@@ -529,6 +537,8 @@ devops_type_mapping = {
     "Connection": Connection,
     "ConnectionCollection": ConnectionCollection,
     "ConnectionSummary": ConnectionSummary,
+    "ContainerConfig": ContainerConfig,
+    "ContainerInstanceConfig": ContainerInstanceConfig,
     "ContainerRegistryDeliveredArtifact": ContainerRegistryDeliveredArtifact,
     "CountBasedApprovalPolicy": CountBasedApprovalPolicy,
     "CreateAbsoluteWaitCriteriaDetails": CreateAbsoluteWaitCriteriaDetails,
@@ -578,6 +588,7 @@ devops_type_mapping = {
     "CreateOkeHelmChartDeployStageDetails": CreateOkeHelmChartDeployStageDetails,
     "CreateProjectDetails": CreateProjectDetails,
     "CreateRepositoryDetails": CreateRepositoryDetails,
+    "CreateShellDeployStageDetails": CreateShellDeployStageDetails,
     "CreateSingleDeployStageDeploymentDetails": CreateSingleDeployStageDeploymentDetails,
     "CreateSingleDeployStageRedeploymentDetails": CreateSingleDeployStageRedeploymentDetails,
     "CreateTriggerDeploymentStageDetails": CreateTriggerDeploymentStageDetails,
@@ -769,6 +780,10 @@ devops_type_mapping = {
     "RepositoryTag": RepositoryTag,
     "RepositoryTagSummary": RepositoryTagSummary,
     "ServiceVnicChannel": ServiceVnicChannel,
+    "ShapeConfig": ShapeConfig,
+    "ShellDeployStage": ShellDeployStage,
+    "ShellDeployStageExecutionProgress": ShellDeployStageExecutionProgress,
+    "ShellDeployStageSummary": ShellDeployStageSummary,
     "SingleDeployStageDeployment": SingleDeployStageDeployment,
     "SingleDeployStageDeploymentSummary": SingleDeployStageDeploymentSummary,
     "SingleDeployStageRedeployment": SingleDeployStageRedeployment,
@@ -832,6 +847,7 @@ devops_type_mapping = {
     "UpdateOkeHelmChartDeployStageDetails": UpdateOkeHelmChartDeployStageDetails,
     "UpdateProjectDetails": UpdateProjectDetails,
     "UpdateRepositoryDetails": UpdateRepositoryDetails,
+    "UpdateShellDeployStageDetails": UpdateShellDeployStageDetails,
     "UpdateSingleDeployStageDeploymentDetails": UpdateSingleDeployStageDeploymentDetails,
     "UpdateSingleDeployStageRedeploymentDetails": UpdateSingleDeployStageRedeploymentDetails,
     "UpdateTriggerDeploymentStageDetails": UpdateTriggerDeploymentStageDetails,

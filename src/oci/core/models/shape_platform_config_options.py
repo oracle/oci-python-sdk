@@ -68,6 +68,10 @@ class ShapePlatformConfigOptions(object):
             The value to assign to the numa_nodes_per_socket_platform_options property of this ShapePlatformConfigOptions.
         :type numa_nodes_per_socket_platform_options: oci.core.models.ShapeNumaNodesPerSocketPlatformOptions
 
+        :param memory_encryption_options:
+            The value to assign to the memory_encryption_options property of this ShapePlatformConfigOptions.
+        :type memory_encryption_options: oci.core.models.ShapeMemoryEncryptionOptions
+
         :param symmetric_multi_threading_options:
             The value to assign to the symmetric_multi_threading_options property of this ShapePlatformConfigOptions.
         :type symmetric_multi_threading_options: oci.core.models.ShapeSymmetricMultiThreadingEnabledPlatformOptions
@@ -95,6 +99,7 @@ class ShapePlatformConfigOptions(object):
             'measured_boot_options': 'ShapeMeasuredBootOptions',
             'trusted_platform_module_options': 'ShapeTrustedPlatformModuleOptions',
             'numa_nodes_per_socket_platform_options': 'ShapeNumaNodesPerSocketPlatformOptions',
+            'memory_encryption_options': 'ShapeMemoryEncryptionOptions',
             'symmetric_multi_threading_options': 'ShapeSymmetricMultiThreadingEnabledPlatformOptions',
             'access_control_service_options': 'ShapeAccessControlServiceEnabledPlatformOptions',
             'virtual_instructions_options': 'ShapeVirtualInstructionsEnabledPlatformOptions',
@@ -108,6 +113,7 @@ class ShapePlatformConfigOptions(object):
             'measured_boot_options': 'measuredBootOptions',
             'trusted_platform_module_options': 'trustedPlatformModuleOptions',
             'numa_nodes_per_socket_platform_options': 'numaNodesPerSocketPlatformOptions',
+            'memory_encryption_options': 'memoryEncryptionOptions',
             'symmetric_multi_threading_options': 'symmetricMultiThreadingOptions',
             'access_control_service_options': 'accessControlServiceOptions',
             'virtual_instructions_options': 'virtualInstructionsOptions',
@@ -120,6 +126,7 @@ class ShapePlatformConfigOptions(object):
         self._measured_boot_options = None
         self._trusted_platform_module_options = None
         self._numa_nodes_per_socket_platform_options = None
+        self._memory_encryption_options = None
         self._symmetric_multi_threading_options = None
         self._access_control_service_options = None
         self._virtual_instructions_options = None
@@ -235,6 +242,26 @@ class ShapePlatformConfigOptions(object):
         :type: oci.core.models.ShapeNumaNodesPerSocketPlatformOptions
         """
         self._numa_nodes_per_socket_platform_options = numa_nodes_per_socket_platform_options
+
+    @property
+    def memory_encryption_options(self):
+        """
+        Gets the memory_encryption_options of this ShapePlatformConfigOptions.
+
+        :return: The memory_encryption_options of this ShapePlatformConfigOptions.
+        :rtype: oci.core.models.ShapeMemoryEncryptionOptions
+        """
+        return self._memory_encryption_options
+
+    @memory_encryption_options.setter
+    def memory_encryption_options(self, memory_encryption_options):
+        """
+        Sets the memory_encryption_options of this ShapePlatformConfigOptions.
+
+        :param memory_encryption_options: The memory_encryption_options of this ShapePlatformConfigOptions.
+        :type: oci.core.models.ShapeMemoryEncryptionOptions
+        """
+        self._memory_encryption_options = memory_encryption_options
 
     @property
     def symmetric_multi_threading_options(self):

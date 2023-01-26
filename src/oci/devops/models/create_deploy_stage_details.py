@@ -23,6 +23,7 @@ class CreateDeployStageDetails(object):
         * :class:`~oci.devops.models.CreateComputeInstanceGroupCanaryDeployStageDetails`
         * :class:`~oci.devops.models.CreateWaitDeployStageDetails`
         * :class:`~oci.devops.models.CreateLoadBalancerTrafficShiftDeployStageDetails`
+        * :class:`~oci.devops.models.CreateShellDeployStageDetails`
         * :class:`~oci.devops.models.CreateComputeInstanceGroupBlueGreenTrafficShiftDeployStageDetails`
         * :class:`~oci.devops.models.CreateOkeBlueGreenDeployStageDetails`
         * :class:`~oci.devops.models.CreateComputeInstanceGroupDeployStageDetails`
@@ -118,6 +119,9 @@ class CreateDeployStageDetails(object):
 
         if type == 'LOAD_BALANCER_TRAFFIC_SHIFT':
             return 'CreateLoadBalancerTrafficShiftDeployStageDetails'
+
+        if type == 'SHELL':
+            return 'CreateShellDeployStageDetails'
 
         if type == 'COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT':
             return 'CreateComputeInstanceGroupBlueGreenTrafficShiftDeployStageDetails'

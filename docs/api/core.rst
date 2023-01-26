@@ -409,6 +409,7 @@ Core Services
     oci.core.models.ShapeInputOutputMemoryManagementUnitEnabledPlatformOptions
     oci.core.models.ShapeMaxVnicAttachmentOptions
     oci.core.models.ShapeMeasuredBootOptions
+    oci.core.models.ShapeMemoryEncryptionOptions
     oci.core.models.ShapeMemoryOptions
     oci.core.models.ShapeNetworkingBandwidthOptions
     oci.core.models.ShapeNumaNodesPerSocketPlatformOptions

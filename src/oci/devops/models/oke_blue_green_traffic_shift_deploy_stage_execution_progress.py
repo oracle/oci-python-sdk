@@ -96,7 +96,7 @@ class OkeBlueGreenTrafficShiftDeployStageExecutionProgress(DeployStageExecutionP
     def namespace(self):
         """
         Gets the namespace of this OkeBlueGreenTrafficShiftDeployStageExecutionProgress.
-        Namespace where traffic is going.
+        Namespace where traffic is going. Example:  blue - Traffic is going to blue namespace. green - Traffic is going to green namespace.
 
 
         :return: The namespace of this OkeBlueGreenTrafficShiftDeployStageExecutionProgress.
@@ -108,7 +108,7 @@ class OkeBlueGreenTrafficShiftDeployStageExecutionProgress(DeployStageExecutionP
     def namespace(self, namespace):
         """
         Sets the namespace of this OkeBlueGreenTrafficShiftDeployStageExecutionProgress.
-        Namespace where traffic is going.
+        Namespace where traffic is going. Example:  blue - Traffic is going to blue namespace. green - Traffic is going to green namespace.
 
 
         :param namespace: The namespace of this OkeBlueGreenTrafficShiftDeployStageExecutionProgress.

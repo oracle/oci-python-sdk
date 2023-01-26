@@ -74,25 +74,32 @@ class PlatformConfig(object):
             The value to assign to the is_measured_boot_enabled property of this PlatformConfig.
         :type is_measured_boot_enabled: bool
 
+        :param is_memory_encryption_enabled:
+            The value to assign to the is_memory_encryption_enabled property of this PlatformConfig.
+        :type is_memory_encryption_enabled: bool
+
         """
         self.swagger_types = {
             'type': 'str',
             'is_secure_boot_enabled': 'bool',
             'is_trusted_platform_module_enabled': 'bool',
-            'is_measured_boot_enabled': 'bool'
+            'is_measured_boot_enabled': 'bool',
+            'is_memory_encryption_enabled': 'bool'
         }
 
         self.attribute_map = {
             'type': 'type',
             'is_secure_boot_enabled': 'isSecureBootEnabled',
             'is_trusted_platform_module_enabled': 'isTrustedPlatformModuleEnabled',
-            'is_measured_boot_enabled': 'isMeasuredBootEnabled'
+            'is_measured_boot_enabled': 'isMeasuredBootEnabled',
+            'is_memory_encryption_enabled': 'isMemoryEncryptionEnabled'
         }
 
         self._type = None
         self._is_secure_boot_enabled = None
         self._is_trusted_platform_module_enabled = None
         self._is_measured_boot_enabled = None
+        self._is_memory_encryption_enabled = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -226,6 +233,30 @@ class PlatformConfig(object):
         :type: bool
         """
         self._is_measured_boot_enabled = is_measured_boot_enabled
+
+    @property
+    def is_memory_encryption_enabled(self):
+        """
+        Gets the is_memory_encryption_enabled of this PlatformConfig.
+        Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+
+
+        :return: The is_memory_encryption_enabled of this PlatformConfig.
+        :rtype: bool
+        """
+        return self._is_memory_encryption_enabled
+
+    @is_memory_encryption_enabled.setter
+    def is_memory_encryption_enabled(self, is_memory_encryption_enabled):
+        """
+        Sets the is_memory_encryption_enabled of this PlatformConfig.
+        Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+
+
+        :param is_memory_encryption_enabled: The is_memory_encryption_enabled of this PlatformConfig.
+        :type: bool
+        """
+        self._is_memory_encryption_enabled = is_memory_encryption_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)
