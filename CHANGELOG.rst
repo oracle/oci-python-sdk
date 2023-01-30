@@ -4,12 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.90.4 - TBD
+2.90.4 - 2023-01-31
 ====================
 
 Added
 -----
-* TBD
+* Support for ECPU billing for autonomous databases and dedicated autonomous databases on Exadata Cloud at Customer in the Database service
+* Support for providing a vault secret ID when creating or updating autonomous shared databases in the Database service
+* Support for including machine learning notebook, ORDS, and database transform URLs as autonomous database connections in the Database service
+* Support for role*based access control on OpenSearch clusters in the Search service
+* Support for managed shell stages on deployments in the DevOps service
+* Support for memory encryption on confidential VMs in the Compute service
+* Support for configuration items, and reporting ownership of configuration items, in the Application Performance Monitoring service
 
 ====================
 2.90.3 - 2023-01-24
