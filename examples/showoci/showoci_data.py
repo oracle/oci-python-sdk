@@ -18,6 +18,7 @@ from showoci_service import ShowOCIService, ShowOCIFlags
 
 
 class ShowOCIData(object):
+    version = "23.02.07"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -296,12 +297,12 @@ class ShowOCIData(object):
                             data['containers'] = value
                             has_data = True
 
-                # streams
-                if self.service.flags.read_streams:
-                    value = self.__get_streams_main(region_name, compartment)
+                # streams queues
+                if self.service.flags.read_streams_queues:
+                    value = self.__get_streams_queues_main(region_name, compartment)
                     if value is not None:
                         if len(value) > 0:
-                            data['streams'] = value
+                            data['streams_queues'] = value
                             has_data = True
 
                 # monitoring
@@ -2303,7 +2304,8 @@ class ShowOCIData(object):
                     'sum_size_gb': dbs['total_storage_size_in_gbs'],
                     'data': str(dbs['available_storage_size_in_gbs']) + "GB",
                     'db_servers': [] if not dbs['db_servers'] else sorted(dbs['db_servers'], key=lambda i: i['desc']),
-                    'vm_clusters': []
+                    'vm_clusters': [],
+                    'adb_clusters': self.__get_database_adb_dedicated(region_name, compartment, dbs['id'])
                 }
 
                 list_vms = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_EXADATA_VMS, 'region_name', region_name, 'cloud_exadata_infrastructure_id', dbs['id'])
@@ -2427,6 +2429,7 @@ class ShowOCIData(object):
                     'sum_info_storage': 'Database - Storage (GB)',
                     'sum_size_gb': dbs['max_data_storage_in_t_bs'],
                     'vm_clusters': [],
+                    'adb_clusters': self.__get_database_db_exacc_adb_dedicated(region_name, compartment, dbs['id']),
                     'db_servers': [] if not dbs['db_servers'] else sorted(dbs['db_servers'], key=lambda i: i['desc']),
                     'name': dbs['display_name'] + " - " + dbs['shape'] + " - " + dbs['lifecycle_state']
                 }
@@ -2477,6 +2480,88 @@ class ShowOCIData(object):
 
         except Exception as e:
             self.__print_error("__get_database_db_exacc", e)
+            return data
+
+    ##########################################################################
+    # ExaCC Autonomous Dedicated Infra
+    ##########################################################################
+    def __get_database_db_exacc_adb_dedicated(self, region_name, compartment, infra_id):
+
+        data = []
+        try:
+
+            # Fetch the vmclusters
+            vms = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_ADB_D_VMS, 'region_name', region_name, 'exadata_infrastructure_id', infra_id)
+            for vm in vms:
+                vmval = {
+                    'id': vm['id'],
+                    'display_name': vm['display_name'],
+                    'description': vm['description'],
+                    'last_update_history_entry_id': vm['last_update_history_entry_id'],
+                    'lifecycle_state': vm['lifecycle_state'],
+                    'lifecycle_details': vm['lifecycle_details'],
+                    'time_created': vm['time_created'],
+                    'time_zone': vm['time_zone'],
+                    'shape': vm['shape'],
+                    'exadata_infrastructure_id': vm['exadata_infrastructure_id'],
+                    'vm_cluster_network_id': vm['vm_cluster_network_id'],
+                    'is_local_backup_enabled': vm['is_local_backup_enabled'],
+                    'cpus_enabled': vm['cpus_enabled'],
+                    'ocpus_enabled': vm['ocpus_enabled'],
+                    'available_cpus': vm['available_cpus'],
+                    'total_container_databases': vm['total_container_databases'],
+                    'memory_per_oracle_compute_unit_in_gbs': vm['memory_per_oracle_compute_unit_in_gbs'],
+                    'cpu_core_count_per_node': vm['cpu_core_count_per_node'],
+                    'autonomous_data_storage_size_in_tbs': vm['autonomous_data_storage_size_in_tbs'],
+                    'memory_size_in_gbs': vm['memory_size_in_gbs'],
+                    'db_node_storage_size_in_gbs': vm['db_node_storage_size_in_gbs'],
+                    'data_storage_size_in_tbs': vm['data_storage_size_in_tbs'],
+                    'data_storage_size_in_gbs': vm['data_storage_size_in_gbs'],
+                    'available_data_storage_size_in_tbs': vm['available_data_storage_size_in_tbs'],
+                    'available_container_databases': vm['available_container_databases'],
+                    'reclaimable_cpus': vm['reclaimable_cpus'],
+                    'available_autonomous_data_storage_size_in_tbs': vm['available_autonomous_data_storage_size_in_tbs'],
+                    'scan_listener_port_tls': vm['scan_listener_port_tls'],
+                    'scan_listener_port_non_tls': vm['scan_listener_port_non_tls'],
+                    'is_mtls_enabled': vm['is_mtls_enabled'],
+                    'defined_tags': vm['defined_tags'],
+                    'freeform_tags': vm['freeform_tags'],
+                    'sum_info': 'Database ExaCC ADB VM ' + vm['license_model'],
+                    'sum_info_storage': 'Database - Storage (GB)',
+                    'sum_size_gb': vm['db_node_storage_size_in_gbs'],
+                    'compartment_name': vm['compartment_name'],
+                    'compartment_path': vm['compartment_path'],
+                    'compartment_id': vm['compartment_id'],
+                    'region_name': vm['region_name'],
+                    'containers': []}
+
+                # fetch the containers
+                containers = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_ADB_D_CONTAINERS, 'autonomous_vm_cluster_id', vm['id'])
+                for ct in containers:
+                    ct['name'] = ct['display_name'] + " (" + ct['lifecycle_state'] + "), " + ct['db_version'] + ", Patch Model : " + ct['patch_model']
+                    ct['databases'] = []
+
+                    # Add Databases
+                    databases = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_ADB_DATABASE, 'autonomous_container_database_id', ct['id'])
+                    for arr in databases:
+                        db = self.__get_database_adb_database_info(arr)
+                        db['name'] = str(db['db_name'] + " (" + db['display_name'] + ") - " + vm['license_model'] + " - " + db['lifecycle_state'] + " (" + str(db['sum_count']) + " OCPUs" + (" AutoScale" if db['is_auto_scaling_enabled'] else "") + ") - " + db['db_workload'])
+                        db['sum_info'] = "Autonomous Database Dedicated " + str(db['db_workload']) + " (OCPUs) - " + vm['license_model']
+                        db['sum_info_stopped'] = "Stopped Autonomous Database Dedicated " + str(db['db_workload']) + " (Count) - " + vm['license_model']
+                        db['sum_info_count'] = "Autonomous Database Dedicated " + str(db['db_workload']) + " (Count) - " + vm['license_model']
+                        db['sum_info_storage'] = "Autonomous Database Dedicated (TB)"
+                        ct['databases'].append(db)
+
+                    # Add containers
+                    vmval['containers'].append(ct)
+
+                # add the clusters to the infra
+                data.append(vmval)
+
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_database_adb_dedicated", e)
             return data
 
     ##########################################################################
@@ -2693,52 +2778,62 @@ class ShowOCIData(object):
     ##########################################################################
     # Autonomous Dedicated Infra
     ##########################################################################
-    def __get_database_adb_dedicated(self, region_name, compartment):
+    def __get_database_adb_dedicated(self, region_name, compartment, infra_id):
 
         data = []
         try:
-            infrastructures = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_ADB_D_INFRA, 'region_name', region_name, 'compartment_id', compartment['id'])
 
-            for infra in infrastructures:
-                value = {'id': str(infra['id']),
-                         'name': str(infra['display_name']) + " - " + str(infra['license_model']) + " - " + infra['shape'] + " - " + str(infra['lifecycle_state']),
-                         'availability_domain': infra['availability_domain'],
-                         'display_name': infra['display_name'],
-                         'subnet_id': infra['subnet_id'],
-                         'subnet_name': infra['subnet_name'],
-                         'nsg_ids': infra['nsg_ids'],
-                         'nsg_names': [],
-                         'shape': infra['shape'],
-                         'shape_ocpu': infra['shape_ocpu'],
-                         'shape_memory_gb': infra['shape_memory_gb'],
-                         'shape_storage_tb': infra['shape_storage_tb'],
-                         'hostname': infra['hostname'],
-                         'domain': str(infra['domain']),
-                         'lifecycle_state': str(infra['lifecycle_state']),
-                         'lifecycle_details': str(infra['lifecycle_details']),
-                         'license_model': str(infra['license_model']),
-                         'time_created': str(infra['time_created']),
-                         'scan_dns_name': str(infra['scan_dns_name']),
-                         'zone_id': infra['zone_id'],
-                         'maintenance_window': infra['maintenance_window'],
-                         'last_maintenance_run': infra['last_maintenance_run'],
-                         'next_maintenance_run': infra['next_maintenance_run'],
-                         'defined_tags': infra['defined_tags'],
-                         'freeform_tags': infra['freeform_tags'],
-                         'compartment_name': infra['compartment_name'],
-                         'compartment_path': infra['compartment_path'],
-                         'compartment_id': infra['compartment_id'],
-                         'region_name': infra['region_name'],
-                         'containers': [],
-                         'sum_info': "Autonomous Dedicated " + infra['shape'] + " - " + infra['license_model'],
-                         'sum_info_stopped': "Stopped Autonomous Dedicated " + infra['shape'] + " - " + infra['license_model'],
-                         'sum_info_count': "Autonomous Dedicated " + infra['shape'] + " - " + infra['license_model'],
-                         'sum_count': 1,
-                         'sum_info_storage': "",
-                         'sum_size_tb': ""
-                         }
+            # Fetch the vmclusters
+            vms = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_ADB_D_VMS, 'region_name', region_name, 'cloud_exadata_infrastructure_id', infra_id)
+            for vm in vms:
+                vmval = {
+                    'id': vm['id'],
+                    'display_name': vm['display_name'],
+                    'availability_domain': vm['availability_domain'],
+                    'description': vm['description'],
+                    'subnet_id': vm['subnet_id'],
+                    'subnet_name': vm['subnet_name'],
+                    'nsg_ids': vm['nsg_ids'],
+                    'last_update_history_entry_id': vm['last_update_history_entry_id'],
+                    'lifecycle_state': vm['lifecycle_state'],
+                    'time_created': vm['time_created'],
+                    'time_updated': vm['time_updated'],
+                    'cluster_time_zone': vm['cluster_time_zone'],
+                    'lifecycle_details': vm['lifecycle_details'],
+                    'shape': vm['shape'],
+                    'node_count': vm['node_count'],
+                    'data_storage_size_in_tbs': vm['data_storage_size_in_tbs'],
+                    'data_storage_size_in_gbs': vm['data_storage_size_in_gbs'],
+                    'cpu_core_count': vm['cpu_core_count'],
+                    'ocpu_count': vm['ocpu_count'],
+                    'cpu_core_count_per_node': vm['cpu_core_count_per_node'],
+                    'memory_size_in_gbs': vm['memory_size_in_gbs'],
+                    'license_model': vm['license_model'],
+                    'cloud_exadata_infrastructure_id': vm['cloud_exadata_infrastructure_id'],
+                    'hostname': vm['hostname'],
+                    'domain': vm['domain'],
+                    'available_cpus': vm['available_cpus'],
+                    'reclaimable_cpus': vm['reclaimable_cpus'],
+                    'available_container_databases': vm['available_container_databases'],
+                    'total_container_databases': vm['total_container_databases'],
+                    'available_autonomous_data_storage_size_in_tbs': vm['available_autonomous_data_storage_size_in_tbs'],
+                    'autonomous_data_storage_size_in_tbs': vm['autonomous_data_storage_size_in_tbs'],
+                    'db_node_storage_size_in_gbs': vm['db_node_storage_size_in_gbs'],
+                    'memory_per_oracle_compute_unit_in_gbs': vm['memory_per_oracle_compute_unit_in_gbs'],
+                    'maintenance_window': vm['maintenance_window'],
+                    'last_maintenance_run': vm['last_maintenance_run'],
+                    'next_maintenance_run': vm['next_maintenance_run'],
+                    'defined_tags': vm['defined_tags'],
+                    'freeform_tags': vm['freeform_tags'],
+                    'compartment_name': vm['compartment_name'],
+                    'compartment_path': vm['compartment_path'],
+                    'compartment_id': vm['compartment_id'],
+                    'region_name': vm['region_name'],
+                    'containers': []}
 
-                for ct in infra['containers']:
+                # fetch the containers
+                containers = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_ADB_D_CONTAINERS, 'cloud_autonomous_vm_cluster_id', vm['id'])
+                for ct in containers:
                     ct['name'] = ct['display_name'] + " (" + ct['lifecycle_state'] + "), " + ct['db_version'] + ", Patch Model : " + ct['patch_model']
                     ct['databases'] = []
 
@@ -2746,24 +2841,19 @@ class ShowOCIData(object):
                     databases = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_ADB_DATABASE, 'autonomous_container_database_id', ct['id'])
                     for arr in databases:
                         db = self.__get_database_adb_database_info(arr)
-                        db['name'] = str(db['db_name'] + " (" + db['display_name'] + ") - " + infra['license_model'] + " - " + db['lifecycle_state'] + " (" + str(db['sum_count']) + " OCPUs" + (" AutoScale" if db['is_auto_scaling_enabled'] else "") + ") - " + db['db_workload'])
-                        db['sum_info'] = "Autonomous Database Dedicated " + str(db['db_workload']) + " (OCPUs) - " + infra['license_model']
-                        db['sum_info_stopped'] = "Stopped Autonomous Database Dedicated " + str(db['db_workload']) + " (Count) - " + infra['license_model']
-                        db['sum_info_count'] = "Autonomous Database Dedicated " + str(db['db_workload']) + " (Count) - " + infra['license_model']
+                        db['name'] = str(db['db_name'] + " (" + db['display_name'] + ") - " + vm['license_model'] + " - " + db['lifecycle_state'] + " (" + str(db['sum_count']) + " OCPUs" + (" AutoScale" if db['is_auto_scaling_enabled'] else "") + ") - " + db['db_workload'])
+                        db['sum_info'] = "Autonomous Database Dedicated " + str(db['db_workload']) + " (OCPUs) - " + vm['license_model']
+                        db['sum_info_stopped'] = "Stopped Autonomous Database Dedicated " + str(db['db_workload']) + " (Count) - " + vm['license_model']
+                        db['sum_info_count'] = "Autonomous Database Dedicated " + str(db['db_workload']) + " (Count) - " + vm['license_model']
                         db['sum_info_storage'] = "Autonomous Database Dedicated (TB)"
                         ct['databases'].append(db)
 
                     # Add containers
-                    value['containers'].append(ct)
+                    vmval['containers'].append(ct)
 
-                # get the nsg names
-                if infra['nsg_ids']:
-                    for nsg in infra['nsg_ids']:
-                        nsg_obj = self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_NSG, 'id', nsg)
-                        if nsg_obj:
-                            value['nsg_names'].append(nsg_obj['name'])
+                # add the clusters to the infra
+                data.append(vmval)
 
-                data.append(value)
             return data
 
         except Exception as e:
@@ -2897,11 +2987,6 @@ class ShowOCIData(object):
             if data:
                 if len(data) > 0:
                     return_data['exacc_infrustructure'] = data
-
-            data = self.__get_database_adb_dedicated(region_name, compartment)
-            if data:
-                if len(data) > 0:
-                    return_data['autonomous_dedicated'] = data
 
             data = self.__get_database_adb_databases(region_name, compartment)
             if data:
@@ -3491,31 +3576,24 @@ class ShowOCIData(object):
     ##########################################################################
     # Streams
     ##########################################################################
-    def __get_streams_main(self, region_name, compartment):
+    def __get_streams_queues_main(self, region_name, compartment):
         try:
+            data = {}
             streams = self.service.search_multi_items(self.service.C_STREAMS, self.service.C_STREAMS_STREAMS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            queues = self.service.search_multi_items(self.service.C_STREAMS, self.service.C_STREAMS_QUEUES, 'region_name', region_name, 'compartment_id', compartment['id'])
 
-            data = []
+            # if streams add it
             if streams:
-                for stream in streams:
-                    val = {'id': stream['id'],
-                           'name': stream['name'],
-                           'partitions': stream['partitions'],
-                           'time_created': stream['time_created'],
-                           'messages_endpoint': stream['messages_endpoint'],
-                           'defined_tags': stream['defined_tags'],
-                           'freeform_tags': stream['freeform_tags'],
-                           'compartment_name': stream['compartment_name'],
-                           'compartment_path': stream['compartment_path'],
-                           'compartment_id': stream['compartment_id'],
-                           'region_name': stream['region_name']
-                           }
+                data['streams'] = streams
 
-                    data.append(val)
+            # if queues add it
+            if queues:
+                data['queues'] = queues
+
             return data
 
         except Exception as e:
-            self.__print_error("__get_streams_main", e)
+            self.__print_error("__get_streams_queues_main", e)
             pass
 
     ##########################################################################

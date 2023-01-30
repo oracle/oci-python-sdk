@@ -60,6 +60,7 @@ and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/
 - oci.bastion.BastionClient
 - oci.key_management.KmsVaultClient
 - oci.data_integration.DataIntegrationClient
+- oci.queue.QueueAdminClient
 
 ## Executing using Cloud Shell:
 ```

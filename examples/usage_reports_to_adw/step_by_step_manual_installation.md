@@ -57,6 +57,7 @@ and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/
    --> Statement 2 = endorse dynamic-group UsageDownloadGroup to read objects in tenancy usage-report
    --> Statement 3 = Allow dynamic-group UsageDownloadGroup to inspect compartments in tenancy
    --> Statement 4 = Allow dynamic-group UsageDownloadGroup to inspect tenancies in tenancy
+   --> Statement 5 = Allow dynamic-group UsageDownloadGroup to read autonomous-databases in compartment {APPCOMP} 
    *** Please don't change the usage report tenant OCID, it is fixed.
 ```
 
@@ -100,7 +101,7 @@ and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/
 
 ```
    sudo yum install -y python3
-   sudo python3 -m pip install --upgrade oci oci-cli cx_Oracle requests pip
+   sudo python3 -m pip install --upgrade oci oci-cli oracledb requests pip
 
    # test instance principle is working using oci-cli
    oci os ns get --auth instance_principal
@@ -116,10 +117,10 @@ and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/
 ```
    # Please refer to the download site for Manual installation = https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html
 
-   # please choose basic and sqlplus package, below example on 19.9
-   sudo rpm -i https://yum.oracle.com/repo/OracleLinux/OL7/oracle/instantclient/x86_64/getPackage/oracle-instantclient19.9-basic-19.9.0.0.0-1.x86_64.rpm
-   sudo rpm -i https://yum.oracle.com/repo/OracleLinux/OL7/oracle/instantclient/x86_64/getPackage/oracle-instantclient19.9-sqlplus-19.9.0.0.0-1.x86_64.rpm
-   sudo ln -s /usr/lib/oracle/19.9 /usr/lib/oracle/current
+   # please choose basic and sqlplus package, below example on 19.18
+   sudo rpm -i https://download.oracle.com/otn_software/linux/instantclient/1918000/oracle-instantclient19.18-basic-19.18.0.0.0-1.x86_64.rpm
+   sudo rpm -i https://download.oracle.com/otn_software/linux/instantclient/1918000/oracle-instantclient19.18-sqlplus-19.18.0.0.0-1.x86_64.rpm
+   sudo ln -s /usr/lib/oracle/19.18 /usr/lib/oracle/current
 
    # setup oracle home variables
    # Add the below to $HOME/.bashrc:
@@ -333,60 +334,12 @@ Right Click and Download [usage.demo.apex.sql](https://raw.githubusercontent.com
     0 0 * * * timeout 6h /home/opc/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh > /home/opc/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw_crontab_run.txt 2>&1
 ```
 
-## 20. How to change Autonomous Database to Private End Point
+## Additional Contents
+Please Visit [How To File](step_by_step_howto.md)
 
-Login to OCI Console -> Menu -> Oracle Database -> Autonomous Database
-
-Choose The Autonomous database for Usage2ADW
-
-More Actions Menu -> Update Network Access
-
-![](img/pe1.png)
-
-#### Update Network Access
-
-Choose Network Access -> Private endpoint access Only
-
-Choose Network security group that will assigned to the Autonomous database
-
-If you don't have Network Security Group, Go to the Virtual Cloud Network and Create one.
-
-Make sure you allow port 1522/TCP inbound traffic.
-
-![](img/pe2.png)
-
-#### Update VM tnsnames to the private endpoint
-
-Find the Private Endpoint URL:
-
-![](img/pe3.png)
-
-Login to the usage2adw virtual machine using ssh tool with opc user
-
-cd ADWCUSG
-
-Edit tnsnames.ora file and change the tnsnames *_low entry host to the private end point specify in the ADW page
-
-
-## 21. How to upgrade the usage2adw software and "OCI Usage and Cost Report" APEX application
-```
-    # clone the software from github:
-    cd $HOME
-    git clone https://github.com/oracle/oci-python-sdk
-
-    # Execute the python script in order to upgrade the metadata
-    cd oci-python-sdk/examples/usage_reports_to_adw
-    python3 usage2adw.py -ip -du USAGE -dp <password> -dn adwcusg_low
-    
-    # Login to APEX workspace and choose "OCI Usage and Cost Report" Application
-    On the right menu -> Delete this application
-    
-    # Import the new APEX Application
-    Follow section 17 - Import APEX application
-```
 
 ## License
 
-Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
 This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl
 or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.

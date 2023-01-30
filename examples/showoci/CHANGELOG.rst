@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+23.02.07 - 23.02.07
+=====================
+* Added version check of showoci classes
+* Added Queues
+* Added CSV for Streams and Queues
+* Fix ADB-D extract on ExaCS and ExaCC
+
+=====================
 23.01.31 - 23.01.31
 =====================
 * Added flag -skipdbhomes to skip database homes and databases
