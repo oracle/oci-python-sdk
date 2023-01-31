@@ -10,8 +10,21 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateOpensearchClusterDetails(object):
     """
-    The configuration to update on an existing OpenSearch cluster.
+    The configuration to update on an existing OpenSearch cluster. Software version
+    and security config are not allowed to be updated at the same time.
     """
+
+    #: A constant which can be used with the security_mode property of a UpdateOpensearchClusterDetails.
+    #: This constant has a value of "DISABLED"
+    SECURITY_MODE_DISABLED = "DISABLED"
+
+    #: A constant which can be used with the security_mode property of a UpdateOpensearchClusterDetails.
+    #: This constant has a value of "PERMISSIVE"
+    SECURITY_MODE_PERMISSIVE = "PERMISSIVE"
+
+    #: A constant which can be used with the security_mode property of a UpdateOpensearchClusterDetails.
+    #: This constant has a value of "ENFORCING"
+    SECURITY_MODE_ENFORCING = "ENFORCING"
 
     def __init__(self, **kwargs):
         """
@@ -26,6 +39,19 @@ class UpdateOpensearchClusterDetails(object):
             The value to assign to the software_version property of this UpdateOpensearchClusterDetails.
         :type software_version: str
 
+        :param security_mode:
+            The value to assign to the security_mode property of this UpdateOpensearchClusterDetails.
+            Allowed values for this property are: "DISABLED", "PERMISSIVE", "ENFORCING"
+        :type security_mode: str
+
+        :param security_master_user_name:
+            The value to assign to the security_master_user_name property of this UpdateOpensearchClusterDetails.
+        :type security_master_user_name: str
+
+        :param security_master_user_password_hash:
+            The value to assign to the security_master_user_password_hash property of this UpdateOpensearchClusterDetails.
+        :type security_master_user_password_hash: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateOpensearchClusterDetails.
         :type freeform_tags: dict(str, str)
@@ -38,6 +64,9 @@ class UpdateOpensearchClusterDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'software_version': 'str',
+            'security_mode': 'str',
+            'security_master_user_name': 'str',
+            'security_master_user_password_hash': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -45,12 +74,18 @@ class UpdateOpensearchClusterDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'software_version': 'softwareVersion',
+            'security_mode': 'securityMode',
+            'security_master_user_name': 'securityMasterUserName',
+            'security_master_user_password_hash': 'securityMasterUserPasswordHash',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._display_name = None
         self._software_version = None
+        self._security_mode = None
+        self._security_master_user_name = None
+        self._security_master_user_password_hash = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -97,6 +132,86 @@ class UpdateOpensearchClusterDetails(object):
         :type: str
         """
         self._software_version = software_version
+
+    @property
+    def security_mode(self):
+        """
+        Gets the security_mode of this UpdateOpensearchClusterDetails.
+        The security mode of the cluster.
+
+        Allowed values for this property are: "DISABLED", "PERMISSIVE", "ENFORCING"
+
+
+        :return: The security_mode of this UpdateOpensearchClusterDetails.
+        :rtype: str
+        """
+        return self._security_mode
+
+    @security_mode.setter
+    def security_mode(self, security_mode):
+        """
+        Sets the security_mode of this UpdateOpensearchClusterDetails.
+        The security mode of the cluster.
+
+
+        :param security_mode: The security_mode of this UpdateOpensearchClusterDetails.
+        :type: str
+        """
+        allowed_values = ["DISABLED", "PERMISSIVE", "ENFORCING"]
+        if not value_allowed_none_or_none_sentinel(security_mode, allowed_values):
+            raise ValueError(
+                "Invalid value for `security_mode`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._security_mode = security_mode
+
+    @property
+    def security_master_user_name(self):
+        """
+        Gets the security_master_user_name of this UpdateOpensearchClusterDetails.
+        The name of the master user that are used to manage security config
+
+
+        :return: The security_master_user_name of this UpdateOpensearchClusterDetails.
+        :rtype: str
+        """
+        return self._security_master_user_name
+
+    @security_master_user_name.setter
+    def security_master_user_name(self, security_master_user_name):
+        """
+        Sets the security_master_user_name of this UpdateOpensearchClusterDetails.
+        The name of the master user that are used to manage security config
+
+
+        :param security_master_user_name: The security_master_user_name of this UpdateOpensearchClusterDetails.
+        :type: str
+        """
+        self._security_master_user_name = security_master_user_name
+
+    @property
+    def security_master_user_password_hash(self):
+        """
+        Gets the security_master_user_password_hash of this UpdateOpensearchClusterDetails.
+        The password hash of the master user that are used to manage security config
+
+
+        :return: The security_master_user_password_hash of this UpdateOpensearchClusterDetails.
+        :rtype: str
+        """
+        return self._security_master_user_password_hash
+
+    @security_master_user_password_hash.setter
+    def security_master_user_password_hash(self, security_master_user_password_hash):
+        """
+        Sets the security_master_user_password_hash of this UpdateOpensearchClusterDetails.
+        The password hash of the master user that are used to manage security config
+
+
+        :param security_master_user_password_hash: The security_master_user_password_hash of this UpdateOpensearchClusterDetails.
+        :type: str
+        """
+        self._security_master_user_password_hash = security_master_user_password_hash
 
     @property
     def freeform_tags(self):

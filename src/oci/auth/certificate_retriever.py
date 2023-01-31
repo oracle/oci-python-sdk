@@ -5,6 +5,8 @@
 from cryptography import x509
 from cryptography.hazmat.backends import default_backend
 from oci._vendor import requests
+from oci._vendor.requests.exceptions import HTTPError
+from oci.exceptions import ServiceError
 
 import oci.retry
 import os.path
@@ -212,7 +214,10 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
             {"status_code": response.status_code, "url": response.url, "header": dict(response.headers.items()),
                 "reason": response.reason}, indent=2)))
 
-        response.raise_for_status()
+        try:
+            response.raise_for_status()
+        except HTTPError as e:
+            raise ServiceError(e.response.status_code, e.errno, e.response.headers, str(e))
 
         for chunk in response.raw.stream(self.READ_CHUNK_BYTES, decode_content=False):
             downloaded_certificate.write(chunk)
@@ -233,7 +238,10 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
                 {"status_code": response.status_code, "url": response.url, "header": dict(response.headers.items()),
                     "reason": response.reason}, indent=2)))
 
-            response.raise_for_status()
+            try:
+                response.raise_for_status()
+            except HTTPError as e:
+                raise ServiceError(e.response.status_code, e.errno, e.response.headers, str(e))
 
             for chunk in response.raw.stream(self.READ_CHUNK_BYTES, decode_content=False):
                 downloaded_private_key_raw.write(chunk)

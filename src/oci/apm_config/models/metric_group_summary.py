@@ -37,6 +37,18 @@ class MetricGroupSummary(ConfigSummary):
             The value to assign to the time_updated property of this MetricGroupSummary.
         :type time_updated: datetime
 
+        :param created_by:
+            The value to assign to the created_by property of this MetricGroupSummary.
+        :type created_by: str
+
+        :param updated_by:
+            The value to assign to the updated_by property of this MetricGroupSummary.
+        :type updated_by: str
+
+        :param etag:
+            The value to assign to the etag property of this MetricGroupSummary.
+        :type etag: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this MetricGroupSummary.
         :type freeform_tags: dict(str, str)
@@ -71,6 +83,9 @@ class MetricGroupSummary(ConfigSummary):
             'config_type': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'created_by': 'str',
+            'updated_by': 'str',
+            'etag': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
@@ -85,6 +100,9 @@ class MetricGroupSummary(ConfigSummary):
             'config_type': 'configType',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'created_by': 'createdBy',
+            'updated_by': 'updatedBy',
+            'etag': 'etag',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -98,6 +116,9 @@ class MetricGroupSummary(ConfigSummary):
         self._config_type = None
         self._time_created = None
         self._time_updated = None
+        self._created_by = None
+        self._updated_by = None
+        self._etag = None
         self._freeform_tags = None
         self._defined_tags = None
         self._display_name = None

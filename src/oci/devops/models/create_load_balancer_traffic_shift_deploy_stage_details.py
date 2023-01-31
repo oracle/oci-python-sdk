@@ -163,7 +163,7 @@ class CreateLoadBalancerTrafficShiftDeployStageDetails(CreateDeployStageDetails)
     def traffic_shift_target(self):
         """
         **[Required]** Gets the traffic_shift_target of this CreateLoadBalancerTrafficShiftDeployStageDetails.
-        Specifies the target or destination backend set.
+        Specifies the target or destination backend set. Example: BLUE - Traffic from the existing backends of managed Load Balance Listener to blue Backend IPs, as per rolloutPolicy. GREEN - Traffic from the existing backends of managed Load Balance Listener to blue Backend IPs ser as per rolloutPolicy.
 
 
         :return: The traffic_shift_target of this CreateLoadBalancerTrafficShiftDeployStageDetails.
@@ -175,7 +175,7 @@ class CreateLoadBalancerTrafficShiftDeployStageDetails(CreateDeployStageDetails)
     def traffic_shift_target(self, traffic_shift_target):
         """
         Sets the traffic_shift_target of this CreateLoadBalancerTrafficShiftDeployStageDetails.
-        Specifies the target or destination backend set.
+        Specifies the target or destination backend set. Example: BLUE - Traffic from the existing backends of managed Load Balance Listener to blue Backend IPs, as per rolloutPolicy. GREEN - Traffic from the existing backends of managed Load Balance Listener to blue Backend IPs ser as per rolloutPolicy.
 
 
         :param traffic_shift_target: The traffic_shift_target of this CreateLoadBalancerTrafficShiftDeployStageDetails.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConfigSummary(object):
     """
-    A description of a configuration item. It specifes all the properties that define the configuration item.
+    A description of a configuration item. It specifies all the properties that define the configuration item.
     """
 
     #: A constant which can be used with the config_type property of a ConfigSummary.
@@ -59,6 +59,18 @@ class ConfigSummary(object):
             The value to assign to the time_updated property of this ConfigSummary.
         :type time_updated: datetime
 
+        :param created_by:
+            The value to assign to the created_by property of this ConfigSummary.
+        :type created_by: str
+
+        :param updated_by:
+            The value to assign to the updated_by property of this ConfigSummary.
+        :type updated_by: str
+
+        :param etag:
+            The value to assign to the etag property of this ConfigSummary.
+        :type etag: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ConfigSummary.
         :type freeform_tags: dict(str, str)
@@ -73,6 +85,9 @@ class ConfigSummary(object):
             'config_type': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'created_by': 'str',
+            'updated_by': 'str',
+            'etag': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -82,6 +97,9 @@ class ConfigSummary(object):
             'config_type': 'configType',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'created_by': 'createdBy',
+            'updated_by': 'updatedBy',
+            'etag': 'etag',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -90,6 +108,9 @@ class ConfigSummary(object):
         self._config_type = None
         self._time_created = None
         self._time_updated = None
+        self._created_by = None
+        self._updated_by = None
+        self._etag = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -238,6 +259,86 @@ class ConfigSummary(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def created_by(self):
+        """
+        Gets the created_by of this ConfigSummary.
+        The `OCID`__ of a user.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The created_by of this ConfigSummary.
+        :rtype: str
+        """
+        return self._created_by
+
+    @created_by.setter
+    def created_by(self, created_by):
+        """
+        Sets the created_by of this ConfigSummary.
+        The `OCID`__ of a user.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param created_by: The created_by of this ConfigSummary.
+        :type: str
+        """
+        self._created_by = created_by
+
+    @property
+    def updated_by(self):
+        """
+        Gets the updated_by of this ConfigSummary.
+        The `OCID`__ of a user.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The updated_by of this ConfigSummary.
+        :rtype: str
+        """
+        return self._updated_by
+
+    @updated_by.setter
+    def updated_by(self, updated_by):
+        """
+        Sets the updated_by of this ConfigSummary.
+        The `OCID`__ of a user.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param updated_by: The updated_by of this ConfigSummary.
+        :type: str
+        """
+        self._updated_by = updated_by
+
+    @property
+    def etag(self):
+        """
+        Gets the etag of this ConfigSummary.
+        For optimistic concurrency control. See `if-match`.
+
+
+        :return: The etag of this ConfigSummary.
+        :rtype: str
+        """
+        return self._etag
+
+    @etag.setter
+    def etag(self, etag):
+        """
+        Sets the etag of this ConfigSummary.
+        For optimistic concurrency control. See `if-match`.
+
+
+        :param etag: The etag of this ConfigSummary.
+        :type: str
+        """
+        self._etag = etag
 
     @property
     def freeform_tags(self):

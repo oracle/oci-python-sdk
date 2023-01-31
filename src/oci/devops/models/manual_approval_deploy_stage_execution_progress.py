@@ -96,6 +96,8 @@ class ManualApprovalDeployStageExecutionProgress(DeployStageExecutionProgress):
     def approval_actions(self):
         """
         Gets the approval_actions of this ManualApprovalDeployStageExecutionProgress.
+        Specifies the Canary approval actions.
+
 
         :return: The approval_actions of this ManualApprovalDeployStageExecutionProgress.
         :rtype: list[oci.devops.models.ApprovalAction]
@@ -106,6 +108,8 @@ class ManualApprovalDeployStageExecutionProgress(DeployStageExecutionProgress):
     def approval_actions(self, approval_actions):
         """
         Sets the approval_actions of this ManualApprovalDeployStageExecutionProgress.
+        Specifies the Canary approval actions.
+
 
         :param approval_actions: The approval_actions of this ManualApprovalDeployStageExecutionProgress.
         :type: list[oci.devops.models.ApprovalAction]

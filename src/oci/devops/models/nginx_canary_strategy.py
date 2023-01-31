@@ -54,7 +54,7 @@ class NginxCanaryStrategy(OkeCanaryStrategy):
     def namespace(self):
         """
         **[Required]** Gets the namespace of this NginxCanaryStrategy.
-        Canary namespace to be used for Kubernetes canary deployment.
+        Canary namespace to be used for Kubernetes canary deployment. Example: canary - Name of the Canary namespace.
 
 
         :return: The namespace of this NginxCanaryStrategy.
@@ -66,7 +66,7 @@ class NginxCanaryStrategy(OkeCanaryStrategy):
     def namespace(self, namespace):
         """
         Sets the namespace of this NginxCanaryStrategy.
-        Canary namespace to be used for Kubernetes canary deployment.
+        Canary namespace to be used for Kubernetes canary deployment. Example: canary - Name of the Canary namespace.
 
 
         :param namespace: The namespace of this NginxCanaryStrategy.
