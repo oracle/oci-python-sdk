@@ -36,6 +36,18 @@ class SpanFilterSummary(ConfigSummary):
             The value to assign to the time_updated property of this SpanFilterSummary.
         :type time_updated: datetime
 
+        :param created_by:
+            The value to assign to the created_by property of this SpanFilterSummary.
+        :type created_by: str
+
+        :param updated_by:
+            The value to assign to the updated_by property of this SpanFilterSummary.
+        :type updated_by: str
+
+        :param etag:
+            The value to assign to the etag property of this SpanFilterSummary.
+        :type etag: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this SpanFilterSummary.
         :type freeform_tags: dict(str, str)
@@ -52,6 +64,10 @@ class SpanFilterSummary(ConfigSummary):
             The value to assign to the filter_text property of this SpanFilterSummary.
         :type filter_text: str
 
+        :param in_use_by:
+            The value to assign to the in_use_by property of this SpanFilterSummary.
+        :type in_use_by: list[oci.apm_config.models.SpanFilterReference]
+
         :param description:
             The value to assign to the description property of this SpanFilterSummary.
         :type description: str
@@ -62,10 +78,14 @@ class SpanFilterSummary(ConfigSummary):
             'config_type': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'created_by': 'str',
+            'updated_by': 'str',
+            'etag': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'filter_text': 'str',
+            'in_use_by': 'list[SpanFilterReference]',
             'description': 'str'
         }
 
@@ -74,10 +94,14 @@ class SpanFilterSummary(ConfigSummary):
             'config_type': 'configType',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'created_by': 'createdBy',
+            'updated_by': 'updatedBy',
+            'etag': 'etag',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'filter_text': 'filterText',
+            'in_use_by': 'inUseBy',
             'description': 'description'
         }
 
@@ -85,10 +109,14 @@ class SpanFilterSummary(ConfigSummary):
         self._config_type = None
         self._time_created = None
         self._time_updated = None
+        self._created_by = None
+        self._updated_by = None
+        self._etag = None
         self._freeform_tags = None
         self._defined_tags = None
         self._display_name = None
         self._filter_text = None
+        self._in_use_by = None
         self._description = None
         self._config_type = 'SPAN_FILTER'
 
@@ -139,6 +167,30 @@ class SpanFilterSummary(ConfigSummary):
         :type: str
         """
         self._filter_text = filter_text
+
+    @property
+    def in_use_by(self):
+        """
+        Gets the in_use_by of this SpanFilterSummary.
+        The list of configuration items that reference the span filter.
+
+
+        :return: The in_use_by of this SpanFilterSummary.
+        :rtype: list[oci.apm_config.models.SpanFilterReference]
+        """
+        return self._in_use_by
+
+    @in_use_by.setter
+    def in_use_by(self, in_use_by):
+        """
+        Sets the in_use_by of this SpanFilterSummary.
+        The list of configuration items that reference the span filter.
+
+
+        :param in_use_by: The in_use_by of this SpanFilterSummary.
+        :type: list[oci.apm_config.models.SpanFilterReference]
+        """
+        self._in_use_by = in_use_by
 
     @property
     def description(self):

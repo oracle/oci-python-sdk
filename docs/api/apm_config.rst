@@ -41,6 +41,7 @@ Apm Config
     oci.apm_config.models.OptionsSummary
     oci.apm_config.models.RetrieveNamespaceMetricsDetails
     oci.apm_config.models.SpanFilter
+    oci.apm_config.models.SpanFilterReference
     oci.apm_config.models.SpanFilterSummary
     oci.apm_config.models.UpdateApdexRulesDetails
     oci.apm_config.models.UpdateConfigDetails

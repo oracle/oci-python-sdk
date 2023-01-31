@@ -54,6 +54,10 @@ class AmdMilanBmPlatformConfig(PlatformConfig):
             The value to assign to the is_measured_boot_enabled property of this AmdMilanBmPlatformConfig.
         :type is_measured_boot_enabled: bool
 
+        :param is_memory_encryption_enabled:
+            The value to assign to the is_memory_encryption_enabled property of this AmdMilanBmPlatformConfig.
+        :type is_memory_encryption_enabled: bool
+
         :param numa_nodes_per_socket:
             The value to assign to the numa_nodes_per_socket property of this AmdMilanBmPlatformConfig.
             Allowed values for this property are: "NPS0", "NPS1", "NPS2", "NPS4", 'UNKNOWN_ENUM_VALUE'.
@@ -86,6 +90,7 @@ class AmdMilanBmPlatformConfig(PlatformConfig):
             'is_secure_boot_enabled': 'bool',
             'is_trusted_platform_module_enabled': 'bool',
             'is_measured_boot_enabled': 'bool',
+            'is_memory_encryption_enabled': 'bool',
             'numa_nodes_per_socket': 'str',
             'is_symmetric_multi_threading_enabled': 'bool',
             'is_access_control_service_enabled': 'bool',
@@ -99,6 +104,7 @@ class AmdMilanBmPlatformConfig(PlatformConfig):
             'is_secure_boot_enabled': 'isSecureBootEnabled',
             'is_trusted_platform_module_enabled': 'isTrustedPlatformModuleEnabled',
             'is_measured_boot_enabled': 'isMeasuredBootEnabled',
+            'is_memory_encryption_enabled': 'isMemoryEncryptionEnabled',
             'numa_nodes_per_socket': 'numaNodesPerSocket',
             'is_symmetric_multi_threading_enabled': 'isSymmetricMultiThreadingEnabled',
             'is_access_control_service_enabled': 'isAccessControlServiceEnabled',
@@ -111,6 +117,7 @@ class AmdMilanBmPlatformConfig(PlatformConfig):
         self._is_secure_boot_enabled = None
         self._is_trusted_platform_module_enabled = None
         self._is_measured_boot_enabled = None
+        self._is_memory_encryption_enabled = None
         self._numa_nodes_per_socket = None
         self._is_symmetric_multi_threading_enabled = None
         self._is_access_control_service_enabled = None

@@ -41,6 +41,14 @@ class CloudAutonomousVmClusterSummary(object):
     #: This constant has a value of "MAINTENANCE_IN_PROGRESS"
     LIFECYCLE_STATE_MAINTENANCE_IN_PROGRESS = "MAINTENANCE_IN_PROGRESS"
 
+    #: A constant which can be used with the compute_model property of a CloudAutonomousVmClusterSummary.
+    #: This constant has a value of "ECPU"
+    COMPUTE_MODEL_ECPU = "ECPU"
+
+    #: A constant which can be used with the compute_model property of a CloudAutonomousVmClusterSummary.
+    #: This constant has a value of "OCPU"
+    COMPUTE_MODEL_OCPU = "OCPU"
+
     #: A constant which can be used with the license_model property of a CloudAutonomousVmClusterSummary.
     #: This constant has a value of "LICENSE_INCLUDED"
     LICENSE_MODEL_LICENSE_INCLUDED = "LICENSE_INCLUDED"
@@ -144,6 +152,12 @@ class CloudAutonomousVmClusterSummary(object):
             The value to assign to the ocpu_count property of this CloudAutonomousVmClusterSummary.
         :type ocpu_count: float
 
+        :param compute_model:
+            The value to assign to the compute_model property of this CloudAutonomousVmClusterSummary.
+            Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type compute_model: str
+
         :param cpu_core_count_per_node:
             The value to assign to the cpu_core_count_per_node property of this CloudAutonomousVmClusterSummary.
         :type cpu_core_count_per_node: int
@@ -234,6 +248,7 @@ class CloudAutonomousVmClusterSummary(object):
             'data_storage_size_in_gbs': 'float',
             'cpu_core_count': 'int',
             'ocpu_count': 'float',
+            'compute_model': 'str',
             'cpu_core_count_per_node': 'int',
             'memory_size_in_gbs': 'int',
             'license_model': 'str',
@@ -275,6 +290,7 @@ class CloudAutonomousVmClusterSummary(object):
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
             'cpu_core_count': 'cpuCoreCount',
             'ocpu_count': 'ocpuCount',
+            'compute_model': 'computeModel',
             'cpu_core_count_per_node': 'cpuCoreCountPerNode',
             'memory_size_in_gbs': 'memorySizeInGBs',
             'license_model': 'licenseModel',
@@ -315,6 +331,7 @@ class CloudAutonomousVmClusterSummary(object):
         self._data_storage_size_in_gbs = None
         self._cpu_core_count = None
         self._ocpu_count = None
+        self._compute_model = None
         self._cpu_core_count_per_node = None
         self._memory_size_in_gbs = None
         self._license_model = None
@@ -909,6 +926,36 @@ class CloudAutonomousVmClusterSummary(object):
         :type: float
         """
         self._ocpu_count = ocpu_count
+
+    @property
+    def compute_model(self):
+        """
+        Gets the compute_model of this CloudAutonomousVmClusterSummary.
+        The compute model of the Cloud Autonomous VM Cluster.
+
+        Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The compute_model of this CloudAutonomousVmClusterSummary.
+        :rtype: str
+        """
+        return self._compute_model
+
+    @compute_model.setter
+    def compute_model(self, compute_model):
+        """
+        Sets the compute_model of this CloudAutonomousVmClusterSummary.
+        The compute model of the Cloud Autonomous VM Cluster.
+
+
+        :param compute_model: The compute_model of this CloudAutonomousVmClusterSummary.
+        :type: str
+        """
+        allowed_values = ["ECPU", "OCPU"]
+        if not value_allowed_none_or_none_sentinel(compute_model, allowed_values):
+            compute_model = 'UNKNOWN_ENUM_VALUE'
+        self._compute_model = compute_model
 
     @property
     def cpu_core_count_per_node(self):

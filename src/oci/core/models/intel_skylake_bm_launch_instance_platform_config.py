@@ -37,25 +37,32 @@ class IntelSkylakeBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
             The value to assign to the is_measured_boot_enabled property of this IntelSkylakeBmLaunchInstancePlatformConfig.
         :type is_measured_boot_enabled: bool
 
+        :param is_memory_encryption_enabled:
+            The value to assign to the is_memory_encryption_enabled property of this IntelSkylakeBmLaunchInstancePlatformConfig.
+        :type is_memory_encryption_enabled: bool
+
         """
         self.swagger_types = {
             'type': 'str',
             'is_secure_boot_enabled': 'bool',
             'is_trusted_platform_module_enabled': 'bool',
-            'is_measured_boot_enabled': 'bool'
+            'is_measured_boot_enabled': 'bool',
+            'is_memory_encryption_enabled': 'bool'
         }
 
         self.attribute_map = {
             'type': 'type',
             'is_secure_boot_enabled': 'isSecureBootEnabled',
             'is_trusted_platform_module_enabled': 'isTrustedPlatformModuleEnabled',
-            'is_measured_boot_enabled': 'isMeasuredBootEnabled'
+            'is_measured_boot_enabled': 'isMeasuredBootEnabled',
+            'is_memory_encryption_enabled': 'isMemoryEncryptionEnabled'
         }
 
         self._type = None
         self._is_secure_boot_enabled = None
         self._is_trusted_platform_module_enabled = None
         self._is_measured_boot_enabled = None
+        self._is_memory_encryption_enabled = None
         self._type = 'INTEL_SKYLAKE_BM'
 
     def __repr__(self):

@@ -109,6 +109,8 @@ Devops
     oci.devops.models.Connection
     oci.devops.models.ConnectionCollection
     oci.devops.models.ConnectionSummary
+    oci.devops.models.ContainerConfig
+    oci.devops.models.ContainerInstanceConfig
     oci.devops.models.ContainerRegistryDeliveredArtifact
     oci.devops.models.CountBasedApprovalPolicy
     oci.devops.models.CreateAbsoluteWaitCriteriaDetails
@@ -158,6 +160,7 @@ Devops
     oci.devops.models.CreateOkeHelmChartDeployStageDetails
     oci.devops.models.CreateProjectDetails
     oci.devops.models.CreateRepositoryDetails
+    oci.devops.models.CreateShellDeployStageDetails
     oci.devops.models.CreateSingleDeployStageDeploymentDetails
     oci.devops.models.CreateSingleDeployStageRedeploymentDetails
     oci.devops.models.CreateTriggerDeploymentStageDetails
@@ -349,6 +352,10 @@ Devops
     oci.devops.models.RepositoryTag
     oci.devops.models.RepositoryTagSummary
     oci.devops.models.ServiceVnicChannel
+    oci.devops.models.ShapeConfig
+    oci.devops.models.ShellDeployStage
+    oci.devops.models.ShellDeployStageExecutionProgress
+    oci.devops.models.ShellDeployStageSummary
     oci.devops.models.SingleDeployStageDeployment
     oci.devops.models.SingleDeployStageDeploymentSummary
     oci.devops.models.SingleDeployStageRedeployment
@@ -412,6 +419,7 @@ Devops
     oci.devops.models.UpdateOkeHelmChartDeployStageDetails
     oci.devops.models.UpdateProjectDetails
     oci.devops.models.UpdateRepositoryDetails
+    oci.devops.models.UpdateShellDeployStageDetails
     oci.devops.models.UpdateSingleDeployStageDeploymentDetails
     oci.devops.models.UpdateSingleDeployStageRedeploymentDetails
     oci.devops.models.UpdateTriggerDeploymentStageDetails

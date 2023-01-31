@@ -96,6 +96,8 @@ class ComputeInstanceGroupCanaryApprovalDeployStageExecutionProgress(DeployStage
     def approval_actions(self):
         """
         Gets the approval_actions of this ComputeInstanceGroupCanaryApprovalDeployStageExecutionProgress.
+        Specifies the Canary approval actions.
+
 
         :return: The approval_actions of this ComputeInstanceGroupCanaryApprovalDeployStageExecutionProgress.
         :rtype: list[oci.devops.models.ApprovalAction]
@@ -106,6 +108,8 @@ class ComputeInstanceGroupCanaryApprovalDeployStageExecutionProgress(DeployStage
     def approval_actions(self, approval_actions):
         """
         Sets the approval_actions of this ComputeInstanceGroupCanaryApprovalDeployStageExecutionProgress.
+        Specifies the Canary approval actions.
+
 
         :param approval_actions: The approval_actions of this ComputeInstanceGroupCanaryApprovalDeployStageExecutionProgress.
         :type: list[oci.devops.models.ApprovalAction]

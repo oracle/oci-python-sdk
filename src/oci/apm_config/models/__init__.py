@@ -27,6 +27,7 @@ from .options import Options
 from .options_summary import OptionsSummary
 from .retrieve_namespace_metrics_details import RetrieveNamespaceMetricsDetails
 from .span_filter import SpanFilter
+from .span_filter_reference import SpanFilterReference
 from .span_filter_summary import SpanFilterSummary
 from .update_apdex_rules_details import UpdateApdexRulesDetails
 from .update_config_details import UpdateConfigDetails
@@ -60,6 +61,7 @@ apm_config_type_mapping = {
     "OptionsSummary": OptionsSummary,
     "RetrieveNamespaceMetricsDetails": RetrieveNamespaceMetricsDetails,
     "SpanFilter": SpanFilter,
+    "SpanFilterReference": SpanFilterReference,
     "SpanFilterSummary": SpanFilterSummary,
     "UpdateApdexRulesDetails": UpdateApdexRulesDetails,
     "UpdateConfigDetails": UpdateConfigDetails,

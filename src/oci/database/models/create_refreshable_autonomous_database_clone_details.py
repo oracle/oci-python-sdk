@@ -47,6 +47,15 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             The value to assign to the cpu_core_count property of this CreateRefreshableAutonomousDatabaseCloneDetails.
         :type cpu_core_count: int
 
+        :param compute_model:
+            The value to assign to the compute_model property of this CreateRefreshableAutonomousDatabaseCloneDetails.
+            Allowed values for this property are: "ECPU", "OCPU"
+        :type compute_model: str
+
+        :param compute_count:
+            The value to assign to the compute_count property of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type compute_count: float
+
         :param ocpu_count:
             The value to assign to the ocpu_count property of this CreateRefreshableAutonomousDatabaseCloneDetails.
         :type ocpu_count: float
@@ -191,6 +200,18 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             The value to assign to the database_edition property of this CreateRefreshableAutonomousDatabaseCloneDetails.
         :type database_edition: str
 
+        :param db_tools_details:
+            The value to assign to the db_tools_details property of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type db_tools_details: list[oci.database.models.DatabaseTool]
+
+        :param secret_id:
+            The value to assign to the secret_id property of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type secret_id: str
+
+        :param secret_version_number:
+            The value to assign to the secret_version_number property of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type secret_version_number: int
+
         :param source_id:
             The value to assign to the source_id property of this CreateRefreshableAutonomousDatabaseCloneDetails.
         :type source_id: str
@@ -207,6 +228,8 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'ncharacter_set': 'str',
             'db_name': 'str',
             'cpu_core_count': 'int',
+            'compute_model': 'str',
+            'compute_count': 'float',
             'ocpu_count': 'float',
             'db_workload': 'str',
             'data_storage_size_in_tbs': 'int',
@@ -242,6 +265,9 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'is_auto_scaling_for_storage_enabled': 'bool',
             'max_cpu_core_count': 'int',
             'database_edition': 'str',
+            'db_tools_details': 'list[DatabaseTool]',
+            'secret_id': 'str',
+            'secret_version_number': 'int',
             'source_id': 'str',
             'refreshable_mode': 'str'
         }
@@ -252,6 +278,8 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'ncharacter_set': 'ncharacterSet',
             'db_name': 'dbName',
             'cpu_core_count': 'cpuCoreCount',
+            'compute_model': 'computeModel',
+            'compute_count': 'computeCount',
             'ocpu_count': 'ocpuCount',
             'db_workload': 'dbWorkload',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
@@ -287,6 +315,9 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled',
             'max_cpu_core_count': 'maxCpuCoreCount',
             'database_edition': 'databaseEdition',
+            'db_tools_details': 'dbToolsDetails',
+            'secret_id': 'secretId',
+            'secret_version_number': 'secretVersionNumber',
             'source_id': 'sourceId',
             'refreshable_mode': 'refreshableMode'
         }
@@ -296,6 +327,8 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
         self._ncharacter_set = None
         self._db_name = None
         self._cpu_core_count = None
+        self._compute_model = None
+        self._compute_count = None
         self._ocpu_count = None
         self._db_workload = None
         self._data_storage_size_in_tbs = None
@@ -331,6 +364,9 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
         self._is_auto_scaling_for_storage_enabled = None
         self._max_cpu_core_count = None
         self._database_edition = None
+        self._db_tools_details = None
+        self._secret_id = None
+        self._secret_version_number = None
         self._source_id = None
         self._refreshable_mode = None
         self._source = 'CLONE_TO_REFRESHABLE'

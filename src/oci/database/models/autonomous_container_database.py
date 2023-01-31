@@ -105,6 +105,14 @@ class AutonomousContainerDatabase(object):
     #: This constant has a value of "DISABLED_STANDBY"
     ROLE_DISABLED_STANDBY = "DISABLED_STANDBY"
 
+    #: A constant which can be used with the compute_model property of a AutonomousContainerDatabase.
+    #: This constant has a value of "ECPU"
+    COMPUTE_MODEL_ECPU = "ECPU"
+
+    #: A constant which can be used with the compute_model property of a AutonomousContainerDatabase.
+    #: This constant has a value of "OCPU"
+    COMPUTE_MODEL_OCPU = "OCPU"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AutonomousContainerDatabase object with values from keyword arguments.
@@ -260,6 +268,12 @@ class AutonomousContainerDatabase(object):
             The value to assign to the provisionable_cpus property of this AutonomousContainerDatabase.
         :type provisionable_cpus: list[float]
 
+        :param compute_model:
+            The value to assign to the compute_model property of this AutonomousContainerDatabase.
+            Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type compute_model: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -296,7 +310,8 @@ class AutonomousContainerDatabase(object):
             'available_cpus': 'float',
             'total_cpus': 'int',
             'reclaimable_cpus': 'float',
-            'provisionable_cpus': 'list[float]'
+            'provisionable_cpus': 'list[float]',
+            'compute_model': 'str'
         }
 
         self.attribute_map = {
@@ -334,7 +349,8 @@ class AutonomousContainerDatabase(object):
             'available_cpus': 'availableCpus',
             'total_cpus': 'totalCpus',
             'reclaimable_cpus': 'reclaimableCpus',
-            'provisionable_cpus': 'provisionableCpus'
+            'provisionable_cpus': 'provisionableCpus',
+            'compute_model': 'computeModel'
         }
 
         self._id = None
@@ -372,6 +388,7 @@ class AutonomousContainerDatabase(object):
         self._total_cpus = None
         self._reclaimable_cpus = None
         self._provisionable_cpus = None
+        self._compute_model = None
 
     @property
     def id(self):
@@ -1163,7 +1180,7 @@ class AutonomousContainerDatabase(object):
     def memory_per_oracle_compute_unit_in_gbs(self):
         """
         Gets the memory_per_oracle_compute_unit_in_gbs of this AutonomousContainerDatabase.
-        The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+        The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
 
 
         :return: The memory_per_oracle_compute_unit_in_gbs of this AutonomousContainerDatabase.
@@ -1175,7 +1192,7 @@ class AutonomousContainerDatabase(object):
     def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
         """
         Sets the memory_per_oracle_compute_unit_in_gbs of this AutonomousContainerDatabase.
-        The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+        The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
 
 
         :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this AutonomousContainerDatabase.
@@ -1187,7 +1204,7 @@ class AutonomousContainerDatabase(object):
     def available_cpus(self):
         """
         Gets the available_cpus of this AutonomousContainerDatabase.
-        Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
+        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
 
 
         :return: The available_cpus of this AutonomousContainerDatabase.
@@ -1199,7 +1216,7 @@ class AutonomousContainerDatabase(object):
     def available_cpus(self, available_cpus):
         """
         Sets the available_cpus of this AutonomousContainerDatabase.
-        Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
+        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
 
 
         :param available_cpus: The available_cpus of this AutonomousContainerDatabase.
@@ -1211,7 +1228,7 @@ class AutonomousContainerDatabase(object):
     def total_cpus(self):
         """
         Gets the total_cpus of this AutonomousContainerDatabase.
-        The number of CPU cores allocated to the Autonomous VM cluster.
+        The number of CPUs allocated to the Autonomous VM cluster.
 
 
         :return: The total_cpus of this AutonomousContainerDatabase.
@@ -1223,7 +1240,7 @@ class AutonomousContainerDatabase(object):
     def total_cpus(self, total_cpus):
         """
         Sets the total_cpus of this AutonomousContainerDatabase.
-        The number of CPU cores allocated to the Autonomous VM cluster.
+        The number of CPUs allocated to the Autonomous VM cluster.
 
 
         :param total_cpus: The total_cpus of this AutonomousContainerDatabase.
@@ -1235,7 +1252,7 @@ class AutonomousContainerDatabase(object):
     def reclaimable_cpus(self):
         """
         Gets the reclaimable_cpus of this AutonomousContainerDatabase.
-        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 
 
         :return: The reclaimable_cpus of this AutonomousContainerDatabase.
@@ -1247,7 +1264,7 @@ class AutonomousContainerDatabase(object):
     def reclaimable_cpus(self, reclaimable_cpus):
         """
         Sets the reclaimable_cpus of this AutonomousContainerDatabase.
-        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 
 
         :param reclaimable_cpus: The reclaimable_cpus of this AutonomousContainerDatabase.
@@ -1278,6 +1295,36 @@ class AutonomousContainerDatabase(object):
         :type: list[float]
         """
         self._provisionable_cpus = provisionable_cpus
+
+    @property
+    def compute_model(self):
+        """
+        Gets the compute_model of this AutonomousContainerDatabase.
+        The compute model of the Autonomous VM Cluster.
+
+        Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The compute_model of this AutonomousContainerDatabase.
+        :rtype: str
+        """
+        return self._compute_model
+
+    @compute_model.setter
+    def compute_model(self, compute_model):
+        """
+        Sets the compute_model of this AutonomousContainerDatabase.
+        The compute model of the Autonomous VM Cluster.
+
+
+        :param compute_model: The compute_model of this AutonomousContainerDatabase.
+        :type: str
+        """
+        allowed_values = ["ECPU", "OCPU"]
+        if not value_allowed_none_or_none_sentinel(compute_model, allowed_values):
+            compute_model = 'UNKNOWN_ENUM_VALUE'
+        self._compute_model = compute_model
 
     def __repr__(self):
         return formatted_flat_dict(self)

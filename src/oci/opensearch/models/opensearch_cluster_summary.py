@@ -13,6 +13,18 @@ class OpensearchClusterSummary(object):
     The summary of information about an OpenSearch cluster.
     """
 
+    #: A constant which can be used with the security_mode property of a OpensearchClusterSummary.
+    #: This constant has a value of "DISABLED"
+    SECURITY_MODE_DISABLED = "DISABLED"
+
+    #: A constant which can be used with the security_mode property of a OpensearchClusterSummary.
+    #: This constant has a value of "PERMISSIVE"
+    SECURITY_MODE_PERMISSIVE = "PERMISSIVE"
+
+    #: A constant which can be used with the security_mode property of a OpensearchClusterSummary.
+    #: This constant has a value of "ENFORCING"
+    SECURITY_MODE_ENFORCING = "ENFORCING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new OpensearchClusterSummary object with values from keyword arguments.
@@ -70,6 +82,12 @@ class OpensearchClusterSummary(object):
             The value to assign to the availability_domains property of this OpensearchClusterSummary.
         :type availability_domains: list[str]
 
+        :param security_mode:
+            The value to assign to the security_mode property of this OpensearchClusterSummary.
+            Allowed values for this property are: "DISABLED", "PERMISSIVE", "ENFORCING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type security_mode: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -84,7 +102,8 @@ class OpensearchClusterSummary(object):
             'software_version': 'str',
             'total_storage_gb': 'int',
             'lifecycle_state': 'str',
-            'availability_domains': 'list[str]'
+            'availability_domains': 'list[str]',
+            'security_mode': 'str'
         }
 
         self.attribute_map = {
@@ -100,7 +119,8 @@ class OpensearchClusterSummary(object):
             'software_version': 'softwareVersion',
             'total_storage_gb': 'totalStorageGB',
             'lifecycle_state': 'lifecycleState',
-            'availability_domains': 'availabilityDomains'
+            'availability_domains': 'availabilityDomains',
+            'security_mode': 'securityMode'
         }
 
         self._id = None
@@ -116,6 +136,7 @@ class OpensearchClusterSummary(object):
         self._total_storage_gb = None
         self._lifecycle_state = None
         self._availability_domains = None
+        self._security_mode = None
 
     @property
     def id(self):
@@ -446,6 +467,36 @@ class OpensearchClusterSummary(object):
         :type: list[str]
         """
         self._availability_domains = availability_domains
+
+    @property
+    def security_mode(self):
+        """
+        Gets the security_mode of this OpensearchClusterSummary.
+        The security mode of the cluster.
+
+        Allowed values for this property are: "DISABLED", "PERMISSIVE", "ENFORCING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The security_mode of this OpensearchClusterSummary.
+        :rtype: str
+        """
+        return self._security_mode
+
+    @security_mode.setter
+    def security_mode(self, security_mode):
+        """
+        Sets the security_mode of this OpensearchClusterSummary.
+        The security mode of the cluster.
+
+
+        :param security_mode: The security_mode of this OpensearchClusterSummary.
+        :type: str
+        """
+        allowed_values = ["DISABLED", "PERMISSIVE", "ENFORCING"]
+        if not value_allowed_none_or_none_sentinel(security_mode, allowed_values):
+            security_mode = 'UNKNOWN_ENUM_VALUE'
+        self._security_mode = security_mode
 
     def __repr__(self):
         return formatted_flat_dict(self)

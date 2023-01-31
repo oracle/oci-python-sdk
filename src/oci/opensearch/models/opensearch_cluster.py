@@ -56,6 +56,18 @@ class OpensearchCluster(object):
     #: This constant has a value of "BM"
     DATA_NODE_HOST_TYPE_BM = "BM"
 
+    #: A constant which can be used with the security_mode property of a OpensearchCluster.
+    #: This constant has a value of "DISABLED"
+    SECURITY_MODE_DISABLED = "DISABLED"
+
+    #: A constant which can be used with the security_mode property of a OpensearchCluster.
+    #: This constant has a value of "PERMISSIVE"
+    SECURITY_MODE_PERMISSIVE = "PERMISSIVE"
+
+    #: A constant which can be used with the security_mode property of a OpensearchCluster.
+    #: This constant has a value of "ENFORCING"
+    SECURITY_MODE_ENFORCING = "ENFORCING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new OpensearchCluster object with values from keyword arguments.
@@ -215,6 +227,20 @@ class OpensearchCluster(object):
             The value to assign to the availability_domains property of this OpensearchCluster.
         :type availability_domains: list[str]
 
+        :param security_mode:
+            The value to assign to the security_mode property of this OpensearchCluster.
+            Allowed values for this property are: "DISABLED", "PERMISSIVE", "ENFORCING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type security_mode: str
+
+        :param security_master_user_name:
+            The value to assign to the security_master_user_name property of this OpensearchCluster.
+        :type security_master_user_name: str
+
+        :param security_master_user_password_hash:
+            The value to assign to the security_master_user_password_hash property of this OpensearchCluster.
+        :type security_master_user_password_hash: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -253,7 +279,10 @@ class OpensearchCluster(object):
             'vcn_compartment_id': 'str',
             'subnet_compartment_id': 'str',
             'fqdn': 'str',
-            'availability_domains': 'list[str]'
+            'availability_domains': 'list[str]',
+            'security_mode': 'str',
+            'security_master_user_name': 'str',
+            'security_master_user_password_hash': 'str'
         }
 
         self.attribute_map = {
@@ -293,7 +322,10 @@ class OpensearchCluster(object):
             'vcn_compartment_id': 'vcnCompartmentId',
             'subnet_compartment_id': 'subnetCompartmentId',
             'fqdn': 'fqdn',
-            'availability_domains': 'availabilityDomains'
+            'availability_domains': 'availabilityDomains',
+            'security_mode': 'securityMode',
+            'security_master_user_name': 'securityMasterUserName',
+            'security_master_user_password_hash': 'securityMasterUserPasswordHash'
         }
 
         self._id = None
@@ -333,6 +365,9 @@ class OpensearchCluster(object):
         self._subnet_compartment_id = None
         self._fqdn = None
         self._availability_domains = None
+        self._security_mode = None
+        self._security_master_user_name = None
+        self._security_master_user_password_hash = None
 
     @property
     def id(self):
@@ -1245,6 +1280,84 @@ class OpensearchCluster(object):
         :type: list[str]
         """
         self._availability_domains = availability_domains
+
+    @property
+    def security_mode(self):
+        """
+        Gets the security_mode of this OpensearchCluster.
+        The security mode of the cluster.
+
+        Allowed values for this property are: "DISABLED", "PERMISSIVE", "ENFORCING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The security_mode of this OpensearchCluster.
+        :rtype: str
+        """
+        return self._security_mode
+
+    @security_mode.setter
+    def security_mode(self, security_mode):
+        """
+        Sets the security_mode of this OpensearchCluster.
+        The security mode of the cluster.
+
+
+        :param security_mode: The security_mode of this OpensearchCluster.
+        :type: str
+        """
+        allowed_values = ["DISABLED", "PERMISSIVE", "ENFORCING"]
+        if not value_allowed_none_or_none_sentinel(security_mode, allowed_values):
+            security_mode = 'UNKNOWN_ENUM_VALUE'
+        self._security_mode = security_mode
+
+    @property
+    def security_master_user_name(self):
+        """
+        Gets the security_master_user_name of this OpensearchCluster.
+        The name of the master user that are used to manage security config
+
+
+        :return: The security_master_user_name of this OpensearchCluster.
+        :rtype: str
+        """
+        return self._security_master_user_name
+
+    @security_master_user_name.setter
+    def security_master_user_name(self, security_master_user_name):
+        """
+        Sets the security_master_user_name of this OpensearchCluster.
+        The name of the master user that are used to manage security config
+
+
+        :param security_master_user_name: The security_master_user_name of this OpensearchCluster.
+        :type: str
+        """
+        self._security_master_user_name = security_master_user_name
+
+    @property
+    def security_master_user_password_hash(self):
+        """
+        Gets the security_master_user_password_hash of this OpensearchCluster.
+        The password hash of the master user that are used to manage security config
+
+
+        :return: The security_master_user_password_hash of this OpensearchCluster.
+        :rtype: str
+        """
+        return self._security_master_user_password_hash
+
+    @security_master_user_password_hash.setter
+    def security_master_user_password_hash(self, security_master_user_password_hash):
+        """
+        Sets the security_master_user_password_hash of this OpensearchCluster.
+        The password hash of the master user that are used to manage security config
+
+
+        :param security_master_user_password_hash: The security_master_user_password_hash of this OpensearchCluster.
+        :type: str
+        """
+        self._security_master_user_password_hash = security_master_user_password_hash
 
     def __repr__(self):
         return formatted_flat_dict(self)
