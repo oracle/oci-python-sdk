@@ -19,8 +19,8 @@ Added
 -----
 * Support for ECPU billing for autonomous databases and dedicated autonomous databases on Exadata Cloud at Customer in the Database service
 * Support for providing a vault secret ID when creating or updating autonomous shared databases in the Database service
-* Support for including machine learning notebook, ORDS, and database transform URLs as autonomous database connections in the Database service
-* Support for role*based access control on OpenSearch clusters in the Search service
+* Support for including ORDS and database transform URLs as autonomous database connections in the Database service
+* Support for role-based access control on OpenSearch clusters in the Search service
 * Support for managed shell stages on deployments in the DevOps service
 * Support for memory encryption on confidential VMs in the Compute service
 * Support for configuration items, and reporting ownership of configuration items, in the Application Performance Monitoring service
@@ -59,6 +59,8 @@ Added
 Security
 --------
 * Upgrade wheel version for applicable Python versions to fix security vulnerability as mentioned in https://github.com/oracle/oci-python-sdk/pull/502
+
+====================
 2.90.0 - 2022-12-13
 ====================
 
