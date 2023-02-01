@@ -11,6 +11,7 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 * Added Queues
 * Added CSV for Streams and Queues
 * Fix ADB-D extract on ExaCS and ExaCC
+* Convert Tags to Columns in CSV output unless -csv_notagstocols specified
 
 =====================
 23.01.31 - 23.01.31

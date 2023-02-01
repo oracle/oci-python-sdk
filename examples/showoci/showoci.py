@@ -237,6 +237,7 @@ def execute_extract():
         # if print to CSV
         ############################################
         if cmd.csv:
+            csv.csv_tags_to_cols = not cmd.csv_notagstocols
             csv.generate_csv(extracted_data, cmd.csv, not cmd.csv_nodate, cmd.csvcol)
 
     ############################################
@@ -338,6 +339,7 @@ def set_parser_arguments(argsList=[]):
     parser.add_argument('-csv', default="", dest='csv', help="Output to CSV files, Input as file header")
     parser.add_argument('-csvcol', default="", dest='csvcol', help="Extract define tags as columns for Compute in CSV")
     parser.add_argument('-csv_nodate', action='store_true', default=False, dest='csv_nodate', help='Do not add date field to the csv')
+    parser.add_argument('-csv_notagstocols', action='store_true', default=False, dest='csv_notagstocols', help='Do not Convert Tags to Columns in CSV Extract')
     parser.add_argument('-jf', type=argparse.FileType('w'), dest='joutfile', help="Output to file   (JSON format)")
     parser.add_argument('-js', action='store_true', default=False, dest='joutscr', help="Output to screen (JSON format)")
     parser.add_argument('-sjf', type=argparse.FileType('w'), dest='sjoutfile', help="Output to screen (nice format) and JSON File")

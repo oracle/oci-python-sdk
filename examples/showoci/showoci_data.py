@@ -1561,6 +1561,8 @@ class ShowOCIData(object):
                         'vpus_per_gb': vol['vpus_per_gb'],
                         'sum_info': 'Compute - Block Storage (GB)',
                         'sum_size_gb': vol['size_in_gbs'],
+                        'defined_tags': vol['defined_tags'],
+                        'freeform_tags': vol['freeform_tags'],
                         'desc': ((str(vol['size_in_gbs']) + "GB").ljust(7) + " - " + str(vol['display_name']).ljust(20)[0:19] + " - " + vol['availability_domain'] + " - " + vol['time_created'][0:16] + volume_group)
                     }
 
@@ -1611,6 +1613,8 @@ class ShowOCIData(object):
                         'volume_group_name': vol['volume_group_name'],
                         'sum_info': 'Compute - Block Storage (GB)',
                         'sum_size_gb': vol['size_in_gbs'],
+                        'defined_tags': vol['defined_tags'],
+                        'freeform_tags': vol['freeform_tags'],
                         'desc': ((str(vol['size_in_gbs']) + "GB").ljust(7) + " - " + str(vol['display_name']).ljust(26)[0:25] + " - " + vol['availability_domain'] + " - " + vol['time_created'][0:16] + volume_group)
                     }
 
