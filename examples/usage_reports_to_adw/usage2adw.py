@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 ##########################################################################
-# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 #
 # DISCLAIMER This is not an official Oracle application,  It does not supported by Oracle Support,
@@ -21,6 +21,7 @@
 #   endorse group UsageDownloadGroup to read objects in tenancy usage-report
 #   Allow group UsageDownloadGroup to inspect compartments in tenancy
 #   Allow group UsageDownloadGroup to inspect tenancies in tenancy
+#   Allow group UsageDownloadGroup to read autonomous-database in compartment {APPCOMP}
 #
 ##########################################################################
 # Database user:
@@ -60,14 +61,17 @@ import oci
 import gzip
 import os
 import csv
-import cx_Oracle
+import oracledb
 import requests
 import time
 
 
-version = "22.12.08"
+version = "23.02.07"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
+
+# Init the Oracle Thic Client Library in order to use sqlnet.ora and instant client
+oracledb.init_oracle_client()
 
 # create the work dir if not  exist
 if not os.path.exists(work_report_dir):
@@ -248,132 +252,129 @@ def set_parser_arguments():
 def check_database_table_structure_usage(connection, tenant_name):
     try:
         # open cursor
-        cursor = connection.cursor()
+        with connection.cursor() as cursor:
 
-        # check if OCI_USAGE table exist, if not create
-        sql = "select count(*) from user_tables where table_name = 'OCI_USAGE'"
-        cursor.execute(sql)
-        val, = cursor.fetchone()
-
-        # if table not exist, create it
-        if val == 0:
-            print("   Table OCI_USAGE was not exist, creating")
-            sql = "create table OCI_USAGE ("
-            sql += "    TENANT_NAME             VARCHAR2(100),"
-            sql += "    TENANT_ID               VARCHAR2(100),"
-            sql += "    FILE_ID                 VARCHAR2(30),"
-            sql += "    USAGE_INTERVAL_START    DATE,"
-            sql += "    USAGE_INTERVAL_END      DATE,"
-            sql += "    PRD_SERVICE             VARCHAR2(100),"
-            sql += "    PRD_RESOURCE            VARCHAR2(100),"
-            sql += "    PRD_COMPARTMENT_ID      VARCHAR2(100),"
-            sql += "    PRD_COMPARTMENT_NAME    VARCHAR2(100),"
-            sql += "    PRD_COMPARTMENT_PATH    VARCHAR2(1000),"
-            sql += "    PRD_REGION              VARCHAR2(100),"
-            sql += "    PRD_AVAILABILITY_DOMAIN VARCHAR2(100),"
-            sql += "    USG_RESOURCE_ID         VARCHAR2(1000),"
-            sql += "    USG_BILLED_QUANTITY     NUMBER,"
-            sql += "    USG_CONSUMED_QUANTITY   NUMBER,"
-            sql += "    USG_CONSUMED_UNITS      VARCHAR2(100),"
-            sql += "    USG_CONSUMED_MEASURE    VARCHAR2(100),"
-            sql += "    IS_CORRECTION           VARCHAR2(10),"
-            sql += "    TAGS_DATA               VARCHAR2(4000),"
-            sql += "    TAG_SPECIAL             VARCHAR2(4000),"
-            sql += "    TAG_SPECIAL2            VARCHAR2(4000)"
-            sql += ") COMPRESS"
+            # check if OCI_USAGE table exist, if not create
+            sql = "select count(*) from user_tables where table_name = 'OCI_USAGE'"
             cursor.execute(sql)
-            print("   Table OCI_USAGE created")
-        else:
-            print("   Table OCI_USAGE exist")
+            val, = cursor.fetchone()
 
-        # check if TAGS_DATA columns exist in OCI_USAGE table, if not create
-        sql = "select count(*) from user_tab_columns where table_name = 'OCI_USAGE' and column_name='TAGS_DATA'"
-        cursor.execute(sql)
-        val, = cursor.fetchone()
+            # if table not exist, create it
+            if val == 0:
+                print("   Table OCI_USAGE was not exist, creating")
+                sql = """create table OCI_USAGE (
+                    TENANT_NAME             VARCHAR2(100),
+                    TENANT_ID               VARCHAR2(100),
+                    FILE_ID                 VARCHAR2(30),
+                    USAGE_INTERVAL_START    DATE,
+                    USAGE_INTERVAL_END      DATE,
+                    PRD_SERVICE             VARCHAR2(100),
+                    PRD_RESOURCE            VARCHAR2(100),
+                    PRD_COMPARTMENT_ID      VARCHAR2(100),
+                    PRD_COMPARTMENT_NAME    VARCHAR2(100),
+                    PRD_COMPARTMENT_PATH    VARCHAR2(1000),
+                    PRD_REGION              VARCHAR2(100),
+                    PRD_AVAILABILITY_DOMAIN VARCHAR2(100),
+                    USG_RESOURCE_ID         VARCHAR2(1000),
+                    USG_BILLED_QUANTITY     NUMBER,
+                    USG_CONSUMED_QUANTITY   NUMBER,
+                    USG_CONSUMED_UNITS      VARCHAR2(100),
+                    USG_CONSUMED_MEASURE    VARCHAR2(100),
+                    IS_CORRECTION           VARCHAR2(10),
+                    TAGS_DATA               VARCHAR2(4000),
+                    TAG_SPECIAL             VARCHAR2(4000),
+                    TAG_SPECIAL2            VARCHAR2(4000)
+                    ) COMPRESS"""
+                cursor.execute(sql)
+                print("   Table OCI_USAGE created")
+            else:
+                print("   Table OCI_USAGE exist")
 
-        # if columns TAGS_DATA not exist, create it
-        if val == 0:
-            print("   Column TAGS_DATA does not exist in the table OCI_USAGE, adding...")
-            sql = "alter table OCI_USAGE add (TAGS_DATA VARCHAR2(4000))"
+            # check if TAGS_DATA columns exist in OCI_USAGE table, if not create
+            sql = "select count(*) from user_tab_columns where table_name = 'OCI_USAGE' and column_name='TAGS_DATA'"
             cursor.execute(sql)
+            val, = cursor.fetchone()
 
-        # check if TENANT_ID columns exist in OCI_USAGE table, if not create
-        sql = "select count(*) from user_tab_columns where table_name = 'OCI_USAGE' and column_name='TENANT_ID'"
-        cursor.execute(sql)
-        val, = cursor.fetchone()
+            # if columns TAGS_DATA not exist, create it
+            if val == 0:
+                print("   Column TAGS_DATA does not exist in the table OCI_USAGE, adding...")
+                sql = "alter table OCI_USAGE add (TAGS_DATA VARCHAR2(4000))"
+                cursor.execute(sql)
 
-        # if columns TENANT_ID not exist, create it
-        if val == 0:
-            print("   Column TENANT_ID does not exist in the table OCI_USAGE, adding...")
-            sql = "alter table OCI_USAGE add (TENANT_ID VARCHAR2(100))"
+            # check if TENANT_ID columns exist in OCI_USAGE table, if not create
+            sql = "select count(*) from user_tab_columns where table_name = 'OCI_USAGE' and column_name='TENANT_ID'"
             cursor.execute(sql)
+            val, = cursor.fetchone()
 
-        # check if TAG_SPECIAL columns exist in OCI_USAGE table, if not create
-        sql = "select count(*) from user_tab_columns where table_name = 'OCI_USAGE' and column_name='TAG_SPECIAL'"
-        cursor.execute(sql)
-        val, = cursor.fetchone()
+            # if columns TENANT_ID not exist, create it
+            if val == 0:
+                print("   Column TENANT_ID does not exist in the table OCI_USAGE, adding...")
+                sql = "alter table OCI_USAGE add (TENANT_ID VARCHAR2(100))"
+                cursor.execute(sql)
 
-        # if columns TAG_SPECIAL not exist, create it
-        if val == 0:
-            print("   Column TAG_SPECIAL does not exist in the table OCI_USAGE, adding...")
-            sql = "alter table OCI_USAGE add (TAG_SPECIAL VARCHAR2(4000))"
+            # check if TAG_SPECIAL columns exist in OCI_USAGE table, if not create
+            sql = "select count(*) from user_tab_columns where table_name = 'OCI_USAGE' and column_name='TAG_SPECIAL'"
             cursor.execute(sql)
+            val, = cursor.fetchone()
 
-        # check if TAG_SPECIAL2 columns exist in OCI_USAGE table, if not create
-        sql = "select count(*) from user_tab_columns where table_name = 'OCI_USAGE' and column_name='TAG_SPECIAL2'"
-        cursor.execute(sql)
-        val, = cursor.fetchone()
+            # if columns TAG_SPECIAL not exist, create it
+            if val == 0:
+                print("   Column TAG_SPECIAL does not exist in the table OCI_USAGE, adding...")
+                sql = "alter table OCI_USAGE add (TAG_SPECIAL VARCHAR2(4000))"
+                cursor.execute(sql)
 
-        # if columns TAG_SPECIAL2 not exist, create it
-        if val == 0:
-            print("   Column TAG_SPECIAL2 does not exist in the table OCI_USAGE, adding...")
-            sql = "alter table OCI_USAGE add (TAG_SPECIAL2 VARCHAR2(4000))"
+            # check if TAG_SPECIAL2 columns exist in OCI_USAGE table, if not create
+            sql = "select count(*) from user_tab_columns where table_name = 'OCI_USAGE' and column_name='TAG_SPECIAL2'"
             cursor.execute(sql)
+            val, = cursor.fetchone()
 
-        # check if OCI_USAGE_TAG_KEYS table exist, if not create
-        sql = "select count(*) from user_tables where table_name = 'OCI_USAGE_TAG_KEYS'"
-        cursor.execute(sql)
-        val, = cursor.fetchone()
+            # if columns TAG_SPECIAL2 not exist, create it
+            if val == 0:
+                print("   Column TAG_SPECIAL2 does not exist in the table OCI_USAGE, adding...")
+                sql = "alter table OCI_USAGE add (TAG_SPECIAL2 VARCHAR2(4000))"
+                cursor.execute(sql)
 
-        # if table OCI_USAGE_TAG_KEYS not exist, create it
-        if val == 0:
-            print("   Table OCI_USAGE_TAG_KEYS was not exist, creating")
-            sql = "CREATE TABLE OCI_USAGE_TAG_KEYS (TENANT_NAME VARCHAR2(100), TAG_KEY VARCHAR2(100), "
-            sql += "CONSTRAINT OCI_USAGE_TAG_KEYS_PK PRIMARY KEY(TENANT_NAME,TAG_KEY)"
-            sql += ")"
+            # check if OCI_USAGE_TAG_KEYS table exist, if not create
+            sql = "select count(*) from user_tables where table_name = 'OCI_USAGE_TAG_KEYS'"
             cursor.execute(sql)
-            print("   Table OCI_USAGE_TAG_KEYS created")
-        else:
-            print("   Table OCI_USAGE_TAG_KEYS exist")
+            val, = cursor.fetchone()
 
-        # check if OCI_USAGE_STATS table exist, if not create
-        sql = "select count(*) from user_tables where table_name = 'OCI_USAGE_STATS'"
-        cursor.execute(sql)
-        val, = cursor.fetchone()
+            # if table OCI_USAGE_TAG_KEYS not exist, create it
+            if val == 0:
+                print("   Table OCI_USAGE_TAG_KEYS was not exist, creating")
+                sql = """CREATE TABLE OCI_USAGE_TAG_KEYS (TENANT_NAME VARCHAR2(100), TAG_KEY VARCHAR2(100),
+                CONSTRAINT OCI_USAGE_TAG_KEYS_PK PRIMARY KEY(TENANT_NAME,TAG_KEY)
+                )"""
+                cursor.execute(sql)
+                print("   Table OCI_USAGE_TAG_KEYS created")
+            else:
+                print("   Table OCI_USAGE_TAG_KEYS exist")
 
-        # if table OCI_USAGE_STATS not exist, create it
-        if val == 0:
-            print("   Table OCI_USAGE_STATS was not exist, creating")
-            sql = "CREATE TABLE OCI_USAGE_STATS ( "
-            sql += "    TENANT_NAME             VARCHAR2(100),"
-            sql += "    FILE_ID                 VARCHAR2(30),"
-            sql += "    USAGE_INTERVAL_START    DATE,"
-            sql += "    NUM_ROWS                NUMBER,"
-            sql += "    UPDATE_DATE             DATE,"
-            sql += "    AGENT_VERSION           VARCHAR2(30),"
-            sql += "    CONSTRAINT OCI_USAGE_STATS_PK PRIMARY KEY (TENANT_NAME,FILE_ID,USAGE_INTERVAL_START)"
-            sql += ")"
+            # check if OCI_USAGE_STATS table exist, if not create
+            sql = "select count(*) from user_tables where table_name = 'OCI_USAGE_STATS'"
             cursor.execute(sql)
-            print("   Table OCI_USAGE_STATS created")
+            val, = cursor.fetchone()
 
-            update_usage_stats(connection, tenant_name)
-        else:
-            print("   Table OCI_USAGE_STATS exist")
+            # if table OCI_USAGE_STATS not exist, create it
+            if val == 0:
+                print("   Table OCI_USAGE_STATS was not exist, creating")
+                sql = """CREATE TABLE OCI_USAGE_STATS (
+                    TENANT_NAME             VARCHAR2(100),
+                    FILE_ID                 VARCHAR2(30),
+                    USAGE_INTERVAL_START    DATE,
+                    NUM_ROWS                NUMBER,
+                    UPDATE_DATE             DATE,
+                    AGENT_VERSION           VARCHAR2(30),
+                    CONSTRAINT OCI_USAGE_STATS_PK PRIMARY KEY (TENANT_NAME,FILE_ID,USAGE_INTERVAL_START)
+                    )"""
+                cursor.execute(sql)
+                print("   Table OCI_USAGE_STATS created")
 
-        # close cursor
-        cursor.close()
+                update_usage_stats(connection, tenant_name)
+            else:
+                print("   Table OCI_USAGE_STATS exist")
 
-    except cx_Oracle.DatabaseError as e:
+    except oracledb.DatabaseError as e:
         print("\nError manipulating database at check_database_table_structure_usage() - " + str(e) + "\n")
         raise SystemExit
 
@@ -387,25 +388,22 @@ def check_database_table_structure_usage(connection, tenant_name):
 def check_database_index_structure_usage(connection):
     try:
         # open cursor
-        cursor = connection.cursor()
+        with connection.cursor() as cursor:
 
-        # check if index OCI_USAGE_1IX exist in OCI_USAGE table, if not create
-        sql = "select count(*) from user_indexes where table_name = 'OCI_USAGE' and index_name='OCI_USAGE_1IX'"
-        cursor.execute(sql)
-        val, = cursor.fetchone()
-
-        # if index not exist, create it
-        if val == 0:
-            print("\nChecking Index for OCI_USAGE")
-            print("   Index OCI_USAGE_1IX does not exist for table OCI_USAGE, adding...")
-            sql = "CREATE INDEX OCI_USAGE_1IX ON OCI_USAGE(TENANT_NAME,USAGE_INTERVAL_START)"
+            # check if index OCI_USAGE_1IX exist in OCI_USAGE table, if not create
+            sql = "select count(*) from user_indexes where table_name = 'OCI_USAGE' and index_name='OCI_USAGE_1IX'"
             cursor.execute(sql)
-            print("   Index created.")
+            val, = cursor.fetchone()
 
-        # close cursor
-        cursor.close()
+            # if index not exist, create it
+            if val == 0:
+                print("\nChecking Index for OCI_USAGE")
+                print("   Index OCI_USAGE_1IX does not exist for table OCI_USAGE, adding...")
+                sql = "CREATE INDEX OCI_USAGE_1IX ON OCI_USAGE(TENANT_NAME,USAGE_INTERVAL_START)"
+                cursor.execute(sql)
+                print("   Index created.")
 
-    except cx_Oracle.DatabaseError as e:
+    except oracledb.DatabaseError as e:
         print("\nError manipulating database at check_database_index_structure_usage() - " + str(e) + "\n")
         raise SystemExit
 
@@ -419,25 +417,22 @@ def check_database_index_structure_usage(connection):
 def check_database_index_structure_cost(connection):
     try:
         # open cursor
-        cursor = connection.cursor()
+        with connection.cursor() as cursor:
 
-        # check if index OCI_USAGE_1IX exist in OCI_USAGE table, if not create
-        sql = "select count(*) from user_indexes where table_name = 'OCI_COST' and index_name='OCI_COST_1IX'"
-        cursor.execute(sql)
-        val, = cursor.fetchone()
-
-        # if index not exist, create it
-        if val == 0:
-            print("\nChecking Index for OCI_COST")
-            print("   Index OCI_COST_1IX does not exist for table OCI_COST, adding...")
-            sql = "CREATE INDEX OCI_COST_1IX ON OCI_COST(TENANT_NAME,USAGE_INTERVAL_START)"
+            # check if index OCI_USAGE_1IX exist in OCI_USAGE table, if not create
+            sql = "select count(*) from user_indexes where table_name = 'OCI_COST' and index_name='OCI_COST_1IX'"
             cursor.execute(sql)
-            print("   Index created.")
+            val, = cursor.fetchone()
 
-        # close cursor
-        cursor.close()
+            # if index not exist, create it
+            if val == 0:
+                print("\nChecking Index for OCI_COST")
+                print("   Index OCI_COST_1IX does not exist for table OCI_COST, adding...")
+                sql = "CREATE INDEX OCI_COST_1IX ON OCI_COST(TENANT_NAME,USAGE_INTERVAL_START)"
+                cursor.execute(sql)
+                print("   Index created.")
 
-    except cx_Oracle.DatabaseError as e:
+    except oracledb.DatabaseError as e:
         print("\nError manipulating database at check_database_index_structure_cost() - " + str(e) + "\n")
         raise SystemExit
 
@@ -452,44 +447,44 @@ def update_cost_stats(connection, tenant_name):
     try:
         start_time = time.time()
         # open cursor
-        cursor = connection.cursor()
+        with connection.cursor() as cursor:
 
-        print("\nMerging statistics into OCI_COST_STATS...")
+            print("\nMerging statistics into OCI_COST_STATS...")
 
-        # run merge to oci_update_stats
-        sql = "merge into OCI_COST_STATS a "
-        sql += "using "
-        sql += "( "
-        sql += "    select /*+ parallel(oci_cost,8) full(oci_cost) */  "
-        sql += "        tenant_name, "
-        sql += "        file_id, "
-        sql += "        USAGE_INTERVAL_START, "
-        sql += "        sum(COST_MY_COST) COST_MY_COST, "
-        sql += "        sum(COST_MY_COST_OVERAGE) COST_MY_COST_OVERAGE, "
-        sql += "        min(COST_CURRENCY_CODE) COST_CURRENCY_CODE, "
-        sql += "        count(*) NUM_ROWS "
-        sql += "    from  "
-        sql += "        oci_cost "
-        sql += "    where "
-        sql += "        tenant_name = :tenant_name "
-        sql += "    group by  "
-        sql += "        tenant_name, "
-        sql += "        file_id, "
-        sql += "        USAGE_INTERVAL_START "
-        sql += ") b "
-        sql += "on (a.tenant_name=b.tenant_name and a.file_id=b.file_id and a.USAGE_INTERVAL_START=b.USAGE_INTERVAL_START) "
-        sql += "when matched then update set a.num_rows=b.num_rows, a.COST_MY_COST=b.COST_MY_COST, a.UPDATE_DATE=sysdate, a.AGENT_VERSION=:version,"
-        sql += "    a.COST_MY_COST_OVERAGE=b.COST_MY_COST_OVERAGE, a.COST_CURRENCY_CODE=b.COST_CURRENCY_CODE "
-        sql += "where a.num_rows <> b.num_rows "
-        sql += "when not matched then insert (TENANT_NAME,FILE_ID,USAGE_INTERVAL_START,NUM_ROWS,COST_MY_COST,UPDATE_DATE,AGENT_VERSION,COST_MY_COST_OVERAGE,COST_CURRENCY_CODE)  "
-        sql += "   values (b.TENANT_NAME,b.FILE_ID,b.USAGE_INTERVAL_START,b.NUM_ROWS,b.COST_MY_COST,sysdate,:version,b.COST_MY_COST_OVERAGE,b.COST_CURRENCY_CODE) "
+            # run merge to oci_update_stats
+            sql = """merge into OCI_COST_STATS a
+            using
+            (
+                select /*+ parallel(oci_cost,8) full(oci_cost) */
+                    tenant_name,
+                    file_id,
+                    USAGE_INTERVAL_START,
+                    sum(COST_MY_COST) COST_MY_COST,
+                    sum(COST_MY_COST_OVERAGE) COST_MY_COST_OVERAGE,
+                    min(COST_CURRENCY_CODE) COST_CURRENCY_CODE,
+                    count(*) NUM_ROWS
+                from
+                    oci_cost
+                where
+                    tenant_name = :tenant_name
+                group by
+                    tenant_name,
+                    file_id,
+                    USAGE_INTERVAL_START
+            ) b
+            on (a.tenant_name=b.tenant_name and a.file_id=b.file_id and a.USAGE_INTERVAL_START=b.USAGE_INTERVAL_START)
+            when matched then update set a.num_rows=b.num_rows, a.COST_MY_COST=b.COST_MY_COST, a.UPDATE_DATE=sysdate, a.AGENT_VERSION=:version,
+                a.COST_MY_COST_OVERAGE=b.COST_MY_COST_OVERAGE, a.COST_CURRENCY_CODE=b.COST_CURRENCY_CODE
+            where a.num_rows <> b.num_rows
+            when not matched then insert (TENANT_NAME,FILE_ID,USAGE_INTERVAL_START,NUM_ROWS,COST_MY_COST,UPDATE_DATE,AGENT_VERSION,COST_MY_COST_OVERAGE,COST_CURRENCY_CODE)
+            values (b.TENANT_NAME,b.FILE_ID,b.USAGE_INTERVAL_START,b.NUM_ROWS,b.COST_MY_COST,sysdate,:version,b.COST_MY_COST_OVERAGE,b.COST_CURRENCY_CODE)
+            """
 
-        cursor.execute(sql, {"version": version, "tenant_name": tenant_name})
-        connection.commit()
-        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
-        cursor.close()
+            cursor.execute(sql, version=version, tenant_name=tenant_name)
+            connection.commit()
+            print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
 
-    except cx_Oracle.DatabaseError as e:
+    except oracledb.DatabaseError as e:
         print("\nError manipulating database at update_cost_stats() - " + str(e) + "\n")
         raise SystemExit
 
@@ -503,68 +498,70 @@ def update_cost_stats(connection, tenant_name):
 def update_price_list(connection, tenant_name):
     try:
         start_time = time.time()
+
         # open cursor
-        cursor = connection.cursor()
+        with connection.cursor() as cursor:
 
-        print("\nMerging statistics into OCI_PRICE_LIST...")
+            print("\nMerging statistics into OCI_PRICE_LIST...")
 
-        # run merge to oci_update_stats
-        sql = "MERGE INTO OCI_PRICE_LIST A "
-        sql += "USING "
-        sql += "( "
-        sql += "    SELECT "
-        sql += "        TENANT_NAME, "
-        sql += "        TENANT_ID, "
-        sql += "        COST_PRODUCT_SKU, "
-        sql += "        PRD_DESCRIPTION, "
-        sql += "        COST_CURRENCY_CODE, "
-        sql += "        COST_UNIT_PRICE "
-        sql += "    FROM "
-        sql += "    ( "
-        sql += "        SELECT  /*+ parallel(a,8) full(a) */ "
-        sql += "            TENANT_NAME, "
-        sql += "            TENANT_ID, "
-        sql += "            COST_PRODUCT_SKU, "
-        sql += "            PRD_DESCRIPTION, "
-        sql += "            COST_CURRENCY_CODE, "
-        sql += "            COST_UNIT_PRICE, "
-        sql += "            ROW_NUMBER() OVER (PARTITION BY TENANT_NAME, TENANT_ID, COST_PRODUCT_SKU ORDER BY USAGE_INTERVAL_START DESC, COST_UNIT_PRICE DESC) RN "
-        sql += "        FROM OCI_COST A where tenant_id is not null and tenant_name=:tenant_name "
-        sql += "    )     "
-        sql += "    WHERE RN = 1 "
-        sql += "    ORDER BY 1,2 "
-        sql += ") B "
-        sql += "ON (A.TENANT_NAME = B.TENANT_NAME AND A.TENANT_ID = B.TENANT_ID AND A.COST_PRODUCT_SKU = B.COST_PRODUCT_SKU) "
-        sql += "WHEN MATCHED THEN UPDATE SET A.PRD_DESCRIPTION=B.PRD_DESCRIPTION, A.COST_CURRENCY_CODE=B.COST_CURRENCY_CODE, A.COST_UNIT_PRICE=B.COST_UNIT_PRICE, COST_LAST_UPDATE = SYSDATE "
-        sql += "WHEN NOT MATCHED THEN INSERT (TENANT_NAME,TENANT_ID,COST_PRODUCT_SKU,PRD_DESCRIPTION,COST_CURRENCY_CODE,COST_UNIT_PRICE,COST_LAST_UPDATE)  "
-        sql += "  VALUES (B.TENANT_NAME,B.TENANT_ID, B.COST_PRODUCT_SKU,B.PRD_DESCRIPTION,B.COST_CURRENCY_CODE,B.COST_UNIT_PRICE,SYSDATE)"
+            # run merge to oci_update_stats
+            sql = """MERGE INTO OCI_PRICE_LIST A
+            USING
+            (
+                SELECT
+                    TENANT_NAME,
+                    TENANT_ID,
+                    COST_PRODUCT_SKU,
+                    PRD_DESCRIPTION,
+                    COST_CURRENCY_CODE,
+                    COST_UNIT_PRICE
+                FROM
+                (
+                    SELECT  /*+ parallel(a,8) full(a) */
+                        TENANT_NAME,
+                        TENANT_ID,
+                        COST_PRODUCT_SKU,
+                        PRD_DESCRIPTION,
+                        COST_CURRENCY_CODE,
+                        COST_UNIT_PRICE,
+                        ROW_NUMBER() OVER (PARTITION BY TENANT_NAME, TENANT_ID, COST_PRODUCT_SKU ORDER BY USAGE_INTERVAL_START DESC, COST_UNIT_PRICE DESC) RN
+                    FROM OCI_COST A where tenant_id is not null and tenant_name=:tenant_name
+                )
+                WHERE RN = 1
+                ORDER BY 1,2
+            ) B
+            ON (A.TENANT_NAME = B.TENANT_NAME AND A.TENANT_ID = B.TENANT_ID AND A.COST_PRODUCT_SKU = B.COST_PRODUCT_SKU)
+            WHEN MATCHED THEN UPDATE SET A.PRD_DESCRIPTION=B.PRD_DESCRIPTION, A.COST_CURRENCY_CODE=B.COST_CURRENCY_CODE, A.COST_UNIT_PRICE=B.COST_UNIT_PRICE, COST_LAST_UPDATE = SYSDATE
+            WHEN NOT MATCHED THEN INSERT (TENANT_NAME,TENANT_ID,COST_PRODUCT_SKU,PRD_DESCRIPTION,COST_CURRENCY_CODE,COST_UNIT_PRICE,COST_LAST_UPDATE)
+            VALUES (B.TENANT_NAME,B.TENANT_ID, B.COST_PRODUCT_SKU,B.PRD_DESCRIPTION,B.COST_CURRENCY_CODE,B.COST_UNIT_PRICE,SYSDATE)
+            """
 
-        cursor.execute(sql, {"tenant_name": tenant_name})
-        connection.commit()
-        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
+            cursor.execute(sql, tenant_name=tenant_name)
+            connection.commit()
+            print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
 
-        start_time = time.time()
-        print("\nUpdate OCI_PRICE_LIST for empty currency...")
+            start_time = time.time()
+            print("\nUpdate OCI_PRICE_LIST for empty currency...")
 
-        # update currency when currency is null
-        sql = "update OCI_PRICE_LIST "
-        sql += "set COST_CURRENCY_CODE = "
-        sql += "("
-        sql += "    select COST_CURRENCY_CODE "
-        sql += "    from (SELECT  /*+ parallel(a,8) full(a) */ "
-        sql += "        COST_CURRENCY_CODE, "
-        sql += "        ROW_NUMBER() OVER (PARTITION BY TENANT_NAME ORDER BY USAGE_INTERVAL_START DESC) RN "
-        sql += "    FROM OCI_COST A where COST_CURRENCY_CODE is not null and tenant_name=:tenant_name"
-        sql += "    ) where rn=1"
-        sql += ") "
-        sql += "where COST_CURRENCY_CODE is null and tenant_name=:tenant_name"
+            # update currency when currency is null
+            sql = """update OCI_PRICE_LIST
+                set COST_CURRENCY_CODE =
+                (
+                    select COST_CURRENCY_CODE
+                    from (SELECT  /*+ parallel(a,8) full(a) */
+                        COST_CURRENCY_CODE,
+                        ROW_NUMBER() OVER (PARTITION BY TENANT_NAME ORDER BY USAGE_INTERVAL_START DESC) RN
+                    FROM OCI_COST A where COST_CURRENCY_CODE is not null and tenant_name=:tenant_name
+                    ) where rn=1
+                )
+                where COST_CURRENCY_CODE is null and tenant_name=:tenant_name
+                """
 
-        cursor.execute(sql, {"tenant_name": tenant_name})
-        connection.commit()
-        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
-        cursor.close()
+            cursor.execute(sql, tenant_name=tenant_name)
+            connection.commit()
+            print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
 
-    except cx_Oracle.DatabaseError as e:
+    except oracledb.DatabaseError as e:
         print("\nError manipulating database at update_price_list() - " + str(e) + "\n")
         raise SystemExit
 
@@ -578,95 +575,97 @@ def update_price_list(connection, tenant_name):
 def update_cost_reference(connection, tag_special_key, tag_special_key2, tenant_name):
     try:
         start_time = time.time()
+
         # open cursor
-        cursor = connection.cursor()
+        with connection.cursor() as cursor:
 
-        print("\nMerging statistics into OCI_COST_REFERENCE ...")
-        print("   Merging statistics from OCI_COST...")
+            print("\nMerging statistics into OCI_COST_REFERENCE ...")
+            print("   Merging statistics from OCI_COST...")
 
-        #######################################################
-        # run merge to OCI_COST_REFERENCE
-        #######################################################
-        sql = "merge into OCI_COST_REFERENCE a "
-        sql += "using "
-        sql += "( "
-        sql += "    select TENANT_NAME, REF_TYPE, REF_NAME "
-        sql += "    from "
-        sql += "    ( "
-        sql += "        select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'PRD_SERVICE' as REF_TYPE, PRD_SERVICE as REF_NAME from OCI_COST  where :tenant_name = TENANT_NAME "
-        sql += "        union all "
-        sql += "        select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'PRD_COMPARTMENT_PATH' as REF_TYPE,  "
-        sql += "            case when prd_compartment_path like '%/%' then substr(prd_compartment_path,1,instr(prd_compartment_path,' /')-1)  "
-        sql += "            else prd_compartment_path end as REF_NAME  "
-        sql += "            from OCI_COST  where :tenant_name = TENANT_NAME "
-        sql += "        union all "
-        sql += "        select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'TENANT_ID' as REF_TYPE, TENANT_ID as ref_name from OCI_COST where tenant_id is not null and :tenant_name = TENANT_NAME "
-        sql += "        union all "
-        sql += "        select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'PRD_COMPARTMENT_NAME' as REF_TYPE, PRD_COMPARTMENT_NAME as ref_name from OCI_COST  where :tenant_name = TENANT_NAME "
-        sql += "        union all "
-        sql += "        select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'PRD_REGION' as REF_TYPE, PRD_REGION as ref_name from OCI_COST  where :tenant_name = TENANT_NAME "
-        sql += "        union all "
-        sql += "        select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'COST_SUBSCRIPTION_ID' as REF_TYPE, to_char(COST_SUBSCRIPTION_ID) as ref_name from OCI_COST  where :tenant_name = TENANT_NAME "
-        sql += "        union all "
-        sql += "        select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'TAG_SPECIAL' as REF_TYPE, TAG_SPECIAL as ref_name from OCI_COST  where :tenant_name = TENANT_NAME "
-        sql += "        union all "
-        sql += "        select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'TAG_SPECIAL2' as REF_TYPE, TAG_SPECIAL2 as ref_name from OCI_COST  where :tenant_name = TENANT_NAME "
-        sql += "        union all "
-        sql += "        select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'COST_PRODUCT_SKU' as REF_TYPE, COST_PRODUCT_SKU || ' '||min(PRD_DESCRIPTION) as ref_name from OCI_COST  where :tenant_name = TENANT_NAME  "
-        sql += "        group by TENANT_NAME, COST_PRODUCT_SKU "
-        sql += "    ) where ref_name is not null "
-        sql += ") b "
-        sql += "on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE and a.REF_NAME=b.REF_NAME) "
-        sql += "when not matched then insert (TENANT_NAME,REF_TYPE,REF_NAME)  "
-        sql += "values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)"
+            #######################################################
+            # run merge to OCI_COST_REFERENCE
+            #######################################################
+            sql = """merge into OCI_COST_REFERENCE a
+            using
+            (
+                select TENANT_NAME, REF_TYPE, REF_NAME
+                from
+                (
+                    select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'PRD_SERVICE' as REF_TYPE, PRD_SERVICE as REF_NAME from OCI_COST  where :tenant_name = TENANT_NAME
+                    union all
+                    select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'PRD_COMPARTMENT_PATH' as REF_TYPE,
+                        case when prd_compartment_path like '%/%' then substr(prd_compartment_path,1,instr(prd_compartment_path,' /')-1)
+                        else prd_compartment_path end as REF_NAME
+                        from OCI_COST  where :tenant_name = TENANT_NAME
+                    union all
+                    select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'TENANT_ID' as REF_TYPE, TENANT_ID as ref_name from OCI_COST where tenant_id is not null and :tenant_name = TENANT_NAME
+                    union all
+                    select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'PRD_COMPARTMENT_NAME' as REF_TYPE, PRD_COMPARTMENT_NAME as ref_name from OCI_COST  where :tenant_name = TENANT_NAME
+                    union all
+                    select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'PRD_REGION' as REF_TYPE, PRD_REGION as ref_name from OCI_COST  where :tenant_name = TENANT_NAME
+                    union all
+                    select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'COST_SUBSCRIPTION_ID' as REF_TYPE, to_char(COST_SUBSCRIPTION_ID) as ref_name from OCI_COST  where :tenant_name = TENANT_NAME
+                    union all
+                    select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'TAG_SPECIAL' as REF_TYPE, TAG_SPECIAL as ref_name from OCI_COST  where :tenant_name = TENANT_NAME
+                    union all
+                    select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'TAG_SPECIAL2' as REF_TYPE, TAG_SPECIAL2 as ref_name from OCI_COST  where :tenant_name = TENANT_NAME
+                    union all
+                    select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'COST_PRODUCT_SKU' as REF_TYPE, COST_PRODUCT_SKU || ' '||min(PRD_DESCRIPTION) as ref_name from OCI_COST  where :tenant_name = TENANT_NAME
+                    group by TENANT_NAME, COST_PRODUCT_SKU
+                ) where ref_name is not null
+            ) b
+            on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE and a.REF_NAME=b.REF_NAME)
+            when not matched then insert (TENANT_NAME,REF_TYPE,REF_NAME)
+            values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)
+            """
 
-        cursor.execute(sql, {"tenant_name": tenant_name})
-        connection.commit()
-        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
-
-        if tag_special_key:
-
-            start_time = time.time()
-            # run merge to OCI_COST_REFERENCE for the tag special key
-            print("   Handling Tag Special Key '" + tag_special_key + "'")
-
-            sql = "merge into OCI_COST_REFERENCE a "
-            sql += "using "
-            sql += "( "
-            sql += "        select :tenant_name as TENANT_NAME, 'TAG_SPECIAL_KEY' as REF_TYPE, :tag_special_key as ref_name from DUAL "
-            sql += ") b "
-            sql += "on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE) "
-            sql += "when matched then update set a.ref_name = b.ref_name  "
-            sql += "when not matched then insert (TENANT_NAME,REF_TYPE,REF_NAME)  "
-            sql += "values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)"
-
-            cursor.execute(sql, {"tenant_name": tenant_name, "tag_special_key": tag_special_key})
+            cursor.execute(sql, tenant_name=tenant_name)
             connection.commit()
             print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
 
-        if tag_special_key2:
+            if tag_special_key:
 
-            start_time = time.time()
-            # run merge to OCI_COST_REFERENCE for the tag special key
-            print("   Handling Tag Special Key '" + tag_special_key2 + "'")
+                start_time = time.time()
+                # run merge to OCI_COST_REFERENCE for the tag special key
+                print("   Handling Tag Special Key '" + tag_special_key + "'")
 
-            sql = "merge into OCI_COST_REFERENCE a "
-            sql += "using "
-            sql += "( "
-            sql += "        select :tenant_name as TENANT_NAME, 'TAG_SPECIAL_KEY2' as REF_TYPE, :tag_special_key2 as ref_name from DUAL "
-            sql += ") b "
-            sql += "on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE) "
-            sql += "when matched then update set a.ref_name = b.ref_name  "
-            sql += "when not matched then insert (TENANT_NAME,REF_TYPE,REF_NAME)  "
-            sql += "values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)"
+                sql = """merge into OCI_COST_REFERENCE a
+                using
+                (
+                        select :tenant_name as TENANT_NAME, 'TAG_SPECIAL_KEY' as REF_TYPE, :tag_special_key as ref_name from DUAL
+                ) b
+                on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE)
+                when matched then update set a.ref_name = b.ref_name
+                when not matched then insert (TENANT_NAME,REF_TYPE,REF_NAME)
+                values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)
+                """
 
-            cursor.execute(sql, {"tenant_name": tenant_name, "tag_special_key2": tag_special_key2})
-            connection.commit()
-            print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
+                cursor.execute(sql, tenant_name=tenant_name, tag_special_key=tag_special_key)
+                connection.commit()
+                print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
 
-        cursor.close()
+            if tag_special_key2:
 
-    except cx_Oracle.DatabaseError as e:
+                start_time = time.time()
+                # run merge to OCI_COST_REFERENCE for the tag special key
+                print("   Handling Tag Special Key '" + tag_special_key2 + "'")
+
+                sql = """merge into OCI_COST_REFERENCE a
+                using
+                (
+                        select :tenant_name as TENANT_NAME, 'TAG_SPECIAL_KEY2' as REF_TYPE, :tag_special_key2 as ref_name from DUAL
+                ) b
+                on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE)
+                when matched then update set a.ref_name = b.ref_name
+                when not matched then insert (TENANT_NAME,REF_TYPE,REF_NAME)
+                values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)
+                """
+
+                cursor.execute(sql, tenant_name=tenant_name, tag_special_key2=tag_special_key2)
+                connection.commit()
+                print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
+
+    except oracledb.DatabaseError as e:
         print("\nError manipulating database at update_cost_reference() - " + str(e) + "\n")
         raise SystemExit
 
@@ -680,92 +679,94 @@ def update_cost_reference(connection, tag_special_key, tag_special_key2, tenant_
 def update_usage_reference(connection, tag_special_key, tag_special_key2, tenant_name):
     try:
         start_time = time.time()
+
         # open cursor
-        cursor = connection.cursor()
+        with connection.cursor() as cursor:
 
-        print("\nMerging statistics into OCI_COST_REFERENCE ...")
-        print("   Merging statistics from OCI_USAGE...")
+            print("\nMerging statistics into OCI_COST_REFERENCE ...")
+            print("   Merging statistics from OCI_USAGE...")
 
-        #######################################################
-        # run merge to OCI_COST_REFERENCE from OCI_USAGE
-        #######################################################
-        sql = "merge into OCI_COST_REFERENCE a "
-        sql += "using "
-        sql += "( "
-        sql += "    select TENANT_NAME, REF_TYPE, REF_NAME "
-        sql += "    from "
-        sql += "    ( "
-        sql += "        select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_SERVICE' as REF_TYPE, PRD_SERVICE as REF_NAME from OCI_USAGE where :tenant_name = TENANT_NAME "
-        sql += "        union all "
-        sql += "        select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_COMPARTMENT_PATH' as REF_TYPE,  "
-        sql += "            case when prd_compartment_path like '%/%' then substr(prd_compartment_path,1,instr(prd_compartment_path,' /')-1)  "
-        sql += "            else prd_compartment_path end as REF_NAME  "
-        sql += "            from OCI_USAGE  where :tenant_name = TENANT_NAME "
-        sql += "        union all "
-        sql += "        select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_TENANT_ID' as REF_TYPE, TENANT_ID as ref_name from OCI_USAGE where tenant_id is not null and :tenant_name = TENANT_NAME "
-        sql += "        union all "
-        sql += "        select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_COMPARTMENT_NAME' as REF_TYPE, PRD_COMPARTMENT_NAME as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
-        sql += "        union all "
-        sql += "        select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_REGION' as REF_TYPE, PRD_REGION as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
-        sql += "        union all "
-        sql += "        select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_RESOURCE' as REF_TYPE, PRD_RESOURCE as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
-        sql += "        union all "
-        sql += "        select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_TAG_SPECIAL' as REF_TYPE, TAG_SPECIAL as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
-        sql += "        union all "
-        sql += "        select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_TAG_SPECIAL2' as REF_TYPE, TAG_SPECIAL2 as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
-        sql += "    ) where ref_name is not null "
-        sql += ") b "
-        sql += "on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE and a.REF_NAME=b.REF_NAME) "
-        sql += "when not matched then insert (TENANT_NAME,REF_TYPE,REF_NAME)  "
-        sql += "values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)"
+            #######################################################
+            # run merge to OCI_COST_REFERENCE from OCI_USAGE
+            #######################################################
+            sql = """merge into OCI_COST_REFERENCE a
+            using
+            (
+                select TENANT_NAME, REF_TYPE, REF_NAME
+                from
+                (
+                    select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_SERVICE' as REF_TYPE, PRD_SERVICE as REF_NAME from OCI_USAGE where :tenant_name = TENANT_NAME
+                    union all
+                    select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_COMPARTMENT_PATH' as REF_TYPE,
+                        case when prd_compartment_path like '%/%' then substr(prd_compartment_path,1,instr(prd_compartment_path,' /')-1)
+                        else prd_compartment_path end as REF_NAME
+                        from OCI_USAGE  where :tenant_name = TENANT_NAME
+                    union all
+                    select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_TENANT_ID' as REF_TYPE, TENANT_ID as ref_name from OCI_USAGE where tenant_id is not null and :tenant_name = TENANT_NAME
+                    union all
+                    select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_COMPARTMENT_NAME' as REF_TYPE, PRD_COMPARTMENT_NAME as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME
+                    union all
+                    select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_REGION' as REF_TYPE, PRD_REGION as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME
+                    union all
+                    select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_RESOURCE' as REF_TYPE, PRD_RESOURCE as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME
+                    union all
+                    select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_TAG_SPECIAL' as REF_TYPE, TAG_SPECIAL as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME
+                    union all
+                    select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_TAG_SPECIAL2' as REF_TYPE, TAG_SPECIAL2 as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME
+                ) where ref_name is not null
+            ) b
+            on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE and a.REF_NAME=b.REF_NAME)
+            when not matched then insert (TENANT_NAME,REF_TYPE,REF_NAME)
+            values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)
+            """
 
-        cursor.execute(sql, {"tenant_name": tenant_name})
-        connection.commit()
-        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
-
-        if tag_special_key:
-
-            start_time = time.time()
-            # run merge to OCI_COST_REFERENCE for the tag special key
-            print("   Handling Tag Special Key '" + tag_special_key + "'")
-
-            sql = "merge into OCI_COST_REFERENCE a "
-            sql += "using "
-            sql += "( "
-            sql += "        select :tenant_name as TENANT_NAME, 'TAG_SPECIAL_KEY' as REF_TYPE, :tag_special_key as ref_name from DUAL "
-            sql += ") b "
-            sql += "on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE) "
-            sql += "when matched then update set a.ref_name = b.ref_name  "
-            sql += "when not matched then insert (TENANT_NAME,REF_TYPE,REF_NAME)  "
-            sql += "values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)"
-
-            cursor.execute(sql, {"tenant_name": tenant_name, "tag_special_key": tag_special_key})
+            cursor.execute(sql, tenant_name=tenant_name)
             connection.commit()
             print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
 
-        if tag_special_key2:
+            if tag_special_key:
 
-            start_time = time.time()
-            # run merge to OCI_COST_REFERENCE for the tag special key
-            print("   Handling Tag Special Key '" + tag_special_key2 + "'")
+                start_time = time.time()
+                # run merge to OCI_COST_REFERENCE for the tag special key
+                print("   Handling Tag Special Key '" + tag_special_key + "'")
 
-            sql = "merge into OCI_COST_REFERENCE a "
-            sql += "using "
-            sql += "( "
-            sql += "        select :tenant_name as TENANT_NAME, 'TAG_SPECIAL_KEY2' as REF_TYPE, :tag_special_key2 as ref_name from DUAL "
-            sql += ") b "
-            sql += "on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE) "
-            sql += "when matched then update set a.ref_name = b.ref_name  "
-            sql += "when not matched then insert (TENANT_NAME,REF_TYPE,REF_NAME)  "
-            sql += "values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)"
+                sql = """merge into OCI_COST_REFERENCE a
+                using
+                (
+                        select :tenant_name as TENANT_NAME, 'TAG_SPECIAL_KEY' as REF_TYPE, :tag_special_key as ref_name from DUAL
+                ) b
+                on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE)
+                when matched then update set a.ref_name = b.ref_name
+                when not matched then insert (TENANT_NAME,REF_TYPE,REF_NAME)
+                values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)
+                """
 
-            cursor.execute(sql, {"tenant_name": tenant_name, "tag_special_key2": tag_special_key2})
-            connection.commit()
-            print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
+                cursor.execute(sql, tenant_name=tenant_name, tag_special_key=tag_special_key)
+                connection.commit()
+                print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
 
-        cursor.close()
+            if tag_special_key2:
 
-    except cx_Oracle.DatabaseError as e:
+                start_time = time.time()
+                # run merge to OCI_COST_REFERENCE for the tag special key
+                print("   Handling Tag Special Key '" + tag_special_key2 + "'")
+
+                sql = """merge into OCI_COST_REFERENCE a
+                using
+                (
+                        select :tenant_name as TENANT_NAME, 'TAG_SPECIAL_KEY2' as REF_TYPE, :tag_special_key2 as ref_name from DUAL
+                ) b
+                on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE)
+                when matched then update set a.ref_name = b.ref_name
+                when not matched then insert (TENANT_NAME,REF_TYPE,REF_NAME)
+                values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)
+                """
+
+                cursor.execute(sql, tenant_name=tenant_name, tag_special_key2=tag_special_key2)
+                connection.commit()
+                print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
+
+    except oracledb.DatabaseError as e:
         print("\nError manipulating database at update_usage_reference() - " + str(e) + "\n")
         raise SystemExit
 
@@ -780,78 +781,79 @@ def update_public_rates(connection, tenant_name):
     api_url = "https://apexapps.oracle.com/pls/apex/cetools/api/v1/products/?"
     try:
         start_time = time.time()
-        # open cursor
         num_rows = 0
-        cursor = connection.cursor()
 
-        print("\nMerging Public Rates into OCI_RATE_CARD...")
+        # open cursor
+        with connection.cursor() as cursor:
 
-        # retrieve the SKUS to query
-        sql = "select distinct COST_PRODUCT_SKU, COST_CURRENCY_CODE from OCI_PRICE_LIST where tenant_name=:tenant_name"
+            print("\nMerging Public Rates into OCI_RATE_CARD...")
 
-        cursor.execute(sql, {"tenant_name": tenant_name})
-        rows = cursor.fetchall()
+            # retrieve the SKUS to query
+            sql = "select distinct COST_PRODUCT_SKU, COST_CURRENCY_CODE from OCI_PRICE_LIST where tenant_name=:tenant_name"
 
-        if rows:
-            for row in rows:
+            cursor.execute(sql, tenant_name=tenant_name)
+            rows = cursor.fetchall()
 
-                rate_description = ""
-                rate_price = None
-                resp = None
+            if rows:
+                for row in rows:
 
-                #######################################
-                # Call API to fetch the SKU Data
-                #######################################
-                try:
-                    cost_product_sku = str(row[0])
-                    country_code = str(row[1])
-                    resp = requests.get(api_url + "partNumber=" + cost_product_sku + "&currencyCode=" + country_code)
-                    time.sleep(0.2)
+                    rate_description = ""
+                    rate_price = None
+                    resp = None
 
-                except Exception as e:
-                    print("\nWarning  Calling REST API for Public Rate at update_public_rates() - " + str(e))
-                    time.sleep(2)
-                    continue
+                    #######################################
+                    # Call API to fetch the SKU Data
+                    #######################################
+                    try:
+                        cost_product_sku = str(row[0])
+                        country_code = str(row[1])
+                        resp = requests.get(api_url + "partNumber=" + cost_product_sku + "&currencyCode=" + country_code)
+                        time.sleep(0.2)
 
-                if not resp:
-                    continue
+                    except Exception as e:
+                        print("\nWarning  Calling REST API for Public Rate at update_public_rates() - " + str(e))
+                        time.sleep(2)
+                        continue
 
-                for item in resp.json()['items']:
-                    rate_description = item["displayName"]
-                    if 'currencyCodeLocalizations' in item:
-                        for currency in item['currencyCodeLocalizations']:
-                            if 'prices' in currency:
-                                for price in currency['prices']:
-                                    if price['model'] == 'PAY_AS_YOU_GO':
-                                        rate_price = price['value']
+                    if not resp:
+                        continue
 
-                if rate_price:
-                    # update database
-                    sql = "update OCI_PRICE_LIST set "
-                    sql += "RATE_DESCRIPTION=:rate_description, "
-                    sql += "RATE_PAYGO_PRICE=:rate_price, "
-                    sql += "RATE_MONTHLY_FLEX_PRICE=:rate_price, "
-                    sql += "RATE_UPDATE_DATE=sysdate "
-                    sql += "where TENANT_NAME=:tenant_name and COST_PRODUCT_SKU=:cost_product_sku "
+                    for item in resp.json()['items']:
+                        rate_description = item["displayName"]
+                        if 'currencyCodeLocalizations' in item:
+                            for currency in item['currencyCodeLocalizations']:
+                                if 'prices' in currency:
+                                    for price in currency['prices']:
+                                        if price['model'] == 'PAY_AS_YOU_GO':
+                                            rate_price = price['value']
 
-                    # only apply paygo cost after 7/13 oracle change rate
-                    sql_variables = {
-                        "rate_description": rate_description,
-                        "rate_price": rate_price,
-                        "tenant_name": tenant_name,
-                        "cost_product_sku": cost_product_sku
-                    }
+                    if rate_price:
+                        # update database
+                        sql = """update OCI_PRICE_LIST set
+                        RATE_DESCRIPTION=:rate_description,
+                        RATE_PAYGO_PRICE=:rate_price,
+                        RATE_MONTHLY_FLEX_PRICE=:rate_price,
+                        RATE_UPDATE_DATE=sysdate
+                        where TENANT_NAME=:tenant_name and COST_PRODUCT_SKU=:cost_product_sku
+                        """
 
-                    cursor.execute(sql, sql_variables)
-                    num_rows += 1
+                        # only apply paygo cost after 7/13 oracle change rate
+                        sql_variables = {
+                            "rate_description": rate_description,
+                            "rate_price": rate_price,
+                            "tenant_name": tenant_name,
+                            "cost_product_sku": cost_product_sku
+                        }
 
-            # Commit
-            connection.commit()
+                        cursor.execute(sql, sql_variables)
+                        num_rows += 1
 
-        print("   Update Completed, " + str(num_rows) + " rows updated." + get_time_elapsed(start_time))
-        cursor.close()
+                # Commit
+                connection.commit()
 
-    except cx_Oracle.DatabaseError as e:
+            print("   Update Completed, " + str(num_rows) + " rows updated." + get_time_elapsed(start_time))
+
+    except oracledb.DatabaseError as e:
         print("\nError manipulating database at update_public_rates() - " + str(e) + "\n")
         raise SystemExit
 
@@ -869,41 +871,42 @@ def update_public_rates(connection, tenant_name):
 def update_usage_stats(connection, tenant_name):
     try:
         start_time = time.time()
+
         # open cursor
-        cursor = connection.cursor()
+        with connection.cursor() as cursor:
 
-        print("\nMerging statistics into OCI_USAGE_STATS...")
+            print("\nMerging statistics into OCI_USAGE_STATS...")
 
-        # run merge to oci_update_stats
-        sql = "merge into OCI_USAGE_STATS a "
-        sql += "using "
-        sql += "( "
-        sql += "    select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */  "
-        sql += "        tenant_name, "
-        sql += "        file_id, "
-        sql += "        USAGE_INTERVAL_START, "
-        sql += "        count(*) NUM_ROWS "
-        sql += "    from  "
-        sql += "        oci_usage "
-        sql += "    where "
-        sql += "        tenant_name = :tenant_name "
-        sql += "    group by  "
-        sql += "        tenant_name, "
-        sql += "        file_id, "
-        sql += "        USAGE_INTERVAL_START "
-        sql += ") b "
-        sql += "on (a.tenant_name=b.tenant_name and a.file_id=b.file_id and a.USAGE_INTERVAL_START=b.USAGE_INTERVAL_START) "
-        sql += "when matched then update set a.num_rows=b.num_rows, a.UPDATE_DATE=sysdate, a.AGENT_VERSION=:version "
-        sql += "where a.num_rows <> b.num_rows "
-        sql += "when not matched then insert (TENANT_NAME,FILE_ID,USAGE_INTERVAL_START,NUM_ROWS,UPDATE_DATE,AGENT_VERSION)  "
-        sql += "   values (b.TENANT_NAME,b.FILE_ID,b.USAGE_INTERVAL_START,b.NUM_ROWS,sysdate,:version) "
+            # run merge to oci_update_stats
+            sql = """merge into OCI_USAGE_STATS a
+            using
+            (
+                select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */
+                    tenant_name,
+                    file_id,
+                    USAGE_INTERVAL_START,
+                    count(*) NUM_ROWS
+                from
+                    oci_usage
+                where
+                    tenant_name = :tenant_name
+                group by
+                    tenant_name,
+                    file_id,
+                    USAGE_INTERVAL_START
+            ) b
+            on (a.tenant_name=b.tenant_name and a.file_id=b.file_id and a.USAGE_INTERVAL_START=b.USAGE_INTERVAL_START)
+            when matched then update set a.num_rows=b.num_rows, a.UPDATE_DATE=sysdate, a.AGENT_VERSION=:version
+            where a.num_rows <> b.num_rows
+            when not matched then insert (TENANT_NAME,FILE_ID,USAGE_INTERVAL_START,NUM_ROWS,UPDATE_DATE,AGENT_VERSION)
+            values (b.TENANT_NAME,b.FILE_ID,b.USAGE_INTERVAL_START,b.NUM_ROWS,sysdate,:version)
+            """
 
-        cursor.execute(sql, {"version": version, "tenant_name": tenant_name})
-        connection.commit()
-        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
-        cursor.close()
+            cursor.execute(sql, version=version, tenant_name=tenant_name)
+            connection.commit()
+            print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
 
-    except cx_Oracle.DatabaseError as e:
+    except oracledb.DatabaseError as e:
         print("\nError manipulating database at update_usage_stats() - " + str(e) + "\n")
         raise SystemExit
 
@@ -917,39 +920,38 @@ def update_usage_stats(connection, tenant_name):
 def update_tenant_id_if_null(connection, tenant_name, short_tenant_id):
     try:
         start_time = time.time()
+
         # open cursor
-        cursor = connection.cursor()
+        with connection.cursor() as cursor:
 
-        # Check OCI_USAGE
-        print("\nCheck if TENANT_ID is null on OCI_USAGE...")
-        sql = "select /*+ full(a) parallel(a,8) */ count(*) as cnt from OCI_USAGE a where TENANT_NAME=:tenant_name and tenant_id is null"
-        cursor.execute(sql, {"tenant_name": str(tenant_name)})
-        cnt, = cursor.fetchone()
+            # Check OCI_USAGE
+            print("\nCheck if TENANT_ID is null on OCI_USAGE...")
+            sql = "select /*+ full(a) parallel(a,8) */ count(*) as cnt from OCI_USAGE a where TENANT_NAME=:tenant_name and tenant_id is null"
+            cursor.execute(sql, tenant_name=tenant_name)
+            cnt, = cursor.fetchone()
 
-        if cnt > 0:
-            print("   Update TENANT_ID on OCI_USAGE... " + str(cnt) + " rows to update... updating max 1,000,000 per execution")
-            sql = "update /*+ parallel(a,8) */ OCI_USAGE a set TENANT_ID = :tenant_id where tenant_id is null and tenant_name = :tenant_name and rownum<=1000000"
-            cursor.execute(sql, {"tenant_id": short_tenant_id, "tenant_name": tenant_name})
-            connection.commit()
-            print("   Update Completed, " + str(cursor.rowcount) + " rows updated" + get_time_elapsed(start_time))
+            if cnt > 0:
+                print("   Update TENANT_ID on OCI_USAGE... " + str(cnt) + " rows to update... updating max 1,000,000 per execution")
+                sql = "update /*+ parallel(a,8) */ OCI_USAGE a set TENANT_ID = :tenant_id where tenant_id is null and tenant_name = :tenant_name and rownum<=1000000"
+                cursor.execute(sql, tenant_id=short_tenant_id, tenant_name=tenant_name)
+                connection.commit()
+                print("   Update Completed, " + str(cursor.rowcount) + " rows updated" + get_time_elapsed(start_time))
 
-        # Check OCI_COST
-        start_time = time.time()
-        print("\nCheck if TENANT_ID is null on OCI_COST...")
-        sql = "select /*+ full(a) parallel(a,8) */ count(*) as cnt from OCI_COST a where TENANT_NAME=:tenant_name and tenant_id is null"
-        cursor.execute(sql, {"tenant_name": str(tenant_name)})
-        cnt, = cursor.fetchone()
+            # Check OCI_COST
+            start_time = time.time()
+            print("\nCheck if TENANT_ID is null on OCI_COST...")
+            sql = "select /*+ full(a) parallel(a,8) */ count(*) as cnt from OCI_COST a where TENANT_NAME=:tenant_name and tenant_id is null"
+            cursor.execute(sql, tenant_name=tenant_name)
+            cnt, = cursor.fetchone()
 
-        if cnt > 0:
-            print("   Update TENANT_ID on OCI_COST..." + str(cnt) + " rows to update... updating max 1,000,000 per execution")
-            sql = "update /*+ parallel(a,8) */ OCI_COST a set TENANT_ID = :tenant_id where tenant_id is null and tenant_name = :tenant_name and rownum<=1000000"
-            cursor.execute(sql, {"tenant_id": short_tenant_id, "tenant_name": tenant_name})
-            connection.commit()
-            print("   Update Completed, " + str(cursor.rowcount) + " rows updated" + get_time_elapsed(start_time))
+            if cnt > 0:
+                print("   Update TENANT_ID on OCI_COST..." + str(cnt) + " rows to update... updating max 1,000,000 per execution")
+                sql = "update /*+ parallel(a,8) */ OCI_COST a set TENANT_ID = :tenant_id where tenant_id is null and tenant_name = :tenant_name and rownum<=1000000"
+                cursor.execute(sql, tenant_id=short_tenant_id, tenant_name=tenant_name)
+                connection.commit()
+                print("   Update Completed, " + str(cursor.rowcount) + " rows updated" + get_time_elapsed(start_time))
 
-        cursor.close()
-
-    except cx_Oracle.DatabaseError as e:
+    except oracledb.DatabaseError as e:
         print("\nError manipulating database at update_tenant_id_if_null() - " + str(e) + "\n")
         raise SystemExit
 
@@ -963,184 +965,188 @@ def update_tenant_id_if_null(connection, tenant_name, short_tenant_id):
 def check_database_table_structure_cost(connection, tag_special_key, tag_special_key2, tenant_name):
     try:
         # open cursor
-        cursor = connection.cursor()
+        with connection.cursor() as cursor:
 
-        # check if OCI_COST table exist, if not create
-        sql = "select count(*) from user_tables where table_name = 'OCI_COST'"
-        cursor.execute(sql)
-        val, = cursor.fetchone()
-
-        # if table not exist, create it
-        if val == 0:
-            print("   Table OCI_COST was not exist, creating")
-            sql = "create table OCI_COST ("
-            sql += "    TENANT_NAME             VARCHAR2(100),"
-            sql += "    TENANT_ID               VARCHAR2(100),"
-            sql += "    FILE_ID                 VARCHAR2(30),"
-            sql += "    USAGE_INTERVAL_START    DATE,"
-            sql += "    USAGE_INTERVAL_END      DATE,"
-            sql += "    PRD_SERVICE             VARCHAR2(100),"
-            sql += "    PRD_RESOURCE            VARCHAR2(100),"
-            sql += "    PRD_COMPARTMENT_ID      VARCHAR2(100),"
-            sql += "    PRD_COMPARTMENT_NAME    VARCHAR2(100),"
-            sql += "    PRD_COMPARTMENT_PATH    VARCHAR2(1000),"
-            sql += "    PRD_REGION              VARCHAR2(100),"
-            sql += "    PRD_AVAILABILITY_DOMAIN VARCHAR2(100),"
-            sql += "    USG_RESOURCE_ID         VARCHAR2(1000),"
-            sql += "    USG_BILLED_QUANTITY     NUMBER,"
-            sql += "    USG_BILLED_QUANTITY_OVERAGE NUMBER,"
-            sql += "    COST_SUBSCRIPTION_ID    NUMBER,"
-            sql += "    COST_PRODUCT_SKU        VARCHAR2(10),"
-            sql += "    PRD_DESCRIPTION         VARCHAR2(1000),"
-            sql += "    COST_UNIT_PRICE         NUMBER,"
-            sql += "    COST_UNIT_PRICE_OVERAGE NUMBER,"
-            sql += "    COST_MY_COST            NUMBER,"
-            sql += "    COST_MY_COST_OVERAGE    NUMBER,"
-            sql += "    COST_CURRENCY_CODE      VARCHAR2(10),"
-            sql += "    COST_BILLING_UNIT       VARCHAR2(1000),"
-            sql += "    COST_OVERAGE_FLAG       VARCHAR2(10),"
-            sql += "    IS_CORRECTION           VARCHAR2(10),"
-            sql += "    TAGS_DATA               VARCHAR2(4000),"
-            sql += "    TAG_SPECIAL             VARCHAR2(4000),"
-            sql += "    TAG_SPECIAL2            VARCHAR2(4000)"
-            sql += ") COMPRESS"
+            # check if OCI_COST table exist, if not create
+            sql = "select count(*) from user_tables where table_name = 'OCI_COST'"
             cursor.execute(sql)
-            print("   Table OCI_COST created")
-        else:
-            print("   Table OCI_COST exist")
+            val, = cursor.fetchone()
 
-        # check if TENANT_ID column exist in OCI_COST table, if not create
-        sql = "select count(*) from user_tab_columns where table_name = 'OCI_COST' and column_name='TENANT_ID'"
-        cursor.execute(sql)
-        val, = cursor.fetchone()
+            # if table not exist, create it
+            if val == 0:
+                print("   Table OCI_COST was not exist, creating")
+                sql = """create table OCI_COST (
+                    TENANT_NAME             VARCHAR2(100),
+                    TENANT_ID               VARCHAR2(100),
+                    FILE_ID                 VARCHAR2(30),
+                    USAGE_INTERVAL_START    DATE,
+                    USAGE_INTERVAL_END      DATE,
+                    PRD_SERVICE             VARCHAR2(100),
+                    PRD_RESOURCE            VARCHAR2(100),
+                    PRD_COMPARTMENT_ID      VARCHAR2(100),
+                    PRD_COMPARTMENT_NAME    VARCHAR2(100),
+                    PRD_COMPARTMENT_PATH    VARCHAR2(1000),
+                    PRD_REGION              VARCHAR2(100),
+                    PRD_AVAILABILITY_DOMAIN VARCHAR2(100),
+                    USG_RESOURCE_ID         VARCHAR2(1000),
+                    USG_BILLED_QUANTITY     NUMBER,
+                    USG_BILLED_QUANTITY_OVERAGE NUMBER,
+                    COST_SUBSCRIPTION_ID    NUMBER,
+                    COST_PRODUCT_SKU        VARCHAR2(10),
+                    PRD_DESCRIPTION         VARCHAR2(1000),
+                    COST_UNIT_PRICE         NUMBER,
+                    COST_UNIT_PRICE_OVERAGE NUMBER,
+                    COST_MY_COST            NUMBER,
+                    COST_MY_COST_OVERAGE    NUMBER,
+                    COST_CURRENCY_CODE      VARCHAR2(10),
+                    COST_BILLING_UNIT       VARCHAR2(1000),
+                    COST_OVERAGE_FLAG       VARCHAR2(10),
+                    IS_CORRECTION           VARCHAR2(10),
+                    TAGS_DATA               VARCHAR2(4000),
+                    TAG_SPECIAL             VARCHAR2(4000),
+                    TAG_SPECIAL2            VARCHAR2(4000)
+                ) COMPRESS
+                """
 
-        # if columns TENANT_ID not exist, create it
-        if val == 0:
-            print("   Column TENANT_ID does not exist in the table OCI_COST, adding...")
-            sql = "alter table OCI_COST add (TENANT_ID VARCHAR2(100))"
+                cursor.execute(sql)
+                print("   Table OCI_COST created")
+            else:
+                print("   Table OCI_COST exist")
+
+            # check if TENANT_ID column exist in OCI_COST table, if not create
+            sql = "select count(*) from user_tab_columns where table_name = 'OCI_COST' and column_name='TENANT_ID'"
             cursor.execute(sql)
+            val, = cursor.fetchone()
 
-        # check if TAG_SPECIAL column exist in OCI_COST table, if not create
-        sql = "select count(*) from user_tab_columns where table_name = 'OCI_COST' and column_name='TAG_SPECIAL'"
-        cursor.execute(sql)
-        val, = cursor.fetchone()
+            # if columns TENANT_ID not exist, create it
+            if val == 0:
+                print("   Column TENANT_ID does not exist in the table OCI_COST, adding...")
+                sql = "alter table OCI_COST add (TENANT_ID VARCHAR2(100))"
+                cursor.execute(sql)
 
-        # if column TAG_SPECIAL not exist, create it
-        if val == 0:
-            print("   Column TAG_SPECIAL does not exist in the table OCI_COST, adding...")
-            sql = "alter table OCI_COST add (TAG_SPECIAL VARCHAR2(4000))"
+            # check if TAG_SPECIAL column exist in OCI_COST table, if not create
+            sql = "select count(*) from user_tab_columns where table_name = 'OCI_COST' and column_name='TAG_SPECIAL'"
             cursor.execute(sql)
+            val, = cursor.fetchone()
 
-        # check if TAG_SPECIAL2 column exist in OCI_COST table, if not create
-        sql = "select count(*) from user_tab_columns where table_name = 'OCI_COST' and column_name='TAG_SPECIAL2'"
-        cursor.execute(sql)
-        val, = cursor.fetchone()
+            # if column TAG_SPECIAL not exist, create it
+            if val == 0:
+                print("   Column TAG_SPECIAL does not exist in the table OCI_COST, adding...")
+                sql = "alter table OCI_COST add (TAG_SPECIAL VARCHAR2(4000))"
+                cursor.execute(sql)
 
-        # if column TAG_SPECIAL2 not exist, create it
-        if val == 0:
-            print("   Column TAG_SPECIAL2 does not exist in the table OCI_COST, adding...")
-            sql = "alter table OCI_COST add (TAG_SPECIAL2 VARCHAR2(4000))"
+            # check if TAG_SPECIAL2 column exist in OCI_COST table, if not create
+            sql = "select count(*) from user_tab_columns where table_name = 'OCI_COST' and column_name='TAG_SPECIAL2'"
             cursor.execute(sql)
+            val, = cursor.fetchone()
 
-        # check if OCI_COST_TAG_KEYS table exist, if not create
-        sql = "select count(*) from user_tables where table_name = 'OCI_COST_TAG_KEYS'"
-        cursor.execute(sql)
-        val, = cursor.fetchone()
+            # if column TAG_SPECIAL2 not exist, create it
+            if val == 0:
+                print("   Column TAG_SPECIAL2 does not exist in the table OCI_COST, adding...")
+                sql = "alter table OCI_COST add (TAG_SPECIAL2 VARCHAR2(4000))"
+                cursor.execute(sql)
 
-        # if table OCI_COST_TAG_KEYS not exist, create it
-        if val == 0:
-            print("   Table OCI_COST_TAG_KEYS was not exist, creating")
-            sql = "CREATE TABLE OCI_COST_TAG_KEYS (TENANT_NAME VARCHAR2(100), TAG_KEY VARCHAR2(100), "
-            sql += "CONSTRAINT OCI_COST_TAG_KEYS_PK PRIMARY KEY(TENANT_NAME,TAG_KEY)"
-            sql += ")"
+            # check if OCI_COST_TAG_KEYS table exist, if not create
+            sql = "select count(*) from user_tables where table_name = 'OCI_COST_TAG_KEYS'"
             cursor.execute(sql)
-            print("   Table OCI_COST_TAG_KEYS created")
-        else:
-            print("   Table OCI_COST_TAG_KEYS exist")
+            val, = cursor.fetchone()
 
-        # check if OCI_COST_STATS table exist, if not create
-        sql = "select count(*) from user_tables where table_name = 'OCI_COST_STATS'"
-        cursor.execute(sql)
-        val, = cursor.fetchone()
+            # if table OCI_COST_TAG_KEYS not exist, create it
+            if val == 0:
+                print("   Table OCI_COST_TAG_KEYS was not exist, creating")
+                sql = """CREATE TABLE OCI_COST_TAG_KEYS (TENANT_NAME VARCHAR2(100), TAG_KEY VARCHAR2(100),
+                CONSTRAINT OCI_COST_TAG_KEYS_PK PRIMARY KEY(TENANT_NAME,TAG_KEY)
+                )"""
+                cursor.execute(sql)
+                print("   Table OCI_COST_TAG_KEYS created")
+            else:
+                print("   Table OCI_COST_TAG_KEYS exist")
 
-        # if table OCI_COST_STATS not exist, create it
-        if val == 0:
-            print("   Table OCI_COST_STATS was not exist, creating")
-            sql = "CREATE TABLE OCI_COST_STATS ( "
-            sql += "    TENANT_NAME             VARCHAR2(100),"
-            sql += "    FILE_ID                 VARCHAR2(30),"
-            sql += "    USAGE_INTERVAL_START    DATE,"
-            sql += "    NUM_ROWS                NUMBER,"
-            sql += "    COST_MY_COST            NUMBER,"
-            sql += "    COST_MY_COST_OVERAGE    NUMBER,"
-            sql += "    COST_CURRENCY_CODE      VARCHAR2(30),"
-            sql += "    UPDATE_DATE             DATE,"
-            sql += "    AGENT_VERSION           VARCHAR2(30),"
-            sql += "    CONSTRAINT OCI_COST_STATS_PK PRIMARY KEY (TENANT_NAME,FILE_ID,USAGE_INTERVAL_START)"
-            sql += ")"
+            # check if OCI_COST_STATS table exist, if not create
+            sql = "select count(*) from user_tables where table_name = 'OCI_COST_STATS'"
             cursor.execute(sql)
-            print("   Table OCI_COST_STATS created")
+            val, = cursor.fetchone()
 
-            update_cost_stats(connection, tenant_name)
-        else:
-            print("   Table OCI_COST_STATS exist")
+            # if table OCI_COST_STATS not exist, create it
+            if val == 0:
+                print("   Table OCI_COST_STATS was not exist, creating")
+                sql = """CREATE TABLE OCI_COST_STATS (
+                    TENANT_NAME             VARCHAR2(100),
+                    FILE_ID                 VARCHAR2(30),
+                    USAGE_INTERVAL_START    DATE,
+                    NUM_ROWS                NUMBER,
+                    COST_MY_COST            NUMBER,
+                    COST_MY_COST_OVERAGE    NUMBER,
+                    COST_CURRENCY_CODE      VARCHAR2(30),
+                    UPDATE_DATE             DATE,
+                    AGENT_VERSION           VARCHAR2(30),
+                    CONSTRAINT OCI_COST_STATS_PK PRIMARY KEY (TENANT_NAME,FILE_ID,USAGE_INTERVAL_START)
+                )
+                """
 
-        # check if COST_MY_COST_OVERAGE columns exist in OCI_COST_STATS table, if not create
-        sql = "select count(*) from user_tab_columns where table_name = 'OCI_COST_STATS' and column_name='COST_MY_COST_OVERAGE'"
-        cursor.execute(sql)
-        val, = cursor.fetchone()
+                cursor.execute(sql)
+                print("   Table OCI_COST_STATS created")
 
-        # if columns COST_MY_COST_OVERAGE not exist, create them
-        if val == 0:
-            print("   Column COST_MY_COST_OVERAGE does not exist in the table OCI_COST_STATS, adding...")
-            sql = "alter table OCI_COST_STATS add (COST_MY_COST_OVERAGE NUMBER, COST_CURRENCY_CODE VARCHAR2(10))"
+                update_cost_stats(connection, tenant_name)
+            else:
+                print("   Table OCI_COST_STATS exist")
+
+            # check if COST_MY_COST_OVERAGE columns exist in OCI_COST_STATS table, if not create
+            sql = "select count(*) from user_tab_columns where table_name = 'OCI_COST_STATS' and column_name='COST_MY_COST_OVERAGE'"
             cursor.execute(sql)
+            val, = cursor.fetchone()
 
-        # check if OCI_COST_REFERENCE table exist, if not create
-        sql = "select count(*) from user_tables where table_name = 'OCI_COST_REFERENCE'"
-        cursor.execute(sql)
-        val, = cursor.fetchone()
+            # if columns COST_MY_COST_OVERAGE not exist, create them
+            if val == 0:
+                print("   Column COST_MY_COST_OVERAGE does not exist in the table OCI_COST_STATS, adding...")
+                sql = "alter table OCI_COST_STATS add (COST_MY_COST_OVERAGE NUMBER, COST_CURRENCY_CODE VARCHAR2(10))"
+                cursor.execute(sql)
 
-        # if table OCI_COST_REFERENCE not exist, create it
-        if val == 0:
-            print("   Table OCI_COST_REFERENCE was not exist, creating")
-            sql = "CREATE TABLE OCI_COST_REFERENCE ("
-            sql += "    TENANT_NAME             VARCHAR2(100),"
-            sql += "    REF_TYPE                VARCHAR2(100),"
-            sql += "    REF_NAME                VARCHAR2(1000),"
-            sql += "    CONSTRAINT OCI_REFERENCE_PK PRIMARY KEY (TENANT_NAME,REF_TYPE,REF_NAME) "
-            sql += ") "
+            # check if OCI_COST_REFERENCE table exist, if not create
+            sql = "select count(*) from user_tables where table_name = 'OCI_COST_REFERENCE'"
             cursor.execute(sql)
-            print("   Table OCI_COST_REFERENCE created")
+            val, = cursor.fetchone()
 
-            update_cost_reference(connection, tag_special_key, tag_special_key2, tenant_name)
-        else:
-            print("   Table OCI_COST_REFERENCE exist")
+            # if table OCI_COST_REFERENCE not exist, create it
+            if val == 0:
+                print("   Table OCI_COST_REFERENCE was not exist, creating")
+                sql = """CREATE TABLE OCI_COST_REFERENCE (
+                    TENANT_NAME             VARCHAR2(100),
+                    REF_TYPE                VARCHAR2(100),
+                    REF_NAME                VARCHAR2(1000),
+                    CONSTRAINT OCI_REFERENCE_PK PRIMARY KEY (TENANT_NAME,REF_TYPE,REF_NAME)
+                )
+                """
 
-        # check if OCI_INTERNAL_COST table exist, if not create
-        sql = "select count(*) from user_tables where table_name = 'OCI_INTERNAL_COST'"
-        cursor.execute(sql)
-        val, = cursor.fetchone()
+                cursor.execute(sql)
+                print("   Table OCI_COST_REFERENCE created")
 
-        # if table OCI_INTERNAL_COST not exist, create it
-        if val == 0:
-            print("   Table OCI_INTERNAL_COST was not exist, creating")
-            sql = "CREATE TABLE OCI_INTERNAL_COST ("
-            sql += "    RESOURCE_NAME       varchar2(100) NOT NULL,"
-            sql += "    SERVICE_NAME        varchar2(100),"
-            sql += "    BILLED_USAGE_UNIT   varchar2(100),"
-            sql += "    UNIT_COST           NUMBER,"
-            sql += "    CONSTRAINT OCI_INTERNAL_COST_PK PRIMARY KEY (RESOURCE_NAME) USING INDEX ENABLE"
-            sql += ")"
+                update_cost_reference(connection, tag_special_key, tag_special_key2, tenant_name)
+            else:
+                print("   Table OCI_COST_REFERENCE exist")
+
+            # check if OCI_INTERNAL_COST table exist, if not create
+            sql = "select count(*) from user_tables where table_name = 'OCI_INTERNAL_COST'"
             cursor.execute(sql)
-            print("   Table OCI_INTERNAL_COST created")
-        else:
-            print("   Table OCI_INTERNAL_COST exist")
+            val, = cursor.fetchone()
 
-        # close cursor
-        cursor.close()
+            # if table OCI_INTERNAL_COST not exist, create it
+            if val == 0:
+                print("   Table OCI_INTERNAL_COST was not exist, creating")
+                sql = """CREATE TABLE OCI_INTERNAL_COST (
+                    RESOURCE_NAME       varchar2(100) NOT NULL,
+                    SERVICE_NAME        varchar2(100),
+                    BILLED_USAGE_UNIT   varchar2(100),
+                    UNIT_COST           NUMBER,
+                    CONSTRAINT OCI_INTERNAL_COST_PK PRIMARY KEY (RESOURCE_NAME) USING INDEX ENABLE
+                )"""
 
-    except cx_Oracle.DatabaseError as e:
+                cursor.execute(sql)
+                print("   Table OCI_INTERNAL_COST created")
+            else:
+                print("   Table OCI_INTERNAL_COST exist")
+
+    except oracledb.DatabaseError as e:
         print("\nError manipulating database at check_database_table_structure_cost() - " + str(e) + "\n")
         raise SystemExit
 
@@ -1154,61 +1160,59 @@ def check_database_table_structure_cost(connection, tag_special_key, tag_special
 def check_database_table_structure_price_list(connection, tenant_name):
     try:
         # open cursor
-        cursor = connection.cursor()
+        with connection.cursor() as cursor:
 
-        # check if OCI_PRICE_LIST table exist, if not create
-        sql = "select count(*) from user_tables where table_name = 'OCI_PRICE_LIST'"
-        cursor.execute(sql)
-        val, = cursor.fetchone()
-
-        # if table not exist, create it
-        if val == 0:
-            print("   Table OCI_PRICE_LIST was not exist, creating")
-            sql = "create table OCI_PRICE_LIST ("
-            sql += "    TENANT_NAME             VARCHAR2(100),"
-            sql += "    TENANT_ID               VARCHAR2(100),"
-            sql += "    COST_PRODUCT_SKU        VARCHAR2(10),"
-            sql += "    PRD_DESCRIPTION         VARCHAR2(1000),"
-            sql += "    COST_CURRENCY_CODE      VARCHAR2(10),"
-            sql += "    COST_UNIT_PRICE         NUMBER,"
-            sql += "    COST_LAST_UPDATE        DATE,"
-            sql += "    RATE_DESCRIPTION        VARCHAR2(1000),"
-            sql += "    RATE_PAYGO_PRICE        NUMBER,"
-            sql += "    RATE_MONTHLY_FLEX_PRICE NUMBER,"
-            sql += "    RATE_UPDATE_DATE        DATE,"
-            sql += "    CONSTRAINT OCI_PRICE_LIST_PK PRIMARY KEY (TENANT_NAME,TENANT_ID,COST_PRODUCT_SKU) "
-            sql += ") "
+            # check if OCI_PRICE_LIST table exist, if not create
+            sql = "select count(*) from user_tables where table_name = 'OCI_PRICE_LIST'"
             cursor.execute(sql)
-            print("   Table OCI_PRICE_LIST created")
-            update_price_list(connection, tenant_name)
-            update_public_rates(connection, tenant_name)
-        else:
-            print("   Table OCI_PRICE_LIST exist")
+            val, = cursor.fetchone()
 
-        # check if TENANT_ID column exist in OCI_PRICE_LIST table, if not create
-        sql = "select count(*) from user_tab_columns where table_name = 'OCI_PRICE_LIST' and column_name='TENANT_ID'"
-        cursor.execute(sql)
-        val, = cursor.fetchone()
+            # if table not exist, create it
+            if val == 0:
+                print("   Table OCI_PRICE_LIST was not exist, creating")
+                sql = """create table OCI_PRICE_LIST (
+                    TENANT_NAME             VARCHAR2(100),
+                    TENANT_ID               VARCHAR2(100),
+                    COST_PRODUCT_SKU        VARCHAR2(10),
+                    PRD_DESCRIPTION         VARCHAR2(1000),
+                    COST_CURRENCY_CODE      VARCHAR2(10),
+                    COST_UNIT_PRICE         NUMBER,
+                    COST_LAST_UPDATE        DATE,
+                    RATE_DESCRIPTION        VARCHAR2(1000),
+                    RATE_PAYGO_PRICE        NUMBER,
+                    RATE_MONTHLY_FLEX_PRICE NUMBER,
+                    RATE_UPDATE_DATE        DATE,
+                    CONSTRAINT OCI_PRICE_LIST_PK PRIMARY KEY (TENANT_NAME,TENANT_ID,COST_PRODUCT_SKU)
+                ) """
+                cursor.execute(sql)
+                print("   Table OCI_PRICE_LIST created")
+                update_price_list(connection, tenant_name)
+                update_public_rates(connection, tenant_name)
+            else:
+                print("   Table OCI_PRICE_LIST exist")
 
-        # if columns not exist, create them
-        if val == 0:
-            print("   Column TENANT_ID does not exist in the table OCI_PRICE_LIST, adding...")
-            sql = "alter table OCI_PRICE_LIST add (TENANT_ID VARCHAR2(100))"
+            # check if TENANT_ID column exist in OCI_PRICE_LIST table, if not create
+            sql = "select count(*) from user_tab_columns where table_name = 'OCI_PRICE_LIST' and column_name='TENANT_ID'"
             cursor.execute(sql)
+            val, = cursor.fetchone()
 
-            print("   truncating OCI_PRICE_LIST to make PK changes")
-            sql = "truncate table OCI_PRICE_LIST"
-            cursor.execute(sql)
-            print("   Modifying OCI_PRICE_LIST primary key to include TENANT_ID..")
-            sql = "alter table OCI_PRICE_LIST drop primary key"
-            cursor.execute(sql)
-            sql = "alter table OCI_PRICE_LIST ADD CONSTRAINT OCI_PRICE_LIST_PK PRIMARY KEY (TENANT_NAME,TENANT_ID,COST_PRODUCT_SKU)"
-            cursor.execute(sql)
-            print("   Table OCI_PRICE_LIST Changes Completed.")
+            # if columns not exist, create them
+            if val == 0:
+                print("   Column TENANT_ID does not exist in the table OCI_PRICE_LIST, adding...")
+                sql = "alter table OCI_PRICE_LIST add (TENANT_ID VARCHAR2(100))"
+                cursor.execute(sql)
 
-        cursor.close()
+                print("   truncating OCI_PRICE_LIST to make PK changes")
+                sql = "truncate table OCI_PRICE_LIST"
+                cursor.execute(sql)
+                print("   Modifying OCI_PRICE_LIST primary key to include TENANT_ID..")
+                sql = "alter table OCI_PRICE_LIST drop primary key"
+                cursor.execute(sql)
+                sql = "alter table OCI_PRICE_LIST ADD CONSTRAINT OCI_PRICE_LIST_PK PRIMARY KEY (TENANT_NAME,TENANT_ID,COST_PRODUCT_SKU)"
+                cursor.execute(sql)
+                print("   Table OCI_PRICE_LIST Changes Completed.")
 
-    except cx_Oracle.DatabaseError as e:
+    except oracledb.DatabaseError as e:
         print("\nError manipulating database at check_database_table_price_list() - " + str(e) + "\n")
         raise SystemExit
 
@@ -1270,185 +1274,180 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
             batch_size = 5000
             array_size = 1000
 
-            sql = "INSERT INTO OCI_COST ("
-            sql += "TENANT_NAME,"
-            sql += "FILE_ID,"
-            sql += "USAGE_INTERVAL_START, "
-            sql += "USAGE_INTERVAL_END, "
-            sql += "PRD_SERVICE, "
-            # 6
-            sql += "PRD_COMPARTMENT_ID, "
-            sql += "PRD_COMPARTMENT_NAME, "
-            sql += "PRD_COMPARTMENT_PATH, "
-            sql += "PRD_REGION, "
-            sql += "PRD_AVAILABILITY_DOMAIN, "
-            # 11
-            sql += "USG_RESOURCE_ID, "
-            sql += "USG_BILLED_QUANTITY, "
-            sql += "USG_BILLED_QUANTITY_OVERAGE, "
-            sql += "COST_SUBSCRIPTION_ID, "
-            sql += "COST_PRODUCT_SKU, "
-            # 16
-            sql += "PRD_DESCRIPTION, "
-            sql += "COST_UNIT_PRICE, "
-            sql += "COST_UNIT_PRICE_OVERAGE, "
-            sql += "COST_MY_COST, "
-            sql += "COST_MY_COST_OVERAGE, "
-            # 21
-            sql += "COST_CURRENCY_CODE, "
-            sql += "COST_BILLING_UNIT, "
-            sql += "COST_OVERAGE_FLAG,"
-            sql += "IS_CORRECTION, "
-            sql += "TAGS_DATA, "
-            sql += "TENANT_ID, "
-            sql += "TAG_SPECIAL, "
-            sql += "TAG_SPECIAL2 "
-            sql += ") VALUES ("
-            sql += ":1, :2, to_date(:3,'YYYY-MM-DD HH24:MI'), to_date(:4,'YYYY-MM-DD HH24:MI'), :5,  "
-            sql += ":6, :7, :8, :9, :10, "
-            sql += ":11, to_number(:12), to_number(:13) ,:14, :15, "
-            sql += ":16, to_number(:17), to_number(:18), to_number(:19), to_number(:20), "
-            sql += ":21, :22, :23, :24, :25, :26, :27, :28"
-            sql += ") "
+            sql = """INSERT INTO OCI_COST (
+            TENANT_NAME,
+            FILE_ID,
+            USAGE_INTERVAL_START,
+            USAGE_INTERVAL_END,
+            PRD_SERVICE,
+            PRD_COMPARTMENT_ID,
+            PRD_COMPARTMENT_NAME,
+            PRD_COMPARTMENT_PATH,
+            PRD_REGION,
+            PRD_AVAILABILITY_DOMAIN,
+            USG_RESOURCE_ID,
+            USG_BILLED_QUANTITY,
+            USG_BILLED_QUANTITY_OVERAGE,
+            COST_SUBSCRIPTION_ID,
+            COST_PRODUCT_SKU,
+            PRD_DESCRIPTION,
+            COST_UNIT_PRICE,
+            COST_UNIT_PRICE_OVERAGE,
+            COST_MY_COST,
+            COST_MY_COST_OVERAGE,
+            COST_CURRENCY_CODE,
+            COST_BILLING_UNIT,
+            COST_OVERAGE_FLAG,
+            IS_CORRECTION,
+            TAGS_DATA,
+            TENANT_ID,
+            TAG_SPECIAL,
+            TAG_SPECIAL2
+            ) VALUES (
+            :1, :2, to_date(:3,'YYYY-MM-DD HH24:MI'), to_date(:4,'YYYY-MM-DD HH24:MI'), :5,
+            :6, :7, :8, :9, :10,
+            :11, to_number(:12), to_number(:13) ,:14, :15,
+            :16, to_number(:17), to_number(:18), to_number(:19), to_number(:20),
+            :21, :22, :23, :24, :25, :26, :27, :28
+            ) """
 
             # insert bulk to database
-            cursor = cx_Oracle.Cursor(connection)
+            with connection.cursor() as cursor:
 
-            # Predefine the memory areas to match the table definition
-            cursor.setinputsizes(None, array_size)
+                # Predefine the memory areas to match the table definition
+                cursor.setinputsizes(None, array_size)
 
-            data = []
-            for row in csv_reader:
+                data = []
+                for row in csv_reader:
 
-                # find compartment path
-                compartment_path = ""
-                for c in compartments:
-                    if c['id'] == row['product/compartmentId']:
-                        compartment_path = c['path']
+                    # find compartment path
+                    compartment_path = ""
+                    for c in compartments:
+                        if c['id'] == row['product/compartmentId']:
+                            compartment_path = c['path']
 
-                # Handle Tags up to 4000 chars with # seperator
-                tag_special = ""
-                tag_special2 = ""
-                tags_data = ""
-                for (key, value) in row.items():
-                    if 'tags' in key and len(value) > 0:
+                    # Handle Tags up to 4000 chars with # seperator
+                    tag_special = ""
+                    tag_special2 = ""
+                    tags_data = ""
+                    for (key, value) in row.items():
+                        if 'tags' in key and len(value) > 0:
 
-                        # remove # and = from the tags keys and value
-                        keyadj = str(key).replace("tags/", "").replace("#", "").replace("=", "")
-                        valueadj = str(value).replace("#", "").replace("=", "")
+                            # remove # and = from the tags keys and value
+                            keyadj = str(key).replace("tags/", "").replace("#", "").replace("=", "")
+                            valueadj = str(value).replace("#", "").replace("=", "")
 
-                        # if tagspecial
-                        if cmd.tagspecial:
-                            if keyadj == cmd.tagspecial:
-                                if len(valueadj) < 4000:
-                                    tag_special = valueadj
-                                    # remove oracle idcs from the e-mail
-                                    tag_special = tag_special.replace("oracleidentitycloudservice/", "")
+                            # if tagspecial
+                            if cmd.tagspecial:
+                                if keyadj == cmd.tagspecial:
+                                    if len(valueadj) < 4000:
+                                        tag_special = valueadj
+                                        # remove oracle idcs from the e-mail
+                                        tag_special = tag_special.replace("oracleidentitycloudservice/", "")
 
-                        # if tagspecial2
-                        if cmd.tagspecial2:
-                            if keyadj == cmd.tagspecial2:
-                                if len(valueadj) < 4000:
-                                    tag_special2 = valueadj
-                                    # remove oracle idcs from the e-mail
-                                    tag_special2 = tag_special2.replace("oracleidentitycloudservice/", "")
+                            # if tagspecial2
+                            if cmd.tagspecial2:
+                                if keyadj == cmd.tagspecial2:
+                                    if len(valueadj) < 4000:
+                                        tag_special2 = valueadj
+                                        # remove oracle idcs from the e-mail
+                                        tag_special2 = tag_special2.replace("oracleidentitycloudservice/", "")
 
-                        # check if length < 4000 to avoid overflow database column
-                        if len(tags_data) + len(keyadj) + len(valueadj) + 2 < 4000:
-                            tags_data += ("#" if tags_data == "" else "") + keyadj + "=" + valueadj + "#"
+                            # check if length < 4000 to avoid overflow database column
+                            if len(tags_data) + len(keyadj) + len(valueadj) + 2 < 4000:
+                                tags_data += ("#" if tags_data == "" else "") + keyadj + "=" + valueadj + "#"
 
-                        # add tag key to tag_keys array
-                            if keyadj not in tags_keys:
-                                tags_keys.append(keyadj)
+                            # add tag key to tag_keys array
+                                if keyadj not in tags_keys:
+                                    tags_keys.append(keyadj)
 
-                # Assign each column to variable to avoid error if column missing from the file
-                lineItem_tenantId = get_column_value_from_array('lineItem/tenantId', row)
-                lineItem_intervalUsageStart = get_column_value_from_array('lineItem/intervalUsageStart', row)
-                lineItem_intervalUsageEnd = get_column_value_from_array('lineItem/intervalUsageEnd', row)
-                product_service = get_column_value_from_array('product/service', row)
-                product_compartmentId = get_column_value_from_array('product/compartmentId', row)
-                product_compartmentName = get_column_value_from_array('product/compartmentName', row)
-                product_region = get_column_value_from_array('product/region', row)
-                product_availabilityDomain = get_column_value_from_array('product/availabilityDomain', row)
-                product_resourceId = get_column_value_from_array('product/resourceId', row)
-                usage_billedQuantity = get_column_value_from_array('usage/billedQuantity', row)
-                usage_billedQuantityOverage = get_column_value_from_array('usage/billedQuantityOverage', row)
-                cost_subscriptionId = get_column_value_from_array('cost/subscriptionId', row)
-                cost_productSku = get_column_value_from_array('cost/productSku', row)
-                product_Description = get_column_value_from_array('product/Description', row)
-                cost_unitPrice = get_column_value_from_array('cost/unitPrice', row)
-                cost_unitPriceOverage = get_column_value_from_array('cost/unitPriceOverage', row)
-                cost_myCost = get_column_value_from_array('cost/myCost', row)
-                cost_myCostOverage = get_column_value_from_array('cost/myCostOverage', row)
-                cost_currencyCode = get_column_value_from_array('cost/currencyCode', row)
-                cost_overageFlag = get_column_value_from_array('cost/overageFlag', row)
-                lineItem_isCorrection = get_column_value_from_array('lineItem/isCorrection', row)
+                    # Assign each column to variable to avoid error if column missing from the file
+                    lineItem_tenantId = get_column_value_from_array('lineItem/tenantId', row)
+                    lineItem_intervalUsageStart = get_column_value_from_array('lineItem/intervalUsageStart', row)
+                    lineItem_intervalUsageEnd = get_column_value_from_array('lineItem/intervalUsageEnd', row)
+                    product_service = get_column_value_from_array('product/service', row)
+                    product_compartmentId = get_column_value_from_array('product/compartmentId', row)
+                    product_compartmentName = get_column_value_from_array('product/compartmentName', row)
+                    product_region = get_column_value_from_array('product/region', row)
+                    product_availabilityDomain = get_column_value_from_array('product/availabilityDomain', row)
+                    product_resourceId = get_column_value_from_array('product/resourceId', row)
+                    usage_billedQuantity = get_column_value_from_array('usage/billedQuantity', row)
+                    usage_billedQuantityOverage = get_column_value_from_array('usage/billedQuantityOverage', row)
+                    cost_subscriptionId = get_column_value_from_array('cost/subscriptionId', row)
+                    cost_productSku = get_column_value_from_array('cost/productSku', row)
+                    product_Description = get_column_value_from_array('product/Description', row)
+                    cost_unitPrice = get_column_value_from_array('cost/unitPrice', row)
+                    cost_unitPriceOverage = get_column_value_from_array('cost/unitPriceOverage', row)
+                    cost_myCost = get_column_value_from_array('cost/myCost', row)
+                    cost_myCostOverage = get_column_value_from_array('cost/myCostOverage', row)
+                    cost_currencyCode = get_column_value_from_array('cost/currencyCode', row)
+                    cost_overageFlag = get_column_value_from_array('cost/overageFlag', row)
+                    lineItem_isCorrection = get_column_value_from_array('lineItem/isCorrection', row)
 
-                # OCI changed the column billingUnitReadable to skuUnitDescription
-                if 'cost/skuUnitDescription' in row:
-                    cost_billingUnitReadable = get_column_value_from_array('cost/skuUnitDescription', row)
-                else:
-                    cost_billingUnitReadable = get_column_value_from_array('cost/billingUnitReadable', row)
+                    # OCI changed the column billingUnitReadable to skuUnitDescription
+                    if 'cost/skuUnitDescription' in row:
+                        cost_billingUnitReadable = get_column_value_from_array('cost/skuUnitDescription', row)
+                    else:
+                        cost_billingUnitReadable = get_column_value_from_array('cost/billingUnitReadable', row)
 
-                # Fix OCI Data for missing product description for old SKUs
-                if cost_productSku == "B88166" and product_Description == "":
-                    product_Description = "Oracle Identity Cloud - Standard"
-                    cost_billingUnitReadable = "Active User per Hour"
+                    # Fix OCI Data for missing product description for old SKUs
+                    if cost_productSku == "B88166" and product_Description == "":
+                        product_Description = "Oracle Identity Cloud - Standard"
+                        cost_billingUnitReadable = "Active User per Hour"
 
-                elif cost_productSku == "B88167" and product_Description == "":
-                    product_Description = "Oracle Identity Cloud - Basic"
-                    cost_billingUnitReadable = "Active User per Hour"
+                    elif cost_productSku == "B88167" and product_Description == "":
+                        product_Description = "Oracle Identity Cloud - Basic"
+                        cost_billingUnitReadable = "Active User per Hour"
 
-                elif cost_productSku == "B88168" and product_Description == "":
-                    product_Description = "Oracle Identity Cloud - Basic - Consumer User"
-                    cost_billingUnitReadable = "Active User per Hour"
+                    elif cost_productSku == "B88168" and product_Description == "":
+                        product_Description = "Oracle Identity Cloud - Basic - Consumer User"
+                        cost_billingUnitReadable = "Active User per Hour"
 
-                # create array
-                row_data = (
-                    str(tenancy.name),
-                    file_id,
-                    lineItem_intervalUsageStart[0:10] + " " + lineItem_intervalUsageStart[11:16],
-                    lineItem_intervalUsageEnd[0:10] + " " + lineItem_intervalUsageEnd[11:16],
-                    product_service,
-                    product_compartmentId,
-                    product_compartmentName,
-                    compartment_path,
-                    product_region,
-                    product_availabilityDomain,
-                    product_resourceId,
-                    usage_billedQuantity,
-                    usage_billedQuantityOverage,
-                    cost_subscriptionId,
-                    cost_productSku,
-                    product_Description,
-                    cost_unitPrice,
-                    cost_unitPriceOverage,
-                    cost_myCost,
-                    cost_myCostOverage,
-                    cost_currencyCode,
-                    cost_billingUnitReadable,
-                    cost_overageFlag,
-                    lineItem_isCorrection,
-                    tags_data,
-                    lineItem_tenantId[-6:],
-                    tag_special,
-                    tag_special2
-                )
-                data.append(row_data)
-                num_rows += 1
+                    # create array
+                    row_data = (
+                        str(tenancy.name),
+                        file_id,
+                        lineItem_intervalUsageStart[0:10] + " " + lineItem_intervalUsageStart[11:16],
+                        lineItem_intervalUsageEnd[0:10] + " " + lineItem_intervalUsageEnd[11:16],
+                        product_service,
+                        product_compartmentId,
+                        product_compartmentName,
+                        compartment_path,
+                        product_region,
+                        product_availabilityDomain,
+                        product_resourceId,
+                        usage_billedQuantity,
+                        usage_billedQuantityOverage,
+                        cost_subscriptionId,
+                        cost_productSku,
+                        product_Description,
+                        cost_unitPrice,
+                        cost_unitPriceOverage,
+                        cost_myCost,
+                        cost_myCostOverage,
+                        cost_currencyCode,
+                        cost_billingUnitReadable,
+                        cost_overageFlag,
+                        lineItem_isCorrection,
+                        tags_data,
+                        lineItem_tenantId[-6:],
+                        tag_special,
+                        tag_special2
+                    )
+                    data.append(row_data)
+                    num_rows += 1
 
-                # executemany every batch size
-                if len(data) % batch_size == 0:
+                    # executemany every batch size
+                    if len(data) % batch_size == 0:
+                        cursor.executemany(sql, data)
+                        data = []
+
+                # if data exist final execute
+                if data:
                     cursor.executemany(sql, data)
-                    data = []
 
-            # if data exist final execute
-            if data:
-                cursor.executemany(sql, data)
-
-            connection.commit()
-            cursor.close()
-            print("   Completed  file " + o.name + " - " + str(num_rows) + " Rows Inserted" + get_time_elapsed(start_time), end="")
+                connection.commit()
+                print("   Completed  file " + o.name + " - " + str(num_rows) + " Rows Inserted" + get_time_elapsed(start_time), end="")
 
         num_files += 1
 
@@ -1464,22 +1463,20 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
             data.append(row_data)
 
         if data:
-            cursor = cx_Oracle.Cursor(connection)
-            sql = "INSERT INTO OCI_COST_TAG_KEYS (TENANT_NAME , TAG_KEY) "
-            sql += "SELECT :1, :2 FROM DUAL "
-            sql += "WHERE NOT EXISTS (SELECT 1 FROM OCI_COST_TAG_KEYS B WHERE B.TENANT_NAME = :3 AND B.TAG_KEY = :4)"
+            with connection.cursor() as cursor:
+                sql = "INSERT INTO OCI_COST_TAG_KEYS (TENANT_NAME , TAG_KEY) "
+                sql += "SELECT :1, :2 FROM DUAL "
+                sql += "WHERE NOT EXISTS (SELECT 1 FROM OCI_COST_TAG_KEYS B WHERE B.TENANT_NAME = :3 AND B.TAG_KEY = :4)"
 
-            cursor.prepare(sql)
-            cursor.executemany(None, data)
-            connection.commit()
-            cursor.close()
-            print(", " + str(len(data)) + " Tags Merged.")
+                cursor.executemany(sql, data)
+                connection.commit()
+                print(", " + str(len(data)) + " Tags Merged.")
         else:
             print("")
 
         return num_files
 
-    except cx_Oracle.DatabaseError as e:
+    except oracledb.DatabaseError as e:
         print("\nload_cost_file() - Error manipulating database - " + str(e) + "\n")
         raise SystemExit
 
@@ -1538,126 +1535,125 @@ def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, t
             csv_reader = csv.DictReader(file_in)
 
             # sql statement
-            sql = "INSERT INTO OCI_USAGE (TENANT_NAME, FILE_ID, USAGE_INTERVAL_START, USAGE_INTERVAL_END, PRD_SERVICE, PRD_RESOURCE, "
-            sql += "PRD_COMPARTMENT_ID, PRD_COMPARTMENT_NAME, PRD_COMPARTMENT_PATH, PRD_REGION, PRD_AVAILABILITY_DOMAIN, USG_RESOURCE_ID, "
-            sql += "USG_BILLED_QUANTITY, USG_CONSUMED_QUANTITY, USG_CONSUMED_UNITS, USG_CONSUMED_MEASURE, IS_CORRECTION, TAGS_DATA, TENANT_ID, TAG_SPECIAL, TAG_SPECIAL2 "
-            sql += ") VALUES ("
-            sql += ":1, :2, to_date(:3,'YYYY-MM-DD HH24:MI'), to_date(:4,'YYYY-MM-DD HH24:MI'), :5, :6, "
-            sql += ":7, :8, :9, :10, :11, :12, "
-            sql += "to_number(:13), to_number(:14), :15, :16, :17 ,:18, :19, :20, :21 "
-            sql += ") "
+            sql = """INSERT INTO OCI_USAGE (TENANT_NAME, FILE_ID, USAGE_INTERVAL_START, USAGE_INTERVAL_END, PRD_SERVICE, PRD_RESOURCE,
+            PRD_COMPARTMENT_ID, PRD_COMPARTMENT_NAME, PRD_COMPARTMENT_PATH, PRD_REGION, PRD_AVAILABILITY_DOMAIN, USG_RESOURCE_ID,
+            USG_BILLED_QUANTITY, USG_CONSUMED_QUANTITY, USG_CONSUMED_UNITS, USG_CONSUMED_MEASURE, IS_CORRECTION, TAGS_DATA, TENANT_ID, TAG_SPECIAL, TAG_SPECIAL2
+            ) VALUES (
+            :1, :2, to_date(:3,'YYYY-MM-DD HH24:MI'), to_date(:4,'YYYY-MM-DD HH24:MI'), :5, :6,
+            :7, :8, :9, :10, :11, :12,
+            to_number(:13), to_number(:14), :15, :16, :17 ,:18, :19, :20, :21
+            )"""
 
             # Adjust the batch size to meet memory and performance requirements
             batch_size = 5000
             array_size = 1000
 
             # insert bulk to database
-            cursor = cx_Oracle.Cursor(connection)
+            with connection.cursor() as cursor:
 
-            # Predefine the memory areas to match the table definition
-            cursor.setinputsizes(None, array_size)
+                # Predefine the memory areas to match the table definition
+                cursor.setinputsizes(None, array_size)
 
-            data = []
-            for row in csv_reader:
+                data = []
+                for row in csv_reader:
 
-                # find compartment path
-                compartment_path = ""
-                for c in compartments:
-                    if c['id'] == row['product/compartmentId']:
-                        compartment_path = c['path']
+                    # find compartment path
+                    compartment_path = ""
+                    for c in compartments:
+                        if c['id'] == row['product/compartmentId']:
+                            compartment_path = c['path']
 
-                # Handle Tags up to 3500 chars with # seperator
-                tags_data = ""
-                tag_special = ""
-                tag_special2 = ""
-                for (key, value) in row.items():
-                    if 'tags' in key and len(value) > 0:
+                    # Handle Tags up to 3500 chars with # seperator
+                    tags_data = ""
+                    tag_special = ""
+                    tag_special2 = ""
+                    for (key, value) in row.items():
+                        if 'tags' in key and len(value) > 0:
 
-                        # remove # and = from the tags keys and value
-                        keyadj = str(key).replace("tags/", "").replace("#", "").replace("=", "")
-                        valueadj = str(value).replace("#", "").replace("=", "")
+                            # remove # and = from the tags keys and value
+                            keyadj = str(key).replace("tags/", "").replace("#", "").replace("=", "")
+                            valueadj = str(value).replace("#", "").replace("=", "")
 
-                        # if tagspecial
-                        if cmd.tagspecial:
-                            if keyadj == cmd.tagspecial:
-                                if len(valueadj) < 4000:
-                                    tag_special = valueadj
-                                    # remove oracle idcs from the e-mail
-                                    tag_special = tag_special.replace("oracleidentitycloudservice/", "")
+                            # if tagspecial
+                            if cmd.tagspecial:
+                                if keyadj == cmd.tagspecial:
+                                    if len(valueadj) < 4000:
+                                        tag_special = valueadj
+                                        # remove oracle idcs from the e-mail
+                                        tag_special = tag_special.replace("oracleidentitycloudservice/", "")
 
-                        # if tagspecial2
-                        if cmd.tagspecial2:
-                            if keyadj == cmd.tagspecial2:
-                                if len(valueadj) < 4000:
-                                    tag_special2 = valueadj
-                                    # remove oracle idcs from the e-mail
-                                    tag_special2 = tag_special2.replace("oracleidentitycloudservice/", "")
+                            # if tagspecial2
+                            if cmd.tagspecial2:
+                                if keyadj == cmd.tagspecial2:
+                                    if len(valueadj) < 4000:
+                                        tag_special2 = valueadj
+                                        # remove oracle idcs from the e-mail
+                                        tag_special2 = tag_special2.replace("oracleidentitycloudservice/", "")
 
-                        # check if length < 3500 to avoid overflow database column
-                        if len(tags_data) + len(keyadj) + len(valueadj) + 2 < 3500:
-                            tags_data += ("#" if tags_data == "" else "") + keyadj + "=" + valueadj + "#"
+                            # check if length < 3500 to avoid overflow database column
+                            if len(tags_data) + len(keyadj) + len(valueadj) + 2 < 3500:
+                                tags_data += ("#" if tags_data == "" else "") + keyadj + "=" + valueadj + "#"
 
-                        # add tag key to tag_keys array
-                            if keyadj not in tags_keys:
-                                tags_keys.append(keyadj)
+                            # add tag key to tag_keys array
+                                if keyadj not in tags_keys:
+                                    tags_keys.append(keyadj)
 
-                # Assign each column to variable to avoid error if column missing from the file
-                lineItem_tenantId = get_column_value_from_array('lineItem/tenantId', row)
-                lineItem_intervalUsageStart = get_column_value_from_array('lineItem/intervalUsageStart', row)
-                lineItem_intervalUsageEnd = get_column_value_from_array('lineItem/intervalUsageEnd', row)
-                product_service = get_column_value_from_array('product/service', row)
-                product_resource = get_column_value_from_array('product/resource', row)
-                product_compartmentId = get_column_value_from_array('product/compartmentId', row)
-                product_compartmentName = get_column_value_from_array('product/compartmentName', row)
-                product_region = get_column_value_from_array('product/region', row)
-                product_availabilityDomain = get_column_value_from_array('product/availabilityDomain', row)
-                product_resourceId = get_column_value_from_array('product/resourceId', row)
-                usage_billedQuantity = get_column_value_from_array('usage/billedQuantity', row)
-                usage_consumedQuantity = get_column_value_from_array('usage/consumedQuantity', row)
-                usage_consumedQuantityUnits = get_column_value_from_array('usage/consumedQuantityUnits', row)
-                usage_consumedQuantityMeasure = get_column_value_from_array('usage/consumedQuantityMeasure', row)
-                lineItem_isCorrection = get_column_value_from_array('lineItem/isCorrection', row)
+                    # Assign each column to variable to avoid error if column missing from the file
+                    lineItem_tenantId = get_column_value_from_array('lineItem/tenantId', row)
+                    lineItem_intervalUsageStart = get_column_value_from_array('lineItem/intervalUsageStart', row)
+                    lineItem_intervalUsageEnd = get_column_value_from_array('lineItem/intervalUsageEnd', row)
+                    product_service = get_column_value_from_array('product/service', row)
+                    product_resource = get_column_value_from_array('product/resource', row)
+                    product_compartmentId = get_column_value_from_array('product/compartmentId', row)
+                    product_compartmentName = get_column_value_from_array('product/compartmentName', row)
+                    product_region = get_column_value_from_array('product/region', row)
+                    product_availabilityDomain = get_column_value_from_array('product/availabilityDomain', row)
+                    product_resourceId = get_column_value_from_array('product/resourceId', row)
+                    usage_billedQuantity = get_column_value_from_array('usage/billedQuantity', row)
+                    usage_consumedQuantity = get_column_value_from_array('usage/consumedQuantity', row)
+                    usage_consumedQuantityUnits = get_column_value_from_array('usage/consumedQuantityUnits', row)
+                    usage_consumedQuantityMeasure = get_column_value_from_array('usage/consumedQuantityMeasure', row)
+                    lineItem_isCorrection = get_column_value_from_array('lineItem/isCorrection', row)
 
-                # create array for bulk insert
-                row_data = (
-                    str(tenancy.name),
-                    file_id,
-                    lineItem_intervalUsageStart[0:10] + " " + lineItem_intervalUsageStart[11:16],
-                    lineItem_intervalUsageEnd[0:10] + " " + lineItem_intervalUsageEnd[11:16],
-                    product_service,
-                    product_resource,
-                    product_compartmentId,
-                    product_compartmentName,
-                    compartment_path,
-                    product_region,
-                    product_availabilityDomain,
-                    product_resourceId,
-                    usage_billedQuantity,
-                    usage_consumedQuantity,
-                    usage_consumedQuantityUnits,
-                    usage_consumedQuantityMeasure,
-                    lineItem_isCorrection,
-                    tags_data,
-                    lineItem_tenantId[-6:],
-                    tag_special,
-                    tag_special2
-                )
-                data.append(row_data)
-                num_rows += 1
+                    # create array for bulk insert
+                    row_data = (
+                        str(tenancy.name),
+                        file_id,
+                        lineItem_intervalUsageStart[0:10] + " " + lineItem_intervalUsageStart[11:16],
+                        lineItem_intervalUsageEnd[0:10] + " " + lineItem_intervalUsageEnd[11:16],
+                        product_service,
+                        product_resource,
+                        product_compartmentId,
+                        product_compartmentName,
+                        compartment_path,
+                        product_region,
+                        product_availabilityDomain,
+                        product_resourceId,
+                        usage_billedQuantity,
+                        usage_consumedQuantity,
+                        usage_consumedQuantityUnits,
+                        usage_consumedQuantityMeasure,
+                        lineItem_isCorrection,
+                        tags_data,
+                        lineItem_tenantId[-6:],
+                        tag_special,
+                        tag_special2
+                    )
+                    data.append(row_data)
+                    num_rows += 1
 
-                # insert every buffer size
-                if len(data) % batch_size == 0:
+                    # insert every buffer size
+                    if len(data) % batch_size == 0:
+                        cursor.executemany(sql, data)
+                        data = []
+
+                # final insert
+                if data:
                     cursor.executemany(sql, data)
-                    data = []
 
-            # final insert
-            if data:
-                cursor.executemany(sql, data)
-
-            # commit
-            connection.commit()
-            cursor.close()
-            print("   Completed  file " + o.name + " - " + str(num_rows) + " Rows Inserted" + get_time_elapsed(start_time), end="")
+                # commit
+                connection.commit()
+                print("   Completed  file " + o.name + " - " + str(num_rows) + " Rows Inserted" + get_time_elapsed(start_time), end="")
 
         num_files += 1
 
@@ -1673,22 +1669,21 @@ def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, t
             data.append(row_data)
 
         if data:
-            cursor = cx_Oracle.Cursor(connection)
-            sql = "INSERT INTO OCI_USAGE_TAG_KEYS (TENANT_NAME , TAG_KEY) "
-            sql += "SELECT :1, :2 FROM DUAL "
-            sql += "WHERE NOT EXISTS (SELECT 1 FROM OCI_USAGE_TAG_KEYS B WHERE B.TENANT_NAME = :3 AND B.TAG_KEY = :4)"
+            with connection.cursor() as cursor:
+                sql = """INSERT INTO OCI_USAGE_TAG_KEYS (TENANT_NAME , TAG_KEY)
+                SELECT :1, :2 FROM DUAL
+                WHERE NOT EXISTS (SELECT 1 FROM OCI_USAGE_TAG_KEYS B WHERE B.TENANT_NAME = :3 AND B.TAG_KEY = :4)
+                """
 
-            cursor.prepare(sql)
-            cursor.executemany(None, data)
-            connection.commit()
-            cursor.close()
-            print(", " + str(len(data)) + " Tags Merged.")
+                cursor.executemany(sql, data)
+                connection.commit()
+                print(", " + str(len(data)) + " Tags Merged.")
         else:
             print("")
 
         return num_files
 
-    except cx_Oracle.DatabaseError as e:
+    except oracledb.DatabaseError as e:
         print("\nload_usage_file() - Error manipulating database - " + str(e) + "\n")
         raise SystemExit
 
@@ -1759,114 +1754,103 @@ def main_process():
     ############################################
     max_usage_file_id = ""
     max_cost_file_id = ""
-    connection = None
     try:
         print("\nConnecting to database " + cmd.dname)
-        connection = cx_Oracle.connect(user=cmd.duser, password=cmd.dpass, dsn=cmd.dname, encoding="UTF-8", nencoding="UTF-8")
-        cursor = connection.cursor()
-        print("   Connected")
+        with oracledb.connect(user=cmd.duser, password=cmd.dpass, dsn=cmd.dname) as connection:
 
-        # Check tables structure
-        print("\nChecking Database Structure...")
-        check_database_table_structure_usage(connection, tenancy.name)
-        check_database_table_structure_cost(connection, cmd.tagspecial, cmd.tagspecial2, tenancy.name)
-        check_database_table_structure_price_list(connection, tenancy.name)
+            # Open Cursor
+            with connection.cursor() as cursor:
+                print("   Connected")
 
-        ###############################
-        # enable hints
-        ###############################
-        sql = "ALTER SESSION SET OPTIMIZER_IGNORE_HINTS=FALSE"
-        cursor.execute(sql)
-        sql = "ALTER SESSION SET OPTIMIZER_IGNORE_PARALLEL_HINTS=FALSE"
-        cursor.execute(sql)
+                # Check tables structure
+                print("\nChecking Database Structure...")
+                check_database_table_structure_usage(connection, tenancy.name)
+                check_database_table_structure_cost(connection, cmd.tagspecial, cmd.tagspecial2, tenancy.name)
+                check_database_table_structure_price_list(connection, tenancy.name)
 
-        ###############################
-        # fetch max file id processed
-        # for usage and cost
-        ###############################
-        print("\nChecking Last Loaded Files... started at " + get_current_date_time())
+                ###############################
+                # enable hints
+                ###############################
+                sql = "ALTER SESSION SET OPTIMIZER_IGNORE_HINTS=FALSE"
+                cursor.execute(sql)
+                sql = "ALTER SESSION SET OPTIMIZER_IGNORE_PARALLEL_HINTS=FALSE"
+                cursor.execute(sql)
 
-        sql = "select /*+ full(a) parallel(a,8) */ nvl(max(file_id),'0') as file_id from OCI_USAGE a where TENANT_NAME=:tenant_name"
-        cursor.execute(sql, {"tenant_name": str(tenancy.name)})
-        max_usage_file_id, = cursor.fetchone()
-        print("   Max Usage File Id Processed = " + str(max_usage_file_id))
+                ###############################
+                # fetch max file id processed
+                # for usage and cost
+                ###############################
+                print("\nChecking Last Loaded Files... started at " + get_current_date_time())
 
-        sql = "select /*+ full(a) parallel(a,8) */ nvl(max(file_id),'0') as file_id from OCI_COST a where TENANT_NAME=:tenant_name"
-        cursor.execute(sql, {"tenant_name": str(tenancy.name)})
-        max_cost_file_id, = cursor.fetchone()
-        print("   Max Cost  File Id Processed = " + str(max_cost_file_id))
+                sql = "select /*+ full(a) parallel(a,8) */ nvl(max(file_id),'0') as file_id from OCI_USAGE a where TENANT_NAME=:tenant_name"
+                cursor.execute(sql, tenant_name=str(tenancy.name))
+                max_usage_file_id, = cursor.fetchone()
+                print("   Max Usage File Id Processed = " + str(max_usage_file_id))
 
-        cursor.close()
+                sql = "select /*+ full(a) parallel(a,8) */ nvl(max(file_id),'0') as file_id from OCI_COST a where TENANT_NAME=:tenant_name"
+                cursor.execute(sql, tenant_name=str(tenancy.name))
+                max_cost_file_id, = cursor.fetchone()
+                print("   Max Cost  File Id Processed = " + str(max_cost_file_id))
 
-        print("Completed Checking at " + get_current_date_time())
+                print("Completed Checking at " + get_current_date_time())
 
-    except cx_Oracle.DatabaseError as e:
-        print("\nError manipulating database - " + str(e) + "\n")
-        raise SystemExit
+            ############################################
+            # Download Usage, cost and insert to database
+            ############################################
 
-    except Exception as e:
-        raise Exception("\nError manipulating database - " + str(e))
+            print("\nConnecting to Object Storage Service...")
 
-    ############################################
-    # Download Usage, cost and insert to database
-    ############################################
-    try:
-        print("\nConnecting to Object Storage Service...")
+            object_storage = oci.object_storage.ObjectStorageClient(config, signer=signer)
+            if cmd.proxy:
+                object_storage.base_client.session.proxies = {'https': cmd.proxy}
+            print("   Connected")
 
-        object_storage = oci.object_storage.ObjectStorageClient(config, signer=signer)
-        if cmd.proxy:
-            object_storage.base_client.session.proxies = {'https': cmd.proxy}
-        print("   Connected")
+            #############################
+            # Handle Report Usage
+            #############################
+            usage_num = 0
+            if not cmd.skip_usage:
+                print("\nHandling Usage Report... started at " + get_current_date_time())
+                objects = oci.pagination.list_call_get_all_results(object_storage.list_objects, usage_report_namespace, str(tenancy.id), fields="timeCreated,size", prefix="reports/usage-csv/", start="reports/usage-csv/" + max_usage_file_id).data
 
-        #############################
-        # Handle Report Usage
-        #############################
-        usage_num = 0
-        if not cmd.skip_usage:
-            print("\nHandling Usage Report... started at " + get_current_date_time())
-            objects = oci.pagination.list_call_get_all_results(object_storage.list_objects, usage_report_namespace, str(tenancy.id), fields="timeCreated,size", prefix="reports/usage-csv/", start="reports/usage-csv/" + max_usage_file_id).data
+                total_files = len(objects.objects)
+                print("Total " + str(total_files) + " usage files found to scan...")
+                for index, object_file in enumerate(objects.objects, start=1):
+                    usage_num += load_usage_file(connection, object_storage, object_file, max_usage_file_id, cmd, tenancy, compartments, index, total_files)
+                print("\n   Total " + str(usage_num) + " Usage Files Loaded, conmpleted at " + get_current_date_time())
 
-            total_files = len(objects.objects)
-            print("Total " + str(total_files) + " usage files found to scan...")
-            for index, object_file in enumerate(objects.objects, start=1):
-                usage_num += load_usage_file(connection, object_storage, object_file, max_usage_file_id, cmd, tenancy, compartments, index, total_files)
-            print("\n   Total " + str(usage_num) + " Usage Files Loaded, conmpleted at " + get_current_date_time())
+            #############################
+            # Handle Cost Usage
+            #############################
+            cost_num = 0
+            if not cmd.skip_cost:
+                print("\nHandling Cost Report... started at " + get_current_date_time())
+                objects = oci.pagination.list_call_get_all_results(object_storage.list_objects, usage_report_namespace, str(tenancy.id), fields="timeCreated,size", prefix="reports/cost-csv/", start="reports/cost-csv/" + max_cost_file_id).data
 
-        #############################
-        # Handle Cost Usage
-        #############################
-        cost_num = 0
-        if not cmd.skip_cost:
-            print("\nHandling Cost Report... started at " + get_current_date_time())
-            objects = oci.pagination.list_call_get_all_results(object_storage.list_objects, usage_report_namespace, str(tenancy.id), fields="timeCreated,size", prefix="reports/cost-csv/", start="reports/cost-csv/" + max_cost_file_id).data
+                total_files = len(objects.objects)
+                print("Total " + str(total_files) + " cost files found to scan...")
+                for index, object_file in enumerate(objects.objects, start=1):
+                    cost_num += load_cost_file(connection, object_storage, object_file, max_cost_file_id, cmd, tenancy, compartments, index, total_files)
+                print("\n   Total " + str(cost_num) + " Cost Files Loaded, completed at " + get_current_date_time())
 
-            total_files = len(objects.objects)
-            print("Total " + str(total_files) + " cost files found to scan...")
-            for index, object_file in enumerate(objects.objects, start=1):
-                cost_num += load_cost_file(connection, object_storage, object_file, max_cost_file_id, cmd, tenancy, compartments, index, total_files)
-            print("\n   Total " + str(cost_num) + " Cost Files Loaded, completed at " + get_current_date_time())
+            # Handle Index structure if not exist
+            check_database_index_structure_usage(connection)
+            check_database_index_structure_cost(connection)
 
-        # Handle Index structure if not exist
-        check_database_index_structure_usage(connection)
-        check_database_index_structure_cost(connection)
+            # Update oci_usage_stats and oci_cost_stats if there were files
+            if usage_num > 0 or cmd.force:
+                update_usage_stats(connection, tenancy.name)
+                update_usage_reference(connection, cmd.tagspecial, cmd.tagspecial2, tenancy.name)
 
-        # Update oci_usage_stats and oci_cost_stats if there were files
-        if usage_num > 0 or cmd.force:
-            update_usage_stats(connection, tenancy.name)
-            update_usage_reference(connection, cmd.tagspecial, cmd.tagspecial2, tenancy.name)
+            if cost_num > 0 or cmd.force:
+                update_cost_stats(connection, tenancy.name)
+                update_price_list(connection, tenancy.name)
+                update_cost_reference(connection, cmd.tagspecial, cmd.tagspecial2, tenancy.name)
+                if not cmd.skip_rate:
+                    update_public_rates(connection, tenancy.name)
+                update_tenant_id_if_null(connection, tenancy.name, short_tenant_id)
 
-        if cost_num > 0 or cmd.force:
-            update_cost_stats(connection, tenancy.name)
-            update_price_list(connection, tenancy.name)
-            update_cost_reference(connection, cmd.tagspecial, cmd.tagspecial2, tenancy.name)
-            if not cmd.skip_rate:
-                update_public_rates(connection, tenancy.name)
-            update_tenant_id_if_null(connection, tenancy.name, short_tenant_id)
-
-        # Close Connection
-        connection.close()
-
-    except cx_Oracle.DatabaseError as e:
+    except oracledb.DatabaseError as e:
         print("\nError manipulating database - " + str(e) + "\n")
 
     except Exception as e:
