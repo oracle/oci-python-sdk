@@ -793,6 +793,124 @@ class OperationsInsightsClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def change_opsi_configuration_compartment(self, opsi_configuration_id, change_opsi_configuration_compartment_details, **kwargs):
+        """
+        Moves an OpsiConfiguration resource from one compartment to another.
+
+
+        :param str opsi_configuration_id: (required)
+            `OCID`__ of OPSI configuration resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.opsi.models.ChangeOpsiConfigurationCompartmentDetails change_opsi_configuration_compartment_details: (required)
+            The information to be updated.
+
+        :param str if_match: (optional)
+            Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request that can be retried in case of a timeout or
+            server error without risk of executing the same action again. Retry tokens expire after 24
+            hours.
+
+            *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+            operations, such as a resource being deleted or purged from the system.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/change_opsi_configuration_compartment.py.html>`__ to see an example of how to use change_opsi_configuration_compartment API.
+        """
+        resource_path = "/opsiConfigurations/{opsiConfigurationId}/actions/changeCompartment"
+        method = "POST"
+        operation_name = "change_opsi_configuration_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/ChangeOpsiConfigurationCompartment"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "change_opsi_configuration_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "opsiConfigurationId": opsi_configuration_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_opsi_configuration_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_opsi_configuration_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def change_pe_comanaged_database_insight(self, database_insight_id, change_pe_comanaged_database_insight_details, **kwargs):
         """
         Change the connection details of a co-managed  database insight. When provided, If-Match is checked against ETag values of the resource.
@@ -1682,6 +1800,159 @@ class OperationsInsightsClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def create_opsi_configuration(self, create_opsi_configuration_details, **kwargs):
+        """
+        Create an OPSI configuration resource.
+
+
+        :param oci.opsi.models.CreateOpsiConfigurationDetails create_opsi_configuration_details: (required)
+            Information about OPSI configuration resource to be created.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request that can be retried in case of a timeout or
+            server error without risk of executing the same action again. Retry tokens expire after 24
+            hours.
+
+            *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+            operations, such as a resource being deleted or purged from the system.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param list[str] opsi_config_field: (optional)
+            Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
+
+            Allowed values are: "configItems"
+
+        :param list[str] config_item_custom_status: (optional)
+            Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned.
+            By default only customized configuration items are returned.
+
+            Allowed values are: "customized", "nonCustomized"
+
+        :param list[str] config_items_applicable_context: (optional)
+            Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
+
+        :param list[str] config_item_field: (optional)
+            Specifies the fields to return in a config item summary.
+
+            Allowed values are: "name", "value", "defaultValue", "metadata", "applicableContexts"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.OpsiConfiguration`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/create_opsi_configuration.py.html>`__ to see an example of how to use create_opsi_configuration API.
+        """
+        resource_path = "/opsiConfigurations"
+        method = "POST"
+        operation_name = "create_opsi_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/CreateOpsiConfiguration"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id",
+            "opsi_config_field",
+            "config_item_custom_status",
+            "config_items_applicable_context",
+            "config_item_field"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_opsi_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'opsi_config_field' in kwargs:
+            opsi_config_field_allowed_values = ["configItems"]
+            for opsi_config_field_item in kwargs['opsi_config_field']:
+                if opsi_config_field_item not in opsi_config_field_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `opsi_config_field`, must be one of {0}".format(opsi_config_field_allowed_values)
+                    )
+
+        if 'config_item_custom_status' in kwargs:
+            config_item_custom_status_allowed_values = ["customized", "nonCustomized"]
+            for config_item_custom_status_item in kwargs['config_item_custom_status']:
+                if config_item_custom_status_item not in config_item_custom_status_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `config_item_custom_status`, must be one of {0}".format(config_item_custom_status_allowed_values)
+                    )
+
+        if 'config_item_field' in kwargs:
+            config_item_field_allowed_values = ["name", "value", "defaultValue", "metadata", "applicableContexts"]
+            for config_item_field_item in kwargs['config_item_field']:
+                if config_item_field_item not in config_item_field_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `config_item_field`, must be one of {0}".format(config_item_field_allowed_values)
+                    )
+
+        query_params = {
+            "opsiConfigField": self.base_client.generate_collection_format_param(kwargs.get("opsi_config_field", missing), 'multi'),
+            "configItemCustomStatus": self.base_client.generate_collection_format_param(kwargs.get("config_item_custom_status", missing), 'multi'),
+            "configItemsApplicableContext": self.base_client.generate_collection_format_param(kwargs.get("config_items_applicable_context", missing), 'multi'),
+            "configItemField": self.base_client.generate_collection_format_param(kwargs.get("config_item_field", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=create_opsi_configuration_details,
+                response_type="OpsiConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=create_opsi_configuration_details,
+                response_type="OpsiConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def delete_awr_hub(self, awr_hub_id, **kwargs):
         """
         Deletes an AWR hub.
@@ -2441,6 +2712,108 @@ class OperationsInsightsClient(object):
 
         path_params = {
             "operationsInsightsWarehouseUserId": operations_insights_warehouse_user_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def delete_opsi_configuration(self, opsi_configuration_id, **kwargs):
+        """
+        Deletes an OPSI configuration resource.
+
+
+        :param str opsi_configuration_id: (required)
+            `OCID`__ of OPSI configuration resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str if_match: (optional)
+            Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/delete_opsi_configuration.py.html>`__ to see an example of how to use delete_opsi_configuration API.
+        """
+        resource_path = "/opsiConfigurations/{opsiConfigurationId}"
+        method = "DELETE"
+        operation_name = "delete_opsi_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/DeleteOpsiConfiguration"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_opsi_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "opsiConfigurationId": opsi_configuration_id
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -4497,6 +4870,162 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="OperationsInsightsWarehouseUser",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def get_opsi_configuration(self, opsi_configuration_id, **kwargs):
+        """
+        Gets details of an OPSI configuration resource.
+        Values specified in configItemField and configItemCustomStatus query params will be considered, only if configItems field is requested as part of opsiConfigField query param.
+        Values specified in configItemCustomStatus will determine whether only customized configuration items or only non-customized configuration items or both have to be returned.
+
+
+        :param str opsi_configuration_id: (required)
+            `OCID`__ of OPSI configuration resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] opsi_config_field: (optional)
+            Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
+
+            Allowed values are: "configItems"
+
+        :param list[str] config_item_custom_status: (optional)
+            Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned.
+            By default only customized configuration items are returned.
+
+            Allowed values are: "customized", "nonCustomized"
+
+        :param list[str] config_items_applicable_context: (optional)
+            Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
+
+        :param list[str] config_item_field: (optional)
+            Specifies the fields to return in a config item summary.
+
+            Allowed values are: "name", "value", "defaultValue", "metadata", "applicableContexts"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.OpsiConfiguration`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/get_opsi_configuration.py.html>`__ to see an example of how to use get_opsi_configuration API.
+        """
+        resource_path = "/opsiConfigurations/{opsiConfigurationId}"
+        method = "GET"
+        operation_name = "get_opsi_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/GetOpsiConfiguration"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opsi_config_field",
+            "config_item_custom_status",
+            "config_items_applicable_context",
+            "config_item_field",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_opsi_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "opsiConfigurationId": opsi_configuration_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'opsi_config_field' in kwargs:
+            opsi_config_field_allowed_values = ["configItems"]
+            for opsi_config_field_item in kwargs['opsi_config_field']:
+                if opsi_config_field_item not in opsi_config_field_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `opsi_config_field`, must be one of {0}".format(opsi_config_field_allowed_values)
+                    )
+
+        if 'config_item_custom_status' in kwargs:
+            config_item_custom_status_allowed_values = ["customized", "nonCustomized"]
+            for config_item_custom_status_item in kwargs['config_item_custom_status']:
+                if config_item_custom_status_item not in config_item_custom_status_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `config_item_custom_status`, must be one of {0}".format(config_item_custom_status_allowed_values)
+                    )
+
+        if 'config_item_field' in kwargs:
+            config_item_field_allowed_values = ["name", "value", "defaultValue", "metadata", "applicableContexts"]
+            for config_item_field_item in kwargs['config_item_field']:
+                if config_item_field_item not in config_item_field_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `config_item_field`, must be one of {0}".format(config_item_field_allowed_values)
+                    )
+
+        query_params = {
+            "opsiConfigField": self.base_client.generate_collection_format_param(kwargs.get("opsi_config_field", missing), 'multi'),
+            "configItemCustomStatus": self.base_client.generate_collection_format_param(kwargs.get("config_item_custom_status", missing), 'multi'),
+            "configItemsApplicableContext": self.base_client.generate_collection_format_param(kwargs.get("config_items_applicable_context", missing), 'multi'),
+            "configItemField": self.base_client.generate_collection_format_param(kwargs.get("config_item_field", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="OpsiConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="OpsiConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
@@ -8894,6 +9423,181 @@ class OperationsInsightsClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def list_opsi_configurations(self, compartment_id, **kwargs):
+        """
+        Gets a list of OPSI configuration resources based on the query parameters specified.
+
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str display_name: (optional)
+            Filter to return based on resources that match the entire display name.
+
+        :param list[str] lifecycle_state: (optional)
+            Filter to return based on Lifecycle state of OPSI configuration.
+
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+
+        :param list[str] opsi_config_type: (optional)
+            Filter to return based on configuration type of OPSI configuration.
+
+            Allowed values are: "UX_CONFIGURATION"
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to
+            return in a paginated \"List\" call.
+            For important details about how pagination works, see
+            `List Pagination`__.
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            OPSI configurations list sort options.
+
+            Allowed values are: "displayName"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.OpsiConfigurationsCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/list_opsi_configurations.py.html>`__ to see an example of how to use list_opsi_configurations API.
+        """
+        resource_path = "/opsiConfigurations"
+        method = "GET"
+        operation_name = "list_opsi_configurations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/ListOpsiConfigurations"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "display_name",
+            "lifecycle_state",
+            "opsi_config_type",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_opsi_configurations got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+            for lifecycle_state_item in kwargs['lifecycle_state']:
+                if lifecycle_state_item not in lifecycle_state_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    )
+
+        if 'opsi_config_type' in kwargs:
+            opsi_config_type_allowed_values = ["UX_CONFIGURATION"]
+            for opsi_config_type_item in kwargs['opsi_config_type']:
+                if opsi_config_type_item not in opsi_config_type_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `opsi_config_type`, must be one of {0}".format(opsi_config_type_allowed_values)
+                    )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "displayName": kwargs.get("display_name", missing),
+            "lifecycleState": self.base_client.generate_collection_format_param(kwargs.get("lifecycle_state", missing), 'multi'),
+            "opsiConfigType": self.base_client.generate_collection_format_param(kwargs.get("opsi_config_type", missing), 'multi'),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="OpsiConfigurationsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="OpsiConfigurationsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def list_opsi_data_objects(self, compartment_id, **kwargs):
         """
         Gets a list of OPSI data objects based on the query parameters specified. CompartmentId id query parameter must be specified.
@@ -12104,6 +12808,159 @@ class OperationsInsightsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="SummarizeAwrSourcesSummariesCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def summarize_configuration_items(self, **kwargs):
+        """
+        Gets the applicable configuration items based on the query parameters specified. Configuration items for an opsiConfigType with respect to a compartmentId can be fetched.
+        Values specified in configItemField param will determine what fields for each configuration items have to be returned.
+
+
+        :param str compartment_id: (optional)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opsi_config_type: (optional)
+            Filter to return configuration items based on configuration type of OPSI configuration.
+
+            Allowed values are: "UX_CONFIGURATION"
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to
+            return in a paginated \"List\" call.
+            For important details about how pagination works, see
+            `List Pagination`__.
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param list[str] config_items_applicable_context: (optional)
+            Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
+
+        :param list[str] config_item_field: (optional)
+            Specifies the fields to return in a config item summary.
+
+            Allowed values are: "name", "value", "defaultValue", "valueSourceConfig", "metadata", "applicableContexts"
+
+        :param str name: (optional)
+            A filter to return only configuration items that match the entire name.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.ConfigurationItemsCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_configuration_items.py.html>`__ to see an example of how to use summarize_configuration_items API.
+        """
+        resource_path = "/opsiConfigurations/configurationItems"
+        method = "GET"
+        operation_name = "summarize_configuration_items"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/SummarizeConfigurationItems"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "compartment_id",
+            "opsi_config_type",
+            "limit",
+            "page",
+            "config_items_applicable_context",
+            "config_item_field",
+            "name",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_configuration_items got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'opsi_config_type' in kwargs:
+            opsi_config_type_allowed_values = ["UX_CONFIGURATION"]
+            if kwargs['opsi_config_type'] not in opsi_config_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `opsi_config_type`, must be one of {0}".format(opsi_config_type_allowed_values)
+                )
+
+        if 'config_item_field' in kwargs:
+            config_item_field_allowed_values = ["name", "value", "defaultValue", "valueSourceConfig", "metadata", "applicableContexts"]
+            for config_item_field_item in kwargs['config_item_field']:
+                if config_item_field_item not in config_item_field_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `config_item_field`, must be one of {0}".format(config_item_field_allowed_values)
+                    )
+
+        query_params = {
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "opsiConfigType": kwargs.get("opsi_config_type", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "configItemsApplicableContext": self.base_client.generate_collection_format_param(kwargs.get("config_items_applicable_context", missing), 'multi'),
+            "configItemField": self.base_client.generate_collection_format_param(kwargs.get("config_item_field", missing), 'multi'),
+            "name": kwargs.get("name", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ConfigurationItemsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ConfigurationItemsCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
@@ -15818,7 +16675,6 @@ class OperationsInsightsClient(object):
 
         :param str resource_metric: (required)
             Filter by host resource metric.
-            Supported values are CPU, MEMORY, and LOGICAL_MEMORY.
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -16084,7 +16940,6 @@ class OperationsInsightsClient(object):
 
         :param str resource_metric: (required)
             Filter by host resource metric.
-            Supported values are CPU, MEMORY, and LOGICAL_MEMORY.
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -16368,7 +17223,6 @@ class OperationsInsightsClient(object):
 
         :param str resource_metric: (required)
             Filter by host resource metric.
-            Supported values are CPU, MEMORY, and LOGICAL_MEMORY.
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -16646,7 +17500,6 @@ class OperationsInsightsClient(object):
 
         :param str resource_metric: (required)
             Filter by host resource metric.
-            Supported values are CPU, MEMORY, and LOGICAL_MEMORY.
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -16872,7 +17725,6 @@ class OperationsInsightsClient(object):
 
         :param str resource_metric: (required)
             Filter by host resource metric.
-            Supported values are CPU, MEMORY, and LOGICAL_MEMORY.
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -17120,7 +17972,6 @@ class OperationsInsightsClient(object):
 
         :param str resource_metric: (required)
             Filter by host resource metric.
-            Supported values are CPU, MEMORY, and LOGICAL_MEMORY.
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -19747,6 +20598,113 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_operations_insights_warehouse_user_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def update_opsi_configuration(self, opsi_configuration_id, update_opsi_configuration_details, **kwargs):
+        """
+        Updates an OPSI configuration resource with the given ID.
+
+
+        :param str opsi_configuration_id: (required)
+            `OCID`__ of OPSI configuration resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.opsi.models.UpdateOpsiConfigurationDetails update_opsi_configuration_details: (required)
+            The OPSI configuration resource details to be updated.
+
+        :param str if_match: (optional)
+            Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/update_opsi_configuration.py.html>`__ to see an example of how to use update_opsi_configuration API.
+        """
+        resource_path = "/opsiConfigurations/{opsiConfigurationId}"
+        method = "PUT"
+        operation_name = "update_opsi_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/UpdateOpsiConfiguration"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_opsi_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "opsiConfigurationId": opsi_configuration_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_opsi_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_opsi_configuration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)

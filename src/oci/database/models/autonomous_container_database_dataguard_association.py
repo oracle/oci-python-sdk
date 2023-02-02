@@ -25,6 +25,10 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     #: This constant has a value of "DISABLED_STANDBY"
     ROLE_DISABLED_STANDBY = "DISABLED_STANDBY"
 
+    #: A constant which can be used with the role property of a AutonomousContainerDatabaseDataguardAssociation.
+    #: This constant has a value of "SNAPSHOT_STANDBY"
+    ROLE_SNAPSHOT_STANDBY = "SNAPSHOT_STANDBY"
+
     #: A constant which can be used with the lifecycle_state property of a AutonomousContainerDatabaseDataguardAssociation.
     #: This constant has a value of "PROVISIONING"
     LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
@@ -53,6 +57,10 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     #: This constant has a value of "UNAVAILABLE"
     LIFECYCLE_STATE_UNAVAILABLE = "UNAVAILABLE"
 
+    #: A constant which can be used with the lifecycle_state property of a AutonomousContainerDatabaseDataguardAssociation.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
     #: A constant which can be used with the peer_role property of a AutonomousContainerDatabaseDataguardAssociation.
     #: This constant has a value of "PRIMARY"
     PEER_ROLE_PRIMARY = "PRIMARY"
@@ -64,6 +72,10 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     #: A constant which can be used with the peer_role property of a AutonomousContainerDatabaseDataguardAssociation.
     #: This constant has a value of "DISABLED_STANDBY"
     PEER_ROLE_DISABLED_STANDBY = "DISABLED_STANDBY"
+
+    #: A constant which can be used with the peer_role property of a AutonomousContainerDatabaseDataguardAssociation.
+    #: This constant has a value of "SNAPSHOT_STANDBY"
+    PEER_ROLE_SNAPSHOT_STANDBY = "SNAPSHOT_STANDBY"
 
     #: A constant which can be used with the peer_lifecycle_state property of a AutonomousContainerDatabaseDataguardAssociation.
     #: This constant has a value of "PROVISIONING"
@@ -93,6 +105,10 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     #: This constant has a value of "UNAVAILABLE"
     PEER_LIFECYCLE_STATE_UNAVAILABLE = "UNAVAILABLE"
 
+    #: A constant which can be used with the peer_lifecycle_state property of a AutonomousContainerDatabaseDataguardAssociation.
+    #: This constant has a value of "UPDATING"
+    PEER_LIFECYCLE_STATE_UPDATING = "UPDATING"
+
     #: A constant which can be used with the protection_mode property of a AutonomousContainerDatabaseDataguardAssociation.
     #: This constant has a value of "MAXIMUM_AVAILABILITY"
     PROTECTION_MODE_MAXIMUM_AVAILABILITY = "MAXIMUM_AVAILABILITY"
@@ -116,13 +132,13 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
 
         :param role:
             The value to assign to the role property of this AutonomousContainerDatabaseDataguardAssociation.
-            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type role: str
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AutonomousContainerDatabaseDataguardAssociation.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -140,13 +156,13 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
 
         :param peer_role:
             The value to assign to the peer_role property of this AutonomousContainerDatabaseDataguardAssociation.
-            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type peer_role: str
 
         :param peer_lifecycle_state:
             The value to assign to the peer_lifecycle_state property of this AutonomousContainerDatabaseDataguardAssociation.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type peer_lifecycle_state: str
 
@@ -155,6 +171,10 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
             Allowed values for this property are: "MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type protection_mode: str
+
+        :param fast_start_fail_over_lag_limit_in_seconds:
+            The value to assign to the fast_start_fail_over_lag_limit_in_seconds property of this AutonomousContainerDatabaseDataguardAssociation.
+        :type fast_start_fail_over_lag_limit_in_seconds: int
 
         :param apply_lag:
             The value to assign to the apply_lag property of this AutonomousContainerDatabaseDataguardAssociation.
@@ -196,6 +216,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
             'peer_role': 'str',
             'peer_lifecycle_state': 'str',
             'protection_mode': 'str',
+            'fast_start_fail_over_lag_limit_in_seconds': 'int',
             'apply_lag': 'str',
             'apply_rate': 'str',
             'is_automatic_failover_enabled': 'bool',
@@ -216,6 +237,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
             'peer_role': 'peerRole',
             'peer_lifecycle_state': 'peerLifecycleState',
             'protection_mode': 'protectionMode',
+            'fast_start_fail_over_lag_limit_in_seconds': 'fastStartFailOverLagLimitInSeconds',
             'apply_lag': 'applyLag',
             'apply_rate': 'applyRate',
             'is_automatic_failover_enabled': 'isAutomaticFailoverEnabled',
@@ -235,6 +257,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
         self._peer_role = None
         self._peer_lifecycle_state = None
         self._protection_mode = None
+        self._fast_start_fail_over_lag_limit_in_seconds = None
         self._apply_lag = None
         self._apply_rate = None
         self._is_automatic_failover_enabled = None
@@ -301,7 +324,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
         **[Required]** Gets the role of this AutonomousContainerDatabaseDataguardAssociation.
         The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 
-        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -320,7 +343,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
         :param role: The role of this AutonomousContainerDatabaseDataguardAssociation.
         :type: str
         """
-        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY"]
+        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             role = 'UNKNOWN_ENUM_VALUE'
         self._role = role
@@ -331,7 +354,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
         **[Required]** Gets the lifecycle_state of this AutonomousContainerDatabaseDataguardAssociation.
         The current state of Autonomous Data Guard.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -350,7 +373,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
         :param lifecycle_state: The lifecycle_state of this AutonomousContainerDatabaseDataguardAssociation.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE", "UPDATING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -437,7 +460,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
         **[Required]** Gets the peer_role of this AutonomousContainerDatabaseDataguardAssociation.
         The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 
-        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -456,7 +479,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
         :param peer_role: The peer_role of this AutonomousContainerDatabaseDataguardAssociation.
         :type: str
         """
-        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY"]
+        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY"]
         if not value_allowed_none_or_none_sentinel(peer_role, allowed_values):
             peer_role = 'UNKNOWN_ENUM_VALUE'
         self._peer_role = peer_role
@@ -467,7 +490,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
         Gets the peer_lifecycle_state of this AutonomousContainerDatabaseDataguardAssociation.
         The current state of Autonomous Data Guard.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -486,7 +509,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
         :param peer_lifecycle_state: The peer_lifecycle_state of this AutonomousContainerDatabaseDataguardAssociation.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE", "UPDATING"]
         if not value_allowed_none_or_none_sentinel(peer_lifecycle_state, allowed_values):
             peer_lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._peer_lifecycle_state = peer_lifecycle_state
@@ -528,6 +551,30 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
         if not value_allowed_none_or_none_sentinel(protection_mode, allowed_values):
             protection_mode = 'UNKNOWN_ENUM_VALUE'
         self._protection_mode = protection_mode
+
+    @property
+    def fast_start_fail_over_lag_limit_in_seconds(self):
+        """
+        Gets the fast_start_fail_over_lag_limit_in_seconds of this AutonomousContainerDatabaseDataguardAssociation.
+        The lag time for my preference based on data loss tolerance in seconds.
+
+
+        :return: The fast_start_fail_over_lag_limit_in_seconds of this AutonomousContainerDatabaseDataguardAssociation.
+        :rtype: int
+        """
+        return self._fast_start_fail_over_lag_limit_in_seconds
+
+    @fast_start_fail_over_lag_limit_in_seconds.setter
+    def fast_start_fail_over_lag_limit_in_seconds(self, fast_start_fail_over_lag_limit_in_seconds):
+        """
+        Sets the fast_start_fail_over_lag_limit_in_seconds of this AutonomousContainerDatabaseDataguardAssociation.
+        The lag time for my preference based on data loss tolerance in seconds.
+
+
+        :param fast_start_fail_over_lag_limit_in_seconds: The fast_start_fail_over_lag_limit_in_seconds of this AutonomousContainerDatabaseDataguardAssociation.
+        :type: int
+        """
+        self._fast_start_fail_over_lag_limit_in_seconds = fast_start_fail_over_lag_limit_in_seconds
 
     @property
     def apply_lag(self):

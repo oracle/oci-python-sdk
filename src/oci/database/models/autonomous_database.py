@@ -249,6 +249,10 @@ class AutonomousDatabase(object):
     #: This constant has a value of "DISABLED_STANDBY"
     ROLE_DISABLED_STANDBY = "DISABLED_STANDBY"
 
+    #: A constant which can be used with the role property of a AutonomousDatabase.
+    #: This constant has a value of "SNAPSHOT_STANDBY"
+    ROLE_SNAPSHOT_STANDBY = "SNAPSHOT_STANDBY"
+
     #: A constant which can be used with the dataguard_region_type property of a AutonomousDatabase.
     #: This constant has a value of "PRIMARY_DG_REGION"
     DATAGUARD_REGION_TYPE_PRIMARY_DG_REGION = "PRIMARY_DG_REGION"
@@ -361,6 +365,14 @@ class AutonomousDatabase(object):
         :param compute_count:
             The value to assign to the compute_count property of this AutonomousDatabase.
         :type compute_count: float
+
+        :param backup_retention_period_in_days:
+            The value to assign to the backup_retention_period_in_days property of this AutonomousDatabase.
+        :type backup_retention_period_in_days: int
+
+        :param total_backup_storage_size_in_gbs:
+            The value to assign to the total_backup_storage_size_in_gbs property of this AutonomousDatabase.
+        :type total_backup_storage_size_in_gbs: float
 
         :param ocpu_count:
             The value to assign to the ocpu_count property of this AutonomousDatabase.
@@ -596,7 +608,7 @@ class AutonomousDatabase(object):
 
         :param role:
             The value to assign to the role property of this AutonomousDatabase.
-            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type role: str
 
@@ -708,6 +720,8 @@ class AutonomousDatabase(object):
             'cpu_core_count': 'int',
             'compute_model': 'str',
             'compute_count': 'float',
+            'backup_retention_period_in_days': 'int',
+            'total_backup_storage_size_in_gbs': 'float',
             'ocpu_count': 'float',
             'provisionable_cpus': 'list[float]',
             'data_storage_size_in_tbs': 'int',
@@ -805,6 +819,8 @@ class AutonomousDatabase(object):
             'cpu_core_count': 'cpuCoreCount',
             'compute_model': 'computeModel',
             'compute_count': 'computeCount',
+            'backup_retention_period_in_days': 'backupRetentionPeriodInDays',
+            'total_backup_storage_size_in_gbs': 'totalBackupStorageSizeInGBs',
             'ocpu_count': 'ocpuCount',
             'provisionable_cpus': 'provisionableCpus',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
@@ -901,6 +917,8 @@ class AutonomousDatabase(object):
         self._cpu_core_count = None
         self._compute_model = None
         self._compute_count = None
+        self._backup_retention_period_in_days = None
+        self._total_backup_storage_size_in_gbs = None
         self._ocpu_count = None
         self._provisionable_cpus = None
         self._data_storage_size_in_tbs = None
@@ -1415,7 +1433,7 @@ class AutonomousDatabase(object):
     @property
     def cpu_core_count(self):
         """
-        **[Required]** Gets the cpu_core_count of this AutonomousDatabase.
+        Gets the cpu_core_count of this AutonomousDatabase.
         The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
 
         **Note:** This parameter cannot be used with the `ocpuCount` parameter.
@@ -1497,6 +1515,54 @@ class AutonomousDatabase(object):
         :type: float
         """
         self._compute_count = compute_count
+
+    @property
+    def backup_retention_period_in_days(self):
+        """
+        Gets the backup_retention_period_in_days of this AutonomousDatabase.
+        Retention period, in days, for backups.
+
+
+        :return: The backup_retention_period_in_days of this AutonomousDatabase.
+        :rtype: int
+        """
+        return self._backup_retention_period_in_days
+
+    @backup_retention_period_in_days.setter
+    def backup_retention_period_in_days(self, backup_retention_period_in_days):
+        """
+        Sets the backup_retention_period_in_days of this AutonomousDatabase.
+        Retention period, in days, for backups.
+
+
+        :param backup_retention_period_in_days: The backup_retention_period_in_days of this AutonomousDatabase.
+        :type: int
+        """
+        self._backup_retention_period_in_days = backup_retention_period_in_days
+
+    @property
+    def total_backup_storage_size_in_gbs(self):
+        """
+        Gets the total_backup_storage_size_in_gbs of this AutonomousDatabase.
+        The backup storage to the database.
+
+
+        :return: The total_backup_storage_size_in_gbs of this AutonomousDatabase.
+        :rtype: float
+        """
+        return self._total_backup_storage_size_in_gbs
+
+    @total_backup_storage_size_in_gbs.setter
+    def total_backup_storage_size_in_gbs(self, total_backup_storage_size_in_gbs):
+        """
+        Sets the total_backup_storage_size_in_gbs of this AutonomousDatabase.
+        The backup storage to the database.
+
+
+        :param total_backup_storage_size_in_gbs: The total_backup_storage_size_in_gbs of this AutonomousDatabase.
+        :type: float
+        """
+        self._total_backup_storage_size_in_gbs = total_backup_storage_size_in_gbs
 
     @property
     def ocpu_count(self):
@@ -2990,7 +3056,7 @@ class AutonomousDatabase(object):
         Gets the role of this AutonomousDatabase.
         The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 
-        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -3009,7 +3075,7 @@ class AutonomousDatabase(object):
         :param role: The role of this AutonomousDatabase.
         :type: str
         """
-        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY"]
+        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             role = 'UNKNOWN_ENUM_VALUE'
         self._role = role

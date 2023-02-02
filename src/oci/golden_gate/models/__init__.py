@@ -39,6 +39,7 @@ from .database_registration import DatabaseRegistration
 from .database_registration_collection import DatabaseRegistrationCollection
 from .database_registration_summary import DatabaseRegistrationSummary
 from .default_cancel_deployment_backup_details import DefaultCancelDeploymentBackupDetails
+from .default_deployment_wallet_exists_details import DefaultDeploymentWalletExistsDetails
 from .default_restore_deployment_details import DefaultRestoreDeploymentDetails
 from .default_start_deployment_details import DefaultStartDeploymentDetails
 from .default_stop_deployment_details import DefaultStopDeploymentDetails
@@ -55,8 +56,14 @@ from .deployment_type_summary import DeploymentTypeSummary
 from .deployment_upgrade import DeploymentUpgrade
 from .deployment_upgrade_collection import DeploymentUpgradeCollection
 from .deployment_upgrade_summary import DeploymentUpgradeSummary
+from .deployment_wallet_exists_details import DeploymentWalletExistsDetails
+from .deployment_wallet_exists_response_details import DeploymentWalletExistsResponseDetails
+from .deployment_wallets_operation_collection import DeploymentWalletsOperationCollection
+from .deployment_wallets_operation_summary import DeploymentWalletsOperationSummary
+from .export_deployment_wallet_details import ExportDeploymentWalletDetails
 from .golden_gate_connection import GoldenGateConnection
 from .golden_gate_connection_summary import GoldenGateConnectionSummary
+from .import_deployment_wallet_details import ImportDeploymentWalletDetails
 from .ingress_ip_details import IngressIpDetails
 from .kafka_bootstrap_server import KafkaBootstrapServer
 from .kafka_connection import KafkaConnection
@@ -139,6 +146,7 @@ golden_gate_type_mapping = {
     "DatabaseRegistrationCollection": DatabaseRegistrationCollection,
     "DatabaseRegistrationSummary": DatabaseRegistrationSummary,
     "DefaultCancelDeploymentBackupDetails": DefaultCancelDeploymentBackupDetails,
+    "DefaultDeploymentWalletExistsDetails": DefaultDeploymentWalletExistsDetails,
     "DefaultRestoreDeploymentDetails": DefaultRestoreDeploymentDetails,
     "DefaultStartDeploymentDetails": DefaultStartDeploymentDetails,
     "DefaultStopDeploymentDetails": DefaultStopDeploymentDetails,
@@ -155,8 +163,14 @@ golden_gate_type_mapping = {
     "DeploymentUpgrade": DeploymentUpgrade,
     "DeploymentUpgradeCollection": DeploymentUpgradeCollection,
     "DeploymentUpgradeSummary": DeploymentUpgradeSummary,
+    "DeploymentWalletExistsDetails": DeploymentWalletExistsDetails,
+    "DeploymentWalletExistsResponseDetails": DeploymentWalletExistsResponseDetails,
+    "DeploymentWalletsOperationCollection": DeploymentWalletsOperationCollection,
+    "DeploymentWalletsOperationSummary": DeploymentWalletsOperationSummary,
+    "ExportDeploymentWalletDetails": ExportDeploymentWalletDetails,
     "GoldenGateConnection": GoldenGateConnection,
     "GoldenGateConnectionSummary": GoldenGateConnectionSummary,
+    "ImportDeploymentWalletDetails": ImportDeploymentWalletDetails,
     "IngressIpDetails": IngressIpDetails,
     "KafkaBootstrapServer": KafkaBootstrapServer,
     "KafkaConnection": KafkaConnection,

@@ -271,6 +271,49 @@ class OperationsInsightsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def change_opsi_configuration_compartment_and_wait_for_state(self, opsi_configuration_id, change_opsi_configuration_compartment_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.opsi.OperationsInsightsClient.change_opsi_configuration_compartment` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str opsi_configuration_id: (required)
+            `OCID`__ of OPSI configuration resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.opsi.models.ChangeOpsiConfigurationCompartmentDetails change_opsi_configuration_compartment_details: (required)
+            The information to be updated.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.opsi.OperationsInsightsClient.change_opsi_configuration_compartment`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.change_opsi_configuration_compartment(opsi_configuration_id, change_opsi_configuration_compartment_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def change_pe_comanaged_database_insight_and_wait_for_state(self, database_insight_id, change_pe_comanaged_database_insight_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.opsi.OperationsInsightsClient.change_pe_comanaged_database_insight` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
@@ -597,6 +640,44 @@ class OperationsInsightsClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.create_operations_insights_warehouse_user(create_operations_insights_warehouse_user_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def create_opsi_configuration_and_wait_for_state(self, create_opsi_configuration_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.opsi.OperationsInsightsClient.create_opsi_configuration` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
+        to enter the given state(s).
+
+        :param oci.opsi.models.CreateOpsiConfigurationDetails create_opsi_configuration_details: (required)
+            Information about OPSI configuration resource to be created.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.opsi.OperationsInsightsClient.create_opsi_configuration`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_opsi_configuration(create_opsi_configuration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
 
@@ -961,6 +1042,54 @@ class OperationsInsightsClientCompositeOperations(object):
         operation_result = None
         try:
             operation_result = self.client.delete_operations_insights_warehouse_user(operations_insights_warehouse_user_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_opsi_configuration_and_wait_for_state(self, opsi_configuration_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.opsi.OperationsInsightsClient.delete_opsi_configuration` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str opsi_configuration_id: (required)
+            `OCID`__ of OPSI configuration resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.opsi.OperationsInsightsClient.delete_opsi_configuration`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_opsi_configuration(opsi_configuration_id, **operation_kwargs)
         except oci.exceptions.ServiceError as e:
             if e.status == 404:
                 return WAIT_RESOURCE_NOT_FOUND
@@ -1572,6 +1701,49 @@ class OperationsInsightsClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.update_operations_insights_warehouse_user(operations_insights_warehouse_user_id, update_operations_insights_warehouse_user_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_opsi_configuration_and_wait_for_state(self, opsi_configuration_id, update_opsi_configuration_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.opsi.OperationsInsightsClient.update_opsi_configuration` and waits for the :py:class:`~oci.opsi.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str opsi_configuration_id: (required)
+            `OCID`__ of OPSI configuration resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.opsi.models.UpdateOpsiConfigurationDetails update_opsi_configuration_details: (required)
+            The OPSI configuration resource details to be updated.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.opsi.OperationsInsightsClient.update_opsi_configuration`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_opsi_configuration(opsi_configuration_id, update_opsi_configuration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
 

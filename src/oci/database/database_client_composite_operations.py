@@ -903,6 +903,94 @@ class DatabaseClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def change_dataguard_role_and_wait_for_work_request(self, change_dataguard_role_details, autonomous_container_database_id, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.change_dataguard_role` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param oci.database.models.ChangeDataguardRoleDetails change_dataguard_role_details: (required)
+            Request to Change the Autonomous Container Database Dataguard role.
+
+        :param str autonomous_container_database_id: (required)
+            The Autonomous Container Database `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.change_dataguard_role`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.change_dataguard_role(change_dataguard_role_details, autonomous_container_database_id, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        work_request_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def change_dataguard_role_and_wait_for_state(self, change_dataguard_role_details, autonomous_container_database_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.change_dataguard_role` and waits for the :py:class:`~oci.database.models.AutonomousContainerDatabase` acted upon
+        to enter the given state(s).
+
+        :param oci.database.models.ChangeDataguardRoleDetails change_dataguard_role_details: (required)
+            Request to Change the Autonomous Container Database Dataguard role.
+
+        :param str autonomous_container_database_id: (required)
+            The Autonomous Container Database `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousContainerDatabase.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.change_dataguard_role`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.change_dataguard_role(change_dataguard_role_details, autonomous_container_database_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        autonomous_container_database_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_autonomous_container_database(autonomous_container_database_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def change_db_system_compartment_and_wait_for_work_request(self, change_compartment_details, db_system_id, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.database.DatabaseClient.change_db_system_compartment` and waits for the oci.work_requests.models.WorkRequest

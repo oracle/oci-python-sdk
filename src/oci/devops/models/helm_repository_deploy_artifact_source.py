@@ -32,22 +32,29 @@ class HelmRepositoryDeployArtifactSource(DeployArtifactSource):
             The value to assign to the deploy_artifact_version property of this HelmRepositoryDeployArtifactSource.
         :type deploy_artifact_version: str
 
+        :param helm_verification_key_source:
+            The value to assign to the helm_verification_key_source property of this HelmRepositoryDeployArtifactSource.
+        :type helm_verification_key_source: oci.devops.models.VerificationKeySource
+
         """
         self.swagger_types = {
             'deploy_artifact_source_type': 'str',
             'chart_url': 'str',
-            'deploy_artifact_version': 'str'
+            'deploy_artifact_version': 'str',
+            'helm_verification_key_source': 'VerificationKeySource'
         }
 
         self.attribute_map = {
             'deploy_artifact_source_type': 'deployArtifactSourceType',
             'chart_url': 'chartUrl',
-            'deploy_artifact_version': 'deployArtifactVersion'
+            'deploy_artifact_version': 'deployArtifactVersion',
+            'helm_verification_key_source': 'helmVerificationKeySource'
         }
 
         self._deploy_artifact_source_type = None
         self._chart_url = None
         self._deploy_artifact_version = None
+        self._helm_verification_key_source = None
         self._deploy_artifact_source_type = 'HELM_CHART'
 
     @property
@@ -97,6 +104,26 @@ class HelmRepositoryDeployArtifactSource(DeployArtifactSource):
         :type: str
         """
         self._deploy_artifact_version = deploy_artifact_version
+
+    @property
+    def helm_verification_key_source(self):
+        """
+        Gets the helm_verification_key_source of this HelmRepositoryDeployArtifactSource.
+
+        :return: The helm_verification_key_source of this HelmRepositoryDeployArtifactSource.
+        :rtype: oci.devops.models.VerificationKeySource
+        """
+        return self._helm_verification_key_source
+
+    @helm_verification_key_source.setter
+    def helm_verification_key_source(self, helm_verification_key_source):
+        """
+        Sets the helm_verification_key_source of this HelmRepositoryDeployArtifactSource.
+
+        :param helm_verification_key_source: The helm_verification_key_source of this HelmRepositoryDeployArtifactSource.
+        :type: oci.devops.models.VerificationKeySource
+        """
+        self._helm_verification_key_source = helm_verification_key_source
 
     def __repr__(self):
         return formatted_flat_dict(self)

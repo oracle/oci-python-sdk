@@ -89,6 +89,8 @@ Core Services
     oci.core.models.ByoipRangeSummary
     oci.core.models.ByoipRangeVcnIpv6AllocationSummary
     oci.core.models.Byoipv6CidrDetails
+    oci.core.models.CapacityReportInstanceShapeConfig
+    oci.core.models.CapacityReportShapeAvailability
     oci.core.models.CapacityReservationInstanceSummary
     oci.core.models.CaptureConsoleHistoryDetails
     oci.core.models.CaptureFilter
@@ -133,6 +135,7 @@ Core Services
     oci.core.models.ClusterNetworkPlacementConfigurationDetails
     oci.core.models.ClusterNetworkSummary
     oci.core.models.CompartmentInternal
+    oci.core.models.ComputeCapacityReport
     oci.core.models.ComputeCapacityReservation
     oci.core.models.ComputeCapacityReservationInstanceShapeSummary
     oci.core.models.ComputeCapacityReservationSummary
@@ -159,9 +162,11 @@ Core Services
     oci.core.models.CreateBootVolumeBackupDetails
     oci.core.models.CreateBootVolumeDetails
     oci.core.models.CreateByoipRangeDetails
+    oci.core.models.CreateCapacityReportShapeAvailabilityDetails
     oci.core.models.CreateCaptureFilterDetails
     oci.core.models.CreateClusterNetworkDetails
     oci.core.models.CreateClusterNetworkInstancePoolDetails
+    oci.core.models.CreateComputeCapacityReportDetails
     oci.core.models.CreateComputeCapacityReservationDetails
     oci.core.models.CreateComputeImageCapabilitySchemaDetails
     oci.core.models.CreateCpeDetails

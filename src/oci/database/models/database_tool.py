@@ -56,19 +56,33 @@ class DatabaseTool(object):
             The value to assign to the is_enabled property of this DatabaseTool.
         :type is_enabled: bool
 
+        :param compute_count:
+            The value to assign to the compute_count property of this DatabaseTool.
+        :type compute_count: float
+
+        :param max_idle_time_in_minutes:
+            The value to assign to the max_idle_time_in_minutes property of this DatabaseTool.
+        :type max_idle_time_in_minutes: int
+
         """
         self.swagger_types = {
             'name': 'str',
-            'is_enabled': 'bool'
+            'is_enabled': 'bool',
+            'compute_count': 'float',
+            'max_idle_time_in_minutes': 'int'
         }
 
         self.attribute_map = {
             'name': 'name',
-            'is_enabled': 'isEnabled'
+            'is_enabled': 'isEnabled',
+            'compute_count': 'computeCount',
+            'max_idle_time_in_minutes': 'maxIdleTimeInMinutes'
         }
 
         self._name = None
         self._is_enabled = None
+        self._compute_count = None
+        self._max_idle_time_in_minutes = None
 
     @property
     def name(self):
@@ -123,6 +137,54 @@ class DatabaseTool(object):
         :type: bool
         """
         self._is_enabled = is_enabled
+
+    @property
+    def compute_count(self):
+        """
+        Gets the compute_count of this DatabaseTool.
+        Compute used by database tools.
+
+
+        :return: The compute_count of this DatabaseTool.
+        :rtype: float
+        """
+        return self._compute_count
+
+    @compute_count.setter
+    def compute_count(self, compute_count):
+        """
+        Sets the compute_count of this DatabaseTool.
+        Compute used by database tools.
+
+
+        :param compute_count: The compute_count of this DatabaseTool.
+        :type: float
+        """
+        self._compute_count = compute_count
+
+    @property
+    def max_idle_time_in_minutes(self):
+        """
+        Gets the max_idle_time_in_minutes of this DatabaseTool.
+        The max idle time, in minutes, after which the VM used by database tools will be terminated.
+
+
+        :return: The max_idle_time_in_minutes of this DatabaseTool.
+        :rtype: int
+        """
+        return self._max_idle_time_in_minutes
+
+    @max_idle_time_in_minutes.setter
+    def max_idle_time_in_minutes(self, max_idle_time_in_minutes):
+        """
+        Sets the max_idle_time_in_minutes of this DatabaseTool.
+        The max idle time, in minutes, after which the VM used by database tools will be terminated.
+
+
+        :param max_idle_time_in_minutes: The max_idle_time_in_minutes of this DatabaseTool.
+        :type: int
+        """
+        self._max_idle_time_in_minutes = max_idle_time_in_minutes
 
     def __repr__(self):
         return formatted_flat_dict(self)

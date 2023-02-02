@@ -42,6 +42,10 @@ class AutonomousDatabaseConnectionUrls(object):
             The value to assign to the mongo_db_url property of this AutonomousDatabaseConnectionUrls.
         :type mongo_db_url: str
 
+        :param machine_learning_notebook_url:
+            The value to assign to the machine_learning_notebook_url property of this AutonomousDatabaseConnectionUrls.
+        :type machine_learning_notebook_url: str
+
         :param ords_url:
             The value to assign to the ords_url property of this AutonomousDatabaseConnectionUrls.
         :type ords_url: str
@@ -57,6 +61,7 @@ class AutonomousDatabaseConnectionUrls(object):
             'machine_learning_user_management_url': 'str',
             'graph_studio_url': 'str',
             'mongo_db_url': 'str',
+            'machine_learning_notebook_url': 'str',
             'ords_url': 'str',
             'database_transforms_url': 'str'
         }
@@ -67,6 +72,7 @@ class AutonomousDatabaseConnectionUrls(object):
             'machine_learning_user_management_url': 'machineLearningUserManagementUrl',
             'graph_studio_url': 'graphStudioUrl',
             'mongo_db_url': 'mongoDbUrl',
+            'machine_learning_notebook_url': 'machineLearningNotebookUrl',
             'ords_url': 'ordsUrl',
             'database_transforms_url': 'databaseTransformsUrl'
         }
@@ -76,6 +82,7 @@ class AutonomousDatabaseConnectionUrls(object):
         self._machine_learning_user_management_url = None
         self._graph_studio_url = None
         self._mongo_db_url = None
+        self._machine_learning_notebook_url = None
         self._ords_url = None
         self._database_transforms_url = None
 
@@ -198,6 +205,30 @@ class AutonomousDatabaseConnectionUrls(object):
         :type: str
         """
         self._mongo_db_url = mongo_db_url
+
+    @property
+    def machine_learning_notebook_url(self):
+        """
+        Gets the machine_learning_notebook_url of this AutonomousDatabaseConnectionUrls.
+        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+
+
+        :return: The machine_learning_notebook_url of this AutonomousDatabaseConnectionUrls.
+        :rtype: str
+        """
+        return self._machine_learning_notebook_url
+
+    @machine_learning_notebook_url.setter
+    def machine_learning_notebook_url(self, machine_learning_notebook_url):
+        """
+        Sets the machine_learning_notebook_url of this AutonomousDatabaseConnectionUrls.
+        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+
+
+        :param machine_learning_notebook_url: The machine_learning_notebook_url of this AutonomousDatabaseConnectionUrls.
+        :type: str
+        """
+        self._machine_learning_notebook_url = machine_learning_notebook_url
 
     @property
     def ords_url(self):

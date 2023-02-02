@@ -277,7 +277,10 @@ Devops
     oci.devops.models.GitlabTriggerCreateResult
     oci.devops.models.GitlabTriggerSummary
     oci.devops.models.HelmRepositoryDeployArtifactSource
+    oci.devops.models.HelmSetValue
+    oci.devops.models.HelmSetValueCollection
     oci.devops.models.InlineDeployArtifactSource
+    oci.devops.models.InlinePublicKeyVerificationKeySource
     oci.devops.models.InvokeFunctionDeployStage
     oci.devops.models.InvokeFunctionDeployStageExecutionProgress
     oci.devops.models.InvokeFunctionDeployStageSummary
@@ -295,6 +298,7 @@ Devops
     oci.devops.models.NginxBlueGreenStrategy
     oci.devops.models.NginxCanaryStrategy
     oci.devops.models.NoDeployStageRollbackPolicy
+    oci.devops.models.NoneVerificationKeySource
     oci.devops.models.NotificationConfig
     oci.devops.models.OcirDeployArtifactSource
     oci.devops.models.OkeBlueGreenDeployStage
@@ -429,6 +433,7 @@ Devops
     oci.devops.models.UpdateWaitCriteriaDetails
     oci.devops.models.UpdateWaitDeployStageDetails
     oci.devops.models.UpdateWaitStageDetails
+    oci.devops.models.VaultSecretVerificationKeySource
     oci.devops.models.VbsAccessTokenConnection
     oci.devops.models.VbsAccessTokenConnectionSummary
     oci.devops.models.VbsBuildRunSource
@@ -439,6 +444,7 @@ Devops
     oci.devops.models.VbsTrigger
     oci.devops.models.VbsTriggerCreateResult
     oci.devops.models.VbsTriggerSummary
+    oci.devops.models.VerificationKeySource
     oci.devops.models.VulnerabilityAuditSummary
     oci.devops.models.VulnerabilityAuditSummaryCollection
     oci.devops.models.WaitCriteria
