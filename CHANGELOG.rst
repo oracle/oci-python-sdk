@@ -4,13 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.90.5 - TBD
+2.91.0 - 2023-02-07
 ====================
 
 Added
 -----
-* TBD
-
+* Support for changing Data Guard role of a database instance within the Database service
+* Support for listing autonomous container database versions in the Database service
+* Support for specifying a database version when creating or updating an autonomous container database in the Database service
+* Support for specifying an eCPU count when creating or updating autonomous shared databases in the Database service
+* Support for Helm attestation and Helm arguments on deploy operations in the DevOps service
+* Support for uploading master key wallets for deployments in the GoldenGate service
+* Support for custom configurations in the Operations Insights service  
+ 
+Breaking
+--------
+* Field `cpu_core_count` has been made optional in the models `AutonomousDatabaseSummary` and `AutonomousDatabase` in the Database service
+ 
 ====================
 2.90.4 - 2023-01-31
 ====================
