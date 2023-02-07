@@ -37,6 +37,14 @@ class CreateAutonomousContainerDatabaseDetails(object):
     #: This constant has a value of "RELEASE_UPDATE_REVISIONS"
     PATCH_MODEL_RELEASE_UPDATE_REVISIONS = "RELEASE_UPDATE_REVISIONS"
 
+    #: A constant which can be used with the version_preference property of a CreateAutonomousContainerDatabaseDetails.
+    #: This constant has a value of "NEXT_RELEASE_UPDATE"
+    VERSION_PREFERENCE_NEXT_RELEASE_UPDATE = "NEXT_RELEASE_UPDATE"
+
+    #: A constant which can be used with the version_preference property of a CreateAutonomousContainerDatabaseDetails.
+    #: This constant has a value of "LATEST_RELEASE_UPDATE"
+    VERSION_PREFERENCE_LATEST_RELEASE_UPDATE = "LATEST_RELEASE_UPDATE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateAutonomousContainerDatabaseDetails object with values from keyword arguments.
@@ -59,6 +67,10 @@ class CreateAutonomousContainerDatabaseDetails(object):
             The value to assign to the autonomous_exadata_infrastructure_id property of this CreateAutonomousContainerDatabaseDetails.
         :type autonomous_exadata_infrastructure_id: str
 
+        :param db_version:
+            The value to assign to the db_version property of this CreateAutonomousContainerDatabaseDetails.
+        :type db_version: str
+
         :param peer_autonomous_exadata_infrastructure_id:
             The value to assign to the peer_autonomous_exadata_infrastructure_id property of this CreateAutonomousContainerDatabaseDetails.
         :type peer_autonomous_exadata_infrastructure_id: str
@@ -71,6 +83,10 @@ class CreateAutonomousContainerDatabaseDetails(object):
             The value to assign to the protection_mode property of this CreateAutonomousContainerDatabaseDetails.
             Allowed values for this property are: "MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE"
         :type protection_mode: str
+
+        :param fast_start_fail_over_lag_limit_in_seconds:
+            The value to assign to the fast_start_fail_over_lag_limit_in_seconds property of this CreateAutonomousContainerDatabaseDetails.
+        :type fast_start_fail_over_lag_limit_in_seconds: int
 
         :param is_automatic_failover_enabled:
             The value to assign to the is_automatic_failover_enabled property of this CreateAutonomousContainerDatabaseDetails.
@@ -121,6 +137,11 @@ class CreateAutonomousContainerDatabaseDetails(object):
             The value to assign to the standby_maintenance_buffer_in_days property of this CreateAutonomousContainerDatabaseDetails.
         :type standby_maintenance_buffer_in_days: int
 
+        :param version_preference:
+            The value to assign to the version_preference property of this CreateAutonomousContainerDatabaseDetails.
+            Allowed values for this property are: "NEXT_RELEASE_UPDATE", "LATEST_RELEASE_UPDATE"
+        :type version_preference: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateAutonomousContainerDatabaseDetails.
         :type freeform_tags: dict(str, str)
@@ -155,9 +176,11 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'db_unique_name': 'str',
             'service_level_agreement_type': 'str',
             'autonomous_exadata_infrastructure_id': 'str',
+            'db_version': 'str',
             'peer_autonomous_exadata_infrastructure_id': 'str',
             'peer_autonomous_container_database_display_name': 'str',
             'protection_mode': 'str',
+            'fast_start_fail_over_lag_limit_in_seconds': 'int',
             'is_automatic_failover_enabled': 'bool',
             'peer_cloud_autonomous_vm_cluster_id': 'str',
             'peer_autonomous_vm_cluster_id': 'str',
@@ -170,6 +193,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'patch_model': 'str',
             'maintenance_window_details': 'MaintenanceWindow',
             'standby_maintenance_buffer_in_days': 'int',
+            'version_preference': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'backup_config': 'AutonomousContainerDatabaseBackupConfig',
@@ -184,9 +208,11 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'db_unique_name': 'dbUniqueName',
             'service_level_agreement_type': 'serviceLevelAgreementType',
             'autonomous_exadata_infrastructure_id': 'autonomousExadataInfrastructureId',
+            'db_version': 'dbVersion',
             'peer_autonomous_exadata_infrastructure_id': 'peerAutonomousExadataInfrastructureId',
             'peer_autonomous_container_database_display_name': 'peerAutonomousContainerDatabaseDisplayName',
             'protection_mode': 'protectionMode',
+            'fast_start_fail_over_lag_limit_in_seconds': 'fastStartFailOverLagLimitInSeconds',
             'is_automatic_failover_enabled': 'isAutomaticFailoverEnabled',
             'peer_cloud_autonomous_vm_cluster_id': 'peerCloudAutonomousVmClusterId',
             'peer_autonomous_vm_cluster_id': 'peerAutonomousVmClusterId',
@@ -199,6 +225,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'patch_model': 'patchModel',
             'maintenance_window_details': 'maintenanceWindowDetails',
             'standby_maintenance_buffer_in_days': 'standbyMaintenanceBufferInDays',
+            'version_preference': 'versionPreference',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'backup_config': 'backupConfig',
@@ -212,9 +239,11 @@ class CreateAutonomousContainerDatabaseDetails(object):
         self._db_unique_name = None
         self._service_level_agreement_type = None
         self._autonomous_exadata_infrastructure_id = None
+        self._db_version = None
         self._peer_autonomous_exadata_infrastructure_id = None
         self._peer_autonomous_container_database_display_name = None
         self._protection_mode = None
+        self._fast_start_fail_over_lag_limit_in_seconds = None
         self._is_automatic_failover_enabled = None
         self._peer_cloud_autonomous_vm_cluster_id = None
         self._peer_autonomous_vm_cluster_id = None
@@ -227,6 +256,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
         self._patch_model = None
         self._maintenance_window_details = None
         self._standby_maintenance_buffer_in_days = None
+        self._version_preference = None
         self._freeform_tags = None
         self._defined_tags = None
         self._backup_config = None
@@ -340,6 +370,30 @@ class CreateAutonomousContainerDatabaseDetails(object):
         self._autonomous_exadata_infrastructure_id = autonomous_exadata_infrastructure_id
 
     @property
+    def db_version(self):
+        """
+        Gets the db_version of this CreateAutonomousContainerDatabaseDetails.
+        The base version for the Autonomous Container Database.
+
+
+        :return: The db_version of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._db_version
+
+    @db_version.setter
+    def db_version(self, db_version):
+        """
+        Sets the db_version of this CreateAutonomousContainerDatabaseDetails.
+        The base version for the Autonomous Container Database.
+
+
+        :param db_version: The db_version of this CreateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        self._db_version = db_version
+
+    @property
     def peer_autonomous_exadata_infrastructure_id(self):
         """
         Gets the peer_autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseDetails.
@@ -426,6 +480,30 @@ class CreateAutonomousContainerDatabaseDetails(object):
                 .format(allowed_values)
             )
         self._protection_mode = protection_mode
+
+    @property
+    def fast_start_fail_over_lag_limit_in_seconds(self):
+        """
+        Gets the fast_start_fail_over_lag_limit_in_seconds of this CreateAutonomousContainerDatabaseDetails.
+        The lag time for my preference based on data loss tolerance in seconds.
+
+
+        :return: The fast_start_fail_over_lag_limit_in_seconds of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: int
+        """
+        return self._fast_start_fail_over_lag_limit_in_seconds
+
+    @fast_start_fail_over_lag_limit_in_seconds.setter
+    def fast_start_fail_over_lag_limit_in_seconds(self, fast_start_fail_over_lag_limit_in_seconds):
+        """
+        Sets the fast_start_fail_over_lag_limit_in_seconds of this CreateAutonomousContainerDatabaseDetails.
+        The lag time for my preference based on data loss tolerance in seconds.
+
+
+        :param fast_start_fail_over_lag_limit_in_seconds: The fast_start_fail_over_lag_limit_in_seconds of this CreateAutonomousContainerDatabaseDetails.
+        :type: int
+        """
+        self._fast_start_fail_over_lag_limit_in_seconds = fast_start_fail_over_lag_limit_in_seconds
 
     @property
     def is_automatic_failover_enabled(self):
@@ -738,6 +816,38 @@ class CreateAutonomousContainerDatabaseDetails(object):
         :type: int
         """
         self._standby_maintenance_buffer_in_days = standby_maintenance_buffer_in_days
+
+    @property
+    def version_preference(self):
+        """
+        Gets the version_preference of this CreateAutonomousContainerDatabaseDetails.
+        The next maintenance version preference.
+
+        Allowed values for this property are: "NEXT_RELEASE_UPDATE", "LATEST_RELEASE_UPDATE"
+
+
+        :return: The version_preference of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._version_preference
+
+    @version_preference.setter
+    def version_preference(self, version_preference):
+        """
+        Sets the version_preference of this CreateAutonomousContainerDatabaseDetails.
+        The next maintenance version preference.
+
+
+        :param version_preference: The version_preference of this CreateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        allowed_values = ["NEXT_RELEASE_UPDATE", "LATEST_RELEASE_UPDATE"]
+        if not value_allowed_none_or_none_sentinel(version_preference, allowed_values):
+            raise ValueError(
+                "Invalid value for `version_preference`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._version_preference = version_preference
 
     @property
     def freeform_tags(self):

@@ -107,6 +107,54 @@ class OkeHelmChartDeployStageSummary(DeployStageSummary):
             The value to assign to the rollback_policy property of this OkeHelmChartDeployStageSummary.
         :type rollback_policy: oci.devops.models.DeployStageRollbackPolicy
 
+        :param set_values:
+            The value to assign to the set_values property of this OkeHelmChartDeployStageSummary.
+        :type set_values: oci.devops.models.HelmSetValueCollection
+
+        :param set_string:
+            The value to assign to the set_string property of this OkeHelmChartDeployStageSummary.
+        :type set_string: oci.devops.models.HelmSetValueCollection
+
+        :param are_hooks_enabled:
+            The value to assign to the are_hooks_enabled property of this OkeHelmChartDeployStageSummary.
+        :type are_hooks_enabled: bool
+
+        :param should_reuse_values:
+            The value to assign to the should_reuse_values property of this OkeHelmChartDeployStageSummary.
+        :type should_reuse_values: bool
+
+        :param should_reset_values:
+            The value to assign to the should_reset_values property of this OkeHelmChartDeployStageSummary.
+        :type should_reset_values: bool
+
+        :param is_force_enabled:
+            The value to assign to the is_force_enabled property of this OkeHelmChartDeployStageSummary.
+        :type is_force_enabled: bool
+
+        :param should_cleanup_on_fail:
+            The value to assign to the should_cleanup_on_fail property of this OkeHelmChartDeployStageSummary.
+        :type should_cleanup_on_fail: bool
+
+        :param max_history:
+            The value to assign to the max_history property of this OkeHelmChartDeployStageSummary.
+        :type max_history: int
+
+        :param should_skip_crds:
+            The value to assign to the should_skip_crds property of this OkeHelmChartDeployStageSummary.
+        :type should_skip_crds: bool
+
+        :param should_skip_render_subchart_notes:
+            The value to assign to the should_skip_render_subchart_notes property of this OkeHelmChartDeployStageSummary.
+        :type should_skip_render_subchart_notes: bool
+
+        :param should_not_wait:
+            The value to assign to the should_not_wait property of this OkeHelmChartDeployStageSummary.
+        :type should_not_wait: bool
+
+        :param is_debug_enabled:
+            The value to assign to the is_debug_enabled property of this OkeHelmChartDeployStageSummary.
+        :type is_debug_enabled: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -130,7 +178,19 @@ class OkeHelmChartDeployStageSummary(DeployStageSummary):
             'release_name': 'str',
             'namespace': 'str',
             'timeout_in_seconds': 'int',
-            'rollback_policy': 'DeployStageRollbackPolicy'
+            'rollback_policy': 'DeployStageRollbackPolicy',
+            'set_values': 'HelmSetValueCollection',
+            'set_string': 'HelmSetValueCollection',
+            'are_hooks_enabled': 'bool',
+            'should_reuse_values': 'bool',
+            'should_reset_values': 'bool',
+            'is_force_enabled': 'bool',
+            'should_cleanup_on_fail': 'bool',
+            'max_history': 'int',
+            'should_skip_crds': 'bool',
+            'should_skip_render_subchart_notes': 'bool',
+            'should_not_wait': 'bool',
+            'is_debug_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -155,7 +215,19 @@ class OkeHelmChartDeployStageSummary(DeployStageSummary):
             'release_name': 'releaseName',
             'namespace': 'namespace',
             'timeout_in_seconds': 'timeoutInSeconds',
-            'rollback_policy': 'rollbackPolicy'
+            'rollback_policy': 'rollbackPolicy',
+            'set_values': 'setValues',
+            'set_string': 'setString',
+            'are_hooks_enabled': 'areHooksEnabled',
+            'should_reuse_values': 'shouldReuseValues',
+            'should_reset_values': 'shouldResetValues',
+            'is_force_enabled': 'isForceEnabled',
+            'should_cleanup_on_fail': 'shouldCleanupOnFail',
+            'max_history': 'maxHistory',
+            'should_skip_crds': 'shouldSkipCrds',
+            'should_skip_render_subchart_notes': 'shouldSkipRenderSubchartNotes',
+            'should_not_wait': 'shouldNotWait',
+            'is_debug_enabled': 'isDebugEnabled'
         }
 
         self._id = None
@@ -180,6 +252,18 @@ class OkeHelmChartDeployStageSummary(DeployStageSummary):
         self._namespace = None
         self._timeout_in_seconds = None
         self._rollback_policy = None
+        self._set_values = None
+        self._set_string = None
+        self._are_hooks_enabled = None
+        self._should_reuse_values = None
+        self._should_reset_values = None
+        self._is_force_enabled = None
+        self._should_cleanup_on_fail = None
+        self._max_history = None
+        self._should_skip_crds = None
+        self._should_skip_render_subchart_notes = None
+        self._should_not_wait = None
+        self._is_debug_enabled = None
         self._deploy_stage_type = 'OKE_HELM_CHART_DEPLOYMENT'
 
     @property
@@ -345,6 +429,286 @@ class OkeHelmChartDeployStageSummary(DeployStageSummary):
         :type: oci.devops.models.DeployStageRollbackPolicy
         """
         self._rollback_policy = rollback_policy
+
+    @property
+    def set_values(self):
+        """
+        Gets the set_values of this OkeHelmChartDeployStageSummary.
+
+        :return: The set_values of this OkeHelmChartDeployStageSummary.
+        :rtype: oci.devops.models.HelmSetValueCollection
+        """
+        return self._set_values
+
+    @set_values.setter
+    def set_values(self, set_values):
+        """
+        Sets the set_values of this OkeHelmChartDeployStageSummary.
+
+        :param set_values: The set_values of this OkeHelmChartDeployStageSummary.
+        :type: oci.devops.models.HelmSetValueCollection
+        """
+        self._set_values = set_values
+
+    @property
+    def set_string(self):
+        """
+        Gets the set_string of this OkeHelmChartDeployStageSummary.
+
+        :return: The set_string of this OkeHelmChartDeployStageSummary.
+        :rtype: oci.devops.models.HelmSetValueCollection
+        """
+        return self._set_string
+
+    @set_string.setter
+    def set_string(self, set_string):
+        """
+        Sets the set_string of this OkeHelmChartDeployStageSummary.
+
+        :param set_string: The set_string of this OkeHelmChartDeployStageSummary.
+        :type: oci.devops.models.HelmSetValueCollection
+        """
+        self._set_string = set_string
+
+    @property
+    def are_hooks_enabled(self):
+        """
+        Gets the are_hooks_enabled of this OkeHelmChartDeployStageSummary.
+        Disable pre/post upgrade hooks.
+
+
+        :return: The are_hooks_enabled of this OkeHelmChartDeployStageSummary.
+        :rtype: bool
+        """
+        return self._are_hooks_enabled
+
+    @are_hooks_enabled.setter
+    def are_hooks_enabled(self, are_hooks_enabled):
+        """
+        Sets the are_hooks_enabled of this OkeHelmChartDeployStageSummary.
+        Disable pre/post upgrade hooks.
+
+
+        :param are_hooks_enabled: The are_hooks_enabled of this OkeHelmChartDeployStageSummary.
+        :type: bool
+        """
+        self._are_hooks_enabled = are_hooks_enabled
+
+    @property
+    def should_reuse_values(self):
+        """
+        Gets the should_reuse_values of this OkeHelmChartDeployStageSummary.
+        During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+
+
+        :return: The should_reuse_values of this OkeHelmChartDeployStageSummary.
+        :rtype: bool
+        """
+        return self._should_reuse_values
+
+    @should_reuse_values.setter
+    def should_reuse_values(self, should_reuse_values):
+        """
+        Sets the should_reuse_values of this OkeHelmChartDeployStageSummary.
+        During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+
+
+        :param should_reuse_values: The should_reuse_values of this OkeHelmChartDeployStageSummary.
+        :type: bool
+        """
+        self._should_reuse_values = should_reuse_values
+
+    @property
+    def should_reset_values(self):
+        """
+        Gets the should_reset_values of this OkeHelmChartDeployStageSummary.
+        During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+
+
+        :return: The should_reset_values of this OkeHelmChartDeployStageSummary.
+        :rtype: bool
+        """
+        return self._should_reset_values
+
+    @should_reset_values.setter
+    def should_reset_values(self, should_reset_values):
+        """
+        Sets the should_reset_values of this OkeHelmChartDeployStageSummary.
+        During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+
+
+        :param should_reset_values: The should_reset_values of this OkeHelmChartDeployStageSummary.
+        :type: bool
+        """
+        self._should_reset_values = should_reset_values
+
+    @property
+    def is_force_enabled(self):
+        """
+        Gets the is_force_enabled of this OkeHelmChartDeployStageSummary.
+        Force resource update through delete; or if required, recreate. Set to false by default.
+
+
+        :return: The is_force_enabled of this OkeHelmChartDeployStageSummary.
+        :rtype: bool
+        """
+        return self._is_force_enabled
+
+    @is_force_enabled.setter
+    def is_force_enabled(self, is_force_enabled):
+        """
+        Sets the is_force_enabled of this OkeHelmChartDeployStageSummary.
+        Force resource update through delete; or if required, recreate. Set to false by default.
+
+
+        :param is_force_enabled: The is_force_enabled of this OkeHelmChartDeployStageSummary.
+        :type: bool
+        """
+        self._is_force_enabled = is_force_enabled
+
+    @property
+    def should_cleanup_on_fail(self):
+        """
+        Gets the should_cleanup_on_fail of this OkeHelmChartDeployStageSummary.
+        Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+
+
+        :return: The should_cleanup_on_fail of this OkeHelmChartDeployStageSummary.
+        :rtype: bool
+        """
+        return self._should_cleanup_on_fail
+
+    @should_cleanup_on_fail.setter
+    def should_cleanup_on_fail(self, should_cleanup_on_fail):
+        """
+        Sets the should_cleanup_on_fail of this OkeHelmChartDeployStageSummary.
+        Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+
+
+        :param should_cleanup_on_fail: The should_cleanup_on_fail of this OkeHelmChartDeployStageSummary.
+        :type: bool
+        """
+        self._should_cleanup_on_fail = should_cleanup_on_fail
+
+    @property
+    def max_history(self):
+        """
+        Gets the max_history of this OkeHelmChartDeployStageSummary.
+        Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+
+
+        :return: The max_history of this OkeHelmChartDeployStageSummary.
+        :rtype: int
+        """
+        return self._max_history
+
+    @max_history.setter
+    def max_history(self, max_history):
+        """
+        Sets the max_history of this OkeHelmChartDeployStageSummary.
+        Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+
+
+        :param max_history: The max_history of this OkeHelmChartDeployStageSummary.
+        :type: int
+        """
+        self._max_history = max_history
+
+    @property
+    def should_skip_crds(self):
+        """
+        Gets the should_skip_crds of this OkeHelmChartDeployStageSummary.
+        If set, no CRDs are installed. By default, CRDs are installed only if they are not present already.  Set to false by default.
+
+
+        :return: The should_skip_crds of this OkeHelmChartDeployStageSummary.
+        :rtype: bool
+        """
+        return self._should_skip_crds
+
+    @should_skip_crds.setter
+    def should_skip_crds(self, should_skip_crds):
+        """
+        Sets the should_skip_crds of this OkeHelmChartDeployStageSummary.
+        If set, no CRDs are installed. By default, CRDs are installed only if they are not present already.  Set to false by default.
+
+
+        :param should_skip_crds: The should_skip_crds of this OkeHelmChartDeployStageSummary.
+        :type: bool
+        """
+        self._should_skip_crds = should_skip_crds
+
+    @property
+    def should_skip_render_subchart_notes(self):
+        """
+        Gets the should_skip_render_subchart_notes of this OkeHelmChartDeployStageSummary.
+        If set, renders subchart notes along with the parent. Set to false by default.
+
+
+        :return: The should_skip_render_subchart_notes of this OkeHelmChartDeployStageSummary.
+        :rtype: bool
+        """
+        return self._should_skip_render_subchart_notes
+
+    @should_skip_render_subchart_notes.setter
+    def should_skip_render_subchart_notes(self, should_skip_render_subchart_notes):
+        """
+        Sets the should_skip_render_subchart_notes of this OkeHelmChartDeployStageSummary.
+        If set, renders subchart notes along with the parent. Set to false by default.
+
+
+        :param should_skip_render_subchart_notes: The should_skip_render_subchart_notes of this OkeHelmChartDeployStageSummary.
+        :type: bool
+        """
+        self._should_skip_render_subchart_notes = should_skip_render_subchart_notes
+
+    @property
+    def should_not_wait(self):
+        """
+        Gets the should_not_wait of this OkeHelmChartDeployStageSummary.
+        Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
+
+
+        :return: The should_not_wait of this OkeHelmChartDeployStageSummary.
+        :rtype: bool
+        """
+        return self._should_not_wait
+
+    @should_not_wait.setter
+    def should_not_wait(self, should_not_wait):
+        """
+        Sets the should_not_wait of this OkeHelmChartDeployStageSummary.
+        Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
+
+
+        :param should_not_wait: The should_not_wait of this OkeHelmChartDeployStageSummary.
+        :type: bool
+        """
+        self._should_not_wait = should_not_wait
+
+    @property
+    def is_debug_enabled(self):
+        """
+        Gets the is_debug_enabled of this OkeHelmChartDeployStageSummary.
+        Enables helm --debug option to stream output. Set to false by default.
+
+
+        :return: The is_debug_enabled of this OkeHelmChartDeployStageSummary.
+        :rtype: bool
+        """
+        return self._is_debug_enabled
+
+    @is_debug_enabled.setter
+    def is_debug_enabled(self, is_debug_enabled):
+        """
+        Sets the is_debug_enabled of this OkeHelmChartDeployStageSummary.
+        Enables helm --debug option to stream output. Set to false by default.
+
+
+        :param is_debug_enabled: The is_debug_enabled of this OkeHelmChartDeployStageSummary.
+        :type: bool
+        """
+        self._is_debug_enabled = is_debug_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

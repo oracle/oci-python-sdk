@@ -4,8 +4,8 @@
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 #
 # Setup Upgrade for usage2adw
-# Written by Adi Zohar, October 2020
-# Git Location = https://github.com/oracle/oci-python-sdk/tree/master/examples/usage_reports_to_adw
+# Written by Adi Zohar, October 2020-2023
+# Git Location = https://github.com/adizohar/usage_reports_to_adw
 #
 # If script fail, please add the policies and re-run
 #
@@ -89,7 +89,7 @@ else
    echo "DATABASE_NAME=${DATABASE_NAME}_low" >> $CREDFILE
    echo "DATABASE_PASS=${DATABASE_PASS}" >> $CREDFILE 
    echo "DATABASE_ADMIN=${DATABASE_ADMIN}" >> $CREDFILE
-   echo "EXTRACT_DATE=2022-07" >> $CREDFILE
+   echo "EXTRACT_DATE=2022-12" >> $CREDFILE
    echo "TAG_SPECIAL=${TAG_SPECIAL}" >> $CREDFILE
    echo "TAG2_SPECIAL=${TAG2_SPECIAL}" >> $CREDFILE
    echo "File Created." | tee -a $LOG

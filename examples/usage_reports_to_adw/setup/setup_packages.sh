@@ -27,7 +27,7 @@ echo "########################################################################" 
 echo "# 1. Install Python3, Git and Python OCI Packages, Can take a moment." | tee -a $LOG
 echo "########################################################################" | tee -a $LOG
 sudo yum install -y python3 git | tee -a $LOG
-sudo python3 -m pip install oci oci-cli cx_Oracle requests | tee -a $LOG
+sudo python3 -m pip install oci oci-cli oracledb requests | tee -a $LOG
 echo "Completed." | tee -a $LOG
 
 ###########################################
@@ -37,9 +37,9 @@ echo "" | tee -a $LOG
 echo "########################################################################" | tee -a $LOG
 echo "# 2. Install Oracle Instant Client 19.9." | tee -a $LOG
 echo "########################################################################" | tee -a $LOG
-sudo rpm -i https://yum.oracle.com/repo/OracleLinux/OL7/oracle/instantclient/x86_64/getPackage/oracle-instantclient19.9-basic-19.9.0.0.0-1.x86_64.rpm | tee -a $LOG
-sudo rpm -i https://yum.oracle.com/repo/OracleLinux/OL7/oracle/instantclient/x86_64/getPackage/oracle-instantclient19.9-sqlplus-19.9.0.0.0-1.x86_64.rpm | tee -a $LOG
-sudo ln -s /usr/lib/oracle/19.9 /usr/lib/oracle/current | tee -a $LOG
+sudo rpm -i https://download.oracle.com/otn_software/linux/instantclient/1918000/oracle-instantclient19.18-basic-19.18.0.0.0-1.x86_64.rpm | tee -a $LOG
+sudo rpm -i https://download.oracle.com/otn_software/linux/instantclient/1918000/oracle-instantclient19.18-sqlplus-19.18.0.0.0-1.x86_64.rpm | tee -a $LOG
+sudo ln -s /usr/lib/oracle/19.18 /usr/lib/oracle/current | tee -a $LOG
 
 # Check if installed
 echo "Check Installation..." | tee -a $LOG

@@ -58,6 +58,7 @@ and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/
    endorse dynamic-group UsageDownloadGroup to read objects in tenancy usage-report
    Allow dynamic-group UsageDownloadGroup to inspect compartments in tenancy
    Allow dynamic-group UsageDownloadGroup to inspect tenancies in tenancy
+   Allow dynamic-group UsageDownloadGroup to read autonomous-databases in compartment {APPCOMP} 
    *** Please don't change the usage report tenant OCID, it is fixed.
 ```
 
@@ -99,7 +100,7 @@ and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/
 
 ## 6. Run Install Packages Script from Github
 
-The script will install Python3, Git and python packages - oci, oci-cli, cx_Oracle and requests
+The script will install Python3, Git and python packages - oci, oci-cli, oracledb and requests
 Install Oracle Database Instance Client, Update bashrc and Clone the Python SDK
 ```
    # on oci github:
@@ -168,91 +169,8 @@ This script will ask for Database Name, Admin Password, Application Password and
 ![](img/Image_30.png)
 
 
-## 12. How to create additional End User Accounts
-
-```
-   Login to Workspace Managament 
-   Top 3rd Right Menu -> Manage Users and Groups
-   --> Create User
-   
-   Fill:
-   --> Username
-   --> Email
-   --> Password
-   --> Confirm Password
-   --> Optional - Require to change passqword = No
-   --> Apply Changes
-```
-
-![](img/Image_19.png)
-
-![](img/Image_20.png)
-
-![](img/Image_21.png)
-
-![](img/Image_22.png)
-   
-
-## 13. How to change Autonomous Database to Private End Point
-
-Login to OCI Console -> Menu -> Oracle Database -> Autonomous Database
-
-Choose The Autonomous database for Usage2ADW
-
-More Actions Menu -> Update Network Access
-
-![](img/pe1.png)
-
-#### Update Network Access
-
-Choose Network Access -> Private endpoint access Only
-
-Choose Network security group that will assigned to the Autonomous database
-
-If you don't have Network Security Group, Go to the Virtual Cloud Network and Create one.
-
-Make sure you allow port 1522/TCP inbound traffic.
-
-![](img/pe2.png)
-
-#### Update VM tnsnames to the private endpoint
-
-Find the Private Endpoint URL:
-
-![](img/pe3.png)
-
-Login to the usage2adw virtual machine using ssh tool with opc user
-
-cd ADWCUSG
-
-Edit tnsnames.ora file and change the tnsnames *_low entry host to the private end point specify in the ADW page
-
-## 19. How to add multiple tenants
-
-Login to Usage2adw VM
-
-```
-   # setup oci tenant configuration
-   oci setup config
-   Enter a location for your config [/home/opc/.oci/config]: ( Press Enter) 
-   Do you want add a profile here - Press Y
-   Name of the profile - Enter the tenant name
-   Complete the rest of the questions based on the user authentication
-
-   # update run_multi_daily_usage2adw.sh
-   cd /home/opc/usage_reports_to_adw/shell_scripts
-   vi run_multi_daily_usage2adw.sh
-
-   # scroll to the bottom and add lines per tenant profile, you can specify different tagspecial1 and tagspecial2 if different then the main tenant
-   run_report tenant2 tagspecial1 tagspecial2
-   run_report tenant3 tagspecial1 tagspecial2
-```
-
-## 20. How to upgrade the usage2adw application and APEX
-```
-   # on oci github:
-   bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-python-sdk/master/examples/usage_reports_to_adw/setup/setup_upgrade_usage2adw.sh)"    
-```
+## Additional Contents
+Please Visit [How To File](step_by_step_howto.md)
 
 
 ## License

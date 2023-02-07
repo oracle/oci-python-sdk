@@ -263,7 +263,10 @@ from .gitlab_trigger import GitlabTrigger
 from .gitlab_trigger_create_result import GitlabTriggerCreateResult
 from .gitlab_trigger_summary import GitlabTriggerSummary
 from .helm_repository_deploy_artifact_source import HelmRepositoryDeployArtifactSource
+from .helm_set_value import HelmSetValue
+from .helm_set_value_collection import HelmSetValueCollection
 from .inline_deploy_artifact_source import InlineDeployArtifactSource
+from .inline_public_key_verification_key_source import InlinePublicKeyVerificationKeySource
 from .invoke_function_deploy_stage import InvokeFunctionDeployStage
 from .invoke_function_deploy_stage_execution_progress import InvokeFunctionDeployStageExecutionProgress
 from .invoke_function_deploy_stage_summary import InvokeFunctionDeployStageSummary
@@ -281,6 +284,7 @@ from .network_channel import NetworkChannel
 from .nginx_blue_green_strategy import NginxBlueGreenStrategy
 from .nginx_canary_strategy import NginxCanaryStrategy
 from .no_deploy_stage_rollback_policy import NoDeployStageRollbackPolicy
+from .none_verification_key_source import NoneVerificationKeySource
 from .notification_config import NotificationConfig
 from .ocir_deploy_artifact_source import OcirDeployArtifactSource
 from .oke_blue_green_deploy_stage import OkeBlueGreenDeployStage
@@ -415,6 +419,7 @@ from .update_vbs_trigger_details import UpdateVbsTriggerDetails
 from .update_wait_criteria_details import UpdateWaitCriteriaDetails
 from .update_wait_deploy_stage_details import UpdateWaitDeployStageDetails
 from .update_wait_stage_details import UpdateWaitStageDetails
+from .vault_secret_verification_key_source import VaultSecretVerificationKeySource
 from .vbs_access_token_connection import VbsAccessTokenConnection
 from .vbs_access_token_connection_summary import VbsAccessTokenConnectionSummary
 from .vbs_build_run_source import VbsBuildRunSource
@@ -425,6 +430,7 @@ from .vbs_filter_exclusion_attributes import VbsFilterExclusionAttributes
 from .vbs_trigger import VbsTrigger
 from .vbs_trigger_create_result import VbsTriggerCreateResult
 from .vbs_trigger_summary import VbsTriggerSummary
+from .verification_key_source import VerificationKeySource
 from .vulnerability_audit_summary import VulnerabilityAuditSummary
 from .vulnerability_audit_summary_collection import VulnerabilityAuditSummaryCollection
 from .wait_criteria import WaitCriteria
@@ -705,7 +711,10 @@ devops_type_mapping = {
     "GitlabTriggerCreateResult": GitlabTriggerCreateResult,
     "GitlabTriggerSummary": GitlabTriggerSummary,
     "HelmRepositoryDeployArtifactSource": HelmRepositoryDeployArtifactSource,
+    "HelmSetValue": HelmSetValue,
+    "HelmSetValueCollection": HelmSetValueCollection,
     "InlineDeployArtifactSource": InlineDeployArtifactSource,
+    "InlinePublicKeyVerificationKeySource": InlinePublicKeyVerificationKeySource,
     "InvokeFunctionDeployStage": InvokeFunctionDeployStage,
     "InvokeFunctionDeployStageExecutionProgress": InvokeFunctionDeployStageExecutionProgress,
     "InvokeFunctionDeployStageSummary": InvokeFunctionDeployStageSummary,
@@ -723,6 +732,7 @@ devops_type_mapping = {
     "NginxBlueGreenStrategy": NginxBlueGreenStrategy,
     "NginxCanaryStrategy": NginxCanaryStrategy,
     "NoDeployStageRollbackPolicy": NoDeployStageRollbackPolicy,
+    "NoneVerificationKeySource": NoneVerificationKeySource,
     "NotificationConfig": NotificationConfig,
     "OcirDeployArtifactSource": OcirDeployArtifactSource,
     "OkeBlueGreenDeployStage": OkeBlueGreenDeployStage,
@@ -857,6 +867,7 @@ devops_type_mapping = {
     "UpdateWaitCriteriaDetails": UpdateWaitCriteriaDetails,
     "UpdateWaitDeployStageDetails": UpdateWaitDeployStageDetails,
     "UpdateWaitStageDetails": UpdateWaitStageDetails,
+    "VaultSecretVerificationKeySource": VaultSecretVerificationKeySource,
     "VbsAccessTokenConnection": VbsAccessTokenConnection,
     "VbsAccessTokenConnectionSummary": VbsAccessTokenConnectionSummary,
     "VbsBuildRunSource": VbsBuildRunSource,
@@ -867,6 +878,7 @@ devops_type_mapping = {
     "VbsTrigger": VbsTrigger,
     "VbsTriggerCreateResult": VbsTriggerCreateResult,
     "VbsTriggerSummary": VbsTriggerSummary,
+    "VerificationKeySource": VerificationKeySource,
     "VulnerabilityAuditSummary": VulnerabilityAuditSummary,
     "VulnerabilityAuditSummaryCollection": VulnerabilityAuditSummaryCollection,
     "WaitCriteria": WaitCriteria,

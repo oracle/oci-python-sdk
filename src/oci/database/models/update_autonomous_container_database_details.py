@@ -21,6 +21,14 @@ class UpdateAutonomousContainerDatabaseDetails(object):
     #: This constant has a value of "RELEASE_UPDATE_REVISIONS"
     PATCH_MODEL_RELEASE_UPDATE_REVISIONS = "RELEASE_UPDATE_REVISIONS"
 
+    #: A constant which can be used with the version_preference property of a UpdateAutonomousContainerDatabaseDetails.
+    #: This constant has a value of "NEXT_RELEASE_UPDATE"
+    VERSION_PREFERENCE_NEXT_RELEASE_UPDATE = "NEXT_RELEASE_UPDATE"
+
+    #: A constant which can be used with the version_preference property of a UpdateAutonomousContainerDatabaseDetails.
+    #: This constant has a value of "LATEST_RELEASE_UPDATE"
+    VERSION_PREFERENCE_LATEST_RELEASE_UPDATE = "LATEST_RELEASE_UPDATE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateAutonomousContainerDatabaseDetails object with values from keyword arguments.
@@ -43,6 +51,11 @@ class UpdateAutonomousContainerDatabaseDetails(object):
             The value to assign to the standby_maintenance_buffer_in_days property of this UpdateAutonomousContainerDatabaseDetails.
         :type standby_maintenance_buffer_in_days: int
 
+        :param version_preference:
+            The value to assign to the version_preference property of this UpdateAutonomousContainerDatabaseDetails.
+            Allowed values for this property are: "NEXT_RELEASE_UPDATE", "LATEST_RELEASE_UPDATE"
+        :type version_preference: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateAutonomousContainerDatabaseDetails.
         :type freeform_tags: dict(str, str)
@@ -61,6 +74,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
             'patch_model': 'str',
             'maintenance_window_details': 'MaintenanceWindow',
             'standby_maintenance_buffer_in_days': 'int',
+            'version_preference': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'backup_config': 'AutonomousContainerDatabaseBackupConfig'
@@ -71,6 +85,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
             'patch_model': 'patchModel',
             'maintenance_window_details': 'maintenanceWindowDetails',
             'standby_maintenance_buffer_in_days': 'standbyMaintenanceBufferInDays',
+            'version_preference': 'versionPreference',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'backup_config': 'backupConfig'
@@ -80,6 +95,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         self._patch_model = None
         self._maintenance_window_details = None
         self._standby_maintenance_buffer_in_days = None
+        self._version_preference = None
         self._freeform_tags = None
         self._defined_tags = None
         self._backup_config = None
@@ -185,6 +201,38 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         :type: int
         """
         self._standby_maintenance_buffer_in_days = standby_maintenance_buffer_in_days
+
+    @property
+    def version_preference(self):
+        """
+        Gets the version_preference of this UpdateAutonomousContainerDatabaseDetails.
+        The next maintenance version preference.
+
+        Allowed values for this property are: "NEXT_RELEASE_UPDATE", "LATEST_RELEASE_UPDATE"
+
+
+        :return: The version_preference of this UpdateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._version_preference
+
+    @version_preference.setter
+    def version_preference(self, version_preference):
+        """
+        Sets the version_preference of this UpdateAutonomousContainerDatabaseDetails.
+        The next maintenance version preference.
+
+
+        :param version_preference: The version_preference of this UpdateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        allowed_values = ["NEXT_RELEASE_UPDATE", "LATEST_RELEASE_UPDATE"]
+        if not value_allowed_none_or_none_sentinel(version_preference, allowed_values):
+            raise ValueError(
+                "Invalid value for `version_preference`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._version_preference = version_preference
 
     @property
     def freeform_tags(self):

@@ -69,6 +69,8 @@ from .byoip_range_collection import ByoipRangeCollection
 from .byoip_range_summary import ByoipRangeSummary
 from .byoip_range_vcn_ipv6_allocation_summary import ByoipRangeVcnIpv6AllocationSummary
 from .byoipv6_cidr_details import Byoipv6CidrDetails
+from .capacity_report_instance_shape_config import CapacityReportInstanceShapeConfig
+from .capacity_report_shape_availability import CapacityReportShapeAvailability
 from .capacity_reservation_instance_summary import CapacityReservationInstanceSummary
 from .capture_console_history_details import CaptureConsoleHistoryDetails
 from .capture_filter import CaptureFilter
@@ -113,6 +115,7 @@ from .cluster_network import ClusterNetwork
 from .cluster_network_placement_configuration_details import ClusterNetworkPlacementConfigurationDetails
 from .cluster_network_summary import ClusterNetworkSummary
 from .compartment_internal import CompartmentInternal
+from .compute_capacity_report import ComputeCapacityReport
 from .compute_capacity_reservation import ComputeCapacityReservation
 from .compute_capacity_reservation_instance_shape_summary import ComputeCapacityReservationInstanceShapeSummary
 from .compute_capacity_reservation_summary import ComputeCapacityReservationSummary
@@ -139,9 +142,11 @@ from .create_app_catalog_subscription_details import CreateAppCatalogSubscriptio
 from .create_boot_volume_backup_details import CreateBootVolumeBackupDetails
 from .create_boot_volume_details import CreateBootVolumeDetails
 from .create_byoip_range_details import CreateByoipRangeDetails
+from .create_capacity_report_shape_availability_details import CreateCapacityReportShapeAvailabilityDetails
 from .create_capture_filter_details import CreateCaptureFilterDetails
 from .create_cluster_network_details import CreateClusterNetworkDetails
 from .create_cluster_network_instance_pool_details import CreateClusterNetworkInstancePoolDetails
+from .create_compute_capacity_report_details import CreateComputeCapacityReportDetails
 from .create_compute_capacity_reservation_details import CreateComputeCapacityReservationDetails
 from .create_compute_image_capability_schema_details import CreateComputeImageCapabilitySchemaDetails
 from .create_cpe_details import CreateCpeDetails
@@ -593,6 +598,8 @@ core_type_mapping = {
     "ByoipRangeSummary": ByoipRangeSummary,
     "ByoipRangeVcnIpv6AllocationSummary": ByoipRangeVcnIpv6AllocationSummary,
     "Byoipv6CidrDetails": Byoipv6CidrDetails,
+    "CapacityReportInstanceShapeConfig": CapacityReportInstanceShapeConfig,
+    "CapacityReportShapeAvailability": CapacityReportShapeAvailability,
     "CapacityReservationInstanceSummary": CapacityReservationInstanceSummary,
     "CaptureConsoleHistoryDetails": CaptureConsoleHistoryDetails,
     "CaptureFilter": CaptureFilter,
@@ -637,6 +644,7 @@ core_type_mapping = {
     "ClusterNetworkPlacementConfigurationDetails": ClusterNetworkPlacementConfigurationDetails,
     "ClusterNetworkSummary": ClusterNetworkSummary,
     "CompartmentInternal": CompartmentInternal,
+    "ComputeCapacityReport": ComputeCapacityReport,
     "ComputeCapacityReservation": ComputeCapacityReservation,
     "ComputeCapacityReservationInstanceShapeSummary": ComputeCapacityReservationInstanceShapeSummary,
     "ComputeCapacityReservationSummary": ComputeCapacityReservationSummary,
@@ -663,9 +671,11 @@ core_type_mapping = {
     "CreateBootVolumeBackupDetails": CreateBootVolumeBackupDetails,
     "CreateBootVolumeDetails": CreateBootVolumeDetails,
     "CreateByoipRangeDetails": CreateByoipRangeDetails,
+    "CreateCapacityReportShapeAvailabilityDetails": CreateCapacityReportShapeAvailabilityDetails,
     "CreateCaptureFilterDetails": CreateCaptureFilterDetails,
     "CreateClusterNetworkDetails": CreateClusterNetworkDetails,
     "CreateClusterNetworkInstancePoolDetails": CreateClusterNetworkInstancePoolDetails,
+    "CreateComputeCapacityReportDetails": CreateComputeCapacityReportDetails,
     "CreateComputeCapacityReservationDetails": CreateComputeCapacityReservationDetails,
     "CreateComputeImageCapabilitySchemaDetails": CreateComputeImageCapabilitySchemaDetails,
     "CreateCpeDetails": CreateCpeDetails,
