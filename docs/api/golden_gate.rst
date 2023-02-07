@@ -53,6 +53,7 @@ Golden Gate
     oci.golden_gate.models.DatabaseRegistrationCollection
     oci.golden_gate.models.DatabaseRegistrationSummary
     oci.golden_gate.models.DefaultCancelDeploymentBackupDetails
+    oci.golden_gate.models.DefaultDeploymentWalletExistsDetails
     oci.golden_gate.models.DefaultRestoreDeploymentDetails
     oci.golden_gate.models.DefaultStartDeploymentDetails
     oci.golden_gate.models.DefaultStopDeploymentDetails
@@ -69,8 +70,14 @@ Golden Gate
     oci.golden_gate.models.DeploymentUpgrade
     oci.golden_gate.models.DeploymentUpgradeCollection
     oci.golden_gate.models.DeploymentUpgradeSummary
+    oci.golden_gate.models.DeploymentWalletExistsDetails
+    oci.golden_gate.models.DeploymentWalletExistsResponseDetails
+    oci.golden_gate.models.DeploymentWalletsOperationCollection
+    oci.golden_gate.models.DeploymentWalletsOperationSummary
+    oci.golden_gate.models.ExportDeploymentWalletDetails
     oci.golden_gate.models.GoldenGateConnection
     oci.golden_gate.models.GoldenGateConnectionSummary
+    oci.golden_gate.models.ImportDeploymentWalletDetails
     oci.golden_gate.models.IngressIpDetails
     oci.golden_gate.models.KafkaBootstrapServer
     oci.golden_gate.models.KafkaConnection

@@ -21,12 +21,14 @@ Database
     oci.database.models.ActivateExadataInfrastructureDetails
     oci.database.models.AddVirtualMachineToCloudVmClusterDetails
     oci.database.models.AddVirtualMachineToVmClusterDetails
+    oci.database.models.AppVersionSummary
     oci.database.models.AssociatedDatabaseDetails
     oci.database.models.AutomatedMountDetails
     oci.database.models.AutonomousContainerDatabase
     oci.database.models.AutonomousContainerDatabaseBackupConfig
     oci.database.models.AutonomousContainerDatabaseDataguardAssociation
     oci.database.models.AutonomousContainerDatabaseSummary
+    oci.database.models.AutonomousContainerDatabaseVersionSummary
     oci.database.models.AutonomousDataWarehouse
     oci.database.models.AutonomousDataWarehouseConnectionStrings
     oci.database.models.AutonomousDataWarehouseSummary
@@ -64,6 +66,7 @@ Database
     oci.database.models.ChangeCloudExadataInfrastructureCompartmentDetails
     oci.database.models.ChangeCloudVmClusterCompartmentDetails
     oci.database.models.ChangeCompartmentDetails
+    oci.database.models.ChangeDataguardRoleDetails
     oci.database.models.ChangeExadataInfrastructureCompartmentDetails
     oci.database.models.ChangeKeyStoreCompartmentDetails
     oci.database.models.ChangeVmClusterCompartmentDetails

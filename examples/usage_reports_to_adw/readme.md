@@ -105,6 +105,7 @@ pip install requests or pip3 install requests
    endorse dynamic-group UsageDownloadGroup to read objects in tenancy usage-report
    Allow dynamic-group UsageDownloadGroup to inspect compartments in tenancy
    Allow dynamic-group UsageDownloadGroup to inspect tenancies in tenancy
+   Allow dynamic-group UsageDownloadGroup to read autonomous-databases in compartment {APPCOMP} 
 ```
 
 ## Setup connectivity using Specific User
@@ -119,6 +120,7 @@ pip install requests or pip3 install requests
    endorse group UsageDownloadGroup to read objects in tenancy usage-report
    Allow group UsageDownloadGroup to inspect compartments in tenancy
    Allow group UsageDownloadGroup to inspect tenancies in tenancy
+   Allow group UsageDownloadGroup to read autonomous-databases in compartment {APPCOMP} 
 
 4. Create new User  : UsageDownloadUser -> Add to UsageDownloadGroup group  
 

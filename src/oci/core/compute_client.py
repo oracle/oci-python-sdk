@@ -1359,6 +1359,102 @@ class ComputeClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def create_compute_capacity_report(self, create_compute_capacity_report_details, **kwargs):
+        """
+        Generates a new compute capacity availability report for the availability domain.
+        A compute capacity report lets you review capacity availability for the provided shapes.
+
+
+        :param oci.core.models.CreateComputeCapacityReportDetails create_compute_capacity_report_details: (required)
+            Details for creating a new compute capacity report.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ComputeCapacityReport`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_compute_capacity_report.py.html>`__ to see an example of how to use create_compute_capacity_report API.
+        """
+        resource_path = "/computeCapacityReports"
+        method = "POST"
+        operation_name = "create_compute_capacity_report"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReport/CreateComputeCapacityReport"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_compute_capacity_report got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_compute_capacity_report_details,
+                response_type="ComputeCapacityReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_compute_capacity_report_details,
+                response_type="ComputeCapacityReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def create_compute_capacity_reservation(self, create_compute_capacity_reservation_details, **kwargs):
         """
         Creates a new compute capacity reservation in the specified compartment and availability domain.

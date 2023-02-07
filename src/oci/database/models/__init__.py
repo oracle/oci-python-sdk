@@ -7,12 +7,14 @@ from __future__ import absolute_import
 from .activate_exadata_infrastructure_details import ActivateExadataInfrastructureDetails
 from .add_virtual_machine_to_cloud_vm_cluster_details import AddVirtualMachineToCloudVmClusterDetails
 from .add_virtual_machine_to_vm_cluster_details import AddVirtualMachineToVmClusterDetails
+from .app_version_summary import AppVersionSummary
 from .associated_database_details import AssociatedDatabaseDetails
 from .automated_mount_details import AutomatedMountDetails
 from .autonomous_container_database import AutonomousContainerDatabase
 from .autonomous_container_database_backup_config import AutonomousContainerDatabaseBackupConfig
 from .autonomous_container_database_dataguard_association import AutonomousContainerDatabaseDataguardAssociation
 from .autonomous_container_database_summary import AutonomousContainerDatabaseSummary
+from .autonomous_container_database_version_summary import AutonomousContainerDatabaseVersionSummary
 from .autonomous_data_warehouse import AutonomousDataWarehouse
 from .autonomous_data_warehouse_connection_strings import AutonomousDataWarehouseConnectionStrings
 from .autonomous_data_warehouse_summary import AutonomousDataWarehouseSummary
@@ -50,6 +52,7 @@ from .change_cloud_autonomous_vm_cluster_compartment_details import ChangeCloudA
 from .change_cloud_exadata_infrastructure_compartment_details import ChangeCloudExadataInfrastructureCompartmentDetails
 from .change_cloud_vm_cluster_compartment_details import ChangeCloudVmClusterCompartmentDetails
 from .change_compartment_details import ChangeCompartmentDetails
+from .change_dataguard_role_details import ChangeDataguardRoleDetails
 from .change_exadata_infrastructure_compartment_details import ChangeExadataInfrastructureCompartmentDetails
 from .change_key_store_compartment_details import ChangeKeyStoreCompartmentDetails
 from .change_vm_cluster_compartment_details import ChangeVmClusterCompartmentDetails
@@ -318,12 +321,14 @@ database_type_mapping = {
     "ActivateExadataInfrastructureDetails": ActivateExadataInfrastructureDetails,
     "AddVirtualMachineToCloudVmClusterDetails": AddVirtualMachineToCloudVmClusterDetails,
     "AddVirtualMachineToVmClusterDetails": AddVirtualMachineToVmClusterDetails,
+    "AppVersionSummary": AppVersionSummary,
     "AssociatedDatabaseDetails": AssociatedDatabaseDetails,
     "AutomatedMountDetails": AutomatedMountDetails,
     "AutonomousContainerDatabase": AutonomousContainerDatabase,
     "AutonomousContainerDatabaseBackupConfig": AutonomousContainerDatabaseBackupConfig,
     "AutonomousContainerDatabaseDataguardAssociation": AutonomousContainerDatabaseDataguardAssociation,
     "AutonomousContainerDatabaseSummary": AutonomousContainerDatabaseSummary,
+    "AutonomousContainerDatabaseVersionSummary": AutonomousContainerDatabaseVersionSummary,
     "AutonomousDataWarehouse": AutonomousDataWarehouse,
     "AutonomousDataWarehouseConnectionStrings": AutonomousDataWarehouseConnectionStrings,
     "AutonomousDataWarehouseSummary": AutonomousDataWarehouseSummary,
@@ -361,6 +366,7 @@ database_type_mapping = {
     "ChangeCloudExadataInfrastructureCompartmentDetails": ChangeCloudExadataInfrastructureCompartmentDetails,
     "ChangeCloudVmClusterCompartmentDetails": ChangeCloudVmClusterCompartmentDetails,
     "ChangeCompartmentDetails": ChangeCompartmentDetails,
+    "ChangeDataguardRoleDetails": ChangeDataguardRoleDetails,
     "ChangeExadataInfrastructureCompartmentDetails": ChangeExadataInfrastructureCompartmentDetails,
     "ChangeKeyStoreCompartmentDetails": ChangeKeyStoreCompartmentDetails,
     "ChangeVmClusterCompartmentDetails": ChangeVmClusterCompartmentDetails,
