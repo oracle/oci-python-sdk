@@ -35,14 +35,12 @@ eval "$(pyenv virtualenv-init -)"
 # pyenv update
 pyenv --version
 
-pyenv install 2.7.5 -s
 pyenv install 3.6.5 -s
 
 # one-time
 pyenv shell 3.6.5
 #pip install --upgrade pip
 pyenv virtualenv --copies 3.6.5 cli-3
-pyenv shell 2.7.5
 
 echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(pyenv init -)"' >> ~/.bashrc

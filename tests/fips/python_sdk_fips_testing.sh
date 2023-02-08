@@ -29,22 +29,6 @@ source /oci/internal_resources/test_setup.sh
 # TODO: Where should the ADMIN_PASS_PHRASE go?  Teamcity?
 #       Currently this must be manually set in the enviromnent used for testing
 
-echo "Using python 2.7.5"
-pyenv shell 2.7.5
-
-# Update pip to the latest version
-pip install -U pip
-
-# Install oci from the clone of the repository
-pip install -e /oci
-pip install -r /oci/requirements.txt
-
-echo "Python 2.7.5 - Entering fips mode and importing Python SDK"
-echo $(pwd)
-python /oci/tests/fips/verify_fips_mode.py
-
-pyenv shell --unset
-
 echo "Using Python 3.6.5"
 pyenv shell 3.6.5
 
