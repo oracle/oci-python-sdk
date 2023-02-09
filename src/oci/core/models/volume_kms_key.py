@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VolumeKmsKey(object):
     """
-    The Key Management master encryption key associated with this volume.
+    The Vault service master encryption key associated with this volume.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class VolumeKmsKey(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this VolumeKmsKey.
-        The OCID of the Key Management key assigned to this volume. If the volume is not using Key Management, then the `kmsKeyId` will be a null string.
+        The OCID of the Vault service key assigned to this volume. If the volume is not using Vault service, then the `kmsKeyId` will be a null string.
 
 
         :return: The kms_key_id of this VolumeKmsKey.
@@ -49,7 +49,7 @@ class VolumeKmsKey(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this VolumeKmsKey.
-        The OCID of the Key Management key assigned to this volume. If the volume is not using Key Management, then the `kmsKeyId` will be a null string.
+        The OCID of the Vault service key assigned to this volume. If the volume is not using Vault service, then the `kmsKeyId` will be a null string.
 
 
         :param kms_key_id: The kms_key_id of this VolumeKmsKey.

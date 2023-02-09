@@ -244,7 +244,6 @@ class CreateInstanceConfigurationBase(object):
         The following values are supported:
 
         * `NONE`: Creates an instance configuration using the list of settings that you specify.
-
         * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
 
         Allowed values for this property are: "NONE", "INSTANCE"
@@ -284,7 +283,6 @@ class CreateInstanceConfigurationBase(object):
         The following values are supported:
 
         * `NONE`: Creates an instance configuration using the list of settings that you specify.
-
         * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
 
 

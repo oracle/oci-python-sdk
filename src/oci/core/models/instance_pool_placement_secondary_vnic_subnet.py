@@ -44,7 +44,7 @@ class InstancePoolPlacementSecondaryVnicSubnet(object):
     def display_name(self):
         """
         Gets the display_name of this InstancePoolPlacementSecondaryVnicSubnet.
-        The display name of the VNIC. This is also use to match against the instance configuration defined
+        The display name of the VNIC. This is also used to match against the instance configuration defined
         secondary VNIC.
 
 
@@ -57,7 +57,7 @@ class InstancePoolPlacementSecondaryVnicSubnet(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this InstancePoolPlacementSecondaryVnicSubnet.
-        The display name of the VNIC. This is also use to match against the instance configuration defined
+        The display name of the VNIC. This is also used to match against the instance configuration defined
         secondary VNIC.
 
 

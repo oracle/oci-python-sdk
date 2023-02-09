@@ -170,6 +170,10 @@ class AutonomousVmClusterSummary(object):
             The value to assign to the available_data_storage_size_in_tbs property of this AutonomousVmClusterSummary.
         :type available_data_storage_size_in_tbs: float
 
+        :param node_count:
+            The value to assign to the node_count property of this AutonomousVmClusterSummary.
+        :type node_count: int
+
         :param license_model:
             The value to assign to the license_model property of this AutonomousVmClusterSummary.
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE", 'UNKNOWN_ENUM_VALUE'.
@@ -183,6 +187,10 @@ class AutonomousVmClusterSummary(object):
         :param defined_tags:
             The value to assign to the defined_tags property of this AutonomousVmClusterSummary.
         :type defined_tags: dict(str, dict(str, object))
+
+        :param db_servers:
+            The value to assign to the db_servers property of this AutonomousVmClusterSummary.
+        :type db_servers: list[str]
 
         :param reclaimable_cpus:
             The value to assign to the reclaimable_cpus property of this AutonomousVmClusterSummary.
@@ -236,9 +244,11 @@ class AutonomousVmClusterSummary(object):
             'data_storage_size_in_tbs': 'float',
             'data_storage_size_in_gbs': 'float',
             'available_data_storage_size_in_tbs': 'float',
+            'node_count': 'int',
             'license_model': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'db_servers': 'list[str]',
             'reclaimable_cpus': 'int',
             'available_container_databases': 'int',
             'available_autonomous_data_storage_size_in_tbs': 'float',
@@ -274,9 +284,11 @@ class AutonomousVmClusterSummary(object):
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
             'available_data_storage_size_in_tbs': 'availableDataStorageSizeInTBs',
+            'node_count': 'nodeCount',
             'license_model': 'licenseModel',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'db_servers': 'dbServers',
             'reclaimable_cpus': 'reclaimableCpus',
             'available_container_databases': 'availableContainerDatabases',
             'available_autonomous_data_storage_size_in_tbs': 'availableAutonomousDataStorageSizeInTBs',
@@ -311,9 +323,11 @@ class AutonomousVmClusterSummary(object):
         self._data_storage_size_in_tbs = None
         self._data_storage_size_in_gbs = None
         self._available_data_storage_size_in_tbs = None
+        self._node_count = None
         self._license_model = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._db_servers = None
         self._reclaimable_cpus = None
         self._available_container_databases = None
         self._available_autonomous_data_storage_size_in_tbs = None
@@ -982,6 +996,30 @@ class AutonomousVmClusterSummary(object):
         self._available_data_storage_size_in_tbs = available_data_storage_size_in_tbs
 
     @property
+    def node_count(self):
+        """
+        Gets the node_count of this AutonomousVmClusterSummary.
+        The number of nodes in the Autonomous VM Cluster.
+
+
+        :return: The node_count of this AutonomousVmClusterSummary.
+        :rtype: int
+        """
+        return self._node_count
+
+    @node_count.setter
+    def node_count(self, node_count):
+        """
+        Sets the node_count of this AutonomousVmClusterSummary.
+        The number of nodes in the Autonomous VM Cluster.
+
+
+        :param node_count: The node_count of this AutonomousVmClusterSummary.
+        :type: int
+        """
+        self._node_count = node_count
+
+    @property
     def license_model(self):
         """
         Gets the license_model of this AutonomousVmClusterSummary.
@@ -1074,6 +1112,34 @@ class AutonomousVmClusterSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def db_servers(self):
+        """
+        Gets the db_servers of this AutonomousVmClusterSummary.
+        The list of `OCIDs`__ of the Db servers.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The db_servers of this AutonomousVmClusterSummary.
+        :rtype: list[str]
+        """
+        return self._db_servers
+
+    @db_servers.setter
+    def db_servers(self, db_servers):
+        """
+        Sets the db_servers of this AutonomousVmClusterSummary.
+        The list of `OCIDs`__ of the Db servers.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param db_servers: The db_servers of this AutonomousVmClusterSummary.
+        :type: list[str]
+        """
+        self._db_servers = db_servers
 
     @property
     def reclaimable_cpus(self):
