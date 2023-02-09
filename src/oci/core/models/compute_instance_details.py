@@ -60,6 +60,8 @@ class ComputeInstanceDetails(InstanceConfigurationInstanceDetails):
     def block_volumes(self):
         """
         Gets the block_volumes of this ComputeInstanceDetails.
+        Block volume parameters.
+
 
         :return: The block_volumes of this ComputeInstanceDetails.
         :rtype: list[oci.core.models.InstanceConfigurationBlockVolumeDetails]
@@ -70,6 +72,8 @@ class ComputeInstanceDetails(InstanceConfigurationInstanceDetails):
     def block_volumes(self, block_volumes):
         """
         Sets the block_volumes of this ComputeInstanceDetails.
+        Block volume parameters.
+
 
         :param block_volumes: The block_volumes of this ComputeInstanceDetails.
         :type: list[oci.core.models.InstanceConfigurationBlockVolumeDetails]
@@ -100,6 +104,8 @@ class ComputeInstanceDetails(InstanceConfigurationInstanceDetails):
     def secondary_vnics(self):
         """
         Gets the secondary_vnics of this ComputeInstanceDetails.
+        Secondary VNIC parameters.
+
 
         :return: The secondary_vnics of this ComputeInstanceDetails.
         :rtype: list[oci.core.models.InstanceConfigurationAttachVnicDetails]
@@ -110,6 +116,8 @@ class ComputeInstanceDetails(InstanceConfigurationInstanceDetails):
     def secondary_vnics(self, secondary_vnics):
         """
         Sets the secondary_vnics of this ComputeInstanceDetails.
+        Secondary VNIC parameters.
+
 
         :param secondary_vnics: The secondary_vnics of this ComputeInstanceDetails.
         :type: list[oci.core.models.InstanceConfigurationAttachVnicDetails]

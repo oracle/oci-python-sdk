@@ -428,7 +428,7 @@ class Volume(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this Volume.
-        The OCID of the Key Management key which is the master encryption key for the volume.
+        The OCID of the Vault service key which is the master encryption key for the volume.
 
 
         :return: The kms_key_id of this Volume.
@@ -440,7 +440,7 @@ class Volume(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this Volume.
-        The OCID of the Key Management key which is the master encryption key for the volume.
+        The OCID of the Vault service key which is the master encryption key for the volume.
 
 
         :param kms_key_id: The kms_key_id of this Volume.

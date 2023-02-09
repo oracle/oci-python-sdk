@@ -88,6 +88,10 @@ class CreateAutonomousVmClusterDetails(object):
             The value to assign to the maintenance_window_details property of this CreateAutonomousVmClusterDetails.
         :type maintenance_window_details: oci.database.models.MaintenanceWindow
 
+        :param db_servers:
+            The value to assign to the db_servers property of this CreateAutonomousVmClusterDetails.
+        :type db_servers: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateAutonomousVmClusterDetails.
         :type freeform_tags: dict(str, str)
@@ -123,6 +127,7 @@ class CreateAutonomousVmClusterDetails(object):
             'memory_per_oracle_compute_unit_in_gbs': 'int',
             'autonomous_data_storage_size_in_tbs': 'float',
             'maintenance_window_details': 'MaintenanceWindow',
+            'db_servers': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'scan_listener_port_tls': 'int',
@@ -144,6 +149,7 @@ class CreateAutonomousVmClusterDetails(object):
             'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs',
             'autonomous_data_storage_size_in_tbs': 'autonomousDataStorageSizeInTBs',
             'maintenance_window_details': 'maintenanceWindowDetails',
+            'db_servers': 'dbServers',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'scan_listener_port_tls': 'scanListenerPortTls',
@@ -164,6 +170,7 @@ class CreateAutonomousVmClusterDetails(object):
         self._memory_per_oracle_compute_unit_in_gbs = None
         self._autonomous_data_storage_size_in_tbs = None
         self._maintenance_window_details = None
+        self._db_servers = None
         self._freeform_tags = None
         self._defined_tags = None
         self._scan_listener_port_tls = None
@@ -509,6 +516,34 @@ class CreateAutonomousVmClusterDetails(object):
         :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window_details = maintenance_window_details
+
+    @property
+    def db_servers(self):
+        """
+        Gets the db_servers of this CreateAutonomousVmClusterDetails.
+        The list of `OCIDs`__ of the Db servers.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The db_servers of this CreateAutonomousVmClusterDetails.
+        :rtype: list[str]
+        """
+        return self._db_servers
+
+    @db_servers.setter
+    def db_servers(self, db_servers):
+        """
+        Sets the db_servers of this CreateAutonomousVmClusterDetails.
+        The list of `OCIDs`__ of the Db servers.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param db_servers: The db_servers of this CreateAutonomousVmClusterDetails.
+        :type: list[str]
+        """
+        self._db_servers = db_servers
 
     @property
     def freeform_tags(self):

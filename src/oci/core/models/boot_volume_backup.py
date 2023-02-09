@@ -466,9 +466,9 @@ class BootVolumeBackup(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this BootVolumeBackup.
-        The OCID of the Key Management master encryption assigned to the boot volume backup.
-        For more information about the Key Management service and encryption keys, see
-        `Overview of Key Management`__ and
+        The OCID of the Vault service master encryption assigned to the boot volume backup.
+        For more information about the Vault service and encryption keys, see
+        `Overview of Vault service`__ and
         `Using Keys`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
@@ -484,9 +484,9 @@ class BootVolumeBackup(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this BootVolumeBackup.
-        The OCID of the Key Management master encryption assigned to the boot volume backup.
-        For more information about the Key Management service and encryption keys, see
-        `Overview of Key Management`__ and
+        The OCID of the Vault service master encryption assigned to the boot volume backup.
+        For more information about the Vault service and encryption keys, see
+        `Overview of Vault service`__ and
         `Using Keys`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm

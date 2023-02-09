@@ -23,6 +23,8 @@ class VirtualNetworkClient(object):
     documentation for the [Networking](/iaas/Content/Network/Concepts/overview.htm),
     [Compute](/iaas/Content/Compute/Concepts/computeoverview.htm), and
     [Block Volume](/iaas/Content/Block/Concepts/overview.htm) services.
+    The required permissions are documented in the
+    [Details for the Core Services](/iaas/Content/Identity/Reference/corepolicyreference.htm) article.
     """
 
     def __init__(self, config, **kwargs):
@@ -9302,9 +9304,12 @@ class VirtualNetworkClient(object):
 
     def delete_vcn(self, vcn_id, **kwargs):
         """
-        Deletes the specified VCN. The VCN must be empty and have no attached gateways. This is an asynchronous
-        operation. The VCN's `lifecycleState` will change to TERMINATING temporarily until the VCN is completely
-        removed.
+        Deletes the specified VCN. The VCN must be completely empty and have no attached gateways. This is an asynchronous
+        operation.
+
+        A deleted VCN's `lifecycleState` changes to TERMINATING and then TERMINATED temporarily until the VCN is completely
+        removed. A completely removed VCN does not appear in the results of a `ListVcns` operation and can't be used in a
+        `GetVcn` operation.
 
 
         :param str vcn_id: (required)

@@ -23,6 +23,8 @@ class BlockstorageClient(object):
     documentation for the [Networking](/iaas/Content/Network/Concepts/overview.htm),
     [Compute](/iaas/Content/Compute/Concepts/computeoverview.htm), and
     [Block Volume](/iaas/Content/Block/Concepts/overview.htm) services.
+    The required permissions are documented in the
+    [Details for the Core Services](/iaas/Content/Identity/Reference/corepolicyreference.htm) article.
     """
 
     def __init__(self, config, **kwargs):
@@ -1975,7 +1977,7 @@ class BlockstorageClient(object):
 
     def delete_boot_volume_kms_key(self, boot_volume_id, **kwargs):
         """
-        Removes the specified boot volume's assigned Key Management encryption key.
+        Removes the specified boot volume's assigned Vault Service encryption key.
 
 
         :param str boot_volume_id: (required)
@@ -2642,7 +2644,7 @@ class BlockstorageClient(object):
 
     def delete_volume_kms_key(self, volume_id, **kwargs):
         """
-        Removes the specified volume's assigned Key Management encryption key.
+        Removes the specified volume's assigned Vault service encryption key.
 
 
         :param str volume_id: (required)
@@ -2980,7 +2982,7 @@ class BlockstorageClient(object):
 
     def get_boot_volume_kms_key(self, boot_volume_id, **kwargs):
         """
-        Gets the Key Management encryption key assigned to the specified boot volume.
+        Gets the Vault service encryption key assigned to the specified boot volume.
 
 
         :param str boot_volume_id: (required)
@@ -3837,7 +3839,7 @@ class BlockstorageClient(object):
 
     def get_volume_kms_key(self, volume_id, **kwargs):
         """
-        Gets the Key Management encryption key assigned to the specified volume.
+        Gets the Vault service encryption key assigned to the specified volume.
 
 
         :param str volume_id: (required)
@@ -5694,14 +5696,14 @@ class BlockstorageClient(object):
 
     def update_boot_volume_kms_key(self, boot_volume_id, update_boot_volume_kms_key_details, **kwargs):
         """
-        Updates the specified volume with a new Key Management master encryption key.
+        Updates the specified volume with a new Vault service master encryption key.
 
 
         :param str boot_volume_id: (required)
             The OCID of the boot volume.
 
         :param oci.core.models.UpdateBootVolumeKmsKeyDetails update_boot_volume_kms_key_details: (required)
-            Updates the Key Management master encryption key assigned to the specified boot volume.
+            Updates the Vault service master encryption key assigned to the specified boot volume.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -6341,7 +6343,7 @@ class BlockstorageClient(object):
             The OCID of the volume.
 
         :param oci.core.models.UpdateVolumeKmsKeyDetails update_volume_kms_key_details: (required)
-            Updates the Key Management master encryption key assigned to the specified volume.
+            Updates the Vault service master encryption key assigned to the specified volume.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`

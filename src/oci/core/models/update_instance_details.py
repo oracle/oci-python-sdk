@@ -548,16 +548,26 @@ class UpdateInstanceDetails(object):
     def time_maintenance_reboot_due(self):
         """
         Gets the time_maintenance_reboot_due of this UpdateInstanceDetails.
-        The date and time the instance is expected to be stopped and restarted, in the format defined by
-        `RFC3339`__.
+        For a VM instance, resets the scheduled time that the instance will be reboot migrated for
+        infrastructure maintenance, in the format defined by `RFC3339`__.
         If the instance hasn't been rebooted after this date, Oracle reboots the instance within 24 hours of the time
         and date that maintenance is due.
-        Regardless of how the instance is stopped, this flag is reset to empty as soon as the instance reaches
+
+        To get the maximum possible date that a maintenance reboot can be extended,
+        use :func:`get_instance_maintenance_reboot`.
+
+        Regardless of how the instance is stopped, this flag is reset to empty as soon as the instance reaches the
         Stopped state.
+
+        To reboot migrate a bare metal instance, use the :func:`instance_action` operation.
+
+        For more information, see
+        `Infrastructure Maintenance`__.
 
         Example: `2018-05-25T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm
 
 
         :return: The time_maintenance_reboot_due of this UpdateInstanceDetails.
@@ -569,16 +579,26 @@ class UpdateInstanceDetails(object):
     def time_maintenance_reboot_due(self, time_maintenance_reboot_due):
         """
         Sets the time_maintenance_reboot_due of this UpdateInstanceDetails.
-        The date and time the instance is expected to be stopped and restarted, in the format defined by
-        `RFC3339`__.
+        For a VM instance, resets the scheduled time that the instance will be reboot migrated for
+        infrastructure maintenance, in the format defined by `RFC3339`__.
         If the instance hasn't been rebooted after this date, Oracle reboots the instance within 24 hours of the time
         and date that maintenance is due.
-        Regardless of how the instance is stopped, this flag is reset to empty as soon as the instance reaches
+
+        To get the maximum possible date that a maintenance reboot can be extended,
+        use :func:`get_instance_maintenance_reboot`.
+
+        Regardless of how the instance is stopped, this flag is reset to empty as soon as the instance reaches the
         Stopped state.
+
+        To reboot migrate a bare metal instance, use the :func:`instance_action` operation.
+
+        For more information, see
+        `Infrastructure Maintenance`__.
 
         Example: `2018-05-25T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm
 
 
         :param time_maintenance_reboot_due: The time_maintenance_reboot_due of this UpdateInstanceDetails.

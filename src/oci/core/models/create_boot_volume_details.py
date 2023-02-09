@@ -293,7 +293,7 @@ class CreateBootVolumeDetails(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this CreateBootVolumeDetails.
-        The OCID of the Key Management key to assign as the master encryption key
+        The OCID of the Vault service key to assign as the master encryption key
         for the boot volume.
 
 
@@ -306,7 +306,7 @@ class CreateBootVolumeDetails(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this CreateBootVolumeDetails.
-        The OCID of the Key Management key to assign as the master encryption key
+        The OCID of the Vault service key to assign as the master encryption key
         for the boot volume.
 
 

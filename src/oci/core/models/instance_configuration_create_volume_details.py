@@ -279,7 +279,7 @@ class InstanceConfigurationCreateVolumeDetails(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this InstanceConfigurationCreateVolumeDetails.
-        The OCID of the Key Management key to assign as the master encryption key
+        The OCID of the Vault service key to assign as the master encryption key
         for the volume.
 
 
@@ -292,7 +292,7 @@ class InstanceConfigurationCreateVolumeDetails(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this InstanceConfigurationCreateVolumeDetails.
-        The OCID of the Key Management key to assign as the master encryption key
+        The OCID of the Vault service key to assign as the master encryption key
         for the volume.
 
 

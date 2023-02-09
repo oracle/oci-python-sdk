@@ -63,6 +63,8 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/vbs_inst/pom.xml</module>
+    <module>poms/recovery/pom.xml</module>
     <module>poms/queue/pom.xml</module>
     <module>poms/ai_document/pom.xml</module>
     <module>poms/container_instances/pom.xml</module>

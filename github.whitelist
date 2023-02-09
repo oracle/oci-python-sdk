@@ -166,3 +166,5 @@
 ^src/oci/container_instances/.*\.py$
 ^src/oci/ai_document/.*\.py$
 ^src/oci/queue/.*\.py$
+^src/oci/recovery/.*\.py$
+^src/oci/vbs_inst/.*\.py$

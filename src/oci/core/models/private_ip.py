@@ -311,7 +311,7 @@ class PrivateIp(object):
         Gets the hostname_label of this PrivateIp.
         The hostname for the private IP. Used for DNS. The value is the hostname
         portion of the private IP's fully qualified domain name (FQDN)
-        (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+        (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`).
         Must be unique across all VNICs in the subnet and comply with
         `RFC 952`__ and
         `RFC 1123`__.
@@ -319,7 +319,7 @@ class PrivateIp(object):
         For more information, see
         `DNS in Your Virtual Cloud Network`__.
 
-        Example: `bminstance-1`
+        Example: `bminstance1`
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
@@ -337,7 +337,7 @@ class PrivateIp(object):
         Sets the hostname_label of this PrivateIp.
         The hostname for the private IP. Used for DNS. The value is the hostname
         portion of the private IP's fully qualified domain name (FQDN)
-        (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+        (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`).
         Must be unique across all VNICs in the subnet and comply with
         `RFC 952`__ and
         `RFC 1123`__.
@@ -345,7 +345,7 @@ class PrivateIp(object):
         For more information, see
         `DNS in Your Virtual Cloud Network`__.
 
-        Example: `bminstance-1`
+        Example: `bminstance1`
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123

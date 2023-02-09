@@ -54,6 +54,8 @@ Database
     oci.database.models.AutonomousExadataInfrastructureSummary
     oci.database.models.AutonomousPatch
     oci.database.models.AutonomousPatchSummary
+    oci.database.models.AutonomousVirtualMachine
+    oci.database.models.AutonomousVirtualMachineSummary
     oci.database.models.AutonomousVmCluster
     oci.database.models.AutonomousVmClusterSummary
     oci.database.models.Backup
