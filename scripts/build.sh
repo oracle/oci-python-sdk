@@ -96,10 +96,10 @@ rm doc_build_output.txt
 # conflicts.
 mkdir -p dist/dev/
 if [ $IS_SNAPSHOT = "true" ]; then
-  cp dist/oci-$DEV_VERSION-py2.py3-none-any.whl dist/dev/oci-$DEV_VERSION-py2.py3-none-any.whl
+  cp dist/oci-$DEV_VERSION-py3-none-any.whl dist/dev/oci-$DEV_VERSION-py3-none-any.whl
   cp dist/oci-python-sdk-$DEV_VERSION.zip dist/dev/oci-python-sdk-$DEV_VERSION.zip
 else
-  cp dist/oci-$SDK_VERSION-py2.py3-none-any.whl dist/dev/oci-$DEV_VERSION-py2.py3-none-any.whl
+  cp dist/oci-$SDK_VERSION-py3-none-any.whl dist/dev/oci-$DEV_VERSION-py3-none-any.whl
   cp dist/oci-python-sdk-$SDK_VERSION.zip dist/dev/oci-python-sdk-$DEV_VERSION.zip
 fi
 

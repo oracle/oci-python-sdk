@@ -79,7 +79,7 @@ To install from GitHub:
 2. Extract the files from the zip.
 3. Use the following command to install the SDK::
 
-    pip install oci-*-py2.py3-none-any.whl
+    pip install oci-*-py3-none-any.whl
 
   .. note::
 
