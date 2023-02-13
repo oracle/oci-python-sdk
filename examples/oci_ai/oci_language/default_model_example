@@ -31,7 +31,7 @@ def createLanguageClient(config_path):
     """
     Create an OCI language client from a config file.
   
-    This function authenticates an OCI connection from a locak file and creates an OCI language client
+    This function authenticates an OCI connection from a local file and creates an OCI language client
     where several OCI functions will be called from.
   
     Parameters:
@@ -178,8 +178,6 @@ def TextClassification(AI_client, text_document):
         print(e)
     return
 
-    
-    
 def printWelcomeMessage():
     print("Welcome to OCI AI Language example.")
 
@@ -267,7 +265,4 @@ def runModel(data, config_path = "~/.oci/config", text_model_key = "Example", la
 
 # Run example model
 runModel(test_string, config_path, text_model_key="example", language_code="en")
-
-
-
 
