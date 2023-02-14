@@ -40,6 +40,8 @@ from .autonomous_exadata_infrastructure_shape_summary import AutonomousExadataIn
 from .autonomous_exadata_infrastructure_summary import AutonomousExadataInfrastructureSummary
 from .autonomous_patch import AutonomousPatch
 from .autonomous_patch_summary import AutonomousPatchSummary
+from .autonomous_virtual_machine import AutonomousVirtualMachine
+from .autonomous_virtual_machine_summary import AutonomousVirtualMachineSummary
 from .autonomous_vm_cluster import AutonomousVmCluster
 from .autonomous_vm_cluster_summary import AutonomousVmClusterSummary
 from .backup import Backup
@@ -354,6 +356,8 @@ database_type_mapping = {
     "AutonomousExadataInfrastructureSummary": AutonomousExadataInfrastructureSummary,
     "AutonomousPatch": AutonomousPatch,
     "AutonomousPatchSummary": AutonomousPatchSummary,
+    "AutonomousVirtualMachine": AutonomousVirtualMachine,
+    "AutonomousVirtualMachineSummary": AutonomousVirtualMachineSummary,
     "AutonomousVmCluster": AutonomousVmCluster,
     "AutonomousVmClusterSummary": AutonomousVmClusterSummary,
     "Backup": Backup,

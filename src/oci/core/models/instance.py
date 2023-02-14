@@ -12,7 +12,18 @@ class Instance(object):
     """
     A compute host. The image used to launch the instance determines its operating system and other
     software. The shape specified during the launch process determines the number of CPUs and memory
-    allocated to the instance. For more information, see
+    allocated to the instance.
+
+    When you launch an instance, it is automatically attached to a virtual
+    network interface card (VNIC), called the *primary VNIC*. The VNIC
+    has a private IP address from the subnet's CIDR. You can either assign a
+    private IP address of your choice or let Oracle automatically assign one.
+    You can choose whether the instance has a public IP address. To retrieve the
+    addresses, use the :func:`list_vnic_attachments`
+    operation to get the VNIC ID for the instance, and then call
+    :func:`get_vnic` with the VNIC ID.
+
+    For more information, see
     `Overview of the Compute Service`__.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
@@ -379,7 +390,7 @@ class Instance(object):
     def dedicated_vm_host_id(self):
         """
         Gets the dedicated_vm_host_id of this Instance.
-        The OCID of dedicated VM host.
+        The OCID of the dedicated virtual machine host that the instance is placed on.
 
 
         :return: The dedicated_vm_host_id of this Instance.
@@ -391,7 +402,7 @@ class Instance(object):
     def dedicated_vm_host_id(self, dedicated_vm_host_id):
         """
         Sets the dedicated_vm_host_id of this Instance.
-        The OCID of dedicated VM host.
+        The OCID of the dedicated virtual machine host that the instance is placed on.
 
 
         :param dedicated_vm_host_id: The dedicated_vm_host_id of this Instance.

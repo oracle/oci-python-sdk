@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RebootMigrateActionDetails(InstancePowerActionDetails):
     """
-    Parameters for the rebootMigrate :func:`instance_action`.
+    Parameters for the `rebootMigrate` :func:`instance_action`.
     """
 
     def __init__(self, **kwargs):
@@ -79,9 +79,10 @@ class RebootMigrateActionDetails(InstancePowerActionDetails):
     def time_scheduled(self):
         """
         Gets the time_scheduled of this RebootMigrateActionDetails.
-        If present, this parameter will set (or re-set) the scheduled time that the instance will be reboot
+        If present, this parameter will set (or reset) the scheduled time that the instance will be reboot
         migrated in the format defined by `RFC3339`__.  This will also change
-        the timeRebootMigrationDue field on the instance.
+        the `timeMaintenanceRebootDue` field on the instance.
+
         If not present, the reboot migration will be triggered immediately.
 
         __ https://tools.ietf.org/html/rfc3339
@@ -96,9 +97,10 @@ class RebootMigrateActionDetails(InstancePowerActionDetails):
     def time_scheduled(self, time_scheduled):
         """
         Sets the time_scheduled of this RebootMigrateActionDetails.
-        If present, this parameter will set (or re-set) the scheduled time that the instance will be reboot
+        If present, this parameter will set (or reset) the scheduled time that the instance will be reboot
         migrated in the format defined by `RFC3339`__.  This will also change
-        the timeRebootMigrationDue field on the instance.
+        the `timeMaintenanceRebootDue` field on the instance.
+
         If not present, the reboot migration will be triggered immediately.
 
         __ https://tools.ietf.org/html/rfc3339

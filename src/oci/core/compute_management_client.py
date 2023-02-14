@@ -23,6 +23,8 @@ class ComputeManagementClient(object):
     documentation for the [Networking](/iaas/Content/Network/Concepts/overview.htm),
     [Compute](/iaas/Content/Compute/Concepts/computeoverview.htm), and
     [Block Volume](/iaas/Content/Block/Concepts/overview.htm) services.
+    The required permissions are documented in the
+    [Details for the Core Services](/iaas/Content/Identity/Reference/corepolicyreference.htm) article.
     """
 
     def __init__(self, config, **kwargs):
@@ -881,7 +883,7 @@ class ComputeManagementClient(object):
 
     def create_instance_pool(self, create_instance_pool_details, **kwargs):
         """
-        Create an instance pool.
+        Creates an instance pool.
 
 
         :param oci.core.models.CreateInstancePoolDetails create_instance_pool_details: (required)
@@ -1701,11 +1703,11 @@ class ComputeManagementClient(object):
 
     def launch_instance_configuration(self, instance_configuration_id, instance_configuration, **kwargs):
         """
-        Launches an instance from an instance configuration.
+        Creates an instance from an instance configuration.
 
         If the instance configuration does not include all of the parameters that are
-        required to launch an instance, such as the availability domain and subnet ID, you must
-        provide these parameters when you launch an instance from the instance configuration.
+        required to create an instance, such as the availability domain and subnet ID, you must
+        provide these parameters when you create an instance from the instance configuration.
         For more information, see the :class:`InstanceConfiguration`
         resource.
 

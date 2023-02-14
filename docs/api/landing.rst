@@ -60,6 +60,7 @@ API Reference
 * :doc:`Data Science <data_science/client/oci.data_science.DataScienceClient>`
 * :doc:`Database <database/client/oci.database.DatabaseClient>`
 * :doc:`Database Migration <database_migration/client/oci.database_migration.DatabaseMigrationClient>`
+* :doc:`Database Recovery <recovery/client/oci.recovery.DatabaseRecoveryClient>`
 * :doc:`Database Tools <database_tools/client/oci.database_tools.DatabaseToolsClient>`
 * :doc:`Dataplane <identity_data_plane/client/oci.identity_data_plane.DataplaneClient>`
 * :doc:`Db Backups <mysql/client/oci.mysql.DbBackupsClient>`
@@ -185,6 +186,7 @@ API Reference
 * :doc:`User <cims/client/oci.cims.UserClient>`
 * :doc:`Vaults <vault/client/oci.vault.VaultsClient>`
 * :doc:`Vb Instance <visual_builder/client/oci.visual_builder.VbInstanceClient>`
+* :doc:`Vbs Instance <vbs_inst/client/oci.vbs_inst.VbsInstanceClient>`
 * :doc:`Virtual Network <core/client/oci.core.VirtualNetworkClient>`
 * :doc:`Vn Monitoring <vn_monitoring/client/oci.vn_monitoring.VnMonitoringClient>`
 * :doc:`Vulnerability Scanning <vulnerability_scanning/client/oci.vulnerability_scanning.VulnerabilityScanningClient>`
@@ -316,6 +318,7 @@ API Reference
     osub_subscription
     osub_usage
     queue
+    recovery
     resource_manager
     resource_search
     rover
@@ -331,6 +334,7 @@ API Reference
     usage
     usage_api
     vault
+    vbs_inst
     visual_builder
     vn_monitoring
     vulnerability_scanning

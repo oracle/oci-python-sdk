@@ -799,7 +799,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
     def dedicated_vm_host_id(self):
         """
         Gets the dedicated_vm_host_id of this InstanceConfigurationLaunchInstanceDetails.
-        The OCID of dedicated VM host.
+        The OCID of the dedicated virtual machine host to place the instance on.
 
         Dedicated VM hosts can be used when launching individual instances from an instance configuration. They
         cannot be used to launch instance pools.
@@ -814,7 +814,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
     def dedicated_vm_host_id(self, dedicated_vm_host_id):
         """
         Sets the dedicated_vm_host_id of this InstanceConfigurationLaunchInstanceDetails.
-        The OCID of dedicated VM host.
+        The OCID of the dedicated virtual machine host to place the instance on.
 
         Dedicated VM hosts can be used when launching individual instances from an instance configuration. They
         cannot be used to launch instance pools.

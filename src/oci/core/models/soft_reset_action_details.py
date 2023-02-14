@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SoftResetActionDetails(InstancePowerActionDetails):
     """
-    Parameters for the softReset :func:`instance_action`. If omitted, default values are used.
+    Parameters for the `softReset` :func:`instance_action`. If omitted, default values are used.
     """
 
     def __init__(self, **kwargs):
