@@ -74,6 +74,14 @@ class DbServer(object):
             The value to assign to the vm_cluster_ids property of this DbServer.
         :type vm_cluster_ids: list[str]
 
+        :param autonomous_vm_cluster_ids:
+            The value to assign to the autonomous_vm_cluster_ids property of this DbServer.
+        :type autonomous_vm_cluster_ids: list[str]
+
+        :param autonomous_virtual_machine_ids:
+            The value to assign to the autonomous_virtual_machine_ids property of this DbServer.
+        :type autonomous_virtual_machine_ids: list[str]
+
         :param db_node_ids:
             The value to assign to the db_node_ids property of this DbServer.
         :type db_node_ids: list[str]
@@ -130,6 +138,8 @@ class DbServer(object):
             'memory_size_in_gbs': 'int',
             'db_node_storage_size_in_gbs': 'int',
             'vm_cluster_ids': 'list[str]',
+            'autonomous_vm_cluster_ids': 'list[str]',
+            'autonomous_virtual_machine_ids': 'list[str]',
             'db_node_ids': 'list[str]',
             'shape': 'str',
             'lifecycle_state': 'str',
@@ -152,6 +162,8 @@ class DbServer(object):
             'memory_size_in_gbs': 'memorySizeInGBs',
             'db_node_storage_size_in_gbs': 'dbNodeStorageSizeInGBs',
             'vm_cluster_ids': 'vmClusterIds',
+            'autonomous_vm_cluster_ids': 'autonomousVmClusterIds',
+            'autonomous_virtual_machine_ids': 'autonomousVirtualMachineIds',
             'db_node_ids': 'dbNodeIds',
             'shape': 'shape',
             'lifecycle_state': 'lifecycleState',
@@ -173,6 +185,8 @@ class DbServer(object):
         self._memory_size_in_gbs = None
         self._db_node_storage_size_in_gbs = None
         self._vm_cluster_ids = None
+        self._autonomous_vm_cluster_ids = None
+        self._autonomous_virtual_machine_ids = None
         self._db_node_ids = None
         self._shape = None
         self._lifecycle_state = None
@@ -392,6 +406,62 @@ class DbServer(object):
         :type: list[str]
         """
         self._vm_cluster_ids = vm_cluster_ids
+
+    @property
+    def autonomous_vm_cluster_ids(self):
+        """
+        Gets the autonomous_vm_cluster_ids of this DbServer.
+        The list of `OCIDs`__ of the Autonomous VM Clusters associated with the Db server.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The autonomous_vm_cluster_ids of this DbServer.
+        :rtype: list[str]
+        """
+        return self._autonomous_vm_cluster_ids
+
+    @autonomous_vm_cluster_ids.setter
+    def autonomous_vm_cluster_ids(self, autonomous_vm_cluster_ids):
+        """
+        Sets the autonomous_vm_cluster_ids of this DbServer.
+        The list of `OCIDs`__ of the Autonomous VM Clusters associated with the Db server.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param autonomous_vm_cluster_ids: The autonomous_vm_cluster_ids of this DbServer.
+        :type: list[str]
+        """
+        self._autonomous_vm_cluster_ids = autonomous_vm_cluster_ids
+
+    @property
+    def autonomous_virtual_machine_ids(self):
+        """
+        Gets the autonomous_virtual_machine_ids of this DbServer.
+        The list of `OCIDs`__ of the Autonomous Virtual Machines associated with the Db server.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The autonomous_virtual_machine_ids of this DbServer.
+        :rtype: list[str]
+        """
+        return self._autonomous_virtual_machine_ids
+
+    @autonomous_virtual_machine_ids.setter
+    def autonomous_virtual_machine_ids(self, autonomous_virtual_machine_ids):
+        """
+        Sets the autonomous_virtual_machine_ids of this DbServer.
+        The list of `OCIDs`__ of the Autonomous Virtual Machines associated with the Db server.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param autonomous_virtual_machine_ids: The autonomous_virtual_machine_ids of this DbServer.
+        :type: list[str]
+        """
+        self._autonomous_virtual_machine_ids = autonomous_virtual_machine_ids
 
     @property
     def db_node_ids(self):

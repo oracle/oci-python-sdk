@@ -56,7 +56,7 @@ class AddDrgRouteRuleDetails(object):
     def destination_type(self):
         """
         **[Required]** Gets the destination_type of this AddDrgRouteRuleDetails.
-        Type of destination for the rule. Required if `direction` = `EGRESS`.
+        Type of destination for the rule.
         Allowed values:
           * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
 
@@ -72,7 +72,7 @@ class AddDrgRouteRuleDetails(object):
     def destination_type(self, destination_type):
         """
         Sets the destination_type of this AddDrgRouteRuleDetails.
-        Type of destination for the rule. Required if `direction` = `EGRESS`.
+        Type of destination for the rule.
         Allowed values:
           * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
 

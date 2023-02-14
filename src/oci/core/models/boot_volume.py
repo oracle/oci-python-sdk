@@ -666,7 +666,7 @@ class BootVolume(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this BootVolume.
-        The OCID of the Key Management master encryption key assigned to the boot volume.
+        The OCID of the Vault service master encryption key assigned to the boot volume.
 
 
         :return: The kms_key_id of this BootVolume.
@@ -678,7 +678,7 @@ class BootVolume(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this BootVolume.
-        The OCID of the Key Management master encryption key assigned to the boot volume.
+        The OCID of the Vault service master encryption key assigned to the boot volume.
 
 
         :param kms_key_id: The kms_key_id of this BootVolume.

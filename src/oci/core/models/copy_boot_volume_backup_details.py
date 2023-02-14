@@ -105,13 +105,13 @@ class CopyBootVolumeBackupDetails(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this CopyBootVolumeBackupDetails.
-        The OCID of the Key Management key in the destination region which will be the master encryption key
+        The OCID of the Vault service key in the destination region which will be the master encryption key
         for the copied boot volume backup. If you do not specify this attribute the boot volume backup
         will be encrypted with the Oracle-provided encryption key when it is copied to the destination region.
 
 
-        For more information about the Key Management service and encryption keys, see
-        `Overview of Key Management`__ and
+        For more information about the Vault service and encryption keys, see
+        `Overview of Vault service`__ and
         `Using Keys`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
@@ -127,13 +127,13 @@ class CopyBootVolumeBackupDetails(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this CopyBootVolumeBackupDetails.
-        The OCID of the Key Management key in the destination region which will be the master encryption key
+        The OCID of the Vault service key in the destination region which will be the master encryption key
         for the copied boot volume backup. If you do not specify this attribute the boot volume backup
         will be encrypted with the Oracle-provided encryption key when it is copied to the destination region.
 
 
-        For more information about the Key Management service and encryption keys, see
-        `Overview of Key Management`__ and
+        For more information about the Vault service and encryption keys, see
+        `Overview of Vault service`__ and
         `Using Keys`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm

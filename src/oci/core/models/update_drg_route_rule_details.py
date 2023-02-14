@@ -119,7 +119,7 @@ class UpdateDrgRouteRuleDetails(object):
     def destination_type(self):
         """
         Gets the destination_type of this UpdateDrgRouteRuleDetails.
-        Type of destination for the rule. Required if `direction` = `EGRESS`.
+        Type of destination for the rule.
         Allowed values:
           * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
 
@@ -135,7 +135,7 @@ class UpdateDrgRouteRuleDetails(object):
     def destination_type(self, destination_type):
         """
         Sets the destination_type of this UpdateDrgRouteRuleDetails.
-        Type of destination for the rule. Required if `direction` = `EGRESS`.
+        Type of destination for the rule.
         Allowed values:
           * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
 
