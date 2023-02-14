@@ -31,7 +31,7 @@ def createLanguageClient(config_path):
     """
     Create an OCI language client from a config file.
 
-    This function authenticates an OCI connection from a locak file and creates an OCI language client
+    This function authenticates an OCI connection from a local file and creates an OCI language client
     where several OCI functions will be called from.
 
     Parameters:
