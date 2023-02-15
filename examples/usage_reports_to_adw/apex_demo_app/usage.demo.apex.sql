@@ -28,7 +28,7 @@ prompt APPLICATION 100 - OCI Usage and Cost Report
 -- Application Export:
 --   Application:     100
 --   Name:            OCI Usage and Cost Report
---   Date and Time:   03:06 Friday January 27, 2023
+--   Date and Time:   12:35 Monday February 13, 2023
 --   Exported By:     ADI.ZOHAR@ORACLE.COM
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -107,7 +107,7 @@ wwv_flow_imp.create_flow(
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'Release 23.02.07'
+,p_flow_version=>'Release 23.02.15'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -129,7 +129,7 @@ wwv_flow_imp.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'OCI Usage and Cost Report'
 ,p_last_updated_by=>'ADI.ZOHAR@ORACLE.COM'
-,p_last_upd_yyyymmddhh24miss=>'20230127030523'
+,p_last_upd_yyyymmddhh24miss=>'20230213123504'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>3
 ,p_print_server_type=>'INSTANCE'
@@ -14397,7 +14397,7 @@ wwv_flow_imp_page.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_page_component_map=>'13'
 ,p_last_updated_by=>'ADI.ZOHAR@ORACLE.COM'
-,p_last_upd_yyyymmddhh24miss=>'20230127030523'
+,p_last_upd_yyyymmddhh24miss=>'20230213123504'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(9856082202688393)
@@ -14444,8 +14444,8 @@ wwv_flow_imp_page.create_page_item(
 '     ''Oracle  SDK Application github <a target=_new href="https://github.com/oracle/oci-python-sdk/tree/master/examples/usage_reports_to_adw">link</a><br>''||',
 '     ''Private SDK Application github <a target=_new href="https://github.com/adizohar/usage_reports_to_adw">link</a>, ''||',
 '     ''How To Manual <a target=_new href="https://github.com/adizohar/usage_reports_to_adw/blob/main/step_by_step_howto.md">link</a><br><br>''||',
-'     ''Please check as well <a target=_new href="https://github.com/oracle/oci-python-sdk/tree/master/examples/showoci">showoci</a> application<br>''||',
-unistr('     ''<H6><b>DISCLAIMER \2013 This is not an official Oracle application<b></H6>'''),
+'     ''Please check as well <a target=_new href="https://github.com/adizohar/showoci">showoci</a> application<br>''||',
+'     ''<H6><b>DISCLAIMER - This is not an official Oracle application<b></H6>''',
 '     );',
 '',
 'END;'))

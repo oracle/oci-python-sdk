@@ -20,7 +20,7 @@ import csv
 
 
 class ShowOCIOutput(object):
-    version = "23.02.07"
+    version = "23.02.14"
 
     ##########################################################################
     # spaces for align
@@ -1357,6 +1357,9 @@ class ShowOCIOutput(object):
             if 'host' in dbs:
                 print(self.tabs + "Host    : " + dbs['host'])
 
+            if 'license_model' in dbs:
+                print(self.tabs + "License : " + dbs['license_model'])
+
             if 'domain' in dbs:
                 if dbs['domain']:
                     print(self.tabs + "Domain  : " + dbs['domain'])
@@ -1364,6 +1367,10 @@ class ShowOCIOutput(object):
             if 'cluster_name' in dbs:
                 if dbs['cluster_name']:
                     print(self.tabs + "Cluster : " + dbs['cluster_name'])
+
+            if 'database_edition' in dbs:
+                if dbs['database_edition']:
+                    print(self.tabs + "Edition : " + dbs['database_edition'])
 
             if 'data' in dbs:
                 if dbs['data']:
@@ -1390,6 +1397,9 @@ class ShowOCIOutput(object):
 
             if 'listener_port' in dbs:
                 print(self.tabs + "Port    : " + dbs['listener_port'])
+
+            if 'cluster_name' in dbs:
+                print(self.tabs + "Cluster : " + dbs['cluster_name'])
 
             if 'patches' in dbs:
                 for p in dbs['patches']:
@@ -1502,6 +1512,21 @@ class ShowOCIOutput(object):
 
         except Exception as e:
             self.__print_error("__print_database_db_autonomous", e)
+
+    ##########################################################################
+    # print database standalone backups
+    ##########################################################################
+
+    def __print_database_standalone_backups(self, backups):
+        try:
+            for backup in backups:
+                if backup['standalone']:
+                    print(self.taba + "Name    : " + backup['name'] + " - " + backup['time'] + " - " + backup['size'] + " - " + backup["availability_domain"])
+                    print(self.tabs + "Shape   : " + backup['shape'] + ", Edition: " + backup["database_edition"] + ", Version: " + backup["version"])
+                    print("")
+
+        except Exception as e:
+            self.__print_error("__print_database_standalone_backups", e)
 
     ##########################################################################
     # print database nosql
@@ -1620,6 +1645,11 @@ class ShowOCIOutput(object):
             if 'db_system' in list_databases:
                 self.print_header("Databases DB Systems", 2)
                 self.__print_database_db_system(list_databases['db_system'])
+                print("")
+
+            if 'db_all_backups' in list_databases:
+                self.print_header("Databases Standalone Backups", 2)
+                self.__print_database_standalone_backups(list_databases['db_all_backups'])
                 print("")
 
             if 'autonomous_dedicated' in list_databases:
@@ -2934,6 +2964,9 @@ class ShowOCISummary(object):
             if 'db_system' in list_databases:
                 self.__summary_database_db_system(list_databases['db_system'])
 
+            if 'db_all_backups' in list_databases:
+                self.__summary_database_all_backups(list_databases['db_all_backups'])
+
             if 'autonomous' in list_databases:
                 self.__summary_database_db_autonomous(list_databases['autonomous'])
 
@@ -2960,6 +2993,18 @@ class ShowOCISummary(object):
 
         except Exception as e:
             self.__print_error("__summary_database_main", e)
+
+    ##########################################################################
+    # __summary_database_all_backups
+    ##########################################################################
+    def __summary_database_all_backups(self, list_db_backups):
+
+        try:
+            for dbs in list_db_backups:
+                self.__summary_core_size(list_db_backups)
+
+        except Exception as e:
+            self.__print_error("__summary_database_all_backups", e)
 
     ##########################################################################
     # Database db systems
@@ -2999,11 +3044,6 @@ class ShowOCISummary(object):
                 if dbs['sum_size_gb'] is not None:
                     if dbs['sum_size_gb'] != 'None' and dbs['sum_size_gb'] != "":
                         self.summary_global_list.append({'type': dbs['sum_info_storage'], 'size': float(dbs['sum_size_gb'])})
-
-                # db homes
-                for db_home in dbs['db_homes']:
-                    for db in db_home['databases']:
-                        self.__summary_core_size(db['backups'])
 
         except Exception as e:
             self.__print_error("__summary_database_db_system", e)
@@ -3524,6 +3564,8 @@ class ShowOCICSV(object):
     csv_monitor_alarms = []
     csv_monitor_events = []
     csv_notifications = []
+    tenant_id = ""
+    tenant_name = ""
 
     ############################################
     # Init
@@ -3535,10 +3577,12 @@ class ShowOCICSV(object):
     ##########################################################################
     # generate_csv
     ##########################################################################
-    def generate_csv(self, data, csv_file_header, add_date_field=True, csv_columns=""):
+    def generate_csv(self, data, csv_file_header, tenancy, add_date_field=True, csv_columns=""):
         self.csv_add_date_field = add_date_field
         self.csv_file_header = csv_file_header
         self.csv_columns = str(csv_columns).split(",")
+        self.tenant_id = str(tenancy['id'])[-6:]
+        self.tenant_name = str(tenancy['name'])
         try:
             for d in data:
                 if 'type' in d:
@@ -3662,8 +3706,6 @@ class ShowOCICSV(object):
                                 key_value = 'Tag_' + tag_split[0]
                                 data_value = tag_split[1]
                                 row.update({key_value: data_value})
-                        # Remove the main key
-                        row.pop(tag_type)
                 # Append the row
                 new_result.append(row)
             return new_result
@@ -3682,13 +3724,14 @@ class ShowOCICSV(object):
 
             # get the file name of the CSV
             file_name = self.csv_file_header + "_" + file_subject + ".csv"
+            tenant_dict = {'tenant_name': self.tenant_name, 'tenant_id': self.tenant_id}
 
             # add start_date to each dictionary
             result = []
             if self.csv_add_date_field:
-                result = [dict(item, extract_date=self.start_time) for item in data]
+                result = [dict(list(tenant_dict.items()) + list(item.items()), extract_date=self.start_time) for item in data]
             else:
-                result = [dict(item) for item in data]
+                result = [dict(list(tenant_dict.items()) + list(item.items())) for item in data]
 
             # if convert tags to cols
             if self.csv_tags_to_cols:
@@ -4329,6 +4372,13 @@ class ShowOCICSV(object):
     ##########################################################################
     # csv database db systems
     ##########################################################################
+    def __csv_database_db_backups(self, region_name, list_db_backups):
+
+        self.__csv_database_backup_item(list_db_backups, "", "")
+
+    ##########################################################################
+    # csv database db systems
+    ##########################################################################
     def __csv_database_db_system(self, region_name, list_db_systems):
 
         try:
@@ -4424,23 +4474,39 @@ class ShowOCICSV(object):
 
                         # database Backups
                         if 'backups' in db:
-                            for backup in db['backups']:
-                                data = {
-                                    'region_name': region_name,
-                                    'compartment_name': dbs['compartment_name'],
-                                    'compartment_path': dbs['compartment_path'],
-                                    'dbs_name': dbs['display_name'],
-                                    'database': db['db_name'],
-                                    'shape': dbs['shape'],
-                                    'backup_name': backup['display_name'],
-                                    'time': backup['time'],
-                                    'size': backup['size'],
-                                    'lifecycle_state': backup['lifecycle_state']
-                                }
-                                self.csv_database_backups.append(data)
+                            self.__csv_database_backup_item(db['backups'], dbs['display_name'], db['db_name'])
 
         except Exception as e:
             self.__print_error("__csv_database_db_system", e)
+
+    ##########################################################################
+    # csv database db systems
+    ##########################################################################
+    def __csv_database_backup_item(self, backups, dbs_name, db_name):
+        try:
+
+            for backup in backups:
+                data = {
+                    'region_name': backup['region_name'],
+                    'compartment_name': backup['compartment_name'],
+                    'compartment_path': backup['compartment_path'],
+                    'dbs_name': dbs_name,
+                    'database': db_name,
+                    'shape': backup['shape'],
+                    'database_edition': backup['database_edition'],
+                    'backup_name': backup['display_name'],
+                    'time': backup['time'],
+                    'size': backup['size'],
+                    'id': backup['id'],
+                    'database_id': backup['database_id'],
+                    'lifecycle_state': backup['lifecycle_state']
+                }
+                # if not exist in array add
+                if not any(d['id'] == str(backup['id']) for d in self.csv_database_backups):
+                    self.csv_database_backups.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_database_backup_item", e)
 
     ##########################################################################
     # csv database exadata
@@ -4581,20 +4647,7 @@ class ShowOCICSV(object):
 
                             # database Backups
                             if 'backups' in db:
-                                for backup in db['backups']:
-                                    data = {
-                                        'region_name': region_name,
-                                        'compartment_name': dbs['compartment_name'],
-                                        'compartment_path': dbs['compartment_path'],
-                                        'dbs_name': dbs['display_name'],
-                                        'database': db['db_name'],
-                                        'shape': dbs['shape'],
-                                        'backup_name': backup['display_name'],
-                                        'time': backup['time'],
-                                        'size': backup['size'],
-                                        'lifecycle_state': backup['lifecycle_state']
-                                    }
-                                    self.csv_database_backups.append(data)
+                                self.__csv_database_backup_item(db['backups'], dbs['display_name'], db['db_name'])
 
         except Exception as e:
             self.__print_error("__csv_database_db_exadata", e)
@@ -4739,20 +4792,7 @@ class ShowOCICSV(object):
 
                             # database Backups
                             if 'backups' in db:
-                                for backup in db['backups']:
-                                    data = {
-                                        'region_name': region_name,
-                                        'compartment_name': dbs['compartment_name'],
-                                        'compartment_path': dbs['compartment_path'],
-                                        'dbs_name': dbs['display_name'],
-                                        'database': db['db_name'],
-                                        'shape': dbs['shape'],
-                                        'backup_name': backup['display_name'],
-                                        'time': backup['time'],
-                                        'size': backup['size'],
-                                        'lifecycle_state': backup['lifecycle_state']
-                                    }
-                                    self.csv_database_backups.append(data)
+                                self.__csv_database_backup_item(db['backups'], dbs['display_name'], db['db_name'])
 
         except Exception as e:
             self.__print_error("__csv_database_db_exacc", e)
@@ -4896,9 +4936,12 @@ class ShowOCICSV(object):
                             'dbs_name': dbs['display_name'],
                             'database': dbs['db_name'],
                             'shape': 'Autononous',
+                            'database_edition': "",
                             'backup_name': ("Automatic Backup - " if backup['is_automatic'] == 'True' else "") + backup['display_name'],
                             'time': backup['time'],
                             'size': "",
+                            'id': backup['id'],
+                            'database_id': dbs['id'],
                             'lifecycle_state': backup['lifecycle_state']
                         }
                         self.csv_database_backups.append(data)
@@ -5011,9 +5054,12 @@ class ShowOCICSV(object):
                                         'dbs_name': dbs['display_name'],
                                         'database': dbs['db_name'],
                                         'shape': 'Autononous',
+                                        'database_edition': "",
                                         'backup_name': ("Automatic Backup - " if backup['is_automatic'] == 'True' else "") + backup['display_name'],
                                         'time': backup['time'],
                                         'size': "",
+                                        'id': backup['id'],
+                                        'database_id': dbs['id'],
                                         'lifecycle_state': backup['lifecycle_state']
                                     }
                                     self.csv_database_backups.append(data)
@@ -5043,6 +5089,9 @@ class ShowOCICSV(object):
 
             if 'db_system' in list_databases:
                 self.__csv_database_db_system(region_name, list_databases['db_system'])
+
+            if 'db_all_backups' in list_databases:
+                self.__csv_database_db_backups(region_name, list_databases['db_all_backups'])
 
             if 'autonomous' in list_databases:
                 self.__csv_database_db_autonomous(region_name, list_databases['autonomous'])
@@ -5092,8 +5141,8 @@ class ShowOCICSV(object):
                         'compartment_name': instance['compartment_name'],
                         'compartment_path': instance['compartment_path'],
                         'server_name': instance['display_name'],
-                        'Status': instance['lifecycle_state'],
-                        'Type': instance['image_os'],
+                        'status': instance['lifecycle_state'],
+                        'type': instance['image_os'],
                         'image': instance['image'],
                         'fault_domain': instance['fault_domain'],
                         'primary_vcn': "",
@@ -6007,57 +6056,59 @@ class ShowOCICSV(object):
                 return
 
             if services:
-                if services['streams']:
-                    for ar in services['streams']:
+                if 'streams' in services:
+                    if services['streams']:
+                        for ar in services['streams']:
 
-                        data = {
-                            'region_name': region_name,
-                            'compartment_name': ar['compartment_name'],
-                            'compartment_path': ar['compartment_path'],
-                            'type': "STREAM",
-                            'name': ar['name'],
-                            'partitions': ar['partitions'],
-                            'time_created': ar['time_created'][0:16],
-                            'lifecycle_state': ar['lifecycle_state'],
-                            'lifecycle_details': "",
-                            'messages_endpoint': ar['messages_endpoint'],
-                            'retention_in_seconds': "",
-                            'visibility_in_seconds': "",
-                            'timeout_in_seconds': "",
-                            'dead_letter_queue_delivery_count': "",
-                            'custom_encryption_key_id': "",
-                            'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
-                            'defined_tags': self.__get_defined_tags(ar['defined_tags']),
-                            'id': ar['id']
-                        }
+                            data = {
+                                'region_name': region_name,
+                                'compartment_name': ar['compartment_name'],
+                                'compartment_path': ar['compartment_path'],
+                                'type': "STREAM",
+                                'name': ar['name'],
+                                'partitions': ar['partitions'],
+                                'time_created': ar['time_created'][0:16],
+                                'lifecycle_state': ar['lifecycle_state'],
+                                'lifecycle_details': "",
+                                'messages_endpoint': ar['messages_endpoint'],
+                                'retention_in_seconds': "",
+                                'visibility_in_seconds': "",
+                                'timeout_in_seconds': "",
+                                'dead_letter_queue_delivery_count': "",
+                                'custom_encryption_key_id': "",
+                                'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                                'defined_tags': self.__get_defined_tags(ar['defined_tags']),
+                                'id': ar['id']
+                            }
 
-                        self.csv_streams_queues.append(data)
+                            self.csv_streams_queues.append(data)
 
-                if services['queues']:
-                    for ar in services['queues']:
+                if 'queues' in services:
+                    if services['queues']:
+                        for ar in services['queues']:
 
-                        data = {
-                            'region_name': region_name,
-                            'compartment_name': ar['compartment_name'],
-                            'compartment_path': ar['compartment_path'],
-                            'type': "QUEUE",
-                            'name': ar['name'],
-                            'partitions': "",
-                            'time_created': ar['time_created'][0:16],
-                            'lifecycle_state': ar['lifecycle_state'],
-                            'lifecycle_details': ar['lifecycle_details'],
-                            'messages_endpoint': ar['messages_endpoint'],
-                            'retention_in_seconds': ar['retention_in_seconds'],
-                            'visibility_in_seconds': ar['visibility_in_seconds'],
-                            'timeout_in_seconds': ar['timeout_in_seconds'],
-                            'dead_letter_queue_delivery_count': ar['dead_letter_queue_delivery_count'],
-                            'custom_encryption_key_id': ar['custom_encryption_key_id'],
-                            'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
-                            'defined_tags': self.__get_defined_tags(ar['defined_tags']),
-                            'id': ar['id']
-                        }
+                            data = {
+                                'region_name': region_name,
+                                'compartment_name': ar['compartment_name'],
+                                'compartment_path': ar['compartment_path'],
+                                'type': "QUEUE",
+                                'name': ar['name'],
+                                'partitions': "",
+                                'time_created': ar['time_created'][0:16],
+                                'lifecycle_state': ar['lifecycle_state'],
+                                'lifecycle_details': ar['lifecycle_details'],
+                                'messages_endpoint': ar['messages_endpoint'],
+                                'retention_in_seconds': ar['retention_in_seconds'],
+                                'visibility_in_seconds': ar['visibility_in_seconds'],
+                                'timeout_in_seconds': ar['timeout_in_seconds'],
+                                'dead_letter_queue_delivery_count': ar['dead_letter_queue_delivery_count'],
+                                'custom_encryption_key_id': ar['custom_encryption_key_id'],
+                                'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                                'defined_tags': self.__get_defined_tags(ar['defined_tags']),
+                                'id': ar['id']
+                            }
 
-                        self.csv_streams_queues.append(data)
+                            self.csv_streams_queues.append(data)
 
         except Exception as e:
             self.__print_error("__csv_streams_queues", e)

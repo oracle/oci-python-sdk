@@ -3,24 +3,23 @@
 # Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 #
-# Author - Adi Zohar, Feb 28th 2020, Amended Oct 18th 2022
+# Author - Adi Zohar, Feb 8th 2023
 #
-# Run Multi daily usage load for crontab use
-#
-# Amend variables below and database connectivity
-# Use .oci/config profiles with user authentications
+# Run load_showoci_csv_to_adw
 #
 # Crontab set:
-# 0 0 * * * timeout 6h /home/opc/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh > /home/opc/usage_reports_to_adw/cron_run_multi_tenants_crontab_run.txt 2>&1
+# 0 0 * * * timeout 6h /home/opc/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh > /home/opc/usage_reports_to_adw/run_multi_tenants_crontab_run.txt 2>&1
 #############################################################################################################################
 
 # Env Variables based on yum instant client
 export CLIENT_HOME=/usr/lib/oracle/current/client64
+export LD_LIBRARY_PATH=${CLIENT_HOME}/lib
 export PATH=$PATH:$CLIENT_HOME/bin:$CLIENT_HOME
 
 # App dir
 export TNS_ADMIN=$HOME/ADWCUSG
 export APPDIR=$HOME/usage_reports_to_adw
+export SHOWOCI_DIR=$HOME/showoci
 export CREDFILE=$APPDIR/config.user
 cd $APPDIR
 
@@ -37,13 +36,13 @@ export DATE=`date '+%Y%m%d_%H%M'`
 export REPORT_DIR=${APPDIR}/report
 mkdir -p ${REPORT_DIR}
 
-# Check if usage2adw.py already running
-if (( `ps -ef |grep python |grep usage2adw.py |wc -l` > 0 ))
+# Check if showoci_csv2adw.py already running
+if (( `ps -ef |grep python |grep showoci_csv2adw.py |wc -l` > 0 ))
 then
-    echo "usage2adw.py is already running, abort.."
-    ps -ef |grep python |grep usage2adw.py
+    echo "showoci_csv2adw.py is already running, abort.."
+    ps -ef |grep python |grep showoci_csv2adw.py
     exit 1
-fi
+fi 
 
 ##################################
 # Report Function
@@ -51,35 +50,23 @@ fi
 run_report()
 {
     NAME=$1
+    CSV=$2
     export tenant="-t $NAME"
     if [ -z "$NAME" ]
     then
         exit 1
     fi
 
-    if [ "${1}" = "local" ]; then
-        export tenant="-ip"
-    fi
-
-    if [ -z "${2}" ]
+    if [ -z "${CSV}" ]
     then
-        TAG1=$TAG1_SPECIAL
-    else
-        TAG1=$2
+        exit 1 
     fi
 
-    if [ -z "${3}" ]
-    then
-        TAG2=$TAG2_SPECIAL
-    else
-        TAG2=$3
-    fi
-
-    DIR=${REPORT_DIR}/$NAME
+    DIR=${REPORT_DIR}/CSV_$NAME
     OUTPUT_FILE=${DIR}/${DATE}_${NAME}.txt
     mkdir -p $DIR
     echo "Running $NAME... to $OUTPUT_FILE "
-    python3 $APPDIR/usage2adw.py $tenant -du $DATABASE_USER -dp $DATABASE_PASS -dn $DATABASE_NAME -d $MIN_DATE -ts "${TAG1}" -ts2 "${TAG2}" $4 |tee -a $OUTPUT_FILE
+    python3 $SHOWOCI_DIR/showoci_csv2adw.py -du $DATABASE_USER -dp $DATABASE_PASS -dn $DATABASE_NAME -csv $CSV |tee -a $OUTPUT_FILE
     grep -i "Error" $OUTPUT_FILE
 
     ERROR=""
@@ -95,13 +82,8 @@ run_report()
 ###########################################################
 # Main
 ###########################################################
-# local - authentication by instant principle
-# add oci config tenant profile to add more tenants to load
-##################################
 echo "Start running at `date`..."
 
-run_report local
-#run_report tenant2 tagspecial1 tagspecial2
-#run_report tenant3 tagspecial1 tagspecial2
+run_report local $SHOWOCI_DIR/report/local/csv/local
 
 echo "Completed at `date`.."

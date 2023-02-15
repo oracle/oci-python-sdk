@@ -5,7 +5,7 @@
 #
 # Setup for usage2adw
 # Written by Adi Zohar, October 2020
-# Git Location = https://github.com/oracle/oci-python-sdk/tree/master/examples/usage_reports_to_adw
+# Git Location = https://raw.githubusercontent.com/adizohar/usage_reports_to_adw/main/
 #
 # If script fail, please add the policies and re-run
 #

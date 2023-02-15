@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+23.02.14 - 23.02.14
+=====================
+* Added database standalone backups
+* Added tenant_name and tenant_id (6 last letters) to CSVs
+* Added showoci_csv2adw.py (beta) - Load csv files to Oracle database
+
+=====================
 23.02.07 - 23.02.07
 =====================
 * Added version check of showoci classes
