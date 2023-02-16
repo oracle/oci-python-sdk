@@ -137,7 +137,7 @@ class Anomaly(object):
     def imputed_value(self):
         """
         Gets the imputed_value of this Anomaly.
-        The value imputed by one of IDP step for missing values in origin data
+        The value imputed by an IDP step for missing values in origin data.
 
 
         :return: The imputed_value of this Anomaly.
@@ -149,7 +149,7 @@ class Anomaly(object):
     def imputed_value(self, imputed_value):
         """
         Sets the imputed_value of this Anomaly.
-        The value imputed by one of IDP step for missing values in origin data
+        The value imputed by an IDP step for missing values in origin data.
 
 
         :param imputed_value: The imputed_value of this Anomaly.
@@ -161,7 +161,7 @@ class Anomaly(object):
     def anomaly_score(self):
         """
         **[Required]** Gets the anomaly_score of this Anomaly.
-        A significant score ranged from 0 to 1 to each anomaly point
+        A significant score ranged from 0 to 1 to each anomaly point.
 
 
         :return: The anomaly_score of this Anomaly.
@@ -173,7 +173,7 @@ class Anomaly(object):
     def anomaly_score(self, anomaly_score):
         """
         Sets the anomaly_score of this Anomaly.
-        A significant score ranged from 0 to 1 to each anomaly point
+        A significant score ranged from 0 to 1 to each anomaly point.
 
 
         :param anomaly_score: The anomaly_score of this Anomaly.

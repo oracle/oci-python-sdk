@@ -56,7 +56,7 @@ class ProjectSummary(object):
 
         :param system_tags:
             The value to assign to the system_tags property of this ProjectSummary.
-        :type system_tags: dict(str, dict(str, object))
+        :type system_tags: dict(str, object)
 
         """
         self.swagger_types = {
@@ -69,7 +69,7 @@ class ProjectSummary(object):
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -333,11 +333,11 @@ class ProjectSummary(object):
         """
         Gets the system_tags of this ProjectSummary.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
 
 
         :return: The system_tags of this ProjectSummary.
-        :rtype: dict(str, dict(str, object))
+        :rtype: dict(str, object)
         """
         return self._system_tags
 
@@ -346,11 +346,11 @@ class ProjectSummary(object):
         """
         Sets the system_tags of this ProjectSummary.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
 
 
         :param system_tags: The system_tags of this ProjectSummary.
-        :type: dict(str, dict(str, object))
+        :type: dict(str, object)
         """
         self._system_tags = system_tags
 

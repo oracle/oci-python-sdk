@@ -127,7 +127,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -145,7 +145,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -181,6 +181,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -236,7 +238,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -254,7 +256,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/aiPrivateEndpoints/{aiPrivateEndpointId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_ai_private_endpoint_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpoint/ChangeAiPrivateEndpointCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -292,6 +294,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -350,7 +354,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -368,7 +372,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/dataAssets/{dataAssetId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_data_asset_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAsset/ChangeDataAssetCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -406,6 +410,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -431,6 +437,112 @@ class AnomalyDetectionClient(object):
                 header_params=header_params,
                 body=change_data_asset_compartment_details,
                 response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def change_detect_anomaly_job_compartment(self, detect_anomaly_job_id, change_detect_anomaly_job_compartment_details, **kwargs):
+        """
+        Moves a asynchronous anomaly detect job resource from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
+
+
+        :param str detect_anomaly_job_id: (required)
+            Unique asynchronous job identifier.
+
+        :param oci.ai_anomaly_detection.models.ChangeDetectAnomalyJobCompartmentDetails change_detect_anomaly_job_compartment_details: (required)
+            The details to change the compartment of the async anomaly detect job.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/change_detect_anomaly_job_compartment.py.html>`__ to see an example of how to use change_detect_anomaly_job_compartment API.
+        """
+        resource_path = "/detectAnomalyJobs/{detectAnomalyJobId}/actions/changeCompartment"
+        method = "POST"
+        operation_name = "change_detect_anomaly_job_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJob/ChangeDetectAnomalyJobCompartment"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "change_detect_anomaly_job_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "detectAnomalyJobId": detect_anomaly_job_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_detect_anomaly_job_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_detect_anomaly_job_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
@@ -466,7 +578,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -484,7 +596,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/models/{modelId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_model_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/ChangeModelCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -522,6 +634,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -580,7 +694,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -598,7 +712,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/projects/{projectId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_project_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/ChangeProjectCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -636,6 +750,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -684,7 +800,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -702,7 +818,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/aiPrivateEndpoints"
         method = "POST"
         operation_name = "create_ai_private_endpoint"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpoint/CreateAiPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -728,6 +844,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -774,7 +892,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -792,7 +910,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/dataAssets"
         method = "POST"
         operation_name = "create_data_asset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAsset/CreateDataAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -818,6 +936,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -845,6 +965,108 @@ class AnomalyDetectionClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def create_detect_anomaly_job(self, create_detect_anomaly_job_details, **kwargs):
+        """
+        Creates a job to perform anomaly detection.
+
+
+        :param oci.ai_anomaly_detection.models.CreateDetectAnomalyJobDetails create_detect_anomaly_job_details: (required)
+            The input is either:
+              - JSON object in the request. This object is defined, and the SDK generates the
+                object for it.
+              - Data embedded as Base64 string in format of either:
+                - CSV
+                - JSON
+                If this option is used, then you must provide the content of specified
+                CSV or JSON in Base64 encoded string. The Embedded JSON has to be
+                in the same format as the inline request JSON.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.ai_anomaly_detection.models.DetectAnomalyJob`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/create_detect_anomaly_job.py.html>`__ to see an example of how to use create_detect_anomaly_job API.
+        """
+        resource_path = "/detectAnomalyJobs"
+        method = "POST"
+        operation_name = "create_detect_anomaly_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJob/CreateDetectAnomalyJob"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_detect_anomaly_job got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_detect_anomaly_job_details,
+                response_type="DetectAnomalyJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_detect_anomaly_job_details,
+                response_type="DetectAnomalyJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def create_model(self, create_model_details, **kwargs):
         """
         Creates a new Model.
@@ -866,7 +1088,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -884,7 +1106,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/models"
         method = "POST"
         operation_name = "create_model"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/CreateModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -910,6 +1132,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -958,7 +1182,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -976,7 +1200,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/projects"
         method = "POST"
         operation_name = "create_project"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/CreateProject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1002,6 +1226,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1050,7 +1276,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1068,7 +1294,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/aiPrivateEndpoints/{aiPrivateEndpointId}"
         method = "DELETE"
         operation_name = "delete_ai_private_endpoint"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpoint/DeleteAiPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1104,6 +1330,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1149,7 +1377,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1167,7 +1395,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/dataAssets/{dataAssetId}"
         method = "DELETE"
         operation_name = "delete_data_asset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAsset/DeleteDataAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1203,6 +1431,109 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def delete_detect_anomaly_job(self, detect_anomaly_job_id, **kwargs):
+        """
+        Deletes an accepted, but not started detect anomaly asynchronous job.
+
+
+        :param str detect_anomaly_job_id: (required)
+            Unique asynchronous job identifier.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/delete_detect_anomaly_job.py.html>`__ to see an example of how to use delete_detect_anomaly_job API.
+        """
+        resource_path = "/detectAnomalyJobs/{detectAnomalyJobId}"
+        method = "DELETE"
+        operation_name = "delete_detect_anomaly_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJob/DeleteDetectAnomalyJob"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_detect_anomaly_job got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "detectAnomalyJobId": detect_anomaly_job_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1248,7 +1579,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1266,7 +1597,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/models/{modelId}"
         method = "DELETE"
         operation_name = "delete_model"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/DeleteModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1302,6 +1633,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1347,7 +1680,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1365,7 +1698,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/projects/{projectId}"
         method = "DELETE"
         operation_name = "delete_project"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/DeleteProject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1401,6 +1734,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1434,11 +1769,11 @@ class AnomalyDetectionClient(object):
             The input is either:
               - JSON object in the request. This object is defined and SDK will generate the
                 object for it
-              - Data embedded as base64 string in format of either
+              - Data embedded as Base64 string in format of either
                 - CSV
                 - JSON
                 If this option is chosen then customer has to provide the content of specified
-                CSV or JSON in base64 encoded string. The Embedded JSON will still has to be
+                CSV or JSON in Base64 encoded string. The Embedded JSON will still has to be
                 in same format as inline request JSON
 
         :param str opc_request_id: (optional)
@@ -1461,7 +1796,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1479,7 +1814,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/actions/detectAnomalies"
         method = "POST"
         operation_name = "detect_anomalies"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/DetectAnomalies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1507,6 +1842,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1548,7 +1885,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1566,7 +1903,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/aiPrivateEndpoints/{aiPrivateEndpointId}"
         method = "GET"
         operation_name = "get_ai_private_endpoint"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpoint/GetAiPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1600,6 +1937,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1640,7 +1979,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1658,7 +1997,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/dataAssets/{dataAssetId}"
         method = "GET"
         operation_name = "get_data_asset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAsset/GetDataAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1692,6 +2031,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1718,6 +2059,100 @@ class AnomalyDetectionClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def get_detect_anomaly_job(self, detect_anomaly_job_id, **kwargs):
+        """
+        Gets a detect anomaly asynchronous job by identifier.
+
+
+        :param str detect_anomaly_job_id: (required)
+            Unique asynchronous job identifier.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.ai_anomaly_detection.models.DetectAnomalyJob`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/get_detect_anomaly_job.py.html>`__ to see an example of how to use get_detect_anomaly_job API.
+        """
+        resource_path = "/detectAnomalyJobs/{detectAnomalyJobId}"
+        method = "GET"
+        operation_name = "get_detect_anomaly_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJob/GetDetectAnomalyJob"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_detect_anomaly_job got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "detectAnomalyJobId": detect_anomaly_job_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DetectAnomalyJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DetectAnomalyJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def get_model(self, model_id, **kwargs):
         """
         Gets a Model by identifier
@@ -1732,7 +2167,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1750,7 +2185,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/models/{modelId}"
         method = "GET"
         operation_name = "get_model"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/GetModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1784,6 +2219,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1824,7 +2261,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1842,7 +2279,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/projects/{projectId}"
         method = "GET"
         operation_name = "get_project"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/GetProject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1876,6 +2313,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1916,7 +2355,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1934,7 +2373,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1968,6 +2407,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -2036,7 +2477,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -2054,7 +2495,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/aiPrivateEndpoints"
         method = "GET"
         operation_name = "list_ai_private_endpoints"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpointCollection/ListAiPrivateEndpoints"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2118,6 +2559,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -2186,7 +2629,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -2204,7 +2647,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/dataAssets"
         method = "GET"
         operation_name = "list_data_assets"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAssetCollection/ListDataAssets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2268,6 +2711,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -2290,6 +2735,168 @@ class AnomalyDetectionClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="DataAssetCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def list_detect_anomaly_jobs(self, compartment_id, **kwargs):
+        """
+        Returns a list of all the Anomaly Detection jobs in the specified compartment.
+
+
+        :param str compartment_id: (required)
+            The ID of the compartment in which to list resources.
+
+        :param str model_id: (optional)
+            The ID of the trained model for which to list the resources.
+
+        :param str project_id: (optional)
+            The ID of the project for which to list the objects.
+
+        :param str detect_anomaly_job_id: (optional)
+            Unique Async Job identifier
+
+        :param str lifecycle_state: (optional)
+            <b>Filter</b> results by the specified lifecycle state. Must be a valid
+            state for the resource type.
+
+            Allowed values are: "SUCCEEDED", "PARTIALLY_SUCCEEDED", "FAILED", "ACCEPTED", "CANCELED", "IN_PROGRESS"
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the entire display name given.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+
+            Allowed values are: "timeCreated", "displayName"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.ai_anomaly_detection.models.DetectAnomalyJobCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/list_detect_anomaly_jobs.py.html>`__ to see an example of how to use list_detect_anomaly_jobs API.
+        """
+        resource_path = "/detectAnomalyJobs"
+        method = "GET"
+        operation_name = "list_detect_anomaly_jobs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJobCollection/ListDetectAnomalyJobs"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "model_id",
+            "project_id",
+            "detect_anomaly_job_id",
+            "lifecycle_state",
+            "display_name",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_detect_anomaly_jobs got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["SUCCEEDED", "PARTIALLY_SUCCEEDED", "FAILED", "ACCEPTED", "CANCELED", "IN_PROGRESS"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "modelId": kwargs.get("model_id", missing),
+            "projectId": kwargs.get("project_id", missing),
+            "detectAnomalyJobId": kwargs.get("detect_anomaly_job_id", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="DetectAnomalyJobCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="DetectAnomalyJobCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
@@ -2339,7 +2946,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -2357,7 +2964,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/models"
         method = "GET"
         operation_name = "list_models"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/ListModels"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2421,6 +3028,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -2489,7 +3098,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -2507,7 +3116,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/projects"
         method = "GET"
         operation_name = "list_projects"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/ListProjects"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2569,6 +3178,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -2615,7 +3226,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -2633,7 +3244,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2675,6 +3286,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -2723,7 +3336,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -2741,7 +3354,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2783,6 +3396,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -2834,7 +3449,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -2852,7 +3467,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2887,6 +3502,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -2937,7 +3554,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -2955,7 +3572,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/aiPrivateEndpoints/{aiPrivateEndpointId}"
         method = "PUT"
         operation_name = "update_ai_private_endpoint"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/AiPrivateEndpoint/UpdateAiPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2991,6 +3608,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -3041,7 +3660,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -3059,7 +3678,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/dataAssets/{dataAssetId}"
         method = "PUT"
         operation_name = "update_data_asset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DataAsset/UpdateDataAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3095,6 +3714,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -3123,6 +3744,114 @@ class AnomalyDetectionClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def update_detect_anomaly_job(self, detect_anomaly_job_id, update_detect_anomaly_job_details, **kwargs):
+        """
+        Updates the detect anomaly asynchronous job by identifier.
+
+
+        :param str detect_anomaly_job_id: (required)
+            Unique asynchronous job identifier.
+
+        :param oci.ai_anomaly_detection.models.UpdateDetectAnomalyJobDetails update_detect_anomaly_job_details: (required)
+            The information to be updated.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.ai_anomaly_detection.models.DetectAnomalyJob`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/update_detect_anomaly_job.py.html>`__ to see an example of how to use update_detect_anomaly_job API.
+        """
+        resource_path = "/detectAnomalyJobs/{detectAnomalyJobId}"
+        method = "PUT"
+        operation_name = "update_detect_anomaly_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/DetectAnomalyJob/UpdateDetectAnomalyJob"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_detect_anomaly_job got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "detectAnomalyJobId": detect_anomaly_job_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_detect_anomaly_job_details,
+                response_type="DetectAnomalyJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_detect_anomaly_job_details,
+                response_type="DetectAnomalyJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def update_model(self, model_id, update_model_details, **kwargs):
         """
         Updates the Model
@@ -3147,7 +3876,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -3165,7 +3894,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/models/{modelId}"
         method = "PUT"
         operation_name = "update_model"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Model/UpdateModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3201,6 +3930,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -3251,7 +3982,7 @@ class AnomalyDetectionClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -3269,7 +4000,7 @@ class AnomalyDetectionClient(object):
         resource_path = "/projects/{projectId}"
         method = "PUT"
         operation_name = "update_project"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/anomalydetection/20210101/Project/UpdateProject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3305,6 +4036,8 @@ class AnomalyDetectionClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):

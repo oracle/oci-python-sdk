@@ -60,25 +60,39 @@ class WorkRequestResource(object):
             The value to assign to the entity_uri property of this WorkRequestResource.
         :type entity_uri: str
 
+        :param entity_name:
+            The value to assign to the entity_name property of this WorkRequestResource.
+        :type entity_name: str
+
+        :param entity_dependencies:
+            The value to assign to the entity_dependencies property of this WorkRequestResource.
+        :type entity_dependencies: list[oci.database_management.models.WorkRequestSubResource]
+
         """
         self.swagger_types = {
             'entity_type': 'str',
             'action_type': 'str',
             'identifier': 'str',
-            'entity_uri': 'str'
+            'entity_uri': 'str',
+            'entity_name': 'str',
+            'entity_dependencies': 'list[WorkRequestSubResource]'
         }
 
         self.attribute_map = {
             'entity_type': 'entityType',
             'action_type': 'actionType',
             'identifier': 'identifier',
-            'entity_uri': 'entityUri'
+            'entity_uri': 'entityUri',
+            'entity_name': 'entityName',
+            'entity_dependencies': 'entityDependencies'
         }
 
         self._entity_type = None
         self._action_type = None
         self._identifier = None
         self._entity_uri = None
+        self._entity_name = None
+        self._entity_dependencies = None
 
     @property
     def entity_type(self):
@@ -187,6 +201,56 @@ class WorkRequestResource(object):
         :type: str
         """
         self._entity_uri = entity_uri
+
+    @property
+    def entity_name(self):
+        """
+        Gets the entity_name of this WorkRequestResource.
+        The name of the WorkRequest resource entity.
+
+
+        :return: The entity_name of this WorkRequestResource.
+        :rtype: str
+        """
+        return self._entity_name
+
+    @entity_name.setter
+    def entity_name(self, entity_name):
+        """
+        Sets the entity_name of this WorkRequestResource.
+        The name of the WorkRequest resource entity.
+
+
+        :param entity_name: The entity_name of this WorkRequestResource.
+        :type: str
+        """
+        self._entity_name = entity_name
+
+    @property
+    def entity_dependencies(self):
+        """
+        Gets the entity_dependencies of this WorkRequestResource.
+        The dependent resources of this work request resource, these can only be provisioned
+        when primary resource successfully completes.
+
+
+        :return: The entity_dependencies of this WorkRequestResource.
+        :rtype: list[oci.database_management.models.WorkRequestSubResource]
+        """
+        return self._entity_dependencies
+
+    @entity_dependencies.setter
+    def entity_dependencies(self, entity_dependencies):
+        """
+        Sets the entity_dependencies of this WorkRequestResource.
+        The dependent resources of this work request resource, these can only be provisioned
+        when primary resource successfully completes.
+
+
+        :param entity_dependencies: The entity_dependencies of this WorkRequestResource.
+        :type: list[oci.database_management.models.WorkRequestSubResource]
+        """
+        self._entity_dependencies = entity_dependencies
 
     def __repr__(self):
         return formatted_flat_dict(self)

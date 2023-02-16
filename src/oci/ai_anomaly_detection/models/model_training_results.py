@@ -13,6 +13,14 @@ class ModelTrainingResults(object):
     Specifies the details for an Anomaly Detection model trained with MSET.
     """
 
+    #: A constant which can be used with the algorithm property of a ModelTrainingResults.
+    #: This constant has a value of "MULTIVARIATE_MSET"
+    ALGORITHM_MULTIVARIATE_MSET = "MULTIVARIATE_MSET"
+
+    #: A constant which can be used with the algorithm property of a ModelTrainingResults.
+    #: This constant has a value of "UNIVARIATE_OCSVM"
+    ALGORITHM_UNIVARIATE_OCSVM = "UNIVARIATE_OCSVM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ModelTrainingResults object with values from keyword arguments.
@@ -25,6 +33,16 @@ class ModelTrainingResults(object):
         :param multivariate_fap:
             The value to assign to the multivariate_fap property of this ModelTrainingResults.
         :type multivariate_fap: float
+
+        :param algorithm:
+            The value to assign to the algorithm property of this ModelTrainingResults.
+            Allowed values for this property are: "MULTIVARIATE_MSET", "UNIVARIATE_OCSVM", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type algorithm: str
+
+        :param window_size:
+            The value to assign to the window_size property of this ModelTrainingResults.
+        :type window_size: int
 
         :param is_training_goal_achieved:
             The value to assign to the is_training_goal_achieved property of this ModelTrainingResults.
@@ -46,6 +64,8 @@ class ModelTrainingResults(object):
         self.swagger_types = {
             'fap': 'float',
             'multivariate_fap': 'float',
+            'algorithm': 'str',
+            'window_size': 'int',
             'is_training_goal_achieved': 'bool',
             'warning': 'str',
             'signal_details': 'list[PerSignalDetails]',
@@ -55,6 +75,8 @@ class ModelTrainingResults(object):
         self.attribute_map = {
             'fap': 'fap',
             'multivariate_fap': 'multivariateFap',
+            'algorithm': 'algorithm',
+            'window_size': 'windowSize',
             'is_training_goal_achieved': 'isTrainingGoalAchieved',
             'warning': 'warning',
             'signal_details': 'signalDetails',
@@ -63,6 +85,8 @@ class ModelTrainingResults(object):
 
         self._fap = None
         self._multivariate_fap = None
+        self._algorithm = None
+        self._window_size = None
         self._is_training_goal_achieved = None
         self._warning = None
         self._signal_details = None
@@ -115,6 +139,60 @@ class ModelTrainingResults(object):
         :type: float
         """
         self._multivariate_fap = multivariate_fap
+
+    @property
+    def algorithm(self):
+        """
+        Gets the algorithm of this ModelTrainingResults.
+        Actual algorithm used to train the model
+
+        Allowed values for this property are: "MULTIVARIATE_MSET", "UNIVARIATE_OCSVM", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The algorithm of this ModelTrainingResults.
+        :rtype: str
+        """
+        return self._algorithm
+
+    @algorithm.setter
+    def algorithm(self, algorithm):
+        """
+        Sets the algorithm of this ModelTrainingResults.
+        Actual algorithm used to train the model
+
+
+        :param algorithm: The algorithm of this ModelTrainingResults.
+        :type: str
+        """
+        allowed_values = ["MULTIVARIATE_MSET", "UNIVARIATE_OCSVM"]
+        if not value_allowed_none_or_none_sentinel(algorithm, allowed_values):
+            algorithm = 'UNKNOWN_ENUM_VALUE'
+        self._algorithm = algorithm
+
+    @property
+    def window_size(self):
+        """
+        Gets the window_size of this ModelTrainingResults.
+        Window size defined during training or deduced by the algorithm.
+
+
+        :return: The window_size of this ModelTrainingResults.
+        :rtype: int
+        """
+        return self._window_size
+
+    @window_size.setter
+    def window_size(self, window_size):
+        """
+        Sets the window_size of this ModelTrainingResults.
+        Window size defined during training or deduced by the algorithm.
+
+
+        :param window_size: The window_size of this ModelTrainingResults.
+        :type: int
+        """
+        self._window_size = window_size
 
     @property
     def is_training_goal_achieved(self):

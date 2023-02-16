@@ -10,8 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DetectAnomaliesDetails(object):
     """
-    Base class for the DetectAnomalies call. It contains the identifier that will
-    be used for deciding what type of request this is.
+    Base class for the DetectAnomalies call. It contains the identifier that is
+    used for deciding what type of request this is.
     """
 
     #: A constant which can be used with the request_type property of a DetectAnomaliesDetails.
@@ -41,19 +41,26 @@ class DetectAnomaliesDetails(object):
             Allowed values for this property are: "INLINE", "BASE64_ENCODED"
         :type request_type: str
 
+        :param sensitivity:
+            The value to assign to the sensitivity property of this DetectAnomaliesDetails.
+        :type sensitivity: float
+
         """
         self.swagger_types = {
             'model_id': 'str',
-            'request_type': 'str'
+            'request_type': 'str',
+            'sensitivity': 'float'
         }
 
         self.attribute_map = {
             'model_id': 'modelId',
-            'request_type': 'requestType'
+            'request_type': 'requestType',
+            'sensitivity': 'sensitivity'
         }
 
         self._model_id = None
         self._request_type = None
+        self._sensitivity = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -75,7 +82,7 @@ class DetectAnomaliesDetails(object):
     def model_id(self):
         """
         **[Required]** Gets the model_id of this DetectAnomaliesDetails.
-        The OCID of the trained model\u3002
+        The OCID of the trained model.
 
 
         :return: The model_id of this DetectAnomaliesDetails.
@@ -87,7 +94,7 @@ class DetectAnomaliesDetails(object):
     def model_id(self, model_id):
         """
         Sets the model_id of this DetectAnomaliesDetails.
-        The OCID of the trained model\u3002
+        The OCID of the trained model.
 
 
         :param model_id: The model_id of this DetectAnomaliesDetails.
@@ -99,8 +106,8 @@ class DetectAnomaliesDetails(object):
     def request_type(self):
         """
         **[Required]** Gets the request_type of this DetectAnomaliesDetails.
-        Type of request. This parameter will be filled autmatically by classes generated
-        by the SDK. For raw curl request, user will have to provide this field.
+        Type of request. This parameter is automatically populated by classes generated
+        by the SDK. For raw curl requests, you must provide this field.
 
         Allowed values for this property are: "INLINE", "BASE64_ENCODED"
 
@@ -114,8 +121,8 @@ class DetectAnomaliesDetails(object):
     def request_type(self, request_type):
         """
         Sets the request_type of this DetectAnomaliesDetails.
-        Type of request. This parameter will be filled autmatically by classes generated
-        by the SDK. For raw curl request, user will have to provide this field.
+        Type of request. This parameter is automatically populated by classes generated
+        by the SDK. For raw curl requests, you must provide this field.
 
 
         :param request_type: The request_type of this DetectAnomaliesDetails.
@@ -128,6 +135,30 @@ class DetectAnomaliesDetails(object):
                 .format(allowed_values)
             )
         self._request_type = request_type
+
+    @property
+    def sensitivity(self):
+        """
+        Gets the sensitivity of this DetectAnomaliesDetails.
+        Sensitivity of the algorithm to detect anomalies - higher the value, more anomalies get flagged. The value estimated during training is used by default. You can choose to provide a custom value.
+
+
+        :return: The sensitivity of this DetectAnomaliesDetails.
+        :rtype: float
+        """
+        return self._sensitivity
+
+    @sensitivity.setter
+    def sensitivity(self, sensitivity):
+        """
+        Sets the sensitivity of this DetectAnomaliesDetails.
+        Sensitivity of the algorithm to detect anomalies - higher the value, more anomalies get flagged. The value estimated during training is used by default. You can choose to provide a custom value.
+
+
+        :param sensitivity: The sensitivity of this DetectAnomaliesDetails.
+        :type: float
+        """
+        self._sensitivity = sensitivity
 
     def __repr__(self):
         return formatted_flat_dict(self)

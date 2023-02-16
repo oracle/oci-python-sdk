@@ -272,6 +272,48 @@ def test_change_db_management_private_endpoint_compartment(testing_service_clien
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_change_external_db_system_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ChangeExternalDbSystemCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ChangeExternalDbSystemCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ChangeExternalDbSystemCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.change_external_db_system_compartment(
+                external_db_system_id=request.pop(util.camelize('externalDbSystemId')),
+                change_external_db_system_compartment_details=request.pop(util.camelize('ChangeExternalDbSystemCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ChangeExternalDbSystemCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_external_db_system_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_change_job_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'ChangeJobCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -356,6 +398,47 @@ def test_change_managed_database_group_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_check_external_db_system_connector_connection_status(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'CheckExternalDbSystemConnectorConnectionStatus'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'CheckExternalDbSystemConnectorConnectionStatus')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='CheckExternalDbSystemConnectorConnectionStatus')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.check_external_db_system_connector_connection_status(
+                external_db_system_connector_id=request.pop(util.camelize('externalDbSystemConnectorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'CheckExternalDbSystemConnectorConnectionStatus',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalDbSystemConnector',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_create_db_management_private_endpoint(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'CreateDbManagementPrivateEndpoint'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -391,6 +474,129 @@ def test_create_db_management_private_endpoint(testing_service_client):
             result,
             service_error,
             'dbManagementPrivateEndpoint',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_create_external_db_system(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'CreateExternalDbSystem'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'CreateExternalDbSystem')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='CreateExternalDbSystem')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.create_external_db_system(
+                create_external_db_system_details=request.pop(util.camelize('CreateExternalDbSystemDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'CreateExternalDbSystem',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalDbSystem',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_create_external_db_system_connector(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'CreateExternalDbSystemConnector'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'CreateExternalDbSystemConnector')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='CreateExternalDbSystemConnector')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.create_external_db_system_connector(
+                create_external_db_system_connector_details=request.pop(util.camelize('CreateExternalDbSystemConnectorDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'CreateExternalDbSystemConnector',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalDbSystemConnector',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_create_external_db_system_discovery(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'CreateExternalDbSystemDiscovery'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'CreateExternalDbSystemDiscovery')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='CreateExternalDbSystemDiscovery')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.create_external_db_system_discovery(
+                create_external_db_system_discovery_details=request.pop(util.camelize('CreateExternalDbSystemDiscoveryDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'CreateExternalDbSystemDiscovery',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalDbSystemDiscovery',
             False,
             False
         )
@@ -562,6 +768,129 @@ def test_delete_db_management_private_endpoint(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_delete_external_db_system(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'DeleteExternalDbSystem'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'DeleteExternalDbSystem')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='DeleteExternalDbSystem')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.delete_external_db_system(
+                external_db_system_id=request.pop(util.camelize('externalDbSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'DeleteExternalDbSystem',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_external_db_system',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_delete_external_db_system_connector(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'DeleteExternalDbSystemConnector'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'DeleteExternalDbSystemConnector')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='DeleteExternalDbSystemConnector')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.delete_external_db_system_connector(
+                external_db_system_connector_id=request.pop(util.camelize('externalDbSystemConnectorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'DeleteExternalDbSystemConnector',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_external_db_system_connector',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_delete_external_db_system_discovery(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'DeleteExternalDbSystemDiscovery'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'DeleteExternalDbSystemDiscovery')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='DeleteExternalDbSystemDiscovery')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.delete_external_db_system_discovery(
+                external_db_system_discovery_id=request.pop(util.camelize('externalDbSystemDiscoveryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'DeleteExternalDbSystemDiscovery',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_external_db_system_discovery',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_delete_job(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'DeleteJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -686,6 +1015,47 @@ def test_delete_preferred_credential(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_disable_external_db_system_database_management(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'DisableExternalDbSystemDatabaseManagement'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'DisableExternalDbSystemDatabaseManagement')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='DisableExternalDbSystemDatabaseManagement')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.disable_external_db_system_database_management(
+                external_db_system_id=request.pop(util.camelize('externalDbSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'DisableExternalDbSystemDatabaseManagement',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'disable_external_db_system_database_management',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_drop_tablespace(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'DropTablespace'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -723,6 +1093,48 @@ def test_drop_tablespace(testing_service_client):
             result,
             service_error,
             'tablespaceAdminStatus',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_enable_external_db_system_database_management(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'EnableExternalDbSystemDatabaseManagement'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'EnableExternalDbSystemDatabaseManagement')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='EnableExternalDbSystemDatabaseManagement')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.enable_external_db_system_database_management(
+                external_db_system_id=request.pop(util.camelize('externalDbSystemId')),
+                enable_external_db_system_database_management_details=request.pop(util.camelize('EnableExternalDbSystemDatabaseManagementDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'EnableExternalDbSystemDatabaseManagement',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'enable_external_db_system_database_management',
             False,
             False
         )
@@ -1018,6 +1430,457 @@ def test_get_db_management_private_endpoint(testing_service_client):
             result,
             service_error,
             'dbManagementPrivateEndpoint',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_external_asm(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetExternalAsm'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetExternalAsm')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetExternalAsm')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_external_asm(
+                external_asm_id=request.pop(util.camelize('externalAsmId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetExternalAsm',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalAsm',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_external_asm_configuration(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetExternalAsmConfiguration'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetExternalAsmConfiguration')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetExternalAsmConfiguration')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_external_asm_configuration(
+                external_asm_id=request.pop(util.camelize('externalAsmId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetExternalAsmConfiguration',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalAsmConfiguration',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_external_asm_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetExternalAsmInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetExternalAsmInstance')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetExternalAsmInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_external_asm_instance(
+                external_asm_instance_id=request.pop(util.camelize('externalAsmInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetExternalAsmInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalAsmInstance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_external_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetExternalCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetExternalCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetExternalCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_external_cluster(
+                external_cluster_id=request.pop(util.camelize('externalClusterId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetExternalCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalCluster',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_external_cluster_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetExternalClusterInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetExternalClusterInstance')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetExternalClusterInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_external_cluster_instance(
+                external_cluster_instance_id=request.pop(util.camelize('externalClusterInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetExternalClusterInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalClusterInstance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_external_db_home(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetExternalDbHome'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetExternalDbHome')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetExternalDbHome')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_external_db_home(
+                external_db_home_id=request.pop(util.camelize('externalDbHomeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetExternalDbHome',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalDbHome',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_external_db_node(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetExternalDbNode'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetExternalDbNode')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetExternalDbNode')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_external_db_node(
+                external_db_node_id=request.pop(util.camelize('externalDbNodeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetExternalDbNode',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalDbNode',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_external_db_system(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetExternalDbSystem'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetExternalDbSystem')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetExternalDbSystem')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_external_db_system(
+                external_db_system_id=request.pop(util.camelize('externalDbSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetExternalDbSystem',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalDbSystem',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_external_db_system_connector(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetExternalDbSystemConnector'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetExternalDbSystemConnector')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetExternalDbSystemConnector')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_external_db_system_connector(
+                external_db_system_connector_id=request.pop(util.camelize('externalDbSystemConnectorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetExternalDbSystemConnector',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalDbSystemConnector',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_external_db_system_discovery(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetExternalDbSystemDiscovery'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetExternalDbSystemDiscovery')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetExternalDbSystemDiscovery')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_external_db_system_discovery(
+                external_db_system_discovery_id=request.pop(util.camelize('externalDbSystemDiscoveryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetExternalDbSystemDiscovery',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalDbSystemDiscovery',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_external_listener(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetExternalListener'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetExternalListener')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetExternalListener')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_external_listener(
+                external_listener_id=request.pop(util.camelize('externalListenerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetExternalListener',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalListener',
             False,
             False
         )
@@ -2098,6 +2961,864 @@ def test_list_db_management_private_endpoints(testing_service_client):
             result,
             service_error,
             'dbManagementPrivateEndpointCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_external_asm_disk_groups(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListExternalAsmDiskGroups'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListExternalAsmDiskGroups')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListExternalAsmDiskGroups')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_external_asm_disk_groups(
+                external_asm_id=request.pop(util.camelize('externalAsmId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_external_asm_disk_groups(
+                    external_asm_id=request.pop(util.camelize('externalAsmId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_external_asm_disk_groups(
+                        external_asm_id=request.pop(util.camelize('externalAsmId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListExternalAsmDiskGroups',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalAsmDiskGroupCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_external_asm_instances(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListExternalAsmInstances'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListExternalAsmInstances')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListExternalAsmInstances')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_external_asm_instances(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_external_asm_instances(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_external_asm_instances(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListExternalAsmInstances',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalAsmInstanceCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_external_asm_users(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListExternalAsmUsers'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListExternalAsmUsers')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListExternalAsmUsers')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_external_asm_users(
+                external_asm_id=request.pop(util.camelize('externalAsmId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_external_asm_users(
+                    external_asm_id=request.pop(util.camelize('externalAsmId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_external_asm_users(
+                        external_asm_id=request.pop(util.camelize('externalAsmId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListExternalAsmUsers',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalAsmUserCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_external_asms(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListExternalAsms'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListExternalAsms')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListExternalAsms')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_external_asms(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_external_asms(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_external_asms(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListExternalAsms',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalAsmCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_external_cluster_instances(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListExternalClusterInstances'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListExternalClusterInstances')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListExternalClusterInstances')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_external_cluster_instances(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_external_cluster_instances(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_external_cluster_instances(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListExternalClusterInstances',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalClusterInstanceCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_external_clusters(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListExternalClusters'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListExternalClusters')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListExternalClusters')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_external_clusters(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_external_clusters(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_external_clusters(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListExternalClusters',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalClusterCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_external_databases(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListExternalDatabases'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListExternalDatabases')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListExternalDatabases')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_external_databases(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_external_databases(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_external_databases(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListExternalDatabases',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalDatabaseCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_external_db_homes(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListExternalDbHomes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListExternalDbHomes')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListExternalDbHomes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_external_db_homes(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_external_db_homes(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_external_db_homes(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListExternalDbHomes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalDbHomeCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_external_db_nodes(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListExternalDbNodes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListExternalDbNodes')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListExternalDbNodes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_external_db_nodes(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_external_db_nodes(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_external_db_nodes(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListExternalDbNodes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalDbNodeCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_external_db_system_connectors(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListExternalDbSystemConnectors'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListExternalDbSystemConnectors')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListExternalDbSystemConnectors')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_external_db_system_connectors(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_external_db_system_connectors(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_external_db_system_connectors(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListExternalDbSystemConnectors',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalDbSystemConnectorCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_external_db_system_discoveries(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListExternalDbSystemDiscoveries'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListExternalDbSystemDiscoveries')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListExternalDbSystemDiscoveries')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_external_db_system_discoveries(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_external_db_system_discoveries(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_external_db_system_discoveries(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListExternalDbSystemDiscoveries',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalDbSystemDiscoveryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_external_db_systems(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListExternalDbSystems'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListExternalDbSystems')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListExternalDbSystems')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_external_db_systems(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_external_db_systems(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_external_db_systems(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListExternalDbSystems',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalDbSystemCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_external_listener_services(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListExternalListenerServices'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListExternalListenerServices')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListExternalListenerServices')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_external_listener_services(
+                external_listener_id=request.pop(util.camelize('externalListenerId')),
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_external_listener_services(
+                    external_listener_id=request.pop(util.camelize('externalListenerId')),
+                    managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_external_listener_services(
+                        external_listener_id=request.pop(util.camelize('externalListenerId')),
+                        managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListExternalListenerServices',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalListenerServiceCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_external_listeners(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListExternalListeners'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListExternalListeners')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListExternalListeners')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_external_listeners(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_external_listeners(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_external_listeners(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListExternalListeners',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalListenerCollection',
             False,
             True
         )
@@ -3316,6 +5037,48 @@ def test_list_work_requests(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_patch_external_db_system_discovery(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'PatchExternalDbSystemDiscovery'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'PatchExternalDbSystemDiscovery')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='PatchExternalDbSystemDiscovery')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.patch_external_db_system_discovery(
+                external_db_system_discovery_id=request.pop(util.camelize('externalDbSystemDiscoveryId')),
+                patch_external_db_system_discovery_details=request.pop(util.camelize('PatchExternalDbSystemDiscoveryDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'PatchExternalDbSystemDiscovery',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalDbSystemDiscovery',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_remove_data_file(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'RemoveDataFile'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4107,6 +5870,351 @@ def test_summarize_awr_db_wait_events(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_summarize_external_asm_metrics(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'SummarizeExternalAsmMetrics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'SummarizeExternalAsmMetrics')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='SummarizeExternalAsmMetrics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_external_asm_metrics(
+                external_asm_id=request.pop(util.camelize('externalAsmId')),
+                start_time=request.pop(util.camelize('startTime')),
+                end_time=request.pop(util.camelize('endTime')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_external_asm_metrics(
+                    external_asm_id=request.pop(util.camelize('externalAsmId')),
+                    start_time=request.pop(util.camelize('startTime')),
+                    end_time=request.pop(util.camelize('endTime')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_external_asm_metrics(
+                        external_asm_id=request.pop(util.camelize('externalAsmId')),
+                        start_time=request.pop(util.camelize('startTime')),
+                        end_time=request.pop(util.camelize('endTime')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'SummarizeExternalAsmMetrics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'metricsAggregationRangeCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_summarize_external_cluster_metrics(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'SummarizeExternalClusterMetrics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'SummarizeExternalClusterMetrics')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='SummarizeExternalClusterMetrics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_external_cluster_metrics(
+                external_cluster_id=request.pop(util.camelize('externalClusterId')),
+                start_time=request.pop(util.camelize('startTime')),
+                end_time=request.pop(util.camelize('endTime')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_external_cluster_metrics(
+                    external_cluster_id=request.pop(util.camelize('externalClusterId')),
+                    start_time=request.pop(util.camelize('startTime')),
+                    end_time=request.pop(util.camelize('endTime')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_external_cluster_metrics(
+                        external_cluster_id=request.pop(util.camelize('externalClusterId')),
+                        start_time=request.pop(util.camelize('startTime')),
+                        end_time=request.pop(util.camelize('endTime')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'SummarizeExternalClusterMetrics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'metricsAggregationRangeCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_summarize_external_db_node_metrics(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'SummarizeExternalDbNodeMetrics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'SummarizeExternalDbNodeMetrics')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='SummarizeExternalDbNodeMetrics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_external_db_node_metrics(
+                external_db_node_id=request.pop(util.camelize('externalDbNodeId')),
+                start_time=request.pop(util.camelize('startTime')),
+                end_time=request.pop(util.camelize('endTime')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_external_db_node_metrics(
+                    external_db_node_id=request.pop(util.camelize('externalDbNodeId')),
+                    start_time=request.pop(util.camelize('startTime')),
+                    end_time=request.pop(util.camelize('endTime')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_external_db_node_metrics(
+                        external_db_node_id=request.pop(util.camelize('externalDbNodeId')),
+                        start_time=request.pop(util.camelize('startTime')),
+                        end_time=request.pop(util.camelize('endTime')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'SummarizeExternalDbNodeMetrics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'metricsAggregationRangeCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_summarize_external_db_system_availability_metrics(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'SummarizeExternalDbSystemAvailabilityMetrics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'SummarizeExternalDbSystemAvailabilityMetrics')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='SummarizeExternalDbSystemAvailabilityMetrics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_external_db_system_availability_metrics(
+                external_db_system_id=request.pop(util.camelize('externalDbSystemId')),
+                start_time=request.pop(util.camelize('startTime')),
+                end_time=request.pop(util.camelize('endTime')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_external_db_system_availability_metrics(
+                    external_db_system_id=request.pop(util.camelize('externalDbSystemId')),
+                    start_time=request.pop(util.camelize('startTime')),
+                    end_time=request.pop(util.camelize('endTime')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_external_db_system_availability_metrics(
+                        external_db_system_id=request.pop(util.camelize('externalDbSystemId')),
+                        start_time=request.pop(util.camelize('startTime')),
+                        end_time=request.pop(util.camelize('endTime')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'SummarizeExternalDbSystemAvailabilityMetrics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'metricsAggregationRangeCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_summarize_external_listener_metrics(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'SummarizeExternalListenerMetrics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'SummarizeExternalListenerMetrics')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='SummarizeExternalListenerMetrics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_external_listener_metrics(
+                external_listener_id=request.pop(util.camelize('externalListenerId')),
+                start_time=request.pop(util.camelize('startTime')),
+                end_time=request.pop(util.camelize('endTime')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_external_listener_metrics(
+                    external_listener_id=request.pop(util.camelize('externalListenerId')),
+                    start_time=request.pop(util.camelize('startTime')),
+                    end_time=request.pop(util.camelize('endTime')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_external_listener_metrics(
+                        external_listener_id=request.pop(util.camelize('externalListenerId')),
+                        start_time=request.pop(util.camelize('startTime')),
+                        end_time=request.pop(util.camelize('endTime')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'SummarizeExternalListenerMetrics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'metricsAggregationRangeCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_summarize_job_executions_statuses(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'SummarizeJobExecutionsStatuses'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4146,6 +6254,75 @@ def test_summarize_job_executions_statuses(testing_service_client):
             'jobExecutionsStatusSummaryCollection',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_summarize_managed_database_availability_metrics(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'SummarizeManagedDatabaseAvailabilityMetrics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'SummarizeManagedDatabaseAvailabilityMetrics')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='SummarizeManagedDatabaseAvailabilityMetrics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_managed_database_availability_metrics(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                start_time=request.pop(util.camelize('startTime')),
+                end_time=request.pop(util.camelize('endTime')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_managed_database_availability_metrics(
+                    managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                    start_time=request.pop(util.camelize('startTime')),
+                    end_time=request.pop(util.camelize('endTime')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_managed_database_availability_metrics(
+                        managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                        start_time=request.pop(util.camelize('startTime')),
+                        end_time=request.pop(util.camelize('endTime')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'SummarizeManagedDatabaseAvailabilityMetrics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'metricsAggregationRangeCollection',
+            False,
+            True
         )
 
 
@@ -4228,6 +6405,342 @@ def test_update_db_management_private_endpoint(testing_service_client):
             result,
             service_error,
             'dbManagementPrivateEndpoint',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_update_external_asm(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'UpdateExternalAsm'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'UpdateExternalAsm')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='UpdateExternalAsm')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.update_external_asm(
+                external_asm_id=request.pop(util.camelize('externalAsmId')),
+                update_external_asm_details=request.pop(util.camelize('UpdateExternalAsmDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'UpdateExternalAsm',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_external_asm',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_update_external_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'UpdateExternalCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'UpdateExternalCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='UpdateExternalCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.update_external_cluster(
+                external_cluster_id=request.pop(util.camelize('externalClusterId')),
+                update_external_cluster_details=request.pop(util.camelize('UpdateExternalClusterDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'UpdateExternalCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_external_cluster',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_update_external_cluster_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'UpdateExternalClusterInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'UpdateExternalClusterInstance')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='UpdateExternalClusterInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.update_external_cluster_instance(
+                external_cluster_instance_id=request.pop(util.camelize('externalClusterInstanceId')),
+                update_external_cluster_instance_details=request.pop(util.camelize('UpdateExternalClusterInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'UpdateExternalClusterInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_external_cluster_instance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_update_external_db_node(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'UpdateExternalDbNode'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'UpdateExternalDbNode')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='UpdateExternalDbNode')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.update_external_db_node(
+                external_db_node_id=request.pop(util.camelize('externalDbNodeId')),
+                update_external_db_node_details=request.pop(util.camelize('UpdateExternalDbNodeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'UpdateExternalDbNode',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_external_db_node',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_update_external_db_system(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'UpdateExternalDbSystem'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'UpdateExternalDbSystem')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='UpdateExternalDbSystem')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.update_external_db_system(
+                external_db_system_id=request.pop(util.camelize('externalDbSystemId')),
+                update_external_db_system_details=request.pop(util.camelize('UpdateExternalDbSystemDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'UpdateExternalDbSystem',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalDbSystem',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_update_external_db_system_connector(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'UpdateExternalDbSystemConnector'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'UpdateExternalDbSystemConnector')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='UpdateExternalDbSystemConnector')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.update_external_db_system_connector(
+                external_db_system_connector_id=request.pop(util.camelize('externalDbSystemConnectorId')),
+                update_external_db_system_connector_details=request.pop(util.camelize('UpdateExternalDbSystemConnectorDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'UpdateExternalDbSystemConnector',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_external_db_system_connector',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_update_external_db_system_discovery(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'UpdateExternalDbSystemDiscovery'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'UpdateExternalDbSystemDiscovery')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='UpdateExternalDbSystemDiscovery')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.update_external_db_system_discovery(
+                external_db_system_discovery_id=request.pop(util.camelize('externalDbSystemDiscoveryId')),
+                update_external_db_system_discovery_details=request.pop(util.camelize('UpdateExternalDbSystemDiscoveryDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'UpdateExternalDbSystemDiscovery',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalDbSystemDiscovery',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_update_external_listener(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'UpdateExternalListener'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'UpdateExternalListener')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='UpdateExternalListener')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.update_external_listener(
+                external_listener_id=request.pop(util.camelize('externalListenerId')),
+                update_external_listener_details=request.pop(util.camelize('UpdateExternalListenerDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'UpdateExternalListener',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_external_listener',
             False,
             False
         )

@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.pic.ocas</groupId>
         <artifactId>ad-control-plane-spec</artifactId>
-        <version>1.0.14-preview</version>
+        <version>3.4.4</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -33,9 +33,14 @@ Database Management
     oci.database_management.models.AlertLogCountsCollection
     oci.database_management.models.AlertLogSummary
     oci.database_management.models.AllowedParameterValue
+    oci.database_management.models.AsmConnectionCredentailsByName
+    oci.database_management.models.AsmConnectionCredentials
+    oci.database_management.models.AsmConnectionCredentialsByDetails
+    oci.database_management.models.AsmConnectionString
     oci.database_management.models.AsmProperty
     oci.database_management.models.AsmPropertyCollection
     oci.database_management.models.AsmPropertySummary
+    oci.database_management.models.AssociatedComponent
     oci.database_management.models.AssociatedDatabaseCollection
     oci.database_management.models.AssociatedDatabaseSummary
     oci.database_management.models.AttentionLogCollection
@@ -71,6 +76,7 @@ Database Management
     oci.database_management.models.ChangeDatabaseParameterDetails
     oci.database_management.models.ChangeDatabaseParametersDetails
     oci.database_management.models.ChangeDbManagementPrivateEndpointCompartmentDetails
+    oci.database_management.models.ChangeExternalDbSystemCompartmentDetails
     oci.database_management.models.ChangeJobCompartmentDetails
     oci.database_management.models.ChangeManagedDatabaseGroupCompartmentDetails
     oci.database_management.models.ChildDatabase
@@ -80,31 +86,113 @@ Database Management
     oci.database_management.models.ConsumerGroupPrivilegeSummary
     oci.database_management.models.CpuUtilizationAggregateMetrics
     oci.database_management.models.CreateDbManagementPrivateEndpointDetails
+    oci.database_management.models.CreateExternalDbSystemConnectorDetails
+    oci.database_management.models.CreateExternalDbSystemDetails
+    oci.database_management.models.CreateExternalDbSystemDiscoveryDetails
+    oci.database_management.models.CreateExternalDbSystemMacsConnectorDetails
     oci.database_management.models.CreateJobDetails
     oci.database_management.models.CreateManagedDatabaseGroupDetails
     oci.database_management.models.CreateSqlJobDetails
     oci.database_management.models.CreateTablespaceDetails
     oci.database_management.models.DataAccessContainerCollection
     oci.database_management.models.DataAccessContainerSummary
+    oci.database_management.models.DatabaseConnectionCredentailsByName
+    oci.database_management.models.DatabaseConnectionCredentials
+    oci.database_management.models.DatabaseConnectionCredentialsByDetails
+    oci.database_management.models.DatabaseConnectionString
     oci.database_management.models.DatabaseCredentials
     oci.database_management.models.DatabaseFleetHealthMetrics
     oci.database_management.models.DatabaseHomeMetricDefinition
     oci.database_management.models.DatabaseHomeMetrics
     oci.database_management.models.DatabaseIOAggregateMetrics
     oci.database_management.models.DatabaseInstanceHomeMetricsDefinition
+    oci.database_management.models.DatabaseManagementConfig
     oci.database_management.models.DatabaseParameterSummary
     oci.database_management.models.DatabaseParameterUpdateStatus
     oci.database_management.models.DatabaseParametersCollection
+    oci.database_management.models.DatabaseSslConnectionCredentials
     oci.database_management.models.DatabaseStorageAggregateMetrics
     oci.database_management.models.DatabaseTimeAggregateMetrics
     oci.database_management.models.DatabaseUsageMetrics
     oci.database_management.models.Datafile
+    oci.database_management.models.DbManagementAnalyticsMetric
     oci.database_management.models.DbManagementPrivateEndpoint
     oci.database_management.models.DbManagementPrivateEndpointCollection
     oci.database_management.models.DbManagementPrivateEndpointSummary
+    oci.database_management.models.DiscoveredExternalAsm
+    oci.database_management.models.DiscoveredExternalAsmInstance
+    oci.database_management.models.DiscoveredExternalCluster
+    oci.database_management.models.DiscoveredExternalClusterInstance
+    oci.database_management.models.DiscoveredExternalDatabase
+    oci.database_management.models.DiscoveredExternalDbHome
+    oci.database_management.models.DiscoveredExternalDbNode
+    oci.database_management.models.DiscoveredExternalDbSystemComponent
+    oci.database_management.models.DiscoveredExternalListener
+    oci.database_management.models.DiscoveredExternalPluggableDatabase
     oci.database_management.models.DropSqlTuningTaskDetails
     oci.database_management.models.DropTablespaceDetails
+    oci.database_management.models.EnableExternalDbSystemDatabaseManagementDetails
     oci.database_management.models.ExecutionPlanStatsComparision
+    oci.database_management.models.ExternalAsm
+    oci.database_management.models.ExternalAsmCollection
+    oci.database_management.models.ExternalAsmConfiguration
+    oci.database_management.models.ExternalAsmConnectionInfo
+    oci.database_management.models.ExternalAsmDiskGroupCollection
+    oci.database_management.models.ExternalAsmDiskGroupSummary
+    oci.database_management.models.ExternalAsmInstance
+    oci.database_management.models.ExternalAsmInstanceCollection
+    oci.database_management.models.ExternalAsmInstanceParameters
+    oci.database_management.models.ExternalAsmInstanceSummary
+    oci.database_management.models.ExternalAsmServicedDatabase
+    oci.database_management.models.ExternalAsmSummary
+    oci.database_management.models.ExternalAsmUserCollection
+    oci.database_management.models.ExternalAsmUserSummary
+    oci.database_management.models.ExternalCluster
+    oci.database_management.models.ExternalClusterCollection
+    oci.database_management.models.ExternalClusterInstance
+    oci.database_management.models.ExternalClusterInstanceCollection
+    oci.database_management.models.ExternalClusterInstanceSummary
+    oci.database_management.models.ExternalClusterNetworkConfiguration
+    oci.database_management.models.ExternalClusterScanListenerConfiguration
+    oci.database_management.models.ExternalClusterSummary
+    oci.database_management.models.ExternalClusterVipConfiguration
+    oci.database_management.models.ExternalDatabaseCollection
+    oci.database_management.models.ExternalDatabaseConnectionInfo
+    oci.database_management.models.ExternalDatabaseInstance
+    oci.database_management.models.ExternalDatabaseSummary
+    oci.database_management.models.ExternalDbHome
+    oci.database_management.models.ExternalDbHomeCollection
+    oci.database_management.models.ExternalDbHomeSummary
+    oci.database_management.models.ExternalDbNode
+    oci.database_management.models.ExternalDbNodeCollection
+    oci.database_management.models.ExternalDbNodeSummary
+    oci.database_management.models.ExternalDbSystem
+    oci.database_management.models.ExternalDbSystemBasicInfo
+    oci.database_management.models.ExternalDbSystemCollection
+    oci.database_management.models.ExternalDbSystemConnectionInfo
+    oci.database_management.models.ExternalDbSystemConnector
+    oci.database_management.models.ExternalDbSystemConnectorCollection
+    oci.database_management.models.ExternalDbSystemConnectorSummary
+    oci.database_management.models.ExternalDbSystemDatabaseManagementConfigDetails
+    oci.database_management.models.ExternalDbSystemDiscovery
+    oci.database_management.models.ExternalDbSystemDiscoveryCollection
+    oci.database_management.models.ExternalDbSystemDiscoveryConnector
+    oci.database_management.models.ExternalDbSystemDiscoveryMacsConnector
+    oci.database_management.models.ExternalDbSystemDiscoverySummary
+    oci.database_management.models.ExternalDbSystemMacsConnector
+    oci.database_management.models.ExternalDbSystemSummary
+    oci.database_management.models.ExternalListener
+    oci.database_management.models.ExternalListenerCollection
+    oci.database_management.models.ExternalListenerEndpoint
+    oci.database_management.models.ExternalListenerIpcEndpoint
+    oci.database_management.models.ExternalListenerServiceCollection
+    oci.database_management.models.ExternalListenerServiceSummary
+    oci.database_management.models.ExternalListenerServicedDatabase
+    oci.database_management.models.ExternalListenerSummary
+    oci.database_management.models.ExternalListenerTcpEndpoint
+    oci.database_management.models.ExternalListenerTcpsEndpoint
+    oci.database_management.models.ExternalServicedAsm
+    oci.database_management.models.ExternalServicedDatabase
     oci.database_management.models.FailedConnectionsAggregateMetrics
     oci.database_management.models.FindingSchemaOrOperation
     oci.database_management.models.FleetMetricDefinition
@@ -143,6 +231,8 @@ Database Management
     oci.database_management.models.MetricDataPoint
     oci.database_management.models.MetricDimensionDefinition
     oci.database_management.models.MetricStatisticsDefinition
+    oci.database_management.models.MetricsAggregationRange
+    oci.database_management.models.MetricsAggregationRangeCollection
     oci.database_management.models.ObjectPrivilegeCollection
     oci.database_management.models.ObjectPrivilegeSummary
     oci.database_management.models.ObjectStorageJobExecutionResultDetails
@@ -160,6 +250,9 @@ Database Management
     oci.database_management.models.OptimizerStatisticsCollectionOperationsCollection
     oci.database_management.models.OptimizerStatisticsOperationTask
     oci.database_management.models.ParentGroup
+    oci.database_management.models.PatchExternalDbSystemDiscoveryDetails
+    oci.database_management.models.PatchInstruction
+    oci.database_management.models.PatchMergeInstruction
     oci.database_management.models.PdbMetrics
     oci.database_management.models.PdbStatusDetails
     oci.database_management.models.PreferredCredential
@@ -231,6 +324,15 @@ Database Management
     oci.database_management.models.UpdateBasicPreferredCredentialDetails
     oci.database_management.models.UpdateDatabaseParametersResult
     oci.database_management.models.UpdateDbManagementPrivateEndpointDetails
+    oci.database_management.models.UpdateExternalAsmDetails
+    oci.database_management.models.UpdateExternalClusterDetails
+    oci.database_management.models.UpdateExternalClusterInstanceDetails
+    oci.database_management.models.UpdateExternalDbNodeDetails
+    oci.database_management.models.UpdateExternalDbSystemConnectorDetails
+    oci.database_management.models.UpdateExternalDbSystemDetails
+    oci.database_management.models.UpdateExternalDbSystemDiscoveryDetails
+    oci.database_management.models.UpdateExternalDbSystemMacsConnectorDetails
+    oci.database_management.models.UpdateExternalListenerDetails
     oci.database_management.models.UpdateJobDetails
     oci.database_management.models.UpdateManagedDatabaseGroupDetails
     oci.database_management.models.UpdatePreferredCredentialDetails
@@ -246,4 +348,5 @@ Database Management
     oci.database_management.models.WorkRequestLogEntry
     oci.database_management.models.WorkRequestLogEntryCollection
     oci.database_management.models.WorkRequestResource
+    oci.database_management.models.WorkRequestSubResource
     oci.database_management.models.WorkRequestSummary

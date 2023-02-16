@@ -21,6 +21,38 @@ class WorkRequestSummary(object):
     #: This constant has a value of "DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT"
     OPERATION_TYPE_DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT = "DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT"
 
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_DB_SYSTEM_DISCOVERY"
+    OPERATION_TYPE_CREATE_DB_SYSTEM_DISCOVERY = "CREATE_DB_SYSTEM_DISCOVERY"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_DB_SYSTEM"
+    OPERATION_TYPE_CREATE_DB_SYSTEM = "CREATE_DB_SYSTEM"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_DB_SYSTEM"
+    OPERATION_TYPE_UPDATE_DB_SYSTEM = "UPDATE_DB_SYSTEM"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DB_SYSTEM_ENABLE_DBMGMT"
+    OPERATION_TYPE_DB_SYSTEM_ENABLE_DBMGMT = "DB_SYSTEM_ENABLE_DBMGMT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DB_SYSTEM_DISABLE_DBMGMT"
+    OPERATION_TYPE_DB_SYSTEM_DISABLE_DBMGMT = "DB_SYSTEM_DISABLE_DBMGMT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_DB_SYSTEM"
+    OPERATION_TYPE_DELETE_DB_SYSTEM = "DELETE_DB_SYSTEM"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_EXTERNAL_DB_SYSTEM_CONNECTOR"
+    OPERATION_TYPE_UPDATE_EXTERNAL_DB_SYSTEM_CONNECTOR = "UPDATE_EXTERNAL_DB_SYSTEM_CONNECTOR"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT"
+    OPERATION_TYPE_CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT = "CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT"
+
     #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -52,7 +84,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "CREATE_DB_SYSTEM_DISCOVERY", "CREATE_DB_SYSTEM", "UPDATE_DB_SYSTEM", "DB_SYSTEM_ENABLE_DBMGMT", "DB_SYSTEM_DISABLE_DBMGMT", "DELETE_DB_SYSTEM", "UPDATE_EXTERNAL_DB_SYSTEM_CONNECTOR", "CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -131,7 +163,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         The type of work request.
 
-        Allowed values for this property are: "CREATE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "CREATE_DB_SYSTEM_DISCOVERY", "CREATE_DB_SYSTEM", "UPDATE_DB_SYSTEM", "DB_SYSTEM_ENABLE_DBMGMT", "DB_SYSTEM_DISABLE_DBMGMT", "DELETE_DB_SYSTEM", "UPDATE_EXTERNAL_DB_SYSTEM_CONNECTOR", "CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -150,7 +182,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT"]
+        allowed_values = ["CREATE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "CREATE_DB_SYSTEM_DISCOVERY", "CREATE_DB_SYSTEM", "UPDATE_DB_SYSTEM", "DB_SYSTEM_ENABLE_DBMGMT", "DB_SYSTEM_DISABLE_DBMGMT", "DELETE_DB_SYSTEM", "UPDATE_EXTERNAL_DB_SYSTEM_CONNECTOR", "CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
