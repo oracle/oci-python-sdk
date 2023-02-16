@@ -4,13 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.92.1 - TBD
+2.93.0 - 2023-02-21
 ====================
 
 Added
 -----
-* TBD
-
+* Support for async jobs in the AI Anomaly Detection service
+* Support for specifying algorithm hints and windows sizes during model training in the AI Anomaly Detection service
+* Support for specifying a sensitivity value during model detection in the AI Anomaly Detection service
+* Support for discovery and monitoring of external Oracle database infrastructure components in the Database Management service
+ 
+Breaking
+--------
+* The type for property `system_tags` was changed from a dict of string to another dict to a dict of a string to object for `project_summary`, `project`, `model_summary`, `model`, `data_asset_summary`, `data_asset`, `ai_private_endpoint_summary`, `ai_private_endpoint` models in the AI Anomaly Detection service
+* Support for retries by default on operations of the AI Anomaly Detection service
+ 
 ====================
 2.92.0 - 2023-02-14
 ====================
