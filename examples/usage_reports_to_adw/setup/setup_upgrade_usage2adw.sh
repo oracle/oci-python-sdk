@@ -57,7 +57,7 @@ export APPDIR=/home/opc/usage_reports_to_adw
 export CREDFILE=$APPDIR/config.user
 export LOG=/home/opc/upgrade.log
 export LOGDIR=$APPDIR/setup/log
-export GIT=https://raw.githubusercontent.com/oracle/oci-python-sdk/master/examples/usage_reports_to_adw
+export GIT=https://raw.githubusercontent.com/adizohar/usage_reports_to_adw/main/
 
 cd $APPDIR
 mkdir -p $LOGDIR

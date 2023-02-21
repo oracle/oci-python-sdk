@@ -38,6 +38,10 @@ class AwrDbWaitEventSummary(object):
             The value to assign to the avg_wait_time_per_sec property of this AwrDbWaitEventSummary.
         :type avg_wait_time_per_sec: float
 
+        :param avg_wait_time_per_wait:
+            The value to assign to the avg_wait_time_per_wait property of this AwrDbWaitEventSummary.
+        :type avg_wait_time_per_wait: float
+
         :param snapshot_id:
             The value to assign to the snapshot_id property of this AwrDbWaitEventSummary.
         :type snapshot_id: int
@@ -49,6 +53,7 @@ class AwrDbWaitEventSummary(object):
             'time_end': 'datetime',
             'waits_per_sec': 'float',
             'avg_wait_time_per_sec': 'float',
+            'avg_wait_time_per_wait': 'float',
             'snapshot_id': 'int'
         }
 
@@ -58,6 +63,7 @@ class AwrDbWaitEventSummary(object):
             'time_end': 'timeEnd',
             'waits_per_sec': 'waitsPerSec',
             'avg_wait_time_per_sec': 'avgWaitTimePerSec',
+            'avg_wait_time_per_wait': 'avgWaitTimePerWait',
             'snapshot_id': 'snapshotId'
         }
 
@@ -66,6 +72,7 @@ class AwrDbWaitEventSummary(object):
         self._time_end = None
         self._waits_per_sec = None
         self._avg_wait_time_per_sec = None
+        self._avg_wait_time_per_wait = None
         self._snapshot_id = None
 
     @property
@@ -187,6 +194,30 @@ class AwrDbWaitEventSummary(object):
         :type: float
         """
         self._avg_wait_time_per_sec = avg_wait_time_per_sec
+
+    @property
+    def avg_wait_time_per_wait(self):
+        """
+        Gets the avg_wait_time_per_wait of this AwrDbWaitEventSummary.
+        The average wait time in milliseconds per wait.
+
+
+        :return: The avg_wait_time_per_wait of this AwrDbWaitEventSummary.
+        :rtype: float
+        """
+        return self._avg_wait_time_per_wait
+
+    @avg_wait_time_per_wait.setter
+    def avg_wait_time_per_wait(self, avg_wait_time_per_wait):
+        """
+        Sets the avg_wait_time_per_wait of this AwrDbWaitEventSummary.
+        The average wait time in milliseconds per wait.
+
+
+        :param avg_wait_time_per_wait: The avg_wait_time_per_wait of this AwrDbWaitEventSummary.
+        :type: float
+        """
+        self._avg_wait_time_per_wait = avg_wait_time_per_wait
 
     @property
     def snapshot_id(self):

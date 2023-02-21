@@ -16,7 +16,6 @@
 
 # Env Variables based on yum instant client
 export CLIENT_HOME=/usr/lib/oracle/current/client64
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$CLIENT_HOME/lib:$CLIENT_HOME
 export PATH=$PATH:$CLIENT_HOME/bin:$CLIENT_HOME
 
 # App dir

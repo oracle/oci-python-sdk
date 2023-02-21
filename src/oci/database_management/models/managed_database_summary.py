@@ -160,6 +160,14 @@ class ManagedDatabaseSummary(object):
             The value to assign to the parent_container_id property of this ManagedDatabaseSummary.
         :type parent_container_id: str
 
+        :param db_system_id:
+            The value to assign to the db_system_id property of this ManagedDatabaseSummary.
+        :type db_system_id: str
+
+        :param storage_system_id:
+            The value to assign to the storage_system_id property of this ManagedDatabaseSummary.
+        :type storage_system_id: str
+
         :param time_created:
             The value to assign to the time_created property of this ManagedDatabaseSummary.
         :type time_created: datetime
@@ -176,6 +184,8 @@ class ManagedDatabaseSummary(object):
             'workload_type': 'str',
             'is_cluster': 'bool',
             'parent_container_id': 'str',
+            'db_system_id': 'str',
+            'storage_system_id': 'str',
             'time_created': 'datetime'
         }
 
@@ -190,6 +200,8 @@ class ManagedDatabaseSummary(object):
             'workload_type': 'workloadType',
             'is_cluster': 'isCluster',
             'parent_container_id': 'parentContainerId',
+            'db_system_id': 'dbSystemId',
+            'storage_system_id': 'storageSystemId',
             'time_created': 'timeCreated'
         }
 
@@ -203,6 +215,8 @@ class ManagedDatabaseSummary(object):
         self._workload_type = None
         self._is_cluster = None
         self._parent_container_id = None
+        self._db_system_id = None
+        self._storage_system_id = None
         self._time_created = None
 
     @property
@@ -490,6 +504,64 @@ class ManagedDatabaseSummary(object):
         :type: str
         """
         self._parent_container_id = parent_container_id
+
+    @property
+    def db_system_id(self):
+        """
+        Gets the db_system_id of this ManagedDatabaseSummary.
+        The `OCID`__ of the external
+        DB system that this Managed Database is part of.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The db_system_id of this ManagedDatabaseSummary.
+        :rtype: str
+        """
+        return self._db_system_id
+
+    @db_system_id.setter
+    def db_system_id(self, db_system_id):
+        """
+        Sets the db_system_id of this ManagedDatabaseSummary.
+        The `OCID`__ of the external
+        DB system that this Managed Database is part of.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param db_system_id: The db_system_id of this ManagedDatabaseSummary.
+        :type: str
+        """
+        self._db_system_id = db_system_id
+
+    @property
+    def storage_system_id(self):
+        """
+        Gets the storage_system_id of this ManagedDatabaseSummary.
+        The `OCID`__ of the storage DB system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The storage_system_id of this ManagedDatabaseSummary.
+        :rtype: str
+        """
+        return self._storage_system_id
+
+    @storage_system_id.setter
+    def storage_system_id(self, storage_system_id):
+        """
+        Sets the storage_system_id of this ManagedDatabaseSummary.
+        The `OCID`__ of the storage DB system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param storage_system_id: The storage_system_id of this ManagedDatabaseSummary.
+        :type: str
+        """
+        self._storage_system_id = storage_system_id
 
     @property
     def time_created(self):

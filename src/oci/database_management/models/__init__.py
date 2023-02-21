@@ -15,9 +15,14 @@ from .alert_log_count_summary import AlertLogCountSummary
 from .alert_log_counts_collection import AlertLogCountsCollection
 from .alert_log_summary import AlertLogSummary
 from .allowed_parameter_value import AllowedParameterValue
+from .asm_connection_credentails_by_name import AsmConnectionCredentailsByName
+from .asm_connection_credentials import AsmConnectionCredentials
+from .asm_connection_credentials_by_details import AsmConnectionCredentialsByDetails
+from .asm_connection_string import AsmConnectionString
 from .asm_property import AsmProperty
 from .asm_property_collection import AsmPropertyCollection
 from .asm_property_summary import AsmPropertySummary
+from .associated_component import AssociatedComponent
 from .associated_database_collection import AssociatedDatabaseCollection
 from .associated_database_summary import AssociatedDatabaseSummary
 from .attention_log_collection import AttentionLogCollection
@@ -53,6 +58,7 @@ from .basic_preferred_credential import BasicPreferredCredential
 from .change_database_parameter_details import ChangeDatabaseParameterDetails
 from .change_database_parameters_details import ChangeDatabaseParametersDetails
 from .change_db_management_private_endpoint_compartment_details import ChangeDbManagementPrivateEndpointCompartmentDetails
+from .change_external_db_system_compartment_details import ChangeExternalDbSystemCompartmentDetails
 from .change_job_compartment_details import ChangeJobCompartmentDetails
 from .change_managed_database_group_compartment_details import ChangeManagedDatabaseGroupCompartmentDetails
 from .child_database import ChildDatabase
@@ -62,31 +68,113 @@ from .consumer_group_privilege_collection import ConsumerGroupPrivilegeCollectio
 from .consumer_group_privilege_summary import ConsumerGroupPrivilegeSummary
 from .cpu_utilization_aggregate_metrics import CpuUtilizationAggregateMetrics
 from .create_db_management_private_endpoint_details import CreateDbManagementPrivateEndpointDetails
+from .create_external_db_system_connector_details import CreateExternalDbSystemConnectorDetails
+from .create_external_db_system_details import CreateExternalDbSystemDetails
+from .create_external_db_system_discovery_details import CreateExternalDbSystemDiscoveryDetails
+from .create_external_db_system_macs_connector_details import CreateExternalDbSystemMacsConnectorDetails
 from .create_job_details import CreateJobDetails
 from .create_managed_database_group_details import CreateManagedDatabaseGroupDetails
 from .create_sql_job_details import CreateSqlJobDetails
 from .create_tablespace_details import CreateTablespaceDetails
 from .data_access_container_collection import DataAccessContainerCollection
 from .data_access_container_summary import DataAccessContainerSummary
+from .database_connection_credentails_by_name import DatabaseConnectionCredentailsByName
+from .database_connection_credentials import DatabaseConnectionCredentials
+from .database_connection_credentials_by_details import DatabaseConnectionCredentialsByDetails
+from .database_connection_string import DatabaseConnectionString
 from .database_credentials import DatabaseCredentials
 from .database_fleet_health_metrics import DatabaseFleetHealthMetrics
 from .database_home_metric_definition import DatabaseHomeMetricDefinition
 from .database_home_metrics import DatabaseHomeMetrics
 from .database_io_aggregate_metrics import DatabaseIOAggregateMetrics
 from .database_instance_home_metrics_definition import DatabaseInstanceHomeMetricsDefinition
+from .database_management_config import DatabaseManagementConfig
 from .database_parameter_summary import DatabaseParameterSummary
 from .database_parameter_update_status import DatabaseParameterUpdateStatus
 from .database_parameters_collection import DatabaseParametersCollection
+from .database_ssl_connection_credentials import DatabaseSslConnectionCredentials
 from .database_storage_aggregate_metrics import DatabaseStorageAggregateMetrics
 from .database_time_aggregate_metrics import DatabaseTimeAggregateMetrics
 from .database_usage_metrics import DatabaseUsageMetrics
 from .datafile import Datafile
+from .db_management_analytics_metric import DbManagementAnalyticsMetric
 from .db_management_private_endpoint import DbManagementPrivateEndpoint
 from .db_management_private_endpoint_collection import DbManagementPrivateEndpointCollection
 from .db_management_private_endpoint_summary import DbManagementPrivateEndpointSummary
+from .discovered_external_asm import DiscoveredExternalAsm
+from .discovered_external_asm_instance import DiscoveredExternalAsmInstance
+from .discovered_external_cluster import DiscoveredExternalCluster
+from .discovered_external_cluster_instance import DiscoveredExternalClusterInstance
+from .discovered_external_database import DiscoveredExternalDatabase
+from .discovered_external_db_home import DiscoveredExternalDbHome
+from .discovered_external_db_node import DiscoveredExternalDbNode
+from .discovered_external_db_system_component import DiscoveredExternalDbSystemComponent
+from .discovered_external_listener import DiscoveredExternalListener
+from .discovered_external_pluggable_database import DiscoveredExternalPluggableDatabase
 from .drop_sql_tuning_task_details import DropSqlTuningTaskDetails
 from .drop_tablespace_details import DropTablespaceDetails
+from .enable_external_db_system_database_management_details import EnableExternalDbSystemDatabaseManagementDetails
 from .execution_plan_stats_comparision import ExecutionPlanStatsComparision
+from .external_asm import ExternalAsm
+from .external_asm_collection import ExternalAsmCollection
+from .external_asm_configuration import ExternalAsmConfiguration
+from .external_asm_connection_info import ExternalAsmConnectionInfo
+from .external_asm_disk_group_collection import ExternalAsmDiskGroupCollection
+from .external_asm_disk_group_summary import ExternalAsmDiskGroupSummary
+from .external_asm_instance import ExternalAsmInstance
+from .external_asm_instance_collection import ExternalAsmInstanceCollection
+from .external_asm_instance_parameters import ExternalAsmInstanceParameters
+from .external_asm_instance_summary import ExternalAsmInstanceSummary
+from .external_asm_serviced_database import ExternalAsmServicedDatabase
+from .external_asm_summary import ExternalAsmSummary
+from .external_asm_user_collection import ExternalAsmUserCollection
+from .external_asm_user_summary import ExternalAsmUserSummary
+from .external_cluster import ExternalCluster
+from .external_cluster_collection import ExternalClusterCollection
+from .external_cluster_instance import ExternalClusterInstance
+from .external_cluster_instance_collection import ExternalClusterInstanceCollection
+from .external_cluster_instance_summary import ExternalClusterInstanceSummary
+from .external_cluster_network_configuration import ExternalClusterNetworkConfiguration
+from .external_cluster_scan_listener_configuration import ExternalClusterScanListenerConfiguration
+from .external_cluster_summary import ExternalClusterSummary
+from .external_cluster_vip_configuration import ExternalClusterVipConfiguration
+from .external_database_collection import ExternalDatabaseCollection
+from .external_database_connection_info import ExternalDatabaseConnectionInfo
+from .external_database_instance import ExternalDatabaseInstance
+from .external_database_summary import ExternalDatabaseSummary
+from .external_db_home import ExternalDbHome
+from .external_db_home_collection import ExternalDbHomeCollection
+from .external_db_home_summary import ExternalDbHomeSummary
+from .external_db_node import ExternalDbNode
+from .external_db_node_collection import ExternalDbNodeCollection
+from .external_db_node_summary import ExternalDbNodeSummary
+from .external_db_system import ExternalDbSystem
+from .external_db_system_basic_info import ExternalDbSystemBasicInfo
+from .external_db_system_collection import ExternalDbSystemCollection
+from .external_db_system_connection_info import ExternalDbSystemConnectionInfo
+from .external_db_system_connector import ExternalDbSystemConnector
+from .external_db_system_connector_collection import ExternalDbSystemConnectorCollection
+from .external_db_system_connector_summary import ExternalDbSystemConnectorSummary
+from .external_db_system_database_management_config_details import ExternalDbSystemDatabaseManagementConfigDetails
+from .external_db_system_discovery import ExternalDbSystemDiscovery
+from .external_db_system_discovery_collection import ExternalDbSystemDiscoveryCollection
+from .external_db_system_discovery_connector import ExternalDbSystemDiscoveryConnector
+from .external_db_system_discovery_macs_connector import ExternalDbSystemDiscoveryMacsConnector
+from .external_db_system_discovery_summary import ExternalDbSystemDiscoverySummary
+from .external_db_system_macs_connector import ExternalDbSystemMacsConnector
+from .external_db_system_summary import ExternalDbSystemSummary
+from .external_listener import ExternalListener
+from .external_listener_collection import ExternalListenerCollection
+from .external_listener_endpoint import ExternalListenerEndpoint
+from .external_listener_ipc_endpoint import ExternalListenerIpcEndpoint
+from .external_listener_service_collection import ExternalListenerServiceCollection
+from .external_listener_service_summary import ExternalListenerServiceSummary
+from .external_listener_serviced_database import ExternalListenerServicedDatabase
+from .external_listener_summary import ExternalListenerSummary
+from .external_listener_tcp_endpoint import ExternalListenerTcpEndpoint
+from .external_listener_tcps_endpoint import ExternalListenerTcpsEndpoint
+from .external_serviced_asm import ExternalServicedAsm
+from .external_serviced_database import ExternalServicedDatabase
 from .failed_connections_aggregate_metrics import FailedConnectionsAggregateMetrics
 from .finding_schema_or_operation import FindingSchemaOrOperation
 from .fleet_metric_definition import FleetMetricDefinition
@@ -125,6 +213,8 @@ from .memory_aggregate_metrics import MemoryAggregateMetrics
 from .metric_data_point import MetricDataPoint
 from .metric_dimension_definition import MetricDimensionDefinition
 from .metric_statistics_definition import MetricStatisticsDefinition
+from .metrics_aggregation_range import MetricsAggregationRange
+from .metrics_aggregation_range_collection import MetricsAggregationRangeCollection
 from .object_privilege_collection import ObjectPrivilegeCollection
 from .object_privilege_summary import ObjectPrivilegeSummary
 from .object_storage_job_execution_result_details import ObjectStorageJobExecutionResultDetails
@@ -142,6 +232,9 @@ from .optimizer_statistics_collection_operation_summary import OptimizerStatisti
 from .optimizer_statistics_collection_operations_collection import OptimizerStatisticsCollectionOperationsCollection
 from .optimizer_statistics_operation_task import OptimizerStatisticsOperationTask
 from .parent_group import ParentGroup
+from .patch_external_db_system_discovery_details import PatchExternalDbSystemDiscoveryDetails
+from .patch_instruction import PatchInstruction
+from .patch_merge_instruction import PatchMergeInstruction
 from .pdb_metrics import PdbMetrics
 from .pdb_status_details import PdbStatusDetails
 from .preferred_credential import PreferredCredential
@@ -213,6 +306,15 @@ from .time_series_metric_definition import TimeSeriesMetricDefinition
 from .update_basic_preferred_credential_details import UpdateBasicPreferredCredentialDetails
 from .update_database_parameters_result import UpdateDatabaseParametersResult
 from .update_db_management_private_endpoint_details import UpdateDbManagementPrivateEndpointDetails
+from .update_external_asm_details import UpdateExternalAsmDetails
+from .update_external_cluster_details import UpdateExternalClusterDetails
+from .update_external_cluster_instance_details import UpdateExternalClusterInstanceDetails
+from .update_external_db_node_details import UpdateExternalDbNodeDetails
+from .update_external_db_system_connector_details import UpdateExternalDbSystemConnectorDetails
+from .update_external_db_system_details import UpdateExternalDbSystemDetails
+from .update_external_db_system_discovery_details import UpdateExternalDbSystemDiscoveryDetails
+from .update_external_db_system_macs_connector_details import UpdateExternalDbSystemMacsConnectorDetails
+from .update_external_listener_details import UpdateExternalListenerDetails
 from .update_job_details import UpdateJobDetails
 from .update_managed_database_group_details import UpdateManagedDatabaseGroupDetails
 from .update_preferred_credential_details import UpdatePreferredCredentialDetails
@@ -228,6 +330,7 @@ from .work_request_error_collection import WorkRequestErrorCollection
 from .work_request_log_entry import WorkRequestLogEntry
 from .work_request_log_entry_collection import WorkRequestLogEntryCollection
 from .work_request_resource import WorkRequestResource
+from .work_request_sub_resource import WorkRequestSubResource
 from .work_request_summary import WorkRequestSummary
 
 # Maps type names to classes for database_management services.
@@ -243,9 +346,14 @@ database_management_type_mapping = {
     "AlertLogCountsCollection": AlertLogCountsCollection,
     "AlertLogSummary": AlertLogSummary,
     "AllowedParameterValue": AllowedParameterValue,
+    "AsmConnectionCredentailsByName": AsmConnectionCredentailsByName,
+    "AsmConnectionCredentials": AsmConnectionCredentials,
+    "AsmConnectionCredentialsByDetails": AsmConnectionCredentialsByDetails,
+    "AsmConnectionString": AsmConnectionString,
     "AsmProperty": AsmProperty,
     "AsmPropertyCollection": AsmPropertyCollection,
     "AsmPropertySummary": AsmPropertySummary,
+    "AssociatedComponent": AssociatedComponent,
     "AssociatedDatabaseCollection": AssociatedDatabaseCollection,
     "AssociatedDatabaseSummary": AssociatedDatabaseSummary,
     "AttentionLogCollection": AttentionLogCollection,
@@ -281,6 +389,7 @@ database_management_type_mapping = {
     "ChangeDatabaseParameterDetails": ChangeDatabaseParameterDetails,
     "ChangeDatabaseParametersDetails": ChangeDatabaseParametersDetails,
     "ChangeDbManagementPrivateEndpointCompartmentDetails": ChangeDbManagementPrivateEndpointCompartmentDetails,
+    "ChangeExternalDbSystemCompartmentDetails": ChangeExternalDbSystemCompartmentDetails,
     "ChangeJobCompartmentDetails": ChangeJobCompartmentDetails,
     "ChangeManagedDatabaseGroupCompartmentDetails": ChangeManagedDatabaseGroupCompartmentDetails,
     "ChildDatabase": ChildDatabase,
@@ -290,31 +399,113 @@ database_management_type_mapping = {
     "ConsumerGroupPrivilegeSummary": ConsumerGroupPrivilegeSummary,
     "CpuUtilizationAggregateMetrics": CpuUtilizationAggregateMetrics,
     "CreateDbManagementPrivateEndpointDetails": CreateDbManagementPrivateEndpointDetails,
+    "CreateExternalDbSystemConnectorDetails": CreateExternalDbSystemConnectorDetails,
+    "CreateExternalDbSystemDetails": CreateExternalDbSystemDetails,
+    "CreateExternalDbSystemDiscoveryDetails": CreateExternalDbSystemDiscoveryDetails,
+    "CreateExternalDbSystemMacsConnectorDetails": CreateExternalDbSystemMacsConnectorDetails,
     "CreateJobDetails": CreateJobDetails,
     "CreateManagedDatabaseGroupDetails": CreateManagedDatabaseGroupDetails,
     "CreateSqlJobDetails": CreateSqlJobDetails,
     "CreateTablespaceDetails": CreateTablespaceDetails,
     "DataAccessContainerCollection": DataAccessContainerCollection,
     "DataAccessContainerSummary": DataAccessContainerSummary,
+    "DatabaseConnectionCredentailsByName": DatabaseConnectionCredentailsByName,
+    "DatabaseConnectionCredentials": DatabaseConnectionCredentials,
+    "DatabaseConnectionCredentialsByDetails": DatabaseConnectionCredentialsByDetails,
+    "DatabaseConnectionString": DatabaseConnectionString,
     "DatabaseCredentials": DatabaseCredentials,
     "DatabaseFleetHealthMetrics": DatabaseFleetHealthMetrics,
     "DatabaseHomeMetricDefinition": DatabaseHomeMetricDefinition,
     "DatabaseHomeMetrics": DatabaseHomeMetrics,
     "DatabaseIOAggregateMetrics": DatabaseIOAggregateMetrics,
     "DatabaseInstanceHomeMetricsDefinition": DatabaseInstanceHomeMetricsDefinition,
+    "DatabaseManagementConfig": DatabaseManagementConfig,
     "DatabaseParameterSummary": DatabaseParameterSummary,
     "DatabaseParameterUpdateStatus": DatabaseParameterUpdateStatus,
     "DatabaseParametersCollection": DatabaseParametersCollection,
+    "DatabaseSslConnectionCredentials": DatabaseSslConnectionCredentials,
     "DatabaseStorageAggregateMetrics": DatabaseStorageAggregateMetrics,
     "DatabaseTimeAggregateMetrics": DatabaseTimeAggregateMetrics,
     "DatabaseUsageMetrics": DatabaseUsageMetrics,
     "Datafile": Datafile,
+    "DbManagementAnalyticsMetric": DbManagementAnalyticsMetric,
     "DbManagementPrivateEndpoint": DbManagementPrivateEndpoint,
     "DbManagementPrivateEndpointCollection": DbManagementPrivateEndpointCollection,
     "DbManagementPrivateEndpointSummary": DbManagementPrivateEndpointSummary,
+    "DiscoveredExternalAsm": DiscoveredExternalAsm,
+    "DiscoveredExternalAsmInstance": DiscoveredExternalAsmInstance,
+    "DiscoveredExternalCluster": DiscoveredExternalCluster,
+    "DiscoveredExternalClusterInstance": DiscoveredExternalClusterInstance,
+    "DiscoveredExternalDatabase": DiscoveredExternalDatabase,
+    "DiscoveredExternalDbHome": DiscoveredExternalDbHome,
+    "DiscoveredExternalDbNode": DiscoveredExternalDbNode,
+    "DiscoveredExternalDbSystemComponent": DiscoveredExternalDbSystemComponent,
+    "DiscoveredExternalListener": DiscoveredExternalListener,
+    "DiscoveredExternalPluggableDatabase": DiscoveredExternalPluggableDatabase,
     "DropSqlTuningTaskDetails": DropSqlTuningTaskDetails,
     "DropTablespaceDetails": DropTablespaceDetails,
+    "EnableExternalDbSystemDatabaseManagementDetails": EnableExternalDbSystemDatabaseManagementDetails,
     "ExecutionPlanStatsComparision": ExecutionPlanStatsComparision,
+    "ExternalAsm": ExternalAsm,
+    "ExternalAsmCollection": ExternalAsmCollection,
+    "ExternalAsmConfiguration": ExternalAsmConfiguration,
+    "ExternalAsmConnectionInfo": ExternalAsmConnectionInfo,
+    "ExternalAsmDiskGroupCollection": ExternalAsmDiskGroupCollection,
+    "ExternalAsmDiskGroupSummary": ExternalAsmDiskGroupSummary,
+    "ExternalAsmInstance": ExternalAsmInstance,
+    "ExternalAsmInstanceCollection": ExternalAsmInstanceCollection,
+    "ExternalAsmInstanceParameters": ExternalAsmInstanceParameters,
+    "ExternalAsmInstanceSummary": ExternalAsmInstanceSummary,
+    "ExternalAsmServicedDatabase": ExternalAsmServicedDatabase,
+    "ExternalAsmSummary": ExternalAsmSummary,
+    "ExternalAsmUserCollection": ExternalAsmUserCollection,
+    "ExternalAsmUserSummary": ExternalAsmUserSummary,
+    "ExternalCluster": ExternalCluster,
+    "ExternalClusterCollection": ExternalClusterCollection,
+    "ExternalClusterInstance": ExternalClusterInstance,
+    "ExternalClusterInstanceCollection": ExternalClusterInstanceCollection,
+    "ExternalClusterInstanceSummary": ExternalClusterInstanceSummary,
+    "ExternalClusterNetworkConfiguration": ExternalClusterNetworkConfiguration,
+    "ExternalClusterScanListenerConfiguration": ExternalClusterScanListenerConfiguration,
+    "ExternalClusterSummary": ExternalClusterSummary,
+    "ExternalClusterVipConfiguration": ExternalClusterVipConfiguration,
+    "ExternalDatabaseCollection": ExternalDatabaseCollection,
+    "ExternalDatabaseConnectionInfo": ExternalDatabaseConnectionInfo,
+    "ExternalDatabaseInstance": ExternalDatabaseInstance,
+    "ExternalDatabaseSummary": ExternalDatabaseSummary,
+    "ExternalDbHome": ExternalDbHome,
+    "ExternalDbHomeCollection": ExternalDbHomeCollection,
+    "ExternalDbHomeSummary": ExternalDbHomeSummary,
+    "ExternalDbNode": ExternalDbNode,
+    "ExternalDbNodeCollection": ExternalDbNodeCollection,
+    "ExternalDbNodeSummary": ExternalDbNodeSummary,
+    "ExternalDbSystem": ExternalDbSystem,
+    "ExternalDbSystemBasicInfo": ExternalDbSystemBasicInfo,
+    "ExternalDbSystemCollection": ExternalDbSystemCollection,
+    "ExternalDbSystemConnectionInfo": ExternalDbSystemConnectionInfo,
+    "ExternalDbSystemConnector": ExternalDbSystemConnector,
+    "ExternalDbSystemConnectorCollection": ExternalDbSystemConnectorCollection,
+    "ExternalDbSystemConnectorSummary": ExternalDbSystemConnectorSummary,
+    "ExternalDbSystemDatabaseManagementConfigDetails": ExternalDbSystemDatabaseManagementConfigDetails,
+    "ExternalDbSystemDiscovery": ExternalDbSystemDiscovery,
+    "ExternalDbSystemDiscoveryCollection": ExternalDbSystemDiscoveryCollection,
+    "ExternalDbSystemDiscoveryConnector": ExternalDbSystemDiscoveryConnector,
+    "ExternalDbSystemDiscoveryMacsConnector": ExternalDbSystemDiscoveryMacsConnector,
+    "ExternalDbSystemDiscoverySummary": ExternalDbSystemDiscoverySummary,
+    "ExternalDbSystemMacsConnector": ExternalDbSystemMacsConnector,
+    "ExternalDbSystemSummary": ExternalDbSystemSummary,
+    "ExternalListener": ExternalListener,
+    "ExternalListenerCollection": ExternalListenerCollection,
+    "ExternalListenerEndpoint": ExternalListenerEndpoint,
+    "ExternalListenerIpcEndpoint": ExternalListenerIpcEndpoint,
+    "ExternalListenerServiceCollection": ExternalListenerServiceCollection,
+    "ExternalListenerServiceSummary": ExternalListenerServiceSummary,
+    "ExternalListenerServicedDatabase": ExternalListenerServicedDatabase,
+    "ExternalListenerSummary": ExternalListenerSummary,
+    "ExternalListenerTcpEndpoint": ExternalListenerTcpEndpoint,
+    "ExternalListenerTcpsEndpoint": ExternalListenerTcpsEndpoint,
+    "ExternalServicedAsm": ExternalServicedAsm,
+    "ExternalServicedDatabase": ExternalServicedDatabase,
     "FailedConnectionsAggregateMetrics": FailedConnectionsAggregateMetrics,
     "FindingSchemaOrOperation": FindingSchemaOrOperation,
     "FleetMetricDefinition": FleetMetricDefinition,
@@ -353,6 +544,8 @@ database_management_type_mapping = {
     "MetricDataPoint": MetricDataPoint,
     "MetricDimensionDefinition": MetricDimensionDefinition,
     "MetricStatisticsDefinition": MetricStatisticsDefinition,
+    "MetricsAggregationRange": MetricsAggregationRange,
+    "MetricsAggregationRangeCollection": MetricsAggregationRangeCollection,
     "ObjectPrivilegeCollection": ObjectPrivilegeCollection,
     "ObjectPrivilegeSummary": ObjectPrivilegeSummary,
     "ObjectStorageJobExecutionResultDetails": ObjectStorageJobExecutionResultDetails,
@@ -370,6 +563,9 @@ database_management_type_mapping = {
     "OptimizerStatisticsCollectionOperationsCollection": OptimizerStatisticsCollectionOperationsCollection,
     "OptimizerStatisticsOperationTask": OptimizerStatisticsOperationTask,
     "ParentGroup": ParentGroup,
+    "PatchExternalDbSystemDiscoveryDetails": PatchExternalDbSystemDiscoveryDetails,
+    "PatchInstruction": PatchInstruction,
+    "PatchMergeInstruction": PatchMergeInstruction,
     "PdbMetrics": PdbMetrics,
     "PdbStatusDetails": PdbStatusDetails,
     "PreferredCredential": PreferredCredential,
@@ -441,6 +637,15 @@ database_management_type_mapping = {
     "UpdateBasicPreferredCredentialDetails": UpdateBasicPreferredCredentialDetails,
     "UpdateDatabaseParametersResult": UpdateDatabaseParametersResult,
     "UpdateDbManagementPrivateEndpointDetails": UpdateDbManagementPrivateEndpointDetails,
+    "UpdateExternalAsmDetails": UpdateExternalAsmDetails,
+    "UpdateExternalClusterDetails": UpdateExternalClusterDetails,
+    "UpdateExternalClusterInstanceDetails": UpdateExternalClusterInstanceDetails,
+    "UpdateExternalDbNodeDetails": UpdateExternalDbNodeDetails,
+    "UpdateExternalDbSystemConnectorDetails": UpdateExternalDbSystemConnectorDetails,
+    "UpdateExternalDbSystemDetails": UpdateExternalDbSystemDetails,
+    "UpdateExternalDbSystemDiscoveryDetails": UpdateExternalDbSystemDiscoveryDetails,
+    "UpdateExternalDbSystemMacsConnectorDetails": UpdateExternalDbSystemMacsConnectorDetails,
+    "UpdateExternalListenerDetails": UpdateExternalListenerDetails,
     "UpdateJobDetails": UpdateJobDetails,
     "UpdateManagedDatabaseGroupDetails": UpdateManagedDatabaseGroupDetails,
     "UpdatePreferredCredentialDetails": UpdatePreferredCredentialDetails,
@@ -456,5 +661,6 @@ database_management_type_mapping = {
     "WorkRequestLogEntry": WorkRequestLogEntry,
     "WorkRequestLogEntryCollection": WorkRequestLogEntryCollection,
     "WorkRequestResource": WorkRequestResource,
+    "WorkRequestSubResource": WorkRequestSubResource,
     "WorkRequestSummary": WorkRequestSummary
 }

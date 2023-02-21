@@ -25,10 +25,12 @@ Ai Anomaly Detection
     oci.ai_anomaly_detection.models.AnomalyDetectResult
     oci.ai_anomaly_detection.models.ChangeAiPrivateEndpointCompartmentDetails
     oci.ai_anomaly_detection.models.ChangeDataAssetCompartmentDetails
+    oci.ai_anomaly_detection.models.ChangeDetectAnomalyJobCompartmentDetails
     oci.ai_anomaly_detection.models.ChangeModelCompartmentDetails
     oci.ai_anomaly_detection.models.ChangeProjectCompartmentDetails
     oci.ai_anomaly_detection.models.CreateAiPrivateEndpointDetails
     oci.ai_anomaly_detection.models.CreateDataAssetDetails
+    oci.ai_anomaly_detection.models.CreateDetectAnomalyJobDetails
     oci.ai_anomaly_detection.models.CreateModelDetails
     oci.ai_anomaly_detection.models.CreateProjectDetails
     oci.ai_anomaly_detection.models.DataAsset
@@ -40,17 +42,32 @@ Ai Anomaly Detection
     oci.ai_anomaly_detection.models.DataSourceDetailsInflux
     oci.ai_anomaly_detection.models.DataSourceDetailsObjectStorage
     oci.ai_anomaly_detection.models.DetectAnomaliesDetails
+    oci.ai_anomaly_detection.models.DetectAnomalyJob
+    oci.ai_anomaly_detection.models.DetectAnomalyJobCollection
+    oci.ai_anomaly_detection.models.DetectAnomalyJobSummary
     oci.ai_anomaly_detection.models.DetectionResultItem
     oci.ai_anomaly_detection.models.EmbeddedDetectAnomaliesRequest
+    oci.ai_anomaly_detection.models.EmbeddedInputDetails
     oci.ai_anomaly_detection.models.InfluxDetails
     oci.ai_anomaly_detection.models.InfluxDetailsV1v8
     oci.ai_anomaly_detection.models.InfluxDetailsV2v0
     oci.ai_anomaly_detection.models.InlineDetectAnomaliesRequest
+    oci.ai_anomaly_detection.models.InlineInputDetails
+    oci.ai_anomaly_detection.models.InlineInputJobDetails
+    oci.ai_anomaly_detection.models.InputDetails
+    oci.ai_anomaly_detection.models.InputJobDetails
     oci.ai_anomaly_detection.models.Model
     oci.ai_anomaly_detection.models.ModelCollection
     oci.ai_anomaly_detection.models.ModelSummary
     oci.ai_anomaly_detection.models.ModelTrainingDetails
     oci.ai_anomaly_detection.models.ModelTrainingResults
+    oci.ai_anomaly_detection.models.ObjectListInputDetails
+    oci.ai_anomaly_detection.models.ObjectListInputJobDetails
+    oci.ai_anomaly_detection.models.ObjectLocation
+    oci.ai_anomaly_detection.models.ObjectStorageLocation
+    oci.ai_anomaly_detection.models.ObjectStoreOutputDetails
+    oci.ai_anomaly_detection.models.OutputDetails
+    oci.ai_anomaly_detection.models.OutputJobDetails
     oci.ai_anomaly_detection.models.PerSignalDetails
     oci.ai_anomaly_detection.models.Project
     oci.ai_anomaly_detection.models.ProjectCollection
@@ -58,6 +75,7 @@ Ai Anomaly Detection
     oci.ai_anomaly_detection.models.RowReductionDetails
     oci.ai_anomaly_detection.models.UpdateAiPrivateEndpointDetails
     oci.ai_anomaly_detection.models.UpdateDataAssetDetails
+    oci.ai_anomaly_detection.models.UpdateDetectAnomalyJobDetails
     oci.ai_anomaly_detection.models.UpdateModelDetails
     oci.ai_anomaly_detection.models.UpdateProjectDetails
     oci.ai_anomaly_detection.models.WorkRequest

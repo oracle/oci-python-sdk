@@ -146,7 +146,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/protectedDatabases/{protectedDatabaseId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_protected_database_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/ChangeProtectedDatabaseCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -252,7 +252,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/protectionPolicies/{protectionPolicyId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_protection_policy_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicy/ChangeProtectionPolicyCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -358,7 +358,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/recoveryServiceSubnets/{recoveryServiceSubnetId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_recovery_service_subnet_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnet/ChangeRecoveryServiceSubnetCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -461,7 +461,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/protectedDatabases"
         method = "POST"
         operation_name = "create_protected_database"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/CreateProtectedDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -555,7 +555,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/protectionPolicies"
         method = "POST"
         operation_name = "create_protection_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicy/CreateProtectionPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -649,7 +649,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/recoveryServiceSubnets"
         method = "POST"
         operation_name = "create_recovery_service_subnet"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnet/CreateRecoveryServiceSubnet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -743,7 +743,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/protectedDatabases/{protectedDatabaseId}"
         method = "DELETE"
         operation_name = "delete_protected_database"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/DeleteProtectedDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -845,7 +845,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/protectionPolicies/{protectionPolicyId}"
         method = "DELETE"
         operation_name = "delete_protection_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicy/DeleteProtectionPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -946,7 +946,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/recoveryServiceSubnets/{recoveryServiceSubnetId}"
         method = "DELETE"
         operation_name = "delete_recovery_service_subnet"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnet/DeleteRecoveryServiceSubnet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1050,7 +1050,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/protectedDatabases/{protectedDatabaseId}/actions/getConfiguration"
         method = "POST"
         operation_name = "fetch_protected_database_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/FetchProtectedDatabaseConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1149,7 +1149,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/protectedDatabases/{protectedDatabaseId}"
         method = "GET"
         operation_name = "get_protected_database"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/GetProtectedDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1243,7 +1243,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/protectionPolicies/{protectionPolicyId}"
         method = "GET"
         operation_name = "get_protection_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicy/GetProtectionPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1337,7 +1337,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/recoveryServiceSubnets/{recoveryServiceSubnetId}"
         method = "GET"
         operation_name = "get_recovery_service_subnet"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnet/GetRecoveryServiceSubnet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1431,7 +1431,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1564,7 +1564,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/protectedDatabases"
         method = "GET"
         operation_name = "list_protected_databases"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabaseCollection/ListProtectedDatabases"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1730,7 +1730,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/protectionPolicies"
         method = "GET"
         operation_name = "list_protection_policies"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicyCollection/ListProtectionPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1906,7 +1906,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/recoveryServiceSubnets"
         method = "GET"
         operation_name = "list_recovery_service_subnets"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnetCollection/ListRecoveryServiceSubnets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2051,7 +2051,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/WorkRequestErrorCollection/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2192,7 +2192,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/WorkRequestLogEntryCollection/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2344,7 +2344,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/WorkRequestSummaryCollection/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2478,7 +2478,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/protectedDatabases/{protectedDatabaseId}"
         method = "PUT"
         operation_name = "update_protected_database"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/UpdateProtectedDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2584,7 +2584,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/protectionPolicies/{protectionPolicyId}"
         method = "PUT"
         operation_name = "update_protection_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectionPolicy/UpdateProtectionPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2690,7 +2690,7 @@ class DatabaseRecoveryClient(object):
         resource_path = "/recoveryServiceSubnets/{recoveryServiceSubnetId}"
         method = "PUT"
         operation_name = "update_recovery_service_subnet"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/RecoveryServiceSubnet/UpdateRecoveryServiceSubnet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

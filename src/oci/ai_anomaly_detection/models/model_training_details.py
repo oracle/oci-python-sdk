@@ -13,10 +13,24 @@ class ModelTrainingDetails(object):
     Specifies the details of the MSET model during the create call.
     """
 
+    #: A constant which can be used with the algorithm_hint property of a ModelTrainingDetails.
+    #: This constant has a value of "MULTIVARIATE_MSET"
+    ALGORITHM_HINT_MULTIVARIATE_MSET = "MULTIVARIATE_MSET"
+
+    #: A constant which can be used with the algorithm_hint property of a ModelTrainingDetails.
+    #: This constant has a value of "UNIVARIATE_OCSVM"
+    ALGORITHM_HINT_UNIVARIATE_OCSVM = "UNIVARIATE_OCSVM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ModelTrainingDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param algorithm_hint:
+            The value to assign to the algorithm_hint property of this ModelTrainingDetails.
+            Allowed values for this property are: "MULTIVARIATE_MSET", "UNIVARIATE_OCSVM", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type algorithm_hint: str
 
         :param target_fap:
             The value to assign to the target_fap property of this ModelTrainingDetails.
@@ -26,26 +40,66 @@ class ModelTrainingDetails(object):
             The value to assign to the training_fraction property of this ModelTrainingDetails.
         :type training_fraction: float
 
+        :param window_size:
+            The value to assign to the window_size property of this ModelTrainingDetails.
+        :type window_size: int
+
         :param data_asset_ids:
             The value to assign to the data_asset_ids property of this ModelTrainingDetails.
         :type data_asset_ids: list[str]
 
         """
         self.swagger_types = {
+            'algorithm_hint': 'str',
             'target_fap': 'float',
             'training_fraction': 'float',
+            'window_size': 'int',
             'data_asset_ids': 'list[str]'
         }
 
         self.attribute_map = {
+            'algorithm_hint': 'algorithmHint',
             'target_fap': 'targetFap',
             'training_fraction': 'trainingFraction',
+            'window_size': 'windowSize',
             'data_asset_ids': 'dataAssetIds'
         }
 
+        self._algorithm_hint = None
         self._target_fap = None
         self._training_fraction = None
+        self._window_size = None
         self._data_asset_ids = None
+
+    @property
+    def algorithm_hint(self):
+        """
+        Gets the algorithm_hint of this ModelTrainingDetails.
+        User can choose specific algorithm for training.
+
+        Allowed values for this property are: "MULTIVARIATE_MSET", "UNIVARIATE_OCSVM", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The algorithm_hint of this ModelTrainingDetails.
+        :rtype: str
+        """
+        return self._algorithm_hint
+
+    @algorithm_hint.setter
+    def algorithm_hint(self, algorithm_hint):
+        """
+        Sets the algorithm_hint of this ModelTrainingDetails.
+        User can choose specific algorithm for training.
+
+
+        :param algorithm_hint: The algorithm_hint of this ModelTrainingDetails.
+        :type: str
+        """
+        allowed_values = ["MULTIVARIATE_MSET", "UNIVARIATE_OCSVM"]
+        if not value_allowed_none_or_none_sentinel(algorithm_hint, allowed_values):
+            algorithm_hint = 'UNKNOWN_ENUM_VALUE'
+        self._algorithm_hint = algorithm_hint
 
     @property
     def target_fap(self):
@@ -94,6 +148,30 @@ class ModelTrainingDetails(object):
         :type: float
         """
         self._training_fraction = training_fraction
+
+    @property
+    def window_size(self):
+        """
+        Gets the window_size of this ModelTrainingDetails.
+        This value would determine the window size of the training algorithm.
+
+
+        :return: The window_size of this ModelTrainingDetails.
+        :rtype: int
+        """
+        return self._window_size
+
+    @window_size.setter
+    def window_size(self, window_size):
+        """
+        Sets the window_size of this ModelTrainingDetails.
+        This value would determine the window size of the training algorithm.
+
+
+        :param window_size: The window_size of this ModelTrainingDetails.
+        :type: int
+        """
+        self._window_size = window_size
 
     @property
     def data_asset_ids(self):

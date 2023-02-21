@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+23.02.15 - 2023.02.15
+=====================
+* Change Image to Oracle Linux 8
+* Added showoci code to the image
+
+=====================
 23.02.07 - 2023.02.07
 =====================
 * Migrated cx_oracle to oracledb libraries

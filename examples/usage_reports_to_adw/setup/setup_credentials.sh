@@ -1,13 +1,13 @@
 #!/bin/bash
 #############################################################################################################################
-# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 #
 # Initial Setup credentials
 # Written by Adi Zohar, October 2020
 # Git Location = https://github.com/oracle/oci-python-sdk/tree/master/examples/usage_reports_to_adw
 #
-# Version 2022-08-12
+# Version 2023-02-14
 #
 #########################################################################################################################
 
@@ -48,7 +48,7 @@ echo "" | tee -a $LOG
 echo "Below Data written to $CREDFILE:" | tee -a $LOG
 cat $CREDFILE | tee -a $LOG
 echo "" | tee -a $LOG
-echo "Setup Packages Completed." | tee -a $LOG
+echo "Setup Credentials Completed." | tee -a $LOG
 echo "" | tee -a $LOG
 echo "########################################################################" | tee -a $LOG
 echo "# Please download the database wallet to /home/opc/wallet.zip "           | tee -a $LOG
