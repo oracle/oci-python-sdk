@@ -176,6 +176,14 @@ class ManagedDatabase(object):
             The value to assign to the managed_database_groups property of this ManagedDatabase.
         :type managed_database_groups: list[oci.database_management.models.ParentGroup]
 
+        :param db_system_id:
+            The value to assign to the db_system_id property of this ManagedDatabase.
+        :type db_system_id: str
+
+        :param storage_system_id:
+            The value to assign to the storage_system_id property of this ManagedDatabase.
+        :type storage_system_id: str
+
         :param time_created:
             The value to assign to the time_created property of this ManagedDatabase.
         :type time_created: datetime
@@ -227,6 +235,8 @@ class ManagedDatabase(object):
             'is_cluster': 'bool',
             'parent_container_id': 'str',
             'managed_database_groups': 'list[ParentGroup]',
+            'db_system_id': 'str',
+            'storage_system_id': 'str',
             'time_created': 'datetime',
             'database_status': 'str',
             'parent_container_name': 'str',
@@ -250,6 +260,8 @@ class ManagedDatabase(object):
             'is_cluster': 'isCluster',
             'parent_container_id': 'parentContainerId',
             'managed_database_groups': 'managedDatabaseGroups',
+            'db_system_id': 'dbSystemId',
+            'storage_system_id': 'storageSystemId',
             'time_created': 'timeCreated',
             'database_status': 'databaseStatus',
             'parent_container_name': 'parentContainerName',
@@ -272,6 +284,8 @@ class ManagedDatabase(object):
         self._is_cluster = None
         self._parent_container_id = None
         self._managed_database_groups = None
+        self._db_system_id = None
+        self._storage_system_id = None
         self._time_created = None
         self._database_status = None
         self._parent_container_name = None
@@ -591,6 +605,64 @@ class ManagedDatabase(object):
         :type: list[oci.database_management.models.ParentGroup]
         """
         self._managed_database_groups = managed_database_groups
+
+    @property
+    def db_system_id(self):
+        """
+        Gets the db_system_id of this ManagedDatabase.
+        The `OCID`__ of the external
+        DB system that this Managed Database is part of.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The db_system_id of this ManagedDatabase.
+        :rtype: str
+        """
+        return self._db_system_id
+
+    @db_system_id.setter
+    def db_system_id(self, db_system_id):
+        """
+        Sets the db_system_id of this ManagedDatabase.
+        The `OCID`__ of the external
+        DB system that this Managed Database is part of.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param db_system_id: The db_system_id of this ManagedDatabase.
+        :type: str
+        """
+        self._db_system_id = db_system_id
+
+    @property
+    def storage_system_id(self):
+        """
+        Gets the storage_system_id of this ManagedDatabase.
+        The `OCID`__ of the storage DB system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The storage_system_id of this ManagedDatabase.
+        :rtype: str
+        """
+        return self._storage_system_id
+
+    @storage_system_id.setter
+    def storage_system_id(self, storage_system_id):
+        """
+        Sets the storage_system_id of this ManagedDatabase.
+        The `OCID`__ of the storage DB system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param storage_system_id: The storage_system_id of this ManagedDatabase.
+        :type: str
+        """
+        self._storage_system_id = storage_system_id
 
     @property
     def time_created(self):

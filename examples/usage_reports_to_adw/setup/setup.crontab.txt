@@ -8,3 +8,12 @@
 ###############################################################################
 30 0   * * 0 timeout 6h /home/opc/usage_reports_to_adw/shell_scripts/run_gather_stats.sh > /home/opc/usage_reports_to_adw/run_gather_stats_run.txt 2>&1
 
+###############################################################################
+# Crontab to run showoci every night
+###############################################################################
+# 0 0 * * * timeout 23h /home/opc/showoci/run_daily_report.sh > /home/opc/showoci/run_daily_report_crontab_run.txt 2>&1
+
+###############################################################################
+# Crontab to run showoci_csv to ADB
+###############################################################################
+#00 8 * * * timeout 2h /home/opc/usage_reports_to_adw/shell_scripts/run_load_showoci_csv_to_adw.sh > /home/opc/usage_reports_to_adw/cron/run_load_showoci_csv_to_adw.sh_run.txt 2>&1

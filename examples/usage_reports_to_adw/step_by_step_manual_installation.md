@@ -9,174 +9,162 @@ Oracle Application Express (APEX) will be used for reporting.
 [cost analysis](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/costanalysisoverview.htm) 
 and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm) features should be used instead.**
 
-**Developed by Adi Zohar, 2020-2022**
+**Developed by Adi Zohar, 2020-2023**
 
 ## 1. Deploy VM Compute instance to run the python script
-```
-   OCI -> Menu -> Compute -> Instances
-   Create Instance
-   --> Name = UsageVM
-   --> Image = Oracle Linux 7.9 or highrt
-   --> Shape = VM.Standard2.1
-   --> Choose your network VCN and Subnet (any type of VCN and Subnet)
-   --> Assign public IP -  Optional if on public subnet
-   --> Add your public SSH key
-   --> Press Create
-```
-![](img/Image_01.png)
-
-![](img/Image_02.png)
-
-![](img/Image_03.png)
 
 ```
-   Copy Instance Info:
-   --> Compute OCID to be used for Dynamic Group Permission
-   --> Compute IP
+OCI -> Menu -> Compute -> Instances
+Create Instance
+--> Name = UsageVM
+--> Image = Oracle Linux 8
+--> Shape = VM.Flex.E4 or Higher
+--> Choose your network VCN and Subnet (any type of VCN and Subnet)
+--> Assign public IP -  Optional if on public subnet
+--> Add your public SSH key
+--> Press Create
+
+Copy Instance Info:
+--> Compute OCID to be used for Dynamic Group Permission
+--> Compute IP
+
 ```
 
 ## 2. Create Dynamic Group for Instance Principles
 
 ```
-   OCI -> Menu -> Identity -> Dynamic Groups -> Create Dynamic Group
-   --> Name = UsageDownloadGroup 
-   --> Desc = Dynamic Group for the Usage Report VM
-   --> Rule 1 = ANY { instance.id = 'OCID_Of_Step_1_Instance' }
+OCI -> Menu -> Identity -> Dynamic Groups -> Create Dynamic Group
+--> Name = UsageDownloadGroup 
+--> Desc = Dynamic Group for the Usage Report VM
+--> Rule 1 = ANY { instance.id = 'OCID_Of_Step_1_Instance' }
 ```
-![](img/Image_04.png)
 
 ## 3. Create Policy to allow the Dynamic Group to extract usage report and read Compartments
 
 ```
-   OCI -> Menu -> Identity -> Policies
-   Choose Root Compartment
-   Create Policy
-   --> Name = UsageDownloadPolicy
-   --> Desc = Allow Dynamic Group UsageDownloadGroup to Extract Usage report script
-   --> Statement 1 = define tenancy usage-report as ocid1.tenancy.oc1..aaaaaaaaned4fkpkisbwjlr56u7cj63lf3wffbilvqknstgtvzub7vhqkggq
-   --> Statement 2 = endorse dynamic-group UsageDownloadGroup to read objects in tenancy usage-report
-   --> Statement 3 = Allow dynamic-group UsageDownloadGroup to inspect compartments in tenancy
-   --> Statement 4 = Allow dynamic-group UsageDownloadGroup to inspect tenancies in tenancy
-   --> Statement 5 = Allow dynamic-group UsageDownloadGroup to read autonomous-databases in compartment {APPCOMP} 
-   *** Please don't change the usage report tenant OCID, it is fixed.
+OCI -> Menu -> Identity -> Policies
+Choose Root Compartment
+Create Policy
+--> Name = UsageDownloadPolicy
+--> Desc = Allow Dynamic Group UsageDownloadGroup to Extract Usage report script
+--> Statement 1 = define tenancy usage-report as ocid1.tenancy.oc1..aaaaaaaaned4fkpkisbwjlr56u7cj63lf3wffbilvqknstgtvzub7vhqkggq
+--> Statement 2 = endorse dynamic-group UsageDownloadGroup to read objects in tenancy usage-report
+--> Statement 3 = Allow dynamic-group UsageDownloadGroup to inspect compartments in tenancy
+--> Statement 4 = Allow dynamic-group UsageDownloadGroup to inspect tenancies in tenancy
+--> Statement 5 = Allow dynamic-group UsageDownloadGroup to read autonomous-databases in compartment {APPCOMP} 
+*** Please don't change the usage report tenant OCID, it is fixed.
 ```
-
-![](img/Image_05.png)
 
 ## 4. Deploy Autonomous Data Warehouse Database
 
 ```
-   OCI -> Menu -> Autonomous Data Warehouse
-   Create Autonomous Database
-   --> Compartment = Please Choose
-   --> Display Name = ADWCUSG
-   --> Database Name ADWCUSG
-   --> Workload = Data Warehouse
-   --> Deployment = Shared
-   --> Always Free = Optional
-   --> OCPU = 1
-   --> Storage = 1
-   --> Auto Scale = No
-   --> Password = (Please choose your own password)
-   --> Choose Network Access = Allow secure Access from Everywhere (you can use VCN as well which requires NSG)
-   --> Choose License Type
+OCI -> Menu -> Autonomous Data Warehouse
+Create Autonomous Database
+--> Compartment = Please Choose
+--> Display Name = ADWCUSG
+--> Database Name ADWCUSG
+--> Workload = Data Warehouse
+--> Deployment = Shared
+--> Always Free = Optional
+--> OCPU = 1
+--> Storage = 1
+--> Auto Scale = No
+--> Password = (Please choose your own password)
+--> Choose Network Access = Allow secure Access from Everywhere (you can use VCN as well which requires NSG)
+--> Choose License Type
 ```
-
-![](img/Image_06.png)
-
-![](img/Image_07.png)
-
-![](img/Image_08.png)
-
-![](img/Image_09.png)
 
 ## 5. Login to Linux Machine
 
 ```
-   Using the SSH key you provided, SSH to the linux machine from step #1
-   ssh opc@UsageVM
+Using the SSH key you provided, SSH to the linux machine from step #1
+ssh opc@UsageVM
 ```
 
-## 6. Install Python 3 OCI packages
+## 6. Install Python 3.9 OCI packages
 
 ```
-   sudo yum install -y python3
-   sudo python3 -m pip install --upgrade oci oci-cli oracledb requests pip
+sudo dnf module install python39
+sudo dnf install python39-pip
+sudo alternatives --set python3 /usr/bin/python3.9
 
-   # test instance principle is working using oci-cli
-   oci os ns get --auth instance_principal
-   
-   [opc@usagevm ~]$ oci os ns get --auth instance_principal
-   {
-       "data": "orasenatdplxxxx"
-   }
+# Install Python required packages
+python3 -m pip install --upgrade pip
+python3 -m pip install --upgrade oci oci-cli
+python3 -m pip install --upgrade oracledb 
+python3 -m pip install --upgrade requests
+python3 -m pip install --upgrade pandas openpyxl
+
+# test instance principle is working using oci-cli
+oci os ns get --auth instance_principal
 ```
 
 ## 7. Install Oracle instant client
 
 ```
-   # Please refer to the download site for Manual installation = https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html
+# Please refer to the download site for Manual installation = https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html
 
-   # please choose basic and sqlplus package, below example on 19.18
-   sudo rpm -i https://download.oracle.com/otn_software/linux/instantclient/1918000/oracle-instantclient19.18-basic-19.18.0.0.0-1.x86_64.rpm
-   sudo rpm -i https://download.oracle.com/otn_software/linux/instantclient/1918000/oracle-instantclient19.18-sqlplus-19.18.0.0.0-1.x86_64.rpm
-   sudo ln -s /usr/lib/oracle/19.18 /usr/lib/oracle/current
+4. install oracle instant client 21
+sudo dnf install oracle-instantclient-release-el8
+sudo dnf install oracle-instantclient-basic
+sudo dnf install oracle-instantclient-sqlplus
+sudo ln -s /usr/lib/oracle/21 /usr/lib/oracle/current
 
-   # setup oracle home variables
-   # Add the below to $HOME/.bashrc:
-   export CLIENT_HOME=/usr/lib/oracle/current/client64
-   export LD_LIBRARY_PATH=$CLIENT_HOME/lib
-   export PATH=$PATH:$CLIENT_HOME/bin
-   export TNS_ADMIN=$HOME/ADWCUSG
+# setup oracle home variables
+# Add the below to $HOME/.bashrc:
+export CLIENT_HOME=/usr/lib/oracle/current/client64
+export PATH=$PATH:$CLIENT_HOME/bin
+export TNS_ADMIN=$HOME/ADWCUSG
 
-   # set the variables
-   source $HOME/.bashrc
+# Load the variables
+source $HOME/.bashrc
 ```
    
 ## 8. Download Autonomous database Wallet
 
 ```
-   # on Linux -> create folder $HOME/ADWCUSG
-   mkdir $HOME/ADWCUSG
+# on Linux -> create folder $HOME/ADWCUSG
+mkdir $HOME/ADWCUSG
 
-   # On OCI -> MENU -> Autonomous Data Warehouse -> ADWCUSG
-   --> Service Console
-   --> Administration
-   --> Download Client Credential
-   --> Specify the Admin Password
-   --> Copy the Wallet wallet_ADWCUSG.zip to the Linux folder $HOME/ADWCUSG
+# On OCI -> MENU -> Autonomous Data Warehouse -> ADWCUSG
+--> Service Console
+--> Administration
+--> Download Client Credential
+--> Specify the Admin Password
+--> Copy the Wallet wallet.zip to the Linux folder $HOME/ADWCUSG
+
+# Or use OCI CLI , Requires - Autonomous DB OCID and any password
+oci db autonomous-database generate-wallet --autonomous-database-id ocid1.autonomousdatabase.xxxx --password yyyy# --file /home/opc/wallet.zip --auth instance_principal
 ```
 
-![](img/Image_10.png)
-
 ```
-   # on Linux -> Unzip Wallet
-   cd $HOME/ADWCUSG
-   unzip wallet_ADWCUSG.zip
-   
-   # Change directory of sqlnet.ora to $HOME/ADWCUSG
-   sed -i "s#?/network/admin#$HOME/ADWCUSG#" sqlnet.ora
+# on Linux -> Unzip Wallet
+cd $HOME/ADWCUSG
+unzip wallet.zip
+
+# Change directory of sqlnet.ora to $HOME/ADWCUSG
+sed -i "s#?/network/admin#$HOME/ADWCUSG#" sqlnet.ora
 ```
 
 ## 9. Create Database User for the Usage repository
 
 ```
-   sqlplus admin/<password>@adwcusg_low
-   
-   # Choose your own password
-   SQL> create user usage identified by <password>;
-   SQL> grant connect, resource, dwrole, unlimited tablespace to usage;
-   SQL> exit
+sqlplus admin/<password>@adwcusg_low
+
+# Choose your own password
+SQL> create user usage identified by <password>;
+SQL> grant connect, resource, dwrole, unlimited tablespace to usage;
+SQL> exit
 ```
 
 ## 10. Clone the OCI SDK Repo from Git Hub
 
 ```
-   cd $HOME
-   sudo yum install -y git
-   git clone https://github.com/oracle/oci-python-sdk
-   ln -s oci-python-sdk/examples/usage_reports_to_adw .
-   cd usage_reports_to_adw
+cd $HOME
+sudo yum install -y git
+git clone https://github.com/oracle/oci-python-sdk
+ln -s oci-python-sdk/examples/usage_reports_to_adw .
+cd usage_reports_to_adw
 ```
 
 ## 11. Setup Credentials
@@ -184,24 +172,23 @@ and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/
 This script will ask for Database Name, Admin Password, Application Password and Extract Start Date
 
 ```
-   /home/opc/usage_reports_to_adw/setup/setup_credentials.sh
+/home/opc/usage_reports_to_adw/setup/setup_credentials.sh
 ```
 
 ## 12. Execute the python script - usage2adw.py or setup_usage2adw.sh
 
 ```
-    # if you want to skip 13 to 17, execute the script /home/opc/usage_reports_to_adw/setup/setup_usage2adw.sh
-    
-    # Please amend the password for the USAGE schema and load the data
-    python3 usage2adw.py -ip -du USAGE -dp <password> -dn adwcusg_low
-```
+# if you want to skip 13 to 17, execute the script /home/opc/usage_reports_to_adw/setup/setup_usage2adw.sh
 
+# Please amend the password for the USAGE schema and load the data
+python3 usage2adw.py -ip -du USAGE -dp <password> -dn adwcusg_low
+```
 
 ## 13. Open Autonomous Database APEX Application
 
 ```
-    OCI Console -> Autonomous Databases -> ADWCUSG -> Service Console
-    Development Menu -> Oracle APEX
+OCI Console -> Autonomous Databases -> ADWCUSG -> Service Console
+Development Menu -> Oracle APEX
 ```
 
 ![](img/Image_11.png)
@@ -322,13 +309,13 @@ Right Click and Download [usage.demo.apex.sql](https://raw.githubusercontent.com
 ## 19. Schedule a crontab job to execute the load daily
 ```
     # Amend the oracle instance client path run_daily_usage2adw.sh according to your environment. i.e. 18.3 or later
-    $HOME/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw.sh
+    $HOME/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh
 
 	# change execution permission
-	chmod +x $HOME/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw.sh
+	chmod +x $HOME/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh
  
 	# Test the execution
-	$HOME/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw.sh
+	$HOME/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh
    
     # add crontab that execute every night
     0 0 * * * timeout 6h /home/opc/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh > /home/opc/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw_crontab_run.txt 2>&1

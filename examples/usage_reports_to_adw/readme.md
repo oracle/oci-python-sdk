@@ -10,7 +10,7 @@ It uses APEX for Visualization and generates Daily e-mail report.
 [cost analysis](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/costanalysisoverview.htm) 
 and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm) features should be used instead.**
 
-**Developed by Adi Zohar, 2020-2021**
+**Developed by Adi Zohar, 2020-2023**
 
 ## Main Features
 - Usage Current State
@@ -54,13 +54,13 @@ Please check step by step guide - [step_by_step_inst_by_marketplace.md](step_by_
 ## Step by Step Installation Guide
 Please check step by step guide - [step_by_step_installation.md](step_by_step_installation.md)
 
-## Step by Step Daily Report
-Please check step by step daily report guide - [step_by_step_daily_report.md](step_by_step_daily_report.md)
+## Step by Step HowTo - More information
+Please check step by step HowTo  guide - [step_by_step_howto.md](step_by_step_howto.md)
 
 
 ## OCI SDK Modules Included:
 - oci.identity.IdentityClient            
-- oci.object_storage.ObjectStorageClient 
+- oci.object_storage.ObjectStorageClient
 
 ## Database Tables:
 - OCI_USAGE - Raw data of the usage reports
@@ -142,27 +142,29 @@ Execute
 ```
 $ ./usage2adw.py  
 
-usage: usage2adw.py [-h] [-c CONFIG] [-t PROFILE] [-f FILEID] [-ts TAGSPECIAL] [-ts2 TAGSPECIAL2]
-                    [-d FILEDATE] [-p PROXY] [-su] [-sc] [-sr] [-ip]
-                    [-du DUSER] [-dp DPASS] [-dn DNAME] [--version]
+usage: usage2adw.py [-h] [-c CONFIG] [-t PROFILE] [-f FILEID] [-ts TAGSPECIAL]
+                    [-ts2 TAGSPECIAL2] [-d FILEDATE] [-p PROXY] [-su] [-sc]
+                    [-sr] [-ip] [-du DUSER] [-dp DPASS] [-dn DNAME] [--force]
+                    [--version]
 
 optional arguments:
-  -h, --help      show this help message and exit
-  -c CONFIG       Config File
-  -t PROFILE      Config file section to use (tenancy profile)
-  -f FILEID       File Id to load
-  -ts TAGSPECIAL  tag special key 1 to load the data to TAG_SPECIAL column
-  -ts2 TAGSPECIAL tag special key 2 to load the data to TAG_SPECIAL column
-  -d FILEDATE     Minimum File Date to load (i.e. yyyy-mm-dd)
-  -p PROXY        Set Proxy (i.e. www-proxy-server.com:80)
-  -su             Skip Load Usage Files
-  -sc             Skip Load Cost Files
-  -sr             Skip Public Rate API
-  -ip             Use Instance Principals for Authentication
-  -du DUSER       ADB User
-  -dp DPASS       ADB Password
-  -dn DNAME       ADB Name
-  --version       show program's version number and exit
+  -h, --help        show this help message and exit
+  -c CONFIG         Config File
+  -t PROFILE        Config file section to use (tenancy profile)
+  -f FILEID         File Id to load
+  -ts TAGSPECIAL    tag special key 1 to load the data to TAG_SPECIAL column
+  -ts2 TAGSPECIAL2  tag special key 2 to load the data to TAG_SPECIAL2 column
+  -d FILEDATE       Minimum File Date to load (i.e. yyyy-mm-dd)
+  -p PROXY          Set Proxy (i.e. www-proxy-server.com:80)
+  -su               Skip Load Usage Files
+  -sc               Skip Load Cost Files
+  -sr               Skip Public Rate API
+  -ip               Use Instance Principals for Authentication
+  -du DUSER         ADB User
+  -dp DPASS         ADB Password
+  -dn DNAME         ADB Name
+  --force           Force Update without updated file
+  --version         show program's version number and exit
 ```
 
 ## Below example of execution
@@ -222,6 +224,6 @@ Completed at 2020-04-21 12:05:46
 
 ## License
 
-Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
 This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl
 or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.

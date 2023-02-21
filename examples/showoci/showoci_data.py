@@ -18,7 +18,7 @@ from showoci_service import ShowOCIService, ShowOCIFlags
 
 
 class ShowOCIData(object):
-    version = "23.02.07"
+    version = "23.02.14"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -51,6 +51,13 @@ class ShowOCIData(object):
     def get_service_data(self):
 
         return self.service.data
+
+    ############################################
+    # get tenancy data
+    ############################################
+    def get_tenancy_data(self):
+
+        return self.service.get_tenancy()
 
     ############################################
     # call service to load data
@@ -1694,43 +1701,44 @@ class ShowOCIData(object):
                 if 'Flex' in instance['shape']:
                     sum_flex = "." + str(int(instance['shape_ocpu']))
 
-                inst = {'id': instance['id'], 'name': instance['shape'] + " - " + instance['display_name'] + " - " + instance['lifecycle_state'],
-                        'sum_info': 'Compute',
-                        'sum_shape': str(instance['shape'].replace("Flex", "F") + sum_flex).ljust(22, ' ')[0:21] + " - " + sum_shape,
-                        'availability_domain': instance['availability_domain'],
-                        'fault_domain': instance['fault_domain'],
-                        'time_maintenance_reboot_due': str(instance['time_maintenance_reboot_due']),
-                        'image': instance['image'], 'image_id': instance['image_id'],
-                        'image_os': instance['image_os'],
-                        'shape': instance['shape'],
-                        'shape_ocpu': instance['shape_ocpu'],
-                        'shape_memory_gb': instance['shape_memory_gb'],
-                        'shape_storage_tb': instance['shape_storage_tb'],
-                        'shape_gpu_description': instance['shape_gpu_description'],
-                        'shape_gpus': instance['shape_gpus'],
-                        'shape_local_disk_description': instance['shape_local_disk_description'],
-                        'shape_local_disks': instance['shape_local_disks'],
-                        'shape_max_vnic_attachments': instance['shape_max_vnic_attachments'],
-                        'shape_networking_bandwidth_in_gbps': instance['shape_networking_bandwidth_in_gbps'],
-                        'shape_processor_description': instance['shape_processor_description'],
-                        'display_name': instance['display_name'],
-                        'compartment_name': instance['compartment_name'],
-                        'compartment_path': instance['compartment_path'],
-                        'compartment_id': instance['compartment_id'],
-                        'lifecycle_state': instance['lifecycle_state'],
-                        'console_id': instance['console_id'], 'console': instance['console'],
-                        'time_created': instance['time_created'],
-                        'agent_is_management_disabled': instance['agent_is_management_disabled'],
-                        'agent_is_monitoring_disabled': instance['agent_is_monitoring_disabled'],
-                        'are_all_plugins_disabled': instance['are_all_plugins_disabled'],
-                        'agent_plugin_config': instance['agent_plugin_config'],
-                        'agent_plugin_status': instance['agent_plugin_status'],
-                        'defined_tags': instance['defined_tags'],
-                        'freeform_tags': instance['freeform_tags'],
-                        'metadata': instance['metadata'],
-                        'extended_metadata': instance['extended_metadata'],
-                        'logs': self.service.get_logging_log(instance['id'])
-                        }
+                inst = {
+                    'id': instance['id'],
+                    'name': instance['shape'] + " - " + instance['display_name'] + " - " + instance['lifecycle_state'],
+                    'sum_info': 'Compute',
+                    'sum_shape': str(instance['shape'].replace("Flex", "F") + sum_flex).ljust(22, ' ')[0:21] + " - " + sum_shape,
+                    'availability_domain': instance['availability_domain'],
+                    'fault_domain': instance['fault_domain'],
+                    'time_maintenance_reboot_due': str(instance['time_maintenance_reboot_due']),
+                    'image': instance['image'], 'image_id': instance['image_id'],
+                    'image_os': instance['image_os'],
+                    'shape': instance['shape'],
+                    'shape_ocpu': instance['shape_ocpu'],
+                    'shape_memory_gb': instance['shape_memory_gb'],
+                    'shape_storage_tb': instance['shape_storage_tb'],
+                    'shape_gpu_description': instance['shape_gpu_description'],
+                    'shape_gpus': instance['shape_gpus'],
+                    'shape_local_disk_description': instance['shape_local_disk_description'],
+                    'shape_local_disks': instance['shape_local_disks'],
+                    'shape_max_vnic_attachments': instance['shape_max_vnic_attachments'],
+                    'shape_networking_bandwidth_in_gbps': instance['shape_networking_bandwidth_in_gbps'],
+                    'shape_processor_description': instance['shape_processor_description'],
+                    'display_name': instance['display_name'],
+                    'compartment_name': instance['compartment_name'],
+                    'compartment_path': instance['compartment_path'],
+                    'compartment_id': instance['compartment_id'],
+                    'lifecycle_state': instance['lifecycle_state'],
+                    'console_id': instance['console_id'], 'console': instance['console'],
+                    'time_created': instance['time_created'],
+                    'agent_is_management_disabled': instance['agent_is_management_disabled'],
+                    'agent_is_monitoring_disabled': instance['agent_is_monitoring_disabled'],
+                    'are_all_plugins_disabled': instance['are_all_plugins_disabled'],
+                    'agent_plugin_config': instance['agent_plugin_config'],
+                    'agent_plugin_status': instance['agent_plugin_status'],
+                    'defined_tags': instance['defined_tags'],
+                    'freeform_tags': instance['freeform_tags'],
+                    'metadata': instance['metadata'],
+                    'extended_metadata': instance['extended_metadata'],
+                    'logs': self.service.get_logging_log(instance['id'])}
 
                 # boot volumes attachments
                 boot_vol_attachement = self.service.search_multi_items(self.service.C_COMPUTE, self.service.C_COMPUTE_BOOT_VOL_ATTACH, 'instance_id', instance['id'])
@@ -1759,6 +1767,7 @@ class ShowOCIData(object):
                 vnicas = self.service.search_multi_items(self.service.C_COMPUTE, self.service.C_COMPUTE_VNIC_ATTACH, 'instance_id', instance['id'])
 
                 vnicdata = []
+                fqdn = ""
                 for vnic in vnicas:
 
                     # handle compartment
@@ -1773,11 +1782,20 @@ class ShowOCIData(object):
                                 'desc': vnic['vnic_details']['display_name'] + str(comp_text),
                                 'details': vnic['vnic_details']
                             }
+                            if vnic['vnic_details'] and 'internal_fqdn' in vnic['vnic_details']:
+                                if vnic['vnic_details']['internal_fqdn']:
+                                    fqdn = vnic['vnic_details']['internal_fqdn']
                             if 'ip_addresses' in vnic['vnic_details']:
                                 val['ip_addresses'] = vnic['vnic_details']['ip_addresses']
                             vnicdata.append(val)
 
                 inst['vnic'] = vnicdata
+
+                # if user has inspect, display_name is empty, then take it from the vnic fqdn
+                if instance['display_name'] == 'None' and fqdn:
+                    host_name = str(fqdn.split(".")[0])
+                    inst['name'] = instance['shape'] + " - " + host_name + " - " + instance['lifecycle_state']
+                    inst['display_name'] = host_name
 
                 # add instance to data
                 data.append(inst)
@@ -2171,15 +2189,28 @@ class ShowOCIData(object):
                     ssize = "{0:.1f}".format(round(float(backup['database_size_in_gbs']), 1))
 
                 data.append(
-                    {'name': str(backup['display_name']) + " - " + str(backup['type']) + " - " + str(backup['lifecycle_state']),
-                     'time': str(backup['time_started'])[0:16] + " - " + str(backup['time_ended'])[0:16],
-                     'size': bsize,
-                     'display_name': backup['display_name'],
-                     'lifecycle_state': backup['lifecycle_state'],
-                     'type': backup['type'],
-                     'sum_info': 'Object Storage - DB Backup (GB)',
-                     'sum_size_gb': ssize,
-                     })
+                    {
+                        'name': str(backup['display_name']) + " - " + str(backup['type']) + " - " + str(backup['lifecycle_state']),
+                        'time': str(backup['time_started'])[0:16] + " - " + str(backup['time_ended'])[0:16],
+                        'size': bsize,
+                        'id': backup['id'],
+                        'display_name': backup['display_name'],
+                        'lifecycle_state': backup['lifecycle_state'],
+                        'availability_domain': backup['availability_domain'],
+                        'database_edition': backup['database_edition'],
+                        'shape': backup['shape'],
+                        'version': backup['version'],
+                        'kms_key_id': backup['kms_key_id'],
+                        'kms_key_version_id': backup['kms_key_version_id'],
+                        'vault_id': backup['vault_id'],
+                        'type': backup['type'],
+                        'sum_info': 'Object Storage - DB Backup (GB)',
+                        'sum_size_gb': ssize,
+                        'database_id': backup['database_id'],
+                        'compartment_id': backup['compartment_id'],
+                        'compartment_name': backup['compartment_name'],
+                        'compartment_path': backup['compartment_path'],
+                        'region_name': backup['region_name']})
             return data
 
         except Exception as e:
@@ -2495,7 +2526,7 @@ class ShowOCIData(object):
         try:
 
             # Fetch the vmclusters
-            vms = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_ADB_D_VMS, 'region_name', region_name, 'exadata_infrastructure_id', infra_id)
+            vms = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_EXACC_ADB_VMS, 'region_name', region_name, 'exadata_infrastructure_id', infra_id)
             for vm in vms:
                 vmval = {
                     'id': vm['id'],
@@ -2643,6 +2674,52 @@ class ShowOCIData(object):
             return data
 
     ##########################################################################
+    # Database All Backups
+    ##########################################################################
+    def __get_database_db_all_backups(self, region_name, compartment):
+
+        data = []
+        try:
+            list_db_backups = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_BACKUPS, 'region_name', region_name, 'compartment_id', compartment['id'])
+
+            for backup in list_db_backups:
+                bsize = "None"
+                ssize = ""
+                if backup['database_size_in_gbs']:
+                    bsize = "{0:.1f}".format(round(float(backup['database_size_in_gbs']), 1)) + "GB"
+                    ssize = "{0:.1f}".format(round(float(backup['database_size_in_gbs']), 1))
+
+                data.append(
+                    {
+                        'name': str(backup['display_name']) + " - " + str(backup['type']) + " - " + str(backup['lifecycle_state']),
+                        'time': str(backup['time_started'])[0:16] + " - " + str(backup['time_ended'])[0:16],
+                        'size': bsize,
+                        'id': backup['id'],
+                        'display_name': backup['display_name'],
+                        'standalone': backup['standalone'],
+                        'lifecycle_state': backup['lifecycle_state'],
+                        'availability_domain': backup['availability_domain'],
+                        'database_edition': backup['database_edition'],
+                        'shape': backup['shape'],
+                        'version': backup['version'],
+                        'kms_key_id': backup['kms_key_id'],
+                        'kms_key_version_id': backup['kms_key_version_id'],
+                        'vault_id': backup['vault_id'],
+                        'type': backup['type'],
+                        'database_id': backup['database_id'],
+                        'compartment_name': backup['compartment_name'],
+                        'compartment_path': backup['compartment_path'],
+                        'compartment_id': backup['compartment_id'],
+                        'region_name': backup['region_name'],
+                        'sum_info': 'Object Storage - DB Backup (GB)',
+                        'sum_size_gb': ssize})
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_database_db_all_backups", e)
+            return data
+
+    ##########################################################################
     # print database db backups
     ##########################################################################
     def __get_database_adb_databases_backups(self, backups):
@@ -2659,6 +2736,7 @@ class ShowOCIData(object):
                         'display_name': backup['display_name'],
                         'lifecycle_state': backup['lifecycle_state'],
                         'type': backup['type'],
+                        'id': backup['id'],
                         'is_automatic': backup['is_automatic']
                     }
                 )
@@ -2981,6 +3059,12 @@ class ShowOCIData(object):
             if data:
                 if len(data) > 0:
                     return_data['db_system'] = data
+
+            # DB Backups
+            data = self.__get_database_db_all_backups(region_name, compartment)
+            if data:
+                if len(data) > 0:
+                    return_data['db_all_backups'] = data
 
             data = self.__get_database_db_exadata(region_name, compartment)
             if data:

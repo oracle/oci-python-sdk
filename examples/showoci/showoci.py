@@ -100,7 +100,7 @@ import datetime
 import contextlib
 import os
 
-version = "23.02.07"
+version = "23.02.14"
 
 ##########################################################################
 # check OCI version
@@ -148,7 +148,6 @@ def execute_extract():
     # create data instance
     ############################################
     data = ShowOCIData(flags)
-
     ############################################
     # output and summary instances
     ############################################
@@ -170,6 +169,11 @@ def execute_extract():
 
     if not data.load_service_data():
         return
+
+    ############################################
+    # Get Tenancy details from file
+    ############################################
+    tenancy = data.get_tenancy_data()
 
     ############################################
     # if print service data to file or screen
@@ -238,7 +242,7 @@ def execute_extract():
         ############################################
         if cmd.csv:
             csv.csv_tags_to_cols = not cmd.csv_notagstocols
-            csv.generate_csv(extracted_data, cmd.csv, not cmd.csv_nodate, cmd.csvcol)
+            csv.generate_csv(extracted_data, cmd.csv, tenancy, not cmd.csv_nodate, cmd.csvcol)
 
     ############################################
     # print completion

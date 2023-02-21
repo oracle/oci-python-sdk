@@ -60,7 +60,7 @@ class AiPrivateEndpointSummary(object):
 
         :param system_tags:
             The value to assign to the system_tags property of this AiPrivateEndpointSummary.
-        :type system_tags: dict(str, dict(str, object))
+        :type system_tags: dict(str, object)
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AiPrivateEndpointSummary.
@@ -78,7 +78,7 @@ class AiPrivateEndpointSummary(object):
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, object)',
             'lifecycle_state': 'str'
         }
 
@@ -369,11 +369,11 @@ class AiPrivateEndpointSummary(object):
         """
         Gets the system_tags of this AiPrivateEndpointSummary.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
 
 
         :return: The system_tags of this AiPrivateEndpointSummary.
-        :rtype: dict(str, dict(str, object))
+        :rtype: dict(str, object)
         """
         return self._system_tags
 
@@ -382,11 +382,11 @@ class AiPrivateEndpointSummary(object):
         """
         Sets the system_tags of this AiPrivateEndpointSummary.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
 
 
         :param system_tags: The system_tags of this AiPrivateEndpointSummary.
-        :type: dict(str, dict(str, object))
+        :type: dict(str, object)
         """
         self._system_tags = system_tags
 

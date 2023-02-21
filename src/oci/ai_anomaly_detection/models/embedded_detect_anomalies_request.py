@@ -37,6 +37,10 @@ class EmbeddedDetectAnomaliesRequest(DetectAnomaliesDetails):
             Allowed values for this property are: "INLINE", "BASE64_ENCODED"
         :type request_type: str
 
+        :param sensitivity:
+            The value to assign to the sensitivity property of this EmbeddedDetectAnomaliesRequest.
+        :type sensitivity: float
+
         :param content_type:
             The value to assign to the content_type property of this EmbeddedDetectAnomaliesRequest.
             Allowed values for this property are: "CSV", "JSON"
@@ -50,6 +54,7 @@ class EmbeddedDetectAnomaliesRequest(DetectAnomaliesDetails):
         self.swagger_types = {
             'model_id': 'str',
             'request_type': 'str',
+            'sensitivity': 'float',
             'content_type': 'str',
             'content': 'str'
         }
@@ -57,12 +62,14 @@ class EmbeddedDetectAnomaliesRequest(DetectAnomaliesDetails):
         self.attribute_map = {
             'model_id': 'modelId',
             'request_type': 'requestType',
+            'sensitivity': 'sensitivity',
             'content_type': 'contentType',
             'content': 'content'
         }
 
         self._model_id = None
         self._request_type = None
+        self._sensitivity = None
         self._content_type = None
         self._content = None
         self._request_type = 'BASE64_ENCODED'

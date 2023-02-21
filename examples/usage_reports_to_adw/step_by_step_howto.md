@@ -25,6 +25,8 @@ and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/
 
 [8. How to Setup e-mail subscription](#8-how-to-setup-e-mail-subscription)
 
+[9. How to Enable showoci extract on usage2adw vm](#9-how-to-enable-showoci-extract-on-usage2adw-vm)
+
 ## 1. How to create additional APEX End User Accounts
 
 ```
@@ -403,8 +405,64 @@ END;
 
 ```
 
+## 9. How to enable showoci extract on usage2adw vm
+
+### 9.1 Upgrade showoci and oci sdk packages
+
+Run on oci vm
+
+```
+bash -c "$(curl -L https://raw.githubusercontent.com/adizohar/showoci/master/showoci_upgrade.sh)"    
+```
+
+### 9.2 Add read all-resources policy to allow showoci to extract data
+
+Update the policy for the dynamic group of the host as below (inspect can be used instead but some information won't be exported)
+
+```
+Allow dynamic-group UsageDownloadGroup to read all-resources in tenancy
+```
+
+### 9.3 Add/Enable crontab to extract showoci every night
+
+Edit crontab using crontab -e and add/update the below: (If exist remove the # before the command)
+
+```
+###############################################################################
+# Crontab to run showoci every night
+###############################################################################
+0 0 * * * timeout 23h /home/opc/showoci/run_daily_report.sh > /home/opc/showoci/run_daily_report_crontab_run.txt 2>&1
+```
+
+### 9.4 Add-Update crontab to load showoci-csv to Autonomous database
+
+Download run_load_showoci_csv_to_adw.sh if not exist
+
+```
+wget https://raw.githubusercontent.com/adizohar/usage_reports_to_adw/main/shell_scripts/run_multi_daily_usage2adw.sh -O /home/opc/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh
+chmod +x /home/opc/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh 
+```
+
+Edit crontab using crontab -e and add/update the below (If exist remove the # before the command)
+
+```
+###############################################################################
+# Crontab to run showoci_csv to ADB
+###############################################################################
+00 8 * * * timeout 2h /home/opc/usage_reports_to_adw/shell_scripts/run_load_showoci_csv_to_adw.sh > /home/opc/usage_reports_to_adw/cron/run_load_showoci_csv_to_adw.sh_run.txt 2>&1
+```
+
+### 9.5 showoci outputs
+
+Showoci output locations:
+
+```
+/home/opc/showoci/report/local and /home/opc/showoci/report/local/csv
+Autonomous tables - OCI_SHOWOCI_*
+```
+
 ## License
 
-Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
 This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl
 or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.

@@ -25,7 +25,7 @@
 #
 ##########################################################################
 # Database user:
-#     create user usage identified by PaSsw0rd2#_#;
+#     create user usage identified by applicable_password;
 #     grant connect, resource, dwrole, unlimited tablespace to usage;
 ##########################################################################
 #
@@ -66,11 +66,11 @@ import requests
 import time
 
 
-version = "23.02.07"
+version = "23.02.16"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 
-# Init the Oracle Thic Client Library in order to use sqlnet.ora and instant client
+# Init the Oracle Thick Client Library in order to use sqlnet.ora and instant client
 oracledb.init_oracle_client()
 
 # create the work dir if not  exist

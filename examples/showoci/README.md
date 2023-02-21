@@ -8,7 +8,10 @@ Output can be printer friendly, CSV files or JSON file.
 [cost analysis](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/costanalysisoverview.htm) 
 and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm) features should be used instead.**
 
-**Developed by Adi Zohar, 2018-2022**
+Please visit [step_by_step_howto.md](step_by_step_howto.md) for useful Howto information.
+
+**Developed by Adi Zohar, 2018-2023**
+
 
 ![](img/screen_xls.png)
 ![](img/screen_scr1.png)
@@ -121,7 +124,7 @@ Allow Group ReadOnlyUsers to read resource-availability in tenancy
 Please follow [Python Documentation](https://docs.python.org/3/using/index.html)
 
 ## Install oci SDK Packages:
-Please follow [Oracle Python SDK Documentation](https://github.com/oracle/oci-python-sdk)
+Please follow [Oracle Python SDK Documentation](https://docs.oracle.com/iaas/tools/python/latest/api/landing.html)
 
 ## Setup connectivity using Instance Principals
 
