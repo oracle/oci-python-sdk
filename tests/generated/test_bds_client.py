@@ -579,6 +579,48 @@ def test_delete_bds_metastore_configuration(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_execute_bootstrap_script(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'ExecuteBootstrapScript'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'ExecuteBootstrapScript')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='ExecuteBootstrapScript')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.execute_bootstrap_script(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                execute_bootstrap_script_details=request.pop(util.camelize('ExecuteBootstrapScriptDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'ExecuteBootstrapScript',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'execute_bootstrap_script',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
 def test_get_auto_scaling_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('bds', 'GetAutoScalingConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
