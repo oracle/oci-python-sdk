@@ -52,6 +52,7 @@ Bds
     oci.bds.models.DayBasedHorizontalScalingScheduleDetails
     oci.bds.models.DayBasedVerticalScalingScheduleDetails
     oci.bds.models.DefaultError
+    oci.bds.models.ExecuteBootstrapScriptDetails
     oci.bds.models.HorizontalScalingScheduleDetails
     oci.bds.models.InstallPatchDetails
     oci.bds.models.KerberosDetails
