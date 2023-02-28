@@ -38,6 +38,7 @@ from .create_node_details import CreateNodeDetails
 from .day_based_horizontal_scaling_schedule_details import DayBasedHorizontalScalingScheduleDetails
 from .day_based_vertical_scaling_schedule_details import DayBasedVerticalScalingScheduleDetails
 from .default_error import DefaultError
+from .execute_bootstrap_script_details import ExecuteBootstrapScriptDetails
 from .horizontal_scaling_schedule_details import HorizontalScalingScheduleDetails
 from .install_patch_details import InstallPatchDetails
 from .kerberos_details import KerberosDetails
@@ -116,6 +117,7 @@ bds_type_mapping = {
     "DayBasedHorizontalScalingScheduleDetails": DayBasedHorizontalScalingScheduleDetails,
     "DayBasedVerticalScalingScheduleDetails": DayBasedVerticalScalingScheduleDetails,
     "DefaultError": DefaultError,
+    "ExecuteBootstrapScriptDetails": ExecuteBootstrapScriptDetails,
     "HorizontalScalingScheduleDetails": HorizontalScalingScheduleDetails,
     "InstallPatchDetails": InstallPatchDetails,
     "KerberosDetails": KerberosDetails,
