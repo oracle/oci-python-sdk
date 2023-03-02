@@ -5,7 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
-23.02.15 - 2023.02.15
+23.03.07 - 2023.03.07
+=====================
+* Added ShowOCI Section if ShowOCI data enabled
+
+=====================
+23.03.01 - 2023.03.01
+=====================
+* Added Load statistics to Apex main page
+* Added Service Grouping in cost over time report
+
+=====================
+23.02.22 - 2023.02.22
+=====================
+* Added Load Status Page and OCI_LOAD_STATUS table
+* Added Public Load Balancer to the Private End Point Image
+
+=====================
+23.02.16 - 2023.02.16
 =====================
 * Change Image to Oracle Linux 8
 * Added showoci code to the image

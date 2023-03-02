@@ -4,7 +4,7 @@
 ###################################################
 source ~/.bashrc >/dev/null
 
-export APPDIR=/home/opc/showoci
+export APPDIR=${HOME}/showoci
 export LOGDIR=$APPDIR/log
 export LOG=$LOGDIR/showoci_upgrade.log
 mkdir -p $LOGDIR
@@ -31,17 +31,17 @@ download_file()
 echo "##################################################" | tee -a $LOG
 echo "# Upgrade showoci" | tee -a $LOG
 echo "##################################################" | tee -a $LOG
-cd /home/opc
+cd $HOME
 echo "Checking file showoci.py location before upgrade"
-if [ -f "/home/opc/showoci/showoci.py" ]; then
-   echo "   File showoci.py exist in app - /home/opc/showoci/showoci.py " 
-elif [ -f "/home/opc/oci-python-sdk/examples/showoci/showoci.py" ]; then
-   echo "   File showoci.py exist in oci-python-sdk location, /home/opc/oci-python-sdk/examples/showoci/showoci.py"
-   echo "   Creating Symbolic Link: ln -s /home/opc/oci-python-sdk/examples/showoci ."
-   ln -s /home/opc/oci-python-sdk/examples/showoci .
+if [ -f "${APPDIR}/showoci.py" ]; then
+   echo "   File showoci.py exist in app - ${APPDIR}/showoci.py " 
+elif [ -f "${HOME}/oci-python-sdk/examples/showoci/showoci.py" ]; then
+   echo "   File showoci.py exist in oci-python-sdk location, ${HOME}/oci-python-sdk/examples/showoci/showoci.py"
+   echo "   Creating Symbolic Link: ln -s ${HOME}/oci-python-sdk/examples/showoci ."
+   ln -s ${HOME}/oci-python-sdk/examples/showoci .
 else
    echo "   File showoci.py could not find, creating showoci folder"
-   mkdir -p /home/opc/showoci
+   mkdir -p ${HOME}/showoci
 fi
 
 ###########################################

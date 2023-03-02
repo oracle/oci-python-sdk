@@ -714,6 +714,9 @@ def main():
                 if "all" in cmd.service or "database" in cmd.service:
                     handle_object(compartment, region_name, assign_tags, "DB DB Systems", database_client.list_db_systems, database_client.update_db_system, oci.database.models.UpdateDbSystemDetails, filter_by_name=filter_by_name)
                     handle_object(compartment, region_name, assign_tags, "DB Autonomous", database_client.list_autonomous_databases, database_client.update_autonomous_database, oci.database.models.UpdateAutonomousDatabaseDetails, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "DB ExaCS Infra", database_client.list_cloud_exadata_infrastructures, database_client.update_cloud_exadata_infrastructure, oci.database.models.UpdateCloudExadataInfrastructureDetails, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "DB ExaCS VM Cluster", database_client.list_cloud_vm_clusters, database_client.update_cloud_vm_cluster, oci.database.models.UpdateCloudVmClusterDetails, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "DB Homes", database_client.list_db_homes, database_client.update_db_home, oci.database.models.UpdateDbHomeDetails, filter_by_name=filter_by_name)
 
                 # Object storage
                 if "all" in cmd.service or "object" in cmd.service:
