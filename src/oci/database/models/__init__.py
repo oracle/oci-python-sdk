@@ -229,6 +229,7 @@ from .launch_db_system_from_backup_details import LaunchDbSystemFromBackupDetail
 from .launch_db_system_from_database_details import LaunchDbSystemFromDatabaseDetails
 from .launch_db_system_from_db_system_details import LaunchDbSystemFromDbSystemDetails
 from .local_clone_pluggable_database_details import LocalClonePluggableDatabaseDetails
+from .long_term_back_up_schedule_details import LongTermBackUpScheduleDetails
 from .maintenance_run import MaintenanceRun
 from .maintenance_run_history import MaintenanceRunHistory
 from .maintenance_run_history_summary import MaintenanceRunHistorySummary
@@ -274,6 +275,7 @@ from .switchover_data_guard_association_details import SwitchoverDataGuardAssoci
 from .update import Update
 from .update_autonomous_container_database_data_guard_association_details import UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
 from .update_autonomous_container_database_details import UpdateAutonomousContainerDatabaseDetails
+from .update_autonomous_database_backup_details import UpdateAutonomousDatabaseBackupDetails
 from .update_autonomous_database_details import UpdateAutonomousDatabaseDetails
 from .update_autonomous_database_wallet_details import UpdateAutonomousDatabaseWalletDetails
 from .update_autonomous_exadata_infrastructure_details import UpdateAutonomousExadataInfrastructureDetails
@@ -545,6 +547,7 @@ database_type_mapping = {
     "LaunchDbSystemFromDatabaseDetails": LaunchDbSystemFromDatabaseDetails,
     "LaunchDbSystemFromDbSystemDetails": LaunchDbSystemFromDbSystemDetails,
     "LocalClonePluggableDatabaseDetails": LocalClonePluggableDatabaseDetails,
+    "LongTermBackUpScheduleDetails": LongTermBackUpScheduleDetails,
     "MaintenanceRun": MaintenanceRun,
     "MaintenanceRunHistory": MaintenanceRunHistory,
     "MaintenanceRunHistorySummary": MaintenanceRunHistorySummary,
@@ -590,6 +593,7 @@ database_type_mapping = {
     "Update": Update,
     "UpdateAutonomousContainerDatabaseDataGuardAssociationDetails": UpdateAutonomousContainerDatabaseDataGuardAssociationDetails,
     "UpdateAutonomousContainerDatabaseDetails": UpdateAutonomousContainerDatabaseDetails,
+    "UpdateAutonomousDatabaseBackupDetails": UpdateAutonomousDatabaseBackupDetails,
     "UpdateAutonomousDatabaseDetails": UpdateAutonomousDatabaseDetails,
     "UpdateAutonomousDatabaseWalletDetails": UpdateAutonomousDatabaseWalletDetails,
     "UpdateAutonomousExadataInfrastructureDetails": UpdateAutonomousExadataInfrastructureDetails,

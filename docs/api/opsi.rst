@@ -59,6 +59,7 @@ Opsi
     oci.opsi.models.AwrSourceSummary
     oci.opsi.models.BasicConfigurationItemMetadata
     oci.opsi.models.BasicConfigurationItemSummary
+    oci.opsi.models.ChangeAutonomousDatabaseInsightAdvancedFeaturesDetails
     oci.opsi.models.ChangeDatabaseInsightCompartmentDetails
     oci.opsi.models.ChangeEnterpriseManagerBridgeCompartmentDetails
     oci.opsi.models.ChangeExadataInsightCompartmentDetails
@@ -137,6 +138,7 @@ Opsi
     oci.opsi.models.EmManagedExternalHostConfigurationSummary
     oci.opsi.models.EmManagedExternalHostInsight
     oci.opsi.models.EmManagedExternalHostInsightSummary
+    oci.opsi.models.EnableAutonomousDatabaseInsightAdvancedFeaturesDetails
     oci.opsi.models.EnableDatabaseInsightDetails
     oci.opsi.models.EnableEmManagedExternalDatabaseInsightDetails
     oci.opsi.models.EnableEmManagedExternalExadataInsightDetails
@@ -266,6 +268,8 @@ Opsi
     oci.opsi.models.PeComanagedExadataInsight
     oci.opsi.models.PeComanagedExadataInsightSummary
     oci.opsi.models.PeComanagedHostConfigurationSummary
+    oci.opsi.models.PeComanagedHostInsight
+    oci.opsi.models.PeComanagedHostInsightSummary
     oci.opsi.models.PeComanagedManagedExternalDatabaseConfigurationSummary
     oci.opsi.models.ProjectedDataItem
     oci.opsi.models.QueryDataObjectJsonResultSetRowsCollection

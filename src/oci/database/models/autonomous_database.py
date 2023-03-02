@@ -328,6 +328,14 @@ class AutonomousDatabase(object):
             The value to assign to the ncharacter_set property of this AutonomousDatabase.
         :type ncharacter_set: str
 
+        :param next_long_term_backup_time_stamp:
+            The value to assign to the next_long_term_backup_time_stamp property of this AutonomousDatabase.
+        :type next_long_term_backup_time_stamp: datetime
+
+        :param long_term_backup_schedule:
+            The value to assign to the long_term_backup_schedule property of this AutonomousDatabase.
+        :type long_term_backup_schedule: oci.database.models.LongTermBackUpScheduleDetails
+
         :param is_free_tier:
             The value to assign to the is_free_tier property of this AutonomousDatabase.
         :type is_free_tier: bool
@@ -711,6 +719,8 @@ class AutonomousDatabase(object):
             'db_name': 'str',
             'character_set': 'str',
             'ncharacter_set': 'str',
+            'next_long_term_backup_time_stamp': 'datetime',
+            'long_term_backup_schedule': 'LongTermBackUpScheduleDetails',
             'is_free_tier': 'bool',
             'system_tags': 'dict(str, dict(str, object))',
             'time_reclamation_of_free_autonomous_database': 'datetime',
@@ -810,6 +820,8 @@ class AutonomousDatabase(object):
             'db_name': 'dbName',
             'character_set': 'characterSet',
             'ncharacter_set': 'ncharacterSet',
+            'next_long_term_backup_time_stamp': 'nextLongTermBackupTimeStamp',
+            'long_term_backup_schedule': 'longTermBackupSchedule',
             'is_free_tier': 'isFreeTier',
             'system_tags': 'systemTags',
             'time_reclamation_of_free_autonomous_database': 'timeReclamationOfFreeAutonomousDatabase',
@@ -908,6 +920,8 @@ class AutonomousDatabase(object):
         self._db_name = None
         self._character_set = None
         self._ncharacter_set = None
+        self._next_long_term_backup_time_stamp = None
+        self._long_term_backup_schedule = None
         self._is_free_tier = None
         self._system_tags = None
         self._time_reclamation_of_free_autonomous_database = None
@@ -1285,6 +1299,50 @@ class AutonomousDatabase(object):
         self._ncharacter_set = ncharacter_set
 
     @property
+    def next_long_term_backup_time_stamp(self):
+        """
+        Gets the next_long_term_backup_time_stamp of this AutonomousDatabase.
+        The date and time when the next long-term backup would be created.
+
+
+        :return: The next_long_term_backup_time_stamp of this AutonomousDatabase.
+        :rtype: datetime
+        """
+        return self._next_long_term_backup_time_stamp
+
+    @next_long_term_backup_time_stamp.setter
+    def next_long_term_backup_time_stamp(self, next_long_term_backup_time_stamp):
+        """
+        Sets the next_long_term_backup_time_stamp of this AutonomousDatabase.
+        The date and time when the next long-term backup would be created.
+
+
+        :param next_long_term_backup_time_stamp: The next_long_term_backup_time_stamp of this AutonomousDatabase.
+        :type: datetime
+        """
+        self._next_long_term_backup_time_stamp = next_long_term_backup_time_stamp
+
+    @property
+    def long_term_backup_schedule(self):
+        """
+        Gets the long_term_backup_schedule of this AutonomousDatabase.
+
+        :return: The long_term_backup_schedule of this AutonomousDatabase.
+        :rtype: oci.database.models.LongTermBackUpScheduleDetails
+        """
+        return self._long_term_backup_schedule
+
+    @long_term_backup_schedule.setter
+    def long_term_backup_schedule(self, long_term_backup_schedule):
+        """
+        Sets the long_term_backup_schedule of this AutonomousDatabase.
+
+        :param long_term_backup_schedule: The long_term_backup_schedule of this AutonomousDatabase.
+        :type: oci.database.models.LongTermBackUpScheduleDetails
+        """
+        self._long_term_backup_schedule = long_term_backup_schedule
+
+    @property
     def is_free_tier(self):
         """
         Gets the is_free_tier of this AutonomousDatabase.
@@ -1520,7 +1578,7 @@ class AutonomousDatabase(object):
     def backup_retention_period_in_days(self):
         """
         Gets the backup_retention_period_in_days of this AutonomousDatabase.
-        Retention period, in days, for backups.
+        Retention period, in days, for long-term backups
 
 
         :return: The backup_retention_period_in_days of this AutonomousDatabase.
@@ -1532,7 +1590,7 @@ class AutonomousDatabase(object):
     def backup_retention_period_in_days(self, backup_retention_period_in_days):
         """
         Sets the backup_retention_period_in_days of this AutonomousDatabase.
-        Retention period, in days, for backups.
+        Retention period, in days, for long-term backups
 
 
         :param backup_retention_period_in_days: The backup_retention_period_in_days of this AutonomousDatabase.

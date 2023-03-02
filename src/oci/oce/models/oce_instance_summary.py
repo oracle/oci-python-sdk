@@ -82,8 +82,8 @@ class OceInstanceSummary(object):
     LIFECYCLE_DETAILS_DOWN = "DOWN"
 
     #: A constant which can be used with the lifecycle_details property of a OceInstanceSummary.
-    #: This constant has a value of "ACTIVE"
-    LIFECYCLE_DETAILS_ACTIVE = "ACTIVE"
+    #: This constant has a value of "PRIMARY"
+    LIFECYCLE_DETAILS_PRIMARY = "PRIMARY"
 
     def __init__(self, **kwargs):
         """
@@ -176,9 +176,13 @@ class OceInstanceSummary(object):
 
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this OceInstanceSummary.
-            Allowed values for this property are: "STANDBY", "FAILOVER", "DOWN", "ACTIVE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STANDBY", "FAILOVER", "DOWN", "PRIMARY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_details: str
+
+        :param dr_region:
+            The value to assign to the dr_region property of this OceInstanceSummary.
+        :type dr_region: str
 
         :param state_message:
             The value to assign to the state_message property of this OceInstanceSummary.
@@ -222,6 +226,7 @@ class OceInstanceSummary(object):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'dr_region': 'str',
             'state_message': 'str',
             'service': 'dict(str, object)',
             'freeform_tags': 'dict(str, str)',
@@ -250,6 +255,7 @@ class OceInstanceSummary(object):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'dr_region': 'drRegion',
             'state_message': 'stateMessage',
             'service': 'service',
             'freeform_tags': 'freeformTags',
@@ -277,6 +283,7 @@ class OceInstanceSummary(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._dr_region = None
         self._state_message = None
         self._service = None
         self._freeform_tags = None
@@ -771,7 +778,7 @@ class OceInstanceSummary(object):
         Gets the lifecycle_details of this OceInstanceSummary.
         Details of the current state of the instance lifecycle
 
-        Allowed values for this property are: "STANDBY", "FAILOVER", "DOWN", "ACTIVE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STANDBY", "FAILOVER", "DOWN", "PRIMARY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -790,10 +797,34 @@ class OceInstanceSummary(object):
         :param lifecycle_details: The lifecycle_details of this OceInstanceSummary.
         :type: str
         """
-        allowed_values = ["STANDBY", "FAILOVER", "DOWN", "ACTIVE"]
+        allowed_values = ["STANDBY", "FAILOVER", "DOWN", "PRIMARY"]
         if not value_allowed_none_or_none_sentinel(lifecycle_details, allowed_values):
             lifecycle_details = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def dr_region(self):
+        """
+        Gets the dr_region of this OceInstanceSummary.
+        disaster recovery paired ragion name
+
+
+        :return: The dr_region of this OceInstanceSummary.
+        :rtype: str
+        """
+        return self._dr_region
+
+    @dr_region.setter
+    def dr_region(self, dr_region):
+        """
+        Sets the dr_region of this OceInstanceSummary.
+        disaster recovery paired ragion name
+
+
+        :param dr_region: The dr_region of this OceInstanceSummary.
+        :type: str
+        """
+        self._dr_region = dr_region
 
     @property
     def state_message(self):

@@ -76,6 +76,48 @@ def test_add_exadata_insight_members(testing_service_client):
 
 
 # IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_change_autonomous_database_insight_advanced_features(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'ChangeAutonomousDatabaseInsightAdvancedFeatures'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'ChangeAutonomousDatabaseInsightAdvancedFeatures')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='ChangeAutonomousDatabaseInsightAdvancedFeatures')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.change_autonomous_database_insight_advanced_features(
+                change_autonomous_database_insight_advanced_features_details=request.pop(util.camelize('ChangeAutonomousDatabaseInsightAdvancedFeaturesDetails')),
+                database_insight_id=request.pop(util.camelize('databaseInsightId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'ChangeAutonomousDatabaseInsightAdvancedFeatures',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_autonomous_database_insight_advanced_features',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
 def test_change_database_insight_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('opsi', 'ChangeDatabaseInsightCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1108,6 +1150,47 @@ def test_delete_opsi_configuration(testing_service_client):
 
 
 # IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_disable_autonomous_database_insight_advanced_features(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'DisableAutonomousDatabaseInsightAdvancedFeatures'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'DisableAutonomousDatabaseInsightAdvancedFeatures')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='DisableAutonomousDatabaseInsightAdvancedFeatures')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.disable_autonomous_database_insight_advanced_features(
+                database_insight_id=request.pop(util.camelize('databaseInsightId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'DisableAutonomousDatabaseInsightAdvancedFeatures',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'disable_autonomous_database_insight_advanced_features',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
 def test_disable_database_insight(testing_service_client):
     if not testing_service_client.is_api_enabled('opsi', 'DisableDatabaseInsight'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1267,6 +1350,48 @@ def test_download_operations_insights_warehouse_wallet(testing_service_client):
             result,
             service_error,
             'stream',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_enable_autonomous_database_insight_advanced_features(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'EnableAutonomousDatabaseInsightAdvancedFeatures'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'EnableAutonomousDatabaseInsightAdvancedFeatures')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='EnableAutonomousDatabaseInsightAdvancedFeatures')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.enable_autonomous_database_insight_advanced_features(
+                enable_autonomous_database_insight_advanced_features_details=request.pop(util.camelize('EnableAutonomousDatabaseInsightAdvancedFeaturesDetails')),
+                database_insight_id=request.pop(util.camelize('databaseInsightId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'EnableAutonomousDatabaseInsightAdvancedFeatures',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'enable_autonomous_database_insight_advanced_features',
             False,
             False
         )

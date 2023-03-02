@@ -25,6 +25,10 @@ class ManagementAgentImage(object):
     #: This constant has a value of "SOLARIS"
     PLATFORM_TYPE_SOLARIS = "SOLARIS"
 
+    #: A constant which can be used with the platform_type property of a ManagementAgentImage.
+    #: This constant has a value of "MACOSX"
+    PLATFORM_TYPE_MACOSX = "MACOSX"
+
     #: A constant which can be used with the package_type property of a ManagementAgentImage.
     #: This constant has a value of "RPM"
     PACKAGE_TYPE_RPM = "RPM"
@@ -44,6 +48,10 @@ class ManagementAgentImage(object):
     #: A constant which can be used with the package_architecture_type property of a ManagementAgentImage.
     #: This constant has a value of "X86"
     PACKAGE_ARCHITECTURE_TYPE_X86 = "X86"
+
+    #: A constant which can be used with the package_architecture_type property of a ManagementAgentImage.
+    #: This constant has a value of "M1"
+    PACKAGE_ARCHITECTURE_TYPE_M1 = "M1"
 
     #: A constant which can be used with the lifecycle_state property of a ManagementAgentImage.
     #: This constant has a value of "CREATING"
@@ -88,7 +96,7 @@ class ManagementAgentImage(object):
 
         :param platform_type:
             The value to assign to the platform_type property of this ManagementAgentImage.
-            Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS"
+            Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX"
         :type platform_type: str
 
         :param platform_name:
@@ -102,7 +110,7 @@ class ManagementAgentImage(object):
 
         :param package_architecture_type:
             The value to assign to the package_architecture_type property of this ManagementAgentImage.
-            Allowed values for this property are: "X86_64", "SPARC", "X86"
+            Allowed values for this property are: "X86_64", "SPARC", "X86", "M1"
         :type package_architecture_type: str
 
         :param version:
@@ -121,6 +129,10 @@ class ManagementAgentImage(object):
             The value to assign to the object_url property of this ManagementAgentImage.
         :type object_url: str
 
+        :param image_object_storage_details:
+            The value to assign to the image_object_storage_details property of this ManagementAgentImage.
+        :type image_object_storage_details: oci.management_agent.models.ObjectDetails
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ManagementAgentImage.
             Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "TERMINATED", "DELETING", "DELETED", "FAILED"
@@ -137,6 +149,7 @@ class ManagementAgentImage(object):
             'size': 'float',
             'checksum': 'str',
             'object_url': 'str',
+            'image_object_storage_details': 'ObjectDetails',
             'lifecycle_state': 'str'
         }
 
@@ -150,6 +163,7 @@ class ManagementAgentImage(object):
             'size': 'size',
             'checksum': 'checksum',
             'object_url': 'objectUrl',
+            'image_object_storage_details': 'imageObjectStorageDetails',
             'lifecycle_state': 'lifecycleState'
         }
 
@@ -162,6 +176,7 @@ class ManagementAgentImage(object):
         self._size = None
         self._checksum = None
         self._object_url = None
+        self._image_object_storage_details = None
         self._lifecycle_state = None
 
     @property
@@ -194,7 +209,7 @@ class ManagementAgentImage(object):
         **[Required]** Gets the platform_type of this ManagementAgentImage.
         Agent image platform type
 
-        Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS"
+        Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX"
 
 
         :return: The platform_type of this ManagementAgentImage.
@@ -212,7 +227,7 @@ class ManagementAgentImage(object):
         :param platform_type: The platform_type of this ManagementAgentImage.
         :type: str
         """
-        allowed_values = ["LINUX", "WINDOWS", "SOLARIS"]
+        allowed_values = ["LINUX", "WINDOWS", "SOLARIS", "MACOSX"]
         if not value_allowed_none_or_none_sentinel(platform_type, allowed_values):
             raise ValueError(
                 "Invalid value for `platform_type`, must be None or one of {0}"
@@ -282,7 +297,7 @@ class ManagementAgentImage(object):
         Gets the package_architecture_type of this ManagementAgentImage.
         The installation package target architecture type
 
-        Allowed values for this property are: "X86_64", "SPARC", "X86"
+        Allowed values for this property are: "X86_64", "SPARC", "X86", "M1"
 
 
         :return: The package_architecture_type of this ManagementAgentImage.
@@ -300,7 +315,7 @@ class ManagementAgentImage(object):
         :param package_architecture_type: The package_architecture_type of this ManagementAgentImage.
         :type: str
         """
-        allowed_values = ["X86_64", "SPARC", "X86"]
+        allowed_values = ["X86_64", "SPARC", "X86", "M1"]
         if not value_allowed_none_or_none_sentinel(package_architecture_type, allowed_values):
             raise ValueError(
                 "Invalid value for `package_architecture_type`, must be None or one of {0}"
@@ -403,6 +418,26 @@ class ManagementAgentImage(object):
         :type: str
         """
         self._object_url = object_url
+
+    @property
+    def image_object_storage_details(self):
+        """
+        Gets the image_object_storage_details of this ManagementAgentImage.
+
+        :return: The image_object_storage_details of this ManagementAgentImage.
+        :rtype: oci.management_agent.models.ObjectDetails
+        """
+        return self._image_object_storage_details
+
+    @image_object_storage_details.setter
+    def image_object_storage_details(self, image_object_storage_details):
+        """
+        Sets the image_object_storage_details of this ManagementAgentImage.
+
+        :param image_object_storage_details: The image_object_storage_details of this ManagementAgentImage.
+        :type: oci.management_agent.models.ObjectDetails
+        """
+        self._image_object_storage_details = image_object_storage_details
 
     @property
     def lifecycle_state(self):

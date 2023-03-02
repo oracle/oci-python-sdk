@@ -37,7 +37,9 @@ Management Agent
     oci.management_agent.models.ManagementAgentPluginAggregationDimensions
     oci.management_agent.models.ManagementAgentPluginDetails
     oci.management_agent.models.ManagementAgentPluginSummary
+    oci.management_agent.models.ManagementAgentProperty
     oci.management_agent.models.ManagementAgentSummary
+    oci.management_agent.models.ObjectDetails
     oci.management_agent.models.SetAutoUpgradableConfigDetails
     oci.management_agent.models.UpdateManagementAgentDetails
     oci.management_agent.models.UpdateManagementAgentInstallKeyDetails

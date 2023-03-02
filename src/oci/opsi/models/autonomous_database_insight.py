@@ -102,6 +102,22 @@ class AutonomousDatabaseInsight(DatabaseInsight):
             The value to assign to the db_additional_details property of this AutonomousDatabaseInsight.
         :type db_additional_details: object
 
+        :param opsi_private_endpoint_id:
+            The value to assign to the opsi_private_endpoint_id property of this AutonomousDatabaseInsight.
+        :type opsi_private_endpoint_id: str
+
+        :param is_advanced_features_enabled:
+            The value to assign to the is_advanced_features_enabled property of this AutonomousDatabaseInsight.
+        :type is_advanced_features_enabled: bool
+
+        :param connection_details:
+            The value to assign to the connection_details property of this AutonomousDatabaseInsight.
+        :type connection_details: oci.opsi.models.ConnectionDetails
+
+        :param credential_details:
+            The value to assign to the credential_details property of this AutonomousDatabaseInsight.
+        :type credential_details: oci.opsi.models.CredentialDetails
+
         """
         self.swagger_types = {
             'entity_source': 'str',
@@ -123,7 +139,11 @@ class AutonomousDatabaseInsight(DatabaseInsight):
             'database_name': 'str',
             'database_display_name': 'str',
             'database_resource_type': 'str',
-            'db_additional_details': 'object'
+            'db_additional_details': 'object',
+            'opsi_private_endpoint_id': 'str',
+            'is_advanced_features_enabled': 'bool',
+            'connection_details': 'ConnectionDetails',
+            'credential_details': 'CredentialDetails'
         }
 
         self.attribute_map = {
@@ -146,7 +166,11 @@ class AutonomousDatabaseInsight(DatabaseInsight):
             'database_name': 'databaseName',
             'database_display_name': 'databaseDisplayName',
             'database_resource_type': 'databaseResourceType',
-            'db_additional_details': 'dbAdditionalDetails'
+            'db_additional_details': 'dbAdditionalDetails',
+            'opsi_private_endpoint_id': 'opsiPrivateEndpointId',
+            'is_advanced_features_enabled': 'isAdvancedFeaturesEnabled',
+            'connection_details': 'connectionDetails',
+            'credential_details': 'credentialDetails'
         }
 
         self._entity_source = None
@@ -169,6 +193,10 @@ class AutonomousDatabaseInsight(DatabaseInsight):
         self._database_display_name = None
         self._database_resource_type = None
         self._db_additional_details = None
+        self._opsi_private_endpoint_id = None
+        self._is_advanced_features_enabled = None
+        self._connection_details = None
+        self._credential_details = None
         self._entity_source = 'AUTONOMOUS_DATABASE'
 
     @property
@@ -294,6 +322,98 @@ class AutonomousDatabaseInsight(DatabaseInsight):
         :type: object
         """
         self._db_additional_details = db_additional_details
+
+    @property
+    def opsi_private_endpoint_id(self):
+        """
+        Gets the opsi_private_endpoint_id of this AutonomousDatabaseInsight.
+        The `OCID`__ of the OPSI private endpoint
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The opsi_private_endpoint_id of this AutonomousDatabaseInsight.
+        :rtype: str
+        """
+        return self._opsi_private_endpoint_id
+
+    @opsi_private_endpoint_id.setter
+    def opsi_private_endpoint_id(self, opsi_private_endpoint_id):
+        """
+        Sets the opsi_private_endpoint_id of this AutonomousDatabaseInsight.
+        The `OCID`__ of the OPSI private endpoint
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param opsi_private_endpoint_id: The opsi_private_endpoint_id of this AutonomousDatabaseInsight.
+        :type: str
+        """
+        self._opsi_private_endpoint_id = opsi_private_endpoint_id
+
+    @property
+    def is_advanced_features_enabled(self):
+        """
+        Gets the is_advanced_features_enabled of this AutonomousDatabaseInsight.
+        Flag is to identify if advanced features for autonomous database is enabled or not
+
+
+        :return: The is_advanced_features_enabled of this AutonomousDatabaseInsight.
+        :rtype: bool
+        """
+        return self._is_advanced_features_enabled
+
+    @is_advanced_features_enabled.setter
+    def is_advanced_features_enabled(self, is_advanced_features_enabled):
+        """
+        Sets the is_advanced_features_enabled of this AutonomousDatabaseInsight.
+        Flag is to identify if advanced features for autonomous database is enabled or not
+
+
+        :param is_advanced_features_enabled: The is_advanced_features_enabled of this AutonomousDatabaseInsight.
+        :type: bool
+        """
+        self._is_advanced_features_enabled = is_advanced_features_enabled
+
+    @property
+    def connection_details(self):
+        """
+        Gets the connection_details of this AutonomousDatabaseInsight.
+
+        :return: The connection_details of this AutonomousDatabaseInsight.
+        :rtype: oci.opsi.models.ConnectionDetails
+        """
+        return self._connection_details
+
+    @connection_details.setter
+    def connection_details(self, connection_details):
+        """
+        Sets the connection_details of this AutonomousDatabaseInsight.
+
+        :param connection_details: The connection_details of this AutonomousDatabaseInsight.
+        :type: oci.opsi.models.ConnectionDetails
+        """
+        self._connection_details = connection_details
+
+    @property
+    def credential_details(self):
+        """
+        Gets the credential_details of this AutonomousDatabaseInsight.
+
+        :return: The credential_details of this AutonomousDatabaseInsight.
+        :rtype: oci.opsi.models.CredentialDetails
+        """
+        return self._credential_details
+
+    @credential_details.setter
+    def credential_details(self, credential_details):
+        """
+        Sets the credential_details of this AutonomousDatabaseInsight.
+
+        :param credential_details: The credential_details of this AutonomousDatabaseInsight.
+        :type: oci.opsi.models.CredentialDetails
+        """
+        self._credential_details = credential_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

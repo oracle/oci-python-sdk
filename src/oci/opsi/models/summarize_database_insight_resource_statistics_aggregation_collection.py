@@ -70,6 +70,14 @@ class SummarizeDatabaseInsightResourceStatisticsAggregationCollection(object):
             The value to assign to the time_interval_end property of this SummarizeDatabaseInsightResourceStatisticsAggregationCollection.
         :type time_interval_end: datetime
 
+        :param high_utilization_threshold:
+            The value to assign to the high_utilization_threshold property of this SummarizeDatabaseInsightResourceStatisticsAggregationCollection.
+        :type high_utilization_threshold: int
+
+        :param low_utilization_threshold:
+            The value to assign to the low_utilization_threshold property of this SummarizeDatabaseInsightResourceStatisticsAggregationCollection.
+        :type low_utilization_threshold: int
+
         :param resource_metric:
             The value to assign to the resource_metric property of this SummarizeDatabaseInsightResourceStatisticsAggregationCollection.
             Allowed values for this property are: "CPU", "STORAGE", "IO", "MEMORY", "MEMORY_PGA", "MEMORY_SGA", 'UNKNOWN_ENUM_VALUE'.
@@ -90,6 +98,8 @@ class SummarizeDatabaseInsightResourceStatisticsAggregationCollection(object):
         self.swagger_types = {
             'time_interval_start': 'datetime',
             'time_interval_end': 'datetime',
+            'high_utilization_threshold': 'int',
+            'low_utilization_threshold': 'int',
             'resource_metric': 'str',
             'usage_unit': 'str',
             'items': 'list[ResourceStatisticsAggregation]'
@@ -98,6 +108,8 @@ class SummarizeDatabaseInsightResourceStatisticsAggregationCollection(object):
         self.attribute_map = {
             'time_interval_start': 'timeIntervalStart',
             'time_interval_end': 'timeIntervalEnd',
+            'high_utilization_threshold': 'highUtilizationThreshold',
+            'low_utilization_threshold': 'lowUtilizationThreshold',
             'resource_metric': 'resourceMetric',
             'usage_unit': 'usageUnit',
             'items': 'items'
@@ -105,6 +117,8 @@ class SummarizeDatabaseInsightResourceStatisticsAggregationCollection(object):
 
         self._time_interval_start = None
         self._time_interval_end = None
+        self._high_utilization_threshold = None
+        self._low_utilization_threshold = None
         self._resource_metric = None
         self._usage_unit = None
         self._items = None
@@ -156,6 +170,54 @@ class SummarizeDatabaseInsightResourceStatisticsAggregationCollection(object):
         :type: datetime
         """
         self._time_interval_end = time_interval_end
+
+    @property
+    def high_utilization_threshold(self):
+        """
+        **[Required]** Gets the high_utilization_threshold of this SummarizeDatabaseInsightResourceStatisticsAggregationCollection.
+        Percent value in which a resource metric is considered highly utilized.
+
+
+        :return: The high_utilization_threshold of this SummarizeDatabaseInsightResourceStatisticsAggregationCollection.
+        :rtype: int
+        """
+        return self._high_utilization_threshold
+
+    @high_utilization_threshold.setter
+    def high_utilization_threshold(self, high_utilization_threshold):
+        """
+        Sets the high_utilization_threshold of this SummarizeDatabaseInsightResourceStatisticsAggregationCollection.
+        Percent value in which a resource metric is considered highly utilized.
+
+
+        :param high_utilization_threshold: The high_utilization_threshold of this SummarizeDatabaseInsightResourceStatisticsAggregationCollection.
+        :type: int
+        """
+        self._high_utilization_threshold = high_utilization_threshold
+
+    @property
+    def low_utilization_threshold(self):
+        """
+        **[Required]** Gets the low_utilization_threshold of this SummarizeDatabaseInsightResourceStatisticsAggregationCollection.
+        Percent value in which a resource metric is considered lowly utilized.
+
+
+        :return: The low_utilization_threshold of this SummarizeDatabaseInsightResourceStatisticsAggregationCollection.
+        :rtype: int
+        """
+        return self._low_utilization_threshold
+
+    @low_utilization_threshold.setter
+    def low_utilization_threshold(self, low_utilization_threshold):
+        """
+        Sets the low_utilization_threshold of this SummarizeDatabaseInsightResourceStatisticsAggregationCollection.
+        Percent value in which a resource metric is considered lowly utilized.
+
+
+        :param low_utilization_threshold: The low_utilization_threshold of this SummarizeDatabaseInsightResourceStatisticsAggregationCollection.
+        :type: int
+        """
+        self._low_utilization_threshold = low_utilization_threshold
 
     @property
     def resource_metric(self):

@@ -25,6 +25,10 @@ class ManagementAgent(object):
     #: This constant has a value of "SOLARIS"
     PLATFORM_TYPE_SOLARIS = "SOLARIS"
 
+    #: A constant which can be used with the platform_type property of a ManagementAgent.
+    #: This constant has a value of "MACOSX"
+    PLATFORM_TYPE_MACOSX = "MACOSX"
+
     #: A constant which can be used with the availability_status property of a ManagementAgent.
     #: This constant has a value of "ACTIVE"
     AVAILABILITY_STATUS_ACTIVE = "ACTIVE"
@@ -96,7 +100,7 @@ class ManagementAgent(object):
 
         :param platform_type:
             The value to assign to the platform_type property of this ManagementAgent.
-            Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type platform_type: str
 
@@ -178,6 +182,10 @@ class ManagementAgent(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type install_type: str
 
+        :param management_agent_properties:
+            The value to assign to the management_agent_properties property of this ManagementAgent.
+        :type management_agent_properties: list[oci.management_agent.models.ManagementAgentProperty]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ManagementAgent.
         :type freeform_tags: dict(str, str)
@@ -210,6 +218,7 @@ class ManagementAgent(object):
             'lifecycle_details': 'str',
             'is_customer_deployed': 'bool',
             'install_type': 'str',
+            'management_agent_properties': 'list[ManagementAgentProperty]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -237,6 +246,7 @@ class ManagementAgent(object):
             'lifecycle_details': 'lifecycleDetails',
             'is_customer_deployed': 'isCustomerDeployed',
             'install_type': 'installType',
+            'management_agent_properties': 'managementAgentProperties',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -263,6 +273,7 @@ class ManagementAgent(object):
         self._lifecycle_details = None
         self._is_customer_deployed = None
         self._install_type = None
+        self._management_agent_properties = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -344,7 +355,7 @@ class ManagementAgent(object):
         Gets the platform_type of this ManagementAgent.
         Platform Type
 
-        Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -363,7 +374,7 @@ class ManagementAgent(object):
         :param platform_type: The platform_type of this ManagementAgent.
         :type: str
         """
-        allowed_values = ["LINUX", "WINDOWS", "SOLARIS"]
+        allowed_values = ["LINUX", "WINDOWS", "SOLARIS", "MACOSX"]
         if not value_allowed_none_or_none_sentinel(platform_type, allowed_values):
             platform_type = 'UNKNOWN_ENUM_VALUE'
         self._platform_type = platform_type
@@ -825,6 +836,30 @@ class ManagementAgent(object):
         if not value_allowed_none_or_none_sentinel(install_type, allowed_values):
             install_type = 'UNKNOWN_ENUM_VALUE'
         self._install_type = install_type
+
+    @property
+    def management_agent_properties(self):
+        """
+        Gets the management_agent_properties of this ManagementAgent.
+        Additional properties for this Management Agent
+
+
+        :return: The management_agent_properties of this ManagementAgent.
+        :rtype: list[oci.management_agent.models.ManagementAgentProperty]
+        """
+        return self._management_agent_properties
+
+    @management_agent_properties.setter
+    def management_agent_properties(self, management_agent_properties):
+        """
+        Sets the management_agent_properties of this ManagementAgent.
+        Additional properties for this Management Agent
+
+
+        :param management_agent_properties: The management_agent_properties of this ManagementAgent.
+        :type: list[oci.management_agent.models.ManagementAgentProperty]
+        """
+        self._management_agent_properties = management_agent_properties
 
     @property
     def freeform_tags(self):

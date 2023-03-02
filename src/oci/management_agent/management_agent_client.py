@@ -1065,14 +1065,14 @@ class ManagementAgentClient(object):
         :param datetime time_availability_status_ended_greater_than: (optional)
             Filter to limit the availability history results to that of time after the input time including the boundary record.
             Defaulted to current date minus one year.
-            The date and time to be given as described in `RFC 3339`__, section 14.29.
+            The date and time to be given as described in `RFC 3339`__, section 5.6.
 
             __ https://tools.ietf.org/rfc/rfc3339
 
         :param datetime time_availability_status_started_less_than: (optional)
             Filter to limit the availability history results to that of time before the input time including the boundary record
             Defaulted to current date.
-            The date and time to be given as described in `RFC 3339`__, section 14.29.
+            The date and time to be given as described in `RFC 3339`__, section 5.6.
 
             __ https://tools.ietf.org/rfc/rfc3339
 
@@ -1560,7 +1560,7 @@ class ManagementAgentClient(object):
         :param list[str] platform_type: (optional)
             Filter to return only results having the particular platform type.
 
-            Allowed values are: "LINUX", "WINDOWS", "SOLARIS"
+            Allowed values are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX"
 
         :param str agent_id: (optional)
             The ManagementAgentID of the agent from which the Management Agents to be filtered.
@@ -1629,7 +1629,7 @@ class ManagementAgentClient(object):
                 )
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "WINDOWS", "SOLARIS"]
+            platform_type_allowed_values = ["LINUX", "WINDOWS", "SOLARIS", "MACOSX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
@@ -1721,7 +1721,7 @@ class ManagementAgentClient(object):
         :param list[str] platform_type: (optional)
             Filter to return only results having the particular platform type.
 
-            Allowed values are: "LINUX", "WINDOWS", "SOLARIS"
+            Allowed values are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX"
 
         :param bool is_customer_deployed: (optional)
             true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
@@ -1730,6 +1730,9 @@ class ManagementAgentClient(object):
             A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
 
             Allowed values are: "AGENT", "GATEWAY"
+
+        :param list[str] gateway_id: (optional)
+            Filter to return only results having the particular gatewayId.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1792,6 +1795,7 @@ class ManagementAgentClient(object):
             "platform_type",
             "is_customer_deployed",
             "install_type",
+            "gateway_id",
             "limit",
             "page",
             "sort_order",
@@ -1820,7 +1824,7 @@ class ManagementAgentClient(object):
                 )
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "WINDOWS", "SOLARIS"]
+            platform_type_allowed_values = ["LINUX", "WINDOWS", "SOLARIS", "MACOSX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
@@ -1859,6 +1863,7 @@ class ManagementAgentClient(object):
             "platformType": self.base_client.generate_collection_format_param(kwargs.get("platform_type", missing), 'multi'),
             "isCustomerDeployed": kwargs.get("is_customer_deployed", missing),
             "installType": kwargs.get("install_type", missing),
+            "gatewayId": self.base_client.generate_collection_format_param(kwargs.get("gateway_id", missing), 'multi'),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
@@ -2457,6 +2462,9 @@ class ManagementAgentClient(object):
 
             Allowed values are: "AGENT", "GATEWAY"
 
+        :param bool compartment_id_in_subtree: (optional)
+            if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
@@ -2492,6 +2500,7 @@ class ManagementAgentClient(object):
             "retry_strategy",
             "has_plugins",
             "install_type",
+            "compartment_id_in_subtree",
             "page",
             "opc_request_id"
         ]
@@ -2519,6 +2528,7 @@ class ManagementAgentClient(object):
             "groupBy": self.base_client.generate_collection_format_param(group_by, 'multi'),
             "hasPlugins": kwargs.get("has_plugins", missing),
             "installType": kwargs.get("install_type", missing),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "page": kwargs.get("page", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -2574,6 +2584,9 @@ class ManagementAgentClient(object):
 
             Allowed values are: "pluginName"
 
+        :param bool compartment_id_in_subtree: (optional)
+            if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
@@ -2607,6 +2620,7 @@ class ManagementAgentClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "compartment_id_in_subtree",
             "page",
             "opc_request_id"
         ]
@@ -2624,6 +2638,7 @@ class ManagementAgentClient(object):
         query_params = {
             "compartmentId": compartment_id,
             "groupBy": group_by,
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "page": kwargs.get("page", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}

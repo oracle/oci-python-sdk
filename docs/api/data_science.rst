@@ -43,6 +43,7 @@ Data Science
     oci.data_science.models.CreatePipelineRunDetails
     oci.data_science.models.CreateProjectDetails
     oci.data_science.models.DefaultJobConfigurationDetails
+    oci.data_science.models.DefaultModelDeploymentEnvironmentConfigurationDetails
     oci.data_science.models.ExportModelArtifactDetails
     oci.data_science.models.FastLaunchJobConfigSummary
     oci.data_science.models.FixedSizeScalingPolicy
@@ -65,6 +66,7 @@ Data Science
     oci.data_science.models.ModelConfigurationDetails
     oci.data_science.models.ModelDeployment
     oci.data_science.models.ModelDeploymentConfigurationDetails
+    oci.data_science.models.ModelDeploymentEnvironmentConfigurationDetails
     oci.data_science.models.ModelDeploymentInstanceShapeConfigDetails
     oci.data_science.models.ModelDeploymentShapeSummary
     oci.data_science.models.ModelDeploymentSummary
@@ -81,6 +83,7 @@ Data Science
     oci.data_science.models.NotebookSessionShapeConfigDetails
     oci.data_science.models.NotebookSessionShapeSummary
     oci.data_science.models.NotebookSessionSummary
+    oci.data_science.models.OcirModelDeploymentEnvironmentConfigurationDetails
     oci.data_science.models.Pipeline
     oci.data_science.models.PipelineConfigurationDetails
     oci.data_science.models.PipelineCustomScriptStepDetails
@@ -108,15 +111,18 @@ Data Science
     oci.data_science.models.SingleModelDeploymentConfigurationDetails
     oci.data_science.models.StandaloneJobInfrastructureConfigurationDetails
     oci.data_science.models.UpdateCategoryLogDetails
+    oci.data_science.models.UpdateDefaultModelDeploymentEnvironmentConfigurationDetails
     oci.data_science.models.UpdateJobDetails
     oci.data_science.models.UpdateJobRunDetails
     oci.data_science.models.UpdateModelConfigurationDetails
     oci.data_science.models.UpdateModelDeploymentConfigurationDetails
     oci.data_science.models.UpdateModelDeploymentDetails
+    oci.data_science.models.UpdateModelDeploymentEnvironmentConfigurationDetails
     oci.data_science.models.UpdateModelDetails
     oci.data_science.models.UpdateModelProvenanceDetails
     oci.data_science.models.UpdateModelVersionSetDetails
     oci.data_science.models.UpdateNotebookSessionDetails
+    oci.data_science.models.UpdateOcirModelDeploymentEnvironmentConfigurationDetails
     oci.data_science.models.UpdatePipelineDetails
     oci.data_science.models.UpdatePipelineRunDetails
     oci.data_science.models.UpdateProjectDetails

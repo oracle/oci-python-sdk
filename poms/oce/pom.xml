@@ -135,7 +135,7 @@
       <dependency>
         <groupId>com.oracle.cec.provisioning.controlplane</groupId>
         <artifactId>cec-public-spec</artifactId>
-        <version>22.42.3</version>
+        <version>22.122.1</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

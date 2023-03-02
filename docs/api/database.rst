@@ -243,6 +243,7 @@ Database
     oci.database.models.LaunchDbSystemFromDatabaseDetails
     oci.database.models.LaunchDbSystemFromDbSystemDetails
     oci.database.models.LocalClonePluggableDatabaseDetails
+    oci.database.models.LongTermBackUpScheduleDetails
     oci.database.models.MaintenanceRun
     oci.database.models.MaintenanceRunHistory
     oci.database.models.MaintenanceRunHistorySummary
@@ -288,6 +289,7 @@ Database
     oci.database.models.Update
     oci.database.models.UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
     oci.database.models.UpdateAutonomousContainerDatabaseDetails
+    oci.database.models.UpdateAutonomousDatabaseBackupDetails
     oci.database.models.UpdateAutonomousDatabaseDetails
     oci.database.models.UpdateAutonomousDatabaseWalletDetails
     oci.database.models.UpdateAutonomousExadataInfrastructureDetails

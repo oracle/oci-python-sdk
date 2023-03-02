@@ -29,6 +29,7 @@ from .create_pipeline_details import CreatePipelineDetails
 from .create_pipeline_run_details import CreatePipelineRunDetails
 from .create_project_details import CreateProjectDetails
 from .default_job_configuration_details import DefaultJobConfigurationDetails
+from .default_model_deployment_environment_configuration_details import DefaultModelDeploymentEnvironmentConfigurationDetails
 from .export_model_artifact_details import ExportModelArtifactDetails
 from .fast_launch_job_config_summary import FastLaunchJobConfigSummary
 from .fixed_size_scaling_policy import FixedSizeScalingPolicy
@@ -51,6 +52,7 @@ from .model import Model
 from .model_configuration_details import ModelConfigurationDetails
 from .model_deployment import ModelDeployment
 from .model_deployment_configuration_details import ModelDeploymentConfigurationDetails
+from .model_deployment_environment_configuration_details import ModelDeploymentEnvironmentConfigurationDetails
 from .model_deployment_instance_shape_config_details import ModelDeploymentInstanceShapeConfigDetails
 from .model_deployment_shape_summary import ModelDeploymentShapeSummary
 from .model_deployment_summary import ModelDeploymentSummary
@@ -67,6 +69,7 @@ from .notebook_session_runtime_config_details import NotebookSessionRuntimeConfi
 from .notebook_session_shape_config_details import NotebookSessionShapeConfigDetails
 from .notebook_session_shape_summary import NotebookSessionShapeSummary
 from .notebook_session_summary import NotebookSessionSummary
+from .ocir_model_deployment_environment_configuration_details import OcirModelDeploymentEnvironmentConfigurationDetails
 from .pipeline import Pipeline
 from .pipeline_configuration_details import PipelineConfigurationDetails
 from .pipeline_custom_script_step_details import PipelineCustomScriptStepDetails
@@ -94,15 +97,18 @@ from .scaling_policy import ScalingPolicy
 from .single_model_deployment_configuration_details import SingleModelDeploymentConfigurationDetails
 from .standalone_job_infrastructure_configuration_details import StandaloneJobInfrastructureConfigurationDetails
 from .update_category_log_details import UpdateCategoryLogDetails
+from .update_default_model_deployment_environment_configuration_details import UpdateDefaultModelDeploymentEnvironmentConfigurationDetails
 from .update_job_details import UpdateJobDetails
 from .update_job_run_details import UpdateJobRunDetails
 from .update_model_configuration_details import UpdateModelConfigurationDetails
 from .update_model_deployment_configuration_details import UpdateModelDeploymentConfigurationDetails
 from .update_model_deployment_details import UpdateModelDeploymentDetails
+from .update_model_deployment_environment_configuration_details import UpdateModelDeploymentEnvironmentConfigurationDetails
 from .update_model_details import UpdateModelDetails
 from .update_model_provenance_details import UpdateModelProvenanceDetails
 from .update_model_version_set_details import UpdateModelVersionSetDetails
 from .update_notebook_session_details import UpdateNotebookSessionDetails
+from .update_ocir_model_deployment_environment_configuration_details import UpdateOcirModelDeploymentEnvironmentConfigurationDetails
 from .update_pipeline_details import UpdatePipelineDetails
 from .update_pipeline_run_details import UpdatePipelineRunDetails
 from .update_project_details import UpdateProjectDetails
@@ -140,6 +146,7 @@ data_science_type_mapping = {
     "CreatePipelineRunDetails": CreatePipelineRunDetails,
     "CreateProjectDetails": CreateProjectDetails,
     "DefaultJobConfigurationDetails": DefaultJobConfigurationDetails,
+    "DefaultModelDeploymentEnvironmentConfigurationDetails": DefaultModelDeploymentEnvironmentConfigurationDetails,
     "ExportModelArtifactDetails": ExportModelArtifactDetails,
     "FastLaunchJobConfigSummary": FastLaunchJobConfigSummary,
     "FixedSizeScalingPolicy": FixedSizeScalingPolicy,
@@ -162,6 +169,7 @@ data_science_type_mapping = {
     "ModelConfigurationDetails": ModelConfigurationDetails,
     "ModelDeployment": ModelDeployment,
     "ModelDeploymentConfigurationDetails": ModelDeploymentConfigurationDetails,
+    "ModelDeploymentEnvironmentConfigurationDetails": ModelDeploymentEnvironmentConfigurationDetails,
     "ModelDeploymentInstanceShapeConfigDetails": ModelDeploymentInstanceShapeConfigDetails,
     "ModelDeploymentShapeSummary": ModelDeploymentShapeSummary,
     "ModelDeploymentSummary": ModelDeploymentSummary,
@@ -178,6 +186,7 @@ data_science_type_mapping = {
     "NotebookSessionShapeConfigDetails": NotebookSessionShapeConfigDetails,
     "NotebookSessionShapeSummary": NotebookSessionShapeSummary,
     "NotebookSessionSummary": NotebookSessionSummary,
+    "OcirModelDeploymentEnvironmentConfigurationDetails": OcirModelDeploymentEnvironmentConfigurationDetails,
     "Pipeline": Pipeline,
     "PipelineConfigurationDetails": PipelineConfigurationDetails,
     "PipelineCustomScriptStepDetails": PipelineCustomScriptStepDetails,
@@ -205,15 +214,18 @@ data_science_type_mapping = {
     "SingleModelDeploymentConfigurationDetails": SingleModelDeploymentConfigurationDetails,
     "StandaloneJobInfrastructureConfigurationDetails": StandaloneJobInfrastructureConfigurationDetails,
     "UpdateCategoryLogDetails": UpdateCategoryLogDetails,
+    "UpdateDefaultModelDeploymentEnvironmentConfigurationDetails": UpdateDefaultModelDeploymentEnvironmentConfigurationDetails,
     "UpdateJobDetails": UpdateJobDetails,
     "UpdateJobRunDetails": UpdateJobRunDetails,
     "UpdateModelConfigurationDetails": UpdateModelConfigurationDetails,
     "UpdateModelDeploymentConfigurationDetails": UpdateModelDeploymentConfigurationDetails,
     "UpdateModelDeploymentDetails": UpdateModelDeploymentDetails,
+    "UpdateModelDeploymentEnvironmentConfigurationDetails": UpdateModelDeploymentEnvironmentConfigurationDetails,
     "UpdateModelDetails": UpdateModelDetails,
     "UpdateModelProvenanceDetails": UpdateModelProvenanceDetails,
     "UpdateModelVersionSetDetails": UpdateModelVersionSetDetails,
     "UpdateNotebookSessionDetails": UpdateNotebookSessionDetails,
+    "UpdateOcirModelDeploymentEnvironmentConfigurationDetails": UpdateOcirModelDeploymentEnvironmentConfigurationDetails,
     "UpdatePipelineDetails": UpdatePipelineDetails,
     "UpdatePipelineRunDetails": UpdatePipelineRunDetails,
     "UpdateProjectDetails": UpdateProjectDetails,
