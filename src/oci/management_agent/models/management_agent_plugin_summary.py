@@ -25,6 +25,10 @@ class ManagementAgentPluginSummary(object):
     #: This constant has a value of "SOLARIS"
     SUPPORTED_PLATFORM_TYPES_SOLARIS = "SOLARIS"
 
+    #: A constant which can be used with the supported_platform_types property of a ManagementAgentPluginSummary.
+    #: This constant has a value of "MACOSX"
+    SUPPORTED_PLATFORM_TYPES_MACOSX = "MACOSX"
+
     #: A constant which can be used with the lifecycle_state property of a ManagementAgentPluginSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -76,7 +80,7 @@ class ManagementAgentPluginSummary(object):
 
         :param supported_platform_types:
             The value to assign to the supported_platform_types property of this ManagementAgentPluginSummary.
-            Allowed values for items in this list are: "LINUX", "WINDOWS", "SOLARIS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type supported_platform_types: list[str]
 
@@ -208,7 +212,7 @@ class ManagementAgentPluginSummary(object):
         Gets the supported_platform_types of this ManagementAgentPluginSummary.
         Supported Platform Types
 
-        Allowed values for items in this list are: "LINUX", "WINDOWS", "SOLARIS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -227,7 +231,7 @@ class ManagementAgentPluginSummary(object):
         :param supported_platform_types: The supported_platform_types of this ManagementAgentPluginSummary.
         :type: list[str]
         """
-        allowed_values = ["LINUX", "WINDOWS", "SOLARIS"]
+        allowed_values = ["LINUX", "WINDOWS", "SOLARIS", "MACOSX"]
         if supported_platform_types:
             supported_platform_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in supported_platform_types]
         self._supported_platform_types = supported_platform_types

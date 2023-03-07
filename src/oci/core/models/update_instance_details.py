@@ -13,6 +13,14 @@ class UpdateInstanceDetails(object):
     UpdateInstanceDetails model.
     """
 
+    #: A constant which can be used with the update_operation_constraint property of a UpdateInstanceDetails.
+    #: This constant has a value of "ALLOW_DOWNTIME"
+    UPDATE_OPERATION_CONSTRAINT_ALLOW_DOWNTIME = "ALLOW_DOWNTIME"
+
+    #: A constant which can be used with the update_operation_constraint property of a UpdateInstanceDetails.
+    #: This constant has a value of "AVOID_DOWNTIME"
+    UPDATE_OPERATION_CONSTRAINT_AVOID_DOWNTIME = "AVOID_DOWNTIME"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateInstanceDetails object with values from keyword arguments.
@@ -54,6 +62,11 @@ class UpdateInstanceDetails(object):
             The value to assign to the shape_config property of this UpdateInstanceDetails.
         :type shape_config: oci.core.models.UpdateInstanceShapeConfigDetails
 
+        :param update_operation_constraint:
+            The value to assign to the update_operation_constraint property of this UpdateInstanceDetails.
+            Allowed values for this property are: "ALLOW_DOWNTIME", "AVOID_DOWNTIME"
+        :type update_operation_constraint: str
+
         :param instance_options:
             The value to assign to the instance_options property of this UpdateInstanceDetails.
         :type instance_options: oci.core.models.InstanceOptions
@@ -85,6 +98,7 @@ class UpdateInstanceDetails(object):
             'extended_metadata': 'dict(str, object)',
             'shape': 'str',
             'shape_config': 'UpdateInstanceShapeConfigDetails',
+            'update_operation_constraint': 'str',
             'instance_options': 'InstanceOptions',
             'fault_domain': 'str',
             'launch_options': 'UpdateLaunchOptions',
@@ -102,6 +116,7 @@ class UpdateInstanceDetails(object):
             'extended_metadata': 'extendedMetadata',
             'shape': 'shape',
             'shape_config': 'shapeConfig',
+            'update_operation_constraint': 'updateOperationConstraint',
             'instance_options': 'instanceOptions',
             'fault_domain': 'faultDomain',
             'launch_options': 'launchOptions',
@@ -118,6 +133,7 @@ class UpdateInstanceDetails(object):
         self._extended_metadata = None
         self._shape = None
         self._shape_config = None
+        self._update_operation_constraint = None
         self._instance_options = None
         self._fault_domain = None
         self._launch_options = None
@@ -439,6 +455,48 @@ class UpdateInstanceDetails(object):
         :type: oci.core.models.UpdateInstanceShapeConfigDetails
         """
         self._shape_config = shape_config
+
+    @property
+    def update_operation_constraint(self):
+        """
+        Gets the update_operation_constraint of this UpdateInstanceDetails.
+        The parameter acts as a fail-safe to prevent unwanted downtime when updating a running instance.
+        The default is ALLOW_DOWNTIME.
+        * `ALLOW_DOWNTIME` - Compute might reboot the instance while updating the instance if a reboot is required.
+        * `AVOID_DOWNTIME` - If the instance is in running state, Compute tries to update the instance without rebooting
+                          it. If the instance requires a reboot to be updated, an error is returned and the instance
+                          is not updated. If the instance is stopped, it is updated and remains in the stopped state.
+
+        Allowed values for this property are: "ALLOW_DOWNTIME", "AVOID_DOWNTIME"
+
+
+        :return: The update_operation_constraint of this UpdateInstanceDetails.
+        :rtype: str
+        """
+        return self._update_operation_constraint
+
+    @update_operation_constraint.setter
+    def update_operation_constraint(self, update_operation_constraint):
+        """
+        Sets the update_operation_constraint of this UpdateInstanceDetails.
+        The parameter acts as a fail-safe to prevent unwanted downtime when updating a running instance.
+        The default is ALLOW_DOWNTIME.
+        * `ALLOW_DOWNTIME` - Compute might reboot the instance while updating the instance if a reboot is required.
+        * `AVOID_DOWNTIME` - If the instance is in running state, Compute tries to update the instance without rebooting
+                          it. If the instance requires a reboot to be updated, an error is returned and the instance
+                          is not updated. If the instance is stopped, it is updated and remains in the stopped state.
+
+
+        :param update_operation_constraint: The update_operation_constraint of this UpdateInstanceDetails.
+        :type: str
+        """
+        allowed_values = ["ALLOW_DOWNTIME", "AVOID_DOWNTIME"]
+        if not value_allowed_none_or_none_sentinel(update_operation_constraint, allowed_values):
+            raise ValueError(
+                "Invalid value for `update_operation_constraint`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._update_operation_constraint = update_operation_constraint
 
     @property
     def instance_options(self):

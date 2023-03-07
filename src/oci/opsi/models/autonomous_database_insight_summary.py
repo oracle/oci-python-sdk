@@ -102,6 +102,10 @@ class AutonomousDatabaseInsightSummary(DatabaseInsightSummary):
             The value to assign to the database_resource_type property of this AutonomousDatabaseInsightSummary.
         :type database_resource_type: str
 
+        :param is_advanced_features_enabled:
+            The value to assign to the is_advanced_features_enabled property of this AutonomousDatabaseInsightSummary.
+        :type is_advanced_features_enabled: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -123,7 +127,8 @@ class AutonomousDatabaseInsightSummary(DatabaseInsightSummary):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'database_connection_status_details': 'str',
-            'database_resource_type': 'str'
+            'database_resource_type': 'str',
+            'is_advanced_features_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -146,7 +151,8 @@ class AutonomousDatabaseInsightSummary(DatabaseInsightSummary):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'database_connection_status_details': 'databaseConnectionStatusDetails',
-            'database_resource_type': 'databaseResourceType'
+            'database_resource_type': 'databaseResourceType',
+            'is_advanced_features_enabled': 'isAdvancedFeaturesEnabled'
         }
 
         self._id = None
@@ -169,6 +175,7 @@ class AutonomousDatabaseInsightSummary(DatabaseInsightSummary):
         self._lifecycle_details = None
         self._database_connection_status_details = None
         self._database_resource_type = None
+        self._is_advanced_features_enabled = None
         self._entity_source = 'AUTONOMOUS_DATABASE'
 
     @property
@@ -194,6 +201,30 @@ class AutonomousDatabaseInsightSummary(DatabaseInsightSummary):
         :type: str
         """
         self._database_resource_type = database_resource_type
+
+    @property
+    def is_advanced_features_enabled(self):
+        """
+        Gets the is_advanced_features_enabled of this AutonomousDatabaseInsightSummary.
+        Flag is to identify if advanced features for autonomous database is enabled or not
+
+
+        :return: The is_advanced_features_enabled of this AutonomousDatabaseInsightSummary.
+        :rtype: bool
+        """
+        return self._is_advanced_features_enabled
+
+    @is_advanced_features_enabled.setter
+    def is_advanced_features_enabled(self, is_advanced_features_enabled):
+        """
+        Sets the is_advanced_features_enabled of this AutonomousDatabaseInsightSummary.
+        Flag is to identify if advanced features for autonomous database is enabled or not
+
+
+        :param is_advanced_features_enabled: The is_advanced_features_enabled of this AutonomousDatabaseInsightSummary.
+        :type: bool
+        """
+        self._is_advanced_features_enabled = is_advanced_features_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

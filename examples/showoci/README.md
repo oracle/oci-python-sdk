@@ -1,16 +1,34 @@
 ## showoci - Oracle Cloud Infrastructure Reporting Tool
 
-SHOWOCI is a reporting tool which uses the Python SDK to extract list of resources from your tenant. 
-It covers most of OCI components,  Authentication by User or Compute using instance principals, 
+SHOWOCI is a reporting tool which uses the Python SDK to extract list of resources from your tenant.
+It covers most of OCI components,  Authentication by User or Compute using instance principals,
 Output can be printer friendly, CSV files or JSON file.
 
 **DISCLAIMER – This is not an official Oracle application,  It does not supported by Oracle Support, It should NOT be used for utilization calculation purposes, and rather OCI's official 
 [cost analysis](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/costanalysisoverview.htm) 
 and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm) features should be used instead.**
 
-Please visit [step_by_step_howto.md](step_by_step_howto.md) for useful Howto information.
-
 **Developed by Adi Zohar, 2018-2023**
+
+## Content
+
+[1. Requirements and Modules Included](#1-requirement-and-modules-included)
+
+[2. Executing ShowOCI using Cloud Shell](#2-executing-using-cloud-shell)
+
+[3. Executing ShowOCI using different options](#3-executing-showoci-using-different-options)
+
+[4. Setup Policies for Instance Principals or Read Only User](#4-setup-policies-for-instance-principals-or-user-authentication)
+
+[5. Step by Step installation Guide on OCI VM](#5-step-by-step-installation-guide-on-oci-vm)
+
+[6. How to Upgrade or install ShowOCI code](#6-how-to-upgrade-or-install-showoci-from-adi-zohar-github)
+
+[7. How to Upgrade OCI SDK drivers](#7-how-to-upgrade-oci-sdk-drivers)
+
+[8. ShowOCI Execution Flags](#8-showoci-execution-flags)
+
+[9. Example of ShowOCI Reports](#9-example-of-showoci-reports)
 
 
 ![](img/screen_xls.png)
@@ -19,7 +37,16 @@ Please visit [step_by_step_howto.md](step_by_step_howto.md) for useful Howto inf
 ![](img/screen_json1.png)
 ![](img/screen_json2.png)
 
-## Modules Included:  
+## 1. Requirement and Modules Included
+
+### Requirements
+
+1. Cloud Shell or Virtual Machine or Home PC
+2. Connectivity to the Internet to access OCI Rest APIs
+3. Python3 (3.9+ Recommedned)
+4. OCI SDK Python Packages - oci oracledb
+
+### Modules Included:  
 - oci.core.VirtualNetworkClient          
 - oci.core.ComputeClient                 
 - oci.core.ComputeManagementClient       
@@ -65,19 +92,56 @@ Please visit [step_by_step_howto.md](step_by_step_howto.md) for useful Howto inf
 - oci.data_integration.DataIntegrationClient
 - oci.queue.QueueAdminClient
 
-## Executing using Cloud Shell:
+## 2. Executing using Cloud Shell
+
+Cloud Shell has 20 minutes timeout, for large extract, I would recommend to use dedicated Virtual Machine
+
+Step 1 - Clone from OCI SDK Repo and Create symbolink link
+
 ```
-1. clone the oci sdk repo
-   git clone https://github.com/oracle/oci-python-sdk
-
-2. run showoci with delegation token
-   cd oci-python-sdk/examples/showoci
-   python3 showoci.py -dt -ani
+git clone https://github.com/oracle/oci-python-sdk
+ln -s oci-python-sdk/examples/showoci .
 ```
 
-## OCI Authentication using Instance Principals 
+Or Install using Bash from private Repo
 
-Create Dynamic Group ShowOCIDynamicGroup:
+```
+bash -c "$(curl -L https://raw.githubusercontent.com/adizohar/showoci/master/showoci_upgrade.sh)"    
+```
+
+Step 2 - Change Dir to ShowOCI
+
+```
+cd showoci
+```
+
+## 3. Executing ShowOCI using different options
+
+```
+# Run report for all resources except identity from Cloud Shell
+python3 showoci.py -dt -ani
+
+# Run Report for all compute resources and produce CSV file using Cloud Shell
+python3 showoci.py -dt -c -csv $HOME/output
+
+# Run Report for all compute and database resources and produce CSV file using Cloud Shell
+python3 showoci.py -dt -c -d -csv $HOME/output
+
+# Run Report for all compute resources filter by compartment=AdiZohar and region=us-ashburn-1 using instance principle
+python3 showoci.py -ip -c -cp AdiZohar -rg us-ashburn-1
+
+# Run Report for PaaS Services filter by region us-phoenix-1 using user authentication profile=Adi and produce CSV
+python3 showoci.py -paas -rg us-phoenix-1 -t Adi -csv $HOME/output
+
+# Run Report for PaaS Services and produce JSON file
+python3 showoci.py -paas -js
+
+```
+
+## 4. Setup Policies for Instance Principals or User Authentication
+
+For Instance Principals - Create Dynamic Group ShowOCIDynamicGroup:
+
 ```
 any {ALL {instance.id = 'ocid1.instance.oc1.xxxxxxxxxx'}}
 ```
@@ -87,69 +151,118 @@ Add Policy:
 allow dynamic-group ShowOCIDynamicGroup to read all-resources in tenancy
 ```
 
-## OCI Authentication using Read Only User
-Required OCI IAM user with read only privileges
+For User Authenticaiton - Required OCI IAM user with read only privileges (Inspect can used with reduce info)
 
 ```
 ALLOW GROUP ReadOnlyUsers to read all-resources IN TENANCY
 ```
 
-For restrictive privileges:
+Use 'oci setup config' to configure the user on VM
+ 
 
+## 5. Step by Step installation Guide on OCI VM
+
+### 5.1 Deploy VM Compute instance to run the python script
 ```
-Allow group ReadOnlyUsers to inspect all-objects in tenancy
-Allow group ReadOnlyUsers to read instances      in tenancy
-Allow group ReadOnlyUsers to read load-balancers in tenancy
-Allow group ReadOnlyUsers to read buckets        in tenancy
-Allow group ReadOnlyUsers to read nat-gateways   in tenancy
-Allow group ReadOnlyUsers to read public-ips     in tenancy
-Allow group ReadOnlyUsers to read file-family    in tenancy
-Allow group ReadOnlyUsers to read instance-configurations in tenancy
-Allow Group ReadOnlyUsers to read network-security-groups in tenancy
-Allow Group ReadOnlyUsers to read resource-availability in tenancy
-    
-# Explanation:
-    read instances      allows - ListInstances
-    read load-balancers allows - ListBackendSets, ListBackends, GetHealthChecker (for status)
-    read buckets        allows - GetBucket (for size), GetObjectLifecyclePolicy
-    read nat-gateways   allows - ListNatGateways
-    read public-ips     allows - ListPublicIps (not used yet)
-    read file-family    allows - ListExports, ListSnapshots
-    read instance-configurations allows - GetInstanceConfiguration
-    read resource-availability allows - GetResourceAvailability
+OCI -> Menu -> Compute -> Instances
+Create Instance
+--> Name = ShowOCIVM
+--> Image = Oracle Linux 8
+--> Shape = Any Shape
+--> Choose your network VCN and Subnet (any type of VCN and Subnet)
+--> Assign public IP -  Optional if on public subnet
+--> Add your public SSH key
+--> Press Create
 
+Copy Instance Info:
+--> Compute OCID to be used for Dynamic Group Permission
+--> Compute IP
 ```
 
-## Installation of Python 3 incase you don't have Python3 installed:
-Please follow [Python Documentation](https://docs.python.org/3/using/index.html)
+### 5.2. Create Dynamic Group for Instance Principles
 
-## Install oci SDK Packages:
-Please follow [Oracle Python SDK Documentation](https://docs.oracle.com/iaas/tools/python/latest/api/landing.html)
-
-## Setup connectivity using Instance Principals
-
-```  
-1. Login to your OCI Cloud console
-2. Create new Dynamic Group : ShowOCIDynamicGroup  
-   Obtain Compute OCID and add rule - any {ALL {instance.id = 'ocid1.instance.oc1.xxxxxxxxxx'}}
-3. Create new Policy: ShowOCIDynamicGroupPolicy with Statement - allow dynamic-group ShowOCIDynamicGroup to read all-resources in tenancy
+```
+OCI -> Menu -> Identity -> Dynamic Groups -> Create Dynamic Group
+--> Name = ShowOCIDynamicGroup 
+--> Desc = Dynamic Group for the showoci VM
+--> Rule 1 = ANY { instance.id = 'OCID_Of_Step_1_Instance' }
 ```
 
-## Setup connectivity using Read Only User
+### 5.3. Create Policy to allow the Dynamic Group to run showoci report
 
-```  
-1. Login to your OCI Cloud console
-2. Create new group : ReadOnlyGroup  
-3. Create new Policy: ReadOnlyGroupPolicy with Statement - ALLOW GROUP ReadOnlyGroup to read all-resources IN TENANCY  
-4. Create new User  : readonly.user -> Add to ReadOnlyGroup group  
-5. Config OCI config file - ~/.oci/config
-   Please follow SDK config documentation - https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm 
+```
+OCI -> Menu -> Identity -> Policies
+Choose Root Compartment
+Create Policy
+--> Name = showociPolicy
+--> Desc = Allow Dynamic Group ShowOCIDynamicGroup to extract tenant information using showoci
+--> Statement = allow dynamic-group ShowOCIDynamicGroup to read all-resources in tenancy   
 ```
 
-## Copy the Software
-Download the showoci*.py from this project  
+### 5.4. Login to Linux Machine
 
-Execute  
+```
+Using the SSH key you provided, SSH to the linux machine from step #1
+ssh opc@UsageVM
+```
+
+### 5.5. Install Python 3.9, GIT and OCI packages
+
+```
+sudo yum -y update
+sudo yum -y git
+sudo dnf -y module install python39
+sudo dnf -y install python39-pip
+sudo dnf -y install python39-setuptools
+sudo alternatives --set python3 /usr/bin/python3.9
+python3 -m pip install --upgrade pip
+python3 -m pip install --upgrade oci oci-cli
+python3 -m pip install --upgrade oracledb 
+```
+
+Test instance principle is working using oci-cli
+
+```
+oci os ns get --auth instance_principal
+```
+
+### 5.6. Clone the OCI SDK Repo from Git Hub or install using bash file
+
+Clone from OCI SDK Repo and Create symbolink link
+
+```
+git clone https://github.com/oracle/oci-python-sdk
+ln -s oci-python-sdk/examples/showoci .
+```
+
+Or Install using Bash from private repo
+
+```
+bash -c "$(curl -L https://raw.githubusercontent.com/adizohar/showoci/master/showoci_upgrade.sh)"    
+```
+
+### 5.7. Execute the python script - showoci.py
+
+```
+cd showoci
+python3 showoci.py -ip -ani
+```
+
+## 6. How to upgrade or install showoci from Adi Zohar github
+
+Run on OCI VM:
+
+```
+bash -c "$(curl -L https://raw.githubusercontent.com/adizohar/showoci/master/showoci_upgrade.sh)"    
+```
+
+## 7. How to upgrade OCI SDK drivers
+
+```
+python3 -m pip install --upgrade oci oci-cli oracledb pip
+```
+
+## 8. ShowOCI Execution Flags
 
 ```
 $ python3 showoci.py  
@@ -218,7 +331,7 @@ options:
   --version                 show program's version number and exit
   ```
 
-## Below example of reports from few tenancies  
+## 9. Example of ShowOCI Reports
 
 ```
 ############################################################

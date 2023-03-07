@@ -21,6 +21,10 @@ class AutonomousDatabaseBackup(object):
     #: This constant has a value of "FULL"
     TYPE_FULL = "FULL"
 
+    #: A constant which can be used with the type property of a AutonomousDatabaseBackup.
+    #: This constant has a value of "LONGTERM"
+    TYPE_LONGTERM = "LONGTERM"
+
     #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseBackup.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -40,6 +44,10 @@ class AutonomousDatabaseBackup(object):
     #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseBackup.
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseBackup.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
 
     def __init__(self, **kwargs):
         """
@@ -64,7 +72,7 @@ class AutonomousDatabaseBackup(object):
 
         :param type:
             The value to assign to the type property of this AutonomousDatabaseBackup.
-            Allowed values for this property are: "INCREMENTAL", "FULL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INCREMENTAL", "FULL", "LONGTERM", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -90,7 +98,7 @@ class AutonomousDatabaseBackup(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AutonomousDatabaseBackup.
-            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -118,6 +126,22 @@ class AutonomousDatabaseBackup(object):
             The value to assign to the kms_key_version_id property of this AutonomousDatabaseBackup.
         :type kms_key_version_id: str
 
+        :param retention_period_in_days:
+            The value to assign to the retention_period_in_days property of this AutonomousDatabaseBackup.
+        :type retention_period_in_days: int
+
+        :param time_available_till:
+            The value to assign to the time_available_till property of this AutonomousDatabaseBackup.
+        :type time_available_till: datetime
+
+        :param db_version:
+            The value to assign to the db_version property of this AutonomousDatabaseBackup.
+        :type db_version: str
+
+        :param size_in_tbs:
+            The value to assign to the size_in_tbs property of this AutonomousDatabaseBackup.
+        :type size_in_tbs: float
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -136,7 +160,11 @@ class AutonomousDatabaseBackup(object):
             'key_store_wallet_name': 'str',
             'kms_key_id': 'str',
             'vault_id': 'str',
-            'kms_key_version_id': 'str'
+            'kms_key_version_id': 'str',
+            'retention_period_in_days': 'int',
+            'time_available_till': 'datetime',
+            'db_version': 'str',
+            'size_in_tbs': 'float'
         }
 
         self.attribute_map = {
@@ -156,7 +184,11 @@ class AutonomousDatabaseBackup(object):
             'key_store_wallet_name': 'keyStoreWalletName',
             'kms_key_id': 'kmsKeyId',
             'vault_id': 'vaultId',
-            'kms_key_version_id': 'kmsKeyVersionId'
+            'kms_key_version_id': 'kmsKeyVersionId',
+            'retention_period_in_days': 'retentionPeriodInDays',
+            'time_available_till': 'timeAvailableTill',
+            'db_version': 'dbVersion',
+            'size_in_tbs': 'sizeInTBs'
         }
 
         self._id = None
@@ -176,6 +208,10 @@ class AutonomousDatabaseBackup(object):
         self._kms_key_id = None
         self._vault_id = None
         self._kms_key_version_id = None
+        self._retention_period_in_days = None
+        self._time_available_till = None
+        self._db_version = None
+        self._size_in_tbs = None
 
     @property
     def id(self):
@@ -291,7 +327,7 @@ class AutonomousDatabaseBackup(object):
         **[Required]** Gets the type of this AutonomousDatabaseBackup.
         The type of backup.
 
-        Allowed values for this property are: "INCREMENTAL", "FULL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INCREMENTAL", "FULL", "LONGTERM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -310,7 +346,7 @@ class AutonomousDatabaseBackup(object):
         :param type: The type of this AutonomousDatabaseBackup.
         :type: str
         """
-        allowed_values = ["INCREMENTAL", "FULL"]
+        allowed_values = ["INCREMENTAL", "FULL", "LONGTERM"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
@@ -441,7 +477,7 @@ class AutonomousDatabaseBackup(object):
         **[Required]** Gets the lifecycle_state of this AutonomousDatabaseBackup.
         The current state of the backup.
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -460,7 +496,7 @@ class AutonomousDatabaseBackup(object):
         :param lifecycle_state: The lifecycle_state of this AutonomousDatabaseBackup.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -618,6 +654,102 @@ class AutonomousDatabaseBackup(object):
         :type: str
         """
         self._kms_key_version_id = kms_key_version_id
+
+    @property
+    def retention_period_in_days(self):
+        """
+        Gets the retention_period_in_days of this AutonomousDatabaseBackup.
+        Retention period, in days, for long-term backups
+
+
+        :return: The retention_period_in_days of this AutonomousDatabaseBackup.
+        :rtype: int
+        """
+        return self._retention_period_in_days
+
+    @retention_period_in_days.setter
+    def retention_period_in_days(self, retention_period_in_days):
+        """
+        Sets the retention_period_in_days of this AutonomousDatabaseBackup.
+        Retention period, in days, for long-term backups
+
+
+        :param retention_period_in_days: The retention_period_in_days of this AutonomousDatabaseBackup.
+        :type: int
+        """
+        self._retention_period_in_days = retention_period_in_days
+
+    @property
+    def time_available_till(self):
+        """
+        Gets the time_available_till of this AutonomousDatabaseBackup.
+        Timestamp until when the backup will be available
+
+
+        :return: The time_available_till of this AutonomousDatabaseBackup.
+        :rtype: datetime
+        """
+        return self._time_available_till
+
+    @time_available_till.setter
+    def time_available_till(self, time_available_till):
+        """
+        Sets the time_available_till of this AutonomousDatabaseBackup.
+        Timestamp until when the backup will be available
+
+
+        :param time_available_till: The time_available_till of this AutonomousDatabaseBackup.
+        :type: datetime
+        """
+        self._time_available_till = time_available_till
+
+    @property
+    def db_version(self):
+        """
+        Gets the db_version of this AutonomousDatabaseBackup.
+        A valid Oracle Database version for Autonomous Database.
+
+
+        :return: The db_version of this AutonomousDatabaseBackup.
+        :rtype: str
+        """
+        return self._db_version
+
+    @db_version.setter
+    def db_version(self, db_version):
+        """
+        Sets the db_version of this AutonomousDatabaseBackup.
+        A valid Oracle Database version for Autonomous Database.
+
+
+        :param db_version: The db_version of this AutonomousDatabaseBackup.
+        :type: str
+        """
+        self._db_version = db_version
+
+    @property
+    def size_in_tbs(self):
+        """
+        Gets the size_in_tbs of this AutonomousDatabaseBackup.
+        The backup size in terrabytes (TB).
+
+
+        :return: The size_in_tbs of this AutonomousDatabaseBackup.
+        :rtype: float
+        """
+        return self._size_in_tbs
+
+    @size_in_tbs.setter
+    def size_in_tbs(self, size_in_tbs):
+        """
+        Sets the size_in_tbs of this AutonomousDatabaseBackup.
+        The backup size in terrabytes (TB).
+
+
+        :param size_in_tbs: The size_in_tbs of this AutonomousDatabaseBackup.
+        :type: float
+        """
+        self._size_in_tbs = size_in_tbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

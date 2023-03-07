@@ -76,6 +76,10 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the cpu_core_count property of this UpdateAutonomousDatabaseDetails.
         :type cpu_core_count: int
 
+        :param long_term_backup_schedule:
+            The value to assign to the long_term_backup_schedule property of this UpdateAutonomousDatabaseDetails.
+        :type long_term_backup_schedule: oci.database.models.LongTermBackUpScheduleDetails
+
         :param compute_count:
             The value to assign to the compute_count property of this UpdateAutonomousDatabaseDetails.
         :type compute_count: float
@@ -236,6 +240,7 @@ class UpdateAutonomousDatabaseDetails(object):
         """
         self.swagger_types = {
             'cpu_core_count': 'int',
+            'long_term_backup_schedule': 'LongTermBackUpScheduleDetails',
             'compute_count': 'float',
             'ocpu_count': 'float',
             'data_storage_size_in_tbs': 'int',
@@ -278,6 +283,7 @@ class UpdateAutonomousDatabaseDetails(object):
 
         self.attribute_map = {
             'cpu_core_count': 'cpuCoreCount',
+            'long_term_backup_schedule': 'longTermBackupSchedule',
             'compute_count': 'computeCount',
             'ocpu_count': 'ocpuCount',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
@@ -319,6 +325,7 @@ class UpdateAutonomousDatabaseDetails(object):
         }
 
         self._cpu_core_count = None
+        self._long_term_backup_schedule = None
         self._compute_count = None
         self._ocpu_count = None
         self._data_storage_size_in_tbs = None
@@ -385,6 +392,26 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: int
         """
         self._cpu_core_count = cpu_core_count
+
+    @property
+    def long_term_backup_schedule(self):
+        """
+        Gets the long_term_backup_schedule of this UpdateAutonomousDatabaseDetails.
+
+        :return: The long_term_backup_schedule of this UpdateAutonomousDatabaseDetails.
+        :rtype: oci.database.models.LongTermBackUpScheduleDetails
+        """
+        return self._long_term_backup_schedule
+
+    @long_term_backup_schedule.setter
+    def long_term_backup_schedule(self, long_term_backup_schedule):
+        """
+        Sets the long_term_backup_schedule of this UpdateAutonomousDatabaseDetails.
+
+        :param long_term_backup_schedule: The long_term_backup_schedule of this UpdateAutonomousDatabaseDetails.
+        :type: oci.database.models.LongTermBackUpScheduleDetails
+        """
+        self._long_term_backup_schedule = long_term_backup_schedule
 
     @property
     def compute_count(self):

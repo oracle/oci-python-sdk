@@ -18,7 +18,7 @@ from showoci_service import ShowOCIService, ShowOCIFlags
 
 
 class ShowOCIData(object):
-    version = "23.02.14"
+    version = "23.03.07"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -2308,6 +2308,7 @@ class ShowOCIData(object):
             list_exas = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_EXADATA, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             for dbs in list_exas:
+                config_str = ' D' + dbs['compute_count'] + 'S' + dbs['storage_count'] if dbs['compute_count'] else ""
                 value = {
                     'id': dbs['id'],
                     'display_name': dbs['display_name'],
@@ -2333,8 +2334,8 @@ class ShowOCIData(object):
                     'defined_tags': dbs['defined_tags'],
                     'freeform_tags': dbs['freeform_tags'],
                     'region_name': dbs['region_name'],
-                    'name': dbs['display_name'] + " - " + dbs['shape'] + " - " + dbs['lifecycle_state'],
-                    'sum_info': 'Database XP - ' + dbs['shape'],
+                    'name': dbs['display_name'] + " - " + dbs['shape'] + config_str + " - " + dbs['lifecycle_state'],
+                    'sum_info': 'Database ExaCS Infra - ' + dbs['shape'] + config_str,
                     'sum_info_storage': 'Database - Storage (GB)',
                     'sum_size_gb': dbs['total_storage_size_in_gbs'],
                     'data': str(dbs['available_storage_size_in_gbs']) + "GB",
@@ -2388,7 +2389,7 @@ class ShowOCIData(object):
                             'scan_dns_record_id': vm['scan_dns_record_id'],
                             'defined_tags': vm['defined_tags'],
                             'freeform_tags': vm['freeform_tags'],
-                            'sum_info': 'Database XP - ' + dbs['shape'] + " - " + vm['license_model'],
+                            'sum_info': 'Database ExaCS VMCluster - ' + dbs['shape'] + " - " + vm['license_model'],
                             'sum_info_storage': 'Database - Storage (GB)',
                             'sum_size_gb': vm['storage_size_in_gbs'],
                             'patches': self.__get_database_db_patches(vm['patches']),
@@ -2419,6 +2420,7 @@ class ShowOCIData(object):
             list_exas = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_EXACC, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             for dbs in list_exas:
+                config_str = ' D' + dbs['compute_count'] + 'S' + dbs['activated_storage_count'] if dbs['compute_count'] else ""
                 value = {
                     'id': dbs['id'],
                     'display_name': dbs['display_name'],
@@ -2460,13 +2462,13 @@ class ShowOCIData(object):
                     'compartment_path': dbs['compartment_path'],
                     'compartment_id': dbs['compartment_id'],
                     'region_name': dbs['region_name'],
-                    'sum_info': 'Database ExaCC - ' + dbs['shape'],
+                    'sum_info': 'Database ExaCC Infra - ' + dbs['shape'],
                     'sum_info_storage': 'Database - Storage (GB)',
                     'sum_size_gb': dbs['max_data_storage_in_t_bs'],
                     'vm_clusters': [],
                     'adb_clusters': self.__get_database_db_exacc_adb_dedicated(region_name, compartment, dbs['id']),
                     'db_servers': [] if not dbs['db_servers'] else sorted(dbs['db_servers'], key=lambda i: i['desc']),
-                    'name': dbs['display_name'] + " - " + dbs['shape'] + " - " + dbs['lifecycle_state']
+                    'name': dbs['display_name'] + " - " + dbs['shape'] + config_str + " - " + dbs['lifecycle_state']
                 }
 
                 list_vms = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_EXACC_VMS, 'region_name', region_name, 'exadata_infrastructure_id', dbs['id'])
@@ -2497,7 +2499,7 @@ class ShowOCIData(object):
                             'license_model': vm['license_model'],
                             'defined_tags': vm['defined_tags'],
                             'freeform_tags': vm['freeform_tags'],
-                            'sum_info': 'Database ExaCC - ' + dbs['shape'] + " - " + vm['license_model'],
+                            'sum_info': 'Database ExaCC VMCluster - ' + dbs['shape'] + " - " + vm['license_model'],
                             'sum_info_storage': 'Database - Storage (GB)',
                             'sum_size_gb': vm['db_node_storage_size_in_gbs'],
                             'patches': self.__get_database_db_patches(vm['patches']),
@@ -3221,12 +3223,15 @@ class ShowOCIData(object):
             for fs in file_systems:
                 dataval = {'id': fs['id'],
                            'filesystem': fs['display_name'] + " - " + fs['availability_domain'] + " - " + fs['size_gb'] + "GB metered",
+                           'time_created': fs['time_created'],
                            'display_name': fs['display_name'],
                            'availability_domain': fs['availability_domain'],
                            'size_gb': fs['size_gb'],
                            'sum_info': 'File Storage (GB)',
                            'sum_size_gb': fs['size_gb'],
                            'snapshots': [e['name'] + " - " + e['time_created'][0:16] for e in fs['snapshots']],
+                           'defined_tags': fs['defined_tags'],
+                           'freeform_tags': fs['freeform_tags'],
                            'compartment_name': fs['compartment_name'],
                            'compartment_path': fs['compartment_path'],
                            'compartment_id': fs['compartment_id'],
@@ -3258,9 +3263,11 @@ class ShowOCIData(object):
             for bucket in buckets:
                 value = {'name': bucket['name'],
                          'objects': bucket['approximate_count'],
+                         'time_created': bucket['time_created'],
                          'size': bucket['approximate_size'],
                          'sum_size_gb': bucket['size_gb'],
                          'sum_info': 'Object Storage - Buckets (GB)',
+                         'count': bucket['count'],
                          'preauthenticated_requests': bucket['preauthenticated_requests'],
                          'object_lifecycle': bucket['object_lifecycle'],
                          'compartment_id': bucket['compartment_id'],
@@ -3392,6 +3399,7 @@ class ShowOCIData(object):
             data['compartment_path'] = lb['compartment_path']
             data['compartment_id'] = lb['compartment_id']
             data['subnet_ids'] = lb['subnet_ids']
+            data['time_created'] = lb['time_created']
             data['defined_tags'] = lb['defined_tags']
             data['freeform_tags'] = lb['freeform_tags']
             data['certificates'] = lb['certificates']
@@ -3414,6 +3422,7 @@ class ShowOCIData(object):
                     'default_backend_set_name': str(lo['default_backend_set_name']),
                     'path_route_set_name': lo['path_route_set_name'],
                     'rule_set_names': lo['rule_set_names'],
+                    'id': lo['id'],
                     'desc': (lo['id'].ljust(20) + " - " + str(lo['port']) + "/" + str(lo['protocol']) + " - BS: " + str(lo['default_backend_set_name']) + ("" if lo['ssl_configuration'] == "" else " - Cert: " + str(lo['ssl_configuration'])))
                 }
 

@@ -45,6 +45,7 @@ from .awr_snapshot_summary import AwrSnapshotSummary
 from .awr_source_summary import AwrSourceSummary
 from .basic_configuration_item_metadata import BasicConfigurationItemMetadata
 from .basic_configuration_item_summary import BasicConfigurationItemSummary
+from .change_autonomous_database_insight_advanced_features_details import ChangeAutonomousDatabaseInsightAdvancedFeaturesDetails
 from .change_database_insight_compartment_details import ChangeDatabaseInsightCompartmentDetails
 from .change_enterprise_manager_bridge_compartment_details import ChangeEnterpriseManagerBridgeCompartmentDetails
 from .change_exadata_insight_compartment_details import ChangeExadataInsightCompartmentDetails
@@ -123,6 +124,7 @@ from .em_managed_external_exadata_insight_summary import EmManagedExternalExadat
 from .em_managed_external_host_configuration_summary import EmManagedExternalHostConfigurationSummary
 from .em_managed_external_host_insight import EmManagedExternalHostInsight
 from .em_managed_external_host_insight_summary import EmManagedExternalHostInsightSummary
+from .enable_autonomous_database_insight_advanced_features_details import EnableAutonomousDatabaseInsightAdvancedFeaturesDetails
 from .enable_database_insight_details import EnableDatabaseInsightDetails
 from .enable_em_managed_external_database_insight_details import EnableEmManagedExternalDatabaseInsightDetails
 from .enable_em_managed_external_exadata_insight_details import EnableEmManagedExternalExadataInsightDetails
@@ -252,6 +254,8 @@ from .pe_comanaged_database_insight_summary import PeComanagedDatabaseInsightSum
 from .pe_comanaged_exadata_insight import PeComanagedExadataInsight
 from .pe_comanaged_exadata_insight_summary import PeComanagedExadataInsightSummary
 from .pe_comanaged_host_configuration_summary import PeComanagedHostConfigurationSummary
+from .pe_comanaged_host_insight import PeComanagedHostInsight
+from .pe_comanaged_host_insight_summary import PeComanagedHostInsightSummary
 from .pe_comanaged_managed_external_database_configuration_summary import PeComanagedManagedExternalDatabaseConfigurationSummary
 from .projected_data_item import ProjectedDataItem
 from .query_data_object_json_result_set_rows_collection import QueryDataObjectJsonResultSetRowsCollection
@@ -401,6 +405,7 @@ opsi_type_mapping = {
     "AwrSourceSummary": AwrSourceSummary,
     "BasicConfigurationItemMetadata": BasicConfigurationItemMetadata,
     "BasicConfigurationItemSummary": BasicConfigurationItemSummary,
+    "ChangeAutonomousDatabaseInsightAdvancedFeaturesDetails": ChangeAutonomousDatabaseInsightAdvancedFeaturesDetails,
     "ChangeDatabaseInsightCompartmentDetails": ChangeDatabaseInsightCompartmentDetails,
     "ChangeEnterpriseManagerBridgeCompartmentDetails": ChangeEnterpriseManagerBridgeCompartmentDetails,
     "ChangeExadataInsightCompartmentDetails": ChangeExadataInsightCompartmentDetails,
@@ -479,6 +484,7 @@ opsi_type_mapping = {
     "EmManagedExternalHostConfigurationSummary": EmManagedExternalHostConfigurationSummary,
     "EmManagedExternalHostInsight": EmManagedExternalHostInsight,
     "EmManagedExternalHostInsightSummary": EmManagedExternalHostInsightSummary,
+    "EnableAutonomousDatabaseInsightAdvancedFeaturesDetails": EnableAutonomousDatabaseInsightAdvancedFeaturesDetails,
     "EnableDatabaseInsightDetails": EnableDatabaseInsightDetails,
     "EnableEmManagedExternalDatabaseInsightDetails": EnableEmManagedExternalDatabaseInsightDetails,
     "EnableEmManagedExternalExadataInsightDetails": EnableEmManagedExternalExadataInsightDetails,
@@ -608,6 +614,8 @@ opsi_type_mapping = {
     "PeComanagedExadataInsight": PeComanagedExadataInsight,
     "PeComanagedExadataInsightSummary": PeComanagedExadataInsightSummary,
     "PeComanagedHostConfigurationSummary": PeComanagedHostConfigurationSummary,
+    "PeComanagedHostInsight": PeComanagedHostInsight,
+    "PeComanagedHostInsightSummary": PeComanagedHostInsightSummary,
     "PeComanagedManagedExternalDatabaseConfigurationSummary": PeComanagedManagedExternalDatabaseConfigurationSummary,
     "ProjectedDataItem": ProjectedDataItem,
     "QueryDataObjectJsonResultSetRowsCollection": QueryDataObjectJsonResultSetRowsCollection,

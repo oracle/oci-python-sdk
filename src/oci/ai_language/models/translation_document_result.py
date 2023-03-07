@@ -106,9 +106,31 @@ class TranslationDocumentResult(object):
     def source_language_code(self):
         """
         **[Required]** Gets the source_language_code of this TranslationDocumentResult.
-        Language code per the `ISO 639-1`__ standard.
-
-        __ https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+        Language code supported
+        Automatically detect language - auto
+        Arabic - ar
+        Brazilian Portuguese -  pt-BR
+        Czech - cs
+        Danish - da
+        Dutch - nl
+        English - en
+        Finnish - fi
+        French - fr
+        Canadian French - fr-CA
+        German - de
+        Italian - it
+        Japanese - ja
+        Korean - ko
+        Norwegian - no
+        Polish - pl
+        Romanian - ro
+        Simplified Chinese - zh-CN
+        Spanish - es
+        Swedish - sv
+        Traditional Chinese - zh-TW
+        Turkish - tr
+        Greek - el
+        Hebrew - he
 
 
         :return: The source_language_code of this TranslationDocumentResult.
@@ -120,9 +142,31 @@ class TranslationDocumentResult(object):
     def source_language_code(self, source_language_code):
         """
         Sets the source_language_code of this TranslationDocumentResult.
-        Language code per the `ISO 639-1`__ standard.
-
-        __ https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+        Language code supported
+        Automatically detect language - auto
+        Arabic - ar
+        Brazilian Portuguese -  pt-BR
+        Czech - cs
+        Danish - da
+        Dutch - nl
+        English - en
+        Finnish - fi
+        French - fr
+        Canadian French - fr-CA
+        German - de
+        Italian - it
+        Japanese - ja
+        Korean - ko
+        Norwegian - no
+        Polish - pl
+        Romanian - ro
+        Simplified Chinese - zh-CN
+        Spanish - es
+        Swedish - sv
+        Traditional Chinese - zh-TW
+        Turkish - tr
+        Greek - el
+        Hebrew - he
 
 
         :param source_language_code: The source_language_code of this TranslationDocumentResult.
@@ -134,9 +178,31 @@ class TranslationDocumentResult(object):
     def target_language_code(self):
         """
         **[Required]** Gets the target_language_code of this TranslationDocumentResult.
-        Language code per the `ISO 639-1`__ standard.
-
-        __ https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+        Language code supported
+        Automatically detect language - auto
+        Arabic - ar
+        Brazilian Portuguese -  pt-BR
+        Czech - cs
+        Danish - da
+        Dutch - nl
+        English - en
+        Finnish - fi
+        French - fr
+        Canadian French - fr-CA
+        German - de
+        Italian - it
+        Japanese - ja
+        Korean - ko
+        Norwegian - no
+        Polish - pl
+        Romanian - ro
+        Simplified Chinese - zh-CN
+        Spanish - es
+        Swedish - sv
+        Traditional Chinese - zh-TW
+        Turkish - tr
+        Greek - el
+        Hebrew - he
 
 
         :return: The target_language_code of this TranslationDocumentResult.
@@ -148,9 +214,31 @@ class TranslationDocumentResult(object):
     def target_language_code(self, target_language_code):
         """
         Sets the target_language_code of this TranslationDocumentResult.
-        Language code per the `ISO 639-1`__ standard.
-
-        __ https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+        Language code supported
+        Automatically detect language - auto
+        Arabic - ar
+        Brazilian Portuguese -  pt-BR
+        Czech - cs
+        Danish - da
+        Dutch - nl
+        English - en
+        Finnish - fi
+        French - fr
+        Canadian French - fr-CA
+        German - de
+        Italian - it
+        Japanese - ja
+        Korean - ko
+        Norwegian - no
+        Polish - pl
+        Romanian - ro
+        Simplified Chinese - zh-CN
+        Spanish - es
+        Swedish - sv
+        Traditional Chinese - zh-TW
+        Turkish - tr
+        Greek - el
+        Hebrew - he
 
 
         :param target_language_code: The target_language_code of this TranslationDocumentResult.

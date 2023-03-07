@@ -10,6 +10,8 @@ It uses APEX for Visualization and generates Daily e-mail report.
 [cost analysis](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/costanalysisoverview.htm) 
 and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm) features should be used instead.**
 
+Additional information located at [Adi Zohar Git](https://github.com/adizohar/usage_reports_to_adw)
+
 **Developed by Adi Zohar, 2020-2023**
 
 ## Main Features
@@ -48,14 +50,17 @@ The file name for each usage report is appended with an automatically incrementi
 
 More information can be found at https://docs.cloud.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm
 
-## Step by Step Installation Using Oracle cloud Marketplace
-Please check step by step guide - [step_by_step_inst_by_marketplace.md](step_by_step_inst_by_marketplace.md)
+## Step by Step Installation Using Oracle Cloud Marketplace
+Please check step by step guide - [step_by_step_marketplace.md](step_by_step_marketplace.md)
 
 ## Step by Step Installation Guide
 Please check step by step guide - [step_by_step_installation.md](step_by_step_installation.md)
 
+## Step by Step Manual Installation Guide
+Please check step by step manual guide - [step_by_step_manual_installation.md](step_by_step_manual_installation.md)
+
 ## Step by Step HowTo - More information
-Please check step by step HowTo  guide - [step_by_step_howto.md](step_by_step_howto.md)
+Please check step by step How To guide - [step_by_step_howto.md](step_by_step_howto.md)
 
 
 ## OCI SDK Modules Included:
@@ -71,6 +76,7 @@ Please check step by step HowTo  guide - [step_by_step_howto.md](step_by_step_ho
 - OCI_COST_TAG_KEYS - Tag keys of the cost reports
 - OCI_COST_REFERENCE - Reference table of the cost filter keys - SERVICE, REGION, COMPARTMENT, PRODUCT, SUBSCRIPTION
 - OCI_PRICE_LIST - Hold the price list and the cost per product 
+- OCI_LOAD_STATUS - Has the load file statistics
 
 ## OCI APIs Used:
 - IdentityClient.list_compartments - Policy COMPARTMENT_INSPECT
@@ -86,11 +92,11 @@ Please check step by step HowTo  guide - [step_by_step_howto.md](step_by_step_ho
 ### Installation of Python 3 incase you don't have Python3 installed:
 Please follow Python Documentation - https://docs.python.org/3/using/index.html
 
-### install oci SDK Packages:
+### Install OCI SDK Packages:
 Please follow Oracle Python SDK Documentation - https://github.com/oracle/oci-python-sdk
 
-### install requests package:
-pip install requests or pip3 install requests
+### Install requests and oracledb packages:
+pytnon3 -m pip install requests oracledb
 
 ## Setup connectivity using Instance Principals
 
@@ -98,7 +104,9 @@ pip install requests or pip3 install requests
 1. Login to your OCI Cloud console
 
 2. Create new Dynamic Group : UsageDownloadGroup  
-   Obtain Compute OCID and add rule - ALL {instance.id = 'ocid1.instance.oc1.xxxxxxxxxx'}
+   Use Compute Id or Compartment Id
+   ALL {instance.id = 'ocid1.instance.oc1.xxxxxxxxxx'}
+   ALL {instance.compaertment_id = 'ocid1.compartment.oc1.xxxxxxxxxx'}
 
 3. Create new Policy: UsageDownloadPolicy with Statements:
    define tenancy usage-report as ocid1.tenancy.oc1..aaaaaaaaned4fkpkisbwjlr56u7cj63lf3wffbilvqknstgtvzub7vhqkggq

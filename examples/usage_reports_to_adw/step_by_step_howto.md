@@ -27,6 +27,8 @@ and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/
 
 [9. How to Enable showoci extract on usage2adw vm](#9-how-to-enable-showoci-extract-on-usage2adw-vm)
 
+[10. How to unlock user USAGE and change password](#10-how-to-unlock-user-usage-and-change-password)
+
 ## 1. How to create additional APEX End User Accounts
 
 ```
@@ -110,7 +112,7 @@ Login to Usage2adw VM
 ## 4. How to upgrade the usage2adw application and APEX
 ```
    # on oci github:
-   bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-python-sdk/master/examples/usage_reports_to_adw/setup/setup_upgrade_usage2adw.sh)"    
+   bash -c "$(curl -L https://raw.githubusercontent.com/adizohar/usage_reports_to_adw/main/setup/setup_upgrade_usage2adw.sh)"    
 ```
 
 ## 5. How to Refresh the Autonomous Database Wallet for the usage2adw application
@@ -265,8 +267,8 @@ echo "This is a test message" | mail -s "Test" -r "report@oracleemaildelivery.co
 # Required if previous clone not includes run_daily_report.sh
 cd $HOME
 sudo yum install -y git
-git clone https://github.com/oracle/oci-python-sdk
-cd oci-python-sdk/examples/usage_reports_to_adw/shell_scripts
+git clone https://github.com/adizohar/usage_reports_to_adw
+cd usage_reports_to_adw/shell_scripts
 chmod +x run_daily_report.sh
 ```
 
@@ -454,12 +456,55 @@ Edit crontab using crontab -e and add/update the below (If exist remove the # be
 
 ### 9.5 showoci outputs
 
-Showoci output locations:
+ShowOCI output locations:
 
 ```
 /home/opc/showoci/report/local and /home/opc/showoci/report/local/csv
 Autonomous tables - OCI_SHOWOCI_*
 ```
+
+## 10. How to unlock user USAGE and change password
+
+### 10.1. Login to the VM host
+
+### 10.2. Obtain the database connect string
+
+```
+grep low $HOME/usage_reports_to_adw/config.user | awk -F= '{ print $2 }'
+```
+Example: adi19c_low
+
+### 10.3. Connect to the database using Admin, Please replace the connect_string from item above.
+   (if you don't know the admin password, please update the admin password at the OCI Console [here](https://docs.oracle.com/en-us/iaas/autonomous-database/doc/unlock-or-change-admin-database-user-password.html)
+
+```
+sqlplus admin@connect_string
+```
+
+### 10.4. Unloack the USAGE account if locked
+
+```
+ALTER USER USAGE ACCOUNT UNLOCK;
+```
+
+### 10.4. Change USAGE user password (), New Password must contain at least 12 chars, upper case, lower case and special symbol # or _
+
+```
+ALTER USER USAGE IDENTIFIED BY NEW_PASSWORD;
+```
+
+### 10.5. Update config.user file with new password
+
+```
+vi $HOME/usage_reports_to_adw/config.user
+```
+
+### 10.6. Test the application:
+
+```
+/home/opc/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh
+```
+
 
 ## License
 

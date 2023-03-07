@@ -20,7 +20,7 @@ import csv
 
 
 class ShowOCIOutput(object):
-    version = "23.02.14"
+    version = "23.03.07"
 
     ##########################################################################
     # spaces for align
@@ -1746,22 +1746,24 @@ class ShowOCIOutput(object):
             if not sq:
                 return
 
-            if sq["streams"]:
-                self.print_header("Streams", 2)
+            if "streams" in sq:
+                if sq["streams"]:
+                    self.print_header("Streams", 2)
 
-                for ct in sq["streams"]:
-                    print(self.taba + ct['name'] + ", partitions (" + ct['partitions'] + "), Created: " + ct['time_created'][0:16])
-                    print(self.tabs + "URL   : " + str(ct['messages_endpoint']))
-                    print("")
+                    for ct in sq["streams"]:
+                        print(self.taba + ct['name'] + ", partitions (" + ct['partitions'] + "), Created: " + ct['time_created'][0:16])
+                        print(self.tabs + "URL   : " + str(ct['messages_endpoint']))
+                        print("")
 
-            if sq["queues"]:
-                self.print_header("Queues", 2)
+            if "queues" in sq:
+                if sq["queues"]:
+                    self.print_header("Queues", 2)
 
-                for ct in sq["queues"]:
-                    print(self.taba + ct['name'] + ", Created: " + ct['time_created'][0:16])
-                    print(self.tabs + "URL   : " + str(ct['messages_endpoint']))
-                    print(self.tabs + "Params: Retention (Sec): " + str(ct['retention_in_seconds']) + ", Visibility: " + str(ct['visibility_in_seconds']) + ", Timeout: " + str(ct['timeout_in_seconds']) + ", Dead Letter Delivery Count: " + str(ct['dead_letter_queue_delivery_count']))
-                    print("")
+                    for ct in sq["queues"]:
+                        print(self.taba + ct['name'] + ", Created: " + ct['time_created'][0:16])
+                        print(self.tabs + "URL   : " + str(ct['messages_endpoint']))
+                        print(self.tabs + "Params: Retention (Sec): " + str(ct['retention_in_seconds']) + ", Visibility: " + str(ct['visibility_in_seconds']) + ", Timeout: " + str(ct['timeout_in_seconds']) + ", Dead Letter Delivery Count: " + str(ct['dead_letter_queue_delivery_count']))
+                        print("")
 
         except Exception as e:
             self.__print_error("__print_streams_queues_main", e)
@@ -2830,15 +2832,34 @@ class ShowOCISummary(object):
                 return
 
             if 'oic' in paas_services:
-                self.__summary_core_size(paas_services['oic'])
+                array = [x for x in paas_services['oic'] if x['lifecycle_state'] == 'ACTIVE']
+                self.__summary_core_size(array)
+                array = [x for x in paas_services['oic'] if x['lifecycle_state'] != 'ACTIVE']
+                self.__summary_core_size(array, add_info="Stopped ")
+
             if 'oac' in paas_services:
-                self.__summary_core_size(paas_services['oac'])
+                array = [x for x in paas_services['oac'] if x['lifecycle_state'] == 'ACTIVE']
+                self.__summary_core_size(array)
+                array = [x for x in paas_services['oac'] if x['lifecycle_state'] != 'ACTIVE']
+                self.__summary_core_size(array, add_info="Stopped ")
+
             if 'oce' in paas_services:
-                self.__summary_core_size(paas_services['oce'])
+                array = [x for x in paas_services['oce'] if x['lifecycle_state'] == 'ACTIVE']
+                self.__summary_core_size(array)
+                array = [x for x in paas_services['oce'] if x['lifecycle_state'] != 'ACTIVE']
+                self.__summary_core_size(array, add_info="Stopped ")
+
             if 'ocvs' in paas_services:
-                self.__summary_core_size(paas_services['ocvs'])
+                array = [x for x in paas_services['ocvs'] if x['lifecycle_state'] == 'ACTIVE']
+                self.__summary_core_size(array)
+                array = [x for x in paas_services['ocvs'] if x['lifecycle_state'] != 'ACTIVE']
+                self.__summary_core_size(array, add_info="Stopped ")
+
             if 'vb' in paas_services:
-                self.__summary_core_size(paas_services['vb'])
+                array = [x for x in paas_services['vb'] if x['lifecycle_state'] == 'ACTIVE']
+                self.__summary_core_size(array)
+                array = [x for x in paas_services['vb'] if x['lifecycle_state'] != 'ACTIVE']
+                self.__summary_core_size(array, add_info="Stopped ")
 
         except Exception as e:
             self.__print_error("__summary_paas_services_main", e)
@@ -2877,19 +2898,46 @@ class ShowOCISummary(object):
                 return
 
             if 'data_catalog' in data_ai:
-                self.__summary_core_size(data_ai['data_catalog'])
+                array = [x for x in data_ai['data_catalog'] if x['lifecycle_state'] == 'ACTIVE']
+                self.__summary_core_size(array)
+                array = [x for x in data_ai['data_catalog'] if x['lifecycle_state'] != 'ACTIVE']
+                self.__summary_core_size(array, add_info="Stopped ")
+
             if 'data_science' in data_ai:
-                self.__summary_core_size(data_ai['data_science'])
+                array = [x for x in data_ai['data_science'] if x['lifecycle_state'] == 'ACTIVE']
+                self.__summary_core_size(array)
+                array = [x for x in data_ai['data_science'] if x['lifecycle_state'] != 'ACTIVE']
+                self.__summary_core_size(array, add_info="Stopped ")
+
             if 'data_flow' in data_ai:
-                self.__summary_core_size(data_ai['data_flow'])
+                array = [x for x in data_ai['data_flow'] if x['lifecycle_state'] == 'ACTIVE']
+                self.__summary_core_size(array)
+                array = [x for x in data_ai['data_flow'] if x['lifecycle_state'] != 'ACTIVE']
+                self.__summary_core_size(array, add_info="Stopped ")
+
             if 'oda' in data_ai:
-                self.__summary_core_size(data_ai['oda'])
+                array = [x for x in data_ai['oda'] if x['lifecycle_state'] == 'ACTIVE']
+                self.__summary_core_size(array)
+                array = [x for x in data_ai['oda'] if x['lifecycle_state'] != 'ACTIVE']
+                self.__summary_core_size(array, add_info="Stopped ")
+
             if 'bds' in data_ai:
-                self.__summary_core_size(data_ai['bds'])
+                array = [x for x in data_ai['bds'] if x['lifecycle_state'] == 'ACTIVE']
+                self.__summary_core_size(array)
+                array = [x for x in data_ai['bds'] if x['lifecycle_state'] != 'ACTIVE']
+                self.__summary_core_size(array, add_info="Stopped ")
+
             if 'data_integration' in data_ai:
-                self.__summary_core_size(data_ai['data_integration'])
+                array = [x for x in data_ai['data_integration'] if x['lifecycle_state'] == 'ACTIVE']
+                self.__summary_core_size(array)
+                array = [x for x in data_ai['data_integration'] if x['lifecycle_state'] != 'ACTIVE']
+                self.__summary_core_size(array, add_info="Stopped ")
+
             if 'data_connectivity_registry' in data_ai:
-                self.__summary_core_size(data_ai['data_connectivity_registry'])
+                array = [x for x in data_ai['data_connectivity_registry'] if x['lifecycle_state'] == 'ACTIVE']
+                self.__summary_core_size(array)
+                array = [x for x in data_ai['data_connectivity_registry'] if x['lifecycle_state'] != 'ACTIVE']
+                self.__summary_core_size(array, add_info="Stopped ")
 
         except Exception as e:
             self.__print_error("__summary_data_ai_main", e)
@@ -3055,6 +3103,8 @@ class ShowOCISummary(object):
 
         try:
             for dbs in list_exa:
+                if not (dbs['lifecycle_state'] == 'TERMINATED' or dbs['lifecycle_state'] == 'DELETED'):
+                    self.summary_global_list.append({'type': dbs['sum_info'] + " - Count", 'size': 1})
 
                 for vm in dbs['vm_clusters']:
                     if 'cpu_core_count' in vm:
@@ -3097,7 +3147,7 @@ class ShowOCISummary(object):
 
         try:
             for dbs in list_exa:
-                if dbs['lifecycle_state'] == 'ACTIVE' or dbs['lifecycle_state'] == 'UPDATING':
+                if not (dbs['lifecycle_state'] == 'TERMINATED' or dbs['lifecycle_state'] == 'DELETED'):
                     self.summary_global_list.append({'type': dbs['sum_info'] + " - Count", 'size': 1})
 
                 for vm in dbs['vm_clusters']:
@@ -3208,7 +3258,7 @@ class ShowOCISummary(object):
     # sum core sizes
     ##########################################################################
 
-    def __summary_core_size(self, objects, sum_info="sum_info", sum_size="sum_size_gb"):
+    def __summary_core_size(self, objects, sum_info="sum_info", sum_size="sum_size_gb", add_info=""):
         try:
             if len(objects) == 0:
                 return
@@ -3217,7 +3267,7 @@ class ShowOCISummary(object):
                 if sum_info in obj and sum_size in obj:
                     if obj[sum_size] != '':
                         if float(obj[sum_size]) > 0:
-                            self.summary_global_list.append({'type': obj[sum_info], 'size': float(obj[sum_size])})
+                            self.summary_global_list.append({'type': add_info + obj[sum_info], 'size': float(obj[sum_size])})
 
         except Exception as e:
             self.__print_error("__summary_core_size", e)
@@ -5428,14 +5478,19 @@ class ShowOCICSV(object):
                             'log_access': log_access,
                             'logs': str(', '.join(x['name'] for x in load_balance_obj['logs'])),
                             'subnets': str(', '.join(x for x in lb['subnets'])),
+                            'listener_name': "No Listener",
                             'listener_port': "No Listener",
                             'listener_def_bs': "",
                             'listener_ssl': "",
                             'listener_path': "",
                             'listener_rule': "",
                             'listener_host': "",
+                            'time_created': lb['time_created'],
                             'lb_certificates': lb['certificates'],
-                            'loadbalancer_id': lb['id']
+                            'freeform_tags': self.__get_freeform_tags(lb['freeform_tags']),
+                            'defined_tags': self.__get_defined_tags(lb['defined_tags']),
+                            'loadbalancer_id': lb['id'],
+                            'id': lb['id']
                             }
                     self.csv_load_balancer.append(data)
 
@@ -5453,14 +5508,19 @@ class ShowOCICSV(object):
                             'log_access': log_access,
                             'logs': str(', '.join(x['name'] for x in load_balance_obj['logs'])),
                             'subnets': str(', '.join(x for x in lb['subnets'])),
+                            'listener_name': listener['id'],
                             'listener_port': listener['port'],
                             'listener_def_bs': listener['default_backend_set_name'],
                             'listener_ssl': listener['ssl_configuration'],
                             'listener_host': str(', '.join(x for x in listener['hostname_names'])),
                             'listener_path': listener['path_route_set_name'],
                             'listener_rule': str(', '.join(x for x in listener['rule_set_names'])),
+                            'time_created': lb['time_created'],
                             'lb_certificates': lb['certificates'],
-                            'loadbalancer_id': lb['id']
+                            'freeform_tags': self.__get_freeform_tags(lb['freeform_tags']),
+                            'defined_tags': self.__get_defined_tags(lb['defined_tags']),
+                            'loadbalancer_id': lb['id'],
+                            'id': lb['id'] + ":" + listener['id']
                             }
                     self.csv_load_balancer.append(data)
 
@@ -5540,13 +5600,17 @@ class ShowOCICSV(object):
                                 'type': ("Private" if lb['is_private'] else "Public"),
                                 'ip_addresses': str(', '.join(x for x in lb['ips'])),
                                 'subnets': str(', '.join(x for x in lb['subnets'])),
-                                'bs_name': bs['desc'],
+                                'bs_name': bs['name'],
+                                'bs_desc': bs['desc'],
                                 'bs_status': bs['status'],
                                 'health_check': bs['health_check']['desc1'] + " " + bs['health_check']['desc2'],
                                 'session_persistence': session_persistence,
                                 'ssl_cert': ssl_cert,
+                                'backend_name': backend['name'],
                                 'backend': backend['desc'],
-                                'loadbalancer_id': lb['id']
+                                'backend_ip': backend['ip_address'] + ":" + backend['port'],
+                                'loadbalancer_id': lb['id'],
+                                'id': lb['id'] + ":" + bs['name'] + ":" + backend['name'] + ":" + backend['ip_address'] + ":" + backend['port']
                                 }
                         self.csv_load_balancer_bs.append(data)
 
@@ -5606,8 +5670,12 @@ class ShowOCICSV(object):
                             'display_name': fs['display_name'],
                             'size_gb': fs['size_gb'],
                             'id': fs['id'],
+                            'time_created': fs['time_created'],
                             'exports': exports,
-                            'mount_ips': mount_ips
+                            'mount_ips': mount_ips,
+                            'snapshots': str(','.join(x for x in fs['snapshots'])),
+                            'freeform_tags': self.__get_freeform_tags(fs['freeform_tags']),
+                            'defined_tags': self.__get_defined_tags(fs['defined_tags'])
                             }
 
                     self.csv_file_storage.append(data)
@@ -5633,8 +5701,8 @@ class ShowOCICSV(object):
                         'compartment_name': ar['compartment_name'],
                         'compartment_path': ar['compartment_path'],
                         'bucket_name': ar['name'],
-                        'objects': ar['objects'],
-                        'size': ar['size'],
+                        'objects': ar['count'],
+                        'size_gb': ar['sum_size_gb'],
                         'preauthenticated_requests': ar['preauthenticated_requests'],
                         'object_lifecycle': ar['object_lifecycle'],
                         'public_access_type': ar['public_access_type'],
@@ -5646,6 +5714,9 @@ class ShowOCICSV(object):
                         'auto_tiering': ar['auto_tiering'],
                         'kms_key_id': ar['kms_key_id'],
                         'bucket_id': ar['id'],
+                        'time_created': ar['time_created'],
+                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(ar['defined_tags']),
                         'logs': str(', '.join(x['name'] for x in ar['logs']))
                     }
 
