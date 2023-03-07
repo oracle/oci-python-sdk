@@ -76,6 +76,7 @@ class HostInsightSummary(object):
 
         * :class:`~oci.opsi.models.MacsManagedExternalHostInsightSummary`
         * :class:`~oci.opsi.models.EmManagedExternalHostInsightSummary`
+        * :class:`~oci.opsi.models.PeComanagedHostInsightSummary`
         * :class:`~oci.opsi.models.MacsManagedCloudHostInsightSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -219,6 +220,9 @@ class HostInsightSummary(object):
 
         if type == 'EM_MANAGED_EXTERNAL_HOST':
             return 'EmManagedExternalHostInsightSummary'
+
+        if type == 'PE_COMANAGED_HOST':
+            return 'PeComanagedHostInsightSummary'
 
         if type == 'MACS_MANAGED_CLOUD_HOST':
             return 'MacsManagedCloudHostInsightSummary'

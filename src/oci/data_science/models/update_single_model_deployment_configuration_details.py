@@ -28,19 +28,26 @@ class UpdateSingleModelDeploymentConfigurationDetails(UpdateModelDeploymentConfi
             The value to assign to the model_configuration_details property of this UpdateSingleModelDeploymentConfigurationDetails.
         :type model_configuration_details: oci.data_science.models.UpdateModelConfigurationDetails
 
+        :param environment_configuration_details:
+            The value to assign to the environment_configuration_details property of this UpdateSingleModelDeploymentConfigurationDetails.
+        :type environment_configuration_details: oci.data_science.models.UpdateModelDeploymentEnvironmentConfigurationDetails
+
         """
         self.swagger_types = {
             'deployment_type': 'str',
-            'model_configuration_details': 'UpdateModelConfigurationDetails'
+            'model_configuration_details': 'UpdateModelConfigurationDetails',
+            'environment_configuration_details': 'UpdateModelDeploymentEnvironmentConfigurationDetails'
         }
 
         self.attribute_map = {
             'deployment_type': 'deploymentType',
-            'model_configuration_details': 'modelConfigurationDetails'
+            'model_configuration_details': 'modelConfigurationDetails',
+            'environment_configuration_details': 'environmentConfigurationDetails'
         }
 
         self._deployment_type = None
         self._model_configuration_details = None
+        self._environment_configuration_details = None
         self._deployment_type = 'SINGLE_MODEL'
 
     @property
@@ -62,6 +69,26 @@ class UpdateSingleModelDeploymentConfigurationDetails(UpdateModelDeploymentConfi
         :type: oci.data_science.models.UpdateModelConfigurationDetails
         """
         self._model_configuration_details = model_configuration_details
+
+    @property
+    def environment_configuration_details(self):
+        """
+        Gets the environment_configuration_details of this UpdateSingleModelDeploymentConfigurationDetails.
+
+        :return: The environment_configuration_details of this UpdateSingleModelDeploymentConfigurationDetails.
+        :rtype: oci.data_science.models.UpdateModelDeploymentEnvironmentConfigurationDetails
+        """
+        return self._environment_configuration_details
+
+    @environment_configuration_details.setter
+    def environment_configuration_details(self, environment_configuration_details):
+        """
+        Sets the environment_configuration_details of this UpdateSingleModelDeploymentConfigurationDetails.
+
+        :param environment_configuration_details: The environment_configuration_details of this UpdateSingleModelDeploymentConfigurationDetails.
+        :type: oci.data_science.models.UpdateModelDeploymentEnvironmentConfigurationDetails
+        """
+        self._environment_configuration_details = environment_configuration_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -23,7 +23,9 @@ from .management_agent_plugin_aggregation_collection import ManagementAgentPlugi
 from .management_agent_plugin_aggregation_dimensions import ManagementAgentPluginAggregationDimensions
 from .management_agent_plugin_details import ManagementAgentPluginDetails
 from .management_agent_plugin_summary import ManagementAgentPluginSummary
+from .management_agent_property import ManagementAgentProperty
 from .management_agent_summary import ManagementAgentSummary
+from .object_details import ObjectDetails
 from .set_auto_upgradable_config_details import SetAutoUpgradableConfigDetails
 from .update_management_agent_details import UpdateManagementAgentDetails
 from .update_management_agent_install_key_details import UpdateManagementAgentInstallKeyDetails
@@ -55,7 +57,9 @@ management_agent_type_mapping = {
     "ManagementAgentPluginAggregationDimensions": ManagementAgentPluginAggregationDimensions,
     "ManagementAgentPluginDetails": ManagementAgentPluginDetails,
     "ManagementAgentPluginSummary": ManagementAgentPluginSummary,
+    "ManagementAgentProperty": ManagementAgentProperty,
     "ManagementAgentSummary": ManagementAgentSummary,
+    "ObjectDetails": ObjectDetails,
     "SetAutoUpgradableConfigDetails": SetAutoUpgradableConfigDetails,
     "UpdateManagementAgentDetails": UpdateManagementAgentDetails,
     "UpdateManagementAgentInstallKeyDetails": UpdateManagementAgentInstallKeyDetails,

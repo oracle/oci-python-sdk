@@ -76,6 +76,7 @@ class HostInsight(object):
 
         * :class:`~oci.opsi.models.MacsManagedCloudHostInsight`
         * :class:`~oci.opsi.models.EmManagedExternalHostInsight`
+        * :class:`~oci.opsi.models.PeComanagedHostInsight`
         * :class:`~oci.opsi.models.MacsManagedExternalHostInsight`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -212,6 +213,9 @@ class HostInsight(object):
 
         if type == 'EM_MANAGED_EXTERNAL_HOST':
             return 'EmManagedExternalHostInsight'
+
+        if type == 'PE_COMANAGED_HOST':
+            return 'PeComanagedHostInsight'
 
         if type == 'MACS_MANAGED_EXTERNAL_HOST':
             return 'MacsManagedExternalHostInsight'

@@ -32,7 +32,7 @@ import platform
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "23.02.14"
+    version = "23.03.07"
     oci_compatible_version = "2.90.3"
 
     ##########################################################################
@@ -725,6 +725,15 @@ class ShowOCIService(object):
         return True
 
     ##########################################################################
+    # check_lifecycle_state_not_terminated
+    ##########################################################################
+    def check_lifecycle_state_active(self, lifecycle_state):
+        return not (lifecycle_state == 'DELETED' or lifecycle_state == 'DELETING' or
+                    lifecycle_state == 'TERMINATED' or lifecycle_state == 'TERMINATING' or
+                    lifecycle_state == 'UNAVAILABLE' or
+                    lifecycle_state == 'MIGRATED' or lifecycle_state == 'FAILED')
+
+    ##########################################################################
     # find shape info
     # returns CPUs, Memory and Local Storage SSD
     ##########################################################################
@@ -929,6 +938,7 @@ class ShowOCIService(object):
                 'closed connection' in str(code).lower() or
                 code == 'Forbidden' or
                 code == 'TooManyRequests' or
+                code == 'NotAuthorizedOrNotFound' or
                 code == 'IncorrectState' or
                 code == 'LimitExceeded'
                 )
@@ -4097,9 +4107,7 @@ class ShowOCIService(object):
                 # loop on array
                 # arr = oci.core.models.Instance
                 for arr in arrs:
-                    if (arr.lifecycle_state == oci.core.models.Instance.LIFECYCLE_STATE_TERMINATED or
-                            arr.lifecycle_state == oci.core.models.Instance.LIFECYCLE_STATE_PROVISIONING or
-                            arr.lifecycle_state == oci.core.models.Instance.LIFECYCLE_STATE_TERMINATING):
+                    if not self.check_lifecycle_state_active(arr.lifecycle_state):
                         continue
 
                     # load data
@@ -4337,7 +4345,7 @@ class ShowOCIService(object):
 
                 # loop on array
                 for arr in list_reservations:
-                    if (arr.lifecycle_state == 'DELETED' or arr.lifecycle_state == 'DELETING'):
+                    if not self.check_lifecycle_state_active(arr.lifecycle_state):
                         continue
 
                     values = ({
@@ -5472,7 +5480,7 @@ class ShowOCIService(object):
                 # arr = oci.core.models.VolumeBackup
                 for arr in volume_backups:
 
-                    if arr.lifecycle_state == "TERMINATED":
+                    if not self.check_lifecycle_state_active(arr.lifecycle_state):
                         continue
 
                     # add the rest
@@ -5618,6 +5626,7 @@ class ShowOCIService(object):
                     # add the rest
                     val = {'id': str(arr.id),
                            'shape_name': str(arr.shape_name),
+                           'time_created': str(arr.time_created)[0:16],
                            'shape_min_mbps': "",
                            'shape_max_mbps': "",
                            'display_name': str(arr.display_name),
@@ -6295,7 +6304,7 @@ class ShowOCIService(object):
                         if bucket:
                             val = {
                                 'name': str(arr.name),
-                                'time_created': str(arr.time_created),
+                                'time_created': str(arr.time_created)[0:16],
                                 'compartment_name': str(compartment['name']),
                                 'compartment_path': str(compartment['path']),
                                 'compartment_id': str(compartment['id']),
@@ -6313,6 +6322,7 @@ class ShowOCIService(object):
                                 'auto_tiering': str(bucket.auto_tiering) if bucket.auto_tiering else "",
                                 'id': str(bucket.id),
                                 'size_gb': "",
+                                'count': "",
                                 'approximate_count': "",
                                 'approximate_size': "",
                                 'object_lifecycle': "",
@@ -6327,6 +6337,7 @@ class ShowOCIService(object):
                                 val['approximate_count'] = str('{:11,.0f}'.format(objcnt))
                                 val['approximate_size'] = str('{:11,.1f}'.format(round(size / 1024 / 1024 / 1024, 1)))
                                 val['size_gb'] = str(round(size / 1024 / 1024 / 1024, 1))
+                                val['count'] = objcnt
 
                     except oci.exceptions.ServiceError as e:
                         if self.__check_service_error(e.code):
@@ -6749,11 +6760,17 @@ class ShowOCIService(object):
                     # query the stacks
                     # fs = oci.file_storage.models.FileSystemSummary.
                     for fs in file_systems:
-                        val = {'id': str(fs.id), 'display_name': str(fs.display_name),
-                               'time_created': str(fs.time_created), 'availability_domain': str(fs.availability_domain),
+                        val = {'id': str(fs.id),
+                               'display_name': str(fs.display_name),
+                               'time_created': str(fs.time_created)[0:16],
+                               'availability_domain': str(fs.availability_domain),
                                'size_gb': str(round(int(fs.metered_bytes) / 1024 / 1024 / 1024, 1)),
-                               'metered_bytes': str(fs.metered_bytes), 'snapshots': [],
-                               'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                               'metered_bytes': str(fs.metered_bytes),
+                               'snapshots': [],
+                               'defined_tags': [] if fs.defined_tags is None else fs.defined_tags,
+                               'freeform_tags': [] if fs.freeform_tags is None else fs.freeform_tags,
+                               'compartment_name': str(compartment['name']),
+                               'compartment_id': str(compartment['id']),
                                'compartment_path': str(compartment['path']),
                                'region_name': str(self.config['region'])}
 
@@ -7198,7 +7215,7 @@ class ShowOCIService(object):
                 # loop on the Exadata infrastructure
                 # dbs = oci.database.models.ExadataInfrastructureSummary
                 for dbs in list_exa:
-                    if (dbs.lifecycle_state == 'TERMINATED' or dbs.lifecycle_state == 'TERMINATING' or dbs.lifecycle_state == 'DELETING'):
+                    if not self.check_lifecycle_state_active(dbs.lifecycle_state):
                         continue
 
                     value = {'id': str(dbs.id),
@@ -7299,7 +7316,7 @@ class ShowOCIService(object):
 
                 # arr = oci.database.models.VmClusterSummary
                 for arr in vms:
-                    if arr.lifecycle_state == "TERMINATED" or arr.lifecycle_state == "TERMINATING":
+                    if not self.check_lifecycle_state_active(arr.lifecycle_state):
                         continue
 
                     value = {
@@ -7400,7 +7417,7 @@ class ShowOCIService(object):
 
                 # dbs = oci.database.models.AutonomousVmClusterSummary
                 for dbs in list_vms:
-                    if (dbs.lifecycle_state == "TERMINATED" or dbs.lifecycle_state == "TERMINATING"):
+                    if not self.check_lifecycle_state_active(dbs.lifecycle_state):
                         continue
 
                     value = {'id': str(dbs.id),
@@ -7583,8 +7600,7 @@ class ShowOCIService(object):
                 # loop on the Exadata infrastructure
                 # dbs = oci.database.models.CloudExadataInfrastructureSummary
                 for dbs in list_exa:
-                    if (dbs.lifecycle_state == oci.database.models.CloudExadataInfrastructureSummary.LIFECYCLE_STATE_TERMINATED or
-                            dbs.lifecycle_state == oci.database.models.CloudExadataInfrastructureSummary.LIFECYCLE_STATE_TERMINATING):
+                    if not self.check_lifecycle_state_active(dbs.lifecycle_state):
                         continue
 
                     value = {'id': str(dbs.id),
@@ -7684,8 +7700,7 @@ class ShowOCIService(object):
 
                 # arr = oci.database.models.CloudVmClusterSummary
                 for arr in vms:
-                    if (arr.lifecycle_state == oci.database.models.CloudVmClusterSummary.LIFECYCLE_STATE_TERMINATED or
-                            arr.lifecycle_state == oci.database.models.CloudVmClusterSummary.LIFECYCLE_STATE_TERMINATING):
+                    if not self.check_lifecycle_state_active(arr.lifecycle_state):
                         continue
 
                     value = {
@@ -7838,7 +7853,7 @@ class ShowOCIService(object):
 
                 # arr = oci.database.models.DbHomeSummary
                 for db_home in homes:
-                    if (db_home.lifecycle_state == "TERMINATED" or db_home.lifecycle_state == "TERMINATING"):
+                    if not self.check_lifecycle_state_active(db_home.lifecycle_state):
                         continue
 
                     value = {
@@ -7927,7 +7942,7 @@ class ShowOCIService(object):
                         raise
 
                 for backup in backups:
-                    if (backup.lifecycle_state == "DELETING" or backup.lifecycle_state == "DELETED"):
+                    if not self.check_lifecycle_state_active(backup.lifecycle_state):
                         continue
 
                     value = {
@@ -8049,7 +8064,7 @@ class ShowOCIService(object):
                 # loop on the db systems
                 # dbs = oci.database.models.DbSystemSummary
                 for dbs in list_db_systems:
-                    if (dbs.lifecycle_state == oci.database.models.DbSystemSummary.LIFECYCLE_STATE_TERMINATED or dbs.lifecycle_state == "MIGRATED"):
+                    if not self.check_lifecycle_state_active(dbs.lifecycle_state):
                         continue
 
                     value = {'id': str(dbs.id),
@@ -8300,7 +8315,7 @@ class ShowOCIService(object):
 
             # db = oci.database.models.DatabaseSummary
             for db in dbs:
-                if db.lifecycle_state == oci.database.models.DatabaseSummary.LIFECYCLE_STATE_TERMINATED:
+                if not self.check_lifecycle_state_active(db.lifecycle_state):
                     continue
 
                 value = {
@@ -8374,7 +8389,7 @@ class ShowOCIService(object):
 
             # db = oci.database.models.PluggableDatabaseSummary
             for db in dbs:
-                if db.lifecycle_state == "TERMINATED":
+                if not self.check_lifecycle_state_active(db.lifecycle_state):
                     continue
 
                 value = {
@@ -8533,7 +8548,7 @@ class ShowOCIService(object):
 
             # dg = oci.database.models.DataGuardAssociationSummary
             for dg in dgs:
-                if not dg.peer_database_id or dg.lifecycle_state == oci.database.models.DataGuardAssociationSummary.LIFECYCLE_STATE_TERMINATED or dg.lifecycle_state == oci.database.models.DataGuardAssociationSummary.LIFECYCLE_STATE_FAILED:
+                if not dg.peer_database_id or not self.check_lifecycle_state_active(dg.lifecycle_state):
                     continue
 
                 val = ({'id': str(dg.id),
@@ -8621,7 +8636,7 @@ class ShowOCIService(object):
                 # loop on the Exadata infrastructure
                 # dbs = oci.database.models.CloudAutonomousVmClusterSummary
                 for dbs in list_vms:
-                    if (dbs.lifecycle_state == "TERMINATED" or dbs.lifecycle_state == "TERMINATING"):
+                    if not self.check_lifecycle_state_active(dbs.lifecycle_state):
                         continue
 
                     value = {
@@ -8738,8 +8753,7 @@ class ShowOCIService(object):
 
                 # arr = oci.database.models.AutonomousContainerDatabaseSummary
                 for arr in vms:
-                    if (arr.lifecycle_state == oci.database.models.AutonomousContainerDatabaseSummary.LIFECYCLE_STATE_TERMINATED or
-                            arr.lifecycle_state == oci.database.models.AutonomousContainerDatabaseSummary.LIFECYCLE_STATE_TERMINATING):
+                    if not self.check_lifecycle_state_active(arr.lifecycle_state):
                         continue
 
                     value = {
@@ -8774,9 +8788,6 @@ class ShowOCIService(object):
                         'compartment_id': str(compartment['id']),
                         'region_name': str(self.config['region'])
                     }
-
-                    # add to main data
-                    data.append(value)
 
                     # add the data
                     cnt += 1
@@ -8836,7 +8847,7 @@ class ShowOCIService(object):
                 # dbs = oci.database.models.AutonomousDatabaseSummary
                 for dbs in list_autos:
                     value = {}
-                    if dbs.lifecycle_state == oci.database.models.AutonomousDatabaseSummary.LIFECYCLE_STATE_TERMINATED or dbs.lifecycle_state == oci.database.models.AutonomousDatabaseSummary.LIFECYCLE_STATE_UNAVAILABLE:
+                    if not self.check_lifecycle_state_active(dbs.lifecycle_state):
                         continue
 
                     value = {'id': str(dbs.id),
@@ -8975,7 +8986,7 @@ class ShowOCIService(object):
                 # dbs = oci.database.models.ExternalContainerDatabaseSummary
                 for dbs in list_externals:
                     value = {}
-                    if dbs.lifecycle_state == "TERMINATING" or dbs.lifecycle_state == "TERMINATED":
+                    if not self.check_lifecycle_state_active(dbs.lifecycle_state):
                         continue
 
                     # management license
@@ -9071,7 +9082,7 @@ class ShowOCIService(object):
                 # dbs = oci.database.models.ExternalPluggableDatabaseSummary
                 for dbs in list_externals:
                     value = {}
-                    if dbs.lifecycle_state == "TERMINATING" or dbs.lifecycle_state == "TERMINATED":
+                    if not self.check_lifecycle_state_active(dbs.lifecycle_state):
                         continue
 
                     # management license
@@ -9168,7 +9179,7 @@ class ShowOCIService(object):
                 # dbs = oci.database.models.ExternalNonContainerDatabaseSummary
                 for dbs in list_externals:
                     value = {}
-                    if dbs.lifecycle_state == "TERMINATING" or dbs.lifecycle_state == "TERMINATED":
+                    if not self.check_lifecycle_state_active(dbs.lifecycle_state):
                         continue
 
                     # management license
@@ -9265,7 +9276,7 @@ class ShowOCIService(object):
                 # list_tables = oci.nosql.models.TableCollection
                 for tab in list_tables:
                     value = {}
-                    if tab.lifecycle_state == 'DELETED' or tab.lifecycle_state == 'FAILED':
+                    if not self.check_lifecycle_state_active(tab.lifecycle_state):
                         continue
 
                     value = {'id': str(tab.id),
@@ -9348,7 +9359,7 @@ class ShowOCIService(object):
                 # databases = oci.mysql.models.DbSystemSummary
                 for mysqls in databases:
                     value = {}
-                    if mysqls.lifecycle_state == 'DELETED' or mysqls.lifecycle_state == 'FAILED':
+                    if not self.check_lifecycle_state_active(mysqls.lifecycle_state):
                         continue
 
                     try:
@@ -9467,7 +9478,7 @@ class ShowOCIService(object):
                 # loop on auto
                 # array = oci.database.models.DatabaseSoftwareImageSummary
                 for array in db_soft_images:
-                    if array.lifecycle_state == 'TERMINATED' or array.lifecycle_state == 'FAILED':
+                    if not self.check_lifecycle_state_active(array.lifecycle_state):
                         continue
 
                     value = {'id': str(array.id),
@@ -9549,7 +9560,7 @@ class ShowOCIService(object):
                 # loop on auto
                 # array = oci.golden_gate.models.DeploymentSummary
                 for array in gg_deployments:
-                    if array.lifecycle_state == 'TERMINATED' or array.lifecycle_state == 'FAILED' or array.lifecycle_state == 'DELETED':
+                    if not self.check_lifecycle_state_active(array.lifecycle_state):
                         continue
 
                     value = {'id': str(array.id),
@@ -9639,7 +9650,7 @@ class ShowOCIService(object):
                 # loop on auto
                 # array = oci.golden_gate.models.DatabaseRegistrationSummary(*
                 for array in db_registrations:
-                    if array.lifecycle_state == 'TERMINATED' or array.lifecycle_state == 'FAILED' or array.lifecycle_state == 'DELETED':
+                    if not self.check_lifecycle_state_active(array.lifecycle_state):
                         continue
 
                     value = {'id': str(array.id),
@@ -9867,7 +9878,7 @@ class ShowOCIService(object):
 
                 # arr = oci.container_engine.models.ClusterSummary
                 for arr in list_clusters:
-                    if arr.lifecycle_state == oci.container_engine.models.ClusterSummary.LIFECYCLE_STATE_DELETED:
+                    if not self.check_lifecycle_state_active(arr.lifecycle_state):
                         continue
 
                     val = {'id': str(arr.id), 'name': str(arr.name),
@@ -10407,7 +10418,7 @@ class ShowOCIService(object):
 
                 # fns = oci.functions.models.ApplicationSummary
                 for fun in funs:
-                    if fun.lifecycle_state == 'TERMINATED':
+                    if not self.check_lifecycle_state_active(fun.lifecycle_state):
                         continue
 
                     val = {
@@ -11061,7 +11072,7 @@ class ShowOCIService(object):
 
                 # sub = oci.ons.models.SubscriptionSummary
                 for sub in subs:
-                    if sub.lifecycle_state != oci.ons.models.SubscriptionSummary.LIFECYCLE_STATE_ACTIVE:
+                    if not self.check_lifecycle_state_active(sub.lifecycle_state):
                         continue
 
                     val = {'id': str(sub.id),
@@ -11758,7 +11769,7 @@ class ShowOCIService(object):
 
                 except oci.exceptions.ServiceError as e:
                     if self.__check_service_error(e.code):
-                        self.__load_print_auth_warning()
+                        self.__load_print_auth_warning(increase_warning=False)
                         continue
                     raise
                 except oci.exceptions.ConnectTimeout:
@@ -11769,29 +11780,30 @@ class ShowOCIService(object):
 
                 # arr = oci.data_connectivity.models.RegistrySummaryCollection
                 for arr in array:
-                    if (arr.lifecycle_state == 'ACTIVE' or arr.lifecycle_state == 'UPDATING'):
+                    if not self.check_lifecycle_state_active(arr.lifecycle_state):
+                        continue
 
-                        val = {'id': str(arr.id),
-                               'description': str(arr.description),
-                               'display_name': str(arr.display_name),
-                               'time_created': str(arr.time_created),
-                               'time_updated': str(arr.time_updated),
-                               'updated_by': str(arr.updated_by),
-                               'lifecycle_state': str(arr.lifecycle_state),
-                               'state_message': str(arr.state_message),
-                               'sum_info': "Data Conn Registry",
-                               'sum_size_gb': str("1"),
-                               'compartment_name': str(compartment['name']),
-                               'compartment_path': str(compartment['path']),
-                               'compartment_id': str(compartment['id']),
-                               'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
-                               'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
-                               'region_name': str(self.config['region'])
-                               }
+                    val = {
+                        'id': str(arr.id),
+                        'description': str(arr.description),
+                        'display_name': str(arr.display_name),
+                        'time_created': str(arr.time_created),
+                        'time_updated': str(arr.time_updated),
+                        'updated_by': str(arr.updated_by),
+                        'lifecycle_state': str(arr.lifecycle_state),
+                        'state_message': str(arr.state_message),
+                        'sum_info': "Data Conn Registry",
+                        'sum_size_gb': str("1"),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                        'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                        'region_name': str(self.config['region'])}
 
-                        # add the data
-                        cnt += 1
-                        data.append(val)
+                    # add the data
+                    cnt += 1
+                    data.append(val)
 
             self.__load_print_cnt(cnt, start_time)
             return data
@@ -11846,28 +11858,29 @@ class ShowOCIService(object):
 
                 # arr = oci.data_catalog.models.CatalogSummary
                 for arr in array:
-                    if (arr.lifecycle_state == 'ACTIVE' or arr.lifecycle_state == 'UPDATING'):
+                    if not self.check_lifecycle_state_active(arr.lifecycle_state):
+                        continue
 
-                        val = {'id': str(arr.id),
-                               'display_name': str(arr.display_name),
-                               'time_created': str(arr.time_created),
-                               'time_updated': str(arr.time_updated),
-                               'number_of_objects': str(arr.number_of_objects),
-                               'lifecycle_state': str(arr.lifecycle_state),
-                               'lifecycle_details': str(arr.lifecycle_details),
-                               'sum_info': "Data Catalog",
-                               'sum_size_gb': str("1"),
-                               'compartment_name': str(compartment['name']),
-                               'compartment_path': str(compartment['path']),
-                               'compartment_id': str(compartment['id']),
-                               'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
-                               'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
-                               'region_name': str(self.config['region'])
-                               }
+                    val = {
+                        'id': str(arr.id),
+                        'display_name': str(arr.display_name),
+                        'time_created': str(arr.time_created),
+                        'time_updated': str(arr.time_updated),
+                        'number_of_objects': str(arr.number_of_objects),
+                        'lifecycle_state': str(arr.lifecycle_state),
+                        'lifecycle_details': str(arr.lifecycle_details),
+                        'sum_info': "Data Catalog",
+                        'sum_size_gb': str("1"),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                        'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                        'region_name': str(self.config['region'])}
 
-                        # add the data
-                        cnt += 1
-                        data.append(val)
+                    # add the data
+                    cnt += 1
+                    data.append(val)
 
             self.__load_print_cnt(cnt, start_time)
             return data
@@ -11922,27 +11935,28 @@ class ShowOCIService(object):
 
                 # arr = oci.data_science.models.ProjectSummary
                 for arr in array:
-                    if (arr.lifecycle_state == 'ACTIVE' or arr.lifecycle_state == 'UPDATING'):
+                    if not self.check_lifecycle_state_active(arr.lifecycle_state):
+                        continue
 
-                        val = {'id': str(arr.id),
-                               'display_name': str(arr.display_name),
-                               'time_created': str(arr.time_created),
-                               'description': str(arr.description),
-                               'created_by': str(arr.created_by),
-                               'lifecycle_state': str(arr.lifecycle_state),
-                               'sum_info': "Data Science",
-                               'sum_size_gb': str("1"),
-                               'compartment_name': str(compartment['name']),
-                               'compartment_path': str(compartment['path']),
-                               'compartment_id': str(compartment['id']),
-                               'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
-                               'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
-                               'region_name': str(self.config['region'])
-                               }
+                    val = {
+                        'id': str(arr.id),
+                        'display_name': str(arr.display_name),
+                        'time_created': str(arr.time_created),
+                        'description': str(arr.description),
+                        'created_by': str(arr.created_by),
+                        'lifecycle_state': str(arr.lifecycle_state),
+                        'sum_info': "Data Science",
+                        'sum_size_gb': str("1"),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                        'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                        'region_name': str(self.config['region'])}
 
-                        # add the data
-                        cnt += 1
-                        data.append(val)
+                    # add the data
+                    cnt += 1
+                    data.append(val)
 
             self.__load_print_cnt(cnt, start_time)
             return data
@@ -11997,29 +12011,30 @@ class ShowOCIService(object):
 
                 # arr = oci.data_flow.models.ApplicationSummary
                 for arr in array:
-                    if (arr.lifecycle_state == 'ACTIVE' or arr.lifecycle_state == 'UPDATING'):
+                    if not self.check_lifecycle_state_active(arr.lifecycle_state):
+                        continue
 
-                        val = {'id': str(arr.id),
-                               'display_name': str(arr.display_name),
-                               'time_created': str(arr.time_created),
-                               'time_updated': str(arr.time_updated),
-                               'language': str(arr.language),
-                               'lifecycle_state': str(arr.lifecycle_state),
-                               'owner_principal_id': str(arr.owner_principal_id),
-                               'owner_user_name': str(arr.owner_user_name),
-                               'sum_info': "Data Flow",
-                               'sum_size_gb': str("1"),
-                               'compartment_name': str(compartment['name']),
-                               'compartment_path': str(compartment['path']),
-                               'compartment_id': str(compartment['id']),
-                               'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
-                               'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
-                               'region_name': str(self.config['region'])
-                               }
+                    val = {
+                        'id': str(arr.id),
+                        'display_name': str(arr.display_name),
+                        'time_created': str(arr.time_created),
+                        'time_updated': str(arr.time_updated),
+                        'language': str(arr.language),
+                        'lifecycle_state': str(arr.lifecycle_state),
+                        'owner_principal_id': str(arr.owner_principal_id),
+                        'owner_user_name': str(arr.owner_user_name),
+                        'sum_info': "Data Flow",
+                        'sum_size_gb': str("1"),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                        'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                        'region_name': str(self.config['region'])}
 
-                        # add the data
-                        cnt += 1
-                        data.append(val)
+                    # add the data
+                    cnt += 1
+                    data.append(val)
 
             self.__load_print_cnt(cnt, start_time)
             return data
@@ -12073,28 +12088,30 @@ class ShowOCIService(object):
 
                 # oda = oci.oda.models.OdaInstanceSummary
                 for oda in odas:
-                    if (oda.lifecycle_state == 'ACTIVE' or oda.lifecycle_state == 'UPDATING'):
-                        val = {'id': str(oda.id),
-                               'display_name': str(oda.display_name),
-                               'description': str(oda.description),
-                               'shape_name': str(oda.shape_name),
-                               'time_created': str(oda.time_created),
-                               'time_updated': str(oda.time_updated),
-                               'lifecycle_state': str(oda.lifecycle_state),
-                               'lifecycle_sub_state': str(oda.lifecycle_sub_state),
-                               'state_message': str(oda.state_message),
-                               'sum_info': "Digital Assistant " + str(oda.shape_name),
-                               'sum_size_gb': str("1"),
-                               'compartment_name': str(compartment['name']),
-                               'compartment_path': str(compartment['path']),
-                               'compartment_id': str(compartment['id']),
-                               'defined_tags': [] if oda.defined_tags is None else oda.defined_tags,
-                               'freeform_tags': [] if oda.freeform_tags is None else oda.freeform_tags,
-                               'region_name': str(self.config['region'])}
+                    if not self.check_lifecycle_state_active(oda.lifecycle_state):
+                        continue
+                    val = {
+                        'id': str(oda.id),
+                        'display_name': str(oda.display_name),
+                        'description': str(oda.description),
+                        'shape_name': str(oda.shape_name),
+                        'time_created': str(oda.time_created),
+                        'time_updated': str(oda.time_updated),
+                        'lifecycle_state': str(oda.lifecycle_state),
+                        'lifecycle_sub_state': str(oda.lifecycle_sub_state),
+                        'state_message': str(oda.state_message),
+                        'sum_info': "Digital Assistant " + str(oda.shape_name),
+                        'sum_size_gb': str("1"),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'defined_tags': [] if oda.defined_tags is None else oda.defined_tags,
+                        'freeform_tags': [] if oda.freeform_tags is None else oda.freeform_tags,
+                        'region_name': str(self.config['region'])}
 
-                        # add the data
-                        cnt += 1
-                        data.append(val)
+                    # add the data
+                    cnt += 1
+                    data.append(val)
 
             self.__load_print_cnt(cnt, start_time)
             return data
@@ -12149,28 +12166,31 @@ class ShowOCIService(object):
 
                 # bds = bds.models.BdsInstanceSummary
                 for bds in bdss:
-                    if (bds.lifecycle_state == 'ACTIVE' or bds.lifecycle_state == 'UPDATING' or bds.lifecycle_state == 'RESUMING'):
-                        val = {'id': str(bds.id),
-                               'display_name': str(bds.display_name),
-                               'number_of_nodes': str(bds.number_of_nodes),
-                               'cluster_version': str(bds.cluster_version),
-                               'is_high_availability': str(bds.is_high_availability),
-                               'is_secure': str(bds.is_secure),
-                               'lifecycle_state': str(bds.lifecycle_state),
-                               'is_cloud_sql_configured': str(bds.is_cloud_sql_configured),
-                               'time_created': str(bds.time_created),
-                               'compartment_name': str(compartment['name']),
-                               'compartment_path': str(compartment['path']),
-                               'compartment_id': str(compartment['id']),
-                               'sum_info': "Big Data Service (Nodes)",
-                               'sum_size_gb': str(bds.number_of_nodes),
-                               'defined_tags': [] if bds.defined_tags is None else bds.defined_tags,
-                               'freeform_tags': [] if bds.freeform_tags is None else bds.freeform_tags,
-                               'region_name': str(self.config['region'])}
+                    if not self.check_lifecycle_state_active(bds.lifecycle_state):
+                        continue
 
-                        # add the data
-                        cnt += 1
-                        data.append(val)
+                    val = {
+                        'id': str(bds.id),
+                        'display_name': str(bds.display_name),
+                        'number_of_nodes': str(bds.number_of_nodes),
+                        'cluster_version': str(bds.cluster_version),
+                        'is_high_availability': str(bds.is_high_availability),
+                        'is_secure': str(bds.is_secure),
+                        'lifecycle_state': str(bds.lifecycle_state),
+                        'is_cloud_sql_configured': str(bds.is_cloud_sql_configured),
+                        'time_created': str(bds.time_created),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'sum_info': "Big Data Service (Nodes)",
+                        'sum_size_gb': str(bds.number_of_nodes),
+                        'defined_tags': [] if bds.defined_tags is None else bds.defined_tags,
+                        'freeform_tags': [] if bds.freeform_tags is None else bds.freeform_tags,
+                        'region_name': str(self.config['region'])}
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
 
             self.__load_print_cnt(cnt, start_time)
             return data
@@ -12224,25 +12244,28 @@ class ShowOCIService(object):
 
                 # di = oci.data_integration.models.WorkspaceSummary
                 for di in dis:
-                    if (di.lifecycle_state == 'ACTIVE' or di.lifecycle_state == 'UPDATING' or di.lifecycle_state == 'RESUMING'):
-                        val = {'id': str(di.id),
-                               'description': str(di.description),
-                               'display_name': str(di.display_name),
-                               'lifecycle_state': str(di.lifecycle_state),
-                               'time_created': str(di.time_created),
-                               'time_updated': str(di.time_updated),
-                               'compartment_name': str(compartment['name']),
-                               'compartment_path': str(compartment['path']),
-                               'compartment_id': str(compartment['id']),
-                               'sum_info': "Data Integration (Workspaces)",
-                               'sum_size_gb': str(1),
-                               'defined_tags': [] if di.defined_tags is None else di.defined_tags,
-                               'freeform_tags': [] if di.freeform_tags is None else di.freeform_tags,
-                               'region_name': str(self.config['region'])}
+                    if not self.check_lifecycle_state_active(di.lifecycle_state):
+                        continue
 
-                        # add the data
-                        cnt += 1
-                        data.append(val)
+                    val = {
+                        'id': str(di.id),
+                        'description': str(di.description),
+                        'display_name': str(di.display_name),
+                        'lifecycle_state': str(di.lifecycle_state),
+                        'time_created': str(di.time_created),
+                        'time_updated': str(di.time_updated),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'sum_info': "Data Integration (Workspaces)",
+                        'sum_size_gb': str(1),
+                        'defined_tags': [] if di.defined_tags is None else di.defined_tags,
+                        'freeform_tags': [] if di.freeform_tags is None else di.freeform_tags,
+                        'region_name': str(self.config['region'])}
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
 
             self.__load_print_cnt(cnt, start_time)
             return data
@@ -12359,32 +12382,36 @@ class ShowOCIService(object):
 
                 # oic = oci.integration.models.IntegrationInstanceSummary
                 for oic in oics:
-                    if (oic.lifecycle_state == 'ACTIVE' or oic.lifecycle_state == 'UPDATING'):
+                    if not self.check_lifecycle_state_active(oic.lifecycle_state):
+                        continue
 
-                        val = {'id': str(oic.id),
-                               'display_name': str(oic.display_name),
-                               'integration_instance_type': str(oic.integration_instance_type),
-                               'time_created': str(oic.time_created),
-                               'time_updated': str(oic.time_updated),
-                               'lifecycle_state': str(oic.lifecycle_state),
-                               'state_message': str(oic.state_message),
-                               'instance_url': str(oic.instance_url),
-                               'message_packs': str(oic.message_packs),
-                               'is_byol': oic.is_byol,
-                               'sum_info': "PaaS OIC Native " + ("BYOL" if oic.is_byol else "INCL") + " - Msg Pack",
-                               'sum_size_gb': str(oic.message_packs),
-                               'is_file_server_enabled': str(oic.is_file_server_enabled),
-                               'consumption_model': str(oic.consumption_model),
-                               'defined_tags': [],
-                               'freeform_tags': [],
-                               'compartment_name': str(compartment['name']),
-                               'compartment_path': str(compartment['path']),
-                               'compartment_id': str(compartment['id']),
-                               'region_name': str(self.config['region'])}
+                    val = {
+                        'id': str(oic.id),
+                        'display_name': str(oic.display_name),
+                        'integration_instance_type': str(oic.integration_instance_type),
+                        'time_created': str(oic.time_created),
+                        'time_updated': str(oic.time_updated),
+                        'lifecycle_state': str(oic.lifecycle_state),
+                        'state_message': str(oic.state_message),
+                        'instance_url': str(oic.instance_url),
+                        'message_packs': str(oic.message_packs),
+                        'is_byol': oic.is_byol,
+                        'sum_info': "PaaS OIC Native " + ("BYOL" if oic.is_byol else "INCL") + " - Msg Pack",
+                        'sum_size_gb': str(oic.message_packs),
+                        'is_file_server_enabled': str(oic.is_file_server_enabled),
+                        'is_visual_builder_enabled': str(oic.is_visual_builder_enabled),
+                        'shape': str(oic.shape),
+                        'consumption_model': str(oic.consumption_model),
+                        'defined_tags': [] if oic.defined_tags is None else oic.defined_tags,
+                        'freeform_tags': [] if oic.freeform_tags is None else oic.freeform_tags,
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'region_name': str(self.config['region'])}
 
-                        # add the data
-                        cnt += 1
-                        data.append(val)
+                    # add the data
+                    cnt += 1
+                    data.append(val)
 
             self.__load_print_cnt(cnt, start_time)
             return data
@@ -12439,106 +12466,108 @@ class ShowOCIService(object):
 
                 # vmware_summary = oci.ocvp.models.SddcSummary
                 for vmware_summary in ocvs:
-                    if (vmware_summary.lifecycle_state == 'ACTIVE' or vmware_summary.lifecycle_state == 'UPDATING' or vmware_summary.lifecycle_state == 'CREATING'):
+                    if not self.check_lifecycle_state_active(vmware_summary.lifecycle_state):
+                        continue
 
-                        # get vmware object with more details
-                        # vmware = oci.ocvp.models.Sddc
-                        vmware = ocvs_client.get_sddc(vmware_summary.id).data
+                    # get vmware object with more details
+                    # vmware = oci.ocvp.models.Sddc
+                    vmware = ocvs_client.get_sddc(vmware_summary.id).data
 
-                        val = {'id': str(vmware.id),
-                               'display_name': str(vmware.display_name),
-                               'compute_availability_domain': str(vmware.compute_availability_domain),
-                               'instance_display_name_prefix': str(vmware.instance_display_name_prefix),
-                               'vmware_software_version': str(vmware.vmware_software_version),
-                               'esxi_hosts_count': str(vmware.esxi_hosts_count),
-                               'nsx_manager_fqdn': str(vmware.nsx_manager_fqdn),
-                               'nsx_manager_private_ip_id': str(vmware.nsx_manager_private_ip_id),
-                               'nsx_manager_private_ip': self.__load_core_network_single_privateip(virtual_network, vmware.nsx_manager_private_ip_id, False),
-                               'nsx_manager_username': str(vmware.nsx_manager_username),
-                               'nsx_manager_initial_password': str(vmware.nsx_manager_initial_password),
-                               'vcenter_fqdn': str(vmware.vcenter_fqdn),
-                               'vcenter_username': str(vmware.vcenter_username),
-                               'vcenter_private_ip_id': str(vmware.vcenter_private_ip_id),
-                               'vcenter_private_ip': self.__load_core_network_single_privateip(virtual_network, vmware.vcenter_private_ip_id, False),
-                               'vcenter_initial_password': str(vmware.vcenter_initial_password),
-                               'workload_network_cidr': str(vmware.workload_network_cidr),
-                               'nsx_overlay_segment_name': str(vmware.nsx_overlay_segment_name),
-                               'nsx_edge_uplink_ip_id': str(vmware.nsx_edge_uplink_ip_id),
-                               'nsx_edge_uplink_ip': self.__load_core_network_single_privateip(virtual_network, vmware.nsx_edge_uplink_ip_id, True),
-                               'provisioning_subnet_id': str(vmware.provisioning_subnet_id),
-                               'provisioning_subnet': self.get_network_subnet(vmware.provisioning_subnet_id, True),
-                               'vsphere_vlan_id': str(vmware.vsphere_vlan_id),
-                               'vsphere_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.vsphere_vlan_id),
-                               'vmotion_vlan_id': str(vmware.vmotion_vlan_id),
-                               'vmotion_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.vmotion_vlan_id),
-                               'vsan_vlan_id': str(vmware.vsan_vlan_id),
-                               'vsan_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.vsan_vlan_id),
-                               'nsx_v_tep_vlan_id': str(vmware.nsx_v_tep_vlan_id),
-                               'nsx_v_tep_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.nsx_v_tep_vlan_id),
-                               'nsx_edge_v_tep_vlan_id': str(vmware.nsx_edge_v_tep_vlan_id),
-                               'nsx_edge_v_tep_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.nsx_edge_v_tep_vlan_id),
-                               'nsx_edge_uplink1_vlan_id': str(vmware.nsx_edge_uplink1_vlan_id),
-                               'nsx_edge_uplink1_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.nsx_edge_uplink1_vlan_id),
-                               'nsx_edge_uplink2_vlan_id': str(vmware.nsx_edge_uplink2_vlan_id),
-                               'nsx_edge_uplink2_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.nsx_edge_uplink2_vlan_id),
-                               'hcx_private_ip_id': str(vmware.hcx_private_ip_id),
-                               'hcx_fqdn': str(vmware.hcx_fqdn),
-                               'hcx_initial_password': str(vmware.hcx_initial_password),
-                               'hcx_vlan_id': str(vmware.hcx_vlan_id),
-                               'hcx_on_prem_key': str(vmware.hcx_on_prem_key),
-                               'is_hcx_enabled': str(vmware.is_hcx_enabled),
-                               'time_created': str(vmware.time_created),
-                               'time_updated': str(vmware.time_updated),
-                               'lifecycle_state': str(vmware.lifecycle_state),
-                               'sum_info': "PaaS OCVS VMWare ESXi Servers",
-                               'sum_size_gb': str(vmware.esxi_hosts_count),
-                               'compartment_name': str(compartment['name']),
-                               'compartment_path': str(compartment['path']),
-                               'compartment_id': str(compartment['id']),
-                               'defined_tags': [] if vmware.defined_tags is None else vmware.defined_tags,
-                               'freeform_tags': [] if vmware.freeform_tags is None else vmware.freeform_tags,
-                               'esxihosts': [],
-                               'region_name': str(self.config['region'])}
+                    val = {
+                        'id': str(vmware.id),
+                        'display_name': str(vmware.display_name),
+                        'compute_availability_domain': str(vmware.compute_availability_domain),
+                        'instance_display_name_prefix': str(vmware.instance_display_name_prefix),
+                        'vmware_software_version': str(vmware.vmware_software_version),
+                        'esxi_hosts_count': str(vmware.esxi_hosts_count),
+                        'nsx_manager_fqdn': str(vmware.nsx_manager_fqdn),
+                        'nsx_manager_private_ip_id': str(vmware.nsx_manager_private_ip_id),
+                        'nsx_manager_private_ip': self.__load_core_network_single_privateip(virtual_network, vmware.nsx_manager_private_ip_id, False),
+                        'nsx_manager_username': str(vmware.nsx_manager_username),
+                        'nsx_manager_initial_password': str(vmware.nsx_manager_initial_password),
+                        'vcenter_fqdn': str(vmware.vcenter_fqdn),
+                        'vcenter_username': str(vmware.vcenter_username),
+                        'vcenter_private_ip_id': str(vmware.vcenter_private_ip_id),
+                        'vcenter_private_ip': self.__load_core_network_single_privateip(virtual_network, vmware.vcenter_private_ip_id, False),
+                        'vcenter_initial_password': str(vmware.vcenter_initial_password),
+                        'workload_network_cidr': str(vmware.workload_network_cidr),
+                        'nsx_overlay_segment_name': str(vmware.nsx_overlay_segment_name),
+                        'nsx_edge_uplink_ip_id': str(vmware.nsx_edge_uplink_ip_id),
+                        'nsx_edge_uplink_ip': self.__load_core_network_single_privateip(virtual_network, vmware.nsx_edge_uplink_ip_id, True),
+                        'provisioning_subnet_id': str(vmware.provisioning_subnet_id),
+                        'provisioning_subnet': self.get_network_subnet(vmware.provisioning_subnet_id, True),
+                        'vsphere_vlan_id': str(vmware.vsphere_vlan_id),
+                        'vsphere_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.vsphere_vlan_id),
+                        'vmotion_vlan_id': str(vmware.vmotion_vlan_id),
+                        'vmotion_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.vmotion_vlan_id),
+                        'vsan_vlan_id': str(vmware.vsan_vlan_id),
+                        'vsan_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.vsan_vlan_id),
+                        'nsx_v_tep_vlan_id': str(vmware.nsx_v_tep_vlan_id),
+                        'nsx_v_tep_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.nsx_v_tep_vlan_id),
+                        'nsx_edge_v_tep_vlan_id': str(vmware.nsx_edge_v_tep_vlan_id),
+                        'nsx_edge_v_tep_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.nsx_edge_v_tep_vlan_id),
+                        'nsx_edge_uplink1_vlan_id': str(vmware.nsx_edge_uplink1_vlan_id),
+                        'nsx_edge_uplink1_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.nsx_edge_uplink1_vlan_id),
+                        'nsx_edge_uplink2_vlan_id': str(vmware.nsx_edge_uplink2_vlan_id),
+                        'nsx_edge_uplink2_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.nsx_edge_uplink2_vlan_id),
+                        'hcx_private_ip_id': str(vmware.hcx_private_ip_id),
+                        'hcx_fqdn': str(vmware.hcx_fqdn),
+                        'hcx_initial_password': str(vmware.hcx_initial_password),
+                        'hcx_vlan_id': str(vmware.hcx_vlan_id),
+                        'hcx_on_prem_key': str(vmware.hcx_on_prem_key),
+                        'is_hcx_enabled': str(vmware.is_hcx_enabled),
+                        'time_created': str(vmware.time_created),
+                        'time_updated': str(vmware.time_updated),
+                        'lifecycle_state': str(vmware.lifecycle_state),
+                        'sum_info': "PaaS OCVS VMWare ESXi Servers",
+                        'sum_size_gb': str(vmware.esxi_hosts_count),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'defined_tags': [] if vmware.defined_tags is None else vmware.defined_tags,
+                        'freeform_tags': [] if vmware.freeform_tags is None else vmware.freeform_tags,
+                        'esxihosts': [],
+                        'region_name': str(self.config['region'])}
 
-                        #######################
-                        # get the esxi hosts
-                        #######################
-                        esxis = []
-                        try:
-                            esxis = esxi_client.list_esxi_hosts(
-                                sddc_id=vmware.id,
-                                sort_by="displayName",
-                                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
-                            ).data
+                    #######################
+                    # get the esxi hosts
+                    #######################
+                    esxis = []
+                    try:
+                        esxis = esxi_client.list_esxi_hosts(
+                            sddc_id=vmware.id,
+                            sort_by="displayName",
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                        ).data
 
-                        except oci.exceptions.ServiceError:
-                            pass
-                        except oci.exceptions.ConnectTimeout:
-                            pass
+                    except oci.exceptions.ServiceError:
+                        pass
+                    except oci.exceptions.ConnectTimeout:
+                        pass
 
-                        # esxi = classoci.ocvp.models.EsxiHostSummary
-                        if esxis:
-                            for esxi in esxis.items:
-                                if esxi.lifecycle_state != 'TERMINATED':
-                                    val['esxihosts'].append(
-                                        {
-                                            'id': str(esxi.id),
-                                            'display_name': str(esxi.display_name),
-                                            'compute_instance_id': str(esxi.compute_instance_id),
-                                            'billing_contract_end_date': str(esxi.billing_contract_end_date),
-                                            'current_sku': str(esxi.current_sku),
-                                            'next_sku': str(esxi.next_sku),
-                                            'time_created': str(esxi.time_created),
-                                            'time_updated': str(esxi.time_updated),
-                                            'lifecycle_state': str(esxi.lifecycle_state),
-                                            'defined_tags': [] if esxi.defined_tags is None else esxi.defined_tags,
-                                            'freeform_tags': [] if esxi.freeform_tags is None else esxi.freeform_tags
-                                        }
-                                    )
+                    # esxi = classoci.ocvp.models.EsxiHostSummary
+                    if esxis:
+                        for esxi in esxis.items:
+                            if self.check_lifecycle_state_active(esxi.lifecycle_state):
+                                val['esxihosts'].append(
+                                    {
+                                        'id': str(esxi.id),
+                                        'display_name': str(esxi.display_name),
+                                        'compute_instance_id': str(esxi.compute_instance_id),
+                                        'billing_contract_end_date': str(esxi.billing_contract_end_date),
+                                        'current_sku': str(esxi.current_sku),
+                                        'next_sku': str(esxi.next_sku),
+                                        'time_created': str(esxi.time_created),
+                                        'time_updated': str(esxi.time_updated),
+                                        'lifecycle_state': str(esxi.lifecycle_state),
+                                        'defined_tags': [] if esxi.defined_tags is None else esxi.defined_tags,
+                                        'freeform_tags': [] if esxi.freeform_tags is None else esxi.freeform_tags
+                                    }
+                                )
 
-                        # add the data
-                        cnt += 1
-                        data.append(val)
+                    # add the data
+                    cnt += 1
+                    data.append(val)
 
             self.__load_print_cnt(cnt, start_time)
             return data
@@ -12689,32 +12718,35 @@ class ShowOCIService(object):
 
                 # oce = oci.oce.models.OceInstanceSummary
                 for oce in oces:
-                    if oce.lifecycle_state == 'ACTIVE' or oce.lifecycle_state == 'UPDATING':
-                        val = {'id': str(oce.id),
-                               'guid': str(oce.guid),
-                               'description': str(oce.description),
-                               'name': str(oce.name),
-                               'tenancy_name': str(oce.tenancy_name),
-                               'idcs_tenancy': str(oce.idcs_tenancy),
-                               'object_storage_namespace': str(oce.object_storage_namespace),
-                               'admin_email': str(oce.admin_email),
-                               'time_created': str(oce.time_created),
-                               'time_updated': str(oce.time_updated),
-                               'lifecycle_state': str(oce.lifecycle_state),
-                               'state_message': str(oce.state_message),
-                               'service': oce.service,
-                               'sum_info': "PaaS OCE Native",
-                               'sum_size_gb': str("1"),
-                               'compartment_name': str(compartment['name']),
-                               'compartment_path': str(compartment['path']),
-                               'compartment_id': str(compartment['id']),
-                               'defined_tags': [] if oce.defined_tags is None else oce.defined_tags,
-                               'freeform_tags': [] if oce.freeform_tags is None else oce.freeform_tags,
-                               'region_name': str(self.config['region'])}
+                    if not self.check_lifecycle_state_active(oce.lifecycle_state):
+                        continue
 
-                        # add the data
-                        cnt += 1
-                        data.append(val)
+                    val = {
+                        'id': str(oce.id),
+                        'guid': str(oce.guid),
+                        'description': str(oce.description),
+                        'name': str(oce.name),
+                        'tenancy_name': str(oce.tenancy_name),
+                        'idcs_tenancy': str(oce.idcs_tenancy),
+                        'object_storage_namespace': str(oce.object_storage_namespace),
+                        'admin_email': str(oce.admin_email),
+                        'time_created': str(oce.time_created),
+                        'time_updated': str(oce.time_updated),
+                        'lifecycle_state': str(oce.lifecycle_state),
+                        'state_message': str(oce.state_message),
+                        'service': oce.service,
+                        'sum_info': "PaaS OCE Native",
+                        'sum_size_gb': str("1"),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'defined_tags': [] if oce.defined_tags is None else oce.defined_tags,
+                        'freeform_tags': [] if oce.freeform_tags is None else oce.freeform_tags,
+                        'region_name': str(self.config['region'])}
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
 
             self.__load_print_cnt(cnt, start_time)
             return data
@@ -12769,7 +12801,7 @@ class ShowOCIService(object):
 
                 # vbs = oci.visual_builder.models.VbInstanceSummary
                 for vb in vbs:
-                    if vb.lifecycle_state == 'ACTIVE' or vb.lifecycle_state == 'UPDATING':
+                    if self.check_lifecycle_state_active(vb.lifecycle_state):
                         val = {'id': str(vb.id),
                                'display_name': str(vb.display_name),
                                'time_created': str(vb.time_created),
@@ -13281,7 +13313,7 @@ class ShowOCIService(object):
 
                 # item = oci.cloud_guard.models.TargetSummary
                 for item in array:
-                    if (item.lifecycle_state == 'ACTIVE' or item.lifecycle_state == 'UPDATING'):
+                    if self.check_lifecycle_state_active(item.lifecycle_state):
 
                         val = {'id': str(item.id),
                                'display_name': str(item.display_name),
@@ -13359,7 +13391,7 @@ class ShowOCIService(object):
 
                 # item = oci.key_management.models.VaultSummary
                 for item in array:
-                    if (item.lifecycle_state == 'ACTIVE' or item.lifecycle_state == 'UPDATING'):
+                    if self.check_lifecycle_state_active(item.lifecycle_state):
 
                         val = {'id': str(item.id),
                                'name': str(item.display_name),
@@ -13710,7 +13742,7 @@ class ShowOCIService(object):
 
                 # bs = oci.bastion.models.BastionSummary
                 for bs in bastions:
-                    if (bs.lifecycle_state == 'ACTIVE' or bs.lifecycle_state == 'UPDATING'):
+                    if self.check_lifecycle_state_active(bs.lifecycle_state):
                         val = {
                             'id': str(bs.id),
                             'bastion_type': str(bs.bastion_type),

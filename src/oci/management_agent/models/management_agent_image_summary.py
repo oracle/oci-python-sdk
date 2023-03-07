@@ -25,6 +25,10 @@ class ManagementAgentImageSummary(object):
     #: This constant has a value of "SOLARIS"
     PLATFORM_TYPE_SOLARIS = "SOLARIS"
 
+    #: A constant which can be used with the platform_type property of a ManagementAgentImageSummary.
+    #: This constant has a value of "MACOSX"
+    PLATFORM_TYPE_MACOSX = "MACOSX"
+
     #: A constant which can be used with the package_type property of a ManagementAgentImageSummary.
     #: This constant has a value of "RPM"
     PACKAGE_TYPE_RPM = "RPM"
@@ -44,6 +48,10 @@ class ManagementAgentImageSummary(object):
     #: A constant which can be used with the package_architecture_type property of a ManagementAgentImageSummary.
     #: This constant has a value of "X86"
     PACKAGE_ARCHITECTURE_TYPE_X86 = "X86"
+
+    #: A constant which can be used with the package_architecture_type property of a ManagementAgentImageSummary.
+    #: This constant has a value of "M1"
+    PACKAGE_ARCHITECTURE_TYPE_M1 = "M1"
 
     #: A constant which can be used with the lifecycle_state property of a ManagementAgentImageSummary.
     #: This constant has a value of "CREATING"
@@ -88,7 +96,7 @@ class ManagementAgentImageSummary(object):
 
         :param platform_type:
             The value to assign to the platform_type property of this ManagementAgentImageSummary.
-            Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type platform_type: str
 
@@ -104,7 +112,7 @@ class ManagementAgentImageSummary(object):
 
         :param package_architecture_type:
             The value to assign to the package_architecture_type property of this ManagementAgentImageSummary.
-            Allowed values for this property are: "X86_64", "SPARC", "X86", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "SPARC", "X86", "M1", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type package_architecture_type: str
 
@@ -124,6 +132,10 @@ class ManagementAgentImageSummary(object):
             The value to assign to the object_url property of this ManagementAgentImageSummary.
         :type object_url: str
 
+        :param image_object_storage_details:
+            The value to assign to the image_object_storage_details property of this ManagementAgentImageSummary.
+        :type image_object_storage_details: oci.management_agent.models.ObjectDetails
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ManagementAgentImageSummary.
             Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "TERMINATED", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -141,6 +153,7 @@ class ManagementAgentImageSummary(object):
             'size': 'float',
             'checksum': 'str',
             'object_url': 'str',
+            'image_object_storage_details': 'ObjectDetails',
             'lifecycle_state': 'str'
         }
 
@@ -154,6 +167,7 @@ class ManagementAgentImageSummary(object):
             'size': 'size',
             'checksum': 'checksum',
             'object_url': 'objectUrl',
+            'image_object_storage_details': 'imageObjectStorageDetails',
             'lifecycle_state': 'lifecycleState'
         }
 
@@ -166,6 +180,7 @@ class ManagementAgentImageSummary(object):
         self._size = None
         self._checksum = None
         self._object_url = None
+        self._image_object_storage_details = None
         self._lifecycle_state = None
 
     @property
@@ -198,7 +213,7 @@ class ManagementAgentImageSummary(object):
         **[Required]** Gets the platform_type of this ManagementAgentImageSummary.
         Agent image platform type
 
-        Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -217,7 +232,7 @@ class ManagementAgentImageSummary(object):
         :param platform_type: The platform_type of this ManagementAgentImageSummary.
         :type: str
         """
-        allowed_values = ["LINUX", "WINDOWS", "SOLARIS"]
+        allowed_values = ["LINUX", "WINDOWS", "SOLARIS", "MACOSX"]
         if not value_allowed_none_or_none_sentinel(platform_type, allowed_values):
             platform_type = 'UNKNOWN_ENUM_VALUE'
         self._platform_type = platform_type
@@ -282,7 +297,7 @@ class ManagementAgentImageSummary(object):
         Gets the package_architecture_type of this ManagementAgentImageSummary.
         The installation package target architecture type
 
-        Allowed values for this property are: "X86_64", "SPARC", "X86", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X86_64", "SPARC", "X86", "M1", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -301,7 +316,7 @@ class ManagementAgentImageSummary(object):
         :param package_architecture_type: The package_architecture_type of this ManagementAgentImageSummary.
         :type: str
         """
-        allowed_values = ["X86_64", "SPARC", "X86"]
+        allowed_values = ["X86_64", "SPARC", "X86", "M1"]
         if not value_allowed_none_or_none_sentinel(package_architecture_type, allowed_values):
             package_architecture_type = 'UNKNOWN_ENUM_VALUE'
         self._package_architecture_type = package_architecture_type
@@ -401,6 +416,26 @@ class ManagementAgentImageSummary(object):
         :type: str
         """
         self._object_url = object_url
+
+    @property
+    def image_object_storage_details(self):
+        """
+        Gets the image_object_storage_details of this ManagementAgentImageSummary.
+
+        :return: The image_object_storage_details of this ManagementAgentImageSummary.
+        :rtype: oci.management_agent.models.ObjectDetails
+        """
+        return self._image_object_storage_details
+
+    @image_object_storage_details.setter
+    def image_object_storage_details(self, image_object_storage_details):
+        """
+        Sets the image_object_storage_details of this ManagementAgentImageSummary.
+
+        :param image_object_storage_details: The image_object_storage_details of this ManagementAgentImageSummary.
+        :type: oci.management_agent.models.ObjectDetails
+        """
+        self._image_object_storage_details = image_object_storage_details
 
     @property
     def lifecycle_state(self):

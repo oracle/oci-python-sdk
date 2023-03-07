@@ -28,19 +28,33 @@ class CreateAutonomousDatabaseBackupDetails(object):
             The value to assign to the autonomous_database_id property of this CreateAutonomousDatabaseBackupDetails.
         :type autonomous_database_id: str
 
+        :param retention_period_in_days:
+            The value to assign to the retention_period_in_days property of this CreateAutonomousDatabaseBackupDetails.
+        :type retention_period_in_days: int
+
+        :param is_long_term_backup:
+            The value to assign to the is_long_term_backup property of this CreateAutonomousDatabaseBackupDetails.
+        :type is_long_term_backup: bool
+
         """
         self.swagger_types = {
             'display_name': 'str',
-            'autonomous_database_id': 'str'
+            'autonomous_database_id': 'str',
+            'retention_period_in_days': 'int',
+            'is_long_term_backup': 'bool'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
-            'autonomous_database_id': 'autonomousDatabaseId'
+            'autonomous_database_id': 'autonomousDatabaseId',
+            'retention_period_in_days': 'retentionPeriodInDays',
+            'is_long_term_backup': 'isLongTermBackup'
         }
 
         self._display_name = None
         self._autonomous_database_id = None
+        self._retention_period_in_days = None
+        self._is_long_term_backup = None
 
     @property
     def display_name(self):
@@ -93,6 +107,54 @@ class CreateAutonomousDatabaseBackupDetails(object):
         :type: str
         """
         self._autonomous_database_id = autonomous_database_id
+
+    @property
+    def retention_period_in_days(self):
+        """
+        Gets the retention_period_in_days of this CreateAutonomousDatabaseBackupDetails.
+        Retention period, in days, for long-term backups
+
+
+        :return: The retention_period_in_days of this CreateAutonomousDatabaseBackupDetails.
+        :rtype: int
+        """
+        return self._retention_period_in_days
+
+    @retention_period_in_days.setter
+    def retention_period_in_days(self, retention_period_in_days):
+        """
+        Sets the retention_period_in_days of this CreateAutonomousDatabaseBackupDetails.
+        Retention period, in days, for long-term backups
+
+
+        :param retention_period_in_days: The retention_period_in_days of this CreateAutonomousDatabaseBackupDetails.
+        :type: int
+        """
+        self._retention_period_in_days = retention_period_in_days
+
+    @property
+    def is_long_term_backup(self):
+        """
+        Gets the is_long_term_backup of this CreateAutonomousDatabaseBackupDetails.
+        Indicates whether the backup is long-term
+
+
+        :return: The is_long_term_backup of this CreateAutonomousDatabaseBackupDetails.
+        :rtype: bool
+        """
+        return self._is_long_term_backup
+
+    @is_long_term_backup.setter
+    def is_long_term_backup(self, is_long_term_backup):
+        """
+        Sets the is_long_term_backup of this CreateAutonomousDatabaseBackupDetails.
+        Indicates whether the backup is long-term
+
+
+        :param is_long_term_backup: The is_long_term_backup of this CreateAutonomousDatabaseBackupDetails.
+        :type: bool
+        """
+        self._is_long_term_backup = is_long_term_backup
 
     def __repr__(self):
         return formatted_flat_dict(self)

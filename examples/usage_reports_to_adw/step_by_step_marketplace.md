@@ -272,6 +272,9 @@ It is generally the location that you have access to build the compute node and 
 --> Network Configuration - 
    - Choose the VCN and Subnet to be used
 
+--> Load Balancer Configuration - 
+   - Choose if to provision Public Load Balancer
+
 ```
 
 ```

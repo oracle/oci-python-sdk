@@ -37,6 +37,22 @@ class UpdateOceInstanceDetails(object):
     #: This constant has a value of "NONPRIMARY"
     INSTANCE_USAGE_TYPE_NONPRIMARY = "NONPRIMARY"
 
+    #: A constant which can be used with the lifecycle_details property of a UpdateOceInstanceDetails.
+    #: This constant has a value of "STANDBY"
+    LIFECYCLE_DETAILS_STANDBY = "STANDBY"
+
+    #: A constant which can be used with the lifecycle_details property of a UpdateOceInstanceDetails.
+    #: This constant has a value of "FAILOVER"
+    LIFECYCLE_DETAILS_FAILOVER = "FAILOVER"
+
+    #: A constant which can be used with the lifecycle_details property of a UpdateOceInstanceDetails.
+    #: This constant has a value of "DOWN"
+    LIFECYCLE_DETAILS_DOWN = "DOWN"
+
+    #: A constant which can be used with the lifecycle_details property of a UpdateOceInstanceDetails.
+    #: This constant has a value of "PRIMARY"
+    LIFECYCLE_DETAILS_PRIMARY = "PRIMARY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateOceInstanceDetails object with values from keyword arguments.
@@ -64,6 +80,15 @@ class UpdateOceInstanceDetails(object):
             The value to assign to the add_on_features property of this UpdateOceInstanceDetails.
         :type add_on_features: list[str]
 
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this UpdateOceInstanceDetails.
+            Allowed values for this property are: "STANDBY", "FAILOVER", "DOWN", "PRIMARY"
+        :type lifecycle_details: str
+
+        :param dr_region:
+            The value to assign to the dr_region property of this UpdateOceInstanceDetails.
+        :type dr_region: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateOceInstanceDetails.
         :type freeform_tags: dict(str, str)
@@ -79,6 +104,8 @@ class UpdateOceInstanceDetails(object):
             'instance_license_type': 'str',
             'instance_usage_type': 'str',
             'add_on_features': 'list[str]',
+            'lifecycle_details': 'str',
+            'dr_region': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -89,6 +116,8 @@ class UpdateOceInstanceDetails(object):
             'instance_license_type': 'instanceLicenseType',
             'instance_usage_type': 'instanceUsageType',
             'add_on_features': 'addOnFeatures',
+            'lifecycle_details': 'lifecycleDetails',
+            'dr_region': 'drRegion',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -98,6 +127,8 @@ class UpdateOceInstanceDetails(object):
         self._instance_license_type = None
         self._instance_usage_type = None
         self._add_on_features = None
+        self._lifecycle_details = None
+        self._dr_region = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -236,6 +267,62 @@ class UpdateOceInstanceDetails(object):
         :type: list[str]
         """
         self._add_on_features = add_on_features
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this UpdateOceInstanceDetails.
+        Details of the current state of the instance lifecycle
+
+        Allowed values for this property are: "STANDBY", "FAILOVER", "DOWN", "PRIMARY"
+
+
+        :return: The lifecycle_details of this UpdateOceInstanceDetails.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this UpdateOceInstanceDetails.
+        Details of the current state of the instance lifecycle
+
+
+        :param lifecycle_details: The lifecycle_details of this UpdateOceInstanceDetails.
+        :type: str
+        """
+        allowed_values = ["STANDBY", "FAILOVER", "DOWN", "PRIMARY"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_details, allowed_values):
+            raise ValueError(
+                "Invalid value for `lifecycle_details`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._lifecycle_details = lifecycle_details
+
+    @property
+    def dr_region(self):
+        """
+        Gets the dr_region of this UpdateOceInstanceDetails.
+        disaster recovery paired ragion name
+
+
+        :return: The dr_region of this UpdateOceInstanceDetails.
+        :rtype: str
+        """
+        return self._dr_region
+
+    @dr_region.setter
+    def dr_region(self, dr_region):
+        """
+        Sets the dr_region of this UpdateOceInstanceDetails.
+        disaster recovery paired ragion name
+
+
+        :param dr_region: The dr_region of this UpdateOceInstanceDetails.
+        :type: str
+        """
+        self._dr_region = dr_region
 
     @property
     def freeform_tags(self):

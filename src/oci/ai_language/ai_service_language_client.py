@@ -1690,17 +1690,14 @@ class AIServiceLanguageClient(object):
 
     def detect_dominant_language(self, detect_dominant_language_details, **kwargs):
         """
-        **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT.
-        We recommend you replace this API with the batch API, `BatchDetectDominantLanguage`__.
+        This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT
+        The API returns the detected language and a related confidence score (between 0 and 1).
 
-        The DetectDominantLanguage API returns the detected language and a related confidence score (between 0 and 1).
-
-        `List of supported languages`__
+        `List of supported languages.`__
 
         Limitations:
         - A record may be up to 1000 characters long.
 
-        __ https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectDominantLanguage/BatchDetectDominantLanguage
         __ https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#lang-detect
 
 
@@ -1783,15 +1780,11 @@ class AIServiceLanguageClient(object):
 
     def detect_language_entities(self, detect_language_entities_details, **kwargs):
         """
-        **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT.
-        We recommend you replace this API with the batch API, `BatchDetectLanguageEntities`__.
-
-        The DetectLanguageEntities API extracts entities in text records. For each entity, its type and confidence score (between 0 and 1) is returned.
+        This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT
+        The API extracts entities in text records. For each entity, its type and confidence score (between 0 and 1) is returned.
 
         Limitations:
         - A text may be up to 1000 characters long.
-
-        __ https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageEntities/BatchDetectLanguageEntities
 
 
         :param oci.ai_language.models.DetectLanguageEntitiesDetails detect_language_entities_details: (required)
@@ -1899,15 +1892,11 @@ class AIServiceLanguageClient(object):
 
     def detect_language_key_phrases(self, detect_language_key_phrases_details, **kwargs):
         """
-        **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT.
-        We recommend you replace this API with the batch API, `BatchDetectLanguageKeyPhrases`__.
-
-        The DetectLanguageKeyPhrases API extracts key-phrases in text records. For each key-phrase, a score (between 0 and 1) is returned that highlights the importance of the key-phrase in the context of the text.
+        This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT
+        The API extracts key-phrases in text records. For each key-phrase, a score (between 0 and 1) is returned that highlights the importance of the key-phrase in the context of the text.
 
         Limitations:
         - A record may be up to 1000 characters long.
-
-        __ https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageKeyPhrases/BatchDetectLanguageKeyPhrases
 
 
         :param oci.ai_language.models.DetectLanguageKeyPhrasesDetails detect_language_key_phrases_details: (required)
@@ -1989,10 +1978,8 @@ class AIServiceLanguageClient(object):
 
     def detect_language_sentiments(self, detect_language_sentiments_details, **kwargs):
         """
-        **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT.
-        We recommend you replace this API with the batch API, `BatchDetectLanguageSentiments`__.
-
-        The DetectLanguageSentiments API extracts aspect-based in text records.
+        This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT
+        The API extracts aspect-based in text records.
 
         For aspect-based sentiment analysis, a set of aspects and their respective sentiment is returned.
 
@@ -2003,7 +1990,6 @@ class AIServiceLanguageClient(object):
         Limitations:
          - A record may be up to 1000 characters long.
 
-        __ https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageSentiments/BatchDetectLanguageSentiments
         __ https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#sentiment
 
 
@@ -2086,17 +2072,14 @@ class AIServiceLanguageClient(object):
 
     def detect_language_text_classification(self, detect_language_text_classification_details, **kwargs):
         """
-        **Deprecated**: This API will be retired Tuesday, 10 Oct 2023 00:00:00 GMT.
-        We recommend you replace this API with the batch API, `BatchDetectLanguageTextClassification`__.
-
-        The DetectLanguageTextClassification API automatically classifies text into a set of pre-determined classes and sub-classes. A single class/subclass is returned for each record classified.
+        This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT
+        The API automatically classifies text into a set of pre-determined classes and sub-classes. A single class/subclass is returned for each record classified.
 
         Learn more about text classification `here`__.
 
         Limitations:
         - A record may be up to 1000 characters long.
 
-        __ https://docs.cloud.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageTextClassification/BatchDetectLanguageTextClassification
         __ https://docs.cloud.oracle.com/iaas/language/using/pretrain-models.htm#text-class
 
 

@@ -53,6 +53,7 @@
 # - OCI_COST_TAG_KEYS - Tag keys of the cost reports
 # - OCI_COST_REFERENCE - Reference table of the cost filter keys - SERVICE, REGION, COMPARTMENT, PRODUCT, SUBSCRIPTION
 # - OCI_PRICE_LIST - Hold the price list and the cost per product
+# - OCI_LOAD_STATUS - Load Statistics table
 ##########################################################################
 import sys
 import argparse
@@ -66,7 +67,7 @@ import requests
 import time
 
 
-version = "23.02.16"
+version = "23.03.07"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 
@@ -438,6 +439,55 @@ def check_database_index_structure_cost(connection):
 
     except Exception as e:
         raise Exception("\nError manipulating database at check_database_index_structure_cost() - " + str(e))
+
+
+#########################################################################
+# insert load stats
+##########################################################################
+def insert_load_stats(connection, tenant_name, file_type, file_id, file_name_full, file_size_mb, file_time, num_rows, start_time_str, batch_id, batch_total):
+    try:
+
+        with connection.cursor() as cursor:
+            sql = """INSERT INTO OCI_LOAD_STATUS (TENANT_NAME, FILE_TYPE, FILE_ID, FILE_NAME, FILE_SIZE, FILE_DATE, NUM_ROWS, LOAD_START_TIME, LOAD_END_TIME, AGENT_VERSION, BATCH_ID, BATCH_TOTAL)
+                     VALUES (
+                     :tenant_name,
+                     :file_type,
+                     :file_id,
+                     :file_name,
+                     :file_size,
+                     to_date(:file_date,'YYYY-MM-DD HH24:MI'),
+                     :num_rows,
+                     to_date(:load_start_time,'YYYY-MM-DD HH24:MI:SS'),
+                     to_date(:load_end_time,'YYYY-MM-DD HH24:MI:SS'),
+                     :agent_version,
+                     :batch_id,
+                     :batch_total
+                     )"""
+
+            cursor.execute(
+                sql,
+                tenant_name=tenant_name,
+                file_type=file_type,
+                file_id=file_id,
+                file_name=file_name_full,
+                file_size=file_size_mb,
+                file_date=file_time,
+                num_rows=num_rows,
+                load_start_time=start_time_str,
+                load_end_time=get_current_date_time(),
+                agent_version=version,
+                batch_id=batch_id,
+                batch_total=batch_total)
+
+            connection.commit()
+
+    except oracledb.DatabaseError as e:
+        print("\ninsert_load_stats() - Error manipulating database - " + str(e) + "\n")
+        raise SystemExit
+
+    except Exception as e:
+        print("\ninsert_load_stats() - Error insert into load_stats table - " + str(e))
+        raise SystemExit
 
 
 ##########################################################################
@@ -1220,11 +1270,56 @@ def check_database_table_structure_price_list(connection, tenant_name):
         raise Exception("\nError manipulating database at check_database_table_price_list() - " + str(e))
 
 
+##########################################################################
+# Check Table Structure Load Status
+##########################################################################
+def check_database_table_structure_load_status(connection):
+    try:
+        # open cursor
+        with connection.cursor() as cursor:
+
+            # check if OCI_PRICE_LIST table exist, if not create
+            sql = "select count(*) from user_tables where table_name = 'OCI_LOAD_STATUS'"
+            cursor.execute(sql)
+            val, = cursor.fetchone()
+
+            # if table not exist, create it
+            if val == 0:
+                print("   Table OCI_LOAD_STATUS was not exist, creating")
+                sql = """create table OCI_LOAD_STATUS (
+                        TENANT_NAME      varchar2(100) NOT NULL,
+                        FILE_TYPE        varchar2(100) NOT NULL,
+                        FILE_ID          varchar2(1000) NOT NULL,
+                        FILE_NAME        varchar2(1000) NOT NULL,
+                        FILE_DATE        DATE,
+                        FILE_SIZE        number,
+                        NUM_ROWS         number,
+                        LOAD_START_TIME  DATE,
+                        LOAD_END_TIME    DATE,
+                        AGENT_VERSION    varchar2(100),
+                        BATCH_ID         number,
+                        BATCH_TOTAL      number,
+                        CONSTRAINT OCI_LOAD_STATUS PRIMARY KEY (TENANT_NAME, FILE_ID) USING INDEX ENABLE
+                ) """
+                cursor.execute(sql)
+                print("   Table OCI_LOAD_STATUS created")
+            else:
+                print("   Table OCI_LOAD_STATUS exist")
+
+    except oracledb.DatabaseError as e:
+        print("\nError manipulating database at check_database_table_structure_load_status() - " + str(e) + "\n")
+        raise SystemExit
+
+    except Exception as e:
+        raise Exception("\nError manipulating database at check_database_table_structure_load_status() - " + str(e))
+
+
 #########################################################################
 # Load Cost File
 ##########################################################################
 def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, tenancy, compartments, file_num, total_files):
     start_time = time.time()
+    start_time_str = get_current_date_time()
     num_files = 0
     num_rows = 0
 
@@ -1236,29 +1331,31 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
 
         # get file name
         filename = o.name.rsplit('/', 1)[-1]
+        file_size_mb = round(o.size / 1024 / 1024)
+        file_name_full = o.name
         file_id = filename[:-7]
         file_time = str(o.time_created)[0:16]
 
         # if file already loaded, skip (check if < max_file_id
         if str(max_file_id) != "None":
             if file_id <= str(max_file_id):
-                print("   Skipping   file " + o.name + " - " + str(round(o.size / 1024 / 1024)) + " MB, " + file_time + ", #" + str(file_num) + "/" + str(total_files) + ", File already loaded")
+                print("   Skipping   file " + file_name_full + " - " + str(file_size_mb) + " MB, " + file_time + ", #" + str(file_num) + "/" + str(total_files) + ", File already loaded")
                 return num_files
 
         # if file id enabled, check
         if cmd.fileid:
             if file_id != cmd.fileid:
-                print("   Skipping   file " + o.name + " - " + str(round(o.size / 1024 / 1024)) + " MB, " + file_time + ", #" + str(file_num) + "/" + str(total_files) + ", File Id " + cmd.fileid + " filter specified")
+                print("   Skipping   file " + file_name_full + " - " + str(file_size_mb) + " MB, " + file_time + ", #" + str(file_num) + "/" + str(total_files) + ", File Id " + cmd.fileid + " filter specified")
                 return num_files
 
         # check file date
         if cmd.filedate:
             if file_time <= cmd.filedate:
-                print("   Skipping   file " + o.name + " - " + str(round(o.size / 1024 / 1024)) + " MB, " + file_time + ", #" + str(file_num) + "/" + str(total_files) + ", Less then specified date " + cmd.filedate)
+                print("   Skipping   file " + file_name_full + " - " + str(file_size_mb) + " MB, " + file_time + ", #" + str(file_num) + "/" + str(total_files) + ", Less then specified date " + cmd.filedate)
                 return num_files
 
         path_filename = work_report_dir + '/' + filename
-        print("\n   Processing file " + o.name + " - " + str(round(o.size / 1024 / 1024)) + " MB, " + file_time + ", #" + str(file_num) + "/" + str(total_files))
+        print("\n   Processing file " + file_name_full + " - " + str(file_size_mb) + " MB, " + file_time + ", #" + str(file_num) + "/" + str(total_files))
 
         # download file
         object_details = object_storage.get_object(usage_report_namespace, str(tenancy.id), o.name)
@@ -1447,7 +1544,7 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
                     cursor.executemany(sql, data)
 
                 connection.commit()
-                print("   Completed  file " + o.name + " - " + str(num_rows) + " Rows Inserted" + get_time_elapsed(start_time), end="")
+                print("   Completed  file " + file_name_full + " - " + str(num_rows) + " Rows Inserted" + get_time_elapsed(start_time), end="")
 
         num_files += 1
 
@@ -1464,9 +1561,10 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
 
         if data:
             with connection.cursor() as cursor:
-                sql = "INSERT INTO OCI_COST_TAG_KEYS (TENANT_NAME , TAG_KEY) "
-                sql += "SELECT :1, :2 FROM DUAL "
-                sql += "WHERE NOT EXISTS (SELECT 1 FROM OCI_COST_TAG_KEYS B WHERE B.TENANT_NAME = :3 AND B.TAG_KEY = :4)"
+                sql = """INSERT INTO OCI_COST_TAG_KEYS (TENANT_NAME , TAG_KEY)
+                         SELECT :1, :2 FROM DUAL
+                         WHERE NOT EXISTS (SELECT 1 FROM OCI_COST_TAG_KEYS B WHERE B.TENANT_NAME = :3 AND B.TAG_KEY = :4
+                      )"""
 
                 cursor.executemany(sql, data)
                 connection.commit()
@@ -1474,6 +1572,10 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
         else:
             print("")
 
+        #######################################
+        # insert load stats
+        #######################################
+        insert_load_stats(connection, str(tenancy.name), 'COST', file_id, file_name_full, file_size_mb, file_time, num_rows, start_time_str, file_num, total_files)
         return num_files
 
     except oracledb.DatabaseError as e:
@@ -1490,6 +1592,7 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
 ##########################################################################
 def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, tenancy, compartments, file_num, total_files):
     start_time = time.time()
+    start_time_str = get_current_date_time()
     num_files = 0
     num_rows = 0
     try:
@@ -1502,6 +1605,8 @@ def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, t
         filename = o.name.rsplit('/', 1)[-1]
         file_id = filename[:-7]
         file_time = str(o.time_created)[0:16]
+        file_size_mb = round(o.size / 1024 / 1024)
+        file_name_full = o.name
 
         # if file already loaded, skip (check if < max_usage_file_id)
         if str(max_file_id) != "None":
@@ -1681,6 +1786,11 @@ def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, t
         else:
             print("")
 
+        #######################################
+        # insert load stats
+        #######################################
+        insert_load_stats(connection, str(tenancy.name), 'USAGE', file_id, file_name_full, file_size_mb, file_time, num_rows, start_time_str, file_num, total_files)
+
         return num_files
 
     except oracledb.DatabaseError as e:
@@ -1767,6 +1877,7 @@ def main_process():
                 check_database_table_structure_usage(connection, tenancy.name)
                 check_database_table_structure_cost(connection, cmd.tagspecial, cmd.tagspecial2, tenancy.name)
                 check_database_table_structure_price_list(connection, tenancy.name)
+                check_database_table_structure_load_status(connection)
 
                 ###############################
                 # enable hints

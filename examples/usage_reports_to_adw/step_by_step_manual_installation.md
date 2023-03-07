@@ -162,8 +162,7 @@ SQL> exit
 ```
 cd $HOME
 sudo yum install -y git
-git clone https://github.com/oracle/oci-python-sdk
-ln -s oci-python-sdk/examples/usage_reports_to_adw .
+git clone https://github.com/adizohar/usage_reports_to_adw
 cd usage_reports_to_adw
 ```
 
@@ -261,7 +260,7 @@ Development Menu -> Oracle APEX
    
 ## 17. Import APEX application
 
-Right Click and Download [usage.demo.apex.sql](https://raw.githubusercontent.com/oracle/oci-python-sdk/master/examples/usage_reports_to_adw/apex_demo_app/usage.demo.apex.sql) from github "apex_demo_app" folder (raw)
+Right Click and Download [usage.demo.apex.sql](https://raw.githubusercontent.com/adizohar/usage_reports_to_adw/main/apex_demo_app/usage.demo.apex.sql) from github "apex_demo_app" folder (raw)
 
 ```
    APEX Top Menu -> App Builder -> Import

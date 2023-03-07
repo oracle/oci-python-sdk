@@ -113,6 +113,10 @@ class CreateOceInstanceDetails(object):
             Allowed values for this property are: "NEW", "BYOL", "PREMIUM", "STARTER"
         :type instance_license_type: str
 
+        :param dr_region:
+            The value to assign to the dr_region property of this CreateOceInstanceDetails.
+        :type dr_region: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateOceInstanceDetails.
         :type freeform_tags: dict(str, str)
@@ -138,6 +142,7 @@ class CreateOceInstanceDetails(object):
             'waf_primary_domain': 'str',
             'instance_access_type': 'str',
             'instance_license_type': 'str',
+            'dr_region': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -158,6 +163,7 @@ class CreateOceInstanceDetails(object):
             'waf_primary_domain': 'wafPrimaryDomain',
             'instance_access_type': 'instanceAccessType',
             'instance_license_type': 'instanceLicenseType',
+            'dr_region': 'drRegion',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -177,6 +183,7 @@ class CreateOceInstanceDetails(object):
         self._waf_primary_domain = None
         self._instance_access_type = None
         self._instance_license_type = None
+        self._dr_region = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -561,6 +568,30 @@ class CreateOceInstanceDetails(object):
                 .format(allowed_values)
             )
         self._instance_license_type = instance_license_type
+
+    @property
+    def dr_region(self):
+        """
+        Gets the dr_region of this CreateOceInstanceDetails.
+        disaster recovery paired ragion name
+
+
+        :return: The dr_region of this CreateOceInstanceDetails.
+        :rtype: str
+        """
+        return self._dr_region
+
+    @dr_region.setter
+    def dr_region(self, dr_region):
+        """
+        Sets the dr_region of this CreateOceInstanceDetails.
+        disaster recovery paired ragion name
+
+
+        :param dr_region: The dr_region of this CreateOceInstanceDetails.
+        :type: str
+        """
+        self._dr_region = dr_region
 
     @property
     def freeform_tags(self):

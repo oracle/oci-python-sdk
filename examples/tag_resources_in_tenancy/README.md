@@ -5,7 +5,7 @@ It covers the below OCI components,
 Authentication by User or Compute using instance principals, 
 Output can be printer friendly, Summary or JSON.
 
-**Developed by Adi Zohar, Nov 2020**
+**Developed by Adi Zohar, Nov 2020-Mar 2023**
 
 ## Modules Included:  
 - oci.core.VirtualNetworkClient          

@@ -304,7 +304,7 @@ class WorkRequest(object):
         """
         **[Required]** Gets the time_accepted of this WorkRequest.
         The date and time the request was created, as described in
-        `RFC 3339`__, section 14.29.
+        `RFC 3339`__, section 5.6.
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -319,7 +319,7 @@ class WorkRequest(object):
         """
         Sets the time_accepted of this WorkRequest.
         The date and time the request was created, as described in
-        `RFC 3339`__, section 14.29.
+        `RFC 3339`__, section 5.6.
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -334,7 +334,7 @@ class WorkRequest(object):
         """
         Gets the time_started of this WorkRequest.
         The date and time the request was started, as described in `RFC 3339`__,
-        section 14.29.
+        section 5.6.
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -349,7 +349,7 @@ class WorkRequest(object):
         """
         Sets the time_started of this WorkRequest.
         The date and time the request was started, as described in `RFC 3339`__,
-        section 14.29.
+        section 5.6.
 
         __ https://tools.ietf.org/rfc/rfc3339
 

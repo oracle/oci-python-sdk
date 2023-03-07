@@ -37,6 +37,10 @@ class ManagementAgentAggregationDimensions(object):
     #: This constant has a value of "SOLARIS"
     PLATFORM_TYPE_SOLARIS = "SOLARIS"
 
+    #: A constant which can be used with the platform_type property of a ManagementAgentAggregationDimensions.
+    #: This constant has a value of "MACOSX"
+    PLATFORM_TYPE_MACOSX = "MACOSX"
+
     #: A constant which can be used with the install_type property of a ManagementAgentAggregationDimensions.
     #: This constant has a value of "AGENT"
     INSTALL_TYPE_AGENT = "AGENT"
@@ -58,7 +62,7 @@ class ManagementAgentAggregationDimensions(object):
 
         :param platform_type:
             The value to assign to the platform_type property of this ManagementAgentAggregationDimensions.
-            Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type platform_type: str
 
@@ -135,7 +139,7 @@ class ManagementAgentAggregationDimensions(object):
         Gets the platform_type of this ManagementAgentAggregationDimensions.
         Platform Type
 
-        Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", "MACOSX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -154,7 +158,7 @@ class ManagementAgentAggregationDimensions(object):
         :param platform_type: The platform_type of this ManagementAgentAggregationDimensions.
         :type: str
         """
-        allowed_values = ["LINUX", "WINDOWS", "SOLARIS"]
+        allowed_values = ["LINUX", "WINDOWS", "SOLARIS", "MACOSX"]
         if not value_allowed_none_or_none_sentinel(platform_type, allowed_values):
             platform_type = 'UNKNOWN_ENUM_VALUE'
         self._platform_type = platform_type
