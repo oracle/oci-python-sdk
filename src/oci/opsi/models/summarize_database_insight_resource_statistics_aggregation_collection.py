@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SummarizeDatabaseInsightResourceStatisticsAggregationCollection(object):
     """
-    Returns list of the Databases with resource statistics like usage,capacity,utilization and usage change percent.
+    Returns list of the Databases with resource statistics like usage, capacity, utilization and usage change percent.
     """
 
     #: A constant which can be used with the resource_metric property of a SummarizeDatabaseInsightResourceStatisticsAggregationCollection.

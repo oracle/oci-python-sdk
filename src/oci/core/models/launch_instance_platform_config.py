@@ -34,6 +34,10 @@ class LaunchInstancePlatformConfig(object):
     TYPE_AMD_MILAN_BM = "AMD_MILAN_BM"
 
     #: A constant which can be used with the type property of a LaunchInstancePlatformConfig.
+    #: This constant has a value of "AMD_MILAN_BM_GPU"
+    TYPE_AMD_MILAN_BM_GPU = "AMD_MILAN_BM_GPU"
+
+    #: A constant which can be used with the type property of a LaunchInstancePlatformConfig.
     #: This constant has a value of "AMD_ROME_BM"
     TYPE_AMD_ROME_BM = "AMD_ROME_BM"
 
@@ -69,12 +73,13 @@ class LaunchInstancePlatformConfig(object):
         * :class:`~oci.core.models.IntelVmLaunchInstancePlatformConfig`
         * :class:`~oci.core.models.IntelSkylakeBmLaunchInstancePlatformConfig`
         * :class:`~oci.core.models.AmdMilanBmLaunchInstancePlatformConfig`
+        * :class:`~oci.core.models.AmdMilanBmGpuLaunchInstancePlatformConfig`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this LaunchInstancePlatformConfig.
-            Allowed values for this property are: "AMD_MILAN_BM", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"
+            Allowed values for this property are: "AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"
         :type type: str
 
         :param is_secure_boot_enabled:
@@ -144,6 +149,9 @@ class LaunchInstancePlatformConfig(object):
 
         if type == 'AMD_MILAN_BM':
             return 'AmdMilanBmLaunchInstancePlatformConfig'
+
+        if type == 'AMD_MILAN_BM_GPU':
+            return 'AmdMilanBmGpuLaunchInstancePlatformConfig'
         else:
             return 'LaunchInstancePlatformConfig'
 
@@ -153,7 +161,7 @@ class LaunchInstancePlatformConfig(object):
         **[Required]** Gets the type of this LaunchInstancePlatformConfig.
         The type of platform being configured.
 
-        Allowed values for this property are: "AMD_MILAN_BM", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"
+        Allowed values for this property are: "AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"
 
 
         :return: The type of this LaunchInstancePlatformConfig.
@@ -171,7 +179,7 @@ class LaunchInstancePlatformConfig(object):
         :param type: The type of this LaunchInstancePlatformConfig.
         :type: str
         """
-        allowed_values = ["AMD_MILAN_BM", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"]
+        allowed_values = ["AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 "Invalid value for `type`, must be None or one of {0}"

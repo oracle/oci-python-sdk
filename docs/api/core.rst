@@ -39,6 +39,8 @@ Core Services
     oci.core.models.AllowedIkeIPSecParameters
     oci.core.models.AllowedPhaseOneParameters
     oci.core.models.AllowedPhaseTwoParameters
+    oci.core.models.AmdMilanBmGpuLaunchInstancePlatformConfig
+    oci.core.models.AmdMilanBmGpuPlatformConfig
     oci.core.models.AmdMilanBmLaunchInstancePlatformConfig
     oci.core.models.AmdMilanBmPlatformConfig
     oci.core.models.AmdRomeBmGpuLaunchInstancePlatformConfig
@@ -288,6 +290,7 @@ Core Services
     oci.core.models.InstanceAgentPluginConfigDetails
     oci.core.models.InstanceAvailabilityConfig
     oci.core.models.InstanceConfiguration
+    oci.core.models.InstanceConfigurationAmdMilanBmGpuLaunchInstancePlatformConfig
     oci.core.models.InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
     oci.core.models.InstanceConfigurationAmdRomeBmGpuLaunchInstancePlatformConfig
     oci.core.models.InstanceConfigurationAmdRomeBmLaunchInstancePlatformConfig

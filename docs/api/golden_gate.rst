@@ -23,6 +23,7 @@ Golden Gate
     oci.golden_gate.models.AzureSynapseConnection
     oci.golden_gate.models.AzureSynapseConnectionSummary
     oci.golden_gate.models.CancelDeploymentBackupDetails
+    oci.golden_gate.models.CancelSnoozeDeploymentUpgradeDetails
     oci.golden_gate.models.ChangeConnectionCompartmentDetails
     oci.golden_gate.models.ChangeDatabaseRegistrationCompartmentDetails
     oci.golden_gate.models.ChangeDeploymentBackupCompartmentDetails
@@ -44,6 +45,7 @@ Golden Gate
     oci.golden_gate.models.CreateGoldenGateConnectionDetails
     oci.golden_gate.models.CreateKafkaConnectionDetails
     oci.golden_gate.models.CreateKafkaSchemaRegistryConnectionDetails
+    oci.golden_gate.models.CreateMaintenanceWindowDetails
     oci.golden_gate.models.CreateMysqlConnectionDetails
     oci.golden_gate.models.CreateOciObjectStorageConnectionDetails
     oci.golden_gate.models.CreateOggDeploymentDetails
@@ -53,10 +55,14 @@ Golden Gate
     oci.golden_gate.models.DatabaseRegistrationCollection
     oci.golden_gate.models.DatabaseRegistrationSummary
     oci.golden_gate.models.DefaultCancelDeploymentBackupDetails
+    oci.golden_gate.models.DefaultCancelSnoozeDeploymentUpgradeDetails
     oci.golden_gate.models.DefaultDeploymentWalletExistsDetails
     oci.golden_gate.models.DefaultRestoreDeploymentDetails
+    oci.golden_gate.models.DefaultRollbackDeploymentUpgradeDetails
+    oci.golden_gate.models.DefaultSnoozeDeploymentUpgradeDetails
     oci.golden_gate.models.DefaultStartDeploymentDetails
     oci.golden_gate.models.DefaultStopDeploymentDetails
+    oci.golden_gate.models.DefaultUpgradeDeploymentUpgradeDetails
     oci.golden_gate.models.Deployment
     oci.golden_gate.models.DeploymentBackup
     oci.golden_gate.models.DeploymentBackupCollection
@@ -70,6 +76,8 @@ Golden Gate
     oci.golden_gate.models.DeploymentUpgrade
     oci.golden_gate.models.DeploymentUpgradeCollection
     oci.golden_gate.models.DeploymentUpgradeSummary
+    oci.golden_gate.models.DeploymentVersionCollection
+    oci.golden_gate.models.DeploymentVersionSummary
     oci.golden_gate.models.DeploymentWalletExistsDetails
     oci.golden_gate.models.DeploymentWalletExistsResponseDetails
     oci.golden_gate.models.DeploymentWalletsOperationCollection
@@ -84,6 +92,7 @@ Golden Gate
     oci.golden_gate.models.KafkaConnectionSummary
     oci.golden_gate.models.KafkaSchemaRegistryConnection
     oci.golden_gate.models.KafkaSchemaRegistryConnectionSummary
+    oci.golden_gate.models.MaintenanceWindow
     oci.golden_gate.models.MessageSummary
     oci.golden_gate.models.MysqlConnection
     oci.golden_gate.models.MysqlConnectionSummary
@@ -96,6 +105,8 @@ Golden Gate
     oci.golden_gate.models.PostgresqlConnection
     oci.golden_gate.models.PostgresqlConnectionSummary
     oci.golden_gate.models.RestoreDeploymentDetails
+    oci.golden_gate.models.RollbackDeploymentUpgradeDetails
+    oci.golden_gate.models.SnoozeDeploymentUpgradeDetails
     oci.golden_gate.models.StartDeploymentDetails
     oci.golden_gate.models.StopDeploymentDetails
     oci.golden_gate.models.TrailFileCollection
@@ -111,6 +122,7 @@ Golden Gate
     oci.golden_gate.models.UpdateGoldenGateConnectionDetails
     oci.golden_gate.models.UpdateKafkaConnectionDetails
     oci.golden_gate.models.UpdateKafkaSchemaRegistryConnectionDetails
+    oci.golden_gate.models.UpdateMaintenanceWindowDetails
     oci.golden_gate.models.UpdateMysqlConnectionDetails
     oci.golden_gate.models.UpdateOciObjectStorageConnectionDetails
     oci.golden_gate.models.UpdateOggDeploymentDetails
@@ -118,6 +130,8 @@ Golden Gate
     oci.golden_gate.models.UpdatePostgresqlConnectionDetails
     oci.golden_gate.models.UpgradeDeploymentCurrentReleaseDetails
     oci.golden_gate.models.UpgradeDeploymentDetails
+    oci.golden_gate.models.UpgradeDeploymentSpecificReleaseDetails
+    oci.golden_gate.models.UpgradeDeploymentUpgradeDetails
     oci.golden_gate.models.WorkRequest
     oci.golden_gate.models.WorkRequestError
     oci.golden_gate.models.WorkRequestLogEntry

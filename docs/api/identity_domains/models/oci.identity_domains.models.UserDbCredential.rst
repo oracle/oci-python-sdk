@@ -1,0 +1,11 @@
+UserDbCredential
+================
+
+.. currentmodule:: oci.identity_domains.models
+
+.. autoclass:: UserDbCredential
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

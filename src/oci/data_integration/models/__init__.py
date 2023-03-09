@@ -90,6 +90,11 @@ from .connection_validation import ConnectionValidation
 from .connection_validation_summary import ConnectionValidationSummary
 from .connection_validation_summary_collection import ConnectionValidationSummaryCollection
 from .connector_attribute import ConnectorAttribute
+from .copy_conflict_resolution import CopyConflictResolution
+from .copy_object_metadata_summary import CopyObjectMetadataSummary
+from .copy_object_request import CopyObjectRequest
+from .copy_object_request_summary import CopyObjectRequestSummary
+from .copy_object_request_summary_collection import CopyObjectRequestSummaryCollection
 from .count_statistic import CountStatistic
 from .count_statistic_summary import CountStatisticSummary
 from .create_application_details import CreateApplicationDetails
@@ -108,6 +113,7 @@ from .create_connection_from_oracle import CreateConnectionFromOracle
 from .create_connection_from_rest_basic_auth import CreateConnectionFromRestBasicAuth
 from .create_connection_from_rest_no_auth import CreateConnectionFromRestNoAuth
 from .create_connection_validation_details import CreateConnectionValidationDetails
+from .create_copy_object_request_details import CreateCopyObjectRequestDetails
 from .create_data_asset_details import CreateDataAssetDetails
 from .create_data_asset_from_adwc import CreateDataAssetFromAdwc
 from .create_data_asset_from_amazon_s3 import CreateDataAssetFromAmazonS3
@@ -121,6 +127,7 @@ from .create_data_asset_from_oracle import CreateDataAssetFromOracle
 from .create_data_asset_from_rest import CreateDataAssetFromRest
 from .create_data_flow_details import CreateDataFlowDetails
 from .create_data_flow_validation_details import CreateDataFlowValidationDetails
+from .create_detailed_description_details import CreateDetailedDescriptionDetails
 from .create_dis_application_details import CreateDisApplicationDetails
 from .create_entity_shape_details import CreateEntityShapeDetails
 from .create_entity_shape_from_file import CreateEntityShapeFromFile
@@ -214,6 +221,7 @@ from .dependent_object_summary_collection import DependentObjectSummaryCollectio
 from .derived_entity import DerivedEntity
 from .derived_field import DerivedField
 from .derived_type import DerivedType
+from .detailed_description import DetailedDescription
 from .direct_field_map import DirectFieldMap
 from .direct_named_field_map import DirectNamedFieldMap
 from .dis_application import DisApplication
@@ -435,6 +443,7 @@ from .task_summary_from_sql_task import TaskSummaryFromSQLTask
 from .task_validation import TaskValidation
 from .task_validation_summary import TaskValidationSummary
 from .task_validation_summary_collection import TaskValidationSummaryCollection
+from .template import Template
 from .template_summary import TemplateSummary
 from .template_summary_collection import TemplateSummaryCollection
 from .time import Time
@@ -463,6 +472,7 @@ from .update_connection_from_object_storage import UpdateConnectionFromObjectSto
 from .update_connection_from_oracle import UpdateConnectionFromOracle
 from .update_connection_from_rest_basic_auth import UpdateConnectionFromRestBasicAuth
 from .update_connection_from_rest_no_auth import UpdateConnectionFromRestNoAuth
+from .update_copy_object_request_details import UpdateCopyObjectRequestDetails
 from .update_data_asset_details import UpdateDataAssetDetails
 from .update_data_asset_from_adwc import UpdateDataAssetFromAdwc
 from .update_data_asset_from_amazon_s3 import UpdateDataAssetFromAmazonS3
@@ -475,6 +485,7 @@ from .update_data_asset_from_object_storage import UpdateDataAssetFromObjectStor
 from .update_data_asset_from_oracle import UpdateDataAssetFromOracle
 from .update_data_asset_from_rest import UpdateDataAssetFromRest
 from .update_data_flow_details import UpdateDataFlowDetails
+from .update_detailed_description_details import UpdateDetailedDescriptionDetails
 from .update_dis_application_details import UpdateDisApplicationDetails
 from .update_external_publication_details import UpdateExternalPublicationDetails
 from .update_folder_details import UpdateFolderDetails
@@ -601,6 +612,11 @@ data_integration_type_mapping = {
     "ConnectionValidationSummary": ConnectionValidationSummary,
     "ConnectionValidationSummaryCollection": ConnectionValidationSummaryCollection,
     "ConnectorAttribute": ConnectorAttribute,
+    "CopyConflictResolution": CopyConflictResolution,
+    "CopyObjectMetadataSummary": CopyObjectMetadataSummary,
+    "CopyObjectRequest": CopyObjectRequest,
+    "CopyObjectRequestSummary": CopyObjectRequestSummary,
+    "CopyObjectRequestSummaryCollection": CopyObjectRequestSummaryCollection,
     "CountStatistic": CountStatistic,
     "CountStatisticSummary": CountStatisticSummary,
     "CreateApplicationDetails": CreateApplicationDetails,
@@ -619,6 +635,7 @@ data_integration_type_mapping = {
     "CreateConnectionFromRestBasicAuth": CreateConnectionFromRestBasicAuth,
     "CreateConnectionFromRestNoAuth": CreateConnectionFromRestNoAuth,
     "CreateConnectionValidationDetails": CreateConnectionValidationDetails,
+    "CreateCopyObjectRequestDetails": CreateCopyObjectRequestDetails,
     "CreateDataAssetDetails": CreateDataAssetDetails,
     "CreateDataAssetFromAdwc": CreateDataAssetFromAdwc,
     "CreateDataAssetFromAmazonS3": CreateDataAssetFromAmazonS3,
@@ -632,6 +649,7 @@ data_integration_type_mapping = {
     "CreateDataAssetFromRest": CreateDataAssetFromRest,
     "CreateDataFlowDetails": CreateDataFlowDetails,
     "CreateDataFlowValidationDetails": CreateDataFlowValidationDetails,
+    "CreateDetailedDescriptionDetails": CreateDetailedDescriptionDetails,
     "CreateDisApplicationDetails": CreateDisApplicationDetails,
     "CreateEntityShapeDetails": CreateEntityShapeDetails,
     "CreateEntityShapeFromFile": CreateEntityShapeFromFile,
@@ -725,6 +743,7 @@ data_integration_type_mapping = {
     "DerivedEntity": DerivedEntity,
     "DerivedField": DerivedField,
     "DerivedType": DerivedType,
+    "DetailedDescription": DetailedDescription,
     "DirectFieldMap": DirectFieldMap,
     "DirectNamedFieldMap": DirectNamedFieldMap,
     "DisApplication": DisApplication,
@@ -946,6 +965,7 @@ data_integration_type_mapping = {
     "TaskValidation": TaskValidation,
     "TaskValidationSummary": TaskValidationSummary,
     "TaskValidationSummaryCollection": TaskValidationSummaryCollection,
+    "Template": Template,
     "TemplateSummary": TemplateSummary,
     "TemplateSummaryCollection": TemplateSummaryCollection,
     "Time": Time,
@@ -974,6 +994,7 @@ data_integration_type_mapping = {
     "UpdateConnectionFromOracle": UpdateConnectionFromOracle,
     "UpdateConnectionFromRestBasicAuth": UpdateConnectionFromRestBasicAuth,
     "UpdateConnectionFromRestNoAuth": UpdateConnectionFromRestNoAuth,
+    "UpdateCopyObjectRequestDetails": UpdateCopyObjectRequestDetails,
     "UpdateDataAssetDetails": UpdateDataAssetDetails,
     "UpdateDataAssetFromAdwc": UpdateDataAssetFromAdwc,
     "UpdateDataAssetFromAmazonS3": UpdateDataAssetFromAmazonS3,
@@ -986,6 +1007,7 @@ data_integration_type_mapping = {
     "UpdateDataAssetFromOracle": UpdateDataAssetFromOracle,
     "UpdateDataAssetFromRest": UpdateDataAssetFromRest,
     "UpdateDataFlowDetails": UpdateDataFlowDetails,
+    "UpdateDetailedDescriptionDetails": UpdateDetailedDescriptionDetails,
     "UpdateDisApplicationDetails": UpdateDisApplicationDetails,
     "UpdateExternalPublicationDetails": UpdateExternalPublicationDetails,
     "UpdateFolderDetails": UpdateFolderDetails,

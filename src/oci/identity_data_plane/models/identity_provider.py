@@ -48,7 +48,8 @@ class IdentityProvider(object):
 
         :param protocol:
             The value to assign to the protocol property of this IdentityProvider.
-            Allowed values for this property are: "SAML2"
+            Allowed values for this property are: "SAML2", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type protocol: str
 
         :param service_provider_entity_id:
@@ -251,7 +252,8 @@ class IdentityProvider(object):
         **[Required]** Gets the protocol of this IdentityProvider.
         The type of the provider.
 
-        Allowed values for this property are: "SAML2"
+        Allowed values for this property are: "SAML2", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The protocol of this IdentityProvider.
@@ -271,10 +273,7 @@ class IdentityProvider(object):
         """
         allowed_values = ["SAML2"]
         if not value_allowed_none_or_none_sentinel(protocol, allowed_values):
-            raise ValueError(
-                "Invalid value for `protocol`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            protocol = 'UNKNOWN_ENUM_VALUE'
         self._protocol = protocol
 
     @property

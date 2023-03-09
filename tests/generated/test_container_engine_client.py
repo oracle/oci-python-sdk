@@ -199,6 +199,47 @@ def test_create_node_pool(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
+def test_create_virtual_node_pool(testing_service_client):
+    if not testing_service_client.is_api_enabled('container_engine', 'CreateVirtualNodePool'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'CreateVirtualNodePool')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='CreateVirtualNodePool')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
+            response = client.create_virtual_node_pool(
+                create_virtual_node_pool_details=request.pop(util.camelize('CreateVirtualNodePoolDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'container_engine',
+            'CreateVirtualNodePool',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'create_virtual_node_pool',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_delete_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'DeleteCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -323,6 +364,47 @@ def test_delete_node_pool(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
+def test_delete_virtual_node_pool(testing_service_client):
+    if not testing_service_client.is_api_enabled('container_engine', 'DeleteVirtualNodePool'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'DeleteVirtualNodePool')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='DeleteVirtualNodePool')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
+            response = client.delete_virtual_node_pool(
+                virtual_node_pool_id=request.pop(util.camelize('virtualNodePoolId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'container_engine',
+            'DeleteVirtualNodePool',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_virtual_node_pool',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_delete_work_request(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'DeleteWorkRequest'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -359,6 +441,91 @@ def test_delete_work_request(testing_service_client):
             service_error,
             'delete_work_request',
             True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
+def test_disable_addon(testing_service_client):
+    if not testing_service_client.is_api_enabled('container_engine', 'DisableAddon'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'DisableAddon')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='DisableAddon')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
+            response = client.disable_addon(
+                cluster_id=request.pop(util.camelize('clusterId')),
+                addon_name=request.pop(util.camelize('addonName')),
+                is_remove_existing_add_on=request.pop(util.camelize('isRemoveExistingAddOn')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'container_engine',
+            'DisableAddon',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'disable_addon',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
+def test_get_addon(testing_service_client):
+    if not testing_service_client.is_api_enabled('container_engine', 'GetAddon'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'GetAddon')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='GetAddon')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
+            response = client.get_addon(
+                cluster_id=request.pop(util.camelize('clusterId')),
+                addon_name=request.pop(util.camelize('addonName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'container_engine',
+            'GetAddon',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'addon',
+            False,
             False
         )
 
@@ -569,6 +736,89 @@ def test_get_node_pool_options(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
+def test_get_virtual_node(testing_service_client):
+    if not testing_service_client.is_api_enabled('container_engine', 'GetVirtualNode'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'GetVirtualNode')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='GetVirtualNode')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
+            response = client.get_virtual_node(
+                virtual_node_pool_id=request.pop(util.camelize('virtualNodePoolId')),
+                virtual_node_id=request.pop(util.camelize('virtualNodeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'container_engine',
+            'GetVirtualNode',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'virtualNode',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
+def test_get_virtual_node_pool(testing_service_client):
+    if not testing_service_client.is_api_enabled('container_engine', 'GetVirtualNodePool'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'GetVirtualNodePool')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='GetVirtualNodePool')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
+            response = client.get_virtual_node_pool(
+                virtual_node_pool_id=request.pop(util.camelize('virtualNodePoolId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'container_engine',
+            'GetVirtualNodePool',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'virtualNodePool',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_get_work_request(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'GetWorkRequest'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -606,6 +856,174 @@ def test_get_work_request(testing_service_client):
             'workRequest',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
+def test_install_addon(testing_service_client):
+    if not testing_service_client.is_api_enabled('container_engine', 'InstallAddon'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'InstallAddon')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='InstallAddon')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
+            response = client.install_addon(
+                cluster_id=request.pop(util.camelize('clusterId')),
+                install_addon_details=request.pop(util.camelize('InstallAddonDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'container_engine',
+            'InstallAddon',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'install_addon',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
+def test_list_addon_options(testing_service_client):
+    if not testing_service_client.is_api_enabled('container_engine', 'ListAddonOptions'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'ListAddonOptions')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='ListAddonOptions')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
+            response = client.list_addon_options(
+                kubernetes_version=request.pop(util.camelize('kubernetesVersion')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_addon_options(
+                    kubernetes_version=request.pop(util.camelize('kubernetesVersion')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_addon_options(
+                        kubernetes_version=request.pop(util.camelize('kubernetesVersion')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'container_engine',
+            'ListAddonOptions',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'addonOptionSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
+def test_list_addons(testing_service_client):
+    if not testing_service_client.is_api_enabled('container_engine', 'ListAddons'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'ListAddons')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='ListAddons')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
+            response = client.list_addons(
+                cluster_id=request.pop(util.camelize('clusterId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_addons(
+                    cluster_id=request.pop(util.camelize('clusterId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_addons(
+                        cluster_id=request.pop(util.camelize('clusterId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'container_engine',
+            'ListAddons',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'addonSummary',
+            False,
+            True
         )
 
 
@@ -730,6 +1148,195 @@ def test_list_node_pools(testing_service_client):
             result,
             service_error,
             'nodePoolSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
+def test_list_pod_shapes(testing_service_client):
+    if not testing_service_client.is_api_enabled('container_engine', 'ListPodShapes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'ListPodShapes')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='ListPodShapes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
+            response = client.list_pod_shapes(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_pod_shapes(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_pod_shapes(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'container_engine',
+            'ListPodShapes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'podShapeSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
+def test_list_virtual_node_pools(testing_service_client):
+    if not testing_service_client.is_api_enabled('container_engine', 'ListVirtualNodePools'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'ListVirtualNodePools')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='ListVirtualNodePools')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
+            response = client.list_virtual_node_pools(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_virtual_node_pools(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_virtual_node_pools(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'container_engine',
+            'ListVirtualNodePools',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'virtualNodePoolSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
+def test_list_virtual_nodes(testing_service_client):
+    if not testing_service_client.is_api_enabled('container_engine', 'ListVirtualNodes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'ListVirtualNodes')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='ListVirtualNodes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
+            response = client.list_virtual_nodes(
+                virtual_node_pool_id=request.pop(util.camelize('virtualNodePoolId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_virtual_nodes(
+                    virtual_node_pool_id=request.pop(util.camelize('virtualNodePoolId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_virtual_nodes(
+                        virtual_node_pool_id=request.pop(util.camelize('virtualNodePoolId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'container_engine',
+            'ListVirtualNodes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'virtualNodeSummary',
             False,
             True
         )
@@ -883,6 +1490,49 @@ def test_list_work_requests(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
+def test_update_addon(testing_service_client):
+    if not testing_service_client.is_api_enabled('container_engine', 'UpdateAddon'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'UpdateAddon')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='UpdateAddon')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
+            response = client.update_addon(
+                cluster_id=request.pop(util.camelize('clusterId')),
+                addon_name=request.pop(util.camelize('addonName')),
+                update_addon_details=request.pop(util.camelize('UpdateAddonDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'container_engine',
+            'UpdateAddon',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_addon',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_update_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'UpdateCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1003,6 +1653,48 @@ def test_update_node_pool(testing_service_client):
             result,
             service_error,
             'update_node_pool',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
+def test_update_virtual_node_pool(testing_service_client):
+    if not testing_service_client.is_api_enabled('container_engine', 'UpdateVirtualNodePool'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'UpdateVirtualNodePool')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='UpdateVirtualNodePool')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
+            response = client.update_virtual_node_pool(
+                virtual_node_pool_id=request.pop(util.camelize('virtualNodePoolId')),
+                update_virtual_node_pool_details=request.pop(util.camelize('UpdateVirtualNodePoolDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'container_engine',
+            'UpdateVirtualNodePool',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_virtual_node_pool',
             False,
             False
         )

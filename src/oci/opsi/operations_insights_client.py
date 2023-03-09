@@ -17059,6 +17059,170 @@ class OperationsInsightsClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def summarize_host_insight_network_usage_trend(self, compartment_id, id, **kwargs):
+        """
+        Returns response with usage time series data with breakdown by network interface for the time period specified.
+
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str id: (required)
+            Required `OCID`__ of the host insight resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str analysis_time_interval: (optional)
+            Specify time period in ISO 8601 format with respect to current time.
+            Default is last 30 days represented by P30D.
+            If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+            Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+
+        :param datetime time_interval_start: (optional)
+            Analysis start time in UTC in ISO 8601 format(inclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            The minimum allowed value is 2 years prior to the current day.
+            timeIntervalStart and timeIntervalEnd parameters are used together.
+            If analysisTimeInterval is specified, this parameter is ignored.
+
+        :param datetime time_interval_end: (optional)
+            Analysis end time in UTC in ISO 8601 format(exclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            timeIntervalStart and timeIntervalEnd are used together.
+            If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+
+        :param str host_id: (optional)
+            Optional `OCID`__ of the host (Compute Id)
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to
+            return in a paginated \"List\" call.
+            For important details about how pagination works, see
+            `List Pagination`__.
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str statistic: (optional)
+            Choose the type of statistic metric data to be used for forecasting.
+
+            Allowed values are: "AVG", "MAX"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.SummarizeHostInsightNetworkUsageTrendAggregationCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_host_insight_network_usage_trend.py.html>`__ to see an example of how to use summarize_host_insight_network_usage_trend API.
+        """
+        resource_path = "/hostInsights/networkUsageTrend"
+        method = "GET"
+        operation_name = "summarize_host_insight_network_usage_trend"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightNetworkUsageTrend"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "analysis_time_interval",
+            "time_interval_start",
+            "time_interval_end",
+            "host_id",
+            "page",
+            "limit",
+            "statistic",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_host_insight_network_usage_trend got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'statistic' in kwargs:
+            statistic_allowed_values = ["AVG", "MAX"]
+            if kwargs['statistic'] not in statistic_allowed_values:
+                raise ValueError(
+                    "Invalid value for `statistic`, must be one of {0}".format(statistic_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "id": id,
+            "analysisTimeInterval": kwargs.get("analysis_time_interval", missing),
+            "timeIntervalStart": kwargs.get("time_interval_start", missing),
+            "timeIntervalEnd": kwargs.get("time_interval_end", missing),
+            "hostId": kwargs.get("host_id", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "statistic": kwargs.get("statistic", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeHostInsightNetworkUsageTrendAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeHostInsightNetworkUsageTrendAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def summarize_host_insight_resource_capacity_trend(self, compartment_id, resource_metric, **kwargs):
         """
         Returns response with time series data (endTimestamp, capacity) for the time period specified.
@@ -17073,6 +17237,7 @@ class OperationsInsightsClient(object):
 
         :param str resource_metric: (required)
             Filter by host resource metric.
+            Supported values are CPU, MEMORY, LOGICAL_MEMORY, STORAGE and NETWORK.
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -17181,6 +17346,12 @@ class OperationsInsightsClient(object):
         :param list[str] vmcluster_name: (optional)
             Optional list of Exadata Insight VM cluster name.
 
+        :param int high_utilization_threshold: (optional)
+            Percent value in which a resource metric is considered highly utilized.
+
+        :param int low_utilization_threshold: (optional)
+            Percent value in which a resource metric is considered low utilized.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -17226,7 +17397,9 @@ class OperationsInsightsClient(object):
             "compartment_id_in_subtree",
             "host_type",
             "host_id",
-            "vmcluster_name"
+            "vmcluster_name",
+            "high_utilization_threshold",
+            "low_utilization_threshold"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -17282,7 +17455,9 @@ class OperationsInsightsClient(object):
             "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
             "hostId": kwargs.get("host_id", missing),
-            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi'),
+            "highUtilizationThreshold": kwargs.get("high_utilization_threshold", missing),
+            "lowUtilizationThreshold": kwargs.get("low_utilization_threshold", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -17338,6 +17513,7 @@ class OperationsInsightsClient(object):
 
         :param str resource_metric: (required)
             Filter by host resource metric.
+            Supported values are CPU, MEMORY, LOGICAL_MEMORY, STORAGE and NETWORK.
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -17460,6 +17636,18 @@ class OperationsInsightsClient(object):
         :param list[str] vmcluster_name: (optional)
             Optional list of Exadata Insight VM cluster name.
 
+        :param int high_utilization_threshold: (optional)
+            Percent value in which a resource metric is considered highly utilized.
+
+        :param int low_utilization_threshold: (optional)
+            Percent value in which a resource metric is considered low utilized.
+
+        :param str mount_point: (optional)
+            Mount points are specialized NTFS filesystem objects.
+
+        :param str interface_name: (optional)
+            Name of the network interface.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -17507,7 +17695,11 @@ class OperationsInsightsClient(object):
             "compartment_id_in_subtree",
             "host_type",
             "host_id",
-            "vmcluster_name"
+            "vmcluster_name",
+            "high_utilization_threshold",
+            "low_utilization_threshold",
+            "mount_point",
+            "interface_name"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -17565,7 +17757,11 @@ class OperationsInsightsClient(object):
             "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
             "hostId": kwargs.get("host_id", missing),
-            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi'),
+            "highUtilizationThreshold": kwargs.get("high_utilization_threshold", missing),
+            "lowUtilizationThreshold": kwargs.get("low_utilization_threshold", missing),
+            "mountPoint": kwargs.get("mount_point", missing),
+            "interfaceName": kwargs.get("interface_name", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -17621,6 +17817,7 @@ class OperationsInsightsClient(object):
 
         :param str resource_metric: (required)
             Filter by host resource metric.
+            Supported values are CPU, MEMORY, LOGICAL_MEMORY, STORAGE and NETWORK.
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -17740,6 +17937,12 @@ class OperationsInsightsClient(object):
         :param list[str] vmcluster_name: (optional)
             Optional list of Exadata Insight VM cluster name.
 
+        :param int high_utilization_threshold: (optional)
+            Percent value in which a resource metric is considered highly utilized.
+
+        :param int low_utilization_threshold: (optional)
+            Percent value in which a resource metric is considered low utilized.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -17788,7 +17991,9 @@ class OperationsInsightsClient(object):
             "compartment_id_in_subtree",
             "host_type",
             "host_id",
-            "vmcluster_name"
+            "vmcluster_name",
+            "high_utilization_threshold",
+            "low_utilization_threshold"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -17840,7 +18045,9 @@ class OperationsInsightsClient(object):
             "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
             "hostId": kwargs.get("host_id", missing),
-            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi'),
+            "highUtilizationThreshold": kwargs.get("high_utilization_threshold", missing),
+            "lowUtilizationThreshold": kwargs.get("low_utilization_threshold", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -17898,6 +18105,7 @@ class OperationsInsightsClient(object):
 
         :param str resource_metric: (required)
             Filter by host resource metric.
+            Supported values are CPU, MEMORY, LOGICAL_MEMORY, STORAGE and NETWORK.
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -18123,6 +18331,7 @@ class OperationsInsightsClient(object):
 
         :param str resource_metric: (required)
             Filter by host resource metric.
+            Supported values are CPU, MEMORY, LOGICAL_MEMORY, STORAGE and NETWORK.
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -18370,6 +18579,7 @@ class OperationsInsightsClient(object):
 
         :param str resource_metric: (required)
             Filter by host resource metric.
+            Supported values are CPU, MEMORY, LOGICAL_MEMORY, STORAGE and NETWORK.
 
         :param str analysis_time_interval: (optional)
             Specify time period in ISO 8601 format with respect to current time.
@@ -18462,6 +18672,12 @@ class OperationsInsightsClient(object):
         :param list[str] vmcluster_name: (optional)
             Optional list of Exadata Insight VM cluster name.
 
+        :param int high_utilization_threshold: (optional)
+            Percent value in which a resource metric is considered highly utilized.
+
+        :param int low_utilization_threshold: (optional)
+            Percent value in which a resource metric is considered low utilized.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -18505,7 +18721,9 @@ class OperationsInsightsClient(object):
             "compartment_id_in_subtree",
             "host_type",
             "host_id",
-            "vmcluster_name"
+            "vmcluster_name",
+            "high_utilization_threshold",
+            "low_utilization_threshold"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -18538,7 +18756,9 @@ class OperationsInsightsClient(object):
             "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
             "hostId": kwargs.get("host_id", missing),
-            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi'),
+            "highUtilizationThreshold": kwargs.get("high_utilization_threshold", missing),
+            "lowUtilizationThreshold": kwargs.get("low_utilization_threshold", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -18577,6 +18797,170 @@ class OperationsInsightsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="SummarizeHostInsightResourceUtilizationInsightAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def summarize_host_insight_storage_usage_trend(self, compartment_id, id, **kwargs):
+        """
+        Returns response with usage time series data with breakdown by filesystem for the time period specified.
+
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str id: (required)
+            Required `OCID`__ of the host insight resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str analysis_time_interval: (optional)
+            Specify time period in ISO 8601 format with respect to current time.
+            Default is last 30 days represented by P30D.
+            If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+            Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+
+        :param datetime time_interval_start: (optional)
+            Analysis start time in UTC in ISO 8601 format(inclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            The minimum allowed value is 2 years prior to the current day.
+            timeIntervalStart and timeIntervalEnd parameters are used together.
+            If analysisTimeInterval is specified, this parameter is ignored.
+
+        :param datetime time_interval_end: (optional)
+            Analysis end time in UTC in ISO 8601 format(exclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            timeIntervalStart and timeIntervalEnd are used together.
+            If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+
+        :param str host_id: (optional)
+            Optional `OCID`__ of the host (Compute Id)
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to
+            return in a paginated \"List\" call.
+            For important details about how pagination works, see
+            `List Pagination`__.
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str statistic: (optional)
+            Choose the type of statistic metric data to be used for forecasting.
+
+            Allowed values are: "AVG", "MAX"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.SummarizeHostInsightStorageUsageTrendAggregationCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_host_insight_storage_usage_trend.py.html>`__ to see an example of how to use summarize_host_insight_storage_usage_trend API.
+        """
+        resource_path = "/hostInsights/storageUsageTrend"
+        method = "GET"
+        operation_name = "summarize_host_insight_storage_usage_trend"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightStorageUsageTrend"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "analysis_time_interval",
+            "time_interval_start",
+            "time_interval_end",
+            "host_id",
+            "page",
+            "limit",
+            "statistic",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_host_insight_storage_usage_trend got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'statistic' in kwargs:
+            statistic_allowed_values = ["AVG", "MAX"]
+            if kwargs['statistic'] not in statistic_allowed_values:
+                raise ValueError(
+                    "Invalid value for `statistic`, must be one of {0}".format(statistic_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "id": id,
+            "analysisTimeInterval": kwargs.get("analysis_time_interval", missing),
+            "timeIntervalStart": kwargs.get("time_interval_start", missing),
+            "timeIntervalEnd": kwargs.get("time_interval_end", missing),
+            "hostId": kwargs.get("host_id", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "statistic": kwargs.get("statistic", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeHostInsightStorageUsageTrendAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeHostInsightStorageUsageTrendAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
@@ -18654,6 +19038,11 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param str statistic: (optional)
+            Choose the type of statistic metric data to be used for forecasting.
+
+            Allowed values are: "AVG", "MAX"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -18688,12 +19077,20 @@ class OperationsInsightsClient(object):
             "opc_request_id",
             "analysis_time_interval",
             "host_type",
-            "host_id"
+            "host_id",
+            "statistic"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "summarize_host_insight_top_processes_usage got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'statistic' in kwargs:
+            statistic_allowed_values = ["AVG", "MAX"]
+            if kwargs['statistic'] not in statistic_allowed_values:
+                raise ValueError(
+                    "Invalid value for `statistic`, must be one of {0}".format(statistic_allowed_values)
+                )
 
         query_params = {
             "compartmentId": compartment_id,
@@ -18706,7 +19103,8 @@ class OperationsInsightsClient(object):
             "analysisTimeInterval": kwargs.get("analysis_time_interval", missing),
             "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
             "hostId": kwargs.get("host_id", missing),
-            "timestamp": timestamp
+            "timestamp": timestamp,
+            "statistic": kwargs.get("statistic", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -18821,6 +19219,11 @@ class OperationsInsightsClient(object):
         :param str process_hash: (optional)
             Unique identifier for a process.
 
+        :param str statistic: (optional)
+            Choose the type of statistic metric data to be used for forecasting.
+
+            Allowed values are: "AVG", "MAX"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -18856,12 +19259,20 @@ class OperationsInsightsClient(object):
             "opc_request_id",
             "host_type",
             "host_id",
-            "process_hash"
+            "process_hash",
+            "statistic"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "summarize_host_insight_top_processes_usage_trend got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'statistic' in kwargs:
+            statistic_allowed_values = ["AVG", "MAX"]
+            if kwargs['statistic'] not in statistic_allowed_values:
+                raise ValueError(
+                    "Invalid value for `statistic`, must be one of {0}".format(statistic_allowed_values)
+                )
 
         query_params = {
             "compartmentId": compartment_id,
@@ -18874,7 +19285,8 @@ class OperationsInsightsClient(object):
             "limit": kwargs.get("limit", missing),
             "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
             "hostId": kwargs.get("host_id", missing),
-            "processHash": kwargs.get("process_hash", missing)
+            "processHash": kwargs.get("process_hash", missing),
+            "statistic": kwargs.get("statistic", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

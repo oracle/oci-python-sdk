@@ -29,6 +29,10 @@ class HostPerformanceMetricGroup(object):
     #: This constant has a value of "HOST_TOP_PROCESSES"
     METRIC_NAME_HOST_TOP_PROCESSES = "HOST_TOP_PROCESSES"
 
+    #: A constant which can be used with the metric_name property of a HostPerformanceMetricGroup.
+    #: This constant has a value of "HOST_FILESYSTEM_USAGE"
+    METRIC_NAME_HOST_FILESYSTEM_USAGE = "HOST_FILESYSTEM_USAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new HostPerformanceMetricGroup object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -37,13 +41,14 @@ class HostPerformanceMetricGroup(object):
         * :class:`~oci.opsi.models.HostMemoryUsage`
         * :class:`~oci.opsi.models.HostTopProcesses`
         * :class:`~oci.opsi.models.HostCpuUsage`
+        * :class:`~oci.opsi.models.HostFilesystemUsage`
         * :class:`~oci.opsi.models.HostNetworkActivitySummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param metric_name:
             The value to assign to the metric_name property of this HostPerformanceMetricGroup.
-            Allowed values for this property are: "HOST_CPU_USAGE", "HOST_MEMORY_USAGE", "HOST_NETWORK_ACTIVITY_SUMMARY", "HOST_TOP_PROCESSES"
+            Allowed values for this property are: "HOST_CPU_USAGE", "HOST_MEMORY_USAGE", "HOST_NETWORK_ACTIVITY_SUMMARY", "HOST_TOP_PROCESSES", "HOST_FILESYSTEM_USAGE"
         :type metric_name: str
 
         :param time_collected:
@@ -81,6 +86,9 @@ class HostPerformanceMetricGroup(object):
         if type == 'HOST_CPU_USAGE':
             return 'HostCpuUsage'
 
+        if type == 'HOST_FILESYSTEM_USAGE':
+            return 'HostFilesystemUsage'
+
         if type == 'HOST_NETWORK_ACTIVITY_SUMMARY':
             return 'HostNetworkActivitySummary'
         else:
@@ -92,7 +100,7 @@ class HostPerformanceMetricGroup(object):
         **[Required]** Gets the metric_name of this HostPerformanceMetricGroup.
         Name of the metric group
 
-        Allowed values for this property are: "HOST_CPU_USAGE", "HOST_MEMORY_USAGE", "HOST_NETWORK_ACTIVITY_SUMMARY", "HOST_TOP_PROCESSES"
+        Allowed values for this property are: "HOST_CPU_USAGE", "HOST_MEMORY_USAGE", "HOST_NETWORK_ACTIVITY_SUMMARY", "HOST_TOP_PROCESSES", "HOST_FILESYSTEM_USAGE"
 
 
         :return: The metric_name of this HostPerformanceMetricGroup.
@@ -110,7 +118,7 @@ class HostPerformanceMetricGroup(object):
         :param metric_name: The metric_name of this HostPerformanceMetricGroup.
         :type: str
         """
-        allowed_values = ["HOST_CPU_USAGE", "HOST_MEMORY_USAGE", "HOST_NETWORK_ACTIVITY_SUMMARY", "HOST_TOP_PROCESSES"]
+        allowed_values = ["HOST_CPU_USAGE", "HOST_MEMORY_USAGE", "HOST_NETWORK_ACTIVITY_SUMMARY", "HOST_TOP_PROCESSES", "HOST_FILESYSTEM_USAGE"]
         if not value_allowed_none_or_none_sentinel(metric_name, allowed_values):
             raise ValueError(
                 "Invalid value for `metric_name`, must be None or one of {0}"

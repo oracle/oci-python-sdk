@@ -21,12 +21,16 @@ class HostNetworkActivitySummary(HostPerformanceMetricGroup):
 
         :param metric_name:
             The value to assign to the metric_name property of this HostNetworkActivitySummary.
-            Allowed values for this property are: "HOST_CPU_USAGE", "HOST_MEMORY_USAGE", "HOST_NETWORK_ACTIVITY_SUMMARY", "HOST_TOP_PROCESSES"
+            Allowed values for this property are: "HOST_CPU_USAGE", "HOST_MEMORY_USAGE", "HOST_NETWORK_ACTIVITY_SUMMARY", "HOST_TOP_PROCESSES", "HOST_FILESYSTEM_USAGE"
         :type metric_name: str
 
         :param time_collected:
             The value to assign to the time_collected property of this HostNetworkActivitySummary.
         :type time_collected: datetime
+
+        :param interface_name:
+            The value to assign to the interface_name property of this HostNetworkActivitySummary.
+        :type interface_name: str
 
         :param all_network_read_in_mbps:
             The value to assign to the all_network_read_in_mbps property of this HostNetworkActivitySummary.
@@ -44,6 +48,7 @@ class HostNetworkActivitySummary(HostPerformanceMetricGroup):
         self.swagger_types = {
             'metric_name': 'str',
             'time_collected': 'datetime',
+            'interface_name': 'str',
             'all_network_read_in_mbps': 'float',
             'all_network_write_in_mbps': 'float',
             'all_network_io_in_mbps': 'float'
@@ -52,6 +57,7 @@ class HostNetworkActivitySummary(HostPerformanceMetricGroup):
         self.attribute_map = {
             'metric_name': 'metricName',
             'time_collected': 'timeCollected',
+            'interface_name': 'interfaceName',
             'all_network_read_in_mbps': 'allNetworkReadInMbps',
             'all_network_write_in_mbps': 'allNetworkWriteInMbps',
             'all_network_io_in_mbps': 'allNetworkIoInMbps'
@@ -59,10 +65,35 @@ class HostNetworkActivitySummary(HostPerformanceMetricGroup):
 
         self._metric_name = None
         self._time_collected = None
+        self._interface_name = None
         self._all_network_read_in_mbps = None
         self._all_network_write_in_mbps = None
         self._all_network_io_in_mbps = None
         self._metric_name = 'HOST_NETWORK_ACTIVITY_SUMMARY'
+
+    @property
+    def interface_name(self):
+        """
+        Gets the interface_name of this HostNetworkActivitySummary.
+        Name of the network interface
+
+
+        :return: The interface_name of this HostNetworkActivitySummary.
+        :rtype: str
+        """
+        return self._interface_name
+
+    @interface_name.setter
+    def interface_name(self, interface_name):
+        """
+        Sets the interface_name of this HostNetworkActivitySummary.
+        Name of the network interface
+
+
+        :param interface_name: The interface_name of this HostNetworkActivitySummary.
+        :type: str
+        """
+        self._interface_name = interface_name
 
     @property
     def all_network_read_in_mbps(self):

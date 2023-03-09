@@ -76,6 +76,48 @@ def test_cancel_deployment_backup(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_cancel_snooze_deployment_upgrade(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'CancelSnoozeDeploymentUpgrade'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'CancelSnoozeDeploymentUpgrade')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='CancelSnoozeDeploymentUpgrade')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.cancel_snooze_deployment_upgrade(
+                deployment_upgrade_id=request.pop(util.camelize('deploymentUpgradeId')),
+                cancel_snooze_deployment_upgrade_details=request.pop(util.camelize('CancelSnoozeDeploymentUpgradeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'CancelSnoozeDeploymentUpgrade',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cancel_snooze_deployment_upgrade',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
 def test_change_connection_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('golden_gate', 'ChangeConnectionCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1487,6 +1529,69 @@ def test_list_deployment_upgrades(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_list_deployment_versions(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'ListDeploymentVersions'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'ListDeploymentVersions')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='ListDeploymentVersions')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.list_deployment_versions(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_deployment_versions(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_deployment_versions(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'ListDeploymentVersions',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'deploymentVersionCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
 def test_list_deployment_wallets_operations(testing_service_client):
     if not testing_service_client.is_api_enabled('golden_gate', 'ListDeploymentWalletsOperations'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2036,6 +2141,90 @@ def test_restore_deployment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_rollback_deployment_upgrade(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'RollbackDeploymentUpgrade'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'RollbackDeploymentUpgrade')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='RollbackDeploymentUpgrade')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.rollback_deployment_upgrade(
+                deployment_upgrade_id=request.pop(util.camelize('deploymentUpgradeId')),
+                rollback_deployment_upgrade_details=request.pop(util.camelize('RollbackDeploymentUpgradeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'RollbackDeploymentUpgrade',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'rollback_deployment_upgrade',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_snooze_deployment_upgrade(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'SnoozeDeploymentUpgrade'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'SnoozeDeploymentUpgrade')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='SnoozeDeploymentUpgrade')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.snooze_deployment_upgrade(
+                deployment_upgrade_id=request.pop(util.camelize('deploymentUpgradeId')),
+                snooze_deployment_upgrade_details=request.pop(util.camelize('SnoozeDeploymentUpgradeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'SnoozeDeploymentUpgrade',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'snooze_deployment_upgrade',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
 def test_start_deployment(testing_service_client):
     if not testing_service_client.is_api_enabled('golden_gate', 'StartDeployment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2324,6 +2513,48 @@ def test_upgrade_deployment(testing_service_client):
             result,
             service_error,
             'upgrade_deployment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_upgrade_deployment_upgrade(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'UpgradeDeploymentUpgrade'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'UpgradeDeploymentUpgrade')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='UpgradeDeploymentUpgrade')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.upgrade_deployment_upgrade(
+                deployment_upgrade_id=request.pop(util.camelize('deploymentUpgradeId')),
+                upgrade_deployment_upgrade_details=request.pop(util.camelize('UpgradeDeploymentUpgradeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'UpgradeDeploymentUpgrade',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'upgrade_deployment_upgrade',
             False,
             False
         )

@@ -38,13 +38,18 @@ class CreateOggDeploymentDetails(object):
             The value to assign to the key property of this CreateOggDeploymentDetails.
         :type key: str
 
+        :param ogg_version:
+            The value to assign to the ogg_version property of this CreateOggDeploymentDetails.
+        :type ogg_version: str
+
         """
         self.swagger_types = {
             'deployment_name': 'str',
             'admin_username': 'str',
             'admin_password': 'str',
             'certificate': 'str',
-            'key': 'str'
+            'key': 'str',
+            'ogg_version': 'str'
         }
 
         self.attribute_map = {
@@ -52,7 +57,8 @@ class CreateOggDeploymentDetails(object):
             'admin_username': 'adminUsername',
             'admin_password': 'adminPassword',
             'certificate': 'certificate',
-            'key': 'key'
+            'key': 'key',
+            'ogg_version': 'oggVersion'
         }
 
         self._deployment_name = None
@@ -60,6 +66,7 @@ class CreateOggDeploymentDetails(object):
         self._admin_password = None
         self._certificate = None
         self._key = None
+        self._ogg_version = None
 
     @property
     def deployment_name(self):
@@ -188,6 +195,30 @@ class CreateOggDeploymentDetails(object):
         :type: str
         """
         self._key = key
+
+    @property
+    def ogg_version(self):
+        """
+        Gets the ogg_version of this CreateOggDeploymentDetails.
+        Version of OGG
+
+
+        :return: The ogg_version of this CreateOggDeploymentDetails.
+        :rtype: str
+        """
+        return self._ogg_version
+
+    @ogg_version.setter
+    def ogg_version(self, ogg_version):
+        """
+        Sets the ogg_version of this CreateOggDeploymentDetails.
+        Version of OGG
+
+
+        :param ogg_version: The ogg_version of this CreateOggDeploymentDetails.
+        :type: str
+        """
+        self._ogg_version = ogg_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

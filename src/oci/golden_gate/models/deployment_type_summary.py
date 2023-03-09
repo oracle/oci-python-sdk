@@ -112,6 +112,10 @@ class DeploymentTypeSummary(object):
             The value to assign to the target_technologies property of this DeploymentTypeSummary.
         :type target_technologies: list[str]
 
+        :param ogg_version:
+            The value to assign to the ogg_version property of this DeploymentTypeSummary.
+        :type ogg_version: str
+
         """
         self.swagger_types = {
             'category': 'str',
@@ -119,7 +123,8 @@ class DeploymentTypeSummary(object):
             'deployment_type': 'str',
             'connection_types': 'list[str]',
             'source_technologies': 'list[str]',
-            'target_technologies': 'list[str]'
+            'target_technologies': 'list[str]',
+            'ogg_version': 'str'
         }
 
         self.attribute_map = {
@@ -128,7 +133,8 @@ class DeploymentTypeSummary(object):
             'deployment_type': 'deploymentType',
             'connection_types': 'connectionTypes',
             'source_technologies': 'sourceTechnologies',
-            'target_technologies': 'targetTechnologies'
+            'target_technologies': 'targetTechnologies',
+            'ogg_version': 'oggVersion'
         }
 
         self._category = None
@@ -137,6 +143,7 @@ class DeploymentTypeSummary(object):
         self._connection_types = None
         self._source_technologies = None
         self._target_technologies = None
+        self._ogg_version = None
 
     @property
     def category(self):
@@ -313,6 +320,30 @@ class DeploymentTypeSummary(object):
         :type: list[str]
         """
         self._target_technologies = target_technologies
+
+    @property
+    def ogg_version(self):
+        """
+        Gets the ogg_version of this DeploymentTypeSummary.
+        Version of OGG
+
+
+        :return: The ogg_version of this DeploymentTypeSummary.
+        :rtype: str
+        """
+        return self._ogg_version
+
+    @ogg_version.setter
+    def ogg_version(self, ogg_version):
+        """
+        Sets the ogg_version of this DeploymentTypeSummary.
+        Version of OGG
+
+
+        :param ogg_version: The ogg_version of this DeploymentTypeSummary.
+        :type: str
+        """
+        self._ogg_version = ogg_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

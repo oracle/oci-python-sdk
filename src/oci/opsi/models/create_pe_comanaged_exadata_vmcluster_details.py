@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreatePeComanagedExadataVmclusterDetails(object):
     """
-    The information of the VM Cluster which contains databases.
+    The information of the VM Cluster which contains databases. Either an opsiPrivateEndpointId or dbmPrivateEndpointId must be specified. If the dbmPrivateEndpointId is specified, a new Operations Insights private endpoint will be created.
     """
 
     def __init__(self, **kwargs):
@@ -85,7 +85,7 @@ class CreatePeComanagedExadataVmclusterDetails(object):
     @property
     def opsi_private_endpoint_id(self):
         """
-        **[Required]** Gets the opsi_private_endpoint_id of this CreatePeComanagedExadataVmclusterDetails.
+        Gets the opsi_private_endpoint_id of this CreatePeComanagedExadataVmclusterDetails.
         The `OCID`__ of the OPSI private endpoint
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm

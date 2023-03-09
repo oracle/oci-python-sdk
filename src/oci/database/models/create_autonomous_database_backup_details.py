@@ -36,25 +36,32 @@ class CreateAutonomousDatabaseBackupDetails(object):
             The value to assign to the is_long_term_backup property of this CreateAutonomousDatabaseBackupDetails.
         :type is_long_term_backup: bool
 
+        :param backup_destination_details:
+            The value to assign to the backup_destination_details property of this CreateAutonomousDatabaseBackupDetails.
+        :type backup_destination_details: oci.database.models.BackupDestinationDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'autonomous_database_id': 'str',
             'retention_period_in_days': 'int',
-            'is_long_term_backup': 'bool'
+            'is_long_term_backup': 'bool',
+            'backup_destination_details': 'BackupDestinationDetails'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
             'autonomous_database_id': 'autonomousDatabaseId',
             'retention_period_in_days': 'retentionPeriodInDays',
-            'is_long_term_backup': 'isLongTermBackup'
+            'is_long_term_backup': 'isLongTermBackup',
+            'backup_destination_details': 'backupDestinationDetails'
         }
 
         self._display_name = None
         self._autonomous_database_id = None
         self._retention_period_in_days = None
         self._is_long_term_backup = None
+        self._backup_destination_details = None
 
     @property
     def display_name(self):
@@ -155,6 +162,26 @@ class CreateAutonomousDatabaseBackupDetails(object):
         :type: bool
         """
         self._is_long_term_backup = is_long_term_backup
+
+    @property
+    def backup_destination_details(self):
+        """
+        Gets the backup_destination_details of this CreateAutonomousDatabaseBackupDetails.
+
+        :return: The backup_destination_details of this CreateAutonomousDatabaseBackupDetails.
+        :rtype: oci.database.models.BackupDestinationDetails
+        """
+        return self._backup_destination_details
+
+    @backup_destination_details.setter
+    def backup_destination_details(self, backup_destination_details):
+        """
+        Sets the backup_destination_details of this CreateAutonomousDatabaseBackupDetails.
+
+        :param backup_destination_details: The backup_destination_details of this CreateAutonomousDatabaseBackupDetails.
+        :type: oci.database.models.BackupDestinationDetails
+        """
+        self._backup_destination_details = backup_destination_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

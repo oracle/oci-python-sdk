@@ -168,3 +168,4 @@
 ^src/oci/queue/.*\.py$
 ^src/oci/recovery/.*\.py$
 ^src/oci/vbs_inst/.*\.py$
+^src/oci/identity_domains/.*\.py$

@@ -1,0 +1,11 @@
+MyTrustedUserAgents
+===================
+
+.. currentmodule:: oci.identity_domains.models
+
+.. autoclass:: MyTrustedUserAgents
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

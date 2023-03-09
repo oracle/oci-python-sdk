@@ -17,18 +17,23 @@ class UpgradeDeploymentDetails(object):
     #: This constant has a value of "CURRENT_RELEASE"
     TYPE_CURRENT_RELEASE = "CURRENT_RELEASE"
 
+    #: A constant which can be used with the type property of a UpgradeDeploymentDetails.
+    #: This constant has a value of "SPECIFIC_RELEASE"
+    TYPE_SPECIFIC_RELEASE = "SPECIFIC_RELEASE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpgradeDeploymentDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.golden_gate.models.UpgradeDeploymentSpecificReleaseDetails`
         * :class:`~oci.golden_gate.models.UpgradeDeploymentCurrentReleaseDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this UpgradeDeploymentDetails.
-            Allowed values for this property are: "CURRENT_RELEASE"
+            Allowed values for this property are: "CURRENT_RELEASE", "SPECIFIC_RELEASE"
         :type type: str
 
         """
@@ -50,6 +55,9 @@ class UpgradeDeploymentDetails(object):
         """
         type = object_dictionary['type']
 
+        if type == 'SPECIFIC_RELEASE':
+            return 'UpgradeDeploymentSpecificReleaseDetails'
+
         if type == 'CURRENT_RELEASE':
             return 'UpgradeDeploymentCurrentReleaseDetails'
         else:
@@ -61,7 +69,7 @@ class UpgradeDeploymentDetails(object):
         **[Required]** Gets the type of this UpgradeDeploymentDetails.
         The type of a deployment upgrade
 
-        Allowed values for this property are: "CURRENT_RELEASE"
+        Allowed values for this property are: "CURRENT_RELEASE", "SPECIFIC_RELEASE"
 
 
         :return: The type of this UpgradeDeploymentDetails.
@@ -79,7 +87,7 @@ class UpgradeDeploymentDetails(object):
         :param type: The type of this UpgradeDeploymentDetails.
         :type: str
         """
-        allowed_values = ["CURRENT_RELEASE"]
+        allowed_values = ["CURRENT_RELEASE", "SPECIFIC_RELEASE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 "Invalid value for `type`, must be None or one of {0}"

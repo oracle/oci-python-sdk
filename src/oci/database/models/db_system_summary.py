@@ -205,6 +205,10 @@ class DbSystemSummary(object):
             The value to assign to the version property of this DbSystemSummary.
         :type version: str
 
+        :param os_version:
+            The value to assign to the os_version property of this DbSystemSummary.
+        :type os_version: str
+
         :param cpu_core_count:
             The value to assign to the cpu_core_count property of this DbSystemSummary.
         :type cpu_core_count: int
@@ -346,6 +350,7 @@ class DbSystemSummary(object):
             'domain': 'str',
             'kms_key_id': 'str',
             'version': 'str',
+            'os_version': 'str',
             'cpu_core_count': 'int',
             'cluster_name': 'str',
             'data_storage_percentage': 'int',
@@ -396,6 +401,7 @@ class DbSystemSummary(object):
             'domain': 'domain',
             'kms_key_id': 'kmsKeyId',
             'version': 'version',
+            'os_version': 'osVersion',
             'cpu_core_count': 'cpuCoreCount',
             'cluster_name': 'clusterName',
             'data_storage_percentage': 'dataStoragePercentage',
@@ -445,6 +451,7 @@ class DbSystemSummary(object):
         self._domain = None
         self._kms_key_id = None
         self._version = None
+        self._os_version = None
         self._cpu_core_count = None
         self._cluster_name = None
         self._data_storage_percentage = None
@@ -995,6 +1002,30 @@ class DbSystemSummary(object):
         :type: str
         """
         self._version = version
+
+    @property
+    def os_version(self):
+        """
+        Gets the os_version of this DbSystemSummary.
+        The most recent OS Patch Version applied on the DB system.
+
+
+        :return: The os_version of this DbSystemSummary.
+        :rtype: str
+        """
+        return self._os_version
+
+    @os_version.setter
+    def os_version(self, os_version):
+        """
+        Sets the os_version of this DbSystemSummary.
+        The most recent OS Patch Version applied on the DB system.
+
+
+        :param os_version: The os_version of this DbSystemSummary.
+        :type: str
+        """
+        self._os_version = os_version
 
     @property
     def cpu_core_count(self):
