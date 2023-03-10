@@ -342,13 +342,13 @@ class IdentityProvider(object):
             The value to assign to the correlation_policy property of this IdentityProvider.
         :type correlation_policy: oci.identity_domains.models.IdentityProviderCorrelationPolicy
 
-        :param urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider property of this IdentityProvider.
-        :type urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider: oci.identity_domains.models.ExtensionSocialIdentityProvider
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider property of this IdentityProvider.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider: oci.identity_domains.models.ExtensionSocialIdentityProvider
 
-        :param urnietfparamsscimschemasoracleidcsextensionx509_identity_provider:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionx509_identity_provider property of this IdentityProvider.
-        :type urnietfparamsscimschemasoracleidcsextensionx509_identity_provider: oci.identity_domains.models.ExtensionX509IdentityProvider
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider property of this IdentityProvider.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider: oci.identity_domains.models.ExtensionX509IdentityProvider
 
         """
         self.swagger_types = {
@@ -408,8 +408,8 @@ class IdentityProvider(object):
             'jit_user_prov_attributes': 'IdentityProviderJitUserProvAttributes',
             'jit_user_prov_assigned_groups': 'list[IdentityProviderJitUserProvAssignedGroups]',
             'correlation_policy': 'IdentityProviderCorrelationPolicy',
-            'urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider': 'ExtensionSocialIdentityProvider',
-            'urnietfparamsscimschemasoracleidcsextensionx509_identity_provider': 'ExtensionX509IdentityProvider'
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider': 'ExtensionSocialIdentityProvider',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider': 'ExtensionX509IdentityProvider'
         }
 
         self.attribute_map = {
@@ -469,8 +469,8 @@ class IdentityProvider(object):
             'jit_user_prov_attributes': 'jitUserProvAttributes',
             'jit_user_prov_assigned_groups': 'jitUserProvAssignedGroups',
             'correlation_policy': 'correlationPolicy',
-            'urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:social:IdentityProvider',
-            'urnietfparamsscimschemasoracleidcsextensionx509_identity_provider': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:x509:IdentityProvider'
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:social:IdentityProvider',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:x509:IdentityProvider'
         }
 
         self._id = None
@@ -529,8 +529,8 @@ class IdentityProvider(object):
         self._jit_user_prov_attributes = None
         self._jit_user_prov_assigned_groups = None
         self._correlation_policy = None
-        self._urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider = None
-        self._urnietfparamsscimschemasoracleidcsextensionx509_identity_provider = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider = None
 
     @property
     def id(self):
@@ -3009,44 +3009,44 @@ class IdentityProvider(object):
         self._correlation_policy = correlation_policy
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider of this IdentityProvider.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider of this IdentityProvider.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider of this IdentityProvider.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider of this IdentityProvider.
         :rtype: oci.identity_domains.models.ExtensionSocialIdentityProvider
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider
 
-    @urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider.setter
-    def urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider(self, urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider of this IdentityProvider.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider of this IdentityProvider.
 
-        :param urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider: The urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider of this IdentityProvider.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider: The urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider of this IdentityProvider.
         :type: oci.identity_domains.models.ExtensionSocialIdentityProvider
         """
-        self._urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider = urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider = urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionx509_identity_provider(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionx509_identity_provider of this IdentityProvider.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider of this IdentityProvider.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionx509_identity_provider of this IdentityProvider.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider of this IdentityProvider.
         :rtype: oci.identity_domains.models.ExtensionX509IdentityProvider
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionx509_identity_provider
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider
 
-    @urnietfparamsscimschemasoracleidcsextensionx509_identity_provider.setter
-    def urnietfparamsscimschemasoracleidcsextensionx509_identity_provider(self, urnietfparamsscimschemasoracleidcsextensionx509_identity_provider):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionx509_identity_provider of this IdentityProvider.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider of this IdentityProvider.
 
-        :param urnietfparamsscimschemasoracleidcsextensionx509_identity_provider: The urnietfparamsscimschemasoracleidcsextensionx509_identity_provider of this IdentityProvider.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider: The urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider of this IdentityProvider.
         :type: oci.identity_domains.models.ExtensionX509IdentityProvider
         """
-        self._urnietfparamsscimschemasoracleidcsextensionx509_identity_provider = urnietfparamsscimschemasoracleidcsextensionx509_identity_provider
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider = urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider
 
     def __repr__(self):
         return formatted_flat_dict(self)

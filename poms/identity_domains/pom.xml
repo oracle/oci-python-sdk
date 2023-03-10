@@ -110,11 +110,13 @@
               <additionalProperties>
                 <specName>identity_domains</specName>
                 <generateInitFile>true</generateInitFile>
+                <isRegionalClient.identity_domains>false</isRegionalClient.identity_domains>
               </additionalProperties>
               <featureIdConfigFile>${feature-id-file}</featureIdConfigFile>
               <featureIdConfigDir>${feature-id-dir}</featureIdConfigDir>
               <serviceSlugNameMappingConfigFile>${spec-temp-dir}/serviceSlugNameMapping.yaml</serviceSlugNameMappingConfigFile>
               <isTestGenerationEnabled>true</isTestGenerationEnabled>
+              <renamingConfigFile>${project.basedir}/renamingConfig.yaml</renamingConfigFile>
             </configuration>
           </execution>
         </executions>

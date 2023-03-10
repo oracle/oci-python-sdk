@@ -22,7 +22,7 @@ class IdentityDomainsClient(object):
     Use the table of contents and search tool to explore the Identity Domains API.
     """
 
-    def __init__(self, config, **kwargs):
+    def __init__(self, config, service_endpoint, **kwargs):
         """
         Creates a new service client
 
@@ -31,10 +31,8 @@ class IdentityDomainsClient(object):
             The :py:meth:`~oci.config.from_file` method can be used to load configuration from a file. Alternatively, a ``dict`` can be passed. You can validate_config
             the dict using :py:meth:`~oci.config.validate_config`
 
-        :param str service_endpoint: (optional)
-            The endpoint of the service to call using this client. For example ``https://iaas.us-ashburn-1.oraclecloud.com``. If this keyword argument is
-            not provided then it will be derived using the region in the config parameter. You should only provide this keyword argument if you have an explicit
-            need to specify a service endpoint.
+        :param str service_endpoint:
+            The endpoint of the service to call using this client. For example ``https://iaas.us-ashburn-1.oraclecloud.com``.
 
         :param timeout: (optional)
             The connection and read timeouts for the client. The default values are connection timeout 10 seconds and read timeout 60 seconds. This keyword argument can be provided
@@ -88,8 +86,8 @@ class IdentityDomainsClient(object):
             )
 
         base_client_init_kwargs = {
-            'regional_client': True,
-            'service_endpoint': kwargs.get('service_endpoint'),
+            'regional_client': False,
+            'service_endpoint': service_endpoint,
             'base_path': '/admin/v1',
             'service_endpoint_template': 'https://identity.{region}.oci.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False),

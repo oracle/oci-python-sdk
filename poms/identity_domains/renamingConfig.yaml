@@ -1,0 +1,101 @@
+# modes:
+#   improveColonReadability:
+#     enabled: true
+#   removePrefix:
+#     prefixes:
+#       - urnIetfParamsScim
+#       - UrnIetfParamsScim
+#       - urn_ietf_params_scim_
+#       - Urn_ietf_params_scim_
+languages:
+  oracle-python-sdk:
+    properties:
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:selfChange:User"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user"
+
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:OCITags"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags"
+
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:group:Group"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:posix:Group"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_group"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:requestable:Group"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_requestable_group"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:dbcs:Group"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_dbcs_group"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:dynamic:Group"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_dynamic_group"
+
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:social:IdentityProvider"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:x509:IdentityProvider"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider"
+
+      - originalName: "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_extension_enterprise2_0_user"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:passwordState:User"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:userState:User"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:me:User"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_me_user"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:posix:User"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:mfa:User"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:securityQuestions:User"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_security_questions_user"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:selfRegistration:User"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_self_registration_user"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:termsOfUse:User"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_terms_of_use_user"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:userCredentials:User"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:capabilities:User"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:dbCredentials:User"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user"
+
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:kerberosUser:User"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_kerberos_user_user"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:adaptive:User"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:sff:User"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_sff_user"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:socialAccount:User"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_social_account_user"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:dbUser:User"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:passwordless:User"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_passwordless_user"

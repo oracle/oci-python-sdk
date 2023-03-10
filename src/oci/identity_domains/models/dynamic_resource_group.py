@@ -104,9 +104,9 @@ class DynamicResourceGroup(object):
             The value to assign to the dynamic_group_app_roles property of this DynamicResourceGroup.
         :type dynamic_group_app_roles: list[oci.identity_domains.models.DynamicResourceGroupDynamicGroupAppRoles]
 
-        :param urnietfparamsscimschemasoracleidcsextension_oci_tags:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextension_oci_tags property of this DynamicResourceGroup.
-        :type urnietfparamsscimschemasoracleidcsextension_oci_tags: oci.identity_domains.models.ExtensionOCITags
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags property of this DynamicResourceGroup.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags: oci.identity_domains.models.ExtensionOCITags
 
         """
         self.swagger_types = {
@@ -128,7 +128,7 @@ class DynamicResourceGroup(object):
             'description': 'str',
             'grants': 'list[DynamicResourceGroupGrants]',
             'dynamic_group_app_roles': 'list[DynamicResourceGroupDynamicGroupAppRoles]',
-            'urnietfparamsscimschemasoracleidcsextension_oci_tags': 'ExtensionOCITags'
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags': 'ExtensionOCITags'
         }
 
         self.attribute_map = {
@@ -150,7 +150,7 @@ class DynamicResourceGroup(object):
             'description': 'description',
             'grants': 'grants',
             'dynamic_group_app_roles': 'dynamicGroupAppRoles',
-            'urnietfparamsscimschemasoracleidcsextension_oci_tags': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:OCITags'
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:OCITags'
         }
 
         self._id = None
@@ -171,7 +171,7 @@ class DynamicResourceGroup(object):
         self._description = None
         self._grants = None
         self._dynamic_group_app_roles = None
-        self._urnietfparamsscimschemasoracleidcsextension_oci_tags = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags = None
 
     @property
     def id(self):
@@ -904,24 +904,24 @@ class DynamicResourceGroup(object):
         self._dynamic_group_app_roles = dynamic_group_app_roles
 
     @property
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextension_oci_tags of this DynamicResourceGroup.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags of this DynamicResourceGroup.
 
-        :return: The urnietfparamsscimschemasoracleidcsextension_oci_tags of this DynamicResourceGroup.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags of this DynamicResourceGroup.
         :rtype: oci.identity_domains.models.ExtensionOCITags
         """
-        return self._urnietfparamsscimschemasoracleidcsextension_oci_tags
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags
 
-    @urnietfparamsscimschemasoracleidcsextension_oci_tags.setter
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self, urnietfparamsscimschemasoracleidcsextension_oci_tags):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextension_oci_tags of this DynamicResourceGroup.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags of this DynamicResourceGroup.
 
-        :param urnietfparamsscimschemasoracleidcsextension_oci_tags: The urnietfparamsscimschemasoracleidcsextension_oci_tags of this DynamicResourceGroup.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags: The urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags of this DynamicResourceGroup.
         :type: oci.identity_domains.models.ExtensionOCITags
         """
-        self._urnietfparamsscimschemasoracleidcsextension_oci_tags = urnietfparamsscimschemasoracleidcsextension_oci_tags
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags = urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

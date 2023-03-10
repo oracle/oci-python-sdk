@@ -122,9 +122,9 @@ class OAuth2ClientCredential(object):
             The value to assign to the user property of this OAuth2ClientCredential.
         :type user: oci.identity_domains.models.OAuth2ClientCredentialUser
 
-        :param urnietfparamsscimschemasoracleidcsextensionself_change_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionself_change_user property of this OAuth2ClientCredential.
-        :type urnietfparamsscimschemasoracleidcsextensionself_change_user: oci.identity_domains.models.ExtensionSelfChangeUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user property of this OAuth2ClientCredential.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user: oci.identity_domains.models.ExtensionSelfChangeUser
 
         """
         self.swagger_types = {
@@ -148,7 +148,7 @@ class OAuth2ClientCredential(object):
             'is_reset_secret': 'bool',
             'scopes': 'list[OAuth2ClientCredentialScopes]',
             'user': 'OAuth2ClientCredentialUser',
-            'urnietfparamsscimschemasoracleidcsextensionself_change_user': 'ExtensionSelfChangeUser'
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user': 'ExtensionSelfChangeUser'
         }
 
         self.attribute_map = {
@@ -172,7 +172,7 @@ class OAuth2ClientCredential(object):
             'is_reset_secret': 'isResetSecret',
             'scopes': 'scopes',
             'user': 'user',
-            'urnietfparamsscimschemasoracleidcsextensionself_change_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:selfChange:User'
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:selfChange:User'
         }
 
         self._id = None
@@ -195,7 +195,7 @@ class OAuth2ClientCredential(object):
         self._is_reset_secret = None
         self._scopes = None
         self._user = None
-        self._urnietfparamsscimschemasoracleidcsextensionself_change_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user = None
 
     @property
     def id(self):
@@ -994,24 +994,24 @@ class OAuth2ClientCredential(object):
         self._user = user
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionself_change_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionself_change_user of this OAuth2ClientCredential.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user of this OAuth2ClientCredential.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionself_change_user of this OAuth2ClientCredential.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user of this OAuth2ClientCredential.
         :rtype: oci.identity_domains.models.ExtensionSelfChangeUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionself_change_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user
 
-    @urnietfparamsscimschemasoracleidcsextensionself_change_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionself_change_user(self, urnietfparamsscimschemasoracleidcsextensionself_change_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionself_change_user of this OAuth2ClientCredential.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user of this OAuth2ClientCredential.
 
-        :param urnietfparamsscimschemasoracleidcsextensionself_change_user: The urnietfparamsscimschemasoracleidcsextensionself_change_user of this OAuth2ClientCredential.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user of this OAuth2ClientCredential.
         :type: oci.identity_domains.models.ExtensionSelfChangeUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensionself_change_user = urnietfparamsscimschemasoracleidcsextensionself_change_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user
 
     def __repr__(self):
         return formatted_flat_dict(self)

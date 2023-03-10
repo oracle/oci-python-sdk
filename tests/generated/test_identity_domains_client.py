@@ -50,7 +50,7 @@ def test_create_api_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateApiKey")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_api_key(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -90,7 +90,7 @@ def test_create_auth_token(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateAuthToken")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_auth_token(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -130,7 +130,7 @@ def test_create_authentication_factors_remover(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateAuthenticationFactorsRemover")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_authentication_factors_remover(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -170,7 +170,7 @@ def test_create_customer_secret_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateCustomerSecretKey")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_customer_secret_key(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -210,7 +210,7 @@ def test_create_dynamic_resource_group(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateDynamicResourceGroup")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_dynamic_resource_group(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -250,7 +250,7 @@ def test_create_group(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateGroup")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_group(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -290,7 +290,7 @@ def test_create_identity_provider(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateIdentityProvider")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_identity_provider(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -330,7 +330,7 @@ def test_create_me(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateMe")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_me(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -370,7 +370,7 @@ def test_create_my_api_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateMyApiKey")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_my_api_key(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -410,7 +410,7 @@ def test_create_my_auth_token(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateMyAuthToken")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_my_auth_token(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -450,7 +450,7 @@ def test_create_my_authentication_factor_initiator(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateMyAuthenticationFactorInitiator")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_my_authentication_factor_initiator(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -490,7 +490,7 @@ def test_create_my_authentication_factor_validator(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateMyAuthenticationFactorValidator")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_my_authentication_factor_validator(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -530,7 +530,7 @@ def test_create_my_authentication_factors_remover(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateMyAuthenticationFactorsRemover")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_my_authentication_factors_remover(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -570,7 +570,7 @@ def test_create_my_customer_secret_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateMyCustomerSecretKey")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_my_customer_secret_key(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -610,7 +610,7 @@ def test_create_my_o_auth2_client_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateMyOAuth2ClientCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_my_o_auth2_client_credential(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -650,7 +650,7 @@ def test_create_my_smtp_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateMySmtpCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_my_smtp_credential(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -690,7 +690,7 @@ def test_create_my_support_account(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateMySupportAccount")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_my_support_account(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -730,7 +730,7 @@ def test_create_my_user_db_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateMyUserDbCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_my_user_db_credential(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -770,7 +770,7 @@ def test_create_o_auth2_client_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateOAuth2ClientCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_o_auth2_client_credential(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -810,7 +810,7 @@ def test_create_password_policy(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreatePasswordPolicy")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_password_policy(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -850,7 +850,7 @@ def test_create_smtp_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateSmtpCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_smtp_credential(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -890,7 +890,7 @@ def test_create_user(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateUser")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_user(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -930,7 +930,7 @@ def test_create_user_db_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateUserDbCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.create_user_db_credential(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -970,7 +970,7 @@ def test_delete_api_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteApiKey")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.delete_api_key(
                 api_key_id=request.pop(util.camelize('apiKeyId')),
@@ -1011,7 +1011,7 @@ def test_delete_auth_token(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteAuthToken")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.delete_auth_token(
                 auth_token_id=request.pop(util.camelize('authTokenId')),
@@ -1052,7 +1052,7 @@ def test_delete_customer_secret_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteCustomerSecretKey")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.delete_customer_secret_key(
                 customer_secret_key_id=request.pop(util.camelize('customerSecretKeyId')),
@@ -1093,7 +1093,7 @@ def test_delete_dynamic_resource_group(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteDynamicResourceGroup")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.delete_dynamic_resource_group(
                 dynamic_resource_group_id=request.pop(util.camelize('dynamicResourceGroupId')),
@@ -1134,7 +1134,7 @@ def test_delete_group(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteGroup")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.delete_group(
                 group_id=request.pop(util.camelize('groupId')),
@@ -1175,7 +1175,7 @@ def test_delete_identity_provider(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteIdentityProvider")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.delete_identity_provider(
                 identity_provider_id=request.pop(util.camelize('identityProviderId')),
@@ -1216,7 +1216,7 @@ def test_delete_my_api_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteMyApiKey")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.delete_my_api_key(
                 my_api_key_id=request.pop(util.camelize('myApiKeyId')),
@@ -1257,7 +1257,7 @@ def test_delete_my_auth_token(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteMyAuthToken")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.delete_my_auth_token(
                 my_auth_token_id=request.pop(util.camelize('myAuthTokenId')),
@@ -1298,7 +1298,7 @@ def test_delete_my_customer_secret_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteMyCustomerSecretKey")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.delete_my_customer_secret_key(
                 my_customer_secret_key_id=request.pop(util.camelize('myCustomerSecretKeyId')),
@@ -1339,7 +1339,7 @@ def test_delete_my_device(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteMyDevice")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.delete_my_device(
                 my_device_id=request.pop(util.camelize('myDeviceId')),
@@ -1380,7 +1380,7 @@ def test_delete_my_o_auth2_client_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteMyOAuth2ClientCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.delete_my_o_auth2_client_credential(
                 my_o_auth2_client_credential_id=request.pop(util.camelize('myOAuth2ClientCredentialId')),
@@ -1421,7 +1421,7 @@ def test_delete_my_smtp_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteMySmtpCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.delete_my_smtp_credential(
                 my_smtp_credential_id=request.pop(util.camelize('mySmtpCredentialId')),
@@ -1462,7 +1462,7 @@ def test_delete_my_support_account(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteMySupportAccount")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.delete_my_support_account(
                 my_support_account_id=request.pop(util.camelize('mySupportAccountId')),
@@ -1503,7 +1503,7 @@ def test_delete_my_trusted_user_agent(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteMyTrustedUserAgent")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.delete_my_trusted_user_agent(
                 my_trusted_user_agent_id=request.pop(util.camelize('myTrustedUserAgentId')),
@@ -1544,7 +1544,7 @@ def test_delete_my_user_db_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteMyUserDbCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.delete_my_user_db_credential(
                 my_user_db_credential_id=request.pop(util.camelize('myUserDbCredentialId')),
@@ -1585,7 +1585,7 @@ def test_delete_o_auth2_client_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteOAuth2ClientCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.delete_o_auth2_client_credential(
                 o_auth2_client_credential_id=request.pop(util.camelize('oAuth2ClientCredentialId')),
@@ -1626,7 +1626,7 @@ def test_delete_password_policy(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeletePasswordPolicy")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.delete_password_policy(
                 password_policy_id=request.pop(util.camelize('passwordPolicyId')),
@@ -1667,7 +1667,7 @@ def test_delete_smtp_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteSmtpCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.delete_smtp_credential(
                 smtp_credential_id=request.pop(util.camelize('smtpCredentialId')),
@@ -1708,7 +1708,7 @@ def test_delete_user(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteUser")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.delete_user(
                 user_id=request.pop(util.camelize('userId')),
@@ -1749,7 +1749,7 @@ def test_delete_user_db_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteUserDbCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.delete_user_db_credential(
                 user_db_credential_id=request.pop(util.camelize('userDbCredentialId')),
@@ -1790,7 +1790,7 @@ def test_get_api_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetApiKey")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_api_key(
                 api_key_id=request.pop(util.camelize('apiKeyId')),
@@ -1831,7 +1831,7 @@ def test_get_auth_token(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetAuthToken")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_auth_token(
                 auth_token_id=request.pop(util.camelize('authTokenId')),
@@ -1872,7 +1872,7 @@ def test_get_authentication_factor_setting(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetAuthenticationFactorSetting")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_authentication_factor_setting(
                 authentication_factor_setting_id=request.pop(util.camelize('authenticationFactorSettingId')),
@@ -1913,7 +1913,7 @@ def test_get_customer_secret_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetCustomerSecretKey")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_customer_secret_key(
                 customer_secret_key_id=request.pop(util.camelize('customerSecretKeyId')),
@@ -1954,7 +1954,7 @@ def test_get_dynamic_resource_group(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetDynamicResourceGroup")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_dynamic_resource_group(
                 dynamic_resource_group_id=request.pop(util.camelize('dynamicResourceGroupId')),
@@ -1995,7 +1995,7 @@ def test_get_group(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetGroup")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_group(
                 group_id=request.pop(util.camelize('groupId')),
@@ -2036,7 +2036,7 @@ def test_get_identity_provider(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetIdentityProvider")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_identity_provider(
                 identity_provider_id=request.pop(util.camelize('identityProviderId')),
@@ -2077,7 +2077,7 @@ def test_get_kmsi_setting(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetKmsiSetting")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_kmsi_setting(
                 kmsi_setting_id=request.pop(util.camelize('kmsiSettingId')),
@@ -2118,7 +2118,7 @@ def test_get_me(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetMe")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_me(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -2158,7 +2158,7 @@ def test_get_my_api_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetMyApiKey")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_my_api_key(
                 my_api_key_id=request.pop(util.camelize('myApiKeyId')),
@@ -2199,7 +2199,7 @@ def test_get_my_auth_token(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetMyAuthToken")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_my_auth_token(
                 my_auth_token_id=request.pop(util.camelize('myAuthTokenId')),
@@ -2240,7 +2240,7 @@ def test_get_my_customer_secret_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetMyCustomerSecretKey")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_my_customer_secret_key(
                 my_customer_secret_key_id=request.pop(util.camelize('myCustomerSecretKeyId')),
@@ -2281,7 +2281,7 @@ def test_get_my_device(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetMyDevice")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_my_device(
                 my_device_id=request.pop(util.camelize('myDeviceId')),
@@ -2322,7 +2322,7 @@ def test_get_my_o_auth2_client_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetMyOAuth2ClientCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_my_o_auth2_client_credential(
                 my_o_auth2_client_credential_id=request.pop(util.camelize('myOAuth2ClientCredentialId')),
@@ -2363,7 +2363,7 @@ def test_get_my_smtp_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetMySmtpCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_my_smtp_credential(
                 my_smtp_credential_id=request.pop(util.camelize('mySmtpCredentialId')),
@@ -2404,7 +2404,7 @@ def test_get_my_support_account(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetMySupportAccount")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_my_support_account(
                 my_support_account_id=request.pop(util.camelize('mySupportAccountId')),
@@ -2445,7 +2445,7 @@ def test_get_my_trusted_user_agent(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetMyTrustedUserAgent")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_my_trusted_user_agent(
                 my_trusted_user_agent_id=request.pop(util.camelize('myTrustedUserAgentId')),
@@ -2486,7 +2486,7 @@ def test_get_my_user_db_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetMyUserDbCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_my_user_db_credential(
                 my_user_db_credential_id=request.pop(util.camelize('myUserDbCredentialId')),
@@ -2527,7 +2527,7 @@ def test_get_o_auth2_client_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetOAuth2ClientCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_o_auth2_client_credential(
                 o_auth2_client_credential_id=request.pop(util.camelize('oAuth2ClientCredentialId')),
@@ -2568,7 +2568,7 @@ def test_get_password_policy(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetPasswordPolicy")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_password_policy(
                 password_policy_id=request.pop(util.camelize('passwordPolicyId')),
@@ -2609,7 +2609,7 @@ def test_get_smtp_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetSmtpCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_smtp_credential(
                 smtp_credential_id=request.pop(util.camelize('smtpCredentialId')),
@@ -2650,7 +2650,7 @@ def test_get_user(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetUser")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_user(
                 user_id=request.pop(util.camelize('userId')),
@@ -2691,7 +2691,7 @@ def test_get_user_db_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetUserDbCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.get_user_db_credential(
                 user_db_credential_id=request.pop(util.camelize('userDbCredentialId')),
@@ -2733,7 +2733,7 @@ def test_list_api_keys(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListApiKeys")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_api_keys(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -2793,7 +2793,7 @@ def test_list_auth_tokens(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListAuthTokens")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_auth_tokens(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -2853,7 +2853,7 @@ def test_list_authentication_factor_settings(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListAuthenticationFactorSettings")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_authentication_factor_settings(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -2913,7 +2913,7 @@ def test_list_customer_secret_keys(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListCustomerSecretKeys")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_customer_secret_keys(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -2973,7 +2973,7 @@ def test_list_dynamic_resource_groups(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListDynamicResourceGroups")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_dynamic_resource_groups(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -3033,7 +3033,7 @@ def test_list_groups(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListGroups")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_groups(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -3093,7 +3093,7 @@ def test_list_identity_providers(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListIdentityProviders")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_identity_providers(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -3153,7 +3153,7 @@ def test_list_kmsi_settings(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListKmsiSettings")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_kmsi_settings(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -3213,7 +3213,7 @@ def test_list_my_api_keys(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListMyApiKeys")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_my_api_keys(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -3273,7 +3273,7 @@ def test_list_my_auth_tokens(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListMyAuthTokens")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_my_auth_tokens(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -3333,7 +3333,7 @@ def test_list_my_customer_secret_keys(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListMyCustomerSecretKeys")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_my_customer_secret_keys(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -3393,7 +3393,7 @@ def test_list_my_devices(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListMyDevices")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_my_devices(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -3453,7 +3453,7 @@ def test_list_my_groups(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListMyGroups")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_my_groups(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -3513,7 +3513,7 @@ def test_list_my_o_auth2_client_credentials(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListMyOAuth2ClientCredentials")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_my_o_auth2_client_credentials(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -3573,7 +3573,7 @@ def test_list_my_smtp_credentials(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListMySmtpCredentials")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_my_smtp_credentials(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -3633,7 +3633,7 @@ def test_list_my_support_accounts(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListMySupportAccounts")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_my_support_accounts(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -3693,7 +3693,7 @@ def test_list_my_trusted_user_agents(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListMyTrustedUserAgents")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_my_trusted_user_agents(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -3753,7 +3753,7 @@ def test_list_my_user_db_credentials(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListMyUserDbCredentials")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_my_user_db_credentials(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -3813,7 +3813,7 @@ def test_list_o_auth2_client_credentials(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListOAuth2ClientCredentials")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_o_auth2_client_credentials(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -3873,7 +3873,7 @@ def test_list_password_policies(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListPasswordPolicies")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_password_policies(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -3933,7 +3933,7 @@ def test_list_smtp_credentials(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListSmtpCredentials")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_smtp_credentials(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -3993,7 +3993,7 @@ def test_list_user_db_credentials(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListUserDbCredentials")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_user_db_credentials(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -4053,7 +4053,7 @@ def test_list_users(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListUsers")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.list_users(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -4112,7 +4112,7 @@ def test_patch_api_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchApiKey")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.patch_api_key(
                 api_key_id=request.pop(util.camelize('apiKeyId')),
@@ -4153,7 +4153,7 @@ def test_patch_auth_token(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchAuthToken")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.patch_auth_token(
                 auth_token_id=request.pop(util.camelize('authTokenId')),
@@ -4194,7 +4194,7 @@ def test_patch_customer_secret_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchCustomerSecretKey")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.patch_customer_secret_key(
                 customer_secret_key_id=request.pop(util.camelize('customerSecretKeyId')),
@@ -4235,7 +4235,7 @@ def test_patch_dynamic_resource_group(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchDynamicResourceGroup")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.patch_dynamic_resource_group(
                 dynamic_resource_group_id=request.pop(util.camelize('dynamicResourceGroupId')),
@@ -4276,7 +4276,7 @@ def test_patch_group(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchGroup")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.patch_group(
                 group_id=request.pop(util.camelize('groupId')),
@@ -4317,7 +4317,7 @@ def test_patch_identity_provider(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchIdentityProvider")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.patch_identity_provider(
                 identity_provider_id=request.pop(util.camelize('identityProviderId')),
@@ -4358,7 +4358,7 @@ def test_patch_kmsi_setting(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchKmsiSetting")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.patch_kmsi_setting(
                 kmsi_setting_id=request.pop(util.camelize('kmsiSettingId')),
@@ -4399,7 +4399,7 @@ def test_patch_me(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchMe")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.patch_me(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -4439,7 +4439,7 @@ def test_patch_my_api_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchMyApiKey")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.patch_my_api_key(
                 my_api_key_id=request.pop(util.camelize('myApiKeyId')),
@@ -4480,7 +4480,7 @@ def test_patch_my_auth_token(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchMyAuthToken")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.patch_my_auth_token(
                 my_auth_token_id=request.pop(util.camelize('myAuthTokenId')),
@@ -4521,7 +4521,7 @@ def test_patch_my_customer_secret_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchMyCustomerSecretKey")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.patch_my_customer_secret_key(
                 my_customer_secret_key_id=request.pop(util.camelize('myCustomerSecretKeyId')),
@@ -4562,7 +4562,7 @@ def test_patch_my_device(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchMyDevice")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.patch_my_device(
                 my_device_id=request.pop(util.camelize('myDeviceId')),
@@ -4603,7 +4603,7 @@ def test_patch_my_o_auth2_client_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchMyOAuth2ClientCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.patch_my_o_auth2_client_credential(
                 my_o_auth2_client_credential_id=request.pop(util.camelize('myOAuth2ClientCredentialId')),
@@ -4644,7 +4644,7 @@ def test_patch_my_smtp_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchMySmtpCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.patch_my_smtp_credential(
                 my_smtp_credential_id=request.pop(util.camelize('mySmtpCredentialId')),
@@ -4685,7 +4685,7 @@ def test_patch_o_auth2_client_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchOAuth2ClientCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.patch_o_auth2_client_credential(
                 o_auth2_client_credential_id=request.pop(util.camelize('oAuth2ClientCredentialId')),
@@ -4726,7 +4726,7 @@ def test_patch_password_policy(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchPasswordPolicy")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.patch_password_policy(
                 password_policy_id=request.pop(util.camelize('passwordPolicyId')),
@@ -4767,7 +4767,7 @@ def test_patch_smtp_credential(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchSmtpCredential")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.patch_smtp_credential(
                 smtp_credential_id=request.pop(util.camelize('smtpCredentialId')),
@@ -4808,7 +4808,7 @@ def test_patch_user(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchUser")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.patch_user(
                 user_id=request.pop(util.camelize('userId')),
@@ -4849,7 +4849,7 @@ def test_put_authentication_factor_setting(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PutAuthenticationFactorSetting")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.put_authentication_factor_setting(
                 authentication_factor_setting_id=request.pop(util.camelize('authenticationFactorSettingId')),
@@ -4890,7 +4890,7 @@ def test_put_dynamic_resource_group(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PutDynamicResourceGroup")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.put_dynamic_resource_group(
                 dynamic_resource_group_id=request.pop(util.camelize('dynamicResourceGroupId')),
@@ -4931,7 +4931,7 @@ def test_put_group(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PutGroup")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.put_group(
                 group_id=request.pop(util.camelize('groupId')),
@@ -4972,7 +4972,7 @@ def test_put_identity_provider(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PutIdentityProvider")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.put_identity_provider(
                 identity_provider_id=request.pop(util.camelize('identityProviderId')),
@@ -5013,7 +5013,7 @@ def test_put_kmsi_setting(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PutKmsiSetting")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.put_kmsi_setting(
                 kmsi_setting_id=request.pop(util.camelize('kmsiSettingId')),
@@ -5054,7 +5054,7 @@ def test_put_me(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PutMe")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.put_me(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -5094,7 +5094,7 @@ def test_put_me_password_changer(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PutMePasswordChanger")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.put_me_password_changer(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -5134,7 +5134,7 @@ def test_put_password_policy(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PutPasswordPolicy")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.put_password_policy(
                 password_policy_id=request.pop(util.camelize('passwordPolicyId')),
@@ -5175,7 +5175,7 @@ def test_put_user(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PutUser")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.put_user(
                 user_id=request.pop(util.camelize('userId')),
@@ -5216,7 +5216,7 @@ def test_put_user_capabilities_changer(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PutUserCapabilitiesChanger")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.put_user_capabilities_changer(
                 user_capabilities_changer_id=request.pop(util.camelize('userCapabilitiesChangerId')),
@@ -5257,7 +5257,7 @@ def test_put_user_password_changer(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PutUserPasswordChanger")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.put_user_password_changer(
                 user_password_changer_id=request.pop(util.camelize('userPasswordChangerId')),
@@ -5298,7 +5298,7 @@ def test_put_user_password_resetter(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PutUserPasswordResetter")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.put_user_password_resetter(
                 user_password_resetter_id=request.pop(util.camelize('userPasswordResetterId')),
@@ -5339,7 +5339,7 @@ def test_put_user_status_changer(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PutUserStatusChanger")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.put_user_status_changer(
                 user_status_changer_id=request.pop(util.camelize('userStatusChangerId')),
@@ -5381,7 +5381,7 @@ def test_search_api_keys(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchApiKeys")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.search_api_keys(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -5441,7 +5441,7 @@ def test_search_auth_tokens(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchAuthTokens")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.search_auth_tokens(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -5501,7 +5501,7 @@ def test_search_authentication_factor_settings(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchAuthenticationFactorSettings")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.search_authentication_factor_settings(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -5561,7 +5561,7 @@ def test_search_customer_secret_keys(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchCustomerSecretKeys")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.search_customer_secret_keys(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -5621,7 +5621,7 @@ def test_search_dynamic_resource_groups(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchDynamicResourceGroups")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.search_dynamic_resource_groups(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -5681,7 +5681,7 @@ def test_search_groups(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchGroups")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.search_groups(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -5741,7 +5741,7 @@ def test_search_identity_providers(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchIdentityProviders")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.search_identity_providers(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -5801,7 +5801,7 @@ def test_search_kmsi_settings(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchKmsiSettings")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.search_kmsi_settings(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -5861,7 +5861,7 @@ def test_search_my_groups(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchMyGroups")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.search_my_groups(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -5921,7 +5921,7 @@ def test_search_o_auth2_client_credentials(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchOAuth2ClientCredentials")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.search_o_auth2_client_credentials(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -5981,7 +5981,7 @@ def test_search_password_policies(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchPasswordPolicies")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.search_password_policies(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -6041,7 +6041,7 @@ def test_search_smtp_credentials(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchSmtpCredentials")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.search_smtp_credentials(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -6101,7 +6101,7 @@ def test_search_user_db_credentials(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchUserDbCredentials")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.search_user_db_credentials(
                 retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -6161,7 +6161,7 @@ def test_search_users(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchUsers")
             client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
             response = client.search_users(
                 retry_strategy=oci.retry.NoneRetryStrategy(),

@@ -92,9 +92,9 @@ class UserStatusChanger(object):
             The value to assign to the active property of this UserStatusChanger.
         :type active: bool
 
-        :param urnietfparamsscimschemasoracleidcsextensionself_change_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionself_change_user property of this UserStatusChanger.
-        :type urnietfparamsscimschemasoracleidcsextensionself_change_user: oci.identity_domains.models.ExtensionSelfChangeUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user property of this UserStatusChanger.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user: oci.identity_domains.models.ExtensionSelfChangeUser
 
         """
         self.swagger_types = {
@@ -113,7 +113,7 @@ class UserStatusChanger(object):
             'tenancy_ocid': 'str',
             'external_id': 'str',
             'active': 'bool',
-            'urnietfparamsscimschemasoracleidcsextensionself_change_user': 'ExtensionSelfChangeUser'
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user': 'ExtensionSelfChangeUser'
         }
 
         self.attribute_map = {
@@ -132,7 +132,7 @@ class UserStatusChanger(object):
             'tenancy_ocid': 'tenancyOcid',
             'external_id': 'externalId',
             'active': 'active',
-            'urnietfparamsscimschemasoracleidcsextensionself_change_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:selfChange:User'
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:selfChange:User'
         }
 
         self._id = None
@@ -150,7 +150,7 @@ class UserStatusChanger(object):
         self._tenancy_ocid = None
         self._external_id = None
         self._active = None
-        self._urnietfparamsscimschemasoracleidcsextensionself_change_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user = None
 
     @property
     def id(self):
@@ -745,24 +745,24 @@ class UserStatusChanger(object):
         self._active = active
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionself_change_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionself_change_user of this UserStatusChanger.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user of this UserStatusChanger.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionself_change_user of this UserStatusChanger.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user of this UserStatusChanger.
         :rtype: oci.identity_domains.models.ExtensionSelfChangeUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionself_change_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user
 
-    @urnietfparamsscimschemasoracleidcsextensionself_change_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionself_change_user(self, urnietfparamsscimschemasoracleidcsextensionself_change_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionself_change_user of this UserStatusChanger.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user of this UserStatusChanger.
 
-        :param urnietfparamsscimschemasoracleidcsextensionself_change_user: The urnietfparamsscimschemasoracleidcsextensionself_change_user of this UserStatusChanger.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user of this UserStatusChanger.
         :type: oci.identity_domains.models.ExtensionSelfChangeUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensionself_change_user = urnietfparamsscimschemasoracleidcsextensionself_change_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user
 
     def __repr__(self):
         return formatted_flat_dict(self)

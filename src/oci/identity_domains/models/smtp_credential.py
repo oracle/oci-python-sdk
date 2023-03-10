@@ -114,9 +114,9 @@ class SmtpCredential(object):
             The value to assign to the user property of this SmtpCredential.
         :type user: oci.identity_domains.models.SmtpCredentialUser
 
-        :param urnietfparamsscimschemasoracleidcsextensionself_change_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionself_change_user property of this SmtpCredential.
-        :type urnietfparamsscimschemasoracleidcsextensionself_change_user: oci.identity_domains.models.ExtensionSelfChangeUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user property of this SmtpCredential.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user: oci.identity_domains.models.ExtensionSelfChangeUser
 
         """
         self.swagger_types = {
@@ -138,7 +138,7 @@ class SmtpCredential(object):
             'expires_on': 'str',
             'user_name': 'str',
             'user': 'SmtpCredentialUser',
-            'urnietfparamsscimschemasoracleidcsextensionself_change_user': 'ExtensionSelfChangeUser'
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user': 'ExtensionSelfChangeUser'
         }
 
         self.attribute_map = {
@@ -160,7 +160,7 @@ class SmtpCredential(object):
             'expires_on': 'expiresOn',
             'user_name': 'userName',
             'user': 'user',
-            'urnietfparamsscimschemasoracleidcsextensionself_change_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:selfChange:User'
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:selfChange:User'
         }
 
         self._id = None
@@ -181,7 +181,7 @@ class SmtpCredential(object):
         self._expires_on = None
         self._user_name = None
         self._user = None
-        self._urnietfparamsscimschemasoracleidcsextensionself_change_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user = None
 
     @property
     def id(self):
@@ -886,24 +886,24 @@ class SmtpCredential(object):
         self._user = user
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionself_change_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionself_change_user of this SmtpCredential.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user of this SmtpCredential.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionself_change_user of this SmtpCredential.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user of this SmtpCredential.
         :rtype: oci.identity_domains.models.ExtensionSelfChangeUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionself_change_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user
 
-    @urnietfparamsscimschemasoracleidcsextensionself_change_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionself_change_user(self, urnietfparamsscimschemasoracleidcsextensionself_change_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionself_change_user of this SmtpCredential.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user of this SmtpCredential.
 
-        :param urnietfparamsscimschemasoracleidcsextensionself_change_user: The urnietfparamsscimschemasoracleidcsextensionself_change_user of this SmtpCredential.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user of this SmtpCredential.
         :type: oci.identity_domains.models.ExtensionSelfChangeUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensionself_change_user = urnietfparamsscimschemasoracleidcsextensionself_change_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user
 
     def __repr__(self):
         return formatted_flat_dict(self)

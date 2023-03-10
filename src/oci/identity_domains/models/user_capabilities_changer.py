@@ -112,9 +112,9 @@ class UserCapabilitiesChanger(object):
             The value to assign to the can_use_db_credentials property of this UserCapabilitiesChanger.
         :type can_use_db_credentials: bool
 
-        :param urnietfparamsscimschemasoracleidcsextensionself_change_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionself_change_user property of this UserCapabilitiesChanger.
-        :type urnietfparamsscimschemasoracleidcsextensionself_change_user: oci.identity_domains.models.ExtensionSelfChangeUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user property of this UserCapabilitiesChanger.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user: oci.identity_domains.models.ExtensionSelfChangeUser
 
         """
         self.swagger_types = {
@@ -138,7 +138,7 @@ class UserCapabilitiesChanger(object):
             'can_use_o_auth2_client_credentials': 'bool',
             'can_use_smtp_credentials': 'bool',
             'can_use_db_credentials': 'bool',
-            'urnietfparamsscimschemasoracleidcsextensionself_change_user': 'ExtensionSelfChangeUser'
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user': 'ExtensionSelfChangeUser'
         }
 
         self.attribute_map = {
@@ -162,7 +162,7 @@ class UserCapabilitiesChanger(object):
             'can_use_o_auth2_client_credentials': 'canUseOAuth2ClientCredentials',
             'can_use_smtp_credentials': 'canUseSmtpCredentials',
             'can_use_db_credentials': 'canUseDbCredentials',
-            'urnietfparamsscimschemasoracleidcsextensionself_change_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:selfChange:User'
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:selfChange:User'
         }
 
         self._id = None
@@ -185,7 +185,7 @@ class UserCapabilitiesChanger(object):
         self._can_use_o_auth2_client_credentials = None
         self._can_use_smtp_credentials = None
         self._can_use_db_credentials = None
-        self._urnietfparamsscimschemasoracleidcsextensionself_change_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user = None
 
     @property
     def id(self):
@@ -1000,24 +1000,24 @@ class UserCapabilitiesChanger(object):
         self._can_use_db_credentials = can_use_db_credentials
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionself_change_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionself_change_user of this UserCapabilitiesChanger.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user of this UserCapabilitiesChanger.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionself_change_user of this UserCapabilitiesChanger.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user of this UserCapabilitiesChanger.
         :rtype: oci.identity_domains.models.ExtensionSelfChangeUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionself_change_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user
 
-    @urnietfparamsscimschemasoracleidcsextensionself_change_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionself_change_user(self, urnietfparamsscimschemasoracleidcsextensionself_change_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionself_change_user of this UserCapabilitiesChanger.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user of this UserCapabilitiesChanger.
 
-        :param urnietfparamsscimschemasoracleidcsextensionself_change_user: The urnietfparamsscimschemasoracleidcsextensionself_change_user of this UserCapabilitiesChanger.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user of this UserCapabilitiesChanger.
         :type: oci.identity_domains.models.ExtensionSelfChangeUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensionself_change_user = urnietfparamsscimschemasoracleidcsextensionself_change_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user
 
     def __repr__(self):
         return formatted_flat_dict(self)

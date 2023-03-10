@@ -100,13 +100,13 @@ class MyGroup(object):
             The value to assign to the members property of this MyGroup.
         :type members: list[oci.identity_domains.models.MyGroupMembers]
 
-        :param urnietfparamsscimschemasoracleidcsextensiongroup_group:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensiongroup_group property of this MyGroup.
-        :type urnietfparamsscimschemasoracleidcsextensiongroup_group: oci.identity_domains.models.ExtensionGroupGroup
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group property of this MyGroup.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group: oci.identity_domains.models.ExtensionGroupGroup
 
-        :param urnietfparamsscimschemasoracleidcsextensionposix_group:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionposix_group property of this MyGroup.
-        :type urnietfparamsscimschemasoracleidcsextensionposix_group: oci.identity_domains.models.ExtensionPosixGroup
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_group:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_group property of this MyGroup.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_group: oci.identity_domains.models.ExtensionPosixGroup
 
         """
         self.swagger_types = {
@@ -127,8 +127,8 @@ class MyGroup(object):
             'display_name': 'str',
             'non_unique_display_name': 'str',
             'members': 'list[MyGroupMembers]',
-            'urnietfparamsscimschemasoracleidcsextensiongroup_group': 'ExtensionGroupGroup',
-            'urnietfparamsscimschemasoracleidcsextensionposix_group': 'ExtensionPosixGroup'
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group': 'ExtensionGroupGroup',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_group': 'ExtensionPosixGroup'
         }
 
         self.attribute_map = {
@@ -149,8 +149,8 @@ class MyGroup(object):
             'display_name': 'displayName',
             'non_unique_display_name': 'nonUniqueDisplayName',
             'members': 'members',
-            'urnietfparamsscimschemasoracleidcsextensiongroup_group': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:group:Group',
-            'urnietfparamsscimschemasoracleidcsextensionposix_group': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:posix:Group'
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:group:Group',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_group': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:posix:Group'
         }
 
         self._id = None
@@ -170,8 +170,8 @@ class MyGroup(object):
         self._display_name = None
         self._non_unique_display_name = None
         self._members = None
-        self._urnietfparamsscimschemasoracleidcsextensiongroup_group = None
-        self._urnietfparamsscimschemasoracleidcsextensionposix_group = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_group = None
 
     @property
     def id(self):
@@ -868,44 +868,44 @@ class MyGroup(object):
         self._members = members
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensiongroup_group(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensiongroup_group of this MyGroup.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group of this MyGroup.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensiongroup_group of this MyGroup.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group of this MyGroup.
         :rtype: oci.identity_domains.models.ExtensionGroupGroup
         """
-        return self._urnietfparamsscimschemasoracleidcsextensiongroup_group
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group
 
-    @urnietfparamsscimschemasoracleidcsextensiongroup_group.setter
-    def urnietfparamsscimschemasoracleidcsextensiongroup_group(self, urnietfparamsscimschemasoracleidcsextensiongroup_group):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensiongroup_group of this MyGroup.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group of this MyGroup.
 
-        :param urnietfparamsscimschemasoracleidcsextensiongroup_group: The urnietfparamsscimschemasoracleidcsextensiongroup_group of this MyGroup.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group: The urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group of this MyGroup.
         :type: oci.identity_domains.models.ExtensionGroupGroup
         """
-        self._urnietfparamsscimschemasoracleidcsextensiongroup_group = urnietfparamsscimschemasoracleidcsextensiongroup_group
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group = urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionposix_group(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_group(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionposix_group of this MyGroup.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_group of this MyGroup.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionposix_group of this MyGroup.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_group of this MyGroup.
         :rtype: oci.identity_domains.models.ExtensionPosixGroup
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionposix_group
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_group
 
-    @urnietfparamsscimschemasoracleidcsextensionposix_group.setter
-    def urnietfparamsscimschemasoracleidcsextensionposix_group(self, urnietfparamsscimschemasoracleidcsextensionposix_group):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_group.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_group(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_group):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionposix_group of this MyGroup.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_group of this MyGroup.
 
-        :param urnietfparamsscimschemasoracleidcsextensionposix_group: The urnietfparamsscimschemasoracleidcsextensionposix_group of this MyGroup.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_group: The urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_group of this MyGroup.
         :type: oci.identity_domains.models.ExtensionPosixGroup
         """
-        self._urnietfparamsscimschemasoracleidcsextensionposix_group = urnietfparamsscimschemasoracleidcsextensionposix_group
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_group = urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_group
 
     def __repr__(self):
         return formatted_flat_dict(self)

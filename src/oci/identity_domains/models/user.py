@@ -206,85 +206,85 @@ class User(object):
             The value to assign to the x509_certificates property of this User.
         :type x509_certificates: list[oci.identity_domains.models.UserX509Certificates]
 
-        :param urnietfparamsscimschemasextensionenterprise2_0_user:
-            The value to assign to the urnietfparamsscimschemasextensionenterprise2_0_user property of this User.
-        :type urnietfparamsscimschemasextensionenterprise2_0_user: oci.identity_domains.models.ExtensionEnterprise20User
+        :param urn_ietf_params_scim_schemas_extension_enterprise2_0_user:
+            The value to assign to the urn_ietf_params_scim_schemas_extension_enterprise2_0_user property of this User.
+        :type urn_ietf_params_scim_schemas_extension_enterprise2_0_user: oci.identity_domains.models.ExtensionEnterprise20User
 
-        :param urnietfparamsscimschemasoracleidcsextensionuser_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionuser_user property of this User.
-        :type urnietfparamsscimschemasoracleidcsextensionuser_user: oci.identity_domains.models.ExtensionUserUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user property of this User.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user: oci.identity_domains.models.ExtensionUserUser
 
-        :param urnietfparamsscimschemasoracleidcsextensionpassword_state_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionpassword_state_user property of this User.
-        :type urnietfparamsscimschemasoracleidcsextensionpassword_state_user: oci.identity_domains.models.ExtensionPasswordStateUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user property of this User.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user: oci.identity_domains.models.ExtensionPasswordStateUser
 
-        :param urnietfparamsscimschemasoracleidcsextensionuser_state_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionuser_state_user property of this User.
-        :type urnietfparamsscimschemasoracleidcsextensionuser_state_user: oci.identity_domains.models.ExtensionUserStateUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user property of this User.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user: oci.identity_domains.models.ExtensionUserStateUser
 
-        :param urnietfparamsscimschemasoracleidcsextensionposix_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionposix_user property of this User.
-        :type urnietfparamsscimschemasoracleidcsextensionposix_user: oci.identity_domains.models.ExtensionPosixUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user property of this User.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user: oci.identity_domains.models.ExtensionPosixUser
 
-        :param urnietfparamsscimschemasoracleidcsextensionkerberos_user_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionkerberos_user_user property of this User.
-        :type urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: oci.identity_domains.models.ExtensionKerberosUserUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_kerberos_user_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_kerberos_user_user property of this User.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_kerberos_user_user: oci.identity_domains.models.ExtensionKerberosUserUser
 
-        :param urnietfparamsscimschemasoracleidcsextensionmfa_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionmfa_user property of this User.
-        :type urnietfparamsscimschemasoracleidcsextensionmfa_user: oci.identity_domains.models.ExtensionMfaUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user property of this User.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user: oci.identity_domains.models.ExtensionMfaUser
 
-        :param urnietfparamsscimschemasoracleidcsextensionadaptive_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionadaptive_user property of this User.
-        :type urnietfparamsscimschemasoracleidcsextensionadaptive_user: oci.identity_domains.models.ExtensionAdaptiveUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user property of this User.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user: oci.identity_domains.models.ExtensionAdaptiveUser
 
-        :param urnietfparamsscimschemasoracleidcsextensionsff_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionsff_user property of this User.
-        :type urnietfparamsscimschemasoracleidcsextensionsff_user: oci.identity_domains.models.ExtensionSffUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_sff_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_sff_user property of this User.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_sff_user: oci.identity_domains.models.ExtensionSffUser
 
-        :param urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user property of this User.
-        :type urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: oci.identity_domains.models.ExtensionSecurityQuestionsUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_security_questions_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_security_questions_user property of this User.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_security_questions_user: oci.identity_domains.models.ExtensionSecurityQuestionsUser
 
-        :param urnietfparamsscimschemasoracleidcsextensionself_registration_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionself_registration_user property of this User.
-        :type urnietfparamsscimschemasoracleidcsextensionself_registration_user: oci.identity_domains.models.ExtensionSelfRegistrationUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_self_registration_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_self_registration_user property of this User.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_self_registration_user: oci.identity_domains.models.ExtensionSelfRegistrationUser
 
-        :param urnietfparamsscimschemasoracleidcsextensionsocial_account_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionsocial_account_user property of this User.
-        :type urnietfparamsscimschemasoracleidcsextensionsocial_account_user: oci.identity_domains.models.ExtensionSocialAccountUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_social_account_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_social_account_user property of this User.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_social_account_user: oci.identity_domains.models.ExtensionSocialAccountUser
 
-        :param urnietfparamsscimschemasoracleidcsextensiondb_user_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensiondb_user_user property of this User.
-        :type urnietfparamsscimschemasoracleidcsextensiondb_user_user: oci.identity_domains.models.ExtensionDbUserUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user property of this User.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user: oci.identity_domains.models.ExtensionDbUserUser
 
-        :param urnietfparamsscimschemasoracleidcsextensionterms_of_use_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionterms_of_use_user property of this User.
-        :type urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: oci.identity_domains.models.ExtensionTermsOfUseUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_terms_of_use_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_terms_of_use_user property of this User.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_terms_of_use_user: oci.identity_domains.models.ExtensionTermsOfUseUser
 
-        :param urnietfparamsscimschemasoracleidcsextensionpasswordless_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionpasswordless_user property of this User.
-        :type urnietfparamsscimschemasoracleidcsextensionpasswordless_user: oci.identity_domains.models.ExtensionPasswordlessUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_passwordless_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_passwordless_user property of this User.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_passwordless_user: oci.identity_domains.models.ExtensionPasswordlessUser
 
-        :param urnietfparamsscimschemasoracleidcsextension_oci_tags:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextension_oci_tags property of this User.
-        :type urnietfparamsscimschemasoracleidcsextension_oci_tags: oci.identity_domains.models.ExtensionOCITags
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags property of this User.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags: oci.identity_domains.models.ExtensionOCITags
 
-        :param urnietfparamsscimschemasoracleidcsextensionuser_credentials_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionuser_credentials_user property of this User.
-        :type urnietfparamsscimschemasoracleidcsextensionuser_credentials_user: oci.identity_domains.models.ExtensionUserCredentialsUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user property of this User.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user: oci.identity_domains.models.ExtensionUserCredentialsUser
 
-        :param urnietfparamsscimschemasoracleidcsextensioncapabilities_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensioncapabilities_user property of this User.
-        :type urnietfparamsscimschemasoracleidcsextensioncapabilities_user: oci.identity_domains.models.ExtensionCapabilitiesUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user property of this User.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user: oci.identity_domains.models.ExtensionCapabilitiesUser
 
-        :param urnietfparamsscimschemasoracleidcsextensiondb_credentials_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensiondb_credentials_user property of this User.
-        :type urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: oci.identity_domains.models.ExtensionDbCredentialsUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user property of this User.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user: oci.identity_domains.models.ExtensionDbCredentialsUser
 
-        :param urnietfparamsscimschemasoracleidcsextensionself_change_user:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionself_change_user property of this User.
-        :type urnietfparamsscimschemasoracleidcsextensionself_change_user: oci.identity_domains.models.ExtensionSelfChangeUser
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user property of this User.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user: oci.identity_domains.models.ExtensionSelfChangeUser
 
         """
         self.swagger_types = {
@@ -324,26 +324,26 @@ class User(object):
             'entitlements': 'list[UserEntitlements]',
             'roles': 'list[UserRoles]',
             'x509_certificates': 'list[UserX509Certificates]',
-            'urnietfparamsscimschemasextensionenterprise2_0_user': 'ExtensionEnterprise20User',
-            'urnietfparamsscimschemasoracleidcsextensionuser_user': 'ExtensionUserUser',
-            'urnietfparamsscimschemasoracleidcsextensionpassword_state_user': 'ExtensionPasswordStateUser',
-            'urnietfparamsscimschemasoracleidcsextensionuser_state_user': 'ExtensionUserStateUser',
-            'urnietfparamsscimschemasoracleidcsextensionposix_user': 'ExtensionPosixUser',
-            'urnietfparamsscimschemasoracleidcsextensionkerberos_user_user': 'ExtensionKerberosUserUser',
-            'urnietfparamsscimschemasoracleidcsextensionmfa_user': 'ExtensionMfaUser',
-            'urnietfparamsscimschemasoracleidcsextensionadaptive_user': 'ExtensionAdaptiveUser',
-            'urnietfparamsscimschemasoracleidcsextensionsff_user': 'ExtensionSffUser',
-            'urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user': 'ExtensionSecurityQuestionsUser',
-            'urnietfparamsscimschemasoracleidcsextensionself_registration_user': 'ExtensionSelfRegistrationUser',
-            'urnietfparamsscimschemasoracleidcsextensionsocial_account_user': 'ExtensionSocialAccountUser',
-            'urnietfparamsscimschemasoracleidcsextensiondb_user_user': 'ExtensionDbUserUser',
-            'urnietfparamsscimschemasoracleidcsextensionterms_of_use_user': 'ExtensionTermsOfUseUser',
-            'urnietfparamsscimschemasoracleidcsextensionpasswordless_user': 'ExtensionPasswordlessUser',
-            'urnietfparamsscimschemasoracleidcsextension_oci_tags': 'ExtensionOCITags',
-            'urnietfparamsscimschemasoracleidcsextensionuser_credentials_user': 'ExtensionUserCredentialsUser',
-            'urnietfparamsscimschemasoracleidcsextensioncapabilities_user': 'ExtensionCapabilitiesUser',
-            'urnietfparamsscimschemasoracleidcsextensiondb_credentials_user': 'ExtensionDbCredentialsUser',
-            'urnietfparamsscimschemasoracleidcsextensionself_change_user': 'ExtensionSelfChangeUser'
+            'urn_ietf_params_scim_schemas_extension_enterprise2_0_user': 'ExtensionEnterprise20User',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user': 'ExtensionUserUser',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user': 'ExtensionPasswordStateUser',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user': 'ExtensionUserStateUser',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user': 'ExtensionPosixUser',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_kerberos_user_user': 'ExtensionKerberosUserUser',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user': 'ExtensionMfaUser',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user': 'ExtensionAdaptiveUser',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_sff_user': 'ExtensionSffUser',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_security_questions_user': 'ExtensionSecurityQuestionsUser',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_self_registration_user': 'ExtensionSelfRegistrationUser',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_social_account_user': 'ExtensionSocialAccountUser',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user': 'ExtensionDbUserUser',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_terms_of_use_user': 'ExtensionTermsOfUseUser',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_passwordless_user': 'ExtensionPasswordlessUser',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags': 'ExtensionOCITags',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user': 'ExtensionUserCredentialsUser',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user': 'ExtensionCapabilitiesUser',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user': 'ExtensionDbCredentialsUser',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user': 'ExtensionSelfChangeUser'
         }
 
         self.attribute_map = {
@@ -383,26 +383,26 @@ class User(object):
             'entitlements': 'entitlements',
             'roles': 'roles',
             'x509_certificates': 'x509Certificates',
-            'urnietfparamsscimschemasextensionenterprise2_0_user': 'urn:ietf:params:scim:schemas:extension:enterprise:2.0:User',
-            'urnietfparamsscimschemasoracleidcsextensionuser_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User',
-            'urnietfparamsscimschemasoracleidcsextensionpassword_state_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:passwordState:User',
-            'urnietfparamsscimschemasoracleidcsextensionuser_state_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:userState:User',
-            'urnietfparamsscimschemasoracleidcsextensionposix_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:posix:User',
-            'urnietfparamsscimschemasoracleidcsextensionkerberos_user_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:kerberosUser:User',
-            'urnietfparamsscimschemasoracleidcsextensionmfa_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:mfa:User',
-            'urnietfparamsscimschemasoracleidcsextensionadaptive_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:adaptive:User',
-            'urnietfparamsscimschemasoracleidcsextensionsff_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:sff:User',
-            'urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:securityQuestions:User',
-            'urnietfparamsscimschemasoracleidcsextensionself_registration_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:selfRegistration:User',
-            'urnietfparamsscimschemasoracleidcsextensionsocial_account_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:socialAccount:User',
-            'urnietfparamsscimschemasoracleidcsextensiondb_user_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:dbUser:User',
-            'urnietfparamsscimschemasoracleidcsextensionterms_of_use_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:termsOfUse:User',
-            'urnietfparamsscimschemasoracleidcsextensionpasswordless_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:passwordless:User',
-            'urnietfparamsscimschemasoracleidcsextension_oci_tags': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:OCITags',
-            'urnietfparamsscimschemasoracleidcsextensionuser_credentials_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:userCredentials:User',
-            'urnietfparamsscimschemasoracleidcsextensioncapabilities_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:capabilities:User',
-            'urnietfparamsscimschemasoracleidcsextensiondb_credentials_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:dbCredentials:User',
-            'urnietfparamsscimschemasoracleidcsextensionself_change_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:selfChange:User'
+            'urn_ietf_params_scim_schemas_extension_enterprise2_0_user': 'urn:ietf:params:scim:schemas:extension:enterprise:2.0:User',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:passwordState:User',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:userState:User',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:posix:User',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_kerberos_user_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:kerberosUser:User',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:mfa:User',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:adaptive:User',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_sff_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:sff:User',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_security_questions_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:securityQuestions:User',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_self_registration_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:selfRegistration:User',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_social_account_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:socialAccount:User',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:dbUser:User',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_terms_of_use_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:termsOfUse:User',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_passwordless_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:passwordless:User',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:OCITags',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:userCredentials:User',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:capabilities:User',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:dbCredentials:User',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:selfChange:User'
         }
 
         self._id = None
@@ -441,26 +441,26 @@ class User(object):
         self._entitlements = None
         self._roles = None
         self._x509_certificates = None
-        self._urnietfparamsscimschemasextensionenterprise2_0_user = None
-        self._urnietfparamsscimschemasoracleidcsextensionuser_user = None
-        self._urnietfparamsscimschemasoracleidcsextensionpassword_state_user = None
-        self._urnietfparamsscimschemasoracleidcsextensionuser_state_user = None
-        self._urnietfparamsscimschemasoracleidcsextensionposix_user = None
-        self._urnietfparamsscimschemasoracleidcsextensionkerberos_user_user = None
-        self._urnietfparamsscimschemasoracleidcsextensionmfa_user = None
-        self._urnietfparamsscimschemasoracleidcsextensionadaptive_user = None
-        self._urnietfparamsscimschemasoracleidcsextensionsff_user = None
-        self._urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user = None
-        self._urnietfparamsscimschemasoracleidcsextensionself_registration_user = None
-        self._urnietfparamsscimschemasoracleidcsextensionsocial_account_user = None
-        self._urnietfparamsscimschemasoracleidcsextensiondb_user_user = None
-        self._urnietfparamsscimschemasoracleidcsextensionterms_of_use_user = None
-        self._urnietfparamsscimschemasoracleidcsextensionpasswordless_user = None
-        self._urnietfparamsscimschemasoracleidcsextension_oci_tags = None
-        self._urnietfparamsscimschemasoracleidcsextensionuser_credentials_user = None
-        self._urnietfparamsscimschemasoracleidcsextensioncapabilities_user = None
-        self._urnietfparamsscimschemasoracleidcsextensiondb_credentials_user = None
-        self._urnietfparamsscimschemasoracleidcsextensionself_change_user = None
+        self._urn_ietf_params_scim_schemas_extension_enterprise2_0_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_kerberos_user_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_sff_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_security_questions_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_self_registration_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_social_account_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_terms_of_use_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_passwordless_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user = None
 
     @property
     def id(self):
@@ -2033,404 +2033,404 @@ class User(object):
         self._x509_certificates = x509_certificates
 
     @property
-    def urnietfparamsscimschemasextensionenterprise2_0_user(self):
+    def urn_ietf_params_scim_schemas_extension_enterprise2_0_user(self):
         """
-        Gets the urnietfparamsscimschemasextensionenterprise2_0_user of this User.
+        Gets the urn_ietf_params_scim_schemas_extension_enterprise2_0_user of this User.
 
-        :return: The urnietfparamsscimschemasextensionenterprise2_0_user of this User.
+        :return: The urn_ietf_params_scim_schemas_extension_enterprise2_0_user of this User.
         :rtype: oci.identity_domains.models.ExtensionEnterprise20User
         """
-        return self._urnietfparamsscimschemasextensionenterprise2_0_user
+        return self._urn_ietf_params_scim_schemas_extension_enterprise2_0_user
 
-    @urnietfparamsscimschemasextensionenterprise2_0_user.setter
-    def urnietfparamsscimschemasextensionenterprise2_0_user(self, urnietfparamsscimschemasextensionenterprise2_0_user):
+    @urn_ietf_params_scim_schemas_extension_enterprise2_0_user.setter
+    def urn_ietf_params_scim_schemas_extension_enterprise2_0_user(self, urn_ietf_params_scim_schemas_extension_enterprise2_0_user):
         """
-        Sets the urnietfparamsscimschemasextensionenterprise2_0_user of this User.
+        Sets the urn_ietf_params_scim_schemas_extension_enterprise2_0_user of this User.
 
-        :param urnietfparamsscimschemasextensionenterprise2_0_user: The urnietfparamsscimschemasextensionenterprise2_0_user of this User.
+        :param urn_ietf_params_scim_schemas_extension_enterprise2_0_user: The urn_ietf_params_scim_schemas_extension_enterprise2_0_user of this User.
         :type: oci.identity_domains.models.ExtensionEnterprise20User
         """
-        self._urnietfparamsscimschemasextensionenterprise2_0_user = urnietfparamsscimschemasextensionenterprise2_0_user
+        self._urn_ietf_params_scim_schemas_extension_enterprise2_0_user = urn_ietf_params_scim_schemas_extension_enterprise2_0_user
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionuser_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionuser_user of this User.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user of this User.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionuser_user of this User.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user of this User.
         :rtype: oci.identity_domains.models.ExtensionUserUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionuser_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user
 
-    @urnietfparamsscimschemasoracleidcsextensionuser_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionuser_user(self, urnietfparamsscimschemasoracleidcsextensionuser_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionuser_user of this User.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user of this User.
 
-        :param urnietfparamsscimschemasoracleidcsextensionuser_user: The urnietfparamsscimschemasoracleidcsextensionuser_user of this User.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user of this User.
         :type: oci.identity_domains.models.ExtensionUserUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensionuser_user = urnietfparamsscimschemasoracleidcsextensionuser_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionpassword_state_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionpassword_state_user of this User.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user of this User.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionpassword_state_user of this User.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user of this User.
         :rtype: oci.identity_domains.models.ExtensionPasswordStateUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionpassword_state_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user
 
-    @urnietfparamsscimschemasoracleidcsextensionpassword_state_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionpassword_state_user(self, urnietfparamsscimschemasoracleidcsextensionpassword_state_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionpassword_state_user of this User.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user of this User.
 
-        :param urnietfparamsscimschemasoracleidcsextensionpassword_state_user: The urnietfparamsscimschemasoracleidcsextensionpassword_state_user of this User.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user of this User.
         :type: oci.identity_domains.models.ExtensionPasswordStateUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensionpassword_state_user = urnietfparamsscimschemasoracleidcsextensionpassword_state_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionuser_state_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionuser_state_user of this User.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user of this User.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionuser_state_user of this User.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user of this User.
         :rtype: oci.identity_domains.models.ExtensionUserStateUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionuser_state_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user
 
-    @urnietfparamsscimschemasoracleidcsextensionuser_state_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionuser_state_user(self, urnietfparamsscimschemasoracleidcsextensionuser_state_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionuser_state_user of this User.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user of this User.
 
-        :param urnietfparamsscimschemasoracleidcsextensionuser_state_user: The urnietfparamsscimschemasoracleidcsextensionuser_state_user of this User.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user of this User.
         :type: oci.identity_domains.models.ExtensionUserStateUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensionuser_state_user = urnietfparamsscimschemasoracleidcsextensionuser_state_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionposix_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionposix_user of this User.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user of this User.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionposix_user of this User.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user of this User.
         :rtype: oci.identity_domains.models.ExtensionPosixUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionposix_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user
 
-    @urnietfparamsscimschemasoracleidcsextensionposix_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionposix_user(self, urnietfparamsscimschemasoracleidcsextensionposix_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionposix_user of this User.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user of this User.
 
-        :param urnietfparamsscimschemasoracleidcsextensionposix_user: The urnietfparamsscimschemasoracleidcsextensionposix_user of this User.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user of this User.
         :type: oci.identity_domains.models.ExtensionPosixUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensionposix_user = urnietfparamsscimschemasoracleidcsextensionposix_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionkerberos_user_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_kerberos_user_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionkerberos_user_user of this User.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_kerberos_user_user of this User.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionkerberos_user_user of this User.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_kerberos_user_user of this User.
         :rtype: oci.identity_domains.models.ExtensionKerberosUserUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionkerberos_user_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_kerberos_user_user
 
-    @urnietfparamsscimschemasoracleidcsextensionkerberos_user_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionkerberos_user_user(self, urnietfparamsscimschemasoracleidcsextensionkerberos_user_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_kerberos_user_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_kerberos_user_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_kerberos_user_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionkerberos_user_user of this User.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_kerberos_user_user of this User.
 
-        :param urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: The urnietfparamsscimschemasoracleidcsextensionkerberos_user_user of this User.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_kerberos_user_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_kerberos_user_user of this User.
         :type: oci.identity_domains.models.ExtensionKerberosUserUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensionkerberos_user_user = urnietfparamsscimschemasoracleidcsextensionkerberos_user_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_kerberos_user_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_kerberos_user_user
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionmfa_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionmfa_user of this User.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user of this User.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionmfa_user of this User.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user of this User.
         :rtype: oci.identity_domains.models.ExtensionMfaUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionmfa_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user
 
-    @urnietfparamsscimschemasoracleidcsextensionmfa_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionmfa_user(self, urnietfparamsscimschemasoracleidcsextensionmfa_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionmfa_user of this User.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user of this User.
 
-        :param urnietfparamsscimschemasoracleidcsextensionmfa_user: The urnietfparamsscimschemasoracleidcsextensionmfa_user of this User.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user of this User.
         :type: oci.identity_domains.models.ExtensionMfaUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensionmfa_user = urnietfparamsscimschemasoracleidcsextensionmfa_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionadaptive_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionadaptive_user of this User.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user of this User.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionadaptive_user of this User.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user of this User.
         :rtype: oci.identity_domains.models.ExtensionAdaptiveUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionadaptive_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user
 
-    @urnietfparamsscimschemasoracleidcsextensionadaptive_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionadaptive_user(self, urnietfparamsscimschemasoracleidcsextensionadaptive_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionadaptive_user of this User.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user of this User.
 
-        :param urnietfparamsscimschemasoracleidcsextensionadaptive_user: The urnietfparamsscimschemasoracleidcsextensionadaptive_user of this User.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user of this User.
         :type: oci.identity_domains.models.ExtensionAdaptiveUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensionadaptive_user = urnietfparamsscimschemasoracleidcsextensionadaptive_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionsff_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_sff_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionsff_user of this User.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_sff_user of this User.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionsff_user of this User.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_sff_user of this User.
         :rtype: oci.identity_domains.models.ExtensionSffUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionsff_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_sff_user
 
-    @urnietfparamsscimschemasoracleidcsextensionsff_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionsff_user(self, urnietfparamsscimschemasoracleidcsextensionsff_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_sff_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_sff_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_sff_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionsff_user of this User.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_sff_user of this User.
 
-        :param urnietfparamsscimschemasoracleidcsextensionsff_user: The urnietfparamsscimschemasoracleidcsextensionsff_user of this User.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_sff_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_sff_user of this User.
         :type: oci.identity_domains.models.ExtensionSffUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensionsff_user = urnietfparamsscimschemasoracleidcsextensionsff_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_sff_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_sff_user
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_security_questions_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user of this User.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_security_questions_user of this User.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user of this User.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_security_questions_user of this User.
         :rtype: oci.identity_domains.models.ExtensionSecurityQuestionsUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_security_questions_user
 
-    @urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user(self, urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_security_questions_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_security_questions_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_security_questions_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user of this User.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_security_questions_user of this User.
 
-        :param urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: The urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user of this User.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_security_questions_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_security_questions_user of this User.
         :type: oci.identity_domains.models.ExtensionSecurityQuestionsUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user = urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_security_questions_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_security_questions_user
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionself_registration_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_self_registration_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionself_registration_user of this User.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_self_registration_user of this User.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionself_registration_user of this User.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_self_registration_user of this User.
         :rtype: oci.identity_domains.models.ExtensionSelfRegistrationUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionself_registration_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_self_registration_user
 
-    @urnietfparamsscimschemasoracleidcsextensionself_registration_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionself_registration_user(self, urnietfparamsscimschemasoracleidcsextensionself_registration_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_self_registration_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_self_registration_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_self_registration_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionself_registration_user of this User.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_self_registration_user of this User.
 
-        :param urnietfparamsscimschemasoracleidcsextensionself_registration_user: The urnietfparamsscimschemasoracleidcsextensionself_registration_user of this User.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_self_registration_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_self_registration_user of this User.
         :type: oci.identity_domains.models.ExtensionSelfRegistrationUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensionself_registration_user = urnietfparamsscimschemasoracleidcsextensionself_registration_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_self_registration_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_self_registration_user
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionsocial_account_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_social_account_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionsocial_account_user of this User.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_social_account_user of this User.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionsocial_account_user of this User.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_social_account_user of this User.
         :rtype: oci.identity_domains.models.ExtensionSocialAccountUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionsocial_account_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_social_account_user
 
-    @urnietfparamsscimschemasoracleidcsextensionsocial_account_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionsocial_account_user(self, urnietfparamsscimschemasoracleidcsextensionsocial_account_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_social_account_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_social_account_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_social_account_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionsocial_account_user of this User.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_social_account_user of this User.
 
-        :param urnietfparamsscimschemasoracleidcsextensionsocial_account_user: The urnietfparamsscimschemasoracleidcsextensionsocial_account_user of this User.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_social_account_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_social_account_user of this User.
         :type: oci.identity_domains.models.ExtensionSocialAccountUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensionsocial_account_user = urnietfparamsscimschemasoracleidcsextensionsocial_account_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_social_account_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_social_account_user
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensiondb_user_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensiondb_user_user of this User.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user of this User.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensiondb_user_user of this User.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user of this User.
         :rtype: oci.identity_domains.models.ExtensionDbUserUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensiondb_user_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user
 
-    @urnietfparamsscimschemasoracleidcsextensiondb_user_user.setter
-    def urnietfparamsscimschemasoracleidcsextensiondb_user_user(self, urnietfparamsscimschemasoracleidcsextensiondb_user_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensiondb_user_user of this User.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user of this User.
 
-        :param urnietfparamsscimschemasoracleidcsextensiondb_user_user: The urnietfparamsscimschemasoracleidcsextensiondb_user_user of this User.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user of this User.
         :type: oci.identity_domains.models.ExtensionDbUserUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensiondb_user_user = urnietfparamsscimschemasoracleidcsextensiondb_user_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionterms_of_use_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_terms_of_use_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionterms_of_use_user of this User.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_terms_of_use_user of this User.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionterms_of_use_user of this User.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_terms_of_use_user of this User.
         :rtype: oci.identity_domains.models.ExtensionTermsOfUseUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionterms_of_use_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_terms_of_use_user
 
-    @urnietfparamsscimschemasoracleidcsextensionterms_of_use_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionterms_of_use_user(self, urnietfparamsscimschemasoracleidcsextensionterms_of_use_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_terms_of_use_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_terms_of_use_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_terms_of_use_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionterms_of_use_user of this User.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_terms_of_use_user of this User.
 
-        :param urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: The urnietfparamsscimschemasoracleidcsextensionterms_of_use_user of this User.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_terms_of_use_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_terms_of_use_user of this User.
         :type: oci.identity_domains.models.ExtensionTermsOfUseUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensionterms_of_use_user = urnietfparamsscimschemasoracleidcsextensionterms_of_use_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_terms_of_use_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_terms_of_use_user
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionpasswordless_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_passwordless_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionpasswordless_user of this User.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_passwordless_user of this User.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionpasswordless_user of this User.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_passwordless_user of this User.
         :rtype: oci.identity_domains.models.ExtensionPasswordlessUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionpasswordless_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_passwordless_user
 
-    @urnietfparamsscimschemasoracleidcsextensionpasswordless_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionpasswordless_user(self, urnietfparamsscimschemasoracleidcsextensionpasswordless_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_passwordless_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_passwordless_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_passwordless_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionpasswordless_user of this User.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_passwordless_user of this User.
 
-        :param urnietfparamsscimschemasoracleidcsextensionpasswordless_user: The urnietfparamsscimschemasoracleidcsextensionpasswordless_user of this User.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_passwordless_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_passwordless_user of this User.
         :type: oci.identity_domains.models.ExtensionPasswordlessUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensionpasswordless_user = urnietfparamsscimschemasoracleidcsextensionpasswordless_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_passwordless_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_passwordless_user
 
     @property
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextension_oci_tags of this User.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags of this User.
 
-        :return: The urnietfparamsscimschemasoracleidcsextension_oci_tags of this User.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags of this User.
         :rtype: oci.identity_domains.models.ExtensionOCITags
         """
-        return self._urnietfparamsscimschemasoracleidcsextension_oci_tags
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags
 
-    @urnietfparamsscimschemasoracleidcsextension_oci_tags.setter
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self, urnietfparamsscimschemasoracleidcsextension_oci_tags):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextension_oci_tags of this User.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags of this User.
 
-        :param urnietfparamsscimschemasoracleidcsextension_oci_tags: The urnietfparamsscimschemasoracleidcsextension_oci_tags of this User.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags: The urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags of this User.
         :type: oci.identity_domains.models.ExtensionOCITags
         """
-        self._urnietfparamsscimschemasoracleidcsextension_oci_tags = urnietfparamsscimschemasoracleidcsextension_oci_tags
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags = urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionuser_credentials_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionuser_credentials_user of this User.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user of this User.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionuser_credentials_user of this User.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user of this User.
         :rtype: oci.identity_domains.models.ExtensionUserCredentialsUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionuser_credentials_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user
 
-    @urnietfparamsscimschemasoracleidcsextensionuser_credentials_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionuser_credentials_user(self, urnietfparamsscimschemasoracleidcsextensionuser_credentials_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionuser_credentials_user of this User.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user of this User.
 
-        :param urnietfparamsscimschemasoracleidcsextensionuser_credentials_user: The urnietfparamsscimschemasoracleidcsextensionuser_credentials_user of this User.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user of this User.
         :type: oci.identity_domains.models.ExtensionUserCredentialsUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensionuser_credentials_user = urnietfparamsscimschemasoracleidcsextensionuser_credentials_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensioncapabilities_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensioncapabilities_user of this User.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user of this User.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensioncapabilities_user of this User.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user of this User.
         :rtype: oci.identity_domains.models.ExtensionCapabilitiesUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensioncapabilities_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user
 
-    @urnietfparamsscimschemasoracleidcsextensioncapabilities_user.setter
-    def urnietfparamsscimschemasoracleidcsextensioncapabilities_user(self, urnietfparamsscimschemasoracleidcsextensioncapabilities_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensioncapabilities_user of this User.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user of this User.
 
-        :param urnietfparamsscimschemasoracleidcsextensioncapabilities_user: The urnietfparamsscimschemasoracleidcsextensioncapabilities_user of this User.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user of this User.
         :type: oci.identity_domains.models.ExtensionCapabilitiesUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensioncapabilities_user = urnietfparamsscimschemasoracleidcsextensioncapabilities_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensiondb_credentials_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensiondb_credentials_user of this User.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user of this User.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensiondb_credentials_user of this User.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user of this User.
         :rtype: oci.identity_domains.models.ExtensionDbCredentialsUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensiondb_credentials_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user
 
-    @urnietfparamsscimschemasoracleidcsextensiondb_credentials_user.setter
-    def urnietfparamsscimschemasoracleidcsextensiondb_credentials_user(self, urnietfparamsscimschemasoracleidcsextensiondb_credentials_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensiondb_credentials_user of this User.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user of this User.
 
-        :param urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: The urnietfparamsscimschemasoracleidcsextensiondb_credentials_user of this User.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user of this User.
         :type: oci.identity_domains.models.ExtensionDbCredentialsUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensiondb_credentials_user = urnietfparamsscimschemasoracleidcsextensiondb_credentials_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionself_change_user(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionself_change_user of this User.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user of this User.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionself_change_user of this User.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user of this User.
         :rtype: oci.identity_domains.models.ExtensionSelfChangeUser
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionself_change_user
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user
 
-    @urnietfparamsscimschemasoracleidcsextensionself_change_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionself_change_user(self, urnietfparamsscimschemasoracleidcsextensionself_change_user):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionself_change_user of this User.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user of this User.
 
-        :param urnietfparamsscimschemasoracleidcsextensionself_change_user: The urnietfparamsscimschemasoracleidcsextensionself_change_user of this User.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user: The urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user of this User.
         :type: oci.identity_domains.models.ExtensionSelfChangeUser
         """
-        self._urnietfparamsscimschemasoracleidcsextensionself_change_user = urnietfparamsscimschemasoracleidcsextensionself_change_user
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user = urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user
 
     def __repr__(self):
         return formatted_flat_dict(self)
