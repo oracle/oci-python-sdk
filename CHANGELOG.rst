@@ -4,13 +4,29 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.94.1 - TBD
+2.95.0 - 2023-03-14
 ====================
 
 Added
 -----
-* TBD
-
+* Support for the Identity Domains service
+* Support for long-term backups for autonomous databases on Exadata Cloud at Customer in the Database service
+* Support for database OS patching in the Database service
+* Support for managing enhanced clusters, cluster add-ons, and serverless virtual node pools in the Container Engine for Kubernetes service
+* Support for templates and copy object requests in the Data Integration service
+* Support for maintenance features in the GoldenGate service
+* Support for AMD_MILAN_BM_GPU configuration type on instances in the Compute service
+* Support for host storage metrics and network metrics as part of host capacity planning in the Operations Insights service
+ 
+Breaking
+--------
+* `UNKNOWN_ENUM_VALUE` will be returned for unknown enum values, instead of raising `ValueError`, for property `protocol` in model `IdentityProvider` in the Identity Data Plane service
+* `UNKNOWN_ENUM_VALUE` will be returned for unknown enum values, instead of raising `ValueError`, for property `lifecycle_state` in model `TemplateSummary` in the Identity Data Plane service
+ 
+Security
+--------
+* The upper bound for `cryptography` dependency has changed to versions less than `40.0.0` to address security vulnerability CVE-2023-23931. For more discussion please see https://github.com/oracle/oci-python-sdk/issues/515
+  
 ====================
 2.94.0 - 2023-03-07
 ====================
