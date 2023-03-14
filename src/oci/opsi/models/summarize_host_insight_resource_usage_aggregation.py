@@ -25,6 +25,14 @@ class SummarizeHostInsightResourceUsageAggregation(object):
     #: This constant has a value of "LOGICAL_MEMORY"
     RESOURCE_METRIC_LOGICAL_MEMORY = "LOGICAL_MEMORY"
 
+    #: A constant which can be used with the resource_metric property of a SummarizeHostInsightResourceUsageAggregation.
+    #: This constant has a value of "STORAGE"
+    RESOURCE_METRIC_STORAGE = "STORAGE"
+
+    #: A constant which can be used with the resource_metric property of a SummarizeHostInsightResourceUsageAggregation.
+    #: This constant has a value of "NETWORK"
+    RESOURCE_METRIC_NETWORK = "NETWORK"
+
     #: A constant which can be used with the usage_unit property of a SummarizeHostInsightResourceUsageAggregation.
     #: This constant has a value of "CORES"
     USAGE_UNIT_CORES = "CORES"
@@ -60,7 +68,7 @@ class SummarizeHostInsightResourceUsageAggregation(object):
 
         :param resource_metric:
             The value to assign to the resource_metric property of this SummarizeHostInsightResourceUsageAggregation.
-            Allowed values for this property are: "CPU", "MEMORY", "LOGICAL_MEMORY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CPU", "MEMORY", "LOGICAL_MEMORY", "STORAGE", "NETWORK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_metric: str
 
@@ -165,7 +173,7 @@ class SummarizeHostInsightResourceUsageAggregation(object):
         **[Required]** Gets the resource_metric of this SummarizeHostInsightResourceUsageAggregation.
         Defines the type of resource metric (CPU, Physical Memory, Logical Memory)
 
-        Allowed values for this property are: "CPU", "MEMORY", "LOGICAL_MEMORY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CPU", "MEMORY", "LOGICAL_MEMORY", "STORAGE", "NETWORK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -184,7 +192,7 @@ class SummarizeHostInsightResourceUsageAggregation(object):
         :param resource_metric: The resource_metric of this SummarizeHostInsightResourceUsageAggregation.
         :type: str
         """
-        allowed_values = ["CPU", "MEMORY", "LOGICAL_MEMORY"]
+        allowed_values = ["CPU", "MEMORY", "LOGICAL_MEMORY", "STORAGE", "NETWORK"]
         if not value_allowed_none_or_none_sentinel(resource_metric, allowed_values):
             resource_metric = 'UNKNOWN_ENUM_VALUE'
         self._resource_metric = resource_metric

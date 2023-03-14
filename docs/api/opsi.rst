@@ -185,6 +185,8 @@ Opsi
     oci.opsi.models.HostCpuUsage
     oci.opsi.models.HostDetails
     oci.opsi.models.HostEntities
+    oci.opsi.models.HostFilesystemConfiguration
+    oci.opsi.models.HostFilesystemUsage
     oci.opsi.models.HostHardwareConfiguration
     oci.opsi.models.HostImportableAgentEntitySummary
     oci.opsi.models.HostInsight
@@ -200,11 +202,13 @@ Opsi
     oci.opsi.models.HostMemoryUsage
     oci.opsi.models.HostNetworkActivitySummary
     oci.opsi.models.HostNetworkConfiguration
+    oci.opsi.models.HostNetworkStatistics
     oci.opsi.models.HostPerformanceMetricGroup
     oci.opsi.models.HostProduct
     oci.opsi.models.HostResourceAllocation
     oci.opsi.models.HostResourceCapacityTrendAggregation
     oci.opsi.models.HostResourceStatistics
+    oci.opsi.models.HostStorageStatistics
     oci.opsi.models.HostTopProcesses
     oci.opsi.models.HostedEntityCollection
     oci.opsi.models.HostedEntitySummary
@@ -238,6 +242,8 @@ Opsi
     oci.opsi.models.MacsManagedExternalHostConfigurationSummary
     oci.opsi.models.MacsManagedExternalHostInsight
     oci.opsi.models.MacsManagedExternalHostInsightSummary
+    oci.opsi.models.NetworkUsageTrend
+    oci.opsi.models.NetworkUsageTrendAggregation
     oci.opsi.models.OperationsInsightsPrivateEndpoint
     oci.opsi.models.OperationsInsightsPrivateEndpointCollection
     oci.opsi.models.OperationsInsightsPrivateEndpointSummary
@@ -313,6 +319,8 @@ Opsi
     oci.opsi.models.SqlTextCollection
     oci.opsi.models.SqlTextSummary
     oci.opsi.models.StorageServerDetails
+    oci.opsi.models.StorageUsageTrend
+    oci.opsi.models.StorageUsageTrendAggregation
     oci.opsi.models.SummarizeAwrSourcesSummariesCollection
     oci.opsi.models.SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection
     oci.opsi.models.SummarizeDatabaseInsightResourceForecastTrendAggregation
@@ -329,12 +337,14 @@ Opsi
     oci.opsi.models.SummarizeExadataInsightResourceUsageAggregation
     oci.opsi.models.SummarizeExadataInsightResourceUsageCollection
     oci.opsi.models.SummarizeExadataInsightResourceUtilizationInsightAggregation
+    oci.opsi.models.SummarizeHostInsightNetworkUsageTrendAggregationCollection
     oci.opsi.models.SummarizeHostInsightResourceCapacityTrendAggregationCollection
     oci.opsi.models.SummarizeHostInsightResourceForecastTrendAggregation
     oci.opsi.models.SummarizeHostInsightResourceStatisticsAggregationCollection
     oci.opsi.models.SummarizeHostInsightResourceUsageAggregation
     oci.opsi.models.SummarizeHostInsightResourceUsageTrendAggregationCollection
     oci.opsi.models.SummarizeHostInsightResourceUtilizationInsightAggregation
+    oci.opsi.models.SummarizeHostInsightStorageUsageTrendAggregationCollection
     oci.opsi.models.SummarizeHostInsightsTopProcessesUsageCollection
     oci.opsi.models.SummarizeHostInsightsTopProcessesUsageTrendCollection
     oci.opsi.models.SummarizeOperationsInsightsWarehouseResourceUsageAggregation

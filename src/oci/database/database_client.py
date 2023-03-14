@@ -17011,6 +17011,9 @@ class DatabaseClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
 
+        :param str type: (optional)
+            A filter to return only backups that matches with the given type of Backup.
+
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
@@ -17049,6 +17052,7 @@ class DatabaseClient(object):
             "sort_order",
             "lifecycle_state",
             "display_name",
+            "type",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -17085,7 +17089,8 @@ class DatabaseClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
-            "displayName": kwargs.get("display_name", missing)
+            "displayName": kwargs.get("display_name", missing),
+            "type": kwargs.get("type", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

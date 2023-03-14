@@ -13,6 +13,14 @@ class CreateClusterDetails(object):
     The properties that define a request to create a cluster.
     """
 
+    #: A constant which can be used with the type property of a CreateClusterDetails.
+    #: This constant has a value of "BASIC_CLUSTER"
+    TYPE_BASIC_CLUSTER = "BASIC_CLUSTER"
+
+    #: A constant which can be used with the type property of a CreateClusterDetails.
+    #: This constant has a value of "ENHANCED_CLUSTER"
+    TYPE_ENHANCED_CLUSTER = "ENHANCED_CLUSTER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateClusterDetails object with values from keyword arguments.
@@ -62,6 +70,11 @@ class CreateClusterDetails(object):
             The value to assign to the cluster_pod_network_options property of this CreateClusterDetails.
         :type cluster_pod_network_options: list[oci.container_engine.models.ClusterPodNetworkOptionDetails]
 
+        :param type:
+            The value to assign to the type property of this CreateClusterDetails.
+            Allowed values for this property are: "BASIC_CLUSTER", "ENHANCED_CLUSTER"
+        :type type: str
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -74,7 +87,8 @@ class CreateClusterDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'options': 'ClusterCreateOptions',
             'image_policy_config': 'CreateImagePolicyConfigDetails',
-            'cluster_pod_network_options': 'list[ClusterPodNetworkOptionDetails]'
+            'cluster_pod_network_options': 'list[ClusterPodNetworkOptionDetails]',
+            'type': 'str'
         }
 
         self.attribute_map = {
@@ -88,7 +102,8 @@ class CreateClusterDetails(object):
             'defined_tags': 'definedTags',
             'options': 'options',
             'image_policy_config': 'imagePolicyConfig',
-            'cluster_pod_network_options': 'clusterPodNetworkOptions'
+            'cluster_pod_network_options': 'clusterPodNetworkOptions',
+            'type': 'type'
         }
 
         self._name = None
@@ -102,6 +117,7 @@ class CreateClusterDetails(object):
         self._options = None
         self._image_policy_config = None
         self._cluster_pod_network_options = None
+        self._type = None
 
     @property
     def name(self):
@@ -388,6 +404,38 @@ class CreateClusterDetails(object):
         :type: list[oci.container_engine.models.ClusterPodNetworkOptionDetails]
         """
         self._cluster_pod_network_options = cluster_pod_network_options
+
+    @property
+    def type(self):
+        """
+        Gets the type of this CreateClusterDetails.
+        Type of cluster
+
+        Allowed values for this property are: "BASIC_CLUSTER", "ENHANCED_CLUSTER"
+
+
+        :return: The type of this CreateClusterDetails.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this CreateClusterDetails.
+        Type of cluster
+
+
+        :param type: The type of this CreateClusterDetails.
+        :type: str
+        """
+        allowed_values = ["BASIC_CLUSTER", "ENHANCED_CLUSTER"]
+        if not value_allowed_none_or_none_sentinel(type, allowed_values):
+            raise ValueError(
+                "Invalid value for `type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._type = type
 
     def __repr__(self):
         return formatted_flat_dict(self)

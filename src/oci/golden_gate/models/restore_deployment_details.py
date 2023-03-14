@@ -59,7 +59,7 @@ class RestoreDeploymentDetails(object):
     def type(self):
         """
         **[Required]** Gets the type of this RestoreDeploymentDetails.
-        The type of a deployment restore
+        The type of a deployment restore.
 
         Allowed values for this property are: "DEFAULT"
 
@@ -73,7 +73,7 @@ class RestoreDeploymentDetails(object):
     def type(self, type):
         """
         Sets the type of this RestoreDeploymentDetails.
-        The type of a deployment restore
+        The type of a deployment restore.
 
 
         :param type: The type of this RestoreDeploymentDetails.

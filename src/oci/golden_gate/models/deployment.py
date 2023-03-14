@@ -61,6 +61,10 @@ class Deployment(object):
     #: This constant has a value of "SUCCEEDED"
     LIFECYCLE_STATE_SUCCEEDED = "SUCCEEDED"
 
+    #: A constant which can be used with the lifecycle_state property of a Deployment.
+    #: This constant has a value of "WAITING"
+    LIFECYCLE_STATE_WAITING = "WAITING"
+
     #: A constant which can be used with the lifecycle_sub_state property of a Deployment.
     #: This constant has a value of "RECOVERING"
     LIFECYCLE_SUB_STATE_RECOVERING = "RECOVERING"
@@ -89,6 +93,10 @@ class Deployment(object):
     #: This constant has a value of "BACKUP_IN_PROGRESS"
     LIFECYCLE_SUB_STATE_BACKUP_IN_PROGRESS = "BACKUP_IN_PROGRESS"
 
+    #: A constant which can be used with the lifecycle_sub_state property of a Deployment.
+    #: This constant has a value of "ROLLBACK_IN_PROGRESS"
+    LIFECYCLE_SUB_STATE_ROLLBACK_IN_PROGRESS = "ROLLBACK_IN_PROGRESS"
+
     #: A constant which can be used with the license_model property of a Deployment.
     #: This constant has a value of "LICENSE_INCLUDED"
     LICENSE_MODEL_LICENSE_INCLUDED = "LICENSE_INCLUDED"
@@ -116,6 +124,10 @@ class Deployment(object):
     #: A constant which can be used with the deployment_type property of a Deployment.
     #: This constant has a value of "DATABASE_POSTGRESQL"
     DEPLOYMENT_TYPE_DATABASE_POSTGRESQL = "DATABASE_POSTGRESQL"
+
+    #: A constant which can be used with the next_maintenance_action_type property of a Deployment.
+    #: This constant has a value of "UPGRADE"
+    NEXT_MAINTENANCE_ACTION_TYPE_UPGRADE = "UPGRADE"
 
     def __init__(self, **kwargs):
         """
@@ -152,13 +164,13 @@ class Deployment(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Deployment.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param lifecycle_sub_state:
             The value to assign to the lifecycle_sub_state property of this Deployment.
-            Allowed values for this property are: "RECOVERING", "STARTING", "STOPPING", "MOVING", "UPGRADING", "RESTORING", "BACKUP_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "RECOVERING", "STARTING", "STOPPING", "MOVING", "UPGRADING", "RESTORING", "BACKUP_IN_PROGRESS", "ROLLBACK_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_sub_state: str
 
@@ -254,6 +266,24 @@ class Deployment(object):
             The value to assign to the deployment_diagnostic_data property of this Deployment.
         :type deployment_diagnostic_data: oci.golden_gate.models.DeploymentDiagnosticData
 
+        :param maintenance_window:
+            The value to assign to the maintenance_window property of this Deployment.
+        :type maintenance_window: oci.golden_gate.models.MaintenanceWindow
+
+        :param time_of_next_maintenance:
+            The value to assign to the time_of_next_maintenance property of this Deployment.
+        :type time_of_next_maintenance: datetime
+
+        :param next_maintenance_action_type:
+            The value to assign to the next_maintenance_action_type property of this Deployment.
+            Allowed values for this property are: "UPGRADE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type next_maintenance_action_type: str
+
+        :param next_maintenance_description:
+            The value to assign to the next_maintenance_description property of this Deployment.
+        :type next_maintenance_description: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -286,7 +316,11 @@ class Deployment(object):
             'is_storage_utilization_limit_exceeded': 'bool',
             'deployment_type': 'str',
             'ogg_data': 'OggDeployment',
-            'deployment_diagnostic_data': 'DeploymentDiagnosticData'
+            'deployment_diagnostic_data': 'DeploymentDiagnosticData',
+            'maintenance_window': 'MaintenanceWindow',
+            'time_of_next_maintenance': 'datetime',
+            'next_maintenance_action_type': 'str',
+            'next_maintenance_description': 'str'
         }
 
         self.attribute_map = {
@@ -320,7 +354,11 @@ class Deployment(object):
             'is_storage_utilization_limit_exceeded': 'isStorageUtilizationLimitExceeded',
             'deployment_type': 'deploymentType',
             'ogg_data': 'oggData',
-            'deployment_diagnostic_data': 'deploymentDiagnosticData'
+            'deployment_diagnostic_data': 'deploymentDiagnosticData',
+            'maintenance_window': 'maintenanceWindow',
+            'time_of_next_maintenance': 'timeOfNextMaintenance',
+            'next_maintenance_action_type': 'nextMaintenanceActionType',
+            'next_maintenance_description': 'nextMaintenanceDescription'
         }
 
         self._id = None
@@ -354,6 +392,10 @@ class Deployment(object):
         self._deployment_type = None
         self._ogg_data = None
         self._deployment_diagnostic_data = None
+        self._maintenance_window = None
+        self._time_of_next_maintenance = None
+        self._next_maintenance_action_type = None
+        self._next_maintenance_description = None
 
     @property
     def id(self):
@@ -553,7 +595,7 @@ class Deployment(object):
         Gets the lifecycle_state of this Deployment.
         Possible lifecycle states.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -572,7 +614,7 @@ class Deployment(object):
         :param lifecycle_state: The lifecycle_state of this Deployment.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -583,7 +625,7 @@ class Deployment(object):
         Gets the lifecycle_sub_state of this Deployment.
         Possible GGS lifecycle sub-states.
 
-        Allowed values for this property are: "RECOVERING", "STARTING", "STOPPING", "MOVING", "UPGRADING", "RESTORING", "BACKUP_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "RECOVERING", "STARTING", "STOPPING", "MOVING", "UPGRADING", "RESTORING", "BACKUP_IN_PROGRESS", "ROLLBACK_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -602,7 +644,7 @@ class Deployment(object):
         :param lifecycle_sub_state: The lifecycle_sub_state of this Deployment.
         :type: str
         """
-        allowed_values = ["RECOVERING", "STARTING", "STOPPING", "MOVING", "UPGRADING", "RESTORING", "BACKUP_IN_PROGRESS"]
+        allowed_values = ["RECOVERING", "STARTING", "STOPPING", "MOVING", "UPGRADING", "RESTORING", "BACKUP_IN_PROGRESS", "ROLLBACK_IN_PROGRESS"]
         if not value_allowed_none_or_none_sentinel(lifecycle_sub_state, allowed_values):
             lifecycle_sub_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_sub_state = lifecycle_sub_state
@@ -1031,6 +1073,9 @@ class Deployment(object):
     def time_upgrade_required(self):
         """
         Gets the time_upgrade_required of this Deployment.
+        Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records
+        to check, when deployment will be forced to upgrade to a newer version.
+        Old description:
         The date the existing version in use will no longer be considered as usable
         and an upgrade will be required.  This date is typically 6 months after the
         version was released for use by GGS.  The format is defined by
@@ -1048,6 +1093,9 @@ class Deployment(object):
     def time_upgrade_required(self, time_upgrade_required):
         """
         Sets the time_upgrade_required of this Deployment.
+        Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records
+        to check, when deployment will be forced to upgrade to a newer version.
+        Old description:
         The date the existing version in use will no longer be considered as usable
         and an upgrade will be required.  This date is typically 6 months after the
         version was released for use by GGS.  The format is defined by
@@ -1182,6 +1230,110 @@ class Deployment(object):
         :type: oci.golden_gate.models.DeploymentDiagnosticData
         """
         self._deployment_diagnostic_data = deployment_diagnostic_data
+
+    @property
+    def maintenance_window(self):
+        """
+        Gets the maintenance_window of this Deployment.
+
+        :return: The maintenance_window of this Deployment.
+        :rtype: oci.golden_gate.models.MaintenanceWindow
+        """
+        return self._maintenance_window
+
+    @maintenance_window.setter
+    def maintenance_window(self, maintenance_window):
+        """
+        Sets the maintenance_window of this Deployment.
+
+        :param maintenance_window: The maintenance_window of this Deployment.
+        :type: oci.golden_gate.models.MaintenanceWindow
+        """
+        self._maintenance_window = maintenance_window
+
+    @property
+    def time_of_next_maintenance(self):
+        """
+        Gets the time_of_next_maintenance of this Deployment.
+        The time of next maintenance schedule. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_of_next_maintenance of this Deployment.
+        :rtype: datetime
+        """
+        return self._time_of_next_maintenance
+
+    @time_of_next_maintenance.setter
+    def time_of_next_maintenance(self, time_of_next_maintenance):
+        """
+        Sets the time_of_next_maintenance of this Deployment.
+        The time of next maintenance schedule. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_of_next_maintenance: The time_of_next_maintenance of this Deployment.
+        :type: datetime
+        """
+        self._time_of_next_maintenance = time_of_next_maintenance
+
+    @property
+    def next_maintenance_action_type(self):
+        """
+        Gets the next_maintenance_action_type of this Deployment.
+        Type of the next maintenance.
+
+        Allowed values for this property are: "UPGRADE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The next_maintenance_action_type of this Deployment.
+        :rtype: str
+        """
+        return self._next_maintenance_action_type
+
+    @next_maintenance_action_type.setter
+    def next_maintenance_action_type(self, next_maintenance_action_type):
+        """
+        Sets the next_maintenance_action_type of this Deployment.
+        Type of the next maintenance.
+
+
+        :param next_maintenance_action_type: The next_maintenance_action_type of this Deployment.
+        :type: str
+        """
+        allowed_values = ["UPGRADE"]
+        if not value_allowed_none_or_none_sentinel(next_maintenance_action_type, allowed_values):
+            next_maintenance_action_type = 'UNKNOWN_ENUM_VALUE'
+        self._next_maintenance_action_type = next_maintenance_action_type
+
+    @property
+    def next_maintenance_description(self):
+        """
+        Gets the next_maintenance_description of this Deployment.
+        Description of the next maintenance.
+
+
+        :return: The next_maintenance_description of this Deployment.
+        :rtype: str
+        """
+        return self._next_maintenance_description
+
+    @next_maintenance_description.setter
+    def next_maintenance_description(self, next_maintenance_description):
+        """
+        Sets the next_maintenance_description of this Deployment.
+        Description of the next maintenance.
+
+
+        :param next_maintenance_description: The next_maintenance_description of this Deployment.
+        :type: str
+        """
+        self._next_maintenance_description = next_maintenance_description
 
     def __repr__(self):
         return formatted_flat_dict(self)

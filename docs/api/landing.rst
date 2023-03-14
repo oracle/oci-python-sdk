@@ -88,6 +88,7 @@ API Reference
 * :doc:`Governance Rule <governance_rules_control_plane/client/oci.governance_rules_control_plane.GovernanceRuleClient>`
 * :doc:`Health Checks <healthchecks/client/oci.healthchecks.HealthChecksClient>`
 * :doc:`Identity <identity/client/oci.identity.IdentityClient>`
+* :doc:`Identity Domains <identity_domains/client/oci.identity_domains.IdentityDomainsClient>`
 * :doc:`Incident <cims/client/oci.cims.IncidentClient>`
 * :doc:`Integration Instance <integration/client/oci.integration.IntegrationInstanceClient>`
 * :doc:`Inventory <cloud_bridge/client/oci.cloud_bridge.InventoryClient>`
@@ -280,6 +281,7 @@ API Reference
     healthchecks
     identity
     identity_data_plane
+    identity_domains
     integration
     jms
     key_management

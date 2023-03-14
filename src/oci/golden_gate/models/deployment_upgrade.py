@@ -69,6 +69,10 @@ class DeploymentUpgrade(object):
     #: This constant has a value of "SUCCEEDED"
     LIFECYCLE_STATE_SUCCEEDED = "SUCCEEDED"
 
+    #: A constant which can be used with the lifecycle_state property of a DeploymentUpgrade.
+    #: This constant has a value of "WAITING"
+    LIFECYCLE_STATE_WAITING = "WAITING"
+
     #: A constant which can be used with the lifecycle_sub_state property of a DeploymentUpgrade.
     #: This constant has a value of "RECOVERING"
     LIFECYCLE_SUB_STATE_RECOVERING = "RECOVERING"
@@ -96,6 +100,22 @@ class DeploymentUpgrade(object):
     #: A constant which can be used with the lifecycle_sub_state property of a DeploymentUpgrade.
     #: This constant has a value of "BACKUP_IN_PROGRESS"
     LIFECYCLE_SUB_STATE_BACKUP_IN_PROGRESS = "BACKUP_IN_PROGRESS"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a DeploymentUpgrade.
+    #: This constant has a value of "ROLLBACK_IN_PROGRESS"
+    LIFECYCLE_SUB_STATE_ROLLBACK_IN_PROGRESS = "ROLLBACK_IN_PROGRESS"
+
+    #: A constant which can be used with the release_type property of a DeploymentUpgrade.
+    #: This constant has a value of "MAJOR"
+    RELEASE_TYPE_MAJOR = "MAJOR"
+
+    #: A constant which can be used with the release_type property of a DeploymentUpgrade.
+    #: This constant has a value of "BUNDLE"
+    RELEASE_TYPE_BUNDLE = "BUNDLE"
+
+    #: A constant which can be used with the release_type property of a DeploymentUpgrade.
+    #: This constant has a value of "MINOR"
+    RELEASE_TYPE_MINOR = "MINOR"
 
     def __init__(self, **kwargs):
         """
@@ -150,13 +170,13 @@ class DeploymentUpgrade(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DeploymentUpgrade.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param lifecycle_sub_state:
             The value to assign to the lifecycle_sub_state property of this DeploymentUpgrade.
-            Allowed values for this property are: "RECOVERING", "STARTING", "STOPPING", "MOVING", "UPGRADING", "RESTORING", "BACKUP_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "RECOVERING", "STARTING", "STOPPING", "MOVING", "UPGRADING", "RESTORING", "BACKUP_IN_PROGRESS", "ROLLBACK_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_sub_state: str
 
@@ -176,6 +196,40 @@ class DeploymentUpgrade(object):
             The value to assign to the system_tags property of this DeploymentUpgrade.
         :type system_tags: dict(str, dict(str, object))
 
+        :param previous_ogg_version:
+            The value to assign to the previous_ogg_version property of this DeploymentUpgrade.
+        :type previous_ogg_version: str
+
+        :param time_schedule:
+            The value to assign to the time_schedule property of this DeploymentUpgrade.
+        :type time_schedule: datetime
+
+        :param is_snoozed:
+            The value to assign to the is_snoozed property of this DeploymentUpgrade.
+        :type is_snoozed: bool
+
+        :param time_snoozed_until:
+            The value to assign to the time_snoozed_until property of this DeploymentUpgrade.
+        :type time_snoozed_until: datetime
+
+        :param time_released:
+            The value to assign to the time_released property of this DeploymentUpgrade.
+        :type time_released: datetime
+
+        :param release_type:
+            The value to assign to the release_type property of this DeploymentUpgrade.
+            Allowed values for this property are: "MAJOR", "BUNDLE", "MINOR", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type release_type: str
+
+        :param is_security_fix:
+            The value to assign to the is_security_fix property of this DeploymentUpgrade.
+        :type is_security_fix: bool
+
+        :param is_rollback_allowed:
+            The value to assign to the is_rollback_allowed property of this DeploymentUpgrade.
+        :type is_rollback_allowed: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -194,7 +248,15 @@ class DeploymentUpgrade(object):
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'previous_ogg_version': 'str',
+            'time_schedule': 'datetime',
+            'is_snoozed': 'bool',
+            'time_snoozed_until': 'datetime',
+            'time_released': 'datetime',
+            'release_type': 'str',
+            'is_security_fix': 'bool',
+            'is_rollback_allowed': 'bool'
         }
 
         self.attribute_map = {
@@ -214,7 +276,15 @@ class DeploymentUpgrade(object):
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'previous_ogg_version': 'previousOggVersion',
+            'time_schedule': 'timeSchedule',
+            'is_snoozed': 'isSnoozed',
+            'time_snoozed_until': 'timeSnoozedUntil',
+            'time_released': 'timeReleased',
+            'release_type': 'releaseType',
+            'is_security_fix': 'isSecurityFix',
+            'is_rollback_allowed': 'isRollbackAllowed'
         }
 
         self._id = None
@@ -234,6 +304,14 @@ class DeploymentUpgrade(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._previous_ogg_version = None
+        self._time_schedule = None
+        self._is_snoozed = None
+        self._time_snoozed_until = None
+        self._time_released = None
+        self._release_type = None
+        self._is_security_fix = None
+        self._is_rollback_allowed = None
 
     @property
     def id(self):
@@ -547,7 +625,7 @@ class DeploymentUpgrade(object):
         Gets the lifecycle_state of this DeploymentUpgrade.
         Possible lifecycle states.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -566,7 +644,7 @@ class DeploymentUpgrade(object):
         :param lifecycle_state: The lifecycle_state of this DeploymentUpgrade.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -577,7 +655,7 @@ class DeploymentUpgrade(object):
         Gets the lifecycle_sub_state of this DeploymentUpgrade.
         Possible GGS lifecycle sub-states.
 
-        Allowed values for this property are: "RECOVERING", "STARTING", "STOPPING", "MOVING", "UPGRADING", "RESTORING", "BACKUP_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "RECOVERING", "STARTING", "STOPPING", "MOVING", "UPGRADING", "RESTORING", "BACKUP_IN_PROGRESS", "ROLLBACK_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -596,7 +674,7 @@ class DeploymentUpgrade(object):
         :param lifecycle_sub_state: The lifecycle_sub_state of this DeploymentUpgrade.
         :type: str
         """
-        allowed_values = ["RECOVERING", "STARTING", "STOPPING", "MOVING", "UPGRADING", "RESTORING", "BACKUP_IN_PROGRESS"]
+        allowed_values = ["RECOVERING", "STARTING", "STOPPING", "MOVING", "UPGRADING", "RESTORING", "BACKUP_IN_PROGRESS", "ROLLBACK_IN_PROGRESS"]
         if not value_allowed_none_or_none_sentinel(lifecycle_sub_state, allowed_values):
             lifecycle_sub_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_sub_state = lifecycle_sub_state
@@ -720,6 +798,226 @@ class DeploymentUpgrade(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def previous_ogg_version(self):
+        """
+        Gets the previous_ogg_version of this DeploymentUpgrade.
+        Version of OGG
+
+
+        :return: The previous_ogg_version of this DeploymentUpgrade.
+        :rtype: str
+        """
+        return self._previous_ogg_version
+
+    @previous_ogg_version.setter
+    def previous_ogg_version(self, previous_ogg_version):
+        """
+        Sets the previous_ogg_version of this DeploymentUpgrade.
+        Version of OGG
+
+
+        :param previous_ogg_version: The previous_ogg_version of this DeploymentUpgrade.
+        :type: str
+        """
+        self._previous_ogg_version = previous_ogg_version
+
+    @property
+    def time_schedule(self):
+        """
+        Gets the time_schedule of this DeploymentUpgrade.
+        The time of upgrade schedule. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_schedule of this DeploymentUpgrade.
+        :rtype: datetime
+        """
+        return self._time_schedule
+
+    @time_schedule.setter
+    def time_schedule(self, time_schedule):
+        """
+        Sets the time_schedule of this DeploymentUpgrade.
+        The time of upgrade schedule. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_schedule: The time_schedule of this DeploymentUpgrade.
+        :type: datetime
+        """
+        self._time_schedule = time_schedule
+
+    @property
+    def is_snoozed(self):
+        """
+        Gets the is_snoozed of this DeploymentUpgrade.
+        Indicates if upgrade notifications are snoozed or not.
+
+
+        :return: The is_snoozed of this DeploymentUpgrade.
+        :rtype: bool
+        """
+        return self._is_snoozed
+
+    @is_snoozed.setter
+    def is_snoozed(self, is_snoozed):
+        """
+        Sets the is_snoozed of this DeploymentUpgrade.
+        Indicates if upgrade notifications are snoozed or not.
+
+
+        :param is_snoozed: The is_snoozed of this DeploymentUpgrade.
+        :type: bool
+        """
+        self._is_snoozed = is_snoozed
+
+    @property
+    def time_snoozed_until(self):
+        """
+        Gets the time_snoozed_until of this DeploymentUpgrade.
+        The time the upgrade notifications are snoozed until. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_snoozed_until of this DeploymentUpgrade.
+        :rtype: datetime
+        """
+        return self._time_snoozed_until
+
+    @time_snoozed_until.setter
+    def time_snoozed_until(self, time_snoozed_until):
+        """
+        Sets the time_snoozed_until of this DeploymentUpgrade.
+        The time the upgrade notifications are snoozed until. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_snoozed_until: The time_snoozed_until of this DeploymentUpgrade.
+        :type: datetime
+        """
+        self._time_snoozed_until = time_snoozed_until
+
+    @property
+    def time_released(self):
+        """
+        Gets the time_released of this DeploymentUpgrade.
+        The time the resource was released. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_released of this DeploymentUpgrade.
+        :rtype: datetime
+        """
+        return self._time_released
+
+    @time_released.setter
+    def time_released(self, time_released):
+        """
+        Sets the time_released of this DeploymentUpgrade.
+        The time the resource was released. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_released: The time_released of this DeploymentUpgrade.
+        :type: datetime
+        """
+        self._time_released = time_released
+
+    @property
+    def release_type(self):
+        """
+        Gets the release_type of this DeploymentUpgrade.
+        The type of release.
+
+        Allowed values for this property are: "MAJOR", "BUNDLE", "MINOR", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The release_type of this DeploymentUpgrade.
+        :rtype: str
+        """
+        return self._release_type
+
+    @release_type.setter
+    def release_type(self, release_type):
+        """
+        Sets the release_type of this DeploymentUpgrade.
+        The type of release.
+
+
+        :param release_type: The release_type of this DeploymentUpgrade.
+        :type: str
+        """
+        allowed_values = ["MAJOR", "BUNDLE", "MINOR"]
+        if not value_allowed_none_or_none_sentinel(release_type, allowed_values):
+            release_type = 'UNKNOWN_ENUM_VALUE'
+        self._release_type = release_type
+
+    @property
+    def is_security_fix(self):
+        """
+        Gets the is_security_fix of this DeploymentUpgrade.
+        Indicates if OGG release contains security fix.
+
+
+        :return: The is_security_fix of this DeploymentUpgrade.
+        :rtype: bool
+        """
+        return self._is_security_fix
+
+    @is_security_fix.setter
+    def is_security_fix(self, is_security_fix):
+        """
+        Sets the is_security_fix of this DeploymentUpgrade.
+        Indicates if OGG release contains security fix.
+
+
+        :param is_security_fix: The is_security_fix of this DeploymentUpgrade.
+        :type: bool
+        """
+        self._is_security_fix = is_security_fix
+
+    @property
+    def is_rollback_allowed(self):
+        """
+        Gets the is_rollback_allowed of this DeploymentUpgrade.
+        Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
+        - Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
+        - Automatic upgrade by default is not allowed, unless a serious issue does not justify.
+
+
+        :return: The is_rollback_allowed of this DeploymentUpgrade.
+        :rtype: bool
+        """
+        return self._is_rollback_allowed
+
+    @is_rollback_allowed.setter
+    def is_rollback_allowed(self, is_rollback_allowed):
+        """
+        Sets the is_rollback_allowed of this DeploymentUpgrade.
+        Indicates if rollback is allowed. In practice only the last upgrade can be rolled back.
+        - Manual upgrade is allowed to rollback only until the old version isn't deprecated yet.
+        - Automatic upgrade by default is not allowed, unless a serious issue does not justify.
+
+
+        :param is_rollback_allowed: The is_rollback_allowed of this DeploymentUpgrade.
+        :type: bool
+        """
+        self._is_rollback_allowed = is_rollback_allowed
 
     def __repr__(self):
         return formatted_flat_dict(self)

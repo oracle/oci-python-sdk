@@ -171,6 +171,8 @@ from .host_cpu_statistics import HostCpuStatistics
 from .host_cpu_usage import HostCpuUsage
 from .host_details import HostDetails
 from .host_entities import HostEntities
+from .host_filesystem_configuration import HostFilesystemConfiguration
+from .host_filesystem_usage import HostFilesystemUsage
 from .host_hardware_configuration import HostHardwareConfiguration
 from .host_importable_agent_entity_summary import HostImportableAgentEntitySummary
 from .host_insight import HostInsight
@@ -186,11 +188,13 @@ from .host_memory_statistics import HostMemoryStatistics
 from .host_memory_usage import HostMemoryUsage
 from .host_network_activity_summary import HostNetworkActivitySummary
 from .host_network_configuration import HostNetworkConfiguration
+from .host_network_statistics import HostNetworkStatistics
 from .host_performance_metric_group import HostPerformanceMetricGroup
 from .host_product import HostProduct
 from .host_resource_allocation import HostResourceAllocation
 from .host_resource_capacity_trend_aggregation import HostResourceCapacityTrendAggregation
 from .host_resource_statistics import HostResourceStatistics
+from .host_storage_statistics import HostStorageStatistics
 from .host_top_processes import HostTopProcesses
 from .hosted_entity_collection import HostedEntityCollection
 from .hosted_entity_summary import HostedEntitySummary
@@ -224,6 +228,8 @@ from .macs_managed_external_database_insight_summary import MacsManagedExternalD
 from .macs_managed_external_host_configuration_summary import MacsManagedExternalHostConfigurationSummary
 from .macs_managed_external_host_insight import MacsManagedExternalHostInsight
 from .macs_managed_external_host_insight_summary import MacsManagedExternalHostInsightSummary
+from .network_usage_trend import NetworkUsageTrend
+from .network_usage_trend_aggregation import NetworkUsageTrendAggregation
 from .operations_insights_private_endpoint import OperationsInsightsPrivateEndpoint
 from .operations_insights_private_endpoint_collection import OperationsInsightsPrivateEndpointCollection
 from .operations_insights_private_endpoint_summary import OperationsInsightsPrivateEndpointSummary
@@ -299,6 +305,8 @@ from .sql_text import SqlText
 from .sql_text_collection import SqlTextCollection
 from .sql_text_summary import SqlTextSummary
 from .storage_server_details import StorageServerDetails
+from .storage_usage_trend import StorageUsageTrend
+from .storage_usage_trend_aggregation import StorageUsageTrendAggregation
 from .summarize_awr_sources_summaries_collection import SummarizeAwrSourcesSummariesCollection
 from .summarize_database_insight_resource_capacity_trend_aggregation_collection import SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection
 from .summarize_database_insight_resource_forecast_trend_aggregation import SummarizeDatabaseInsightResourceForecastTrendAggregation
@@ -315,12 +323,14 @@ from .summarize_exadata_insight_resource_statistics_aggregation_collection impor
 from .summarize_exadata_insight_resource_usage_aggregation import SummarizeExadataInsightResourceUsageAggregation
 from .summarize_exadata_insight_resource_usage_collection import SummarizeExadataInsightResourceUsageCollection
 from .summarize_exadata_insight_resource_utilization_insight_aggregation import SummarizeExadataInsightResourceUtilizationInsightAggregation
+from .summarize_host_insight_network_usage_trend_aggregation_collection import SummarizeHostInsightNetworkUsageTrendAggregationCollection
 from .summarize_host_insight_resource_capacity_trend_aggregation_collection import SummarizeHostInsightResourceCapacityTrendAggregationCollection
 from .summarize_host_insight_resource_forecast_trend_aggregation import SummarizeHostInsightResourceForecastTrendAggregation
 from .summarize_host_insight_resource_statistics_aggregation_collection import SummarizeHostInsightResourceStatisticsAggregationCollection
 from .summarize_host_insight_resource_usage_aggregation import SummarizeHostInsightResourceUsageAggregation
 from .summarize_host_insight_resource_usage_trend_aggregation_collection import SummarizeHostInsightResourceUsageTrendAggregationCollection
 from .summarize_host_insight_resource_utilization_insight_aggregation import SummarizeHostInsightResourceUtilizationInsightAggregation
+from .summarize_host_insight_storage_usage_trend_aggregation_collection import SummarizeHostInsightStorageUsageTrendAggregationCollection
 from .summarize_host_insights_top_processes_usage_collection import SummarizeHostInsightsTopProcessesUsageCollection
 from .summarize_host_insights_top_processes_usage_trend_collection import SummarizeHostInsightsTopProcessesUsageTrendCollection
 from .summarize_operations_insights_warehouse_resource_usage_aggregation import SummarizeOperationsInsightsWarehouseResourceUsageAggregation
@@ -531,6 +541,8 @@ opsi_type_mapping = {
     "HostCpuUsage": HostCpuUsage,
     "HostDetails": HostDetails,
     "HostEntities": HostEntities,
+    "HostFilesystemConfiguration": HostFilesystemConfiguration,
+    "HostFilesystemUsage": HostFilesystemUsage,
     "HostHardwareConfiguration": HostHardwareConfiguration,
     "HostImportableAgentEntitySummary": HostImportableAgentEntitySummary,
     "HostInsight": HostInsight,
@@ -546,11 +558,13 @@ opsi_type_mapping = {
     "HostMemoryUsage": HostMemoryUsage,
     "HostNetworkActivitySummary": HostNetworkActivitySummary,
     "HostNetworkConfiguration": HostNetworkConfiguration,
+    "HostNetworkStatistics": HostNetworkStatistics,
     "HostPerformanceMetricGroup": HostPerformanceMetricGroup,
     "HostProduct": HostProduct,
     "HostResourceAllocation": HostResourceAllocation,
     "HostResourceCapacityTrendAggregation": HostResourceCapacityTrendAggregation,
     "HostResourceStatistics": HostResourceStatistics,
+    "HostStorageStatistics": HostStorageStatistics,
     "HostTopProcesses": HostTopProcesses,
     "HostedEntityCollection": HostedEntityCollection,
     "HostedEntitySummary": HostedEntitySummary,
@@ -584,6 +598,8 @@ opsi_type_mapping = {
     "MacsManagedExternalHostConfigurationSummary": MacsManagedExternalHostConfigurationSummary,
     "MacsManagedExternalHostInsight": MacsManagedExternalHostInsight,
     "MacsManagedExternalHostInsightSummary": MacsManagedExternalHostInsightSummary,
+    "NetworkUsageTrend": NetworkUsageTrend,
+    "NetworkUsageTrendAggregation": NetworkUsageTrendAggregation,
     "OperationsInsightsPrivateEndpoint": OperationsInsightsPrivateEndpoint,
     "OperationsInsightsPrivateEndpointCollection": OperationsInsightsPrivateEndpointCollection,
     "OperationsInsightsPrivateEndpointSummary": OperationsInsightsPrivateEndpointSummary,
@@ -659,6 +675,8 @@ opsi_type_mapping = {
     "SqlTextCollection": SqlTextCollection,
     "SqlTextSummary": SqlTextSummary,
     "StorageServerDetails": StorageServerDetails,
+    "StorageUsageTrend": StorageUsageTrend,
+    "StorageUsageTrendAggregation": StorageUsageTrendAggregation,
     "SummarizeAwrSourcesSummariesCollection": SummarizeAwrSourcesSummariesCollection,
     "SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection": SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection,
     "SummarizeDatabaseInsightResourceForecastTrendAggregation": SummarizeDatabaseInsightResourceForecastTrendAggregation,
@@ -675,12 +693,14 @@ opsi_type_mapping = {
     "SummarizeExadataInsightResourceUsageAggregation": SummarizeExadataInsightResourceUsageAggregation,
     "SummarizeExadataInsightResourceUsageCollection": SummarizeExadataInsightResourceUsageCollection,
     "SummarizeExadataInsightResourceUtilizationInsightAggregation": SummarizeExadataInsightResourceUtilizationInsightAggregation,
+    "SummarizeHostInsightNetworkUsageTrendAggregationCollection": SummarizeHostInsightNetworkUsageTrendAggregationCollection,
     "SummarizeHostInsightResourceCapacityTrendAggregationCollection": SummarizeHostInsightResourceCapacityTrendAggregationCollection,
     "SummarizeHostInsightResourceForecastTrendAggregation": SummarizeHostInsightResourceForecastTrendAggregation,
     "SummarizeHostInsightResourceStatisticsAggregationCollection": SummarizeHostInsightResourceStatisticsAggregationCollection,
     "SummarizeHostInsightResourceUsageAggregation": SummarizeHostInsightResourceUsageAggregation,
     "SummarizeHostInsightResourceUsageTrendAggregationCollection": SummarizeHostInsightResourceUsageTrendAggregationCollection,
     "SummarizeHostInsightResourceUtilizationInsightAggregation": SummarizeHostInsightResourceUtilizationInsightAggregation,
+    "SummarizeHostInsightStorageUsageTrendAggregationCollection": SummarizeHostInsightStorageUsageTrendAggregationCollection,
     "SummarizeHostInsightsTopProcessesUsageCollection": SummarizeHostInsightsTopProcessesUsageCollection,
     "SummarizeHostInsightsTopProcessesUsageTrendCollection": SummarizeHostInsightsTopProcessesUsageTrendCollection,
     "SummarizeOperationsInsightsWarehouseResourceUsageAggregation": SummarizeOperationsInsightsWarehouseResourceUsageAggregation,

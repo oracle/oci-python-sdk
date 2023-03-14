@@ -19,6 +19,8 @@ from .added_network_security_group_security_rules import AddedNetworkSecurityGro
 from .allowed_ike_ip_sec_parameters import AllowedIkeIPSecParameters
 from .allowed_phase_one_parameters import AllowedPhaseOneParameters
 from .allowed_phase_two_parameters import AllowedPhaseTwoParameters
+from .amd_milan_bm_gpu_launch_instance_platform_config import AmdMilanBmGpuLaunchInstancePlatformConfig
+from .amd_milan_bm_gpu_platform_config import AmdMilanBmGpuPlatformConfig
 from .amd_milan_bm_launch_instance_platform_config import AmdMilanBmLaunchInstancePlatformConfig
 from .amd_milan_bm_platform_config import AmdMilanBmPlatformConfig
 from .amd_rome_bm_gpu_launch_instance_platform_config import AmdRomeBmGpuLaunchInstancePlatformConfig
@@ -268,6 +270,7 @@ from .instance_agent_features import InstanceAgentFeatures
 from .instance_agent_plugin_config_details import InstanceAgentPluginConfigDetails
 from .instance_availability_config import InstanceAvailabilityConfig
 from .instance_configuration import InstanceConfiguration
+from .instance_configuration_amd_milan_bm_gpu_launch_instance_platform_config import InstanceConfigurationAmdMilanBmGpuLaunchInstancePlatformConfig
 from .instance_configuration_amd_milan_bm_launch_instance_platform_config import InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
 from .instance_configuration_amd_rome_bm_gpu_launch_instance_platform_config import InstanceConfigurationAmdRomeBmGpuLaunchInstancePlatformConfig
 from .instance_configuration_amd_rome_bm_launch_instance_platform_config import InstanceConfigurationAmdRomeBmLaunchInstancePlatformConfig
@@ -543,6 +546,8 @@ core_type_mapping = {
     "AllowedIkeIPSecParameters": AllowedIkeIPSecParameters,
     "AllowedPhaseOneParameters": AllowedPhaseOneParameters,
     "AllowedPhaseTwoParameters": AllowedPhaseTwoParameters,
+    "AmdMilanBmGpuLaunchInstancePlatformConfig": AmdMilanBmGpuLaunchInstancePlatformConfig,
+    "AmdMilanBmGpuPlatformConfig": AmdMilanBmGpuPlatformConfig,
     "AmdMilanBmLaunchInstancePlatformConfig": AmdMilanBmLaunchInstancePlatformConfig,
     "AmdMilanBmPlatformConfig": AmdMilanBmPlatformConfig,
     "AmdRomeBmGpuLaunchInstancePlatformConfig": AmdRomeBmGpuLaunchInstancePlatformConfig,
@@ -792,6 +797,7 @@ core_type_mapping = {
     "InstanceAgentPluginConfigDetails": InstanceAgentPluginConfigDetails,
     "InstanceAvailabilityConfig": InstanceAvailabilityConfig,
     "InstanceConfiguration": InstanceConfiguration,
+    "InstanceConfigurationAmdMilanBmGpuLaunchInstancePlatformConfig": InstanceConfigurationAmdMilanBmGpuLaunchInstancePlatformConfig,
     "InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig": InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig,
     "InstanceConfigurationAmdRomeBmGpuLaunchInstancePlatformConfig": InstanceConfigurationAmdRomeBmGpuLaunchInstancePlatformConfig,
     "InstanceConfigurationAmdRomeBmLaunchInstancePlatformConfig": InstanceConfigurationAmdRomeBmLaunchInstancePlatformConfig,

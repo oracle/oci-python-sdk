@@ -21,11 +21,21 @@ class HostResourceStatistics(object):
     #: This constant has a value of "HOST_MEMORY_STATISTICS"
     RESOURCE_NAME_HOST_MEMORY_STATISTICS = "HOST_MEMORY_STATISTICS"
 
+    #: A constant which can be used with the resource_name property of a HostResourceStatistics.
+    #: This constant has a value of "HOST_STORAGE_STATISTICS"
+    RESOURCE_NAME_HOST_STORAGE_STATISTICS = "HOST_STORAGE_STATISTICS"
+
+    #: A constant which can be used with the resource_name property of a HostResourceStatistics.
+    #: This constant has a value of "HOST_NETWORK_STATISTICS"
+    RESOURCE_NAME_HOST_NETWORK_STATISTICS = "HOST_NETWORK_STATISTICS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new HostResourceStatistics object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.opsi.models.HostNetworkStatistics`
+        * :class:`~oci.opsi.models.HostStorageStatistics`
         * :class:`~oci.opsi.models.HostMemoryStatistics`
         * :class:`~oci.opsi.models.HostCpuStatistics`
 
@@ -49,7 +59,7 @@ class HostResourceStatistics(object):
 
         :param resource_name:
             The value to assign to the resource_name property of this HostResourceStatistics.
-            Allowed values for this property are: "HOST_CPU_STATISTICS", "HOST_MEMORY_STATISTICS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "HOST_CPU_STATISTICS", "HOST_MEMORY_STATISTICS", "HOST_STORAGE_STATISTICS", "HOST_NETWORK_STATISTICS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_name: str
 
@@ -83,6 +93,12 @@ class HostResourceStatistics(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['resourceName']
+
+        if type == 'HOST_NETWORK_STATISTICS':
+            return 'HostNetworkStatistics'
+
+        if type == 'HOST_STORAGE_STATISTICS':
+            return 'HostStorageStatistics'
 
         if type == 'HOST_MEMORY_STATISTICS':
             return 'HostMemoryStatistics'
@@ -194,7 +210,7 @@ class HostResourceStatistics(object):
         **[Required]** Gets the resource_name of this HostResourceStatistics.
         Name of resource for host
 
-        Allowed values for this property are: "HOST_CPU_STATISTICS", "HOST_MEMORY_STATISTICS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "HOST_CPU_STATISTICS", "HOST_MEMORY_STATISTICS", "HOST_STORAGE_STATISTICS", "HOST_NETWORK_STATISTICS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -213,7 +229,7 @@ class HostResourceStatistics(object):
         :param resource_name: The resource_name of this HostResourceStatistics.
         :type: str
         """
-        allowed_values = ["HOST_CPU_STATISTICS", "HOST_MEMORY_STATISTICS"]
+        allowed_values = ["HOST_CPU_STATISTICS", "HOST_MEMORY_STATISTICS", "HOST_STORAGE_STATISTICS", "HOST_NETWORK_STATISTICS"]
         if not value_allowed_none_or_none_sentinel(resource_name, allowed_values):
             resource_name = 'UNKNOWN_ENUM_VALUE'
         self._resource_name = resource_name

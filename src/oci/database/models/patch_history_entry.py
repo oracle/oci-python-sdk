@@ -33,6 +33,18 @@ class PatchHistoryEntry(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the patch_type property of a PatchHistoryEntry.
+    #: This constant has a value of "OS"
+    PATCH_TYPE_OS = "OS"
+
+    #: A constant which can be used with the patch_type property of a PatchHistoryEntry.
+    #: This constant has a value of "DB"
+    PATCH_TYPE_DB = "DB"
+
+    #: A constant which can be used with the patch_type property of a PatchHistoryEntry.
+    #: This constant has a value of "GI"
+    PATCH_TYPE_GI = "GI"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PatchHistoryEntry object with values from keyword arguments.
@@ -70,6 +82,12 @@ class PatchHistoryEntry(object):
             The value to assign to the time_ended property of this PatchHistoryEntry.
         :type time_ended: datetime
 
+        :param patch_type:
+            The value to assign to the patch_type property of this PatchHistoryEntry.
+            Allowed values for this property are: "OS", "DB", "GI", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type patch_type: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -78,7 +96,8 @@ class PatchHistoryEntry(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'time_started': 'datetime',
-            'time_ended': 'datetime'
+            'time_ended': 'datetime',
+            'patch_type': 'str'
         }
 
         self.attribute_map = {
@@ -88,7 +107,8 @@ class PatchHistoryEntry(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'time_started': 'timeStarted',
-            'time_ended': 'timeEnded'
+            'time_ended': 'timeEnded',
+            'patch_type': 'patchType'
         }
 
         self._id = None
@@ -98,6 +118,7 @@ class PatchHistoryEntry(object):
         self._lifecycle_details = None
         self._time_started = None
         self._time_ended = None
+        self._patch_type = None
 
     @property
     def id(self):
@@ -288,6 +309,36 @@ class PatchHistoryEntry(object):
         :type: datetime
         """
         self._time_ended = time_ended
+
+    @property
+    def patch_type(self):
+        """
+        Gets the patch_type of this PatchHistoryEntry.
+        The type of Patch operation.
+
+        Allowed values for this property are: "OS", "DB", "GI", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The patch_type of this PatchHistoryEntry.
+        :rtype: str
+        """
+        return self._patch_type
+
+    @patch_type.setter
+    def patch_type(self, patch_type):
+        """
+        Sets the patch_type of this PatchHistoryEntry.
+        The type of Patch operation.
+
+
+        :param patch_type: The patch_type of this PatchHistoryEntry.
+        :type: str
+        """
+        allowed_values = ["OS", "DB", "GI"]
+        if not value_allowed_none_or_none_sentinel(patch_type, allowed_values):
+            patch_type = 'UNKNOWN_ENUM_VALUE'
+        self._patch_type = patch_type
 
     def __repr__(self):
         return formatted_flat_dict(self)
