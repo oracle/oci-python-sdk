@@ -128,7 +128,8 @@ class TemplateSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this TemplateSummary.
-            Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"
+            Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param metadata:
@@ -727,7 +728,8 @@ class TemplateSummary(object):
         Gets the lifecycle_state of this TemplateSummary.
         The current state of the workspace.
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"
+        Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The lifecycle_state of this TemplateSummary.
@@ -747,10 +749,7 @@ class TemplateSummary(object):
         """
         allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
-            raise ValueError(
-                "Invalid value for `lifecycle_state`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property

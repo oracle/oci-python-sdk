@@ -104,6 +104,11 @@ Data Integration
     oci.data_integration.models.ConnectionValidationSummary
     oci.data_integration.models.ConnectionValidationSummaryCollection
     oci.data_integration.models.ConnectorAttribute
+    oci.data_integration.models.CopyConflictResolution
+    oci.data_integration.models.CopyObjectMetadataSummary
+    oci.data_integration.models.CopyObjectRequest
+    oci.data_integration.models.CopyObjectRequestSummary
+    oci.data_integration.models.CopyObjectRequestSummaryCollection
     oci.data_integration.models.CountStatistic
     oci.data_integration.models.CountStatisticSummary
     oci.data_integration.models.CreateApplicationDetails
@@ -122,6 +127,7 @@ Data Integration
     oci.data_integration.models.CreateConnectionFromRestBasicAuth
     oci.data_integration.models.CreateConnectionFromRestNoAuth
     oci.data_integration.models.CreateConnectionValidationDetails
+    oci.data_integration.models.CreateCopyObjectRequestDetails
     oci.data_integration.models.CreateDataAssetDetails
     oci.data_integration.models.CreateDataAssetFromAdwc
     oci.data_integration.models.CreateDataAssetFromAmazonS3
@@ -135,6 +141,7 @@ Data Integration
     oci.data_integration.models.CreateDataAssetFromRest
     oci.data_integration.models.CreateDataFlowDetails
     oci.data_integration.models.CreateDataFlowValidationDetails
+    oci.data_integration.models.CreateDetailedDescriptionDetails
     oci.data_integration.models.CreateDisApplicationDetails
     oci.data_integration.models.CreateEntityShapeDetails
     oci.data_integration.models.CreateEntityShapeFromFile
@@ -228,6 +235,7 @@ Data Integration
     oci.data_integration.models.DerivedEntity
     oci.data_integration.models.DerivedField
     oci.data_integration.models.DerivedType
+    oci.data_integration.models.DetailedDescription
     oci.data_integration.models.DirectFieldMap
     oci.data_integration.models.DirectNamedFieldMap
     oci.data_integration.models.DisApplication
@@ -449,6 +457,7 @@ Data Integration
     oci.data_integration.models.TaskValidation
     oci.data_integration.models.TaskValidationSummary
     oci.data_integration.models.TaskValidationSummaryCollection
+    oci.data_integration.models.Template
     oci.data_integration.models.TemplateSummary
     oci.data_integration.models.TemplateSummaryCollection
     oci.data_integration.models.Time
@@ -477,6 +486,7 @@ Data Integration
     oci.data_integration.models.UpdateConnectionFromOracle
     oci.data_integration.models.UpdateConnectionFromRestBasicAuth
     oci.data_integration.models.UpdateConnectionFromRestNoAuth
+    oci.data_integration.models.UpdateCopyObjectRequestDetails
     oci.data_integration.models.UpdateDataAssetDetails
     oci.data_integration.models.UpdateDataAssetFromAdwc
     oci.data_integration.models.UpdateDataAssetFromAmazonS3
@@ -489,6 +499,7 @@ Data Integration
     oci.data_integration.models.UpdateDataAssetFromOracle
     oci.data_integration.models.UpdateDataAssetFromRest
     oci.data_integration.models.UpdateDataFlowDetails
+    oci.data_integration.models.UpdateDetailedDescriptionDetails
     oci.data_integration.models.UpdateDisApplicationDetails
     oci.data_integration.models.UpdateExternalPublicationDetails
     oci.data_integration.models.UpdateFolderDetails

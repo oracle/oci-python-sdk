@@ -9,6 +9,7 @@ from .azure_data_lake_storage_connection_summary import AzureDataLakeStorageConn
 from .azure_synapse_connection import AzureSynapseConnection
 from .azure_synapse_connection_summary import AzureSynapseConnectionSummary
 from .cancel_deployment_backup_details import CancelDeploymentBackupDetails
+from .cancel_snooze_deployment_upgrade_details import CancelSnoozeDeploymentUpgradeDetails
 from .change_connection_compartment_details import ChangeConnectionCompartmentDetails
 from .change_database_registration_compartment_details import ChangeDatabaseRegistrationCompartmentDetails
 from .change_deployment_backup_compartment_details import ChangeDeploymentBackupCompartmentDetails
@@ -30,6 +31,7 @@ from .create_deployment_details import CreateDeploymentDetails
 from .create_golden_gate_connection_details import CreateGoldenGateConnectionDetails
 from .create_kafka_connection_details import CreateKafkaConnectionDetails
 from .create_kafka_schema_registry_connection_details import CreateKafkaSchemaRegistryConnectionDetails
+from .create_maintenance_window_details import CreateMaintenanceWindowDetails
 from .create_mysql_connection_details import CreateMysqlConnectionDetails
 from .create_oci_object_storage_connection_details import CreateOciObjectStorageConnectionDetails
 from .create_ogg_deployment_details import CreateOggDeploymentDetails
@@ -39,10 +41,14 @@ from .database_registration import DatabaseRegistration
 from .database_registration_collection import DatabaseRegistrationCollection
 from .database_registration_summary import DatabaseRegistrationSummary
 from .default_cancel_deployment_backup_details import DefaultCancelDeploymentBackupDetails
+from .default_cancel_snooze_deployment_upgrade_details import DefaultCancelSnoozeDeploymentUpgradeDetails
 from .default_deployment_wallet_exists_details import DefaultDeploymentWalletExistsDetails
 from .default_restore_deployment_details import DefaultRestoreDeploymentDetails
+from .default_rollback_deployment_upgrade_details import DefaultRollbackDeploymentUpgradeDetails
+from .default_snooze_deployment_upgrade_details import DefaultSnoozeDeploymentUpgradeDetails
 from .default_start_deployment_details import DefaultStartDeploymentDetails
 from .default_stop_deployment_details import DefaultStopDeploymentDetails
+from .default_upgrade_deployment_upgrade_details import DefaultUpgradeDeploymentUpgradeDetails
 from .deployment import Deployment
 from .deployment_backup import DeploymentBackup
 from .deployment_backup_collection import DeploymentBackupCollection
@@ -56,6 +62,8 @@ from .deployment_type_summary import DeploymentTypeSummary
 from .deployment_upgrade import DeploymentUpgrade
 from .deployment_upgrade_collection import DeploymentUpgradeCollection
 from .deployment_upgrade_summary import DeploymentUpgradeSummary
+from .deployment_version_collection import DeploymentVersionCollection
+from .deployment_version_summary import DeploymentVersionSummary
 from .deployment_wallet_exists_details import DeploymentWalletExistsDetails
 from .deployment_wallet_exists_response_details import DeploymentWalletExistsResponseDetails
 from .deployment_wallets_operation_collection import DeploymentWalletsOperationCollection
@@ -70,6 +78,7 @@ from .kafka_connection import KafkaConnection
 from .kafka_connection_summary import KafkaConnectionSummary
 from .kafka_schema_registry_connection import KafkaSchemaRegistryConnection
 from .kafka_schema_registry_connection_summary import KafkaSchemaRegistryConnectionSummary
+from .maintenance_window import MaintenanceWindow
 from .message_summary import MessageSummary
 from .mysql_connection import MysqlConnection
 from .mysql_connection_summary import MysqlConnectionSummary
@@ -82,6 +91,8 @@ from .oracle_connection_summary import OracleConnectionSummary
 from .postgresql_connection import PostgresqlConnection
 from .postgresql_connection_summary import PostgresqlConnectionSummary
 from .restore_deployment_details import RestoreDeploymentDetails
+from .rollback_deployment_upgrade_details import RollbackDeploymentUpgradeDetails
+from .snooze_deployment_upgrade_details import SnoozeDeploymentUpgradeDetails
 from .start_deployment_details import StartDeploymentDetails
 from .stop_deployment_details import StopDeploymentDetails
 from .trail_file_collection import TrailFileCollection
@@ -97,6 +108,7 @@ from .update_deployment_details import UpdateDeploymentDetails
 from .update_golden_gate_connection_details import UpdateGoldenGateConnectionDetails
 from .update_kafka_connection_details import UpdateKafkaConnectionDetails
 from .update_kafka_schema_registry_connection_details import UpdateKafkaSchemaRegistryConnectionDetails
+from .update_maintenance_window_details import UpdateMaintenanceWindowDetails
 from .update_mysql_connection_details import UpdateMysqlConnectionDetails
 from .update_oci_object_storage_connection_details import UpdateOciObjectStorageConnectionDetails
 from .update_ogg_deployment_details import UpdateOggDeploymentDetails
@@ -104,6 +116,8 @@ from .update_oracle_connection_details import UpdateOracleConnectionDetails
 from .update_postgresql_connection_details import UpdatePostgresqlConnectionDetails
 from .upgrade_deployment_current_release_details import UpgradeDeploymentCurrentReleaseDetails
 from .upgrade_deployment_details import UpgradeDeploymentDetails
+from .upgrade_deployment_specific_release_details import UpgradeDeploymentSpecificReleaseDetails
+from .upgrade_deployment_upgrade_details import UpgradeDeploymentUpgradeDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_log_entry import WorkRequestLogEntry
@@ -116,6 +130,7 @@ golden_gate_type_mapping = {
     "AzureSynapseConnection": AzureSynapseConnection,
     "AzureSynapseConnectionSummary": AzureSynapseConnectionSummary,
     "CancelDeploymentBackupDetails": CancelDeploymentBackupDetails,
+    "CancelSnoozeDeploymentUpgradeDetails": CancelSnoozeDeploymentUpgradeDetails,
     "ChangeConnectionCompartmentDetails": ChangeConnectionCompartmentDetails,
     "ChangeDatabaseRegistrationCompartmentDetails": ChangeDatabaseRegistrationCompartmentDetails,
     "ChangeDeploymentBackupCompartmentDetails": ChangeDeploymentBackupCompartmentDetails,
@@ -137,6 +152,7 @@ golden_gate_type_mapping = {
     "CreateGoldenGateConnectionDetails": CreateGoldenGateConnectionDetails,
     "CreateKafkaConnectionDetails": CreateKafkaConnectionDetails,
     "CreateKafkaSchemaRegistryConnectionDetails": CreateKafkaSchemaRegistryConnectionDetails,
+    "CreateMaintenanceWindowDetails": CreateMaintenanceWindowDetails,
     "CreateMysqlConnectionDetails": CreateMysqlConnectionDetails,
     "CreateOciObjectStorageConnectionDetails": CreateOciObjectStorageConnectionDetails,
     "CreateOggDeploymentDetails": CreateOggDeploymentDetails,
@@ -146,10 +162,14 @@ golden_gate_type_mapping = {
     "DatabaseRegistrationCollection": DatabaseRegistrationCollection,
     "DatabaseRegistrationSummary": DatabaseRegistrationSummary,
     "DefaultCancelDeploymentBackupDetails": DefaultCancelDeploymentBackupDetails,
+    "DefaultCancelSnoozeDeploymentUpgradeDetails": DefaultCancelSnoozeDeploymentUpgradeDetails,
     "DefaultDeploymentWalletExistsDetails": DefaultDeploymentWalletExistsDetails,
     "DefaultRestoreDeploymentDetails": DefaultRestoreDeploymentDetails,
+    "DefaultRollbackDeploymentUpgradeDetails": DefaultRollbackDeploymentUpgradeDetails,
+    "DefaultSnoozeDeploymentUpgradeDetails": DefaultSnoozeDeploymentUpgradeDetails,
     "DefaultStartDeploymentDetails": DefaultStartDeploymentDetails,
     "DefaultStopDeploymentDetails": DefaultStopDeploymentDetails,
+    "DefaultUpgradeDeploymentUpgradeDetails": DefaultUpgradeDeploymentUpgradeDetails,
     "Deployment": Deployment,
     "DeploymentBackup": DeploymentBackup,
     "DeploymentBackupCollection": DeploymentBackupCollection,
@@ -163,6 +183,8 @@ golden_gate_type_mapping = {
     "DeploymentUpgrade": DeploymentUpgrade,
     "DeploymentUpgradeCollection": DeploymentUpgradeCollection,
     "DeploymentUpgradeSummary": DeploymentUpgradeSummary,
+    "DeploymentVersionCollection": DeploymentVersionCollection,
+    "DeploymentVersionSummary": DeploymentVersionSummary,
     "DeploymentWalletExistsDetails": DeploymentWalletExistsDetails,
     "DeploymentWalletExistsResponseDetails": DeploymentWalletExistsResponseDetails,
     "DeploymentWalletsOperationCollection": DeploymentWalletsOperationCollection,
@@ -177,6 +199,7 @@ golden_gate_type_mapping = {
     "KafkaConnectionSummary": KafkaConnectionSummary,
     "KafkaSchemaRegistryConnection": KafkaSchemaRegistryConnection,
     "KafkaSchemaRegistryConnectionSummary": KafkaSchemaRegistryConnectionSummary,
+    "MaintenanceWindow": MaintenanceWindow,
     "MessageSummary": MessageSummary,
     "MysqlConnection": MysqlConnection,
     "MysqlConnectionSummary": MysqlConnectionSummary,
@@ -189,6 +212,8 @@ golden_gate_type_mapping = {
     "PostgresqlConnection": PostgresqlConnection,
     "PostgresqlConnectionSummary": PostgresqlConnectionSummary,
     "RestoreDeploymentDetails": RestoreDeploymentDetails,
+    "RollbackDeploymentUpgradeDetails": RollbackDeploymentUpgradeDetails,
+    "SnoozeDeploymentUpgradeDetails": SnoozeDeploymentUpgradeDetails,
     "StartDeploymentDetails": StartDeploymentDetails,
     "StopDeploymentDetails": StopDeploymentDetails,
     "TrailFileCollection": TrailFileCollection,
@@ -204,6 +229,7 @@ golden_gate_type_mapping = {
     "UpdateGoldenGateConnectionDetails": UpdateGoldenGateConnectionDetails,
     "UpdateKafkaConnectionDetails": UpdateKafkaConnectionDetails,
     "UpdateKafkaSchemaRegistryConnectionDetails": UpdateKafkaSchemaRegistryConnectionDetails,
+    "UpdateMaintenanceWindowDetails": UpdateMaintenanceWindowDetails,
     "UpdateMysqlConnectionDetails": UpdateMysqlConnectionDetails,
     "UpdateOciObjectStorageConnectionDetails": UpdateOciObjectStorageConnectionDetails,
     "UpdateOggDeploymentDetails": UpdateOggDeploymentDetails,
@@ -211,6 +237,8 @@ golden_gate_type_mapping = {
     "UpdatePostgresqlConnectionDetails": UpdatePostgresqlConnectionDetails,
     "UpgradeDeploymentCurrentReleaseDetails": UpgradeDeploymentCurrentReleaseDetails,
     "UpgradeDeploymentDetails": UpgradeDeploymentDetails,
+    "UpgradeDeploymentSpecificReleaseDetails": UpgradeDeploymentSpecificReleaseDetails,
+    "UpgradeDeploymentUpgradeDetails": UpgradeDeploymentUpgradeDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestLogEntry": WorkRequestLogEntry,

@@ -37,6 +37,14 @@ class ClusterSummary(object):
     #: This constant has a value of "UPDATING"
     LIFECYCLE_STATE_UPDATING = "UPDATING"
 
+    #: A constant which can be used with the type property of a ClusterSummary.
+    #: This constant has a value of "BASIC_CLUSTER"
+    TYPE_BASIC_CLUSTER = "BASIC_CLUSTER"
+
+    #: A constant which can be used with the type property of a ClusterSummary.
+    #: This constant has a value of "ENHANCED_CLUSTER"
+    TYPE_ENHANCED_CLUSTER = "ENHANCED_CLUSTER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ClusterSummary object with values from keyword arguments.
@@ -112,6 +120,12 @@ class ClusterSummary(object):
             The value to assign to the cluster_pod_network_options property of this ClusterSummary.
         :type cluster_pod_network_options: list[oci.container_engine.models.ClusterPodNetworkOptionDetails]
 
+        :param type:
+            The value to assign to the type property of this ClusterSummary.
+            Allowed values for this property are: "BASIC_CLUSTER", "ENHANCED_CLUSTER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type type: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -130,7 +144,8 @@ class ClusterSummary(object):
             'endpoints': 'ClusterEndpoints',
             'available_kubernetes_upgrades': 'list[str]',
             'image_policy_config': 'ImagePolicyConfig',
-            'cluster_pod_network_options': 'list[ClusterPodNetworkOptionDetails]'
+            'cluster_pod_network_options': 'list[ClusterPodNetworkOptionDetails]',
+            'type': 'str'
         }
 
         self.attribute_map = {
@@ -150,7 +165,8 @@ class ClusterSummary(object):
             'endpoints': 'endpoints',
             'available_kubernetes_upgrades': 'availableKubernetesUpgrades',
             'image_policy_config': 'imagePolicyConfig',
-            'cluster_pod_network_options': 'clusterPodNetworkOptions'
+            'cluster_pod_network_options': 'clusterPodNetworkOptions',
+            'type': 'type'
         }
 
         self._id = None
@@ -170,6 +186,7 @@ class ClusterSummary(object):
         self._available_kubernetes_upgrades = None
         self._image_policy_config = None
         self._cluster_pod_network_options = None
+        self._type = None
 
     @property
     def id(self):
@@ -602,6 +619,36 @@ class ClusterSummary(object):
         :type: list[oci.container_engine.models.ClusterPodNetworkOptionDetails]
         """
         self._cluster_pod_network_options = cluster_pod_network_options
+
+    @property
+    def type(self):
+        """
+        Gets the type of this ClusterSummary.
+        Type of cluster
+
+        Allowed values for this property are: "BASIC_CLUSTER", "ENHANCED_CLUSTER", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The type of this ClusterSummary.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this ClusterSummary.
+        Type of cluster
+
+
+        :param type: The type of this ClusterSummary.
+        :type: str
+        """
+        allowed_values = ["BASIC_CLUSTER", "ENHANCED_CLUSTER"]
+        if not value_allowed_none_or_none_sentinel(type, allowed_values):
+            type = 'UNKNOWN_ENUM_VALUE'
+        self._type = type
 
     def __repr__(self):
         return formatted_flat_dict(self)

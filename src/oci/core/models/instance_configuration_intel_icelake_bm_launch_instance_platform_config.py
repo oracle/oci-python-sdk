@@ -30,7 +30,7 @@ class InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig(InstanceCo
 
         :param type:
             The value to assign to the type property of this InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig.
-            Allowed values for this property are: "AMD_MILAN_BM", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 

@@ -13,6 +13,14 @@ class UpdateClusterDetails(object):
     The properties that define a request to update a cluster.
     """
 
+    #: A constant which can be used with the type property of a UpdateClusterDetails.
+    #: This constant has a value of "BASIC_CLUSTER"
+    TYPE_BASIC_CLUSTER = "BASIC_CLUSTER"
+
+    #: A constant which can be used with the type property of a UpdateClusterDetails.
+    #: This constant has a value of "ENHANCED_CLUSTER"
+    TYPE_ENHANCED_CLUSTER = "ENHANCED_CLUSTER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateClusterDetails object with values from keyword arguments.
@@ -42,6 +50,11 @@ class UpdateClusterDetails(object):
             The value to assign to the image_policy_config property of this UpdateClusterDetails.
         :type image_policy_config: oci.container_engine.models.UpdateImagePolicyConfigDetails
 
+        :param type:
+            The value to assign to the type property of this UpdateClusterDetails.
+            Allowed values for this property are: "BASIC_CLUSTER", "ENHANCED_CLUSTER"
+        :type type: str
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -49,7 +62,8 @@ class UpdateClusterDetails(object):
             'options': 'UpdateClusterOptionsDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'image_policy_config': 'UpdateImagePolicyConfigDetails'
+            'image_policy_config': 'UpdateImagePolicyConfigDetails',
+            'type': 'str'
         }
 
         self.attribute_map = {
@@ -58,7 +72,8 @@ class UpdateClusterDetails(object):
             'options': 'options',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'image_policy_config': 'imagePolicyConfig'
+            'image_policy_config': 'imagePolicyConfig',
+            'type': 'type'
         }
 
         self._name = None
@@ -67,6 +82,7 @@ class UpdateClusterDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._image_policy_config = None
+        self._type = None
 
     @property
     def name(self):
@@ -227,6 +243,38 @@ class UpdateClusterDetails(object):
         :type: oci.container_engine.models.UpdateImagePolicyConfigDetails
         """
         self._image_policy_config = image_policy_config
+
+    @property
+    def type(self):
+        """
+        Gets the type of this UpdateClusterDetails.
+        Type of cluster
+
+        Allowed values for this property are: "BASIC_CLUSTER", "ENHANCED_CLUSTER"
+
+
+        :return: The type of this UpdateClusterDetails.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this UpdateClusterDetails.
+        Type of cluster
+
+
+        :param type: The type of this UpdateClusterDetails.
+        :type: str
+        """
+        allowed_values = ["BASIC_CLUSTER", "ENHANCED_CLUSTER"]
+        if not value_allowed_none_or_none_sentinel(type, allowed_values):
+            raise ValueError(
+                "Invalid value for `type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._type = type
 
     def __repr__(self):
         return formatted_flat_dict(self)

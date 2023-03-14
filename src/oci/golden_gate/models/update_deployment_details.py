@@ -75,6 +75,10 @@ class UpdateDeploymentDetails(object):
             The value to assign to the ogg_data property of this UpdateDeploymentDetails.
         :type ogg_data: oci.golden_gate.models.UpdateOggDeploymentDetails
 
+        :param maintenance_window:
+            The value to assign to the maintenance_window property of this UpdateDeploymentDetails.
+        :type maintenance_window: oci.golden_gate.models.UpdateMaintenanceWindowDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -88,7 +92,8 @@ class UpdateDeploymentDetails(object):
             'fqdn': 'str',
             'cpu_core_count': 'int',
             'is_auto_scaling_enabled': 'bool',
-            'ogg_data': 'UpdateOggDeploymentDetails'
+            'ogg_data': 'UpdateOggDeploymentDetails',
+            'maintenance_window': 'UpdateMaintenanceWindowDetails'
         }
 
         self.attribute_map = {
@@ -103,7 +108,8 @@ class UpdateDeploymentDetails(object):
             'fqdn': 'fqdn',
             'cpu_core_count': 'cpuCoreCount',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
-            'ogg_data': 'oggData'
+            'ogg_data': 'oggData',
+            'maintenance_window': 'maintenanceWindow'
         }
 
         self._display_name = None
@@ -118,6 +124,7 @@ class UpdateDeploymentDetails(object):
         self._cpu_core_count = None
         self._is_auto_scaling_enabled = None
         self._ogg_data = None
+        self._maintenance_window = None
 
     @property
     def display_name(self):
@@ -424,6 +431,26 @@ class UpdateDeploymentDetails(object):
         :type: oci.golden_gate.models.UpdateOggDeploymentDetails
         """
         self._ogg_data = ogg_data
+
+    @property
+    def maintenance_window(self):
+        """
+        Gets the maintenance_window of this UpdateDeploymentDetails.
+
+        :return: The maintenance_window of this UpdateDeploymentDetails.
+        :rtype: oci.golden_gate.models.UpdateMaintenanceWindowDetails
+        """
+        return self._maintenance_window
+
+    @maintenance_window.setter
+    def maintenance_window(self, maintenance_window):
+        """
+        Sets the maintenance_window of this UpdateDeploymentDetails.
+
+        :param maintenance_window: The maintenance_window of this UpdateDeploymentDetails.
+        :type: oci.golden_gate.models.UpdateMaintenanceWindowDetails
+        """
+        self._maintenance_window = maintenance_window
 
     def __repr__(self):
         return formatted_flat_dict(self)

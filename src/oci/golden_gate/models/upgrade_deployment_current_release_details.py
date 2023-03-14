@@ -21,7 +21,7 @@ class UpgradeDeploymentCurrentReleaseDetails(UpgradeDeploymentDetails):
 
         :param type:
             The value to assign to the type property of this UpgradeDeploymentCurrentReleaseDetails.
-            Allowed values for this property are: "CURRENT_RELEASE"
+            Allowed values for this property are: "CURRENT_RELEASE", "SPECIFIC_RELEASE"
         :type type: str
 
         """

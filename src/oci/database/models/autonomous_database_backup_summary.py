@@ -147,6 +147,10 @@ class AutonomousDatabaseBackupSummary(object):
             The value to assign to the size_in_tbs property of this AutonomousDatabaseBackupSummary.
         :type size_in_tbs: float
 
+        :param backup_destination_details:
+            The value to assign to the backup_destination_details property of this AutonomousDatabaseBackupSummary.
+        :type backup_destination_details: oci.database.models.BackupDestinationDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -169,7 +173,8 @@ class AutonomousDatabaseBackupSummary(object):
             'retention_period_in_days': 'int',
             'time_available_till': 'datetime',
             'db_version': 'str',
-            'size_in_tbs': 'float'
+            'size_in_tbs': 'float',
+            'backup_destination_details': 'BackupDestinationDetails'
         }
 
         self.attribute_map = {
@@ -193,7 +198,8 @@ class AutonomousDatabaseBackupSummary(object):
             'retention_period_in_days': 'retentionPeriodInDays',
             'time_available_till': 'timeAvailableTill',
             'db_version': 'dbVersion',
-            'size_in_tbs': 'sizeInTBs'
+            'size_in_tbs': 'sizeInTBs',
+            'backup_destination_details': 'backupDestinationDetails'
         }
 
         self._id = None
@@ -217,6 +223,7 @@ class AutonomousDatabaseBackupSummary(object):
         self._time_available_till = None
         self._db_version = None
         self._size_in_tbs = None
+        self._backup_destination_details = None
 
     @property
     def id(self):
@@ -755,6 +762,26 @@ class AutonomousDatabaseBackupSummary(object):
         :type: float
         """
         self._size_in_tbs = size_in_tbs
+
+    @property
+    def backup_destination_details(self):
+        """
+        Gets the backup_destination_details of this AutonomousDatabaseBackupSummary.
+
+        :return: The backup_destination_details of this AutonomousDatabaseBackupSummary.
+        :rtype: oci.database.models.BackupDestinationDetails
+        """
+        return self._backup_destination_details
+
+    @backup_destination_details.setter
+    def backup_destination_details(self, backup_destination_details):
+        """
+        Sets the backup_destination_details of this AutonomousDatabaseBackupSummary.
+
+        :param backup_destination_details: The backup_destination_details of this AutonomousDatabaseBackupSummary.
+        :type: oci.database.models.BackupDestinationDetails
+        """
+        self._backup_destination_details = backup_destination_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -25,6 +25,14 @@ class SummarizeHostInsightResourceUtilizationInsightAggregation(object):
     #: This constant has a value of "LOGICAL_MEMORY"
     RESOURCE_METRIC_LOGICAL_MEMORY = "LOGICAL_MEMORY"
 
+    #: A constant which can be used with the resource_metric property of a SummarizeHostInsightResourceUtilizationInsightAggregation.
+    #: This constant has a value of "STORAGE"
+    RESOURCE_METRIC_STORAGE = "STORAGE"
+
+    #: A constant which can be used with the resource_metric property of a SummarizeHostInsightResourceUtilizationInsightAggregation.
+    #: This constant has a value of "NETWORK"
+    RESOURCE_METRIC_NETWORK = "NETWORK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SummarizeHostInsightResourceUtilizationInsightAggregation object with values from keyword arguments.
@@ -38,9 +46,17 @@ class SummarizeHostInsightResourceUtilizationInsightAggregation(object):
             The value to assign to the time_interval_end property of this SummarizeHostInsightResourceUtilizationInsightAggregation.
         :type time_interval_end: datetime
 
+        :param high_utilization_threshold:
+            The value to assign to the high_utilization_threshold property of this SummarizeHostInsightResourceUtilizationInsightAggregation.
+        :type high_utilization_threshold: int
+
+        :param low_utilization_threshold:
+            The value to assign to the low_utilization_threshold property of this SummarizeHostInsightResourceUtilizationInsightAggregation.
+        :type low_utilization_threshold: int
+
         :param resource_metric:
             The value to assign to the resource_metric property of this SummarizeHostInsightResourceUtilizationInsightAggregation.
-            Allowed values for this property are: "CPU", "MEMORY", "LOGICAL_MEMORY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CPU", "MEMORY", "LOGICAL_MEMORY", "STORAGE", "NETWORK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_metric: str
 
@@ -56,6 +72,8 @@ class SummarizeHostInsightResourceUtilizationInsightAggregation(object):
         self.swagger_types = {
             'time_interval_start': 'datetime',
             'time_interval_end': 'datetime',
+            'high_utilization_threshold': 'int',
+            'low_utilization_threshold': 'int',
             'resource_metric': 'str',
             'projected_utilization': 'ResourceInsightProjectedUtilization',
             'current_utilization': 'ResourceInsightCurrentUtilization'
@@ -64,6 +82,8 @@ class SummarizeHostInsightResourceUtilizationInsightAggregation(object):
         self.attribute_map = {
             'time_interval_start': 'timeIntervalStart',
             'time_interval_end': 'timeIntervalEnd',
+            'high_utilization_threshold': 'highUtilizationThreshold',
+            'low_utilization_threshold': 'lowUtilizationThreshold',
             'resource_metric': 'resourceMetric',
             'projected_utilization': 'projectedUtilization',
             'current_utilization': 'currentUtilization'
@@ -71,6 +91,8 @@ class SummarizeHostInsightResourceUtilizationInsightAggregation(object):
 
         self._time_interval_start = None
         self._time_interval_end = None
+        self._high_utilization_threshold = None
+        self._low_utilization_threshold = None
         self._resource_metric = None
         self._projected_utilization = None
         self._current_utilization = None
@@ -124,12 +146,60 @@ class SummarizeHostInsightResourceUtilizationInsightAggregation(object):
         self._time_interval_end = time_interval_end
 
     @property
+    def high_utilization_threshold(self):
+        """
+        **[Required]** Gets the high_utilization_threshold of this SummarizeHostInsightResourceUtilizationInsightAggregation.
+        Percent value in which a resource metric is considered highly utilized.
+
+
+        :return: The high_utilization_threshold of this SummarizeHostInsightResourceUtilizationInsightAggregation.
+        :rtype: int
+        """
+        return self._high_utilization_threshold
+
+    @high_utilization_threshold.setter
+    def high_utilization_threshold(self, high_utilization_threshold):
+        """
+        Sets the high_utilization_threshold of this SummarizeHostInsightResourceUtilizationInsightAggregation.
+        Percent value in which a resource metric is considered highly utilized.
+
+
+        :param high_utilization_threshold: The high_utilization_threshold of this SummarizeHostInsightResourceUtilizationInsightAggregation.
+        :type: int
+        """
+        self._high_utilization_threshold = high_utilization_threshold
+
+    @property
+    def low_utilization_threshold(self):
+        """
+        **[Required]** Gets the low_utilization_threshold of this SummarizeHostInsightResourceUtilizationInsightAggregation.
+        Percent value in which a resource metric is considered lowly utilized.
+
+
+        :return: The low_utilization_threshold of this SummarizeHostInsightResourceUtilizationInsightAggregation.
+        :rtype: int
+        """
+        return self._low_utilization_threshold
+
+    @low_utilization_threshold.setter
+    def low_utilization_threshold(self, low_utilization_threshold):
+        """
+        Sets the low_utilization_threshold of this SummarizeHostInsightResourceUtilizationInsightAggregation.
+        Percent value in which a resource metric is considered lowly utilized.
+
+
+        :param low_utilization_threshold: The low_utilization_threshold of this SummarizeHostInsightResourceUtilizationInsightAggregation.
+        :type: int
+        """
+        self._low_utilization_threshold = low_utilization_threshold
+
+    @property
     def resource_metric(self):
         """
         **[Required]** Gets the resource_metric of this SummarizeHostInsightResourceUtilizationInsightAggregation.
         Defines the type of resource metric (CPU, Physical Memory, Logical Memory)
 
-        Allowed values for this property are: "CPU", "MEMORY", "LOGICAL_MEMORY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CPU", "MEMORY", "LOGICAL_MEMORY", "STORAGE", "NETWORK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -148,7 +218,7 @@ class SummarizeHostInsightResourceUtilizationInsightAggregation(object):
         :param resource_metric: The resource_metric of this SummarizeHostInsightResourceUtilizationInsightAggregation.
         :type: str
         """
-        allowed_values = ["CPU", "MEMORY", "LOGICAL_MEMORY"]
+        allowed_values = ["CPU", "MEMORY", "LOGICAL_MEMORY", "STORAGE", "NETWORK"]
         if not value_allowed_none_or_none_sentinel(resource_metric, allowed_values):
             resource_metric = 'UNKNOWN_ENUM_VALUE'
         self._resource_metric = resource_metric

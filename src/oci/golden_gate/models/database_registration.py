@@ -61,6 +61,10 @@ class DatabaseRegistration(object):
     #: This constant has a value of "SUCCEEDED"
     LIFECYCLE_STATE_SUCCEEDED = "SUCCEEDED"
 
+    #: A constant which can be used with the lifecycle_state property of a DatabaseRegistration.
+    #: This constant has a value of "WAITING"
+    LIFECYCLE_STATE_WAITING = "WAITING"
+
     #: A constant which can be used with the session_mode property of a DatabaseRegistration.
     #: This constant has a value of "DIRECT"
     SESSION_MODE_DIRECT = "DIRECT"
@@ -100,7 +104,7 @@ class DatabaseRegistration(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DatabaseRegistration.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -426,7 +430,7 @@ class DatabaseRegistration(object):
         Gets the lifecycle_state of this DatabaseRegistration.
         Possible lifecycle states.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -445,7 +449,7 @@ class DatabaseRegistration(object):
         :param lifecycle_state: The lifecycle_state of this DatabaseRegistration.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

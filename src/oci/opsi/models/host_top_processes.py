@@ -21,7 +21,7 @@ class HostTopProcesses(HostPerformanceMetricGroup):
 
         :param metric_name:
             The value to assign to the metric_name property of this HostTopProcesses.
-            Allowed values for this property are: "HOST_CPU_USAGE", "HOST_MEMORY_USAGE", "HOST_NETWORK_ACTIVITY_SUMMARY", "HOST_TOP_PROCESSES"
+            Allowed values for this property are: "HOST_CPU_USAGE", "HOST_MEMORY_USAGE", "HOST_NETWORK_ACTIVITY_SUMMARY", "HOST_TOP_PROCESSES", "HOST_FILESYSTEM_USAGE"
         :type metric_name: str
 
         :param time_collected:
