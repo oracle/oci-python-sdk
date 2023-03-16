@@ -59,8 +59,8 @@ from .connection_from_bip import ConnectionFromBIP
 from .connection_from_bip_details import ConnectionFromBipDetails
 from .connection_from_jdbc import ConnectionFromJdbc
 from .connection_from_jdbc_details import ConnectionFromJdbcDetails
-from .connection_from_lakehouse import ConnectionFromLakehouse
-from .connection_from_lakehouse_details import ConnectionFromLakehouseDetails
+from .connection_from_lake import ConnectionFromLake
+from .connection_from_lake_details import ConnectionFromLakeDetails
 from .connection_from_my_sql import ConnectionFromMySQL
 from .connection_from_my_sql_details import ConnectionFromMySQLDetails
 from .connection_from_object_storage import ConnectionFromObjectStorage
@@ -80,7 +80,7 @@ from .connection_summary_from_atp import ConnectionSummaryFromAtp
 from .connection_summary_from_bicc import ConnectionSummaryFromBICC
 from .connection_summary_from_bip import ConnectionSummaryFromBIP
 from .connection_summary_from_jdbc import ConnectionSummaryFromJdbc
-from .connection_summary_from_lakehouse import ConnectionSummaryFromLakehouse
+from .connection_summary_from_lake import ConnectionSummaryFromLake
 from .connection_summary_from_my_sql import ConnectionSummaryFromMySQL
 from .connection_summary_from_object_storage import ConnectionSummaryFromObjectStorage
 from .connection_summary_from_oracle import ConnectionSummaryFromOracle
@@ -106,7 +106,7 @@ from .create_connection_from_atp import CreateConnectionFromAtp
 from .create_connection_from_bicc import CreateConnectionFromBICC
 from .create_connection_from_bip import CreateConnectionFromBIP
 from .create_connection_from_jdbc import CreateConnectionFromJdbc
-from .create_connection_from_lakehouse import CreateConnectionFromLakehouse
+from .create_connection_from_lake import CreateConnectionFromLake
 from .create_connection_from_my_sql import CreateConnectionFromMySQL
 from .create_connection_from_object_storage import CreateConnectionFromObjectStorage
 from .create_connection_from_oracle import CreateConnectionFromOracle
@@ -120,7 +120,7 @@ from .create_data_asset_from_amazon_s3 import CreateDataAssetFromAmazonS3
 from .create_data_asset_from_atp import CreateDataAssetFromAtp
 from .create_data_asset_from_fusion_app import CreateDataAssetFromFusionApp
 from .create_data_asset_from_jdbc import CreateDataAssetFromJdbc
-from .create_data_asset_from_lakehouse import CreateDataAssetFromLakehouse
+from .create_data_asset_from_lake import CreateDataAssetFromLake
 from .create_data_asset_from_my_sql import CreateDataAssetFromMySQL
 from .create_data_asset_from_object_storage import CreateDataAssetFromObjectStorage
 from .create_data_asset_from_oracle import CreateDataAssetFromOracle
@@ -167,7 +167,7 @@ from .data_asset_from_amazon_s3 import DataAssetFromAmazonS3
 from .data_asset_from_atp_details import DataAssetFromAtpDetails
 from .data_asset_from_fusion_app import DataAssetFromFusionApp
 from .data_asset_from_jdbc import DataAssetFromJdbc
-from .data_asset_from_lakehouse_details import DataAssetFromLakehouseDetails
+from .data_asset_from_lake_details import DataAssetFromLakeDetails
 from .data_asset_from_my_sql import DataAssetFromMySQL
 from .data_asset_from_object_storage_details import DataAssetFromObjectStorageDetails
 from .data_asset_from_oracle_details import DataAssetFromOracleDetails
@@ -179,7 +179,7 @@ from .data_asset_summary_from_amazon_s3 import DataAssetSummaryFromAmazonS3
 from .data_asset_summary_from_atp import DataAssetSummaryFromAtp
 from .data_asset_summary_from_fusion_app import DataAssetSummaryFromFusionApp
 from .data_asset_summary_from_jdbc import DataAssetSummaryFromJdbc
-from .data_asset_summary_from_lakehouse import DataAssetSummaryFromLakehouse
+from .data_asset_summary_from_lake import DataAssetSummaryFromLake
 from .data_asset_summary_from_my_sql import DataAssetSummaryFromMySQL
 from .data_asset_summary_from_object_storage import DataAssetSummaryFromObjectStorage
 from .data_asset_summary_from_oracle import DataAssetSummaryFromOracle
@@ -466,7 +466,7 @@ from .update_connection_from_atp import UpdateConnectionFromAtp
 from .update_connection_from_bicc import UpdateConnectionFromBICC
 from .update_connection_from_bip import UpdateConnectionFromBIP
 from .update_connection_from_jdbc import UpdateConnectionFromJdbc
-from .update_connection_from_lakehouse import UpdateConnectionFromLakehouse
+from .update_connection_from_lake import UpdateConnectionFromLake
 from .update_connection_from_my_sql import UpdateConnectionFromMySQL
 from .update_connection_from_object_storage import UpdateConnectionFromObjectStorage
 from .update_connection_from_oracle import UpdateConnectionFromOracle
@@ -479,7 +479,7 @@ from .update_data_asset_from_amazon_s3 import UpdateDataAssetFromAmazonS3
 from .update_data_asset_from_atp import UpdateDataAssetFromAtp
 from .update_data_asset_from_fusion_app import UpdateDataAssetFromFusionApp
 from .update_data_asset_from_jdbc import UpdateDataAssetFromJdbc
-from .update_data_asset_from_lakehouse import UpdateDataAssetFromLakehouse
+from .update_data_asset_from_lake import UpdateDataAssetFromLake
 from .update_data_asset_from_my_sql import UpdateDataAssetFromMySQL
 from .update_data_asset_from_object_storage import UpdateDataAssetFromObjectStorage
 from .update_data_asset_from_oracle import UpdateDataAssetFromOracle
@@ -581,8 +581,8 @@ data_integration_type_mapping = {
     "ConnectionFromBipDetails": ConnectionFromBipDetails,
     "ConnectionFromJdbc": ConnectionFromJdbc,
     "ConnectionFromJdbcDetails": ConnectionFromJdbcDetails,
-    "ConnectionFromLakehouse": ConnectionFromLakehouse,
-    "ConnectionFromLakehouseDetails": ConnectionFromLakehouseDetails,
+    "ConnectionFromLake": ConnectionFromLake,
+    "ConnectionFromLakeDetails": ConnectionFromLakeDetails,
     "ConnectionFromMySQL": ConnectionFromMySQL,
     "ConnectionFromMySQLDetails": ConnectionFromMySQLDetails,
     "ConnectionFromObjectStorage": ConnectionFromObjectStorage,
@@ -602,7 +602,7 @@ data_integration_type_mapping = {
     "ConnectionSummaryFromBICC": ConnectionSummaryFromBICC,
     "ConnectionSummaryFromBIP": ConnectionSummaryFromBIP,
     "ConnectionSummaryFromJdbc": ConnectionSummaryFromJdbc,
-    "ConnectionSummaryFromLakehouse": ConnectionSummaryFromLakehouse,
+    "ConnectionSummaryFromLake": ConnectionSummaryFromLake,
     "ConnectionSummaryFromMySQL": ConnectionSummaryFromMySQL,
     "ConnectionSummaryFromObjectStorage": ConnectionSummaryFromObjectStorage,
     "ConnectionSummaryFromOracle": ConnectionSummaryFromOracle,
@@ -628,7 +628,7 @@ data_integration_type_mapping = {
     "CreateConnectionFromBICC": CreateConnectionFromBICC,
     "CreateConnectionFromBIP": CreateConnectionFromBIP,
     "CreateConnectionFromJdbc": CreateConnectionFromJdbc,
-    "CreateConnectionFromLakehouse": CreateConnectionFromLakehouse,
+    "CreateConnectionFromLake": CreateConnectionFromLake,
     "CreateConnectionFromMySQL": CreateConnectionFromMySQL,
     "CreateConnectionFromObjectStorage": CreateConnectionFromObjectStorage,
     "CreateConnectionFromOracle": CreateConnectionFromOracle,
@@ -642,7 +642,7 @@ data_integration_type_mapping = {
     "CreateDataAssetFromAtp": CreateDataAssetFromAtp,
     "CreateDataAssetFromFusionApp": CreateDataAssetFromFusionApp,
     "CreateDataAssetFromJdbc": CreateDataAssetFromJdbc,
-    "CreateDataAssetFromLakehouse": CreateDataAssetFromLakehouse,
+    "CreateDataAssetFromLake": CreateDataAssetFromLake,
     "CreateDataAssetFromMySQL": CreateDataAssetFromMySQL,
     "CreateDataAssetFromObjectStorage": CreateDataAssetFromObjectStorage,
     "CreateDataAssetFromOracle": CreateDataAssetFromOracle,
@@ -689,7 +689,7 @@ data_integration_type_mapping = {
     "DataAssetFromAtpDetails": DataAssetFromAtpDetails,
     "DataAssetFromFusionApp": DataAssetFromFusionApp,
     "DataAssetFromJdbc": DataAssetFromJdbc,
-    "DataAssetFromLakehouseDetails": DataAssetFromLakehouseDetails,
+    "DataAssetFromLakeDetails": DataAssetFromLakeDetails,
     "DataAssetFromMySQL": DataAssetFromMySQL,
     "DataAssetFromObjectStorageDetails": DataAssetFromObjectStorageDetails,
     "DataAssetFromOracleDetails": DataAssetFromOracleDetails,
@@ -701,7 +701,7 @@ data_integration_type_mapping = {
     "DataAssetSummaryFromAtp": DataAssetSummaryFromAtp,
     "DataAssetSummaryFromFusionApp": DataAssetSummaryFromFusionApp,
     "DataAssetSummaryFromJdbc": DataAssetSummaryFromJdbc,
-    "DataAssetSummaryFromLakehouse": DataAssetSummaryFromLakehouse,
+    "DataAssetSummaryFromLake": DataAssetSummaryFromLake,
     "DataAssetSummaryFromMySQL": DataAssetSummaryFromMySQL,
     "DataAssetSummaryFromObjectStorage": DataAssetSummaryFromObjectStorage,
     "DataAssetSummaryFromOracle": DataAssetSummaryFromOracle,
@@ -988,7 +988,7 @@ data_integration_type_mapping = {
     "UpdateConnectionFromBICC": UpdateConnectionFromBICC,
     "UpdateConnectionFromBIP": UpdateConnectionFromBIP,
     "UpdateConnectionFromJdbc": UpdateConnectionFromJdbc,
-    "UpdateConnectionFromLakehouse": UpdateConnectionFromLakehouse,
+    "UpdateConnectionFromLake": UpdateConnectionFromLake,
     "UpdateConnectionFromMySQL": UpdateConnectionFromMySQL,
     "UpdateConnectionFromObjectStorage": UpdateConnectionFromObjectStorage,
     "UpdateConnectionFromOracle": UpdateConnectionFromOracle,
@@ -1001,7 +1001,7 @@ data_integration_type_mapping = {
     "UpdateDataAssetFromAtp": UpdateDataAssetFromAtp,
     "UpdateDataAssetFromFusionApp": UpdateDataAssetFromFusionApp,
     "UpdateDataAssetFromJdbc": UpdateDataAssetFromJdbc,
-    "UpdateDataAssetFromLakehouse": UpdateDataAssetFromLakehouse,
+    "UpdateDataAssetFromLake": UpdateDataAssetFromLake,
     "UpdateDataAssetFromMySQL": UpdateDataAssetFromMySQL,
     "UpdateDataAssetFromObjectStorage": UpdateDataAssetFromObjectStorage,
     "UpdateDataAssetFromOracle": UpdateDataAssetFromOracle,

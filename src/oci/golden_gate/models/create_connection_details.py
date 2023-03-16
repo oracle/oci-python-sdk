@@ -30,6 +30,14 @@ class CreateConnectionDetails(object):
     CONNECTION_TYPE_MYSQL = "MYSQL"
 
     #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
+    #: This constant has a value of "JAVA_MESSAGE_SERVICE"
+    CONNECTION_TYPE_JAVA_MESSAGE_SERVICE = "JAVA_MESSAGE_SERVICE"
+
+    #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
+    #: This constant has a value of "MICROSOFT_SQLSERVER"
+    CONNECTION_TYPE_MICROSOFT_SQLSERVER = "MICROSOFT_SQLSERVER"
+
+    #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
     #: This constant has a value of "OCI_OBJECT_STORAGE"
     CONNECTION_TYPE_OCI_OBJECT_STORAGE = "OCI_OBJECT_STORAGE"
 
@@ -49,6 +57,26 @@ class CreateConnectionDetails(object):
     #: This constant has a value of "AZURE_SYNAPSE_ANALYTICS"
     CONNECTION_TYPE_AZURE_SYNAPSE_ANALYTICS = "AZURE_SYNAPSE_ANALYTICS"
 
+    #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
+    #: This constant has a value of "SNOWFLAKE"
+    CONNECTION_TYPE_SNOWFLAKE = "SNOWFLAKE"
+
+    #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
+    #: This constant has a value of "AMAZON_S3"
+    CONNECTION_TYPE_AMAZON_S3 = "AMAZON_S3"
+
+    #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
+    #: This constant has a value of "HDFS"
+    CONNECTION_TYPE_HDFS = "HDFS"
+
+    #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
+    #: This constant has a value of "ORACLE_NOSQL"
+    CONNECTION_TYPE_ORACLE_NOSQL = "ORACLE_NOSQL"
+
+    #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
+    #: This constant has a value of "MONGODB"
+    CONNECTION_TYPE_MONGODB = "MONGODB"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -56,19 +84,26 @@ class CreateConnectionDetails(object):
 
         * :class:`~oci.golden_gate.models.CreatePostgresqlConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateKafkaSchemaRegistryConnectionDetails`
-        * :class:`~oci.golden_gate.models.CreateAzureSynapseConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateMicrosoftSqlserverConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateJavaMessageServiceConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateSnowflakeConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateAzureDataLakeStorageConnectionDetails`
-        * :class:`~oci.golden_gate.models.CreateMysqlConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateMongoDbConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateAmazonS3ConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateHdfsConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateOciObjectStorageConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateAzureSynapseConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateMysqlConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateKafkaConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateOracleConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateGoldenGateConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateOracleNosqlConnectionDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"
         :type connection_type: str
 
         :param display_name:
@@ -159,17 +194,35 @@ class CreateConnectionDetails(object):
         if type == 'KAFKA_SCHEMA_REGISTRY':
             return 'CreateKafkaSchemaRegistryConnectionDetails'
 
-        if type == 'AZURE_SYNAPSE_ANALYTICS':
-            return 'CreateAzureSynapseConnectionDetails'
+        if type == 'MICROSOFT_SQLSERVER':
+            return 'CreateMicrosoftSqlserverConnectionDetails'
+
+        if type == 'JAVA_MESSAGE_SERVICE':
+            return 'CreateJavaMessageServiceConnectionDetails'
+
+        if type == 'SNOWFLAKE':
+            return 'CreateSnowflakeConnectionDetails'
 
         if type == 'AZURE_DATA_LAKE_STORAGE':
             return 'CreateAzureDataLakeStorageConnectionDetails'
 
-        if type == 'MYSQL':
-            return 'CreateMysqlConnectionDetails'
+        if type == 'MONGODB':
+            return 'CreateMongoDbConnectionDetails'
+
+        if type == 'AMAZON_S3':
+            return 'CreateAmazonS3ConnectionDetails'
+
+        if type == 'HDFS':
+            return 'CreateHdfsConnectionDetails'
 
         if type == 'OCI_OBJECT_STORAGE':
             return 'CreateOciObjectStorageConnectionDetails'
+
+        if type == 'AZURE_SYNAPSE_ANALYTICS':
+            return 'CreateAzureSynapseConnectionDetails'
+
+        if type == 'MYSQL':
+            return 'CreateMysqlConnectionDetails'
 
         if type == 'KAFKA':
             return 'CreateKafkaConnectionDetails'
@@ -179,6 +232,9 @@ class CreateConnectionDetails(object):
 
         if type == 'GOLDENGATE':
             return 'CreateGoldenGateConnectionDetails'
+
+        if type == 'ORACLE_NOSQL':
+            return 'CreateOracleNosqlConnectionDetails'
         else:
             return 'CreateConnectionDetails'
 
@@ -188,7 +244,7 @@ class CreateConnectionDetails(object):
         **[Required]** Gets the connection_type of this CreateConnectionDetails.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS"
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"
 
 
         :return: The connection_type of this CreateConnectionDetails.
@@ -206,7 +262,7 @@ class CreateConnectionDetails(object):
         :param connection_type: The connection_type of this CreateConnectionDetails.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             raise ValueError(
                 "Invalid value for `connection_type`, must be None or one of {0}"
@@ -352,13 +408,9 @@ class CreateConnectionDetails(object):
     def vault_id(self):
         """
         Gets the vault_id of this CreateConnectionDetails.
-        The `OCID`__ of the customer vault being
-        referenced.
-        If provided, this will reference a vault which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to manage secrets contained
-        within this vault.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's vault OCID.
+        If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+        to manage secrets contained within this vault.
 
 
         :return: The vault_id of this CreateConnectionDetails.
@@ -370,13 +422,9 @@ class CreateConnectionDetails(object):
     def vault_id(self, vault_id):
         """
         Sets the vault_id of this CreateConnectionDetails.
-        The `OCID`__ of the customer vault being
-        referenced.
-        If provided, this will reference a vault which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to manage secrets contained
-        within this vault.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's vault OCID.
+        If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+        to manage secrets contained within this vault.
 
 
         :param vault_id: The vault_id of this CreateConnectionDetails.
@@ -388,13 +436,8 @@ class CreateConnectionDetails(object):
     def key_id(self):
         """
         Gets the key_id of this CreateConnectionDetails.
-        The `OCID`__ of the customer \"Master\" key being
-        referenced.
-        If provided, this will reference a key which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to utilize this key to
-        manage secrets.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's master key OCID.
+        If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 
 
         :return: The key_id of this CreateConnectionDetails.
@@ -406,13 +449,8 @@ class CreateConnectionDetails(object):
     def key_id(self, key_id):
         """
         Sets the key_id of this CreateConnectionDetails.
-        The `OCID`__ of the customer \"Master\" key being
-        referenced.
-        If provided, this will reference a key which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to utilize this key to
-        manage secrets.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's master key OCID.
+        If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 
 
         :param key_id: The key_id of this CreateConnectionDetails.

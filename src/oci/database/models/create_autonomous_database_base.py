@@ -76,6 +76,10 @@ class CreateAutonomousDatabaseBase(object):
     #: This constant has a value of "CROSS_REGION_DATAGUARD"
     SOURCE_CROSS_REGION_DATAGUARD = "CROSS_REGION_DATAGUARD"
 
+    #: A constant which can be used with the source property of a CreateAutonomousDatabaseBase.
+    #: This constant has a value of "CROSS_REGION_DISASTER_RECOVERY"
+    SOURCE_CROSS_REGION_DISASTER_RECOVERY = "CROSS_REGION_DISASTER_RECOVERY"
+
     #: A constant which can be used with the autonomous_maintenance_schedule_type property of a CreateAutonomousDatabaseBase.
     #: This constant has a value of "EARLY"
     AUTONOMOUS_MAINTENANCE_SCHEDULE_TYPE_EARLY = "EARLY"
@@ -92,6 +96,7 @@ class CreateAutonomousDatabaseBase(object):
         * :class:`~oci.database.models.CreateAutonomousDatabaseCloneDetails`
         * :class:`~oci.database.models.CreateRefreshableAutonomousDatabaseCloneDetails`
         * :class:`~oci.database.models.CreateAutonomousDatabaseFromBackupDetails`
+        * :class:`~oci.database.models.CreateCrossRegionDisasterRecoveryDetails`
         * :class:`~oci.database.models.CreateAutonomousDatabaseFromBackupTimestampDetails`
         * :class:`~oci.database.models.CreateCrossRegionAutonomousDatabaseDataGuardDetails`
         * :class:`~oci.database.models.CreateAutonomousDatabaseDetails`
@@ -239,7 +244,7 @@ class CreateAutonomousDatabaseBase(object):
 
         :param source:
             The value to assign to the source property of this CreateAutonomousDatabaseBase.
-            Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE", "CROSS_REGION_DATAGUARD"
+            Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE", "CROSS_REGION_DATAGUARD", "CROSS_REGION_DISASTER_RECOVERY"
         :type source: str
 
         :param customer_contacts:
@@ -442,6 +447,9 @@ class CreateAutonomousDatabaseBase(object):
 
         if type == 'BACKUP_FROM_ID':
             return 'CreateAutonomousDatabaseFromBackupDetails'
+
+        if type == 'CROSS_REGION_DISASTER_RECOVERY':
+            return 'CreateCrossRegionDisasterRecoveryDetails'
 
         if type == 'BACKUP_FROM_TIMESTAMP':
             return 'CreateAutonomousDatabaseFromBackupTimestampDetails'
@@ -1521,7 +1529,7 @@ class CreateAutonomousDatabaseBase(object):
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/clone-autonomous-database.html#GUID-D771796F-5081-4CFB-A7FF-0F893EABD7BC
 
-        Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE", "CROSS_REGION_DATAGUARD"
+        Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE", "CROSS_REGION_DATAGUARD", "CROSS_REGION_DISASTER_RECOVERY"
 
 
         :return: The source of this CreateAutonomousDatabaseBase.
@@ -1544,7 +1552,7 @@ class CreateAutonomousDatabaseBase(object):
         :param source: The source of this CreateAutonomousDatabaseBase.
         :type: str
         """
-        allowed_values = ["NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE", "CROSS_REGION_DATAGUARD"]
+        allowed_values = ["NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE", "CROSS_REGION_DATAGUARD", "CROSS_REGION_DISASTER_RECOVERY"]
         if not value_allowed_none_or_none_sentinel(source, allowed_values):
             raise ValueError(
                 "Invalid value for `source`, must be None or one of {0}"

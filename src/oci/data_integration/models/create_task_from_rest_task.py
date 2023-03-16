@@ -369,6 +369,8 @@ class CreateTaskFromRestTask(CreateTaskDetails):
     def headers(self):
         """
         Gets the headers of this CreateTaskFromRestTask.
+        Headers data for the request.
+
 
         :return: The headers of this CreateTaskFromRestTask.
         :rtype: object
@@ -379,6 +381,8 @@ class CreateTaskFromRestTask(CreateTaskDetails):
     def headers(self, headers):
         """
         Sets the headers of this CreateTaskFromRestTask.
+        Headers data for the request.
+
 
         :param headers: The headers of this CreateTaskFromRestTask.
         :type: object

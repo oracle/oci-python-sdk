@@ -65,6 +65,7 @@ Devops
     oci.devops.models.BuildRunSource
     oci.devops.models.BuildRunSummary
     oci.devops.models.BuildRunSummaryCollection
+    oci.devops.models.BuildRunnerShapeConfig
     oci.devops.models.BuildSource
     oci.devops.models.BuildSourceCollection
     oci.devops.models.BuildStage
@@ -170,6 +171,8 @@ Devops
     oci.devops.models.CreateWaitCriteriaDetails
     oci.devops.models.CreateWaitDeployStageDetails
     oci.devops.models.CreateWaitStageDetails
+    oci.devops.models.CustomBuildRunnerShapeConfig
+    oci.devops.models.DefaultBuildRunnerShapeConfig
     oci.devops.models.DeliverArtifact
     oci.devops.models.DeliverArtifactCollection
     oci.devops.models.DeliverArtifactStage

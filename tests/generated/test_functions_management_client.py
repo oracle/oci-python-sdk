@@ -322,6 +322,88 @@ def test_get_function(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="serverless_grp@oracle.com" jiraProject="FAAS" opsJiraProject="FAAS"
+def test_get_pbf_listing(testing_service_client):
+    if not testing_service_client.is_api_enabled('functions', 'GetPbfListing'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('functions', util.camelize('functions_management'), 'GetPbfListing')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='functions', api_name='GetPbfListing')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.functions.FunctionsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_pbf_listing(
+                pbf_listing_id=request.pop(util.camelize('pbfListingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'functions',
+            'GetPbfListing',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pbfListing',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="serverless_grp@oracle.com" jiraProject="FAAS" opsJiraProject="FAAS"
+def test_get_pbf_listing_version(testing_service_client):
+    if not testing_service_client.is_api_enabled('functions', 'GetPbfListingVersion'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('functions', util.camelize('functions_management'), 'GetPbfListingVersion')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='functions', api_name='GetPbfListingVersion')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.functions.FunctionsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_pbf_listing_version(
+                pbf_listing_version_id=request.pop(util.camelize('pbfListingVersionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'functions',
+            'GetPbfListingVersion',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pbfListingVersion',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="serverless_grp@oracle.com" jiraProject="FAAS" opsJiraProject="FAAS"
 def test_list_applications(testing_service_client):
     if not testing_service_client.is_api_enabled('functions', 'ListApplications'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -442,6 +524,189 @@ def test_list_functions(testing_service_client):
             result,
             service_error,
             'functionSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="serverless_grp@oracle.com" jiraProject="FAAS" opsJiraProject="FAAS"
+def test_list_pbf_listing_versions(testing_service_client):
+    if not testing_service_client.is_api_enabled('functions', 'ListPbfListingVersions'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('functions', util.camelize('functions_management'), 'ListPbfListingVersions')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='functions', api_name='ListPbfListingVersions')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.functions.FunctionsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_pbf_listing_versions(
+                pbf_listing_id=request.pop(util.camelize('pbfListingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_pbf_listing_versions(
+                    pbf_listing_id=request.pop(util.camelize('pbfListingId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_pbf_listing_versions(
+                        pbf_listing_id=request.pop(util.camelize('pbfListingId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'functions',
+            'ListPbfListingVersions',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pbfListingVersionsCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="serverless_grp@oracle.com" jiraProject="FAAS" opsJiraProject="FAAS"
+def test_list_pbf_listings(testing_service_client):
+    if not testing_service_client.is_api_enabled('functions', 'ListPbfListings'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('functions', util.camelize('functions_management'), 'ListPbfListings')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='functions', api_name='ListPbfListings')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.functions.FunctionsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_pbf_listings(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_pbf_listings(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_pbf_listings(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'functions',
+            'ListPbfListings',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pbfListingsCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="serverless_grp@oracle.com" jiraProject="FAAS" opsJiraProject="FAAS"
+def test_list_triggers(testing_service_client):
+    if not testing_service_client.is_api_enabled('functions', 'ListTriggers'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('functions', util.camelize('functions_management'), 'ListTriggers')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='functions', api_name='ListTriggers')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.functions.FunctionsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_triggers(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_triggers(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_triggers(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'functions',
+            'ListTriggers',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'triggersCollection',
             False,
             True
         )

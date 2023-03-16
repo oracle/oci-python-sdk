@@ -130,12 +130,9 @@ class DeploymentWalletsOperationSummary(object):
     def wallet_secret_id(self):
         """
         **[Required]** Gets the wallet_secret_id of this DeploymentWalletsOperationSummary.
-        The `OCID`__ of the customer GGS Secret being
-        referenced.
-        If provided, this will reference a key which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to utilize this Secret
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        The OCID of the customer's GoldenGate Service Secret.
+        If provided, it references a key that customers will be required to ensure the policies are established
+        to permit GoldenGate to use this Secret.
 
 
         :return: The wallet_secret_id of this DeploymentWalletsOperationSummary.
@@ -147,12 +144,9 @@ class DeploymentWalletsOperationSummary(object):
     def wallet_secret_id(self, wallet_secret_id):
         """
         Sets the wallet_secret_id of this DeploymentWalletsOperationSummary.
-        The `OCID`__ of the customer GGS Secret being
-        referenced.
-        If provided, this will reference a key which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to utilize this Secret
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        The OCID of the customer's GoldenGate Service Secret.
+        If provided, it references a key that customers will be required to ensure the policies are established
+        to permit GoldenGate to use this Secret.
 
 
         :param wallet_secret_id: The wallet_secret_id of this DeploymentWalletsOperationSummary.

@@ -21,7 +21,7 @@ class OracleConnectionSummary(ConnectionSummary):
 
         :param connection_type:
             The value to assign to the connection_type property of this OracleConnectionSummary.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"
         :type connection_type: str
 
         :param id:
@@ -218,9 +218,9 @@ class OracleConnectionSummary(ConnectionSummary):
     def username(self):
         """
         **[Required]** Gets the username of this OracleConnectionSummary.
-        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
-        already exist and be available for use by the database.  It must conform to the security
-        requirements implemented by the database including length, case sensitivity, and so on.
+        The username Oracle GoldenGate uses to connect the associated system of the given technology.
+        This username must already exist and be available by the system/application to be connected to
+        and must conform to the case sensitivty requirments defined in it.
 
 
         :return: The username of this OracleConnectionSummary.
@@ -232,9 +232,9 @@ class OracleConnectionSummary(ConnectionSummary):
     def username(self, username):
         """
         Sets the username of this OracleConnectionSummary.
-        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
-        already exist and be available for use by the database.  It must conform to the security
-        requirements implemented by the database including length, case sensitivity, and so on.
+        The username Oracle GoldenGate uses to connect the associated system of the given technology.
+        This username must already exist and be available by the system/application to be connected to
+        and must conform to the case sensitivty requirments defined in it.
 
 
         :param username: The username of this OracleConnectionSummary.
@@ -246,8 +246,7 @@ class OracleConnectionSummary(ConnectionSummary):
     def connection_string(self):
         """
         Gets the connection_string of this OracleConnectionSummary.
-        Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
-        database.
+        Connect descriptor or Easy Connect Naming method used to connect to a database.
 
 
         :return: The connection_string of this OracleConnectionSummary.
@@ -259,8 +258,7 @@ class OracleConnectionSummary(ConnectionSummary):
     def connection_string(self, connection_string):
         """
         Sets the connection_string of this OracleConnectionSummary.
-        Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
-        database.
+        Connect descriptor or Easy Connect Naming method used to connect to a database.
 
 
         :param connection_string: The connection_string of this OracleConnectionSummary.

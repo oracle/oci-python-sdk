@@ -378,6 +378,8 @@ class TaskSummaryFromRestTask(TaskSummary):
     def headers(self):
         """
         Gets the headers of this TaskSummaryFromRestTask.
+        Headers for payload.
+
 
         :return: The headers of this TaskSummaryFromRestTask.
         :rtype: object
@@ -388,6 +390,8 @@ class TaskSummaryFromRestTask(TaskSummary):
     def headers(self, headers):
         """
         Sets the headers of this TaskSummaryFromRestTask.
+        Headers for payload.
+
 
         :param headers: The headers of this TaskSummaryFromRestTask.
         :type: object

@@ -20,7 +20,7 @@
     <feature-id-file>${sdk-root-dir}/featureId.yaml</feature-id-file>
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
     <!-- Service Spec file goes here -->
-    <devops-service-spec-spec-file>./source/api.cond.yaml</devops-service-spec-spec-file>
+    <devops-service-spec-spec-file>source/api.cond.yaml</devops-service-spec-spec-file>
   </properties>
   <build>
     <directory>${sdk-root-dir}/target</directory>
@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.pic.dlc</groupId>
         <artifactId>devops-service-spec</artifactId>
-        <version>0.3.169</version>
+        <version>0.3.179</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

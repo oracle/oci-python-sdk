@@ -21,7 +21,7 @@ class GoldenGateConnectionSummary(ConnectionSummary):
 
         :param connection_type:
             The value to assign to the connection_type property of this GoldenGateConnectionSummary.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"
         :type connection_type: str
 
         :param id:
@@ -104,6 +104,10 @@ class GoldenGateConnectionSummary(ConnectionSummary):
             The value to assign to the port property of this GoldenGateConnectionSummary.
         :type port: int
 
+        :param username:
+            The value to assign to the username property of this GoldenGateConnectionSummary.
+        :type username: str
+
         :param private_ip:
             The value to assign to the private_ip property of this GoldenGateConnectionSummary.
         :type private_ip: str
@@ -131,6 +135,7 @@ class GoldenGateConnectionSummary(ConnectionSummary):
             'deployment_id': 'str',
             'host': 'str',
             'port': 'int',
+            'username': 'str',
             'private_ip': 'str'
         }
 
@@ -156,6 +161,7 @@ class GoldenGateConnectionSummary(ConnectionSummary):
             'deployment_id': 'deploymentId',
             'host': 'host',
             'port': 'port',
+            'username': 'username',
             'private_ip': 'privateIp'
         }
 
@@ -180,6 +186,7 @@ class GoldenGateConnectionSummary(ConnectionSummary):
         self._deployment_id = None
         self._host = None
         self._port = None
+        self._username = None
         self._private_ip = None
         self._connection_type = 'GOLDENGATE'
 
@@ -282,6 +289,30 @@ class GoldenGateConnectionSummary(ConnectionSummary):
         :type: int
         """
         self._port = port
+
+    @property
+    def username(self):
+        """
+        Gets the username of this GoldenGateConnectionSummary.
+        The username credential existing in the Oracle GoldenGate used to be connected to.
+
+
+        :return: The username of this GoldenGateConnectionSummary.
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """
+        Sets the username of this GoldenGateConnectionSummary.
+        The username credential existing in the Oracle GoldenGate used to be connected to.
+
+
+        :param username: The username of this GoldenGateConnectionSummary.
+        :type: str
+        """
+        self._username = username
 
     @property
     def private_ip(self):

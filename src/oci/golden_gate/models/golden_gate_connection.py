@@ -25,7 +25,7 @@ class GoldenGateConnection(Connection):
 
         :param connection_type:
             The value to assign to the connection_type property of this GoldenGateConnection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -113,6 +113,10 @@ class GoldenGateConnection(Connection):
             The value to assign to the port property of this GoldenGateConnection.
         :type port: int
 
+        :param username:
+            The value to assign to the username property of this GoldenGateConnection.
+        :type username: str
+
         :param private_ip:
             The value to assign to the private_ip property of this GoldenGateConnection.
         :type private_ip: str
@@ -140,6 +144,7 @@ class GoldenGateConnection(Connection):
             'deployment_id': 'str',
             'host': 'str',
             'port': 'int',
+            'username': 'str',
             'private_ip': 'str'
         }
 
@@ -165,6 +170,7 @@ class GoldenGateConnection(Connection):
             'deployment_id': 'deploymentId',
             'host': 'host',
             'port': 'port',
+            'username': 'username',
             'private_ip': 'privateIp'
         }
 
@@ -189,6 +195,7 @@ class GoldenGateConnection(Connection):
         self._deployment_id = None
         self._host = None
         self._port = None
+        self._username = None
         self._private_ip = None
         self._connection_type = 'GOLDENGATE'
 
@@ -297,6 +304,30 @@ class GoldenGateConnection(Connection):
         :type: int
         """
         self._port = port
+
+    @property
+    def username(self):
+        """
+        Gets the username of this GoldenGateConnection.
+        The username credential existing in the Oracle GoldenGate used to be connected to.
+
+
+        :return: The username of this GoldenGateConnection.
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """
+        Sets the username of this GoldenGateConnection.
+        The username credential existing in the Oracle GoldenGate used to be connected to.
+
+
+        :param username: The username of this GoldenGateConnection.
+        :type: str
+        """
+        self._username = username
 
     @property
     def private_ip(self):

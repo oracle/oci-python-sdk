@@ -69,7 +69,7 @@ class PostgresqlConnection(Connection):
 
         :param connection_type:
             The value to assign to the connection_type property of this PostgresqlConnection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -374,9 +374,9 @@ class PostgresqlConnection(Connection):
     def username(self):
         """
         **[Required]** Gets the username of this PostgresqlConnection.
-        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
-        already exist and be available for use by the database.  It must conform to the security
-        requirements implemented by the database including length, case sensitivity, and so on.
+        The username Oracle GoldenGate uses to connect the associated system of the given technology.
+        This username must already exist and be available by the system/application to be connected to
+        and must conform to the case sensitivty requirments defined in it.
 
 
         :return: The username of this PostgresqlConnection.
@@ -388,9 +388,9 @@ class PostgresqlConnection(Connection):
     def username(self, username):
         """
         Sets the username of this PostgresqlConnection.
-        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
-        already exist and be available for use by the database.  It must conform to the security
-        requirements implemented by the database including length, case sensitivity, and so on.
+        The username Oracle GoldenGate uses to connect the associated system of the given technology.
+        This username must already exist and be available by the system/application to be connected to
+        and must conform to the case sensitivty requirments defined in it.
 
 
         :param username: The username of this PostgresqlConnection.

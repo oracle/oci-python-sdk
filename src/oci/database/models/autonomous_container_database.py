@@ -114,6 +114,10 @@ class AutonomousContainerDatabase(object):
     ROLE_DISABLED_STANDBY = "DISABLED_STANDBY"
 
     #: A constant which can be used with the role property of a AutonomousContainerDatabase.
+    #: This constant has a value of "BACKUP_COPY"
+    ROLE_BACKUP_COPY = "BACKUP_COPY"
+
+    #: A constant which can be used with the role property of a AutonomousContainerDatabase.
     #: This constant has a value of "SNAPSHOT_STANDBY"
     ROLE_SNAPSHOT_STANDBY = "SNAPSHOT_STANDBY"
 
@@ -246,7 +250,7 @@ class AutonomousContainerDatabase(object):
 
         :param role:
             The value to assign to the role property of this AutonomousContainerDatabase.
-            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type role: str
 
@@ -1114,7 +1118,7 @@ class AutonomousContainerDatabase(object):
         Gets the role of this AutonomousContainerDatabase.
         The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 
-        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -1133,7 +1137,7 @@ class AutonomousContainerDatabase(object):
         :param role: The role of this AutonomousContainerDatabase.
         :type: str
         """
-        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY"]
+        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             role = 'UNKNOWN_ENUM_VALUE'
         self._role = role

@@ -124,8 +124,7 @@ class CreateOggDeploymentDetails(object):
         **[Required]** Gets the admin_password of this CreateOggDeploymentDetails.
         The password associated with the GoldenGate deployment console username.
         The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
-        and 1 special character. Special characters such as \u2018$\u2019, \u2018^\u2019, or \u2018?\u2019 are not allowed.
-        This field will be deprecated and replaced by \"passwordSecretId\".
+        and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
 
 
         :return: The admin_password of this CreateOggDeploymentDetails.
@@ -139,8 +138,7 @@ class CreateOggDeploymentDetails(object):
         Sets the admin_password of this CreateOggDeploymentDetails.
         The password associated with the GoldenGate deployment console username.
         The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
-        and 1 special character. Special characters such as \u2018$\u2019, \u2018^\u2019, or \u2018?\u2019 are not allowed.
-        This field will be deprecated and replaced by \"passwordSecretId\".
+        and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
 
 
         :param admin_password: The admin_password of this CreateOggDeploymentDetails.

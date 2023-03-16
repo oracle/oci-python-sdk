@@ -30,6 +30,14 @@ class ConnectionSummary(object):
     CONNECTION_TYPE_MYSQL = "MYSQL"
 
     #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "JAVA_MESSAGE_SERVICE"
+    CONNECTION_TYPE_JAVA_MESSAGE_SERVICE = "JAVA_MESSAGE_SERVICE"
+
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "MICROSOFT_SQLSERVER"
+    CONNECTION_TYPE_MICROSOFT_SQLSERVER = "MICROSOFT_SQLSERVER"
+
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
     #: This constant has a value of "OCI_OBJECT_STORAGE"
     CONNECTION_TYPE_OCI_OBJECT_STORAGE = "OCI_OBJECT_STORAGE"
 
@@ -49,6 +57,26 @@ class ConnectionSummary(object):
     #: This constant has a value of "AZURE_SYNAPSE_ANALYTICS"
     CONNECTION_TYPE_AZURE_SYNAPSE_ANALYTICS = "AZURE_SYNAPSE_ANALYTICS"
 
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "SNOWFLAKE"
+    CONNECTION_TYPE_SNOWFLAKE = "SNOWFLAKE"
+
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "AMAZON_S3"
+    CONNECTION_TYPE_AMAZON_S3 = "AMAZON_S3"
+
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "HDFS"
+    CONNECTION_TYPE_HDFS = "HDFS"
+
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "ORACLE_NOSQL"
+    CONNECTION_TYPE_ORACLE_NOSQL = "ORACLE_NOSQL"
+
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "MONGODB"
+    CONNECTION_TYPE_MONGODB = "MONGODB"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ConnectionSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -56,19 +84,26 @@ class ConnectionSummary(object):
 
         * :class:`~oci.golden_gate.models.GoldenGateConnectionSummary`
         * :class:`~oci.golden_gate.models.KafkaSchemaRegistryConnectionSummary`
-        * :class:`~oci.golden_gate.models.PostgresqlConnectionSummary`
+        * :class:`~oci.golden_gate.models.JavaMessageServiceConnectionSummary`
+        * :class:`~oci.golden_gate.models.MicrosoftSqlserverConnectionSummary`
+        * :class:`~oci.golden_gate.models.OracleNosqlConnectionSummary`
         * :class:`~oci.golden_gate.models.OracleConnectionSummary`
-        * :class:`~oci.golden_gate.models.MysqlConnectionSummary`
-        * :class:`~oci.golden_gate.models.KafkaConnectionSummary`
+        * :class:`~oci.golden_gate.models.SnowflakeConnectionSummary`
         * :class:`~oci.golden_gate.models.OciObjectStorageConnectionSummary`
         * :class:`~oci.golden_gate.models.AzureDataLakeStorageConnectionSummary`
         * :class:`~oci.golden_gate.models.AzureSynapseConnectionSummary`
+        * :class:`~oci.golden_gate.models.MongoDbConnectionSummary`
+        * :class:`~oci.golden_gate.models.AmazonS3ConnectionSummary`
+        * :class:`~oci.golden_gate.models.PostgresqlConnectionSummary`
+        * :class:`~oci.golden_gate.models.MysqlConnectionSummary`
+        * :class:`~oci.golden_gate.models.KafkaConnectionSummary`
+        * :class:`~oci.golden_gate.models.HdfsConnectionSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param connection_type:
             The value to assign to the connection_type property of this ConnectionSummary.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -209,17 +244,20 @@ class ConnectionSummary(object):
         if type == 'KAFKA_SCHEMA_REGISTRY':
             return 'KafkaSchemaRegistryConnectionSummary'
 
-        if type == 'POSTGRESQL':
-            return 'PostgresqlConnectionSummary'
+        if type == 'JAVA_MESSAGE_SERVICE':
+            return 'JavaMessageServiceConnectionSummary'
+
+        if type == 'MICROSOFT_SQLSERVER':
+            return 'MicrosoftSqlserverConnectionSummary'
+
+        if type == 'ORACLE_NOSQL':
+            return 'OracleNosqlConnectionSummary'
 
         if type == 'ORACLE':
             return 'OracleConnectionSummary'
 
-        if type == 'MYSQL':
-            return 'MysqlConnectionSummary'
-
-        if type == 'KAFKA':
-            return 'KafkaConnectionSummary'
+        if type == 'SNOWFLAKE':
+            return 'SnowflakeConnectionSummary'
 
         if type == 'OCI_OBJECT_STORAGE':
             return 'OciObjectStorageConnectionSummary'
@@ -229,6 +267,24 @@ class ConnectionSummary(object):
 
         if type == 'AZURE_SYNAPSE_ANALYTICS':
             return 'AzureSynapseConnectionSummary'
+
+        if type == 'MONGODB':
+            return 'MongoDbConnectionSummary'
+
+        if type == 'AMAZON_S3':
+            return 'AmazonS3ConnectionSummary'
+
+        if type == 'POSTGRESQL':
+            return 'PostgresqlConnectionSummary'
+
+        if type == 'MYSQL':
+            return 'MysqlConnectionSummary'
+
+        if type == 'KAFKA':
+            return 'KafkaConnectionSummary'
+
+        if type == 'HDFS':
+            return 'HdfsConnectionSummary'
         else:
             return 'ConnectionSummary'
 
@@ -238,7 +294,7 @@ class ConnectionSummary(object):
         **[Required]** Gets the connection_type of this ConnectionSummary.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -257,7 +313,7 @@ class ConnectionSummary(object):
         :param connection_type: The connection_type of this ConnectionSummary.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             connection_type = 'UNKNOWN_ENUM_VALUE'
         self._connection_type = connection_type
@@ -576,13 +632,9 @@ class ConnectionSummary(object):
     def vault_id(self):
         """
         Gets the vault_id of this ConnectionSummary.
-        The `OCID`__ of the customer vault being
-        referenced.
-        If provided, this will reference a vault which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to manage secrets contained
-        within this vault.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's vault OCID.
+        If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+        to manage secrets contained within this vault.
 
 
         :return: The vault_id of this ConnectionSummary.
@@ -594,13 +646,9 @@ class ConnectionSummary(object):
     def vault_id(self, vault_id):
         """
         Sets the vault_id of this ConnectionSummary.
-        The `OCID`__ of the customer vault being
-        referenced.
-        If provided, this will reference a vault which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to manage secrets contained
-        within this vault.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's vault OCID.
+        If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+        to manage secrets contained within this vault.
 
 
         :param vault_id: The vault_id of this ConnectionSummary.
@@ -612,13 +660,8 @@ class ConnectionSummary(object):
     def key_id(self):
         """
         Gets the key_id of this ConnectionSummary.
-        The `OCID`__ of the customer \"Master\" key being
-        referenced.
-        If provided, this will reference a key which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to utilize this key to
-        manage secrets.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's master key OCID.
+        If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 
 
         :return: The key_id of this ConnectionSummary.
@@ -630,13 +673,8 @@ class ConnectionSummary(object):
     def key_id(self, key_id):
         """
         Sets the key_id of this ConnectionSummary.
-        The `OCID`__ of the customer \"Master\" key being
-        referenced.
-        If provided, this will reference a key which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to utilize this key to
-        manage secrets.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's master key OCID.
+        If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 
 
         :param key_id: The key_id of this ConnectionSummary.
@@ -676,7 +714,8 @@ class ConnectionSummary(object):
     def ingress_ips(self):
         """
         Gets the ingress_ips of this ConnectionSummary.
-        List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.
+        Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
 
 
         :return: The ingress_ips of this ConnectionSummary.
@@ -688,7 +727,8 @@ class ConnectionSummary(object):
     def ingress_ips(self, ingress_ips):
         """
         Sets the ingress_ips of this ConnectionSummary.
-        List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.
+        Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
 
 
         :param ingress_ips: The ingress_ips of this ConnectionSummary.
