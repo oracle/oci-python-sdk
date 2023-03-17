@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+23.03.21 - 23.03.21
+=====================
+* Added Identity Domains including Users, Groups, IDPs, DynGroups, Auth Setting, KMSI Setting
+
+=====================
+23.03.14 - 23.03.14
+=====================
+* Added more info for OKE, APIGW, Databases for JSON and CSV
+* Added most of CSVs to csv2adw process
+* Added DevOps and WAF
+* Added Quotas to CSV
+
+=====================
 23.03.07 - 23.03.07
 =====================
 * Added Tags to file storage and object storage CSVs

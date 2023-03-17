@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+23.03.15 - 2023.03.15
+=====================
+* Fix OCI_LOAD_STATUS Constraint bug
+
+=====================
+23.03.14 - 2023.03.14
+=====================
+* Added 51 ShowOCI tables to the APEX Page
+
+=====================
 23.03.07 - 2023.03.07
 =====================
 * Added ShowOCI Section if ShowOCI data enabled

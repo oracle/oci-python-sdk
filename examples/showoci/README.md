@@ -2,7 +2,7 @@
 
 SHOWOCI is a reporting tool which uses the Python SDK to extract list of resources from your tenant.
 It covers most of OCI components,  Authentication by User or Compute using instance principals,
-Output can be printer friendly, CSV files or JSON file.
+Output can be printer friendly, CSV files or JSON file with an option to load the CSV files to Autonomous DB.
 
 **DISCLAIMER – This is not an official Oracle application,  It does not supported by Oracle Support, It should NOT be used for utilization calculation purposes, and rather OCI's official 
 [cost analysis](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/costanalysisoverview.htm) 
@@ -46,16 +46,17 @@ and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/
 3. Python3 (3.9+ Recommedned)
 4. OCI SDK Python Packages - oci oracledb
 
-### Modules Included:  
-- oci.core.VirtualNetworkClient          
-- oci.core.ComputeClient                 
-- oci.core.ComputeManagementClient       
-- oci.core.BlockstorageClient            
-- oci.file_storage.FileStorageClient     
-- oci.object_storage.ObjectStorageClient 
-- oci.database.DatabaseClient            
-- oci.identity.IdentityClient            
-- oci.load_balancer.LoadBalancerClient   
+### Modules Included:
+
+- oci.core.VirtualNetworkClient
+- oci.core.ComputeClient
+- oci.core.ComputeManagementClient
+- oci.core.BlockstorageClient
+- oci.file_storage.FileStorageClient
+- oci.object_storage.ObjectStorageClient
+- oci.database.DatabaseClient
+- oci.identity.IdentityClient
+- oci.load_balancer.LoadBalancerClient
 - oci.email.EmailClient
 - oci.container_engine.ContainerEngineClient
 - oci.streaming.StreamAdminClient
@@ -91,6 +92,7 @@ and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/
 - oci.key_management.KmsVaultClient
 - oci.data_integration.DataIntegrationClient
 - oci.queue.QueueAdminClient
+- oci.identity_domains.IdentityDomainsClient
 
 ## 2. Executing using Cloud Shell
 
@@ -288,7 +290,7 @@ options:
   -edge                     Print Edge, DNS Services and WAAS policies
   -f                        Print File Storage
   -fun                      Print Functions
-  -i                        Print Identity
+  -i                        Print Identity and Identity Domains
   -ic                       Print Identity Compartments only
   -isc                      Skip Identity User Credential extract
   -l                        Print Load Balancer

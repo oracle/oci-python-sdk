@@ -18,7 +18,7 @@ from showoci_service import ShowOCIService, ShowOCIFlags
 
 
 class ShowOCIData(object):
-    version = "23.03.07"
+    version = "23.03.21"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -432,10 +432,22 @@ class ShowOCIData(object):
             for arr in list_igws:
                 value = {'id': arr['id'],
                          'name': arr['name'],
+                         'vcn_id': arr['vcn_id'],
+                         'is_enabled': arr['is_enabled'],
+                         'route_table_id': arr['route_table_id'],
+                         'route_table': "",
                          'compartment_name': arr['compartment_name'],
                          'compartment_path': arr['compartment_path'],
                          'compartment_id': arr['compartment_id'],
-                         'time_created': arr['time_created']}
+                         'time_created': arr['time_created'],
+                         'defined_tags': arr['defined_tags'],
+                         'freeform_tags': arr['freeform_tags']}
+
+                # check route table
+                if value['route_table_id'] != "None":
+                    route_table = self.__get_core_network_route(value['route_table_id'])
+                    value['route_table'] = route_table
+
                 data.append(value)
             return data
 
@@ -462,6 +474,7 @@ class ShowOCIData(object):
                          'route_table_id': arr['route_table_id'],
                          'route_table': "",
                          'transit': "",
+                         'block_traffic': arr['block_traffic'],
                          'time_created': arr['time_created'],
                          'defined_tags': arr['defined_tags'],
                          'freeform_tags': arr['freeform_tags']}
@@ -981,9 +994,19 @@ class ShowOCIData(object):
                     'display_name': vcn['display_name'],
                     'cidr_block': vcn['cidr_block'],
                     'cidr_blocks': vcn['cidr_blocks'],
+                    'ipv6_private_cidr_blocks': vcn['ipv6_private_cidr_blocks'],
+                    'ipv6_cidr_blocks': vcn['ipv6_cidr_blocks'],
+                    'byoipv6_cidr_blocks': vcn['byoipv6_cidr_blocks'],
+                    'default_dhcp_options_id': vcn['default_dhcp_options_id'],
+                    'default_route_table_id': vcn['default_route_table_id'],
+                    'default_security_list_id': vcn['default_security_list_id'],
+                    'dns_label': vcn['dns_label'],
+                    'vcn_domain_name': vcn['vcn_domain_name'],
                     'compartment_name': str(compartment['name']),
                     'compartment_path': str(compartment['path']),
                     'compartment_id': str(compartment['id']),
+                    'defined_tags': vcn['defined_tags'],
+                    'freeform_tags': vcn['freeform_tags'],
                     'drg_route_table_id': "",
                     'drg_route_name': "",
                     'route_table_id': "",
@@ -1212,8 +1235,8 @@ class ShowOCIData(object):
                     'routes': ips['static_routes'],
                     'tunnels': ips['tunnels'],
                     'defined_tags': ips['defined_tags'],
-                    'time_created': ips['time_created'],
                     'freeform_tags': ips['freeform_tags'],
+                    'time_created': ips['time_created'],
                     'compartment_id': ips['compartment_id'],
                     'compartment_name': ips['compartment_name'],
                     'compartment_path': ips['compartment_path'],
@@ -1247,6 +1270,16 @@ class ShowOCIData(object):
                     'bandwidth_shape_name': str(vc['bandwidth_shape_name']),
                     'bgp_management': str(vc['bgp_management']),
                     'bgp_session_state': str(vc['bgp_session_state']),
+                    'bgp_ipv6_session_state': vc['bgp_ipv6_session_state'],
+                    'bgp_admin_state': vc['bgp_admin_state'],
+                    'is_bfd_enabled': vc['is_bfd_enabled'],
+                    'customer_asn': vc['customer_asn'],
+                    'gateway_id': vc['gateway_id'],
+                    'provider_service_id': vc['provider_service_id'],
+                    'provider_service_key_name': vc['provider_service_key_name'],
+                    'routing_policy': vc['routing_policy'],
+                    'public_prefixes': vc['public_prefixes'],
+                    'region': vc['region'],
                     'customer_bgp_asn': str(vc['customer_bgp_asn']),
                     'drg': drg,
                     'drg_id': vc['drg_id'],
@@ -1263,6 +1296,8 @@ class ShowOCIData(object):
                     'compartment_id': vc['compartment_id'],
                     'compartment_name': vc['compartment_name'],
                     'compartment_path': vc['compartment_path'],
+                    'defined_tags': vc['defined_tags'],
+                    'freeform_tags': vc['freeform_tags'],
                     'region_name': vc['region_name'],
                     'drg_route_table_id': vc['drg_route_table_id'],
                     'drg_route_table': vc['drg_route_table']
@@ -2896,6 +2931,7 @@ class ShowOCIData(object):
                     'cloud_exadata_infrastructure_id': vm['cloud_exadata_infrastructure_id'],
                     'hostname': vm['hostname'],
                     'domain': vm['domain'],
+                    'is_dedicated': True,
                     'available_cpus': vm['available_cpus'],
                     'reclaimable_cpus': vm['reclaimable_cpus'],
                     'available_container_databases': vm['available_container_databases'],
@@ -3643,6 +3679,30 @@ class ShowOCIData(object):
                            'compartment_path': container['compartment_path'],
                            'compartment_id': container['compartment_id'],
                            'region_name': container['region_name'],
+                           'endpoint_is_public_ip_enabled': container['endpoint_is_public_ip_enabled'],
+                           'endpoint_nsg_ids': container['endpoint_nsg_ids'],
+                           'endpoint_nsg_names': container['endpoint_nsg_names'],
+                           'endpoint_subnet_id': container['endpoint_subnet_id'],
+                           'endpoint_subnet_name': container['endpoint_subnet_name'],
+                           'option_lb_ids': container['option_lb_ids'],
+                           'option_network_pods_cidr': container['option_network_pods_cidr'],
+                           'option_network_services_cidr': container['option_network_services_cidr'],
+                           'option_is_kubernetes_dashboard_enabled': container['option_is_kubernetes_dashboard_enabled'],
+                           'option_is_tiller_enabled': container['option_is_tiller_enabled'],
+                           'option_is_pod_security_policy_enabled': container['option_is_pod_security_policy_enabled'],
+                           'time_created': container['time_created'],
+                           'time_deleted': container['time_deleted'],
+                           'time_updated': container['time_updated'],
+                           'created_by_user_id': container['created_by_user_id'],
+                           'deleted_by_user_id': container['deleted_by_user_id'],
+                           'updated_by_user_id': container['updated_by_user_id'],
+                           'endpoint_kubernetes': container['endpoint_kubernetes'],
+                           'endpoint_public_endpoint': container['endpoint_public_endpoint'],
+                           'endpoint_private_endpoint': container['endpoint_private_endpoint'],
+                           'endpoint_vcn_hostname_endpoint': container['endpoint_vcn_hostname_endpoint'],
+                           'available_kubernetes_upgrades': container['available_kubernetes_upgrades'],
+                           'defined_tags': container['defined_tags'],
+                           'freeform_tags': container['freeform_tags'],
                            'vcn_id': container['vcn_id'],
                            'node_pools': [],
                            'vcn_name': self.__get_core_network_vcn_name(container['vcn_id'])}
@@ -3650,13 +3710,25 @@ class ShowOCIData(object):
                     # add the node pools
                     nodes = self.service.search_multi_items(self.service.C_CONTAINER, self.service.C_CONTAINER_NODE_POOLS, 'cluster_id', container['id'])
                     for np in nodes:
-                        nval = {'id': np['id'], 'name': np['name'], 'node_image_id': np['node_image_id'], 'node_image_name': np['node_image_name'],
-                                'kubernetes_version': np['kubernetes_version'], 'node_shape': np['node_shape'],
-                                'quantity_per_subnet': np['quantity_per_subnet'],
-                                'compartment_name': np['compartment_name'],
-                                'compartment_path': np['compartment_path'],
-                                'compartment_id': np['compartment_id'],
-                                'subnets': [], 'subnet_ids': np['subnet_ids']}
+                        nval = {
+                            'id': np['id'],
+                            'name': np['name'],
+                            'node_image_id': np['node_image_id'],
+                            'node_image_name': np['node_image_name'],
+                            'kubernetes_version': np['kubernetes_version'],
+                            'node_shape': np['node_shape'],
+                            'quantity_per_subnet': np['quantity_per_subnet'],
+                            'node_shape_mem_gb': np['node_shape_mem_gb'],
+                            'node_shape_ocpus': np['node_shape_ocpus'],
+                            'node_source_type': np['node_source_type'],
+                            'node_source_name': np['node_source_name'],
+                            'defined_tags': np['defined_tags'],
+                            'freeform_tags': np['freeform_tags'],
+                            'compartment_name': np['compartment_name'],
+                            'compartment_path': np['compartment_path'],
+                            'compartment_id': np['compartment_id'],
+                            'subnets': [],
+                            'subnet_ids': np['subnet_ids']}
 
                         # subnets
                         for sub in np['subnet_ids']:
@@ -3739,10 +3811,6 @@ class ShowOCIData(object):
             if apigs:
                 for ap in apigs:
                     val = ap
-
-                    # subnet
-                    if ap['subnet_id']:
-                        val['subnet_name'] = self.__get_core_network_subnet_name(ap['subnet_id'])
 
                     # deployments
                     apidep = self.service.search_multi_items(self.service.C_API, self.service.C_API_DEPLOYMENT, 'region_name', region_name, 'gateway_id', val['id'])
@@ -3897,6 +3965,7 @@ class ShowOCIData(object):
             dns_zone = self.service.search_multi_items(self.service.C_EDGE, self.service.C_EDGE_DNS_ZONE, 'region_name', region_name, 'compartment_id', compartment['id'])
             dns_steering = self.service.search_multi_items(self.service.C_EDGE, self.service.C_EDGE_DNS_STEERING, 'region_name', region_name, 'compartment_id', compartment['id'])
             waas_policies = self.service.search_multi_items(self.service.C_EDGE, self.service.C_EDGE_WAAS_POLICIES, 'region_name', region_name, 'compartment_id', compartment['id'])
+            waf = self.service.search_multi_items(self.service.C_EDGE, self.service.C_EDGE_WAF, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             data = {}
             if len(healthcheck_http) > 0 or len(healthcheck_ping) > 0:
@@ -3910,6 +3979,9 @@ class ShowOCIData(object):
 
             if waas_policies:
                 data['waas_policies'] = waas_policies
+
+            if waf:
+                data['waf'] = waf
 
             return data
 
@@ -3979,6 +4051,11 @@ class ShowOCIData(object):
             ocvs = self.service.search_multi_items(self.service.C_PAAS_NATIVE, self.service.C_PAAS_NATIVE_OCVS, 'region_name', region_name, 'compartment_id', compartment['id'])
             if ocvs:
                 paas_services['ocvs'] = ocvs
+
+            # devops
+            devops = self.service.search_multi_items(self.service.C_PAAS_NATIVE, self.service.C_PAAS_NATIVE_DEVOPS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if devops:
+                paas_services['devops'] = devops
 
             return paas_services
 
