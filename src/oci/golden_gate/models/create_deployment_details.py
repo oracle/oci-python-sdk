@@ -34,6 +34,10 @@ class CreateDeploymentDetails(object):
     DEPLOYMENT_TYPE_BIGDATA = "BIGDATA"
 
     #: A constant which can be used with the deployment_type property of a CreateDeploymentDetails.
+    #: This constant has a value of "DATABASE_MICROSOFT_SQLSERVER"
+    DEPLOYMENT_TYPE_DATABASE_MICROSOFT_SQLSERVER = "DATABASE_MICROSOFT_SQLSERVER"
+
+    #: A constant which can be used with the deployment_type property of a CreateDeploymentDetails.
     #: This constant has a value of "DATABASE_MYSQL"
     DEPLOYMENT_TYPE_DATABASE_MYSQL = "DATABASE_MYSQL"
 
@@ -101,7 +105,7 @@ class CreateDeploymentDetails(object):
 
         :param deployment_type:
             The value to assign to the deployment_type property of this CreateDeploymentDetails.
-            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"
+            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"
         :type deployment_type: str
 
         :param ogg_data:
@@ -514,11 +518,11 @@ class CreateDeploymentDetails(object):
     def deployment_type(self):
         """
         **[Required]** Gets the deployment_type of this CreateDeploymentDetails.
-        The type of deployment, the value determines the exact 'type' of service executed in the Deployment.
-        NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged
-              in favor of the equivalent 'DATABASE_ORACLE' value.
+        The type of deployment, which can be any one of the Allowed values.
+        NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+            Its use is discouraged in favor of 'DATABASE_ORACLE'.
 
-        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"
+        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"
 
 
         :return: The deployment_type of this CreateDeploymentDetails.
@@ -530,15 +534,15 @@ class CreateDeploymentDetails(object):
     def deployment_type(self, deployment_type):
         """
         Sets the deployment_type of this CreateDeploymentDetails.
-        The type of deployment, the value determines the exact 'type' of service executed in the Deployment.
-        NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged
-              in favor of the equivalent 'DATABASE_ORACLE' value.
+        The type of deployment, which can be any one of the Allowed values.
+        NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+            Its use is discouraged in favor of 'DATABASE_ORACLE'.
 
 
         :param deployment_type: The deployment_type of this CreateDeploymentDetails.
         :type: str
         """
-        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"]
+        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"]
         if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
             raise ValueError(
                 "Invalid value for `deployment_type`, must be None or one of {0}"

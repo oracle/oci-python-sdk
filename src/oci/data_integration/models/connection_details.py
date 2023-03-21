@@ -50,8 +50,8 @@ class ConnectionDetails(object):
     MODEL_TYPE_BIP_CONNECTION = "BIP_CONNECTION"
 
     #: A constant which can be used with the model_type property of a ConnectionDetails.
-    #: This constant has a value of "LAKE_HOUSE_CONNECTION"
-    MODEL_TYPE_LAKE_HOUSE_CONNECTION = "LAKE_HOUSE_CONNECTION"
+    #: This constant has a value of "LAKE_CONNECTION"
+    MODEL_TYPE_LAKE_CONNECTION = "LAKE_CONNECTION"
 
     #: A constant which can be used with the model_type property of a ConnectionDetails.
     #: This constant has a value of "REST_NO_AUTH_CONNECTION"
@@ -70,12 +70,12 @@ class ConnectionDetails(object):
         * :class:`~oci.data_integration.models.ConnectionFromRestNoAuthDetails`
         * :class:`~oci.data_integration.models.ConnectionFromAmazonS3Details`
         * :class:`~oci.data_integration.models.ConnectionFromObjectStorageDetails`
-        * :class:`~oci.data_integration.models.ConnectionFromLakehouseDetails`
         * :class:`~oci.data_integration.models.ConnectionFromBICCDetails`
         * :class:`~oci.data_integration.models.ConnectionFromMySQLDetails`
         * :class:`~oci.data_integration.models.ConnectionFromAdwcDetails`
         * :class:`~oci.data_integration.models.ConnectionFromAtpDetails`
         * :class:`~oci.data_integration.models.ConnectionFromOracleDetails`
+        * :class:`~oci.data_integration.models.ConnectionFromLakeDetails`
         * :class:`~oci.data_integration.models.ConnectionFromRestBasicAuthDetails`
         * :class:`~oci.data_integration.models.ConnectionFromBipDetails`
 
@@ -83,7 +83,7 @@ class ConnectionDetails(object):
 
         :param model_type:
             The value to assign to the model_type property of this ConnectionDetails.
-            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_HOUSE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -202,9 +202,6 @@ class ConnectionDetails(object):
         if type == 'ORACLE_OBJECT_STORAGE_CONNECTION':
             return 'ConnectionFromObjectStorageDetails'
 
-        if type == 'LAKE_HOUSE_CONNECTION':
-            return 'ConnectionFromLakehouseDetails'
-
         if type == 'BICC_CONNECTION':
             return 'ConnectionFromBICCDetails'
 
@@ -220,6 +217,9 @@ class ConnectionDetails(object):
         if type == 'ORACLEDB_CONNECTION':
             return 'ConnectionFromOracleDetails'
 
+        if type == 'LAKE_CONNECTION':
+            return 'ConnectionFromLakeDetails'
+
         if type == 'REST_BASIC_AUTH_CONNECTION':
             return 'ConnectionFromRestBasicAuthDetails'
 
@@ -234,7 +234,7 @@ class ConnectionDetails(object):
         **[Required]** Gets the model_type of this ConnectionDetails.
         The type of the connection.
 
-        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_HOUSE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -253,7 +253,7 @@ class ConnectionDetails(object):
         :param model_type: The model_type of this ConnectionDetails.
         :type: str
         """
-        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_HOUSE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION"]
+        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

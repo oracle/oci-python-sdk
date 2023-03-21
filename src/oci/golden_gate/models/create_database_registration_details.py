@@ -405,9 +405,9 @@ class CreateDatabaseRegistrationDetails(object):
     def username(self):
         """
         **[Required]** Gets the username of this CreateDatabaseRegistrationDetails.
-        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
-        already exist and be available for use by the database.  It must conform to the security
-        requirements implemented by the database including length, case sensitivity, and so on.
+        The username Oracle GoldenGate uses to connect the associated system of the given technology.
+        This username must already exist and be available by the system/application to be connected to
+        and must conform to the case sensitivty requirments defined in it.
 
 
         :return: The username of this CreateDatabaseRegistrationDetails.
@@ -419,9 +419,9 @@ class CreateDatabaseRegistrationDetails(object):
     def username(self, username):
         """
         Sets the username of this CreateDatabaseRegistrationDetails.
-        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
-        already exist and be available for use by the database.  It must conform to the security
-        requirements implemented by the database including length, case sensitivity, and so on.
+        The username Oracle GoldenGate uses to connect the associated system of the given technology.
+        This username must already exist and be available by the system/application to be connected to
+        and must conform to the case sensitivty requirments defined in it.
 
 
         :param username: The username of this CreateDatabaseRegistrationDetails.
@@ -433,9 +433,8 @@ class CreateDatabaseRegistrationDetails(object):
     def password(self):
         """
         **[Required]** Gets the password of this CreateDatabaseRegistrationDetails.
-        The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the
-        specific security requirements implemented by the database including length, case
-        sensitivity, and so on.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
 
 
         :return: The password of this CreateDatabaseRegistrationDetails.
@@ -447,9 +446,8 @@ class CreateDatabaseRegistrationDetails(object):
     def password(self, password):
         """
         Sets the password of this CreateDatabaseRegistrationDetails.
-        The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the
-        specific security requirements implemented by the database including length, case
-        sensitivity, and so on.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
 
 
         :param password: The password of this CreateDatabaseRegistrationDetails.
@@ -461,8 +459,7 @@ class CreateDatabaseRegistrationDetails(object):
     def connection_string(self):
         """
         Gets the connection_string of this CreateDatabaseRegistrationDetails.
-        Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
-        database.
+        Connect descriptor or Easy Connect Naming method used to connect to a database.
 
 
         :return: The connection_string of this CreateDatabaseRegistrationDetails.
@@ -474,8 +471,7 @@ class CreateDatabaseRegistrationDetails(object):
     def connection_string(self, connection_string):
         """
         Sets the connection_string of this CreateDatabaseRegistrationDetails.
-        Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
-        database.
+        Connect descriptor or Easy Connect Naming method used to connect to a database.
 
 
         :param connection_string: The connection_string of this CreateDatabaseRegistrationDetails.
@@ -575,13 +571,9 @@ class CreateDatabaseRegistrationDetails(object):
     def vault_id(self):
         """
         Gets the vault_id of this CreateDatabaseRegistrationDetails.
-        The `OCID`__ of the customer vault being
-        referenced.
-        If provided, this will reference a vault which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to manage secrets contained
-        within this vault.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's vault OCID.
+        If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+        to manage secrets contained within this vault.
 
 
         :return: The vault_id of this CreateDatabaseRegistrationDetails.
@@ -593,13 +585,9 @@ class CreateDatabaseRegistrationDetails(object):
     def vault_id(self, vault_id):
         """
         Sets the vault_id of this CreateDatabaseRegistrationDetails.
-        The `OCID`__ of the customer vault being
-        referenced.
-        If provided, this will reference a vault which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to manage secrets contained
-        within this vault.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's vault OCID.
+        If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+        to manage secrets contained within this vault.
 
 
         :param vault_id: The vault_id of this CreateDatabaseRegistrationDetails.
@@ -611,13 +599,8 @@ class CreateDatabaseRegistrationDetails(object):
     def key_id(self):
         """
         Gets the key_id of this CreateDatabaseRegistrationDetails.
-        The `OCID`__ of the customer \"Master\" key being
-        referenced.
-        If provided, this will reference a key which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to utilize this key to
-        manage secrets.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's master key OCID.
+        If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 
 
         :return: The key_id of this CreateDatabaseRegistrationDetails.
@@ -629,13 +612,8 @@ class CreateDatabaseRegistrationDetails(object):
     def key_id(self, key_id):
         """
         Sets the key_id of this CreateDatabaseRegistrationDetails.
-        The `OCID`__ of the customer \"Master\" key being
-        referenced.
-        If provided, this will reference a key which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to utilize this key to
-        manage secrets.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's master key OCID.
+        If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 
 
         :param key_id: The key_id of this CreateDatabaseRegistrationDetails.
@@ -647,13 +625,8 @@ class CreateDatabaseRegistrationDetails(object):
     def secret_compartment_id(self):
         """
         Gets the secret_compartment_id of this CreateDatabaseRegistrationDetails.
-        The `OCID`__ of the compartment where the
-        the GGS Secret will be created.
-        If provided, this will reference a key which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to utilize this Compartment
-        in which to create a Secret.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        The OCID of the compartment where the GoldenGate Secret will be created.
+        If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 
 
         :return: The secret_compartment_id of this CreateDatabaseRegistrationDetails.
@@ -665,13 +638,8 @@ class CreateDatabaseRegistrationDetails(object):
     def secret_compartment_id(self, secret_compartment_id):
         """
         Sets the secret_compartment_id of this CreateDatabaseRegistrationDetails.
-        The `OCID`__ of the compartment where the
-        the GGS Secret will be created.
-        If provided, this will reference a key which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to utilize this Compartment
-        in which to create a Secret.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        The OCID of the compartment where the GoldenGate Secret will be created.
+        If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 
 
         :param secret_compartment_id: The secret_compartment_id of this CreateDatabaseRegistrationDetails.

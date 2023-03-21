@@ -57,6 +57,10 @@ download_file showoci_csv2adw.py
 download_file CHANGELOG.rst
 download_file README.md
 
+echo "Rename run_daily_report.sh to run_daily_report.sh.bak" | tee -a $LOG
+mv run_daily_report.sh run_daily_report.sh.bak
+download_file run_daily_report.sh
+
 ###########################################
 # Upgrading OCI SDK
 ###########################################

@@ -30,6 +30,14 @@ class Connection(object):
     CONNECTION_TYPE_MYSQL = "MYSQL"
 
     #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "JAVA_MESSAGE_SERVICE"
+    CONNECTION_TYPE_JAVA_MESSAGE_SERVICE = "JAVA_MESSAGE_SERVICE"
+
+    #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "MICROSOFT_SQLSERVER"
+    CONNECTION_TYPE_MICROSOFT_SQLSERVER = "MICROSOFT_SQLSERVER"
+
+    #: A constant which can be used with the connection_type property of a Connection.
     #: This constant has a value of "OCI_OBJECT_STORAGE"
     CONNECTION_TYPE_OCI_OBJECT_STORAGE = "OCI_OBJECT_STORAGE"
 
@@ -48,6 +56,26 @@ class Connection(object):
     #: A constant which can be used with the connection_type property of a Connection.
     #: This constant has a value of "AZURE_SYNAPSE_ANALYTICS"
     CONNECTION_TYPE_AZURE_SYNAPSE_ANALYTICS = "AZURE_SYNAPSE_ANALYTICS"
+
+    #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "SNOWFLAKE"
+    CONNECTION_TYPE_SNOWFLAKE = "SNOWFLAKE"
+
+    #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "AMAZON_S3"
+    CONNECTION_TYPE_AMAZON_S3 = "AMAZON_S3"
+
+    #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "HDFS"
+    CONNECTION_TYPE_HDFS = "HDFS"
+
+    #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "ORACLE_NOSQL"
+    CONNECTION_TYPE_ORACLE_NOSQL = "ORACLE_NOSQL"
+
+    #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "MONGODB"
+    CONNECTION_TYPE_MONGODB = "MONGODB"
 
     #: A constant which can be used with the lifecycle_state property of a Connection.
     #: This constant has a value of "CREATING"
@@ -80,19 +108,26 @@ class Connection(object):
 
         * :class:`~oci.golden_gate.models.KafkaConnection`
         * :class:`~oci.golden_gate.models.PostgresqlConnection`
-        * :class:`~oci.golden_gate.models.OciObjectStorageConnection`
-        * :class:`~oci.golden_gate.models.KafkaSchemaRegistryConnection`
+        * :class:`~oci.golden_gate.models.JavaMessageServiceConnection`
+        * :class:`~oci.golden_gate.models.SnowflakeConnection`
         * :class:`~oci.golden_gate.models.GoldenGateConnection`
         * :class:`~oci.golden_gate.models.MysqlConnection`
+        * :class:`~oci.golden_gate.models.AmazonS3Connection`
         * :class:`~oci.golden_gate.models.OracleConnection`
         * :class:`~oci.golden_gate.models.AzureDataLakeStorageConnection`
+        * :class:`~oci.golden_gate.models.MongoDbConnection`
+        * :class:`~oci.golden_gate.models.HdfsConnection`
+        * :class:`~oci.golden_gate.models.OciObjectStorageConnection`
+        * :class:`~oci.golden_gate.models.KafkaSchemaRegistryConnection`
+        * :class:`~oci.golden_gate.models.MicrosoftSqlserverConnection`
+        * :class:`~oci.golden_gate.models.OracleNosqlConnection`
         * :class:`~oci.golden_gate.models.AzureSynapseConnection`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param connection_type:
             The value to assign to the connection_type property of this Connection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -235,11 +270,11 @@ class Connection(object):
         if type == 'POSTGRESQL':
             return 'PostgresqlConnection'
 
-        if type == 'OCI_OBJECT_STORAGE':
-            return 'OciObjectStorageConnection'
+        if type == 'JAVA_MESSAGE_SERVICE':
+            return 'JavaMessageServiceConnection'
 
-        if type == 'KAFKA_SCHEMA_REGISTRY':
-            return 'KafkaSchemaRegistryConnection'
+        if type == 'SNOWFLAKE':
+            return 'SnowflakeConnection'
 
         if type == 'GOLDENGATE':
             return 'GoldenGateConnection'
@@ -247,11 +282,32 @@ class Connection(object):
         if type == 'MYSQL':
             return 'MysqlConnection'
 
+        if type == 'AMAZON_S3':
+            return 'AmazonS3Connection'
+
         if type == 'ORACLE':
             return 'OracleConnection'
 
         if type == 'AZURE_DATA_LAKE_STORAGE':
             return 'AzureDataLakeStorageConnection'
+
+        if type == 'MONGODB':
+            return 'MongoDbConnection'
+
+        if type == 'HDFS':
+            return 'HdfsConnection'
+
+        if type == 'OCI_OBJECT_STORAGE':
+            return 'OciObjectStorageConnection'
+
+        if type == 'KAFKA_SCHEMA_REGISTRY':
+            return 'KafkaSchemaRegistryConnection'
+
+        if type == 'MICROSOFT_SQLSERVER':
+            return 'MicrosoftSqlserverConnection'
+
+        if type == 'ORACLE_NOSQL':
+            return 'OracleNosqlConnection'
 
         if type == 'AZURE_SYNAPSE_ANALYTICS':
             return 'AzureSynapseConnection'
@@ -264,7 +320,7 @@ class Connection(object):
         **[Required]** Gets the connection_type of this Connection.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -283,7 +339,7 @@ class Connection(object):
         :param connection_type: The connection_type of this Connection.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             connection_type = 'UNKNOWN_ENUM_VALUE'
         self._connection_type = connection_type
@@ -608,13 +664,9 @@ class Connection(object):
     def vault_id(self):
         """
         Gets the vault_id of this Connection.
-        The `OCID`__ of the customer vault being
-        referenced.
-        If provided, this will reference a vault which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to manage secrets contained
-        within this vault.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's vault OCID.
+        If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+        to manage secrets contained within this vault.
 
 
         :return: The vault_id of this Connection.
@@ -626,13 +678,9 @@ class Connection(object):
     def vault_id(self, vault_id):
         """
         Sets the vault_id of this Connection.
-        The `OCID`__ of the customer vault being
-        referenced.
-        If provided, this will reference a vault which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to manage secrets contained
-        within this vault.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's vault OCID.
+        If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+        to manage secrets contained within this vault.
 
 
         :param vault_id: The vault_id of this Connection.
@@ -644,13 +692,8 @@ class Connection(object):
     def key_id(self):
         """
         Gets the key_id of this Connection.
-        The `OCID`__ of the customer \"Master\" key being
-        referenced.
-        If provided, this will reference a key which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to utilize this key to
-        manage secrets.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's master key OCID.
+        If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 
 
         :return: The key_id of this Connection.
@@ -662,13 +705,8 @@ class Connection(object):
     def key_id(self, key_id):
         """
         Sets the key_id of this Connection.
-        The `OCID`__ of the customer \"Master\" key being
-        referenced.
-        If provided, this will reference a key which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to utilize this key to
-        manage secrets.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's master key OCID.
+        If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 
 
         :param key_id: The key_id of this Connection.
@@ -708,7 +746,8 @@ class Connection(object):
     def ingress_ips(self):
         """
         Gets the ingress_ips of this Connection.
-        List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.
+        Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
 
 
         :return: The ingress_ips of this Connection.
@@ -720,7 +759,8 @@ class Connection(object):
     def ingress_ips(self, ingress_ips):
         """
         Sets the ingress_ips of this Connection.
-        List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.
+        Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
 
 
         :param ingress_ips: The ingress_ips of this Connection.

@@ -252,6 +252,10 @@ class AutonomousDatabaseSummary(object):
     ROLE_DISABLED_STANDBY = "DISABLED_STANDBY"
 
     #: A constant which can be used with the role property of a AutonomousDatabaseSummary.
+    #: This constant has a value of "BACKUP_COPY"
+    ROLE_BACKUP_COPY = "BACKUP_COPY"
+
+    #: A constant which can be used with the role property of a AutonomousDatabaseSummary.
     #: This constant has a value of "SNAPSHOT_STANDBY"
     ROLE_SNAPSHOT_STANDBY = "SNAPSHOT_STANDBY"
 
@@ -278,6 +282,14 @@ class AutonomousDatabaseSummary(object):
     #: A constant which can be used with the database_edition property of a AutonomousDatabaseSummary.
     #: This constant has a value of "ENTERPRISE_EDITION"
     DATABASE_EDITION_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
+
+    #: A constant which can be used with the disaster_recovery_region_type property of a AutonomousDatabaseSummary.
+    #: This constant has a value of "PRIMARY"
+    DISASTER_RECOVERY_REGION_TYPE_PRIMARY = "PRIMARY"
+
+    #: A constant which can be used with the disaster_recovery_region_type property of a AutonomousDatabaseSummary.
+    #: This constant has a value of "REMOTE"
+    DISASTER_RECOVERY_REGION_TYPE_REMOTE = "REMOTE"
 
     def __init__(self, **kwargs):
         """
@@ -618,7 +630,7 @@ class AutonomousDatabaseSummary(object):
 
         :param role:
             The value to assign to the role property of this AutonomousDatabaseSummary.
-            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type role: str
 
@@ -707,6 +719,24 @@ class AutonomousDatabaseSummary(object):
         :param db_tools_details:
             The value to assign to the db_tools_details property of this AutonomousDatabaseSummary.
         :type db_tools_details: list[oci.database.models.DatabaseTool]
+
+        :param local_disaster_recovery_type:
+            The value to assign to the local_disaster_recovery_type property of this AutonomousDatabaseSummary.
+        :type local_disaster_recovery_type: str
+
+        :param disaster_recovery_region_type:
+            The value to assign to the disaster_recovery_region_type property of this AutonomousDatabaseSummary.
+            Allowed values for this property are: "PRIMARY", "REMOTE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type disaster_recovery_region_type: str
+
+        :param time_disaster_recovery_role_changed:
+            The value to assign to the time_disaster_recovery_role_changed property of this AutonomousDatabaseSummary.
+        :type time_disaster_recovery_role_changed: datetime
+
+        :param remote_disaster_recovery_configuration:
+            The value to assign to the remote_disaster_recovery_configuration property of this AutonomousDatabaseSummary.
+        :type remote_disaster_recovery_configuration: oci.database.models.DisasterRecoveryConfiguration
 
         """
         self.swagger_types = {
@@ -807,7 +837,11 @@ class AutonomousDatabaseSummary(object):
             'actual_used_data_storage_size_in_tbs': 'float',
             'max_cpu_core_count': 'int',
             'database_edition': 'str',
-            'db_tools_details': 'list[DatabaseTool]'
+            'db_tools_details': 'list[DatabaseTool]',
+            'local_disaster_recovery_type': 'str',
+            'disaster_recovery_region_type': 'str',
+            'time_disaster_recovery_role_changed': 'datetime',
+            'remote_disaster_recovery_configuration': 'DisasterRecoveryConfiguration'
         }
 
         self.attribute_map = {
@@ -908,7 +942,11 @@ class AutonomousDatabaseSummary(object):
             'actual_used_data_storage_size_in_tbs': 'actualUsedDataStorageSizeInTBs',
             'max_cpu_core_count': 'maxCpuCoreCount',
             'database_edition': 'databaseEdition',
-            'db_tools_details': 'dbToolsDetails'
+            'db_tools_details': 'dbToolsDetails',
+            'local_disaster_recovery_type': 'localDisasterRecoveryType',
+            'disaster_recovery_region_type': 'disasterRecoveryRegionType',
+            'time_disaster_recovery_role_changed': 'timeDisasterRecoveryRoleChanged',
+            'remote_disaster_recovery_configuration': 'remoteDisasterRecoveryConfiguration'
         }
 
         self._id = None
@@ -1009,6 +1047,10 @@ class AutonomousDatabaseSummary(object):
         self._max_cpu_core_count = None
         self._database_edition = None
         self._db_tools_details = None
+        self._local_disaster_recovery_type = None
+        self._disaster_recovery_region_type = None
+        self._time_disaster_recovery_role_changed = None
+        self._remote_disaster_recovery_configuration = None
 
     @property
     def id(self):
@@ -3116,7 +3158,7 @@ class AutonomousDatabaseSummary(object):
         Gets the role of this AutonomousDatabaseSummary.
         The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 
-        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -3135,7 +3177,7 @@ class AutonomousDatabaseSummary(object):
         :param role: The role of this AutonomousDatabaseSummary.
         :type: str
         """
-        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY"]
+        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             role = 'UNKNOWN_ENUM_VALUE'
         self._role = role
@@ -3651,6 +3693,108 @@ class AutonomousDatabaseSummary(object):
         :type: list[oci.database.models.DatabaseTool]
         """
         self._db_tools_details = db_tools_details
+
+    @property
+    def local_disaster_recovery_type(self):
+        """
+        Gets the local_disaster_recovery_type of this AutonomousDatabaseSummary.
+        Indicates the local disaster recovery (DR) type of the Shared Autonomous Database.
+        Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
+        Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+
+
+        :return: The local_disaster_recovery_type of this AutonomousDatabaseSummary.
+        :rtype: str
+        """
+        return self._local_disaster_recovery_type
+
+    @local_disaster_recovery_type.setter
+    def local_disaster_recovery_type(self, local_disaster_recovery_type):
+        """
+        Sets the local_disaster_recovery_type of this AutonomousDatabaseSummary.
+        Indicates the local disaster recovery (DR) type of the Shared Autonomous Database.
+        Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
+        Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+
+
+        :param local_disaster_recovery_type: The local_disaster_recovery_type of this AutonomousDatabaseSummary.
+        :type: str
+        """
+        self._local_disaster_recovery_type = local_disaster_recovery_type
+
+    @property
+    def disaster_recovery_region_type(self):
+        """
+        Gets the disaster_recovery_region_type of this AutonomousDatabaseSummary.
+        The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+
+        Allowed values for this property are: "PRIMARY", "REMOTE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The disaster_recovery_region_type of this AutonomousDatabaseSummary.
+        :rtype: str
+        """
+        return self._disaster_recovery_region_type
+
+    @disaster_recovery_region_type.setter
+    def disaster_recovery_region_type(self, disaster_recovery_region_type):
+        """
+        Sets the disaster_recovery_region_type of this AutonomousDatabaseSummary.
+        The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+
+
+        :param disaster_recovery_region_type: The disaster_recovery_region_type of this AutonomousDatabaseSummary.
+        :type: str
+        """
+        allowed_values = ["PRIMARY", "REMOTE"]
+        if not value_allowed_none_or_none_sentinel(disaster_recovery_region_type, allowed_values):
+            disaster_recovery_region_type = 'UNKNOWN_ENUM_VALUE'
+        self._disaster_recovery_region_type = disaster_recovery_region_type
+
+    @property
+    def time_disaster_recovery_role_changed(self):
+        """
+        Gets the time_disaster_recovery_role_changed of this AutonomousDatabaseSummary.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+
+
+        :return: The time_disaster_recovery_role_changed of this AutonomousDatabaseSummary.
+        :rtype: datetime
+        """
+        return self._time_disaster_recovery_role_changed
+
+    @time_disaster_recovery_role_changed.setter
+    def time_disaster_recovery_role_changed(self, time_disaster_recovery_role_changed):
+        """
+        Sets the time_disaster_recovery_role_changed of this AutonomousDatabaseSummary.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+
+
+        :param time_disaster_recovery_role_changed: The time_disaster_recovery_role_changed of this AutonomousDatabaseSummary.
+        :type: datetime
+        """
+        self._time_disaster_recovery_role_changed = time_disaster_recovery_role_changed
+
+    @property
+    def remote_disaster_recovery_configuration(self):
+        """
+        Gets the remote_disaster_recovery_configuration of this AutonomousDatabaseSummary.
+
+        :return: The remote_disaster_recovery_configuration of this AutonomousDatabaseSummary.
+        :rtype: oci.database.models.DisasterRecoveryConfiguration
+        """
+        return self._remote_disaster_recovery_configuration
+
+    @remote_disaster_recovery_configuration.setter
+    def remote_disaster_recovery_configuration(self, remote_disaster_recovery_configuration):
+        """
+        Sets the remote_disaster_recovery_configuration of this AutonomousDatabaseSummary.
+
+        :param remote_disaster_recovery_configuration: The remote_disaster_recovery_configuration of this AutonomousDatabaseSummary.
+        :type: oci.database.models.DisasterRecoveryConfiguration
+        """
+        self._remote_disaster_recovery_configuration = remote_disaster_recovery_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

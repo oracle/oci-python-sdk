@@ -51,6 +51,7 @@ from .build_run_progress_summary import BuildRunProgressSummary
 from .build_run_source import BuildRunSource
 from .build_run_summary import BuildRunSummary
 from .build_run_summary_collection import BuildRunSummaryCollection
+from .build_runner_shape_config import BuildRunnerShapeConfig
 from .build_source import BuildSource
 from .build_source_collection import BuildSourceCollection
 from .build_stage import BuildStage
@@ -156,6 +157,8 @@ from .create_vbs_trigger_details import CreateVbsTriggerDetails
 from .create_wait_criteria_details import CreateWaitCriteriaDetails
 from .create_wait_deploy_stage_details import CreateWaitDeployStageDetails
 from .create_wait_stage_details import CreateWaitStageDetails
+from .custom_build_runner_shape_config import CustomBuildRunnerShapeConfig
+from .default_build_runner_shape_config import DefaultBuildRunnerShapeConfig
 from .deliver_artifact import DeliverArtifact
 from .deliver_artifact_collection import DeliverArtifactCollection
 from .deliver_artifact_stage import DeliverArtifactStage
@@ -499,6 +502,7 @@ devops_type_mapping = {
     "BuildRunSource": BuildRunSource,
     "BuildRunSummary": BuildRunSummary,
     "BuildRunSummaryCollection": BuildRunSummaryCollection,
+    "BuildRunnerShapeConfig": BuildRunnerShapeConfig,
     "BuildSource": BuildSource,
     "BuildSourceCollection": BuildSourceCollection,
     "BuildStage": BuildStage,
@@ -604,6 +608,8 @@ devops_type_mapping = {
     "CreateWaitCriteriaDetails": CreateWaitCriteriaDetails,
     "CreateWaitDeployStageDetails": CreateWaitDeployStageDetails,
     "CreateWaitStageDetails": CreateWaitStageDetails,
+    "CustomBuildRunnerShapeConfig": CustomBuildRunnerShapeConfig,
+    "DefaultBuildRunnerShapeConfig": DefaultBuildRunnerShapeConfig,
     "DeliverArtifact": DeliverArtifact,
     "DeliverArtifactCollection": DeliverArtifactCollection,
     "DeliverArtifactStage": DeliverArtifactStage,

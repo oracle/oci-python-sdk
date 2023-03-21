@@ -69,6 +69,7 @@ Database
     oci.database.models.ChangeCloudVmClusterCompartmentDetails
     oci.database.models.ChangeCompartmentDetails
     oci.database.models.ChangeDataguardRoleDetails
+    oci.database.models.ChangeDisasterRecoveryConfigurationDetails
     oci.database.models.ChangeExadataInfrastructureCompartmentDetails
     oci.database.models.ChangeKeyStoreCompartmentDetails
     oci.database.models.ChangeVmClusterCompartmentDetails
@@ -104,6 +105,7 @@ Database
     oci.database.models.CreateCloudVmClusterDetails
     oci.database.models.CreateConsoleConnectionDetails
     oci.database.models.CreateCrossRegionAutonomousDatabaseDataGuardDetails
+    oci.database.models.CreateCrossRegionDisasterRecoveryDetails
     oci.database.models.CreateDataGuardAssociationDetails
     oci.database.models.CreateDataGuardAssociationToExistingDbSystemDetails
     oci.database.models.CreateDataGuardAssociationToExistingVmClusterDetails
@@ -188,6 +190,7 @@ Database
     oci.database.models.DbSystemUpgradeHistoryEntrySummary
     oci.database.models.DbVersionSummary
     oci.database.models.DeregisterAutonomousDatabaseDataSafeDetails
+    oci.database.models.DisasterRecoveryConfiguration
     oci.database.models.DiskPerformanceDetails
     oci.database.models.EnableDatabaseManagementDetails
     oci.database.models.EnableExternalContainerDatabaseDatabaseManagementDetails

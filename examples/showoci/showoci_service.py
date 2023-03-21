@@ -17,6 +17,8 @@
 #
 # ShowOCIFlags   - class has the flags for calling the service Classes
 #
+# ShowOCIDomains  - class has the identity domain info
+#
 # PaaS Services - OCE and OIC , ODA Tested
 #                 OAC need to be tested
 ##########################################################################
@@ -32,8 +34,8 @@ import platform
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "23.03.07"
-    oci_compatible_version = "2.90.3"
+    version = "23.03.21"
+    oci_compatible_version = "2.95.0"
 
     ##########################################################################
     # Global Constants
@@ -69,6 +71,7 @@ class ShowOCIService(object):
 
     # Identity Identifiers
     C_IDENTITY = 'identity'
+    C_IDENTITY_DOMAINS = 'domains'
     C_IDENTITY_ADS = 'availability_domains'
     C_IDENTITY_USERS = 'users'
     C_IDENTITY_GROUPS = 'groups'
@@ -186,6 +189,7 @@ class ShowOCIService(object):
     C_EDGE_DNS_ZONE = 'dns_zone'
     C_EDGE_DNS_STEERING = 'dns_steering'
     C_EDGE_WAAS_POLICIES = 'waas_policies'
+    C_EDGE_WAF = 'waf'
 
     # Announcement services
     C_ANNOUNCEMENT = "announcement"
@@ -203,6 +207,7 @@ class ShowOCIService(object):
     C_PAAS_NATIVE_OCE = "oce"
     C_PAAS_NATIVE_OCVS = "ocvs"
     C_PAAS_NATIVE_VB = "vb"
+    C_PAAS_NATIVE_DEVOPS = "devops"
 
     # function
     C_FUNCTION = "functions"
@@ -1192,11 +1197,22 @@ class ShowOCIService(object):
             # if loading the full identity - load the rest
             if self.flags.read_identity:
                 self.__load_identity_network_sources(identity, tenancy_id)
-                self.__load_identity_users_groups(identity, tenancy_id)
-                self.__load_identity_dynamic_groups(identity, tenancy_id)
                 self.__load_identity_policies(identity)
                 self.__load_identity_cost_tracking_tags(identity, tenancy_id)
                 self.__load_identity_tag_namespace(identity)
+
+                # Load Identity Domains
+                print("")
+                showoci_domains = ShowOCIDomains(self.config, self.signer, self.flags.proxy, self.flags.read_timeout, self.flags.connection_timeout)
+                domains_data = showoci_domains.load_identity_domains_main()
+                self.error += showoci_domains.error
+                self.warning += showoci_domains.warning
+                self.data[self.C_IDENTITY][self.C_IDENTITY_DOMAINS] = domains_data
+
+                if not domains_data:
+                    print("\nIdentity (No Domains)...")
+                    self.__load_identity_users_groups(identity, tenancy_id)
+                    self.__load_identity_dynamic_groups(identity, tenancy_id)
 
             print("")
         except oci.exceptions.RequestException:
@@ -1328,6 +1344,8 @@ class ShowOCIService(object):
                                 'description': str(c.description),
                                 'time_created': str(c.time_created),
                                 'is_accessible': str(c.is_accessible),
+                                'lifecycle_state': str(c.lifecycle_state),
+                                'inactive_status': str(c.inactive_status),
                                 'path': path + str(c.name),
                                 'defined_tags': [] if c.defined_tags is None else c.defined_tags,
                                 'freeform_tags': [] if c.freeform_tags is None else c.freeform_tags
@@ -1351,6 +1369,8 @@ class ShowOCIService(object):
                             'description': str(tenc.description),
                             'time_created': str(tenc.time_created),
                             'is_accessible': str(tenc.is_accessible),
+                            'lifecycle_state': 'ACTIVE',
+                            'inactive_status': "",
                             'path': "/ " + str(tenc.name) + " (root)",
                             'defined_tags': [] if tenc.defined_tags is None else tenc.defined_tags,
                             'freeform_tags': [] if tenc.freeform_tags is None else tenc.freeform_tags
@@ -1427,6 +1447,8 @@ class ShowOCIService(object):
                     'description': str(compartment.description),
                     'time_created': str(compartment.time_created),
                     'is_accessible': str(compartment.is_accessible),
+                    'lifecycle_state': str(compartment.lifecycle_state),
+                    'inactive_status': str(compartment.inactive_status),
                     'path': str(compartment.name),
                     'defined_tags': [] if compartment.defined_tags is None else compartment.defined_tags,
                     'freeform_tags': [] if compartment.freeform_tags is None else compartment.freeform_tags
@@ -2098,7 +2120,7 @@ class ShowOCIService(object):
             raise
 
     ##########################################################################
-    # data network read vcns
+    # data network read vcns - 3/6/2023
     ##########################################################################
     def __load_core_network_vcn(self, virtual_network, compartments):
 
@@ -2133,18 +2155,27 @@ class ShowOCIService(object):
                 # loop on the array
                 # vcn = oci.core.models.Vcn()
                 for vcn in vcns:
-                    val = {'id': str(vcn.id), 'name': str(', '.join(x for x in vcn.cidr_blocks)) + " - " + str(vcn.display_name) + " - " + str(vcn.vcn_domain_name),
-                           'display_name': str(vcn.display_name),
-                           'cidr_block': str(vcn.cidr_block),
-                           'cidr_blocks': vcn.cidr_blocks,
-                           'time_created': str(vcn.time_created),
-                           'vcn_domain_name': str(vcn.vcn_domain_name),
-                           'compartment_name': str(compartment['name']),
-                           'compartment_path': str(compartment['path']),
-                           'defined_tags': [] if vcn.defined_tags is None else vcn.defined_tags,
-                           'freeform_tags': [] if vcn.freeform_tags is None else vcn.freeform_tags,
-                           'compartment_id': str(compartment['id']),
-                           'region_name': str(self.config['region'])}
+                    val = {
+                        'id': str(vcn.id),
+                        'name': str(', '.join(x for x in vcn.cidr_blocks)) + " - " + str(vcn.display_name) + " - " + str(vcn.vcn_domain_name),
+                        'display_name': str(vcn.display_name),
+                        'cidr_block': str(vcn.cidr_block),
+                        'cidr_blocks': vcn.cidr_blocks,
+                        'ipv6_private_cidr_blocks': vcn.ipv6_private_cidr_blocks,
+                        'ipv6_cidr_blocks': vcn.ipv6_cidr_blocks,
+                        'byoipv6_cidr_blocks': vcn.byoipv6_cidr_blocks,
+                        'default_dhcp_options_id': str(vcn.default_dhcp_options_id),
+                        'default_route_table_id': str(vcn.default_route_table_id),
+                        'default_security_list_id': str(vcn.default_security_list_id),
+                        'dns_label': str(vcn.dns_label),
+                        'time_created': str(vcn.time_created),
+                        'vcn_domain_name': str(vcn.vcn_domain_name),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'defined_tags': [] if vcn.defined_tags is None else vcn.defined_tags,
+                        'freeform_tags': [] if vcn.freeform_tags is None else vcn.freeform_tags,
+                        'compartment_id': str(compartment['id']),
+                        'region_name': str(self.config['region'])}
                     data.append(val)
                     cnt += 1
 
@@ -2232,7 +2263,7 @@ class ShowOCIService(object):
             return data
 
     ##########################################################################
-    # data network read igw
+    # data network read igw - 3/6/2023
     ##########################################################################
     def __load_core_network_igw(self, virtual_network, compartments):
 
@@ -2265,7 +2296,11 @@ class ShowOCIService(object):
                     val = {'id': str(igw.id),
                            'vcn_id': str(igw.vcn_id),
                            'name': str(igw.display_name),
+                           'is_enabled': str(igw.is_enabled),
+                           'route_table_id': str(igw.route_table_id),
                            'time_created': str(igw.time_created),
+                           'defined_tags': [] if igw.defined_tags is None else igw.defined_tags,
+                           'freeform_tags': [] if igw.freeform_tags is None else igw.freeform_tags,
                            'compartment_name': str(compartment['name']),
                            'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
@@ -2287,7 +2322,7 @@ class ShowOCIService(object):
             return data
 
     ##########################################################################
-    # data network lpg
+    # data network lpg - 3/6/2023
     ##########################################################################
     def __load_core_network_lpg(self, virtual_network, compartments):
 
@@ -3258,6 +3293,7 @@ class ShowOCIService(object):
                            'vcn_id': str(sgw.vcn_id),
                            'name': str(sgw.display_name),
                            'time_created': str(sgw.time_created),
+                           'block_traffic': str(sgw.block_traffic),
                            'route_table_id': str(sgw.route_table_id),
                            'services': str(', '.join(x.service_name for x in sgw.services)),
                            'compartment_name': str(compartment['name']),
@@ -3438,7 +3474,7 @@ class ShowOCIService(object):
             return data
 
     ##########################################################################
-    # data network read drg
+    # data network read drg - 3/6/2023
     ##########################################################################
     def __load_core_network_drg(self, virtual_network, compartments):
 
@@ -3478,6 +3514,7 @@ class ShowOCIService(object):
                                'time_created': str(arr.time_created),
                                'redundancy': "",
                                'drg_route_tables': [],
+                               'default_export_drg_route_distribution_id': str(arr.default_export_drg_route_distribution_id),
                                'compartment_name': str(compartment['name']),
                                'compartment_path': str(compartment['path']),
                                'compartment_id': str(compartment['id']),
@@ -3544,7 +3581,7 @@ class ShowOCIService(object):
             return data
 
     ##########################################################################
-    # data network read cpes
+    # data network read cpes - 3/6/2023
     ##########################################################################
     def __load_core_network_drg_route_rules(self, virtual_network, drg_route_id):
 
@@ -3596,7 +3633,7 @@ class ShowOCIService(object):
             return data
 
     ##########################################################################
-    # data network read cpes
+    # data network read cpes - 3/6/2023
     ##########################################################################
     def __load_core_network_cpe(self, virtual_network, compartments):
 
@@ -3635,6 +3672,7 @@ class ShowOCIService(object):
                            'display_name': str(arr.display_name),
                            'ip_address': str(arr.ip_address),
                            'time_created': str(arr.time_created),
+                           'cpe_device_shape_id': str(arr.cpe_device_shape_id),
                            'compartment_name': str(compartment['name']),
                            'compartment_path': str(compartment['path']),
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
@@ -3775,7 +3813,7 @@ class ShowOCIService(object):
             return data
 
     ##########################################################################
-    # data network read fastconnect
+    # data network read fastconnect - 3/6/2023
     ##########################################################################
     def __load_core_network_vc(self, virtual_network, compartments):
 
@@ -3815,19 +3853,38 @@ class ShowOCIService(object):
                         data_cc.append({'customer_bgp_peering_ip': str(cc.customer_bgp_peering_ip),
                                         'oracle_bgp_peering_ip': str(cc.oracle_bgp_peering_ip), 'vlan': str(cc.vlan)})
 
-                    val = {'id': str(arr.id), 'name': str(arr.display_name),
+                    val = {'id': str(arr.id),
+                           'name': str(arr.display_name),
                            'bandwidth_shape_name': str(arr.bandwidth_shape_name),
-                           'bgp_management': str(arr.bgp_management), 'bgp_session_state': str(arr.bgp_session_state),
-                           'customer_bgp_asn': str(arr.customer_bgp_asn), 'drg_id': str(arr.gateway_id),
-                           'lifecycle_state': str(arr.lifecycle_state), 'oracle_bgp_asn': str(arr.oracle_bgp_asn),
+                           'bgp_management': str(arr.bgp_management),
+                           'bgp_session_state': str(arr.bgp_session_state),
+                           'bgp_ipv6_session_state': str(arr.bgp_ipv6_session_state),
+                           'bgp_admin_state': str(arr.bgp_admin_state),
+                           'is_bfd_enabled': str(arr.is_bfd_enabled),
+                           'customer_asn': str(arr.customer_asn),
+                           'gateway_id': str(arr.gateway_id),
+                           'provider_service_id': str(arr.provider_service_id),
+                           'provider_service_key_name': str(arr.provider_service_key_name),
+                           'routing_policy': str(', '.join(x for x in arr.routing_policy)) if arr.routing_policy else "",
+                           'public_prefixes': str(', '.join(x for x in arr.public_prefixes)) if arr.public_prefixes else "",
+                           'region': arr.region,
+                           'customer_bgp_asn': str(arr.customer_bgp_asn),
+                           'drg_id': str(arr.gateway_id),
+                           'lifecycle_state': str(arr.lifecycle_state),
+                           'oracle_bgp_asn': str(arr.oracle_bgp_asn),
                            'provider_name': str(arr.provider_name),
                            'provider_service_name': str(arr.provider_service_name),
-                           'provider_state': str(arr.provider_state), 'reference_comment': str(arr.reference_comment),
-                           'service_type': str(arr.service_type), 'cross_connect_mappings': data_cc,
+                           'provider_state': str(arr.provider_state),
+                           'reference_comment': str(arr.reference_comment),
+                           'service_type': str(arr.service_type),
+                           'cross_connect_mappings': data_cc,
                            'type': str(arr.type), 'time_created': str(arr.time_created),
-                           'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
                            'compartment_path': str(compartment['path']),
                            'region_name': str(self.config['region']),
+                           'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                           'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                            'drg_route_table_id': "",
                            'drg_route_table': ""
                            }
@@ -3900,6 +3957,7 @@ class ShowOCIService(object):
                             for tunnel in tunnels:
                                 tun_val = {'id': str(tunnel.id),
                                            'status': str(tunnel.status),
+                                           'ike_version': str(tunnel.ike_version),
                                            'lifecycle_state': str(tunnel.lifecycle_state),
                                            'status_date': tunnel.time_status_updated.strftime("%Y-%m-%d %H:%M"),
                                            'display_name': str(tunnel.display_name),
@@ -3911,8 +3969,11 @@ class ShowOCIService(object):
                                            'nat_translation_enabled': str(tunnel.nat_translation_enabled),
                                            'dpd_mode': str(tunnel.dpd_mode),
                                            'dpd_timeout_in_sec': str(tunnel.dpd_timeout_in_sec),
-                                           'bgp_info': ""
-                                           }
+                                           'bgp_info': "",
+                                           'encryption_domain_config_oracle': "",
+                                           'encryption_domain_config_cpe': "",
+                                           'phase_one_details': {},
+                                           'phase_two_details': {}}
                                 if tunnels_status:
                                     tunnels_status += " "
                                 tunnels_status += str(tunnel.status)
@@ -3920,6 +3981,44 @@ class ShowOCIService(object):
                                 if tunnel.bgp_session_info:
                                     bs = tunnel.bgp_session_info
                                     tun_val['bgp_info'] = "BGP Status ".ljust(12) + " - " + str(bs.bgp_state) + ", Cust: " + str(bs.customer_interface_ip) + " (ASN = " + str(bs.customer_bgp_asn) + "), Oracle: " + str(bs.oracle_interface_ip) + " (ASN = " + str(bs.oracle_bgp_asn) + ")"
+
+                                if tunnel.encryption_domain_config:
+                                    env = tunnel.encryption_domain_config
+                                    if env.oracle_traffic_selector:
+                                        tun_val['encryption_domain_config_oracle'] = str(', '.join(x for x in env.oracle_traffic_selector))
+                                    if env.cpe_traffic_selector:
+                                        tun_val['encryption_domain_config_cpe'] = str(', '.join(x for x in env.cpe_traffic_selector))
+
+                                if tunnel.phase_one_details:
+                                    env = tunnel.phase_one_details
+                                    tun_val['phase_one_details'] = {
+                                        'is_custom_phase_one_config': str(env.is_custom_phase_one_config) if env.is_custom_phase_one_config else "",
+                                        'lifetime': str(env.lifetime) if str(env.lifetime) else "",
+                                        'remaining_lifetime': str(env.remaining_lifetime) if env.remaining_lifetime else "",
+                                        'custom_authentication_algorithm': str(env.custom_authentication_algorithm) if env.custom_authentication_algorithm else "",
+                                        'negotiated_authentication_algorithm': str(env.negotiated_authentication_algorithm) if env.negotiated_authentication_algorithm else "",
+                                        'custom_encryption_algorithm': str(env.custom_encryption_algorithm) if env.custom_encryption_algorithm else "",
+                                        'negotiated_encryption_algorithm': str(env.negotiated_encryption_algorithm) if env.negotiated_encryption_algorithm else "",
+                                        'custom_dh_group': str(env.custom_dh_group) if env.custom_dh_group else "",
+                                        'negotiated_dh_group': str(env.negotiated_dh_group) if env.negotiated_dh_group else "",
+                                        'is_ike_established': str(env.is_ike_established) if env.is_ike_established else "",
+                                        'remaining_lifetime_last_retrieved': str(env.remaining_lifetime_last_retrieved) if env.remaining_lifetime_last_retrieved else ""}
+
+                                if tunnel.phase_two_details:
+                                    env = tunnel.phase_two_details
+                                    tun_val['phase_two_details'] = {
+                                        'is_custom_phase_two_config': str(env.is_custom_phase_two_config) if env.is_custom_phase_two_config else "",
+                                        'lifetime': str(env.lifetime) if str(env.lifetime) else "",
+                                        'remaining_lifetime': str(env.remaining_lifetime) if env.remaining_lifetime else "",
+                                        'custom_authentication_algorithm': str(env.custom_authentication_algorithm) if env.custom_authentication_algorithm else "",
+                                        'negotiated_authentication_algorithm': str(env.negotiated_authentication_algorithm) if env.negotiated_authentication_algorithm else "",
+                                        'custom_encryption_algorithm': str(env.custom_encryption_algorithm) if env.custom_encryption_algorithm else "",
+                                        'negotiated_encryption_algorithm': str(env.negotiated_encryption_algorithm) if env.negotiated_encryption_algorithm else "",
+                                        'dh_group': str(env.dh_group) if env.dh_group else "",
+                                        'negotiated_dh_group': str(env.negotiated_dh_group) if env.negotiated_dh_group else "",
+                                        'is_esp_established': str(env.negotiated_dh_group) if env.negotiated_dh_group else "",
+                                        'is_pfs_enabled': str(env.is_pfs_enabled) if env.is_pfs_enabled else "",
+                                        'remaining_lifetime_last_retrieved': str(env.remaining_lifetime_last_retrieved) if env.remaining_lifetime_last_retrieved else ""}
 
                                 data_tun.append(tun_val)
                         except Exception:
@@ -3931,13 +4030,16 @@ class ShowOCIService(object):
                                'tunnels_status': tunnels_status,
                                'cpe_local_identifier': str(arr.cpe_local_identifier),
                                'cpe_local_identifier_type': str(arr.cpe_local_identifier_type),
-                               'cpe_id': str(arr.cpe_id), 'time_created': str(arr.time_created),
-                               'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                               'cpe_id': str(arr.cpe_id),
+                               'time_created': str(arr.time_created),
+                               'compartment_name': str(compartment['name']),
+                               'compartment_id': str(compartment['id']),
                                'compartment_path': str(compartment['path']),
                                'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                                'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                                'region_name': str(self.config['region']),
-                               'static_routes': [str(es) for es in arr.static_routes], 'tunnels': data_tun,
+                               'static_routes': [str(es) for es in arr.static_routes],
+                               'tunnels': data_tun,
                                'drg_route_table_id': "",
                                'drg_route_table': ""
                                }
@@ -9815,6 +9917,7 @@ class ShowOCIService(object):
 
                     val = {'id': str(arr.id),
                            'name': str(arr.name),
+                           'lifecycle_state': str(arr.lifecycle_state),
                            'cluster_id': str(arr.cluster_id),
                            'node_image_id': str(arr.node_image_id),
                            'kubernetes_version': str(arr.kubernetes_version),
@@ -9822,10 +9925,24 @@ class ShowOCIService(object):
                            'node_shape': str(arr.node_shape),
                            'quantity_per_subnet': str(arr.quantity_per_subnet),
                            'subnet_ids': [subnets for subnets in arr.subnet_ids],
+                           'node_shape_mem_gb': "",
+                           'node_shape_ocpus': "",
+                           'node_source_type': "",
+                           'node_source_name': "",
+                           'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                           'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                            'compartment_name': str(compartment['name']),
                            'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'region_name': str(self.config['region'])}
+
+                    if arr.node_shape_config:
+                        val['node_shape_ocpus'] = arr.node_shape_config.ocpus
+                        val['node_shape_mem_gb'] = arr.node_shape_config.memory_in_gbs
+
+                    if arr.node_source:
+                        val['node_source_type'] = arr.node_source.source_type
+                        val['node_source_name'] = arr.node_source.source_name
 
                     # add the data
                     cnt += 1
@@ -9881,14 +9998,76 @@ class ShowOCIService(object):
                     if not self.check_lifecycle_state_active(arr.lifecycle_state):
                         continue
 
-                    val = {'id': str(arr.id), 'name': str(arr.name),
+                    val = {'id': str(arr.id),
+                           'name': str(arr.name),
                            'lifecycle_state': str(arr.lifecycle_state),
                            'vcn_id': str(arr.vcn_id),
                            'kubernetes_version': str(arr.kubernetes_version),
+                           'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                           'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                           'endpoint_is_public_ip_enabled': "",
+                           'endpoint_nsg_ids': "",
+                           'endpoint_nsg_names': "",
+                           'endpoint_subnet_id': "",
+                           'endpoint_subnet_name': "",
+                           'option_lb_ids': "",
+                           'option_network_pods_cidr': "",
+                           'option_network_services_cidr': "",
+                           'option_is_kubernetes_dashboard_enabled': "",
+                           'option_is_tiller_enabled': "",
+                           'option_is_pod_security_policy_enabled': "",
+                           'time_created': "",
+                           'time_deleted': "",
+                           'time_updated': "",
+                           'created_by_user_id': "",
+                           'deleted_by_user_id': "",
+                           'updated_by_user_id': "",
+                           'endpoint_kubernetes': "",
+                           'endpoint_public_endpoint': "",
+                           'endpoint_private_endpoint': "",
+                           'endpoint_vcn_hostname_endpoint': "",
+                           'available_kubernetes_upgrades': str(arr.available_kubernetes_upgrades),
                            'compartment_name': str(compartment['name']),
                            'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'region_name': str(self.config['region'])}
+
+                    # endpoint_config
+                    if arr.endpoint_config:
+                        val['endpoint_is_public_ip_enabled'] = arr.endpoint_config.is_public_ip_enabled
+                        val['endpoint_subnet_id'] = str(arr.endpoint_config.subnet_id)
+                        if arr.endpoint_config.subnet_id:
+                            val['endpoint_subnet_name'] = self.get_network_subnet(arr.endpoint_config.subnet_id)
+                        val['endpoint_nsg_ids'] = arr.endpoint_config.nsg_ids
+                        if arr.endpoint_config.nsg_ids:
+                            val['endpoint_nsg_names'] = self.__load_core_network_get_nsg_names(arr.endpoint_config.nsg_ids)
+
+                    # options
+                    if arr.options:
+                        val['option_lb_ids'] = arr.options.service_lb_subnet_ids
+                        if arr.options.kubernetes_network_config:
+                            val['option_network_pods_cidr'] = str(arr.options.kubernetes_network_config.pods_cidr)
+                            val['option_network_services_cidr'] = str(arr.options.kubernetes_network_config.services_cidr)
+                        if arr.options.add_ons:
+                            val['option_is_kubernetes_dashboard_enabled'] = str(arr.options.add_ons.is_kubernetes_dashboard_enabled)
+                            val['option_is_tiller_enabled'] = str(arr.options.add_ons.is_tiller_enabled)
+                        if arr.options.admission_controller_options:
+                            val['option_is_pod_security_policy_enabled'] = str(arr.options.admission_controller_options.is_pod_security_policy_enabled)
+
+                    # metadata
+                    if arr.metadata:
+                        val['time_created'] = str(arr.metadata.time_created)[0:16]
+                        val['time_deleted'] = str(arr.metadata.time_deleted)[0:16]
+                        val['time_updated'] = str(arr.metadata.time_updated)[0:16]
+                        val['created_by_user_id'] = str(arr.metadata.created_by_user_id)
+                        val['deleted_by_user_id'] = str(arr.metadata.deleted_by_user_id)
+                        val['updated_by_user_id'] = str(arr.metadata.updated_by_user_id)
+
+                    if arr.endpoints:
+                        val['endpoint_kubernetes'] = str(arr.endpoints.kubernetes)
+                        val['endpoint_public_endpoint'] = str(arr.endpoints.public_endpoint)
+                        val['endpoint_private_endpoint'] = str(arr.endpoints.private_endpoint)
+                        val['endpoint_vcn_hostname_endpoint'] = str(arr.endpoints.vcn_hostname_endpoint)
 
                     # add the data
                     cnt += 1
@@ -10154,8 +10333,8 @@ class ShowOCIService(object):
                 apigs = []
                 try:
                     apigs = oci.pagination.list_call_get_all_results(
-                        api_client.list_gateways, compartment_id=compartment['id'],
-                        lifecycle_state="ACTIVE",
+                        api_client.list_gateways,
+                        compartment_id=compartment['id'],
                         retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                     ).data
 
@@ -10172,15 +10351,23 @@ class ShowOCIService(object):
 
                 # load apis
                 for apig in apigs:
+                    if not self.check_lifecycle_state_active(apig.lifecycle_state):
+                        continue
+
                     val = {'id': str(apig.id),
                            'display_name': str(apig.display_name),
                            'endpoint_type': str(apig.endpoint_type),
                            'hostname': str(apig.hostname),
                            'subnet_id': str(apig.subnet_id),
                            'subnet_name': "",
+                           'nsg_ids': str(apig.network_security_group_ids),
+                           'nsg_names': str(self.__load_core_network_get_nsg_names(apig.network_security_group_ids)) if apig.network_security_group_ids else "",
                            'time_created': str(apig.time_created),
                            'time_updated': str(apig.time_updated),
-                           'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'lifecycle_state': str(apig.lifecycle_state),
+                           'certificate_id': str(apig.certificate_id),
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
                            'compartment_path': str(compartment['path']),
                            'defined_tags': [] if apig.defined_tags is None else apig.defined_tags,
                            'freeform_tags': [] if apig.freeform_tags is None else apig.freeform_tags,
@@ -10227,7 +10414,6 @@ class ShowOCIService(object):
                 try:
                     apids = oci.pagination.list_call_get_all_results(
                         api_deployment_client.list_deployments, compartment_id=compartment['id'],
-                        lifecycle_state="ACTIVE",
                         retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                     ).data
 
@@ -10244,10 +10430,14 @@ class ShowOCIService(object):
 
                 # load deployment
                 for apid in apids:
+                    if not self.check_lifecycle_state_active(apid.lifecycle_state):
+                        continue
+
                     val = {'id': str(apid.id),
                            'gateway_id': str(apid.gateway_id),
                            'display_name': str(apid.display_name),
                            'path_prefix': str(apid.path_prefix),
+                           'lifecycle_state': str(apid.lifecycle_state),
                            'endpoint': str(apid.endpoint),
                            'time_created': str(apid.time_created),
                            'time_updated': str(apid.time_updated),
@@ -10869,6 +11059,11 @@ class ShowOCIService(object):
                            'is_cluster': str(agent.is_cluster),
                            'parent_container_id': str(agent.parent_container_id),
                            'time_created': str(agent.time_created),
+                           'deployment_type': str(agent.deployment_type),
+                           'management_option': str(agent.management_option),
+                           'workload_type': str(agent.workload_type),
+                           'db_system_id': str(agent.db_system_id),
+                           'storage_system_id': str(agent.storage_system_id),
                            'compartment_name': str(compartment['name']),
                            'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
@@ -11136,6 +11331,11 @@ class ShowOCIService(object):
             if self.flags.proxy:
                 waas.base_client.session.proxies = {'https': self.flags.proxy}
 
+            # Open connectivity to OCI - Waas
+            waf = oci.waf.WafClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
+            if self.flags.proxy:
+                waf.base_client.session.proxies = {'https': self.flags.proxy}
+
             # reference to compartments
             compartments = self.get_compartment()
 
@@ -11145,6 +11345,7 @@ class ShowOCIService(object):
             self.__initialize_data_key(self.C_EDGE, self.C_EDGE_DNS_ZONE)
             self.__initialize_data_key(self.C_EDGE, self.C_EDGE_DNS_STEERING)
             self.__initialize_data_key(self.C_EDGE, self.C_EDGE_WAAS_POLICIES)
+            self.__initialize_data_key(self.C_EDGE, self.C_EDGE_WAF)
 
             # reference to stream
             edge = self.data[self.C_EDGE]
@@ -11155,6 +11356,7 @@ class ShowOCIService(object):
             edge[self.C_EDGE_DNS_ZONE] += self.__load_edge_dns_zone(dns, compartments)
             edge[self.C_EDGE_DNS_STEERING] += self.__load_edge_dns_steering(dns, compartments)
             edge[self.C_EDGE_WAAS_POLICIES] += self.__load_edge_waas_policies(waas, compartments)
+            edge[self.C_EDGE_WAF] += self.__load_edge_waf(waf, compartments)
             print("")
 
         except oci.exceptions.RequestException:
@@ -11224,6 +11426,8 @@ class ShowOCIService(object):
                            'interval_in_seconds': str(health.interval_in_seconds),
                            'is_enabled': health.is_enabled,
                            'protocol': str(health.protocol),
+                           'time_created': str(health.time_created),
+                           'lifecycle_state': 'ACTIVE',
                            'compartment_name': str(compartment['name']),
                            'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
@@ -11311,6 +11515,8 @@ class ShowOCIService(object):
                            'targets': str(', '.join(x for x in health.targets)),
                            'vantage_point_names': str(', '.join(x for x in health.vantage_point_names)),
                            'headers': health.headers,
+                           'lifecycle_state': 'ACTIVE',
+                           'time_created': str(health.time_created),
                            'compartment_name': str(compartment['name']),
                            'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
@@ -11457,6 +11663,7 @@ class ShowOCIService(object):
                            'health_check_monitor_id': str(arr.health_check_monitor_id),
                            'template': str(arr.template),
                            'time_created': str(arr.time_created),
+                           'lifecycle_state': str(arr.lifecycle_state),
                            'compartment_name': str(compartment['name']),
                            'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
@@ -11641,13 +11848,15 @@ class ShowOCIService(object):
 
                 # arr = oci.waas.models.WaasPolicySummary
                 for arr in array:
-                    if arr.lifecycle_state != 'ACTIVE':
+                    if not self.check_lifecycle_state_active(arr.lifecycle_state):
                         continue
                     val = {'id': str(arr.id),
                            'display_name': str(arr.display_name),
                            'domain': str(arr.domain),
                            'time_created': str(arr.time_created),
                            'lifecycle_state': str(arr.lifecycle_state),
+                           'sum_info': "WaaS policies",
+                           'sum_size_gb': str("1"),
                            'compartment_name': str(compartment['name']),
                            'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
@@ -11669,6 +11878,82 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_edge_waas_policies", e)
+            return data
+
+    ##########################################################################
+    # __load_edge_waf
+    ##########################################################################
+    def __load_edge_waf(self, waf, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("WAF")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                array = []
+                try:
+                    array = oci.pagination.list_call_get_all_results(
+                        waf.list_web_app_firewalls,
+                        compartment['id'],
+                        sort_by="displayName",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning()
+                    continue
+
+                print(".", end="")
+
+                # arr = oci.waf.models.WebAppFirewallSummary
+                for arr in array:
+                    if not self.check_lifecycle_state_active(arr.lifecycle_state):
+                        continue
+                    val = {'id': str(arr.id),
+                           'display_name': str(arr.display_name),
+                           'backend_type': str(arr.backend_type),
+                           'web_app_firewall_policy_id': str(arr.web_app_firewall_policy_id),
+                           'time_created': str(arr.time_created),
+                           'time_updated': str(arr.time_updated),
+                           'lifecycle_state': str(arr.lifecycle_state),
+                           'sum_info': "Web Application Firewall",
+                           'sum_size_gb': str("1"),
+                           'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
+                           'compartment_id': str(compartment['id']),
+                           'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                           'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                           'region_name': str(self.config['region'])
+                           }
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_edge_waf", e)
             return data
 
     ##########################################################################
@@ -11869,6 +12154,7 @@ class ShowOCIService(object):
                         'number_of_objects': str(arr.number_of_objects),
                         'lifecycle_state': str(arr.lifecycle_state),
                         'lifecycle_details': str(arr.lifecycle_details),
+                        'attached_catalog_private_endpoints': str(', '.join(x for x in arr.attached_catalog_private_endpoints)) if arr.attached_catalog_private_endpoints else "",
                         'sum_info': "Data Catalog",
                         'sum_size_gb': str("1"),
                         'compartment_name': str(compartment['name']),
@@ -12023,6 +12309,8 @@ class ShowOCIService(object):
                         'lifecycle_state': str(arr.lifecycle_state),
                         'owner_principal_id': str(arr.owner_principal_id),
                         'owner_user_name': str(arr.owner_user_name),
+                        'spark_version': str(arr.spark_version),
+                        'type': str(arr.type),
                         'sum_info': "Data Flow",
                         'sum_size_gb': str("1"),
                         'compartment_name': str(compartment['name']),
@@ -12100,6 +12388,10 @@ class ShowOCIService(object):
                         'lifecycle_state': str(oda.lifecycle_state),
                         'lifecycle_sub_state': str(oda.lifecycle_sub_state),
                         'state_message': str(oda.state_message),
+                        'is_role_based_access': str(oda.is_role_based_access),
+                        'identity_domain': str(oda.identity_domain),
+                        'imported_package_names': str(', '.join(x for x in oda.imported_package_names)) if oda.imported_package_names else "",
+                        'attachment_types': str(', '.join(x for x in oda.attachment_types)) if oda.attachment_types else "",
                         'sum_info': "Digital Assistant " + str(oda.shape_name),
                         'sum_size_gb': str("1"),
                         'compartment_name': str(compartment['name']),
@@ -12176,6 +12468,7 @@ class ShowOCIService(object):
                         'cluster_version': str(bds.cluster_version),
                         'is_high_availability': str(bds.is_high_availability),
                         'is_secure': str(bds.is_secure),
+                        'cluster_profile': str(bds.cluster_profile),
                         'lifecycle_state': str(bds.lifecycle_state),
                         'is_cloud_sql_configured': str(bds.is_cloud_sql_configured),
                         'time_created': str(bds.time_created),
@@ -12302,6 +12595,7 @@ class ShowOCIService(object):
             esxi_client = oci.ocvp.EsxiHostClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
             vb_client = oci.visual_builder.VbInstanceClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
             virtual_network = oci.core.VirtualNetworkClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
+            devops_client = oci.devops.DevopsClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
 
             if self.flags.proxy:
                 oic_client.base_client.session.proxies = {'https': self.flags.proxy}
@@ -12311,6 +12605,7 @@ class ShowOCIService(object):
                 vb_client.base_client.session.proxies = {'https': self.flags.proxy}
                 esxi_client.base_client.session.proxies = {'https': self.flags.proxy}
                 virtual_network.base_client.session.proxies = {'https': self.flags.proxy}
+                devops_client.base_client.session.proxies = {'https': self.flags.proxy}
 
             # reference to compartments
             compartments = self.get_compartment()
@@ -12321,6 +12616,7 @@ class ShowOCIService(object):
             self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_OCE)
             self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_OCVS)
             self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_VB)
+            self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_DEVOPS)
 
             # reference to paas
             paas = self.data[self.C_PAAS_NATIVE]
@@ -12331,6 +12627,7 @@ class ShowOCIService(object):
             paas[self.C_PAAS_NATIVE_OCE] += self.__load_paas_oce(oce_client, compartments)
             paas[self.C_PAAS_NATIVE_OAC] += self.__load_paas_oac(oac_client, compartments)
             paas[self.C_PAAS_NATIVE_VB] += self.__load_paas_visualbuilder(vb_client, compartments)
+            paas[self.C_PAAS_NATIVE_DEVOPS] += self.__load_paas_devops(devops_client, compartments)
             print("")
 
         except oci.exceptions.RequestException:
@@ -12401,6 +12698,7 @@ class ShowOCIService(object):
                         'is_file_server_enabled': str(oic.is_file_server_enabled),
                         'is_visual_builder_enabled': str(oic.is_visual_builder_enabled),
                         'shape': str(oic.shape),
+                        'network_endpoint_type': "",
                         'consumption_model': str(oic.consumption_model),
                         'defined_tags': [] if oic.defined_tags is None else oic.defined_tags,
                         'freeform_tags': [] if oic.freeform_tags is None else oic.freeform_tags,
@@ -12408,6 +12706,10 @@ class ShowOCIService(object):
                         'compartment_path': str(compartment['path']),
                         'compartment_id': str(compartment['id']),
                         'region_name': str(self.config['region'])}
+
+                    # end point
+                    if oic.network_endpoint_details:
+                        val['network_endpoint_type'] = str(oic.network_endpoint_details.network_endpoint_type)
 
                     # add the data
                     cnt += 1
@@ -12652,6 +12954,8 @@ class ShowOCIService(object):
                         # Fetch main OAC object for Vanity URL
                         try:
                             oac_main = oac_client.get_analytics_instance(oac.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+                            val['defined_tags'] = [] if oac_main.defined_tags is None else oac_main.defined_tags
+                            val['freeform_tags'] = [] if oac_main.freeform_tags is None else oac_main.freeform_tags
                             if oac_main.vanity_url_details:
                                 for k, v in oac_main.vanity_url_details.items():
                                     if v:
@@ -12837,6 +13141,86 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_paas_visualbuilder", e)
+            return data
+
+    ##########################################################################
+    # __load_paas_devops
+    ##########################################################################
+    def __load_paas_devops(self, devops_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("DevOPS Projects")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                array = []
+                try:
+                    array = oci.pagination.list_call_get_all_results(
+                        devops_client.list_projects,
+                        compartment['id'],
+                        sort_by="displayName",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning()
+                    continue
+
+                print(".", end="")
+
+                # arr = oci.devops.models.ProjectSummary
+                for arr in array:
+                    if self.check_lifecycle_state_active(arr.lifecycle_state):
+                        val = {'id': str(arr.id),
+                               'name': str(arr.name),
+                               'description': str(arr.description),
+                               'namespace': str(arr.namespace),
+                               'time_created': str(arr.time_created),
+                               'time_updated': str(arr.time_updated),
+                               'lifecycle_state': str(arr.lifecycle_state),
+                               'notification_config': "",
+                               'sum_info': "DevOPS Projects",
+                               'sum_size_gb': str("1"),
+                               'compartment_name': str(compartment['name']),
+                               'compartment_path': str(compartment['path']),
+                               'compartment_id': str(compartment['id']),
+                               'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                               'system_tags': [] if arr.system_tags is None else arr.system_tags,
+                               'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                               'region_name': str(self.config['region'])}
+
+                        # notification_config
+                        if arr.notification_config:
+                            val['notification_config'] = str(arr.notification_config.topic_id)
+
+                        # add the data
+                        cnt += 1
+                        data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_paas_devops", e)
             return data
 
     ##########################################################################
@@ -13115,6 +13499,10 @@ class ShowOCIService(object):
                     print(".", end="")
                     continue
 
+                # skip if not root compartment
+                if compartment['id'] != self.get_tenancy_id():
+                    continue
+
                 quotas = []
                 try:
                     quotas = quotas_client.list_quotas(
@@ -13184,6 +13572,12 @@ class ShowOCIService(object):
     #
     # oci.cloud_guard.CloudGuardClient(config, **kwargs)
     # oci.logging.LoggingManagementClient(config, **kwargs)
+    #
+    # TBD
+    # list_detector_recipes
+    # list_responder_recipes
+    # list_security_recipes
+    # list_problems
     ##########################################################################
     def __load_security_main(self):
 
@@ -13751,7 +14145,6 @@ class ShowOCIService(object):
                             'target_vcn_name': self.get_network_vcn(bs.target_vcn_id),
                             'target_subnet_id': str(bs.target_subnet_id),
                             'target_subnet_name': self.get_network_subnet(bs.target_subnet_id),
-
                             'time_created': str(bs.time_created),
                             'time_updated': str(bs.time_updated),
                             'lifecycle_state': str(bs.lifecycle_state),
@@ -13813,6 +14206,7 @@ class ShowOCIFlags(object):
     skip_identity_user_credential = False
     skip_backups = False
     skip_dbhomes = False
+    pause = False
     connection_timeout = 20
     read_timeout = 150
 
@@ -13885,3 +14279,978 @@ class ShowOCIFlags(object):
                 self.read_function or
                 self.read_api or
                 self.read_paas_native)
+
+
+##########################################################################
+# class ShowOCIDomains
+##########################################################################
+# list_groups
+# list_users
+# list_dynamic_resource_groups
+# list_kmsi_settings
+# list_identity_providers
+# list_authentication_factor_settings
+##########################################################################
+class ShowOCIDomains(object):
+
+    data = []
+    config = {}
+    signer = None
+    proxy = None
+    error = 0
+    warning = 0
+    read_timeout = 30
+    connection_timeout = 30
+
+    ##########################################################################
+    # init class
+    # Creates a new data object
+    ##########################################################################
+    def __init__(self, config, signer, proxy=None, read_timeout=30, connection_timeout=30):
+        self.data = []
+        self.config = config
+        self.signer = signer
+        self.read_timeout = read_timeout
+        self.connection_timeout = connection_timeout
+        self.proxy = proxy
+
+    ##################################################################################
+    # get_value function
+    ##################################################################################
+    def get_value(self, val):
+        if not val:
+            return ""
+        return str(val)
+
+    ##################################################################################
+    # get_value value,ocid,ref
+    ##################################################################################
+    def get_value_ocid_ref(self, val):
+        if not val:
+            return []
+
+        return [{
+            'value': self.get_value(x.value),
+            'ocid': self.get_value(x.ocid),
+            'ref': self.get_value(x.ref)
+        } for x in val]
+
+    ##################################################################################
+    # get_date
+    # Example of Date 2022-08-20T23:32:54.491Z -> 2022-08-20 23:32
+    ##################################################################################
+    def get_date(self, val):
+        if not val:
+            return ""
+        return str(val)[0:16].replace("T", " ")
+
+    ##########################################################################
+    # print count result
+    ##########################################################################
+    def __load_print_cnt(self, cnt, start_time):
+        et = time.time() - start_time
+        print(" (" + str(cnt) + ") - "'{:02d}:{:02d}:{:02d}'.format(round(et // 3600), (round(et % 3600 // 60)), round(et % 60)))
+
+    ##########################################################################
+    # print status message
+    ##########################################################################
+    def __load_print_status(self, msg):
+        print("--> " + msg.ljust(27) + "<-- ", end="")
+
+    ##########################################################################
+    # get_tags
+    # convert idcs tags to normal OCI tags
+    ##########################################################################
+    def __get_tags(self, tags, is_defined):
+        data = {}
+        try:
+            if not tags:
+                return {}
+
+            # defined_tags
+            if is_defined:
+                if tags.defined_tags:
+                    for tag in tags.defined_tags:
+
+                        if tag.namespace in data:
+                            data[tag.namespace][tag.key] = tag.value
+                        else:
+                            data[tag.namespace] = {tag.key: tag.value}
+
+            # freeform_tags
+            else:
+                if tags.freeform_tags:
+                    for tag in tags.freeform_tags:
+                        data[tag.key] = tag.value
+
+            return data
+        except Exception as e:
+            self.__print_error("__get_tags", e)
+            return data
+
+    ##########################################################################
+    # print print error
+    ##########################################################################
+    def __print_error(self, msg, e):
+        classname = type(self).__name__
+
+        if 'TooManyRequests' in str(e):
+            print(" - TooManyRequests Err in " + msg)
+        elif isinstance(e, KeyError):
+            print("\nError in " + classname + ":" + msg + ": KeyError " + str(e.args))
+        else:
+            print("\nError in " + classname + ":" + msg + ": " + str(e))
+
+        self.error += 1
+
+    ##########################################################################
+    # check service error to warn instead of error
+    ##########################################################################
+    def __check_service_error(self, code):
+        return ('remote end closed' in str(code).lower() or
+                'max retries exceeded' in str(code).lower() or
+                'auth' in str(code).lower() or
+                'aborted' in str(code).lower() or
+                'notfound' in str(code).lower() or
+                'closed connection' in str(code).lower() or
+                code == 'Forbidden' or
+                code == 'TooManyRequests' or
+                code == 'NotAuthorizedOrNotFound' or
+                code == 'IncorrectState' or
+                code == 'LimitExceeded'
+                )
+
+    ##########################################################################
+    # print auth warning
+    ##########################################################################
+    def __load_print_auth_warning(self, special_char="a", increase_warning=True):
+        if increase_warning:
+            self.warning += 1
+        print(special_char, end="")
+
+    ##########################################################################
+    # check request error if service not exists for region
+    ##########################################################################
+    def __check_request_error(self, e):
+
+        # service not yet available
+        if (
+                ('Errno 8' in str(e) and 'NewConnectionError' in str(e)) or
+                'Max retries exceeded' in str(e) or
+                'HTTPSConnectionPool' in str(e) or
+                'not currently available' in str(e) or
+                'closed connection' in str(e)
+        ):
+            print("Service Not Accessible or not yet exist")
+            return True
+
+        # if ReadTimeoutError timeout
+        if ('ReadTimeoutError' in str(e)):
+            print("ReadTimeoutError, Please use higher value with -readtimeout flag !\nError: " + str(e))
+            self.error += 1
+            return True
+
+        # if Connection TimeoutError timeout
+        if ('TimeoutError' in str(e)):
+            print("Connection TimeoutError, Please use higher value with -conntimeout flag !\nError: " + str(e))
+            self.error += 1
+            return True
+
+        return False
+
+    ##########################################################################
+    # get Meta Module
+    ##########################################################################
+    def __load_identity_meta_info(self, meta):
+        try:
+
+            if not meta:
+                return {}
+
+            return {
+                'resource_type': self.get_value(meta.resource_type),
+                'created': self.get_date(meta.created),
+                'last_modified': self.get_date(meta.last_modified),
+                'location': self.get_value(meta.location),
+                'version': self.get_value(meta.version)
+            }
+
+        except Exception as e:
+            self.__print_error("__load_identity_meta_info", e)
+
+    ##########################################################################
+    # Pagination main call
+    ##########################################################################
+    def __list_call_get_all_results(self, list_func_ref, *list_func_args, **list_func_kwargs):
+
+        aggregated_results = []
+        for call_result in self.__list_call_get_all_results_generator_domains(list_func_ref, *list_func_args, **list_func_kwargs):
+            aggregated_results.extend(call_result.data.resources)
+            final_response = oci.Response(call_result.status, call_result.headers, aggregated_results, call_result.request)
+        return final_response
+
+    ##########################################################################
+    # Pagination result generator
+    ##########################################################################
+    def __list_call_get_all_results_generator_domains(self, list_func_ref, *list_func_args, **list_func_kwargs):
+
+        keep_paginating = True
+
+        while keep_paginating:
+            call_result = oci.retry.DEFAULT_RETRY_STRATEGY.make_retrying_call(list_func_ref, *list_func_args, **list_func_kwargs)
+            yield call_result
+
+            start_index = call_result.data.start_index
+            total_results = call_result.data.total_results
+            items_per_page = call_result.data.items_per_page
+            next_index = start_index + items_per_page
+
+            # print("\nCalled " + str(list_func_ref))
+            # print("start_index: " + str(start_index) + ", " + "total_results: " + str(total_results) + ", " + "items_per_page: " + str(items_per_page) + ", " + "next_index: " + str(next_index))
+
+            if next_index < total_results:
+                list_func_kwargs['start_index'] = next_index
+            else:
+                keep_paginating = False
+
+##################################################################################
+# load_identity_domain_users
+##################################################################################
+    def __load_identity_domain_users(self, identity_domain_client, domain_name):
+        data = []
+
+        self.__load_print_status(domain_name[0:10] + ".Users")
+        start_time = time.time()
+
+        try:
+            users = self.__list_call_get_all_results(
+                identity_domain_client.list_users,
+                attribute_sets=["all"],
+                sort_by="UserName",
+                count=500,
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # oci.identity_domains.models.User
+            for var in users:
+                if var.delete_in_progress:
+                    continue
+
+                print(".", end="")
+
+                ext_password = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user
+                ext_mfa = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user
+                ext_user = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user
+                ext_user_state = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user
+                ext_posix = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user
+                ext_adaptive = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user
+                ext_db_user = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user
+                ext_db_user_credential = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user
+                ext_credential = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user
+                ext_capabilities = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user
+                ext_self_change = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user
+
+                data.append({
+                    'id': self.get_value(var.id),
+                    'ocid': self.get_value(var.ocid),
+                    'display_name': self.get_value(var.display_name),
+                    'compartment_ocid': self.get_value(var.compartment_ocid),
+                    'external_id': self.get_value(var.external_id),
+                    'user_name': self.get_value(var.user_name),
+                    'description': self.get_value(var.description),
+                    'nick_name': self.get_value(var.nick_name),
+                    'title': self.get_value(var.title),
+                    'user_type': self.get_value(var.user_type),
+                    'locale': self.get_value(var.locale),
+                    'preferred_language': self.get_value(var.preferred_language),
+                    'timezone': self.get_value(var.timezone),
+                    'active': self.get_value(var.active),
+                    'schemas': str(','.join(x for x in var.schemas)) if var.schemas else "",
+                    'meta': self.__load_identity_meta_info(var.meta),
+                    'idcs_prevented_operations': str(','.join(x for x in var.idcs_prevented_operations)) if var.idcs_prevented_operations else "",
+                    'idcs_created_by': var.idcs_created_by.value if var.idcs_created_by else "",
+                    'idcs_last_modified_by': var.idcs_last_modified_by.value if var.idcs_last_modified_by else "",
+                    'family_name': var.name.family_name if var.name else "",
+                    'given_name': var.name.given_name if var.name else "",
+                    'tags': [{'key': x.key, 'value': x.value} for x in var.tags] if var.tags else [],
+                    'freeform_tags': self.__get_tags(var.urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags, False),
+                    'defined_tags': self.__get_tags(var.urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags, True),
+                    'phone_numbers': [x.value for x in var.phone_numbers] if var.phone_numbers else [],
+                    'ims': [x.value for x in var.ims] if var.ims else [],
+                    'emails': [x.value for x in var.emails] if var.emails else [],
+                    'entitlements': [x.value for x in var.entitlements] if var.entitlements else [],
+                    'x509_certificates': [x.value for x in var.x509_certificates] if var.x509_certificates else [],
+                    'groups': [{
+                        'value': self.get_value(x.value),
+                        'display': self.get_value(x.display),
+                        'non_unique_display': self.get_value(x.non_unique_display),
+                        'external_id': self.get_value(x.external_id),
+                        'type': self.get_value(x.type),
+                        'membership_ocid': self.get_value(x.membership_ocid),
+                        'ocid': self.get_value(x.ocid),
+                        'date_added': self.get_date(x.date_added)
+                    } for x in var.groups] if var.groups else [],
+                    'ext_user': {
+                        'is_federated_user': self.get_value(ext_user.is_federated_user) if ext_user else "",
+                        'is_authentication_delegated': self.get_value(ext_user.is_authentication_delegated) if ext_user else "",
+                        'status': self.get_value(ext_user.status) if ext_user else "",
+                        'provider': self.get_value(ext_user.provider) if ext_user else "",
+                        'creation_mechanism': self.get_value(ext_user.creation_mechanism) if ext_user else "",
+                        'do_not_show_getting_started': self.get_value(ext_user.do_not_show_getting_started) if ext_user else "",
+                        'bypass_notification': self.get_value(ext_user.bypass_notification) if ext_user else "",
+                        'is_account_recovery_enrolled': self.get_value(ext_user.is_account_recovery_enrolled) if ext_user else "",
+                        'account_recovery_required': self.get_value(ext_user.account_recovery_required) if ext_user else "",
+                        'user_flow_controlled_by_external_client': self.get_value(ext_user.user_flow_controlled_by_external_client) if ext_user else "",
+                        'is_group_membership_normalized': self.get_value(ext_user.is_group_membership_normalized) if ext_user else "",
+                        'is_group_membership_synced_to_users_groups': self.get_value(ext_user.is_group_membership_synced_to_users_groups) if ext_user else ""
+                    },
+                    'ext_password': {
+                        'last_successful_set_date': self.get_date(ext_password.last_successful_set_date) if ext_password else "",
+                        'cant_change': self.get_value(ext_password.cant_change) if ext_password else "",
+                        'cant_expire': self.get_value(ext_password.cant_expire) if ext_password else "",
+                        'must_change': self.get_value(ext_password.must_change) if ext_password else "",
+                        'expired': self.get_value(ext_password.expired) if ext_password else "",
+                        'last_successful_validation_date': self.get_date(ext_password.last_successful_validation_date) if ext_password else "",
+                        'last_failed_validation_date': self.get_date(ext_password.last_failed_validation_date) if ext_password else "",
+                        'applicable_password_policy': self.get_value(ext_password.applicable_password_policy.value) if ext_password and ext_password.applicable_password_policy else ""
+                    },
+                    'ext_user_state': {
+                        'last_successful_login_date': self.get_date(ext_user_state.last_successful_login_date) if ext_user_state else "",
+                        'previous_successful_login_date': self.get_date(ext_user_state.previous_successful_login_date) if ext_user_state else "",
+                        'last_failed_login_date': self.get_date(ext_user_state.last_failed_login_date) if ext_user_state else "",
+                        'login_attempts': self.get_value(ext_user_state.login_attempts) if ext_user_state else "",
+                        'recovery_attempts': self.get_value(ext_user_state.recovery_attempts) if ext_user_state else "",
+                        'recovery_enroll_attempts': self.get_value(ext_user_state.recovery_enroll_attempts) if ext_user_state else "",
+                        'max_concurrent_sessions': self.get_value(ext_user_state.max_concurrent_sessions) if ext_user_state else "",
+                        'recovery_locked_date': self.get_date(ext_user_state.recovery_locked.lock_date) if ext_user_state and ext_user_state.recovery_locked else "",
+                        'recovery_locked_on': self.get_value(ext_user_state.recovery_locked.on) if ext_user_state and ext_user_state.recovery_locked else "",
+                        'locked_date': self.get_date(ext_user_state.locked.lock_date) if ext_user_state and ext_user_state.locked else "",
+                        'locked_expired': self.get_date(ext_user_state.locked.on) if ext_user_state and ext_user_state.locked else "",
+                        'locked_on': self.get_value(ext_user_state.locked.on) if ext_user_state and ext_user_state.locked else "",
+                        'locked_reason': self.get_value(ext_user_state.locked.reason) if ext_user_state and ext_user_state.locked else ""
+                    },
+                    'ext_mfa': {
+                        'preferred_authentication_factor': self.get_value(ext_mfa.preferred_authentication_factor) if ext_mfa else "",
+                        'mfa_status': self.get_value(ext_mfa.mfa_status) if ext_mfa else "",
+                        'preferred_third_party_vendor': self.get_value(ext_mfa.preferred_third_party_vendor) if ext_mfa else "",
+                        'preferred_authentication_method': self.get_value(ext_mfa.preferred_authentication_method) if ext_mfa else "",
+                        'login_attempts': self.get_value(ext_mfa.login_attempts) if ext_mfa else "",
+                        'mfa_enabled_on': self.get_value(ext_mfa.mfa_enabled_on) if ext_mfa else "",
+                        'mfa_ignored_apps': str(','.join(self.get_value(x) for x in ext_mfa.mfa_ignored_apps)) if ext_mfa and ext_mfa.mfa_ignored_apps else ""
+                    },
+                    'ext_posix': {
+                        'uid_number': self.get_value(ext_posix.uid_number) if ext_posix else "",
+                        'gid_number': self.get_value(ext_posix.gid_number) if ext_posix else "",
+                        'gecos': self.get_value(ext_posix.gecos) if ext_posix else "",
+                        'home_directory': self.get_value(ext_posix.home_directory) if ext_posix else "",
+                        'login_shell': self.get_value(ext_posix.login_shell) if ext_posix else ""
+                    },
+                    'ext_adaptive': {
+                        'risk_level': self.get_value(ext_adaptive.risk_level) if ext_adaptive else "",
+                        'risk_scores': str(','.join(self.get_value(x.value) for x in ext_adaptive.risk_scores)) if ext_adaptive and ext_adaptive.risk_scores else ""
+                    },
+                    'ext_db_user': {
+                        'is_db_user': self.get_value(ext_db_user.is_db_user) if ext_db_user else "",
+                        'domain_level_schema': self.get_value(ext_db_user.domain_level_schema) if ext_db_user else "",
+                        'instance_level_schema': self.get_value(ext_db_user.instance_level_schema) if ext_db_user else "",
+                        'db_global_roles': str(','.join(x for x in ext_db_user.db_global_roles)) if ext_db_user else ""
+                    },
+                    'ext_db_user_credential': {
+                        'db_user_name': self.get_value(ext_db_user_credential.db_user_name) if ext_db_user_credential else "",
+                        'db_login_attempts': self.get_value(ext_db_user_credential.db_login_attempts) if ext_db_user_credential else ""
+                    },
+                    'ext_capabilities': {
+                        'can_use_api_keys': self.get_value(ext_capabilities.can_use_api_keys) if ext_capabilities else "",
+                        'can_use_auth_tokens': self.get_value(ext_capabilities.can_use_auth_tokens) if ext_capabilities else "",
+                        'can_use_console_password': self.get_value(ext_capabilities.can_use_console_password) if ext_capabilities else "",
+                        'can_use_customer_secret_keys': self.get_value(ext_capabilities.can_use_customer_secret_keys) if ext_capabilities else "",
+                        'can_use_o_auth2_client_credentials': self.get_value(ext_capabilities.can_use_o_auth2_client_credentials) if ext_capabilities else "",
+                        'can_use_smtp_credentials': self.get_value(ext_capabilities.can_use_smtp_credentials) if ext_capabilities else "",
+                        'can_use_db_credentials': self.get_value(ext_capabilities.can_use_db_credentials) if ext_capabilities else ""
+                    },
+                    'roles': [{'value': x.value, 'type': x.type} for x in var.roles] if var.roles else [],
+                    'api_keys': self.get_value_ocid_ref(ext_credential.api_keys) if ext_credential else [],
+                    'customer_secret_keys': self.get_value_ocid_ref(ext_credential.customer_secret_keys) if ext_credential else [],
+                    'auth_tokens': self.get_value_ocid_ref(ext_credential.auth_tokens) if ext_credential else [],
+                    'smtp_credentials': self.get_value_ocid_ref(ext_credential.smtp_credentials) if ext_credential else [],
+                    'o_auth2_client_credentials': self.get_value_ocid_ref(ext_credential.o_auth2_client_credentials) if ext_credential else [],
+                    'db_credentials': self.get_value_ocid_ref(ext_credential.db_credentials) if ext_credential else [],
+                    'allow_self_change': self.get_value(ext_self_change.allow_self_change) if ext_self_change else ""
+                })
+
+            self.__load_print_cnt(len(data), start_time)
+            return data
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e.code):
+                self.__load_print_auth_warning()
+            else:
+                raise
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return
+            raise
+        except Exception as e:
+            self.__print_error("__load_identity_domain_users", e)
+
+##################################################################################
+# load_identity_domain_users
+##################################################################################
+    def __load_identity_domain_groups(self, identity_domain_client, domain_name):
+        data = []
+
+        self.__load_print_status(domain_name[0:10] + ".Groups")
+        start_time = time.time()
+
+        try:
+            groups = self.__list_call_get_all_results(
+                identity_domain_client.list_groups,
+                attribute_sets=["all"],
+                sort_by="DisplayName",
+                count=500,
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # oci.identity_domains.models.Group
+            for var in groups:
+                if var.delete_in_progress:
+                    continue
+                print(".", end="")
+
+                ext_group = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_group_group
+                ext_posix = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_group
+                ext_req_group = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_requestable_group
+                ext_dbcs_group = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_dbcs_group
+                ext_dynamic_group = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_dynamic_group
+
+                data.append({
+                    'id': self.get_value(var.id),
+                    'ocid': self.get_value(var.ocid),
+                    'display_name': self.get_value(var.display_name),
+                    'schemas': str(','.join(x for x in var.schemas)) if var.schemas else "",
+                    'meta': self.__load_identity_meta_info(var.meta),
+                    'idcs_created_by': var.idcs_created_by.value if var.idcs_created_by else "",
+                    'idcs_last_modified_by': var.idcs_last_modified_by.value if var.idcs_last_modified_by else "",
+                    'idcs_prevented_operations': str(','.join(x for x in var.idcs_prevented_operations)) if var.idcs_prevented_operations else "",
+                    'idcs_last_upgraded_in_release': self.get_value(var.idcs_last_upgraded_in_release),
+                    'external_id': self.get_value(var.external_id),
+                    'compartment_ocid': self.get_value(var.compartment_ocid),
+                    'non_unique_display_name': self.get_value(var.non_unique_display_name),
+                    'tags': [{'key': x.key, 'value': x.value} for x in var.tags] if var.tags else [],
+                    'freeform_tags': self.__get_tags(var.urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags, False),
+                    'defined_tags': self.__get_tags(var.urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags, True),
+                    'members': [{
+                        'value': self.get_value(x.value),
+                        'date_added': self.get_date(x.date_added),
+                        'ocid': self.get_value(x.ocid),
+                        'membership_ocid': self.get_value(x.membership_ocid),
+                        'ref': self.get_value(x.ref),
+                        'display': self.get_value(x.display),
+                        'type': self.get_value(x.type),
+                        'name': self.get_value(x.name)
+                    } for x in var.members] if var.members else [],
+                    'ext_group': {
+                        'description': self.get_value(ext_group.description) if ext_group else "",
+                        'creation_mechanism': self.get_value(ext_group.creation_mechanism) if ext_group else "",
+                        'password_policy': self.get_value(ext_group.password_policy.value) if ext_group and ext_group.password_policy else "",
+                        'synced_from_app': self.get_value(ext_group.synced_from_app.value) if ext_group and ext_group.synced_from_app else "",
+                        'grants': str(','.join(x.value for x in ext_group.grants)) if ext_group and ext_group.grants else "",
+                        'owners': str(','.join(x.value for x in ext_group.owners)) if ext_group and ext_group.owners else "",
+                        'app_roles': str(','.join(x.value for x in ext_group.app_roles)) if ext_group and ext_group.app_roles else ""
+                    },
+                    'ext_dbcs_group': {
+                        'instance_level_schema_names': str(','.join(x.db_instance_id + ":" + x.schema_name for x in ext_dbcs_group.instance_level_schema_names)) if ext_dbcs_group and ext_dbcs_group.instance_level_schema_names else "",
+                        'domain_level_schema_names': str(','.join(x.domain_name + ":" + x.schema_name for x in ext_dbcs_group.domain_level_schema_names)) if ext_dbcs_group and ext_dbcs_group.domain_level_schema_names else "",
+                        'domain_level_schema': self.get_value(ext_dbcs_group.domain_level_schema) if ext_dbcs_group else "",
+                        'instance_level_schema': self.get_value(ext_dbcs_group.instance_level_schema) if ext_dbcs_group else ""
+                    },
+                    'ext_dynamic_group': {
+                        'membership_type': self.get_value(ext_dynamic_group.membership_type) if ext_dynamic_group else "",
+                        'membership_rule': self.get_value(ext_dynamic_group.membership_rule) if ext_dynamic_group else ""
+                    },
+                    'gid_number': self.get_value(ext_posix.gid_number) if ext_posix else "",
+                    'requestable_group': self.get_value(ext_req_group.requestable) if ext_req_group else ""
+                })
+
+            self.__load_print_cnt(len(data), start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return
+            raise
+        except Exception as e:
+            self.__print_error("__load_identity_domain_groups", e)
+
+##################################################################################
+# __load_identity_domain_dynamic_resource_groups
+##################################################################################
+    def __load_identity_domain_dynamic_resource_groups(self, identity_domain_client, domain_name):
+        data = []
+
+        self.__load_print_status(domain_name[0:10] + ".Dynamic Groups")
+        start_time = time.time()
+
+        try:
+            groups = self.__list_call_get_all_results(
+                identity_domain_client.list_dynamic_resource_groups,
+                attribute_sets=["all"],
+                sort_by="DisplayName",
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # oci.identity_domains.models.DynamicResourceGroup
+            for var in groups:
+                if var.delete_in_progress:
+                    continue
+                print(".", end="")
+
+                data.append({
+                    'id': self.get_value(var.id),
+                    'ocid': self.get_value(var.ocid),
+                    'schemas': str(','.join(x for x in var.schemas)) if var.schemas else "",
+                    'meta': self.__load_identity_meta_info(var.meta),
+                    'idcs_created_by': var.idcs_created_by.value if var.idcs_created_by else "",
+                    'idcs_last_modified_by': var.idcs_last_modified_by.value if var.idcs_last_modified_by else "",
+                    'idcs_prevented_operations': str(','.join(x for x in var.idcs_prevented_operations)) if var.idcs_prevented_operations else "",
+                    'tags': [{'key': x.key, 'value': x.value} for x in var.tags] if var.tags else [],
+                    'idcs_last_upgraded_in_release': self.get_value(var.idcs_last_upgraded_in_release),
+                    'compartment_ocid': self.get_value(var.compartment_ocid),
+                    'matching_rule': var.matching_rule,
+                    'display_name': self.get_value(var.display_name),
+                    'description': self.get_value(var.description),
+                    'grants': [{
+                        'value': self.get_value(x.value),
+                        'ref': self.get_value(x.ref),
+                        'app_id': self.get_value(x.app_id),
+                        'grant_mechanism': self.get_value(x.grant_mechanism)
+                    } for x in var.grants] if var.grants else [],
+                    'dynamic_group_app_roles': [{
+                        'value': self.get_value(x.value),
+                        'ref': self.get_value(x.ref),
+                        'display': self.get_value(x.display),
+                        'app_id': self.get_value(x.app_id),
+                        'app_name': self.get_value(x.app_name),
+                        'admin_role': self.get_value(x.admin_role),
+                        'legacy_group_name': self.get_value(x.legacy_group_name)
+                    } for x in var.dynamic_group_app_roles] if var.dynamic_group_app_roles else [],
+                    'freeform_tags': self.__get_tags(var.urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags, False),
+                    'defined_tags': self.__get_tags(var.urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags, True)
+                })
+
+            self.__load_print_cnt(len(data), start_time)
+            return data
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e.code):
+                self.__load_print_auth_warning()
+            else:
+                raise
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return
+            raise
+        except Exception as e:
+            self.__print_error("__load_identity_domain_dynamic_resource_groups", e)
+
+##################################################################################
+# __load_identity_domain_identity_providers
+##################################################################################
+    def __load_identity_domain_identity_providers(self, identity_domain_client, domain_name):
+        data = []
+
+        self.__load_print_status(domain_name[0:10] + ".IDPs")
+        start_time = time.time()
+
+        try:
+            groups = self.__list_call_get_all_results(
+                identity_domain_client.list_identity_providers,
+                attribute_sets=["all"],
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # oci.identity_domains.models.IdentityProvider
+            for var in groups:
+                if var.delete_in_progress:
+                    continue
+                print(".", end="")
+
+                ext_social_idp = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_social_identity_provider
+                ext_x509_idp = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_x509_identity_provider
+
+                data.append({
+                    'id': self.get_value(var.id),
+                    'ocid': self.get_value(var.ocid),
+                    'schemas': str(','.join(x for x in var.schemas)) if var.schemas else "",
+                    'meta': self.__load_identity_meta_info(var.meta),
+                    'idcs_created_by': var.idcs_created_by.value if var.idcs_created_by else "",
+                    'idcs_last_modified_by': var.idcs_last_modified_by.value if var.idcs_last_modified_by else "",
+                    'idcs_prevented_operations': str(','.join(x for x in var.idcs_prevented_operations)) if var.idcs_prevented_operations else "",
+                    'tags': [{'key': x.key, 'value': x.value} for x in var.tags] if var.tags else [],
+                    'idcs_last_upgraded_in_release': self.get_value(var.idcs_last_upgraded_in_release),
+                    'compartment_ocid': self.get_value(var.compartment_ocid),
+                    'external_id': self.get_value(var.external_id),
+                    'partner_name': self.get_value(var.partner_name),
+                    'description': self.get_value(var.description),
+                    'metadata': self.get_value(var.metadata),
+                    'partner_provider_id': self.get_value(var.partner_provider_id),
+                    'tenant_provider_id': self.get_value(var.tenant_provider_id),
+                    'succinct_id': self.get_value(var.succinct_id),
+                    'idp_sso_url': self.get_value(var.idp_sso_url),
+                    'logout_request_url': self.get_value(var.logout_request_url),
+                    'logout_response_url': self.get_value(var.logout_response_url),
+                    'signing_certificate': self.get_value(var.signing_certificate),
+                    'encryption_certificate': self.get_value(var.encryption_certificate),
+                    'name_id_format': self.get_value(var.name_id_format),
+                    'include_signing_cert_in_signature': self.get_value(var.include_signing_cert_in_signature),
+                    'authn_request_binding': self.get_value(var.authn_request_binding),
+                    'logout_binding': self.get_value(var.logout_binding),
+                    'logout_enabled': self.get_value(var.logout_enabled),
+                    'signature_hash_algorithm': self.get_value(var.signature_hash_algorithm),
+                    'enabled': self.get_value(var.enabled),
+                    'icon_url': self.get_value(var.icon_url),
+                    'shown_on_login_page': self.get_value(var.shown_on_login_page),
+                    'jit_user_prov_enabled': self.get_value(var.jit_user_prov_enabled),
+                    'jit_user_prov_group_assertion_attribute_enabled': self.get_value(var.jit_user_prov_group_assertion_attribute_enabled),
+                    'jit_user_prov_group_static_list_enabled': self.get_value(var.jit_user_prov_group_static_list_enabled),
+                    'jit_user_prov_create_user_enabled': self.get_value(var.jit_user_prov_create_user_enabled),
+                    'jit_user_prov_attribute_update_enabled': self.get_value(var.jit_user_prov_attribute_update_enabled),
+                    'jit_user_prov_group_assignment_method': self.get_value(var.jit_user_prov_group_assignment_method),
+                    'jit_user_prov_group_mapping_mode': self.get_value(var.jit_user_prov_group_mapping_mode),
+                    'jit_user_prov_group_mappings': [{
+                        'value': self.get_value(x.value),
+                        'ref': self.get_value(x.ref),
+                        'idp_group': self.get_value(x.idp_group)
+                    } for x in var.jit_user_prov_group_mappings] if var.jit_user_prov_group_mappings else [],
+                    'jit_user_prov_group_saml_attribute_name': self.get_value(var.jit_user_prov_group_saml_attribute_name),
+                    'service_instance_identifier': self.get_value(var.service_instance_identifier),
+                    'user_mapping_method': self.get_value(var.user_mapping_method),
+                    'user_mapping_store_attribute': self.get_value(var.user_mapping_store_attribute),
+                    'assertion_attribute': self.get_value(var.assertion_attribute),
+                    'type': self.get_value(var.type),
+                    'require_force_authn': self.get_value(var.require_force_authn),
+                    'requires_encrypted_assertion': self.get_value(var.requires_encrypted_assertion),
+                    'saml_ho_k_required': self.get_value(var.saml_ho_k_required),
+                    'requested_authentication_context': var.requested_authentication_context,
+                    'jit_user_prov_ignore_error_on_absent_groups': self.get_value(var.jit_user_prov_ignore_error_on_absent_groups),
+                    'jit_user_prov_attributes': self.get_value(var.jit_user_prov_attributes.value) if var.jit_user_prov_attributes else "",
+                    'jit_user_prov_assigned_groups': self.get_value(var.jit_user_prov_assigned_groups.value) if var.jit_user_prov_assigned_groups else "",
+                    'correlation_policy': self.get_value(var.correlation_policy.value) if var.correlation_policy else "",
+                    'ext_social_idp': {
+                        'account_linking_enabled': self.get_value(ext_social_idp.account_linking_enabled) if ext_social_idp else "",
+                        'registration_enabled': self.get_value(ext_social_idp.registration_enabled) if ext_social_idp else "",
+                        'status': self.get_value(ext_social_idp.status) if ext_social_idp else "",
+                        'authz_url': self.get_value(ext_social_idp.authz_url) if ext_social_idp else "",
+                        'access_token_url': self.get_value(ext_social_idp.access_token_url) if ext_social_idp else "",
+                        'profile_url': self.get_value(ext_social_idp.profile_url) if ext_social_idp else "",
+                        'scope': ext_social_idp.scope if ext_social_idp else [],
+                        'admin_scope': ext_social_idp.admin_scope if ext_social_idp else [],
+                        'consumer_key': self.get_value(ext_social_idp.consumer_key) if ext_social_idp else "",
+                        'consumer_secret': self.get_value(ext_social_idp.consumer_secret) if ext_social_idp else "",
+                        'service_provider_name': self.get_value(ext_social_idp.service_provider_name) if ext_social_idp else "",
+                        'clock_skew_in_seconds': self.get_value(ext_social_idp.clock_skew_in_seconds) if ext_social_idp else "",
+                        'redirect_url': self.get_value(ext_social_idp.redirect_url) if ext_social_idp else "",
+                        'discovery_url': self.get_value(ext_social_idp.discovery_url) if ext_social_idp else "",
+                        'client_credential_in_payload': self.get_value(ext_social_idp.client_credential_in_payload) if ext_social_idp else "",
+                        'id_attribute': self.get_value(ext_social_idp.id_attribute) if ext_social_idp else ""
+                    },
+                    'ext_x509_idp': {
+                        'cert_match_attribute': self.get_value(ext_x509_idp.cert_match_attribute) if ext_x509_idp else "",
+                        'user_match_attribute': self.get_value(ext_x509_idp.user_match_attribute) if ext_x509_idp else "",
+                        'other_cert_match_attribute': self.get_value(ext_x509_idp.other_cert_match_attribute) if ext_x509_idp else "",
+                        'signing_certificate_chain': self.get_value(ext_x509_idp.signing_certificate_chain) if ext_x509_idp else "",
+                        'ocsp_server_name': self.get_value(ext_x509_idp.ocsp_server_name) if ext_x509_idp else "",
+                        'ocsp_responder_url': self.get_value(ext_x509_idp.ocsp_responder_url) if ext_x509_idp else "",
+                        'ocsp_allow_unknown_response_status': self.get_value(ext_x509_idp.ocsp_allow_unknown_response_status) if ext_x509_idp else "",
+                        'ocsp_revalidate_time': self.get_value(ext_x509_idp.ocsp_revalidate_time) if ext_x509_idp else "",
+                        'ocsp_enable_signed_response': self.get_value(ext_x509_idp.ocsp_enable_signed_response) if ext_x509_idp else "",
+                        'ocsp_trust_cert_chain': self.get_value(ext_x509_idp.ocsp_trust_cert_chain) if ext_x509_idp else "",
+                        'crl_enabled': self.get_value(ext_x509_idp.crl_enabled) if ext_x509_idp else "",
+                        'crl_check_on_ocsp_failure_enabled': self.get_value(ext_x509_idp.crl_check_on_ocsp_failure_enabled) if ext_x509_idp else "",
+                        'crl_location': self.get_value(ext_x509_idp.crl_location) if ext_x509_idp else "",
+                        'crl_reload_duration': self.get_value(ext_x509_idp.crl_reload_duration) if ext_x509_idp else ""
+                    }
+                })
+
+            self.__load_print_cnt(len(data), start_time)
+            return data
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e.code):
+                self.__load_print_auth_warning()
+            else:
+                raise
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return
+            raise
+        except Exception as e:
+            self.__print_error("__load_identity_domain_identity_providers", e)
+
+##################################################################################
+# __load_identity_domain_kmsi_setting
+##################################################################################
+    def __load_identity_domain_kmsi_setting(self, identity_domain_client, domain_name):
+        data = []
+
+        self.__load_print_status(domain_name[0:10] + ".Kmsi Setting")
+        start_time = time.time()
+
+        try:
+            groups = self.__list_call_get_all_results(
+                identity_domain_client.list_kmsi_settings,
+                attribute_sets=["all"],
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # oci.identity_domains.models.DynamicResourceGroup
+            for var in groups:
+                if var.delete_in_progress:
+                    continue
+                print(".", end="")
+
+                data.append({
+                    'id': self.get_value(var.id),
+                    'ocid': self.get_value(var.ocid),
+                    'schemas': str(','.join(x for x in var.schemas)) if var.schemas else "",
+                    'meta': self.__load_identity_meta_info(var.meta),
+                    'idcs_created_by': var.idcs_created_by.value if var.idcs_created_by else "",
+                    'idcs_last_modified_by': var.idcs_last_modified_by.value if var.idcs_last_modified_by else "",
+                    'idcs_prevented_operations': str(','.join(x for x in var.idcs_prevented_operations)) if var.idcs_prevented_operations else "",
+                    'tags': [{'key': x.key, 'value': x.value} for x in var.tags] if var.tags else [],
+                    'idcs_last_upgraded_in_release': self.get_value(var.idcs_last_upgraded_in_release),
+                    'compartment_ocid': self.get_value(var.compartment_ocid),
+                    'external_id': self.get_value(var.external_id),
+                    'token_validity_in_days': self.get_value(var.token_validity_in_days),
+                    'last_used_validity_in_days': self.get_value(var.last_used_validity_in_days),
+                    'max_allowed_sessions': self.get_value(var.max_allowed_sessions),
+                    'kmsi_feature_enabled': self.get_value(var.kmsi_feature_enabled),
+                    'kmsi_prompt_enabled': self.get_value(var.kmsi_prompt_enabled),
+                    'tou_prompt_disabled': self.get_value(var.tou_prompt_disabled),
+                    'last_enabled_on': self.get_date(var.last_enabled_on)
+                })
+
+            self.__load_print_cnt(len(data), start_time)
+            return data
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e.code):
+                self.__load_print_auth_warning()
+            else:
+                raise
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return
+            raise
+        except Exception as e:
+            self.__print_error("__load_identity_domain_kmsi_setting", e)
+
+##################################################################################
+# __load_identity_domain_authentication_factor_settings
+##################################################################################
+    def __load_identity_domain_authentication_factor_settings(self, identity_domain_client, domain_name):
+        data = []
+
+        self.__load_print_status(domain_name[0:10] + ".Kmsi Setting")
+        start_time = time.time()
+
+        try:
+            groups = self.__list_call_get_all_results(
+                identity_domain_client.list_authentication_factor_settings,
+                attribute_sets=["all"],
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # oci.identity_domains.models.AuthenticationFactorSetting
+            for var in groups:
+                if var.delete_in_progress:
+                    continue
+                print(".", end="")
+
+                ext_third_party_auth_factor = var.urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings
+                ext_fido_auth_factor = var.urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings
+
+                data.append({
+                    'id': self.get_value(var.id),
+                    'ocid': self.get_value(var.ocid),
+                    'schemas': str(','.join(x for x in var.schemas)) if var.schemas else "",
+                    'meta': self.__load_identity_meta_info(var.meta),
+                    'idcs_created_by': var.idcs_created_by.value if var.idcs_created_by else "",
+                    'idcs_last_modified_by': var.idcs_last_modified_by.value if var.idcs_last_modified_by else "",
+                    'idcs_prevented_operations': str(','.join(x for x in var.idcs_prevented_operations)) if var.idcs_prevented_operations else "",
+                    'tags': [{'key': x.key, 'value': x.value} for x in var.tags] if var.tags else [],
+                    'idcs_last_upgraded_in_release': self.get_value(var.idcs_last_upgraded_in_release),
+                    'compartment_ocid': self.get_value(var.compartment_ocid),
+                    'email_enabled': self.get_value(var.email_enabled),
+                    'sms_enabled': self.get_value(var.sms_enabled),
+                    'phone_call_enabled': self.get_value(var.phone_call_enabled),
+                    'totp_enabled': self.get_value(var.totp_enabled),
+                    'push_enabled': self.get_value(var.push_enabled),
+                    'bypass_code_enabled': self.get_value(var.bypass_code_enabled),
+                    'security_questions_enabled': self.get_value(var.security_questions_enabled),
+                    'fido_authenticator_enabled': self.get_value(var.fido_authenticator_enabled),
+                    'yubico_otp_enabled': self.get_value(var.yubico_otp_enabled),
+                    'mfa_enrollment_type': self.get_value(var.mfa_enrollment_type),
+                    'mfa_enabled_category': self.get_value(var.mfa_enabled_category),
+                    'hide_backup_factor_enabled': self.get_value(var.hide_backup_factor_enabled),
+                    'auto_enroll_email_factor_disabled': self.get_value(var.auto_enroll_email_factor_disabled),
+                    'user_enrollment_disabled_factors': var.user_enrollment_disabled_factors,
+                    'email_link_enabled': self.get_value(var.email_settings.email_link_enabled) if var.email_settings else "",
+                    'third_party_factor_duo_security': self.get_value(var.third_party_factor.duo_security) if var.third_party_factor else "",
+                    'notification_settings_pull_enabled': self.get_value(var.notification_settings.pull_enabled) if var.notification_settings else "",
+                    'identity_store_settings_mobile_number_enabled': self.get_value(var.identity_store_settings.mobile_number_enabled) if var.identity_store_settings else "",
+                    'bypass_code_settings': {
+                        'self_service_generation_enabled': self.get_value(var.bypass_code_settings.self_service_generation_enabled) if var.bypass_code_settings else "",
+                        'help_desk_generation_enabled': self.get_value(var.bypass_code_settings.help_desk_generation_enabled) if var.bypass_code_settings else "",
+                        'length': self.get_value(var.bypass_code_settings.length) if var.bypass_code_settings else "",
+                        'max_active': self.get_value(var.bypass_code_settings.max_active) if var.bypass_code_settings else "",
+                        'help_desk_max_usage': self.get_value(var.bypass_code_settings.help_desk_max_usage) if var.bypass_code_settings else ""
+                    },
+                    'client_app_settings': {
+                        'min_pin_length': self.get_value(var.client_app_settings.min_pin_length) if var.client_app_settings else "",
+                        'max_failures_before_warning': self.get_value(var.client_app_settings.max_failures_before_warning) if var.client_app_settings else "",
+                        'max_failures_before_lockout': self.get_value(var.client_app_settings.max_failures_before_lockout) if var.client_app_settings else "",
+                        'initial_lockout_period_in_secs': self.get_value(var.client_app_settings.initial_lockout_period_in_secs) if var.client_app_settings else "",
+                        'lockout_escalation_pattern': self.get_value(var.client_app_settings.lockout_escalation_pattern) if var.client_app_settings else "",
+                        'max_lockout_interval_in_secs': self.get_value(var.client_app_settings.max_lockout_interval_in_secs) if var.client_app_settings else "",
+                        'request_signing_algo': self.get_value(var.client_app_settings.request_signing_algo) if var.client_app_settings else "",
+                        'policy_update_freq_in_days': self.get_value(var.client_app_settings.policy_update_freq_in_days) if var.client_app_settings else "",
+                        'key_pair_length': self.get_value(var.client_app_settings.key_pair_length) if var.client_app_settings else "",
+                        'device_protection_policy': self.get_value(var.client_app_settings.device_protection_policy) if var.client_app_settings else "",
+                        'unlock_app_for_each_request_enabled': self.get_value(var.client_app_settings.unlock_app_for_each_request_enabled) if var.client_app_settings else "",
+                        'unlock_on_app_start_enabled': self.get_value(var.client_app_settings.unlock_on_app_start_enabled) if var.client_app_settings else "",
+                        'unlock_app_interval_in_secs': self.get_value(var.client_app_settings.unlock_app_interval_in_secs) if var.client_app_settings else "",
+                        'shared_secret_encoding': self.get_value(var.client_app_settings.shared_secret_encoding) if var.client_app_settings else "",
+                        'unlock_on_app_foreground_enabled': self.get_value(var.client_app_settings.unlock_on_app_foreground_enabled) if var.client_app_settings else ""
+                    },
+                    'endpoint_restrictions': {
+                        'max_enrolled_devices': self.get_value(var.endpoint_restrictions.max_enrolled_devices) if var.endpoint_restrictions else "",
+                        'max_trusted_endpoints': self.get_value(var.endpoint_restrictions.max_trusted_endpoints) if var.endpoint_restrictions else "",
+                        'max_endpoint_trust_duration_in_days': self.get_value(var.endpoint_restrictions.max_endpoint_trust_duration_in_days) if var.endpoint_restrictions else "",
+                        'trusted_endpoints_enabled': self.get_value(var.endpoint_restrictions.trusted_endpoints_enabled) if var.endpoint_restrictions else "",
+                        'max_incorrect_attempts': self.get_value(var.endpoint_restrictions.max_incorrect_attempts) if var.endpoint_restrictions else ""
+                    },
+                    'totp_settings': {
+                        'hashing_algorithm': self.get_value(var.totp_settings.hashing_algorithm) if var.totp_settings else "",
+                        'passcode_length': self.get_value(var.totp_settings.passcode_length) if var.totp_settings else "",
+                        'key_refresh_interval_in_days': self.get_value(var.totp_settings.key_refresh_interval_in_days) if var.totp_settings else "",
+                        'time_step_in_secs': self.get_value(var.totp_settings.time_step_in_secs) if var.totp_settings else "",
+                        'time_step_tolerance': self.get_value(var.totp_settings.time_step_tolerance) if var.totp_settings else "",
+                        'sms_otp_validity_duration_in_mins': self.get_value(var.totp_settings.sms_otp_validity_duration_in_mins) if var.totp_settings else "",
+                        'jwt_validity_duration_in_secs': self.get_value(var.totp_settings.jwt_validity_duration_in_secs) if var.totp_settings else "",
+                        'sms_passcode_length': self.get_value(var.totp_settings.sms_passcode_length) if var.totp_settings else "",
+                        'email_otp_validity_duration_in_mins': self.get_value(var.totp_settings.email_otp_validity_duration_in_mins) if var.totp_settings else "",
+                        'email_passcode_length': self.get_value(var.totp_settings.email_passcode_length) if var.totp_settings else ""
+                    },
+                    'third_party_duo_security_settings': self.get_value(ext_third_party_auth_factor.duo_security_settings) if ext_third_party_auth_factor else "",
+                    'compliance_policy': [{
+                        'name': self.get_value(x.name),
+                        'action': self.get_value(x.action),
+                        'value': self.get_value(x.value)
+                    } for x in var.compliance_policy] if var.compliance_policy else [],
+                    'ext_fido_auth_factor': {
+                        'attestation': self.get_value(ext_fido_auth_factor.attestation) if ext_fido_auth_factor else "",
+                        'authenticator_selection_attachment': self.get_value(ext_fido_auth_factor.authenticator_selection_attachment) if ext_fido_auth_factor else "",
+                        'authenticator_selection_user_verification': self.get_value(ext_fido_auth_factor.authenticator_selection_user_verification) if ext_fido_auth_factor else "",
+                        'authenticator_selection_resident_key': self.get_value(ext_fido_auth_factor.authenticator_selection_resident_key) if ext_fido_auth_factor else "",
+                        'timeout': self.get_value(ext_fido_auth_factor.timeout) if ext_fido_auth_factor else "",
+                        'authenticator_selection_require_resident_key': self.get_value(ext_fido_auth_factor.authenticator_selection_require_resident_key) if ext_fido_auth_factor else "",
+                        'public_key_types': self.get_value(ext_fido_auth_factor.public_key_types) if ext_fido_auth_factor else "",
+                        'exclude_credentials': self.get_value(ext_fido_auth_factor.exclude_credentials) if ext_fido_auth_factor else "",
+                        'domain_validation_level': self.get_value(ext_fido_auth_factor.domain_validation_level) if ext_fido_auth_factor else ""
+                    }
+                })
+
+            self.__load_print_cnt(len(data), start_time)
+            return data
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e.code):
+                self.__load_print_auth_warning()
+            else:
+                raise
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return
+            raise
+        except Exception as e:
+            self.__print_error("__load_identity_domain_authentication_factor_settings", e)
+
+    ##########################################################################
+    # Identity Module
+    ##########################################################################
+    def load_identity_domains_main(self):
+        try:
+            print("Identity Domains...")
+
+            # create identity object
+            identity_client = oci.identity.IdentityClient(
+                config=self.config,
+                signer=self.signer,
+                timeout=(self.connection_timeout, self.read_timeout)
+            )
+            if self.proxy:
+                identity_client.base_client.session.proxies = {'https': self.proxy}
+
+            # get tenancy id from the config file
+            tenant_id = self.config['tenancy']
+
+            # get all domains
+            list_domains = identity_client.list_domains(
+                tenant_id,
+                lifecycle_state='ACTIVE',
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # oci.identity.models.DomainSummary
+            for domain in list_domains:
+
+                # Create Identity Domain Client
+                identity_domain_client = oci.identity_domains.IdentityDomainsClient(
+                    config=self.config,
+                    signer=self.signer,
+                    service_endpoint=domain.url,
+                    timeout=(self.connection_timeout, self.read_timeout)
+                )
+                if self.proxy:
+                    identity_domain_client.base_client.session.proxies = {'https': self.proxy}
+
+                domain_data = {
+                    'id': self.get_value(domain.id),
+                    'display_name': self.get_value(domain.display_name),
+                    'description': self.get_value(domain.description),
+                    'url': self.get_value(domain.url),
+                    'home_region_url': self.get_value(domain.home_region_url),
+                    'home_region': self.get_value(domain.home_region),
+                    'type': self.get_value(domain.type),
+                    'license_type': self.get_value(domain.license_type),
+                    'is_hidden_on_login': self.get_value(domain.is_hidden_on_login),
+                    'time_created': self.get_value(domain.time_created)[0:16],
+                    'lifecycle_state': self.get_value(domain.lifecycle_state),
+                    'defined_tags': [] if domain.defined_tags is None else domain.defined_tags,
+                    'freeform_tags': [] if domain.freeform_tags is None else domain.freeform_tags,
+                    'replica_regions': str(','.join(x.region for x in domain.replica_regions)) if domain.replica_regions else "",
+                    'users': self.__load_identity_domain_users(identity_domain_client, domain.display_name),
+                    'groups': self.__load_identity_domain_groups(identity_domain_client, domain.display_name),
+                    'dynamic_groups': self.__load_identity_domain_dynamic_resource_groups(identity_domain_client, domain.display_name),
+                    'kmsi_setting': self.__load_identity_domain_kmsi_setting(identity_domain_client, domain.display_name),
+                    'identity_providers': self.__load_identity_domain_identity_providers(identity_domain_client, domain.display_name),
+                    'authentication_factor_settings': self.__load_identity_domain_authentication_factor_settings(identity_domain_client, domain.display_name)
+                }
+
+                self.data.append(domain_data)
+
+            print("")
+            return self.data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return []
+            raise
+        except oci.exceptions.ServiceError as e:
+            if "is not enabled" in str(e):
+                print("--> Identity Domains is not enabled.")
+                return []
+            raise
+        except Exception as e:
+            self.__print_error("load_identity_domains_main: ", e)

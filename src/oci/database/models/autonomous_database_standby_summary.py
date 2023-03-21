@@ -120,25 +120,32 @@ class AutonomousDatabaseStandbySummary(object):
             The value to assign to the time_data_guard_role_changed property of this AutonomousDatabaseStandbySummary.
         :type time_data_guard_role_changed: datetime
 
+        :param time_disaster_recovery_role_changed:
+            The value to assign to the time_disaster_recovery_role_changed property of this AutonomousDatabaseStandbySummary.
+        :type time_disaster_recovery_role_changed: datetime
+
         """
         self.swagger_types = {
             'lag_time_in_seconds': 'int',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
-            'time_data_guard_role_changed': 'datetime'
+            'time_data_guard_role_changed': 'datetime',
+            'time_disaster_recovery_role_changed': 'datetime'
         }
 
         self.attribute_map = {
             'lag_time_in_seconds': 'lagTimeInSeconds',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
-            'time_data_guard_role_changed': 'timeDataGuardRoleChanged'
+            'time_data_guard_role_changed': 'timeDataGuardRoleChanged',
+            'time_disaster_recovery_role_changed': 'timeDisasterRecoveryRoleChanged'
         }
 
         self._lag_time_in_seconds = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._time_data_guard_role_changed = None
+        self._time_disaster_recovery_role_changed = None
 
     @property
     def lag_time_in_seconds(self):
@@ -241,6 +248,30 @@ class AutonomousDatabaseStandbySummary(object):
         :type: datetime
         """
         self._time_data_guard_role_changed = time_data_guard_role_changed
+
+    @property
+    def time_disaster_recovery_role_changed(self):
+        """
+        Gets the time_disaster_recovery_role_changed of this AutonomousDatabaseStandbySummary.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+
+
+        :return: The time_disaster_recovery_role_changed of this AutonomousDatabaseStandbySummary.
+        :rtype: datetime
+        """
+        return self._time_disaster_recovery_role_changed
+
+    @time_disaster_recovery_role_changed.setter
+    def time_disaster_recovery_role_changed(self, time_disaster_recovery_role_changed):
+        """
+        Sets the time_disaster_recovery_role_changed of this AutonomousDatabaseStandbySummary.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+
+
+        :param time_disaster_recovery_role_changed: The time_disaster_recovery_role_changed of this AutonomousDatabaseStandbySummary.
+        :type: datetime
+        """
+        self._time_disaster_recovery_role_changed = time_disaster_recovery_role_changed
 
     def __repr__(self):
         return formatted_flat_dict(self)

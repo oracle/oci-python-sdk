@@ -67,7 +67,7 @@ import requests
 import time
 
 
-version = "23.03.07"
+version = "23.03.15"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 
@@ -483,7 +483,6 @@ def insert_load_stats(connection, tenant_name, file_type, file_id, file_name_ful
 
     except oracledb.DatabaseError as e:
         print("\ninsert_load_stats() - Error manipulating database - " + str(e) + "\n")
-        raise SystemExit
 
     except Exception as e:
         print("\ninsert_load_stats() - Error insert into load_stats table - " + str(e))
@@ -1299,7 +1298,7 @@ def check_database_table_structure_load_status(connection):
                         AGENT_VERSION    varchar2(100),
                         BATCH_ID         number,
                         BATCH_TOTAL      number,
-                        CONSTRAINT OCI_LOAD_STATUS PRIMARY KEY (TENANT_NAME, FILE_ID) USING INDEX ENABLE
+                        CONSTRAINT OCI_LOAD_STATUS PRIMARY KEY (TENANT_NAME, FILE_NAME) USING INDEX ENABLE
                 ) """
                 cursor.execute(sql)
                 print("   Table OCI_LOAD_STATUS created")

@@ -151,6 +151,8 @@ class MapType(BaseType):
     def contains_null(self):
         """
         Gets the contains_null of this MapType.
+        Defines whether null values are allowed.
+
 
         :return: The contains_null of this MapType.
         :rtype: bool
@@ -161,6 +163,8 @@ class MapType(BaseType):
     def contains_null(self, contains_null):
         """
         Sets the contains_null of this MapType.
+        Defines whether null values are allowed.
+
 
         :param contains_null: The contains_null of this MapType.
         :type: bool

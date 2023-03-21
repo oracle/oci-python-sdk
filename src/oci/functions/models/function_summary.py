@@ -13,34 +13,6 @@ class FunctionSummary(object):
     Summary of a function.
     """
 
-    #: A constant which can be used with the lifecycle_state property of a FunctionSummary.
-    #: This constant has a value of "CREATING"
-    LIFECYCLE_STATE_CREATING = "CREATING"
-
-    #: A constant which can be used with the lifecycle_state property of a FunctionSummary.
-    #: This constant has a value of "ACTIVE"
-    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
-
-    #: A constant which can be used with the lifecycle_state property of a FunctionSummary.
-    #: This constant has a value of "INACTIVE"
-    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
-
-    #: A constant which can be used with the lifecycle_state property of a FunctionSummary.
-    #: This constant has a value of "UPDATING"
-    LIFECYCLE_STATE_UPDATING = "UPDATING"
-
-    #: A constant which can be used with the lifecycle_state property of a FunctionSummary.
-    #: This constant has a value of "DELETING"
-    LIFECYCLE_STATE_DELETING = "DELETING"
-
-    #: A constant which can be used with the lifecycle_state property of a FunctionSummary.
-    #: This constant has a value of "DELETED"
-    LIFECYCLE_STATE_DELETED = "DELETED"
-
-    #: A constant which can be used with the lifecycle_state property of a FunctionSummary.
-    #: This constant has a value of "FAILED"
-    LIFECYCLE_STATE_FAILED = "FAILED"
-
     def __init__(self, **kwargs):
         """
         Initializes a new FunctionSummary object with values from keyword arguments.
@@ -64,8 +36,6 @@ class FunctionSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this FunctionSummary.
-            Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param image:
@@ -75,6 +45,10 @@ class FunctionSummary(object):
         :param image_digest:
             The value to assign to the image_digest property of this FunctionSummary.
         :type image_digest: str
+
+        :param source_details:
+            The value to assign to the source_details property of this FunctionSummary.
+        :type source_details: oci.functions.models.FunctionSourceDetails
 
         :param memory_in_mbs:
             The value to assign to the memory_in_mbs property of this FunctionSummary.
@@ -121,6 +95,7 @@ class FunctionSummary(object):
             'lifecycle_state': 'str',
             'image': 'str',
             'image_digest': 'str',
+            'source_details': 'FunctionSourceDetails',
             'memory_in_mbs': 'int',
             'timeout_in_seconds': 'int',
             'provisioned_concurrency_config': 'FunctionProvisionedConcurrencyConfig',
@@ -140,6 +115,7 @@ class FunctionSummary(object):
             'lifecycle_state': 'lifecycleState',
             'image': 'image',
             'image_digest': 'imageDigest',
+            'source_details': 'sourceDetails',
             'memory_in_mbs': 'memoryInMBs',
             'timeout_in_seconds': 'timeoutInSeconds',
             'provisioned_concurrency_config': 'provisionedConcurrencyConfig',
@@ -158,6 +134,7 @@ class FunctionSummary(object):
         self._lifecycle_state = None
         self._image = None
         self._image_digest = None
+        self._source_details = None
         self._memory_in_mbs = None
         self._timeout_in_seconds = None
         self._provisioned_concurrency_config = None
@@ -274,9 +251,6 @@ class FunctionSummary(object):
         Gets the lifecycle_state of this FunctionSummary.
         The current state of the function.
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-
 
         :return: The lifecycle_state of this FunctionSummary.
         :rtype: str
@@ -293,9 +267,6 @@ class FunctionSummary(object):
         :param lifecycle_state: The lifecycle_state of this FunctionSummary.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
-        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
-            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property
@@ -353,6 +324,26 @@ class FunctionSummary(object):
         :type: str
         """
         self._image_digest = image_digest
+
+    @property
+    def source_details(self):
+        """
+        Gets the source_details of this FunctionSummary.
+
+        :return: The source_details of this FunctionSummary.
+        :rtype: oci.functions.models.FunctionSourceDetails
+        """
+        return self._source_details
+
+    @source_details.setter
+    def source_details(self, source_details):
+        """
+        Sets the source_details of this FunctionSummary.
+
+        :param source_details: The source_details of this FunctionSummary.
+        :type: oci.functions.models.FunctionSourceDetails
+        """
+        self._source_details = source_details
 
     @property
     def memory_in_mbs(self):

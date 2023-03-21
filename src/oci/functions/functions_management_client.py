@@ -782,6 +782,196 @@ class FunctionsManagementClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def get_pbf_listing(self, pbf_listing_id, **kwargs):
+        """
+        Fetches a Pre-built Function(PBF) Listing. Returns a PbfListing response model.
+
+
+        :param str pbf_listing_id: (required)
+            unique PbfListing identifier
+
+        :param str opc_request_id: (optional)
+            The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.functions.models.PbfListing`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/functions/get_pbf_listing.py.html>`__ to see an example of how to use get_pbf_listing API.
+        """
+        resource_path = "/pbfListings/{pbfListingId}"
+        method = "GET"
+        operation_name = "get_pbf_listing"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListing/GetPbfListing"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_pbf_listing got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "pbfListingId": pbf_listing_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="PbfListing",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="PbfListing",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def get_pbf_listing_version(self, pbf_listing_version_id, **kwargs):
+        """
+        Gets a PbfListingVersion by identifier for a PbfListing.
+
+
+        :param str pbf_listing_version_id: (required)
+            unique PbfListingVersion identifier
+
+        :param str opc_request_id: (optional)
+            The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.functions.models.PbfListingVersion`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/functions/get_pbf_listing_version.py.html>`__ to see an example of how to use get_pbf_listing_version API.
+        """
+        resource_path = "/pbfListingVersions/{pbfListingVersionId}"
+        method = "GET"
+        operation_name = "get_pbf_listing_version"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListingVersion/GetPbfListingVersion"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_pbf_listing_version got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "pbfListingVersionId": pbf_listing_version_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="PbfListingVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="PbfListingVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def list_applications(self, compartment_id, **kwargs):
         """
         Lists applications for a compartment.
@@ -1110,6 +1300,463 @@ class FunctionsManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[FunctionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def list_pbf_listing_versions(self, pbf_listing_id, **kwargs):
+        """
+        Fetches a wrapped list of all Pre-built Function(PBF) Listing versions. Returns a PbfListingVersionCollection
+        containing an array of PbfListingVersionSummary response models.
+
+        Note that the PbfListingIdentifier must be provided as a query parameter, otherwise an exception shall
+        be thrown.
+
+
+        :param str pbf_listing_id: (required)
+            unique PbfListing identifier
+
+        :param str pbf_listing_version_id: (optional)
+            unique PbfListingVersion identifier
+
+        :param str name: (optional)
+            Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.
+            Each PbfListingVersion name is unique with respect to its associated PbfListing.
+
+        :param bool is_current_version: (optional)
+            Matches the current version (the most recently added version with an Active
+            lifecycleState) associated with a PbfListing.
+
+        :param str lifecycle_state: (optional)
+            A filter to return only resources their lifecycleState matches the given lifecycleState.
+
+            Allowed values are: "ACTIVE", "INACTIVE", "DELETED"
+
+        :param int limit: (optional)
+            The maximum number of items to return. 1 is the minimum, 50 is the maximum.
+
+            Default: 10
+
+        :param str page: (optional)
+            The pagination token for a list query returned by a previous operation
+
+        :param str sort_order: (optional)
+            Specifies sort order.
+
+            * **ASC:** Ascending sort order.
+            * **DESC:** Descending sort order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for name is ascending.
+
+            Allowed values are: "timeCreated", "name"
+
+        :param str opc_request_id: (optional)
+            The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.functions.models.PbfListingVersionsCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/functions/list_pbf_listing_versions.py.html>`__ to see an example of how to use list_pbf_listing_versions API.
+        """
+        resource_path = "/pbfListingVersions"
+        method = "GET"
+        operation_name = "list_pbf_listing_versions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListingVersion/ListPbfListingVersions"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "pbf_listing_version_id",
+            "name",
+            "is_current_version",
+            "lifecycle_state",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_pbf_listing_versions got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["ACTIVE", "INACTIVE", "DELETED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "name"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "pbfListingId": pbf_listing_id,
+            "pbfListingVersionId": kwargs.get("pbf_listing_version_id", missing),
+            "name": kwargs.get("name", missing),
+            "isCurrentVersion": kwargs.get("is_current_version", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="PbfListingVersionsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="PbfListingVersionsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def list_pbf_listings(self, **kwargs):
+        """
+        Fetches a wrapped list of all Pre-built Function(PBF) Listings. Returns a PbfListingCollection containing
+        an array of PbfListingSummary response models.
+
+
+        :param str pbf_listing_id: (optional)
+            unique PbfListing identifier
+
+        :param str name: (optional)
+            A filter to return only resources that match the entire PBF name given.
+
+        :param str name_contains: (optional)
+            A filter to return only resources that contain the supplied filter text in the PBF name given.
+
+        :param str name_starts_with: (optional)
+            A filter to return only resources that start with the supplied filter text in the PBF name given.
+
+        :param list[str] trigger: (optional)
+            A filter to return only resources that match the service trigger sources of a PBF.
+
+        :param str lifecycle_state: (optional)
+            A filter to return only resources their lifecycleState matches the given lifecycleState.
+
+            Allowed values are: "ACTIVE", "INACTIVE", "DELETED"
+
+        :param int limit: (optional)
+            The maximum number of items to return. 1 is the minimum, 50 is the maximum.
+
+            Default: 10
+
+        :param str page: (optional)
+            The pagination token for a list query returned by a previous operation
+
+        :param str sort_order: (optional)
+            Specifies sort order.
+
+            * **ASC:** Ascending sort order.
+            * **DESC:** Descending sort order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for name is ascending.
+
+            Allowed values are: "timeCreated", "name"
+
+        :param str opc_request_id: (optional)
+            The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.functions.models.PbfListingsCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/functions/list_pbf_listings.py.html>`__ to see an example of how to use list_pbf_listings API.
+        """
+        resource_path = "/pbfListings"
+        method = "GET"
+        operation_name = "list_pbf_listings"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/functions/20181201/PbfListing/ListPbfListings"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "pbf_listing_id",
+            "name",
+            "name_contains",
+            "name_starts_with",
+            "trigger",
+            "lifecycle_state",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_pbf_listings got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["ACTIVE", "INACTIVE", "DELETED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "name"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "pbfListingId": kwargs.get("pbf_listing_id", missing),
+            "name": kwargs.get("name", missing),
+            "nameContains": kwargs.get("name_contains", missing),
+            "nameStartsWith": kwargs.get("name_starts_with", missing),
+            "trigger": self.base_client.generate_collection_format_param(kwargs.get("trigger", missing), 'multi'),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="PbfListingsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="PbfListingsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def list_triggers(self, **kwargs):
+        """
+        Returns a list of Triggers.
+
+
+        :param str name: (optional)
+            A filter to return only resources that match the service trigger source of a PBF.
+
+        :param int limit: (optional)
+            The maximum number of items to return. 1 is the minimum, 50 is the maximum.
+
+            Default: 10
+
+        :param str page: (optional)
+            The pagination token for a list query returned by a previous operation
+
+        :param str sort_order: (optional)
+            Specifies sort order.
+
+            * **ASC:** Ascending sort order.
+            * **DESC:** Descending sort order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.functions.models.TriggersCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/functions/list_triggers.py.html>`__ to see an example of how to use list_triggers API.
+        """
+        resource_path = "/pbfListings/triggers"
+        method = "GET"
+        operation_name = "list_triggers"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/functions/20181201/TriggersCollection/ListTriggers"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "name",
+            "limit",
+            "page",
+            "sort_order",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_triggers got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "name": kwargs.get("name", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="TriggersCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="TriggersCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)

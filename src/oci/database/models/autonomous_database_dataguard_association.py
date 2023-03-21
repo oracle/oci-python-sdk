@@ -28,6 +28,10 @@ class AutonomousDatabaseDataguardAssociation(object):
     ROLE_DISABLED_STANDBY = "DISABLED_STANDBY"
 
     #: A constant which can be used with the role property of a AutonomousDatabaseDataguardAssociation.
+    #: This constant has a value of "BACKUP_COPY"
+    ROLE_BACKUP_COPY = "BACKUP_COPY"
+
+    #: A constant which can be used with the role property of a AutonomousDatabaseDataguardAssociation.
     #: This constant has a value of "SNAPSHOT_STANDBY"
     ROLE_SNAPSHOT_STANDBY = "SNAPSHOT_STANDBY"
 
@@ -74,6 +78,10 @@ class AutonomousDatabaseDataguardAssociation(object):
     #: A constant which can be used with the peer_role property of a AutonomousDatabaseDataguardAssociation.
     #: This constant has a value of "DISABLED_STANDBY"
     PEER_ROLE_DISABLED_STANDBY = "DISABLED_STANDBY"
+
+    #: A constant which can be used with the peer_role property of a AutonomousDatabaseDataguardAssociation.
+    #: This constant has a value of "BACKUP_COPY"
+    PEER_ROLE_BACKUP_COPY = "BACKUP_COPY"
 
     #: A constant which can be used with the peer_role property of a AutonomousDatabaseDataguardAssociation.
     #: This constant has a value of "SNAPSHOT_STANDBY"
@@ -134,7 +142,7 @@ class AutonomousDatabaseDataguardAssociation(object):
 
         :param role:
             The value to assign to the role property of this AutonomousDatabaseDataguardAssociation.
-            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type role: str
 
@@ -150,7 +158,7 @@ class AutonomousDatabaseDataguardAssociation(object):
 
         :param peer_role:
             The value to assign to the peer_role property of this AutonomousDatabaseDataguardAssociation.
-            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type peer_role: str
 
@@ -312,7 +320,7 @@ class AutonomousDatabaseDataguardAssociation(object):
         **[Required]** Gets the role of this AutonomousDatabaseDataguardAssociation.
         The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 
-        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -331,7 +339,7 @@ class AutonomousDatabaseDataguardAssociation(object):
         :param role: The role of this AutonomousDatabaseDataguardAssociation.
         :type: str
         """
-        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY"]
+        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             role = 'UNKNOWN_ENUM_VALUE'
         self._role = role
@@ -396,7 +404,7 @@ class AutonomousDatabaseDataguardAssociation(object):
         **[Required]** Gets the peer_role of this AutonomousDatabaseDataguardAssociation.
         The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 
-        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -415,7 +423,7 @@ class AutonomousDatabaseDataguardAssociation(object):
         :param peer_role: The peer_role of this AutonomousDatabaseDataguardAssociation.
         :type: str
         """
-        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY"]
+        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY"]
         if not value_allowed_none_or_none_sentinel(peer_role, allowed_values):
             peer_role = 'UNKNOWN_ENUM_VALUE'
         self._peer_role = peer_role

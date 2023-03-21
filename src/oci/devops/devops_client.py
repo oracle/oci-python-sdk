@@ -827,7 +827,7 @@ class DevopsClient(object):
 
     def create_build_run(self, create_build_run_details, **kwargs):
         """
-        Starts a build pipeline run for a predefined build pipeline.
+        Starts a build pipeline run for a predefined build pipeline. Please ensure the completion of any work request for creation/updation of Build Pipeline before starting a Build Run.
 
 
         :param oci.devops.models.CreateBuildRunDetails create_build_run_details: (required)
@@ -3196,7 +3196,7 @@ class DevopsClient(object):
             Unique repository identifier.
 
         :param str target_version: (required)
-            The commit or reference name where changes are coming from.
+            The commit or reference name that represents the newer changes against the base version.
 
         :param str base_version: (optional)
             The commit or reference name to compare changes against. If base version is not provided, the difference goes against an empty tree.

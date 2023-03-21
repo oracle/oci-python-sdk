@@ -30,6 +30,14 @@ class UpdateConnectionDetails(object):
     CONNECTION_TYPE_MYSQL = "MYSQL"
 
     #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "JAVA_MESSAGE_SERVICE"
+    CONNECTION_TYPE_JAVA_MESSAGE_SERVICE = "JAVA_MESSAGE_SERVICE"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "MICROSOFT_SQLSERVER"
+    CONNECTION_TYPE_MICROSOFT_SQLSERVER = "MICROSOFT_SQLSERVER"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
     #: This constant has a value of "OCI_OBJECT_STORAGE"
     CONNECTION_TYPE_OCI_OBJECT_STORAGE = "OCI_OBJECT_STORAGE"
 
@@ -49,26 +57,53 @@ class UpdateConnectionDetails(object):
     #: This constant has a value of "AZURE_SYNAPSE_ANALYTICS"
     CONNECTION_TYPE_AZURE_SYNAPSE_ANALYTICS = "AZURE_SYNAPSE_ANALYTICS"
 
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "SNOWFLAKE"
+    CONNECTION_TYPE_SNOWFLAKE = "SNOWFLAKE"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "AMAZON_S3"
+    CONNECTION_TYPE_AMAZON_S3 = "AMAZON_S3"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "HDFS"
+    CONNECTION_TYPE_HDFS = "HDFS"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "ORACLE_NOSQL"
+    CONNECTION_TYPE_ORACLE_NOSQL = "ORACLE_NOSQL"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "MONGODB"
+    CONNECTION_TYPE_MONGODB = "MONGODB"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
-        * :class:`~oci.golden_gate.models.UpdatePostgresqlConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateOracleConnectionDetails`
-        * :class:`~oci.golden_gate.models.UpdateKafkaSchemaRegistryConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateOciObjectStorageConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateMongoDbConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateAzureDataLakeStorageConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateJavaMessageServiceConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateGoldenGateConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdatePostgresqlConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateMicrosoftSqlserverConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateOracleNosqlConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateKafkaSchemaRegistryConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateAmazonS3ConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateSnowflakeConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateHdfsConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateMysqlConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateKafkaConnectionDetails`
-        * :class:`~oci.golden_gate.models.UpdateAzureDataLakeStorageConnectionDetails`
-        * :class:`~oci.golden_gate.models.UpdateGoldenGateConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateAzureSynapseConnectionDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param connection_type:
             The value to assign to the connection_type property of this UpdateConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"
         :type connection_type: str
 
         :param display_name:
@@ -139,29 +174,50 @@ class UpdateConnectionDetails(object):
         """
         type = object_dictionary['connectionType']
 
+        if type == 'ORACLE':
+            return 'UpdateOracleConnectionDetails'
+
+        if type == 'OCI_OBJECT_STORAGE':
+            return 'UpdateOciObjectStorageConnectionDetails'
+
+        if type == 'MONGODB':
+            return 'UpdateMongoDbConnectionDetails'
+
+        if type == 'AZURE_DATA_LAKE_STORAGE':
+            return 'UpdateAzureDataLakeStorageConnectionDetails'
+
+        if type == 'JAVA_MESSAGE_SERVICE':
+            return 'UpdateJavaMessageServiceConnectionDetails'
+
+        if type == 'GOLDENGATE':
+            return 'UpdateGoldenGateConnectionDetails'
+
         if type == 'POSTGRESQL':
             return 'UpdatePostgresqlConnectionDetails'
 
-        if type == 'ORACLE':
-            return 'UpdateOracleConnectionDetails'
+        if type == 'MICROSOFT_SQLSERVER':
+            return 'UpdateMicrosoftSqlserverConnectionDetails'
+
+        if type == 'ORACLE_NOSQL':
+            return 'UpdateOracleNosqlConnectionDetails'
 
         if type == 'KAFKA_SCHEMA_REGISTRY':
             return 'UpdateKafkaSchemaRegistryConnectionDetails'
 
-        if type == 'OCI_OBJECT_STORAGE':
-            return 'UpdateOciObjectStorageConnectionDetails'
+        if type == 'AMAZON_S3':
+            return 'UpdateAmazonS3ConnectionDetails'
+
+        if type == 'SNOWFLAKE':
+            return 'UpdateSnowflakeConnectionDetails'
+
+        if type == 'HDFS':
+            return 'UpdateHdfsConnectionDetails'
 
         if type == 'MYSQL':
             return 'UpdateMysqlConnectionDetails'
 
         if type == 'KAFKA':
             return 'UpdateKafkaConnectionDetails'
-
-        if type == 'AZURE_DATA_LAKE_STORAGE':
-            return 'UpdateAzureDataLakeStorageConnectionDetails'
-
-        if type == 'GOLDENGATE':
-            return 'UpdateGoldenGateConnectionDetails'
 
         if type == 'AZURE_SYNAPSE_ANALYTICS':
             return 'UpdateAzureSynapseConnectionDetails'
@@ -174,7 +230,7 @@ class UpdateConnectionDetails(object):
         Gets the connection_type of this UpdateConnectionDetails.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS"
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"
 
 
         :return: The connection_type of this UpdateConnectionDetails.
@@ -192,7 +248,7 @@ class UpdateConnectionDetails(object):
         :param connection_type: The connection_type of this UpdateConnectionDetails.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             raise ValueError(
                 "Invalid value for `connection_type`, must be None or one of {0}"
@@ -310,13 +366,9 @@ class UpdateConnectionDetails(object):
     def vault_id(self):
         """
         Gets the vault_id of this UpdateConnectionDetails.
-        The `OCID`__ of the customer vault being
-        referenced.
-        If provided, this will reference a vault which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to manage secrets contained
-        within this vault.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's vault OCID.
+        If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+        to manage secrets contained within this vault.
 
 
         :return: The vault_id of this UpdateConnectionDetails.
@@ -328,13 +380,9 @@ class UpdateConnectionDetails(object):
     def vault_id(self, vault_id):
         """
         Sets the vault_id of this UpdateConnectionDetails.
-        The `OCID`__ of the customer vault being
-        referenced.
-        If provided, this will reference a vault which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to manage secrets contained
-        within this vault.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's vault OCID.
+        If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+        to manage secrets contained within this vault.
 
 
         :param vault_id: The vault_id of this UpdateConnectionDetails.
@@ -346,13 +394,8 @@ class UpdateConnectionDetails(object):
     def key_id(self):
         """
         Gets the key_id of this UpdateConnectionDetails.
-        The `OCID`__ of the customer \"Master\" key being
-        referenced.
-        If provided, this will reference a key which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to utilize this key to
-        manage secrets.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's master key OCID.
+        If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 
 
         :return: The key_id of this UpdateConnectionDetails.
@@ -364,13 +407,8 @@ class UpdateConnectionDetails(object):
     def key_id(self, key_id):
         """
         Sets the key_id of this UpdateConnectionDetails.
-        The `OCID`__ of the customer \"Master\" key being
-        referenced.
-        If provided, this will reference a key which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to utilize this key to
-        manage secrets.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's master key OCID.
+        If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 
 
         :param key_id: The key_id of this UpdateConnectionDetails.
