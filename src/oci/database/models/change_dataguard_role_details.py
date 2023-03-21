@@ -26,6 +26,10 @@ class ChangeDataguardRoleDetails(object):
     ROLE_DISABLED_STANDBY = "DISABLED_STANDBY"
 
     #: A constant which can be used with the role property of a ChangeDataguardRoleDetails.
+    #: This constant has a value of "BACKUP_COPY"
+    ROLE_BACKUP_COPY = "BACKUP_COPY"
+
+    #: A constant which can be used with the role property of a ChangeDataguardRoleDetails.
     #: This constant has a value of "SNAPSHOT_STANDBY"
     ROLE_SNAPSHOT_STANDBY = "SNAPSHOT_STANDBY"
 
@@ -44,7 +48,7 @@ class ChangeDataguardRoleDetails(object):
 
         :param role:
             The value to assign to the role property of this ChangeDataguardRoleDetails.
-            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY"
+            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY"
         :type role: str
 
         :param autonomous_container_database_dataguard_association_id:
@@ -79,7 +83,7 @@ class ChangeDataguardRoleDetails(object):
         **[Required]** Gets the role of this ChangeDataguardRoleDetails.
         The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 
-        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY"
+        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY"
 
 
         :return: The role of this ChangeDataguardRoleDetails.
@@ -97,7 +101,7 @@ class ChangeDataguardRoleDetails(object):
         :param role: The role of this ChangeDataguardRoleDetails.
         :type: str
         """
-        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY", "SNAPSHOT_STANDBY"]
+        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             raise ValueError(
                 "Invalid value for `role`, must be None or one of {0}"

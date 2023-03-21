@@ -99,6 +99,10 @@ class BuildStageSummary(BuildPipelineStageSummary):
             The value to assign to the primary_build_source property of this BuildStageSummary.
         :type primary_build_source: str
 
+        :param build_runner_shape_config:
+            The value to assign to the build_runner_shape_config property of this BuildStageSummary.
+        :type build_runner_shape_config: oci.devops.models.BuildRunnerShapeConfig
+
         :param private_access_config:
             The value to assign to the private_access_config property of this BuildStageSummary.
         :type private_access_config: oci.devops.models.NetworkChannel
@@ -125,6 +129,7 @@ class BuildStageSummary(BuildPipelineStageSummary):
             'stage_execution_timeout_in_seconds': 'int',
             'build_source_collection': 'BuildSourceCollection',
             'primary_build_source': 'str',
+            'build_runner_shape_config': 'BuildRunnerShapeConfig',
             'private_access_config': 'NetworkChannel'
         }
 
@@ -149,6 +154,7 @@ class BuildStageSummary(BuildPipelineStageSummary):
             'stage_execution_timeout_in_seconds': 'stageExecutionTimeoutInSeconds',
             'build_source_collection': 'buildSourceCollection',
             'primary_build_source': 'primaryBuildSource',
+            'build_runner_shape_config': 'buildRunnerShapeConfig',
             'private_access_config': 'privateAccessConfig'
         }
 
@@ -172,6 +178,7 @@ class BuildStageSummary(BuildPipelineStageSummary):
         self._stage_execution_timeout_in_seconds = None
         self._build_source_collection = None
         self._primary_build_source = None
+        self._build_runner_shape_config = None
         self._private_access_config = None
         self._build_pipeline_stage_type = 'BUILD'
 
@@ -290,6 +297,26 @@ class BuildStageSummary(BuildPipelineStageSummary):
         :type: str
         """
         self._primary_build_source = primary_build_source
+
+    @property
+    def build_runner_shape_config(self):
+        """
+        Gets the build_runner_shape_config of this BuildStageSummary.
+
+        :return: The build_runner_shape_config of this BuildStageSummary.
+        :rtype: oci.devops.models.BuildRunnerShapeConfig
+        """
+        return self._build_runner_shape_config
+
+    @build_runner_shape_config.setter
+    def build_runner_shape_config(self, build_runner_shape_config):
+        """
+        Sets the build_runner_shape_config of this BuildStageSummary.
+
+        :param build_runner_shape_config: The build_runner_shape_config of this BuildStageSummary.
+        :type: oci.devops.models.BuildRunnerShapeConfig
+        """
+        self._build_runner_shape_config = build_runner_shape_config
 
     @property
     def private_access_config(self):

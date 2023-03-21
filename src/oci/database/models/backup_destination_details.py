@@ -29,6 +29,10 @@ class BackupDestinationDetails(object):
     #: This constant has a value of "LOCAL"
     TYPE_LOCAL = "LOCAL"
 
+    #: A constant which can be used with the type property of a BackupDestinationDetails.
+    #: This constant has a value of "DBRS"
+    TYPE_DBRS = "DBRS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BackupDestinationDetails object with values from keyword arguments.
@@ -36,7 +40,7 @@ class BackupDestinationDetails(object):
 
         :param type:
             The value to assign to the type property of this BackupDestinationDetails.
-            Allowed values for this property are: "NFS", "RECOVERY_APPLIANCE", "OBJECT_STORE", "LOCAL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NFS", "RECOVERY_APPLIANCE", "OBJECT_STORE", "LOCAL", "DBRS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -56,13 +60,18 @@ class BackupDestinationDetails(object):
             The value to assign to the internet_proxy property of this BackupDestinationDetails.
         :type internet_proxy: str
 
+        :param dbrs_policy_id:
+            The value to assign to the dbrs_policy_id property of this BackupDestinationDetails.
+        :type dbrs_policy_id: str
+
         """
         self.swagger_types = {
             'type': 'str',
             'id': 'str',
             'vpc_user': 'str',
             'vpc_password': 'str',
-            'internet_proxy': 'str'
+            'internet_proxy': 'str',
+            'dbrs_policy_id': 'str'
         }
 
         self.attribute_map = {
@@ -70,7 +79,8 @@ class BackupDestinationDetails(object):
             'id': 'id',
             'vpc_user': 'vpcUser',
             'vpc_password': 'vpcPassword',
-            'internet_proxy': 'internetProxy'
+            'internet_proxy': 'internetProxy',
+            'dbrs_policy_id': 'dbrsPolicyId'
         }
 
         self._type = None
@@ -78,6 +88,7 @@ class BackupDestinationDetails(object):
         self._vpc_user = None
         self._vpc_password = None
         self._internet_proxy = None
+        self._dbrs_policy_id = None
 
     @property
     def type(self):
@@ -85,7 +96,7 @@ class BackupDestinationDetails(object):
         **[Required]** Gets the type of this BackupDestinationDetails.
         Type of the database backup destination.
 
-        Allowed values for this property are: "NFS", "RECOVERY_APPLIANCE", "OBJECT_STORE", "LOCAL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NFS", "RECOVERY_APPLIANCE", "OBJECT_STORE", "LOCAL", "DBRS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -104,7 +115,7 @@ class BackupDestinationDetails(object):
         :param type: The type of this BackupDestinationDetails.
         :type: str
         """
-        allowed_values = ["NFS", "RECOVERY_APPLIANCE", "OBJECT_STORE", "LOCAL"]
+        allowed_values = ["NFS", "RECOVERY_APPLIANCE", "OBJECT_STORE", "LOCAL", "DBRS"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
@@ -208,6 +219,34 @@ class BackupDestinationDetails(object):
         :type: str
         """
         self._internet_proxy = internet_proxy
+
+    @property
+    def dbrs_policy_id(self):
+        """
+        Gets the dbrs_policy_id of this BackupDestinationDetails.
+        The `OCID`__ of the DBRS policy used for backup.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The dbrs_policy_id of this BackupDestinationDetails.
+        :rtype: str
+        """
+        return self._dbrs_policy_id
+
+    @dbrs_policy_id.setter
+    def dbrs_policy_id(self, dbrs_policy_id):
+        """
+        Sets the dbrs_policy_id of this BackupDestinationDetails.
+        The `OCID`__ of the DBRS policy used for backup.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param dbrs_policy_id: The dbrs_policy_id of this BackupDestinationDetails.
+        :type: str
+        """
+        self._dbrs_policy_id = dbrs_policy_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

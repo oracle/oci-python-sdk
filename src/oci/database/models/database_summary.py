@@ -127,6 +127,14 @@ class DatabaseSummary(object):
             The value to assign to the last_backup_timestamp property of this DatabaseSummary.
         :type last_backup_timestamp: datetime
 
+        :param last_backup_duration_in_seconds:
+            The value to assign to the last_backup_duration_in_seconds property of this DatabaseSummary.
+        :type last_backup_duration_in_seconds: int
+
+        :param last_failed_backup_timestamp:
+            The value to assign to the last_failed_backup_timestamp property of this DatabaseSummary.
+        :type last_failed_backup_timestamp: datetime
+
         :param db_backup_config:
             The value to assign to the db_backup_config property of this DatabaseSummary.
         :type db_backup_config: oci.database.models.DbBackupConfig
@@ -192,6 +200,8 @@ class DatabaseSummary(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'last_backup_timestamp': 'datetime',
+            'last_backup_duration_in_seconds': 'int',
+            'last_failed_backup_timestamp': 'datetime',
             'db_backup_config': 'DbBackupConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -222,6 +232,8 @@ class DatabaseSummary(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'last_backup_timestamp': 'lastBackupTimestamp',
+            'last_backup_duration_in_seconds': 'lastBackupDurationInSeconds',
+            'last_failed_backup_timestamp': 'lastFailedBackupTimestamp',
             'db_backup_config': 'dbBackupConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -251,6 +263,8 @@ class DatabaseSummary(object):
         self._lifecycle_state = None
         self._time_created = None
         self._last_backup_timestamp = None
+        self._last_backup_duration_in_seconds = None
+        self._last_failed_backup_timestamp = None
         self._db_backup_config = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -649,6 +663,54 @@ class DatabaseSummary(object):
         :type: datetime
         """
         self._last_backup_timestamp = last_backup_timestamp
+
+    @property
+    def last_backup_duration_in_seconds(self):
+        """
+        Gets the last_backup_duration_in_seconds of this DatabaseSummary.
+        The duration when the latest database backup created.
+
+
+        :return: The last_backup_duration_in_seconds of this DatabaseSummary.
+        :rtype: int
+        """
+        return self._last_backup_duration_in_seconds
+
+    @last_backup_duration_in_seconds.setter
+    def last_backup_duration_in_seconds(self, last_backup_duration_in_seconds):
+        """
+        Sets the last_backup_duration_in_seconds of this DatabaseSummary.
+        The duration when the latest database backup created.
+
+
+        :param last_backup_duration_in_seconds: The last_backup_duration_in_seconds of this DatabaseSummary.
+        :type: int
+        """
+        self._last_backup_duration_in_seconds = last_backup_duration_in_seconds
+
+    @property
+    def last_failed_backup_timestamp(self):
+        """
+        Gets the last_failed_backup_timestamp of this DatabaseSummary.
+        The date and time when the latest database backup failed.
+
+
+        :return: The last_failed_backup_timestamp of this DatabaseSummary.
+        :rtype: datetime
+        """
+        return self._last_failed_backup_timestamp
+
+    @last_failed_backup_timestamp.setter
+    def last_failed_backup_timestamp(self, last_failed_backup_timestamp):
+        """
+        Sets the last_failed_backup_timestamp of this DatabaseSummary.
+        The date and time when the latest database backup failed.
+
+
+        :param last_failed_backup_timestamp: The last_failed_backup_timestamp of this DatabaseSummary.
+        :type: datetime
+        """
+        self._last_failed_backup_timestamp = last_failed_backup_timestamp
 
     @property
     def db_backup_config(self):

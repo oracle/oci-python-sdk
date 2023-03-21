@@ -69,6 +69,7 @@
 # - oci.visual_builder.VbInstanceClient
 # - oci.data_connectivity.models.RegistrySummary
 # - oci.queue.QueueAdminClient
+# - oci.identity_domains.IdentityDomainsClient
 #
 # Modules Not Yet Covered:
 # - oci.blockchain.BlockchainPlatformClient
@@ -100,7 +101,7 @@ import datetime
 import contextlib
 import os
 
-version = "23.03.07"
+version = "23.03.21"
 
 ##########################################################################
 # check OCI version
@@ -148,6 +149,7 @@ def execute_extract():
     # create data instance
     ############################################
     data = ShowOCIData(flags)
+
     ############################################
     # output and summary instances
     ############################################
@@ -174,6 +176,8 @@ def execute_extract():
     # Get Tenancy details from file
     ############################################
     tenancy = data.get_tenancy_data()
+    if cmd.pause:
+        input("Press Enter to continue...")
 
     ############################################
     # if print service data to file or screen
@@ -308,7 +312,7 @@ def set_parser_arguments(argsList=[]):
     parser.add_argument('-edge', action='store_true', default=False, dest='edge', help='Print Edge, DNS Services and WAAS policies')
     parser.add_argument('-f', action='store_true', default=False, dest='file', help='Print File Storage')
     parser.add_argument('-fun', action='store_true', default=False, dest='function', help='Print Functions')
-    parser.add_argument('-i', action='store_true', default=False, dest='identity', help='Print Identity')
+    parser.add_argument('-i', action='store_true', default=False, dest='identity', help='Print Identity and Identity Domains')
     parser.add_argument('-ic', action='store_true', default=False, dest='identity_compartments', help='Print Identity Compartments only')
     parser.add_argument('-isc', action='store_true', default=False, dest='skip_identity_user_credential', help='Skip Identity User Credential extract')
     parser.add_argument('-l', action='store_true', default=False, dest='load', help='Print Load Balancer')
@@ -334,6 +338,7 @@ def set_parser_arguments(argsList=[]):
     parser.add_argument('-dt', action='store_true', default=False, dest='delegation_token', help='Use Delegation Token (Cloud shell)')
     parser.add_argument('-t', default="", dest='profile', help='Config file section to use (tenancy profile)')
     parser.add_argument('-p', default="", dest='proxy', help='Set Proxy (i.e. www-proxy-server.com:80) ')
+    parser.add_argument('-pause', action='store_true', default=False, dest='pause', help='Pause before Processing')
     parser.add_argument('-rg', default="", dest='region', help='Filter by Region')
     parser.add_argument('-cp', default="", dest='compart', help='Filter by Compartment Name or OCID')
     parser.add_argument('-cpr', default="", dest='compart_recur', help='Filter by Comp Name Recursive')
@@ -394,6 +399,9 @@ def set_service_extract_flags(cmd):
 
     if cmd.proxy:
         prm.proxy = cmd.proxy
+
+    if cmd.pause:
+        prm.pause = cmd.pause
 
     if cmd.mgdcompart:
         prm.read_ManagedCompartmentForPaaS = False

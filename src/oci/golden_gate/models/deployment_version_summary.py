@@ -26,6 +26,10 @@ class DeploymentVersionSummary(object):
     DEPLOYMENT_TYPE_BIGDATA = "BIGDATA"
 
     #: A constant which can be used with the deployment_type property of a DeploymentVersionSummary.
+    #: This constant has a value of "DATABASE_MICROSOFT_SQLSERVER"
+    DEPLOYMENT_TYPE_DATABASE_MICROSOFT_SQLSERVER = "DATABASE_MICROSOFT_SQLSERVER"
+
+    #: A constant which can be used with the deployment_type property of a DeploymentVersionSummary.
     #: This constant has a value of "DATABASE_MYSQL"
     DEPLOYMENT_TYPE_DATABASE_MYSQL = "DATABASE_MYSQL"
 
@@ -56,7 +60,7 @@ class DeploymentVersionSummary(object):
 
         :param deployment_type:
             The value to assign to the deployment_type property of this DeploymentVersionSummary.
-            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type deployment_type: str
 
@@ -125,11 +129,11 @@ class DeploymentVersionSummary(object):
     def deployment_type(self):
         """
         **[Required]** Gets the deployment_type of this DeploymentVersionSummary.
-        The type of deployment, the value determines the exact 'type' of service executed in the Deployment.
-        NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged
-              in favor of the equivalent 'DATABASE_ORACLE' value.
+        The type of deployment, which can be any one of the Allowed values.
+        NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+            Its use is discouraged in favor of 'DATABASE_ORACLE'.
 
-        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -142,15 +146,15 @@ class DeploymentVersionSummary(object):
     def deployment_type(self, deployment_type):
         """
         Sets the deployment_type of this DeploymentVersionSummary.
-        The type of deployment, the value determines the exact 'type' of service executed in the Deployment.
-        NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged
-              in favor of the equivalent 'DATABASE_ORACLE' value.
+        The type of deployment, which can be any one of the Allowed values.
+        NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+            Its use is discouraged in favor of 'DATABASE_ORACLE'.
 
 
         :param deployment_type: The deployment_type of this DeploymentVersionSummary.
         :type: str
         """
-        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"]
+        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"]
         if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
             deployment_type = 'UNKNOWN_ENUM_VALUE'
         self._deployment_type = deployment_type

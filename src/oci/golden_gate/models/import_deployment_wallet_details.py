@@ -65,13 +65,9 @@ class ImportDeploymentWalletDetails(object):
     def vault_id(self):
         """
         **[Required]** Gets the vault_id of this ImportDeploymentWalletDetails.
-        The `OCID`__ of the customer vault being
-        referenced.
-        If provided, this will reference a vault which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to manage secrets contained
-        within this vault.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's vault OCID.
+        If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+        to manage secrets contained within this vault.
 
 
         :return: The vault_id of this ImportDeploymentWalletDetails.
@@ -83,13 +79,9 @@ class ImportDeploymentWalletDetails(object):
     def vault_id(self, vault_id):
         """
         Sets the vault_id of this ImportDeploymentWalletDetails.
-        The `OCID`__ of the customer vault being
-        referenced.
-        If provided, this will reference a vault which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to manage secrets contained
-        within this vault.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's vault OCID.
+        If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+        to manage secrets contained within this vault.
 
 
         :param vault_id: The vault_id of this ImportDeploymentWalletDetails.
@@ -101,12 +93,9 @@ class ImportDeploymentWalletDetails(object):
     def new_wallet_secret_id(self):
         """
         **[Required]** Gets the new_wallet_secret_id of this ImportDeploymentWalletDetails.
-        The `OCID`__ of the customer GGS Secret being
-        referenced.
-        If provided, this will reference a key which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to utilize this Secret
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        The OCID of the customer's GoldenGate Service Secret.
+        If provided, it references a key that customers will be required to ensure the policies are established
+        to permit GoldenGate to use this Secret.
 
 
         :return: The new_wallet_secret_id of this ImportDeploymentWalletDetails.
@@ -118,12 +107,9 @@ class ImportDeploymentWalletDetails(object):
     def new_wallet_secret_id(self, new_wallet_secret_id):
         """
         Sets the new_wallet_secret_id of this ImportDeploymentWalletDetails.
-        The `OCID`__ of the customer GGS Secret being
-        referenced.
-        If provided, this will reference a key which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to utilize this Secret
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        The OCID of the customer's GoldenGate Service Secret.
+        If provided, it references a key that customers will be required to ensure the policies are established
+        to permit GoldenGate to use this Secret.
 
 
         :param new_wallet_secret_id: The new_wallet_secret_id of this ImportDeploymentWalletDetails.
@@ -159,13 +145,8 @@ class ImportDeploymentWalletDetails(object):
     def master_encryption_key_id(self):
         """
         Gets the master_encryption_key_id of this ImportDeploymentWalletDetails.
-        The `OCID`__ of the customer \"Master\" key being
-        referenced.
-        If provided, this will reference a key which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to utilize this key to
-        manage secrets.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's master key OCID.
+        If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 
 
         :return: The master_encryption_key_id of this ImportDeploymentWalletDetails.
@@ -177,13 +158,8 @@ class ImportDeploymentWalletDetails(object):
     def master_encryption_key_id(self, master_encryption_key_id):
         """
         Sets the master_encryption_key_id of this ImportDeploymentWalletDetails.
-        The `OCID`__ of the customer \"Master\" key being
-        referenced.
-        If provided, this will reference a key which the customer will be required to ensure
-        the policies are established to permit the GoldenGate Service to utilize this key to
-        manage secrets.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Refers to the customer's master key OCID.
+        If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
 
 
         :param master_encryption_key_id: The master_encryption_key_id of this ImportDeploymentWalletDetails.

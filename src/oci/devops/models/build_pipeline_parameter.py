@@ -76,7 +76,7 @@ class BuildPipelineParameter(object):
     @property
     def default_value(self):
         """
-        Gets the default_value of this BuildPipelineParameter.
+        **[Required]** Gets the default_value of this BuildPipelineParameter.
         Default value of the parameter.
 
 

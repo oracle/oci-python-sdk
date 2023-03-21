@@ -34,6 +34,10 @@ class CreateFunctionDetails(object):
             The value to assign to the image_digest property of this CreateFunctionDetails.
         :type image_digest: str
 
+        :param source_details:
+            The value to assign to the source_details property of this CreateFunctionDetails.
+        :type source_details: oci.functions.models.FunctionSourceDetails
+
         :param memory_in_mbs:
             The value to assign to the memory_in_mbs property of this CreateFunctionDetails.
         :type memory_in_mbs: int
@@ -68,6 +72,7 @@ class CreateFunctionDetails(object):
             'application_id': 'str',
             'image': 'str',
             'image_digest': 'str',
+            'source_details': 'FunctionSourceDetails',
             'memory_in_mbs': 'int',
             'config': 'dict(str, str)',
             'timeout_in_seconds': 'int',
@@ -82,6 +87,7 @@ class CreateFunctionDetails(object):
             'application_id': 'applicationId',
             'image': 'image',
             'image_digest': 'imageDigest',
+            'source_details': 'sourceDetails',
             'memory_in_mbs': 'memoryInMBs',
             'config': 'config',
             'timeout_in_seconds': 'timeoutInSeconds',
@@ -95,6 +101,7 @@ class CreateFunctionDetails(object):
         self._application_id = None
         self._image = None
         self._image_digest = None
+        self._source_details = None
         self._memory_in_mbs = None
         self._config = None
         self._timeout_in_seconds = None
@@ -154,7 +161,7 @@ class CreateFunctionDetails(object):
     @property
     def image(self):
         """
-        **[Required]** Gets the image of this CreateFunctionDetails.
+        Gets the image of this CreateFunctionDetails.
         The qualified name of the Docker image to use in the function, including the image tag.
         The image should be in the OCI Registry that is in the same region as the function itself.
         Example: `phx.ocir.io/ten/functions/function:0.0.1`
@@ -206,6 +213,26 @@ class CreateFunctionDetails(object):
         :type: str
         """
         self._image_digest = image_digest
+
+    @property
+    def source_details(self):
+        """
+        Gets the source_details of this CreateFunctionDetails.
+
+        :return: The source_details of this CreateFunctionDetails.
+        :rtype: oci.functions.models.FunctionSourceDetails
+        """
+        return self._source_details
+
+    @source_details.setter
+    def source_details(self, source_details):
+        """
+        Sets the source_details of this CreateFunctionDetails.
+
+        :param source_details: The source_details of this CreateFunctionDetails.
+        :type: oci.functions.models.FunctionSourceDetails
+        """
+        self._source_details = source_details
 
     @property
     def memory_in_mbs(self):

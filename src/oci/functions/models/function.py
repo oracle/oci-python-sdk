@@ -76,6 +76,10 @@ class Function(object):
             The value to assign to the image_digest property of this Function.
         :type image_digest: str
 
+        :param source_details:
+            The value to assign to the source_details property of this Function.
+        :type source_details: oci.functions.models.FunctionSourceDetails
+
         :param memory_in_mbs:
             The value to assign to the memory_in_mbs property of this Function.
         :type memory_in_mbs: int
@@ -125,6 +129,7 @@ class Function(object):
             'compartment_id': 'str',
             'image': 'str',
             'image_digest': 'str',
+            'source_details': 'FunctionSourceDetails',
             'memory_in_mbs': 'int',
             'config': 'dict(str, str)',
             'timeout_in_seconds': 'int',
@@ -145,6 +150,7 @@ class Function(object):
             'compartment_id': 'compartmentId',
             'image': 'image',
             'image_digest': 'imageDigest',
+            'source_details': 'sourceDetails',
             'memory_in_mbs': 'memoryInMBs',
             'config': 'config',
             'timeout_in_seconds': 'timeoutInSeconds',
@@ -164,6 +170,7 @@ class Function(object):
         self._compartment_id = None
         self._image = None
         self._image_digest = None
+        self._source_details = None
         self._memory_in_mbs = None
         self._config = None
         self._timeout_in_seconds = None
@@ -360,6 +367,26 @@ class Function(object):
         :type: str
         """
         self._image_digest = image_digest
+
+    @property
+    def source_details(self):
+        """
+        Gets the source_details of this Function.
+
+        :return: The source_details of this Function.
+        :rtype: oci.functions.models.FunctionSourceDetails
+        """
+        return self._source_details
+
+    @source_details.setter
+    def source_details(self, source_details):
+        """
+        Sets the source_details of this Function.
+
+        :param source_details: The source_details of this Function.
+        :type: oci.functions.models.FunctionSourceDetails
+        """
+        self._source_details = source_details
 
     @property
     def memory_in_mbs(self):

@@ -204,7 +204,7 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
 
         :param source:
             The value to assign to the source property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
-            Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE", "CROSS_REGION_DATAGUARD"
+            Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE", "CROSS_REGION_DATAGUARD", "CROSS_REGION_DISASTER_RECOVERY"
         :type source: str
 
         :param customer_contacts:

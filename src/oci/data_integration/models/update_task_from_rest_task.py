@@ -383,6 +383,8 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
     def headers(self):
         """
         Gets the headers of this UpdateTaskFromRestTask.
+        Headers data for the request.
+
 
         :return: The headers of this UpdateTaskFromRestTask.
         :rtype: object
@@ -393,6 +395,8 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
     def headers(self, headers):
         """
         Sets the headers of this UpdateTaskFromRestTask.
+        Headers data for the request.
+
 
         :param headers: The headers of this UpdateTaskFromRestTask.
         :type: object

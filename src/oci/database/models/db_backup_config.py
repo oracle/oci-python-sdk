@@ -64,6 +64,14 @@ class DbBackupConfig(object):
     #: This constant has a value of "SLOT_TWELVE"
     AUTO_BACKUP_WINDOW_SLOT_TWELVE = "SLOT_TWELVE"
 
+    #: A constant which can be used with the backup_deletion_policy property of a DbBackupConfig.
+    #: This constant has a value of "DELETE_IMMEDIATELY"
+    BACKUP_DELETION_POLICY_DELETE_IMMEDIATELY = "DELETE_IMMEDIATELY"
+
+    #: A constant which can be used with the backup_deletion_policy property of a DbBackupConfig.
+    #: This constant has a value of "DELETE_AFTER_RETENTION_PERIOD"
+    BACKUP_DELETION_POLICY_DELETE_AFTER_RETENTION_PERIOD = "DELETE_AFTER_RETENTION_PERIOD"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DbBackupConfig object with values from keyword arguments.
@@ -87,25 +95,34 @@ class DbBackupConfig(object):
             The value to assign to the backup_destination_details property of this DbBackupConfig.
         :type backup_destination_details: list[oci.database.models.BackupDestinationDetails]
 
+        :param backup_deletion_policy:
+            The value to assign to the backup_deletion_policy property of this DbBackupConfig.
+            Allowed values for this property are: "DELETE_IMMEDIATELY", "DELETE_AFTER_RETENTION_PERIOD", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type backup_deletion_policy: str
+
         """
         self.swagger_types = {
             'auto_backup_enabled': 'bool',
             'recovery_window_in_days': 'int',
             'auto_backup_window': 'str',
-            'backup_destination_details': 'list[BackupDestinationDetails]'
+            'backup_destination_details': 'list[BackupDestinationDetails]',
+            'backup_deletion_policy': 'str'
         }
 
         self.attribute_map = {
             'auto_backup_enabled': 'autoBackupEnabled',
             'recovery_window_in_days': 'recoveryWindowInDays',
             'auto_backup_window': 'autoBackupWindow',
-            'backup_destination_details': 'backupDestinationDetails'
+            'backup_destination_details': 'backupDestinationDetails',
+            'backup_deletion_policy': 'backupDeletionPolicy'
         }
 
         self._auto_backup_enabled = None
         self._recovery_window_in_days = None
         self._auto_backup_window = None
         self._backup_destination_details = None
+        self._backup_deletion_policy = None
 
     @property
     def auto_backup_enabled(self):
@@ -216,6 +233,36 @@ class DbBackupConfig(object):
         :type: list[oci.database.models.BackupDestinationDetails]
         """
         self._backup_destination_details = backup_destination_details
+
+    @property
+    def backup_deletion_policy(self):
+        """
+        Gets the backup_deletion_policy of this DbBackupConfig.
+        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+
+        Allowed values for this property are: "DELETE_IMMEDIATELY", "DELETE_AFTER_RETENTION_PERIOD", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The backup_deletion_policy of this DbBackupConfig.
+        :rtype: str
+        """
+        return self._backup_deletion_policy
+
+    @backup_deletion_policy.setter
+    def backup_deletion_policy(self, backup_deletion_policy):
+        """
+        Sets the backup_deletion_policy of this DbBackupConfig.
+        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+
+
+        :param backup_deletion_policy: The backup_deletion_policy of this DbBackupConfig.
+        :type: str
+        """
+        allowed_values = ["DELETE_IMMEDIATELY", "DELETE_AFTER_RETENTION_PERIOD"]
+        if not value_allowed_none_or_none_sentinel(backup_deletion_policy, allowed_values):
+            backup_deletion_policy = 'UNKNOWN_ENUM_VALUE'
+        self._backup_deletion_policy = backup_deletion_policy
 
     def __repr__(self):
         return formatted_flat_dict(self)

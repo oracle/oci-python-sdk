@@ -18,6 +18,8 @@ Golden Gate
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.golden_gate.models.AmazonS3Connection
+    oci.golden_gate.models.AmazonS3ConnectionSummary
     oci.golden_gate.models.AzureDataLakeStorageConnection
     oci.golden_gate.models.AzureDataLakeStorageConnectionSummary
     oci.golden_gate.models.AzureSynapseConnection
@@ -35,6 +37,7 @@ Golden Gate
     oci.golden_gate.models.ConnectionAssignmentSummary
     oci.golden_gate.models.ConnectionCollection
     oci.golden_gate.models.ConnectionSummary
+    oci.golden_gate.models.CreateAmazonS3ConnectionDetails
     oci.golden_gate.models.CreateAzureDataLakeStorageConnectionDetails
     oci.golden_gate.models.CreateAzureSynapseConnectionDetails
     oci.golden_gate.models.CreateConnectionAssignmentDetails
@@ -43,14 +46,20 @@ Golden Gate
     oci.golden_gate.models.CreateDeploymentBackupDetails
     oci.golden_gate.models.CreateDeploymentDetails
     oci.golden_gate.models.CreateGoldenGateConnectionDetails
+    oci.golden_gate.models.CreateHdfsConnectionDetails
+    oci.golden_gate.models.CreateJavaMessageServiceConnectionDetails
     oci.golden_gate.models.CreateKafkaConnectionDetails
     oci.golden_gate.models.CreateKafkaSchemaRegistryConnectionDetails
     oci.golden_gate.models.CreateMaintenanceWindowDetails
+    oci.golden_gate.models.CreateMicrosoftSqlserverConnectionDetails
+    oci.golden_gate.models.CreateMongoDbConnectionDetails
     oci.golden_gate.models.CreateMysqlConnectionDetails
     oci.golden_gate.models.CreateOciObjectStorageConnectionDetails
     oci.golden_gate.models.CreateOggDeploymentDetails
     oci.golden_gate.models.CreateOracleConnectionDetails
+    oci.golden_gate.models.CreateOracleNosqlConnectionDetails
     oci.golden_gate.models.CreatePostgresqlConnectionDetails
+    oci.golden_gate.models.CreateSnowflakeConnectionDetails
     oci.golden_gate.models.DatabaseRegistration
     oci.golden_gate.models.DatabaseRegistrationCollection
     oci.golden_gate.models.DatabaseRegistrationSummary
@@ -85,8 +94,12 @@ Golden Gate
     oci.golden_gate.models.ExportDeploymentWalletDetails
     oci.golden_gate.models.GoldenGateConnection
     oci.golden_gate.models.GoldenGateConnectionSummary
+    oci.golden_gate.models.HdfsConnection
+    oci.golden_gate.models.HdfsConnectionSummary
     oci.golden_gate.models.ImportDeploymentWalletDetails
     oci.golden_gate.models.IngressIpDetails
+    oci.golden_gate.models.JavaMessageServiceConnection
+    oci.golden_gate.models.JavaMessageServiceConnectionSummary
     oci.golden_gate.models.KafkaBootstrapServer
     oci.golden_gate.models.KafkaConnection
     oci.golden_gate.models.KafkaConnectionSummary
@@ -94,6 +107,10 @@ Golden Gate
     oci.golden_gate.models.KafkaSchemaRegistryConnectionSummary
     oci.golden_gate.models.MaintenanceWindow
     oci.golden_gate.models.MessageSummary
+    oci.golden_gate.models.MicrosoftSqlserverConnection
+    oci.golden_gate.models.MicrosoftSqlserverConnectionSummary
+    oci.golden_gate.models.MongoDbConnection
+    oci.golden_gate.models.MongoDbConnectionSummary
     oci.golden_gate.models.MysqlConnection
     oci.golden_gate.models.MysqlConnectionSummary
     oci.golden_gate.models.NameValuePair
@@ -102,17 +119,22 @@ Golden Gate
     oci.golden_gate.models.OggDeployment
     oci.golden_gate.models.OracleConnection
     oci.golden_gate.models.OracleConnectionSummary
+    oci.golden_gate.models.OracleNosqlConnection
+    oci.golden_gate.models.OracleNosqlConnectionSummary
     oci.golden_gate.models.PostgresqlConnection
     oci.golden_gate.models.PostgresqlConnectionSummary
     oci.golden_gate.models.RestoreDeploymentDetails
     oci.golden_gate.models.RollbackDeploymentUpgradeDetails
     oci.golden_gate.models.SnoozeDeploymentUpgradeDetails
+    oci.golden_gate.models.SnowflakeConnection
+    oci.golden_gate.models.SnowflakeConnectionSummary
     oci.golden_gate.models.StartDeploymentDetails
     oci.golden_gate.models.StopDeploymentDetails
     oci.golden_gate.models.TrailFileCollection
     oci.golden_gate.models.TrailFileSummary
     oci.golden_gate.models.TrailSequenceCollection
     oci.golden_gate.models.TrailSequenceSummary
+    oci.golden_gate.models.UpdateAmazonS3ConnectionDetails
     oci.golden_gate.models.UpdateAzureDataLakeStorageConnectionDetails
     oci.golden_gate.models.UpdateAzureSynapseConnectionDetails
     oci.golden_gate.models.UpdateConnectionDetails
@@ -120,14 +142,20 @@ Golden Gate
     oci.golden_gate.models.UpdateDeploymentBackupDetails
     oci.golden_gate.models.UpdateDeploymentDetails
     oci.golden_gate.models.UpdateGoldenGateConnectionDetails
+    oci.golden_gate.models.UpdateHdfsConnectionDetails
+    oci.golden_gate.models.UpdateJavaMessageServiceConnectionDetails
     oci.golden_gate.models.UpdateKafkaConnectionDetails
     oci.golden_gate.models.UpdateKafkaSchemaRegistryConnectionDetails
     oci.golden_gate.models.UpdateMaintenanceWindowDetails
+    oci.golden_gate.models.UpdateMicrosoftSqlserverConnectionDetails
+    oci.golden_gate.models.UpdateMongoDbConnectionDetails
     oci.golden_gate.models.UpdateMysqlConnectionDetails
     oci.golden_gate.models.UpdateOciObjectStorageConnectionDetails
     oci.golden_gate.models.UpdateOggDeploymentDetails
     oci.golden_gate.models.UpdateOracleConnectionDetails
+    oci.golden_gate.models.UpdateOracleNosqlConnectionDetails
     oci.golden_gate.models.UpdatePostgresqlConnectionDetails
+    oci.golden_gate.models.UpdateSnowflakeConnectionDetails
     oci.golden_gate.models.UpgradeDeploymentCurrentReleaseDetails
     oci.golden_gate.models.UpgradeDeploymentDetails
     oci.golden_gate.models.UpgradeDeploymentSpecificReleaseDetails

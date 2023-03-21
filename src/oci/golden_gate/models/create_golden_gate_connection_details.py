@@ -21,7 +21,7 @@ class CreateGoldenGateConnectionDetails(CreateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateGoldenGateConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"
         :type connection_type: str
 
         :param display_name:
@@ -76,6 +76,14 @@ class CreateGoldenGateConnectionDetails(CreateConnectionDetails):
             The value to assign to the port property of this CreateGoldenGateConnectionDetails.
         :type port: int
 
+        :param username:
+            The value to assign to the username property of this CreateGoldenGateConnectionDetails.
+        :type username: str
+
+        :param password:
+            The value to assign to the password property of this CreateGoldenGateConnectionDetails.
+        :type password: str
+
         :param private_ip:
             The value to assign to the private_ip property of this CreateGoldenGateConnectionDetails.
         :type private_ip: str
@@ -96,6 +104,8 @@ class CreateGoldenGateConnectionDetails(CreateConnectionDetails):
             'deployment_id': 'str',
             'host': 'str',
             'port': 'int',
+            'username': 'str',
+            'password': 'str',
             'private_ip': 'str'
         }
 
@@ -114,6 +124,8 @@ class CreateGoldenGateConnectionDetails(CreateConnectionDetails):
             'deployment_id': 'deploymentId',
             'host': 'host',
             'port': 'port',
+            'username': 'username',
+            'password': 'password',
             'private_ip': 'privateIp'
         }
 
@@ -131,6 +143,8 @@ class CreateGoldenGateConnectionDetails(CreateConnectionDetails):
         self._deployment_id = None
         self._host = None
         self._port = None
+        self._username = None
+        self._password = None
         self._private_ip = None
         self._connection_type = 'GOLDENGATE'
 
@@ -233,6 +247,54 @@ class CreateGoldenGateConnectionDetails(CreateConnectionDetails):
         :type: int
         """
         self._port = port
+
+    @property
+    def username(self):
+        """
+        Gets the username of this CreateGoldenGateConnectionDetails.
+        The username credential existing in the Oracle GoldenGate used to be connected to.
+
+
+        :return: The username of this CreateGoldenGateConnectionDetails.
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """
+        Sets the username of this CreateGoldenGateConnectionDetails.
+        The username credential existing in the Oracle GoldenGate used to be connected to.
+
+
+        :param username: The username of this CreateGoldenGateConnectionDetails.
+        :type: str
+        """
+        self._username = username
+
+    @property
+    def password(self):
+        """
+        Gets the password of this CreateGoldenGateConnectionDetails.
+        The password used to connect to the Oracle GoldenGate accessed trough this connection.
+
+
+        :return: The password of this CreateGoldenGateConnectionDetails.
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """
+        Sets the password of this CreateGoldenGateConnectionDetails.
+        The password used to connect to the Oracle GoldenGate accessed trough this connection.
+
+
+        :param password: The password of this CreateGoldenGateConnectionDetails.
+        :type: str
+        """
+        self._password = password
 
     @property
     def private_ip(self):
