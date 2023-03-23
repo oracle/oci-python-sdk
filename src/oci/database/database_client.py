@@ -21127,7 +21127,7 @@ class DatabaseClient(object):
         resource_path = "/dbSystemComputePerformance"
         method = "GET"
         operation_name = "list_db_system_compute_performances"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemComputePerformanceSummary/ListDbSystemComputePerformances"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ListDbSystemComputePerformances"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21528,7 +21528,7 @@ class DatabaseClient(object):
         resource_path = "/dbSystemStoragePerformance"
         method = "GET"
         operation_name = "list_db_system_storage_performances"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemStoragePerformanceSummary/ListDbSystemStoragePerformances"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ListDbSystemStoragePerformances"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

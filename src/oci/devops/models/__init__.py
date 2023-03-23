@@ -96,6 +96,7 @@ from .compute_instance_group_selector_collection import ComputeInstanceGroupSele
 from .connection import Connection
 from .connection_collection import ConnectionCollection
 from .connection_summary import ConnectionSummary
+from .connection_validation_result import ConnectionValidationResult
 from .container_config import ContainerConfig
 from .container_instance_config import ContainerInstanceConfig
 from .container_registry_delivered_artifact import ContainerRegistryDeliveredArtifact
@@ -547,6 +548,7 @@ devops_type_mapping = {
     "Connection": Connection,
     "ConnectionCollection": ConnectionCollection,
     "ConnectionSummary": ConnectionSummary,
+    "ConnectionValidationResult": ConnectionValidationResult,
     "ContainerConfig": ContainerConfig,
     "ContainerInstanceConfig": ContainerInstanceConfig,
     "ContainerRegistryDeliveredArtifact": ContainerRegistryDeliveredArtifact,

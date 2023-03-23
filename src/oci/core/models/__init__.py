@@ -80,6 +80,7 @@ from .change_byoip_range_compartment_details import ChangeByoipRangeCompartmentD
 from .change_capture_filter_compartment_details import ChangeCaptureFilterCompartmentDetails
 from .change_cluster_network_compartment_details import ChangeClusterNetworkCompartmentDetails
 from .change_compute_capacity_reservation_compartment_details import ChangeComputeCapacityReservationCompartmentDetails
+from .change_compute_cluster_compartment_details import ChangeComputeClusterCompartmentDetails
 from .change_compute_image_capability_schema_compartment_details import ChangeComputeImageCapabilitySchemaCompartmentDetails
 from .change_cpe_compartment_details import ChangeCpeCompartmentDetails
 from .change_cross_connect_compartment_details import ChangeCrossConnectCompartmentDetails
@@ -111,6 +112,7 @@ from .change_volume_compartment_details import ChangeVolumeCompartmentDetails
 from .change_volume_group_backup_compartment_details import ChangeVolumeGroupBackupCompartmentDetails
 from .change_volume_group_compartment_details import ChangeVolumeGroupCompartmentDetails
 from .change_vtap_compartment_details import ChangeVtapCompartmentDetails
+from .cluster_config_details import ClusterConfigDetails
 from .cluster_network import ClusterNetwork
 from .cluster_network_placement_configuration_details import ClusterNetworkPlacementConfigurationDetails
 from .cluster_network_summary import ClusterNetworkSummary
@@ -118,6 +120,9 @@ from .compartment_internal import CompartmentInternal
 from .compute_capacity_reservation import ComputeCapacityReservation
 from .compute_capacity_reservation_instance_shape_summary import ComputeCapacityReservationInstanceShapeSummary
 from .compute_capacity_reservation_summary import ComputeCapacityReservationSummary
+from .compute_cluster import ComputeCluster
+from .compute_cluster_collection import ComputeClusterCollection
+from .compute_cluster_summary import ComputeClusterSummary
 from .compute_global_image_capability_schema import ComputeGlobalImageCapabilitySchema
 from .compute_global_image_capability_schema_summary import ComputeGlobalImageCapabilitySchemaSummary
 from .compute_global_image_capability_schema_version import ComputeGlobalImageCapabilitySchemaVersion
@@ -145,6 +150,7 @@ from .create_capture_filter_details import CreateCaptureFilterDetails
 from .create_cluster_network_details import CreateClusterNetworkDetails
 from .create_cluster_network_instance_pool_details import CreateClusterNetworkInstancePoolDetails
 from .create_compute_capacity_reservation_details import CreateComputeCapacityReservationDetails
+from .create_compute_cluster_details import CreateComputeClusterDetails
 from .create_compute_image_capability_schema_details import CreateComputeImageCapabilitySchemaDetails
 from .create_cpe_details import CreateCpeDetails
 from .create_cross_connect_details import CreateCrossConnectDetails
@@ -430,6 +436,7 @@ from .update_capture_filter_details import UpdateCaptureFilterDetails
 from .update_cluster_network_details import UpdateClusterNetworkDetails
 from .update_cluster_network_instance_pool_details import UpdateClusterNetworkInstancePoolDetails
 from .update_compute_capacity_reservation_details import UpdateComputeCapacityReservationDetails
+from .update_compute_cluster_details import UpdateComputeClusterDetails
 from .update_compute_image_capability_schema_details import UpdateComputeImageCapabilitySchemaDetails
 from .update_console_history_details import UpdateConsoleHistoryDetails
 from .update_cpe_details import UpdateCpeDetails
@@ -607,6 +614,7 @@ core_type_mapping = {
     "ChangeCaptureFilterCompartmentDetails": ChangeCaptureFilterCompartmentDetails,
     "ChangeClusterNetworkCompartmentDetails": ChangeClusterNetworkCompartmentDetails,
     "ChangeComputeCapacityReservationCompartmentDetails": ChangeComputeCapacityReservationCompartmentDetails,
+    "ChangeComputeClusterCompartmentDetails": ChangeComputeClusterCompartmentDetails,
     "ChangeComputeImageCapabilitySchemaCompartmentDetails": ChangeComputeImageCapabilitySchemaCompartmentDetails,
     "ChangeCpeCompartmentDetails": ChangeCpeCompartmentDetails,
     "ChangeCrossConnectCompartmentDetails": ChangeCrossConnectCompartmentDetails,
@@ -638,6 +646,7 @@ core_type_mapping = {
     "ChangeVolumeGroupBackupCompartmentDetails": ChangeVolumeGroupBackupCompartmentDetails,
     "ChangeVolumeGroupCompartmentDetails": ChangeVolumeGroupCompartmentDetails,
     "ChangeVtapCompartmentDetails": ChangeVtapCompartmentDetails,
+    "ClusterConfigDetails": ClusterConfigDetails,
     "ClusterNetwork": ClusterNetwork,
     "ClusterNetworkPlacementConfigurationDetails": ClusterNetworkPlacementConfigurationDetails,
     "ClusterNetworkSummary": ClusterNetworkSummary,
@@ -645,6 +654,9 @@ core_type_mapping = {
     "ComputeCapacityReservation": ComputeCapacityReservation,
     "ComputeCapacityReservationInstanceShapeSummary": ComputeCapacityReservationInstanceShapeSummary,
     "ComputeCapacityReservationSummary": ComputeCapacityReservationSummary,
+    "ComputeCluster": ComputeCluster,
+    "ComputeClusterCollection": ComputeClusterCollection,
+    "ComputeClusterSummary": ComputeClusterSummary,
     "ComputeGlobalImageCapabilitySchema": ComputeGlobalImageCapabilitySchema,
     "ComputeGlobalImageCapabilitySchemaSummary": ComputeGlobalImageCapabilitySchemaSummary,
     "ComputeGlobalImageCapabilitySchemaVersion": ComputeGlobalImageCapabilitySchemaVersion,
@@ -672,6 +684,7 @@ core_type_mapping = {
     "CreateClusterNetworkDetails": CreateClusterNetworkDetails,
     "CreateClusterNetworkInstancePoolDetails": CreateClusterNetworkInstancePoolDetails,
     "CreateComputeCapacityReservationDetails": CreateComputeCapacityReservationDetails,
+    "CreateComputeClusterDetails": CreateComputeClusterDetails,
     "CreateComputeImageCapabilitySchemaDetails": CreateComputeImageCapabilitySchemaDetails,
     "CreateCpeDetails": CreateCpeDetails,
     "CreateCrossConnectDetails": CreateCrossConnectDetails,
@@ -957,6 +970,7 @@ core_type_mapping = {
     "UpdateClusterNetworkDetails": UpdateClusterNetworkDetails,
     "UpdateClusterNetworkInstancePoolDetails": UpdateClusterNetworkInstancePoolDetails,
     "UpdateComputeCapacityReservationDetails": UpdateComputeCapacityReservationDetails,
+    "UpdateComputeClusterDetails": UpdateComputeClusterDetails,
     "UpdateComputeImageCapabilitySchemaDetails": UpdateComputeImageCapabilitySchemaDetails,
     "UpdateConsoleHistoryDetails": UpdateConsoleHistoryDetails,
     "UpdateCpeDetails": UpdateCpeDetails,

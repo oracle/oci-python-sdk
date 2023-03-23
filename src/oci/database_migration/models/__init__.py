@@ -62,6 +62,7 @@ from .data_pump_settings import DataPumpSettings
 from .data_transfer_medium_details import DataTransferMediumDetails
 from .database_link_details import DatabaseLinkDetails
 from .database_object import DatabaseObject
+from .diagnostics_result import DiagnosticsResult
 from .directory_object import DirectoryObject
 from .dump_transfer_details import DumpTransferDetails
 from .excluded_object_summary import ExcludedObjectSummary
@@ -97,6 +98,7 @@ from .phase_extract_entry import PhaseExtractEntry
 from .phase_status import PhaseStatus
 from .private_endpoint_details import PrivateEndpointDetails
 from .replicat import Replicat
+from .result_error import ResultError
 from .resume_job_details import ResumeJobDetails
 from .ssh_details import SshDetails
 from .start_migration_details import StartMigrationDetails
@@ -206,6 +208,7 @@ database_migration_type_mapping = {
     "DataTransferMediumDetails": DataTransferMediumDetails,
     "DatabaseLinkDetails": DatabaseLinkDetails,
     "DatabaseObject": DatabaseObject,
+    "DiagnosticsResult": DiagnosticsResult,
     "DirectoryObject": DirectoryObject,
     "DumpTransferDetails": DumpTransferDetails,
     "ExcludedObjectSummary": ExcludedObjectSummary,
@@ -241,6 +244,7 @@ database_migration_type_mapping = {
     "PhaseStatus": PhaseStatus,
     "PrivateEndpointDetails": PrivateEndpointDetails,
     "Replicat": Replicat,
+    "ResultError": ResultError,
     "ResumeJobDetails": ResumeJobDetails,
     "SshDetails": SshDetails,
     "StartMigrationDetails": StartMigrationDetails,

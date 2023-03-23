@@ -285,6 +285,47 @@ def test_clone_migration(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dms_dev_ww_grp@oracle.com" jiraProject="ZDMCS" opsJiraProject="ZDMCS"
+def test_connection_diagnostics(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_migration', 'ConnectionDiagnostics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_migration', util.camelize('database_migration'), 'ConnectionDiagnostics')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_migration', api_name='ConnectionDiagnostics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_migration.DatabaseMigrationClient(config, service_endpoint=service_endpoint)
+            response = client.connection_diagnostics(
+                connection_id=request.pop(util.camelize('connectionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_migration',
+            'ConnectionDiagnostics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'diagnosticsResult',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dms_dev_ww_grp@oracle.com" jiraProject="ZDMCS" opsJiraProject="ZDMCS"
 def test_create_connection(testing_service_client):
     if not testing_service_client.is_api_enabled('database_migration', 'CreateConnection'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

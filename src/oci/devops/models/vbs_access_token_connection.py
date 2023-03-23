@@ -53,6 +53,10 @@ class VbsAccessTokenConnection(Connection):
             The value to assign to the time_updated property of this VbsAccessTokenConnection.
         :type time_updated: datetime
 
+        :param last_connection_validation_result:
+            The value to assign to the last_connection_validation_result property of this VbsAccessTokenConnection.
+        :type last_connection_validation_result: oci.devops.models.ConnectionValidationResult
+
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this VbsAccessTokenConnection.
         :type lifecycle_details: str
@@ -92,6 +96,7 @@ class VbsAccessTokenConnection(Connection):
             'connection_type': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'last_connection_validation_result': 'ConnectionValidationResult',
             'lifecycle_details': 'str',
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -110,6 +115,7 @@ class VbsAccessTokenConnection(Connection):
             'connection_type': 'connectionType',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'last_connection_validation_result': 'lastConnectionValidationResult',
             'lifecycle_details': 'lifecycleDetails',
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
@@ -127,6 +133,7 @@ class VbsAccessTokenConnection(Connection):
         self._connection_type = None
         self._time_created = None
         self._time_updated = None
+        self._last_connection_validation_result = None
         self._lifecycle_details = None
         self._lifecycle_state = None
         self._freeform_tags = None
