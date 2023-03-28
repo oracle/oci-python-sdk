@@ -76,6 +76,7 @@ Database Migration
     oci.database_migration.models.DataTransferMediumDetails
     oci.database_migration.models.DatabaseLinkDetails
     oci.database_migration.models.DatabaseObject
+    oci.database_migration.models.DiagnosticsResult
     oci.database_migration.models.DirectoryObject
     oci.database_migration.models.DumpTransferDetails
     oci.database_migration.models.ExcludedObjectSummary
@@ -111,6 +112,7 @@ Database Migration
     oci.database_migration.models.PhaseStatus
     oci.database_migration.models.PrivateEndpointDetails
     oci.database_migration.models.Replicat
+    oci.database_migration.models.ResultError
     oci.database_migration.models.ResumeJobDetails
     oci.database_migration.models.SshDetails
     oci.database_migration.models.StartMigrationDetails

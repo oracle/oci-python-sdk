@@ -62,6 +62,14 @@ class ClusterNetwork(object):
             The value to assign to the compartment_id property of this ClusterNetwork.
         :type compartment_id: str
 
+        :param hpc_island_id:
+            The value to assign to the hpc_island_id property of this ClusterNetwork.
+        :type hpc_island_id: str
+
+        :param network_block_ids:
+            The value to assign to the network_block_ids property of this ClusterNetwork.
+        :type network_block_ids: list[str]
+
         :param defined_tags:
             The value to assign to the defined_tags property of this ClusterNetwork.
         :type defined_tags: dict(str, dict(str, object))
@@ -100,6 +108,8 @@ class ClusterNetwork(object):
         self.swagger_types = {
             'id': 'str',
             'compartment_id': 'str',
+            'hpc_island_id': 'str',
+            'network_block_ids': 'list[str]',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -113,6 +123,8 @@ class ClusterNetwork(object):
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
+            'hpc_island_id': 'hpcIslandId',
+            'network_block_ids': 'networkBlockIds',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
@@ -125,6 +137,8 @@ class ClusterNetwork(object):
 
         self._id = None
         self._compartment_id = None
+        self._hpc_island_id = None
+        self._network_block_ids = None
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
@@ -189,6 +203,58 @@ class ClusterNetwork(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def hpc_island_id(self):
+        """
+        Gets the hpc_island_id of this ClusterNetwork.
+        The `OCID`__ of the hpc island used by the cluster network.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The hpc_island_id of this ClusterNetwork.
+        :rtype: str
+        """
+        return self._hpc_island_id
+
+    @hpc_island_id.setter
+    def hpc_island_id(self, hpc_island_id):
+        """
+        Sets the hpc_island_id of this ClusterNetwork.
+        The `OCID`__ of the hpc island used by the cluster network.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param hpc_island_id: The hpc_island_id of this ClusterNetwork.
+        :type: str
+        """
+        self._hpc_island_id = hpc_island_id
+
+    @property
+    def network_block_ids(self):
+        """
+        Gets the network_block_ids of this ClusterNetwork.
+        The list of network block OCIDs of the HPC island.
+
+
+        :return: The network_block_ids of this ClusterNetwork.
+        :rtype: list[str]
+        """
+        return self._network_block_ids
+
+    @network_block_ids.setter
+    def network_block_ids(self, network_block_ids):
+        """
+        Sets the network_block_ids of this ClusterNetwork.
+        The list of network block OCIDs of the HPC island.
+
+
+        :param network_block_ids: The network_block_ids of this ClusterNetwork.
+        :type: list[str]
+        """
+        self._network_block_ids = network_block_ids
 
     @property
     def defined_tags(self):

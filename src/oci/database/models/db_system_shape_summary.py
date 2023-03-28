@@ -714,7 +714,7 @@ class DbSystemShapeSummary(object):
     def available_core_count_per_node(self):
         """
         Gets the available_core_count_per_node of this DbSystemShapeSummary.
-        The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape and ExaCC Elastic shapes.
+        The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
 
 
         :return: The available_core_count_per_node of this DbSystemShapeSummary.
@@ -726,7 +726,7 @@ class DbSystemShapeSummary(object):
     def available_core_count_per_node(self, available_core_count_per_node):
         """
         Sets the available_core_count_per_node of this DbSystemShapeSummary.
-        The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape and ExaCC Elastic shapes.
+        The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape, ExaCC Elastic shapes and VM Flex shapes.
 
 
         :param available_core_count_per_node: The available_core_count_per_node of this DbSystemShapeSummary.

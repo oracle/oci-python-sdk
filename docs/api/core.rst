@@ -100,6 +100,7 @@ Core Services
     oci.core.models.ChangeCaptureFilterCompartmentDetails
     oci.core.models.ChangeClusterNetworkCompartmentDetails
     oci.core.models.ChangeComputeCapacityReservationCompartmentDetails
+    oci.core.models.ChangeComputeClusterCompartmentDetails
     oci.core.models.ChangeComputeImageCapabilitySchemaCompartmentDetails
     oci.core.models.ChangeCpeCompartmentDetails
     oci.core.models.ChangeCrossConnectCompartmentDetails
@@ -131,6 +132,7 @@ Core Services
     oci.core.models.ChangeVolumeGroupBackupCompartmentDetails
     oci.core.models.ChangeVolumeGroupCompartmentDetails
     oci.core.models.ChangeVtapCompartmentDetails
+    oci.core.models.ClusterConfigDetails
     oci.core.models.ClusterNetwork
     oci.core.models.ClusterNetworkPlacementConfigurationDetails
     oci.core.models.ClusterNetworkSummary
@@ -138,6 +140,9 @@ Core Services
     oci.core.models.ComputeCapacityReservation
     oci.core.models.ComputeCapacityReservationInstanceShapeSummary
     oci.core.models.ComputeCapacityReservationSummary
+    oci.core.models.ComputeCluster
+    oci.core.models.ComputeClusterCollection
+    oci.core.models.ComputeClusterSummary
     oci.core.models.ComputeGlobalImageCapabilitySchema
     oci.core.models.ComputeGlobalImageCapabilitySchemaSummary
     oci.core.models.ComputeGlobalImageCapabilitySchemaVersion
@@ -165,6 +170,7 @@ Core Services
     oci.core.models.CreateClusterNetworkDetails
     oci.core.models.CreateClusterNetworkInstancePoolDetails
     oci.core.models.CreateComputeCapacityReservationDetails
+    oci.core.models.CreateComputeClusterDetails
     oci.core.models.CreateComputeImageCapabilitySchemaDetails
     oci.core.models.CreateCpeDetails
     oci.core.models.CreateCrossConnectDetails
@@ -450,6 +456,7 @@ Core Services
     oci.core.models.UpdateClusterNetworkDetails
     oci.core.models.UpdateClusterNetworkInstancePoolDetails
     oci.core.models.UpdateComputeCapacityReservationDetails
+    oci.core.models.UpdateComputeClusterDetails
     oci.core.models.UpdateComputeImageCapabilitySchemaDetails
     oci.core.models.UpdateConsoleHistoryDetails
     oci.core.models.UpdateCpeDetails
