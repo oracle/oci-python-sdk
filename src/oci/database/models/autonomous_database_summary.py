@@ -314,6 +314,10 @@ class AutonomousDatabaseSummary(object):
             The value to assign to the lifecycle_details property of this AutonomousDatabaseSummary.
         :type lifecycle_details: str
 
+        :param additional_database_status:
+            The value to assign to the additional_database_status property of this AutonomousDatabaseSummary.
+        :type additional_database_status: list[str]
+
         :param kms_key_id:
             The value to assign to the kms_key_id property of this AutonomousDatabaseSummary.
         :type kms_key_id: str
@@ -744,6 +748,7 @@ class AutonomousDatabaseSummary(object):
             'compartment_id': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'additional_database_status': 'list[str]',
             'kms_key_id': 'str',
             'vault_id': 'str',
             'kms_key_lifecycle_details': 'str',
@@ -849,6 +854,7 @@ class AutonomousDatabaseSummary(object):
             'compartment_id': 'compartmentId',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'additional_database_status': 'additionalDatabaseStatus',
             'kms_key_id': 'kmsKeyId',
             'vault_id': 'vaultId',
             'kms_key_lifecycle_details': 'kmsKeyLifecycleDetails',
@@ -953,6 +959,7 @@ class AutonomousDatabaseSummary(object):
         self._compartment_id = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._additional_database_status = None
         self._kms_key_id = None
         self._vault_id = None
         self._kms_key_lifecycle_details = None
@@ -1161,6 +1168,30 @@ class AutonomousDatabaseSummary(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def additional_database_status(self):
+        """
+        Gets the additional_database_status of this AutonomousDatabaseSummary.
+        Additional details about the status of the database, such as the progress of a backup or restore operation. UNPUBLISHED \"HIDDEN\" FIELD. This field is being added to unblock console functionality but will not be published in the SDK or documentation. It will be present in responses, so deprecating will require coordination to ensure we do not break customers if they begin relying on this field. Please see https://confluence.oci.oraclecorp.com/pages/viewpage.action?pageId=58769459 for details regarding the motivation of this field and the longer term plan.
+
+
+        :return: The additional_database_status of this AutonomousDatabaseSummary.
+        :rtype: list[str]
+        """
+        return self._additional_database_status
+
+    @additional_database_status.setter
+    def additional_database_status(self, additional_database_status):
+        """
+        Sets the additional_database_status of this AutonomousDatabaseSummary.
+        Additional details about the status of the database, such as the progress of a backup or restore operation. UNPUBLISHED \"HIDDEN\" FIELD. This field is being added to unblock console functionality but will not be published in the SDK or documentation. It will be present in responses, so deprecating will require coordination to ensure we do not break customers if they begin relying on this field. Please see https://confluence.oci.oraclecorp.com/pages/viewpage.action?pageId=58769459 for details regarding the motivation of this field and the longer term plan.
+
+
+        :param additional_database_status: The additional_database_status of this AutonomousDatabaseSummary.
+        :type: list[str]
+        """
+        self._additional_database_status = additional_database_status
 
     @property
     def kms_key_id(self):

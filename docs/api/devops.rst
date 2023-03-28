@@ -110,6 +110,7 @@ Devops
     oci.devops.models.Connection
     oci.devops.models.ConnectionCollection
     oci.devops.models.ConnectionSummary
+    oci.devops.models.ConnectionValidationResult
     oci.devops.models.ContainerConfig
     oci.devops.models.ContainerInstanceConfig
     oci.devops.models.ContainerRegistryDeliveredArtifact

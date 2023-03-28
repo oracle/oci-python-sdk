@@ -30,6 +30,10 @@ class InstanceReservationConfigDetails(object):
             The value to assign to the fault_domain property of this InstanceReservationConfigDetails.
         :type fault_domain: str
 
+        :param cluster_config:
+            The value to assign to the cluster_config property of this InstanceReservationConfigDetails.
+        :type cluster_config: oci.core.models.ClusterConfigDetails
+
         :param reserved_count:
             The value to assign to the reserved_count property of this InstanceReservationConfigDetails.
         :type reserved_count: int
@@ -39,6 +43,7 @@ class InstanceReservationConfigDetails(object):
             'instance_shape': 'str',
             'instance_shape_config': 'InstanceReservationShapeConfigDetails',
             'fault_domain': 'str',
+            'cluster_config': 'ClusterConfigDetails',
             'reserved_count': 'int'
         }
 
@@ -46,12 +51,14 @@ class InstanceReservationConfigDetails(object):
             'instance_shape': 'instanceShape',
             'instance_shape_config': 'instanceShapeConfig',
             'fault_domain': 'faultDomain',
+            'cluster_config': 'clusterConfig',
             'reserved_count': 'reservedCount'
         }
 
         self._instance_shape = None
         self._instance_shape_config = None
         self._fault_domain = None
+        self._cluster_config = None
         self._reserved_count = None
 
     @property
@@ -151,6 +158,26 @@ class InstanceReservationConfigDetails(object):
         :type: str
         """
         self._fault_domain = fault_domain
+
+    @property
+    def cluster_config(self):
+        """
+        Gets the cluster_config of this InstanceReservationConfigDetails.
+
+        :return: The cluster_config of this InstanceReservationConfigDetails.
+        :rtype: oci.core.models.ClusterConfigDetails
+        """
+        return self._cluster_config
+
+    @cluster_config.setter
+    def cluster_config(self, cluster_config):
+        """
+        Sets the cluster_config of this InstanceReservationConfigDetails.
+
+        :param cluster_config: The cluster_config of this InstanceReservationConfigDetails.
+        :type: oci.core.models.ClusterConfigDetails
+        """
+        self._cluster_config = cluster_config
 
     @property
     def reserved_count(self):

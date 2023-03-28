@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.96.1 - 2023-03-28
+====================
+
+Added
+-----
+* Support for ACD and OKV wallet naming for autonomous databases and dedicated autonomous databases on Exadata Cloud at Customer in the Database service
+* Support for validating the credentials of a connection in the DevOps service
+* Support for GoldenGate Replicat performance profiles when creating a migration in the Database Migration service
+* Support for connection diagnostics on registered databases in the Database Migration service
+* Support for launching bare metal instances in an RDMA network in the Compute service
+ 
+====================
 2.96.0 - 2023-03-21
 ====================
 

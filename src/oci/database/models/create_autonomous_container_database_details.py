@@ -58,6 +58,10 @@ class CreateAutonomousContainerDatabaseDetails(object):
             The value to assign to the db_unique_name property of this CreateAutonomousContainerDatabaseDetails.
         :type db_unique_name: str
 
+        :param db_name:
+            The value to assign to the db_name property of this CreateAutonomousContainerDatabaseDetails.
+        :type db_name: str
+
         :param service_level_agreement_type:
             The value to assign to the service_level_agreement_type property of this CreateAutonomousContainerDatabaseDetails.
             Allowed values for this property are: "STANDARD", "AUTONOMOUS_DATAGUARD"
@@ -174,6 +178,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'db_unique_name': 'str',
+            'db_name': 'str',
             'service_level_agreement_type': 'str',
             'autonomous_exadata_infrastructure_id': 'str',
             'db_version': 'str',
@@ -206,6 +211,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'db_unique_name': 'dbUniqueName',
+            'db_name': 'dbName',
             'service_level_agreement_type': 'serviceLevelAgreementType',
             'autonomous_exadata_infrastructure_id': 'autonomousExadataInfrastructureId',
             'db_version': 'dbVersion',
@@ -237,6 +243,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
 
         self._display_name = None
         self._db_unique_name = None
+        self._db_name = None
         self._service_level_agreement_type = None
         self._autonomous_exadata_infrastructure_id = None
         self._db_version = None
@@ -312,6 +319,30 @@ class CreateAutonomousContainerDatabaseDetails(object):
         :type: str
         """
         self._db_unique_name = db_unique_name
+
+    @property
+    def db_name(self):
+        """
+        Gets the db_name of this CreateAutonomousContainerDatabaseDetails.
+        The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+
+
+        :return: The db_name of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._db_name
+
+    @db_name.setter
+    def db_name(self, db_name):
+        """
+        Sets the db_name of this CreateAutonomousContainerDatabaseDetails.
+        The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+
+
+        :param db_name: The db_name of this CreateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        self._db_name = db_name
 
     @property
     def service_level_agreement_type(self):
