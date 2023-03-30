@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+23.03.2 - 2023.03.22
+=====================
+* Added OCI_RESOURCES Table populated from showoci
+
+=====================
 23.03.15 - 2023.03.15
 =====================
 * Fix OCI_LOAD_STATUS Constraint bug
