@@ -18,7 +18,7 @@ from showoci_service import ShowOCIService, ShowOCIFlags
 
 
 class ShowOCIData(object):
-    version = "23.03.21"
+    version = "23.03.28"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -1042,6 +1042,32 @@ class ShowOCIData(object):
             return data
 
     ##########################################################################
+    # print network fw
+    ##########################################################################
+    def __get_core_network_firewall(self, region_name, compartment):
+        data = []
+        try:
+            nfw = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_FIREWALL, 'region_name', region_name, 'compartment_id', compartment['id'])
+            return nfw
+
+        except Exception as e:
+            self.__print_error("__get_core_network_firewall", e)
+            return data
+
+    ##########################################################################
+    # print network fw policies
+    ##########################################################################
+    def __get_core_network_firewall_policies(self, region_name, compartment):
+        data = []
+        try:
+            nfw = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_FIREWALL_POLICY, 'region_name', region_name, 'compartment_id', compartment['id'])
+            return nfw
+
+        except Exception as e:
+            self.__print_error("__get_core_network_firewall_policies", e)
+            return data
+
+    ##########################################################################
     # print network drg
     ##########################################################################
     def __get_core_network_drg(self, region_name, compartment):
@@ -1391,6 +1417,14 @@ class ShowOCIData(object):
             data = self.__get_core_network_virtual_circuit(region_name, compartment)
             if len(data) > 0:
                 return_data['virtual_circuit'] = data
+
+            data = self.__get_core_network_firewall(region_name, compartment)
+            if len(data) > 0:
+                return_data['network_firewall'] = data
+
+            data = self.__get_core_network_firewall_policies(region_name, compartment)
+            if len(data) > 0:
+                return_data['network_firewall_policies'] = data
 
             return return_data
 
@@ -4057,6 +4091,11 @@ class ShowOCIData(object):
             if devops:
                 paas_services['devops'] = devops
 
+            # opensearch
+            open_search = self.service.search_multi_items(self.service.C_PAAS_NATIVE, self.service.C_PAAS_NATIVE_OPEN_SEARCH, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if open_search:
+                paas_services['open_search'] = open_search
+
             return paas_services
 
         except Exception as e:
@@ -4071,7 +4110,7 @@ class ShowOCIData(object):
         try:
             security_services = {}
 
-            # cloud guard
+            # cloud guard Main
             cg = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_CLOUD_GUARD, 'region_name', region_name, 'compartment_id', compartment['id'])
             if cg:
                 security_services['cloud_guard'] = cg

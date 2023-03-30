@@ -20,7 +20,7 @@ import csv
 
 
 class ShowOCIOutput(object):
-    version = "23.03.21"
+    version = "23.03.28"
 
     ##########################################################################
     # spaces for align
@@ -789,6 +789,44 @@ class ShowOCIOutput(object):
             self.__print_error("__print_core_network_cpe", e)
 
     ##########################################################################
+    # print network firewall
+    ##########################################################################
+    def __print_core_network_firewall(self, nfws):
+
+        try:
+
+            if len(nfws) == 0:
+                return
+
+            self.print_header("Network Firewalls", 2)
+
+            for arr in nfws:
+                print(self.taba + arr['name'] + " - " + arr['availability_domain'] + " - " + arr['ipv4_address'] + " - " + arr['lifecycle_state'])
+                print(self.tabs + "Subnet: " + arr['subnet_name'])
+                print(self.tabs + "Policy: " + arr['network_firewall_policy_name'])
+
+        except Exception as e:
+            self.__print_error("__print_core_network_firewall", e)
+
+    ##########################################################################
+    # print network firewall Policies
+    ##########################################################################
+    def __print_core_network_firewall_policies(self, nfws):
+
+        try:
+
+            if len(nfws) == 0:
+                return
+
+            self.print_header("Network Firewalls Policies", 2)
+
+            for arr in nfws:
+                print(self.taba + arr['display_name'] + " - " + arr['lifecycle_state'] + ", Is Attached: " + arr['is_firewall_attached'])
+
+        except Exception as e:
+            self.__print_error("__print_core_network_firewall_policies", e)
+
+    ##########################################################################
     # print network dns resolvers
     ##########################################################################
     def __print_core_network_dns_resolver(self, resolvers):
@@ -881,6 +919,10 @@ class ShowOCIOutput(object):
                 self.__print_core_network_drg(data['drg'])
             if 'cpe' in data:
                 self.__print_core_network_cpe(data['cpe'])
+            if 'network_firewall' in data:
+                self.__print_core_network_firewall(data['network_firewall'])
+            if 'network_firewall_policies' in data:
+                self.__print_core_network_firewall_policies(data['network_firewall_policies'])
             if 'ipsec' in data:
                 self.__print_core_network_ipsec(data['ipsec'])
             if 'remote_peering' in data:
@@ -2257,6 +2299,24 @@ class ShowOCIOutput(object):
                     print(self.taba + val['name'] + ", Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + "), " + val['namespace'])
                     print("")
 
+            # Open Search
+            if 'open_search' in paas_services:
+                self.print_header("Open Search Clusters", 2)
+                for val in paas_services['open_search']:
+                    print(self.taba + val['display_name'] + ", Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + "), " + val['software_version'])
+                    if val['availability_domains']:
+                        print(self.tabs + "ADs       : " + val['availability_domains'])
+                    if val['security_mode']:
+                        print(self.tabs + "Sec       : " + val['security_mode'])
+                    print(self.tabs + "Search URL: " + val['opensearch_fqdn'])
+                    print(self.tabs + "Dash URL  : " + val['opendashboard_fqdn'])
+                    print(self.tabs + "Storage   : " + val['total_storage_gb'])
+                    print(self.tabs + "Subnet    : " + val['opensearch_private_ip'] + ", " + val['subnet_name'])
+                    print(self.tabs + "Master    : " + val['master_node_count'] + " x " + val['master_node_host_type'] + "." + val['master_node_host_ocpu_count'] + "." + val['master_node_host_memory_gb'])
+                    print(self.tabs + "Data      : " + val['data_node_count'] + " x " + val['data_node_host_type'] + "." + val['data_node_host_ocpu_count'] + "." + val['data_node_host_memory_gb'])
+                    print(self.tabs + "Dashboard : " + val['opendashboard_node_count'] + " x " + val['opendashboard_node_host_ocpu_count'] + "." + val['opendashboard_node_host_memory_gb'])
+                    print("")
+
             # OCVS
             if 'ocvs' in paas_services:
                 self.print_header("OCVS VMWare", 2)
@@ -2297,9 +2357,17 @@ class ShowOCIOutput(object):
             # cloud guard
             if 'cloud_guard' in security:
                 self.print_header("Cloud Guard", 2)
+
                 for val in security['cloud_guard']:
-                    print(self.taba + val['display_name'] + ", (Target = " + val['target_resource_type'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + "), Total Recipes : " + val['recipe_count'])
-                    print("")
+                    print(self.taba + "Cloud Guard: " + val['display_name'] + ", (Target = " + val['target_resource_type'] + " " + val['target_resource_name'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + "), Total Recipes : " + val['recipe_count'])
+                    if val['inherited_by_compartments']:
+                        print(self.tabs + "Inherited  : " + val['inherited_by_compartments_names'])
+
+                    for dr in val['target_detector_recipes']:
+                        print(self.tabs + "Det Recipes: Owner = " + dr['owner'] + ", " + dr['display_name'] + ", Created: " + dr['time_created'][0:16] + " (" + dr['lifecycle_state'] + ")" + " Rules: " + str(len(dr['effective_detector_rules'])))
+
+                    for dr in val['target_responder_recipes']:
+                        print(self.tabs + "Res Recipes: Owner = " + dr['owner'] + ", " + dr['display_name'] + ", Created: " + dr['time_created'][0:16] + " Rules: " + str(len(dr['effective_responder_rules'])))
 
             # bastions
             if 'bastions' in security:
@@ -2869,8 +2937,12 @@ class ShowOCISummary(object):
 
             for d in data:
                 if 'type' in d:
+
                     if d['type'] == "region":
                         self.__summary_region_data(d['region'], d['data'])
+
+                    elif d['type'] == "identity":
+                        self.__summary_identity(d['data'])
 
             self.summary_global_total = self.__summary_group_by("type", self.summary_global_total)
             self.__summary_print_results(self.summary_global_total, "Summary Total", 0)
@@ -2998,6 +3070,12 @@ class ShowOCISummary(object):
                 array = [x for x in paas_services['devops'] if x['lifecycle_state'] != 'ACTIVE']
                 self.__summary_core_size(array, add_info="Stopped ")
 
+            if 'open_search' in paas_services:
+                array = [x for x in paas_services['open_search'] if x['lifecycle_state'] == 'ACTIVE']
+                self.__summary_core_size(array)
+                array = [x for x in paas_services['open_search'] if x['lifecycle_state'] != 'ACTIVE']
+                self.__summary_core_size(array, add_info="Stopped ")
+
         except Exception as e:
             self.__print_error("__summary_paas_services_main", e)
 
@@ -3078,6 +3156,82 @@ class ShowOCISummary(object):
 
         except Exception as e:
             self.__print_error("__summary_data_ai_main", e)
+
+    ##########################################################################
+    # Identity Domains
+    ##########################################################################
+
+    def __summary_identity(self, identity):
+
+        try:
+            self.summary_global_list = []
+            if not identity:
+                return
+
+            if 'compartments' in identity:
+                self.__summary_core_count(identity['compartments'], 'Identity - Compartments')
+
+            if 'policies' in identity:
+                for policies in identity['policies']:
+                    self.__summary_core_count(policies['policies'], 'Identity - Policies')
+                    for policy in policies['policies']:
+                        self.__summary_core_count(policy['statements'], 'Identity - Policies Statements')
+
+            if 'tag_namespace' in identity:
+                self.__summary_core_count(identity['tag_namespace'], 'Identity - Tag Namsespaces')
+
+            if 'groups' in identity:
+                self.__summary_core_count(identity['groups'], 'Identity - Groups')
+
+            if 'users' in identity:
+                self.__summary_core_count(identity['users'], 'Identity - Users')
+                for arr in identity['users']:
+                    if 'api_keys' in arr:
+                        self.__summary_core_count(arr['api_keys'], 'Identity - Users API Keys')
+                    if 'auth_token' in arr:
+                        self.__summary_core_count(arr['auth_token'], 'Identity - Users Auth Tokens')
+                    if 'secret_key' in arr:
+                        self.__summary_core_count(arr['secret_key'], 'Identity - Users Secret Keys')
+                    if 'smtp_cred' in arr:
+                        self.__summary_core_count(arr['smtp_cred'], 'Identity - Users SMTP Creds')
+
+            if 'domains' in identity:
+                self.__summary_core_count(identity['domains'], "Identity - Domains")
+
+                for domain in identity['domains']:
+
+                    if 'users' in domain:
+                        self.__summary_core_count(domain['users'], "Identity Domains - Users")
+                        for arr in domain['users']:
+                            self.__summary_core_count(arr['api_keys'], 'Identity Domains - Users API Keys')
+                            self.__summary_core_count(arr['auth_tokens'], 'Identity Domains - Users Auth Tokens')
+                            self.__summary_core_count(arr['customer_secret_keys'], 'Identity Domains - Users Secret Keys')
+                            self.__summary_core_count(arr['smtp_credentials'], 'Identity Domains - Users SMTP Creds')
+                            self.__summary_core_count(arr['o_auth2_client_credentials'], 'Identity Domains - Users OAuth Creds')
+                            self.__summary_core_count(arr['db_credentials'], 'Identity Domains - Users DB Creds')
+
+                    if 'groups' in domain:
+                        self.__summary_core_count(domain['groups'], "Identity Domains - Groups")
+
+                    if 'dynamic_groups' in domain:
+                        self.__summary_core_count(domain['dynamic_groups'], "Identity Domains - DynGroups")
+
+                    if 'identity_providers' in domain:
+                        self.__summary_core_count(domain['identity_providers'], "Identity Domains - IDPs")
+
+            # aggregate the data
+            self.summary_global_list = self.__summary_group_by("type", self.summary_global_list)
+
+            # append data to global data
+            self.summary_global_data.append({'type': 'identity', 'summary': self.summary_global_list})
+
+            self.__summary_print_results(self.summary_global_list, "Summary Identity", 3)
+
+            # Merge to Total
+            self.summary_global_total.extend(self.summary_global_list)
+
+        except Exception as e:
+            self.__print_error("__summary_identity", e)
 
     ##########################################################################
     # edge services
@@ -3437,7 +3591,6 @@ class ShowOCISummary(object):
     ##########################################################################
     # sum core count
     ##########################################################################
-
     def __summary_core_count(self, objects, object_name):
         try:
             if len(objects) == 0:
@@ -3551,6 +3704,13 @@ class ShowOCISummary(object):
             # DRG
             if 'drg' in data:
                 self.__summary_core_count(data['drg'], "Network DRG Count")
+
+            # Network Firewall
+            if 'network_firewall' in data:
+                self.__summary_core_count(data['network_firewall'], "Network Firewall Count")
+
+            if 'network_firewall_policies' in data:
+                self.__summary_core_count(data['network_firewall_policies'], "Network Firewall Policies Count")
 
             # CPE
             if 'cpe' in data:
@@ -3740,6 +3900,9 @@ class ShowOCICSV(object):
     csv_db_autonomous = []
     csv_database = []
     csv_database_backups = []
+    csv_db_goldengate_deployments = []
+    csv_db_nosql = []
+    csv_db_mysql = []
     csv_network_drg = []
     csv_network_drg_ipsec_tunnels = []
     csv_network_drg_virtual_circuits = []
@@ -3750,6 +3913,8 @@ class ShowOCICSV(object):
     csv_network_security_group = []
     csv_network_routes = []
     csv_network_dhcp_options = []
+    csv_network_firewall = []
+    csv_network_firewall_policies = []
     csv_file_storage = []
     csv_load_balancer = []
     csv_load_balancer_bs = []
@@ -3772,6 +3937,7 @@ class ShowOCICSV(object):
     csv_paas_oce = []
     csv_paas_vb = []
     csv_paas_devops = []
+    csv_paas_open_search = []
     csv_data_ai_oda = []
     csv_data_ai_bds = []
     csv_data_science = []
@@ -3854,6 +4020,8 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("network_security_list", self.csv_network_security_list)
             self.__export_to_csv_file("network_security_group", self.csv_network_security_group)
             self.__export_to_csv_file("network_dhcp_options", self.csv_network_dhcp_options)
+            self.__export_to_csv_file("network_firewalls", self.csv_network_firewall)
+            self.__export_to_csv_file("network_firewalls_policies", self.csv_network_firewall_policies)
             self.__export_to_csv_file("database", self.csv_database)
             self.__export_to_csv_file("database_backups", self.csv_database_backups)
             self.__export_to_csv_file("database_autonomous", self.csv_db_autonomous)
@@ -3862,6 +4030,9 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("database_db_exa_infra", self.csv_db_exa_infrastructure)
             self.__export_to_csv_file("database_db_exacs", self.csv_db_exacs_vmclusters)
             self.__export_to_csv_file("database_db_exacc", self.csv_db_exacc_vmclusters)
+            self.__export_to_csv_file("database_goldengate_deployments", self.csv_db_goldengate_deployments)
+            self.__export_to_csv_file("database_mysql", self.csv_db_mysql)
+            self.__export_to_csv_file("database_nosql", self.csv_db_nosql)
             self.__export_to_csv_file("load_balancer_listeners", self.csv_load_balancer)
             self.__export_to_csv_file("load_balancer_backendset", self.csv_load_balancer_bs)
             self.__export_to_csv_file("file_storage", self.csv_file_storage)
@@ -3885,6 +4056,7 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("paas_oce", self.csv_paas_oce)
             self.__export_to_csv_file("paas_devops", self.csv_paas_devops)
             self.__export_to_csv_file("paas_visualbuilder", self.csv_paas_vb)
+            self.__export_to_csv_file("paas_opensearch", self.csv_paas_open_search)
             self.__export_to_csv_file("data_science", self.csv_data_science)
             self.__export_to_csv_file("data_flow", self.csv_data_flow)
             self.__export_to_csv_file("data_catalog", self.csv_data_catalog)
@@ -4940,6 +5112,75 @@ class ShowOCICSV(object):
             self.__print_error("__csv_core_network_virtual_circuit", e)
 
     ##########################################################################
+    # CSV Network Firewall
+    ##########################################################################
+    def __csv_core_network_firewall(self, region_name, network_firewalls):
+        try:
+            if not network_firewalls:
+                return
+
+            for arr in network_firewalls:
+                data = {
+                    'region_name': region_name,
+                    'compartment_name': arr['compartment_name'],
+                    'compartment_path': arr['compartment_path'],
+                    'compartment_id': arr['compartment_id'],
+                    'name': arr['display_name'],
+                    'subnet_id': arr['subnet_id'],
+                    'subnet_name': arr['subnet_name'],
+                    'availability_domain': arr['availability_domain'],
+                    'ipv4_address': arr['ipv4_address'],
+                    'ipv6_address': arr['ipv6_address'],
+                    'network_firewall_policy_id': arr['network_firewall_policy_id'],
+                    'network_firewall_policy_name': arr['network_firewall_policy_name'],
+                    'time_created': arr['time_created'],
+                    'time_updated': arr['time_updated'],
+                    'lifecycle_state': arr['lifecycle_state'],
+                    'id': arr['id'],
+                    'freeform_tags': self.__get_freeform_tags(arr['freeform_tags']),
+                    'defined_tags': self.__get_defined_tags(arr['defined_tags'])
+                }
+                self.csv_network_firewall.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_core_network_virtual_circuit", e)
+
+    ##########################################################################
+    # CSV Network Firewall Policies
+    ##########################################################################
+    def __csv_core_network_firewall_policies(self, region_name, network_firewalls_policies):
+        try:
+            if not network_firewalls_policies:
+                return
+
+            for arr in network_firewalls_policies:
+                data = {
+                    'region_name': region_name,
+                    'compartment_name': arr['compartment_name'],
+                    'compartment_path': arr['compartment_path'],
+                    'compartment_id': arr['compartment_id'],
+                    'name': arr['display_name'],
+                    'lifecycle_state': arr['lifecycle_state'],
+                    'url_lists': arr['url_lists'],
+                    'mapped_secrets': arr['mapped_secrets'],
+                    'application_lists': arr['application_lists'],
+                    'ip_address_lists': arr['ip_address_lists'],
+                    'security_rules': arr['security_rules'],
+                    'decryption_rules': arr['decryption_rules'],
+                    'decryption_profiles': arr['decryption_profiles'],
+                    'is_firewall_attached': arr['is_firewall_attached'],
+                    'time_created': arr['time_created'],
+                    'time_updated': arr['time_updated'],
+                    'id': arr['id'],
+                    'freeform_tags': self.__get_freeform_tags(arr['freeform_tags']),
+                    'defined_tags': self.__get_defined_tags(arr['defined_tags'])
+                }
+                self.csv_network_firewall_policies.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_core_network_firewall_policies", e)
+
+    ##########################################################################
     # CSV for  Network vcn security group
     ##########################################################################
     def __csv_core_network_vcn_security_groups(self, region_name, nsg, vcn):
@@ -5190,6 +5431,12 @@ class ShowOCICSV(object):
 
             if 'virtual_circuit' in data:
                 self.__csv_core_network_virtual_circuit(region_name, data['virtual_circuit'])
+
+            if 'network_firewall' in data:
+                self.__csv_core_network_firewall(region_name, data['network_firewall'])
+
+            if 'network_firewall_policies' in data:
+                self.__csv_core_network_firewall_policies(region_name, data['network_firewall_policies'])
 
         except Exception as e:
             self.__print_error("__csv_core_network_main", e)
@@ -5911,6 +6158,136 @@ class ShowOCICSV(object):
             self.__print_error("__csv_database_db_autonomous_databases", e)
 
     ##########################################################################
+    # __csv_database_goldengate
+    ##########################################################################
+
+    def __csv_database_goldengate(self, region_name, goldengates):
+        try:
+            if 'gg_deployments' in goldengates:
+                for db in goldengates['gg_deployments']:
+                    gg = {
+                        'region_name': region_name,
+                        'compartment_name': db['compartment_name'],
+                        'compartment_path': db['compartment_path'],
+                        'display_name': db['display_name'],
+                        'description': db['description'],
+                        'time_created': db['time_created'],
+                        'time_updated': db['time_updated'],
+                        'lifecycle_state': db['lifecycle_state'],
+                        'subnet_id': db['subnet_id'],
+                        'subnet_name': db['subnet_name'],
+                        'license_model': db['license_model'],
+                        'fqdn': db['fqdn'],
+                        'cpu_core_count': db['cpu_core_count'],
+                        'is_auto_scaling_enabled': db['is_auto_scaling_enabled'],
+                        'is_public': db['is_public'],
+                        'public_ip_address': db['public_ip_address'],
+                        'private_ip_address': db['private_ip_address'],
+                        'deployment_url': db['deployment_url'],
+                        'is_latest_version': db['is_latest_version'],
+                        'deployment_type': db['deployment_type'],
+                        'freeform_tags': self.__get_freeform_tags(db['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(db['defined_tags']),
+                        'id': db['id']
+                    }
+
+                    self.csv_db_goldengate_deployments.append(gg)
+
+        except Exception as e:
+            self.__print_error("__csv_database_goldengate", e)
+
+    ##########################################################################
+    # __csv_database_mysql
+    ##########################################################################
+
+    def __csv_database_mysql(self, region_name, mysql):
+        try:
+            for db in mysql:
+                var = {
+                    'region_name': region_name,
+                    'compartment_name': db['compartment_name'],
+                    'compartment_path': db['compartment_path'],
+                    'compartment_id': db['compartment_id'],
+                    'display_name': db['display_name'],
+                    'description': db['description'],
+                    'is_highly_available': db['is_highly_available'],
+                    'current_placement': db['current_placement'],
+                    'is_analytics_cluster_attached': db['is_analytics_cluster_attached'],
+                    'analytics_cluster': db['analytics_cluster'],
+                    'is_heat_wave_cluster_attached': db['is_heat_wave_cluster_attached'],
+                    'heat_wave_cluster': db['heat_wave_cluster'],
+                    'availability_domain': db['availability_domain'],
+                    'fault_domain': db['fault_domain'],
+                    'endpoints': db['endpoints'],
+                    'endpoints_text': db['endpoints_text'],
+                    'lifecycle_state': db['lifecycle_state'],
+                    'mysql_version': db['mysql_version'],
+                    'time_created': db['time_created'],
+                    'time_updated': db['time_updated'],
+                    'deletion_policy': db['deletion_policy'],
+                    'shape_name': db['shape_name'],
+                    'shape_ocpu': db['shape_ocpu'],
+                    'shape_memory_gb': db['shape_memory_gb'],
+                    'crash_recovery': db['crash_recovery'],
+                    'backup_is_enabled': db['backup_is_enabled'],
+                    'sum_info': db['sum_info'],
+                    'sum_info_storage': db['sum_info_storage'],
+                    'sum_size_gb': db['sum_size_gb'],
+                    'subnet_id': db['subnet_id'],
+                    'subnet_name': db['subnet_name'],
+                    'configuration_id': db['configuration_id'],
+                    'source': db['source'],
+                    'hostname_label': db['hostname_label'],
+                    'ip_address': db['ip_address'],
+                    'port': db['port'],
+                    'port_x': db['port_x'],
+                    'channels': db['channels'],
+                    'maintenance': db['maintenance'],
+                    'time_earliest_recovery_point': db['time_earliest_recovery_point'],
+                    'time_latest_recovery_point': db['time_latest_recovery_point'],
+                    'data_storage_size_in_gbs': db['data_storage_size_in_gbs'],
+                    'freeform_tags': self.__get_freeform_tags(db['freeform_tags']),
+                    'defined_tags': self.__get_defined_tags(db['defined_tags']),
+                    'id': db['id']
+                }
+
+                self.csv_db_mysql.append(var)
+
+        except Exception as e:
+            self.__print_error("__csv_database_mysql", e)
+
+    ##########################################################################
+    # __csv_database_nosql
+    ##########################################################################
+
+    def __csv_database_nosql(self, region_name, nosqls):
+        try:
+            for db in nosqls:
+                arr = {
+                    'region_name': region_name,
+                    'compartment_name': db['compartment_name'],
+                    'compartment_path': db['compartment_path'],
+                    'name': db['name'],
+                    'time_created': db['time_created'],
+                    'time_updated': db['time_updated'],
+                    'lifecycle_state': db['lifecycle_state'],
+                    'is_auto_reclaimable': db['is_auto_reclaimable'],
+                    'time_of_expiration': db['time_of_expiration'],
+                    'capacity_mode': db['capacity_mode'],
+                    'max_read_units': db['max_read_units'],
+                    'max_write_units': db['max_write_units'],
+                    'max_storage_in_g_bs': db['max_storage_in_g_bs'],
+                    'freeform_tags': self.__get_freeform_tags(db['freeform_tags']),
+                    'defined_tags': self.__get_defined_tags(db['defined_tags']),
+                    'id': db['id']
+                }
+
+                self.csv_db_nosql.append(arr)
+
+        except Exception as e:
+            self.__print_error("__csv_database_goldengate", e)
+
+    ##########################################################################
     # database
     ##########################################################################
 
@@ -5938,6 +6315,15 @@ class ShowOCICSV(object):
 
             if 'autonomous' in list_databases:
                 self.__csv_database_db_autonomous(region_name, list_databases['autonomous'])
+
+            if 'goldengate' in list_databases:
+                self.__csv_database_goldengate(region_name, list_databases['goldengate'])
+
+            if 'nosql' in list_databases:
+                self.__csv_database_nosql(region_name, list_databases['nosql'])
+
+            if 'mysql' in list_databases:
+                self.__csv_database_mysql(region_name, list_databases['mysql'])
 
         except Exception as e:
             self.__print_error("__print_database_main", e)
@@ -6641,16 +7027,42 @@ class ShowOCICSV(object):
                     data = {
                         'region_name': region_name,
                         'compartment_name': ar['compartment_name'],
+                        'compartment_id': ar['compartment_id'],
                         'compartment_path': ar['compartment_path'],
                         'name': ar['display_name'],
                         'target_resource_type': ar['target_resource_type'],
                         'target_resource_id': ar['target_resource_id'],
+                        'target_resource_name': ar['target_resource_name'],
+                        'inherited_by_compartments': ar['inherited_by_compartments'],
+                        'inherited_by_compartments_names': ar['inherited_by_compartments_names'],
+                        'target_detector_recipes': str(', '.join(x['display_name'] for x in ar['target_detector_recipes'])),
+                        'target_responder_recipes': str(', '.join(x['display_name'] for x in ar['target_responder_recipes'])),
+                        'target_detector_rules': "",
+                        'target_responder_rules': "",
                         'recipe_count': ar['recipe_count'],
                         'time_created': ar['time_created'][0:16],
                         'time_updated': ar['time_updated'][0:16],
                         'lifecycle_state': ar['lifecycle_state'],
+                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(ar['defined_tags']),
                         'id': ar['id']
                     }
+
+                    # target_detector_rules
+                    if ar['target_detector_recipes']:
+                        arrrules = []
+                        for dt in ar['target_detector_recipes']:
+                            for rule in dt['effective_detector_rules']:
+                                arrrules.append(rule)
+                        data['target_detector_rules'] = str(', '.join(x for x in list(set(arrrules))))
+
+                    # target_detector_rules
+                    if ar['target_responder_recipes']:
+                        arrrules = []
+                        for dt in ar['target_responder_recipes']:
+                            for rule in dt['effective_responder_rules']:
+                                arrrules.append(rule)
+                        data['target_responder_rules'] = str(', '.join(x for x in list(set(arrrules))))
 
                     self.csv_security_cloud_guard.append(data)
 
@@ -7224,6 +7636,66 @@ class ShowOCICSV(object):
             self.__print_error("__csv_paas_visualbuilder", e)
 
     ##########################################################################
+    # __csv_paas_open_search
+    ##########################################################################
+    def __csv_paas_open_search(self, region_name, services):
+        try:
+
+            if len(services) == 0:
+                return
+
+            if services:
+                for ar in services:
+
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
+                        'display_name': ar['display_name'],
+                        'time_created': ar['time_created'][0:16],
+                        'time_updated': ar['time_updated'][0:16],
+                        'lifecycle_state': ar['lifecycle_state'],
+                        'software_version': ar['software_version'],
+                        'total_storage_gb': ar['total_storage_gb'],
+                        'security_mode': ar['security_mode'],
+                        'availability_domains': ar['availability_domains'],
+                        'opensearch_fqdn': ar['opensearch_fqdn'],
+                        'opensearch_private_ip': ar['opensearch_private_ip'],
+                        'opendashboard_fqdn': ar['opendashboard_fqdn'],
+                        'opendashboard_private_ip': ar['opendashboard_private_ip'],
+                        'master_node_count': ar['master_node_count'],
+                        'master_node_host_type': ar['master_node_host_type'],
+                        'master_node_host_bare_metal_shape': ar['master_node_host_bare_metal_shape'],
+                        'master_node_host_ocpu_count': ar['master_node_host_ocpu_count'],
+                        'master_node_host_memory_gb': ar['master_node_host_memory_gb'],
+                        'data_node_count': ar['data_node_count'],
+                        'data_node_host_type': ar['data_node_host_type'],
+                        'data_node_host_bare_metal_shape': ar['data_node_host_bare_metal_shape'],
+                        'data_node_host_ocpu_count': ar['data_node_host_ocpu_count'],
+                        'data_node_host_memory_gb': ar['data_node_host_memory_gb'],
+                        'data_node_storage_gb': ar['data_node_storage_gb'],
+                        'opendashboard_node_count': ar['opendashboard_node_count'],
+                        'opendashboard_node_host_ocpu_count': ar['opendashboard_node_host_ocpu_count'],
+                        'opendashboard_node_host_memory_gb': ar['opendashboard_node_host_memory_gb'],
+                        'vcn_id': ar['vcn_id'],
+                        'vcn_name': ar['vcn_name'],
+                        'subnet_id': ar['subnet_id'],
+                        'subnet_name': ar['subnet_name'],
+                        'vcn_compartment_id': ar['vcn_compartment_id'],
+                        'subnet_compartment_id': ar['subnet_compartment_id'],
+                        'security_master_user_name': ar['security_master_user_name'],
+                        'security_master_user_password_hash': ar['security_master_user_password_hash'],
+                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(ar['defined_tags']),
+                        'id': ar['id']
+                    }
+
+                    self.csv_paas_open_search.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_paas_open_search", e)
+
+    ##########################################################################
     # Paas VB
     ##########################################################################
     def __csv_paas_devops(self, region_name, services):
@@ -7333,6 +7805,9 @@ class ShowOCICSV(object):
 
             if 'devops' in data:
                 self.__csv_paas_devops(region_name, data['devops'])
+
+            if 'open_search' in data:
+                self.__csv_paas_open_search(region_name, data['open_search'])
 
         except Exception as e:
             self.__print_error("__csv_paas_main", e)

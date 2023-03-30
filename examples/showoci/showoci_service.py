@@ -34,7 +34,7 @@ import platform
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "23.03.21"
+    version = "23.03.28"
     oci_compatible_version = "2.95.0"
 
     ##########################################################################
@@ -68,6 +68,8 @@ class ShowOCIService(object):
     C_NETWORK_VC = 'virtualcircuit'
     C_NETWORK_PRIVATEIP = 'privateip'
     C_NETWORK_DNS_RESOLVERS = 'dns_resolvers'
+    C_NETWORK_FIREWALL = 'network_firewall'
+    C_NETWORK_FIREWALL_POLICY = 'network_firewall_policy'
 
     # Identity Identifiers
     C_IDENTITY = 'identity'
@@ -208,6 +210,7 @@ class ShowOCIService(object):
     C_PAAS_NATIVE_OCVS = "ocvs"
     C_PAAS_NATIVE_VB = "vb"
     C_PAAS_NATIVE_DEVOPS = "devops"
+    C_PAAS_NATIVE_OPEN_SEARCH = "opensearch"
 
     # function
     C_FUNCTION = "functions"
@@ -1008,7 +1011,10 @@ class ShowOCIService(object):
 
             # print filter by
             if self.flags.filter_by_region:
-                print("Filtered by Region      = " + self.flags.filter_by_region)
+                print("Filtered by Regions       = " + self.flags.filter_by_region)
+
+            if self.flags.filter_by_region_not:
+                print("Filtered by Regions (Not) = " + self.flags.filter_by_region_not)
 
             if self.flags.filter_by_compartment:
                 print("Filtered by Compartment like " + self.flags.filter_by_compartment)
@@ -1048,9 +1054,31 @@ class ShowOCIService(object):
                 tenancy = self.data[self.C_IDENTITY][self.C_IDENTITY_TENANCY]
                 for region_name in tenancy['list_region_subscriptions']:
 
-                    # if filtered by region skip if not cmd.region
-                    if self.flags.filter_by_region and str(self.flags.filter_by_region) not in region_name:
-                        continue
+                    # Region Filter
+                    if self.flags.filter_by_region:
+                        if ',' not in self.flags.filter_by_region:
+                            if str(self.flags.filter_by_region) not in region_name:
+                                continue
+                        else:
+                            region_found = False
+                            for rg in str(self.flags.filter_by_region).split(","):
+                                if rg in region_name:
+                                    region_found = True
+                            if not region_found:
+                                continue
+
+                    # Region Filter Not
+                    if self.flags.filter_by_region_not:
+                        if ',' not in self.flags.filter_by_region_not:
+                            if str(self.flags.filter_by_region_not) in region_name:
+                                continue
+                        else:
+                            region_found = False
+                            for rg in str(self.flags.filter_by_region_not).split(","):
+                                if rg in region_name:
+                                    region_found = True
+                            if region_found:
+                                continue
 
                     # load region into data
                     self.__load_oci_region_data(region_name)
@@ -2038,6 +2066,11 @@ class ShowOCIService(object):
             if self.flags.proxy:
                 dns_client.base_client.session.proxies = {'https': self.flags.proxy}
 
+            # Open connectivity to OCI
+            nwf_client = oci.network_firewall.NetworkFirewallClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
+            if self.flags.proxy:
+                nwf_client.base_client.session.proxies = {'https': self.flags.proxy}
+
             # reference to compartments
             compartments = self.data[self.C_IDENTITY][self.C_IDENTITY_COMPARTMENTS]
 
@@ -2067,6 +2100,8 @@ class ShowOCIService(object):
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_DHCP)
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_PRIVATEIP)
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_DNS_RESOLVERS)
+                self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_FIREWALL)
+                self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_FIREWALL_POLICY)
 
             # reference to network:
             network = self.data[self.C_NETWORK]
@@ -2105,6 +2140,8 @@ class ShowOCIService(object):
                     network[self.C_NETWORK_SLIST] += self.__load_core_network_seclst(virtual_network, compartments)
                     network[self.C_NETWORK_DHCP] += self.__load_core_network_dhcpop(virtual_network, compartments)
                     network[self.C_NETWORK_DNS_RESOLVERS] += self.__load_core_network_dns_resolvers(dns_client, compartments)
+                    network[self.C_NETWORK_FIREWALL_POLICY] += self.__load_core_network_firewall_policy(nwf_client, compartments)
+                    network[self.C_NETWORK_FIREWALL] += self.__load_core_network_firewall(nwf_client, compartments)
 
                     routes = self.__load_core_network_routet(virtual_network, compartments)
                     network[self.C_NETWORK_ROUTE] += routes
@@ -3694,6 +3731,193 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_core_network_cpe", e)
+            return data
+
+    ##########################################################################
+    # load network FW
+    ##########################################################################
+    def __load_core_network_firewall(self, network_firewall_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            self.__load_print_status("Network Firewalls")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                arrs = []
+                try:
+                    arrs = oci.pagination.list_call_get_all_results(
+                        network_firewall_client.list_network_firewalls,
+                        compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+
+                print(".", end="")
+
+                # loop on array
+                # arr = oci.network_firewall.models.NetworkFirewallSummary
+                for arr in arrs:
+                    if not self.check_lifecycle_state_active(arr.lifecycle_state):
+                        continue
+
+                    val = {'id': str(arr.id),
+                           'name': str(arr.display_name) + " - " + str(arr.ipv4_address),
+                           'display_name': str(arr.display_name),
+                           'subnet_id': str(arr.subnet_id),
+                           'subnet_name': "" if arr.subnet_id is None else self.get_network_subnet(arr.subnet_id, True),
+                           'availability_domain': str(arr.availability_domain),
+                           'ipv4_address': str(arr.ipv4_address),
+                           'ipv6_address': str(arr.ipv6_address),
+                           'network_firewall_policy_id': str(arr.network_firewall_policy_id),
+                           'network_firewall_policy_name': "",
+                           'time_created': str(arr.time_created),
+                           'time_updated': str(arr.time_updated),
+                           'lifecycle_state': str(arr.lifecycle_state),
+                           'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
+                           'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                           'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                           'compartment_id': str(compartment['id']),
+                           'region_name': str(self.config['region'])
+                           }
+
+                    # get name of the policy
+                    nwfpolicy = self.search_unique_item(self.C_NETWORK, self.C_NETWORK_FIREWALL_POLICY, 'id', arr.network_firewall_policy_id)
+                    if nwfpolicy:
+                        val['network_firewall_policy_name'] = nwfpolicy['display_name']
+
+                    data.append(val)
+                    cnt += 1
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
+            raise
+        except Exception as e:
+            self.__print_error("__load_core_network_firewall", e)
+            return data
+
+    ##########################################################################
+    # load network FW Policies
+    ##########################################################################
+    def __load_core_network_firewall_policy(self, network_firewall_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            self.__load_print_status("Network Firewalls Policies")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                arrs = []
+                try:
+                    arrs = oci.pagination.list_call_get_all_results(
+                        network_firewall_client.list_network_firewall_policies,
+                        compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+
+                print(".", end="")
+
+                # loop on array
+                # arr = oci.network_firewall.models.NetworkFirewallPolicySummary
+                for arr in arrs:
+                    if not self.check_lifecycle_state_active(arr.lifecycle_state):
+                        continue
+
+                    val = {'id': str(arr.id),
+                           'display_name': str(arr.display_name),
+                           'time_created': str(arr.time_created),
+                           'time_updated': str(arr.time_updated),
+                           'lifecycle_state': str(arr.lifecycle_state),
+                           'compartment_id': str(compartment['id']),
+                           'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
+                           'url_lists': "",
+                           'mapped_secrets': "",
+                           'application_lists': "",
+                           'ip_address_lists': "",
+                           'security_rules': "",
+                           'decryption_rules': "",
+                           'decryption_profiles': "",
+                           'is_firewall_attached': "",
+                           'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                           'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                           'region_name': str(self.config['region'])
+                           }
+
+                    # retrieve more details with get
+                    try:
+                        nfw = network_firewall_client.get_network_firewall_policy(
+                            arr.id,
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                        ).data
+
+                        # (dict(str, list[UrlPattern]))
+                        val['url_lists'] = str(nfw.url_lists) if nfw.url_lists else ""
+
+                        # (dict(str, MappedSecret))
+                        val['mapped_secrets'] = str(nfw.mapped_secrets) if nfw.mapped_secrets else ""
+
+                        # (dict(str, list[Application]))
+                        val['application_lists'] = str(nfw.application_lists) if nfw.application_lists else ""
+
+                        # (dict(str, list[str]))
+                        val['ip_address_lists'] = str(nfw.ip_address_lists) if nfw.ip_address_lists else ""
+
+                        # (list[oci.network_firewall.models.SecurityRule])
+                        val['security_rules'] = str(nfw.security_rules) if nfw.security_rules else ""
+
+                        # (list[oci.network_firewall.models.DecryptionRule])
+                        val['decryption_rules'] = str(nfw.decryption_rules) if nfw.decryption_rules else ""
+
+                        # (dict(str, DecryptionProfile))
+                        val['decryption_profiles'] = str(nfw.decryption_profiles) if nfw.decryption_profiles else ""
+                        val['is_firewall_attached'] = str(nfw.is_firewall_attached) if nfw.is_firewall_attached else ""
+
+                    except Exception:
+                        print("w", end="")
+
+                    data.append(val)
+                    cnt += 1
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
+            raise
+        except Exception as e:
+            self.__print_error("__load_core_network_firewall_policy", e)
             return data
 
     ##########################################################################
@@ -9387,11 +9611,14 @@ class ShowOCIService(object):
                              'time_updated': str(tab.time_updated),
                              'lifecycle_state': str(tab.lifecycle_state),
                              'lifecycle_details': str(tab.lifecycle_details),
+                             'is_auto_reclaimable': str(tab.is_auto_reclaimable),
+                             'time_of_expiration': str(tab.time_of_expiration),
                              'sum_info': "NOSQL Database Tables",
                              'sum_size_gb': str("1"),
                              'max_read_units': str(tab.table_limits.max_read_units),
                              'max_write_units': str(tab.table_limits.max_write_units),
                              'max_storage_in_g_bs': str(tab.table_limits.max_storage_in_g_bs),
+                             'capacity_mode': str(tab.table_limits.capacity_mode),
                              'compartment_name': str(compartment['name']),
                              'compartment_path': str(compartment['path']),
                              'compartment_id': str(compartment['id']),
@@ -9464,63 +9691,94 @@ class ShowOCIService(object):
                     if not self.check_lifecycle_state_active(mysqls.lifecycle_state):
                         continue
 
+                    value = {
+                        'id': str(mysqls.id),
+                        'display_name': str(mysqls.display_name),
+                        'description': str(mysqls.description),
+                        'is_highly_available': str(mysqls.is_highly_available),
+                        'current_placement': str(mysqls.current_placement.availability_domain) if mysqls.current_placement else "",
+                        'is_analytics_cluster_attached': str(mysqls.is_analytics_cluster_attached),
+                        'analytics_cluster': str(mysqls.analytics_cluster.shape_name) + "-" + str(mysqls.analytics_cluster.cluster_size) if mysqls.analytics_cluster else "",
+                        'is_heat_wave_cluster_attached': str(mysqls.is_heat_wave_cluster_attached),
+                        'heat_wave_cluster': str(mysqls.heat_wave_cluster.shape_name) + "-" + str(mysqls.heat_wave_cluster.cluster_size) if mysqls.heat_wave_cluster else "",
+                        'availability_domain': str(mysqls.availability_domain),
+                        'fault_domain': str(mysqls.fault_domain),
+                        'endpoints': [],
+                        'endpoints_text': str(', '.join(str(x.ip_address) + ":" + str(x.port) for x in mysqls.endpoints)),
+                        'lifecycle_state': str(mysqls.lifecycle_state),
+                        'mysql_version': str(mysqls.mysql_version),
+                        'time_created': str(mysqls.time_created),
+                        'time_updated': str(mysqls.time_updated),
+                        'deletion_policy': ("Retention: " + str(mysqls.deletion_policy.automatic_backup_retention) + ", Final Backup: " + str(mysqls.deletion_policy.final_backup) + ", Protected: " + str(mysqls.deletion_policy.is_delete_protected)) if mysqls.deletion_policy else "",
+                        'shape_name': str(mysqls.shape_name),
+                        'shape_ocpu': 0,
+                        'shape_memory_gb': 0,
+                        'crash_recovery': str(mysqls.crash_recovery),
+                        'backup_is_enabled': str(mysqls.backup_policy.is_enabled) if mysqls.backup_policy else "false",
+                        'sum_info': 'Database Mysql - ' + str(mysqls.shape_name),
+                        'sum_info_storage': 'Database - Storage (GB)',
+                        'sum_size_gb': 0,
+                        'subnet_id': "",
+                        'subnet_name': "",
+                        'configuration_id': "",
+                        'source': "",
+                        'hostname_label': "",
+                        'ip_address': "",
+                        'port': "",
+                        'port_x': "",
+                        'channels': "",
+                        'maintenance': "",
+                        'time_earliest_recovery_point': "",
+                        'time_latest_recovery_point': "",
+                        'data_storage_size_in_gbs': "",
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'defined_tags': [] if mysqls.defined_tags is None else mysqls.defined_tags,
+                        'freeform_tags': [] if mysqls.freeform_tags is None else mysqls.freeform_tags,
+                        'region_name': str(self.config['region'])
+                    }
+
+                    # get shape
+                    if mysqls.shape_name:
+                        shape_sizes = self.get_shape_details(str(mysqls.shape_name))
+                        if shape_sizes:
+                            value['shape_ocpu'] = shape_sizes['cpu']
+                            value['shape_memory_gb'] = shape_sizes['memory']
+
+                    # get endpoints
+                    for ep in mysqls.endpoints:
+                        epval = {
+                            'hostname': str(ep.hostname),
+                            'ip_address': str(ep.ip_address),
+                            'port': str(ep.port),
+                            'port_x': str(ep.port_x),
+                            'modes': str(', '.join(x for x in ep.modes)),
+                            'status': str(ep.status),
+                            'status_details': str(ep.status_details)
+                        }
+                        value['endpoints'].append(epval)
+
                     try:
                         # get the full DBSystem - oci.mysql.models.DbSystem
-                        mysql = mysql_client.get_db_system((mysqls.id)).data
+                        mysql = mysql_client.get_db_system(mysqls.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
 
-                        value = {'id': str(mysql.id),
-                                 'display_name': str(mysql.display_name),
-                                 'description': str(mysql.description),
-                                 'availability_domain': str(mysql.availability_domain),
-                                 'fault_domain': str(mysql.fault_domain),
-                                 'lifecycle_state': str(mysql.lifecycle_state),
-                                 'mysql_version': str(mysql.mysql_version),
-                                 'endpoints': [],
-                                 'time_created': str(mysql.time_created),
-                                 'time_updated': str(mysql.time_updated),
-                                 'subnet_id': str(mysql.subnet_id),
-                                 'shape_name': str(mysql.shape_name),
-                                 'shape_ocpu': 0,
-                                 'shape_memory_gb': 0,
-                                 'backup_is_enabled': str(mysql.backup_policy.is_enabled) if mysql.backup_policy else "false",
-                                 'configuration_id': str(mysql.configuration_id),
-                                 'data_storage_size_in_gbs': str(mysql.data_storage_size_in_gbs),
-                                 'sum_info': 'Database Mysql - ' + str(mysql.shape_name),
-                                 'sum_info_storage': 'Database - Storage (GB)',
-                                 'sum_size_gb': str(mysql.data_storage_size_in_gbs),
-                                 'compartment_name': str(compartment['name']),
-                                 'compartment_path': str(compartment['path']),
-                                 'compartment_id': str(compartment['id']),
-                                 'defined_tags': [] if mysql.defined_tags is None else mysql.defined_tags,
-                                 'freeform_tags': [] if mysql.freeform_tags is None else mysql.freeform_tags,
-                                 'region_name': str(self.config['region'])
-                                 }
+                        value['subnet_id'] = str(mysql.subnet_id)
+                        value['configuration_id'] = str(mysql.configuration_id)
+                        value['data_storage_size_in_gbs'] = str(mysql.data_storage_size_in_gbs)
+                        value['sum_size_gb'] = str(mysql.data_storage_size_in_gbs)
+                        value['source'] = str(mysql.source) if mysql.source else ""
+                        value['hostname_label'] = str(mysql.hostname_label) if mysql.hostname_label else ""
+                        value['ip_address'] = str(mysql.ip_address)
+                        value['port'] = str(mysql.port)
+                        value['port_x'] = str(mysql.port_x)
+                        value['maintenance'] = str(mysql.maintenance.window_start_time) if mysql.maintenance else ""
+                        value['channels'] = str(', '.join(str(x.display_name) for x in mysql.channels))
+                        value['time_earliest_recovery_point'] = str(mysql.point_in_time_recovery_details.time_earliest_recovery_point)[0:16] if mysql.point_in_time_recovery_details else ""
+                        value['time_latest_recovery_point'] = str(mysql.point_in_time_recovery_details.time_latest_recovery_point)[0:16] if mysql.point_in_time_recovery_details else ""
 
-                        # get shape
-                        if mysql.shape_name:
-                            shape_sizes = self.get_shape_details(str(mysql.shape_name))
-                            if shape_sizes:
-                                value['shape_ocpu'] = shape_sizes['cpu']
-                                value['shape_memory_gb'] = shape_sizes['memory']
-
-                        # get endpoints
-                        for ep in mysql.endpoints:
-                            epval = {'hostname': str(ep.hostname),
-                                     'ip_address': str(ep.ip_address),
-                                     'port': str(ep.port),
-                                     'port_x': str(ep.port_x),
-                                     'modes': str(', '.join(x for x in ep.modes)),
-                                     'status': str(ep.status),
-                                     'status_details': str(ep.status_details)
-                                     }
-                            value['endpoints'].append(epval)
-
-                    except oci.exceptions.ServiceError as e:
-                        if self.__check_service_error(e.code):
-                            self.__load_print_auth_warning()
-                            continue
-                        else:
-                            raise
+                    except Exception:
+                        print("w", end="")
 
                     # add the data
                     cnt += 1
@@ -12594,6 +12852,7 @@ class ShowOCIService(object):
             ocvs_client = oci.ocvp.SddcClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
             esxi_client = oci.ocvp.EsxiHostClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
             vb_client = oci.visual_builder.VbInstanceClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
+            opensearch_client = oci.opensearch.OpensearchClusterClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
             virtual_network = oci.core.VirtualNetworkClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
             devops_client = oci.devops.DevopsClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
 
@@ -12605,6 +12864,7 @@ class ShowOCIService(object):
                 vb_client.base_client.session.proxies = {'https': self.flags.proxy}
                 esxi_client.base_client.session.proxies = {'https': self.flags.proxy}
                 virtual_network.base_client.session.proxies = {'https': self.flags.proxy}
+                opensearch_client.base_client.session.proxies = {'https': self.flags.proxy}
                 devops_client.base_client.session.proxies = {'https': self.flags.proxy}
 
             # reference to compartments
@@ -12617,6 +12877,7 @@ class ShowOCIService(object):
             self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_OCVS)
             self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_VB)
             self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_DEVOPS)
+            self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_OPEN_SEARCH)
 
             # reference to paas
             paas = self.data[self.C_PAAS_NATIVE]
@@ -12628,6 +12889,7 @@ class ShowOCIService(object):
             paas[self.C_PAAS_NATIVE_OAC] += self.__load_paas_oac(oac_client, compartments)
             paas[self.C_PAAS_NATIVE_VB] += self.__load_paas_visualbuilder(vb_client, compartments)
             paas[self.C_PAAS_NATIVE_DEVOPS] += self.__load_paas_devops(devops_client, compartments)
+            paas[self.C_PAAS_NATIVE_OPEN_SEARCH] += self.__load_paas_open_search(opensearch_client, compartments)
             print("")
 
         except oci.exceptions.RequestException:
@@ -13144,6 +13406,150 @@ class ShowOCIService(object):
             return data
 
     ##########################################################################
+    # __load_paas_open_search
+    ##########################################################################
+    def __load_paas_open_search(self, open_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Open Search Cluster")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                opens = []
+                try:
+                    opens = oci.pagination.list_call_get_all_results(
+                        open_client.list_opensearch_clusters,
+                        compartment['id'],
+                        sort_by="displayName",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning()
+                    continue
+
+                print(".", end="")
+
+                # arr = oci.opensearch.models.OpensearchClusterSummary
+                for arr in opens:
+                    if not self.check_lifecycle_state_active(arr.lifecycle_state):
+                        continue
+
+                    val = {
+                        'id': str(arr.id),
+                        'display_name': str(arr.display_name),
+                        'time_created': str(arr.time_created),
+                        'time_updated': str(arr.time_updated),
+                        'lifecycle_state': str(arr.lifecycle_state),
+                        'software_version': str(arr.software_version),
+                        'total_storage_gb': str(arr.total_storage_gb),
+                        'security_mode': str(arr.security_mode) if arr.security_mode else "",
+                        'availability_domains': str(", ").join(x for x in arr.availability_domains) if arr.availability_domains else "",
+                        'sum_info': "PaaS Open Search Cluster",
+                        'sum_size_gb': str(1),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                        'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                        'region_name': str(self.config['region'])
+                    }
+
+                    val['opensearch_fqdn'] = ""
+                    val['opensearch_private_ip'] = ""
+                    val['opendashboard_fqdn'] = ""
+                    val['opendashboard_private_ip'] = ""
+                    val['master_node_count'] = ""
+                    val['master_node_host_type'] = ""
+                    val['master_node_host_bare_metal_shape'] = ""
+                    val['master_node_host_ocpu_count'] = ""
+                    val['master_node_host_memory_gb'] = ""
+                    val['data_node_count'] = ""
+                    val['data_node_host_type'] = ""
+                    val['data_node_host_bare_metal_shape'] = ""
+                    val['data_node_host_ocpu_count'] = ""
+                    val['data_node_host_memory_gb'] = ""
+                    val['data_node_storage_gb'] = ""
+                    val['opendashboard_node_count'] = ""
+                    val['opendashboard_node_host_ocpu_count'] = ""
+                    val['opendashboard_node_host_memory_gb'] = ""
+                    val['vcn_id'] = ""
+                    val['vcn_name'] = ""
+                    val['subnet_id'] = ""
+                    val['subnet_name'] = ""
+                    val['vcn_compartment_id'] = ""
+                    val['subnet_compartment_id'] = ""
+                    val['security_master_user_name'] = ""
+                    val['security_master_user_password_hash'] = ""
+
+                    try:
+                        # get the target with more info
+                        arf = open_client.get_opensearch_cluster(
+                            arr.id,
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                        ).data
+
+                        # target_detector_recipes
+                        val['opensearch_fqdn'] = str(arf.opensearch_fqdn)
+                        val['opensearch_private_ip'] = str(arf.opensearch_private_ip)
+                        val['opendashboard_fqdn'] = str(arf.opendashboard_fqdn)
+                        val['opendashboard_private_ip'] = str(arf.opendashboard_private_ip)
+                        val['master_node_count'] = str(arf.master_node_count)
+                        val['master_node_host_type'] = str(arf.master_node_host_type)
+                        val['master_node_host_bare_metal_shape'] = str(arf.master_node_host_bare_metal_shape)
+                        val['master_node_host_ocpu_count'] = str(arf.master_node_host_ocpu_count)
+                        val['master_node_host_memory_gb'] = str(arf.master_node_host_memory_gb)
+                        val['data_node_count'] = str(arf.data_node_count)
+                        val['data_node_host_type'] = str(arf.data_node_host_type)
+                        val['data_node_host_bare_metal_shape'] = str(arf.data_node_host_bare_metal_shape)
+                        val['data_node_host_ocpu_count'] = str(arf.data_node_host_ocpu_count)
+                        val['data_node_host_memory_gb'] = str(arf.data_node_host_memory_gb)
+                        val['data_node_storage_gb'] = str(arf.data_node_storage_gb)
+                        val['opendashboard_node_count'] = str(arf.opendashboard_node_count)
+                        val['opendashboard_node_host_ocpu_count'] = str(arf.opendashboard_node_host_ocpu_count)
+                        val['opendashboard_node_host_memory_gb'] = str(arf.opendashboard_node_host_memory_gb)
+                        val['vcn_id'] = str(arf.vcn_id)
+                        val['vcn_name'] = self.get_network_vcn(arf.vcn_id)
+                        val['subnet_id'] = self.get_network_subnet(arf.subnet_id, detailed=True)
+                        val['vcn_compartment_id'] = str(arf.vcn_compartment_id)
+                        val['subnet_compartment_id'] = str(arf.subnet_compartment_id)
+                        val['security_master_user_name'] = str(arf.security_master_user_name)
+                        val['security_master_user_password_hash'] = str(arf.security_master_user_password_hash)
+
+                    except Exception as e:
+                        self.__print_error("__load_paas_open_search", e)
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_paas_open_search", e)
+            return data
+
+    ##########################################################################
     # __load_paas_devops
     ##########################################################################
     def __load_paas_devops(self, devops_client, compartments):
@@ -13573,11 +13979,6 @@ class ShowOCIService(object):
     # oci.cloud_guard.CloudGuardClient(config, **kwargs)
     # oci.logging.LoggingManagementClient(config, **kwargs)
     #
-    # TBD
-    # list_detector_recipes
-    # list_responder_recipes
-    # list_security_recipes
-    # list_problems
     ##########################################################################
     def __load_security_main(self):
 
@@ -13610,9 +14011,9 @@ class ShowOCIService(object):
 
             # append the data
             sec[self.C_SECURITY_BASTION] += self.__load_security_bastions(bs_client, compartments)
-            sec[self.C_SECURITY_CLOUD_GUARD] += self.__load_security_cloud_guard(cg_client, compartments)
             sec[self.C_SECURITY_LOGGING] += self.__load_security_log_groups(log_client, compartments)
             sec[self.C_SECURITY_VAULTS] += self.__load_security_kms_vaults(kms_client, compartments)
+            sec[self.C_SECURITY_CLOUD_GUARD] += self.__load_security_cloud_guard(cg_client, compartments)
 
             print("")
 
@@ -13622,48 +14023,6 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_security_main", e)
-
-    ##########################################################################
-    # __load_security_scores_main
-    ##########################################################################
-    #
-    # OCI Classes used:
-    #
-    # oci.cloud_guard.CloudGuardClient(config, **kwargs)
-    ##########################################################################
-    def __load_security_scores_main(self):
-
-        try:
-            print("Cloud Guard Scores...")
-
-            # clients
-            cg_client = oci.cloud_guard.CloudGuardClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
-
-            if self.flags.proxy:
-                cg_client.base_client.session.proxies = {'https': self.flags.proxy}
-
-            # reference to compartments
-            root_compartment = self.get_tenancy_id()
-
-            # add the key if not exists
-            self.__initialize_data_key(self.C_SECURITY_SCORES, self.C_SECURITY_SCORES_GUARD_SECURITY_SCORES)
-            self.__initialize_data_key(self.C_SECURITY_SCORES, self.C_SECURITY_SCORES_GUARD_RISK_SCORES)
-
-            # reference to paas
-            sec = self.data[self.C_SECURITY_SCORES]
-
-            # append the data
-            sec[self.C_SECURITY_SCORES_GUARD_SECURITY_SCORES] += self.__load_security_cloud_guard_security_scores(cg_client, root_compartment)
-            sec[self.C_SECURITY_SCORES_GUARD_RISK_SCORES] += self.__load_security_cloud_guard_risk_scores(cg_client, root_compartment)
-
-            print("")
-
-        except oci.exceptions.RequestException:
-            raise
-        except oci.exceptions.ServiceError:
-            raise
-        except Exception as e:
-            self.__print_error("__load_security_scores_main", e)
 
     ##########################################################################
     # __load_security_cloud_guard
@@ -13707,30 +14066,89 @@ class ShowOCIService(object):
 
                 # item = oci.cloud_guard.models.TargetSummary
                 for item in array:
-                    if self.check_lifecycle_state_active(item.lifecycle_state):
+                    if not self.check_lifecycle_state_active(item.lifecycle_state):
+                        continue
 
-                        val = {'id': str(item.id),
-                               'display_name': str(item.display_name),
-                               'target_resource_type': str(item.target_resource_type),
-                               'target_resource_id': str(item.target_resource_id),
-                               'recipe_count': str(item.recipe_count),
-                               'time_created': str(item.time_created),
-                               'time_updated': str(item.time_updated),
-                               'lifecycle_state': str(item.lifecycle_state),
-                               'lifecyle_details': str(item.lifecyle_details),
-                               'sum_info': "Cloud Guard",
-                               'sum_size_gb': str(1),
-                               'system_tags': [] if item.system_tags is None else item.system_tags,
-                               'defined_tags': [] if item.defined_tags is None else item.defined_tags,
-                               'freeform_tags': [] if item.freeform_tags is None else item.freeform_tags,
-                               'compartment_name': str(compartment['name']),
-                               'compartment_path': str(compartment['path']),
-                               'compartment_id': str(compartment['id']),
-                               'region_name': str(self.config['region'])}
+                    val = {
+                        'id': str(item.id),
+                        'display_name': str(item.display_name),
+                        'target_resource_type': str(item.target_resource_type),
+                        'target_resource_id': str(item.target_resource_id),
+                        'target_resource_name': "",
+                        'inherited_by_compartments': "",
+                        'inherited_by_compartments_names': "",
+                        'target_detector_recipes': [],
+                        'target_responder_recipes': [],
+                        'recipe_count': str(item.recipe_count),
+                        'time_created': str(item.time_created),
+                        'time_updated': str(item.time_updated),
+                        'lifecycle_state': str(item.lifecycle_state),
+                        'lifecyle_details': str(item.lifecyle_details),
+                        'sum_info': "Cloud Guard",
+                        'sum_size_gb': str(1),
+                        'system_tags': [] if item.system_tags is None else item.system_tags,
+                        'defined_tags': [] if item.defined_tags is None else item.defined_tags,
+                        'freeform_tags': [] if item.freeform_tags is None else item.freeform_tags,
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'region_name': str(self.config['region'])}
 
-                        # add the data
-                        cnt += 1
-                        data.append(val)
+                    # target compartment name
+                    target_arr = self.get_compartment_by_id(item.target_resource_id)
+                    if target_arr:
+                        val['target_resource_name'] = target_arr['name']
+
+                    try:
+                        # get the target with more info
+                        itemfull = cg_client.get_target(
+                            item.id,
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                        ).data
+
+                        if itemfull.inherited_by_compartments:
+                            incp = []
+                            for cp in itemfull.inherited_by_compartments:
+                                cpname = self.get_compartment_by_id(cp)
+                                if cpname:
+                                    incp.append(cpname['name'])
+                            val['inherited_by_compartments'] = str(','.join(y for y in itemfull.inherited_by_compartments))
+                            val['inherited_by_compartments_names'] = str(','.join(y for y in incp))
+
+                        # target_detector_recipes
+                        val['target_detector_recipes'] = [{
+                            'id': str(arr.id),
+                            'display_name': str(arr.display_name),
+                            'description': str(arr.description),
+                            'compartment_id': str(arr.compartment_id),
+                            'detector_recipe_id': str(arr.detector_recipe_id),
+                            'owner': str(arr.owner),
+                            'detector': str(arr.detector),
+                            'effective_detector_rules': [y.detector_rule_id for y in arr.effective_detector_rules] if arr.effective_detector_rules else [],
+                            'time_created': str(arr.time_created),
+                            'time_updated': str(arr.time_updated),
+                            'lifecycle_state': str(arr.lifecycle_state),
+                            'source_data_retention': str(arr.source_data_retention)
+                        } for arr in itemfull.target_detector_recipes] if itemfull.target_detector_recipes else []
+
+                        # target_responder_recipes
+                        val['target_responder_recipes'] = [{
+                            'id': str(arr.id),
+                            'responder_recipe_id': str(arr.responder_recipe_id),
+                            'compartment_id': str(arr.compartment_id),
+                            'display_name': str(arr.display_name),
+                            'description': str(arr.description),
+                            'owner': str(arr.owner),
+                            'time_created': str(arr.time_created),
+                            'time_updated': str(arr.time_updated),
+                            'effective_responder_rules': [y.responder_rule_id for y in arr.effective_responder_rules] if arr.effective_responder_rules else [],
+                        } for arr in itemfull.target_responder_recipes] if itemfull.target_responder_recipes else []
+                    except Exception as e:
+                        self.__print_error("__load_security_cloud_guard", e)
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
 
             self.__load_print_cnt(cnt, start_time)
             return data
@@ -13742,6 +14160,48 @@ class ShowOCIService(object):
         except Exception as e:
             self.__print_error("__load_security_cloud_guard", e)
             return data
+
+    ##########################################################################
+    # __load_security_scores_main
+    ##########################################################################
+    #
+    # OCI Classes used:
+    #
+    # oci.cloud_guard.CloudGuardClient(config, **kwargs)
+    ##########################################################################
+    def __load_security_scores_main(self):
+
+        try:
+            print("Cloud Guard Scores...")
+
+            # clients
+            cg_client = oci.cloud_guard.CloudGuardClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
+
+            if self.flags.proxy:
+                cg_client.base_client.session.proxies = {'https': self.flags.proxy}
+
+            # reference to compartments
+            root_compartment = self.get_tenancy_id()
+
+            # add the key if not exists
+            self.__initialize_data_key(self.C_SECURITY_SCORES, self.C_SECURITY_SCORES_GUARD_SECURITY_SCORES)
+            self.__initialize_data_key(self.C_SECURITY_SCORES, self.C_SECURITY_SCORES_GUARD_RISK_SCORES)
+
+            # reference to paas
+            sec = self.data[self.C_SECURITY_SCORES]
+
+            # append the data
+            sec[self.C_SECURITY_SCORES_GUARD_SECURITY_SCORES] += self.__load_security_cloud_guard_security_scores(cg_client, root_compartment)
+            sec[self.C_SECURITY_SCORES_GUARD_RISK_SCORES] += self.__load_security_cloud_guard_risk_scores(cg_client, root_compartment)
+
+            print("")
+
+        except oci.exceptions.RequestException:
+            raise
+        except oci.exceptions.ServiceError:
+            raise
+        except Exception as e:
+            self.__print_error("__load_security_scores_main", e)
 
     ##########################################################################
     # __load_security_kms_vaults
@@ -14215,6 +14675,7 @@ class ShowOCIFlags(object):
 
     # filter flags
     filter_by_region = ""
+    filter_by_region_not = ""
     filter_by_compartment = ""
     filter_by_compartment_recursive = ""
     filter_by_compartment_path = ""

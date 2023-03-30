@@ -58,7 +58,9 @@ download_file CHANGELOG.rst
 download_file README.md
 
 echo "Rename run_daily_report.sh to run_daily_report.sh.bak" | tee -a $LOG
-mv run_daily_report.sh run_daily_report.sh.bak
+if [ -f "${APPDIR}/run_daily_report.sh" ]; then
+	mv ${APPDIR}/run_daily_report.sh ${APPDIR}/run_daily_report.sh.bak
+fi
 download_file run_daily_report.sh
 
 ###########################################

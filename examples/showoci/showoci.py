@@ -70,24 +70,39 @@
 # - oci.data_connectivity.models.RegistrySummary
 # - oci.queue.QueueAdminClient
 # - oci.identity_domains.IdentityDomainsClient
+# - oci.network_firewall.NetworkFirewallClient
+# - oci.opensearch.OpensearchClusterClient
+#
+# Modules without CSV yet:
+# - datasciencemodeldeployment
+# - datasciencenotebooksession
 #
 # Modules Not Yet Covered:
-# - oci.blockchain.BlockchainPlatformClient
-# - oci.data_safe.DataSafeClient
-# - oci.usage_api.UsageapiClient
-# - oci.sch.ServiceConnectorClient
-# - oci.os_management.OsManagementClient
-# - oci.log_analytics.LogAnalyticsClient
-# - oci.tenant_manager_control_plane.LinkClient
 # - oci.ai_anomaly_detection.AnomalyDetectionClient
+# - oci.ai_document.AIServiceDocumentClient
 # - oci.ai_language.AIServiceLanguageClient
+# - oci.ai_speech.AIServiceSpeechClient
 # - oci.ai_vision.AIServiceVisionClient
-# - oci.apm_control_plane.ApmDomainClient
-# - oci.certificates.CertificatesClient
+# - oci.apm_config.ConfigClient
+# - oci.apm_synthetics.ApmSyntheticClient
+# - oci.application_migration.ApplicationMigrationClient
+# - oci.artifacts.ArtifactsClient
+# - oci.certificates_management.CertificatesManagementClient
+# - oci.cloud_migrations.MigrationClient
+# - oci.container_instances.ContainerInstanceClient
 # - oci.data_labeling_service.DataLabelingManagementClient
-# - oci.data_safe.DataSafeClient
-# - oci.devops.DevopsClient
+# - oci.disaster_recovery.DisasterRecoveryClient
+# - oci.fusion_apps.FusionApplicationsClient
 # - oci.jms.JavaManagementServiceClient
+# - oci.license_manager.LicenseManagerClient
+# - oci.lockbox.LockboxClient
+# - oci.media_services.MediaServicesClient
+# - oci.opa.OpaInstanceClient
+# - oci.opsi.OperationsInsightsClient
+# - oci.optimizer.OptimizerClient
+# - oci.recovery.DatabaseRecoveryClient
+# - oci.service_mesh.ServiceMeshClient
+# - oci.threat_intelligence.ThreatintelClient
 ##########################################################################
 from __future__ import print_function
 from showoci_data import ShowOCIData
@@ -101,7 +116,7 @@ import datetime
 import contextlib
 import os
 
-version = "23.03.21"
+version = "23.03.28"
 
 ##########################################################################
 # check OCI version
@@ -339,7 +354,8 @@ def set_parser_arguments(argsList=[]):
     parser.add_argument('-t', default="", dest='profile', help='Config file section to use (tenancy profile)')
     parser.add_argument('-p', default="", dest='proxy', help='Set Proxy (i.e. www-proxy-server.com:80) ')
     parser.add_argument('-pause', action='store_true', default=False, dest='pause', help='Pause before Processing')
-    parser.add_argument('-rg', default="", dest='region', help='Filter by Region')
+    parser.add_argument('-rg', default="", dest='region', help='Filter by Region, partial name or comma seperated')
+    parser.add_argument('-rgn', default="", dest='not_region', help='Filter by Region, do not include region partial name or comma seperated')
     parser.add_argument('-cp', default="", dest='compart', help='Filter by Compartment Name or OCID')
     parser.add_argument('-cpr', default="", dest='compart_recur', help='Filter by Comp Name Recursive')
     parser.add_argument('-cpath', default="", dest='compartpath', help='Filter by Compartment path ,(i.e. -cpath "Adi / Sub"')
@@ -493,6 +509,9 @@ def set_service_extract_flags(cmd):
 
     if cmd.region:
         prm.filter_by_region = str(cmd.region)
+
+    if cmd.not_region:
+        prm.filter_by_region_not = str(cmd.not_region)
 
     if cmd.compart:
         prm.filter_by_compartment = str(cmd.compart)

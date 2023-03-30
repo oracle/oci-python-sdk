@@ -93,6 +93,8 @@ and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/
 - oci.data_integration.DataIntegrationClient
 - oci.queue.QueueAdminClient
 - oci.identity_domains.IdentityDomainsClient
+- oci.network_firewall.NetworkFirewallClient
+- oci.opensearch.OpensearchClusterClient
 
 ## 2. Executing using Cloud Shell
 
@@ -271,12 +273,12 @@ $ python3 showoci.py
 
 usage: showoci.py [-h] [-a] [-ani] [-an] [-api] [-b] [-c] [-cn] [-d] [-e] [-edge] [-f] [-fun] [-i] [-ic] [-isc] [-l] [-lq] [-m]
                   [-n] [-o] [-paas] [-dataai] [-rm] [-s] [-sec] [-nobackups] [-skipdbhomes] [-readtimeout READTIMEOUT]
-                  [-conntimeout CONNTIMEOUT] [-so] [-mc] [-nr] [-ip] [-is] [-dt] [-t PROFILE] [-p PROXY] [-rg REGION]
-                  [-cp COMPART] [-cpr COMPART_RECUR] [-cpath COMPARTPATH] [-tenantid TENANTID] [-cf CONFIG] [-csv CSV]
-                  [-csvcol CSVCOL] [-csv_nodate] [-csv_notagstocols] [-jf JOUTFILE] [-js] [-sjf SJOUTFILE] [-cachef SERVICEFILE]
-                  [-caches] [--version]
+                  [-conntimeout CONNTIMEOUT] [-so] [-mc] [-nr] [-ip] [-is] [-dt] [-t PROFILE] [-p PROXY] [-pause] [-rg REGION]
+                  [-rgn NOT_REGION] [-cp COMPART] [-cpr COMPART_RECUR] [-cpath COMPARTPATH] [-tenantid TENANTID] [-cf CONFIG]
+                  [-csv CSV] [-csvcol CSVCOL] [-csv_nodate] [-csv_notagstocols] [-jf JOUTFILE] [-js] [-sjf SJOUTFILE]
+                  [-cachef SERVICEFILE] [-caches] [--version]
 
-options:
+optional arguments:
   -h, --help                show this help message and exit
   -a                        Print All Resources
   -ani                      Print All Resources but identity
@@ -315,7 +317,9 @@ options:
   -dt                       Use Delegation Token (Cloud shell)
   -t PROFILE                Config file section to use (tenancy profile)
   -p PROXY                  Set Proxy (i.e. www-proxy-server.com:80)
-  -rg REGION                Filter by Region
+  -pause                    Pause before Processing
+  -rg REGION                Filter by Region, partial name or comma seperated
+  -rgn NOT_REGION           Filter by Region, do not include region partial name or comma seperated
   -cp COMPART               Filter by Compartment Name or OCID
   -cpr COMPART_RECUR        Filter by Comp Name Recursive
   -cpath COMPARTPATH        Filter by Compartment path ,(i.e. -cpath "Adi / Sub"
