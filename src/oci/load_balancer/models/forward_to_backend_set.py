@@ -46,7 +46,7 @@ class ForwardToBackendSet(Action):
     @property
     def backend_set_name(self):
         """
-        Gets the backend_set_name of this ForwardToBackendSet.
+        **[Required]** Gets the backend_set_name of this ForwardToBackendSet.
         Name of the backend set the listener will forward the traffic to.
 
         Example: `backendSetForImages`
