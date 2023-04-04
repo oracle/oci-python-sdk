@@ -417,6 +417,10 @@ Run on oci vm
 bash -c "$(curl -L https://raw.githubusercontent.com/adizohar/showoci/master/showoci_upgrade.sh)"    
 ```
 
+```
+mkdir -p ${HOME}/usage_reports_to_adw/cron
+```
+
 ### 9.2 Add read all-resources policy to allow showoci to extract data
 
 Update the policy for the dynamic group of the host as below (inspect can be used instead but some information won't be exported)

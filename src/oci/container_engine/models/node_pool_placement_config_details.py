@@ -30,6 +30,10 @@ class NodePoolPlacementConfigDetails(object):
             The value to assign to the capacity_reservation_id property of this NodePoolPlacementConfigDetails.
         :type capacity_reservation_id: str
 
+        :param preemptible_node_config:
+            The value to assign to the preemptible_node_config property of this NodePoolPlacementConfigDetails.
+        :type preemptible_node_config: oci.container_engine.models.PreemptibleNodeConfigDetails
+
         :param fault_domains:
             The value to assign to the fault_domains property of this NodePoolPlacementConfigDetails.
         :type fault_domains: list[str]
@@ -39,6 +43,7 @@ class NodePoolPlacementConfigDetails(object):
             'availability_domain': 'str',
             'subnet_id': 'str',
             'capacity_reservation_id': 'str',
+            'preemptible_node_config': 'PreemptibleNodeConfigDetails',
             'fault_domains': 'list[str]'
         }
 
@@ -46,12 +51,14 @@ class NodePoolPlacementConfigDetails(object):
             'availability_domain': 'availabilityDomain',
             'subnet_id': 'subnetId',
             'capacity_reservation_id': 'capacityReservationId',
+            'preemptible_node_config': 'preemptibleNodeConfig',
             'fault_domains': 'faultDomains'
         }
 
         self._availability_domain = None
         self._subnet_id = None
         self._capacity_reservation_id = None
+        self._preemptible_node_config = None
         self._fault_domains = None
 
     @property
@@ -127,6 +134,26 @@ class NodePoolPlacementConfigDetails(object):
         :type: str
         """
         self._capacity_reservation_id = capacity_reservation_id
+
+    @property
+    def preemptible_node_config(self):
+        """
+        Gets the preemptible_node_config of this NodePoolPlacementConfigDetails.
+
+        :return: The preemptible_node_config of this NodePoolPlacementConfigDetails.
+        :rtype: oci.container_engine.models.PreemptibleNodeConfigDetails
+        """
+        return self._preemptible_node_config
+
+    @preemptible_node_config.setter
+    def preemptible_node_config(self, preemptible_node_config):
+        """
+        Sets the preemptible_node_config of this NodePoolPlacementConfigDetails.
+
+        :param preemptible_node_config: The preemptible_node_config of this NodePoolPlacementConfigDetails.
+        :type: oci.container_engine.models.PreemptibleNodeConfigDetails
+        """
+        self._preemptible_node_config = preemptible_node_config
 
     @property
     def fault_domains(self):

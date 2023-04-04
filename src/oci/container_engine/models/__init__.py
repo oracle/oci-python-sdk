@@ -61,11 +61,14 @@ from .placement_configuration import PlacementConfiguration
 from .pod_configuration import PodConfiguration
 from .pod_shape import PodShape
 from .pod_shape_summary import PodShapeSummary
+from .preemptible_node_config_details import PreemptibleNodeConfigDetails
+from .preemption_action import PreemptionAction
 from .service_lb_config_details import ServiceLbConfigDetails
 from .shape_memory_options import ShapeMemoryOptions
 from .shape_network_bandwidth_options import ShapeNetworkBandwidthOptions
 from .shape_ocpu_options import ShapeOcpuOptions
 from .taint import Taint
+from .terminate_preemption_action import TerminatePreemptionAction
 from .update_addon_details import UpdateAddonDetails
 from .update_cluster_details import UpdateClusterDetails
 from .update_cluster_endpoint_config_details import UpdateClusterEndpointConfigDetails
@@ -146,11 +149,14 @@ container_engine_type_mapping = {
     "PodConfiguration": PodConfiguration,
     "PodShape": PodShape,
     "PodShapeSummary": PodShapeSummary,
+    "PreemptibleNodeConfigDetails": PreemptibleNodeConfigDetails,
+    "PreemptionAction": PreemptionAction,
     "ServiceLbConfigDetails": ServiceLbConfigDetails,
     "ShapeMemoryOptions": ShapeMemoryOptions,
     "ShapeNetworkBandwidthOptions": ShapeNetworkBandwidthOptions,
     "ShapeOcpuOptions": ShapeOcpuOptions,
     "Taint": Taint,
+    "TerminatePreemptionAction": TerminatePreemptionAction,
     "UpdateAddonDetails": UpdateAddonDetails,
     "UpdateClusterDetails": UpdateClusterDetails,
     "UpdateClusterEndpointConfigDetails": UpdateClusterEndpointConfigDetails,

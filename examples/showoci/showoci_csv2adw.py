@@ -31,6 +31,9 @@
 # - OCI_SHOWOCI_DATABASES
 # - OCI_SHOWOCI_DATABASE_VM_BM
 # - OCI_SHOWOCI_DATABASES_ADB
+# - OCI_SHOWOCI_DB_NOSQL
+# - OCI_SHOWOCI_DB_MYSQL
+# - OCI_SHOWOCI_DB_GOLDENGATE_DEP
 # - OCI_SHOWOCI_FILE_STORAGE
 # - OCI_SHOWOCI_OBJECT_STORAGE
 # - OCI_SHOWOCI_LB_LISTENERS
@@ -53,6 +56,7 @@
 # - OCI_SHOWOCI_NETWORK_ROUTES
 # - OCI_SHOWOCI_NETWORK_DRG_VC
 # - OCI_SHOWOCI_NETWORK_DRG_IPSEC
+# - OCI_SHOWOCI_NETWORK_FIREWALL
 # - OCI_SHOWOCI_DIGITAL_ASSISTANCE
 # - OCI_SHOWOCI_BIG_DATA
 # - OCI_SHOWOCI_DATA_FLOW
@@ -76,9 +80,18 @@
 # - OCI_SHOWOCI_MONITOR_DB_MANAGEMENT
 # - OCI_SHOWOCI_MONITOR_ALARMS
 # - OCI_SHOWOCI_MONITOR_NOTIFICATIONS
+# - OCI_SHOWOCI_OPEN_SEARCH
+#
+##########################################################################
+# TO DO APEX
+##########################################################################
+# OCI_SHOWOCI_OPEN_SEARCH
+# OCI_SHOWOCI_SECURITY_CLOUDGUARD
+#
 ##########################################################################
 # TO DO
 ##########################################################################
+#
 # paas_ocvs_vmware
 # edge_waas_policies
 # identity_compartments
@@ -100,7 +113,7 @@ import oracledb
 import time
 import os
 
-version = "23.03.14"
+version = "23.03.28"
 cmd = None
 file_num = 0
 
@@ -224,7 +237,7 @@ def handle_compute(connection):
                 {'col': 'extract_date          ', 'csv': '    ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "instance_id", "server_name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_compute - " + str(e))
 
@@ -258,7 +271,7 @@ def handle_block_volume(connection):
                 {'col': 'extract_date       ', 'csv': '     ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "display_name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_block_storage - " + str(e))
 
@@ -291,7 +304,7 @@ def handle_block_volume_backups(connection):
                 {'col': 'extract_date       ', 'csv': '         ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "source_name", "backup Source ")
     except Exception as e:
         raise Exception("\nError at procedure: handle_block_volume_backups - " + str(e))
 
@@ -348,7 +361,7 @@ def handle_database_all(connection):
                 {'col': 'extract_date        ', 'csv': '     ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_database_all - " + str(e))
 
@@ -438,7 +451,7 @@ def handle_database_exa_cs_vms(connection):
                 {'col': 'extract_date        ', 'csv': '     ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_database_exa_cs_vms - " + str(e))
 
@@ -497,7 +510,7 @@ def handle_database_exa_infra(connection):
                 {'col': 'extract_date                 ', 'csv': '        ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_database_exa_infra - " + str(e))
 
@@ -554,7 +567,7 @@ def handle_database_exa_cc_vms(connection):
                 {'col': 'extract_date        ', 'csv': '     ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_database_exa_cs_vms - " + str(e))
 
@@ -609,7 +622,7 @@ def handle_database(connection):
                 {'col': 'extract_date        ', 'csv': '           ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_database - " + str(e))
 
@@ -663,7 +676,7 @@ def handle_database_vm_bm(connection):
                 {'col': 'extract_date        ', 'csv': '           ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_database_vm_bm - " + str(e))
 
@@ -724,9 +737,148 @@ def handle_database_autonomous(connection):
                 {'col': 'extract_date                 ', 'csv': '     ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_database_autonomous - " + str(e))
+
+
+##########################################################################
+# Check Table Structure for handle_database_goldengate_deployments
+##########################################################################
+def handle_database_goldengate_deployments(connection):
+    try:
+
+        json = {
+            'table_name': "OCI_SHOWOCI_DB_GOLDENGATE_DEP",
+            'csv_file': "database_goldengate_deployments.csv",
+            'items': [
+                {'col': 'tenant_name                 ', 'csv': '            ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'tenant_id                   ', 'csv': '            ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'id                          ', 'csv': '            ', 'type': 'varchar2(1000)', 'pk': 'y'},
+                {'col': 'region_name                 ', 'csv': '            ', 'type': 'varchar2(100) ', 'pk': 'n'},
+                {'col': 'compartment_name            ', 'csv': '            ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'compartment_path            ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'name                        ', 'csv': 'display_name', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'lifecycle_state             ', 'csv': '            ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'subnet_id                   ', 'csv': '            ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'subnet_name                 ', 'csv': '            ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'license_model               ', 'csv': '            ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'fqdn                        ', 'csv': '            ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'cpu_core_count              ', 'csv': '            ', 'type': 'number        ', 'pk': 'n'},
+                {'col': 'is_auto_scaling_enabled     ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'is_public                   ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'public_ip_address           ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'private_ip_address          ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'deployment_url              ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'is_latest_version           ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'deployment_type             ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'freeform_tags               ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'defined_tags                ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'time_created                ', 'csv': '            ', 'type': 'date          ', 'pk': 'n'},
+                {'col': 'time_updated                ', 'csv': '            ', 'type': 'date          ', 'pk': 'n'},
+                {'col': 'extract_date                ', 'csv': '            ', 'type': 'date          ', 'pk': 'n'}
+            ]
+        }
+        handle_table(connection, json, "id", "name")
+    except Exception as e:
+        raise Exception("\nError at procedure: handle_database_goldengate_deployments - " + str(e))
+
+
+##########################################################################
+# Check Table Structure for handle_database_mysql
+##########################################################################
+def handle_database_mysql(connection):
+    try:
+
+        json = {
+            'table_name': "OCI_SHOWOCI_DB_MYSQL",
+            'csv_file': "database_mysql.csv",
+            'items': [
+                {'col': 'tenant_name                  ', 'csv': '            ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'tenant_id                    ', 'csv': '            ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'id                           ', 'csv': '            ', 'type': 'varchar2(1000)', 'pk': 'y'},
+                {'col': 'region_name                  ', 'csv': '            ', 'type': 'varchar2(100) ', 'pk': 'n'},
+                {'col': 'compartment_name             ', 'csv': '            ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'compartment_path             ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'name                         ', 'csv': 'display_name', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'description                  ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'is_highly_available          ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'current_placement            ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'is_analytics_cluster_attached', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'analytics_cluster            ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'is_heat_wave_cluster_attached', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'heat_wave_cluster            ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'availability_domain          ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'fault_domain                 ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'endpoints                    ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'endpoints_text               ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'lifecycle_state              ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'mysql_version                ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'deletion_policy              ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'shape_name                   ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'shape_ocpu                   ', 'csv': '            ', 'type': 'number        ', 'pk': 'n'},
+                {'col': 'shape_memory_gb              ', 'csv': '            ', 'type': 'number        ', 'pk': 'n'},
+                {'col': 'crash_recovery               ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'backup_is_enabled            ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'subnet_id                    ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'subnet_name                  ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'configuration_id             ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'source                       ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'hostname_label               ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'ip_address                   ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'port                         ', 'csv': '            ', 'type': 'number        ', 'pk': 'n'},
+                {'col': 'port_x                       ', 'csv': '            ', 'type': 'number        ', 'pk': 'n'},
+                {'col': 'channels                     ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'maintenance                  ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'time_earliest_recovery_point ', 'csv': '            ', 'type': 'date          ', 'pk': 'n'},
+                {'col': 'time_latest_recovery_point   ', 'csv': '            ', 'type': 'date          ', 'pk': 'n'},
+                {'col': 'data_storage_size_in_gbs     ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'freeform_tags                ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'defined_tags                 ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'time_created                 ', 'csv': '            ', 'type': 'date          ', 'pk': 'n'},
+                {'col': 'time_updated                 ', 'csv': '            ', 'type': 'date          ', 'pk': 'n'},
+                {'col': 'extract_date                 ', 'csv': '            ', 'type': 'date          ', 'pk': 'n'}
+            ]
+        }
+        handle_table(connection, json, "id", "name")
+    except Exception as e:
+        raise Exception("\nError at procedure: handle_database_mysql - " + str(e))
+
+
+##########################################################################
+# Check Table Structure for handle_database_nosql
+##########################################################################
+def handle_database_nosql(connection):
+    try:
+
+        json = {
+            'table_name': "OCI_SHOWOCI_DB_NOSQL",
+            'csv_file': "database_nosql.csv",
+            'items': [
+                {'col': 'tenant_name                 ', 'csv': '            ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'tenant_id                   ', 'csv': '            ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'id                          ', 'csv': '            ', 'type': 'varchar2(1000)', 'pk': 'y'},
+                {'col': 'region_name                 ', 'csv': '            ', 'type': 'varchar2(100) ', 'pk': 'n'},
+                {'col': 'compartment_name            ', 'csv': '            ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'compartment_path            ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'name                        ', 'csv': '            ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'lifecycle_state             ', 'csv': '            ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'is_auto_reclaimable         ', 'csv': '            ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'capacity_mode               ', 'csv': '            ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'max_read_units              ', 'csv': '            ', 'type': 'number        ', 'pk': 'n'},
+                {'col': 'max_write_units             ', 'csv': '            ', 'type': 'number        ', 'pk': 'n'},
+                {'col': 'max_storage_in_g_bs         ', 'csv': '            ', 'type': 'number        ', 'pk': 'n'},
+                {'col': 'freeform_tags               ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'defined_tags                ', 'csv': '            ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'time_of_expiration          ', 'csv': '            ', 'type': 'date          ', 'pk': 'n'},
+                {'col': 'time_created                ', 'csv': '            ', 'type': 'date          ', 'pk': 'n'},
+                {'col': 'time_updated                ', 'csv': '            ', 'type': 'date          ', 'pk': 'n'},
+                {'col': 'extract_date                ', 'csv': '            ', 'type': 'date          ', 'pk': 'n'}
+            ]
+        }
+        handle_table(connection, json, "id", "name")
+    except Exception as e:
+        raise Exception("\nError at procedure: handle_database_nosql - " + str(e))
 
 
 ##########################################################################
@@ -757,7 +909,7 @@ def handle_file_storage(connection):
                 {'col': 'extract_date       ', 'csv': '    ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "display_name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_file_storage - " + str(e))
 
@@ -799,7 +951,7 @@ def handle_object_storage(connection):
                 {'col': 'extract_date             ', 'csv': '          ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "bucket_name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_object_storage - " + str(e))
 
@@ -844,7 +996,7 @@ def handle_load_balancer_listeners(connection):
                 {'col': 'extract_date       ', 'csv': '     ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_load_balancer_listeners - " + str(e))
 
@@ -922,7 +1074,7 @@ def handle_paas_oac(connection):
                 {'col': 'extract_date            ', 'csv': '    ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_paas_oac - " + str(e))
 
@@ -959,7 +1111,7 @@ def handle_paas_oic(connection):
                 {'col': 'extract_date             ', 'csv': '     ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_paas_oic - " + str(e))
 
@@ -994,7 +1146,7 @@ def handle_paas_oce(connection):
                 {'col': 'extract_date             ', 'csv': '     ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_paas_oce - " + str(e))
 
@@ -1030,7 +1182,7 @@ def handle_paas_visual_builder(connection):
                 {'col': 'extract_date              ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_paas_visual_builder - " + str(e))
 
@@ -1063,7 +1215,7 @@ def handle_paas_devops(connection):
                 {'col': 'extract_date              ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_paas_devops - " + str(e))
 
@@ -1117,7 +1269,7 @@ def handle_containers(connection):
                 {'col': 'extract_date                           ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_paas_visual_builder - " + str(e))
 
@@ -1159,7 +1311,7 @@ def handle_containers_nodepools(connection):
                 {'col': 'extract_date              ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "node_name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_containers_nodepools - " + str(e))
 
@@ -1209,7 +1361,7 @@ def handle_apigw(connection):
                 {'col': 'extract_date             ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "api_id", "gw_name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_apigw - " + str(e))
 
@@ -1245,7 +1397,7 @@ def handle_network_vcn(connection):
                 {'col': 'extract_date             ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_network_vcn - " + str(e))
 
@@ -1292,7 +1444,7 @@ def handle_network_subnet(connection):
                 {'col': 'extract_date             ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "subnet_name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_network_subnet - " + str(e))
 
@@ -1336,7 +1488,7 @@ def handle_network_subnet_private_ips(connection):
                 {'col': 'extract_date             ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "ip_address")
     except Exception as e:
         raise Exception("\nError at procedure: handle_network_subnet_private_ips - " + str(e))
 
@@ -1442,9 +1594,46 @@ def handle_network_drg(connection):
                 {'col': 'extract_date             ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_network_drg - " + str(e))
+
+
+##########################################################################
+# Check Table Structure for handle_network_firewall
+##########################################################################
+def handle_network_firewall(connection):
+    try:
+
+        json = {
+            'table_name': "OCI_SHOWOCI_NETWORK_FIREWALL",
+            'csv_file': "network_firewalls.csv",
+            'items': [
+                {'col': 'tenant_name                 ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'tenant_id                   ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'id                          ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'y'},
+                {'col': 'region_name                 ', 'csv': '             ', 'type': 'varchar2(100) ', 'pk': 'n'},
+                {'col': 'compartment_name            ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'compartment_path            ', 'csv': '             ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'name                        ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'subnet_id                   ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'subnet_name                 ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'availability_domain         ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'ipv4_address                ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'ipv6_address                ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'network_firewall_policy_id  ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'network_firewall_policy_name', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'lifecycle_state             ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'freeform_tags               ', 'csv': '             ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'defined_tags                ', 'csv': '             ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'time_created                ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'},
+                {'col': 'time_updated                ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'},
+                {'col': 'extract_date                ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
+            ]
+        }
+        handle_table(connection, json, "id", "name")
+    except Exception as e:
+        raise Exception("\nError at procedure: handle_network_firewall - " + str(e))
 
 
 ##########################################################################
@@ -1566,7 +1755,7 @@ def handle_network_drg_virtual_circuit(connection):
                 {'col': 'extract_date             ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_network_drg_virtual_circuit - " + str(e))
 
@@ -1607,7 +1796,7 @@ def handle_network_drg_ipsec(connection):
                 {'col': 'extract_date             ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "tunnel_name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_network_drg_ipsec - " + str(e))
 
@@ -1642,7 +1831,7 @@ def handle_data_digital_assistance(connection):
                 {'col': 'extract_date             ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_data_ai_oda - " + str(e))
 
@@ -1677,7 +1866,7 @@ def handle_big_data_service(connection):
                 {'col': 'extract_date             ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_data_ai_bds - " + str(e))
 
@@ -1711,7 +1900,7 @@ def handle_data_flow(connection):
                 {'col': 'extract_date             ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_data_flow - " + str(e))
 
@@ -1742,7 +1931,7 @@ def handle_data_catalog(connection):
                 {'col': 'extract_date             ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_data_catalog - " + str(e))
 
@@ -1774,7 +1963,7 @@ def handle_data_conn_registry(connection):
                 {'col': 'extract_date             ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_data_conn_registry - " + str(e))
 
@@ -1804,7 +1993,7 @@ def handle_data_science(connection):
                 {'col': 'extract_date             ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_data_science - " + str(e))
 
@@ -1833,7 +2022,7 @@ def handle_data_integration(connection):
                 {'col': 'extract_date             ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_data_integration - " + str(e))
 
@@ -1870,7 +2059,7 @@ def handle_streams_queues(connection):
                 {'col': 'extract_date                    ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_streams_queues - " + str(e))
 
@@ -1901,7 +2090,7 @@ def handle_edge_web_application_firewall(connection):
                 {'col': 'extract_date                    ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_edge_web_application_firewall - " + str(e))
 
@@ -1942,7 +2131,7 @@ def handle_edge_healthchecks(connection):
                 {'col': 'extract_date                    ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_edge_healthchecks - " + str(e))
 
@@ -1974,7 +2163,7 @@ def handle_edge_dns_steering_policies(connection):
                 {'col': 'extract_date                    ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_edge_dns_steering_policies - " + str(e))
 
@@ -2004,7 +2193,7 @@ def handle_identity_compartments(connection):
                 {'col': 'extract_date                    ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_identity_compartments - " + str(e))
 
@@ -2039,7 +2228,7 @@ def handle_security_bastions(connection):
                 {'col': 'extract_date         ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_security_bastions - " + str(e))
 
@@ -2054,22 +2243,94 @@ def handle_security_cloud_guard(connection):
             'table_name': "OCI_SHOWOCI_SECURITY_CLOUDGUARD",
             'csv_file': "security_cloud_guards.csv",
             'items': [
-                {'col': 'tenant_name          ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
-                {'col': 'tenant_id            ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
-                {'col': 'id                   ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'y'},
-                {'col': 'name                 ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
-                {'col': 'target_resource_type ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
-                {'col': 'target_resource_id   ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
-                {'col': 'recipe_count         ', 'csv': '             ', 'type': 'number        ', 'pk': 'n'},
-                {'col': 'lifecycle_state      ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
-                {'col': 'time_updated         ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'},
-                {'col': 'time_created         ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'},
-                {'col': 'extract_date         ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
+                {'col': 'tenant_name                     ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'tenant_id                       ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'id                              ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'y'},
+                {'col': 'region_name                     ', 'csv': '             ', 'type': 'varchar2(100) ', 'pk': 'n'},
+                {'col': 'compartment_name                ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'compartment_path                ', 'csv': '             ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'name                            ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'target_resource_type            ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'target_resource_id              ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'target_resource_name            ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'inherited_by_compartments       ', 'csv': '             ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'inherited_by_compartments_names ', 'csv': '             ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'target_detector_recipes         ', 'csv': '             ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'target_responder_recipes        ', 'csv': '             ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'target_detector_rules           ', 'csv': '             ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'target_responder_rules          ', 'csv': '             ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'recipe_count                    ', 'csv': '             ', 'type': 'number        ', 'pk': 'n'},
+                {'col': 'lifecycle_state                 ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'freeform_tags                   ', 'csv': '             ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'defined_tags                    ', 'csv': '             ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'time_updated                    ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'},
+                {'col': 'time_created                    ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'},
+                {'col': 'extract_date                    ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_security_cloud_guard - " + str(e))
+
+
+##########################################################################
+# Check Table Structure for handle_paas_open_search
+##########################################################################
+def handle_paas_open_search(connection):
+    try:
+
+        json = {
+            'table_name': "OCI_SHOWOCI_OPEN_SEARCH",
+            'csv_file': "paas_opensearch.csv",
+            'items': [
+                {'col': 'tenant_name                       ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'tenant_id                         ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'id                                ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'y'},
+                {'col': 'region_name                       ', 'csv': '             ', 'type': 'varchar2(100) ', 'pk': 'n'},
+                {'col': 'compartment_name                  ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'compartment_path                  ', 'csv': '             ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'name                              ', 'csv': 'display_name ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'software_version                  ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'total_storage_gb                  ', 'csv': '             ', 'type': 'number        ', 'pk': 'n'},
+                {'col': 'security_mode                     ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'availability_domains              ', 'csv': '             ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'opensearch_fqdn                   ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'opensearch_private_ip             ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'opendashboard_fqdn                ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'opendashboard_private_ip          ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'master_node_count                 ', 'csv': '             ', 'type': 'number        ', 'pk': 'n'},
+                {'col': 'master_node_host_type             ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'master_node_host_bare_metal_shape ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'master_node_host_ocpu_count       ', 'csv': '             ', 'type': 'number        ', 'pk': 'n'},
+                {'col': 'master_node_host_memory_gb        ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'data_node_count                   ', 'csv': '             ', 'type': 'number        ', 'pk': 'n'},
+                {'col': 'data_node_host_type               ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'data_node_host_bare_metal_shape   ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'data_node_host_ocpu_count         ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'data_node_host_memory_gb          ', 'csv': '             ', 'type': 'number        ', 'pk': 'n'},
+                {'col': 'data_node_storage_gb              ', 'csv': '             ', 'type': 'number        ', 'pk': 'n'},
+                {'col': 'opendashboard_node_count          ', 'csv': '             ', 'type': 'number        ', 'pk': 'n'},
+                {'col': 'opendashboard_node_host_ocpu_count', 'csv': '             ', 'type': 'number        ', 'pk': 'n'},
+                {'col': 'opendashboard_node_host_memory_gb ', 'csv': '             ', 'type': 'number        ', 'pk': 'n'},
+                {'col': 'vcn_id                            ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'vcn_name                          ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'subnet_id                         ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'subnet_name                       ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'vcn_compartment_id                ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'subnet_compartment_id             ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'security_master_user_name         ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'security_master_user_password_hash', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'lifecycle_state                   ', 'csv': '             ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'freeform_tags                     ', 'csv': '             ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'defined_tags                      ', 'csv': '             ', 'type': 'varchar2(4000)', 'pk': 'n'},
+                {'col': 'time_updated                      ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'},
+                {'col': 'time_created                      ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'},
+                {'col': 'extract_date                      ', 'csv': '             ', 'type': 'date          ', 'pk': 'n'}
+            ]
+        }
+        handle_table(connection, json, "id", "name")
+    except Exception as e:
+        raise Exception("\nError at procedure: handle_paas_open_search - " + str(e))
 
 
 ##########################################################################
@@ -2102,7 +2363,7 @@ def handle_security_kms_vaults(connection):
                 {'col': 'extract_date              ', 'csv': '    ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_security_kms_vaults - " + str(e))
 
@@ -2146,7 +2407,7 @@ def handle_security_logging(connection):
                 {'col': 'extract_date                ', 'csv': '      ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "log_name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_security_logging - " + str(e))
 
@@ -2382,7 +2643,7 @@ def handle_monitor_db_management(connection):
                 {'col': 'extract_date                ', 'csv': '            ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_monitor_db_management - " + str(e))
 
@@ -2417,7 +2678,7 @@ def handle_compute_reservations(connection):
                 {'col': 'extract_date                ', 'csv': '            ', 'type': 'date          ', 'pk': 'n'}
             ]
         }
-        handle_table(connection, json)
+        handle_table(connection, json, "id", "name")
     except Exception as e:
         raise Exception("\nError at procedure: handle_compute_reservations - " + str(e))
 
@@ -2443,7 +2704,10 @@ def handle_old_structure(connection):
         with connection.cursor() as cursor:
 
             # tables that need to drop
-            for table_name in ["OCI_SHOWOCI_DATABASE_SYSTEMS", "OCI_SHOWOCI_DATABASE_SYSTEMS_TMP"]:
+            for table_name in ["OCI_SHOWOCI_DATABASE_SYSTEMS",
+                               "OCI_SHOWOCI_DATABASE_SYSTEMS_TMP",
+                               "OCI_SHOWOCI_SECURITY_CLOUDGUARD_TMP",
+                               "OCI_SHOWOCI_SECURITY_CLOUDGUARD"]:
 
                 sql = "select count(*) from user_tables where table_name = :table_name"
                 cursor.execute(sql, table_name=table_name)
@@ -2463,9 +2727,50 @@ def handle_old_structure(connection):
 
 
 ##########################################################################
+# Check Resource Table Structure
+##########################################################################
+def check_database_table_structure_resource(connection):
+    global cmd
+    verbose = cmd.verbose
+
+    try:
+        # open cursor
+        with connection.cursor() as cursor:
+
+            # check if OCI_USAGE table exist, if not create
+            sql = "select count(*) from user_tables where table_name = 'OCI_RESOURCES'"
+            cursor.execute(sql)
+            val, = cursor.fetchone()
+
+            # if table not exist, create it
+            if val == 0:
+                if verbose:
+                    print("   Table OCI_RESOURCES was not exist, creating")
+
+                sql = """create table OCI_RESOURCES (
+                    RESOURCE_ID             VARCHAR2(200) NOT NULL,
+                    RESOURCE_NAME           VARCHAR2(1000),
+                    SOURCE_TENANT           VARCHAR2(100),
+                    SOURCE_TABLE            VARCHAR2(100),
+                    LAST_LOADED             DATE,
+                    CONSTRAINT OCI_RESOURCES_PK PRIMARY KEY (RESOURCE_ID) USING INDEX)"""
+
+                cursor.execute(sql)
+                if verbose:
+                    print("   Table OCI_RESOURCES created")
+
+    except oracledb.DatabaseError as e:
+        print("\nError manipulating database at check_database_table_structure_resource() - " + str(e) + "\n")
+        raise SystemExit
+
+    except Exception as e:
+        raise Exception("\nError manipulating database at check_database_table_structure_resource() - " + str(e))
+
+
+##########################################################################
 # Check Table Structure for Compute
 ##########################################################################
-def handle_table(connection, inputdata):
+def handle_table(connection, inputdata, resource_id="", resource_name="", resource_prefix=""):
     global cmd
     global file_num
     process_location = "Start"
@@ -2610,7 +2915,7 @@ def handle_table(connection, inputdata):
                 if verbose:
                     print("   Loading data to tmp  table... Insert Completed, " + str(num_rows) + " Rows Inserted")
                 else:
-                    print(" TMP = " + str(num_rows).ljust(6), end="")
+                    print(" TMP = " + str(num_rows).ljust(7), end="")
 
                 connection.commit()
 
@@ -2636,10 +2941,50 @@ def handle_table(connection, inputdata):
 
             cursor.execute(sql)
             connection.commit()
+
             if verbose:
                 print("Merge  Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
             else:
-                print(" Merged = " + str(cursor.rowcount) + " Rows.")
+                print(" Merged = " + str(cursor.rowcount).ljust(7), end="")
+
+        if resource_id:
+            ################################################
+            # Merge data from tmp to resource table
+            ################################################
+            process_location = "before Resrouce Merge"
+
+            with connection.cursor() as cursor:
+
+                if verbose:
+                    print("   Merging data to ocid table... ", end="")
+
+                # run merge to oci_update_stats
+                sql = "merge into oci_resources a using "
+                sql += "(select distinct " + resource_id + " as id, '" + resource_prefix + "'||" + resource_name + " as name, "
+                sql += "'" + table_name + "' as table_name, TENANT_NAME from " + tmp_table_name + ") b "
+                sql += """on (a.resource_id = b.id)
+                          when matched then update set
+                          a.RESOURCE_NAME = b.NAME,
+                          a.SOURCE_TABLE = b.TABLE_NAME,
+                          a.SOURCE_TENANT = b.TENANT_NAME,
+                          a.LAST_LOADED = SYSDATE
+                          when not matched then insert
+                          (RESOURCE_ID,RESOURCE_NAME,SOURCE_TABLE,SOURCE_TENANT,LAST_LOADED)
+                          values
+                          (b.ID,b.NAME,b.TABLE_NAME,b.TENANT_NAME,SYSDATE)"""
+
+                cursor.execute(sql)
+                connection.commit()
+
+                if verbose:
+                    print("Merge  Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
+                else:
+                    print(" OCIDs = " + str(cursor.rowcount))
+
+        # if no resource id
+        else:
+            if not verbose:
+                print("")
 
     except oracledb.DatabaseError as e:
         print("\nDatabaseError at procedure: handle_table() - " + process_location + " - " + str(e) + "\n")
@@ -2682,8 +3027,11 @@ def main_process():
 
             print("...Connected\n")
 
-            # Handling CSVs
+            # Checking structure of tables
             handle_old_structure(connection)
+            check_database_table_structure_resource(connection)
+
+            # Handling CSVs
             handle_compute(connection)
             handle_compute_reservations(connection)
             handle_block_volume(connection)
@@ -2696,6 +3044,9 @@ def main_process():
             handle_database_exa_infra(connection)
             handle_database_autonomous(connection)
             handle_database_vm_bm(connection)
+            handle_database_goldengate_deployments(connection)
+            handle_database_nosql(connection)
+            handle_database_mysql(connection)
             handle_file_storage(connection)
             handle_object_storage(connection)
             handle_load_balancer_listeners(connection)
@@ -2705,6 +3056,7 @@ def main_process():
             handle_paas_oce(connection)
             handle_paas_visual_builder(connection)
             handle_paas_devops(connection)
+            handle_paas_open_search(connection)
             handle_containers(connection)
             handle_containers_nodepools(connection)
             handle_apigw(connection)
@@ -2718,6 +3070,7 @@ def main_process():
             handle_network_routes(connection)
             handle_network_drg_virtual_circuit(connection)
             handle_network_drg_ipsec(connection)
+            handle_network_firewall(connection)
             handle_data_digital_assistance(connection)
             handle_big_data_service(connection)
             handle_data_flow(connection)
