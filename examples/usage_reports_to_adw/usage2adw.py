@@ -67,7 +67,7 @@ import requests
 import time
 
 
-version = "23.03.15"
+version = "23.03.22"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 
@@ -381,6 +381,42 @@ def check_database_table_structure_usage(connection, tenant_name):
 
     except Exception as e:
         raise Exception("\nError manipulating database at check_database_table_structure_usage() - " + str(e))
+
+
+##########################################################################
+# Check Resource Table Structure
+##########################################################################
+def check_database_table_structure_resource(connection):
+    try:
+        # open cursor
+        with connection.cursor() as cursor:
+
+            # check if OCI_USAGE table exist, if not create
+            sql = "select count(*) from user_tables where table_name = 'OCI_RESOURCES'"
+            cursor.execute(sql)
+            val, = cursor.fetchone()
+
+            # if table not exist, create it
+            if val == 0:
+                print("   Table OCI_RESOURCES was not exist, creating")
+                sql = """create table OCI_RESOURCES (
+                    RESOURCE_ID             VARCHAR2(200) NOT NULL,
+                    RESOURCE_NAME           VARCHAR2(1000),
+                    SOURCE_TENANT           VARCHAR2(100),
+                    SOURCE_TABLE            VARCHAR2(100),
+                    LAST_LOADED             DATE,
+                    CONSTRAINT OCI_RESOURCES_PK PRIMARY KEY (RESOURCE_ID) USING INDEX)"""
+                cursor.execute(sql)
+                print("   Table OCI_RESOURCES created")
+            else:
+                print("   Table OCI_RESOURCES exist")
+
+    except oracledb.DatabaseError as e:
+        print("\nError manipulating database at check_database_table_structure_resource() - " + str(e) + "\n")
+        raise SystemExit
+
+    except Exception as e:
+        raise Exception("\nError manipulating database at check_database_table_structure_resource() - " + str(e))
 
 
 ##########################################################################
@@ -1877,6 +1913,7 @@ def main_process():
                 check_database_table_structure_cost(connection, cmd.tagspecial, cmd.tagspecial2, tenancy.name)
                 check_database_table_structure_price_list(connection, tenancy.name)
                 check_database_table_structure_load_status(connection)
+                check_database_table_structure_resource(connection)
 
                 ###############################
                 # enable hints
@@ -1930,6 +1967,14 @@ def main_process():
                 print("\n   Total " + str(usage_num) + " Usage Files Loaded, conmpleted at " + get_current_date_time())
 
             #############################
+            # Update oci_usage_stats if
+            # there were files
+            #############################
+            if usage_num > 0 or cmd.force:
+                update_usage_stats(connection, tenancy.name)
+                update_usage_reference(connection, cmd.tagspecial, cmd.tagspecial2, tenancy.name)
+
+            #############################
             # Handle Cost Usage
             #############################
             cost_num = 0
@@ -1947,11 +1992,10 @@ def main_process():
             check_database_index_structure_usage(connection)
             check_database_index_structure_cost(connection)
 
-            # Update oci_usage_stats and oci_cost_stats if there were files
-            if usage_num > 0 or cmd.force:
-                update_usage_stats(connection, tenancy.name)
-                update_usage_reference(connection, cmd.tagspecial, cmd.tagspecial2, tenancy.name)
-
+            #############################
+            # Update oci_cost_stats if
+            # there were files
+            #############################
             if cost_num > 0 or cmd.force:
                 update_cost_stats(connection, tenancy.name)
                 update_price_list(connection, tenancy.name)

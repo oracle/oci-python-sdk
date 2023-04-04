@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+23.03.28 - 23.03.28
+=====================
+* Added OCI_RESOURCES table to showoci2adw to load all relevants OCIDs
+* Added Identity to summary
+* Added Goldengate deployment to CSV and ADW
+* Added NoSQL to CSV and ADW
+* Added Network Firewall + Policies
+* Added more mysql info + added to CSV
+* Added Cloud Guard Recipes
+* Added option to filter by region - comma seperated
+* Added option to filter "Not" by region with -rgn
+* Added Open Search Clusters
+
+=====================
 23.03.21 - 23.03.21
 =====================
 * Added Identity Domains including Users, Groups, IDPs, DynGroups, Auth Setting, KMSI Setting

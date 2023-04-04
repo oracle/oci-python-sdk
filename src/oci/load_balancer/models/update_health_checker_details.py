@@ -50,6 +50,10 @@ class UpdateHealthCheckerDetails(object):
             The value to assign to the response_body_regex property of this UpdateHealthCheckerDetails.
         :type response_body_regex: str
 
+        :param is_force_plain_text:
+            The value to assign to the is_force_plain_text property of this UpdateHealthCheckerDetails.
+        :type is_force_plain_text: bool
+
         """
         self.swagger_types = {
             'protocol': 'str',
@@ -59,7 +63,8 @@ class UpdateHealthCheckerDetails(object):
             'retries': 'int',
             'timeout_in_millis': 'int',
             'interval_in_millis': 'int',
-            'response_body_regex': 'str'
+            'response_body_regex': 'str',
+            'is_force_plain_text': 'bool'
         }
 
         self.attribute_map = {
@@ -70,7 +75,8 @@ class UpdateHealthCheckerDetails(object):
             'retries': 'retries',
             'timeout_in_millis': 'timeoutInMillis',
             'interval_in_millis': 'intervalInMillis',
-            'response_body_regex': 'responseBodyRegex'
+            'response_body_regex': 'responseBodyRegex',
+            'is_force_plain_text': 'isForcePlainText'
         }
 
         self._protocol = None
@@ -81,6 +87,7 @@ class UpdateHealthCheckerDetails(object):
         self._timeout_in_millis = None
         self._interval_in_millis = None
         self._response_body_regex = None
+        self._is_force_plain_text = None
 
     @property
     def protocol(self):
@@ -309,6 +316,48 @@ class UpdateHealthCheckerDetails(object):
         :type: str
         """
         self._response_body_regex = response_body_regex
+
+    @property
+    def is_force_plain_text(self):
+        """
+        Gets the is_force_plain_text of this UpdateHealthCheckerDetails.
+        Specifies if health checks should always be done using plain text instead of depending on
+        whether or not the associated backend set is using SSL.
+
+        If \"true\", health checks will be done using plain text even if the associated backend set is configured
+        to use SSL.
+
+        If \"false\", health checks will be done using SSL encryption if the associated backend set is configured
+        to use SSL. If the backend set is not so configured the health checks will be done using plain text.
+
+        Example: `true`
+
+
+        :return: The is_force_plain_text of this UpdateHealthCheckerDetails.
+        :rtype: bool
+        """
+        return self._is_force_plain_text
+
+    @is_force_plain_text.setter
+    def is_force_plain_text(self, is_force_plain_text):
+        """
+        Sets the is_force_plain_text of this UpdateHealthCheckerDetails.
+        Specifies if health checks should always be done using plain text instead of depending on
+        whether or not the associated backend set is using SSL.
+
+        If \"true\", health checks will be done using plain text even if the associated backend set is configured
+        to use SSL.
+
+        If \"false\", health checks will be done using SSL encryption if the associated backend set is configured
+        to use SSL. If the backend set is not so configured the health checks will be done using plain text.
+
+        Example: `true`
+
+
+        :param is_force_plain_text: The is_force_plain_text of this UpdateHealthCheckerDetails.
+        :type: bool
+        """
+        self._is_force_plain_text = is_force_plain_text
 
     def __repr__(self):
         return formatted_flat_dict(self)

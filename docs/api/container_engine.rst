@@ -75,11 +75,14 @@ Container Engine
     oci.container_engine.models.PodConfiguration
     oci.container_engine.models.PodShape
     oci.container_engine.models.PodShapeSummary
+    oci.container_engine.models.PreemptibleNodeConfigDetails
+    oci.container_engine.models.PreemptionAction
     oci.container_engine.models.ServiceLbConfigDetails
     oci.container_engine.models.ShapeMemoryOptions
     oci.container_engine.models.ShapeNetworkBandwidthOptions
     oci.container_engine.models.ShapeOcpuOptions
     oci.container_engine.models.Taint
+    oci.container_engine.models.TerminatePreemptionAction
     oci.container_engine.models.UpdateAddonDetails
     oci.container_engine.models.UpdateClusterDetails
     oci.container_engine.models.UpdateClusterEndpointConfigDetails
