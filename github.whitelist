@@ -43,6 +43,7 @@
 ^wercker\.yml$
 ^NOTICE\.txt$
 ^.readthedocs.yml
+^sbom_generation.yaml$
 
 ^src/oci/announcements_service/.*\.py$
 ^src/oci/autoscaling/.*\.py$
