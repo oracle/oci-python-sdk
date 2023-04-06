@@ -25,6 +25,10 @@ class DatabaseConfigurationMetricGroup(object):
     #: This constant has a value of "DB_OS_CONFIG_INSTANCE"
     METRIC_NAME_DB_OS_CONFIG_INSTANCE = "DB_OS_CONFIG_INSTANCE"
 
+    #: A constant which can be used with the metric_name property of a DatabaseConfigurationMetricGroup.
+    #: This constant has a value of "DB_PARAMETERS"
+    METRIC_NAME_DB_PARAMETERS = "DB_PARAMETERS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DatabaseConfigurationMetricGroup object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -32,13 +36,14 @@ class DatabaseConfigurationMetricGroup(object):
 
         * :class:`~oci.opsi.models.DBOSConfigInstance`
         * :class:`~oci.opsi.models.DBExternalInstance`
+        * :class:`~oci.opsi.models.DBParameters`
         * :class:`~oci.opsi.models.DBExternalProperties`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param metric_name:
             The value to assign to the metric_name property of this DatabaseConfigurationMetricGroup.
-            Allowed values for this property are: "DB_EXTERNAL_PROPERTIES", "DB_EXTERNAL_INSTANCE", "DB_OS_CONFIG_INSTANCE"
+            Allowed values for this property are: "DB_EXTERNAL_PROPERTIES", "DB_EXTERNAL_INSTANCE", "DB_OS_CONFIG_INSTANCE", "DB_PARAMETERS"
         :type metric_name: str
 
         :param time_collected:
@@ -73,6 +78,9 @@ class DatabaseConfigurationMetricGroup(object):
         if type == 'DB_EXTERNAL_INSTANCE':
             return 'DBExternalInstance'
 
+        if type == 'DB_PARAMETERS':
+            return 'DBParameters'
+
         if type == 'DB_EXTERNAL_PROPERTIES':
             return 'DBExternalProperties'
         else:
@@ -84,7 +92,7 @@ class DatabaseConfigurationMetricGroup(object):
         **[Required]** Gets the metric_name of this DatabaseConfigurationMetricGroup.
         Name of the metric group.
 
-        Allowed values for this property are: "DB_EXTERNAL_PROPERTIES", "DB_EXTERNAL_INSTANCE", "DB_OS_CONFIG_INSTANCE"
+        Allowed values for this property are: "DB_EXTERNAL_PROPERTIES", "DB_EXTERNAL_INSTANCE", "DB_OS_CONFIG_INSTANCE", "DB_PARAMETERS"
 
 
         :return: The metric_name of this DatabaseConfigurationMetricGroup.
@@ -102,7 +110,7 @@ class DatabaseConfigurationMetricGroup(object):
         :param metric_name: The metric_name of this DatabaseConfigurationMetricGroup.
         :type: str
         """
-        allowed_values = ["DB_EXTERNAL_PROPERTIES", "DB_EXTERNAL_INSTANCE", "DB_OS_CONFIG_INSTANCE"]
+        allowed_values = ["DB_EXTERNAL_PROPERTIES", "DB_EXTERNAL_INSTANCE", "DB_OS_CONFIG_INSTANCE", "DB_PARAMETERS"]
         if not value_allowed_none_or_none_sentinel(metric_name, allowed_values):
             raise ValueError(
                 "Invalid value for `metric_name`, must be None or one of {0}"

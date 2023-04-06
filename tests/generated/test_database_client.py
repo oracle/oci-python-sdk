@@ -1206,6 +1206,47 @@ def test_convert_to_pdb(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_create_application_vip(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'CreateApplicationVip'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'CreateApplicationVip')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='CreateApplicationVip')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.create_application_vip(
+                create_application_vip_details=request.pop(util.camelize('CreateApplicationVipDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'CreateApplicationVip',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'applicationVip',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_create_autonomous_container_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateAutonomousContainerDatabase'):
@@ -2231,6 +2272,47 @@ def test_db_node_action(testing_service_client):
             service_error,
             'dbNode',
             False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_delete_application_vip(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'DeleteApplicationVip'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'DeleteApplicationVip')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='DeleteApplicationVip')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.delete_application_vip(
+                application_vip_id=request.pop(util.camelize('applicationVipId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'DeleteApplicationVip',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_application_vip',
+            True,
             False
         )
 
@@ -4463,6 +4545,47 @@ def test_generate_recommended_vm_cluster_network(testing_service_client):
             result,
             service_error,
             'vmClusterNetworkDetails',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_application_vip(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetApplicationVip'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetApplicationVip')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetApplicationVip')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_application_vip(
+                application_vip_id=request.pop(util.camelize('applicationVipId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetApplicationVip',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'applicationVip',
             False,
             False
         )
@@ -6779,6 +6902,72 @@ def test_launch_db_system(testing_service_client):
             'dbSystem',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_application_vips(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListApplicationVips'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListApplicationVips')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListApplicationVips')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_application_vips(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                cloud_vm_cluster_id=request.pop(util.camelize('cloudVmClusterId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_application_vips(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    cloud_vm_cluster_id=request.pop(util.camelize('cloudVmClusterId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_application_vips(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        cloud_vm_cluster_id=request.pop(util.camelize('cloudVmClusterId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListApplicationVips',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'applicationVipSummary',
+            False,
+            True
         )
 
 
@@ -11171,6 +11360,90 @@ def test_rotate_autonomous_database_encryption_key(testing_service_client):
             result,
             service_error,
             'autonomousDatabase',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_rotate_autonomous_vm_cluster_ords_certs(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'RotateAutonomousVmClusterOrdsCerts'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'RotateAutonomousVmClusterOrdsCerts')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='RotateAutonomousVmClusterOrdsCerts')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.rotate_autonomous_vm_cluster_ords_certs(
+                rotate_autonomous_vm_cluster_ords_certs_details=request.pop(util.camelize('RotateAutonomousVmClusterOrdsCertsDetails')),
+                autonomous_vm_cluster_id=request.pop(util.camelize('autonomousVmClusterId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'RotateAutonomousVmClusterOrdsCerts',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'rotate_autonomous_vm_cluster_ords_certs',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_rotate_autonomous_vm_cluster_ssl_certs(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'RotateAutonomousVmClusterSslCerts'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'RotateAutonomousVmClusterSslCerts')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='RotateAutonomousVmClusterSslCerts')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.rotate_autonomous_vm_cluster_ssl_certs(
+                rotate_autonomous_vm_cluster_ssl_certs_details=request.pop(util.camelize('RotateAutonomousVmClusterSslCertsDetails')),
+                autonomous_vm_cluster_id=request.pop(util.camelize('autonomousVmClusterId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'RotateAutonomousVmClusterSslCerts',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'rotate_autonomous_vm_cluster_ssl_certs',
             False,
             False
         )

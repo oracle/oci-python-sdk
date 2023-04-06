@@ -229,7 +229,7 @@ class GenerateReportDetails(object):
     def time_less_than(self):
         """
         Gets the time_less_than of this GenerateReportDetails.
-        Specifies the time before which the data needs to be reported.
+        Specifies the time until which the data needs to be reported.
 
 
         :return: The time_less_than of this GenerateReportDetails.
@@ -241,7 +241,7 @@ class GenerateReportDetails(object):
     def time_less_than(self, time_less_than):
         """
         Sets the time_less_than of this GenerateReportDetails.
-        Specifies the time before which the data needs to be reported.
+        Specifies the time until which the data needs to be reported.
 
 
         :param time_less_than: The time_less_than of this GenerateReportDetails.
@@ -277,7 +277,7 @@ class GenerateReportDetails(object):
     def row_limit(self):
         """
         Gets the row_limit of this GenerateReportDetails.
-        Specifies the limit on number of rows in report.
+        Specifies the limit on the number of rows in the report.
 
 
         :return: The row_limit of this GenerateReportDetails.
@@ -289,7 +289,7 @@ class GenerateReportDetails(object):
     def row_limit(self, row_limit):
         """
         Sets the row_limit of this GenerateReportDetails.
-        Specifies the limit on number of rows in report.
+        Specifies the limit on the number of rows in the report.
 
 
         :param row_limit: The row_limit of this GenerateReportDetails.

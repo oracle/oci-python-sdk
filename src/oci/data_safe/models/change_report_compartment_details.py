@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeReportCompartmentDetails(object):
     """
-    Details for which compartment to move the resource to.
+    The details for moving the audit report to a different compartment.
     """
 
     def __init__(self, **kwargs):

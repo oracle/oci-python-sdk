@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ScheduleReportDetails(object):
     """
-    Details for the report schedule.
+    The details of the report schedule.
     """
 
     #: A constant which can be used with the mime_type property of a ScheduleReportDetails.
@@ -98,7 +98,7 @@ class ScheduleReportDetails(object):
     def schedule(self):
         """
         **[Required]** Gets the schedule of this ScheduleReportDetails.
-        Schedule to generate the report periodically in the specified format:
+        The schedule to generate the report periodically in the specified format:
         <version-string>;<version-specific-schedule>
 
         Allowed version strings - \"v1\"
@@ -123,7 +123,7 @@ class ScheduleReportDetails(object):
     def schedule(self, schedule):
         """
         Sets the schedule of this ScheduleReportDetails.
-        Schedule to generate the report periodically in the specified format:
+        The schedule to generate the report periodically in the specified format:
         <version-string>;<version-specific-schedule>
 
         Allowed version strings - \"v1\"
@@ -148,7 +148,7 @@ class ScheduleReportDetails(object):
     def mime_type(self):
         """
         **[Required]** Gets the mime_type of this ScheduleReportDetails.
-        Specifies the format of report to be excel or pdf
+        Specifies if the report will be in Excel or PDF format
 
         Allowed values for this property are: "PDF", "XLS"
 
@@ -162,7 +162,7 @@ class ScheduleReportDetails(object):
     def mime_type(self, mime_type):
         """
         Sets the mime_type of this ScheduleReportDetails.
-        Specifies the format of report to be excel or pdf
+        Specifies if the report will be in Excel or PDF format
 
 
         :param mime_type: The mime_type of this ScheduleReportDetails.
@@ -180,10 +180,8 @@ class ScheduleReportDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ScheduleReportDetails.
-        The `OCID`__ of the compartment
+        The OCID of the compartment
         in which the resource should be created.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ScheduleReportDetails.
@@ -195,10 +193,8 @@ class ScheduleReportDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ScheduleReportDetails.
-        The `OCID`__ of the compartment
+        The OCID of the compartment
         in which the resource should be created.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ScheduleReportDetails.

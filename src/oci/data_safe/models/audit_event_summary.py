@@ -362,7 +362,7 @@ class AuditEventSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this AuditEventSummary.
-        The OCID of the compartment containing the audit event. This is the same audited target database resource comparment.
+        The OCID of the compartment containing the audit event. This is the same as that of audit profile of the target database resource compartment.
 
 
         :return: The compartment_id of this AuditEventSummary.
@@ -374,7 +374,7 @@ class AuditEventSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this AuditEventSummary.
-        The OCID of the compartment containing the audit event. This is the same audited target database resource comparment.
+        The OCID of the compartment containing the audit event. This is the same as that of audit profile of the target database resource compartment.
 
 
         :param compartment_id: The compartment_id of this AuditEventSummary.
@@ -386,7 +386,7 @@ class AuditEventSummary(object):
     def db_user_name(self):
         """
         Gets the db_user_name of this AuditEventSummary.
-        Name of the database user whose actions were audited.
+        The name of the database user whose actions were audited.
 
 
         :return: The db_user_name of this AuditEventSummary.
@@ -398,7 +398,7 @@ class AuditEventSummary(object):
     def db_user_name(self, db_user_name):
         """
         Sets the db_user_name of this AuditEventSummary.
-        Name of the database user whose actions were audited.
+        The name of the database user whose actions were audited.
 
 
         :param db_user_name: The db_user_name of this AuditEventSummary.
@@ -494,7 +494,7 @@ class AuditEventSummary(object):
     def target_class(self):
         """
         Gets the target_class of this AuditEventSummary.
-        Class of the target that was audited.
+        The class of the target that was audited.
 
         Allowed values for this property are: "DATABASE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -509,7 +509,7 @@ class AuditEventSummary(object):
     def target_class(self, target_class):
         """
         Sets the target_class of this AuditEventSummary.
-        Class of the target that was audited.
+        The class of the target that was audited.
 
 
         :param target_class: The target_class of this AuditEventSummary.
@@ -524,7 +524,7 @@ class AuditEventSummary(object):
     def audit_event_time(self):
         """
         **[Required]** Gets the audit_event_time of this AuditEventSummary.
-        Time of audit event occurrence in the target database.
+        The time of the audit event occurrence in the target database.
 
 
         :return: The audit_event_time of this AuditEventSummary.
@@ -536,7 +536,7 @@ class AuditEventSummary(object):
     def audit_event_time(self, audit_event_time):
         """
         Sets the audit_event_time of this AuditEventSummary.
-        Time of audit event occurrence in the target database.
+        The time of the audit event occurrence in the target database.
 
 
         :param audit_event_time: The audit_event_time of this AuditEventSummary.
@@ -548,7 +548,7 @@ class AuditEventSummary(object):
     def time_collected(self):
         """
         **[Required]** Gets the time_collected of this AuditEventSummary.
-        Timestamp when this audit event was collected from the target database by Data Safe.
+        The timestamp when this audit event was collected from the target database by Data Safe.
 
 
         :return: The time_collected of this AuditEventSummary.
@@ -560,7 +560,7 @@ class AuditEventSummary(object):
     def time_collected(self, time_collected):
         """
         Sets the time_collected of this AuditEventSummary.
-        Timestamp when this audit event was collected from the target database by Data Safe.
+        The timestamp when this audit event was collected from the target database by Data Safe.
 
 
         :param time_collected: The time_collected of this AuditEventSummary.
@@ -572,7 +572,7 @@ class AuditEventSummary(object):
     def os_user_name(self):
         """
         Gets the os_user_name of this AuditEventSummary.
-        Name of the operating system user for the database session.
+        The name of the operating system user for the database session.
 
 
         :return: The os_user_name of this AuditEventSummary.
@@ -584,7 +584,7 @@ class AuditEventSummary(object):
     def os_user_name(self, os_user_name):
         """
         Sets the os_user_name of this AuditEventSummary.
-        Name of the operating system user for the database session.
+        The name of the operating system user for the database session.
 
 
         :param os_user_name: The os_user_name of this AuditEventSummary.
@@ -596,7 +596,7 @@ class AuditEventSummary(object):
     def operation(self):
         """
         Gets the operation of this AuditEventSummary.
-        Name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+        The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
 
 
         :return: The operation of this AuditEventSummary.
@@ -608,7 +608,7 @@ class AuditEventSummary(object):
     def operation(self, operation):
         """
         Sets the operation of this AuditEventSummary.
-        Name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+        The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
 
 
         :param operation: The operation of this AuditEventSummary.
@@ -650,7 +650,7 @@ class AuditEventSummary(object):
     def event_name(self):
         """
         Gets the event_name of this AuditEventSummary.
-        Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+        The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
 
 
         :return: The event_name of this AuditEventSummary.
@@ -662,7 +662,7 @@ class AuditEventSummary(object):
     def event_name(self, event_name):
         """
         Sets the event_name of this AuditEventSummary.
-        Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+        The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
 
 
         :param event_name: The event_name of this AuditEventSummary.
@@ -698,7 +698,7 @@ class AuditEventSummary(object):
     def error_message(self):
         """
         Gets the error_message of this AuditEventSummary.
-        Detailed message on why the Error occurred.
+        The detailed message on why the Error occurred.
 
 
         :return: The error_message of this AuditEventSummary.
@@ -710,7 +710,7 @@ class AuditEventSummary(object):
     def error_message(self, error_message):
         """
         Sets the error_message of this AuditEventSummary.
-        Detailed message on why the Error occurred.
+        The detailed message on why the Error occurred.
 
 
         :param error_message: The error_message of this AuditEventSummary.
@@ -722,7 +722,7 @@ class AuditEventSummary(object):
     def object_type(self):
         """
         Gets the object_type of this AuditEventSummary.
-        Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+        The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
 
 
         :return: The object_type of this AuditEventSummary.
@@ -734,7 +734,7 @@ class AuditEventSummary(object):
     def object_type(self, object_type):
         """
         Sets the object_type of this AuditEventSummary.
-        Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+        The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
 
 
         :param object_type: The object_type of this AuditEventSummary.
@@ -746,7 +746,7 @@ class AuditEventSummary(object):
     def object_name(self):
         """
         Gets the object_name of this AuditEventSummary.
-        Name of the object affected by the action.
+        The name of the object affected by the action.
 
 
         :return: The object_name of this AuditEventSummary.
@@ -758,7 +758,7 @@ class AuditEventSummary(object):
     def object_name(self, object_name):
         """
         Sets the object_name of this AuditEventSummary.
-        Name of the object affected by the action.
+        The name of the object affected by the action.
 
 
         :param object_name: The object_name of this AuditEventSummary.
@@ -770,7 +770,7 @@ class AuditEventSummary(object):
     def object_owner(self):
         """
         Gets the object_owner of this AuditEventSummary.
-        Schema name of object affected but the action.
+        The schema name of the object affected by the action.
 
 
         :return: The object_owner of this AuditEventSummary.
@@ -782,7 +782,7 @@ class AuditEventSummary(object):
     def object_owner(self, object_owner):
         """
         Sets the object_owner of this AuditEventSummary.
-        Schema name of object affected but the action.
+        The schema name of the object affected by the action.
 
 
         :param object_owner: The object_owner of this AuditEventSummary.
@@ -794,7 +794,7 @@ class AuditEventSummary(object):
     def client_hostname(self):
         """
         Gets the client_hostname of this AuditEventSummary.
-        Name of the host machine from which the session was spawned.
+        The name of the host machine from which the session was spawned.
 
 
         :return: The client_hostname of this AuditEventSummary.
@@ -806,7 +806,7 @@ class AuditEventSummary(object):
     def client_hostname(self, client_hostname):
         """
         Sets the client_hostname of this AuditEventSummary.
-        Name of the host machine from which the session was spawned.
+        The name of the host machine from which the session was spawned.
 
 
         :param client_hostname: The client_hostname of this AuditEventSummary.
@@ -818,7 +818,7 @@ class AuditEventSummary(object):
     def client_ip(self):
         """
         Gets the client_ip of this AuditEventSummary.
-        IP address of the host from which the session was spawned.
+        The IP address of the host machine from which the session was spawned.
 
 
         :return: The client_ip of this AuditEventSummary.
@@ -830,7 +830,7 @@ class AuditEventSummary(object):
     def client_ip(self, client_ip):
         """
         Sets the client_ip of this AuditEventSummary.
-        IP address of the host from which the session was spawned.
+        The IP address of the host machine from which the session was spawned.
 
 
         :param client_ip: The client_ip of this AuditEventSummary.
@@ -1112,7 +1112,7 @@ class AuditEventSummary(object):
     def audit_type(self):
         """
         Gets the audit_type of this AuditEventSummary.
-        Type of auditing.
+        The type of the auditing.
 
         Allowed values for this property are: "STANDARD", "FINE_GRAINED", "XS", "DATABASE_VAULT", "LABEL_SECURITY", "RMAN", "DATAPUMP", "DIRECT_PATH_API", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -1127,7 +1127,7 @@ class AuditEventSummary(object):
     def audit_type(self, audit_type):
         """
         Sets the audit_type of this AuditEventSummary.
-        Type of auditing.
+        The type of the auditing.
 
 
         :param audit_type: The audit_type of this AuditEventSummary.

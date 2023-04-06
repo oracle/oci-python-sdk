@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PatchTargetAlertPolicyAssociationDetails(object):
     """
-    The details used to patch alert policy associations.
+    The details used to create associations for target databases and audit policies.
     """
 
     def __init__(self, **kwargs):

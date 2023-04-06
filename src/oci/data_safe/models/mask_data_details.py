@@ -50,6 +50,26 @@ class MaskDataDetails(object):
             The value to assign to the is_execute_saved_script_enabled property of this MaskDataDetails.
         :type is_execute_saved_script_enabled: bool
 
+        :param is_drop_temp_tables_enabled:
+            The value to assign to the is_drop_temp_tables_enabled property of this MaskDataDetails.
+        :type is_drop_temp_tables_enabled: bool
+
+        :param is_redo_logging_enabled:
+            The value to assign to the is_redo_logging_enabled property of this MaskDataDetails.
+        :type is_redo_logging_enabled: bool
+
+        :param is_refresh_stats_enabled:
+            The value to assign to the is_refresh_stats_enabled property of this MaskDataDetails.
+        :type is_refresh_stats_enabled: bool
+
+        :param parallel_degree:
+            The value to assign to the parallel_degree property of this MaskDataDetails.
+        :type parallel_degree: str
+
+        :param recompile:
+            The value to assign to the recompile property of this MaskDataDetails.
+        :type recompile: str
+
         """
         self.swagger_types = {
             'target_id': 'str',
@@ -59,7 +79,12 @@ class MaskDataDetails(object):
             'is_ignore_errors_enabled': 'bool',
             'seed': 'str',
             'is_move_interim_tables_enabled': 'bool',
-            'is_execute_saved_script_enabled': 'bool'
+            'is_execute_saved_script_enabled': 'bool',
+            'is_drop_temp_tables_enabled': 'bool',
+            'is_redo_logging_enabled': 'bool',
+            'is_refresh_stats_enabled': 'bool',
+            'parallel_degree': 'str',
+            'recompile': 'str'
         }
 
         self.attribute_map = {
@@ -70,7 +95,12 @@ class MaskDataDetails(object):
             'is_ignore_errors_enabled': 'isIgnoreErrorsEnabled',
             'seed': 'seed',
             'is_move_interim_tables_enabled': 'isMoveInterimTablesEnabled',
-            'is_execute_saved_script_enabled': 'isExecuteSavedScriptEnabled'
+            'is_execute_saved_script_enabled': 'isExecuteSavedScriptEnabled',
+            'is_drop_temp_tables_enabled': 'isDropTempTablesEnabled',
+            'is_redo_logging_enabled': 'isRedoLoggingEnabled',
+            'is_refresh_stats_enabled': 'isRefreshStatsEnabled',
+            'parallel_degree': 'parallelDegree',
+            'recompile': 'recompile'
         }
 
         self._target_id = None
@@ -81,6 +111,11 @@ class MaskDataDetails(object):
         self._seed = None
         self._is_move_interim_tables_enabled = None
         self._is_execute_saved_script_enabled = None
+        self._is_drop_temp_tables_enabled = None
+        self._is_redo_logging_enabled = None
+        self._is_refresh_stats_enabled = None
+        self._parallel_degree = None
+        self._recompile = None
 
     @property
     def target_id(self):
@@ -299,6 +334,164 @@ class MaskDataDetails(object):
         :type: bool
         """
         self._is_execute_saved_script_enabled = is_execute_saved_script_enabled
+
+    @property
+    def is_drop_temp_tables_enabled(self):
+        """
+        Gets the is_drop_temp_tables_enabled of this MaskDataDetails.
+        Indicates if the temporary tables created during a masking operation should be dropped after masking.
+        Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive
+        data values to mask values. These temporary tables are dropped after masking if this attribute is set as true. But, in some cases, you may want
+        to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables
+        must be dropped before the database is available for unprivileged users.
+        If it's not provided, the value of the isDropTempTablesEnabled attribute in the MaskingPolicy resource is used.
+
+
+        :return: The is_drop_temp_tables_enabled of this MaskDataDetails.
+        :rtype: bool
+        """
+        return self._is_drop_temp_tables_enabled
+
+    @is_drop_temp_tables_enabled.setter
+    def is_drop_temp_tables_enabled(self, is_drop_temp_tables_enabled):
+        """
+        Sets the is_drop_temp_tables_enabled of this MaskDataDetails.
+        Indicates if the temporary tables created during a masking operation should be dropped after masking.
+        Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive
+        data values to mask values. These temporary tables are dropped after masking if this attribute is set as true. But, in some cases, you may want
+        to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables
+        must be dropped before the database is available for unprivileged users.
+        If it's not provided, the value of the isDropTempTablesEnabled attribute in the MaskingPolicy resource is used.
+
+
+        :param is_drop_temp_tables_enabled: The is_drop_temp_tables_enabled of this MaskDataDetails.
+        :type: bool
+        """
+        self._is_drop_temp_tables_enabled = is_drop_temp_tables_enabled
+
+    @property
+    def is_redo_logging_enabled(self):
+        """
+        Gets the is_redo_logging_enabled of this MaskDataDetails.
+        Indicates if redo logging is enabled during a masking operation. Set this attribute to true to
+        enable redo logging. If set as flase, masking disables redo logging and flashback logging to purge any original unmasked
+        data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking,
+        you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
+        If it's not provided, the value of the isRedoLoggingEnabled attribute in the MaskingPolicy resource is used.
+
+
+        :return: The is_redo_logging_enabled of this MaskDataDetails.
+        :rtype: bool
+        """
+        return self._is_redo_logging_enabled
+
+    @is_redo_logging_enabled.setter
+    def is_redo_logging_enabled(self, is_redo_logging_enabled):
+        """
+        Sets the is_redo_logging_enabled of this MaskDataDetails.
+        Indicates if redo logging is enabled during a masking operation. Set this attribute to true to
+        enable redo logging. If set as flase, masking disables redo logging and flashback logging to purge any original unmasked
+        data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking,
+        you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
+        If it's not provided, the value of the isRedoLoggingEnabled attribute in the MaskingPolicy resource is used.
+
+
+        :param is_redo_logging_enabled: The is_redo_logging_enabled of this MaskDataDetails.
+        :type: bool
+        """
+        self._is_redo_logging_enabled = is_redo_logging_enabled
+
+    @property
+    def is_refresh_stats_enabled(self):
+        """
+        Gets the is_refresh_stats_enabled of this MaskDataDetails.
+        Indicates if statistics gathering is enabled. Set this attribute to false to disable statistics
+        gathering. The masking process gathers statistics on masked database tables after masking completes.
+        If it's not provided, the value of the isRefreshStatsEnabled attribute in the MaskingPolicy resource is used.
+
+
+        :return: The is_refresh_stats_enabled of this MaskDataDetails.
+        :rtype: bool
+        """
+        return self._is_refresh_stats_enabled
+
+    @is_refresh_stats_enabled.setter
+    def is_refresh_stats_enabled(self, is_refresh_stats_enabled):
+        """
+        Sets the is_refresh_stats_enabled of this MaskDataDetails.
+        Indicates if statistics gathering is enabled. Set this attribute to false to disable statistics
+        gathering. The masking process gathers statistics on masked database tables after masking completes.
+        If it's not provided, the value of the isRefreshStatsEnabled attribute in the MaskingPolicy resource is used.
+
+
+        :param is_refresh_stats_enabled: The is_refresh_stats_enabled of this MaskDataDetails.
+        :type: bool
+        """
+        self._is_refresh_stats_enabled = is_refresh_stats_enabled
+
+    @property
+    def parallel_degree(self):
+        """
+        Gets the parallel_degree of this MaskDataDetails.
+        Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism),
+        'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree
+        of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the
+        Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
+        If it's not provided, the value of the parallelDegree attribute in the MaskingPolicy resource is used.
+
+
+        :return: The parallel_degree of this MaskDataDetails.
+        :rtype: str
+        """
+        return self._parallel_degree
+
+    @parallel_degree.setter
+    def parallel_degree(self, parallel_degree):
+        """
+        Sets the parallel_degree of this MaskDataDetails.
+        Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism),
+        'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree
+        of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the
+        Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
+        If it's not provided, the value of the parallelDegree attribute in the MaskingPolicy resource is used.
+
+
+        :param parallel_degree: The parallel_degree of this MaskDataDetails.
+        :type: str
+        """
+        self._parallel_degree = parallel_degree
+
+    @property
+    def recompile(self):
+        """
+        Gets the recompile of this MaskDataDetails.
+        Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),
+        'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree
+        attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further
+        recompile manually using UTL_RECOMP package.
+        If it's not provided, the value of the parallelDegree attribute in the MaskingPolicy resource is used.
+
+
+        :return: The recompile of this MaskDataDetails.
+        :rtype: str
+        """
+        return self._recompile
+
+    @recompile.setter
+    def recompile(self, recompile):
+        """
+        Sets the recompile of this MaskDataDetails.
+        Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),
+        'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree
+        attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further
+        recompile manually using UTL_RECOMP package.
+        If it's not provided, the value of the parallelDegree attribute in the MaskingPolicy resource is used.
+
+
+        :param recompile: The recompile of this MaskDataDetails.
+        :type: str
+        """
+        self._recompile = recompile
 
     def __repr__(self):
         return formatted_flat_dict(self)

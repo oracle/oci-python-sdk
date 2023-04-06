@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PatchAlertsDetails(object):
     """
-    Details for how to patch alerts.
+    The alert details to update the status of one or more alert specified by the alert IDs.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class PatchAlertsDetails(object):
     def items(self):
         """
         **[Required]** Gets the items of this PatchAlertsDetails.
-        Array of patch instructions.
+        Array of alert detail to update the status of the alert specified by the alert ID.
 
 
         :return: The items of this PatchAlertsDetails.
@@ -56,7 +56,7 @@ class PatchAlertsDetails(object):
     def items(self, items):
         """
         Sets the items of this PatchAlertsDetails.
-        Array of patch instructions.
+        Array of alert detail to update the status of the alert specified by the alert ID.
 
 
         :param items: The items of this PatchAlertsDetails.

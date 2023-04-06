@@ -97,10 +97,6 @@ class AutonomousDataWarehouseSummary(object):
             The value to assign to the lifecycle_details property of this AutonomousDataWarehouseSummary.
         :type lifecycle_details: str
 
-        :param additional_database_status:
-            The value to assign to the additional_database_status property of this AutonomousDataWarehouseSummary.
-        :type additional_database_status: list[str]
-
         :param db_name:
             The value to assign to the db_name property of this AutonomousDataWarehouseSummary.
         :type db_name: str
@@ -152,7 +148,6 @@ class AutonomousDataWarehouseSummary(object):
             'compartment_id': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
-            'additional_database_status': 'list[str]',
             'db_name': 'str',
             'cpu_core_count': 'int',
             'data_storage_size_in_tbs': 'int',
@@ -171,7 +166,6 @@ class AutonomousDataWarehouseSummary(object):
             'compartment_id': 'compartmentId',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
-            'additional_database_status': 'additionalDatabaseStatus',
             'db_name': 'dbName',
             'cpu_core_count': 'cpuCoreCount',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
@@ -189,7 +183,6 @@ class AutonomousDataWarehouseSummary(object):
         self._compartment_id = None
         self._lifecycle_state = None
         self._lifecycle_details = None
-        self._additional_database_status = None
         self._db_name = None
         self._cpu_core_count = None
         self._data_storage_size_in_tbs = None
@@ -313,30 +306,6 @@ class AutonomousDataWarehouseSummary(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
-
-    @property
-    def additional_database_status(self):
-        """
-        Gets the additional_database_status of this AutonomousDataWarehouseSummary.
-        Additional details about the status of the database, such as the progress of a backup or restore operation. UNPUBLISHED \"HIDDEN\" FIELD. This field is being added to unblock console functionality but will not be published in the SDK or documentation. It will be present in responses, so deprecating will require coordination to ensure we do not break customers if they begin relying on this field. Please see https://confluence.oci.oraclecorp.com/pages/viewpage.action?pageId=58769459 for details regarding the motivation of this field and the longer term plan.
-
-
-        :return: The additional_database_status of this AutonomousDataWarehouseSummary.
-        :rtype: list[str]
-        """
-        return self._additional_database_status
-
-    @additional_database_status.setter
-    def additional_database_status(self, additional_database_status):
-        """
-        Sets the additional_database_status of this AutonomousDataWarehouseSummary.
-        Additional details about the status of the database, such as the progress of a backup or restore operation. UNPUBLISHED \"HIDDEN\" FIELD. This field is being added to unblock console functionality but will not be published in the SDK or documentation. It will be present in responses, so deprecating will require coordination to ensure we do not break customers if they begin relying on this field. Please see https://confluence.oci.oraclecorp.com/pages/viewpage.action?pageId=58769459 for details regarding the motivation of this field and the longer term plan.
-
-
-        :param additional_database_status: The additional_database_status of this AutonomousDataWarehouseSummary.
-        :type: list[str]
-        """
-        self._additional_database_status = additional_database_status
 
     @property
     def db_name(self):

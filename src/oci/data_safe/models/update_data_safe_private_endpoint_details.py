@@ -64,7 +64,7 @@ class UpdateDataSafePrivateEndpointDetails(object):
     @property
     def display_name(self):
         """
-        **[Required]** Gets the display_name of this UpdateDataSafePrivateEndpointDetails.
+        Gets the display_name of this UpdateDataSafePrivateEndpointDetails.
         The display name of the private endpoint.
 
 

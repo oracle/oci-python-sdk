@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ReportDefinitionCollection(object):
     """
-    Collection of report definition summary.
+    Collection of report definition objects.
     """
 
     def __init__(self, **kwargs):

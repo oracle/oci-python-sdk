@@ -200,6 +200,48 @@ def test_apply_discovery_job_results(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_apply_sdm_masking_policy_difference(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ApplySdmMaskingPolicyDifference'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ApplySdmMaskingPolicyDifference')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ApplySdmMaskingPolicyDifference')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.apply_sdm_masking_policy_difference(
+                masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                apply_sdm_masking_policy_difference_details=request.pop(util.camelize('ApplySdmMaskingPolicyDifferenceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ApplySdmMaskingPolicyDifference',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'apply_sdm_masking_policy_difference',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_calculate_audit_volume_available(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'CalculateAuditVolumeAvailable'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -823,6 +865,48 @@ def test_change_retention(testing_service_client):
             result,
             service_error,
             'change_retention',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_change_sdm_masking_policy_difference_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ChangeSdmMaskingPolicyDifferenceCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ChangeSdmMaskingPolicyDifferenceCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ChangeSdmMaskingPolicyDifferenceCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.change_sdm_masking_policy_difference_compartment(
+                sdm_masking_policy_difference_id=request.pop(util.camelize('sdmMaskingPolicyDifferenceId')),
+                change_sdm_masking_policy_difference_compartment_details=request.pop(util.camelize('ChangeSdmMaskingPolicyDifferenceCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ChangeSdmMaskingPolicyDifferenceCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_sdm_masking_policy_difference_compartment',
             False,
             False
         )
@@ -1488,6 +1572,47 @@ def test_create_report_definition(testing_service_client):
             result,
             service_error,
             'reportDefinition',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_create_sdm_masking_policy_difference(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'CreateSdmMaskingPolicyDifference'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'CreateSdmMaskingPolicyDifference')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='CreateSdmMaskingPolicyDifference')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.create_sdm_masking_policy_difference(
+                create_sdm_masking_policy_difference_details=request.pop(util.camelize('CreateSdmMaskingPolicyDifferenceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'CreateSdmMaskingPolicyDifference',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'sdmMaskingPolicyDifference',
             False,
             False
         )
@@ -2229,6 +2354,47 @@ def test_delete_report_definition(testing_service_client):
             result,
             service_error,
             'delete_report_definition',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_delete_sdm_masking_policy_difference(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'DeleteSdmMaskingPolicyDifference'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'DeleteSdmMaskingPolicyDifference')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='DeleteSdmMaskingPolicyDifference')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.delete_sdm_masking_policy_difference(
+                sdm_masking_policy_difference_id=request.pop(util.camelize('sdmMaskingPolicyDifferenceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'DeleteSdmMaskingPolicyDifference',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_sdm_masking_policy_difference',
             True,
             False
         )
@@ -3725,6 +3891,48 @@ def test_get_data_safe_private_endpoint(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_difference_column(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetDifferenceColumn'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetDifferenceColumn')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetDifferenceColumn')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_difference_column(
+                sdm_masking_policy_difference_id=request.pop(util.camelize('sdmMaskingPolicyDifferenceId')),
+                difference_column_key=request.pop(util.camelize('differenceColumnKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetDifferenceColumn',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'differenceColumn',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_get_discovery_job(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'GetDiscoveryJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4014,6 +4222,48 @@ def test_get_on_prem_connector(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_profile(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetProfile'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetProfile')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetProfile')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_profile(
+                user_assessment_id=request.pop(util.camelize('userAssessmentId')),
+                profile_name=request.pop(util.camelize('profileName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetProfile',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'profile',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_get_report(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'GetReport'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4131,6 +4381,47 @@ def test_get_report_definition(testing_service_client):
             result,
             service_error,
             'reportDefinition',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_sdm_masking_policy_difference(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetSdmMaskingPolicyDifference'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetSdmMaskingPolicyDifference')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetSdmMaskingPolicyDifference')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_sdm_masking_policy_difference(
+                sdm_masking_policy_difference_id=request.pop(util.camelize('sdmMaskingPolicyDifferenceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetSdmMaskingPolicyDifference',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'sdmMaskingPolicyDifference',
             False,
             False
         )
@@ -5054,6 +5345,69 @@ def test_list_audit_policies(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_audit_policy_analytics(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListAuditPolicyAnalytics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListAuditPolicyAnalytics')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListAuditPolicyAnalytics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_audit_policy_analytics(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_audit_policy_analytics(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_audit_policy_analytics(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListAuditPolicyAnalytics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'auditPolicyAnalyticCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_list_audit_profile_analytics(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'ListAuditProfileAnalytics'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5558,6 +5912,69 @@ def test_list_data_safe_private_endpoints(testing_service_client):
             result,
             service_error,
             'dataSafePrivateEndpointSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_difference_columns(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListDifferenceColumns'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListDifferenceColumns')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListDifferenceColumns')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_difference_columns(
+                sdm_masking_policy_difference_id=request.pop(util.camelize('sdmMaskingPolicyDifferenceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_difference_columns(
+                    sdm_masking_policy_difference_id=request.pop(util.camelize('sdmMaskingPolicyDifferenceId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_difference_columns(
+                        sdm_masking_policy_difference_id=request.pop(util.camelize('sdmMaskingPolicyDifferenceId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListDifferenceColumns',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'sdmMaskingPolicyDifferenceColumnCollection',
             False,
             True
         )
@@ -6134,6 +6551,69 @@ def test_list_masking_columns(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_masking_objects(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListMaskingObjects'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListMaskingObjects')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListMaskingObjects')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_masking_objects(
+                masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_masking_objects(
+                    masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_masking_objects(
+                        masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListMaskingObjects',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'maskingObjectCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_list_masking_policies(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'ListMaskingPolicies'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6260,6 +6740,69 @@ def test_list_masking_reports(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_masking_schemas(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListMaskingSchemas'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListMaskingSchemas')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListMaskingSchemas')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_masking_schemas(
+                masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_masking_schemas(
+                    masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_masking_schemas(
+                        masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListMaskingSchemas',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'maskingSchemaCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_list_on_prem_connectors(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'ListOnPremConnectors'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6317,6 +6860,138 @@ def test_list_on_prem_connectors(testing_service_client):
             result,
             service_error,
             'onPremConnectorSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_profile_analytics(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListProfileAnalytics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListProfileAnalytics')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListProfileAnalytics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_profile_analytics(
+                user_assessment_id=request.pop(util.camelize('userAssessmentId')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_profile_analytics(
+                    user_assessment_id=request.pop(util.camelize('userAssessmentId')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_profile_analytics(
+                        user_assessment_id=request.pop(util.camelize('userAssessmentId')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListProfileAnalytics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'profileAggregation',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_profile_summaries(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListProfileSummaries'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListProfileSummaries')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListProfileSummaries')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_profile_summaries(
+                user_assessment_id=request.pop(util.camelize('userAssessmentId')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_profile_summaries(
+                    user_assessment_id=request.pop(util.camelize('userAssessmentId')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_profile_summaries(
+                        user_assessment_id=request.pop(util.camelize('userAssessmentId')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListProfileSummaries',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'profileSummary',
             False,
             True
         )
@@ -6575,6 +7250,69 @@ def test_list_schemas(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_sdm_masking_policy_differences(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListSdmMaskingPolicyDifferences'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListSdmMaskingPolicyDifferences')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListSdmMaskingPolicyDifferences')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_sdm_masking_policy_differences(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_sdm_masking_policy_differences(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_sdm_masking_policy_differences(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListSdmMaskingPolicyDifferences',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'sdmMaskingPolicyDifferenceCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_list_security_assessments(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'ListSecurityAssessments'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6758,6 +7496,132 @@ def test_list_sensitive_data_models(testing_service_client):
             result,
             service_error,
             'sensitiveDataModelCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_sensitive_objects(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListSensitiveObjects'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListSensitiveObjects')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListSensitiveObjects')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_sensitive_objects(
+                sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_sensitive_objects(
+                    sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_sensitive_objects(
+                        sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListSensitiveObjects',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'sensitiveObjectCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_sensitive_schemas(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListSensitiveSchemas'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListSensitiveSchemas')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListSensitiveSchemas')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_sensitive_schemas(
+                sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_sensitive_schemas(
+                    sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_sensitive_schemas(
+                        sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListSensitiveSchemas',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'sensitiveSchemaCollection',
             False,
             True
         )
@@ -7597,6 +8461,48 @@ def test_patch_masking_columns(testing_service_client):
             result,
             service_error,
             'patch_masking_columns',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_patch_sdm_masking_policy_difference_columns(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'PatchSdmMaskingPolicyDifferenceColumns'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'PatchSdmMaskingPolicyDifferenceColumns')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='PatchSdmMaskingPolicyDifferenceColumns')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.patch_sdm_masking_policy_difference_columns(
+                sdm_masking_policy_difference_id=request.pop(util.camelize('sdmMaskingPolicyDifferenceId')),
+                patch_sdm_masking_policy_difference_columns_details=request.pop(util.camelize('PatchSdmMaskingPolicyDifferenceColumnsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'PatchSdmMaskingPolicyDifferenceColumns',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'patch_sdm_masking_policy_difference_columns',
             False,
             False
         )
@@ -8805,6 +9711,48 @@ def test_update_report_definition(testing_service_client):
             result,
             service_error,
             'update_report_definition',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_update_sdm_masking_policy_difference(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'UpdateSdmMaskingPolicyDifference'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'UpdateSdmMaskingPolicyDifference')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='UpdateSdmMaskingPolicyDifference')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.update_sdm_masking_policy_difference(
+                sdm_masking_policy_difference_id=request.pop(util.camelize('sdmMaskingPolicyDifferenceId')),
+                update_sdm_masking_policy_difference_details=request.pop(util.camelize('UpdateSdmMaskingPolicyDifferenceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'UpdateSdmMaskingPolicyDifference',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_sdm_masking_policy_difference',
             False,
             False
         )

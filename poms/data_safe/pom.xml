@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.ads.admin.cp</groupId>
         <artifactId>ads-control-plane-spec</artifactId>
-        <version>220802.00</version>
+        <version>230125.10</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

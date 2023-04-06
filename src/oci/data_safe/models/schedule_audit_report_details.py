@@ -54,7 +54,7 @@ class ScheduleAuditReportDetails(ReportDetails):
     def row_limit(self):
         """
         Gets the row_limit of this ScheduleAuditReportDetails.
-        Specifies the limit on number of rows in report.
+        Specifies the limit on the number of rows in the report.
 
 
         :return: The row_limit of this ScheduleAuditReportDetails.
@@ -66,7 +66,7 @@ class ScheduleAuditReportDetails(ReportDetails):
     def row_limit(self, row_limit):
         """
         Sets the row_limit of this ScheduleAuditReportDetails.
-        Specifies the limit on number of rows in report.
+        Specifies the limit on the number of rows in the report.
 
 
         :param row_limit: The row_limit of this ScheduleAuditReportDetails.

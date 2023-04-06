@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AuditEventAggregationDimensions(object):
     """
-    Details of aggregation dimensions used for summarizing audit events.
+    The details of the aggregation dimensions used for summarizing audit events.
     """
 
     #: A constant which can be used with the target_class property of a AuditEventAggregationDimensions.
@@ -147,7 +147,7 @@ class AuditEventAggregationDimensions(object):
     def audit_event_time(self):
         """
         Gets the audit_event_time of this AuditEventAggregationDimensions.
-        Time of audit event occurrence in the target database.
+        The time the audit event occurred in the target database.
 
 
         :return: The audit_event_time of this AuditEventAggregationDimensions.
@@ -159,7 +159,7 @@ class AuditEventAggregationDimensions(object):
     def audit_event_time(self, audit_event_time):
         """
         Sets the audit_event_time of this AuditEventAggregationDimensions.
-        Time of audit event occurrence in the target database.
+        The time the audit event occurred in the target database.
 
 
         :param audit_event_time: The audit_event_time of this AuditEventAggregationDimensions.
@@ -399,7 +399,7 @@ class AuditEventAggregationDimensions(object):
     def event_name(self):
         """
         Gets the event_name of this AuditEventAggregationDimensions.
-        Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+        The name of the event executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
 
 
         :return: The event_name of this AuditEventAggregationDimensions.
@@ -411,7 +411,7 @@ class AuditEventAggregationDimensions(object):
     def event_name(self, event_name):
         """
         Sets the event_name of this AuditEventAggregationDimensions.
-        Name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+        The name of the event executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
 
 
         :param event_name: The event_name of this AuditEventAggregationDimensions.

@@ -479,7 +479,7 @@ class ReportDefinition(object):
     def time_created(self):
         """
         Gets the time_created of this ReportDefinition.
-        Specifies the time at which the report definition was created.
+        Specifies the data and time the report definition was created.
 
 
         :return: The time_created of this ReportDefinition.
@@ -491,7 +491,7 @@ class ReportDefinition(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ReportDefinition.
-        Specifies the time at which the report definition was created.
+        Specifies the data and time the report definition was created.
 
 
         :param time_created: The time_created of this ReportDefinition.
@@ -503,7 +503,7 @@ class ReportDefinition(object):
     def time_updated(self):
         """
         Gets the time_updated of this ReportDefinition.
-        The date and time of the report definition update in Data Safe.
+        The date and time the report definition was update.
 
 
         :return: The time_updated of this ReportDefinition.
@@ -515,7 +515,7 @@ class ReportDefinition(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ReportDefinition.
-        The date and time of the report definition update in Data Safe.
+        The date and time the report definition was update.
 
 
         :param time_updated: The time_updated of this ReportDefinition.
@@ -527,7 +527,7 @@ class ReportDefinition(object):
     def scim_filter(self):
         """
         Gets the scim_filter of this ReportDefinition.
-        Additional scim filters used to specialize the report.
+        Additional SCIM filters used to define the report.
 
 
         :return: The scim_filter of this ReportDefinition.
@@ -539,7 +539,7 @@ class ReportDefinition(object):
     def scim_filter(self, scim_filter):
         """
         Sets the scim_filter of this ReportDefinition.
-        Additional scim filters used to specialize the report.
+        Additional SCIM filters used to define the report.
 
 
         :param scim_filter: The scim_filter of this ReportDefinition.
@@ -575,7 +575,7 @@ class ReportDefinition(object):
     def column_filters(self):
         """
         Gets the column_filters of this ReportDefinition.
-        An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
+        An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
 
 
         :return: The column_filters of this ReportDefinition.
@@ -587,7 +587,7 @@ class ReportDefinition(object):
     def column_filters(self, column_filters):
         """
         Sets the column_filters of this ReportDefinition.
-        An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
+        An array of columnFilter objects. A columnFilter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
 
 
         :param column_filters: The column_filters of this ReportDefinition.
@@ -701,7 +701,7 @@ class ReportDefinition(object):
     def schedule(self):
         """
         Gets the schedule of this ReportDefinition.
-        Schedule to generate the report periodically in the specified format:
+        The schedule to generate the report periodically in the specified format:
         <version-string>;<version-specific-schedule>
 
         Allowed version strings - \"v1\"
@@ -726,7 +726,7 @@ class ReportDefinition(object):
     def schedule(self, schedule):
         """
         Sets the schedule of this ReportDefinition.
-        Schedule to generate the report periodically in the specified format:
+        The schedule to generate the report periodically in the specified format:
         <version-string>;<version-specific-schedule>
 
         Allowed version strings - \"v1\"
@@ -751,7 +751,7 @@ class ReportDefinition(object):
     def scheduled_report_mime_type(self):
         """
         Gets the scheduled_report_mime_type of this ReportDefinition.
-        Specifies the format of report to be excel or pdf
+        Specifies the format of the report ( either XLS or PDF )
 
         Allowed values for this property are: "PDF", "XLS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -766,7 +766,7 @@ class ReportDefinition(object):
     def scheduled_report_mime_type(self, scheduled_report_mime_type):
         """
         Sets the scheduled_report_mime_type of this ReportDefinition.
-        Specifies the format of report to be excel or pdf
+        Specifies the format of the report ( either XLS or PDF )
 
 
         :param scheduled_report_mime_type: The scheduled_report_mime_type of this ReportDefinition.
@@ -781,7 +781,7 @@ class ReportDefinition(object):
     def scheduled_report_row_limit(self):
         """
         Gets the scheduled_report_row_limit of this ReportDefinition.
-        Specifies the limit on number of rows in report.
+        Specifies the limit on the number of rows in the report.
 
 
         :return: The scheduled_report_row_limit of this ReportDefinition.
@@ -793,7 +793,7 @@ class ReportDefinition(object):
     def scheduled_report_row_limit(self, scheduled_report_row_limit):
         """
         Sets the scheduled_report_row_limit of this ReportDefinition.
-        Specifies the limit on number of rows in report.
+        Specifies the limit on the number of rows in the report.
 
 
         :param scheduled_report_row_limit: The scheduled_report_row_limit of this ReportDefinition.
@@ -829,10 +829,7 @@ class ReportDefinition(object):
     def scheduled_report_compartment_id(self):
         """
         Gets the scheduled_report_compartment_id of this ReportDefinition.
-        The `OCID`__ of the compartment
-        in which the scheduled resource should be created.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        The OCID of the compartment in which the scheduled resource should be created.
 
 
         :return: The scheduled_report_compartment_id of this ReportDefinition.
@@ -844,10 +841,7 @@ class ReportDefinition(object):
     def scheduled_report_compartment_id(self, scheduled_report_compartment_id):
         """
         Sets the scheduled_report_compartment_id of this ReportDefinition.
-        The `OCID`__ of the compartment
-        in which the scheduled resource should be created.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        The OCID of the compartment in which the scheduled resource should be created.
 
 
         :param scheduled_report_compartment_id: The scheduled_report_compartment_id of this ReportDefinition.
@@ -859,7 +853,7 @@ class ReportDefinition(object):
     def record_time_span(self):
         """
         Gets the record_time_span of this ReportDefinition.
-        The time span of records in report to be scheduled.
+        The time span for the records in the report to be scheduled.
         <period-value><period>
         Allowed period strings - \"H\",\"D\",\"M\",\"Y\"
         Each of the above fields potentially introduce constraints. A workRequest is created only
@@ -879,7 +873,7 @@ class ReportDefinition(object):
     def record_time_span(self, record_time_span):
         """
         Sets the record_time_span of this ReportDefinition.
-        The time span of records in report to be scheduled.
+        The time span for the records in the report to be scheduled.
         <period-value><period>
         Allowed period strings - \"H\",\"D\",\"M\",\"Y\"
         Each of the above fields potentially introduce constraints. A workRequest is created only
@@ -899,7 +893,7 @@ class ReportDefinition(object):
     def compliance_standards(self):
         """
         Gets the compliance_standards of this ReportDefinition.
-        The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+        The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
 
 
         :return: The compliance_standards of this ReportDefinition.
@@ -911,7 +905,7 @@ class ReportDefinition(object):
     def compliance_standards(self, compliance_standards):
         """
         Sets the compliance_standards of this ReportDefinition.
-        The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+        The list of the data protection regulations/standards used in the report that will help demonstrate compliance.
 
 
         :param compliance_standards: The compliance_standards of this ReportDefinition.
