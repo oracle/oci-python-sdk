@@ -18,7 +18,7 @@ from showoci_service import ShowOCIService, ShowOCIFlags
 
 
 class ShowOCIData(object):
-    version = "23.03.28"
+    version = "23.04.11"
 
     ############################################
     # ShowOCIService - Service object to query
