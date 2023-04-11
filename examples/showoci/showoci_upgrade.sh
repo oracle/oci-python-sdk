@@ -1,6 +1,6 @@
 #!/bin/bash
 ###################################################
-# Upgrade showoci from adizohar git
+# Upgrade showoci from oci-python-sdk sdk git
 ###################################################
 source ~/.bashrc >/dev/null
 
@@ -8,7 +8,7 @@ export APPDIR=${HOME}/showoci
 export LOGDIR=$APPDIR/log
 export LOG=$LOGDIR/showoci_upgrade.log
 mkdir -p $LOGDIR
-export GIT=https://raw.githubusercontent.com/adizohar/showoci/master
+export GIT=https://raw.githubusercontent.com/oracle/oci-python-sdk/master/examples/showoci
 
 ###########################################
 # Download file Proc
@@ -16,15 +16,18 @@ export GIT=https://raw.githubusercontent.com/adizohar/showoci/master
 download_file()
 {
     file=$1
+    file_download=${file}.download
     echo "   Download $file" | tee -a $LOG
-    wget ${GIT}/$file -O ${APPDIR}/$file -o $LOGDIR/${file}.download.log| tee -a $LOG
+    wget ${GIT}/$file -O ${APPDIR}/$file_download -o $LOGDIR/${file}.download.log| tee -a $LOG
     if cat $LOGDIR/${file}.download.log | grep -q "ERROR" 
     then
         echo "   -------> Error Downloading $file, Abort, log=$LOGDIR/${file}.download.log" | tee -a $LOG
         echo ""
         exit 1
     else
-        echo "   -------> $file downloaded successfully" | tee -a $LOG
+        echo "   -------> $file_download downloaded successfully" | tee -a $LOG
+        echo "   -------> rename $file_download to $file" | tee -a $LOG
+        mv -f ${APPDIR}/$file_download ${APPDIR}/$file
     fi
 }
 

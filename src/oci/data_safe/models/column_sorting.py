@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ColumnSorting(object):
     """
-    Sorting the data at the column level.
+    Sorts the data at the column level.
     """
 
     def __init__(self, **kwargs):

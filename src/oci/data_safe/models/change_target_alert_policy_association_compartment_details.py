@@ -37,7 +37,7 @@ class ChangeTargetAlertPolicyAssociationCompartmentDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ChangeTargetAlertPolicyAssociationCompartmentDetails.
-        The OCID of the new compartment to move the target-alert policy association to.
+        The OCID of the compartment to move the target-alert policy association to.
 
 
         :return: The compartment_id of this ChangeTargetAlertPolicyAssociationCompartmentDetails.
@@ -49,7 +49,7 @@ class ChangeTargetAlertPolicyAssociationCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeTargetAlertPolicyAssociationCompartmentDetails.
-        The OCID of the new compartment to move the target-alert policy association to.
+        The OCID of the compartment to move the target-alert policy association to.
 
 
         :param compartment_id: The compartment_id of this ChangeTargetAlertPolicyAssociationCompartmentDetails.

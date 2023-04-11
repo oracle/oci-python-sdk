@@ -193,7 +193,7 @@ class ColumnFilter(object):
     def is_enabled(self):
         """
         **[Required]** Gets the is_enabled of this ColumnFilter.
-        Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+        Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
 
 
         :return: The is_enabled of this ColumnFilter.
@@ -205,7 +205,7 @@ class ColumnFilter(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this ColumnFilter.
-        Indicates if the filter is enabled. Values can either be 'true' or 'false'.
+        Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
 
 
         :param is_enabled: The is_enabled of this ColumnFilter.
@@ -217,7 +217,7 @@ class ColumnFilter(object):
     def is_hidden(self):
         """
         **[Required]** Gets the is_hidden of this ColumnFilter.
-        Indicates if the filter is hidden. Values can either be 'true' or 'false'.
+        Indicates whether the filter is hidden. Values can either be 'true' or 'false'.
 
 
         :return: The is_hidden of this ColumnFilter.
@@ -229,7 +229,7 @@ class ColumnFilter(object):
     def is_hidden(self, is_hidden):
         """
         Sets the is_hidden of this ColumnFilter.
-        Indicates if the filter is hidden. Values can either be 'true' or 'false'.
+        Indicates whether the filter is hidden. Values can either be 'true' or 'false'.
 
 
         :param is_hidden: The is_hidden of this ColumnFilter.

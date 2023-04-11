@@ -29,6 +29,8 @@ and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/
 
 [10. How to unlock user USAGE and change password](#10-how-to-unlock-user-usage-and-change-password)
 
+[11. How to truncate the Usage2ADW tables in order to reload](#11-how-to-truncate-the-usage2adw-tables-in-order-to-reload)
+
 ## 1. How to create additional APEX End User Accounts
 
 ```
@@ -112,7 +114,7 @@ Login to Usage2adw VM
 ## 4. How to upgrade the usage2adw application and APEX
 ```
    # on oci github:
-   bash -c "$(curl -L https://raw.githubusercontent.com/adizohar/usage_reports_to_adw/main/setup/setup_upgrade_usage2adw.sh)"    
+   bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-python-sdk/master/examples/usage_reports_to_adw/setup/setup_upgrade_usage2adw.sh)"    
 ```
 
 ## 5. How to Refresh the Autonomous Database Wallet for the usage2adw application
@@ -261,13 +263,14 @@ sudo postfix reload
 echo "This is a test message" | mail -s "Test" -r "report@oracleemaildelivery.com" youremail@yourdomain.com
 ```
 
-### 7.8. Clone the OCI SDK Repo from Git Hub 
+### 7.8. Clone the OCI Python SDK Repo from Git Hub
 
 ```
 # Required if previous clone not includes run_daily_report.sh
 cd $HOME
 sudo yum install -y git
-git clone https://github.com/adizohar/usage_reports_to_adw
+git clone https://github.com/oracle/oci-python-sdk
+ln -s oci-python-sdk/examples/usage_reports_to_adw .
 cd usage_reports_to_adw/shell_scripts
 chmod +x run_daily_report.sh
 ```
@@ -414,7 +417,7 @@ END;
 Run on oci vm
 
 ```
-bash -c "$(curl -L https://raw.githubusercontent.com/adizohar/showoci/master/showoci_upgrade.sh)"    
+bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-python-sdk/master/examples/showoci/showoci_upgrade.sh)"    
 ```
 
 ```
@@ -445,7 +448,7 @@ Edit crontab using crontab -e and add/update the below: (If exist remove the # b
 Download run_load_showoci_csv_to_adw.sh if not exist
 
 ```
-wget https://raw.githubusercontent.com/adizohar/usage_reports_to_adw/main/shell_scripts/run_multi_daily_usage2adw.sh -O /home/opc/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh
+wget https://raw.githubusercontent.com/oracle/oci-python-sdk/master/examples/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh -O /home/opc/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh
 chmod +x /home/opc/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh 
 ```
 
@@ -509,6 +512,17 @@ vi $HOME/usage_reports_to_adw/config.user
 /home/opc/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh
 ```
 
+## 11. How to truncate the Usage2ADW tables in order to reload
+
+Login to SQL*PLUS
+```
+/home/opc/usage_reports_to_adw/shell_scripts/run_sqlplus_usage.sh
+```
+
+Run the Truncate Table Script
+```
+@/home/opc/usage_reports_to_adw/setup/truncate_tables.sql
+```
 
 ## License
 

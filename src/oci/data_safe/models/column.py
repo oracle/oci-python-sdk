@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Column(object):
     """
-    Description of a column
+    The description of the column.
     """
 
     def __init__(self, **kwargs):

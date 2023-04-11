@@ -19,6 +19,7 @@ from .alert_summary import AlertSummary
 from .alerts_aggregation_dimension import AlertsAggregationDimension
 from .alerts_update_details import AlertsUpdateDetails
 from .apply_discovery_job_results_details import ApplyDiscoveryJobResultsDetails
+from .apply_sdm_masking_policy_difference_details import ApplySdmMaskingPolicyDifferenceDetails
 from .audit_archive_retrieval import AuditArchiveRetrieval
 from .audit_archive_retrieval_collection import AuditArchiveRetrievalCollection
 from .audit_archive_retrieval_summary import AuditArchiveRetrievalSummary
@@ -65,6 +66,7 @@ from .change_on_prem_connector_compartment_details import ChangeOnPremConnectorC
 from .change_report_compartment_details import ChangeReportCompartmentDetails
 from .change_report_definition_compartment_details import ChangeReportDefinitionCompartmentDetails
 from .change_retention_details import ChangeRetentionDetails
+from .change_sdm_masking_policy_difference_compartment_details import ChangeSdmMaskingPolicyDifferenceCompartmentDetails
 from .change_security_assessment_compartment_details import ChangeSecurityAssessmentCompartmentDetails
 from .change_sensitive_data_model_compartment_details import ChangeSensitiveDataModelCompartmentDetails
 from .change_sensitive_type_compartment_details import ChangeSensitiveTypeCompartmentDetails
@@ -100,6 +102,7 @@ from .create_masking_column_details import CreateMaskingColumnDetails
 from .create_masking_policy_details import CreateMaskingPolicyDetails
 from .create_on_prem_connector_details import CreateOnPremConnectorDetails
 from .create_report_definition_details import CreateReportDefinitionDetails
+from .create_sdm_masking_policy_difference_details import CreateSdmMaskingPolicyDifferenceDetails
 from .create_security_assessment_details import CreateSecurityAssessmentDetails
 from .create_sensitive_category_details import CreateSensitiveCategoryDetails
 from .create_sensitive_column_details import CreateSensitiveColumnDetails
@@ -119,6 +122,8 @@ from .delete_rows_format_entry import DeleteRowsFormatEntry
 from .deterministic_encryption_date_format_entry import DeterministicEncryptionDateFormatEntry
 from .deterministic_encryption_format_entry import DeterministicEncryptionFormatEntry
 from .deterministic_substitution_format_entry import DeterministicSubstitutionFormatEntry
+from .difference_column import DifferenceColumn
+from .difference_column_summary import DifferenceColumnSummary
 from .diffs import Diffs
 from .dimensions import Dimensions
 from .discovery_analytics_collection import DiscoveryAnalyticsCollection
@@ -172,12 +177,16 @@ from .masking_column import MaskingColumn
 from .masking_column_collection import MaskingColumnCollection
 from .masking_column_summary import MaskingColumnSummary
 from .masking_format import MaskingFormat
+from .masking_object_collection import MaskingObjectCollection
+from .masking_object_summary import MaskingObjectSummary
 from .masking_policy import MaskingPolicy
 from .masking_policy_collection import MaskingPolicyCollection
 from .masking_policy_summary import MaskingPolicySummary
 from .masking_report import MaskingReport
 from .masking_report_collection import MaskingReportCollection
 from .masking_report_summary import MaskingReportSummary
+from .masking_schema_collection import MaskingSchemaCollection
+from .masking_schema_summary import MaskingSchemaSummary
 from .modified_attributes import ModifiedAttributes
 from .modify_global_settings_details import ModifyGlobalSettingsDetails
 from .null_value_format_entry import NullValueFormatEntry
@@ -193,11 +202,15 @@ from .patch_instruction import PatchInstruction
 from .patch_masking_columns_details import PatchMaskingColumnsDetails
 from .patch_merge_instruction import PatchMergeInstruction
 from .patch_remove_instruction import PatchRemoveInstruction
+from .patch_sdm_masking_policy_difference_columns_details import PatchSdmMaskingPolicyDifferenceColumnsDetails
 from .patch_sensitive_column_details import PatchSensitiveColumnDetails
 from .patch_target_alert_policy_association_details import PatchTargetAlertPolicyAssociationDetails
 from .preserve_original_data_format_entry import PreserveOriginalDataFormatEntry
 from .private_endpoint import PrivateEndpoint
+from .profile import Profile
+from .profile_aggregation import ProfileAggregation
 from .profile_details import ProfileDetails
+from .profile_summary import ProfileSummary
 from .provision_audit_conditions import ProvisionAuditConditions
 from .provision_audit_policy_details import ProvisionAuditPolicyDetails
 from .random_date_format_entry import RandomDateFormatEntry
@@ -223,6 +236,10 @@ from .sql_expression_format_entry import SQLExpressionFormatEntry
 from .schedule_audit_report_details import ScheduleAuditReportDetails
 from .schedule_report_details import ScheduleReportDetails
 from .schema_summary import SchemaSummary
+from .sdm_masking_policy_difference import SdmMaskingPolicyDifference
+from .sdm_masking_policy_difference_collection import SdmMaskingPolicyDifferenceCollection
+from .sdm_masking_policy_difference_column_collection import SdmMaskingPolicyDifferenceColumnCollection
+from .sdm_masking_policy_difference_summary import SdmMaskingPolicyDifferenceSummary
 from .section_statistics import SectionStatistics
 from .security_assessment import SecurityAssessment
 from .security_assessment_base_line_details import SecurityAssessmentBaseLineDetails
@@ -237,6 +254,10 @@ from .sensitive_column_summary import SensitiveColumnSummary
 from .sensitive_data_model import SensitiveDataModel
 from .sensitive_data_model_collection import SensitiveDataModelCollection
 from .sensitive_data_model_summary import SensitiveDataModelSummary
+from .sensitive_object_collection import SensitiveObjectCollection
+from .sensitive_object_summary import SensitiveObjectSummary
+from .sensitive_schema_collection import SensitiveSchemaCollection
+from .sensitive_schema_summary import SensitiveSchemaSummary
 from .sensitive_type import SensitiveType
 from .sensitive_type_collection import SensitiveTypeCollection
 from .sensitive_type_pattern import SensitiveTypePattern
@@ -270,6 +291,7 @@ from .update_masking_policy_details import UpdateMaskingPolicyDetails
 from .update_on_prem_connector_details import UpdateOnPremConnectorDetails
 from .update_on_prem_connector_wallet_details import UpdateOnPremConnectorWalletDetails
 from .update_report_definition_details import UpdateReportDefinitionDetails
+from .update_sdm_masking_policy_difference_details import UpdateSdmMaskingPolicyDifferenceDetails
 from .update_security_assessment_details import UpdateSecurityAssessmentDetails
 from .update_sensitive_category_details import UpdateSensitiveCategoryDetails
 from .update_sensitive_column_details import UpdateSensitiveColumnDetails
@@ -309,6 +331,7 @@ data_safe_type_mapping = {
     "AlertsAggregationDimension": AlertsAggregationDimension,
     "AlertsUpdateDetails": AlertsUpdateDetails,
     "ApplyDiscoveryJobResultsDetails": ApplyDiscoveryJobResultsDetails,
+    "ApplySdmMaskingPolicyDifferenceDetails": ApplySdmMaskingPolicyDifferenceDetails,
     "AuditArchiveRetrieval": AuditArchiveRetrieval,
     "AuditArchiveRetrievalCollection": AuditArchiveRetrievalCollection,
     "AuditArchiveRetrievalSummary": AuditArchiveRetrievalSummary,
@@ -355,6 +378,7 @@ data_safe_type_mapping = {
     "ChangeReportCompartmentDetails": ChangeReportCompartmentDetails,
     "ChangeReportDefinitionCompartmentDetails": ChangeReportDefinitionCompartmentDetails,
     "ChangeRetentionDetails": ChangeRetentionDetails,
+    "ChangeSdmMaskingPolicyDifferenceCompartmentDetails": ChangeSdmMaskingPolicyDifferenceCompartmentDetails,
     "ChangeSecurityAssessmentCompartmentDetails": ChangeSecurityAssessmentCompartmentDetails,
     "ChangeSensitiveDataModelCompartmentDetails": ChangeSensitiveDataModelCompartmentDetails,
     "ChangeSensitiveTypeCompartmentDetails": ChangeSensitiveTypeCompartmentDetails,
@@ -390,6 +414,7 @@ data_safe_type_mapping = {
     "CreateMaskingPolicyDetails": CreateMaskingPolicyDetails,
     "CreateOnPremConnectorDetails": CreateOnPremConnectorDetails,
     "CreateReportDefinitionDetails": CreateReportDefinitionDetails,
+    "CreateSdmMaskingPolicyDifferenceDetails": CreateSdmMaskingPolicyDifferenceDetails,
     "CreateSecurityAssessmentDetails": CreateSecurityAssessmentDetails,
     "CreateSensitiveCategoryDetails": CreateSensitiveCategoryDetails,
     "CreateSensitiveColumnDetails": CreateSensitiveColumnDetails,
@@ -409,6 +434,8 @@ data_safe_type_mapping = {
     "DeterministicEncryptionDateFormatEntry": DeterministicEncryptionDateFormatEntry,
     "DeterministicEncryptionFormatEntry": DeterministicEncryptionFormatEntry,
     "DeterministicSubstitutionFormatEntry": DeterministicSubstitutionFormatEntry,
+    "DifferenceColumn": DifferenceColumn,
+    "DifferenceColumnSummary": DifferenceColumnSummary,
     "Diffs": Diffs,
     "Dimensions": Dimensions,
     "DiscoveryAnalyticsCollection": DiscoveryAnalyticsCollection,
@@ -462,12 +489,16 @@ data_safe_type_mapping = {
     "MaskingColumnCollection": MaskingColumnCollection,
     "MaskingColumnSummary": MaskingColumnSummary,
     "MaskingFormat": MaskingFormat,
+    "MaskingObjectCollection": MaskingObjectCollection,
+    "MaskingObjectSummary": MaskingObjectSummary,
     "MaskingPolicy": MaskingPolicy,
     "MaskingPolicyCollection": MaskingPolicyCollection,
     "MaskingPolicySummary": MaskingPolicySummary,
     "MaskingReport": MaskingReport,
     "MaskingReportCollection": MaskingReportCollection,
     "MaskingReportSummary": MaskingReportSummary,
+    "MaskingSchemaCollection": MaskingSchemaCollection,
+    "MaskingSchemaSummary": MaskingSchemaSummary,
     "ModifiedAttributes": ModifiedAttributes,
     "ModifyGlobalSettingsDetails": ModifyGlobalSettingsDetails,
     "NullValueFormatEntry": NullValueFormatEntry,
@@ -483,11 +514,15 @@ data_safe_type_mapping = {
     "PatchMaskingColumnsDetails": PatchMaskingColumnsDetails,
     "PatchMergeInstruction": PatchMergeInstruction,
     "PatchRemoveInstruction": PatchRemoveInstruction,
+    "PatchSdmMaskingPolicyDifferenceColumnsDetails": PatchSdmMaskingPolicyDifferenceColumnsDetails,
     "PatchSensitiveColumnDetails": PatchSensitiveColumnDetails,
     "PatchTargetAlertPolicyAssociationDetails": PatchTargetAlertPolicyAssociationDetails,
     "PreserveOriginalDataFormatEntry": PreserveOriginalDataFormatEntry,
     "PrivateEndpoint": PrivateEndpoint,
+    "Profile": Profile,
+    "ProfileAggregation": ProfileAggregation,
     "ProfileDetails": ProfileDetails,
+    "ProfileSummary": ProfileSummary,
     "ProvisionAuditConditions": ProvisionAuditConditions,
     "ProvisionAuditPolicyDetails": ProvisionAuditPolicyDetails,
     "RandomDateFormatEntry": RandomDateFormatEntry,
@@ -513,6 +548,10 @@ data_safe_type_mapping = {
     "ScheduleAuditReportDetails": ScheduleAuditReportDetails,
     "ScheduleReportDetails": ScheduleReportDetails,
     "SchemaSummary": SchemaSummary,
+    "SdmMaskingPolicyDifference": SdmMaskingPolicyDifference,
+    "SdmMaskingPolicyDifferenceCollection": SdmMaskingPolicyDifferenceCollection,
+    "SdmMaskingPolicyDifferenceColumnCollection": SdmMaskingPolicyDifferenceColumnCollection,
+    "SdmMaskingPolicyDifferenceSummary": SdmMaskingPolicyDifferenceSummary,
     "SectionStatistics": SectionStatistics,
     "SecurityAssessment": SecurityAssessment,
     "SecurityAssessmentBaseLineDetails": SecurityAssessmentBaseLineDetails,
@@ -527,6 +566,10 @@ data_safe_type_mapping = {
     "SensitiveDataModel": SensitiveDataModel,
     "SensitiveDataModelCollection": SensitiveDataModelCollection,
     "SensitiveDataModelSummary": SensitiveDataModelSummary,
+    "SensitiveObjectCollection": SensitiveObjectCollection,
+    "SensitiveObjectSummary": SensitiveObjectSummary,
+    "SensitiveSchemaCollection": SensitiveSchemaCollection,
+    "SensitiveSchemaSummary": SensitiveSchemaSummary,
     "SensitiveType": SensitiveType,
     "SensitiveTypeCollection": SensitiveTypeCollection,
     "SensitiveTypePattern": SensitiveTypePattern,
@@ -560,6 +603,7 @@ data_safe_type_mapping = {
     "UpdateOnPremConnectorDetails": UpdateOnPremConnectorDetails,
     "UpdateOnPremConnectorWalletDetails": UpdateOnPremConnectorWalletDetails,
     "UpdateReportDefinitionDetails": UpdateReportDefinitionDetails,
+    "UpdateSdmMaskingPolicyDifferenceDetails": UpdateSdmMaskingPolicyDifferenceDetails,
     "UpdateSecurityAssessmentDetails": UpdateSecurityAssessmentDetails,
     "UpdateSensitiveCategoryDetails": UpdateSensitiveCategoryDetails,
     "UpdateSensitiveColumnDetails": UpdateSensitiveColumnDetails,

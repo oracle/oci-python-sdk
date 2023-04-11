@@ -54,7 +54,9 @@ class DatabaseUpgradeWithDbVersionDetails(DatabaseUpgradeSourceBase):
     def db_version(self):
         """
         **[Required]** Gets the db_version of this DatabaseUpgradeWithDbVersionDetails.
-        A valid Oracle Database version. To get a list of supported versions, use the :func:`list_db_versions` operation.
+        A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
 
         :return: The db_version of this DatabaseUpgradeWithDbVersionDetails.
@@ -66,7 +68,9 @@ class DatabaseUpgradeWithDbVersionDetails(DatabaseUpgradeSourceBase):
     def db_version(self, db_version):
         """
         Sets the db_version of this DatabaseUpgradeWithDbVersionDetails.
-        A valid Oracle Database version. To get a list of supported versions, use the :func:`list_db_versions` operation.
+        A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
 
         :param db_version: The db_version of this DatabaseUpgradeWithDbVersionDetails.

@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+23.04.11 - 23.04.11
+=====================
+* Amend scripts and help to point to OCI Python SDK sites
+
+=====================
 23.03.28 - 23.03.28
 =====================
 * Added OCI_RESOURCES table to showoci2adw to load all relevants OCIDs

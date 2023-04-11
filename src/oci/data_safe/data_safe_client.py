@@ -326,11 +326,11 @@ class DataSafeClient(object):
 
     def alerts_update(self, alerts_update_details, **kwargs):
         """
-        Update alerts within a given compartment.
+        Updates alerts in the specified compartment.
 
 
         :param oci.data_safe.models.AlertsUpdateDetails alerts_update_details: (required)
-            Details to update alerts within a given compartment.
+            The details to update the alerts in the specified compartment.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -558,6 +558,126 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=apply_discovery_job_results_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def apply_sdm_masking_policy_difference(self, masking_policy_id, apply_sdm_masking_policy_difference_details, **kwargs):
+        """
+        Applies the difference of a SDM Masking policy difference resource to the specified masking policy. Note that the plannedAction attribute
+        of difference columns is used for processing. You should first use PatchSdmMaskingPolicyDifferenceColumns to set the plannedAction
+        attribute of the difference columns you want to process. ApplySdmMaskingPolicyDifference automatically reads the plannedAction
+        attribute and updates the masking policy to reflect the actions you planned. If the sdmMaskingPolicydifferenceId is not passed, the
+        latest sdmMaskingPolicydifference is used. Note that if the masking policy associated with the SdmMaskingPolicyDifference used for this
+        operation is not associated with the original SDM anymore, this operation won't be allowed.
+
+
+        :param str masking_policy_id: (required)
+            The OCID of the masking policy.
+
+        :param oci.data_safe.models.ApplySdmMaskingPolicyDifferenceDetails apply_sdm_masking_policy_difference_details: (required)
+            Details to apply the SDM Masking policy difference columns to a masking policy.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the if-match parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/apply_sdm_masking_policy_difference.py.html>`__ to see an example of how to use apply_sdm_masking_policy_difference API.
+        """
+        resource_path = "/maskingPolicies/{maskingPolicyId}/maskingColumns/actions/applyDifferenceToMaskingColumns"
+        method = "POST"
+        operation_name = "apply_sdm_masking_policy_difference"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/ApplySdmMaskingPolicyDifference"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "apply_sdm_masking_policy_difference got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "maskingPolicyId": masking_policy_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=apply_sdm_masking_policy_difference_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=apply_sdm_masking_policy_difference_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
@@ -2269,6 +2389,121 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=change_retention_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def change_sdm_masking_policy_difference_compartment(self, sdm_masking_policy_difference_id, change_sdm_masking_policy_difference_compartment_details, **kwargs):
+        """
+        Moves the specified SDM masking policy difference into a different compartment.
+
+
+        :param str sdm_masking_policy_difference_id: (required)
+            The OCID of the SDM masking policy difference.
+
+        :param oci.data_safe.models.ChangeSdmMaskingPolicyDifferenceCompartmentDetails change_sdm_masking_policy_difference_compartment_details: (required)
+            The details used to change the compartment of a resource.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the if-match parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_sdm_masking_policy_difference_compartment.py.html>`__ to see an example of how to use change_sdm_masking_policy_difference_compartment API.
+        """
+        resource_path = "/sdmMaskingPolicyDifferences/{sdmMaskingPolicyDifferenceId}/actions/changeCompartment"
+        method = "POST"
+        operation_name = "change_sdm_masking_policy_difference_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SdmMaskingPolicyDifference/ChangeSdmMaskingPolicyDifferenceCompartment"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "change_sdm_masking_policy_difference_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "sdmMaskingPolicyDifferenceId": sdm_masking_policy_difference_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_sdm_masking_policy_difference_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_sdm_masking_policy_difference_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
@@ -4001,6 +4236,103 @@ class DataSafeClient(object):
                 header_params=header_params,
                 body=create_report_definition_details,
                 response_type="ReportDefinition",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def create_sdm_masking_policy_difference(self, create_sdm_masking_policy_difference_details, **kwargs):
+        """
+        Creates SDM masking policy difference for the specified masking policy. It finds the difference between
+        masking columns of the masking policy and sensitive columns of the SDM. After performing this operation,
+        you can use ListDifferenceColumns to view the difference columns, PatchSdmMaskingPolicyDifferenceColumns
+        to specify the action you want perform on these columns, and then ApplySdmMaskingPolicyDifference to process the
+        difference columns and apply them to the masking policy.
+
+
+        :param oci.data_safe.models.CreateSdmMaskingPolicyDifferenceDetails create_sdm_masking_policy_difference_details: (required)
+            The details used to create a SDM masking policy difference resource
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_safe.models.SdmMaskingPolicyDifference`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_sdm_masking_policy_difference.py.html>`__ to see an example of how to use create_sdm_masking_policy_difference API.
+        """
+        resource_path = "/sdmMaskingPolicyDifferences"
+        method = "POST"
+        operation_name = "create_sdm_masking_policy_difference"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_sdm_masking_policy_difference got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_sdm_masking_policy_difference_details,
+                response_type="SdmMaskingPolicyDifference",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_sdm_masking_policy_difference_details,
+                response_type="SdmMaskingPolicyDifference",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
@@ -5764,6 +6096,107 @@ class DataSafeClient(object):
 
         path_params = {
             "reportDefinitionId": report_definition_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def delete_sdm_masking_policy_difference(self, sdm_masking_policy_difference_id, **kwargs):
+        """
+        Deletes the specified SDM Masking policy difference.
+
+
+        :param str sdm_masking_policy_difference_id: (required)
+            The OCID of the SDM masking policy difference.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the if-match parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sdm_masking_policy_difference.py.html>`__ to see an example of how to use delete_sdm_masking_policy_difference API.
+        """
+        resource_path = "/sdmMaskingPolicyDifferences/{sdmMaskingPolicyDifferenceId}"
+        method = "DELETE"
+        operation_name = "delete_sdm_masking_policy_difference"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SdmMaskingPolicyDifference/DeleteSdmMaskingPolicyDifference"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_sdm_masking_policy_difference got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "sdmMaskingPolicyDifferenceId": sdm_masking_policy_difference_id
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -8467,7 +8900,7 @@ class DataSafeClient(object):
 
     def get_alert(self, alert_id, **kwargs):
         """
-        Gets the details of alert by its ID.
+        Gets the details of the specified alerts.
 
 
         :param str alert_id: (required)
@@ -9456,6 +9889,104 @@ class DataSafeClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def get_difference_column(self, sdm_masking_policy_difference_id, difference_column_key, **kwargs):
+        """
+        Gets the details of the specified SDM Masking policy difference column.
+
+
+        :param str sdm_masking_policy_difference_id: (required)
+            The OCID of the SDM masking policy difference.
+
+        :param str difference_column_key: (required)
+            The unique key that identifies the difference column.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_safe.models.DifferenceColumn`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_difference_column.py.html>`__ to see an example of how to use get_difference_column API.
+        """
+        resource_path = "/sdmMaskingPolicyDifferences/{sdmMaskingPolicyDifferenceId}/differenceColumns/{differenceColumnKey}"
+        method = "GET"
+        operation_name = "get_difference_column"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DifferenceColumn/GetDifferenceColumn"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_difference_column got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "sdmMaskingPolicyDifferenceId": sdm_masking_policy_difference_id,
+            "differenceColumnKey": difference_column_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DifferenceColumn",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DifferenceColumn",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def get_discovery_job(self, discovery_job_id, **kwargs):
         """
         Gets the details of the specified discovery job.
@@ -10122,6 +10653,107 @@ class DataSafeClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def get_profile(self, user_assessment_id, profile_name, **kwargs):
+        """
+        Lists the details of given profile available on the target.
+
+        The GetProfile operation returns only the profiles in the specified 'userAssessmentId'.
+        This does not include any subcompartments of the current compartment.
+
+
+        :param str user_assessment_id: (required)
+            The OCID of the user assessment.
+
+        :param str profile_name: (required)
+            Profile name to get detailed information .
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_safe.models.Profile`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_profile.py.html>`__ to see an example of how to use get_profile API.
+        """
+        resource_path = "/userAssessments/{userAssessmentId}/profiles/{profileName}"
+        method = "GET"
+        operation_name = "get_profile"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/GetProfile"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_profile got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userAssessmentId": user_assessment_id,
+            "profileName": profile_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[Profile]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[Profile]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def get_report(self, report_id, **kwargs):
         """
         Gets a report by identifier
@@ -10400,6 +11032,100 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="ReportDefinition",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def get_sdm_masking_policy_difference(self, sdm_masking_policy_difference_id, **kwargs):
+        """
+        Gets the details of the specified SDM Masking policy difference.
+
+
+        :param str sdm_masking_policy_difference_id: (required)
+            The OCID of the SDM masking policy difference.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_safe.models.SdmMaskingPolicyDifference`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sdm_masking_policy_difference.py.html>`__ to see an example of how to use get_sdm_masking_policy_difference API.
+        """
+        resource_path = "/sdmMaskingPolicyDifferences/{sdmMaskingPolicyDifferenceId}"
+        method = "GET"
+        operation_name = "get_sdm_masking_policy_difference"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SdmMaskingPolicyDifference/GetSdmMaskingPolicyDifference"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_sdm_masking_policy_difference got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "sdmMaskingPolicyDifferenceId": sdm_masking_policy_difference_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="SdmMaskingPolicyDifference",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="SdmMaskingPolicyDifference",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
@@ -11358,7 +12084,7 @@ class DataSafeClient(object):
 
     def list_alert_analytics(self, compartment_id, **kwargs):
         """
-        Returns aggregation details of alerts.
+        Returns the aggregation details of the alerts.
 
 
         :param str compartment_id: (required)
@@ -11428,7 +12154,9 @@ class DataSafeClient(object):
             text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
             (Numeric and boolean values should not be quoted.)
 
-            **Example:** query=(timeCreated ge '2021-06-04T01-00-26') and (targetNames eq 'target_1')
+            **Example:** |
+            query=(timeCreated ge '2021-06-04T01-00-26') and (targetNames eq 'target_1')
+            query=(featureDetails.userName eq \"user\") and (targetNames eq \"target_1\")
             Supported fields:
             severity
             status
@@ -11440,6 +12168,8 @@ class DataSafeClient(object):
             displayName
             timeCreated
             timeUpdated
+            featureDetails.* (* can be any field in nestedStrMap in Feature Attributes in Alert Summary. For example -
+            userName,object,clientHostname,osUserName,clientIPs,clientId,commandText,commandParam,clientProgram,objectType,targetOwner)
 
             __ https://tools.ietf.org/html/draft-ietf-scim-api-12
 
@@ -11647,7 +12377,7 @@ class DataSafeClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided.
+            The field to sort by. Only one sort parameter may be provided.
 
             Allowed values are: "displayName", "timeCreated"
 
@@ -11990,7 +12720,9 @@ class DataSafeClient(object):
             text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
             (Numeric and boolean values should not be quoted.)
 
-            **Example:** query=(timeCreated ge '2021-06-04T01-00-26') and (targetNames eq 'target_1')
+            **Example:** |
+            query=(timeCreated ge '2021-06-04T01-00-26') and (targetNames eq 'target_1')
+            query=(featureDetails.userName eq \"user\") and (targetNames eq \"target_1\")
             Supported fields:
             severity
             status
@@ -12002,6 +12734,8 @@ class DataSafeClient(object):
             displayName
             timeCreated
             timeUpdated
+            featureDetails.* (* can be any field in nestedStrMap in Feature Attributes in Alert Summary. For example -
+            userName,object,clientHostname,osUserName,clientIPs,clientId,commandText,commandParam,clientProgram,objectType,targetOwner)
 
             __ https://tools.ietf.org/html/draft-ietf-scim-api-12
 
@@ -12327,12 +13061,19 @@ class DataSafeClient(object):
 
     def list_audit_event_analytics(self, compartment_id, **kwargs):
         """
-        By default ListAuditEventAnalytics operation will return all of the summary columns. To filter desired summary columns, specify
-        it in the `summaryOf` query parameter.
+        By default the ListAuditEventAnalytics operation will return all of the summary columns. To filter for a specific summary column, specify
+        it in the `summaryField` query parameter.
 
-        **Example:** /ListAuditEventAnalytics?summaryField=targetName&summaryField=userName&summaryField=clientHostName&summaryField
-                     &summaryField=dmls&summaryField=privilege_changes&summaryField=ddls&summaryField=login_failure&summaryField=login_success
-                     &summaryField=eventcount&q=(operationTime ge '2021-06-13T23:49:14')&groupBy=targetName
+        **Example:**
+        /ListAuditEventAnalytics?summaryField=targetName&summaryField=userName&summaryField=clientHostname
+        &summaryField=dmls&summaryField=privilegeChanges&summaryField=ddls&summaryField=loginFailure&summaryField=loginSuccess
+        &summaryField=allRecord&q=(auditEventTime ge \"2021-06-13T23:49:14\")
+
+        /ListAuditEventAnalytics?timeStarted=2022-08-18T11:02:26.000Z&timeEnded=2022-08-24T11:02:26.000Z
+        This will give number of events grouped by periods. Period can be 1 day, 1 week, etc.
+
+        /ListAuditEventAnalytics?summaryField=targetName&groupBy=targetName
+        This will give the number of events group by targetName. Only targetName summary column would be returned.
 
 
         :param str compartment_id: (required)
@@ -12943,6 +13684,202 @@ class DataSafeClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="AuditPolicyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def list_audit_policy_analytics(self, compartment_id, **kwargs):
+        """
+        Gets a list of aggregated audit policy details on the target databases. A audit policy aggregation
+        helps understand the overall state of policies provisioned on targets.
+        It is especially useful to create dashboards or to support analytics.
+
+        The parameter `accessLevel` specifies whether to return only those compartments for which the
+        requestor has INSPECT permissions on at least one resource directly
+        or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+        principal doesn't have access to even one of the child compartments. This is valid only when
+        `compartmentIdInSubtree` is set to `true`.
+
+        The parameter `compartmentIdInSubtree` applies when you perform SummarizedAuditPolicyInfo on the specified
+        `compartmentId` and when it is set to true, the entire hierarchy of compartments can be returned.
+        To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+        set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+
+        **Example:** ListAuditPolicyAnalytics?groupBy=auditPolicyCategory
+
+
+        :param str compartment_id: (required)
+            A filter to return only resources that match the specified compartment OCID.
+
+        :param bool compartment_id_in_subtree: (optional)
+            Default is false.
+            When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+
+        :param str access_level: (optional)
+            Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+            Setting this to ACCESSIBLE returns only those compartments for which the
+            user has INSPECT permissions directly or indirectly (permissions can be on a
+            resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+
+            Allowed values are: "RESTRICTED", "ACCESSIBLE"
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param list[str] group_by: (optional)
+            The group by parameter to summarize audit policy aggregation.
+
+            Allowed values are: "auditPolicyCategory", "auditPolicyName", "targetId"
+
+        :param str audit_policy_category: (optional)
+            The category to which the audit policy belongs to.
+
+            Allowed values are: "BASIC_ACTIVITY", "ADMIN_USER_ACTIVITY", "USER_ACTIVITY", "ORACLE_PREDEFINED", "COMPLIANCE_STANDARD", "CUSTOM"
+
+        :param str audit_policy_name: (optional)
+            In case of seeded policies, it is the policy name defined by Data Safe.
+            In case of custom Policies, it is the policy name that is used to create the policies on the target database.
+            In case of Oracle Pre-seeded policies, it is the default policy name of the same.
+
+        :param str target_id: (optional)
+            A filter to return only items related to a specific target OCID.
+
+        :param str lifecycle_state: (optional)
+            The current state of the audit policy.
+
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "FAILED", "NEEDS_ATTENTION", "DELETING", "DELETED"
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_safe.models.AuditPolicyAnalyticCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_policy_analytics.py.html>`__ to see an example of how to use list_audit_policy_analytics API.
+        """
+        resource_path = "/auditPolicyAnalytics"
+        method = "GET"
+        operation_name = "list_audit_policy_analytics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditPolicyAnalyticCollection/ListAuditPolicyAnalytics"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "compartment_id_in_subtree",
+            "access_level",
+            "limit",
+            "page",
+            "group_by",
+            "audit_policy_category",
+            "audit_policy_name",
+            "target_id",
+            "lifecycle_state",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_audit_policy_analytics got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'access_level' in kwargs:
+            access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
+            if kwargs['access_level'] not in access_level_allowed_values:
+                raise ValueError(
+                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                )
+
+        if 'group_by' in kwargs:
+            group_by_allowed_values = ["auditPolicyCategory", "auditPolicyName", "targetId"]
+            for group_by_item in kwargs['group_by']:
+                if group_by_item not in group_by_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `group_by`, must be one of {0}".format(group_by_allowed_values)
+                    )
+
+        if 'audit_policy_category' in kwargs:
+            audit_policy_category_allowed_values = ["BASIC_ACTIVITY", "ADMIN_USER_ACTIVITY", "USER_ACTIVITY", "ORACLE_PREDEFINED", "COMPLIANCE_STANDARD", "CUSTOM"]
+            if kwargs['audit_policy_category'] not in audit_policy_category_allowed_values:
+                raise ValueError(
+                    "Invalid value for `audit_policy_category`, must be one of {0}".format(audit_policy_category_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "FAILED", "NEEDS_ATTENTION", "DELETING", "DELETED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "accessLevel": kwargs.get("access_level", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "groupBy": self.base_client.generate_collection_format_param(kwargs.get("group_by", missing), 'multi'),
+            "auditPolicyCategory": kwargs.get("audit_policy_category", missing),
+            "auditPolicyName": kwargs.get("audit_policy_name", missing),
+            "targetId": kwargs.get("target_id", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AuditPolicyAnalyticCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AuditPolicyAnalyticCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
@@ -14389,6 +15326,206 @@ class DataSafeClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def list_difference_columns(self, sdm_masking_policy_difference_id, **kwargs):
+        """
+        Gets a list of columns of a SDM masking policy difference resource based on the specified query parameters.
+
+
+        :param str sdm_masking_policy_difference_id: (required)
+            The OCID of the SDM masking policy difference.
+
+        :param str difference_type: (optional)
+            A filter to return only the SDM masking policy difference columns that match the specified difference type
+
+            Allowed values are: "ALL", "NEW", "MODIFIED", "DELETED"
+
+        :param str planned_action: (optional)
+            A filter to return only the SDM masking policy difference columns that match the specified planned action.
+
+            Allowed values are: "SYNC", "NO_SYNC"
+
+        :param str sync_status: (optional)
+            A filter to return the SDM masking policy difference columns based on the value of their syncStatus attribute.
+
+            Allowed values are: "SYNCED", "NOT_SYNCED"
+
+        :param list[str] schema_name: (optional)
+            A filter to return only items related to specific schema name.
+
+        :param list[str] object_name: (optional)
+            A filter to return only items related to a specific object name.
+
+        :param list[str] column_name: (optional)
+            A filter to return only a specific column based on column name.
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (ASC) or descending (DESC).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. You can specify only one sort order (sortOrder). The default order for schemaName is descending.
+            The default order for differenceType, schemaName, objectName, columnName and plannedAction is ascending.
+
+            Allowed values are: "differenceType", "schemaName", "objectName", "columnName", "plannedAction"
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_safe.models.SdmMaskingPolicyDifferenceColumnCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_difference_columns.py.html>`__ to see an example of how to use list_difference_columns API.
+        """
+        resource_path = "/sdmMaskingPolicyDifferences/{sdmMaskingPolicyDifferenceId}/differenceColumns"
+        method = "GET"
+        operation_name = "list_difference_columns"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SdmMaskingPolicyDifference/ListDifferenceColumns"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "difference_type",
+            "planned_action",
+            "sync_status",
+            "schema_name",
+            "object_name",
+            "column_name",
+            "sort_order",
+            "sort_by",
+            "opc_request_id",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_difference_columns got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "sdmMaskingPolicyDifferenceId": sdm_masking_policy_difference_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'difference_type' in kwargs:
+            difference_type_allowed_values = ["ALL", "NEW", "MODIFIED", "DELETED"]
+            if kwargs['difference_type'] not in difference_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `difference_type`, must be one of {0}".format(difference_type_allowed_values)
+                )
+
+        if 'planned_action' in kwargs:
+            planned_action_allowed_values = ["SYNC", "NO_SYNC"]
+            if kwargs['planned_action'] not in planned_action_allowed_values:
+                raise ValueError(
+                    "Invalid value for `planned_action`, must be one of {0}".format(planned_action_allowed_values)
+                )
+
+        if 'sync_status' in kwargs:
+            sync_status_allowed_values = ["SYNCED", "NOT_SYNCED"]
+            if kwargs['sync_status'] not in sync_status_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sync_status`, must be one of {0}".format(sync_status_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["differenceType", "schemaName", "objectName", "columnName", "plannedAction"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "differenceType": kwargs.get("difference_type", missing),
+            "plannedAction": kwargs.get("planned_action", missing),
+            "syncStatus": kwargs.get("sync_status", missing),
+            "schemaName": self.base_client.generate_collection_format_param(kwargs.get("schema_name", missing), 'multi'),
+            "objectName": self.base_client.generate_collection_format_param(kwargs.get("object_name", missing), 'multi'),
+            "columnName": self.base_client.generate_collection_format_param(kwargs.get("column_name", missing), 'multi'),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SdmMaskingPolicyDifferenceColumnCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SdmMaskingPolicyDifferenceColumnCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def list_discovery_analytics(self, compartment_id, **kwargs):
         """
         Gets consolidated discovery analytics data based on the specified query parameters.
@@ -14920,6 +16057,11 @@ class DataSafeClient(object):
 
             Allowed values are: "HIGH", "MEDIUM", "LOW", "EVALUATE", "ADVISORY", "PASS"
 
+        :param str references: (optional)
+            An optional filter to return only findings containing the specified reference.
+
+            Allowed values are: "STIG", "CIS", "GDPR"
+
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
 
@@ -14974,6 +16116,7 @@ class DataSafeClient(object):
             "retry_strategy",
             "opc_request_id",
             "severity",
+            "references",
             "limit",
             "page",
             "compartment_id_in_subtree",
@@ -15002,6 +16145,13 @@ class DataSafeClient(object):
                     "Invalid value for `severity`, must be one of {0}".format(severity_allowed_values)
                 )
 
+        if 'references' in kwargs:
+            references_allowed_values = ["STIG", "CIS", "GDPR"]
+            if kwargs['references'] not in references_allowed_values:
+                raise ValueError(
+                    "Invalid value for `references`, must be one of {0}".format(references_allowed_values)
+                )
+
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
@@ -15011,6 +16161,7 @@ class DataSafeClient(object):
 
         query_params = {
             "severity": kwargs.get("severity", missing),
+            "references": kwargs.get("references", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
@@ -16040,6 +17191,174 @@ class DataSafeClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def list_masking_objects(self, masking_policy_id, **kwargs):
+        """
+        Gets a list of masking objects present in the specified masking policy and based on the specified query parameters.
+
+
+        :param str masking_policy_id: (required)
+            The OCID of the masking policy.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (ASC) or descending (DESC).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. You can specify only one sort order (sortOrder).
+            The default order is ascending.
+
+            Allowed values are: "schemaName", "objectName", "objectType"
+
+        :param list[str] schema_name: (optional)
+            A filter to return only items related to specific schema name.
+
+        :param list[str] object_name: (optional)
+            A filter to return only items related to a specific object name.
+
+        :param list[str] object_type: (optional)
+            A filter to return only items related to a specific object type.
+
+            Allowed values are: "ALL", "TABLE", "EDITIONING_VIEW"
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_safe.models.MaskingObjectCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_objects.py.html>`__ to see an example of how to use list_masking_objects API.
+        """
+        resource_path = "/maskingPolicies/{maskingPolicyId}/maskingObjects"
+        method = "GET"
+        operation_name = "list_masking_objects"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingObjectCollection/ListMaskingObjects"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "schema_name",
+            "object_name",
+            "object_type",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_masking_objects got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "maskingPolicyId": masking_policy_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["schemaName", "objectName", "objectType"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'object_type' in kwargs:
+            object_type_allowed_values = ["ALL", "TABLE", "EDITIONING_VIEW"]
+            for object_type_item in kwargs['object_type']:
+                if object_type_item not in object_type_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `object_type`, must be one of {0}".format(object_type_allowed_values)
+                    )
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "schemaName": self.base_client.generate_collection_format_param(kwargs.get("schema_name", missing), 'multi'),
+            "objectName": self.base_client.generate_collection_format_param(kwargs.get("object_name", missing), 'multi'),
+            "objectType": self.base_client.generate_collection_format_param(kwargs.get("object_type", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="MaskingObjectCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="MaskingObjectCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def list_masking_policies(self, compartment_id, **kwargs):
         """
         Gets a list of masking policies based on the specified query parameters.
@@ -16414,6 +17733,154 @@ class DataSafeClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def list_masking_schemas(self, masking_policy_id, **kwargs):
+        """
+        Gets a list of masking schemas present in the specified masking policy and based on the specified query parameters.
+
+
+        :param str masking_policy_id: (required)
+            The OCID of the masking policy.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (ASC) or descending (DESC).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. You can specify only one sort order (sortOrder).
+            The default order is ascending.
+
+            Allowed values are: "schemaName"
+
+        :param list[str] schema_name: (optional)
+            A filter to return only items related to specific schema name.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_safe.models.MaskingSchemaCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_schemas.py.html>`__ to see an example of how to use list_masking_schemas API.
+        """
+        resource_path = "/maskingPolicies/{maskingPolicyId}/maskingSchemas"
+        method = "GET"
+        operation_name = "list_masking_schemas"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingSchemaCollection/ListMaskingSchemas"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "schema_name",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_masking_schemas got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "maskingPolicyId": masking_policy_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["schemaName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "schemaName": self.base_client.generate_collection_format_param(kwargs.get("schema_name", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="MaskingSchemaCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="MaskingSchemaCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def list_on_prem_connectors(self, compartment_id, **kwargs):
         """
         Gets a list of on-premises connectors.
@@ -16594,6 +18061,462 @@ class DataSafeClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def list_profile_analytics(self, user_assessment_id, compartment_id, **kwargs):
+        """
+        Gets a list of aggregated user profile details in the specified compartment. This provides information about the
+        overall profiles available. For example, the user profile details include how many users have the profile assigned
+        and do how many use password verification function. This data is especially useful content for dashboards or to support analytics.
+
+        When you perform the ListProfileAnalytics operation, if the parameter compartmentIdInSubtree is set to \"true,\" and if the
+        parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+        permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+        root compartment. If the requestor does not have access to at least one subcompartment of the compartment specified by
+        compartmentId, then \"Not Authorized\" is returned.
+
+        The parameter compartmentIdInSubtree applies when you perform ListProfileAnalytics on the compartmentId passed and when it is
+        set to true, the entire hierarchy of compartments can be returned.
+
+        To use ListProfileAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
+        set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+
+
+        :param str user_assessment_id: (required)
+            The OCID of the user assessment.
+
+        :param str compartment_id: (required)
+            A filter to return only resources that match the specified compartment OCID.
+
+        :param bool compartment_id_in_subtree: (optional)
+            Default is false.
+            When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+
+        :param str access_level: (optional)
+            Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+            Setting this to ACCESSIBLE returns only those compartments for which the
+            user has INSPECT permissions directly or indirectly (permissions can be on a
+            resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+
+            Allowed values are: "RESTRICTED", "ACCESSIBLE"
+
+        :param str target_id: (optional)
+            A filter to return only items related to a specific target OCID.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str profile_name: (optional)
+            A filter to return only items that match the specified profile name.
+
+        :param str sort_by: (optional)
+            The field used for sorting. Only one sorting order (sortOrder) can be specified.
+            The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
+            The DISPLAYNAME sort order is case sensitive.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (ASC) or descending (DESC).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_safe.models.ProfileAggregation`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_profile_analytics.py.html>`__ to see an example of how to use list_profile_analytics API.
+        """
+        resource_path = "/userAssessments/{userAssessmentId}/profileAnalytics"
+        method = "GET"
+        operation_name = "list_profile_analytics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Profile/ListProfileAnalytics"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "compartment_id_in_subtree",
+            "access_level",
+            "target_id",
+            "limit",
+            "page",
+            "profile_name",
+            "sort_by",
+            "sort_order",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_profile_analytics got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userAssessmentId": user_assessment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'access_level' in kwargs:
+            access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
+            if kwargs['access_level'] not in access_level_allowed_values:
+                raise ValueError(
+                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "accessLevel": kwargs.get("access_level", missing),
+            "targetId": kwargs.get("target_id", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "profileName": kwargs.get("profile_name", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ProfileAggregation]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ProfileAggregation]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def list_profile_summaries(self, user_assessment_id, compartment_id, **kwargs):
+        """
+        Gets a list of user profiles containing the profile details along with the target id and user counts.
+
+        The ListProfiles operation returns only the profiles belonging to a certain target. If compartment type user assessment
+        id is provided, then profile information for all the targets belonging to the pertaining compartment is returned.
+        The list does not include any subcompartments of the compartment under consideration.
+
+        The parameter 'accessLevel' specifies whether to return only those compartments for which the requestor has
+        INSPECT permissions on at least one resource directly or indirectly (ACCESSIBLE) (the resource can be in a
+        subcompartment) or to return Not Authorized if Principal doesn't have access to even one of the child compartments.
+        This is valid only when 'compartmentIdInSubtree' is set to 'true'.
+
+        The parameter 'compartmentIdInSubtree' applies when you perform ListUserProfiles on the 'compartmentId' belonging
+        to the assessmentId passed and when it is set to true, the entire hierarchy of compartments can be returned.
+        To get a full list of all compartments and subcompartments in the tenancy (root compartment), set the parameter
+        'compartmentIdInSubtree' to true and 'accessLevel' to ACCESSIBLE.
+
+
+        :param str user_assessment_id: (required)
+            The OCID of the user assessment.
+
+        :param str compartment_id: (required)
+            A filter to return only resources that match the specified compartment OCID.
+
+        :param bool compartment_id_in_subtree: (optional)
+            Default is false.
+            When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+
+        :param str access_level: (optional)
+            Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+            Setting this to ACCESSIBLE returns only those compartments for which the
+            user has INSPECT permissions directly or indirectly (permissions can be on a
+            resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+
+            Allowed values are: "RESTRICTED", "ACCESSIBLE"
+
+        :param str target_id: (optional)
+            A filter to return only items related to a specific target OCID.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str profile_name: (optional)
+            A filter to return only items that match the specified profile name.
+
+        :param bool is_user_created: (optional)
+            An optional filter to return the user created profiles.
+
+        :param str password_verification_function: (optional)
+            An optional filter to filter the profiles based on password verification function.
+
+        :param str user_count_greater_than_or_equal: (optional)
+            An optional filter to return the profiles having user count greater than or equal to the provided value.
+
+        :param str user_count_less_than: (optional)
+            An optional filter to return the profiles having user count less than the provided value.
+
+        :param str failed_login_attempts_greater_than_or_equal: (optional)
+            An optional filter to return the profiles having allow failed login attempts number greater than or equal to the provided value.
+            String value is used for accommodating the \"UNLIMITED\" and \"DEFAULT\" values.
+
+        :param str failed_login_attempts_less_than: (optional)
+            An optional filter to return the profiles having failed login attempts number less than the provided value.
+            String value is used for accommodating the \"UNLIMITED\" and \"DEFAULT\" values.
+
+        :param str sessions_per_user_greater_than_or_equal: (optional)
+            An optional filter to return the profiles permitting the user to spawn multiple sessions having count.
+            greater than or equal to the provided value. String value is used for accommodating the \"UNLIMITED\" and \"DEFAULT\" values.
+
+        :param str sessions_per_user_less_than: (optional)
+            An optional filter to return the profiles permitting the user to spawn multiple sessions having count less than
+            the provided value. String value is used for accommodating the \"UNLIMITED\" and \"DEFAULT\" values.
+
+        :param str inactive_account_time_greater_than_or_equal: (optional)
+            An optional filter to return the profiles allowing inactive account time in days greater than or equal to the provided value.
+            String value is used for accommodating the \"UNLIMITED\" and \"DEFAULT\" values.
+
+        :param str inactive_account_time_less_than: (optional)
+            An optional filter to return the profiles  allowing inactive account time in days less than the provided value.
+            String value is used for accommodating the \"UNLIMITED\" and \"DEFAULT\" values.
+
+        :param str password_lock_time_greater_than_or_equal: (optional)
+            An optional filter to return the profiles having password lock number greater than or equal to the provided value.
+            String value is used for accommodating the \"UNLIMITED\" and \"DEFAULT\" values.
+
+        :param str password_lock_time_less_than: (optional)
+            An optional filter to return the profiles having password lock number less than the provided value.
+            String value is used for accommodating the \"UNLIMITED\" and \"DEFAULT\" values.
+
+        :param str sort_by: (optional)
+            The field to sort by. You can specify only one sort order (sortOrder). The default order is targetId ASC.
+
+            Allowed values are: "profileName", "targetId", "isUserCreated", "passwordVerificationFunction", "userCount", "sessionsPerUser", "inactiveAccountTime", "failedLoginAttempts"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (ASC) or descending (DESC).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_safe.models.ProfileSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_profile_summaries.py.html>`__ to see an example of how to use list_profile_summaries API.
+        """
+        resource_path = "/userAssessments/{userAssessmentId}/profiles"
+        method = "GET"
+        operation_name = "list_profile_summaries"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/ListProfileSummaries"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "compartment_id_in_subtree",
+            "access_level",
+            "target_id",
+            "limit",
+            "page",
+            "profile_name",
+            "is_user_created",
+            "password_verification_function",
+            "user_count_greater_than_or_equal",
+            "user_count_less_than",
+            "failed_login_attempts_greater_than_or_equal",
+            "failed_login_attempts_less_than",
+            "sessions_per_user_greater_than_or_equal",
+            "sessions_per_user_less_than",
+            "inactive_account_time_greater_than_or_equal",
+            "inactive_account_time_less_than",
+            "password_lock_time_greater_than_or_equal",
+            "password_lock_time_less_than",
+            "sort_by",
+            "sort_order",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_profile_summaries got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userAssessmentId": user_assessment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'access_level' in kwargs:
+            access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
+            if kwargs['access_level'] not in access_level_allowed_values:
+                raise ValueError(
+                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["profileName", "targetId", "isUserCreated", "passwordVerificationFunction", "userCount", "sessionsPerUser", "inactiveAccountTime", "failedLoginAttempts"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "accessLevel": kwargs.get("access_level", missing),
+            "targetId": kwargs.get("target_id", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "profileName": kwargs.get("profile_name", missing),
+            "isUserCreated": kwargs.get("is_user_created", missing),
+            "passwordVerificationFunction": kwargs.get("password_verification_function", missing),
+            "userCountGreaterThanOrEqual": kwargs.get("user_count_greater_than_or_equal", missing),
+            "userCountLessThan": kwargs.get("user_count_less_than", missing),
+            "failedLoginAttemptsGreaterThanOrEqual": kwargs.get("failed_login_attempts_greater_than_or_equal", missing),
+            "failedLoginAttemptsLessThan": kwargs.get("failed_login_attempts_less_than", missing),
+            "sessionsPerUserGreaterThanOrEqual": kwargs.get("sessions_per_user_greater_than_or_equal", missing),
+            "sessionsPerUserLessThan": kwargs.get("sessions_per_user_less_than", missing),
+            "inactiveAccountTimeGreaterThanOrEqual": kwargs.get("inactive_account_time_greater_than_or_equal", missing),
+            "inactiveAccountTimeLessThan": kwargs.get("inactive_account_time_less_than", missing),
+            "passwordLockTimeGreaterThanOrEqual": kwargs.get("password_lock_time_greater_than_or_equal", missing),
+            "passwordLockTimeLessThan": kwargs.get("password_lock_time_less_than", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ProfileSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ProfileSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def list_report_definitions(self, compartment_id, **kwargs):
         """
         Gets a list of report definitions.
@@ -16635,7 +18558,7 @@ class DataSafeClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field used for sorting. Only one sorting order (sortOrder) can be specified.
+            The field used for sorting. Only one sorting parameter order (sortOrder) can be specified.
             The default order for TIMECREATED is descending. The default order for DISPLAYNAME is ascending.
             The DISPLAYNAME sort order is case sensitive.
 
@@ -17315,6 +19238,190 @@ class DataSafeClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def list_sdm_masking_policy_differences(self, compartment_id, **kwargs):
+        """
+        Gets a list of SDM and masking policy difference resources based on the specified query parameters.
+
+
+        :param str compartment_id: (required)
+            A filter to return only resources that match the specified compartment OCID.
+
+        :param bool compartment_id_in_subtree: (optional)
+            Default is false.
+            When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+
+        :param str difference_access_level: (optional)
+            Valid value is ACCESSIBLE. Default is ACCESSIBLE.
+            Setting this to ACCESSIBLE returns only those compartments for which the
+            user has INSPECT permissions directly or indirectly (permissions can be on a
+            resource in a subcompartment).
+
+            Allowed values are: "ACCESSIBLE"
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the specified display name.
+
+        :param str sensitive_data_model_id: (optional)
+            A filter to return only the resources that match the specified sensitive data model OCID.
+
+        :param str lifecycle_state: (optional)
+            A filter to return only the resources that match the specified lifecycle states.
+
+            Allowed values are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"
+
+        :param str masking_policy_id: (optional)
+            A filter to return only the resources that match the specified masking policy OCID.
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (ASC) or descending (DESC).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. You can specify only one sort order (sortOrder). The default order for timeCreationStarted is descending.
+            The default order for displayName is ascending.
+
+            Allowed values are: "timeCreationStarted", "displayName"
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_safe.models.SdmMaskingPolicyDifferenceCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sdm_masking_policy_differences.py.html>`__ to see an example of how to use list_sdm_masking_policy_differences API.
+        """
+        resource_path = "/sdmMaskingPolicyDifferences"
+        method = "GET"
+        operation_name = "list_sdm_masking_policy_differences"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SdmMaskingPolicyDifference/ListSdmMaskingPolicyDifferences"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "compartment_id_in_subtree",
+            "difference_access_level",
+            "display_name",
+            "sensitive_data_model_id",
+            "lifecycle_state",
+            "masking_policy_id",
+            "sort_order",
+            "sort_by",
+            "opc_request_id",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_sdm_masking_policy_differences got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'difference_access_level' in kwargs:
+            difference_access_level_allowed_values = ["ACCESSIBLE"]
+            if kwargs['difference_access_level'] not in difference_access_level_allowed_values:
+                raise ValueError(
+                    "Invalid value for `difference_access_level`, must be one of {0}".format(difference_access_level_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreationStarted", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "differenceAccessLevel": kwargs.get("difference_access_level", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "sensitiveDataModelId": kwargs.get("sensitive_data_model_id", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "maskingPolicyId": kwargs.get("masking_policy_id", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SdmMaskingPolicyDifferenceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SdmMaskingPolicyDifferenceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def list_security_assessments(self, compartment_id, **kwargs):
         """
         Gets a list of security assessments.
@@ -17679,6 +19786,10 @@ class DataSafeClient(object):
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
+        :param bool is_case_in_sensitive: (optional)
+            A boolean flag indicating whether the search should be case-insensitive.
+            The search is case-sensitive by default. Set this parameter to true to do case-insensitive search.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -17725,7 +19836,8 @@ class DataSafeClient(object):
             "page",
             "sort_order",
             "sort_by",
-            "opc_request_id"
+            "opc_request_id",
+            "is_case_in_sensitive"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -17806,7 +19918,8 @@ class DataSafeClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "sortBy": kwargs.get("sort_by", missing)
+            "sortBy": kwargs.get("sort_by", missing),
+            "isCaseInSensitive": kwargs.get("is_case_in_sensitive", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -18052,6 +20165,322 @@ class DataSafeClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="SensitiveDataModelCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def list_sensitive_objects(self, sensitive_data_model_id, **kwargs):
+        """
+        Gets a list of sensitive objects present in the specified sensitive data model based on the specified query parameters.
+
+
+        :param str sensitive_data_model_id: (required)
+            The OCID of the sensitive data model.
+
+        :param list[str] schema_name: (optional)
+            A filter to return only items related to specific schema name.
+
+        :param list[str] object_name: (optional)
+            A filter to return only items related to a specific object name.
+
+        :param list[str] object_type: (optional)
+            A filter to return only items related to a specific object type.
+
+            Allowed values are: "ALL", "TABLE", "EDITIONING_VIEW"
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (ASC) or descending (DESC).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. You can specify only one sort order (sortOrder).
+            The default order is ascending.
+
+            Allowed values are: "schemaName", "objectName", "objectType"
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_safe.models.SensitiveObjectCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_objects.py.html>`__ to see an example of how to use list_sensitive_objects API.
+        """
+        resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/sensitiveObjects"
+        method = "GET"
+        operation_name = "list_sensitive_objects"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveObjectCollection/ListSensitiveObjects"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "schema_name",
+            "object_name",
+            "object_type",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_sensitive_objects got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "sensitiveDataModelId": sensitive_data_model_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'object_type' in kwargs:
+            object_type_allowed_values = ["ALL", "TABLE", "EDITIONING_VIEW"]
+            for object_type_item in kwargs['object_type']:
+                if object_type_item not in object_type_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `object_type`, must be one of {0}".format(object_type_allowed_values)
+                    )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["schemaName", "objectName", "objectType"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "schemaName": self.base_client.generate_collection_format_param(kwargs.get("schema_name", missing), 'multi'),
+            "objectName": self.base_client.generate_collection_format_param(kwargs.get("object_name", missing), 'multi'),
+            "objectType": self.base_client.generate_collection_format_param(kwargs.get("object_type", missing), 'multi'),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SensitiveObjectCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SensitiveObjectCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def list_sensitive_schemas(self, sensitive_data_model_id, **kwargs):
+        """
+        Gets a list of sensitive schemas present in the specified sensitive data model based on the specified query parameters.
+
+
+        :param str sensitive_data_model_id: (required)
+            The OCID of the sensitive data model.
+
+        :param list[str] schema_name: (optional)
+            A filter to return only items related to specific schema name.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (ASC) or descending (DESC).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. You can specify only one sort order (sortOrder).
+            The default order is ascending.
+
+            Allowed values are: "schemaName"
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_safe.models.SensitiveSchemaCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_schemas.py.html>`__ to see an example of how to use list_sensitive_schemas API.
+        """
+        resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/sensitiveSchemas"
+        method = "GET"
+        operation_name = "list_sensitive_schemas"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveSchemaCollection/ListSensitiveSchemas"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "schema_name",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_sensitive_schemas got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "sensitiveDataModelId": sensitive_data_model_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["schemaName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "schemaName": self.base_client.generate_collection_format_param(kwargs.get("schema_name", missing), 'multi'),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SensitiveSchemaCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SensitiveSchemaCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
@@ -18494,7 +20923,7 @@ class DataSafeClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided.
+            The field to sort by. Only one sort parameter may be provided.
 
             Allowed values are: "DISPLAYNAME", "TIMECREATED", "TIMEUPDATED"
 
@@ -19420,6 +21849,21 @@ class DataSafeClient(object):
         :param str user_category: (optional)
             A filter to return only items that match the specified user category.
 
+        :param str user_role: (optional)
+            A filter to return only items that match the specified user role.
+
+        :param str user_profile: (optional)
+            A filter to return only items that match the specified user profile.
+
+        :param str user_type: (optional)
+            A filter to return only items that match the specified user type. The possible values can be
+              - ADMIN_PRIVILEGED
+              - APPLICATION
+              - PRIVILEGED
+              - SCHEMA
+              - NON_PRIVILEGED
+            as specified by '#/definitions/userTypes'.
+
         :param str user_key: (optional)
             A filter to return only items that match the specified user key.
 
@@ -19523,6 +21967,9 @@ class DataSafeClient(object):
             "compartment_id_in_subtree",
             "access_level",
             "user_category",
+            "user_role",
+            "user_profile",
+            "user_type",
             "user_key",
             "account_status",
             "authentication_type",
@@ -19580,6 +22027,9 @@ class DataSafeClient(object):
             "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "accessLevel": kwargs.get("access_level", missing),
             "userCategory": kwargs.get("user_category", missing),
+            "userRole": kwargs.get("user_role", missing),
+            "userProfile": kwargs.get("user_profile", missing),
+            "userType": kwargs.get("user_type", missing),
             "userKey": kwargs.get("user_key", missing),
             "accountStatus": kwargs.get("account_status", missing),
             "authenticationType": kwargs.get("authentication_type", missing),
@@ -20227,11 +22677,11 @@ class DataSafeClient(object):
 
     def patch_alerts(self, patch_alerts_details, **kwargs):
         """
-        Patch alerts. Updates one or more alerts by specifying alert Ids.
+        Updates the status of one or more alert specified by the alert IDs.
 
 
         :param oci.data_safe.models.PatchAlertsDetails patch_alerts_details: (required)
-            Details to patch alerts.
+            The alert details to update the status of one or more alert specified by the alert IDs.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -20560,6 +23010,113 @@ class DataSafeClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def patch_sdm_masking_policy_difference_columns(self, sdm_masking_policy_difference_id, patch_sdm_masking_policy_difference_columns_details, **kwargs):
+        """
+        Patches one or more SDM masking policy difference columns. You can use this operation to set the plannedAction attribute before using
+        ApplySdmMaskingPolicyDifference to process the difference based on this attribute.
+
+
+        :param str sdm_masking_policy_difference_id: (required)
+            The OCID of the SDM masking policy difference.
+
+        :param oci.data_safe.models.PatchSdmMaskingPolicyDifferenceColumnsDetails patch_sdm_masking_policy_difference_columns_details: (required)
+            Details to patch difference columns.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the if-match parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_sdm_masking_policy_difference_columns.py.html>`__ to see an example of how to use patch_sdm_masking_policy_difference_columns API.
+        """
+        resource_path = "/sdmMaskingPolicyDifferences/{sdmMaskingPolicyDifferenceId}/differenceColumns"
+        method = "PATCH"
+        operation_name = "patch_sdm_masking_policy_difference_columns"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SdmMaskingPolicyDifference/PatchSdmMaskingPolicyDifferenceColumns"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "patch_sdm_masking_policy_difference_columns got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "sdmMaskingPolicyDifferenceId": sdm_masking_policy_difference_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=patch_sdm_masking_policy_difference_columns_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=patch_sdm_masking_policy_difference_columns_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def patch_sensitive_columns(self, sensitive_data_model_id, patch_sensitive_column_details, **kwargs):
         """
         Patches one or more columns in the specified sensitive data model. Use it to create, update, or delete sensitive columns.
@@ -20670,11 +23227,11 @@ class DataSafeClient(object):
 
     def patch_target_alert_policy_association(self, patch_target_alert_policy_association_details, **kwargs):
         """
-        Creates new target-alert policy associations that will be applied on target.
+        Creates new target-alert policy associations that will be applied on the target database.
 
 
         :param oci.data_safe.models.PatchTargetAlertPolicyAssociationDetails patch_target_alert_policy_association_details: (required)
-            The details used to patch target-alert policy associations.
+            The details used to patch the target-alert policy associations.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -21109,7 +23666,7 @@ class DataSafeClient(object):
 
     def remove_schedule_report(self, report_definition_id, **kwargs):
         """
-        Deletes schedule of a PDF or XLS report.
+        Deletes the schedule of a PDF or XLS report.
 
 
         :param str report_definition_id: (required)
@@ -21547,7 +24104,7 @@ class DataSafeClient(object):
             Unique report definition identifier
 
         :param oci.data_safe.models.ScheduleReportDetails schedule_report_details: (required)
-            Details for report schedule. It contains details such as schedule, PDF/XLS and number of rows.
+            The details for the audit report schedule. It contains details such as schedule, PDF/XLS and number of rows.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -22435,7 +24992,7 @@ class DataSafeClient(object):
 
     def update_alert(self, alert_id, update_alert_details, **kwargs):
         """
-        Updates alert status of the specified alert.
+        Updates the status of the specified alert.
 
 
         :param str alert_id: (required)
@@ -23726,6 +26283,112 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_report_definition_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def update_sdm_masking_policy_difference(self, sdm_masking_policy_difference_id, update_sdm_masking_policy_difference_details, **kwargs):
+        """
+        Updates one or more attributes of the specified sdm masking policy difference.
+
+
+        :param str sdm_masking_policy_difference_id: (required)
+            The OCID of the SDM masking policy difference.
+
+        :param oci.data_safe.models.UpdateSdmMaskingPolicyDifferenceDetails update_sdm_masking_policy_difference_details: (required)
+            Details to update a sdm masking policy difference.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the if-match parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sdm_masking_policy_difference.py.html>`__ to see an example of how to use update_sdm_masking_policy_difference API.
+        """
+        resource_path = "/sdmMaskingPolicyDifferences/{sdmMaskingPolicyDifferenceId}"
+        method = "PUT"
+        operation_name = "update_sdm_masking_policy_difference"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SdmMaskingPolicyDifference/UpdateSdmMaskingPolicyDifference"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_sdm_masking_policy_difference got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "sdmMaskingPolicyDifferenceId": sdm_masking_policy_difference_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_sdm_masking_policy_difference_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_sdm_masking_policy_difference_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)

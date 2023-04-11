@@ -369,9 +369,16 @@ class UpdateAutonomousDatabaseDetails(object):
     def cpu_core_count(self):
         """
         Gets the cpu_core_count of this UpdateAutonomousDatabaseDetails.
-        The number of CPUs to be made available to the Autonomous Database.
+        The number of CPUs to be made available to the Autonomous Database.<br>
+        For Autonomous Databases on Dedicated Exadata Infrastructure:
+        - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
+        - It is suggested to use 'computeCount' parameter if you want to use fractional value to provision less than 1 core.
 
         **Note:** This parameter cannot be used with the `ocpuCount` or `computeCount` parameter.
+
+        This cannot be updated in parallel with any of the following: licenseModel, databaseEdition, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
 
         :return: The cpu_core_count of this UpdateAutonomousDatabaseDetails.
@@ -383,9 +390,16 @@ class UpdateAutonomousDatabaseDetails(object):
     def cpu_core_count(self, cpu_core_count):
         """
         Sets the cpu_core_count of this UpdateAutonomousDatabaseDetails.
-        The number of CPUs to be made available to the Autonomous Database.
+        The number of CPUs to be made available to the Autonomous Database.<br>
+        For Autonomous Databases on Dedicated Exadata Infrastructure:
+        - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
+        - It is suggested to use 'computeCount' parameter if you want to use fractional value to provision less than 1 core.
 
         **Note:** This parameter cannot be used with the `ocpuCount` or `computeCount` parameter.
+
+        This cannot be updated in parallel with any of the following: licenseModel, databaseEdition, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
 
         :param cpu_core_count: The cpu_core_count of this UpdateAutonomousDatabaseDetails.
@@ -417,7 +431,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def compute_count(self):
         """
         Gets the compute_count of this UpdateAutonomousDatabaseDetails.
-        The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.@endif
+        The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated Exadata Infrastructure. For an Autonomous Database on Shared Exadata Infrastructure, the ECPU compute model requires values in multiples of two. Required when using the computeModel parameter. When using the cpuCoreCount parameter, computeCount must be null.
+
+        This cannot be updated in parallel with any of the following: licenseModel, databaseEdition, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
 
         :return: The compute_count of this UpdateAutonomousDatabaseDetails.
@@ -429,7 +445,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def compute_count(self, compute_count):
         """
         Sets the compute_count of this UpdateAutonomousDatabaseDetails.
-        The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.@endif
+        The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated Exadata Infrastructure. For an Autonomous Database on Shared Exadata Infrastructure, the ECPU compute model requires values in multiples of two. Required when using the computeModel parameter. When using the cpuCoreCount parameter, computeCount must be null.
+
+        This cannot be updated in parallel with any of the following: licenseModel, databaseEdition, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
 
         :param compute_count: The compute_count of this UpdateAutonomousDatabaseDetails.
@@ -485,6 +503,8 @@ class UpdateAutonomousDatabaseDetails(object):
 
         **Note:** This parameter cannot be used with the `dataStorageSizeInGBs` parameter.
 
+        This cannot be updated in parallel with any of the following: licenseModel, databaseEdition, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+
         __ https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1
 
 
@@ -500,6 +520,8 @@ class UpdateAutonomousDatabaseDetails(object):
         The size, in terabytes, of the data volume that will be created and attached to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
 
         **Note:** This parameter cannot be used with the `dataStorageSizeInGBs` parameter.
+
+        This cannot be updated in parallel with any of the following: licenseModel, databaseEdition, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
         __ https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1
 
@@ -549,8 +571,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateAutonomousDatabaseDetails.
-        The user-friendly name for the Autonomous Database. The name does not have to be unique. The display name can only be updated for Autonomous Databases
-        using dedicated Exadata infrastructure.
+        The user-friendly name for the Autonomous Database. The name does not have to be unique. The display name can only be updated for Autonomous Databases using dedicated Exadata Infrastructure. This parameter may not be updated in parallel with dbVersion.
 
 
         :return: The display_name of this UpdateAutonomousDatabaseDetails.
@@ -562,8 +583,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateAutonomousDatabaseDetails.
-        The user-friendly name for the Autonomous Database. The name does not have to be unique. The display name can only be updated for Autonomous Databases
-        using dedicated Exadata infrastructure.
+        The user-friendly name for the Autonomous Database. The name does not have to be unique. The display name can only be updated for Autonomous Databases using dedicated Exadata Infrastructure. This parameter may not be updated in parallel with dbVersion.
 
 
         :param display_name: The display_name of this UpdateAutonomousDatabaseDetails.
@@ -577,6 +597,8 @@ class UpdateAutonomousDatabaseDetails(object):
         Gets the is_free_tier of this UpdateAutonomousDatabaseDetails.
         Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isLocalDataGuardEnabled
+
 
         :return: The is_free_tier of this UpdateAutonomousDatabaseDetails.
         :rtype: bool
@@ -588,6 +610,8 @@ class UpdateAutonomousDatabaseDetails(object):
         """
         Sets the is_free_tier of this UpdateAutonomousDatabaseDetails.
         Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isLocalDataGuardEnabled
 
 
         :param is_free_tier: The is_free_tier of this UpdateAutonomousDatabaseDetails.
@@ -601,6 +625,8 @@ class UpdateAutonomousDatabaseDetails(object):
         Gets the admin_password of this UpdateAutonomousDatabaseDetails.
         The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (\") or the username \"admin\", regardless of casing. It must be different from the last four passwords and it must not be a password used within the last 24 hours.
 
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, whitelistedIps, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, or isFreeTier.
+
 
         :return: The admin_password of this UpdateAutonomousDatabaseDetails.
         :rtype: str
@@ -612,6 +638,8 @@ class UpdateAutonomousDatabaseDetails(object):
         """
         Sets the admin_password of this UpdateAutonomousDatabaseDetails.
         The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (\") or the username \"admin\", regardless of casing. It must be different from the last four passwords and it must not be a password used within the last 24 hours.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, whitelistedIps, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, or isFreeTier.
 
 
         :param admin_password: The admin_password of this UpdateAutonomousDatabaseDetails.
@@ -627,6 +655,8 @@ class UpdateAutonomousDatabaseDetails(object):
         For databases using dedicated Exadata infrastructure, the name must begin with an alphabetic character, and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
         For databases using shared Exadata infrastructure, the name must begin with an alphabetic character, and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
 
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails.
+
 
         :return: The db_name of this UpdateAutonomousDatabaseDetails.
         :rtype: str
@@ -640,6 +670,8 @@ class UpdateAutonomousDatabaseDetails(object):
         New name for this Autonomous Database.
         For databases using dedicated Exadata infrastructure, the name must begin with an alphabetic character, and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
         For databases using shared Exadata infrastructure, the name must begin with an alphabetic character, and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails.
 
 
         :param db_name: The db_name of this UpdateAutonomousDatabaseDetails.
@@ -722,6 +754,8 @@ class UpdateAutonomousDatabaseDetails(object):
         - AJD - indicates an Autonomous JSON Database
         - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
 
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+
         Allowed values for this property are: "OLTP", "DW", "AJD", "APEX"
 
 
@@ -740,6 +774,8 @@ class UpdateAutonomousDatabaseDetails(object):
         - DW - indicates an Autonomous Data Warehouse database
         - AJD - indicates an Autonomous JSON Database
         - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
 
         :param db_workload: The db_workload of this UpdateAutonomousDatabaseDetails.
@@ -762,6 +798,8 @@ class UpdateAutonomousDatabaseDetails(object):
         Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
         Autonomous Exadata Infrastructure level. When using `shared Exadata infrastructure`__, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
@@ -781,6 +819,8 @@ class UpdateAutonomousDatabaseDetails(object):
         License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
         Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
         Autonomous Exadata Infrastructure level. When using `shared Exadata infrastructure`__, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
@@ -848,6 +888,8 @@ class UpdateAutonomousDatabaseDetails(object):
 
         For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
 
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
@@ -870,6 +912,8 @@ class UpdateAutonomousDatabaseDetails(object):
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"1.1.2.25\"]`
 
         For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
@@ -922,6 +966,8 @@ class UpdateAutonomousDatabaseDetails(object):
 
         For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
 
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
@@ -944,6 +990,8 @@ class UpdateAutonomousDatabaseDetails(object):
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"1.1.2.25\"]`
 
         For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
@@ -985,7 +1033,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_refreshable_clone(self):
         """
         Gets the is_refreshable_clone of this UpdateAutonomousDatabaseDetails.
-        Indicates whether the Autonomous Database is a refreshable clone.
+        Indicates if the Autonomous Database is a refreshable clone.
+
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
 
         :return: The is_refreshable_clone of this UpdateAutonomousDatabaseDetails.
@@ -997,7 +1047,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_refreshable_clone(self, is_refreshable_clone):
         """
         Sets the is_refreshable_clone of this UpdateAutonomousDatabaseDetails.
-        Indicates whether the Autonomous Database is a refreshable clone.
+        Indicates if the Autonomous Database is a refreshable clone.
+
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
 
         :param is_refreshable_clone: The is_refreshable_clone of this UpdateAutonomousDatabaseDetails.
@@ -1048,6 +1100,8 @@ class UpdateAutonomousDatabaseDetails(object):
 
         To enable cross-region Autonomous Data Guard on shared Exadata infrastructure, see :func:`create_cross_region_autonomous_database_data_guard_details`.
 
+        This cannot be updated in parallel with any of the following: isMTLSRequired, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-data-guard-about.html#GUID-045AD017-8120-4BDC-AF58-7430FFE28D2B
 
 
@@ -1066,6 +1120,8 @@ class UpdateAutonomousDatabaseDetails(object):
         To create a local standby, set to `TRUE`. To delete a local standby, set to `FALSE`. For more information on using Autonomous Data Guard on shared Exadata infrastructure (local and cross-region) , see `About Standby Databases`__
 
         To enable cross-region Autonomous Data Guard on shared Exadata infrastructure, see :func:`create_cross_region_autonomous_database_data_guard_details`.
+
+        This cannot be updated in parallel with any of the following: isMTLSRequired, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-data-guard-about.html#GUID-045AD017-8120-4BDC-AF58-7430FFE28D2B
 
@@ -1177,7 +1233,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def open_mode(self):
         """
         Gets the open_mode of this UpdateAutonomousDatabaseDetails.
-        The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+        Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
+
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
         Allowed values for this property are: "READ_ONLY", "READ_WRITE"
 
@@ -1191,7 +1249,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def open_mode(self, open_mode):
         """
         Sets the open_mode of this UpdateAutonomousDatabaseDetails.
-        The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+        Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
+
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
 
         :param open_mode: The open_mode of this UpdateAutonomousDatabaseDetails.
@@ -1209,7 +1269,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def permission_level(self):
         """
         Gets the permission_level of this UpdateAutonomousDatabaseDetails.
-        The Autonomous Database permission level. Restricted mode allows access only to admin users.
+        The Autonomous Database permission level. Restricted mode allows access only by admin users.
+
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
         Allowed values for this property are: "RESTRICTED", "UNRESTRICTED"
 
@@ -1223,7 +1285,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def permission_level(self, permission_level):
         """
         Sets the permission_level of this UpdateAutonomousDatabaseDetails.
-        The Autonomous Database permission level. Restricted mode allows access only to admin users.
+        The Autonomous Database permission level. Restricted mode allows access only by admin users.
+
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
 
         :param permission_level: The permission_level of this UpdateAutonomousDatabaseDetails.
@@ -1287,7 +1351,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def private_endpoint_label(self):
         """
         Gets the private_endpoint_label of this UpdateAutonomousDatabaseDetails.
-        The private endpoint label for the resource. Setting this to an empty string, after the private endpoint database gets created, will change the same private endpoint database to the public endpoint database.
+        The resource's private endpoint label. Setting this to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
+
+        This setting cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
 
         :return: The private_endpoint_label of this UpdateAutonomousDatabaseDetails.
@@ -1299,7 +1365,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def private_endpoint_label(self, private_endpoint_label):
         """
         Sets the private_endpoint_label of this UpdateAutonomousDatabaseDetails.
-        The private endpoint label for the resource. Setting this to an empty string, after the private endpoint database gets created, will change the same private endpoint database to the public endpoint database.
+        The resource's private endpoint label. Setting this to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
+
+        This setting cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
 
         :param private_endpoint_label: The private_endpoint_label of this UpdateAutonomousDatabaseDetails.
@@ -1369,7 +1437,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def customer_contacts(self):
         """
         Gets the customer_contacts of this UpdateAutonomousDatabaseDetails.
-        Customer Contacts. Setting this to an empty list removes all customer contacts of an Oracle Autonomous Database.
+        Customer Contacts. Setting this to an empty list removes all customer contacts of an Oracle
+
+        This cannot be updated in parallel with any of the following: isMTLSConnectionRequired, scheduledOperations, or dbToolsDetails.
 
 
         :return: The customer_contacts of this UpdateAutonomousDatabaseDetails.
@@ -1381,7 +1451,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def customer_contacts(self, customer_contacts):
         """
         Sets the customer_contacts of this UpdateAutonomousDatabaseDetails.
-        Customer Contacts. Setting this to an empty list removes all customer contacts of an Oracle Autonomous Database.
+        Customer Contacts. Setting this to an empty list removes all customer contacts of an Oracle
+
+        This cannot be updated in parallel with any of the following: isMTLSConnectionRequired, scheduledOperations, or dbToolsDetails.
 
 
         :param customer_contacts: The customer_contacts of this UpdateAutonomousDatabaseDetails.
@@ -1393,7 +1465,17 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_mtls_connection_required(self):
         """
         Gets the is_mtls_connection_required of this UpdateAutonomousDatabaseDetails.
-        Indicates whether the Autonomous Database requires mTLS connections.
+        Specifies if the Autonomous Database requires mTLS connections.
+
+        This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+
+        Service Change: The default value of the isMTLSConnectionRequired attribute will change from true to false on July 1, 2023 in the following APIs:
+        - CreateAutonomousDatabase
+        - GetAutonomousDatabase
+        - UpdateAutonomousDatabase
+        Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous Databases on shared Exadata infrastructure.
+        Does this impact me? If you use or maintain custom scripts or Terraform scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the changed default value of the attribute. Should you choose not to leave your scripts unchanged, the API calls containing this attribute will continue to work, but the default value will switch from true to false.
+        How do I make this change? Using either OCI SDKs or command line tools, update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to true.
 
 
         :return: The is_mtls_connection_required of this UpdateAutonomousDatabaseDetails.
@@ -1405,7 +1487,17 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_mtls_connection_required(self, is_mtls_connection_required):
         """
         Sets the is_mtls_connection_required of this UpdateAutonomousDatabaseDetails.
-        Indicates whether the Autonomous Database requires mTLS connections.
+        Specifies if the Autonomous Database requires mTLS connections.
+
+        This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+
+        Service Change: The default value of the isMTLSConnectionRequired attribute will change from true to false on July 1, 2023 in the following APIs:
+        - CreateAutonomousDatabase
+        - GetAutonomousDatabase
+        - UpdateAutonomousDatabase
+        Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous Databases on shared Exadata infrastructure.
+        Does this impact me? If you use or maintain custom scripts or Terraform scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the changed default value of the attribute. Should you choose not to leave your scripts unchanged, the API calls containing this attribute will continue to work, but the default value will switch from true to false.
+        How do I make this change? Using either OCI SDKs or command line tools, update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to true.
 
 
         :param is_mtls_connection_required: The is_mtls_connection_required of this UpdateAutonomousDatabaseDetails.
@@ -1417,7 +1509,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def scheduled_operations(self):
         """
         Gets the scheduled_operations of this UpdateAutonomousDatabaseDetails.
-        list of scheduled operations
+        The list of scheduled operations.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
 
         :return: The scheduled_operations of this UpdateAutonomousDatabaseDetails.
@@ -1429,7 +1523,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def scheduled_operations(self, scheduled_operations):
         """
         Sets the scheduled_operations of this UpdateAutonomousDatabaseDetails.
-        list of scheduled operations
+        The list of scheduled operations.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
 
         :param scheduled_operations: The scheduled_operations of this UpdateAutonomousDatabaseDetails.
@@ -1491,6 +1587,8 @@ class UpdateAutonomousDatabaseDetails(object):
         Gets the database_edition of this UpdateAutonomousDatabaseDetails.
         The Oracle Database Edition that applies to the Autonomous databases.
 
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+
 
         :return: The database_edition of this UpdateAutonomousDatabaseDetails.
         :rtype: str
@@ -1503,6 +1601,8 @@ class UpdateAutonomousDatabaseDetails(object):
         Sets the database_edition of this UpdateAutonomousDatabaseDetails.
         The Oracle Database Edition that applies to the Autonomous databases.
 
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+
 
         :param database_edition: The database_edition of this UpdateAutonomousDatabaseDetails.
         :type: str
@@ -1513,7 +1613,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def db_tools_details(self):
         """
         Gets the db_tools_details of this UpdateAutonomousDatabaseDetails.
-        List of database tools details.
+        The list of database tools details.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
 
 
         :return: The db_tools_details of this UpdateAutonomousDatabaseDetails.
@@ -1525,7 +1627,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def db_tools_details(self, db_tools_details):
         """
         Sets the db_tools_details of this UpdateAutonomousDatabaseDetails.
-        List of database tools details.
+        The list of database tools details.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
 
 
         :param db_tools_details: The db_tools_details of this UpdateAutonomousDatabaseDetails.

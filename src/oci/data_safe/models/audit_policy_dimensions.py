@@ -44,26 +44,34 @@ class AuditPolicyDimensions(object):
 
         :param audit_policy_category:
             The value to assign to the audit_policy_category property of this AuditPolicyDimensions.
-            Allowed values for this property are: "BASIC_ACTIVITY", "ADMIN_USER_ACTIVITY", "USER_ACTIVITY", "ORACLE_PREDEFINED", "COMPLIANCE_STANDARD", "CUSTOM"
+            Allowed values for this property are: "BASIC_ACTIVITY", "ADMIN_USER_ACTIVITY", "USER_ACTIVITY", "ORACLE_PREDEFINED", "COMPLIANCE_STANDARD", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type audit_policy_category: str
 
         :param audit_policy_name:
             The value to assign to the audit_policy_name property of this AuditPolicyDimensions.
         :type audit_policy_name: str
 
+        :param target_id:
+            The value to assign to the target_id property of this AuditPolicyDimensions.
+        :type target_id: str
+
         """
         self.swagger_types = {
             'audit_policy_category': 'str',
-            'audit_policy_name': 'str'
+            'audit_policy_name': 'str',
+            'target_id': 'str'
         }
 
         self.attribute_map = {
             'audit_policy_category': 'auditPolicyCategory',
-            'audit_policy_name': 'auditPolicyName'
+            'audit_policy_name': 'auditPolicyName',
+            'target_id': 'targetId'
         }
 
         self._audit_policy_category = None
         self._audit_policy_name = None
+        self._target_id = None
 
     @property
     def audit_policy_category(self):
@@ -71,7 +79,8 @@ class AuditPolicyDimensions(object):
         Gets the audit_policy_category of this AuditPolicyDimensions.
         The category to which the audit policy belongs.
 
-        Allowed values for this property are: "BASIC_ACTIVITY", "ADMIN_USER_ACTIVITY", "USER_ACTIVITY", "ORACLE_PREDEFINED", "COMPLIANCE_STANDARD", "CUSTOM"
+        Allowed values for this property are: "BASIC_ACTIVITY", "ADMIN_USER_ACTIVITY", "USER_ACTIVITY", "ORACLE_PREDEFINED", "COMPLIANCE_STANDARD", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The audit_policy_category of this AuditPolicyDimensions.
@@ -91,17 +100,14 @@ class AuditPolicyDimensions(object):
         """
         allowed_values = ["BASIC_ACTIVITY", "ADMIN_USER_ACTIVITY", "USER_ACTIVITY", "ORACLE_PREDEFINED", "COMPLIANCE_STANDARD", "CUSTOM"]
         if not value_allowed_none_or_none_sentinel(audit_policy_category, allowed_values):
-            raise ValueError(
-                "Invalid value for `audit_policy_category`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            audit_policy_category = 'UNKNOWN_ENUM_VALUE'
         self._audit_policy_category = audit_policy_category
 
     @property
     def audit_policy_name(self):
         """
         Gets the audit_policy_name of this AuditPolicyDimensions.
-        Indicates the audit policy name. Refer to the `documentation`__ for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+        The name of the audit policy. Refer to the `documentation`__ for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
 
         __ https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827
 
@@ -115,7 +121,7 @@ class AuditPolicyDimensions(object):
     def audit_policy_name(self, audit_policy_name):
         """
         Sets the audit_policy_name of this AuditPolicyDimensions.
-        Indicates the audit policy name. Refer to the `documentation`__ for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+        The name of the audit policy. Refer to the `documentation`__ for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
 
         __ https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827
 
@@ -124,6 +130,30 @@ class AuditPolicyDimensions(object):
         :type: str
         """
         self._audit_policy_name = audit_policy_name
+
+    @property
+    def target_id(self):
+        """
+        Gets the target_id of this AuditPolicyDimensions.
+        The OCID of the target database for which the audit policy will be created.
+
+
+        :return: The target_id of this AuditPolicyDimensions.
+        :rtype: str
+        """
+        return self._target_id
+
+    @target_id.setter
+    def target_id(self, target_id):
+        """
+        Sets the target_id of this AuditPolicyDimensions.
+        The OCID of the target database for which the audit policy will be created.
+
+
+        :param target_id: The target_id of this AuditPolicyDimensions.
+        :type: str
+        """
+        self._target_id = target_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

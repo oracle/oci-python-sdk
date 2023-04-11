@@ -5,7 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
-23.03.2 - 2023.03.22
+23.04.11 - 2023.04.11
+=====================
+* Point to OCI Python SDK Repo
+
+=====================
+23.03.22 - 2023.03.22
 =====================
 * Added OCI_RESOURCES Table populated from showoci
 

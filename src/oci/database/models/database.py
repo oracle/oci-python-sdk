@@ -511,6 +511,9 @@ class Database(object):
     def db_workload(self):
         """
         Gets the db_workload of this Database.
+        **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service.
+        Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+
         The database workload type.
 
 
@@ -523,6 +526,9 @@ class Database(object):
     def db_workload(self, db_workload):
         """
         Sets the db_workload of this Database.
+        **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service.
+        Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
+
         The database workload type.
 
 

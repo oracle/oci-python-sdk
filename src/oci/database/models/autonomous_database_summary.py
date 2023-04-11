@@ -314,10 +314,6 @@ class AutonomousDatabaseSummary(object):
             The value to assign to the lifecycle_details property of this AutonomousDatabaseSummary.
         :type lifecycle_details: str
 
-        :param additional_database_status:
-            The value to assign to the additional_database_status property of this AutonomousDatabaseSummary.
-        :type additional_database_status: list[str]
-
         :param kms_key_id:
             The value to assign to the kms_key_id property of this AutonomousDatabaseSummary.
         :type kms_key_id: str
@@ -748,7 +744,6 @@ class AutonomousDatabaseSummary(object):
             'compartment_id': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
-            'additional_database_status': 'list[str]',
             'kms_key_id': 'str',
             'vault_id': 'str',
             'kms_key_lifecycle_details': 'str',
@@ -854,7 +849,6 @@ class AutonomousDatabaseSummary(object):
             'compartment_id': 'compartmentId',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
-            'additional_database_status': 'additionalDatabaseStatus',
             'kms_key_id': 'kmsKeyId',
             'vault_id': 'vaultId',
             'kms_key_lifecycle_details': 'kmsKeyLifecycleDetails',
@@ -959,7 +953,6 @@ class AutonomousDatabaseSummary(object):
         self._compartment_id = None
         self._lifecycle_state = None
         self._lifecycle_details = None
-        self._additional_database_status = None
         self._kms_key_id = None
         self._vault_id = None
         self._kms_key_lifecycle_details = None
@@ -1168,30 +1161,6 @@ class AutonomousDatabaseSummary(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
-
-    @property
-    def additional_database_status(self):
-        """
-        Gets the additional_database_status of this AutonomousDatabaseSummary.
-        Additional details about the status of the database, such as the progress of a backup or restore operation. UNPUBLISHED \"HIDDEN\" FIELD. This field is being added to unblock console functionality but will not be published in the SDK or documentation. It will be present in responses, so deprecating will require coordination to ensure we do not break customers if they begin relying on this field. Please see https://confluence.oci.oraclecorp.com/pages/viewpage.action?pageId=58769459 for details regarding the motivation of this field and the longer term plan.
-
-
-        :return: The additional_database_status of this AutonomousDatabaseSummary.
-        :rtype: list[str]
-        """
-        return self._additional_database_status
-
-    @additional_database_status.setter
-    def additional_database_status(self, additional_database_status):
-        """
-        Sets the additional_database_status of this AutonomousDatabaseSummary.
-        Additional details about the status of the database, such as the progress of a backup or restore operation. UNPUBLISHED \"HIDDEN\" FIELD. This field is being added to unblock console functionality but will not be published in the SDK or documentation. It will be present in responses, so deprecating will require coordination to ensure we do not break customers if they begin relying on this field. Please see https://confluence.oci.oraclecorp.com/pages/viewpage.action?pageId=58769459 for details regarding the motivation of this field and the longer term plan.
-
-
-        :param additional_database_status: The additional_database_status of this AutonomousDatabaseSummary.
-        :type: list[str]
-        """
-        self._additional_database_status = additional_database_status
 
     @property
     def kms_key_id(self):
@@ -1423,6 +1392,8 @@ class AutonomousDatabaseSummary(object):
         Gets the is_free_tier of this AutonomousDatabaseSummary.
         Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isLocalDataGuardEnabled
+
 
         :return: The is_free_tier of this AutonomousDatabaseSummary.
         :rtype: bool
@@ -1434,6 +1405,8 @@ class AutonomousDatabaseSummary(object):
         """
         Sets the is_free_tier of this AutonomousDatabaseSummary.
         Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isLocalDataGuardEnabled
 
 
         :param is_free_tier: The is_free_tier of this AutonomousDatabaseSummary.
@@ -1629,7 +1602,8 @@ class AutonomousDatabaseSummary(object):
     def compute_count(self):
         """
         Gets the compute_count of this AutonomousDatabaseSummary.
-        The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure.
+        For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
 
 
         :return: The compute_count of this AutonomousDatabaseSummary.
@@ -1641,7 +1615,8 @@ class AutonomousDatabaseSummary(object):
     def compute_count(self, compute_count):
         """
         Sets the compute_count of this AutonomousDatabaseSummary.
-        The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure.
+        For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
 
 
         :param compute_count: The compute_count of this AutonomousDatabaseSummary.
@@ -1793,7 +1768,7 @@ class AutonomousDatabaseSummary(object):
     def memory_per_oracle_compute_unit_in_gbs(self):
         """
         Gets the memory_per_oracle_compute_unit_in_gbs of this AutonomousDatabaseSummary.
-        The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+        The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
 
 
         :return: The memory_per_oracle_compute_unit_in_gbs of this AutonomousDatabaseSummary.
@@ -1805,7 +1780,7 @@ class AutonomousDatabaseSummary(object):
     def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
         """
         Sets the memory_per_oracle_compute_unit_in_gbs of this AutonomousDatabaseSummary.
-        The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+        The amount of memory (in GBs) enabled per each CPU in the Autonomous VM Cluster.
 
 
         :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this AutonomousDatabaseSummary.
@@ -2048,6 +2023,8 @@ class AutonomousDatabaseSummary(object):
         Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
         Autonomous Exadata Infrastructure level. When using `shared Exadata infrastructure`__, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
@@ -2068,6 +2045,8 @@ class AutonomousDatabaseSummary(object):
         License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
         Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
         Autonomous Exadata Infrastructure level. When using `shared Exadata infrastructure`__, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
@@ -2277,7 +2256,9 @@ class AutonomousDatabaseSummary(object):
     def private_endpoint_label(self):
         """
         Gets the private_endpoint_label of this AutonomousDatabaseSummary.
-        The private endpoint label for the resource. Setting this to an empty string, after the private endpoint database gets created, will change the same private endpoint database to the public endpoint database.
+        The resource's private endpoint label. Setting this to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
+
+        This setting cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
 
         :return: The private_endpoint_label of this AutonomousDatabaseSummary.
@@ -2289,7 +2270,9 @@ class AutonomousDatabaseSummary(object):
     def private_endpoint_label(self, private_endpoint_label):
         """
         Sets the private_endpoint_label of this AutonomousDatabaseSummary.
-        The private endpoint label for the resource. Setting this to an empty string, after the private endpoint database gets created, will change the same private endpoint database to the public endpoint database.
+        The resource's private endpoint label. Setting this to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
+
+        This setting cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
 
         :param private_endpoint_label: The private_endpoint_label of this AutonomousDatabaseSummary.
@@ -2380,6 +2363,8 @@ class AutonomousDatabaseSummary(object):
         - AJD - indicates an Autonomous JSON Database
         - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
 
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+
         Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
@@ -2399,6 +2384,8 @@ class AutonomousDatabaseSummary(object):
         - DW - indicates an Autonomous Data Warehouse database
         - AJD - indicates an Autonomous JSON Database
         - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
 
         :param db_workload: The db_workload of this AutonomousDatabaseSummary.
@@ -2460,6 +2447,8 @@ class AutonomousDatabaseSummary(object):
 
         For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
 
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
@@ -2482,6 +2471,8 @@ class AutonomousDatabaseSummary(object):
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"1.1.2.25\"]`
 
         For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
@@ -2534,6 +2525,8 @@ class AutonomousDatabaseSummary(object):
 
         For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
 
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
@@ -2556,6 +2549,8 @@ class AutonomousDatabaseSummary(object):
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"1.1.2.25\"]`
 
         For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
@@ -2755,7 +2750,9 @@ class AutonomousDatabaseSummary(object):
     def is_refreshable_clone(self):
         """
         Gets the is_refreshable_clone of this AutonomousDatabaseSummary.
-        Indicates whether the Autonomous Database is a refreshable clone.
+        Indicates if the Autonomous Database is a refreshable clone.
+
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
 
         :return: The is_refreshable_clone of this AutonomousDatabaseSummary.
@@ -2767,7 +2764,9 @@ class AutonomousDatabaseSummary(object):
     def is_refreshable_clone(self, is_refreshable_clone):
         """
         Sets the is_refreshable_clone of this AutonomousDatabaseSummary.
-        Indicates whether the Autonomous Database is a refreshable clone.
+        Indicates if the Autonomous Database is a refreshable clone.
+
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
 
         :param is_refreshable_clone: The is_refreshable_clone of this AutonomousDatabaseSummary.
@@ -2851,7 +2850,9 @@ class AutonomousDatabaseSummary(object):
     def open_mode(self):
         """
         Gets the open_mode of this AutonomousDatabaseSummary.
-        The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+        Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
+
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
         Allowed values for this property are: "READ_ONLY", "READ_WRITE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -2866,7 +2867,9 @@ class AutonomousDatabaseSummary(object):
     def open_mode(self, open_mode):
         """
         Sets the open_mode of this AutonomousDatabaseSummary.
-        The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+        Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
+
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
 
         :param open_mode: The open_mode of this AutonomousDatabaseSummary.
@@ -2969,7 +2972,9 @@ class AutonomousDatabaseSummary(object):
     def permission_level(self):
         """
         Gets the permission_level of this AutonomousDatabaseSummary.
-        The Autonomous Database permission level. Restricted mode allows access only to admin users.
+        The Autonomous Database permission level. Restricted mode allows access only by admin users.
+
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
         Allowed values for this property are: "RESTRICTED", "UNRESTRICTED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -2984,7 +2989,9 @@ class AutonomousDatabaseSummary(object):
     def permission_level(self, permission_level):
         """
         Sets the permission_level of this AutonomousDatabaseSummary.
-        The Autonomous Database permission level. Restricted mode allows access only to admin users.
+        The Autonomous Database permission level. Restricted mode allows access only by admin users.
+
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
 
         :param permission_level: The permission_level of this AutonomousDatabaseSummary.
@@ -3447,7 +3454,17 @@ class AutonomousDatabaseSummary(object):
     def is_mtls_connection_required(self):
         """
         Gets the is_mtls_connection_required of this AutonomousDatabaseSummary.
-        Indicates whether the Autonomous Database requires mTLS connections.
+        Specifies if the Autonomous Database requires mTLS connections.
+
+        This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+
+        Service Change: The default value of the isMTLSConnectionRequired attribute will change from true to false on July 1, 2023 in the following APIs:
+        - CreateAutonomousDatabase
+        - GetAutonomousDatabase
+        - UpdateAutonomousDatabase
+        Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous Databases on shared Exadata infrastructure.
+        Does this impact me? If you use or maintain custom scripts or Terraform scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the changed default value of the attribute. Should you choose not to leave your scripts unchanged, the API calls containing this attribute will continue to work, but the default value will switch from true to false.
+        How do I make this change? Using either OCI SDKs or command line tools, update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to true.
 
 
         :return: The is_mtls_connection_required of this AutonomousDatabaseSummary.
@@ -3459,7 +3476,17 @@ class AutonomousDatabaseSummary(object):
     def is_mtls_connection_required(self, is_mtls_connection_required):
         """
         Sets the is_mtls_connection_required of this AutonomousDatabaseSummary.
-        Indicates whether the Autonomous Database requires mTLS connections.
+        Specifies if the Autonomous Database requires mTLS connections.
+
+        This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+
+        Service Change: The default value of the isMTLSConnectionRequired attribute will change from true to false on July 1, 2023 in the following APIs:
+        - CreateAutonomousDatabase
+        - GetAutonomousDatabase
+        - UpdateAutonomousDatabase
+        Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous Databases on shared Exadata infrastructure.
+        Does this impact me? If you use or maintain custom scripts or Terraform scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the changed default value of the attribute. Should you choose not to leave your scripts unchanged, the API calls containing this attribute will continue to work, but the default value will switch from true to false.
+        How do I make this change? Using either OCI SDKs or command line tools, update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to true.
 
 
         :param is_mtls_connection_required: The is_mtls_connection_required of this AutonomousDatabaseSummary.
@@ -3551,7 +3578,9 @@ class AutonomousDatabaseSummary(object):
     def scheduled_operations(self):
         """
         Gets the scheduled_operations of this AutonomousDatabaseSummary.
-        list of scheduled operations
+        The list of scheduled operations.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
 
         :return: The scheduled_operations of this AutonomousDatabaseSummary.
@@ -3563,7 +3592,9 @@ class AutonomousDatabaseSummary(object):
     def scheduled_operations(self, scheduled_operations):
         """
         Sets the scheduled_operations of this AutonomousDatabaseSummary.
-        list of scheduled operations
+        The list of scheduled operations.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
 
         :param scheduled_operations: The scheduled_operations of this AutonomousDatabaseSummary.
@@ -3705,7 +3736,9 @@ class AutonomousDatabaseSummary(object):
     def db_tools_details(self):
         """
         Gets the db_tools_details of this AutonomousDatabaseSummary.
-        List of database tools details.
+        The list of database tools details.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
 
 
         :return: The db_tools_details of this AutonomousDatabaseSummary.
@@ -3717,7 +3750,9 @@ class AutonomousDatabaseSummary(object):
     def db_tools_details(self, db_tools_details):
         """
         Sets the db_tools_details of this AutonomousDatabaseSummary.
-        List of database tools details.
+        The list of database tools details.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
 
 
         :param db_tools_details: The db_tools_details of this AutonomousDatabaseSummary.

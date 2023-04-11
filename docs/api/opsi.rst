@@ -21,6 +21,31 @@ Opsi
     oci.opsi.models.AddEmManagedExternalExadataInsightMembersDetails
     oci.opsi.models.AddExadataInsightMembersDetails
     oci.opsi.models.AddPeComanagedExadataInsightMembersDetails
+    oci.opsi.models.AddmDbCollection
+    oci.opsi.models.AddmDbFindingAggregation
+    oci.opsi.models.AddmDbFindingAggregationCollection
+    oci.opsi.models.AddmDbFindingCategoryCollection
+    oci.opsi.models.AddmDbFindingCategorySummary
+    oci.opsi.models.AddmDbFindingsTimeSeriesCollection
+    oci.opsi.models.AddmDbFindingsTimeSeriesSummary
+    oci.opsi.models.AddmDbParameterAggregation
+    oci.opsi.models.AddmDbParameterAggregationCollection
+    oci.opsi.models.AddmDbParameterCategoryCollection
+    oci.opsi.models.AddmDbParameterCategorySummary
+    oci.opsi.models.AddmDbParameterChangeAggregation
+    oci.opsi.models.AddmDbParameterChangeAggregationCollection
+    oci.opsi.models.AddmDbRecommendationAggregation
+    oci.opsi.models.AddmDbRecommendationAggregationCollection
+    oci.opsi.models.AddmDbRecommendationCategoryCollection
+    oci.opsi.models.AddmDbRecommendationCategorySummary
+    oci.opsi.models.AddmDbRecommendationsTimeSeriesCollection
+    oci.opsi.models.AddmDbRecommendationsTimeSeriesSummary
+    oci.opsi.models.AddmDbSchemaObjectCollection
+    oci.opsi.models.AddmDbSchemaObjectSummary
+    oci.opsi.models.AddmDbSqlStatementCollection
+    oci.opsi.models.AddmDbSqlStatementSummary
+    oci.opsi.models.AddmDbSummary
+    oci.opsi.models.AddmReport
     oci.opsi.models.AutonomousDatabaseConfigurationSummary
     oci.opsi.models.AutonomousDatabaseInsight
     oci.opsi.models.AutonomousDatabaseInsightSummary
@@ -104,6 +129,7 @@ Opsi
     oci.opsi.models.DBExternalInstance
     oci.opsi.models.DBExternalProperties
     oci.opsi.models.DBOSConfigInstance
+    oci.opsi.models.DBParameters
     oci.opsi.models.DataObjectColumnMetadata
     oci.opsi.models.DataObjectColumnUnit
     oci.opsi.models.DataObjectCoreColumnUnit
@@ -128,6 +154,7 @@ Opsi
     oci.opsi.models.DatabaseInsightsCollection
     oci.opsi.models.DatabaseInsightsDataObject
     oci.opsi.models.DatabaseInsightsDataObjectSummary
+    oci.opsi.models.DatabaseParameterTypeDetails
     oci.opsi.models.DiskGroupDetails
     oci.opsi.models.DownloadOperationsInsightsWarehouseWalletDetails
     oci.opsi.models.EmManagedExternalDatabaseConfigurationSummary
@@ -218,6 +245,8 @@ Opsi
     oci.opsi.models.ImportableComputeEntitySummaryCollection
     oci.opsi.models.ImportableEnterpriseManagerEntity
     oci.opsi.models.ImportableEnterpriseManagerEntityCollection
+    oci.opsi.models.IngestAddmReportsDetails
+    oci.opsi.models.IngestAddmReportsResponseDetails
     oci.opsi.models.IngestDatabaseConfigurationDetails
     oci.opsi.models.IngestDatabaseConfigurationResponseDetails
     oci.opsi.models.IngestHostConfigurationDetails
@@ -282,6 +311,7 @@ Opsi
     oci.opsi.models.QueryDataObjectResultSetColumnMetadata
     oci.opsi.models.QueryDataObjectResultSetRowsCollection
     oci.opsi.models.QueryOpsiDataObjectDataDetails
+    oci.opsi.models.RelatedObjectTypeDetails
     oci.opsi.models.ResourceCapacityTrendAggregation
     oci.opsi.models.ResourceFilters
     oci.opsi.models.ResourceInsightCurrentUtilization
@@ -291,6 +321,7 @@ Opsi
     oci.opsi.models.ResourceStatisticsAggregation
     oci.opsi.models.ResourceUsageSummary
     oci.opsi.models.ResourceUsageTrendAggregation
+    oci.opsi.models.SchemaObjectTypeDetails
     oci.opsi.models.SqlBucket
     oci.opsi.models.SqlInsightAggregation
     oci.opsi.models.SqlInsightAggregationCollection
@@ -318,6 +349,7 @@ Opsi
     oci.opsi.models.SqlText
     oci.opsi.models.SqlTextCollection
     oci.opsi.models.SqlTextSummary
+    oci.opsi.models.SqlTypeDetails
     oci.opsi.models.StorageServerDetails
     oci.opsi.models.StorageUsageTrend
     oci.opsi.models.StorageUsageTrendAggregation

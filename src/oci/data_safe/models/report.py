@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Report(object):
     """
-    Description of Report.
+    The description of the report.
     """
 
     #: A constant which can be used with the mime_type property of a Report.
@@ -294,7 +294,7 @@ class Report(object):
     def time_generated(self):
         """
         **[Required]** Gets the time_generated of this Report.
-        Specifies the time at which the report was generated.
+        Specifies the date and time the report was generated.
 
 
         :return: The time_generated of this Report.
@@ -306,7 +306,7 @@ class Report(object):
     def time_generated(self, time_generated):
         """
         Sets the time_generated of this Report.
-        Specifies the time at which the report was generated.
+        Specifies the date and time the report was generated.
 
 
         :param time_generated: The time_generated of this Report.
@@ -318,7 +318,7 @@ class Report(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this Report.
-        The current state of the report.
+        The current state of the audit report.
 
         Allowed values for this property are: "UPDATING", "ACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -333,7 +333,7 @@ class Report(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Report.
-        The current state of the report.
+        The current state of the audit report.
 
 
         :param lifecycle_state: The lifecycle_state of this Report.
@@ -348,7 +348,7 @@ class Report(object):
     def type(self):
         """
         Gets the type of this Report.
-        The type of the report.
+        The type of the audit report.
 
         Allowed values for this property are: "GENERATED", "SCHEDULED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -363,7 +363,7 @@ class Report(object):
     def type(self, type):
         """
         Sets the type of this Report.
-        The type of the report.
+        The type of the audit report.
 
 
         :param type: The type of this Report.

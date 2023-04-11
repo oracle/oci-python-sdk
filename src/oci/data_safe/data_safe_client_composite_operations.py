@@ -108,7 +108,7 @@ class DataSafeClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.data_safe.models.AlertsUpdateDetails alerts_update_details: (required)
-            Details to update alerts within a given compartment.
+            The details to update the alerts in the specified compartment.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
@@ -162,6 +162,47 @@ class DataSafeClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.apply_discovery_job_results(sensitive_data_model_id, apply_discovery_job_results_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def apply_sdm_masking_policy_difference_and_wait_for_state(self, masking_policy_id, apply_sdm_masking_policy_difference_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.apply_sdm_masking_policy_difference` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str masking_policy_id: (required)
+            The OCID of the masking policy.
+
+        :param oci.data_safe.models.ApplySdmMaskingPolicyDifferenceDetails apply_sdm_masking_policy_difference_details: (required)
+            Details to apply the SDM Masking policy difference columns to a masking policy.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.apply_sdm_masking_policy_difference`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.apply_sdm_masking_policy_difference(masking_policy_id, apply_sdm_masking_policy_difference_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
 
@@ -939,6 +980,44 @@ class DataSafeClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_sdm_masking_policy_difference_and_wait_for_state(self, create_sdm_masking_policy_difference_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.create_sdm_masking_policy_difference` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param oci.data_safe.models.CreateSdmMaskingPolicyDifferenceDetails create_sdm_masking_policy_difference_details: (required)
+            The details used to create a SDM masking policy difference resource
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.create_sdm_masking_policy_difference`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_sdm_masking_policy_difference(create_sdm_masking_policy_difference_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_security_assessment_and_wait_for_state(self, create_security_assessment_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.data_safe.DataSafeClient.create_security_assessment` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
@@ -1595,6 +1674,52 @@ class DataSafeClientCompositeOperations(object):
         operation_result = None
         try:
             operation_result = self.client.delete_report_definition(report_definition_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_sdm_masking_policy_difference_and_wait_for_state(self, sdm_masking_policy_difference_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.delete_sdm_masking_policy_difference` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str sdm_masking_policy_difference_id: (required)
+            The OCID of the SDM masking policy difference.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.delete_sdm_masking_policy_difference`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_sdm_masking_policy_difference(sdm_masking_policy_difference_id, **operation_kwargs)
         except oci.exceptions.ServiceError as e:
             if e.status == 404:
                 return WAIT_RESOURCE_NOT_FOUND
@@ -2353,7 +2478,7 @@ class DataSafeClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.data_safe.models.PatchAlertsDetails patch_alerts_details: (required)
-            Details to patch alerts.
+            The alert details to update the status of one or more alert specified by the alert IDs.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
@@ -2467,6 +2592,47 @@ class DataSafeClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def patch_sdm_masking_policy_difference_columns_and_wait_for_state(self, sdm_masking_policy_difference_id, patch_sdm_masking_policy_difference_columns_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.patch_sdm_masking_policy_difference_columns` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str sdm_masking_policy_difference_id: (required)
+            The OCID of the SDM masking policy difference.
+
+        :param oci.data_safe.models.PatchSdmMaskingPolicyDifferenceColumnsDetails patch_sdm_masking_policy_difference_columns_details: (required)
+            Details to patch difference columns.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.patch_sdm_masking_policy_difference_columns`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.patch_sdm_masking_policy_difference_columns(sdm_masking_policy_difference_id, patch_sdm_masking_policy_difference_columns_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def patch_sensitive_columns_and_wait_for_state(self, sensitive_data_model_id, patch_sensitive_column_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.data_safe.DataSafeClient.patch_sensitive_columns` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
@@ -2514,7 +2680,7 @@ class DataSafeClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.data_safe.models.PatchTargetAlertPolicyAssociationDetails patch_target_alert_policy_association_details: (required)
-            The details used to patch target-alert policy associations.
+            The details used to patch the target-alert policy associations.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
@@ -2792,7 +2958,7 @@ class DataSafeClientCompositeOperations(object):
             Unique report definition identifier
 
         :param oci.data_safe.models.ScheduleReportDetails schedule_report_details: (required)
-            Details for report schedule. It contains details such as schedule, PDF/XLS and number of rows.
+            The details for the audit report schedule. It contains details such as schedule, PDF/XLS and number of rows.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
@@ -3536,6 +3702,47 @@ class DataSafeClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.update_report_definition(report_definition_id, update_report_definition_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_sdm_masking_policy_difference_and_wait_for_state(self, sdm_masking_policy_difference_id, update_sdm_masking_policy_difference_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.update_sdm_masking_policy_difference` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str sdm_masking_policy_difference_id: (required)
+            The OCID of the SDM masking policy difference.
+
+        :param oci.data_safe.models.UpdateSdmMaskingPolicyDifferenceDetails update_sdm_masking_policy_difference_details: (required)
+            Details to update a sdm masking policy difference.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.update_sdm_masking_policy_difference`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_sdm_masking_policy_difference(sdm_masking_policy_difference_id, update_sdm_masking_policy_difference_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
 

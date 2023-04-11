@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AuditTrailCollection(object):
     """
-    Collection of audit trail summary.
+    Collection of audit trail detail objects.
     """
 
     def __init__(self, **kwargs):

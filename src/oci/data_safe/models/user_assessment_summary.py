@@ -136,6 +136,10 @@ class UserAssessmentSummary(object):
             The value to assign to the time_updated property of this UserAssessmentSummary.
         :type time_updated: datetime
 
+        :param time_last_assessed:
+            The value to assign to the time_last_assessed property of this UserAssessmentSummary.
+        :type time_last_assessed: datetime
+
         :param triggered_by:
             The value to assign to the triggered_by property of this UserAssessmentSummary.
             Allowed values for this property are: "USER", "SYSTEM", 'UNKNOWN_ENUM_VALUE'.
@@ -175,6 +179,7 @@ class UserAssessmentSummary(object):
             'target_ids': 'list[str]',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'time_last_assessed': 'datetime',
             'triggered_by': 'str',
             'type': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -199,6 +204,7 @@ class UserAssessmentSummary(object):
             'target_ids': 'targetIds',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'time_last_assessed': 'timeLastAssessed',
             'triggered_by': 'triggeredBy',
             'type': 'type',
             'freeform_tags': 'freeformTags',
@@ -222,6 +228,7 @@ class UserAssessmentSummary(object):
         self._target_ids = None
         self._time_created = None
         self._time_updated = None
+        self._time_last_assessed = None
         self._triggered_by = None
         self._type = None
         self._freeform_tags = None
@@ -680,6 +687,34 @@ class UserAssessmentSummary(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def time_last_assessed(self):
+        """
+        Gets the time_last_assessed of this UserAssessmentSummary.
+        The date and time the user assessment was last run, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_last_assessed of this UserAssessmentSummary.
+        :rtype: datetime
+        """
+        return self._time_last_assessed
+
+    @time_last_assessed.setter
+    def time_last_assessed(self, time_last_assessed):
+        """
+        Sets the time_last_assessed of this UserAssessmentSummary.
+        The date and time the user assessment was last run, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_last_assessed: The time_last_assessed of this UserAssessmentSummary.
+        :type: datetime
+        """
+        self._time_last_assessed = time_last_assessed
 
     @property
     def triggered_by(self):

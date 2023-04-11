@@ -590,8 +590,7 @@ class AuditTrail(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this AuditTrail.
-        The OCID of the compartment that contains the audit trail and its same as the compartment
-        of audit profile resource.
+        The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
 
 
         :return: The compartment_id of this AuditTrail.
@@ -603,8 +602,7 @@ class AuditTrail(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this AuditTrail.
-        The OCID of the compartment that contains the audit trail and its same as the compartment
-        of audit profile resource.
+        The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
 
 
         :param compartment_id: The compartment_id of this AuditTrail.
@@ -616,7 +614,7 @@ class AuditTrail(object):
     def time_last_collected(self):
         """
         Gets the time_last_collected of this AuditTrail.
-        The date and time until which the audit events are collected from target database by Data Safe audit trail
+        The date and time until when the audit events were collected from the target database by the Data Safe audit trail
         collection process, in the format defined by RFC3339.
 
 
@@ -629,7 +627,7 @@ class AuditTrail(object):
     def time_last_collected(self, time_last_collected):
         """
         Sets the time_last_collected of this AuditTrail.
-        The date and time until which the audit events are collected from target database by Data Safe audit trail
+        The date and time until when the audit events were collected from the target database by the Data Safe audit trail
         collection process, in the format defined by RFC3339.
 
 

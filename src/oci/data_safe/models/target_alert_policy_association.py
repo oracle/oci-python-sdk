@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetAlertPolicyAssociation(object):
     """
-    An association of target to alert policy
+    The association of the target database to an alert policy.
     """
 
     #: A constant which can be used with the lifecycle_state property of a TargetAlertPolicyAssociation.

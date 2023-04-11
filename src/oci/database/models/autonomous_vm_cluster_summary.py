@@ -216,6 +216,14 @@ class AutonomousVmClusterSummary(object):
             The value to assign to the is_mtls_enabled property of this AutonomousVmClusterSummary.
         :type is_mtls_enabled: bool
 
+        :param time_database_ssl_certificate_expires:
+            The value to assign to the time_database_ssl_certificate_expires property of this AutonomousVmClusterSummary.
+        :type time_database_ssl_certificate_expires: datetime
+
+        :param time_ords_certificate_expires:
+            The value to assign to the time_ords_certificate_expires property of this AutonomousVmClusterSummary.
+        :type time_ords_certificate_expires: datetime
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -254,7 +262,9 @@ class AutonomousVmClusterSummary(object):
             'available_autonomous_data_storage_size_in_tbs': 'float',
             'scan_listener_port_tls': 'int',
             'scan_listener_port_non_tls': 'int',
-            'is_mtls_enabled': 'bool'
+            'is_mtls_enabled': 'bool',
+            'time_database_ssl_certificate_expires': 'datetime',
+            'time_ords_certificate_expires': 'datetime'
         }
 
         self.attribute_map = {
@@ -294,7 +304,9 @@ class AutonomousVmClusterSummary(object):
             'available_autonomous_data_storage_size_in_tbs': 'availableAutonomousDataStorageSizeInTBs',
             'scan_listener_port_tls': 'scanListenerPortTls',
             'scan_listener_port_non_tls': 'scanListenerPortNonTls',
-            'is_mtls_enabled': 'isMtlsEnabled'
+            'is_mtls_enabled': 'isMtlsEnabled',
+            'time_database_ssl_certificate_expires': 'timeDatabaseSslCertificateExpires',
+            'time_ords_certificate_expires': 'timeOrdsCertificateExpires'
         }
 
         self._id = None
@@ -334,6 +346,8 @@ class AutonomousVmClusterSummary(object):
         self._scan_listener_port_tls = None
         self._scan_listener_port_non_tls = None
         self._is_mtls_enabled = None
+        self._time_database_ssl_certificate_expires = None
+        self._time_ords_certificate_expires = None
 
     @property
     def id(self):
@@ -629,7 +643,9 @@ class AutonomousVmClusterSummary(object):
     def compute_model(self):
         """
         Gets the compute_model of this AutonomousVmClusterSummary.
-        The compute model of the Autonomous VM Cluster.
+        The compute model of the Autonomous VM Cluster. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
+
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
         Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -644,7 +660,9 @@ class AutonomousVmClusterSummary(object):
     def compute_model(self, compute_model):
         """
         Sets the compute_model of this AutonomousVmClusterSummary.
-        The compute model of the Autonomous VM Cluster.
+        The compute model of the Autonomous VM Cluster. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
+
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
 
         :param compute_model: The compute_model of this AutonomousVmClusterSummary.
@@ -731,7 +749,7 @@ class AutonomousVmClusterSummary(object):
     def memory_per_oracle_compute_unit_in_gbs(self):
         """
         Gets the memory_per_oracle_compute_unit_in_gbs of this AutonomousVmClusterSummary.
-        The amount of memory (in GBs) enabled per each OCPU core.
+        The amount of memory (in GBs) to be enabled per each CPU core.
 
 
         :return: The memory_per_oracle_compute_unit_in_gbs of this AutonomousVmClusterSummary.
@@ -743,7 +761,7 @@ class AutonomousVmClusterSummary(object):
     def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
         """
         Sets the memory_per_oracle_compute_unit_in_gbs of this AutonomousVmClusterSummary.
-        The amount of memory (in GBs) enabled per each OCPU core.
+        The amount of memory (in GBs) to be enabled per each CPU core.
 
 
         :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this AutonomousVmClusterSummary.
@@ -1145,7 +1163,11 @@ class AutonomousVmClusterSummary(object):
     def reclaimable_cpus(self):
         """
         Gets the reclaimable_cpus of this AutonomousVmClusterSummary.
-        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        For Autonomous Databases on Dedicated Exadata Infrastructure:
+        - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
+
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
 
         :return: The reclaimable_cpus of this AutonomousVmClusterSummary.
@@ -1157,7 +1179,11 @@ class AutonomousVmClusterSummary(object):
     def reclaimable_cpus(self, reclaimable_cpus):
         """
         Sets the reclaimable_cpus of this AutonomousVmClusterSummary.
-        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        For Autonomous Databases on Dedicated Exadata Infrastructure:
+        - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
+
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
 
         :param reclaimable_cpus: The reclaimable_cpus of this AutonomousVmClusterSummary.
@@ -1284,6 +1310,54 @@ class AutonomousVmClusterSummary(object):
         :type: bool
         """
         self._is_mtls_enabled = is_mtls_enabled
+
+    @property
+    def time_database_ssl_certificate_expires(self):
+        """
+        Gets the time_database_ssl_certificate_expires of this AutonomousVmClusterSummary.
+        The date and time of Database SSL certificate expiration.
+
+
+        :return: The time_database_ssl_certificate_expires of this AutonomousVmClusterSummary.
+        :rtype: datetime
+        """
+        return self._time_database_ssl_certificate_expires
+
+    @time_database_ssl_certificate_expires.setter
+    def time_database_ssl_certificate_expires(self, time_database_ssl_certificate_expires):
+        """
+        Sets the time_database_ssl_certificate_expires of this AutonomousVmClusterSummary.
+        The date and time of Database SSL certificate expiration.
+
+
+        :param time_database_ssl_certificate_expires: The time_database_ssl_certificate_expires of this AutonomousVmClusterSummary.
+        :type: datetime
+        """
+        self._time_database_ssl_certificate_expires = time_database_ssl_certificate_expires
+
+    @property
+    def time_ords_certificate_expires(self):
+        """
+        Gets the time_ords_certificate_expires of this AutonomousVmClusterSummary.
+        The date and time of ORDS certificate expiration.
+
+
+        :return: The time_ords_certificate_expires of this AutonomousVmClusterSummary.
+        :rtype: datetime
+        """
+        return self._time_ords_certificate_expires
+
+    @time_ords_certificate_expires.setter
+    def time_ords_certificate_expires(self, time_ords_certificate_expires):
+        """
+        Sets the time_ords_certificate_expires of this AutonomousVmClusterSummary.
+        The date and time of ORDS certificate expiration.
+
+
+        :param time_ords_certificate_expires: The time_ords_certificate_expires of this AutonomousVmClusterSummary.
+        :type: datetime
+        """
+        self._time_ords_certificate_expires = time_ords_certificate_expires
 
     def __repr__(self):
         return formatted_flat_dict(self)

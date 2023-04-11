@@ -172,7 +172,7 @@ class CreateReportDefinitionDetails(object):
     def description(self):
         """
         Gets the description of this CreateReportDefinitionDetails.
-        A description of the report definition.
+        The description of the report definition.
 
 
         :return: The description of this CreateReportDefinitionDetails.
@@ -184,7 +184,7 @@ class CreateReportDefinitionDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateReportDefinitionDetails.
-        A description of the report definition.
+        The description of the report definition.
 
 
         :param description: The description of this CreateReportDefinitionDetails.
