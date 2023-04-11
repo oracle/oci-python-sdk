@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
+
+=====================
+23.04.18 - 23.04.18
+=====================
+* remove pause to avoid security issue with input
+
 =====================
 23.04.11 - 23.04.11
 =====================
