@@ -83,12 +83,6 @@
 # - OCI_SHOWOCI_OPEN_SEARCH
 #
 ##########################################################################
-# TO DO APEX
-##########################################################################
-# OCI_SHOWOCI_OPEN_SEARCH
-# OCI_SHOWOCI_SECURITY_CLOUDGUARD
-#
-##########################################################################
 # TO DO
 ##########################################################################
 #
@@ -113,7 +107,7 @@ import oracledb
 import time
 import os
 
-version = "23.03.28"
+version = "23.04.11"
 cmd = None
 file_num = 0
 
@@ -606,7 +600,7 @@ def handle_database(connection):
                 {'col': 'backup_subnet       ', 'csv': '           ', 'type': 'varchar2(1000)', 'pk': 'n'},
                 {'col': 'scan_ips            ', 'csv': '           ', 'type': 'varchar2(1000)', 'pk': 'n'},
                 {'col': 'vip_ips             ', 'csv': '           ', 'type': 'varchar2(1000)', 'pk': 'n'},
-                {'col': 'pdbs                ', 'csv': '           ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'pdbs                ', 'csv': '           ', 'type': 'varchar2(4000)', 'pk': 'n'},
                 {'col': 'cluster_name        ', 'csv': '           ', 'type': 'varchar2(100) ', 'pk': 'n'},
                 {'col': 'vm_name             ', 'csv': '           ', 'type': 'varchar2(100) ', 'pk': 'n'},
                 {'col': 'domain              ', 'csv': '           ', 'type': 'varchar2(1000)', 'pk': 'n'},

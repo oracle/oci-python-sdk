@@ -89,7 +89,7 @@ Install Oracle Database Instance Client, Update bashrc and Clone the Python SDK
 
 ```
 # on oci github:
-bash -c "$(curl -L https://raw.githubusercontent.com/adizohar/usage_reports_to_adw/main/setup/setup_packages.ol8.sh)"
+bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-python-sdk/master/examples/usage_reports_to_adw/setup/setup_packages.ol8.sh)"
 ```
 
 ## 7. Setup Credentials

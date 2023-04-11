@@ -10,8 +10,6 @@ It uses APEX for Visualization and generates Daily e-mail report.
 [cost analysis](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/costanalysisoverview.htm) 
 and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm) features should be used instead.**
 
-Additional information located at [Adi Zohar Git](https://github.com/adizohar/usage_reports_to_adw)
-
 **Developed by Adi Zohar, 2020-2023**
 
 ## Main Features
@@ -19,7 +17,8 @@ Additional information located at [Adi Zohar Git](https://github.com/adizohar/us
 - Usage Over Time
 - Cost Analysis
 - Cost Over Time
-- Rate Card for Used Products
+- Rate Card for Used Product
+- ShowOCI Data (If Enabled)
 
 ## Cost Reports
 ![](img/screen_4.png)

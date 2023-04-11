@@ -82,6 +82,10 @@ class SecurityAssessment(object):
             The value to assign to the time_updated property of this SecurityAssessment.
         :type time_updated: datetime
 
+        :param time_last_assessed:
+            The value to assign to the time_last_assessed property of this SecurityAssessment.
+        :type time_last_assessed: datetime
+
         :param compartment_id:
             The value to assign to the compartment_id property of this SecurityAssessment.
         :type compartment_id: str
@@ -177,6 +181,7 @@ class SecurityAssessment(object):
             'id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'time_last_assessed': 'datetime',
             'compartment_id': 'str',
             'display_name': 'str',
             'target_ids': 'list[str]',
@@ -204,6 +209,7 @@ class SecurityAssessment(object):
             'id': 'id',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'time_last_assessed': 'timeLastAssessed',
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'target_ids': 'targetIds',
@@ -230,6 +236,7 @@ class SecurityAssessment(object):
         self._id = None
         self._time_created = None
         self._time_updated = None
+        self._time_last_assessed = None
         self._compartment_id = None
         self._display_name = None
         self._target_ids = None
@@ -331,6 +338,34 @@ class SecurityAssessment(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def time_last_assessed(self):
+        """
+        Gets the time_last_assessed of this SecurityAssessment.
+        The date and time when the security assessment was last run. Conforms to the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_last_assessed of this SecurityAssessment.
+        :rtype: datetime
+        """
+        return self._time_last_assessed
+
+    @time_last_assessed.setter
+    def time_last_assessed(self, time_last_assessed):
+        """
+        Sets the time_last_assessed of this SecurityAssessment.
+        The date and time when the security assessment was last run. Conforms to the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_last_assessed: The time_last_assessed of this SecurityAssessment.
+        :type: datetime
+        """
+        self._time_last_assessed = time_last_assessed
 
     @property
     def compartment_id(self):

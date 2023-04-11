@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AuditPolicyAggregationItems(object):
     """
-    Details of audit profile aggregation items.
+    The details of the audit profile aggregation items.
     """
 
     def __init__(self, **kwargs):
@@ -64,7 +64,7 @@ class AuditPolicyAggregationItems(object):
     def count(self):
         """
         Gets the count of this AuditPolicyAggregationItems.
-        Total count of aggregated metric.
+        The total count of the aggregated metric.
 
 
         :return: The count of this AuditPolicyAggregationItems.
@@ -76,7 +76,7 @@ class AuditPolicyAggregationItems(object):
     def count(self, count):
         """
         Sets the count of this AuditPolicyAggregationItems.
-        Total count of aggregated metric.
+        The total count of the aggregated metric.
 
 
         :param count: The count of this AuditPolicyAggregationItems.

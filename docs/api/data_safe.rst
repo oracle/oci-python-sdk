@@ -33,6 +33,7 @@ Data Safe
     oci.data_safe.models.AlertsAggregationDimension
     oci.data_safe.models.AlertsUpdateDetails
     oci.data_safe.models.ApplyDiscoveryJobResultsDetails
+    oci.data_safe.models.ApplySdmMaskingPolicyDifferenceDetails
     oci.data_safe.models.AuditArchiveRetrieval
     oci.data_safe.models.AuditArchiveRetrievalCollection
     oci.data_safe.models.AuditArchiveRetrievalSummary
@@ -79,6 +80,7 @@ Data Safe
     oci.data_safe.models.ChangeReportCompartmentDetails
     oci.data_safe.models.ChangeReportDefinitionCompartmentDetails
     oci.data_safe.models.ChangeRetentionDetails
+    oci.data_safe.models.ChangeSdmMaskingPolicyDifferenceCompartmentDetails
     oci.data_safe.models.ChangeSecurityAssessmentCompartmentDetails
     oci.data_safe.models.ChangeSensitiveDataModelCompartmentDetails
     oci.data_safe.models.ChangeSensitiveTypeCompartmentDetails
@@ -114,6 +116,7 @@ Data Safe
     oci.data_safe.models.CreateMaskingPolicyDetails
     oci.data_safe.models.CreateOnPremConnectorDetails
     oci.data_safe.models.CreateReportDefinitionDetails
+    oci.data_safe.models.CreateSdmMaskingPolicyDifferenceDetails
     oci.data_safe.models.CreateSecurityAssessmentDetails
     oci.data_safe.models.CreateSensitiveCategoryDetails
     oci.data_safe.models.CreateSensitiveColumnDetails
@@ -133,6 +136,8 @@ Data Safe
     oci.data_safe.models.DeterministicEncryptionDateFormatEntry
     oci.data_safe.models.DeterministicEncryptionFormatEntry
     oci.data_safe.models.DeterministicSubstitutionFormatEntry
+    oci.data_safe.models.DifferenceColumn
+    oci.data_safe.models.DifferenceColumnSummary
     oci.data_safe.models.Diffs
     oci.data_safe.models.Dimensions
     oci.data_safe.models.DiscoveryAnalyticsCollection
@@ -186,12 +191,16 @@ Data Safe
     oci.data_safe.models.MaskingColumnCollection
     oci.data_safe.models.MaskingColumnSummary
     oci.data_safe.models.MaskingFormat
+    oci.data_safe.models.MaskingObjectCollection
+    oci.data_safe.models.MaskingObjectSummary
     oci.data_safe.models.MaskingPolicy
     oci.data_safe.models.MaskingPolicyCollection
     oci.data_safe.models.MaskingPolicySummary
     oci.data_safe.models.MaskingReport
     oci.data_safe.models.MaskingReportCollection
     oci.data_safe.models.MaskingReportSummary
+    oci.data_safe.models.MaskingSchemaCollection
+    oci.data_safe.models.MaskingSchemaSummary
     oci.data_safe.models.ModifiedAttributes
     oci.data_safe.models.ModifyGlobalSettingsDetails
     oci.data_safe.models.NullValueFormatEntry
@@ -207,11 +216,15 @@ Data Safe
     oci.data_safe.models.PatchMaskingColumnsDetails
     oci.data_safe.models.PatchMergeInstruction
     oci.data_safe.models.PatchRemoveInstruction
+    oci.data_safe.models.PatchSdmMaskingPolicyDifferenceColumnsDetails
     oci.data_safe.models.PatchSensitiveColumnDetails
     oci.data_safe.models.PatchTargetAlertPolicyAssociationDetails
     oci.data_safe.models.PreserveOriginalDataFormatEntry
     oci.data_safe.models.PrivateEndpoint
+    oci.data_safe.models.Profile
+    oci.data_safe.models.ProfileAggregation
     oci.data_safe.models.ProfileDetails
+    oci.data_safe.models.ProfileSummary
     oci.data_safe.models.ProvisionAuditConditions
     oci.data_safe.models.ProvisionAuditPolicyDetails
     oci.data_safe.models.RandomDateFormatEntry
@@ -237,6 +250,10 @@ Data Safe
     oci.data_safe.models.ScheduleAuditReportDetails
     oci.data_safe.models.ScheduleReportDetails
     oci.data_safe.models.SchemaSummary
+    oci.data_safe.models.SdmMaskingPolicyDifference
+    oci.data_safe.models.SdmMaskingPolicyDifferenceCollection
+    oci.data_safe.models.SdmMaskingPolicyDifferenceColumnCollection
+    oci.data_safe.models.SdmMaskingPolicyDifferenceSummary
     oci.data_safe.models.SectionStatistics
     oci.data_safe.models.SecurityAssessment
     oci.data_safe.models.SecurityAssessmentBaseLineDetails
@@ -251,6 +268,10 @@ Data Safe
     oci.data_safe.models.SensitiveDataModel
     oci.data_safe.models.SensitiveDataModelCollection
     oci.data_safe.models.SensitiveDataModelSummary
+    oci.data_safe.models.SensitiveObjectCollection
+    oci.data_safe.models.SensitiveObjectSummary
+    oci.data_safe.models.SensitiveSchemaCollection
+    oci.data_safe.models.SensitiveSchemaSummary
     oci.data_safe.models.SensitiveType
     oci.data_safe.models.SensitiveTypeCollection
     oci.data_safe.models.SensitiveTypePattern
@@ -284,6 +305,7 @@ Data Safe
     oci.data_safe.models.UpdateOnPremConnectorDetails
     oci.data_safe.models.UpdateOnPremConnectorWalletDetails
     oci.data_safe.models.UpdateReportDefinitionDetails
+    oci.data_safe.models.UpdateSdmMaskingPolicyDifferenceDetails
     oci.data_safe.models.UpdateSecurityAssessmentDetails
     oci.data_safe.models.UpdateSensitiveCategoryDetails
     oci.data_safe.models.UpdateSensitiveColumnDetails

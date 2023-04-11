@@ -105,6 +105,26 @@ class MaskingReport(object):
             The value to assign to the time_created property of this MaskingReport.
         :type time_created: datetime
 
+        :param is_drop_temp_tables_enabled:
+            The value to assign to the is_drop_temp_tables_enabled property of this MaskingReport.
+        :type is_drop_temp_tables_enabled: bool
+
+        :param is_redo_logging_enabled:
+            The value to assign to the is_redo_logging_enabled property of this MaskingReport.
+        :type is_redo_logging_enabled: bool
+
+        :param is_refresh_stats_enabled:
+            The value to assign to the is_refresh_stats_enabled property of this MaskingReport.
+        :type is_refresh_stats_enabled: bool
+
+        :param parallel_degree:
+            The value to assign to the parallel_degree property of this MaskingReport.
+        :type parallel_degree: str
+
+        :param recompile:
+            The value to assign to the recompile property of this MaskingReport.
+        :type recompile: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -120,7 +140,12 @@ class MaskingReport(object):
             'time_masking_started': 'datetime',
             'time_masking_finished': 'datetime',
             'lifecycle_state': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'is_drop_temp_tables_enabled': 'bool',
+            'is_redo_logging_enabled': 'bool',
+            'is_refresh_stats_enabled': 'bool',
+            'parallel_degree': 'str',
+            'recompile': 'str'
         }
 
         self.attribute_map = {
@@ -137,7 +162,12 @@ class MaskingReport(object):
             'time_masking_started': 'timeMaskingStarted',
             'time_masking_finished': 'timeMaskingFinished',
             'lifecycle_state': 'lifecycleState',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'is_drop_temp_tables_enabled': 'isDropTempTablesEnabled',
+            'is_redo_logging_enabled': 'isRedoLoggingEnabled',
+            'is_refresh_stats_enabled': 'isRefreshStatsEnabled',
+            'parallel_degree': 'parallelDegree',
+            'recompile': 'recompile'
         }
 
         self._id = None
@@ -154,6 +184,11 @@ class MaskingReport(object):
         self._time_masking_finished = None
         self._lifecycle_state = None
         self._time_created = None
+        self._is_drop_temp_tables_enabled = None
+        self._is_redo_logging_enabled = None
+        self._is_refresh_stats_enabled = None
+        self._parallel_degree = None
+        self._recompile = None
 
     @property
     def id(self):
@@ -508,6 +543,126 @@ class MaskingReport(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def is_drop_temp_tables_enabled(self):
+        """
+        Gets the is_drop_temp_tables_enabled of this MaskingReport.
+        Indicates if the temporary tables created during the masking operation were dropped after masking.
+
+
+        :return: The is_drop_temp_tables_enabled of this MaskingReport.
+        :rtype: bool
+        """
+        return self._is_drop_temp_tables_enabled
+
+    @is_drop_temp_tables_enabled.setter
+    def is_drop_temp_tables_enabled(self, is_drop_temp_tables_enabled):
+        """
+        Sets the is_drop_temp_tables_enabled of this MaskingReport.
+        Indicates if the temporary tables created during the masking operation were dropped after masking.
+
+
+        :param is_drop_temp_tables_enabled: The is_drop_temp_tables_enabled of this MaskingReport.
+        :type: bool
+        """
+        self._is_drop_temp_tables_enabled = is_drop_temp_tables_enabled
+
+    @property
+    def is_redo_logging_enabled(self):
+        """
+        Gets the is_redo_logging_enabled of this MaskingReport.
+        Indicates if redo logging was enabled during the masking operation.
+
+
+        :return: The is_redo_logging_enabled of this MaskingReport.
+        :rtype: bool
+        """
+        return self._is_redo_logging_enabled
+
+    @is_redo_logging_enabled.setter
+    def is_redo_logging_enabled(self, is_redo_logging_enabled):
+        """
+        Sets the is_redo_logging_enabled of this MaskingReport.
+        Indicates if redo logging was enabled during the masking operation.
+
+
+        :param is_redo_logging_enabled: The is_redo_logging_enabled of this MaskingReport.
+        :type: bool
+        """
+        self._is_redo_logging_enabled = is_redo_logging_enabled
+
+    @property
+    def is_refresh_stats_enabled(self):
+        """
+        Gets the is_refresh_stats_enabled of this MaskingReport.
+        Indicates if statistics gathering was enabled during the masking operation.
+
+
+        :return: The is_refresh_stats_enabled of this MaskingReport.
+        :rtype: bool
+        """
+        return self._is_refresh_stats_enabled
+
+    @is_refresh_stats_enabled.setter
+    def is_refresh_stats_enabled(self, is_refresh_stats_enabled):
+        """
+        Sets the is_refresh_stats_enabled of this MaskingReport.
+        Indicates if statistics gathering was enabled during the masking operation.
+
+
+        :param is_refresh_stats_enabled: The is_refresh_stats_enabled of this MaskingReport.
+        :type: bool
+        """
+        self._is_refresh_stats_enabled = is_refresh_stats_enabled
+
+    @property
+    def parallel_degree(self):
+        """
+        Gets the parallel_degree of this MaskingReport.
+        Indicates if parallel execution was enabled during the masking operation.
+
+
+        :return: The parallel_degree of this MaskingReport.
+        :rtype: str
+        """
+        return self._parallel_degree
+
+    @parallel_degree.setter
+    def parallel_degree(self, parallel_degree):
+        """
+        Sets the parallel_degree of this MaskingReport.
+        Indicates if parallel execution was enabled during the masking operation.
+
+
+        :param parallel_degree: The parallel_degree of this MaskingReport.
+        :type: str
+        """
+        self._parallel_degree = parallel_degree
+
+    @property
+    def recompile(self):
+        """
+        Gets the recompile of this MaskingReport.
+        Indicates how invalid objects were recompiled post the masking operation.
+
+
+        :return: The recompile of this MaskingReport.
+        :rtype: str
+        """
+        return self._recompile
+
+    @recompile.setter
+    def recompile(self, recompile):
+        """
+        Sets the recompile of this MaskingReport.
+        Indicates how invalid objects were recompiled post the masking operation.
+
+
+        :param recompile: The recompile of this MaskingReport.
+        :type: str
+        """
+        self._recompile = recompile
 
     def __repr__(self):
         return formatted_flat_dict(self)

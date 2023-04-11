@@ -164,6 +164,8 @@ class AutonomousDbPreviewVersionSummary(object):
         - AJD - indicates an Autonomous JSON Database
         - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
 
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+
         Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
@@ -183,6 +185,8 @@ class AutonomousDbPreviewVersionSummary(object):
         - DW - indicates an Autonomous Data Warehouse database
         - AJD - indicates an Autonomous JSON Database
         - APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
 
         :param db_workload: The db_workload of this AutonomousDbPreviewVersionSummary.

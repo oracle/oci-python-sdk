@@ -300,7 +300,7 @@ class CreateMaskingPolicyDetails(object):
         Gets the parallel_degree of this CreateMaskingPolicyDetails.
         Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism),
         'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree
-        of parallelism. Parallel execution helps effectively use multiple CPUsi and improve masking performance. Refer to the
+        of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the
         Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
 
 
@@ -315,7 +315,7 @@ class CreateMaskingPolicyDetails(object):
         Sets the parallel_degree of this CreateMaskingPolicyDetails.
         Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism),
         'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree
-        of parallelism. Parallel execution helps effectively use multiple CPUsi and improve masking performance. Refer to the
+        of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the
         Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
 
 
@@ -330,7 +330,8 @@ class CreateMaskingPolicyDetails(object):
         Gets the recompile of this CreateMaskingPolicyDetails.
         Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),
         'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree
-        attribute is used.
+        attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further
+        recompile manually using UTL_RECOMP package.
 
 
         :return: The recompile of this CreateMaskingPolicyDetails.
@@ -344,7 +345,8 @@ class CreateMaskingPolicyDetails(object):
         Sets the recompile of this CreateMaskingPolicyDetails.
         Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),
         'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree
-        attribute is used.
+        attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further
+        recompile manually using UTL_RECOMP package.
 
 
         :param recompile: The recompile of this CreateMaskingPolicyDetails.

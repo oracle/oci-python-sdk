@@ -1837,9 +1837,10 @@ class DatabaseClient(object):
         """
         Switch the Autonomous Container Database role between Standby and Snapshot Standby.
         For more information about changing Autonomous Container Databases Dataguard Role, see
-        `Change Database Role to Snapshot Standby`__.
+        `Convert Physical Standby to Snapshot Standby`__ and `Convert Snapshot Standby to Physical Standby`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#changeRole
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4
 
 
         :param oci.database.models.ChangeDataguardRoleDetails change_dataguard_role_details: (required)
@@ -3336,6 +3337,98 @@ class DatabaseClient(object):
                 header_params=header_params,
                 body=convert_to_pdb_details,
                 response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def create_application_vip(self, create_application_vip_details, **kwargs):
+        """
+        Creates a new application virtual IP (VIP) address in the specified cloud VM cluster based on the request parameters you provide.
+
+
+        :param oci.database.models.CreateApplicationVipDetails create_application_vip_details: (required)
+            Request to create a new application virtual IP (VIP) address.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ApplicationVip`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_application_vip.py.html>`__ to see an example of how to use create_application_vip API.
+        """
+        resource_path = "/applicationVip"
+        method = "POST"
+        operation_name = "create_application_vip"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ApplicationVip/CreateApplicationVip"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_application_vip got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_application_vip_details,
+                response_type="ApplicationVip",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_application_vip_details,
+                response_type="ApplicationVip",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
@@ -5717,6 +5810,105 @@ class DatabaseClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="DbNode",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def delete_application_vip(self, application_vip_id, **kwargs):
+        """
+        Deletes and deregisters the specified application virtual IP (VIP) address.
+
+
+        :param str application_vip_id: (required)
+            The `OCID`__ of the application virtual IP (VIP) address.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_application_vip.py.html>`__ to see an example of how to use delete_application_vip API.
+        """
+        resource_path = "/applicationVip/{applicationVipId}"
+        method = "DELETE"
+        operation_name = "delete_application_vip"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ApplicationVip/DeleteApplicationVip"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_application_vip got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "applicationVipId": application_vip_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
@@ -11449,6 +11641,100 @@ class DatabaseClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def get_application_vip(self, application_vip_id, **kwargs):
+        """
+        Gets information about a specified application virtual IP (VIP) address.
+
+
+        :param str application_vip_id: (required)
+            The `OCID`__ of the application virtual IP (VIP) address.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ApplicationVip`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_application_vip.py.html>`__ to see an example of how to use get_application_vip API.
+        """
+        resource_path = "/applicationVip/{applicationVipId}"
+        method = "GET"
+        operation_name = "get_application_vip"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ApplicationVip/GetApplicationVip"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_application_vip got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "applicationVipId": application_vip_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ApplicationVip",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ApplicationVip",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def get_autonomous_container_database(self, autonomous_container_database_id, **kwargs):
         """
         Gets information about the specified Autonomous Container Database.
@@ -16656,6 +16942,156 @@ class DatabaseClient(object):
                 header_params=header_params,
                 body=launch_db_system_details,
                 response_type="DbSystem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def list_application_vips(self, compartment_id, cloud_vm_cluster_id, **kwargs):
+        """
+        Gets a list of application virtual IP (VIP) addresses on a cloud VM cluster.
+
+
+        :param str compartment_id: (required)
+            The compartment `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str cloud_vm_cluster_id: (required)
+            The `OCID`__ of the cloud VM cluster associated with the application virtual IP (VIP) address.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param int limit: (optional)
+            The maximum number of items to return per page.
+
+        :param str page: (optional)
+            The pagination token to continue listing from.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. You can provide one sort order (`sortOrder`).
+            Default order for TIMECREATED is descending.
+            Default order for DISPLAYNAME is ascending.
+            The DISPLAYNAME sort order is case sensitive.
+
+            Allowed values are: "DISPLAYNAME", "TIMECREATED"
+
+        :param str lifecycle_state: (optional)
+            A filter to return only resources that match the given lifecycle state exactly.
+
+            Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAILED"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.ApplicationVipSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_application_vips.py.html>`__ to see an example of how to use list_application_vips API.
+        """
+        resource_path = "/applicationVip"
+        method = "GET"
+        operation_name = "list_application_vips"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ApplicationVipSummary/ListApplicationVips"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "limit",
+            "page",
+            "opc_request_id",
+            "sort_order",
+            "sort_by",
+            "lifecycle_state"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_application_vips got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["DISPLAYNAME", "TIMECREATED"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAILED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "cloudVmClusterId": cloud_vm_cluster_id,
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ApplicationVipSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ApplicationVipSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
@@ -26629,6 +27065,234 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def rotate_autonomous_vm_cluster_ords_certs(self, rotate_autonomous_vm_cluster_ords_certs_details, autonomous_vm_cluster_id, **kwargs):
+        """
+        Rotates the Oracle REST Data Services (ORDS) certificates for Autonomous Exadata VM cluster.
+
+
+        :param oci.database.models.RotateAutonomousVmClusterOrdsCertsDetails rotate_autonomous_vm_cluster_ords_certs_details: (required)
+            Request to rotate the Oracle REST Data Services (ORDS) certificates on Autonomous Exadata VM cluster.
+
+        :param str autonomous_vm_cluster_id: (required)
+            The autonomous VM cluster `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/rotate_autonomous_vm_cluster_ords_certs.py.html>`__ to see an example of how to use rotate_autonomous_vm_cluster_ords_certs API.
+        """
+        resource_path = "/autonomousVmClusters/{autonomousVmClusterId}/actions/rotateOrdsCerts"
+        method = "POST"
+        operation_name = "rotate_autonomous_vm_cluster_ords_certs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/RotateAutonomousVmClusterOrdsCerts"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "rotate_autonomous_vm_cluster_ords_certs got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "autonomousVmClusterId": autonomous_vm_cluster_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=rotate_autonomous_vm_cluster_ords_certs_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=rotate_autonomous_vm_cluster_ords_certs_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def rotate_autonomous_vm_cluster_ssl_certs(self, rotate_autonomous_vm_cluster_ssl_certs_details, autonomous_vm_cluster_id, **kwargs):
+        """
+        Rotates the SSL certificates for Autonomous Exadata VM cluster.
+
+
+        :param oci.database.models.RotateAutonomousVmClusterSslCertsDetails rotate_autonomous_vm_cluster_ssl_certs_details: (required)
+            Request to rotate the SSL certificates on Autonomous Exadata VM cluster.
+
+        :param str autonomous_vm_cluster_id: (required)
+            The autonomous VM cluster `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/rotate_autonomous_vm_cluster_ssl_certs.py.html>`__ to see an example of how to use rotate_autonomous_vm_cluster_ssl_certs API.
+        """
+        resource_path = "/autonomousVmClusters/{autonomousVmClusterId}/actions/rotateSslCerts"
+        method = "POST"
+        operation_name = "rotate_autonomous_vm_cluster_ssl_certs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/RotateAutonomousVmClusterSslCerts"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "rotate_autonomous_vm_cluster_ssl_certs got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "autonomousVmClusterId": autonomous_vm_cluster_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=rotate_autonomous_vm_cluster_ssl_certs_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=rotate_autonomous_vm_cluster_ssl_certs_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)

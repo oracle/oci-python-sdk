@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ReportDetails(object):
     """
-    Details for the report schedule.
+    The details of the report schedule.
     """
 
     #: A constant which can be used with the report_type property of a ReportDetails.
@@ -59,6 +59,8 @@ class ReportDetails(object):
     def report_type(self):
         """
         **[Required]** Gets the report_type of this ReportDetails.
+        The type of the report.
+
         Allowed values for this property are: "AUDIT"
 
 
@@ -71,6 +73,8 @@ class ReportDetails(object):
     def report_type(self, report_type):
         """
         Sets the report_type of this ReportDetails.
+        The type of the report.
+
 
         :param report_type: The report_type of this ReportDetails.
         :type: str

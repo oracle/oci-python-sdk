@@ -100,17 +100,17 @@ and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/
 
 Cloud Shell has 20 minutes timeout, for large extract, I would recommend to use dedicated Virtual Machine
 
-Step 1 - Clone from OCI SDK Repo and Create symbolink link
+Step 1 - Clone from OCI Python SDK Repo and Create symbolink link
 
 ```
 git clone https://github.com/oracle/oci-python-sdk
 ln -s oci-python-sdk/examples/showoci .
 ```
 
-Or Install using Bash from private Repo
+Or Install using Bash
 
 ```
-bash -c "$(curl -L https://raw.githubusercontent.com/adizohar/showoci/master/showoci_upgrade.sh)"    
+bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-python-sdk/master/examples/showoci/showoci_upgrade.sh)"    
 ```
 
 Step 2 - Change Dir to ShowOCI
@@ -242,7 +242,7 @@ ln -s oci-python-sdk/examples/showoci .
 Or Install using Bash from private repo
 
 ```
-bash -c "$(curl -L https://raw.githubusercontent.com/adizohar/showoci/master/showoci_upgrade.sh)"    
+bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-python-sdk/master/examples/showoci/showoci_upgrade.sh)"    
 ```
 
 ### 5.7. Execute the python script - showoci.py
@@ -257,7 +257,7 @@ python3 showoci.py -ip -ani
 Run on OCI VM:
 
 ```
-bash -c "$(curl -L https://raw.githubusercontent.com/adizohar/showoci/master/showoci_upgrade.sh)"    
+bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-python-sdk/master/examples/showoci/showoci_upgrade.sh)"    
 ```
 
 ## 7. How to upgrade OCI SDK drivers
@@ -1807,3 +1807,8 @@ Processing...
 ##########################################################################################
 
 ```
+
+## License:
+
+Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.

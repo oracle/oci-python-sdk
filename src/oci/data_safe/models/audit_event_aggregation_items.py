@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AuditEventAggregationItems(object):
     """
-    Details of audit events aggregation items.
+    The details of audit events aggregation items.
     """
 
     def __init__(self, **kwargs):

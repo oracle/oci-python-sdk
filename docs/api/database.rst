@@ -22,6 +22,8 @@ Database
     oci.database.models.AddVirtualMachineToCloudVmClusterDetails
     oci.database.models.AddVirtualMachineToVmClusterDetails
     oci.database.models.AppVersionSummary
+    oci.database.models.ApplicationVip
+    oci.database.models.ApplicationVipSummary
     oci.database.models.AssociatedDatabaseDetails
     oci.database.models.AutomatedMountDetails
     oci.database.models.AutonomousContainerDatabase
@@ -90,6 +92,7 @@ Database
     oci.database.models.ConsoleConnectionSummary
     oci.database.models.ConvertToPdbDetails
     oci.database.models.ConvertToPdbTargetBase
+    oci.database.models.CreateApplicationVipDetails
     oci.database.models.CreateAutonomousContainerDatabaseDetails
     oci.database.models.CreateAutonomousDatabaseBackupDetails
     oci.database.models.CreateAutonomousDatabaseBase
@@ -283,6 +286,8 @@ Database
     oci.database.models.ResizeVmClusterNetworkDetails
     oci.database.models.RestoreAutonomousDatabaseDetails
     oci.database.models.RestoreDatabaseDetails
+    oci.database.models.RotateAutonomousVmClusterOrdsCertsDetails
+    oci.database.models.RotateAutonomousVmClusterSslCertsDetails
     oci.database.models.ScanDetails
     oci.database.models.ScheduledOperationDetails
     oci.database.models.SelfMountDetails

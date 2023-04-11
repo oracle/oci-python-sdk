@@ -7,6 +7,31 @@ from __future__ import absolute_import
 from .add_em_managed_external_exadata_insight_members_details import AddEmManagedExternalExadataInsightMembersDetails
 from .add_exadata_insight_members_details import AddExadataInsightMembersDetails
 from .add_pe_comanaged_exadata_insight_members_details import AddPeComanagedExadataInsightMembersDetails
+from .addm_db_collection import AddmDbCollection
+from .addm_db_finding_aggregation import AddmDbFindingAggregation
+from .addm_db_finding_aggregation_collection import AddmDbFindingAggregationCollection
+from .addm_db_finding_category_collection import AddmDbFindingCategoryCollection
+from .addm_db_finding_category_summary import AddmDbFindingCategorySummary
+from .addm_db_findings_time_series_collection import AddmDbFindingsTimeSeriesCollection
+from .addm_db_findings_time_series_summary import AddmDbFindingsTimeSeriesSummary
+from .addm_db_parameter_aggregation import AddmDbParameterAggregation
+from .addm_db_parameter_aggregation_collection import AddmDbParameterAggregationCollection
+from .addm_db_parameter_category_collection import AddmDbParameterCategoryCollection
+from .addm_db_parameter_category_summary import AddmDbParameterCategorySummary
+from .addm_db_parameter_change_aggregation import AddmDbParameterChangeAggregation
+from .addm_db_parameter_change_aggregation_collection import AddmDbParameterChangeAggregationCollection
+from .addm_db_recommendation_aggregation import AddmDbRecommendationAggregation
+from .addm_db_recommendation_aggregation_collection import AddmDbRecommendationAggregationCollection
+from .addm_db_recommendation_category_collection import AddmDbRecommendationCategoryCollection
+from .addm_db_recommendation_category_summary import AddmDbRecommendationCategorySummary
+from .addm_db_recommendations_time_series_collection import AddmDbRecommendationsTimeSeriesCollection
+from .addm_db_recommendations_time_series_summary import AddmDbRecommendationsTimeSeriesSummary
+from .addm_db_schema_object_collection import AddmDbSchemaObjectCollection
+from .addm_db_schema_object_summary import AddmDbSchemaObjectSummary
+from .addm_db_sql_statement_collection import AddmDbSqlStatementCollection
+from .addm_db_sql_statement_summary import AddmDbSqlStatementSummary
+from .addm_db_summary import AddmDbSummary
+from .addm_report import AddmReport
 from .autonomous_database_configuration_summary import AutonomousDatabaseConfigurationSummary
 from .autonomous_database_insight import AutonomousDatabaseInsight
 from .autonomous_database_insight_summary import AutonomousDatabaseInsightSummary
@@ -90,6 +115,7 @@ from .credentials_by_source import CredentialsBySource
 from .db_external_instance import DBExternalInstance
 from .db_external_properties import DBExternalProperties
 from .dbos_config_instance import DBOSConfigInstance
+from .db_parameters import DBParameters
 from .data_object_column_metadata import DataObjectColumnMetadata
 from .data_object_column_unit import DataObjectColumnUnit
 from .data_object_core_column_unit import DataObjectCoreColumnUnit
@@ -114,6 +140,7 @@ from .database_insights import DatabaseInsights
 from .database_insights_collection import DatabaseInsightsCollection
 from .database_insights_data_object import DatabaseInsightsDataObject
 from .database_insights_data_object_summary import DatabaseInsightsDataObjectSummary
+from .database_parameter_type_details import DatabaseParameterTypeDetails
 from .disk_group_details import DiskGroupDetails
 from .download_operations_insights_warehouse_wallet_details import DownloadOperationsInsightsWarehouseWalletDetails
 from .em_managed_external_database_configuration_summary import EmManagedExternalDatabaseConfigurationSummary
@@ -204,6 +231,8 @@ from .importable_compute_entity_summary import ImportableComputeEntitySummary
 from .importable_compute_entity_summary_collection import ImportableComputeEntitySummaryCollection
 from .importable_enterprise_manager_entity import ImportableEnterpriseManagerEntity
 from .importable_enterprise_manager_entity_collection import ImportableEnterpriseManagerEntityCollection
+from .ingest_addm_reports_details import IngestAddmReportsDetails
+from .ingest_addm_reports_response_details import IngestAddmReportsResponseDetails
 from .ingest_database_configuration_details import IngestDatabaseConfigurationDetails
 from .ingest_database_configuration_response_details import IngestDatabaseConfigurationResponseDetails
 from .ingest_host_configuration_details import IngestHostConfigurationDetails
@@ -268,6 +297,7 @@ from .query_data_object_json_result_set_rows_collection import QueryDataObjectJs
 from .query_data_object_result_set_column_metadata import QueryDataObjectResultSetColumnMetadata
 from .query_data_object_result_set_rows_collection import QueryDataObjectResultSetRowsCollection
 from .query_opsi_data_object_data_details import QueryOpsiDataObjectDataDetails
+from .related_object_type_details import RelatedObjectTypeDetails
 from .resource_capacity_trend_aggregation import ResourceCapacityTrendAggregation
 from .resource_filters import ResourceFilters
 from .resource_insight_current_utilization import ResourceInsightCurrentUtilization
@@ -277,6 +307,7 @@ from .resource_statistics import ResourceStatistics
 from .resource_statistics_aggregation import ResourceStatisticsAggregation
 from .resource_usage_summary import ResourceUsageSummary
 from .resource_usage_trend_aggregation import ResourceUsageTrendAggregation
+from .schema_object_type_details import SchemaObjectTypeDetails
 from .sql_bucket import SqlBucket
 from .sql_insight_aggregation import SqlInsightAggregation
 from .sql_insight_aggregation_collection import SqlInsightAggregationCollection
@@ -304,6 +335,7 @@ from .sql_stats import SqlStats
 from .sql_text import SqlText
 from .sql_text_collection import SqlTextCollection
 from .sql_text_summary import SqlTextSummary
+from .sql_type_details import SqlTypeDetails
 from .storage_server_details import StorageServerDetails
 from .storage_usage_trend import StorageUsageTrend
 from .storage_usage_trend_aggregation import StorageUsageTrendAggregation
@@ -377,6 +409,31 @@ opsi_type_mapping = {
     "AddEmManagedExternalExadataInsightMembersDetails": AddEmManagedExternalExadataInsightMembersDetails,
     "AddExadataInsightMembersDetails": AddExadataInsightMembersDetails,
     "AddPeComanagedExadataInsightMembersDetails": AddPeComanagedExadataInsightMembersDetails,
+    "AddmDbCollection": AddmDbCollection,
+    "AddmDbFindingAggregation": AddmDbFindingAggregation,
+    "AddmDbFindingAggregationCollection": AddmDbFindingAggregationCollection,
+    "AddmDbFindingCategoryCollection": AddmDbFindingCategoryCollection,
+    "AddmDbFindingCategorySummary": AddmDbFindingCategorySummary,
+    "AddmDbFindingsTimeSeriesCollection": AddmDbFindingsTimeSeriesCollection,
+    "AddmDbFindingsTimeSeriesSummary": AddmDbFindingsTimeSeriesSummary,
+    "AddmDbParameterAggregation": AddmDbParameterAggregation,
+    "AddmDbParameterAggregationCollection": AddmDbParameterAggregationCollection,
+    "AddmDbParameterCategoryCollection": AddmDbParameterCategoryCollection,
+    "AddmDbParameterCategorySummary": AddmDbParameterCategorySummary,
+    "AddmDbParameterChangeAggregation": AddmDbParameterChangeAggregation,
+    "AddmDbParameterChangeAggregationCollection": AddmDbParameterChangeAggregationCollection,
+    "AddmDbRecommendationAggregation": AddmDbRecommendationAggregation,
+    "AddmDbRecommendationAggregationCollection": AddmDbRecommendationAggregationCollection,
+    "AddmDbRecommendationCategoryCollection": AddmDbRecommendationCategoryCollection,
+    "AddmDbRecommendationCategorySummary": AddmDbRecommendationCategorySummary,
+    "AddmDbRecommendationsTimeSeriesCollection": AddmDbRecommendationsTimeSeriesCollection,
+    "AddmDbRecommendationsTimeSeriesSummary": AddmDbRecommendationsTimeSeriesSummary,
+    "AddmDbSchemaObjectCollection": AddmDbSchemaObjectCollection,
+    "AddmDbSchemaObjectSummary": AddmDbSchemaObjectSummary,
+    "AddmDbSqlStatementCollection": AddmDbSqlStatementCollection,
+    "AddmDbSqlStatementSummary": AddmDbSqlStatementSummary,
+    "AddmDbSummary": AddmDbSummary,
+    "AddmReport": AddmReport,
     "AutonomousDatabaseConfigurationSummary": AutonomousDatabaseConfigurationSummary,
     "AutonomousDatabaseInsight": AutonomousDatabaseInsight,
     "AutonomousDatabaseInsightSummary": AutonomousDatabaseInsightSummary,
@@ -460,6 +517,7 @@ opsi_type_mapping = {
     "DBExternalInstance": DBExternalInstance,
     "DBExternalProperties": DBExternalProperties,
     "DBOSConfigInstance": DBOSConfigInstance,
+    "DBParameters": DBParameters,
     "DataObjectColumnMetadata": DataObjectColumnMetadata,
     "DataObjectColumnUnit": DataObjectColumnUnit,
     "DataObjectCoreColumnUnit": DataObjectCoreColumnUnit,
@@ -484,6 +542,7 @@ opsi_type_mapping = {
     "DatabaseInsightsCollection": DatabaseInsightsCollection,
     "DatabaseInsightsDataObject": DatabaseInsightsDataObject,
     "DatabaseInsightsDataObjectSummary": DatabaseInsightsDataObjectSummary,
+    "DatabaseParameterTypeDetails": DatabaseParameterTypeDetails,
     "DiskGroupDetails": DiskGroupDetails,
     "DownloadOperationsInsightsWarehouseWalletDetails": DownloadOperationsInsightsWarehouseWalletDetails,
     "EmManagedExternalDatabaseConfigurationSummary": EmManagedExternalDatabaseConfigurationSummary,
@@ -574,6 +633,8 @@ opsi_type_mapping = {
     "ImportableComputeEntitySummaryCollection": ImportableComputeEntitySummaryCollection,
     "ImportableEnterpriseManagerEntity": ImportableEnterpriseManagerEntity,
     "ImportableEnterpriseManagerEntityCollection": ImportableEnterpriseManagerEntityCollection,
+    "IngestAddmReportsDetails": IngestAddmReportsDetails,
+    "IngestAddmReportsResponseDetails": IngestAddmReportsResponseDetails,
     "IngestDatabaseConfigurationDetails": IngestDatabaseConfigurationDetails,
     "IngestDatabaseConfigurationResponseDetails": IngestDatabaseConfigurationResponseDetails,
     "IngestHostConfigurationDetails": IngestHostConfigurationDetails,
@@ -638,6 +699,7 @@ opsi_type_mapping = {
     "QueryDataObjectResultSetColumnMetadata": QueryDataObjectResultSetColumnMetadata,
     "QueryDataObjectResultSetRowsCollection": QueryDataObjectResultSetRowsCollection,
     "QueryOpsiDataObjectDataDetails": QueryOpsiDataObjectDataDetails,
+    "RelatedObjectTypeDetails": RelatedObjectTypeDetails,
     "ResourceCapacityTrendAggregation": ResourceCapacityTrendAggregation,
     "ResourceFilters": ResourceFilters,
     "ResourceInsightCurrentUtilization": ResourceInsightCurrentUtilization,
@@ -647,6 +709,7 @@ opsi_type_mapping = {
     "ResourceStatisticsAggregation": ResourceStatisticsAggregation,
     "ResourceUsageSummary": ResourceUsageSummary,
     "ResourceUsageTrendAggregation": ResourceUsageTrendAggregation,
+    "SchemaObjectTypeDetails": SchemaObjectTypeDetails,
     "SqlBucket": SqlBucket,
     "SqlInsightAggregation": SqlInsightAggregation,
     "SqlInsightAggregationCollection": SqlInsightAggregationCollection,
@@ -674,6 +737,7 @@ opsi_type_mapping = {
     "SqlText": SqlText,
     "SqlTextCollection": SqlTextCollection,
     "SqlTextSummary": SqlTextSummary,
+    "SqlTypeDetails": SqlTypeDetails,
     "StorageServerDetails": StorageServerDetails,
     "StorageUsageTrend": StorageUsageTrend,
     "StorageUsageTrendAggregation": StorageUsageTrendAggregation,

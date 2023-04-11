@@ -11,7 +11,6 @@ from oci.decorators import init_model_state_from_kwargs
 class CreatePluggableDatabaseDetails(object):
     """
     Parameters for creating a pluggable database in a specified container database (CDB).
-
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 

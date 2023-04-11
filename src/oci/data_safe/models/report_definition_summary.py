@@ -433,7 +433,7 @@ class ReportDefinitionSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this ReportDefinitionSummary.
-        The current state of the report
+        The current state of the audit report.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -448,7 +448,7 @@ class ReportDefinitionSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ReportDefinitionSummary.
-        The current state of the report
+        The current state of the audit report.
 
 
         :param lifecycle_state: The lifecycle_state of this ReportDefinitionSummary.
@@ -463,18 +463,18 @@ class ReportDefinitionSummary(object):
     def schedule(self):
         """
         Gets the schedule of this ReportDefinitionSummary.
-        Schedule to generate the report periodically in the specified format:
+        The schedule to generate the report periodically in the specified format:
         <version-string>;<version-specific-schedule>
 
         Allowed version strings - \"v1\"
         v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month>
-        Each of the above fields potentially introduce constraints. A workrequest is created only
+        Each of the above fields potentially introduce constraints. A work request is created only
         when clock time satisfies all the constraints. Constraints introduced:
         1. seconds = <ss> (So, the allowed range for <ss> is [0, 59])
         2. minutes = <mm> (So, the allowed range for <mm> is [0, 59])
         3. hours = <hh> (So, the allowed range for <hh> is [0, 23])
         4. <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday))
-        No constraint introduced when it is '*'. When not, day of week must equal the given value
+        No constraint introduced when it is '*'. When not, day of week must equal the given value.
         5. <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
         No constraint introduced when it is '*'. When not, day of month must equal the given value
 
@@ -488,18 +488,18 @@ class ReportDefinitionSummary(object):
     def schedule(self, schedule):
         """
         Sets the schedule of this ReportDefinitionSummary.
-        Schedule to generate the report periodically in the specified format:
+        The schedule to generate the report periodically in the specified format:
         <version-string>;<version-specific-schedule>
 
         Allowed version strings - \"v1\"
         v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month>
-        Each of the above fields potentially introduce constraints. A workrequest is created only
+        Each of the above fields potentially introduce constraints. A work request is created only
         when clock time satisfies all the constraints. Constraints introduced:
         1. seconds = <ss> (So, the allowed range for <ss> is [0, 59])
         2. minutes = <mm> (So, the allowed range for <mm> is [0, 59])
         3. hours = <hh> (So, the allowed range for <hh> is [0, 23])
         4. <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday))
-        No constraint introduced when it is '*'. When not, day of week must equal the given value
+        No constraint introduced when it is '*'. When not, day of week must equal the given value.
         5. <day-of-month> can be either '*' (without quotes or a number between 1 and 28)
         No constraint introduced when it is '*'. When not, day of month must equal the given value
 

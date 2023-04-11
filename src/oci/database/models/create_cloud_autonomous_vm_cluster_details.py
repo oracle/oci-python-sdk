@@ -323,7 +323,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
     def cpu_core_count_per_node(self):
         """
         Gets the cpu_core_count_per_node of this CreateCloudAutonomousVmClusterDetails.
-        The number of OCPU cores to be enabled per VM cluster node.
+        The number of CPU cores to be enabled per VM cluster node.
 
 
         :return: The cpu_core_count_per_node of this CreateCloudAutonomousVmClusterDetails.
@@ -335,7 +335,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
     def cpu_core_count_per_node(self, cpu_core_count_per_node):
         """
         Sets the cpu_core_count_per_node of this CreateCloudAutonomousVmClusterDetails.
-        The number of OCPU cores to be enabled per VM cluster node.
+        The number of CPU cores to be enabled per VM cluster node.
 
 
         :param cpu_core_count_per_node: The cpu_core_count_per_node of this CreateCloudAutonomousVmClusterDetails.
@@ -347,7 +347,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
     def memory_per_oracle_compute_unit_in_gbs(self):
         """
         Gets the memory_per_oracle_compute_unit_in_gbs of this CreateCloudAutonomousVmClusterDetails.
-        The amount of memory (in GBs) to be enabled per each OCPU core.
+        The amount of memory (in GBs) to be enabled per each CPU core.
 
 
         :return: The memory_per_oracle_compute_unit_in_gbs of this CreateCloudAutonomousVmClusterDetails.
@@ -359,7 +359,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
     def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
         """
         Sets the memory_per_oracle_compute_unit_in_gbs of this CreateCloudAutonomousVmClusterDetails.
-        The amount of memory (in GBs) to be enabled per each OCPU core.
+        The amount of memory (in GBs) to be enabled per each CPU core.
 
 
         :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this CreateCloudAutonomousVmClusterDetails.
@@ -423,7 +423,9 @@ class CreateCloudAutonomousVmClusterDetails(object):
     def compute_model(self):
         """
         Gets the compute_model of this CreateCloudAutonomousVmClusterDetails.
-        The compute model of the Cloud Autonomous VM Cluster.
+        The compute model of the Cloud Autonomous VM Cluster. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
+
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
         Allowed values for this property are: "ECPU", "OCPU"
 
@@ -437,7 +439,9 @@ class CreateCloudAutonomousVmClusterDetails(object):
     def compute_model(self, compute_model):
         """
         Sets the compute_model of this CreateCloudAutonomousVmClusterDetails.
-        The compute model of the Cloud Autonomous VM Cluster.
+        The compute model of the Cloud Autonomous VM Cluster. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
+
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
 
         :param compute_model: The compute_model of this CreateCloudAutonomousVmClusterDetails.
@@ -504,6 +508,8 @@ class CreateCloudAutonomousVmClusterDetails(object):
         Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
         Autonomous Exadata Infrastructure level. When using `shared Exadata infrastructure`__, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
@@ -523,6 +529,8 @@ class CreateCloudAutonomousVmClusterDetails(object):
         License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
         Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
         Autonomous Exadata Infrastructure level. When using `shared Exadata infrastructure`__, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html

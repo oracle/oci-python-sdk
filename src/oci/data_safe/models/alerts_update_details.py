@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AlertsUpdateDetails(object):
     """
-    Details to perform update all action on alerts.
+    The details to update alerts in the specified compartment.
     """
 
     #: A constant which can be used with the status property of a AlertsUpdateDetails.
@@ -116,7 +116,7 @@ class AlertsUpdateDetails(object):
     def target_id(self):
         """
         Gets the target_id of this AlertsUpdateDetails.
-        The OCID of the target associated with alerts.
+        The OCID of the target database associated with the alerts.
 
 
         :return: The target_id of this AlertsUpdateDetails.
@@ -128,7 +128,7 @@ class AlertsUpdateDetails(object):
     def target_id(self, target_id):
         """
         Sets the target_id of this AlertsUpdateDetails.
-        The OCID of the target associated with alerts.
+        The OCID of the target database associated with the alerts.
 
 
         :param target_id: The target_id of this AlertsUpdateDetails.
