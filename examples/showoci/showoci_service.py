@@ -35,7 +35,7 @@ import platform
 ##########################################################################
 class ShowOCIService(object):
     version = "23.04.11"
-    oci_compatible_version = "2.96.0"
+    oci_compatible_version = "2.95.0"
 
     ##########################################################################
     # Global Constants

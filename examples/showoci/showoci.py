@@ -191,8 +191,6 @@ def execute_extract():
     # Get Tenancy details from file
     ############################################
     tenancy = data.get_tenancy_data()
-    if cmd.pause:
-        input("Press Enter to continue...")
 
     ############################################
     # if print service data to file or screen
@@ -353,7 +351,6 @@ def set_parser_arguments(argsList=[]):
     parser.add_argument('-dt', action='store_true', default=False, dest='delegation_token', help='Use Delegation Token (Cloud shell)')
     parser.add_argument('-t', default="", dest='profile', help='Config file section to use (tenancy profile)')
     parser.add_argument('-p', default="", dest='proxy', help='Set Proxy (i.e. www-proxy-server.com:80) ')
-    parser.add_argument('-pause', action='store_true', default=False, dest='pause', help='Pause before Processing')
     parser.add_argument('-rg', default="", dest='region', help='Filter by Region, partial name or comma seperated')
     parser.add_argument('-rgn', default="", dest='not_region', help='Filter by Region, do not include region partial name or comma seperated')
     parser.add_argument('-cp', default="", dest='compart', help='Filter by Compartment Name or OCID')
@@ -415,9 +412,6 @@ def set_service_extract_flags(cmd):
 
     if cmd.proxy:
         prm.proxy = cmd.proxy
-
-    if cmd.pause:
-        prm.pause = cmd.pause
 
     if cmd.mgdcompart:
         prm.read_ManagedCompartmentForPaaS = False
