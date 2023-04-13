@@ -30,6 +30,7 @@ Oda
     oci.oda.models.AuthenticationProviderSummary
     oci.oda.models.Bot
     oci.oda.models.ChangeOdaInstanceCompartmentDetails
+    oci.oda.models.ChangeOdaPrivateEndpointCompartmentDetails
     oci.oda.models.Channel
     oci.oda.models.ChannelCollection
     oci.oda.models.ChannelSummary
@@ -63,6 +64,9 @@ Oda
     oci.oda.models.CreateOSSChannelResult
     oci.oda.models.CreateOdaInstanceAttachmentDetails
     oci.oda.models.CreateOdaInstanceDetails
+    oci.oda.models.CreateOdaPrivateEndpointAttachmentDetails
+    oci.oda.models.CreateOdaPrivateEndpointDetails
+    oci.oda.models.CreateOdaPrivateEndpointScanProxyDetails
     oci.oda.models.CreateOsvcChannelDetails
     oci.oda.models.CreateOsvcChannelResult
     oci.oda.models.CreateServiceCloudChannelDetails
@@ -110,6 +114,15 @@ Oda
     oci.oda.models.OdaInstanceAttachmentSummary
     oci.oda.models.OdaInstanceOwner
     oci.oda.models.OdaInstanceSummary
+    oci.oda.models.OdaPrivateEndpoint
+    oci.oda.models.OdaPrivateEndpointAttachment
+    oci.oda.models.OdaPrivateEndpointAttachmentCollection
+    oci.oda.models.OdaPrivateEndpointAttachmentSummary
+    oci.oda.models.OdaPrivateEndpointCollection
+    oci.oda.models.OdaPrivateEndpointScanProxy
+    oci.oda.models.OdaPrivateEndpointScanProxyCollection
+    oci.oda.models.OdaPrivateEndpointScanProxySummary
+    oci.oda.models.OdaPrivateEndpointSummary
     oci.oda.models.OsvcChannel
     oci.oda.models.Package
     oci.oda.models.PackageSummary
@@ -119,6 +132,7 @@ Oda
     oci.oda.models.ResourceTypeImportContract
     oci.oda.models.ResourceTypeMetadata
     oci.oda.models.RestrictedOperation
+    oci.oda.models.ScanListenerInfo
     oci.oda.models.ServiceCloudChannel
     oci.oda.models.Skill
     oci.oda.models.SkillCollection
@@ -148,6 +162,7 @@ Oda
     oci.oda.models.UpdateOSSChannelDetails
     oci.oda.models.UpdateOdaInstanceAttachmentDetails
     oci.oda.models.UpdateOdaInstanceDetails
+    oci.oda.models.UpdateOdaPrivateEndpointDetails
     oci.oda.models.UpdateOsvcChannelDetails
     oci.oda.models.UpdateServiceCloudChannelDetails
     oci.oda.models.UpdateSkillDetails

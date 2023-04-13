@@ -137,6 +137,38 @@ class WorkRequestSummary(object):
     #: This constant has a value of "EXPORT_DIGITAL_ASSISTANT"
     REQUEST_ACTION_EXPORT_DIGITAL_ASSISTANT = "EXPORT_DIGITAL_ASSISTANT"
 
+    #: A constant which can be used with the request_action property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_ODA_PRIVATE_ENDPOINT"
+    REQUEST_ACTION_CREATE_ODA_PRIVATE_ENDPOINT = "CREATE_ODA_PRIVATE_ENDPOINT"
+
+    #: A constant which can be used with the request_action property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_ODA_PRIVATE_ENDPOINT"
+    REQUEST_ACTION_DELETE_ODA_PRIVATE_ENDPOINT = "DELETE_ODA_PRIVATE_ENDPOINT"
+
+    #: A constant which can be used with the request_action property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_ODA_PRIVATE_ENDPOINT"
+    REQUEST_ACTION_UPDATE_ODA_PRIVATE_ENDPOINT = "UPDATE_ODA_PRIVATE_ENDPOINT"
+
+    #: A constant which can be used with the request_action property of a WorkRequestSummary.
+    #: This constant has a value of "CHANGE_ODA_PRIVATE_ENDPOINT_COMPARTMENT"
+    REQUEST_ACTION_CHANGE_ODA_PRIVATE_ENDPOINT_COMPARTMENT = "CHANGE_ODA_PRIVATE_ENDPOINT_COMPARTMENT"
+
+    #: A constant which can be used with the request_action property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_ODA_PRIVATE_ENDPOINT_SCAN_PROXY"
+    REQUEST_ACTION_CREATE_ODA_PRIVATE_ENDPOINT_SCAN_PROXY = "CREATE_ODA_PRIVATE_ENDPOINT_SCAN_PROXY"
+
+    #: A constant which can be used with the request_action property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_ODA_PRIVATE_ENDPOINT_SCAN_PROXY"
+    REQUEST_ACTION_DELETE_ODA_PRIVATE_ENDPOINT_SCAN_PROXY = "DELETE_ODA_PRIVATE_ENDPOINT_SCAN_PROXY"
+
+    #: A constant which can be used with the request_action property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_ODA_PRIVATE_ENDPOINT_ATTACHMENT"
+    REQUEST_ACTION_CREATE_ODA_PRIVATE_ENDPOINT_ATTACHMENT = "CREATE_ODA_PRIVATE_ENDPOINT_ATTACHMENT"
+
+    #: A constant which can be used with the request_action property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_ODA_PRIVATE_ENDPOINT_ATTACHMENT"
+    REQUEST_ACTION_DELETE_ODA_PRIVATE_ENDPOINT_ATTACHMENT = "DELETE_ODA_PRIVATE_ENDPOINT_ATTACHMENT"
+
     #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -178,9 +210,13 @@ class WorkRequestSummary(object):
             The value to assign to the oda_instance_id property of this WorkRequestSummary.
         :type oda_instance_id: str
 
+        :param resource_id:
+            The value to assign to the resource_id property of this WorkRequestSummary.
+        :type resource_id: str
+
         :param request_action:
             The value to assign to the request_action property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_ODA_INSTANCE", "UPGRADE_ODA_INSTANCE", "DELETE_ODA_INSTANCE", "PURGE_ODA_INSTANCE", "RECOVER_ODA_INSTANCE", "STOP_ODA_INSTANCE", "START_ODA_INSTANCE", "CHANGE_ODA_INSTANCE_COMPARTMENT", "CHANGE_CUST_ENC_KEY", "DEACT_CUST_ENC_KEY", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "LOOKUP_ODA_INSTANCES_FOR_CACCT", "CREATE_ODA_INSTANCE_ATTACHMENT", "UPDATE_ODA_INSTANCE_ATTACHMENT", "DELETE_ODA_INSTANCE_ATTACHMENT", "CREATE_IMPORTED_PACKAGE", "UPDATE_IMPORTED_PACKAGE", "DELETE_IMPORTED_PACKAGE", "IMPORT_BOT", "CREATE_SKILL", "CLONE_SKILL", "EXTEND_SKILL", "VERSION_SKILL", "EXPORT_SKILL", "CREATE_DIGITAL_ASSISTANT", "CLONE_DIGITAL_ASSISTANT", "EXTEND_DIGITAL_ASSISTANT", "VERSION_DIGITAL_ASSISTANT", "EXPORT_DIGITAL_ASSISTANT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_ODA_INSTANCE", "UPGRADE_ODA_INSTANCE", "DELETE_ODA_INSTANCE", "PURGE_ODA_INSTANCE", "RECOVER_ODA_INSTANCE", "STOP_ODA_INSTANCE", "START_ODA_INSTANCE", "CHANGE_ODA_INSTANCE_COMPARTMENT", "CHANGE_CUST_ENC_KEY", "DEACT_CUST_ENC_KEY", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "LOOKUP_ODA_INSTANCES_FOR_CACCT", "CREATE_ODA_INSTANCE_ATTACHMENT", "UPDATE_ODA_INSTANCE_ATTACHMENT", "DELETE_ODA_INSTANCE_ATTACHMENT", "CREATE_IMPORTED_PACKAGE", "UPDATE_IMPORTED_PACKAGE", "DELETE_IMPORTED_PACKAGE", "IMPORT_BOT", "CREATE_SKILL", "CLONE_SKILL", "EXTEND_SKILL", "VERSION_SKILL", "EXPORT_SKILL", "CREATE_DIGITAL_ASSISTANT", "CLONE_DIGITAL_ASSISTANT", "EXTEND_DIGITAL_ASSISTANT", "VERSION_DIGITAL_ASSISTANT", "EXPORT_DIGITAL_ASSISTANT", "CREATE_ODA_PRIVATE_ENDPOINT", "DELETE_ODA_PRIVATE_ENDPOINT", "UPDATE_ODA_PRIVATE_ENDPOINT", "CHANGE_ODA_PRIVATE_ENDPOINT_COMPARTMENT", "CREATE_ODA_PRIVATE_ENDPOINT_SCAN_PROXY", "DELETE_ODA_PRIVATE_ENDPOINT_SCAN_PROXY", "CREATE_ODA_PRIVATE_ENDPOINT_ATTACHMENT", "DELETE_ODA_PRIVATE_ENDPOINT_ATTACHMENT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type request_action: str
 
@@ -199,6 +235,7 @@ class WorkRequestSummary(object):
             'id': 'str',
             'compartment_id': 'str',
             'oda_instance_id': 'str',
+            'resource_id': 'str',
             'request_action': 'str',
             'status': 'str',
             'resources': 'list[WorkRequestResource]'
@@ -208,6 +245,7 @@ class WorkRequestSummary(object):
             'id': 'id',
             'compartment_id': 'compartmentId',
             'oda_instance_id': 'odaInstanceId',
+            'resource_id': 'resourceId',
             'request_action': 'requestAction',
             'status': 'status',
             'resources': 'resources'
@@ -216,6 +254,7 @@ class WorkRequestSummary(object):
         self._id = None
         self._compartment_id = None
         self._oda_instance_id = None
+        self._resource_id = None
         self._request_action = None
         self._status = None
         self._resources = None
@@ -293,12 +332,36 @@ class WorkRequestSummary(object):
         self._oda_instance_id = oda_instance_id
 
     @property
+    def resource_id(self):
+        """
+        **[Required]** Gets the resource_id of this WorkRequestSummary.
+        The identifier of the resource to which this work request pertains.
+
+
+        :return: The resource_id of this WorkRequestSummary.
+        :rtype: str
+        """
+        return self._resource_id
+
+    @resource_id.setter
+    def resource_id(self, resource_id):
+        """
+        Sets the resource_id of this WorkRequestSummary.
+        The identifier of the resource to which this work request pertains.
+
+
+        :param resource_id: The resource_id of this WorkRequestSummary.
+        :type: str
+        """
+        self._resource_id = resource_id
+
+    @property
     def request_action(self):
         """
         **[Required]** Gets the request_action of this WorkRequestSummary.
         The type of the operation that's associated with the work request.
 
-        Allowed values for this property are: "CREATE_ODA_INSTANCE", "UPGRADE_ODA_INSTANCE", "DELETE_ODA_INSTANCE", "PURGE_ODA_INSTANCE", "RECOVER_ODA_INSTANCE", "STOP_ODA_INSTANCE", "START_ODA_INSTANCE", "CHANGE_ODA_INSTANCE_COMPARTMENT", "CHANGE_CUST_ENC_KEY", "DEACT_CUST_ENC_KEY", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "LOOKUP_ODA_INSTANCES_FOR_CACCT", "CREATE_ODA_INSTANCE_ATTACHMENT", "UPDATE_ODA_INSTANCE_ATTACHMENT", "DELETE_ODA_INSTANCE_ATTACHMENT", "CREATE_IMPORTED_PACKAGE", "UPDATE_IMPORTED_PACKAGE", "DELETE_IMPORTED_PACKAGE", "IMPORT_BOT", "CREATE_SKILL", "CLONE_SKILL", "EXTEND_SKILL", "VERSION_SKILL", "EXPORT_SKILL", "CREATE_DIGITAL_ASSISTANT", "CLONE_DIGITAL_ASSISTANT", "EXTEND_DIGITAL_ASSISTANT", "VERSION_DIGITAL_ASSISTANT", "EXPORT_DIGITAL_ASSISTANT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_ODA_INSTANCE", "UPGRADE_ODA_INSTANCE", "DELETE_ODA_INSTANCE", "PURGE_ODA_INSTANCE", "RECOVER_ODA_INSTANCE", "STOP_ODA_INSTANCE", "START_ODA_INSTANCE", "CHANGE_ODA_INSTANCE_COMPARTMENT", "CHANGE_CUST_ENC_KEY", "DEACT_CUST_ENC_KEY", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "LOOKUP_ODA_INSTANCES_FOR_CACCT", "CREATE_ODA_INSTANCE_ATTACHMENT", "UPDATE_ODA_INSTANCE_ATTACHMENT", "DELETE_ODA_INSTANCE_ATTACHMENT", "CREATE_IMPORTED_PACKAGE", "UPDATE_IMPORTED_PACKAGE", "DELETE_IMPORTED_PACKAGE", "IMPORT_BOT", "CREATE_SKILL", "CLONE_SKILL", "EXTEND_SKILL", "VERSION_SKILL", "EXPORT_SKILL", "CREATE_DIGITAL_ASSISTANT", "CLONE_DIGITAL_ASSISTANT", "EXTEND_DIGITAL_ASSISTANT", "VERSION_DIGITAL_ASSISTANT", "EXPORT_DIGITAL_ASSISTANT", "CREATE_ODA_PRIVATE_ENDPOINT", "DELETE_ODA_PRIVATE_ENDPOINT", "UPDATE_ODA_PRIVATE_ENDPOINT", "CHANGE_ODA_PRIVATE_ENDPOINT_COMPARTMENT", "CREATE_ODA_PRIVATE_ENDPOINT_SCAN_PROXY", "DELETE_ODA_PRIVATE_ENDPOINT_SCAN_PROXY", "CREATE_ODA_PRIVATE_ENDPOINT_ATTACHMENT", "DELETE_ODA_PRIVATE_ENDPOINT_ATTACHMENT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -317,7 +380,7 @@ class WorkRequestSummary(object):
         :param request_action: The request_action of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_ODA_INSTANCE", "UPGRADE_ODA_INSTANCE", "DELETE_ODA_INSTANCE", "PURGE_ODA_INSTANCE", "RECOVER_ODA_INSTANCE", "STOP_ODA_INSTANCE", "START_ODA_INSTANCE", "CHANGE_ODA_INSTANCE_COMPARTMENT", "CHANGE_CUST_ENC_KEY", "DEACT_CUST_ENC_KEY", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "LOOKUP_ODA_INSTANCES_FOR_CACCT", "CREATE_ODA_INSTANCE_ATTACHMENT", "UPDATE_ODA_INSTANCE_ATTACHMENT", "DELETE_ODA_INSTANCE_ATTACHMENT", "CREATE_IMPORTED_PACKAGE", "UPDATE_IMPORTED_PACKAGE", "DELETE_IMPORTED_PACKAGE", "IMPORT_BOT", "CREATE_SKILL", "CLONE_SKILL", "EXTEND_SKILL", "VERSION_SKILL", "EXPORT_SKILL", "CREATE_DIGITAL_ASSISTANT", "CLONE_DIGITAL_ASSISTANT", "EXTEND_DIGITAL_ASSISTANT", "VERSION_DIGITAL_ASSISTANT", "EXPORT_DIGITAL_ASSISTANT"]
+        allowed_values = ["CREATE_ODA_INSTANCE", "UPGRADE_ODA_INSTANCE", "DELETE_ODA_INSTANCE", "PURGE_ODA_INSTANCE", "RECOVER_ODA_INSTANCE", "STOP_ODA_INSTANCE", "START_ODA_INSTANCE", "CHANGE_ODA_INSTANCE_COMPARTMENT", "CHANGE_CUST_ENC_KEY", "DEACT_CUST_ENC_KEY", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "LOOKUP_ODA_INSTANCES_FOR_CACCT", "CREATE_ODA_INSTANCE_ATTACHMENT", "UPDATE_ODA_INSTANCE_ATTACHMENT", "DELETE_ODA_INSTANCE_ATTACHMENT", "CREATE_IMPORTED_PACKAGE", "UPDATE_IMPORTED_PACKAGE", "DELETE_IMPORTED_PACKAGE", "IMPORT_BOT", "CREATE_SKILL", "CLONE_SKILL", "EXTEND_SKILL", "VERSION_SKILL", "EXPORT_SKILL", "CREATE_DIGITAL_ASSISTANT", "CLONE_DIGITAL_ASSISTANT", "EXTEND_DIGITAL_ASSISTANT", "VERSION_DIGITAL_ASSISTANT", "EXPORT_DIGITAL_ASSISTANT", "CREATE_ODA_PRIVATE_ENDPOINT", "DELETE_ODA_PRIVATE_ENDPOINT", "UPDATE_ODA_PRIVATE_ENDPOINT", "CHANGE_ODA_PRIVATE_ENDPOINT_COMPARTMENT", "CREATE_ODA_PRIVATE_ENDPOINT_SCAN_PROXY", "DELETE_ODA_PRIVATE_ENDPOINT_SCAN_PROXY", "CREATE_ODA_PRIVATE_ENDPOINT_ATTACHMENT", "DELETE_ODA_PRIVATE_ENDPOINT_ATTACHMENT"]
         if not value_allowed_none_or_none_sentinel(request_action, allowed_values):
             request_action = 'UNKNOWN_ENUM_VALUE'
         self._request_action = request_action

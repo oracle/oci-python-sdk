@@ -12,6 +12,7 @@ from .authentication_provider_collection import AuthenticationProviderCollection
 from .authentication_provider_summary import AuthenticationProviderSummary
 from .bot import Bot
 from .change_oda_instance_compartment_details import ChangeOdaInstanceCompartmentDetails
+from .change_oda_private_endpoint_compartment_details import ChangeOdaPrivateEndpointCompartmentDetails
 from .channel import Channel
 from .channel_collection import ChannelCollection
 from .channel_summary import ChannelSummary
@@ -45,6 +46,9 @@ from .create_oss_channel_details import CreateOSSChannelDetails
 from .create_oss_channel_result import CreateOSSChannelResult
 from .create_oda_instance_attachment_details import CreateOdaInstanceAttachmentDetails
 from .create_oda_instance_details import CreateOdaInstanceDetails
+from .create_oda_private_endpoint_attachment_details import CreateOdaPrivateEndpointAttachmentDetails
+from .create_oda_private_endpoint_details import CreateOdaPrivateEndpointDetails
+from .create_oda_private_endpoint_scan_proxy_details import CreateOdaPrivateEndpointScanProxyDetails
 from .create_osvc_channel_details import CreateOsvcChannelDetails
 from .create_osvc_channel_result import CreateOsvcChannelResult
 from .create_service_cloud_channel_details import CreateServiceCloudChannelDetails
@@ -92,6 +96,15 @@ from .oda_instance_attachment_owner import OdaInstanceAttachmentOwner
 from .oda_instance_attachment_summary import OdaInstanceAttachmentSummary
 from .oda_instance_owner import OdaInstanceOwner
 from .oda_instance_summary import OdaInstanceSummary
+from .oda_private_endpoint import OdaPrivateEndpoint
+from .oda_private_endpoint_attachment import OdaPrivateEndpointAttachment
+from .oda_private_endpoint_attachment_collection import OdaPrivateEndpointAttachmentCollection
+from .oda_private_endpoint_attachment_summary import OdaPrivateEndpointAttachmentSummary
+from .oda_private_endpoint_collection import OdaPrivateEndpointCollection
+from .oda_private_endpoint_scan_proxy import OdaPrivateEndpointScanProxy
+from .oda_private_endpoint_scan_proxy_collection import OdaPrivateEndpointScanProxyCollection
+from .oda_private_endpoint_scan_proxy_summary import OdaPrivateEndpointScanProxySummary
+from .oda_private_endpoint_summary import OdaPrivateEndpointSummary
 from .osvc_channel import OsvcChannel
 from .package import Package
 from .package_summary import PackageSummary
@@ -101,6 +114,7 @@ from .resource_type_default_parameter_values import ResourceTypeDefaultParameter
 from .resource_type_import_contract import ResourceTypeImportContract
 from .resource_type_metadata import ResourceTypeMetadata
 from .restricted_operation import RestrictedOperation
+from .scan_listener_info import ScanListenerInfo
 from .service_cloud_channel import ServiceCloudChannel
 from .skill import Skill
 from .skill_collection import SkillCollection
@@ -130,6 +144,7 @@ from .update_ms_teams_channel_details import UpdateMSTeamsChannelDetails
 from .update_oss_channel_details import UpdateOSSChannelDetails
 from .update_oda_instance_attachment_details import UpdateOdaInstanceAttachmentDetails
 from .update_oda_instance_details import UpdateOdaInstanceDetails
+from .update_oda_private_endpoint_details import UpdateOdaPrivateEndpointDetails
 from .update_osvc_channel_details import UpdateOsvcChannelDetails
 from .update_service_cloud_channel_details import UpdateServiceCloudChannelDetails
 from .update_skill_details import UpdateSkillDetails
@@ -157,6 +172,7 @@ oda_type_mapping = {
     "AuthenticationProviderSummary": AuthenticationProviderSummary,
     "Bot": Bot,
     "ChangeOdaInstanceCompartmentDetails": ChangeOdaInstanceCompartmentDetails,
+    "ChangeOdaPrivateEndpointCompartmentDetails": ChangeOdaPrivateEndpointCompartmentDetails,
     "Channel": Channel,
     "ChannelCollection": ChannelCollection,
     "ChannelSummary": ChannelSummary,
@@ -190,6 +206,9 @@ oda_type_mapping = {
     "CreateOSSChannelResult": CreateOSSChannelResult,
     "CreateOdaInstanceAttachmentDetails": CreateOdaInstanceAttachmentDetails,
     "CreateOdaInstanceDetails": CreateOdaInstanceDetails,
+    "CreateOdaPrivateEndpointAttachmentDetails": CreateOdaPrivateEndpointAttachmentDetails,
+    "CreateOdaPrivateEndpointDetails": CreateOdaPrivateEndpointDetails,
+    "CreateOdaPrivateEndpointScanProxyDetails": CreateOdaPrivateEndpointScanProxyDetails,
     "CreateOsvcChannelDetails": CreateOsvcChannelDetails,
     "CreateOsvcChannelResult": CreateOsvcChannelResult,
     "CreateServiceCloudChannelDetails": CreateServiceCloudChannelDetails,
@@ -237,6 +256,15 @@ oda_type_mapping = {
     "OdaInstanceAttachmentSummary": OdaInstanceAttachmentSummary,
     "OdaInstanceOwner": OdaInstanceOwner,
     "OdaInstanceSummary": OdaInstanceSummary,
+    "OdaPrivateEndpoint": OdaPrivateEndpoint,
+    "OdaPrivateEndpointAttachment": OdaPrivateEndpointAttachment,
+    "OdaPrivateEndpointAttachmentCollection": OdaPrivateEndpointAttachmentCollection,
+    "OdaPrivateEndpointAttachmentSummary": OdaPrivateEndpointAttachmentSummary,
+    "OdaPrivateEndpointCollection": OdaPrivateEndpointCollection,
+    "OdaPrivateEndpointScanProxy": OdaPrivateEndpointScanProxy,
+    "OdaPrivateEndpointScanProxyCollection": OdaPrivateEndpointScanProxyCollection,
+    "OdaPrivateEndpointScanProxySummary": OdaPrivateEndpointScanProxySummary,
+    "OdaPrivateEndpointSummary": OdaPrivateEndpointSummary,
     "OsvcChannel": OsvcChannel,
     "Package": Package,
     "PackageSummary": PackageSummary,
@@ -246,6 +274,7 @@ oda_type_mapping = {
     "ResourceTypeImportContract": ResourceTypeImportContract,
     "ResourceTypeMetadata": ResourceTypeMetadata,
     "RestrictedOperation": RestrictedOperation,
+    "ScanListenerInfo": ScanListenerInfo,
     "ServiceCloudChannel": ServiceCloudChannel,
     "Skill": Skill,
     "SkillCollection": SkillCollection,
@@ -275,6 +304,7 @@ oda_type_mapping = {
     "UpdateOSSChannelDetails": UpdateOSSChannelDetails,
     "UpdateOdaInstanceAttachmentDetails": UpdateOdaInstanceAttachmentDetails,
     "UpdateOdaInstanceDetails": UpdateOdaInstanceDetails,
+    "UpdateOdaPrivateEndpointDetails": UpdateOdaPrivateEndpointDetails,
     "UpdateOsvcChannelDetails": UpdateOsvcChannelDetails,
     "UpdateServiceCloudChannelDetails": UpdateServiceCloudChannelDetails,
     "UpdateSkillDetails": UpdateSkillDetails,

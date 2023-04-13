@@ -283,6 +283,47 @@ def test_autonomous_database_manual_refresh(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_cancel_backup(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'CancelBackup'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'CancelBackup')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='CancelBackup')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.cancel_backup(
+                backup_id=request.pop(util.camelize('backupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'CancelBackup',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cancel_backup',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_change_autonomous_container_database_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeAutonomousContainerDatabaseCompartment'):

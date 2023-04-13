@@ -34,6 +34,48 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
+def test_change_oda_private_endpoint_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('oda', 'ChangeOdaPrivateEndpointCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('oda', util.camelize('management'), 'ChangeOdaPrivateEndpointCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='oda', api_name='ChangeOdaPrivateEndpointCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.oda.ManagementClient(config, service_endpoint=service_endpoint)
+            response = client.change_oda_private_endpoint_compartment(
+                oda_private_endpoint_id=request.pop(util.camelize('odaPrivateEndpointId')),
+                change_oda_private_endpoint_compartment_details=request.pop(util.camelize('ChangeOdaPrivateEndpointCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'oda',
+            'ChangeOdaPrivateEndpointCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_oda_private_endpoint_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
 def test_configure_digital_assistant_parameters(testing_service_client):
     if not testing_service_client.is_api_enabled('oda', 'ConfigureDigitalAssistantParameters'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -196,6 +238,130 @@ def test_create_digital_assistant(testing_service_client):
             result,
             service_error,
             'create_digital_assistant',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
+def test_create_oda_private_endpoint(testing_service_client):
+    if not testing_service_client.is_api_enabled('oda', 'CreateOdaPrivateEndpoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('oda', util.camelize('management'), 'CreateOdaPrivateEndpoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='oda', api_name='CreateOdaPrivateEndpoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.oda.ManagementClient(config, service_endpoint=service_endpoint)
+            response = client.create_oda_private_endpoint(
+                create_oda_private_endpoint_details=request.pop(util.camelize('CreateOdaPrivateEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'oda',
+            'CreateOdaPrivateEndpoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'odaPrivateEndpoint',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
+def test_create_oda_private_endpoint_attachment(testing_service_client):
+    if not testing_service_client.is_api_enabled('oda', 'CreateOdaPrivateEndpointAttachment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('oda', util.camelize('management'), 'CreateOdaPrivateEndpointAttachment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='oda', api_name='CreateOdaPrivateEndpointAttachment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.oda.ManagementClient(config, service_endpoint=service_endpoint)
+            response = client.create_oda_private_endpoint_attachment(
+                create_oda_private_endpoint_attachment_details=request.pop(util.camelize('CreateOdaPrivateEndpointAttachmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'oda',
+            'CreateOdaPrivateEndpointAttachment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'odaPrivateEndpointAttachment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
+def test_create_oda_private_endpoint_scan_proxy(testing_service_client):
+    if not testing_service_client.is_api_enabled('oda', 'CreateOdaPrivateEndpointScanProxy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('oda', util.camelize('management'), 'CreateOdaPrivateEndpointScanProxy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='oda', api_name='CreateOdaPrivateEndpointScanProxy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.oda.ManagementClient(config, service_endpoint=service_endpoint)
+            response = client.create_oda_private_endpoint_scan_proxy(
+                create_oda_private_endpoint_scan_proxy_details=request.pop(util.camelize('CreateOdaPrivateEndpointScanProxyDetails')),
+                oda_private_endpoint_id=request.pop(util.camelize('odaPrivateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'oda',
+            'CreateOdaPrivateEndpointScanProxy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'odaPrivateEndpointScanProxy',
             False,
             False
         )
@@ -449,6 +615,130 @@ def test_delete_digital_assistant(testing_service_client):
             result,
             service_error,
             'delete_digital_assistant',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
+def test_delete_oda_private_endpoint(testing_service_client):
+    if not testing_service_client.is_api_enabled('oda', 'DeleteOdaPrivateEndpoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('oda', util.camelize('management'), 'DeleteOdaPrivateEndpoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='oda', api_name='DeleteOdaPrivateEndpoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.oda.ManagementClient(config, service_endpoint=service_endpoint)
+            response = client.delete_oda_private_endpoint(
+                oda_private_endpoint_id=request.pop(util.camelize('odaPrivateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'oda',
+            'DeleteOdaPrivateEndpoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_oda_private_endpoint',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
+def test_delete_oda_private_endpoint_attachment(testing_service_client):
+    if not testing_service_client.is_api_enabled('oda', 'DeleteOdaPrivateEndpointAttachment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('oda', util.camelize('management'), 'DeleteOdaPrivateEndpointAttachment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='oda', api_name='DeleteOdaPrivateEndpointAttachment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.oda.ManagementClient(config, service_endpoint=service_endpoint)
+            response = client.delete_oda_private_endpoint_attachment(
+                oda_private_endpoint_attachment_id=request.pop(util.camelize('odaPrivateEndpointAttachmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'oda',
+            'DeleteOdaPrivateEndpointAttachment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_oda_private_endpoint_attachment',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
+def test_delete_oda_private_endpoint_scan_proxy(testing_service_client):
+    if not testing_service_client.is_api_enabled('oda', 'DeleteOdaPrivateEndpointScanProxy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('oda', util.camelize('management'), 'DeleteOdaPrivateEndpointScanProxy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='oda', api_name='DeleteOdaPrivateEndpointScanProxy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.oda.ManagementClient(config, service_endpoint=service_endpoint)
+            response = client.delete_oda_private_endpoint_scan_proxy(
+                oda_private_endpoint_scan_proxy_id=request.pop(util.camelize('odaPrivateEndpointScanProxyId')),
+                oda_private_endpoint_id=request.pop(util.camelize('odaPrivateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'oda',
+            'DeleteOdaPrivateEndpointScanProxy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_oda_private_endpoint_scan_proxy',
             True,
             False
         )
@@ -831,6 +1121,130 @@ def test_get_digital_assistant_parameter(testing_service_client):
             result,
             service_error,
             'digitalAssistantParameter',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
+def test_get_oda_private_endpoint(testing_service_client):
+    if not testing_service_client.is_api_enabled('oda', 'GetOdaPrivateEndpoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('oda', util.camelize('management'), 'GetOdaPrivateEndpoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='oda', api_name='GetOdaPrivateEndpoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.oda.ManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_oda_private_endpoint(
+                oda_private_endpoint_id=request.pop(util.camelize('odaPrivateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'oda',
+            'GetOdaPrivateEndpoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'odaPrivateEndpoint',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
+def test_get_oda_private_endpoint_attachment(testing_service_client):
+    if not testing_service_client.is_api_enabled('oda', 'GetOdaPrivateEndpointAttachment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('oda', util.camelize('management'), 'GetOdaPrivateEndpointAttachment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='oda', api_name='GetOdaPrivateEndpointAttachment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.oda.ManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_oda_private_endpoint_attachment(
+                oda_private_endpoint_attachment_id=request.pop(util.camelize('odaPrivateEndpointAttachmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'oda',
+            'GetOdaPrivateEndpointAttachment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'odaPrivateEndpointAttachment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
+def test_get_oda_private_endpoint_scan_proxy(testing_service_client):
+    if not testing_service_client.is_api_enabled('oda', 'GetOdaPrivateEndpointScanProxy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('oda', util.camelize('management'), 'GetOdaPrivateEndpointScanProxy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='oda', api_name='GetOdaPrivateEndpointScanProxy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.oda.ManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_oda_private_endpoint_scan_proxy(
+                oda_private_endpoint_scan_proxy_id=request.pop(util.camelize('odaPrivateEndpointScanProxyId')),
+                oda_private_endpoint_id=request.pop(util.camelize('odaPrivateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'oda',
+            'GetOdaPrivateEndpointScanProxy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'odaPrivateEndpointScanProxy',
             False,
             False
         )
@@ -1255,6 +1669,198 @@ def test_list_digital_assistants(testing_service_client):
             result,
             service_error,
             'digitalAssistantCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
+def test_list_oda_private_endpoint_attachments(testing_service_client):
+    if not testing_service_client.is_api_enabled('oda', 'ListOdaPrivateEndpointAttachments'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('oda', util.camelize('management'), 'ListOdaPrivateEndpointAttachments')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='oda', api_name='ListOdaPrivateEndpointAttachments')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.oda.ManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_oda_private_endpoint_attachments(
+                oda_private_endpoint_id=request.pop(util.camelize('odaPrivateEndpointId')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_oda_private_endpoint_attachments(
+                    oda_private_endpoint_id=request.pop(util.camelize('odaPrivateEndpointId')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_oda_private_endpoint_attachments(
+                        oda_private_endpoint_id=request.pop(util.camelize('odaPrivateEndpointId')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'oda',
+            'ListOdaPrivateEndpointAttachments',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'odaPrivateEndpointAttachmentCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
+def test_list_oda_private_endpoint_scan_proxies(testing_service_client):
+    if not testing_service_client.is_api_enabled('oda', 'ListOdaPrivateEndpointScanProxies'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('oda', util.camelize('management'), 'ListOdaPrivateEndpointScanProxies')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='oda', api_name='ListOdaPrivateEndpointScanProxies')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.oda.ManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_oda_private_endpoint_scan_proxies(
+                oda_private_endpoint_id=request.pop(util.camelize('odaPrivateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_oda_private_endpoint_scan_proxies(
+                    oda_private_endpoint_id=request.pop(util.camelize('odaPrivateEndpointId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_oda_private_endpoint_scan_proxies(
+                        oda_private_endpoint_id=request.pop(util.camelize('odaPrivateEndpointId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'oda',
+            'ListOdaPrivateEndpointScanProxies',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'odaPrivateEndpointScanProxyCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
+def test_list_oda_private_endpoints(testing_service_client):
+    if not testing_service_client.is_api_enabled('oda', 'ListOdaPrivateEndpoints'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('oda', util.camelize('management'), 'ListOdaPrivateEndpoints')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='oda', api_name='ListOdaPrivateEndpoints')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.oda.ManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_oda_private_endpoints(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_oda_private_endpoints(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_oda_private_endpoints(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'oda',
+            'ListOdaPrivateEndpoints',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'odaPrivateEndpointCollection',
             False,
             True
         )
@@ -1830,6 +2436,48 @@ def test_update_digital_assistant_parameter(testing_service_client):
             result,
             service_error,
             'digitalAssistantParameter',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
+def test_update_oda_private_endpoint(testing_service_client):
+    if not testing_service_client.is_api_enabled('oda', 'UpdateOdaPrivateEndpoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('oda', util.camelize('management'), 'UpdateOdaPrivateEndpoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='oda', api_name='UpdateOdaPrivateEndpoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.oda.ManagementClient(config, service_endpoint=service_endpoint)
+            response = client.update_oda_private_endpoint(
+                oda_private_endpoint_id=request.pop(util.camelize('odaPrivateEndpointId')),
+                update_oda_private_endpoint_details=request.pop(util.camelize('UpdateOdaPrivateEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'oda',
+            'UpdateOdaPrivateEndpoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_oda_private_endpoint',
             False,
             False
         )

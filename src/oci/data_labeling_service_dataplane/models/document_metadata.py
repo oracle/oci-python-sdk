@@ -24,17 +24,48 @@ class DocumentMetadata(RecordMetadata):
             Allowed values for this property are: "IMAGE_METADATA", "TEXT_METADATA", "DOCUMENT_METADATA"
         :type record_type: str
 
+        :param job_id:
+            The value to assign to the job_id property of this DocumentMetadata.
+        :type job_id: str
+
         """
         self.swagger_types = {
-            'record_type': 'str'
+            'record_type': 'str',
+            'job_id': 'str'
         }
 
         self.attribute_map = {
-            'record_type': 'recordType'
+            'record_type': 'recordType',
+            'job_id': 'jobId'
         }
 
         self._record_type = None
+        self._job_id = None
         self._record_type = 'DOCUMENT_METADATA'
+
+    @property
+    def job_id(self):
+        """
+        Gets the job_id of this DocumentMetadata.
+        Job id ocid of OCR batch call.
+
+
+        :return: The job_id of this DocumentMetadata.
+        :rtype: str
+        """
+        return self._job_id
+
+    @job_id.setter
+    def job_id(self, job_id):
+        """
+        Sets the job_id of this DocumentMetadata.
+        Job id ocid of OCR batch call.
+
+
+        :param job_id: The job_id of this DocumentMetadata.
+        :type: str
+        """
+        self._job_id = job_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -54,6 +54,14 @@ class BackupSummary(object):
     #: This constant has a value of "RESTORING"
     LIFECYCLE_STATE_RESTORING = "RESTORING"
 
+    #: A constant which can be used with the lifecycle_state property of a BackupSummary.
+    #: This constant has a value of "CANCELING"
+    LIFECYCLE_STATE_CANCELING = "CANCELING"
+
+    #: A constant which can be used with the lifecycle_state property of a BackupSummary.
+    #: This constant has a value of "CANCELED"
+    LIFECYCLE_STATE_CANCELED = "CANCELED"
+
     #: A constant which can be used with the database_edition property of a BackupSummary.
     #: This constant has a value of "STANDARD_EDITION"
     DATABASE_EDITION_STANDARD_EDITION = "STANDARD_EDITION"
@@ -115,7 +123,7 @@ class BackupSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this BackupSummary.
-            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "RESTORING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "RESTORING", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -448,7 +456,7 @@ class BackupSummary(object):
         Gets the lifecycle_state of this BackupSummary.
         The current state of the backup.
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "RESTORING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "RESTORING", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -467,7 +475,7 @@ class BackupSummary(object):
         :param lifecycle_state: The lifecycle_state of this BackupSummary.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "RESTORING"]
+        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "RESTORING", "CANCELING", "CANCELED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

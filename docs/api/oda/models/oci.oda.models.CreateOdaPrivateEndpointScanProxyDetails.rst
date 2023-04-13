@@ -1,0 +1,11 @@
+CreateOdaPrivateEndpointScanProxyDetails
+========================================
+
+.. currentmodule:: oci.oda.models
+
+.. autoclass:: CreateOdaPrivateEndpointScanProxyDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

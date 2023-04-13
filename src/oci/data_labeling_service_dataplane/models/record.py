@@ -68,10 +68,6 @@ class Record(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
-        :param lifetime_logical_clock:
-            The value to assign to the lifetime_logical_clock property of this Record.
-        :type lifetime_logical_clock: int
-
         :param record_metadata:
             The value to assign to the record_metadata property of this Record.
         :type record_metadata: oci.data_labeling_service_dataplane.models.RecordMetadata
@@ -95,7 +91,6 @@ class Record(object):
             'source_details': 'SourceDetails',
             'is_labeled': 'bool',
             'lifecycle_state': 'str',
-            'lifetime_logical_clock': 'int',
             'record_metadata': 'RecordMetadata',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -111,7 +106,6 @@ class Record(object):
             'source_details': 'sourceDetails',
             'is_labeled': 'isLabeled',
             'lifecycle_state': 'lifecycleState',
-            'lifetime_logical_clock': 'lifetimeLogicalClock',
             'record_metadata': 'recordMetadata',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -126,7 +120,6 @@ class Record(object):
         self._source_details = None
         self._is_labeled = None
         self._lifecycle_state = None
-        self._lifetime_logical_clock = None
         self._record_metadata = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -354,30 +347,6 @@ class Record(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
-
-    @property
-    def lifetime_logical_clock(self):
-        """
-        **[Required]** Gets the lifetime_logical_clock of this Record.
-        An integer value used in achieving concurrency control, this field will be used to generate eTags.
-
-
-        :return: The lifetime_logical_clock of this Record.
-        :rtype: int
-        """
-        return self._lifetime_logical_clock
-
-    @lifetime_logical_clock.setter
-    def lifetime_logical_clock(self, lifetime_logical_clock):
-        """
-        Sets the lifetime_logical_clock of this Record.
-        An integer value used in achieving concurrency control, this field will be used to generate eTags.
-
-
-        :param lifetime_logical_clock: The lifetime_logical_clock of this Record.
-        :type: int
-        """
-        self._lifetime_logical_clock = lifetime_logical_clock
 
     @property
     def record_metadata(self):

@@ -68,10 +68,6 @@ class Annotation(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
-        :param lifetime_logical_clock:
-            The value to assign to the lifetime_logical_clock property of this Annotation.
-        :type lifetime_logical_clock: int
-
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Annotation.
         :type freeform_tags: dict(str, str)
@@ -91,7 +87,6 @@ class Annotation(object):
             'entities': 'list[Entity]',
             'compartment_id': 'str',
             'lifecycle_state': 'str',
-            'lifetime_logical_clock': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -106,7 +101,6 @@ class Annotation(object):
             'entities': 'entities',
             'compartment_id': 'compartmentId',
             'lifecycle_state': 'lifecycleState',
-            'lifetime_logical_clock': 'lifetimeLogicalClock',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -120,7 +114,6 @@ class Annotation(object):
         self._entities = None
         self._compartment_id = None
         self._lifecycle_state = None
-        self._lifetime_logical_clock = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -351,30 +344,6 @@ class Annotation(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
-
-    @property
-    def lifetime_logical_clock(self):
-        """
-        **[Required]** Gets the lifetime_logical_clock of this Annotation.
-        An integer value used in achieving concurrency control, this field will be used to generate eTags.
-
-
-        :return: The lifetime_logical_clock of this Annotation.
-        :rtype: int
-        """
-        return self._lifetime_logical_clock
-
-    @lifetime_logical_clock.setter
-    def lifetime_logical_clock(self, lifetime_logical_clock):
-        """
-        Sets the lifetime_logical_clock of this Annotation.
-        An integer value used in achieving concurrency control, this field will be used to generate eTags.
-
-
-        :param lifetime_logical_clock: The lifetime_logical_clock of this Annotation.
-        :type: int
-        """
-        self._lifetime_logical_clock = lifetime_logical_clock
 
     @property
     def freeform_tags(self):

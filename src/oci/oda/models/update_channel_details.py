@@ -95,6 +95,10 @@ class UpdateChannelDetails(object):
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param name:
+            The value to assign to the name property of this UpdateChannelDetails.
+        :type name: str
+
         :param description:
             The value to assign to the description property of this UpdateChannelDetails.
         :type description: str
@@ -118,6 +122,7 @@ class UpdateChannelDetails(object):
 
         """
         self.swagger_types = {
+            'name': 'str',
             'description': 'str',
             'type': 'str',
             'session_expiry_duration_in_milliseconds': 'int',
@@ -126,6 +131,7 @@ class UpdateChannelDetails(object):
         }
 
         self.attribute_map = {
+            'name': 'name',
             'description': 'description',
             'type': 'type',
             'session_expiry_duration_in_milliseconds': 'sessionExpiryDurationInMilliseconds',
@@ -133,6 +139,7 @@ class UpdateChannelDetails(object):
             'defined_tags': 'definedTags'
         }
 
+        self._name = None
         self._description = None
         self._type = None
         self._session_expiry_duration_in_milliseconds = None
@@ -190,6 +197,30 @@ class UpdateChannelDetails(object):
             return 'UpdateCortanaChannelDetails'
         else:
             return 'UpdateChannelDetails'
+
+    @property
+    def name(self):
+        """
+        Gets the name of this UpdateChannelDetails.
+        The Channel's name. The name can contain only letters, numbers, periods, and underscores. The name must begin with a letter.
+
+
+        :return: The name of this UpdateChannelDetails.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this UpdateChannelDetails.
+        The Channel's name. The name can contain only letters, numbers, periods, and underscores. The name must begin with a letter.
+
+
+        :param name: The name of this UpdateChannelDetails.
+        :type: str
+        """
+        self._name = name
 
     @property
     def description(self):
