@@ -8,7 +8,7 @@ Output can be printer friendly, CSV files or JSON file with an option to load th
 [cost analysis](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/costanalysisoverview.htm) 
 and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm) features should be used instead.**
 
-**Developed by Adi Zohar, 2018-2023**
+**Developed by Adi Zohar, 2018-2023, Contributers: Olaf Heimburger**
 
 ## Content
 
@@ -43,8 +43,8 @@ and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/
 
 1. Cloud Shell or Virtual Machine or Home PC
 2. Connectivity to the Internet to access OCI Rest APIs
-3. Python3 (3.9+ Recommedned)
-4. OCI SDK Python Packages - oci oracledb
+3. Python3, tested on 3.9
+4. OCI SDK Python Packages - oci
 
 ### Modules Included:
 
@@ -1813,7 +1813,3 @@ Processing...
 Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
 This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
-## Developed using open source versions:
-Python 3.9.13
-oracledb 1.3.0
-OCI Python SDK 2.95.0

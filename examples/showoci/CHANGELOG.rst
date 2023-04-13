@@ -8,7 +8,7 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 =====================
 23.04.18 - 23.04.18
 =====================
-* remove pause to avoid security issue with input
+* Removed pause to avoid false positive in security scan
 
 =====================
 23.04.11 - 23.04.11
@@ -20,8 +20,8 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 =====================
 * Added OCI_RESOURCES table to showoci2adw to load all relevants OCIDs
 * Added Identity to summary
-* Added Goldengate deployment to CSV and ADW
-* Added NoSQL to CSV and ADW
+* Added Goldengate deployment to CSV
+* Added NoSQL to CSV
 * Added Network Firewall + Policies
 * Added more mysql info + added to CSV
 * Added Cloud Guard Recipes
@@ -38,7 +38,6 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 23.03.14 - 23.03.14
 =====================
 * Added more info for OKE, APIGW, Databases for JSON and CSV
-* Added most of CSVs to csv2adw process
 * Added DevOps and WAF
 * Added Quotas to CSV
 
@@ -46,7 +45,6 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 23.03.07 - 23.03.07
 =====================
 * Added Tags to file storage and object storage CSVs
-* Added File Storage, Object Storage and Load Balancers to csv2adw process
 
 =====================
 23.02.28 - 23.02.28
@@ -63,7 +61,6 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 =====================
 * Added database standalone backups
 * Added tenant_name and tenant_id (6 last letters) to CSVs
-* Added showoci_csv2adw.py (beta) - Load csv files to Oracle database
 
 =====================
 23.02.07 - 23.02.07
