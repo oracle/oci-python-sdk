@@ -6,6 +6,7 @@
 # showoci.py
 #
 # @author: Adi Zohar
+# @contributers: Olaf Heimburger
 #
 # Supports Python 3 and above
 #
@@ -116,7 +117,7 @@ import datetime
 import contextlib
 import os
 
-version = "23.04.11"
+version = "23.04.18"
 
 ##########################################################################
 # check OCI version
