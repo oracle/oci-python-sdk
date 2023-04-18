@@ -5,7 +5,7 @@
 #
 # Setup Upgrade for usage2adw
 # Written by Adi Zohar, October 2020-2023
-# Git Location = https://github.com/adizohar/usage_reports_to_adw
+# Git Location = https://github.com/oracle/oci-python-sdk/tree/master/examples/usage_reports_to_adw
 #
 # If script fail, please add the policies and re-run
 #
@@ -57,7 +57,7 @@ export APPDIR=/home/opc/usage_reports_to_adw
 export CREDFILE=$APPDIR/config.user
 export LOG=/home/opc/upgrade.log
 export LOGDIR=$APPDIR/setup/log
-export GIT=https://raw.githubusercontent.com/adizohar/usage_reports_to_adw/main/
+export GIT=https://github.com/oracle/oci-python-sdk/tree/master/examples/usage_reports_to_adw
 
 cd $APPDIR
 mkdir -p $LOGDIR
@@ -113,6 +113,15 @@ if [ $? -eq 0 ]; then
    echo "   usage2adw.py downloaded successfully" | tee -a $LOG
 else
    echo "   Error Downloading usage2adw.py, Abort, log=$LOGDIR/usage2adw.py.download.log" | tee -a $LOG
+   exit 1
+fi
+
+echo "   Download usage2adw_showoci_csv2adw.py" | tee -a $LOG
+wget ${GIT}/usage2adw_showoci_csv2adw.py -O ${APPDIR}/usage2adw_showoci_csv2adw.py -o $LOGDIR/usage2adw_showoci_csv2adw.py.download.log| tee -a $LOG
+if [ $? -eq 0 ]; then
+   echo "   usage2adw_showoci_csv2adw.py downloaded successfully" | tee -a $LOG
+else
+   echo "   Error Downloading usage2adw_showoci_csv2adw.py, Abort, log=$LOGDIR/usage2adw_showoci_csv2adw.py.download.log" | tee -a $LOG
    exit 1
 fi
 
@@ -174,5 +183,5 @@ echo "Please run the application to upgrade schema:" | tee -a $LOG
 echo "/home/opc/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh" | tee -a $LOG
 echo ""
 echo "Please run ShowOCI upgrade is using ShowOCI:" | tee -a $LOG
-echo "bash -c '$(curl -L https://raw.githubusercontent.com/adizohar/showoci/master/showoci_upgrade.sh)'" | tee -a $LOG
+echo "bash -c '$(curl -L https://github.com/oracle/oci-python-sdk/tree/master/examples/showoci/showoci_upgrade.sh)'" | tee -a $LOG
 

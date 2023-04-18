@@ -19,6 +19,10 @@ class UpdateTwilioChannelDetails(UpdateChannelDetails):
         of this class is ``TWILIO`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param name:
+            The value to assign to the name property of this UpdateTwilioChannelDetails.
+        :type name: str
+
         :param description:
             The value to assign to the description property of this UpdateTwilioChannelDetails.
         :type description: str
@@ -66,6 +70,7 @@ class UpdateTwilioChannelDetails(UpdateChannelDetails):
 
         """
         self.swagger_types = {
+            'name': 'str',
             'description': 'str',
             'type': 'str',
             'session_expiry_duration_in_milliseconds': 'int',
@@ -80,6 +85,7 @@ class UpdateTwilioChannelDetails(UpdateChannelDetails):
         }
 
         self.attribute_map = {
+            'name': 'name',
             'description': 'description',
             'type': 'type',
             'session_expiry_duration_in_milliseconds': 'sessionExpiryDurationInMilliseconds',
@@ -93,6 +99,7 @@ class UpdateTwilioChannelDetails(UpdateChannelDetails):
             'bot_id': 'botId'
         }
 
+        self._name = None
         self._description = None
         self._type = None
         self._session_expiry_duration_in_milliseconds = None

@@ -50,6 +50,10 @@ class RecordSummary(object):
             The value to assign to the lifecycle_state property of this RecordSummary.
         :type lifecycle_state: str
 
+        :param record_metadata:
+            The value to assign to the record_metadata property of this RecordSummary.
+        :type record_metadata: oci.data_labeling_service_dataplane.models.RecordMetadata
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this RecordSummary.
         :type freeform_tags: dict(str, str)
@@ -68,6 +72,7 @@ class RecordSummary(object):
             'compartment_id': 'str',
             'is_labeled': 'bool',
             'lifecycle_state': 'str',
+            'record_metadata': 'RecordMetadata',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -81,6 +86,7 @@ class RecordSummary(object):
             'compartment_id': 'compartmentId',
             'is_labeled': 'isLabeled',
             'lifecycle_state': 'lifecycleState',
+            'record_metadata': 'recordMetadata',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -93,6 +99,7 @@ class RecordSummary(object):
         self._compartment_id = None
         self._is_labeled = None
         self._lifecycle_state = None
+        self._record_metadata = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -287,6 +294,26 @@ class RecordSummary(object):
         :type: str
         """
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def record_metadata(self):
+        """
+        Gets the record_metadata of this RecordSummary.
+
+        :return: The record_metadata of this RecordSummary.
+        :rtype: oci.data_labeling_service_dataplane.models.RecordMetadata
+        """
+        return self._record_metadata
+
+    @record_metadata.setter
+    def record_metadata(self, record_metadata):
+        """
+        Sets the record_metadata of this RecordSummary.
+
+        :param record_metadata: The record_metadata of this RecordSummary.
+        :type: oci.data_labeling_service_dataplane.models.RecordMetadata
+        """
+        self._record_metadata = record_metadata
 
     @property
     def freeform_tags(self):

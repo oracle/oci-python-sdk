@@ -18,6 +18,10 @@ class WorkRequestResource(object):
     RESOURCE_ACTION_CREATE = "CREATE"
 
     #: A constant which can be used with the resource_action property of a WorkRequestResource.
+    #: This constant has a value of "UPDATE"
+    RESOURCE_ACTION_UPDATE = "UPDATE"
+
+    #: A constant which can be used with the resource_action property of a WorkRequestResource.
     #: This constant has a value of "DELETE"
     RESOURCE_ACTION_DELETE = "DELETE"
 
@@ -120,7 +124,7 @@ class WorkRequestResource(object):
 
         :param resource_action:
             The value to assign to the resource_action property of this WorkRequestResource.
-            Allowed values for this property are: "CREATE", "DELETE", "PURGE", "RECOVER", "STOP", "START", "CHANGE_COMPARTMENT", "CHANGE_CUST_ENC_KEY", "DEACT_CUST_ENC_KEY", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "CREATE_ODA_INSTANCE_ATTACHMENT", "UPDATE_ODA_INSTANCE_ATTACHMENT", "DELETE_ODA_INSTANCE_ATTACHMENT", "CREATE_IMPORTED_PACKAGE", "UPDATE_IMPORTED_PACKAGE", "DELETE_IMPORTED_PACKAGE", "EXPORT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE", "UPDATE", "DELETE", "PURGE", "RECOVER", "STOP", "START", "CHANGE_COMPARTMENT", "CHANGE_CUST_ENC_KEY", "DEACT_CUST_ENC_KEY", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "CREATE_ODA_INSTANCE_ATTACHMENT", "UPDATE_ODA_INSTANCE_ATTACHMENT", "DELETE_ODA_INSTANCE_ATTACHMENT", "CREATE_IMPORTED_PACKAGE", "UPDATE_IMPORTED_PACKAGE", "DELETE_IMPORTED_PACKAGE", "EXPORT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_action: str
 
@@ -176,9 +180,9 @@ class WorkRequestResource(object):
     def resource_action(self):
         """
         **[Required]** Gets the resource_action of this WorkRequestResource.
-        The action to take against the Digital Assistant instance.
+        The action to take against the resource.
 
-        Allowed values for this property are: "CREATE", "DELETE", "PURGE", "RECOVER", "STOP", "START", "CHANGE_COMPARTMENT", "CHANGE_CUST_ENC_KEY", "DEACT_CUST_ENC_KEY", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "CREATE_ODA_INSTANCE_ATTACHMENT", "UPDATE_ODA_INSTANCE_ATTACHMENT", "DELETE_ODA_INSTANCE_ATTACHMENT", "CREATE_IMPORTED_PACKAGE", "UPDATE_IMPORTED_PACKAGE", "DELETE_IMPORTED_PACKAGE", "EXPORT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE", "UPDATE", "DELETE", "PURGE", "RECOVER", "STOP", "START", "CHANGE_COMPARTMENT", "CHANGE_CUST_ENC_KEY", "DEACT_CUST_ENC_KEY", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "CREATE_ODA_INSTANCE_ATTACHMENT", "UPDATE_ODA_INSTANCE_ATTACHMENT", "DELETE_ODA_INSTANCE_ATTACHMENT", "CREATE_IMPORTED_PACKAGE", "UPDATE_IMPORTED_PACKAGE", "DELETE_IMPORTED_PACKAGE", "EXPORT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -191,13 +195,13 @@ class WorkRequestResource(object):
     def resource_action(self, resource_action):
         """
         Sets the resource_action of this WorkRequestResource.
-        The action to take against the Digital Assistant instance.
+        The action to take against the resource.
 
 
         :param resource_action: The resource_action of this WorkRequestResource.
         :type: str
         """
-        allowed_values = ["CREATE", "DELETE", "PURGE", "RECOVER", "STOP", "START", "CHANGE_COMPARTMENT", "CHANGE_CUST_ENC_KEY", "DEACT_CUST_ENC_KEY", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "CREATE_ODA_INSTANCE_ATTACHMENT", "UPDATE_ODA_INSTANCE_ATTACHMENT", "DELETE_ODA_INSTANCE_ATTACHMENT", "CREATE_IMPORTED_PACKAGE", "UPDATE_IMPORTED_PACKAGE", "DELETE_IMPORTED_PACKAGE", "EXPORT"]
+        allowed_values = ["CREATE", "UPDATE", "DELETE", "PURGE", "RECOVER", "STOP", "START", "CHANGE_COMPARTMENT", "CHANGE_CUST_ENC_KEY", "DEACT_CUST_ENC_KEY", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "CREATE_ODA_INSTANCE_ATTACHMENT", "UPDATE_ODA_INSTANCE_ATTACHMENT", "DELETE_ODA_INSTANCE_ATTACHMENT", "CREATE_IMPORTED_PACKAGE", "UPDATE_IMPORTED_PACKAGE", "DELETE_IMPORTED_PACKAGE", "EXPORT"]
         if not value_allowed_none_or_none_sentinel(resource_action, allowed_values):
             resource_action = 'UNKNOWN_ENUM_VALUE'
         self._resource_action = resource_action
@@ -230,7 +234,7 @@ class WorkRequestResource(object):
     def resource_id(self):
         """
         **[Required]** Gets the resource_id of this WorkRequestResource.
-        The identifier of the Digital Assistant instance that is the subject of the request.
+        The identifier of the resource that is the subject of the request.
 
 
         :return: The resource_id of this WorkRequestResource.
@@ -242,7 +246,7 @@ class WorkRequestResource(object):
     def resource_id(self, resource_id):
         """
         Sets the resource_id of this WorkRequestResource.
-        The identifier of the Digital Assistant instance that is the subject of the request.
+        The identifier of the resource that is the subject of the request.
 
 
         :param resource_id: The resource_id of this WorkRequestResource.

@@ -27,6 +27,10 @@ class UpdateWebhookChannelDetails(UpdateChannelDetails):
         of this class is ``WEBHOOK`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param name:
+            The value to assign to the name property of this UpdateWebhookChannelDetails.
+        :type name: str
+
         :param description:
             The value to assign to the description property of this UpdateWebhookChannelDetails.
         :type description: str
@@ -63,6 +67,7 @@ class UpdateWebhookChannelDetails(UpdateChannelDetails):
 
         """
         self.swagger_types = {
+            'name': 'str',
             'description': 'str',
             'type': 'str',
             'session_expiry_duration_in_milliseconds': 'int',
@@ -74,6 +79,7 @@ class UpdateWebhookChannelDetails(UpdateChannelDetails):
         }
 
         self.attribute_map = {
+            'name': 'name',
             'description': 'description',
             'type': 'type',
             'session_expiry_duration_in_milliseconds': 'sessionExpiryDurationInMilliseconds',
@@ -84,6 +90,7 @@ class UpdateWebhookChannelDetails(UpdateChannelDetails):
             'bot_id': 'botId'
         }
 
+        self._name = None
         self._description = None
         self._type = None
         self._session_expiry_duration_in_milliseconds = None

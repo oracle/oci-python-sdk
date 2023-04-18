@@ -20,7 +20,7 @@ import csv
 
 
 class ShowOCIOutput(object):
-    version = "23.04.11"
+    version = "23.04.18"
 
     ##########################################################################
     # spaces for align
@@ -113,6 +113,7 @@ class ShowOCIOutput(object):
         try:
             self.print_header(data['program'], 1)
             print("Author          : " + data['author'])
+            print("Contributers    : " + data['contributers'])
             print("Disclaimer      : " + data['disclaimer'])
             print("Machine         : " + data['machine'])
             print("Python Version  : " + data['python'])

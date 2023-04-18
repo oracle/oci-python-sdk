@@ -1,0 +1,11 @@
+OdaPrivateEndpointAttachmentCollection
+======================================
+
+.. currentmodule:: oci.oda.models
+
+.. autoclass:: OdaPrivateEndpointAttachmentCollection
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

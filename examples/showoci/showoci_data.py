@@ -18,7 +18,7 @@ from showoci_service import ShowOCIService, ShowOCIFlags
 
 
 class ShowOCIData(object):
-    version = "23.04.11"
+    version = "23.04.18"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -132,6 +132,7 @@ class ShowOCIData(object):
         data = {
             'program': "showoci.py",
             'author': "Adi Zohar",
+            'contributers': "Olaf Heimburger",
             'disclaimer': "This is not an official Oracle application, it is not supported by Oracle. It should NOT be used for utilization calculation purposes. If you run into issues using this, please file an issue at https://github.com/oracle/oci-python-sdk/issues rather than contacting support",
             'config_file': self.service.flags.config_file,
             'config_profile': self.service.flags.config_section,
