@@ -7,6 +7,8 @@ Oracle Application Express (APEX) will be used for reporting.
 
 **Developed by Adi Zohar**
 
+**Usage2ADW in the OCI Marketplace is under upgrade, will be available soon**
+
 ## Content:
 [Step by Step Marketplace Installation](#step-by-step-marketplace-installation)
 

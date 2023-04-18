@@ -279,7 +279,7 @@ class CreateAuthenticationProviderDetails(object):
     @property
     def authorization_endpoint_url(self):
         """
-        **[Required]** Gets the authorization_endpoint_url of this CreateAuthenticationProviderDetails.
+        Gets the authorization_endpoint_url of this CreateAuthenticationProviderDetails.
         The IDPs URL for the page that users authenticate with by entering the user name and password.
 
 
@@ -439,7 +439,7 @@ class CreateAuthenticationProviderDetails(object):
     @property
     def subject_claim(self):
         """
-        **[Required]** Gets the subject_claim of this CreateAuthenticationProviderDetails.
+        Gets the subject_claim of this CreateAuthenticationProviderDetails.
         The access-token profile claim to use to identify the user.
 
 

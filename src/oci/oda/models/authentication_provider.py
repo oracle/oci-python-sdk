@@ -352,7 +352,7 @@ class AuthenticationProvider(object):
     @property
     def authorization_endpoint_url(self):
         """
-        **[Required]** Gets the authorization_endpoint_url of this AuthenticationProvider.
+        Gets the authorization_endpoint_url of this AuthenticationProvider.
         The IDPs URL for the page that users authenticate with by entering the user name and password.
 
 
@@ -486,7 +486,7 @@ class AuthenticationProvider(object):
     @property
     def subject_claim(self):
         """
-        **[Required]** Gets the subject_claim of this AuthenticationProvider.
+        Gets the subject_claim of this AuthenticationProvider.
         The access-token profile claim to use to identify the user.
 
 

@@ -19,6 +19,10 @@ class UpdateOSSChannelDetails(UpdateChannelDetails):
         of this class is ``OSS`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param name:
+            The value to assign to the name property of this UpdateOSSChannelDetails.
+        :type name: str
+
         :param description:
             The value to assign to the description property of this UpdateOSSChannelDetails.
         :type description: str
@@ -82,6 +86,7 @@ class UpdateOSSChannelDetails(UpdateChannelDetails):
 
         """
         self.swagger_types = {
+            'name': 'str',
             'description': 'str',
             'type': 'str',
             'session_expiry_duration_in_milliseconds': 'int',
@@ -100,6 +105,7 @@ class UpdateOSSChannelDetails(UpdateChannelDetails):
         }
 
         self.attribute_map = {
+            'name': 'name',
             'description': 'description',
             'type': 'type',
             'session_expiry_duration_in_milliseconds': 'sessionExpiryDurationInMilliseconds',
@@ -117,6 +123,7 @@ class UpdateOSSChannelDetails(UpdateChannelDetails):
             'auth_token': 'authToken'
         }
 
+        self._name = None
         self._description = None
         self._type = None
         self._session_expiry_duration_in_milliseconds = None

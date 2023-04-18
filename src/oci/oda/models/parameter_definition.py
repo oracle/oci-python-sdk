@@ -29,6 +29,10 @@ class ParameterDefinition(object):
     #: This constant has a value of "NUMBER"
     TYPE_NUMBER = "NUMBER"
 
+    #: A constant which can be used with the type property of a ParameterDefinition.
+    #: This constant has a value of "BOOLEAN"
+    TYPE_BOOLEAN = "BOOLEAN"
+
     #: A constant which can be used with the direction property of a ParameterDefinition.
     #: This constant has a value of "INPUT"
     DIRECTION_INPUT = "INPUT"
@@ -48,7 +52,7 @@ class ParameterDefinition(object):
 
         :param type:
             The value to assign to the type property of this ParameterDefinition.
-            Allowed values for this property are: "STRING", "URI", "URL", "NUMBER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STRING", "URI", "URL", "NUMBER", "BOOLEAN", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -168,7 +172,7 @@ class ParameterDefinition(object):
         **[Required]** Gets the type of this ParameterDefinition.
         Enumerated parameter type.
 
-        Allowed values for this property are: "STRING", "URI", "URL", "NUMBER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STRING", "URI", "URL", "NUMBER", "BOOLEAN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -187,7 +191,7 @@ class ParameterDefinition(object):
         :param type: The type of this ParameterDefinition.
         :type: str
         """
-        allowed_values = ["STRING", "URI", "URL", "NUMBER"]
+        allowed_values = ["STRING", "URI", "URL", "NUMBER", "BOOLEAN"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

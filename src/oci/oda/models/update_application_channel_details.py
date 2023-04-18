@@ -19,6 +19,10 @@ class UpdateApplicationChannelDetails(UpdateChannelDetails):
         of this class is ``APPLICATION`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param name:
+            The value to assign to the name property of this UpdateApplicationChannelDetails.
+        :type name: str
+
         :param description:
             The value to assign to the description property of this UpdateApplicationChannelDetails.
         :type description: str
@@ -50,6 +54,7 @@ class UpdateApplicationChannelDetails(UpdateChannelDetails):
 
         """
         self.swagger_types = {
+            'name': 'str',
             'description': 'str',
             'type': 'str',
             'session_expiry_duration_in_milliseconds': 'int',
@@ -60,6 +65,7 @@ class UpdateApplicationChannelDetails(UpdateChannelDetails):
         }
 
         self.attribute_map = {
+            'name': 'name',
             'description': 'description',
             'type': 'type',
             'session_expiry_duration_in_milliseconds': 'sessionExpiryDurationInMilliseconds',
@@ -69,6 +75,7 @@ class UpdateApplicationChannelDetails(UpdateChannelDetails):
             'is_authenticated_user_id': 'isAuthenticatedUserId'
         }
 
+        self._name = None
         self._description = None
         self._type = None
         self._session_expiry_duration_in_milliseconds = None

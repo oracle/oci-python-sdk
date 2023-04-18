@@ -84,10 +84,6 @@ class Dataset(object):
             The value to assign to the annotation_format property of this Dataset.
         :type annotation_format: str
 
-        :param lifetime_logical_clock:
-            The value to assign to the lifetime_logical_clock property of this Dataset.
-        :type lifetime_logical_clock: int
-
         :param dataset_source_details:
             The value to assign to the dataset_source_details property of this Dataset.
         :type dataset_source_details: oci.data_labeling_service_dataplane.models.DatasetSourceDetails
@@ -131,7 +127,6 @@ class Dataset(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'annotation_format': 'str',
-            'lifetime_logical_clock': 'int',
             'dataset_source_details': 'DatasetSourceDetails',
             'dataset_format_details': 'DatasetFormatDetails',
             'label_set': 'LabelSet',
@@ -152,7 +147,6 @@ class Dataset(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'annotation_format': 'annotationFormat',
-            'lifetime_logical_clock': 'lifetimeLogicalClock',
             'dataset_source_details': 'datasetSourceDetails',
             'dataset_format_details': 'datasetFormatDetails',
             'label_set': 'labelSet',
@@ -172,7 +166,6 @@ class Dataset(object):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._annotation_format = None
-        self._lifetime_logical_clock = None
         self._dataset_source_details = None
         self._dataset_format_details = None
         self._label_set = None
@@ -417,30 +410,6 @@ class Dataset(object):
         :type: str
         """
         self._annotation_format = annotation_format
-
-    @property
-    def lifetime_logical_clock(self):
-        """
-        **[Required]** Gets the lifetime_logical_clock of this Dataset.
-        An integer value used in achieving concurrency control, this field will be used to generate eTags.
-
-
-        :return: The lifetime_logical_clock of this Dataset.
-        :rtype: int
-        """
-        return self._lifetime_logical_clock
-
-    @lifetime_logical_clock.setter
-    def lifetime_logical_clock(self, lifetime_logical_clock):
-        """
-        Sets the lifetime_logical_clock of this Dataset.
-        An integer value used in achieving concurrency control, this field will be used to generate eTags.
-
-
-        :param lifetime_logical_clock: The lifetime_logical_clock of this Dataset.
-        :type: int
-        """
-        self._lifetime_logical_clock = lifetime_logical_clock
 
     @property
     def dataset_source_details(self):

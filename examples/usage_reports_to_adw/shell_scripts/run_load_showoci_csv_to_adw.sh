@@ -67,7 +67,7 @@ run_report()
     OUTPUT_FILE=${DIR}/${DATE}_${NAME}.txt
     mkdir -p $DIR
     echo "Running $NAME... to $OUTPUT_FILE "
-    python3 $SHOWOCI_DIR/showoci_csv2adw.py -du $DATABASE_USER -dp $DATABASE_PASS -dn $DATABASE_NAME -csv $CSV -usethick $EXTRA_VARIABLE |tee -a $OUTPUT_FILE
+    python3 $APPDIR/usage2adw_showoci_csv2adw.py -du $DATABASE_USER -dp $DATABASE_PASS -dn $DATABASE_NAME -csv $CSV -usethick $EXTRA_VARIABLE |tee -a $OUTPUT_FILE
     grep -i "Error" $OUTPUT_FILE
 
     ERROR=""

@@ -27,6 +27,10 @@ class UpdateServiceCloudChannelDetails(UpdateChannelDetails):
         of this class is ``SERVICECLOUD`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param name:
+            The value to assign to the name property of this UpdateServiceCloudChannelDetails.
+        :type name: str
+
         :param description:
             The value to assign to the description property of this UpdateServiceCloudChannelDetails.
         :type description: str
@@ -71,6 +75,7 @@ class UpdateServiceCloudChannelDetails(UpdateChannelDetails):
 
         """
         self.swagger_types = {
+            'name': 'str',
             'description': 'str',
             'type': 'str',
             'session_expiry_duration_in_milliseconds': 'int',
@@ -84,6 +89,7 @@ class UpdateServiceCloudChannelDetails(UpdateChannelDetails):
         }
 
         self.attribute_map = {
+            'name': 'name',
             'description': 'description',
             'type': 'type',
             'session_expiry_duration_in_milliseconds': 'sessionExpiryDurationInMilliseconds',
@@ -96,6 +102,7 @@ class UpdateServiceCloudChannelDetails(UpdateChannelDetails):
             'client_type': 'clientType'
         }
 
+        self._name = None
         self._description = None
         self._type = None
         self._session_expiry_duration_in_milliseconds = None

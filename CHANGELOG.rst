@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.99.0 - 2023-04-18
+====================
+
+Added
+-----
+* Support for private endpoints in the Digital Assistant service
+* Support for canceling backups in the Database service
+* Support for improved labeling of key/value pairs in the Data Labeling service 
+ 
+Breaking
+--------
+* Support for retries by default on operations of the Digital Assistant service
+* The property `opc_retry_token` was removed from the models `configure_digital_assistant_parameters`, `rotate_channel_keys`, `start_channel`, `stop_channel` in the Digital Assistant service
+- The property `lifetime_logical_clock` was removed from the models `Record`, `Dataset` and `Annotation` in the Digital Assistant service
+- The property `digital_assistant_id` was renamed to `id` in the `list_digital_assistants` model in the Digital Assistant service
+- The property `is_latest_skill_only` was renamed to `is_latest_version_only` in the `list_packages` method in the Digital Assistant service
+- The property `skill_id` was renamed to `id` in the `list_skills` model in the Digital Assistant service
+- The properties `authorization_endpoint_url` and `subject_claim` were made optional in the `AuthenticationProvider` model in the Digital Assistant service
+ 
+====================
 2.98.0 - 2023-04-11
 ====================
 
