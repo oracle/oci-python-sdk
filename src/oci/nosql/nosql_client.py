@@ -68,6 +68,9 @@ class NosqlClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -94,8 +97,10 @@ class NosqlClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20190828',
             'service_endpoint_template': 'https://nosql.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -155,6 +160,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/change_table_compartment.py.html>`__ to see an example of how to use change_table_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tableNameOrId']
         resource_path = "/tables/{tableNameOrId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_table_compartment"
@@ -213,7 +220,8 @@ class NosqlClient(object):
                 body=change_table_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -223,7 +231,8 @@ class NosqlClient(object):
                 body=change_table_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_index(self, table_name_or_id, create_index_details, **kwargs):
         """
@@ -266,6 +275,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/create_index.py.html>`__ to see an example of how to use create_index API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tableNameOrId']
         resource_path = "/tables/{tableNameOrId}/indexes"
         method = "POST"
         operation_name = "create_index"
@@ -322,7 +333,8 @@ class NosqlClient(object):
                 body=create_index_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -332,7 +344,8 @@ class NosqlClient(object):
                 body=create_index_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_table(self, create_table_details, **kwargs):
         """
@@ -372,6 +385,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/create_table.py.html>`__ to see an example of how to use create_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/tables"
         method = "POST"
         operation_name = "create_table"
@@ -417,7 +432,8 @@ class NosqlClient(object):
                 body=create_table_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -426,7 +442,8 @@ class NosqlClient(object):
                 body=create_table_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_index(self, table_name_or_id, index_name, **kwargs):
         """
@@ -475,6 +492,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/delete_index.py.html>`__ to see an example of how to use delete_index API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tableNameOrId', 'indexName']
         resource_path = "/tables/{tableNameOrId}/indexes/{indexName}"
         method = "DELETE"
         operation_name = "delete_index"
@@ -537,7 +556,8 @@ class NosqlClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -547,7 +567,8 @@ class NosqlClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_row(self, table_name_or_id, key, **kwargs):
         """
@@ -601,6 +622,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/delete_row.py.html>`__ to see an example of how to use delete_row API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tableNameOrId', 'key']
         resource_path = "/tables/{tableNameOrId}/rows"
         method = "DELETE"
         operation_name = "delete_row"
@@ -666,7 +689,8 @@ class NosqlClient(object):
                 response_type="DeleteRowResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -677,7 +701,8 @@ class NosqlClient(object):
                 response_type="DeleteRowResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_table(self, table_name_or_id, **kwargs):
         """
@@ -723,6 +748,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/delete_table.py.html>`__ to see an example of how to use delete_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tableNameOrId']
         resource_path = "/tables/{tableNameOrId}"
         method = "DELETE"
         operation_name = "delete_table"
@@ -784,7 +811,8 @@ class NosqlClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -794,7 +822,8 @@ class NosqlClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_work_request(self, work_request_id, **kwargs):
         """
@@ -832,6 +861,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/delete_work_request.py.html>`__ to see an example of how to use delete_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "delete_work_request"
@@ -884,7 +915,8 @@ class NosqlClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -893,7 +925,8 @@ class NosqlClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_index(self, table_name_or_id, index_name, **kwargs):
         """
@@ -932,6 +965,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/get_index.py.html>`__ to see an example of how to use get_index API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tableNameOrId', 'indexName']
         resource_path = "/tables/{tableNameOrId}/indexes/{indexName}"
         method = "GET"
         operation_name = "get_index"
@@ -993,7 +1028,8 @@ class NosqlClient(object):
                 response_type="Index",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1004,7 +1040,8 @@ class NosqlClient(object):
                 response_type="Index",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_row(self, table_name_or_id, key, **kwargs):
         """
@@ -1052,6 +1089,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/get_row.py.html>`__ to see an example of how to use get_row API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tableNameOrId', 'key']
         resource_path = "/tables/{tableNameOrId}/rows"
         method = "GET"
         operation_name = "get_row"
@@ -1124,7 +1163,8 @@ class NosqlClient(object):
                 response_type="Row",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1135,7 +1175,8 @@ class NosqlClient(object):
                 response_type="Row",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_table(self, table_name_or_id, **kwargs):
         """
@@ -1171,6 +1212,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/get_table.py.html>`__ to see an example of how to use get_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tableNameOrId']
         resource_path = "/tables/{tableNameOrId}"
         method = "GET"
         operation_name = "get_table"
@@ -1231,7 +1274,8 @@ class NosqlClient(object):
                 response_type="Table",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1242,7 +1286,8 @@ class NosqlClient(object):
                 response_type="Table",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1273,6 +1318,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -1326,7 +1373,8 @@ class NosqlClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1336,7 +1384,8 @@ class NosqlClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_indexes(self, table_name_or_id, **kwargs):
         """
@@ -1401,6 +1450,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/list_indexes.py.html>`__ to see an example of how to use list_indexes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tableNameOrId']
         resource_path = "/tables/{tableNameOrId}/indexes"
         method = "GET"
         operation_name = "list_indexes"
@@ -1494,7 +1545,8 @@ class NosqlClient(object):
                 response_type="IndexCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1505,7 +1557,8 @@ class NosqlClient(object):
                 response_type="IndexCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_table_usage(self, table_name_or_id, **kwargs):
         """
@@ -1557,6 +1610,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/list_table_usage.py.html>`__ to see an example of how to use list_table_usage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tableNameOrId']
         resource_path = "/tables/{tableNameOrId}/usage"
         method = "GET"
         operation_name = "list_table_usage"
@@ -1625,7 +1680,8 @@ class NosqlClient(object):
                 response_type="TableUsageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1636,7 +1692,8 @@ class NosqlClient(object):
                 response_type="TableUsageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_tables(self, compartment_id, **kwargs):
         """
@@ -1696,6 +1753,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/list_tables.py.html>`__ to see an example of how to use list_tables API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/tables"
         method = "GET"
         operation_name = "list_tables"
@@ -1777,7 +1836,8 @@ class NosqlClient(object):
                 response_type="TableCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1787,7 +1847,8 @@ class NosqlClient(object):
                 response_type="TableCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1826,6 +1887,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -1888,7 +1951,8 @@ class NosqlClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1899,7 +1963,8 @@ class NosqlClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -1938,6 +2003,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -2000,7 +2067,8 @@ class NosqlClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2011,7 +2079,8 @@ class NosqlClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -2050,6 +2119,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -2102,7 +2173,8 @@ class NosqlClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2112,7 +2184,8 @@ class NosqlClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def prepare_statement(self, compartment_id, statement, **kwargs):
         """
@@ -2149,6 +2222,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/prepare_statement.py.html>`__ to see an example of how to use prepare_statement API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'statement']
         resource_path = "/query/prepare"
         method = "GET"
         operation_name = "prepare_statement"
@@ -2200,7 +2275,8 @@ class NosqlClient(object):
                 response_type="PreparedStatement",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2210,7 +2286,8 @@ class NosqlClient(object):
                 response_type="PreparedStatement",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def query(self, query_details, **kwargs):
         """
@@ -2249,6 +2326,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/query.py.html>`__ to see an example of how to use query API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/query"
         method = "POST"
         operation_name = "query"
@@ -2299,7 +2378,8 @@ class NosqlClient(object):
                 response_type="QueryResultCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2310,7 +2390,8 @@ class NosqlClient(object):
                 response_type="QueryResultCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def summarize_statement(self, compartment_id, statement, **kwargs):
         """
@@ -2344,6 +2425,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/summarize_statement.py.html>`__ to see an example of how to use summarize_statement API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'statement']
         resource_path = "/query/summarize"
         method = "GET"
         operation_name = "summarize_statement"
@@ -2393,7 +2476,8 @@ class NosqlClient(object):
                 response_type="StatementSummary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2403,7 +2487,8 @@ class NosqlClient(object):
                 response_type="StatementSummary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_row(self, table_name_or_id, update_row_details, **kwargs):
         """
@@ -2444,6 +2529,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/update_row.py.html>`__ to see an example of how to use update_row API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tableNameOrId']
         resource_path = "/tables/{tableNameOrId}/rows"
         method = "PUT"
         operation_name = "update_row"
@@ -2498,7 +2585,8 @@ class NosqlClient(object):
                 response_type="UpdateRowResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2509,7 +2597,8 @@ class NosqlClient(object):
                 response_type="UpdateRowResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_table(self, table_name_or_id, update_table_details, **kwargs):
         """
@@ -2551,6 +2640,8 @@ class NosqlClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/nosql/update_table.py.html>`__ to see an example of how to use update_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tableNameOrId']
         resource_path = "/tables/{tableNameOrId}"
         method = "PUT"
         operation_name = "update_table"
@@ -2604,7 +2695,8 @@ class NosqlClient(object):
                 body=update_table_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2614,4 +2706,5 @@ class NosqlClient(object):
                 body=update_table_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

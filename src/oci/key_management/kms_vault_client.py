@@ -67,6 +67,9 @@ class KmsVaultClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -93,8 +96,10 @@ class KmsVaultClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/',
             'service_endpoint_template': 'https://kms.{region}.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -157,6 +162,8 @@ class KmsVaultClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/backup_vault.py.html>`__ to see an example of how to use backup_vault API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vaultId']
         resource_path = "/20180608/vaults/{vaultId}/actions/backup"
         method = "POST"
         operation_name = "backup_vault"
@@ -215,7 +222,8 @@ class KmsVaultClient(object):
                 response_type="Vault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -226,7 +234,8 @@ class KmsVaultClient(object):
                 response_type="Vault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_vault_deletion(self, vault_id, **kwargs):
         """
@@ -282,6 +291,8 @@ class KmsVaultClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/cancel_vault_deletion.py.html>`__ to see an example of how to use cancel_vault_deletion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vaultId']
         resource_path = "/20180608/vaults/{vaultId}/actions/cancelDeletion"
         method = "POST"
         operation_name = "cancel_vault_deletion"
@@ -338,7 +349,8 @@ class KmsVaultClient(object):
                 response_type="Vault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -348,7 +360,8 @@ class KmsVaultClient(object):
                 response_type="Vault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_vault_compartment(self, vault_id, change_vault_compartment_details, **kwargs):
         """
@@ -408,6 +421,8 @@ class KmsVaultClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/change_vault_compartment.py.html>`__ to see an example of how to use change_vault_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vaultId']
         resource_path = "/20180608/vaults/{vaultId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_vault_compartment"
@@ -464,7 +479,8 @@ class KmsVaultClient(object):
                 body=change_vault_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -474,7 +490,8 @@ class KmsVaultClient(object):
                 body=change_vault_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_vault(self, create_vault_details, **kwargs):
         """
@@ -523,6 +540,8 @@ class KmsVaultClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/create_vault.py.html>`__ to see an example of how to use create_vault API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/20180608/vaults"
         method = "POST"
         operation_name = "create_vault"
@@ -567,7 +586,8 @@ class KmsVaultClient(object):
                 response_type="Vault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -577,7 +597,8 @@ class KmsVaultClient(object):
                 response_type="Vault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_vault_replica(self, vault_id, create_vault_replica_details, **kwargs):
         """
@@ -637,6 +658,8 @@ class KmsVaultClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/create_vault_replica.py.html>`__ to see an example of how to use create_vault_replica API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vaultId']
         resource_path = "/20180608/vaults/{vaultId}/actions/createReplica"
         method = "POST"
         operation_name = "create_vault_replica"
@@ -693,7 +716,8 @@ class KmsVaultClient(object):
                 body=create_vault_replica_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -703,7 +727,8 @@ class KmsVaultClient(object):
                 body=create_vault_replica_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_vault_replica(self, vault_id, delete_vault_replica_details, **kwargs):
         """
@@ -759,6 +784,8 @@ class KmsVaultClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/delete_vault_replica.py.html>`__ to see an example of how to use delete_vault_replica API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vaultId']
         resource_path = "/20180608/vaults/{vaultId}/actions/deleteReplica"
         method = "POST"
         operation_name = "delete_vault_replica"
@@ -815,7 +842,8 @@ class KmsVaultClient(object):
                 body=delete_vault_replica_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -825,7 +853,8 @@ class KmsVaultClient(object):
                 body=delete_vault_replica_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_vault(self, vault_id, **kwargs):
         """
@@ -863,6 +892,8 @@ class KmsVaultClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/get_vault.py.html>`__ to see an example of how to use get_vault API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vaultId']
         resource_path = "/20180608/vaults/{vaultId}"
         method = "GET"
         operation_name = "get_vault"
@@ -914,7 +945,8 @@ class KmsVaultClient(object):
                 response_type="Vault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -924,7 +956,8 @@ class KmsVaultClient(object):
                 response_type="Vault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_vault_usage(self, vault_id, **kwargs):
         """
@@ -957,6 +990,8 @@ class KmsVaultClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/get_vault_usage.py.html>`__ to see an example of how to use get_vault_usage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vaultId']
         resource_path = "/20180608/vaults/{vaultId}/usage"
         method = "GET"
         operation_name = "get_vault_usage"
@@ -1008,7 +1043,8 @@ class KmsVaultClient(object):
                 response_type="VaultUsage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1018,7 +1054,8 @@ class KmsVaultClient(object):
                 response_type="VaultUsage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_vault_replicas(self, vault_id, **kwargs):
         """
@@ -1090,6 +1127,8 @@ class KmsVaultClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/list_vault_replicas.py.html>`__ to see an example of how to use list_vault_replicas API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vaultId']
         resource_path = "/20180608/vaults/{vaultId}/actions/listReplicas"
         method = "GET"
         operation_name = "list_vault_replicas"
@@ -1173,7 +1212,8 @@ class KmsVaultClient(object):
                 response_type="list[VaultReplicaSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1184,7 +1224,8 @@ class KmsVaultClient(object):
                 response_type="list[VaultReplicaSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_vaults(self, compartment_id, **kwargs):
         """
@@ -1241,6 +1282,8 @@ class KmsVaultClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/list_vaults.py.html>`__ to see an example of how to use list_vaults API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/20180608/vaults"
         method = "GET"
         operation_name = "list_vaults"
@@ -1309,7 +1352,8 @@ class KmsVaultClient(object):
                 response_type="list[VaultSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1319,7 +1363,8 @@ class KmsVaultClient(object):
                 response_type="list[VaultSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def restore_vault_from_file(self, compartment_id, restore_vault_from_file_details, **kwargs):
         """
@@ -1391,6 +1436,8 @@ class KmsVaultClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/restore_vault_from_file.py.html>`__ to see an example of how to use restore_vault_from_file API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/20180608/vaults/actions/restoreFromFile"
         method = "POST"
         operation_name = "restore_vault_from_file"
@@ -1468,7 +1515,8 @@ class KmsVaultClient(object):
                 response_type="Vault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1479,7 +1527,8 @@ class KmsVaultClient(object):
                 response_type="Vault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def restore_vault_from_object_store(self, compartment_id, **kwargs):
         """
@@ -1532,6 +1581,8 @@ class KmsVaultClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/restore_vault_from_object_store.py.html>`__ to see an example of how to use restore_vault_from_object_store API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/20180608/vaults/actions/restoreFromObjectStore"
         method = "POST"
         operation_name = "restore_vault_from_object_store"
@@ -1585,7 +1636,8 @@ class KmsVaultClient(object):
                 response_type="Vault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1596,7 +1648,8 @@ class KmsVaultClient(object):
                 response_type="Vault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def schedule_vault_deletion(self, vault_id, schedule_vault_deletion_details, **kwargs):
         """
@@ -1656,6 +1709,8 @@ class KmsVaultClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/schedule_vault_deletion.py.html>`__ to see an example of how to use schedule_vault_deletion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vaultId']
         resource_path = "/20180608/vaults/{vaultId}/actions/scheduleDeletion"
         method = "POST"
         operation_name = "schedule_vault_deletion"
@@ -1713,7 +1768,8 @@ class KmsVaultClient(object):
                 response_type="Vault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1724,7 +1780,8 @@ class KmsVaultClient(object):
                 response_type="Vault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_vault(self, vault_id, update_vault_details, **kwargs):
         """
@@ -1774,6 +1831,8 @@ class KmsVaultClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/update_vault.py.html>`__ to see an example of how to use update_vault API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vaultId']
         resource_path = "/20180608/vaults/{vaultId}"
         method = "PUT"
         operation_name = "update_vault"
@@ -1828,7 +1887,8 @@ class KmsVaultClient(object):
                 response_type="Vault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1839,4 +1899,5 @@ class KmsVaultClient(object):
                 response_type="Vault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

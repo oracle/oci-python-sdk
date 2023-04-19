@@ -65,6 +65,9 @@ class ApplicationDependencyManagementClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class ApplicationDependencyManagementClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20220421',
             'service_endpoint_template': 'https://adm.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -142,6 +147,8 @@ class ApplicationDependencyManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/adm/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
@@ -196,7 +203,8 @@ class ApplicationDependencyManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -205,7 +213,8 @@ class ApplicationDependencyManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_knowledge_base_compartment(self, knowledge_base_id, change_knowledge_base_compartment_details, **kwargs):
         """
@@ -255,6 +264,8 @@ class ApplicationDependencyManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/adm/change_knowledge_base_compartment.py.html>`__ to see an example of how to use change_knowledge_base_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['knowledgeBaseId']
         resource_path = "/knowledgeBases/{knowledgeBaseId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_knowledge_base_compartment"
@@ -313,7 +324,8 @@ class ApplicationDependencyManagementClient(object):
                 body=change_knowledge_base_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -323,7 +335,8 @@ class ApplicationDependencyManagementClient(object):
                 body=change_knowledge_base_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_vulnerability_audit_compartment(self, vulnerability_audit_id, change_vulnerability_audit_compartment_details, **kwargs):
         """
@@ -371,6 +384,8 @@ class ApplicationDependencyManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/adm/change_vulnerability_audit_compartment.py.html>`__ to see an example of how to use change_vulnerability_audit_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vulnerabilityAuditId']
         resource_path = "/vulnerabilityAudits/{vulnerabilityAuditId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_vulnerability_audit_compartment"
@@ -429,7 +444,8 @@ class ApplicationDependencyManagementClient(object):
                 body=change_vulnerability_audit_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -439,7 +455,8 @@ class ApplicationDependencyManagementClient(object):
                 body=change_vulnerability_audit_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_knowledge_base(self, create_knowledge_base_details, **kwargs):
         """
@@ -477,6 +494,8 @@ class ApplicationDependencyManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/adm/create_knowledge_base.py.html>`__ to see an example of how to use create_knowledge_base API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/knowledgeBases"
         method = "POST"
         operation_name = "create_knowledge_base"
@@ -522,7 +541,8 @@ class ApplicationDependencyManagementClient(object):
                 body=create_knowledge_base_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -531,7 +551,8 @@ class ApplicationDependencyManagementClient(object):
                 body=create_knowledge_base_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_vulnerability_audit(self, create_vulnerability_audit_details, **kwargs):
         """
@@ -576,6 +597,8 @@ class ApplicationDependencyManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/adm/create_vulnerability_audit.py.html>`__ to see an example of how to use create_vulnerability_audit API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/vulnerabilityAudits"
         method = "POST"
         operation_name = "create_vulnerability_audit"
@@ -624,7 +647,8 @@ class ApplicationDependencyManagementClient(object):
                 response_type="VulnerabilityAudit",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -634,7 +658,8 @@ class ApplicationDependencyManagementClient(object):
                 response_type="VulnerabilityAudit",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_knowledge_base(self, knowledge_base_id, **kwargs):
         """
@@ -674,6 +699,8 @@ class ApplicationDependencyManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/adm/delete_knowledge_base.py.html>`__ to see an example of how to use delete_knowledge_base API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['knowledgeBaseId']
         resource_path = "/knowledgeBases/{knowledgeBaseId}"
         method = "DELETE"
         operation_name = "delete_knowledge_base"
@@ -728,7 +755,8 @@ class ApplicationDependencyManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -737,7 +765,8 @@ class ApplicationDependencyManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_vulnerability_audit(self, vulnerability_audit_id, **kwargs):
         """
@@ -775,6 +804,8 @@ class ApplicationDependencyManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/adm/delete_vulnerability_audit.py.html>`__ to see an example of how to use delete_vulnerability_audit API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vulnerabilityAuditId']
         resource_path = "/vulnerabilityAudits/{vulnerabilityAuditId}"
         method = "DELETE"
         operation_name = "delete_vulnerability_audit"
@@ -829,7 +860,8 @@ class ApplicationDependencyManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -838,7 +870,8 @@ class ApplicationDependencyManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_knowledge_base(self, knowledge_base_id, **kwargs):
         """
@@ -871,6 +904,8 @@ class ApplicationDependencyManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/adm/get_knowledge_base.py.html>`__ to see an example of how to use get_knowledge_base API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['knowledgeBaseId']
         resource_path = "/knowledgeBases/{knowledgeBaseId}"
         method = "GET"
         operation_name = "get_knowledge_base"
@@ -924,7 +959,8 @@ class ApplicationDependencyManagementClient(object):
                 response_type="KnowledgeBase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -934,7 +970,8 @@ class ApplicationDependencyManagementClient(object):
                 response_type="KnowledgeBase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_vulnerability_audit(self, vulnerability_audit_id, **kwargs):
         """
@@ -965,6 +1002,8 @@ class ApplicationDependencyManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/adm/get_vulnerability_audit.py.html>`__ to see an example of how to use get_vulnerability_audit API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vulnerabilityAuditId']
         resource_path = "/vulnerabilityAudits/{vulnerabilityAuditId}"
         method = "GET"
         operation_name = "get_vulnerability_audit"
@@ -1018,7 +1057,8 @@ class ApplicationDependencyManagementClient(object):
                 response_type="VulnerabilityAudit",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1028,7 +1068,8 @@ class ApplicationDependencyManagementClient(object):
                 response_type="VulnerabilityAudit",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1061,6 +1102,8 @@ class ApplicationDependencyManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/adm/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -1114,7 +1157,8 @@ class ApplicationDependencyManagementClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1124,7 +1168,8 @@ class ApplicationDependencyManagementClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_application_dependency_vulnerabilities(self, vulnerability_audit_id, **kwargs):
         """
@@ -1196,6 +1241,8 @@ class ApplicationDependencyManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/adm/list_application_dependency_vulnerabilities.py.html>`__ to see an example of how to use list_application_dependency_vulnerabilities API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vulnerabilityAuditId']
         resource_path = "/vulnerabilityAudits/{vulnerabilityAuditId}/applicationDependencyVulnerabilities"
         method = "GET"
         operation_name = "list_application_dependency_vulnerabilities"
@@ -1288,7 +1335,8 @@ class ApplicationDependencyManagementClient(object):
                 response_type="ApplicationDependencyVulnerabilityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1299,7 +1347,8 @@ class ApplicationDependencyManagementClient(object):
                 response_type="ApplicationDependencyVulnerabilityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_knowledge_bases(self, **kwargs):
         """
@@ -1361,6 +1410,8 @@ class ApplicationDependencyManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/adm/list_knowledge_bases.py.html>`__ to see an example of how to use list_knowledge_bases API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/knowledgeBases"
         method = "GET"
         operation_name = "list_knowledge_bases"
@@ -1445,7 +1496,8 @@ class ApplicationDependencyManagementClient(object):
                 response_type="KnowledgeBaseCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1455,7 +1507,8 @@ class ApplicationDependencyManagementClient(object):
                 response_type="KnowledgeBaseCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_vulnerability_audits(self, **kwargs):
         """
@@ -1527,6 +1580,8 @@ class ApplicationDependencyManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/adm/list_vulnerability_audits.py.html>`__ to see an example of how to use list_vulnerability_audits API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/vulnerabilityAudits"
         method = "GET"
         operation_name = "list_vulnerability_audits"
@@ -1615,7 +1670,8 @@ class ApplicationDependencyManagementClient(object):
                 response_type="VulnerabilityAuditCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1625,7 +1681,8 @@ class ApplicationDependencyManagementClient(object):
                 response_type="VulnerabilityAuditCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1674,6 +1731,8 @@ class ApplicationDependencyManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/adm/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -1754,7 +1813,8 @@ class ApplicationDependencyManagementClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1765,7 +1825,8 @@ class ApplicationDependencyManagementClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -1814,6 +1875,8 @@ class ApplicationDependencyManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/adm/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -1894,7 +1957,8 @@ class ApplicationDependencyManagementClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1905,7 +1969,8 @@ class ApplicationDependencyManagementClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, **kwargs):
         """
@@ -1965,6 +2030,8 @@ class ApplicationDependencyManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/adm/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -2049,7 +2116,8 @@ class ApplicationDependencyManagementClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2059,7 +2127,8 @@ class ApplicationDependencyManagementClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_knowledge_base(self, knowledge_base_id, update_knowledge_base_details, **kwargs):
         """
@@ -2102,6 +2171,8 @@ class ApplicationDependencyManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/adm/update_knowledge_base.py.html>`__ to see an example of how to use update_knowledge_base API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['knowledgeBaseId']
         resource_path = "/knowledgeBases/{knowledgeBaseId}"
         method = "PUT"
         operation_name = "update_knowledge_base"
@@ -2157,7 +2228,8 @@ class ApplicationDependencyManagementClient(object):
                 body=update_knowledge_base_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2167,7 +2239,8 @@ class ApplicationDependencyManagementClient(object):
                 body=update_knowledge_base_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_vulnerability_audit(self, vulnerability_audit_id, update_vulnerability_audit_details, **kwargs):
         """
@@ -2208,6 +2281,8 @@ class ApplicationDependencyManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/adm/update_vulnerability_audit.py.html>`__ to see an example of how to use update_vulnerability_audit API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vulnerabilityAuditId']
         resource_path = "/vulnerabilityAudits/{vulnerabilityAuditId}"
         method = "PUT"
         operation_name = "update_vulnerability_audit"
@@ -2264,7 +2339,8 @@ class ApplicationDependencyManagementClient(object):
                 response_type="VulnerabilityAudit",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2275,4 +2351,5 @@ class ApplicationDependencyManagementClient(object):
                 response_type="VulnerabilityAudit",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

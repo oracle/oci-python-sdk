@@ -65,6 +65,9 @@ class TransferDeviceClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class TransferDeviceClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20171001',
             'service_endpoint_template': 'https://datatransfer.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -140,6 +145,8 @@ class TransferDeviceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/create_transfer_device.py.html>`__ to see an example of how to use create_transfer_device API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['id']
         resource_path = "/transferJobs/{id}/transferDevices"
         method = "POST"
         operation_name = "create_transfer_device"
@@ -193,7 +200,8 @@ class TransferDeviceClient(object):
                 response_type="NewTransferDevice",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -204,7 +212,8 @@ class TransferDeviceClient(object):
                 response_type="NewTransferDevice",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_transfer_device(self, id, transfer_device_label, **kwargs):
         """
@@ -242,6 +251,8 @@ class TransferDeviceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/delete_transfer_device.py.html>`__ to see an example of how to use delete_transfer_device API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['id', 'transferDeviceLabel']
         resource_path = "/transferJobs/{id}/transferDevices/{transferDeviceLabel}"
         method = "DELETE"
         operation_name = "delete_transfer_device"
@@ -294,7 +305,8 @@ class TransferDeviceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -303,7 +315,8 @@ class TransferDeviceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_transfer_device(self, id, transfer_device_label, **kwargs):
         """
@@ -334,6 +347,8 @@ class TransferDeviceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/get_transfer_device.py.html>`__ to see an example of how to use get_transfer_device API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['id', 'transferDeviceLabel']
         resource_path = "/transferJobs/{id}/transferDevices/{transferDeviceLabel}"
         method = "GET"
         operation_name = "get_transfer_device"
@@ -379,7 +394,8 @@ class TransferDeviceClient(object):
                 response_type="TransferDevice",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -389,7 +405,8 @@ class TransferDeviceClient(object):
                 response_type="TransferDevice",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_transfer_devices(self, id, **kwargs):
         """
@@ -425,6 +442,8 @@ class TransferDeviceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/list_transfer_devices.py.html>`__ to see an example of how to use list_transfer_devices API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['id']
         resource_path = "/transferJobs/{id}/transferDevices"
         method = "GET"
         operation_name = "list_transfer_devices"
@@ -489,7 +508,8 @@ class TransferDeviceClient(object):
                 response_type="MultipleTransferDevices",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -500,7 +520,8 @@ class TransferDeviceClient(object):
                 response_type="MultipleTransferDevices",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_transfer_device(self, id, transfer_device_label, update_transfer_device_details, **kwargs):
         """
@@ -538,6 +559,8 @@ class TransferDeviceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/update_transfer_device.py.html>`__ to see an example of how to use update_transfer_device API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['id', 'transferDeviceLabel']
         resource_path = "/transferJobs/{id}/transferDevices/{transferDeviceLabel}"
         method = "PUT"
         operation_name = "update_transfer_device"
@@ -591,7 +614,8 @@ class TransferDeviceClient(object):
                 response_type="TransferDevice",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -602,4 +626,5 @@ class TransferDeviceClient(object):
                 response_type="TransferDevice",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

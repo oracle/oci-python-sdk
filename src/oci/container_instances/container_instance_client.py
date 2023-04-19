@@ -65,6 +65,9 @@ class ContainerInstanceClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class ContainerInstanceClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20210415',
             'service_endpoint_template': 'https://compute-containers.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -143,6 +148,8 @@ class ContainerInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerinstances/change_container_instance_compartment.py.html>`__ to see an example of how to use change_container_instance_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['containerInstanceId']
         resource_path = "/containerInstances/{containerInstanceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_container_instance_compartment"
@@ -198,7 +205,8 @@ class ContainerInstanceClient(object):
                 body=change_container_instance_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -208,7 +216,8 @@ class ContainerInstanceClient(object):
                 body=change_container_instance_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_container_instance(self, create_container_instance_details, **kwargs):
         """
@@ -246,6 +255,8 @@ class ContainerInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerinstances/create_container_instance.py.html>`__ to see an example of how to use create_container_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/containerInstances"
         method = "POST"
         operation_name = "create_container_instance"
@@ -292,7 +303,8 @@ class ContainerInstanceClient(object):
                 response_type="ContainerInstance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -302,7 +314,8 @@ class ContainerInstanceClient(object):
                 response_type="ContainerInstance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_container_instance(self, container_instance_id, **kwargs):
         """
@@ -340,6 +353,8 @@ class ContainerInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerinstances/delete_container_instance.py.html>`__ to see an example of how to use delete_container_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['containerInstanceId']
         resource_path = "/containerInstances/{containerInstanceId}"
         method = "DELETE"
         operation_name = "delete_container_instance"
@@ -394,7 +409,8 @@ class ContainerInstanceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -403,7 +419,8 @@ class ContainerInstanceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_container(self, container_id, **kwargs):
         """
@@ -434,6 +451,8 @@ class ContainerInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerinstances/get_container.py.html>`__ to see an example of how to use get_container API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['containerId']
         resource_path = "/containers/{containerId}"
         method = "GET"
         operation_name = "get_container"
@@ -487,7 +506,8 @@ class ContainerInstanceClient(object):
                 response_type="Container",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -497,7 +517,8 @@ class ContainerInstanceClient(object):
                 response_type="Container",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_container_instance(self, container_instance_id, **kwargs):
         """
@@ -528,6 +549,8 @@ class ContainerInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerinstances/get_container_instance.py.html>`__ to see an example of how to use get_container_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['containerInstanceId']
         resource_path = "/containerInstances/{containerInstanceId}"
         method = "GET"
         operation_name = "get_container_instance"
@@ -581,7 +604,8 @@ class ContainerInstanceClient(object):
                 response_type="ContainerInstance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -591,7 +615,8 @@ class ContainerInstanceClient(object):
                 response_type="ContainerInstance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -622,6 +647,8 @@ class ContainerInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerinstances/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -675,7 +702,8 @@ class ContainerInstanceClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -685,7 +713,8 @@ class ContainerInstanceClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_container_instance_shapes(self, compartment_id, **kwargs):
         """
@@ -727,6 +756,8 @@ class ContainerInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerinstances/list_container_instance_shapes.py.html>`__ to see an example of how to use list_container_instance_shapes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/containerInstanceShapes"
         method = "GET"
         operation_name = "list_container_instance_shapes"
@@ -781,7 +812,8 @@ class ContainerInstanceClient(object):
                 response_type="ContainerInstanceShapeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -791,7 +823,8 @@ class ContainerInstanceClient(object):
                 response_type="ContainerInstanceShapeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_container_instances(self, compartment_id, **kwargs):
         """
@@ -851,6 +884,8 @@ class ContainerInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerinstances/list_container_instances.py.html>`__ to see an example of how to use list_container_instances API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/containerInstances"
         method = "GET"
         operation_name = "list_container_instances"
@@ -934,7 +969,8 @@ class ContainerInstanceClient(object):
                 response_type="ContainerInstanceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -944,7 +980,8 @@ class ContainerInstanceClient(object):
                 response_type="ContainerInstanceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_containers(self, compartment_id, **kwargs):
         """
@@ -1007,6 +1044,8 @@ class ContainerInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerinstances/list_containers.py.html>`__ to see an example of how to use list_containers API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/containers"
         method = "GET"
         operation_name = "list_containers"
@@ -1092,7 +1131,8 @@ class ContainerInstanceClient(object):
                 response_type="ContainerCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1102,7 +1142,8 @@ class ContainerInstanceClient(object):
                 response_type="ContainerCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1139,6 +1180,8 @@ class ContainerInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerinstances/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -1201,7 +1244,8 @@ class ContainerInstanceClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1212,7 +1256,8 @@ class ContainerInstanceClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -1249,6 +1294,8 @@ class ContainerInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerinstances/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -1311,7 +1358,8 @@ class ContainerInstanceClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1322,7 +1370,8 @@ class ContainerInstanceClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -1362,6 +1411,8 @@ class ContainerInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerinstances/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -1416,7 +1467,8 @@ class ContainerInstanceClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1426,7 +1478,8 @@ class ContainerInstanceClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def restart_container_instance(self, container_instance_id, **kwargs):
         """
@@ -1464,6 +1517,8 @@ class ContainerInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerinstances/restart_container_instance.py.html>`__ to see an example of how to use restart_container_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['containerInstanceId']
         resource_path = "/containerInstances/{containerInstanceId}/actions/restart"
         method = "POST"
         operation_name = "restart_container_instance"
@@ -1518,7 +1573,8 @@ class ContainerInstanceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1527,7 +1583,8 @@ class ContainerInstanceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def retrieve_logs(self, container_id, **kwargs):
         """
@@ -1558,6 +1615,8 @@ class ContainerInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerinstances/retrieve_logs.py.html>`__ to see an example of how to use retrieve_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['containerId']
         resource_path = "/containers/{containerId}/actions/retrieveLogs"
         method = "POST"
         operation_name = "retrieve_logs"
@@ -1611,7 +1670,8 @@ class ContainerInstanceClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1621,7 +1681,8 @@ class ContainerInstanceClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def start_container_instance(self, container_instance_id, **kwargs):
         """
@@ -1659,6 +1720,8 @@ class ContainerInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerinstances/start_container_instance.py.html>`__ to see an example of how to use start_container_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['containerInstanceId']
         resource_path = "/containerInstances/{containerInstanceId}/actions/start"
         method = "POST"
         operation_name = "start_container_instance"
@@ -1713,7 +1776,8 @@ class ContainerInstanceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1722,7 +1786,8 @@ class ContainerInstanceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def stop_container_instance(self, container_instance_id, **kwargs):
         """
@@ -1760,6 +1825,8 @@ class ContainerInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerinstances/stop_container_instance.py.html>`__ to see an example of how to use stop_container_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['containerInstanceId']
         resource_path = "/containerInstances/{containerInstanceId}/actions/stop"
         method = "POST"
         operation_name = "stop_container_instance"
@@ -1814,7 +1881,8 @@ class ContainerInstanceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1823,7 +1891,8 @@ class ContainerInstanceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_container(self, container_id, update_container_details, **kwargs):
         """
@@ -1864,6 +1933,8 @@ class ContainerInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerinstances/update_container.py.html>`__ to see an example of how to use update_container API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['containerId']
         resource_path = "/containers/{containerId}"
         method = "PUT"
         operation_name = "update_container"
@@ -1919,7 +1990,8 @@ class ContainerInstanceClient(object):
                 body=update_container_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1929,7 +2001,8 @@ class ContainerInstanceClient(object):
                 body=update_container_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_container_instance(self, container_instance_id, update_container_instance_details, **kwargs):
         """
@@ -1970,6 +2043,8 @@ class ContainerInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerinstances/update_container_instance.py.html>`__ to see an example of how to use update_container_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['containerInstanceId']
         resource_path = "/containerInstances/{containerInstanceId}"
         method = "PUT"
         operation_name = "update_container_instance"
@@ -2025,7 +2100,8 @@ class ContainerInstanceClient(object):
                 body=update_container_instance_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2035,4 +2111,5 @@ class ContainerInstanceClient(object):
                 body=update_container_instance_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

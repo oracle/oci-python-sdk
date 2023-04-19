@@ -65,6 +65,9 @@ class DataLabelingClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class DataLabelingClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20211001',
             'service_endpoint_template': 'https://datalabeling-dp.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -140,6 +145,8 @@ class DataLabelingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservicedataplane/create_annotation.py.html>`__ to see an example of how to use create_annotation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/annotations"
         method = "POST"
         operation_name = "create_annotation"
@@ -186,7 +193,8 @@ class DataLabelingClient(object):
                 response_type="Annotation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -196,7 +204,8 @@ class DataLabelingClient(object):
                 response_type="Annotation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_record(self, create_record_details, **kwargs):
         """
@@ -234,6 +243,8 @@ class DataLabelingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservicedataplane/create_record.py.html>`__ to see an example of how to use create_record API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/records"
         method = "POST"
         operation_name = "create_record"
@@ -280,7 +291,8 @@ class DataLabelingClient(object):
                 response_type="Record",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -290,7 +302,8 @@ class DataLabelingClient(object):
                 response_type="Record",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_annotation(self, annotation_id, **kwargs):
         """
@@ -328,6 +341,8 @@ class DataLabelingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservicedataplane/delete_annotation.py.html>`__ to see an example of how to use delete_annotation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['annotationId']
         resource_path = "/annotations/{annotationId}"
         method = "DELETE"
         operation_name = "delete_annotation"
@@ -382,7 +397,8 @@ class DataLabelingClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -391,7 +407,8 @@ class DataLabelingClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_record(self, record_id, **kwargs):
         """
@@ -429,6 +446,8 @@ class DataLabelingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservicedataplane/delete_record.py.html>`__ to see an example of how to use delete_record API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['recordId']
         resource_path = "/records/{recordId}"
         method = "DELETE"
         operation_name = "delete_record"
@@ -483,7 +502,8 @@ class DataLabelingClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -492,7 +512,8 @@ class DataLabelingClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_annotation(self, annotation_id, **kwargs):
         """
@@ -523,6 +544,8 @@ class DataLabelingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservicedataplane/get_annotation.py.html>`__ to see an example of how to use get_annotation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['annotationId']
         resource_path = "/annotations/{annotationId}"
         method = "GET"
         operation_name = "get_annotation"
@@ -576,7 +599,8 @@ class DataLabelingClient(object):
                 response_type="Annotation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -586,7 +610,8 @@ class DataLabelingClient(object):
                 response_type="Annotation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_dataset(self, dataset_id, **kwargs):
         """
@@ -617,6 +642,8 @@ class DataLabelingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservicedataplane/get_dataset.py.html>`__ to see an example of how to use get_dataset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['datasetId']
         resource_path = "/datasets/{datasetId}"
         method = "GET"
         operation_name = "get_dataset"
@@ -670,7 +697,8 @@ class DataLabelingClient(object):
                 response_type="Dataset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -680,7 +708,8 @@ class DataLabelingClient(object):
                 response_type="Dataset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_record(self, record_id, **kwargs):
         """
@@ -711,6 +740,8 @@ class DataLabelingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservicedataplane/get_record.py.html>`__ to see an example of how to use get_record API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['recordId']
         resource_path = "/records/{recordId}"
         method = "GET"
         operation_name = "get_record"
@@ -764,7 +795,8 @@ class DataLabelingClient(object):
                 response_type="Record",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -774,7 +806,8 @@ class DataLabelingClient(object):
                 response_type="Record",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_record_content(self, record_id, **kwargs):
         """
@@ -812,6 +845,8 @@ class DataLabelingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservicedataplane/get_record_content.py.html>`__ to see an example of how to use get_record_content API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['recordId']
         resource_path = "/records/{recordId}/content"
         method = "GET"
         operation_name = "get_record_content"
@@ -867,7 +902,8 @@ class DataLabelingClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -877,7 +913,8 @@ class DataLabelingClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_record_preview_content(self, record_id, **kwargs):
         """
@@ -915,6 +952,8 @@ class DataLabelingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservicedataplane/get_record_preview_content.py.html>`__ to see an example of how to use get_record_preview_content API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['recordId']
         resource_path = "/records/{recordId}/preview/content"
         method = "GET"
         operation_name = "get_record_preview_content"
@@ -970,7 +1009,8 @@ class DataLabelingClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -980,7 +1020,8 @@ class DataLabelingClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_annotations(self, compartment_id, dataset_id, **kwargs):
         """
@@ -1050,6 +1091,8 @@ class DataLabelingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservicedataplane/list_annotations.py.html>`__ to see an example of how to use list_annotations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'datasetId']
         resource_path = "/annotations"
         method = "GET"
         operation_name = "list_annotations"
@@ -1140,7 +1183,8 @@ class DataLabelingClient(object):
                 response_type="AnnotationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1150,7 +1194,8 @@ class DataLabelingClient(object):
                 response_type="AnnotationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_records(self, compartment_id, dataset_id, **kwargs):
         """
@@ -1217,6 +1262,8 @@ class DataLabelingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservicedataplane/list_records.py.html>`__ to see an example of how to use list_records API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'datasetId']
         resource_path = "/records"
         method = "GET"
         operation_name = "list_records"
@@ -1305,7 +1352,8 @@ class DataLabelingClient(object):
                 response_type="RecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1315,7 +1363,8 @@ class DataLabelingClient(object):
                 response_type="RecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def summarize_annotation_analytics(self, compartment_id, dataset_id, **kwargs):
         """
@@ -1378,6 +1427,8 @@ class DataLabelingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservicedataplane/summarize_annotation_analytics.py.html>`__ to see an example of how to use summarize_annotation_analytics API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'datasetId']
         resource_path = "/annotationAnalytics"
         method = "GET"
         operation_name = "summarize_annotation_analytics"
@@ -1469,7 +1520,8 @@ class DataLabelingClient(object):
                 response_type="AnnotationAnalyticsAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1479,7 +1531,8 @@ class DataLabelingClient(object):
                 response_type="AnnotationAnalyticsAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def summarize_record_analytics(self, compartment_id, dataset_id, **kwargs):
         """
@@ -1539,6 +1592,8 @@ class DataLabelingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservicedataplane/summarize_record_analytics.py.html>`__ to see an example of how to use summarize_record_analytics API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'datasetId']
         resource_path = "/recordAnalytics"
         method = "GET"
         operation_name = "summarize_record_analytics"
@@ -1628,7 +1683,8 @@ class DataLabelingClient(object):
                 response_type="RecordAnalyticsAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1638,7 +1694,8 @@ class DataLabelingClient(object):
                 response_type="RecordAnalyticsAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_annotation(self, annotation_id, update_annotation_details, **kwargs):
         """
@@ -1679,6 +1736,8 @@ class DataLabelingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservicedataplane/update_annotation.py.html>`__ to see an example of how to use update_annotation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['annotationId']
         resource_path = "/annotations/{annotationId}"
         method = "PUT"
         operation_name = "update_annotation"
@@ -1735,7 +1794,8 @@ class DataLabelingClient(object):
                 response_type="Annotation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1746,7 +1806,8 @@ class DataLabelingClient(object):
                 response_type="Annotation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_record(self, record_id, update_record_details, **kwargs):
         """
@@ -1787,6 +1848,8 @@ class DataLabelingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservicedataplane/update_record.py.html>`__ to see an example of how to use update_record API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['recordId']
         resource_path = "/records/{recordId}"
         method = "PUT"
         operation_name = "update_record"
@@ -1843,7 +1906,8 @@ class DataLabelingClient(object):
                 response_type="Record",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1854,4 +1918,5 @@ class DataLabelingClient(object):
                 response_type="Record",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

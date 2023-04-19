@@ -67,6 +67,9 @@ class MonitoringClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -93,8 +96,10 @@ class MonitoringClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20180401',
             'service_endpoint_template': 'https://telemetry.{region}.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -157,6 +162,8 @@ class MonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/monitoring/change_alarm_compartment.py.html>`__ to see an example of how to use change_alarm_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['alarmId']
         resource_path = "/alarms/{alarmId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_alarm_compartment"
@@ -213,7 +220,8 @@ class MonitoringClient(object):
                 body=change_alarm_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -223,7 +231,8 @@ class MonitoringClient(object):
                 body=change_alarm_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_alarm(self, create_alarm_details, **kwargs):
         """
@@ -269,6 +278,8 @@ class MonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/monitoring/create_alarm.py.html>`__ to see an example of how to use create_alarm API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/alarms"
         method = "POST"
         operation_name = "create_alarm"
@@ -313,7 +324,8 @@ class MonitoringClient(object):
                 response_type="Alarm",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -323,7 +335,8 @@ class MonitoringClient(object):
                 response_type="Alarm",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_alarm(self, alarm_id, **kwargs):
         """
@@ -369,6 +382,8 @@ class MonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/monitoring/delete_alarm.py.html>`__ to see an example of how to use delete_alarm API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['alarmId']
         resource_path = "/alarms/{alarmId}"
         method = "DELETE"
         operation_name = "delete_alarm"
@@ -421,7 +436,8 @@ class MonitoringClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -430,7 +446,8 @@ class MonitoringClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_alarm(self, alarm_id, **kwargs):
         """
@@ -471,6 +488,8 @@ class MonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/monitoring/get_alarm.py.html>`__ to see an example of how to use get_alarm API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['alarmId']
         resource_path = "/alarms/{alarmId}"
         method = "GET"
         operation_name = "get_alarm"
@@ -522,7 +541,8 @@ class MonitoringClient(object):
                 response_type="Alarm",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -532,7 +552,8 @@ class MonitoringClient(object):
                 response_type="Alarm",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_alarm_history(self, alarm_id, **kwargs):
         """
@@ -607,6 +628,8 @@ class MonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/monitoring/get_alarm_history.py.html>`__ to see an example of how to use get_alarm_history API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['alarmId']
         resource_path = "/alarms/{alarmId}/history"
         method = "GET"
         operation_name = "get_alarm_history"
@@ -680,7 +703,8 @@ class MonitoringClient(object):
                 response_type="AlarmHistoryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -691,7 +715,8 @@ class MonitoringClient(object):
                 response_type="AlarmHistoryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_alarms(self, compartment_id, **kwargs):
         """
@@ -782,6 +807,8 @@ class MonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/monitoring/list_alarms.py.html>`__ to see an example of how to use list_alarms API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/alarms"
         method = "GET"
         operation_name = "list_alarms"
@@ -863,7 +890,8 @@ class MonitoringClient(object):
                 response_type="list[AlarmSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -873,7 +901,8 @@ class MonitoringClient(object):
                 response_type="list[AlarmSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_alarms_status(self, compartment_id, **kwargs):
         """
@@ -962,6 +991,8 @@ class MonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/monitoring/list_alarms_status.py.html>`__ to see an example of how to use list_alarms_status API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/alarms/status"
         method = "GET"
         operation_name = "list_alarms_status"
@@ -1034,7 +1065,8 @@ class MonitoringClient(object):
                 response_type="list[AlarmStatusSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1044,7 +1076,8 @@ class MonitoringClient(object):
                 response_type="list[AlarmStatusSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_metrics(self, compartment_id, list_metrics_details, **kwargs):
         """
@@ -1115,6 +1148,8 @@ class MonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/monitoring/list_metrics.py.html>`__ to see an example of how to use list_metrics API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/metrics/actions/listMetrics"
         method = "POST"
         operation_name = "list_metrics"
@@ -1168,7 +1203,8 @@ class MonitoringClient(object):
                 response_type="list[Metric]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1179,7 +1215,8 @@ class MonitoringClient(object):
                 response_type="list[Metric]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def post_metric_data(self, post_metric_data_details, **kwargs):
         """
@@ -1235,6 +1272,8 @@ class MonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/monitoring/post_metric_data.py.html>`__ to see an example of how to use post_metric_data API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/metrics"
         method = "POST"
         operation_name = "post_metric_data"
@@ -1278,7 +1317,8 @@ class MonitoringClient(object):
                 response_type="PostMetricDataResponseDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1288,7 +1328,8 @@ class MonitoringClient(object):
                 response_type="PostMetricDataResponseDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_alarm_suppression(self, alarm_id, **kwargs):
         """
@@ -1334,6 +1375,8 @@ class MonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/monitoring/remove_alarm_suppression.py.html>`__ to see an example of how to use remove_alarm_suppression API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['alarmId']
         resource_path = "/alarms/{alarmId}/actions/removeSuppression"
         method = "POST"
         operation_name = "remove_alarm_suppression"
@@ -1386,7 +1429,8 @@ class MonitoringClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1395,7 +1439,8 @@ class MonitoringClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def retrieve_dimension_states(self, alarm_id, **kwargs):
         """
@@ -1459,6 +1504,8 @@ class MonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/monitoring/retrieve_dimension_states.py.html>`__ to see an example of how to use retrieve_dimension_states API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['alarmId']
         resource_path = "/alarms/{alarmId}/actions/retrieveDimensionStates"
         method = "POST"
         operation_name = "retrieve_dimension_states"
@@ -1521,7 +1568,8 @@ class MonitoringClient(object):
                 response_type="AlarmDimensionStatesCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1533,7 +1581,8 @@ class MonitoringClient(object):
                 response_type="AlarmDimensionStatesCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def summarize_metrics_data(self, compartment_id, summarize_metrics_data_details, **kwargs):
         """
@@ -1588,6 +1637,8 @@ class MonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/monitoring/summarize_metrics_data.py.html>`__ to see an example of how to use summarize_metrics_data API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/metrics/actions/summarizeMetricsData"
         method = "POST"
         operation_name = "summarize_metrics_data"
@@ -1637,7 +1688,8 @@ class MonitoringClient(object):
                 response_type="list[MetricData]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1648,7 +1700,8 @@ class MonitoringClient(object):
                 response_type="list[MetricData]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_alarm(self, alarm_id, update_alarm_details, **kwargs):
         """
@@ -1697,6 +1750,8 @@ class MonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/monitoring/update_alarm.py.html>`__ to see an example of how to use update_alarm API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['alarmId']
         resource_path = "/alarms/{alarmId}"
         method = "PUT"
         operation_name = "update_alarm"
@@ -1751,7 +1806,8 @@ class MonitoringClient(object):
                 response_type="Alarm",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1762,4 +1818,5 @@ class MonitoringClient(object):
                 response_type="Alarm",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

@@ -65,6 +65,9 @@ class DashxApisClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class DashxApisClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20200901',
             'service_endpoint_template': 'https://managementdashboard.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -150,6 +155,8 @@ class DashxApisClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/change_management_dashboards_compartment.py.html>`__ to see an example of how to use change_management_dashboards_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managementDashboardId']
         resource_path = "/managementDashboards/{managementDashboardId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_management_dashboards_compartment"
@@ -207,7 +214,8 @@ class DashxApisClient(object):
                 response_type="ManagementDashboard",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -218,7 +226,8 @@ class DashxApisClient(object):
                 response_type="ManagementDashboard",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_management_saved_searches_compartment(self, management_saved_search_id, change_management_saved_searches_compartment_details, **kwargs):
         """
@@ -266,6 +275,8 @@ class DashxApisClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/change_management_saved_searches_compartment.py.html>`__ to see an example of how to use change_management_saved_searches_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managementSavedSearchId']
         resource_path = "/managementSavedSearches/{managementSavedSearchId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_management_saved_searches_compartment"
@@ -323,7 +334,8 @@ class DashxApisClient(object):
                 response_type="ManagementSavedSearch",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -334,7 +346,8 @@ class DashxApisClient(object):
                 response_type="ManagementSavedSearch",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_management_dashboard(self, create_management_dashboard_details, **kwargs):
         """
@@ -375,6 +388,8 @@ class DashxApisClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/create_management_dashboard.py.html>`__ to see an example of how to use create_management_dashboard API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/managementDashboards"
         method = "POST"
         operation_name = "create_management_dashboard"
@@ -419,7 +434,8 @@ class DashxApisClient(object):
                 response_type="ManagementDashboard",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -429,7 +445,8 @@ class DashxApisClient(object):
                 response_type="ManagementDashboard",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_management_saved_search(self, create_management_saved_search_details, **kwargs):
         """
@@ -470,6 +487,8 @@ class DashxApisClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/create_management_saved_search.py.html>`__ to see an example of how to use create_management_saved_search API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/managementSavedSearches"
         method = "POST"
         operation_name = "create_management_saved_search"
@@ -514,7 +533,8 @@ class DashxApisClient(object):
                 response_type="ManagementSavedSearch",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -524,7 +544,8 @@ class DashxApisClient(object):
                 response_type="ManagementSavedSearch",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_management_dashboard(self, management_dashboard_id, **kwargs):
         """
@@ -562,6 +583,8 @@ class DashxApisClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/delete_management_dashboard.py.html>`__ to see an example of how to use delete_management_dashboard API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managementDashboardId']
         resource_path = "/managementDashboards/{managementDashboardId}"
         method = "DELETE"
         operation_name = "delete_management_dashboard"
@@ -614,7 +637,8 @@ class DashxApisClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -623,7 +647,8 @@ class DashxApisClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_management_saved_search(self, management_saved_search_id, **kwargs):
         """
@@ -661,6 +686,8 @@ class DashxApisClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/delete_management_saved_search.py.html>`__ to see an example of how to use delete_management_saved_search API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managementSavedSearchId']
         resource_path = "/managementSavedSearches/{managementSavedSearchId}"
         method = "DELETE"
         operation_name = "delete_management_saved_search"
@@ -713,7 +740,8 @@ class DashxApisClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -722,7 +750,8 @@ class DashxApisClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def export_dashboard(self, export_dashboard_id, **kwargs):
         """
@@ -762,6 +791,8 @@ class DashxApisClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/export_dashboard.py.html>`__ to see an example of how to use export_dashboard API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exportDashboardId']
         resource_path = "/managementDashboards/actions/exportDashboard/{exportDashboardId}"
         method = "GET"
         operation_name = "export_dashboard"
@@ -816,7 +847,8 @@ class DashxApisClient(object):
                 response_type="ManagementDashboardExportDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -826,7 +858,8 @@ class DashxApisClient(object):
                 response_type="ManagementDashboardExportDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_management_dashboard(self, management_dashboard_id, **kwargs):
         """
@@ -864,6 +897,8 @@ class DashxApisClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/get_management_dashboard.py.html>`__ to see an example of how to use get_management_dashboard API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managementDashboardId']
         resource_path = "/managementDashboards/{managementDashboardId}"
         method = "GET"
         operation_name = "get_management_dashboard"
@@ -918,7 +953,8 @@ class DashxApisClient(object):
                 response_type="ManagementDashboard",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -928,7 +964,8 @@ class DashxApisClient(object):
                 response_type="ManagementDashboard",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_management_saved_search(self, management_saved_search_id, **kwargs):
         """
@@ -966,6 +1003,8 @@ class DashxApisClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/get_management_saved_search.py.html>`__ to see an example of how to use get_management_saved_search API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managementSavedSearchId']
         resource_path = "/managementSavedSearches/{managementSavedSearchId}"
         method = "GET"
         operation_name = "get_management_saved_search"
@@ -1020,7 +1059,8 @@ class DashxApisClient(object):
                 response_type="ManagementSavedSearch",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1030,7 +1070,8 @@ class DashxApisClient(object):
                 response_type="ManagementSavedSearch",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def import_dashboard(self, management_dashboard_import_details, **kwargs):
         """
@@ -1080,6 +1121,8 @@ class DashxApisClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/import_dashboard.py.html>`__ to see an example of how to use import_dashboard API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/managementDashboards/actions/importDashboard"
         method = "POST"
         operation_name = "import_dashboard"
@@ -1125,7 +1168,8 @@ class DashxApisClient(object):
                 body=management_dashboard_import_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1134,7 +1178,8 @@ class DashxApisClient(object):
                 body=management_dashboard_import_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_management_dashboards(self, compartment_id, **kwargs):
         """
@@ -1184,6 +1229,8 @@ class DashxApisClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/list_management_dashboards.py.html>`__ to see an example of how to use list_management_dashboards API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/managementDashboards"
         method = "GET"
         operation_name = "list_management_dashboards"
@@ -1254,7 +1301,8 @@ class DashxApisClient(object):
                 response_type="ManagementDashboardCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1264,7 +1312,8 @@ class DashxApisClient(object):
                 response_type="ManagementDashboardCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_management_saved_searches(self, compartment_id, **kwargs):
         """
@@ -1314,6 +1363,8 @@ class DashxApisClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/list_management_saved_searches.py.html>`__ to see an example of how to use list_management_saved_searches API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/managementSavedSearches"
         method = "GET"
         operation_name = "list_management_saved_searches"
@@ -1384,7 +1435,8 @@ class DashxApisClient(object):
                 response_type="ManagementSavedSearchCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1394,7 +1446,8 @@ class DashxApisClient(object):
                 response_type="ManagementSavedSearchCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_management_dashboard(self, management_dashboard_id, update_management_dashboard_details, **kwargs):
         """
@@ -1442,6 +1495,8 @@ class DashxApisClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/update_management_dashboard.py.html>`__ to see an example of how to use update_management_dashboard API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managementDashboardId']
         resource_path = "/managementDashboards/{managementDashboardId}"
         method = "PUT"
         operation_name = "update_management_dashboard"
@@ -1499,7 +1554,8 @@ class DashxApisClient(object):
                 response_type="ManagementDashboard",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1510,7 +1566,8 @@ class DashxApisClient(object):
                 response_type="ManagementDashboard",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_management_saved_search(self, management_saved_search_id, update_management_saved_search_details, **kwargs):
         """
@@ -1558,6 +1615,8 @@ class DashxApisClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementdashboard/update_management_saved_search.py.html>`__ to see an example of how to use update_management_saved_search API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managementSavedSearchId']
         resource_path = "/managementSavedSearches/{managementSavedSearchId}"
         method = "PUT"
         operation_name = "update_management_saved_search"
@@ -1615,7 +1674,8 @@ class DashxApisClient(object):
                 response_type="ManagementSavedSearch",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1626,4 +1686,5 @@ class DashxApisClient(object):
                 response_type="ManagementSavedSearch",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

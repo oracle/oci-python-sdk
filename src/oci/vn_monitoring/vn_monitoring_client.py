@@ -66,6 +66,9 @@ class VnMonitoringClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -92,8 +95,10 @@ class VnMonitoringClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20160918',
             'service_endpoint_template': 'https://vnca-api.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -145,6 +150,8 @@ class VnMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vnmonitoring/change_path_analyzer_test_compartment.py.html>`__ to see an example of how to use change_path_analyzer_test_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['pathAnalyzerTestId']
         resource_path = "/pathAnalyzerTests/{pathAnalyzerTestId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_path_analyzer_test_compartment"
@@ -198,7 +205,8 @@ class VnMonitoringClient(object):
                 body=change_path_analyzer_test_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -208,7 +216,8 @@ class VnMonitoringClient(object):
                 body=change_path_analyzer_test_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_path_analyzer_test(self, create_path_analyzer_test_details, **kwargs):
         """
@@ -247,6 +256,8 @@ class VnMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vnmonitoring/create_path_analyzer_test.py.html>`__ to see an example of how to use create_path_analyzer_test API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/pathAnalyzerTests"
         method = "POST"
         operation_name = "create_path_analyzer_test"
@@ -291,7 +302,8 @@ class VnMonitoringClient(object):
                 response_type="PathAnalyzerTest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -301,7 +313,8 @@ class VnMonitoringClient(object):
                 response_type="PathAnalyzerTest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_path_analyzer_test(self, path_analyzer_test_id, **kwargs):
         """
@@ -340,6 +353,8 @@ class VnMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vnmonitoring/delete_path_analyzer_test.py.html>`__ to see an example of how to use delete_path_analyzer_test API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['pathAnalyzerTestId']
         resource_path = "/pathAnalyzerTests/{pathAnalyzerTestId}"
         method = "DELETE"
         operation_name = "delete_path_analyzer_test"
@@ -392,7 +407,8 @@ class VnMonitoringClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -401,7 +417,8 @@ class VnMonitoringClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_path_analysis(self, get_path_analysis_details, **kwargs):
         """
@@ -453,6 +470,8 @@ class VnMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vnmonitoring/get_path_analysis.py.html>`__ to see an example of how to use get_path_analysis API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/pathAnalysis"
         method = "POST"
         operation_name = "get_path_analysis"
@@ -498,7 +517,8 @@ class VnMonitoringClient(object):
                 body=get_path_analysis_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -507,7 +527,8 @@ class VnMonitoringClient(object):
                 body=get_path_analysis_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_path_analyzer_test(self, path_analyzer_test_id, **kwargs):
         """
@@ -541,6 +562,8 @@ class VnMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vnmonitoring/get_path_analyzer_test.py.html>`__ to see an example of how to use get_path_analyzer_test API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['pathAnalyzerTestId']
         resource_path = "/pathAnalyzerTests/{pathAnalyzerTestId}"
         method = "GET"
         operation_name = "get_path_analyzer_test"
@@ -592,7 +615,8 @@ class VnMonitoringClient(object):
                 response_type="PathAnalyzerTest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -602,7 +626,8 @@ class VnMonitoringClient(object):
                 response_type="PathAnalyzerTest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -636,6 +661,8 @@ class VnMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vnmonitoring/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -687,7 +714,8 @@ class VnMonitoringClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -697,7 +725,8 @@ class VnMonitoringClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_path_analyzer_tests(self, compartment_id, **kwargs):
         """
@@ -773,6 +802,8 @@ class VnMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vnmonitoring/list_path_analyzer_tests.py.html>`__ to see an example of how to use list_path_analyzer_tests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/pathAnalyzerTests"
         method = "GET"
         operation_name = "list_path_analyzer_tests"
@@ -852,7 +883,8 @@ class VnMonitoringClient(object):
                 response_type="PathAnalyzerTestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -862,7 +894,8 @@ class VnMonitoringClient(object):
                 response_type="PathAnalyzerTestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -923,6 +956,8 @@ class VnMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vnmonitoring/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -1001,7 +1036,8 @@ class VnMonitoringClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1012,7 +1048,8 @@ class VnMonitoringClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -1073,6 +1110,8 @@ class VnMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vnmonitoring/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -1151,7 +1190,8 @@ class VnMonitoringClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1162,7 +1202,8 @@ class VnMonitoringClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_results(self, work_request_id, **kwargs):
         """
@@ -1218,6 +1259,8 @@ class VnMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vnmonitoring/list_work_request_results.py.html>`__ to see an example of how to use list_work_request_results API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/results"
         method = "GET"
         operation_name = "list_work_request_results"
@@ -1287,7 +1330,8 @@ class VnMonitoringClient(object):
                 response_type="WorkRequestResultCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1298,7 +1342,8 @@ class VnMonitoringClient(object):
                 response_type="WorkRequestResultCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -1370,6 +1415,8 @@ class VnMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vnmonitoring/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -1451,7 +1498,8 @@ class VnMonitoringClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1461,7 +1509,8 @@ class VnMonitoringClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_path_analyzer_test(self, path_analyzer_test_id, update_path_analyzer_test_details, **kwargs):
         """
@@ -1510,6 +1559,8 @@ class VnMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vnmonitoring/update_path_analyzer_test.py.html>`__ to see an example of how to use update_path_analyzer_test API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['pathAnalyzerTestId']
         resource_path = "/pathAnalyzerTests/{pathAnalyzerTestId}"
         method = "PUT"
         operation_name = "update_path_analyzer_test"
@@ -1567,7 +1618,8 @@ class VnMonitoringClient(object):
                 response_type="PathAnalyzerTest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1578,4 +1630,5 @@ class VnMonitoringClient(object):
                 response_type="PathAnalyzerTest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

@@ -38,6 +38,7 @@ from .version import __version__
 from .util import NONE_SENTINEL, Sentinel, extract_service_endpoint
 missing = Sentinel("Missing")
 APPEND_USER_AGENT_ENV_VAR_NAME = "OCI_SDK_APPEND_USER_AGENT"
+OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED = "OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED"
 APPEND_USER_AGENT = os.environ.get(APPEND_USER_AGENT_ENV_VAR_NAME)
 USER_INFO = "Oracle-PythonSDK/{}".format(__version__)
 
@@ -267,6 +268,7 @@ class BaseClient(object):
         validate_config(config, signer=signer)
         self.signer = signer
 
+        self.config = config
         # Default to true (is a regional client) if there is nothing explicitly set. Regional
         # clients allow us to call set_region and that'll also set the endpoint. For non-regional
         # clients we require an endpoint
@@ -275,10 +277,13 @@ class BaseClient(object):
         self._endpoint = None
         self._base_path = kwargs.get('base_path')
         self.service_endpoint_template = kwargs.get('service_endpoint_template')
+        self.service_endpoint_template_per_realm = kwargs.get('service_endpoint_template_per_realm')
         self.endpoint_service_name = kwargs.get('endpoint_service_name')
 
         # By default self._allow_control_chars will be None. The user would need to explicitly set it to True or False
         self._allow_control_chars = kwargs.get('allow_control_chars')
+
+        self._client_level_realm_specific_endpoint_template_enabled = kwargs.get('client_level_realm_specific_endpoint_template_enabled')  # default this to None as it should be an opt-in feature
 
         if self.regional_client:
             if kwargs.get('service_endpoint'):
@@ -290,9 +295,11 @@ class BaseClient(object):
                 elif hasattr(signer, 'region'):
                     region_to_use = signer.region
 
+                endpoint_template = self.handle_service_endpoint_template(region_to_use, self.service_endpoint_template, self.service_endpoint_template_per_realm)
+
                 self.endpoint = regions.endpoint_for(
                     service,
-                    service_endpoint_template=self.service_endpoint_template,
+                    service_endpoint_template=endpoint_template,
                     region=region_to_use,
                     endpoint=config.get('endpoint'),
                     endpoint_service_name=self.endpoint_service_name)
@@ -347,6 +354,17 @@ class BaseClient(object):
             self.request = circuit_breaker(self.request)
         self.logger.debug('Endpoint: {}'.format(self._endpoint))
 
+    def handle_service_endpoint_template(self, region_id, service_endpoint_template, service_endpoint_template_per_realm):
+        should_enable_realm_template = self.should_allow_template_per_realm()
+
+        if should_enable_realm_template:
+            if region_id in regions.REGION_REALMS:
+                realm = regions.REGION_REALMS[region_id]
+                if realm in service_endpoint_template_per_realm:
+                    return service_endpoint_template_per_realm[realm]
+
+        return service_endpoint_template
+
     @property
     def endpoint(self):
         return self._endpoint
@@ -368,7 +386,8 @@ class BaseClient(object):
 
     def set_region(self, region):
         if self.regional_client:
-            self.endpoint = regions.endpoint_for(self.service, service_endpoint_template=self.service_endpoint_template, region=region, endpoint_service_name=self.endpoint_service_name)
+            service_endpoint_template = self.handle_service_endpoint_template(region, self.service_endpoint_template, self.service_endpoint_template_per_realm)  # check what template to use
+            self.endpoint = regions.endpoint_for(self.service, service_endpoint_template=service_endpoint_template, region=region, endpoint_service_name=self.endpoint_service_name)
         else:
             raise TypeError('Setting the region is not allowed for non-regional service clients. You must instead set the endpoint')
 
@@ -379,6 +398,30 @@ class BaseClient(object):
     @allow_control_chars.setter
     def allow_control_chars(self, bool):
         self._allow_control_chars = bool
+
+    @property
+    def client_level_realm_specific_endpoint_template_enabled(self):
+        return self._client_level_realm_specific_endpoint_template_enabled
+
+    @client_level_realm_specific_endpoint_template_enabled.setter
+    def client_level_realm_specific_endpoint_template_enabled(self, bool):
+        self._client_level_realm_specific_endpoint_template_enabled = bool
+
+        # Recalculate the endpoint since service endpoint template per realm is toggled
+        region_to_use = None
+        if 'region' in self.config and self.config['region']:
+            region_to_use = self.config.get('region')
+        elif hasattr(self.signer, 'region'):
+            region_to_use = self.signer.region
+
+        service_endpoint_template = self.handle_service_endpoint_template(region_to_use, self.service_endpoint_template, self.service_endpoint_template_per_realm)
+
+        self.endpoint = regions.endpoint_for(
+            self.service,
+            service_endpoint_template=service_endpoint_template,
+            region=region_to_use,
+            endpoint=self.config.get('endpoint'),
+            endpoint_service_name=self.endpoint_service_name)
 
     def is_instance_principal_or_resource_principal_signer(self):
         if (isinstance(self.signer, signers.InstancePrincipalsSecurityTokenSigner) or
@@ -398,7 +441,8 @@ class BaseClient(object):
                  enforce_content_headers=True,
                  allow_control_chars=None,
                  operation_name=None,
-                 api_reference_link=None):
+                 api_reference_link=None,
+                 required_arguments=[]):
         """
         Makes the HTTP request and return the deserialized data.
 
@@ -457,7 +501,9 @@ class BaseClient(object):
             body = self.sanitize_for_serialization(body)
             body = json.dumps(body)
 
-        url = self.endpoint + resource_path
+        # Here is where we will change our endpoint with the path / query params if a {serviceParam} exists on the endpoint
+        endpoint = self.handle_service_params_in_endpoint(path_params, query_params, required_arguments)
+        url = endpoint + resource_path
 
         request = Request(
             method=method,
@@ -486,6 +532,46 @@ class BaseClient(object):
             end = timer()
             self.logger.debug('time elapsed for request: {}'.format(str(end - start)))
             return response
+
+    def map_service_params_to_values(self, service_params_url, path_params, query_params, required_arguments):
+        service_params_map = {}
+        service_params = set(filter(None, ("".join(service_params_url.replace(".", "").split("{"))).split("}")))
+        for service_param in service_params:
+            should_append_dot = False
+            # # Check if there is a +Dot, if so we need to append a dot after appending the service_param
+            if "+Dot" in service_param:
+                should_append_dot = True
+                dot_idx = service_param.find("+Dot")
+                service_param = service_param[0:dot_idx]  # remove the +Dot in service param
+
+            if service_param in required_arguments and (service_param in path_params or service_param in query_params):
+                value = path_params[service_param] if service_param in path_params else query_params[service_param]
+                if should_append_dot:
+                    value += "."
+                    service_params_map[service_param + "+Dot"] = value
+                else:
+                    service_params_map[service_param] = value
+            else:  # If service_param was not found, we do not want to include it as part of the url. Set it as an empty string value
+                if should_append_dot:
+                    service_params_map[service_param + "+Dot"] = ""
+                else:
+                    service_params_map[service_param] = ""
+
+        return service_params_map
+
+    def handle_service_params_in_endpoint(self, path_params, query_params, required_arguments):
+        endpoint = self.endpoint
+        start_idx = len("https://")
+        if endpoint[start_idx] == "{":  # If the character after https:// is a "{", we have service params
+            end_idx = endpoint.rfind("}")
+            service_params_url = endpoint[start_idx:end_idx + 1]
+            service_params_map = self.map_service_params_to_values(service_params_url, path_params, query_params, required_arguments)
+
+            for service_param, value in service_params_map.items():
+                service_param = "{" + service_param + "}"
+                endpoint = endpoint.replace(service_param, value)
+
+        return endpoint
 
     def generate_collection_format_param(self, param_value, collection_format_type):
         if param_value is missing:
@@ -1026,4 +1112,24 @@ class BaseClient(object):
         if global_configuration is True:
             return True
 
+        return False
+
+    def should_allow_template_per_realm(self):
+        """
+        Returns a boolean of whether or not we should use realm specific endpoint templates
+
+        The highest precedence goes in decending order. The order: Client / Environment / Default (False)
+        """
+        client_configuration = self.client_level_realm_specific_endpoint_template_enabled
+        env_configuration = os.environ.get(OCI_REALM_SPECIFIC_SERVICE_ENDPOINT_TEMPLATE_ENABLED)  # comes back as a string.
+
+        # Check at the client level
+        if client_configuration is not None:
+            return client_configuration
+
+        # Check at the environment level
+        if env_configuration is not None:
+            return env_configuration.lower() == 'true'
+
+        # By default we should not allow this feature.
         return False

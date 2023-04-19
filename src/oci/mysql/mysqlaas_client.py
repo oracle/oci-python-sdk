@@ -65,6 +65,9 @@ class MysqlaasClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class MysqlaasClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20190415',
             'service_endpoint_template': 'https://mysql.{region}.ocp.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -143,6 +148,8 @@ class MysqlaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/create_configuration.py.html>`__ to see an example of how to use create_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/configurations"
         method = "POST"
         operation_name = "create_configuration"
@@ -187,7 +194,8 @@ class MysqlaasClient(object):
                 response_type="Configuration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -197,7 +205,8 @@ class MysqlaasClient(object):
                 response_type="Configuration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_configuration(self, configuration_id, **kwargs):
         """
@@ -238,6 +247,8 @@ class MysqlaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/delete_configuration.py.html>`__ to see an example of how to use delete_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['configurationId']
         resource_path = "/configurations/{configurationId}"
         method = "DELETE"
         operation_name = "delete_configuration"
@@ -292,7 +303,8 @@ class MysqlaasClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -301,7 +313,8 @@ class MysqlaasClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_configuration(self, configuration_id, **kwargs):
         """
@@ -341,6 +354,8 @@ class MysqlaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/get_configuration.py.html>`__ to see an example of how to use get_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['configurationId']
         resource_path = "/configurations/{configurationId}"
         method = "GET"
         operation_name = "get_configuration"
@@ -396,7 +411,8 @@ class MysqlaasClient(object):
                 response_type="Configuration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -406,7 +422,8 @@ class MysqlaasClient(object):
                 response_type="Configuration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_configurations(self, compartment_id, **kwargs):
         """
@@ -490,6 +507,8 @@ class MysqlaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/list_configurations.py.html>`__ to see an example of how to use list_configurations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/configurations"
         method = "GET"
         operation_name = "list_configurations"
@@ -585,7 +604,8 @@ class MysqlaasClient(object):
                 response_type="list[ConfigurationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -595,7 +615,8 @@ class MysqlaasClient(object):
                 response_type="list[ConfigurationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_shapes(self, compartment_id, **kwargs):
         """
@@ -644,6 +665,8 @@ class MysqlaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/list_shapes.py.html>`__ to see an example of how to use list_shapes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/shapes"
         method = "GET"
         operation_name = "list_shapes"
@@ -706,7 +729,8 @@ class MysqlaasClient(object):
                 response_type="list[ShapeSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -716,7 +740,8 @@ class MysqlaasClient(object):
                 response_type="list[ShapeSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_versions(self, compartment_id, **kwargs):
         """
@@ -753,6 +778,8 @@ class MysqlaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/list_versions.py.html>`__ to see an example of how to use list_versions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/versions"
         method = "GET"
         operation_name = "list_versions"
@@ -801,7 +828,8 @@ class MysqlaasClient(object):
                 response_type="list[VersionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -811,7 +839,8 @@ class MysqlaasClient(object):
                 response_type="list[VersionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_configuration(self, configuration_id, update_configuration_details, **kwargs):
         """
@@ -854,6 +883,8 @@ class MysqlaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/update_configuration.py.html>`__ to see an example of how to use update_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['configurationId']
         resource_path = "/configurations/{configurationId}"
         method = "PUT"
         operation_name = "update_configuration"
@@ -910,7 +941,8 @@ class MysqlaasClient(object):
                 response_type="Configuration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -921,4 +953,5 @@ class MysqlaasClient(object):
                 response_type="Configuration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

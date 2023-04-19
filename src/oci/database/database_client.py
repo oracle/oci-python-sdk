@@ -65,6 +65,9 @@ class DatabaseClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class DatabaseClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20160918',
             'service_endpoint_template': 'https://database.{region}.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -147,6 +152,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/activate_exadata_infrastructure.py.html>`__ to see an example of how to use activate_exadata_infrastructure API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exadataInfrastructureId']
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/actions/activate"
         method = "POST"
         operation_name = "activate_exadata_infrastructure"
@@ -202,7 +209,8 @@ class DatabaseClient(object):
                 response_type="ExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -213,7 +221,8 @@ class DatabaseClient(object):
                 response_type="ExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def add_storage_capacity_cloud_exadata_infrastructure(self, cloud_exadata_infrastructure_id, **kwargs):
         """
@@ -258,6 +267,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/add_storage_capacity_cloud_exadata_infrastructure.py.html>`__ to see an example of how to use add_storage_capacity_cloud_exadata_infrastructure API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudExadataInfrastructureId']
         resource_path = "/cloudExadataInfrastructures/{cloudExadataInfrastructureId}/actions/addStorageCapacity"
         method = "POST"
         operation_name = "add_storage_capacity_cloud_exadata_infrastructure"
@@ -314,7 +325,8 @@ class DatabaseClient(object):
                 response_type="CloudExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -324,7 +336,8 @@ class DatabaseClient(object):
                 response_type="CloudExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def add_storage_capacity_exadata_infrastructure(self, exadata_infrastructure_id, **kwargs):
         """
@@ -369,6 +382,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/add_storage_capacity_exadata_infrastructure.py.html>`__ to see an example of how to use add_storage_capacity_exadata_infrastructure API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exadataInfrastructureId']
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/actions/addStorageCapacity"
         method = "POST"
         operation_name = "add_storage_capacity_exadata_infrastructure"
@@ -425,7 +440,8 @@ class DatabaseClient(object):
                 response_type="ExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -435,7 +451,8 @@ class DatabaseClient(object):
                 response_type="ExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def add_virtual_machine_to_cloud_vm_cluster(self, add_virtual_machine_to_cloud_vm_cluster_details, cloud_vm_cluster_id, **kwargs):
         """
@@ -483,6 +500,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/add_virtual_machine_to_cloud_vm_cluster.py.html>`__ to see an example of how to use add_virtual_machine_to_cloud_vm_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudVmClusterId']
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/actions/addVirtualMachine"
         method = "POST"
         operation_name = "add_virtual_machine_to_cloud_vm_cluster"
@@ -540,7 +559,8 @@ class DatabaseClient(object):
                 response_type="CloudVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -551,7 +571,8 @@ class DatabaseClient(object):
                 response_type="CloudVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def add_virtual_machine_to_vm_cluster(self, add_virtual_machine_to_vm_cluster_details, vm_cluster_id, **kwargs):
         """
@@ -599,6 +620,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/add_virtual_machine_to_vm_cluster.py.html>`__ to see an example of how to use add_virtual_machine_to_vm_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vmClusterId']
         resource_path = "/vmClusters/{vmClusterId}/actions/addVirtualMachine"
         method = "POST"
         operation_name = "add_virtual_machine_to_vm_cluster"
@@ -656,7 +679,8 @@ class DatabaseClient(object):
                 response_type="VmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -667,7 +691,8 @@ class DatabaseClient(object):
                 response_type="VmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def autonomous_database_manual_refresh(self, autonomous_database_id, autonomous_database_manual_refresh_details, **kwargs):
         """
@@ -715,6 +740,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/autonomous_database_manual_refresh.py.html>`__ to see an example of how to use autonomous_database_manual_refresh API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/refresh"
         method = "POST"
         operation_name = "autonomous_database_manual_refresh"
@@ -772,7 +799,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -783,7 +811,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_backup(self, backup_id, **kwargs):
         """
@@ -828,6 +857,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/cancel_backup.py.html>`__ to see an example of how to use cancel_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['backupId']
         resource_path = "/backups/{backupId}/actions/cancel"
         method = "POST"
         operation_name = "cancel_backup"
@@ -883,7 +914,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -892,7 +924,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_autonomous_container_database_compartment(self, change_compartment_details, autonomous_container_database_id, **kwargs):
         """
@@ -944,6 +977,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_autonomous_container_database_compartment.py.html>`__ to see an example of how to use change_autonomous_container_database_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousContainerDatabaseId']
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_autonomous_container_database_compartment"
@@ -1000,7 +1035,8 @@ class DatabaseClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1010,7 +1046,8 @@ class DatabaseClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_autonomous_database_compartment(self, change_compartment_details, autonomous_database_id, **kwargs):
         """
@@ -1062,6 +1099,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_autonomous_database_compartment.py.html>`__ to see an example of how to use change_autonomous_database_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_autonomous_database_compartment"
@@ -1118,7 +1157,8 @@ class DatabaseClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1128,7 +1168,8 @@ class DatabaseClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_autonomous_exadata_infrastructure_compartment(self, change_compartment_details, autonomous_exadata_infrastructure_id, **kwargs):
         """
@@ -1180,6 +1221,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_autonomous_exadata_infrastructure_compartment.py.html>`__ to see an example of how to use change_autonomous_exadata_infrastructure_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousExadataInfrastructureId']
         resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_autonomous_exadata_infrastructure_compartment"
@@ -1236,7 +1279,8 @@ class DatabaseClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1246,7 +1290,8 @@ class DatabaseClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_autonomous_vm_cluster_compartment(self, change_autonomous_vm_cluster_compartment_details, autonomous_vm_cluster_id, **kwargs):
         """
@@ -1294,6 +1339,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_autonomous_vm_cluster_compartment.py.html>`__ to see an example of how to use change_autonomous_vm_cluster_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousVmClusterId']
         resource_path = "/autonomousVmClusters/{autonomousVmClusterId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_autonomous_vm_cluster_compartment"
@@ -1350,7 +1397,8 @@ class DatabaseClient(object):
                 body=change_autonomous_vm_cluster_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1360,7 +1408,8 @@ class DatabaseClient(object):
                 body=change_autonomous_vm_cluster_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_backup_destination_compartment(self, change_compartment_details, backup_destination_id, **kwargs):
         """
@@ -1412,6 +1461,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_backup_destination_compartment.py.html>`__ to see an example of how to use change_backup_destination_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['backupDestinationId']
         resource_path = "/backupDestinations/{backupDestinationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_backup_destination_compartment"
@@ -1468,7 +1519,8 @@ class DatabaseClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1478,7 +1530,8 @@ class DatabaseClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_cloud_autonomous_vm_cluster_compartment(self, change_cloud_autonomous_vm_cluster_compartment_details, cloud_autonomous_vm_cluster_id, **kwargs):
         """
@@ -1526,6 +1579,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_cloud_autonomous_vm_cluster_compartment.py.html>`__ to see an example of how to use change_cloud_autonomous_vm_cluster_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudAutonomousVmClusterId']
         resource_path = "/cloudAutonomousVmClusters/{cloudAutonomousVmClusterId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_cloud_autonomous_vm_cluster_compartment"
@@ -1582,7 +1637,8 @@ class DatabaseClient(object):
                 body=change_cloud_autonomous_vm_cluster_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1592,7 +1648,8 @@ class DatabaseClient(object):
                 body=change_cloud_autonomous_vm_cluster_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_cloud_exadata_infrastructure_compartment(self, change_cloud_exadata_infrastructure_compartment_details, cloud_exadata_infrastructure_id, **kwargs):
         """
@@ -1642,6 +1699,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_cloud_exadata_infrastructure_compartment.py.html>`__ to see an example of how to use change_cloud_exadata_infrastructure_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudExadataInfrastructureId']
         resource_path = "/cloudExadataInfrastructures/{cloudExadataInfrastructureId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_cloud_exadata_infrastructure_compartment"
@@ -1698,7 +1757,8 @@ class DatabaseClient(object):
                 body=change_cloud_exadata_infrastructure_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1708,7 +1768,8 @@ class DatabaseClient(object):
                 body=change_cloud_exadata_infrastructure_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_cloud_vm_cluster_compartment(self, change_cloud_vm_cluster_compartment_details, cloud_vm_cluster_id, **kwargs):
         """
@@ -1756,6 +1817,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_cloud_vm_cluster_compartment.py.html>`__ to see an example of how to use change_cloud_vm_cluster_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudVmClusterId']
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_cloud_vm_cluster_compartment"
@@ -1812,7 +1875,8 @@ class DatabaseClient(object):
                 body=change_cloud_vm_cluster_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1822,7 +1886,8 @@ class DatabaseClient(object):
                 body=change_cloud_vm_cluster_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_database_software_image_compartment(self, change_compartment_details, database_software_image_id, **kwargs):
         """
@@ -1874,6 +1939,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_database_software_image_compartment.py.html>`__ to see an example of how to use change_database_software_image_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseSoftwareImageId']
         resource_path = "/databaseSoftwareImages/{databaseSoftwareImageId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_database_software_image_compartment"
@@ -1930,7 +1997,8 @@ class DatabaseClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1940,7 +2008,8 @@ class DatabaseClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_dataguard_role(self, change_dataguard_role_details, autonomous_container_database_id, **kwargs):
         """
@@ -1993,6 +2062,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_dataguard_role.py.html>`__ to see an example of how to use change_dataguard_role API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousContainerDatabaseId']
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/actions/changeDataguardRole"
         method = "POST"
         operation_name = "change_dataguard_role"
@@ -2050,7 +2121,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2061,7 +2133,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_db_system_compartment(self, change_compartment_details, db_system_id, **kwargs):
         """
@@ -2120,6 +2193,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_db_system_compartment.py.html>`__ to see an example of how to use change_db_system_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_db_system_compartment"
@@ -2176,7 +2251,8 @@ class DatabaseClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2186,7 +2262,8 @@ class DatabaseClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_disaster_recovery_configuration(self, autonomous_database_id, change_disaster_recovery_configuration_details, **kwargs):
         """
@@ -2227,6 +2304,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_disaster_recovery_configuration.py.html>`__ to see an example of how to use change_disaster_recovery_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/changeDisasterRecoveryConfiguration"
         method = "PUT"
         operation_name = "change_disaster_recovery_configuration"
@@ -2281,7 +2360,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2292,7 +2372,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_exadata_infrastructure_compartment(self, change_exadata_infrastructure_compartment_details, exadata_infrastructure_id, **kwargs):
         """
@@ -2341,6 +2422,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_exadata_infrastructure_compartment.py.html>`__ to see an example of how to use change_exadata_infrastructure_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exadataInfrastructureId']
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_exadata_infrastructure_compartment"
@@ -2397,7 +2480,8 @@ class DatabaseClient(object):
                 body=change_exadata_infrastructure_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2407,7 +2491,8 @@ class DatabaseClient(object):
                 body=change_exadata_infrastructure_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_external_container_database_compartment(self, change_compartment_details, external_container_database_id, **kwargs):
         """
@@ -2460,6 +2545,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_external_container_database_compartment.py.html>`__ to see an example of how to use change_external_container_database_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalContainerDatabaseId']
         resource_path = "/externalcontainerdatabases/{externalContainerDatabaseId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_external_container_database_compartment"
@@ -2516,7 +2603,8 @@ class DatabaseClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2526,7 +2614,8 @@ class DatabaseClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_external_non_container_database_compartment(self, change_compartment_details, external_non_container_database_id, **kwargs):
         """
@@ -2578,6 +2667,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_external_non_container_database_compartment.py.html>`__ to see an example of how to use change_external_non_container_database_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalNonContainerDatabaseId']
         resource_path = "/externalnoncontainerdatabases/{externalNonContainerDatabaseId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_external_non_container_database_compartment"
@@ -2634,7 +2725,8 @@ class DatabaseClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2644,7 +2736,8 @@ class DatabaseClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_external_pluggable_database_compartment(self, change_compartment_details, external_pluggable_database_id, **kwargs):
         """
@@ -2699,6 +2792,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_external_pluggable_database_compartment.py.html>`__ to see an example of how to use change_external_pluggable_database_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalPluggableDatabaseId']
         resource_path = "/externalpluggabledatabases/{externalPluggableDatabaseId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_external_pluggable_database_compartment"
@@ -2755,7 +2850,8 @@ class DatabaseClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2765,7 +2861,8 @@ class DatabaseClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_key_store_compartment(self, change_key_store_compartment_details, key_store_id, **kwargs):
         """
@@ -2817,6 +2914,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_key_store_compartment.py.html>`__ to see an example of how to use change_key_store_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['keyStoreId']
         resource_path = "/keyStores/{keyStoreId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_key_store_compartment"
@@ -2873,7 +2972,8 @@ class DatabaseClient(object):
                 body=change_key_store_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2883,7 +2983,8 @@ class DatabaseClient(object):
                 body=change_key_store_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_vm_cluster_compartment(self, change_vm_cluster_compartment_details, vm_cluster_id, **kwargs):
         """
@@ -2932,6 +3033,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/change_vm_cluster_compartment.py.html>`__ to see an example of how to use change_vm_cluster_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vmClusterId']
         resource_path = "/vmClusters/{vmClusterId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_vm_cluster_compartment"
@@ -2988,7 +3091,8 @@ class DatabaseClient(object):
                 body=change_vm_cluster_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2998,7 +3102,8 @@ class DatabaseClient(object):
                 body=change_vm_cluster_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def check_external_database_connector_connection_status(self, external_database_connector_id, **kwargs):
         """
@@ -3045,6 +3150,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/check_external_database_connector_connection_status.py.html>`__ to see an example of how to use check_external_database_connector_connection_status API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalDatabaseConnectorId']
         resource_path = "/externaldatabaseconnectors/{externalDatabaseConnectorId}/actions/checkConnectionStatus"
         method = "POST"
         operation_name = "check_external_database_connector_connection_status"
@@ -3100,7 +3207,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3109,7 +3217,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def complete_external_backup_job(self, backup_id, complete_external_backup_job_details, **kwargs):
         """
@@ -3158,6 +3267,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/complete_external_backup_job.py.html>`__ to see an example of how to use complete_external_backup_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['backupId']
         resource_path = "/externalBackupJobs/{backupId}/actions/complete"
         method = "POST"
         operation_name = "complete_external_backup_job"
@@ -3213,7 +3324,8 @@ class DatabaseClient(object):
                 response_type="ExternalBackupJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3224,7 +3336,8 @@ class DatabaseClient(object):
                 response_type="ExternalBackupJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def configure_autonomous_database_vault_key(self, autonomous_database_id, configure_autonomous_database_vault_key_details, **kwargs):
         """
@@ -3276,6 +3389,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/configure_autonomous_database_vault_key.py.html>`__ to see an example of how to use configure_autonomous_database_vault_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/configureAutonomousDatabaseVaultKey"
         method = "POST"
         operation_name = "configure_autonomous_database_vault_key"
@@ -3332,7 +3447,8 @@ class DatabaseClient(object):
                 body=configure_autonomous_database_vault_key_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3342,7 +3458,8 @@ class DatabaseClient(object):
                 body=configure_autonomous_database_vault_key_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def convert_to_pdb(self, database_id, convert_to_pdb_details, **kwargs):
         """
@@ -3383,6 +3500,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/convert_to_pdb.py.html>`__ to see an example of how to use convert_to_pdb API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId']
         resource_path = "/databases/{databaseId}/actions/convertToPdb"
         method = "POST"
         operation_name = "convert_to_pdb"
@@ -3437,7 +3556,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3448,7 +3568,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_application_vip(self, create_application_vip_details, **kwargs):
         """
@@ -3486,6 +3607,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_application_vip.py.html>`__ to see an example of how to use create_application_vip API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/applicationVip"
         method = "POST"
         operation_name = "create_application_vip"
@@ -3530,7 +3653,8 @@ class DatabaseClient(object):
                 response_type="ApplicationVip",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3540,7 +3664,8 @@ class DatabaseClient(object):
                 response_type="ApplicationVip",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_autonomous_container_database(self, create_autonomous_container_database_details, **kwargs):
         """
@@ -3575,6 +3700,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_autonomous_container_database.py.html>`__ to see an example of how to use create_autonomous_container_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/autonomousContainerDatabases"
         method = "POST"
         operation_name = "create_autonomous_container_database"
@@ -3617,7 +3744,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3627,7 +3755,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_autonomous_database(self, create_autonomous_database_details, **kwargs):
         """
@@ -3665,6 +3794,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_autonomous_database.py.html>`__ to see an example of how to use create_autonomous_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/autonomousDatabases"
         method = "POST"
         operation_name = "create_autonomous_database"
@@ -3709,7 +3840,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3719,7 +3851,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_autonomous_database_backup(self, create_autonomous_database_backup_details, **kwargs):
         """
@@ -3757,6 +3890,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_autonomous_database_backup.py.html>`__ to see an example of how to use create_autonomous_database_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/autonomousDatabaseBackups"
         method = "POST"
         operation_name = "create_autonomous_database_backup"
@@ -3801,7 +3936,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabaseBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3811,7 +3947,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabaseBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_autonomous_vm_cluster(self, create_autonomous_vm_cluster_details, **kwargs):
         """
@@ -3849,6 +3986,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_autonomous_vm_cluster.py.html>`__ to see an example of how to use create_autonomous_vm_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/autonomousVmClusters"
         method = "POST"
         operation_name = "create_autonomous_vm_cluster"
@@ -3893,7 +4032,8 @@ class DatabaseClient(object):
                 response_type="AutonomousVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3903,7 +4043,8 @@ class DatabaseClient(object):
                 response_type="AutonomousVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_backup(self, create_backup_details, **kwargs):
         """
@@ -3938,6 +4079,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_backup.py.html>`__ to see an example of how to use create_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/backups"
         method = "POST"
         operation_name = "create_backup"
@@ -3980,7 +4123,8 @@ class DatabaseClient(object):
                 response_type="Backup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3990,7 +4134,8 @@ class DatabaseClient(object):
                 response_type="Backup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_backup_destination(self, create_backup_destination_details, **kwargs):
         """
@@ -4028,6 +4173,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_backup_destination.py.html>`__ to see an example of how to use create_backup_destination API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/backupDestinations"
         method = "POST"
         operation_name = "create_backup_destination"
@@ -4072,7 +4219,8 @@ class DatabaseClient(object):
                 response_type="BackupDestination",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4082,7 +4230,8 @@ class DatabaseClient(object):
                 response_type="BackupDestination",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_cloud_autonomous_vm_cluster(self, create_cloud_autonomous_vm_cluster_details, **kwargs):
         """
@@ -4120,6 +4269,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_cloud_autonomous_vm_cluster.py.html>`__ to see an example of how to use create_cloud_autonomous_vm_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/cloudAutonomousVmClusters"
         method = "POST"
         operation_name = "create_cloud_autonomous_vm_cluster"
@@ -4164,7 +4315,8 @@ class DatabaseClient(object):
                 response_type="CloudAutonomousVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4174,7 +4326,8 @@ class DatabaseClient(object):
                 response_type="CloudAutonomousVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_cloud_exadata_infrastructure(self, create_cloud_exadata_infrastructure_details, **kwargs):
         """
@@ -4216,6 +4369,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_cloud_exadata_infrastructure.py.html>`__ to see an example of how to use create_cloud_exadata_infrastructure API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/cloudExadataInfrastructures"
         method = "POST"
         operation_name = "create_cloud_exadata_infrastructure"
@@ -4260,7 +4415,8 @@ class DatabaseClient(object):
                 response_type="CloudExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4270,7 +4426,8 @@ class DatabaseClient(object):
                 response_type="CloudExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_cloud_vm_cluster(self, create_cloud_vm_cluster_details, **kwargs):
         """
@@ -4310,6 +4467,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_cloud_vm_cluster.py.html>`__ to see an example of how to use create_cloud_vm_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/cloudVmClusters"
         method = "POST"
         operation_name = "create_cloud_vm_cluster"
@@ -4354,7 +4513,8 @@ class DatabaseClient(object):
                 response_type="CloudVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4364,7 +4524,8 @@ class DatabaseClient(object):
                 response_type="CloudVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_console_connection(self, create_console_connection_details, db_node_id, **kwargs):
         """
@@ -4406,6 +4567,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_console_connection.py.html>`__ to see an example of how to use create_console_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbNodeId']
         resource_path = "/dbNodes/{dbNodeId}/consoleConnections"
         method = "POST"
         operation_name = "create_console_connection"
@@ -4459,7 +4622,8 @@ class DatabaseClient(object):
                 response_type="ConsoleConnection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4470,7 +4634,8 @@ class DatabaseClient(object):
                 response_type="ConsoleConnection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_data_guard_association(self, database_id, create_data_guard_association_details, **kwargs):
         """
@@ -4520,6 +4685,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_data_guard_association.py.html>`__ to see an example of how to use create_data_guard_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId']
         resource_path = "/databases/{databaseId}/dataGuardAssociations"
         method = "POST"
         operation_name = "create_data_guard_association"
@@ -4573,7 +4740,8 @@ class DatabaseClient(object):
                 response_type="DataGuardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4584,7 +4752,8 @@ class DatabaseClient(object):
                 response_type="DataGuardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_database(self, create_new_database_details, **kwargs):
         """
@@ -4622,6 +4791,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_database.py.html>`__ to see an example of how to use create_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/databases"
         method = "POST"
         operation_name = "create_database"
@@ -4666,7 +4837,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4676,7 +4848,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_database_software_image(self, create_database_software_image_details, **kwargs):
         """
@@ -4711,6 +4884,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_database_software_image.py.html>`__ to see an example of how to use create_database_software_image API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/databaseSoftwareImages"
         method = "POST"
         operation_name = "create_database_software_image"
@@ -4753,7 +4928,8 @@ class DatabaseClient(object):
                 response_type="DatabaseSoftwareImage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4763,7 +4939,8 @@ class DatabaseClient(object):
                 response_type="DatabaseSoftwareImage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_db_home(self, create_db_home_with_db_system_id_details, **kwargs):
         """
@@ -4798,6 +4975,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_db_home.py.html>`__ to see an example of how to use create_db_home API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/dbHomes"
         method = "POST"
         operation_name = "create_db_home"
@@ -4840,7 +5019,8 @@ class DatabaseClient(object):
                 response_type="DbHome",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4850,7 +5030,8 @@ class DatabaseClient(object):
                 response_type="DbHome",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_exadata_infrastructure(self, create_exadata_infrastructure_details, **kwargs):
         """
@@ -4889,6 +5070,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_exadata_infrastructure.py.html>`__ to see an example of how to use create_exadata_infrastructure API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/exadataInfrastructures"
         method = "POST"
         operation_name = "create_exadata_infrastructure"
@@ -4933,7 +5116,8 @@ class DatabaseClient(object):
                 response_type="ExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4943,7 +5127,8 @@ class DatabaseClient(object):
                 response_type="ExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_external_backup_job(self, create_external_backup_job_details, **kwargs):
         """
@@ -4982,6 +5167,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_external_backup_job.py.html>`__ to see an example of how to use create_external_backup_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/externalBackupJobs"
         method = "POST"
         operation_name = "create_external_backup_job"
@@ -5024,7 +5211,8 @@ class DatabaseClient(object):
                 response_type="ExternalBackupJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5034,7 +5222,8 @@ class DatabaseClient(object):
                 response_type="ExternalBackupJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_external_container_database(self, create_external_container_database_details, **kwargs):
         """
@@ -5072,6 +5261,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_external_container_database.py.html>`__ to see an example of how to use create_external_container_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/externalcontainerdatabases"
         method = "POST"
         operation_name = "create_external_container_database"
@@ -5116,7 +5307,8 @@ class DatabaseClient(object):
                 response_type="ExternalContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5126,7 +5318,8 @@ class DatabaseClient(object):
                 response_type="ExternalContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_external_database_connector(self, create_external_database_connector_details, **kwargs):
         """
@@ -5164,6 +5357,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_external_database_connector.py.html>`__ to see an example of how to use create_external_database_connector API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/externaldatabaseconnectors"
         method = "POST"
         operation_name = "create_external_database_connector"
@@ -5208,7 +5403,8 @@ class DatabaseClient(object):
                 response_type="ExternalDatabaseConnector",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5218,7 +5414,8 @@ class DatabaseClient(object):
                 response_type="ExternalDatabaseConnector",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_external_non_container_database(self, create_external_non_container_database_details, **kwargs):
         """
@@ -5256,6 +5453,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_external_non_container_database.py.html>`__ to see an example of how to use create_external_non_container_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/externalnoncontainerdatabases"
         method = "POST"
         operation_name = "create_external_non_container_database"
@@ -5300,7 +5499,8 @@ class DatabaseClient(object):
                 response_type="ExternalNonContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5310,7 +5510,8 @@ class DatabaseClient(object):
                 response_type="ExternalNonContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_external_pluggable_database(self, create_external_pluggable_database_details, **kwargs):
         """
@@ -5349,6 +5550,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_external_pluggable_database.py.html>`__ to see an example of how to use create_external_pluggable_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/externalpluggabledatabases"
         method = "POST"
         operation_name = "create_external_pluggable_database"
@@ -5393,7 +5596,8 @@ class DatabaseClient(object):
                 response_type="ExternalPluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5403,7 +5607,8 @@ class DatabaseClient(object):
                 response_type="ExternalPluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_key_store(self, create_key_store_details, **kwargs):
         """
@@ -5441,6 +5646,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_key_store.py.html>`__ to see an example of how to use create_key_store API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/keyStores"
         method = "POST"
         operation_name = "create_key_store"
@@ -5485,7 +5692,8 @@ class DatabaseClient(object):
                 response_type="KeyStore",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5495,7 +5703,8 @@ class DatabaseClient(object):
                 response_type="KeyStore",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_pluggable_database(self, create_pluggable_database_details, **kwargs):
         """
@@ -5534,6 +5743,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_pluggable_database.py.html>`__ to see an example of how to use create_pluggable_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/pluggableDatabases"
         method = "POST"
         operation_name = "create_pluggable_database"
@@ -5578,7 +5789,8 @@ class DatabaseClient(object):
                 response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5588,7 +5800,8 @@ class DatabaseClient(object):
                 response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_vm_cluster(self, create_vm_cluster_details, **kwargs):
         """
@@ -5627,6 +5840,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_vm_cluster.py.html>`__ to see an example of how to use create_vm_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/vmClusters"
         method = "POST"
         operation_name = "create_vm_cluster"
@@ -5671,7 +5886,8 @@ class DatabaseClient(object):
                 response_type="VmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5681,7 +5897,8 @@ class DatabaseClient(object):
                 response_type="VmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_details, **kwargs):
         """
@@ -5725,6 +5942,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_vm_cluster_network.py.html>`__ to see an example of how to use create_vm_cluster_network API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exadataInfrastructureId']
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks"
         method = "POST"
         operation_name = "create_vm_cluster_network"
@@ -5780,7 +5999,8 @@ class DatabaseClient(object):
                 response_type="VmClusterNetwork",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5791,7 +6011,8 @@ class DatabaseClient(object):
                 response_type="VmClusterNetwork",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def db_node_action(self, db_node_id, action, **kwargs):
         """
@@ -5850,6 +6071,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/db_node_action.py.html>`__ to see an example of how to use db_node_action API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbNodeId', 'action']
         resource_path = "/dbNodes/{dbNodeId}"
         method = "POST"
         operation_name = "db_node_action"
@@ -5910,7 +6133,8 @@ class DatabaseClient(object):
                 response_type="DbNode",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5921,7 +6145,8 @@ class DatabaseClient(object):
                 response_type="DbNode",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_application_vip(self, application_vip_id, **kwargs):
         """
@@ -5959,6 +6184,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_application_vip.py.html>`__ to see an example of how to use delete_application_vip API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['applicationVipId']
         resource_path = "/applicationVip/{applicationVipId}"
         method = "DELETE"
         operation_name = "delete_application_vip"
@@ -6011,7 +6238,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6020,7 +6248,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_autonomous_database(self, autonomous_database_id, **kwargs):
         """
@@ -6058,6 +6287,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_autonomous_database.py.html>`__ to see an example of how to use delete_autonomous_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}"
         method = "DELETE"
         operation_name = "delete_autonomous_database"
@@ -6110,7 +6341,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6119,7 +6351,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_autonomous_database_backup(self, autonomous_database_backup_id, **kwargs):
         """
@@ -6157,6 +6390,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_autonomous_database_backup.py.html>`__ to see an example of how to use delete_autonomous_database_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseBackupId']
         resource_path = "/autonomousDatabaseBackups/{autonomousDatabaseBackupId}"
         method = "DELETE"
         operation_name = "delete_autonomous_database_backup"
@@ -6209,7 +6444,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6218,7 +6454,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_autonomous_vm_cluster(self, autonomous_vm_cluster_id, **kwargs):
         """
@@ -6256,6 +6493,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_autonomous_vm_cluster.py.html>`__ to see an example of how to use delete_autonomous_vm_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousVmClusterId']
         resource_path = "/autonomousVmClusters/{autonomousVmClusterId}"
         method = "DELETE"
         operation_name = "delete_autonomous_vm_cluster"
@@ -6308,7 +6547,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6317,7 +6557,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_backup(self, backup_id, **kwargs):
         """
@@ -6352,6 +6593,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_backup.py.html>`__ to see an example of how to use delete_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['backupId']
         resource_path = "/backups/{backupId}"
         method = "DELETE"
         operation_name = "delete_backup"
@@ -6402,7 +6645,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6411,7 +6655,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_backup_destination(self, backup_destination_id, **kwargs):
         """
@@ -6449,6 +6694,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_backup_destination.py.html>`__ to see an example of how to use delete_backup_destination API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['backupDestinationId']
         resource_path = "/backupDestinations/{backupDestinationId}"
         method = "DELETE"
         operation_name = "delete_backup_destination"
@@ -6501,7 +6748,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6510,7 +6758,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_cloud_autonomous_vm_cluster(self, cloud_autonomous_vm_cluster_id, **kwargs):
         """
@@ -6548,6 +6797,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_cloud_autonomous_vm_cluster.py.html>`__ to see an example of how to use delete_cloud_autonomous_vm_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudAutonomousVmClusterId']
         resource_path = "/cloudAutonomousVmClusters/{cloudAutonomousVmClusterId}"
         method = "DELETE"
         operation_name = "delete_cloud_autonomous_vm_cluster"
@@ -6600,7 +6851,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6609,7 +6861,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_cloud_exadata_infrastructure(self, cloud_exadata_infrastructure_id, **kwargs):
         """
@@ -6650,6 +6903,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_cloud_exadata_infrastructure.py.html>`__ to see an example of how to use delete_cloud_exadata_infrastructure API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudExadataInfrastructureId']
         resource_path = "/cloudExadataInfrastructures/{cloudExadataInfrastructureId}"
         method = "DELETE"
         operation_name = "delete_cloud_exadata_infrastructure"
@@ -6709,7 +6964,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6719,7 +6975,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_cloud_vm_cluster(self, cloud_vm_cluster_id, **kwargs):
         """
@@ -6757,6 +7014,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_cloud_vm_cluster.py.html>`__ to see an example of how to use delete_cloud_vm_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudVmClusterId']
         resource_path = "/cloudVmClusters/{cloudVmClusterId}"
         method = "DELETE"
         operation_name = "delete_cloud_vm_cluster"
@@ -6809,7 +7068,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6818,7 +7078,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_console_connection(self, db_node_id, console_connection_id, **kwargs):
         """
@@ -6856,6 +7117,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_console_connection.py.html>`__ to see an example of how to use delete_console_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbNodeId', 'consoleConnectionId']
         resource_path = "/dbNodes/{dbNodeId}/consoleConnections/{consoleConnectionId}"
         method = "DELETE"
         operation_name = "delete_console_connection"
@@ -6907,7 +7170,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6916,7 +7180,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_database(self, database_id, **kwargs):
         """
@@ -6963,6 +7228,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_database.py.html>`__ to see an example of how to use delete_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId']
         resource_path = "/databases/{databaseId}"
         method = "DELETE"
         operation_name = "delete_database"
@@ -7022,7 +7289,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7032,7 +7300,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_database_software_image(self, database_software_image_id, **kwargs):
         """
@@ -7067,6 +7336,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_database_software_image.py.html>`__ to see an example of how to use delete_database_software_image API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseSoftwareImageId']
         resource_path = "/databaseSoftwareImages/{databaseSoftwareImageId}"
         method = "DELETE"
         operation_name = "delete_database_software_image"
@@ -7117,7 +7388,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7126,7 +7398,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_db_home(self, db_home_id, **kwargs):
         """
@@ -7170,6 +7443,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_db_home.py.html>`__ to see an example of how to use delete_db_home API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbHomeId']
         resource_path = "/dbHomes/{dbHomeId}"
         method = "DELETE"
         operation_name = "delete_db_home"
@@ -7227,7 +7502,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7237,7 +7513,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_exadata_infrastructure(self, exadata_infrastructure_id, **kwargs):
         """
@@ -7275,6 +7552,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_exadata_infrastructure.py.html>`__ to see an example of how to use delete_exadata_infrastructure API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exadataInfrastructureId']
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}"
         method = "DELETE"
         operation_name = "delete_exadata_infrastructure"
@@ -7327,7 +7606,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7336,7 +7616,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_external_container_database(self, external_container_database_id, **kwargs):
         """
@@ -7376,6 +7657,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_external_container_database.py.html>`__ to see an example of how to use delete_external_container_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalContainerDatabaseId']
         resource_path = "/externalcontainerdatabases/{externalContainerDatabaseId}"
         method = "DELETE"
         operation_name = "delete_external_container_database"
@@ -7428,7 +7711,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7437,7 +7721,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_external_database_connector(self, external_database_connector_id, **kwargs):
         """
@@ -7478,6 +7763,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_external_database_connector.py.html>`__ to see an example of how to use delete_external_database_connector API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalDatabaseConnectorId']
         resource_path = "/externaldatabaseconnectors/{externalDatabaseConnectorId}"
         method = "DELETE"
         operation_name = "delete_external_database_connector"
@@ -7530,7 +7817,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7539,7 +7827,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_external_non_container_database(self, external_non_container_database_id, **kwargs):
         """
@@ -7577,6 +7866,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_external_non_container_database.py.html>`__ to see an example of how to use delete_external_non_container_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalNonContainerDatabaseId']
         resource_path = "/externalnoncontainerdatabases/{externalNonContainerDatabaseId}"
         method = "DELETE"
         operation_name = "delete_external_non_container_database"
@@ -7629,7 +7920,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7638,7 +7930,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_external_pluggable_database(self, external_pluggable_database_id, **kwargs):
         """
@@ -7677,6 +7970,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_external_pluggable_database.py.html>`__ to see an example of how to use delete_external_pluggable_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalPluggableDatabaseId']
         resource_path = "/externalpluggabledatabases/{externalPluggableDatabaseId}"
         method = "DELETE"
         operation_name = "delete_external_pluggable_database"
@@ -7729,7 +8024,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7738,7 +8034,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_key_store(self, key_store_id, **kwargs):
         """
@@ -7776,6 +8073,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_key_store.py.html>`__ to see an example of how to use delete_key_store API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['keyStoreId']
         resource_path = "/keyStores/{keyStoreId}"
         method = "DELETE"
         operation_name = "delete_key_store"
@@ -7828,7 +8127,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7837,7 +8137,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_pluggable_database(self, pluggable_database_id, **kwargs):
         """
@@ -7875,6 +8176,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_pluggable_database.py.html>`__ to see an example of how to use delete_pluggable_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['pluggableDatabaseId']
         resource_path = "/pluggableDatabases/{pluggableDatabaseId}"
         method = "DELETE"
         operation_name = "delete_pluggable_database"
@@ -7927,7 +8230,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7936,7 +8240,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_vm_cluster(self, vm_cluster_id, **kwargs):
         """
@@ -7974,6 +8279,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_vm_cluster.py.html>`__ to see an example of how to use delete_vm_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vmClusterId']
         resource_path = "/vmClusters/{vmClusterId}"
         method = "DELETE"
         operation_name = "delete_vm_cluster"
@@ -8026,7 +8333,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8035,7 +8343,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_id, **kwargs):
         """
@@ -8079,6 +8388,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_vm_cluster_network.py.html>`__ to see an example of how to use delete_vm_cluster_network API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exadataInfrastructureId', 'vmClusterNetworkId']
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}"
         method = "DELETE"
         operation_name = "delete_vm_cluster_network"
@@ -8132,7 +8443,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8141,7 +8453,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def deregister_autonomous_database_data_safe(self, autonomous_database_id, **kwargs):
         """
@@ -8177,6 +8490,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/deregister_autonomous_database_data_safe.py.html>`__ to see an example of how to use deregister_autonomous_database_data_safe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/deregisterDataSafe"
         method = "POST"
         operation_name = "deregister_autonomous_database_data_safe"
@@ -8229,7 +8544,8 @@ class DatabaseClient(object):
                 body=kwargs.get('deregister_autonomous_database_data_safe_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8239,7 +8555,8 @@ class DatabaseClient(object):
                 body=kwargs.get('deregister_autonomous_database_data_safe_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def disable_autonomous_database_management(self, autonomous_database_id, **kwargs):
         """
@@ -8272,6 +8589,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/disable_autonomous_database_management.py.html>`__ to see an example of how to use disable_autonomous_database_management API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/disableDatabaseManagement"
         method = "POST"
         operation_name = "disable_autonomous_database_management"
@@ -8322,7 +8641,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8331,7 +8651,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def disable_autonomous_database_operations_insights(self, autonomous_database_id, **kwargs):
         """
@@ -8364,6 +8685,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/disable_autonomous_database_operations_insights.py.html>`__ to see an example of how to use disable_autonomous_database_operations_insights API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/disableOperationsInsights"
         method = "POST"
         operation_name = "disable_autonomous_database_operations_insights"
@@ -8414,7 +8737,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8423,7 +8747,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def disable_database_management(self, database_id, **kwargs):
         """
@@ -8468,6 +8793,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/disable_database_management.py.html>`__ to see an example of how to use disable_database_management API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId']
         resource_path = "/databases/{databaseId}/actions/disableDatabaseManagement"
         method = "POST"
         operation_name = "disable_database_management"
@@ -8524,7 +8851,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8534,7 +8862,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def disable_external_container_database_database_management(self, external_container_database_id, **kwargs):
         """
@@ -8579,6 +8908,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/disable_external_container_database_database_management.py.html>`__ to see an example of how to use disable_external_container_database_database_management API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalContainerDatabaseId']
         resource_path = "/externalcontainerdatabases/{externalContainerDatabaseId}/actions/disableDatabaseManagement"
         method = "POST"
         operation_name = "disable_external_container_database_database_management"
@@ -8634,7 +8965,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8643,7 +8975,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def disable_external_container_database_stack_monitoring(self, external_container_database_id, **kwargs):
         """
@@ -8688,6 +9021,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/disable_external_container_database_stack_monitoring.py.html>`__ to see an example of how to use disable_external_container_database_stack_monitoring API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalContainerDatabaseId']
         resource_path = "/externalcontainerdatabases/{externalContainerDatabaseId}/actions/disableStackMonitoring"
         method = "POST"
         operation_name = "disable_external_container_database_stack_monitoring"
@@ -8743,7 +9078,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8752,7 +9088,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def disable_external_non_container_database_database_management(self, external_non_container_database_id, **kwargs):
         """
@@ -8801,6 +9138,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/disable_external_non_container_database_database_management.py.html>`__ to see an example of how to use disable_external_non_container_database_database_management API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalNonContainerDatabaseId']
         resource_path = "/externalnoncontainerdatabases/{externalNonContainerDatabaseId}/actions/disableDatabaseManagement"
         method = "POST"
         operation_name = "disable_external_non_container_database_database_management"
@@ -8856,7 +9195,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8865,7 +9205,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def disable_external_non_container_database_operations_insights(self, external_non_container_database_id, **kwargs):
         """
@@ -8910,6 +9251,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/disable_external_non_container_database_operations_insights.py.html>`__ to see an example of how to use disable_external_non_container_database_operations_insights API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalNonContainerDatabaseId']
         resource_path = "/externalnoncontainerdatabases/{externalNonContainerDatabaseId}/actions/disableOperationsInsights"
         method = "POST"
         operation_name = "disable_external_non_container_database_operations_insights"
@@ -8965,7 +9308,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8974,7 +9318,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def disable_external_non_container_database_stack_monitoring(self, external_non_container_database_id, **kwargs):
         """
@@ -9019,6 +9364,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/disable_external_non_container_database_stack_monitoring.py.html>`__ to see an example of how to use disable_external_non_container_database_stack_monitoring API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalNonContainerDatabaseId']
         resource_path = "/externalnoncontainerdatabases/{externalNonContainerDatabaseId}/actions/disableStackMonitoring"
         method = "POST"
         operation_name = "disable_external_non_container_database_stack_monitoring"
@@ -9074,7 +9421,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9083,7 +9431,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def disable_external_pluggable_database_database_management(self, external_pluggable_database_id, **kwargs):
         """
@@ -9132,6 +9481,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/disable_external_pluggable_database_database_management.py.html>`__ to see an example of how to use disable_external_pluggable_database_database_management API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalPluggableDatabaseId']
         resource_path = "/externalpluggabledatabases/{externalPluggableDatabaseId}/actions/disableDatabaseManagement"
         method = "POST"
         operation_name = "disable_external_pluggable_database_database_management"
@@ -9187,7 +9538,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9196,7 +9548,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def disable_external_pluggable_database_operations_insights(self, external_pluggable_database_id, **kwargs):
         """
@@ -9241,6 +9594,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/disable_external_pluggable_database_operations_insights.py.html>`__ to see an example of how to use disable_external_pluggable_database_operations_insights API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalPluggableDatabaseId']
         resource_path = "/externalpluggabledatabases/{externalPluggableDatabaseId}/actions/disableOperationsInsights"
         method = "POST"
         operation_name = "disable_external_pluggable_database_operations_insights"
@@ -9296,7 +9651,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9305,7 +9661,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def disable_external_pluggable_database_stack_monitoring(self, external_pluggable_database_id, **kwargs):
         """
@@ -9350,6 +9707,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/disable_external_pluggable_database_stack_monitoring.py.html>`__ to see an example of how to use disable_external_pluggable_database_stack_monitoring API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalPluggableDatabaseId']
         resource_path = "/externalpluggabledatabases/{externalPluggableDatabaseId}/actions/disableStackMonitoring"
         method = "POST"
         operation_name = "disable_external_pluggable_database_stack_monitoring"
@@ -9405,7 +9764,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9414,7 +9774,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def disable_pluggable_database_management(self, pluggable_database_id, **kwargs):
         """
@@ -9459,6 +9820,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/disable_pluggable_database_management.py.html>`__ to see an example of how to use disable_pluggable_database_management API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['pluggableDatabaseId']
         resource_path = "/pluggableDatabases/{pluggableDatabaseId}/actions/disablePluggableDatabaseManagement"
         method = "POST"
         operation_name = "disable_pluggable_database_management"
@@ -9515,7 +9878,8 @@ class DatabaseClient(object):
                 response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9525,7 +9889,8 @@ class DatabaseClient(object):
                 response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def download_exadata_infrastructure_config_file(self, exadata_infrastructure_id, **kwargs):
         """
@@ -9565,6 +9930,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/download_exadata_infrastructure_config_file.py.html>`__ to see an example of how to use download_exadata_infrastructure_config_file API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exadataInfrastructureId']
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/actions/downloadConfigFile"
         method = "POST"
         operation_name = "download_exadata_infrastructure_config_file"
@@ -9619,7 +9986,8 @@ class DatabaseClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9629,7 +9997,8 @@ class DatabaseClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def download_validation_report(self, exadata_infrastructure_id, vm_cluster_network_id, **kwargs):
         """
@@ -9674,6 +10043,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/download_validation_report.py.html>`__ to see an example of how to use download_validation_report API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exadataInfrastructureId', 'vmClusterNetworkId']
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}/actions/downloadValidationReport"
         method = "POST"
         operation_name = "download_validation_report"
@@ -9729,7 +10100,8 @@ class DatabaseClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9739,7 +10111,8 @@ class DatabaseClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def download_vm_cluster_network_config_file(self, exadata_infrastructure_id, vm_cluster_network_id, **kwargs):
         """
@@ -9784,6 +10157,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/download_vm_cluster_network_config_file.py.html>`__ to see an example of how to use download_vm_cluster_network_config_file API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exadataInfrastructureId', 'vmClusterNetworkId']
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}/actions/downloadConfigFile"
         method = "POST"
         operation_name = "download_vm_cluster_network_config_file"
@@ -9839,7 +10214,8 @@ class DatabaseClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9849,7 +10225,8 @@ class DatabaseClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def enable_autonomous_database_management(self, autonomous_database_id, **kwargs):
         """
@@ -9882,6 +10259,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/enable_autonomous_database_management.py.html>`__ to see an example of how to use enable_autonomous_database_management API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/enableDatabaseManagement"
         method = "POST"
         operation_name = "enable_autonomous_database_management"
@@ -9932,7 +10311,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9941,7 +10321,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def enable_autonomous_database_operations_insights(self, autonomous_database_id, **kwargs):
         """
@@ -9974,6 +10355,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/enable_autonomous_database_operations_insights.py.html>`__ to see an example of how to use enable_autonomous_database_operations_insights API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/enableOperationsInsights"
         method = "POST"
         operation_name = "enable_autonomous_database_operations_insights"
@@ -10024,7 +10407,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10033,7 +10417,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def enable_database_management(self, database_id, enable_database_management_details, **kwargs):
         """
@@ -10081,6 +10466,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/enable_database_management.py.html>`__ to see an example of how to use enable_database_management API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId']
         resource_path = "/databases/{databaseId}/actions/enableDatabaseManagement"
         method = "POST"
         operation_name = "enable_database_management"
@@ -10138,7 +10525,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10149,7 +10537,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def enable_external_container_database_database_management(self, external_container_database_id, enable_external_container_database_database_management_details, **kwargs):
         """
@@ -10201,6 +10590,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/enable_external_container_database_database_management.py.html>`__ to see an example of how to use enable_external_container_database_database_management API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalContainerDatabaseId']
         resource_path = "/externalcontainerdatabases/{externalContainerDatabaseId}/actions/enableDatabaseManagement"
         method = "POST"
         operation_name = "enable_external_container_database_database_management"
@@ -10257,7 +10648,8 @@ class DatabaseClient(object):
                 body=enable_external_container_database_database_management_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10267,7 +10659,8 @@ class DatabaseClient(object):
                 body=enable_external_container_database_database_management_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def enable_external_container_database_stack_monitoring(self, external_container_database_id, enable_external_container_database_stack_monitoring_details, **kwargs):
         """
@@ -10315,6 +10708,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/enable_external_container_database_stack_monitoring.py.html>`__ to see an example of how to use enable_external_container_database_stack_monitoring API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalContainerDatabaseId']
         resource_path = "/externalcontainerdatabases/{externalContainerDatabaseId}/actions/enableStackMonitoring"
         method = "POST"
         operation_name = "enable_external_container_database_stack_monitoring"
@@ -10371,7 +10766,8 @@ class DatabaseClient(object):
                 body=enable_external_container_database_stack_monitoring_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10381,7 +10777,8 @@ class DatabaseClient(object):
                 body=enable_external_container_database_stack_monitoring_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def enable_external_non_container_database_database_management(self, external_non_container_database_id, enable_external_non_container_database_database_management_details, **kwargs):
         """
@@ -10433,6 +10830,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/enable_external_non_container_database_database_management.py.html>`__ to see an example of how to use enable_external_non_container_database_database_management API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalNonContainerDatabaseId']
         resource_path = "/externalnoncontainerdatabases/{externalNonContainerDatabaseId}/actions/enableDatabaseManagement"
         method = "POST"
         operation_name = "enable_external_non_container_database_database_management"
@@ -10489,7 +10888,8 @@ class DatabaseClient(object):
                 body=enable_external_non_container_database_database_management_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10499,7 +10899,8 @@ class DatabaseClient(object):
                 body=enable_external_non_container_database_database_management_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def enable_external_non_container_database_operations_insights(self, external_non_container_database_id, enable_external_non_container_database_operations_insights_details, **kwargs):
         """
@@ -10547,6 +10948,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/enable_external_non_container_database_operations_insights.py.html>`__ to see an example of how to use enable_external_non_container_database_operations_insights API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalNonContainerDatabaseId']
         resource_path = "/externalnoncontainerdatabases/{externalNonContainerDatabaseId}/actions/enableOperationsInsights"
         method = "POST"
         operation_name = "enable_external_non_container_database_operations_insights"
@@ -10603,7 +11006,8 @@ class DatabaseClient(object):
                 body=enable_external_non_container_database_operations_insights_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10613,7 +11017,8 @@ class DatabaseClient(object):
                 body=enable_external_non_container_database_operations_insights_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def enable_external_non_container_database_stack_monitoring(self, external_non_container_database_id, enable_external_non_container_database_stack_monitoring_details, **kwargs):
         """
@@ -10661,6 +11066,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/enable_external_non_container_database_stack_monitoring.py.html>`__ to see an example of how to use enable_external_non_container_database_stack_monitoring API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalNonContainerDatabaseId']
         resource_path = "/externalnoncontainerdatabases/{externalNonContainerDatabaseId}/actions/enableStackMonitoring"
         method = "POST"
         operation_name = "enable_external_non_container_database_stack_monitoring"
@@ -10717,7 +11124,8 @@ class DatabaseClient(object):
                 body=enable_external_non_container_database_stack_monitoring_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10727,7 +11135,8 @@ class DatabaseClient(object):
                 body=enable_external_non_container_database_stack_monitoring_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def enable_external_pluggable_database_database_management(self, external_pluggable_database_id, enable_external_pluggable_database_database_management_details, **kwargs):
         """
@@ -10779,6 +11188,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/enable_external_pluggable_database_database_management.py.html>`__ to see an example of how to use enable_external_pluggable_database_database_management API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalPluggableDatabaseId']
         resource_path = "/externalpluggabledatabases/{externalPluggableDatabaseId}/actions/enableDatabaseManagement"
         method = "POST"
         operation_name = "enable_external_pluggable_database_database_management"
@@ -10835,7 +11246,8 @@ class DatabaseClient(object):
                 body=enable_external_pluggable_database_database_management_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10845,7 +11257,8 @@ class DatabaseClient(object):
                 body=enable_external_pluggable_database_database_management_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def enable_external_pluggable_database_operations_insights(self, external_pluggable_database_id, enable_external_pluggable_database_operations_insights_details, **kwargs):
         """
@@ -10893,6 +11306,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/enable_external_pluggable_database_operations_insights.py.html>`__ to see an example of how to use enable_external_pluggable_database_operations_insights API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalPluggableDatabaseId']
         resource_path = "/externalpluggabledatabases/{externalPluggableDatabaseId}/actions/enableOperationsInsights"
         method = "POST"
         operation_name = "enable_external_pluggable_database_operations_insights"
@@ -10949,7 +11364,8 @@ class DatabaseClient(object):
                 body=enable_external_pluggable_database_operations_insights_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10959,7 +11375,8 @@ class DatabaseClient(object):
                 body=enable_external_pluggable_database_operations_insights_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def enable_external_pluggable_database_stack_monitoring(self, external_pluggable_database_id, enable_external_pluggable_database_stack_monitoring_details, **kwargs):
         """
@@ -11007,6 +11424,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/enable_external_pluggable_database_stack_monitoring.py.html>`__ to see an example of how to use enable_external_pluggable_database_stack_monitoring API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalPluggableDatabaseId']
         resource_path = "/externalpluggabledatabases/{externalPluggableDatabaseId}/actions/enableStackMonitoring"
         method = "POST"
         operation_name = "enable_external_pluggable_database_stack_monitoring"
@@ -11063,7 +11482,8 @@ class DatabaseClient(object):
                 body=enable_external_pluggable_database_stack_monitoring_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11073,7 +11493,8 @@ class DatabaseClient(object):
                 body=enable_external_pluggable_database_stack_monitoring_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def enable_pluggable_database_management(self, pluggable_database_id, enable_pluggable_database_management_details, **kwargs):
         """
@@ -11121,6 +11542,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/enable_pluggable_database_management.py.html>`__ to see an example of how to use enable_pluggable_database_management API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['pluggableDatabaseId']
         resource_path = "/pluggableDatabases/{pluggableDatabaseId}/actions/enablePluggableDatabaseManagement"
         method = "POST"
         operation_name = "enable_pluggable_database_management"
@@ -11178,7 +11601,8 @@ class DatabaseClient(object):
                 response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11189,7 +11613,8 @@ class DatabaseClient(object):
                 response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def fail_over_autonomous_database(self, autonomous_database_id, **kwargs):
         """
@@ -11241,6 +11666,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/fail_over_autonomous_database.py.html>`__ to see an example of how to use fail_over_autonomous_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/failover"
         method = "POST"
         operation_name = "fail_over_autonomous_database"
@@ -11304,7 +11731,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11315,7 +11743,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def failover_autonomous_container_database_dataguard_association(self, autonomous_container_database_id, autonomous_container_database_dataguard_association_id, **kwargs):
         """
@@ -11357,6 +11786,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/failover_autonomous_container_database_dataguard_association.py.html>`__ to see an example of how to use failover_autonomous_container_database_dataguard_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousContainerDatabaseId', 'autonomousContainerDatabaseDataguardAssociationId']
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}/actions/failover"
         method = "POST"
         operation_name = "failover_autonomous_container_database_dataguard_association"
@@ -11409,7 +11840,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabaseDataguardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11419,7 +11851,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabaseDataguardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def failover_data_guard_association(self, database_id, data_guard_association_id, failover_data_guard_association_details, **kwargs):
         """
@@ -11466,6 +11899,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/failover_data_guard_association.py.html>`__ to see an example of how to use failover_data_guard_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId', 'dataGuardAssociationId']
         resource_path = "/databases/{databaseId}/dataGuardAssociations/{dataGuardAssociationId}/actions/failover"
         method = "POST"
         operation_name = "failover_data_guard_association"
@@ -11519,7 +11954,8 @@ class DatabaseClient(object):
                 response_type="DataGuardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11530,7 +11966,8 @@ class DatabaseClient(object):
                 response_type="DataGuardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def generate_autonomous_database_wallet(self, autonomous_database_id, generate_autonomous_database_wallet_details, **kwargs):
         """
@@ -11573,6 +12010,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/generate_autonomous_database_wallet.py.html>`__ to see an example of how to use generate_autonomous_database_wallet API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/generateWallet"
         method = "POST"
         operation_name = "generate_autonomous_database_wallet"
@@ -11628,7 +12067,8 @@ class DatabaseClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11639,7 +12079,8 @@ class DatabaseClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def generate_recommended_vm_cluster_network(self, exadata_infrastructure_id, generate_recommended_network_details, **kwargs):
         """
@@ -11682,6 +12123,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/generate_recommended_vm_cluster_network.py.html>`__ to see an example of how to use generate_recommended_vm_cluster_network API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exadataInfrastructureId']
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/actions/generateRecommendedNetwork"
         method = "POST"
         operation_name = "generate_recommended_vm_cluster_network"
@@ -11737,7 +12180,8 @@ class DatabaseClient(object):
                 response_type="VmClusterNetworkDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11748,7 +12192,8 @@ class DatabaseClient(object):
                 response_type="VmClusterNetworkDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_application_vip(self, application_vip_id, **kwargs):
         """
@@ -11781,6 +12226,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_application_vip.py.html>`__ to see an example of how to use get_application_vip API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['applicationVipId']
         resource_path = "/applicationVip/{applicationVipId}"
         method = "GET"
         operation_name = "get_application_vip"
@@ -11832,7 +12279,8 @@ class DatabaseClient(object):
                 response_type="ApplicationVip",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11842,7 +12290,8 @@ class DatabaseClient(object):
                 response_type="ApplicationVip",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_autonomous_container_database(self, autonomous_container_database_id, **kwargs):
         """
@@ -11872,6 +12321,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_container_database.py.html>`__ to see an example of how to use get_autonomous_container_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousContainerDatabaseId']
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}"
         method = "GET"
         operation_name = "get_autonomous_container_database"
@@ -11916,7 +12367,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11926,7 +12378,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_autonomous_container_database_dataguard_association(self, autonomous_container_database_id, autonomous_container_database_dataguard_association_id, **kwargs):
         """
@@ -11961,6 +12414,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_container_database_dataguard_association.py.html>`__ to see an example of how to use get_autonomous_container_database_dataguard_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousContainerDatabaseId', 'autonomousContainerDatabaseDataguardAssociationId']
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}"
         method = "GET"
         operation_name = "get_autonomous_container_database_dataguard_association"
@@ -12006,7 +12461,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabaseDataguardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12016,7 +12472,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabaseDataguardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_autonomous_database(self, autonomous_database_id, **kwargs):
         """
@@ -12049,6 +12506,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_database.py.html>`__ to see an example of how to use get_autonomous_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}"
         method = "GET"
         operation_name = "get_autonomous_database"
@@ -12100,7 +12559,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12110,7 +12570,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_autonomous_database_backup(self, autonomous_database_backup_id, **kwargs):
         """
@@ -12143,6 +12604,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_database_backup.py.html>`__ to see an example of how to use get_autonomous_database_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseBackupId']
         resource_path = "/autonomousDatabaseBackups/{autonomousDatabaseBackupId}"
         method = "GET"
         operation_name = "get_autonomous_database_backup"
@@ -12194,7 +12657,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabaseBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12204,7 +12668,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabaseBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_autonomous_database_dataguard_association(self, autonomous_database_id, autonomous_database_dataguard_association_id, **kwargs):
         """
@@ -12242,6 +12707,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_database_dataguard_association.py.html>`__ to see an example of how to use get_autonomous_database_dataguard_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId', 'autonomousDatabaseDataguardAssociationId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/autonomousDatabaseDataguardAssociations/{autonomousDatabaseDataguardAssociationId}"
         method = "GET"
         operation_name = "get_autonomous_database_dataguard_association"
@@ -12294,7 +12761,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabaseDataguardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12304,7 +12772,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabaseDataguardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_autonomous_database_regional_wallet(self, **kwargs):
         """
@@ -12332,6 +12801,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_database_regional_wallet.py.html>`__ to see an example of how to use get_autonomous_database_regional_wallet API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/autonomousDatabases/wallet"
         method = "GET"
         operation_name = "get_autonomous_database_regional_wallet"
@@ -12372,7 +12843,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabaseWallet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12381,7 +12853,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabaseWallet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_autonomous_database_wallet(self, autonomous_database_id, **kwargs):
         """
@@ -12414,6 +12887,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_database_wallet.py.html>`__ to see an example of how to use get_autonomous_database_wallet API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/wallet"
         method = "GET"
         operation_name = "get_autonomous_database_wallet"
@@ -12465,7 +12940,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabaseWallet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12475,7 +12951,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabaseWallet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_autonomous_exadata_infrastructure(self, autonomous_exadata_infrastructure_id, **kwargs):
         """
@@ -12505,6 +12982,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_exadata_infrastructure.py.html>`__ to see an example of how to use get_autonomous_exadata_infrastructure API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousExadataInfrastructureId']
         resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}"
         method = "GET"
         operation_name = "get_autonomous_exadata_infrastructure"
@@ -12549,7 +13028,8 @@ class DatabaseClient(object):
                 response_type="AutonomousExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12559,7 +13039,8 @@ class DatabaseClient(object):
                 response_type="AutonomousExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_autonomous_patch(self, autonomous_patch_id, **kwargs):
         """
@@ -12589,6 +13070,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_patch.py.html>`__ to see an example of how to use get_autonomous_patch API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousPatchId']
         resource_path = "/autonomousPatches/{autonomousPatchId}"
         method = "GET"
         operation_name = "get_autonomous_patch"
@@ -12633,7 +13116,8 @@ class DatabaseClient(object):
                 response_type="AutonomousPatch",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12643,7 +13127,8 @@ class DatabaseClient(object):
                 response_type="AutonomousPatch",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_autonomous_virtual_machine(self, autonomous_virtual_machine_id, **kwargs):
         """
@@ -12676,6 +13161,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_virtual_machine.py.html>`__ to see an example of how to use get_autonomous_virtual_machine API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousVirtualMachineId']
         resource_path = "/autonomousVirtualMachines/{autonomousVirtualMachineId}"
         method = "GET"
         operation_name = "get_autonomous_virtual_machine"
@@ -12727,7 +13214,8 @@ class DatabaseClient(object):
                 response_type="AutonomousVirtualMachine",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12737,7 +13225,8 @@ class DatabaseClient(object):
                 response_type="AutonomousVirtualMachine",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_autonomous_vm_cluster(self, autonomous_vm_cluster_id, **kwargs):
         """
@@ -12770,6 +13259,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_vm_cluster.py.html>`__ to see an example of how to use get_autonomous_vm_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousVmClusterId']
         resource_path = "/autonomousVmClusters/{autonomousVmClusterId}"
         method = "GET"
         operation_name = "get_autonomous_vm_cluster"
@@ -12821,7 +13312,8 @@ class DatabaseClient(object):
                 response_type="AutonomousVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12831,7 +13323,8 @@ class DatabaseClient(object):
                 response_type="AutonomousVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_backup(self, backup_id, **kwargs):
         """
@@ -12861,6 +13354,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_backup.py.html>`__ to see an example of how to use get_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['backupId']
         resource_path = "/backups/{backupId}"
         method = "GET"
         operation_name = "get_backup"
@@ -12905,7 +13400,8 @@ class DatabaseClient(object):
                 response_type="Backup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12915,7 +13411,8 @@ class DatabaseClient(object):
                 response_type="Backup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_backup_destination(self, backup_destination_id, **kwargs):
         """
@@ -12948,6 +13445,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_backup_destination.py.html>`__ to see an example of how to use get_backup_destination API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['backupDestinationId']
         resource_path = "/backupDestinations/{backupDestinationId}"
         method = "GET"
         operation_name = "get_backup_destination"
@@ -12999,7 +13498,8 @@ class DatabaseClient(object):
                 response_type="BackupDestination",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13009,7 +13509,8 @@ class DatabaseClient(object):
                 response_type="BackupDestination",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_cloud_autonomous_vm_cluster(self, cloud_autonomous_vm_cluster_id, **kwargs):
         """
@@ -13042,6 +13543,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_cloud_autonomous_vm_cluster.py.html>`__ to see an example of how to use get_cloud_autonomous_vm_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudAutonomousVmClusterId']
         resource_path = "/cloudAutonomousVmClusters/{cloudAutonomousVmClusterId}"
         method = "GET"
         operation_name = "get_cloud_autonomous_vm_cluster"
@@ -13093,7 +13596,8 @@ class DatabaseClient(object):
                 response_type="CloudAutonomousVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13103,7 +13607,8 @@ class DatabaseClient(object):
                 response_type="CloudAutonomousVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_cloud_exadata_infrastructure(self, cloud_exadata_infrastructure_id, **kwargs):
         """
@@ -13136,6 +13641,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_cloud_exadata_infrastructure.py.html>`__ to see an example of how to use get_cloud_exadata_infrastructure API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudExadataInfrastructureId']
         resource_path = "/cloudExadataInfrastructures/{cloudExadataInfrastructureId}"
         method = "GET"
         operation_name = "get_cloud_exadata_infrastructure"
@@ -13187,7 +13694,8 @@ class DatabaseClient(object):
                 response_type="CloudExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13197,7 +13705,8 @@ class DatabaseClient(object):
                 response_type="CloudExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_cloud_exadata_infrastructure_unallocated_resources(self, cloud_exadata_infrastructure_id, **kwargs):
         """
@@ -13230,6 +13739,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_cloud_exadata_infrastructure_unallocated_resources.py.html>`__ to see an example of how to use get_cloud_exadata_infrastructure_unallocated_resources API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudExadataInfrastructureId']
         resource_path = "/cloudExadataInfrastructures/{cloudExadataInfrastructureId}/unAllocatedResources"
         method = "GET"
         operation_name = "get_cloud_exadata_infrastructure_unallocated_resources"
@@ -13281,7 +13792,8 @@ class DatabaseClient(object):
                 response_type="CloudExadataInfrastructureUnallocatedResources",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13291,7 +13803,8 @@ class DatabaseClient(object):
                 response_type="CloudExadataInfrastructureUnallocatedResources",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_cloud_vm_cluster(self, cloud_vm_cluster_id, **kwargs):
         """
@@ -13324,6 +13837,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_cloud_vm_cluster.py.html>`__ to see an example of how to use get_cloud_vm_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudVmClusterId']
         resource_path = "/cloudVmClusters/{cloudVmClusterId}"
         method = "GET"
         operation_name = "get_cloud_vm_cluster"
@@ -13375,7 +13890,8 @@ class DatabaseClient(object):
                 response_type="CloudVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13385,7 +13901,8 @@ class DatabaseClient(object):
                 response_type="CloudVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_cloud_vm_cluster_iorm_config(self, cloud_vm_cluster_id, **kwargs):
         """
@@ -13419,6 +13936,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_cloud_vm_cluster_iorm_config.py.html>`__ to see an example of how to use get_cloud_vm_cluster_iorm_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudVmClusterId']
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig"
         method = "GET"
         operation_name = "get_cloud_vm_cluster_iorm_config"
@@ -13470,7 +13989,8 @@ class DatabaseClient(object):
                 response_type="ExadataIormConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13480,7 +14000,8 @@ class DatabaseClient(object):
                 response_type="ExadataIormConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_cloud_vm_cluster_update(self, cloud_vm_cluster_id, update_id, **kwargs):
         """
@@ -13518,6 +14039,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_cloud_vm_cluster_update.py.html>`__ to see an example of how to use get_cloud_vm_cluster_update API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudVmClusterId', 'updateId']
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/updates/{updateId}"
         method = "GET"
         operation_name = "get_cloud_vm_cluster_update"
@@ -13570,7 +14093,8 @@ class DatabaseClient(object):
                 response_type="Update",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13580,7 +14104,8 @@ class DatabaseClient(object):
                 response_type="Update",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_cloud_vm_cluster_update_history_entry(self, cloud_vm_cluster_id, update_history_entry_id, **kwargs):
         """
@@ -13618,6 +14143,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_cloud_vm_cluster_update_history_entry.py.html>`__ to see an example of how to use get_cloud_vm_cluster_update_history_entry API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudVmClusterId', 'updateHistoryEntryId']
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/updateHistoryEntries/{updateHistoryEntryId}"
         method = "GET"
         operation_name = "get_cloud_vm_cluster_update_history_entry"
@@ -13670,7 +14197,8 @@ class DatabaseClient(object):
                 response_type="UpdateHistoryEntry",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13680,7 +14208,8 @@ class DatabaseClient(object):
                 response_type="UpdateHistoryEntry",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_console_connection(self, db_node_id, console_connection_id, **kwargs):
         """
@@ -13713,6 +14242,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_console_connection.py.html>`__ to see an example of how to use get_console_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbNodeId', 'consoleConnectionId']
         resource_path = "/dbNodes/{dbNodeId}/consoleConnections/{consoleConnectionId}"
         method = "GET"
         operation_name = "get_console_connection"
@@ -13758,7 +14289,8 @@ class DatabaseClient(object):
                 response_type="ConsoleConnection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13768,7 +14300,8 @@ class DatabaseClient(object):
                 response_type="ConsoleConnection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_data_guard_association(self, database_id, data_guard_association_id, **kwargs):
         """
@@ -13803,6 +14336,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_data_guard_association.py.html>`__ to see an example of how to use get_data_guard_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId', 'dataGuardAssociationId']
         resource_path = "/databases/{databaseId}/dataGuardAssociations/{dataGuardAssociationId}"
         method = "GET"
         operation_name = "get_data_guard_association"
@@ -13848,7 +14383,8 @@ class DatabaseClient(object):
                 response_type="DataGuardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13858,7 +14394,8 @@ class DatabaseClient(object):
                 response_type="DataGuardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_database(self, database_id, **kwargs):
         """
@@ -13888,6 +14425,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_database.py.html>`__ to see an example of how to use get_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId']
         resource_path = "/databases/{databaseId}"
         method = "GET"
         operation_name = "get_database"
@@ -13932,7 +14471,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13942,7 +14482,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_database_software_image(self, database_software_image_id, **kwargs):
         """
@@ -13972,6 +14513,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_database_software_image.py.html>`__ to see an example of how to use get_database_software_image API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseSoftwareImageId']
         resource_path = "/databaseSoftwareImages/{databaseSoftwareImageId}"
         method = "GET"
         operation_name = "get_database_software_image"
@@ -14016,7 +14559,8 @@ class DatabaseClient(object):
                 response_type="DatabaseSoftwareImage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14026,7 +14570,8 @@ class DatabaseClient(object):
                 response_type="DatabaseSoftwareImage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_database_upgrade_history_entry(self, database_id, upgrade_history_entry_id, **kwargs):
         """
@@ -14064,6 +14609,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_database_upgrade_history_entry.py.html>`__ to see an example of how to use get_database_upgrade_history_entry API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId', 'upgradeHistoryEntryId']
         resource_path = "/databases/{databaseId}/upgradeHistoryEntries/{upgradeHistoryEntryId}"
         method = "GET"
         operation_name = "get_database_upgrade_history_entry"
@@ -14116,7 +14663,8 @@ class DatabaseClient(object):
                 response_type="DatabaseUpgradeHistoryEntry",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14126,7 +14674,8 @@ class DatabaseClient(object):
                 response_type="DatabaseUpgradeHistoryEntry",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_db_home(self, db_home_id, **kwargs):
         """
@@ -14156,6 +14705,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_db_home.py.html>`__ to see an example of how to use get_db_home API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbHomeId']
         resource_path = "/dbHomes/{dbHomeId}"
         method = "GET"
         operation_name = "get_db_home"
@@ -14200,7 +14751,8 @@ class DatabaseClient(object):
                 response_type="DbHome",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14210,7 +14762,8 @@ class DatabaseClient(object):
                 response_type="DbHome",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_db_home_patch(self, db_home_id, patch_id, **kwargs):
         """
@@ -14245,6 +14798,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_db_home_patch.py.html>`__ to see an example of how to use get_db_home_patch API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbHomeId', 'patchId']
         resource_path = "/dbHomes/{dbHomeId}/patches/{patchId}"
         method = "GET"
         operation_name = "get_db_home_patch"
@@ -14290,7 +14845,8 @@ class DatabaseClient(object):
                 response_type="Patch",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14300,7 +14856,8 @@ class DatabaseClient(object):
                 response_type="Patch",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_db_home_patch_history_entry(self, db_home_id, patch_history_entry_id, **kwargs):
         """
@@ -14335,6 +14892,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_db_home_patch_history_entry.py.html>`__ to see an example of how to use get_db_home_patch_history_entry API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbHomeId', 'patchHistoryEntryId']
         resource_path = "/dbHomes/{dbHomeId}/patchHistoryEntries/{patchHistoryEntryId}"
         method = "GET"
         operation_name = "get_db_home_patch_history_entry"
@@ -14380,7 +14939,8 @@ class DatabaseClient(object):
                 response_type="PatchHistoryEntry",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14390,7 +14950,8 @@ class DatabaseClient(object):
                 response_type="PatchHistoryEntry",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_db_node(self, db_node_id, **kwargs):
         """
@@ -14420,6 +14981,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_db_node.py.html>`__ to see an example of how to use get_db_node API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbNodeId']
         resource_path = "/dbNodes/{dbNodeId}"
         method = "GET"
         operation_name = "get_db_node"
@@ -14464,7 +15027,8 @@ class DatabaseClient(object):
                 response_type="DbNode",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14474,7 +15038,8 @@ class DatabaseClient(object):
                 response_type="DbNode",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_db_server(self, exadata_infrastructure_id, db_server_id, **kwargs):
         """
@@ -14512,6 +15077,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_db_server.py.html>`__ to see an example of how to use get_db_server API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbServerId', 'exadataInfrastructureId']
         resource_path = "/dbServers/{dbServerId}"
         method = "GET"
         operation_name = "get_db_server"
@@ -14569,7 +15136,8 @@ class DatabaseClient(object):
                 response_type="DbServer",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14580,7 +15148,8 @@ class DatabaseClient(object):
                 response_type="DbServer",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_db_system(self, db_system_id, **kwargs):
         """
@@ -14617,6 +15186,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_db_system.py.html>`__ to see an example of how to use get_db_system API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}"
         method = "GET"
         operation_name = "get_db_system"
@@ -14661,7 +15232,8 @@ class DatabaseClient(object):
                 response_type="DbSystem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14671,7 +15243,8 @@ class DatabaseClient(object):
                 response_type="DbSystem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_db_system_patch(self, db_system_id, patch_id, **kwargs):
         """
@@ -14706,6 +15279,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_db_system_patch.py.html>`__ to see an example of how to use get_db_system_patch API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId', 'patchId']
         resource_path = "/dbSystems/{dbSystemId}/patches/{patchId}"
         method = "GET"
         operation_name = "get_db_system_patch"
@@ -14751,7 +15326,8 @@ class DatabaseClient(object):
                 response_type="Patch",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14761,7 +15337,8 @@ class DatabaseClient(object):
                 response_type="Patch",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_db_system_patch_history_entry(self, db_system_id, patch_history_entry_id, **kwargs):
         """
@@ -14796,6 +15373,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_db_system_patch_history_entry.py.html>`__ to see an example of how to use get_db_system_patch_history_entry API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId', 'patchHistoryEntryId']
         resource_path = "/dbSystems/{dbSystemId}/patchHistoryEntries/{patchHistoryEntryId}"
         method = "GET"
         operation_name = "get_db_system_patch_history_entry"
@@ -14841,7 +15420,8 @@ class DatabaseClient(object):
                 response_type="PatchHistoryEntry",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14851,7 +15431,8 @@ class DatabaseClient(object):
                 response_type="PatchHistoryEntry",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_db_system_upgrade_history_entry(self, db_system_id, upgrade_history_entry_id, **kwargs):
         """
@@ -14889,6 +15470,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_db_system_upgrade_history_entry.py.html>`__ to see an example of how to use get_db_system_upgrade_history_entry API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId', 'upgradeHistoryEntryId']
         resource_path = "/dbSystems/{dbSystemId}/upgradeHistoryEntries/{upgradeHistoryEntryId}"
         method = "GET"
         operation_name = "get_db_system_upgrade_history_entry"
@@ -14941,7 +15524,8 @@ class DatabaseClient(object):
                 response_type="DbSystemUpgradeHistoryEntry",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14951,7 +15535,8 @@ class DatabaseClient(object):
                 response_type="DbSystemUpgradeHistoryEntry",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_exadata_infrastructure(self, exadata_infrastructure_id, **kwargs):
         """
@@ -14990,6 +15575,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_exadata_infrastructure.py.html>`__ to see an example of how to use get_exadata_infrastructure API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exadataInfrastructureId']
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}"
         method = "GET"
         operation_name = "get_exadata_infrastructure"
@@ -15056,7 +15643,8 @@ class DatabaseClient(object):
                 response_type="ExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15067,7 +15655,8 @@ class DatabaseClient(object):
                 response_type="ExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_exadata_infrastructure_ocpus(self, autonomous_exadata_infrastructure_id, **kwargs):
         """
@@ -15100,6 +15689,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_exadata_infrastructure_ocpus.py.html>`__ to see an example of how to use get_exadata_infrastructure_ocpus API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousExadataInfrastructureId']
         resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}/ocpus"
         method = "GET"
         operation_name = "get_exadata_infrastructure_ocpus"
@@ -15151,7 +15742,8 @@ class DatabaseClient(object):
                 response_type="OCPUs",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15161,7 +15753,8 @@ class DatabaseClient(object):
                 response_type="OCPUs",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_exadata_iorm_config(self, db_system_id, **kwargs):
         """
@@ -15205,6 +15798,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_exadata_iorm_config.py.html>`__ to see an example of how to use get_exadata_iorm_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/ExadataIormConfig"
         method = "GET"
         operation_name = "get_exadata_iorm_config"
@@ -15256,7 +15851,8 @@ class DatabaseClient(object):
                 response_type="ExadataIormConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15266,7 +15862,8 @@ class DatabaseClient(object):
                 response_type="ExadataIormConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_external_backup_job(self, backup_id, **kwargs):
         """
@@ -15300,6 +15897,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_external_backup_job.py.html>`__ to see an example of how to use get_external_backup_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['backupId']
         resource_path = "/externalBackupJobs/{backupId}"
         method = "GET"
         operation_name = "get_external_backup_job"
@@ -15344,7 +15943,8 @@ class DatabaseClient(object):
                 response_type="ExternalBackupJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15354,7 +15954,8 @@ class DatabaseClient(object):
                 response_type="ExternalBackupJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_external_container_database(self, external_container_database_id, **kwargs):
         """
@@ -15387,6 +15988,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_external_container_database.py.html>`__ to see an example of how to use get_external_container_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalContainerDatabaseId']
         resource_path = "/externalcontainerdatabases/{externalContainerDatabaseId}"
         method = "GET"
         operation_name = "get_external_container_database"
@@ -15438,7 +16041,8 @@ class DatabaseClient(object):
                 response_type="ExternalContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15448,7 +16052,8 @@ class DatabaseClient(object):
                 response_type="ExternalContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_external_database_connector(self, external_database_connector_id, **kwargs):
         """
@@ -15482,6 +16087,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_external_database_connector.py.html>`__ to see an example of how to use get_external_database_connector API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalDatabaseConnectorId']
         resource_path = "/externaldatabaseconnectors/{externalDatabaseConnectorId}"
         method = "GET"
         operation_name = "get_external_database_connector"
@@ -15533,7 +16140,8 @@ class DatabaseClient(object):
                 response_type="ExternalDatabaseConnector",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15543,7 +16151,8 @@ class DatabaseClient(object):
                 response_type="ExternalDatabaseConnector",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_external_non_container_database(self, external_non_container_database_id, **kwargs):
         """
@@ -15576,6 +16185,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_external_non_container_database.py.html>`__ to see an example of how to use get_external_non_container_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalNonContainerDatabaseId']
         resource_path = "/externalnoncontainerdatabases/{externalNonContainerDatabaseId}"
         method = "GET"
         operation_name = "get_external_non_container_database"
@@ -15627,7 +16238,8 @@ class DatabaseClient(object):
                 response_type="ExternalNonContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15637,7 +16249,8 @@ class DatabaseClient(object):
                 response_type="ExternalNonContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_external_pluggable_database(self, external_pluggable_database_id, **kwargs):
         """
@@ -15671,6 +16284,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_external_pluggable_database.py.html>`__ to see an example of how to use get_external_pluggable_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalPluggableDatabaseId']
         resource_path = "/externalpluggabledatabases/{externalPluggableDatabaseId}"
         method = "GET"
         operation_name = "get_external_pluggable_database"
@@ -15722,7 +16337,8 @@ class DatabaseClient(object):
                 response_type="ExternalPluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15732,7 +16348,8 @@ class DatabaseClient(object):
                 response_type="ExternalPluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_infrastructure_target_versions(self, compartment_id, **kwargs):
         """
@@ -15774,6 +16391,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_infrastructure_target_versions.py.html>`__ to see an example of how to use get_infrastructure_target_versions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/infrastructureTargetVersions"
         method = "GET"
         operation_name = "get_infrastructure_target_versions"
@@ -15831,7 +16450,8 @@ class DatabaseClient(object):
                 response_type="InfrastructureTargetVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15841,7 +16461,8 @@ class DatabaseClient(object):
                 response_type="InfrastructureTargetVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_key_store(self, key_store_id, **kwargs):
         """
@@ -15874,6 +16495,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_key_store.py.html>`__ to see an example of how to use get_key_store API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['keyStoreId']
         resource_path = "/keyStores/{keyStoreId}"
         method = "GET"
         operation_name = "get_key_store"
@@ -15925,7 +16548,8 @@ class DatabaseClient(object):
                 response_type="KeyStore",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15935,7 +16559,8 @@ class DatabaseClient(object):
                 response_type="KeyStore",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_maintenance_run(self, maintenance_run_id, **kwargs):
         """
@@ -15963,6 +16588,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_maintenance_run.py.html>`__ to see an example of how to use get_maintenance_run API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maintenanceRunId']
         resource_path = "/maintenanceRuns/{maintenanceRunId}"
         method = "GET"
         operation_name = "get_maintenance_run"
@@ -16007,7 +16634,8 @@ class DatabaseClient(object):
                 response_type="MaintenanceRun",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16017,7 +16645,8 @@ class DatabaseClient(object):
                 response_type="MaintenanceRun",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_maintenance_run_history(self, maintenance_run_history_id, **kwargs):
         """
@@ -16045,6 +16674,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_maintenance_run_history.py.html>`__ to see an example of how to use get_maintenance_run_history API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maintenanceRunHistoryId']
         resource_path = "/maintenanceRunHistory/{maintenanceRunHistoryId}"
         method = "GET"
         operation_name = "get_maintenance_run_history"
@@ -16089,7 +16720,8 @@ class DatabaseClient(object):
                 response_type="MaintenanceRunHistory",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16099,7 +16731,8 @@ class DatabaseClient(object):
                 response_type="MaintenanceRunHistory",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_pdb_conversion_history_entry(self, database_id, pdb_conversion_history_entry_id, **kwargs):
         """
@@ -16137,6 +16770,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_pdb_conversion_history_entry.py.html>`__ to see an example of how to use get_pdb_conversion_history_entry API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId', 'pdbConversionHistoryEntryId']
         resource_path = "/databases/{databaseId}/pdbConversionHistoryEntries/{pdbConversionHistoryEntryId}"
         method = "GET"
         operation_name = "get_pdb_conversion_history_entry"
@@ -16189,7 +16824,8 @@ class DatabaseClient(object):
                 response_type="PdbConversionHistoryEntry",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16199,7 +16835,8 @@ class DatabaseClient(object):
                 response_type="PdbConversionHistoryEntry",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_pluggable_database(self, pluggable_database_id, **kwargs):
         """
@@ -16229,6 +16866,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_pluggable_database.py.html>`__ to see an example of how to use get_pluggable_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['pluggableDatabaseId']
         resource_path = "/pluggableDatabases/{pluggableDatabaseId}"
         method = "GET"
         operation_name = "get_pluggable_database"
@@ -16273,7 +16912,8 @@ class DatabaseClient(object):
                 response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16283,7 +16923,8 @@ class DatabaseClient(object):
                 response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_vm_cluster(self, vm_cluster_id, **kwargs):
         """
@@ -16316,6 +16957,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_vm_cluster.py.html>`__ to see an example of how to use get_vm_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vmClusterId']
         resource_path = "/vmClusters/{vmClusterId}"
         method = "GET"
         operation_name = "get_vm_cluster"
@@ -16367,7 +17010,8 @@ class DatabaseClient(object):
                 response_type="VmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16377,7 +17021,8 @@ class DatabaseClient(object):
                 response_type="VmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_id, **kwargs):
         """
@@ -16416,6 +17061,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_vm_cluster_network.py.html>`__ to see an example of how to use get_vm_cluster_network API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exadataInfrastructureId', 'vmClusterNetworkId']
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}"
         method = "GET"
         operation_name = "get_vm_cluster_network"
@@ -16468,7 +17115,8 @@ class DatabaseClient(object):
                 response_type="VmClusterNetwork",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16478,7 +17126,8 @@ class DatabaseClient(object):
                 response_type="VmClusterNetwork",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_vm_cluster_patch(self, vm_cluster_id, patch_id, **kwargs):
         """
@@ -16513,6 +17162,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_vm_cluster_patch.py.html>`__ to see an example of how to use get_vm_cluster_patch API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vmClusterId', 'patchId']
         resource_path = "/vmClusters/{vmClusterId}/patches/{patchId}"
         method = "GET"
         operation_name = "get_vm_cluster_patch"
@@ -16558,7 +17209,8 @@ class DatabaseClient(object):
                 response_type="Patch",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16568,7 +17220,8 @@ class DatabaseClient(object):
                 response_type="Patch",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_vm_cluster_patch_history_entry(self, vm_cluster_id, patch_history_entry_id, **kwargs):
         """
@@ -16603,6 +17256,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_vm_cluster_patch_history_entry.py.html>`__ to see an example of how to use get_vm_cluster_patch_history_entry API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vmClusterId', 'patchHistoryEntryId']
         resource_path = "/vmClusters/{vmClusterId}/patchHistoryEntries/{patchHistoryEntryId}"
         method = "GET"
         operation_name = "get_vm_cluster_patch_history_entry"
@@ -16648,7 +17303,8 @@ class DatabaseClient(object):
                 response_type="PatchHistoryEntry",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16658,7 +17314,8 @@ class DatabaseClient(object):
                 response_type="PatchHistoryEntry",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_vm_cluster_update(self, vm_cluster_id, update_id, **kwargs):
         """
@@ -16696,6 +17353,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_vm_cluster_update.py.html>`__ to see an example of how to use get_vm_cluster_update API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vmClusterId', 'updateId']
         resource_path = "/vmClusters/{vmClusterId}/updates/{updateId}"
         method = "GET"
         operation_name = "get_vm_cluster_update"
@@ -16748,7 +17407,8 @@ class DatabaseClient(object):
                 response_type="VmClusterUpdate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16758,7 +17418,8 @@ class DatabaseClient(object):
                 response_type="VmClusterUpdate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_vm_cluster_update_history_entry(self, vm_cluster_id, update_history_entry_id, **kwargs):
         """
@@ -16796,6 +17457,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_vm_cluster_update_history_entry.py.html>`__ to see an example of how to use get_vm_cluster_update_history_entry API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vmClusterId', 'updateHistoryEntryId']
         resource_path = "/vmClusters/{vmClusterId}/updateHistoryEntries/{updateHistoryEntryId}"
         method = "GET"
         operation_name = "get_vm_cluster_update_history_entry"
@@ -16848,7 +17511,8 @@ class DatabaseClient(object):
                 response_type="VmClusterUpdateHistoryEntry",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16858,7 +17522,8 @@ class DatabaseClient(object):
                 response_type="VmClusterUpdateHistoryEntry",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def launch_autonomous_exadata_infrastructure(self, launch_autonomous_exadata_infrastructure_details, **kwargs):
         """
@@ -16893,6 +17558,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/launch_autonomous_exadata_infrastructure.py.html>`__ to see an example of how to use launch_autonomous_exadata_infrastructure API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/autonomousExadataInfrastructures"
         method = "POST"
         operation_name = "launch_autonomous_exadata_infrastructure"
@@ -16935,7 +17602,8 @@ class DatabaseClient(object):
                 response_type="AutonomousExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16945,7 +17613,8 @@ class DatabaseClient(object):
                 response_type="AutonomousExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def launch_db_system(self, launch_db_system_details, **kwargs):
         """
@@ -17001,6 +17670,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/launch_db_system.py.html>`__ to see an example of how to use launch_db_system API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/dbSystems"
         method = "POST"
         operation_name = "launch_db_system"
@@ -17043,7 +17714,8 @@ class DatabaseClient(object):
                 response_type="DbSystem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17053,7 +17725,8 @@ class DatabaseClient(object):
                 response_type="DbSystem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_application_vips(self, compartment_id, cloud_vm_cluster_id, **kwargs):
         """
@@ -17115,6 +17788,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_application_vips.py.html>`__ to see an example of how to use list_application_vips API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'cloudVmClusterId']
         resource_path = "/applicationVip"
         method = "GET"
         operation_name = "list_application_vips"
@@ -17193,7 +17868,8 @@ class DatabaseClient(object):
                 response_type="list[ApplicationVipSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17203,7 +17879,8 @@ class DatabaseClient(object):
                 response_type="list[ApplicationVipSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_autonomous_container_database_dataguard_associations(self, autonomous_container_database_id, **kwargs):
         """
@@ -17239,6 +17916,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_container_database_dataguard_associations.py.html>`__ to see an example of how to use list_autonomous_container_database_dataguard_associations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousContainerDatabaseId']
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations"
         method = "GET"
         operation_name = "list_autonomous_container_database_dataguard_associations"
@@ -17296,7 +17975,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousContainerDatabaseDataguardAssociation]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17307,7 +17987,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousContainerDatabaseDataguardAssociation]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_autonomous_container_database_versions(self, compartment_id, service_component, **kwargs):
         """
@@ -17356,6 +18037,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_container_database_versions.py.html>`__ to see an example of how to use list_autonomous_container_database_versions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'serviceComponent']
         resource_path = "/autonomousContainerDatabaseVersions"
         method = "GET"
         operation_name = "list_autonomous_container_database_versions"
@@ -17422,7 +18105,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousContainerDatabaseVersionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17432,7 +18116,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousContainerDatabaseVersionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_autonomous_container_databases(self, compartment_id, **kwargs):
         """
@@ -17514,6 +18199,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_container_databases.py.html>`__ to see an example of how to use list_autonomous_container_databases API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/autonomousContainerDatabases"
         method = "GET"
         operation_name = "list_autonomous_container_databases"
@@ -17609,7 +18296,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousContainerDatabaseSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17619,7 +18307,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousContainerDatabaseSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_autonomous_database_backups(self, **kwargs):
         """
@@ -17686,6 +18375,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_database_backups.py.html>`__ to see an example of how to use list_autonomous_database_backups API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/autonomousDatabaseBackups"
         method = "GET"
         operation_name = "list_autonomous_database_backups"
@@ -17770,7 +18461,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousDatabaseBackupSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17780,7 +18472,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousDatabaseBackupSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_autonomous_database_character_sets(self, **kwargs):
         """
@@ -17816,6 +18509,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_database_character_sets.py.html>`__ to see an example of how to use list_autonomous_database_character_sets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/autonomousDatabaseCharacterSets"
         method = "GET"
         operation_name = "list_autonomous_database_character_sets"
@@ -17872,7 +18567,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousDatabaseCharacterSets]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17882,7 +18578,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousDatabaseCharacterSets]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_autonomous_database_clones(self, compartment_id, autonomous_database_id, **kwargs):
         """
@@ -17951,6 +18648,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_database_clones.py.html>`__ to see an example of how to use list_autonomous_database_clones API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId', 'compartmentId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/clones"
         method = "GET"
         operation_name = "list_autonomous_database_clones"
@@ -18050,7 +18749,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousDatabaseSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18061,7 +18761,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousDatabaseSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_autonomous_database_dataguard_associations(self, autonomous_database_id, **kwargs):
         """
@@ -18097,6 +18798,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_database_dataguard_associations.py.html>`__ to see an example of how to use list_autonomous_database_dataguard_associations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/autonomousDatabaseDataguardAssociations"
         method = "GET"
         operation_name = "list_autonomous_database_dataguard_associations"
@@ -18154,7 +18857,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousDatabaseDataguardAssociation]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18165,7 +18869,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousDatabaseDataguardAssociation]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_autonomous_database_refreshable_clones(self, autonomous_database_id, **kwargs):
         """
@@ -18204,6 +18909,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_database_refreshable_clones.py.html>`__ to see an example of how to use list_autonomous_database_refreshable_clones API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/refreshableClones"
         method = "GET"
         operation_name = "list_autonomous_database_refreshable_clones"
@@ -18264,7 +18971,8 @@ class DatabaseClient(object):
                 response_type="RefreshableCloneCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18275,7 +18983,8 @@ class DatabaseClient(object):
                 response_type="RefreshableCloneCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_autonomous_databases(self, compartment_id, **kwargs):
         """
@@ -18363,6 +19072,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_databases.py.html>`__ to see an example of how to use list_autonomous_databases API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/autonomousDatabases"
         method = "GET"
         operation_name = "list_autonomous_databases"
@@ -18470,7 +19181,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousDatabaseSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18480,7 +19192,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousDatabaseSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_autonomous_db_preview_versions(self, compartment_id, **kwargs):
         """
@@ -18534,6 +19247,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_db_preview_versions.py.html>`__ to see an example of how to use list_autonomous_db_preview_versions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/autonomousDbPreviewVersions"
         method = "GET"
         operation_name = "list_autonomous_db_preview_versions"
@@ -18602,7 +19317,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousDbPreviewVersionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18612,7 +19328,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousDbPreviewVersionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_autonomous_db_versions(self, compartment_id, **kwargs):
         """
@@ -18661,6 +19378,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_db_versions.py.html>`__ to see an example of how to use list_autonomous_db_versions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/autonomousDbVersions"
         method = "GET"
         operation_name = "list_autonomous_db_versions"
@@ -18729,7 +19448,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousDbVersionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18739,7 +19459,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousDbVersionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_autonomous_exadata_infrastructure_shapes(self, availability_domain, compartment_id, **kwargs):
         """
@@ -18781,6 +19502,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_exadata_infrastructure_shapes.py.html>`__ to see an example of how to use list_autonomous_exadata_infrastructure_shapes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['availabilityDomain', 'compartmentId']
         resource_path = "/autonomousExadataInfrastructureShapes"
         method = "GET"
         operation_name = "list_autonomous_exadata_infrastructure_shapes"
@@ -18832,7 +19555,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousExadataInfrastructureShapeSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18842,7 +19566,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousExadataInfrastructureShapeSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_autonomous_exadata_infrastructures(self, compartment_id, **kwargs):
         """
@@ -18901,6 +19626,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_exadata_infrastructures.py.html>`__ to see an example of how to use list_autonomous_exadata_infrastructures API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/autonomousExadataInfrastructures"
         method = "GET"
         operation_name = "list_autonomous_exadata_infrastructures"
@@ -18979,7 +19706,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousExadataInfrastructureSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18989,7 +19717,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousExadataInfrastructureSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_autonomous_virtual_machines(self, compartment_id, autonomous_vm_cluster_id, **kwargs):
         """
@@ -19038,6 +19767,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_virtual_machines.py.html>`__ to see an example of how to use list_autonomous_virtual_machines API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'autonomousVmClusterId']
         resource_path = "/autonomousVirtualMachines"
         method = "GET"
         operation_name = "list_autonomous_virtual_machines"
@@ -19098,7 +19829,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousVirtualMachineSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19108,7 +19840,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousVirtualMachineSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_autonomous_vm_clusters(self, compartment_id, **kwargs):
         """
@@ -19168,6 +19901,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_vm_clusters.py.html>`__ to see an example of how to use list_autonomous_vm_clusters API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/autonomousVmClusters"
         method = "GET"
         operation_name = "list_autonomous_vm_clusters"
@@ -19249,7 +19984,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousVmClusterSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19259,7 +19995,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousVmClusterSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_backup_destination(self, compartment_id, **kwargs):
         """
@@ -19301,6 +20038,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_backup_destination.py.html>`__ to see an example of how to use list_backup_destination API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/backupDestinations"
         method = "GET"
         operation_name = "list_backup_destination"
@@ -19353,7 +20092,8 @@ class DatabaseClient(object):
                 response_type="list[BackupDestinationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19363,7 +20103,8 @@ class DatabaseClient(object):
                 response_type="list[BackupDestinationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_backups(self, **kwargs):
         """
@@ -19404,6 +20145,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_backups.py.html>`__ to see an example of how to use list_backups API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/backups"
         method = "GET"
         operation_name = "list_backups"
@@ -19454,7 +20197,8 @@ class DatabaseClient(object):
                 response_type="list[BackupSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19464,7 +20208,8 @@ class DatabaseClient(object):
                 response_type="list[BackupSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_cloud_autonomous_vm_clusters(self, compartment_id, **kwargs):
         """
@@ -19527,6 +20272,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_cloud_autonomous_vm_clusters.py.html>`__ to see an example of how to use list_cloud_autonomous_vm_clusters API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/cloudAutonomousVmClusters"
         method = "GET"
         operation_name = "list_cloud_autonomous_vm_clusters"
@@ -19610,7 +20357,8 @@ class DatabaseClient(object):
                 response_type="list[CloudAutonomousVmClusterSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19620,7 +20368,8 @@ class DatabaseClient(object):
                 response_type="list[CloudAutonomousVmClusterSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_cloud_exadata_infrastructures(self, compartment_id, **kwargs):
         """
@@ -19677,6 +20426,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_cloud_exadata_infrastructures.py.html>`__ to see an example of how to use list_cloud_exadata_infrastructures API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/cloudExadataInfrastructures"
         method = "GET"
         operation_name = "list_cloud_exadata_infrastructures"
@@ -19756,7 +20507,8 @@ class DatabaseClient(object):
                 response_type="list[CloudExadataInfrastructureSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19766,7 +20518,8 @@ class DatabaseClient(object):
                 response_type="list[CloudExadataInfrastructureSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_cloud_vm_cluster_update_history_entries(self, cloud_vm_cluster_id, **kwargs):
         """
@@ -19810,6 +20563,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_cloud_vm_cluster_update_history_entries.py.html>`__ to see an example of how to use list_cloud_vm_cluster_update_history_entries API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudVmClusterId']
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/updateHistoryEntries"
         method = "GET"
         operation_name = "list_cloud_vm_cluster_update_history_entries"
@@ -19879,7 +20634,8 @@ class DatabaseClient(object):
                 response_type="list[UpdateHistoryEntrySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19890,7 +20646,8 @@ class DatabaseClient(object):
                 response_type="list[UpdateHistoryEntrySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_cloud_vm_cluster_updates(self, cloud_vm_cluster_id, **kwargs):
         """
@@ -19934,6 +20691,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_cloud_vm_cluster_updates.py.html>`__ to see an example of how to use list_cloud_vm_cluster_updates API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudVmClusterId']
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/updates"
         method = "GET"
         operation_name = "list_cloud_vm_cluster_updates"
@@ -20003,7 +20762,8 @@ class DatabaseClient(object):
                 response_type="list[UpdateSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20014,7 +20774,8 @@ class DatabaseClient(object):
                 response_type="list[UpdateSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_cloud_vm_clusters(self, compartment_id, **kwargs):
         """
@@ -20074,6 +20835,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_cloud_vm_clusters.py.html>`__ to see an example of how to use list_cloud_vm_clusters API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/cloudVmClusters"
         method = "GET"
         operation_name = "list_cloud_vm_clusters"
@@ -20155,7 +20918,8 @@ class DatabaseClient(object):
                 response_type="list[CloudVmClusterSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20165,7 +20929,8 @@ class DatabaseClient(object):
                 response_type="list[CloudVmClusterSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_console_connections(self, db_node_id, **kwargs):
         """
@@ -20195,6 +20960,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_console_connections.py.html>`__ to see an example of how to use list_console_connections API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbNodeId']
         resource_path = "/dbNodes/{dbNodeId}/consoleConnections"
         method = "GET"
         operation_name = "list_console_connections"
@@ -20239,7 +21006,8 @@ class DatabaseClient(object):
                 response_type="list[ConsoleConnectionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20249,7 +21017,8 @@ class DatabaseClient(object):
                 response_type="list[ConsoleConnectionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_container_database_patches(self, autonomous_container_database_id, compartment_id, **kwargs):
         """
@@ -20290,6 +21059,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_container_database_patches.py.html>`__ to see an example of how to use list_container_database_patches API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousContainerDatabaseId', 'compartmentId']
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/patches"
         method = "GET"
         operation_name = "list_container_database_patches"
@@ -20348,7 +21119,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousPatchSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20359,7 +21131,8 @@ class DatabaseClient(object):
                 response_type="list[AutonomousPatchSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_data_guard_associations(self, database_id, **kwargs):
         """
@@ -20395,6 +21168,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_data_guard_associations.py.html>`__ to see an example of how to use list_data_guard_associations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId']
         resource_path = "/databases/{databaseId}/dataGuardAssociations"
         method = "GET"
         operation_name = "list_data_guard_associations"
@@ -20452,7 +21227,8 @@ class DatabaseClient(object):
                 response_type="list[DataGuardAssociationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20463,7 +21239,8 @@ class DatabaseClient(object):
                 response_type="list[DataGuardAssociationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_database_software_images(self, compartment_id, **kwargs):
         """
@@ -20530,6 +21307,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_database_software_images.py.html>`__ to see an example of how to use list_database_software_images API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/databaseSoftwareImages"
         method = "GET"
         operation_name = "list_database_software_images"
@@ -20626,7 +21405,8 @@ class DatabaseClient(object):
                 response_type="list[DatabaseSoftwareImageSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20636,7 +21416,8 @@ class DatabaseClient(object):
                 response_type="list[DatabaseSoftwareImageSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_database_upgrade_history_entries(self, database_id, **kwargs):
         """
@@ -20695,6 +21476,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_database_upgrade_history_entries.py.html>`__ to see an example of how to use list_database_upgrade_history_entries API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId']
         resource_path = "/databases/{databaseId}/upgradeHistoryEntries"
         method = "GET"
         operation_name = "list_database_upgrade_history_entries"
@@ -20791,7 +21574,8 @@ class DatabaseClient(object):
                 response_type="list[DatabaseUpgradeHistoryEntrySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20802,7 +21586,8 @@ class DatabaseClient(object):
                 response_type="list[DatabaseUpgradeHistoryEntrySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_databases(self, compartment_id, **kwargs):
         """
@@ -20866,6 +21651,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_databases.py.html>`__ to see an example of how to use list_databases API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/databases"
         method = "GET"
         operation_name = "list_databases"
@@ -20946,7 +21733,8 @@ class DatabaseClient(object):
                 response_type="list[DatabaseSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20956,7 +21744,8 @@ class DatabaseClient(object):
                 response_type="list[DatabaseSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_db_home_patch_history_entries(self, db_home_id, **kwargs):
         """
@@ -20992,6 +21781,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_home_patch_history_entries.py.html>`__ to see an example of how to use list_db_home_patch_history_entries API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbHomeId']
         resource_path = "/dbHomes/{dbHomeId}/patchHistoryEntries"
         method = "GET"
         operation_name = "list_db_home_patch_history_entries"
@@ -21049,7 +21840,8 @@ class DatabaseClient(object):
                 response_type="list[PatchHistoryEntrySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21060,7 +21852,8 @@ class DatabaseClient(object):
                 response_type="list[PatchHistoryEntrySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_db_home_patches(self, db_home_id, **kwargs):
         """
@@ -21096,6 +21889,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_home_patches.py.html>`__ to see an example of how to use list_db_home_patches API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbHomeId']
         resource_path = "/dbHomes/{dbHomeId}/patches"
         method = "GET"
         operation_name = "list_db_home_patches"
@@ -21153,7 +21948,8 @@ class DatabaseClient(object):
                 response_type="list[PatchSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21164,7 +21960,8 @@ class DatabaseClient(object):
                 response_type="list[PatchSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_db_homes(self, compartment_id, **kwargs):
         """
@@ -21236,6 +22033,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_homes.py.html>`__ to see an example of how to use list_db_homes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/dbHomes"
         method = "GET"
         operation_name = "list_db_homes"
@@ -21320,7 +22119,8 @@ class DatabaseClient(object):
                 response_type="list[DbHomeSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21330,7 +22130,8 @@ class DatabaseClient(object):
                 response_type="list[DbHomeSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_db_nodes(self, compartment_id, **kwargs):
         """
@@ -21396,6 +22197,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_nodes.py.html>`__ to see an example of how to use list_db_nodes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/dbNodes"
         method = "GET"
         operation_name = "list_db_nodes"
@@ -21476,7 +22279,8 @@ class DatabaseClient(object):
                 response_type="list[DbNodeSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21486,7 +22290,8 @@ class DatabaseClient(object):
                 response_type="list[DbNodeSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_db_servers(self, compartment_id, exadata_infrastructure_id, **kwargs):
         """
@@ -21548,6 +22353,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_servers.py.html>`__ to see an example of how to use list_db_servers API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'exadataInfrastructureId']
         resource_path = "/dbServers"
         method = "GET"
         operation_name = "list_db_servers"
@@ -21628,7 +22435,8 @@ class DatabaseClient(object):
                 response_type="list[DbServerSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21638,7 +22446,8 @@ class DatabaseClient(object):
                 response_type="list[DbServerSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_db_system_compute_performances(self, **kwargs):
         """
@@ -21669,6 +22478,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_system_compute_performances.py.html>`__ to see an example of how to use list_db_system_compute_performances API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/dbSystemComputePerformance"
         method = "GET"
         operation_name = "list_db_system_compute_performances"
@@ -21716,7 +22527,8 @@ class DatabaseClient(object):
                 response_type="list[DbSystemComputePerformanceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21726,7 +22538,8 @@ class DatabaseClient(object):
                 response_type="list[DbSystemComputePerformanceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_db_system_patch_history_entries(self, db_system_id, **kwargs):
         """
@@ -21762,6 +22575,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_system_patch_history_entries.py.html>`__ to see an example of how to use list_db_system_patch_history_entries API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/patchHistoryEntries"
         method = "GET"
         operation_name = "list_db_system_patch_history_entries"
@@ -21819,7 +22634,8 @@ class DatabaseClient(object):
                 response_type="list[PatchHistoryEntrySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21830,7 +22646,8 @@ class DatabaseClient(object):
                 response_type="list[PatchHistoryEntrySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_db_system_patches(self, db_system_id, **kwargs):
         """
@@ -21866,6 +22683,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_system_patches.py.html>`__ to see an example of how to use list_db_system_patches API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/patches"
         method = "GET"
         operation_name = "list_db_system_patches"
@@ -21923,7 +22742,8 @@ class DatabaseClient(object):
                 response_type="list[PatchSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21934,7 +22754,8 @@ class DatabaseClient(object):
                 response_type="list[PatchSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_db_system_shapes(self, compartment_id, **kwargs):
         """
@@ -21973,6 +22794,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_system_shapes.py.html>`__ to see an example of how to use list_db_system_shapes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/dbSystemShapes"
         method = "GET"
         operation_name = "list_db_system_shapes"
@@ -22022,7 +22845,8 @@ class DatabaseClient(object):
                 response_type="list[DbSystemShapeSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22032,7 +22856,8 @@ class DatabaseClient(object):
                 response_type="list[DbSystemShapeSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_db_system_storage_performances(self, storage_management, **kwargs):
         """
@@ -22070,6 +22895,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_system_storage_performances.py.html>`__ to see an example of how to use list_db_system_storage_performances API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['storageManagement']
         resource_path = "/dbSystemStoragePerformance"
         method = "GET"
         operation_name = "list_db_system_storage_performances"
@@ -22124,7 +22951,8 @@ class DatabaseClient(object):
                 response_type="list[DbSystemStoragePerformanceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22134,7 +22962,8 @@ class DatabaseClient(object):
                 response_type="list[DbSystemStoragePerformanceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_db_system_upgrade_history_entries(self, db_system_id, **kwargs):
         """
@@ -22193,6 +23022,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_system_upgrade_history_entries.py.html>`__ to see an example of how to use list_db_system_upgrade_history_entries API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/upgradeHistoryEntries"
         method = "GET"
         operation_name = "list_db_system_upgrade_history_entries"
@@ -22289,7 +23120,8 @@ class DatabaseClient(object):
                 response_type="list[DbSystemUpgradeHistoryEntrySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22300,7 +23132,8 @@ class DatabaseClient(object):
                 response_type="list[DbSystemUpgradeHistoryEntrySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_db_systems(self, compartment_id, **kwargs):
         """
@@ -22371,6 +23204,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_systems.py.html>`__ to see an example of how to use list_db_systems API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/dbSystems"
         method = "GET"
         operation_name = "list_db_systems"
@@ -22451,7 +23286,8 @@ class DatabaseClient(object):
                 response_type="list[DbSystemSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22461,7 +23297,8 @@ class DatabaseClient(object):
                 response_type="list[DbSystemSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_db_versions(self, compartment_id, **kwargs):
         """
@@ -22518,6 +23355,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_db_versions.py.html>`__ to see an example of how to use list_db_versions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/dbVersions"
         method = "GET"
         operation_name = "list_db_versions"
@@ -22582,7 +23421,8 @@ class DatabaseClient(object):
                 response_type="list[DbVersionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22592,7 +23432,8 @@ class DatabaseClient(object):
                 response_type="list[DbVersionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_exadata_infrastructures(self, compartment_id, **kwargs):
         """
@@ -22655,6 +23496,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_exadata_infrastructures.py.html>`__ to see an example of how to use list_exadata_infrastructures API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/exadataInfrastructures"
         method = "GET"
         operation_name = "list_exadata_infrastructures"
@@ -22744,7 +23587,8 @@ class DatabaseClient(object):
                 response_type="list[ExadataInfrastructureSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22754,7 +23598,8 @@ class DatabaseClient(object):
                 response_type="list[ExadataInfrastructureSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_external_container_databases(self, compartment_id, **kwargs):
         """
@@ -22814,6 +23659,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_external_container_databases.py.html>`__ to see an example of how to use list_external_container_databases API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/externalcontainerdatabases"
         method = "GET"
         operation_name = "list_external_container_databases"
@@ -22893,7 +23740,8 @@ class DatabaseClient(object):
                 response_type="list[ExternalContainerDatabaseSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22903,7 +23751,8 @@ class DatabaseClient(object):
                 response_type="list[ExternalContainerDatabaseSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_external_database_connectors(self, compartment_id, external_database_id, **kwargs):
         """
@@ -22968,6 +23817,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_external_database_connectors.py.html>`__ to see an example of how to use list_external_database_connectors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'externalDatabaseId']
         resource_path = "/externaldatabaseconnectors"
         method = "GET"
         operation_name = "list_external_database_connectors"
@@ -23048,7 +23899,8 @@ class DatabaseClient(object):
                 response_type="list[ExternalDatabaseConnectorSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23058,7 +23910,8 @@ class DatabaseClient(object):
                 response_type="list[ExternalDatabaseConnectorSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_external_non_container_databases(self, compartment_id, **kwargs):
         """
@@ -23118,6 +23971,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_external_non_container_databases.py.html>`__ to see an example of how to use list_external_non_container_databases API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/externalnoncontainerdatabases"
         method = "GET"
         operation_name = "list_external_non_container_databases"
@@ -23197,7 +24052,8 @@ class DatabaseClient(object):
                 response_type="list[ExternalNonContainerDatabaseSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23207,7 +24063,8 @@ class DatabaseClient(object):
                 response_type="list[ExternalNonContainerDatabaseSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_external_pluggable_databases(self, compartment_id, **kwargs):
         """
@@ -23273,6 +24130,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_external_pluggable_databases.py.html>`__ to see an example of how to use list_external_pluggable_databases API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/externalpluggabledatabases"
         method = "GET"
         operation_name = "list_external_pluggable_databases"
@@ -23354,7 +24213,8 @@ class DatabaseClient(object):
                 response_type="list[ExternalPluggableDatabaseSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23364,7 +24224,8 @@ class DatabaseClient(object):
                 response_type="list[ExternalPluggableDatabaseSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_flex_components(self, compartment_id, **kwargs):
         """
@@ -23413,6 +24274,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_flex_components.py.html>`__ to see an example of how to use list_flex_components API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/dbSystemShapes/flexComponents"
         method = "GET"
         operation_name = "list_flex_components"
@@ -23480,7 +24343,8 @@ class DatabaseClient(object):
                 response_type="FlexComponentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23490,7 +24354,8 @@ class DatabaseClient(object):
                 response_type="FlexComponentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_gi_versions(self, compartment_id, **kwargs):
         """
@@ -23534,6 +24399,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_gi_versions.py.html>`__ to see an example of how to use list_gi_versions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/giVersions"
         method = "GET"
         operation_name = "list_gi_versions"
@@ -23592,7 +24459,8 @@ class DatabaseClient(object):
                 response_type="list[GiVersionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23602,7 +24470,8 @@ class DatabaseClient(object):
                 response_type="list[GiVersionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_key_stores(self, compartment_id, **kwargs):
         """
@@ -23641,6 +24510,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_key_stores.py.html>`__ to see an example of how to use list_key_stores API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/keyStores"
         method = "GET"
         operation_name = "list_key_stores"
@@ -23691,7 +24562,8 @@ class DatabaseClient(object):
                 response_type="list[KeyStoreSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23701,7 +24573,8 @@ class DatabaseClient(object):
                 response_type="list[KeyStoreSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_maintenance_run_history(self, compartment_id, **kwargs):
         """
@@ -23775,6 +24648,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_maintenance_run_history.py.html>`__ to see an example of how to use list_maintenance_run_history API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/maintenanceRunHistory"
         method = "GET"
         operation_name = "list_maintenance_run_history"
@@ -23880,7 +24755,8 @@ class DatabaseClient(object):
                 response_type="list[MaintenanceRunHistorySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23890,7 +24766,8 @@ class DatabaseClient(object):
                 response_type="list[MaintenanceRunHistorySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_maintenance_runs(self, compartment_id, **kwargs):
         """
@@ -23964,6 +24841,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_maintenance_runs.py.html>`__ to see an example of how to use list_maintenance_runs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/maintenanceRuns"
         method = "GET"
         operation_name = "list_maintenance_runs"
@@ -24069,7 +24948,8 @@ class DatabaseClient(object):
                 response_type="list[MaintenanceRunSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24079,7 +24959,8 @@ class DatabaseClient(object):
                 response_type="list[MaintenanceRunSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_pdb_conversion_history_entries(self, database_id, **kwargs):
         """
@@ -24138,6 +25019,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_pdb_conversion_history_entries.py.html>`__ to see an example of how to use list_pdb_conversion_history_entries API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId']
         resource_path = "/databases/{databaseId}/pdbConversionHistoryEntries"
         method = "GET"
         operation_name = "list_pdb_conversion_history_entries"
@@ -24234,7 +25117,8 @@ class DatabaseClient(object):
                 response_type="list[PdbConversionHistoryEntrySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24245,7 +25129,8 @@ class DatabaseClient(object):
                 response_type="list[PdbConversionHistoryEntrySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_pluggable_databases(self, **kwargs):
         """
@@ -24304,6 +25189,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_pluggable_databases.py.html>`__ to see an example of how to use list_pluggable_databases API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/pluggableDatabases"
         method = "GET"
         operation_name = "list_pluggable_databases"
@@ -24383,7 +25270,8 @@ class DatabaseClient(object):
                 response_type="list[PluggableDatabaseSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24393,7 +25281,8 @@ class DatabaseClient(object):
                 response_type="list[PluggableDatabaseSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_vm_cluster_networks(self, exadata_infrastructure_id, compartment_id, **kwargs):
         """
@@ -24455,6 +25344,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_vm_cluster_networks.py.html>`__ to see an example of how to use list_vm_cluster_networks API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exadataInfrastructureId', 'compartmentId']
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks"
         method = "GET"
         operation_name = "list_vm_cluster_networks"
@@ -24545,7 +25436,8 @@ class DatabaseClient(object):
                 response_type="list[VmClusterNetworkSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24556,7 +25448,8 @@ class DatabaseClient(object):
                 response_type="list[VmClusterNetworkSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_vm_cluster_patch_history_entries(self, vm_cluster_id, **kwargs):
         """
@@ -24592,6 +25485,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_vm_cluster_patch_history_entries.py.html>`__ to see an example of how to use list_vm_cluster_patch_history_entries API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vmClusterId']
         resource_path = "/vmClusters/{vmClusterId}/patchHistoryEntries"
         method = "GET"
         operation_name = "list_vm_cluster_patch_history_entries"
@@ -24649,7 +25544,8 @@ class DatabaseClient(object):
                 response_type="list[PatchHistoryEntrySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24660,7 +25556,8 @@ class DatabaseClient(object):
                 response_type="list[PatchHistoryEntrySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_vm_cluster_patches(self, vm_cluster_id, **kwargs):
         """
@@ -24696,6 +25593,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_vm_cluster_patches.py.html>`__ to see an example of how to use list_vm_cluster_patches API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vmClusterId']
         resource_path = "/vmClusters/{vmClusterId}/patches"
         method = "GET"
         operation_name = "list_vm_cluster_patches"
@@ -24753,7 +25652,8 @@ class DatabaseClient(object):
                 response_type="list[PatchSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24764,7 +25664,8 @@ class DatabaseClient(object):
                 response_type="list[PatchSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_vm_cluster_update_history_entries(self, vm_cluster_id, **kwargs):
         """
@@ -24813,6 +25714,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_vm_cluster_update_history_entries.py.html>`__ to see an example of how to use list_vm_cluster_update_history_entries API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vmClusterId']
         resource_path = "/vmClusters/{vmClusterId}/updateHistoryEntries"
         method = "GET"
         operation_name = "list_vm_cluster_update_history_entries"
@@ -24891,7 +25794,8 @@ class DatabaseClient(object):
                 response_type="list[VmClusterUpdateHistoryEntrySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24902,7 +25806,8 @@ class DatabaseClient(object):
                 response_type="list[VmClusterUpdateHistoryEntrySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_vm_cluster_updates(self, vm_cluster_id, **kwargs):
         """
@@ -24951,6 +25856,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_vm_cluster_updates.py.html>`__ to see an example of how to use list_vm_cluster_updates API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vmClusterId']
         resource_path = "/vmClusters/{vmClusterId}/updates"
         method = "GET"
         operation_name = "list_vm_cluster_updates"
@@ -25029,7 +25936,8 @@ class DatabaseClient(object):
                 response_type="list[VmClusterUpdateSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25040,7 +25948,8 @@ class DatabaseClient(object):
                 response_type="list[VmClusterUpdateSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_vm_clusters(self, compartment_id, **kwargs):
         """
@@ -25101,6 +26010,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_vm_clusters.py.html>`__ to see an example of how to use list_vm_clusters API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/vmClusters"
         method = "GET"
         operation_name = "list_vm_clusters"
@@ -25182,7 +26093,8 @@ class DatabaseClient(object):
                 response_type="list[VmClusterSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25192,7 +26104,8 @@ class DatabaseClient(object):
                 response_type="list[VmClusterSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def local_clone_pluggable_database(self, local_clone_pluggable_database_details, pluggable_database_id, **kwargs):
         """
@@ -25240,6 +26153,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/local_clone_pluggable_database.py.html>`__ to see an example of how to use local_clone_pluggable_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['pluggableDatabaseId']
         resource_path = "/pluggableDatabases/{pluggableDatabaseId}/actions/localClone"
         method = "POST"
         operation_name = "local_clone_pluggable_database"
@@ -25297,7 +26212,8 @@ class DatabaseClient(object):
                 response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25308,7 +26224,8 @@ class DatabaseClient(object):
                 response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def migrate_exadata_db_system_resource_model(self, db_system_id, **kwargs):
         """
@@ -25356,6 +26273,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/migrate_exadata_db_system_resource_model.py.html>`__ to see an example of how to use migrate_exadata_db_system_resource_model API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/actions/migration"
         method = "POST"
         operation_name = "migrate_exadata_db_system_resource_model"
@@ -25412,7 +26331,8 @@ class DatabaseClient(object):
                 response_type="ExadataDbSystemMigration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25422,7 +26342,8 @@ class DatabaseClient(object):
                 response_type="ExadataDbSystemMigration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def migrate_vault_key(self, database_id, migrate_vault_key_details, **kwargs):
         """
@@ -25472,6 +26393,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/migrate_vault_key.py.html>`__ to see an example of how to use migrate_vault_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId']
         resource_path = "/databases/{databaseId}/actions/migrateKey"
         method = "POST"
         operation_name = "migrate_vault_key"
@@ -25529,7 +26452,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25540,7 +26464,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def modify_database_management(self, database_id, modify_database_management_details, **kwargs):
         """
@@ -25588,6 +26513,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/modify_database_management.py.html>`__ to see an example of how to use modify_database_management API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId']
         resource_path = "/databases/{databaseId}/actions/modifyDatabaseManagement"
         method = "POST"
         operation_name = "modify_database_management"
@@ -25645,7 +26572,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25656,7 +26584,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def modify_pluggable_database_management(self, pluggable_database_id, modify_pluggable_database_management_details, **kwargs):
         """
@@ -25704,6 +26633,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/modify_pluggable_database_management.py.html>`__ to see an example of how to use modify_pluggable_database_management API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['pluggableDatabaseId']
         resource_path = "/pluggableDatabases/{pluggableDatabaseId}/actions/modifyPluggableDatabaseManagement"
         method = "POST"
         operation_name = "modify_pluggable_database_management"
@@ -25761,7 +26692,8 @@ class DatabaseClient(object):
                 response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25772,7 +26704,8 @@ class DatabaseClient(object):
                 response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def register_autonomous_database_data_safe(self, autonomous_database_id, **kwargs):
         """
@@ -25808,6 +26741,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/register_autonomous_database_data_safe.py.html>`__ to see an example of how to use register_autonomous_database_data_safe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/registerDataSafe"
         method = "POST"
         operation_name = "register_autonomous_database_data_safe"
@@ -25860,7 +26795,8 @@ class DatabaseClient(object):
                 body=kwargs.get('register_autonomous_database_data_safe_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25870,7 +26806,8 @@ class DatabaseClient(object):
                 body=kwargs.get('register_autonomous_database_data_safe_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def reinstate_autonomous_container_database_dataguard_association(self, autonomous_container_database_id, autonomous_container_database_dataguard_association_id, **kwargs):
         """
@@ -25910,6 +26847,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/reinstate_autonomous_container_database_dataguard_association.py.html>`__ to see an example of how to use reinstate_autonomous_container_database_dataguard_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousContainerDatabaseId', 'autonomousContainerDatabaseDataguardAssociationId']
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}/actions/reinstate"
         method = "POST"
         operation_name = "reinstate_autonomous_container_database_dataguard_association"
@@ -25962,7 +26901,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabaseDataguardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25972,7 +26912,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabaseDataguardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def reinstate_data_guard_association(self, database_id, data_guard_association_id, reinstate_data_guard_association_details, **kwargs):
         """
@@ -26015,6 +26956,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/reinstate_data_guard_association.py.html>`__ to see an example of how to use reinstate_data_guard_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId', 'dataGuardAssociationId']
         resource_path = "/databases/{databaseId}/dataGuardAssociations/{dataGuardAssociationId}/actions/reinstate"
         method = "POST"
         operation_name = "reinstate_data_guard_association"
@@ -26068,7 +27011,8 @@ class DatabaseClient(object):
                 response_type="DataGuardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26079,7 +27023,8 @@ class DatabaseClient(object):
                 response_type="DataGuardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remote_clone_pluggable_database(self, remote_clone_pluggable_database_details, pluggable_database_id, **kwargs):
         """
@@ -26128,6 +27073,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/remote_clone_pluggable_database.py.html>`__ to see an example of how to use remote_clone_pluggable_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['pluggableDatabaseId']
         resource_path = "/pluggableDatabases/{pluggableDatabaseId}/actions/remoteClone"
         method = "POST"
         operation_name = "remote_clone_pluggable_database"
@@ -26185,7 +27132,8 @@ class DatabaseClient(object):
                 response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26196,7 +27144,8 @@ class DatabaseClient(object):
                 response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_virtual_machine_from_cloud_vm_cluster(self, remove_virtual_machine_from_cloud_vm_cluster_details, cloud_vm_cluster_id, **kwargs):
         """
@@ -26244,6 +27193,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/remove_virtual_machine_from_cloud_vm_cluster.py.html>`__ to see an example of how to use remove_virtual_machine_from_cloud_vm_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudVmClusterId']
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/actions/removeVirtualMachine"
         method = "POST"
         operation_name = "remove_virtual_machine_from_cloud_vm_cluster"
@@ -26301,7 +27252,8 @@ class DatabaseClient(object):
                 response_type="CloudVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26312,7 +27264,8 @@ class DatabaseClient(object):
                 response_type="CloudVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_virtual_machine_from_vm_cluster(self, remove_virtual_machine_from_vm_cluster_details, vm_cluster_id, **kwargs):
         """
@@ -26360,6 +27313,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/remove_virtual_machine_from_vm_cluster.py.html>`__ to see an example of how to use remove_virtual_machine_from_vm_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vmClusterId']
         resource_path = "/vmClusters/{vmClusterId}/actions/removeVirtualMachine"
         method = "POST"
         operation_name = "remove_virtual_machine_from_vm_cluster"
@@ -26417,7 +27372,8 @@ class DatabaseClient(object):
                 response_type="VmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26428,7 +27384,8 @@ class DatabaseClient(object):
                 response_type="VmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def resize_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_id, resize_vm_cluster_network_details, **kwargs):
         """
@@ -26482,6 +27439,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/resize_vm_cluster_network.py.html>`__ to see an example of how to use resize_vm_cluster_network API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exadataInfrastructureId', 'vmClusterNetworkId']
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}/actions/resize"
         method = "POST"
         operation_name = "resize_vm_cluster_network"
@@ -26540,7 +27499,8 @@ class DatabaseClient(object):
                 response_type="VmClusterNetwork",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26551,7 +27511,8 @@ class DatabaseClient(object):
                 response_type="VmClusterNetwork",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def restart_autonomous_container_database(self, autonomous_container_database_id, **kwargs):
         """
@@ -26589,6 +27550,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/restart_autonomous_container_database.py.html>`__ to see an example of how to use restart_autonomous_container_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousContainerDatabaseId']
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/actions/restart"
         method = "POST"
         operation_name = "restart_autonomous_container_database"
@@ -26642,7 +27605,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26652,7 +27616,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def restart_autonomous_database(self, autonomous_database_id, **kwargs):
         """
@@ -26687,6 +27652,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/restart_autonomous_database.py.html>`__ to see an example of how to use restart_autonomous_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/restart"
         method = "POST"
         operation_name = "restart_autonomous_database"
@@ -26738,7 +27705,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26748,7 +27716,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def restore_autonomous_database(self, autonomous_database_id, restore_autonomous_database_details, **kwargs):
         """
@@ -26786,6 +27755,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/restore_autonomous_database.py.html>`__ to see an example of how to use restore_autonomous_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/restore"
         method = "POST"
         operation_name = "restore_autonomous_database"
@@ -26838,7 +27809,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26849,7 +27821,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def restore_database(self, database_id, restore_database_details, **kwargs):
         """
@@ -26887,6 +27860,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/restore_database.py.html>`__ to see an example of how to use restore_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId']
         resource_path = "/databases/{databaseId}/actions/restore"
         method = "POST"
         operation_name = "restore_database"
@@ -26939,7 +27914,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26950,7 +27926,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def rotate_autonomous_container_database_encryption_key(self, autonomous_container_database_id, **kwargs):
         """
@@ -26997,6 +27974,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/rotate_autonomous_container_database_encryption_key.py.html>`__ to see an example of how to use rotate_autonomous_container_database_encryption_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousContainerDatabaseId']
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/actions/rotateKey"
         method = "POST"
         operation_name = "rotate_autonomous_container_database_encryption_key"
@@ -27053,7 +28032,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -27063,7 +28043,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def rotate_autonomous_database_encryption_key(self, autonomous_database_id, **kwargs):
         """
@@ -27110,6 +28091,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/rotate_autonomous_database_encryption_key.py.html>`__ to see an example of how to use rotate_autonomous_database_encryption_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/rotateKey"
         method = "POST"
         operation_name = "rotate_autonomous_database_encryption_key"
@@ -27166,7 +28149,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -27176,7 +28160,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def rotate_autonomous_vm_cluster_ords_certs(self, rotate_autonomous_vm_cluster_ords_certs_details, autonomous_vm_cluster_id, **kwargs):
         """
@@ -27224,6 +28209,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/rotate_autonomous_vm_cluster_ords_certs.py.html>`__ to see an example of how to use rotate_autonomous_vm_cluster_ords_certs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousVmClusterId']
         resource_path = "/autonomousVmClusters/{autonomousVmClusterId}/actions/rotateOrdsCerts"
         method = "POST"
         operation_name = "rotate_autonomous_vm_cluster_ords_certs"
@@ -27280,7 +28267,8 @@ class DatabaseClient(object):
                 body=rotate_autonomous_vm_cluster_ords_certs_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -27290,7 +28278,8 @@ class DatabaseClient(object):
                 body=rotate_autonomous_vm_cluster_ords_certs_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def rotate_autonomous_vm_cluster_ssl_certs(self, rotate_autonomous_vm_cluster_ssl_certs_details, autonomous_vm_cluster_id, **kwargs):
         """
@@ -27338,6 +28327,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/rotate_autonomous_vm_cluster_ssl_certs.py.html>`__ to see an example of how to use rotate_autonomous_vm_cluster_ssl_certs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousVmClusterId']
         resource_path = "/autonomousVmClusters/{autonomousVmClusterId}/actions/rotateSslCerts"
         method = "POST"
         operation_name = "rotate_autonomous_vm_cluster_ssl_certs"
@@ -27394,7 +28385,8 @@ class DatabaseClient(object):
                 body=rotate_autonomous_vm_cluster_ssl_certs_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -27404,7 +28396,8 @@ class DatabaseClient(object):
                 body=rotate_autonomous_vm_cluster_ssl_certs_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def rotate_cloud_autonomous_vm_cluster_ords_certs(self, cloud_autonomous_vm_cluster_id, **kwargs):
         """
@@ -27449,6 +28442,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/rotate_cloud_autonomous_vm_cluster_ords_certs.py.html>`__ to see an example of how to use rotate_cloud_autonomous_vm_cluster_ords_certs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudAutonomousVmClusterId']
         resource_path = "/cloudAutonomousVmClusters/{cloudAutonomousVmClusterId}/actions/rotateOrdsCerts"
         method = "POST"
         operation_name = "rotate_cloud_autonomous_vm_cluster_ords_certs"
@@ -27504,7 +28499,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -27513,7 +28509,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def rotate_cloud_autonomous_vm_cluster_ssl_certs(self, cloud_autonomous_vm_cluster_id, **kwargs):
         """
@@ -27558,6 +28555,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/rotate_cloud_autonomous_vm_cluster_ssl_certs.py.html>`__ to see an example of how to use rotate_cloud_autonomous_vm_cluster_ssl_certs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudAutonomousVmClusterId']
         resource_path = "/cloudAutonomousVmClusters/{cloudAutonomousVmClusterId}/actions/rotateSslCerts"
         method = "POST"
         operation_name = "rotate_cloud_autonomous_vm_cluster_ssl_certs"
@@ -27613,7 +28612,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -27622,7 +28622,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def rotate_ords_certs(self, autonomous_exadata_infrastructure_id, **kwargs):
         """
@@ -27667,6 +28668,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/rotate_ords_certs.py.html>`__ to see an example of how to use rotate_ords_certs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousExadataInfrastructureId']
         resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}/actions/rotateOrdsCerts"
         method = "POST"
         operation_name = "rotate_ords_certs"
@@ -27722,7 +28725,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -27731,7 +28735,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def rotate_ssl_certs(self, autonomous_exadata_infrastructure_id, **kwargs):
         """
@@ -27776,6 +28781,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/rotate_ssl_certs.py.html>`__ to see an example of how to use rotate_ssl_certs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousExadataInfrastructureId']
         resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}/actions/rotateSslCerts"
         method = "POST"
         operation_name = "rotate_ssl_certs"
@@ -27831,7 +28838,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -27840,7 +28848,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def rotate_vault_key(self, database_id, **kwargs):
         """
@@ -27887,6 +28896,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/rotate_vault_key.py.html>`__ to see an example of how to use rotate_vault_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId']
         resource_path = "/databases/{databaseId}/actions/rotateKey"
         method = "POST"
         operation_name = "rotate_vault_key"
@@ -27943,7 +28954,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -27953,7 +28965,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def scan_external_container_database_pluggable_databases(self, external_container_database_id, external_database_connector_id, **kwargs):
         """
@@ -28000,6 +29013,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/scan_external_container_database_pluggable_databases.py.html>`__ to see an example of how to use scan_external_container_database_pluggable_databases API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalContainerDatabaseId', 'externalDatabaseConnectorId']
         resource_path = "/externalcontainerdatabases/{externalContainerDatabaseId}/actions/scanPluggableDatabases"
         method = "POST"
         operation_name = "scan_external_container_database_pluggable_databases"
@@ -28059,7 +29074,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -28069,7 +29085,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def shrink_autonomous_database(self, autonomous_database_id, **kwargs):
         """
@@ -28104,6 +29121,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/shrink_autonomous_database.py.html>`__ to see an example of how to use shrink_autonomous_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/shrink"
         method = "POST"
         operation_name = "shrink_autonomous_database"
@@ -28155,7 +29174,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -28165,7 +29185,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def start_autonomous_database(self, autonomous_database_id, **kwargs):
         """
@@ -28200,6 +29221,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/start_autonomous_database.py.html>`__ to see an example of how to use start_autonomous_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/start"
         method = "POST"
         operation_name = "start_autonomous_database"
@@ -28251,7 +29274,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -28261,7 +29285,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def start_pluggable_database(self, pluggable_database_id, **kwargs):
         """
@@ -28306,6 +29331,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/start_pluggable_database.py.html>`__ to see an example of how to use start_pluggable_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['pluggableDatabaseId']
         resource_path = "/pluggableDatabases/{pluggableDatabaseId}/actions/start"
         method = "POST"
         operation_name = "start_pluggable_database"
@@ -28362,7 +29389,8 @@ class DatabaseClient(object):
                 response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -28372,7 +29400,8 @@ class DatabaseClient(object):
                 response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def stop_autonomous_database(self, autonomous_database_id, **kwargs):
         """
@@ -28410,6 +29439,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/stop_autonomous_database.py.html>`__ to see an example of how to use stop_autonomous_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/stop"
         method = "POST"
         operation_name = "stop_autonomous_database"
@@ -28463,7 +29494,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -28473,7 +29505,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def stop_pluggable_database(self, pluggable_database_id, **kwargs):
         """
@@ -28518,6 +29551,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/stop_pluggable_database.py.html>`__ to see an example of how to use stop_pluggable_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['pluggableDatabaseId']
         resource_path = "/pluggableDatabases/{pluggableDatabaseId}/actions/stop"
         method = "POST"
         operation_name = "stop_pluggable_database"
@@ -28574,7 +29609,8 @@ class DatabaseClient(object):
                 response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -28584,7 +29620,8 @@ class DatabaseClient(object):
                 response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def switchover_autonomous_container_database_dataguard_association(self, autonomous_container_database_id, autonomous_container_database_dataguard_association_id, **kwargs):
         """
@@ -28626,6 +29663,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/switchover_autonomous_container_database_dataguard_association.py.html>`__ to see an example of how to use switchover_autonomous_container_database_dataguard_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousContainerDatabaseId', 'autonomousContainerDatabaseDataguardAssociationId']
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}/actions/switchover"
         method = "POST"
         operation_name = "switchover_autonomous_container_database_dataguard_association"
@@ -28678,7 +29717,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabaseDataguardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -28688,7 +29728,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabaseDataguardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def switchover_autonomous_database(self, autonomous_database_id, **kwargs):
         """
@@ -28740,6 +29781,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/switchover_autonomous_database.py.html>`__ to see an example of how to use switchover_autonomous_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/switchover"
         method = "POST"
         operation_name = "switchover_autonomous_database"
@@ -28803,7 +29846,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -28814,7 +29858,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def switchover_data_guard_association(self, database_id, data_guard_association_id, switchover_data_guard_association_details, **kwargs):
         """
@@ -28860,6 +29905,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/switchover_data_guard_association.py.html>`__ to see an example of how to use switchover_data_guard_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId', 'dataGuardAssociationId']
         resource_path = "/databases/{databaseId}/dataGuardAssociations/{dataGuardAssociationId}/actions/switchover"
         method = "POST"
         operation_name = "switchover_data_guard_association"
@@ -28913,7 +29960,8 @@ class DatabaseClient(object):
                 response_type="DataGuardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -28924,7 +29972,8 @@ class DatabaseClient(object):
                 response_type="DataGuardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def terminate_autonomous_container_database(self, autonomous_container_database_id, **kwargs):
         """
@@ -28959,6 +30008,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/terminate_autonomous_container_database.py.html>`__ to see an example of how to use terminate_autonomous_container_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousContainerDatabaseId']
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}"
         method = "DELETE"
         operation_name = "terminate_autonomous_container_database"
@@ -29009,7 +30060,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -29018,7 +30070,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def terminate_autonomous_exadata_infrastructure(self, autonomous_exadata_infrastructure_id, **kwargs):
         """
@@ -29053,6 +30106,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/terminate_autonomous_exadata_infrastructure.py.html>`__ to see an example of how to use terminate_autonomous_exadata_infrastructure API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousExadataInfrastructureId']
         resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}"
         method = "DELETE"
         operation_name = "terminate_autonomous_exadata_infrastructure"
@@ -29103,7 +30158,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -29112,7 +30168,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def terminate_db_system(self, db_system_id, **kwargs):
         """
@@ -29154,6 +30211,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/terminate_db_system.py.html>`__ to see an example of how to use terminate_db_system API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}"
         method = "DELETE"
         operation_name = "terminate_db_system"
@@ -29204,7 +30263,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -29213,7 +30273,8 @@ class DatabaseClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_autonomous_container_database(self, autonomous_container_database_id, update_autonomous_container_database_details, **kwargs):
         """
@@ -29251,6 +30312,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_autonomous_container_database.py.html>`__ to see an example of how to use update_autonomous_container_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousContainerDatabaseId']
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}"
         method = "PUT"
         operation_name = "update_autonomous_container_database"
@@ -29303,7 +30366,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -29314,7 +30378,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_autonomous_container_database_dataguard_association(self, autonomous_container_database_id, autonomous_container_database_dataguard_association_id, update_autonomous_container_database_data_guard_association_details, **kwargs):
         """
@@ -29360,6 +30425,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_autonomous_container_database_dataguard_association.py.html>`__ to see an example of how to use update_autonomous_container_database_dataguard_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousContainerDatabaseId', 'autonomousContainerDatabaseDataguardAssociationId']
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}"
         method = "PUT"
         operation_name = "update_autonomous_container_database_dataguard_association"
@@ -29415,7 +30482,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabaseDataguardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -29426,7 +30494,8 @@ class DatabaseClient(object):
                 response_type="AutonomousContainerDatabaseDataguardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_autonomous_database(self, autonomous_database_id, update_autonomous_database_details, **kwargs):
         """
@@ -29467,6 +30536,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_autonomous_database.py.html>`__ to see an example of how to use update_autonomous_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}"
         method = "PUT"
         operation_name = "update_autonomous_database"
@@ -29521,7 +30592,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -29532,7 +30604,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_autonomous_database_backup(self, autonomous_database_backup_id, update_autonomous_database_backup_details, **kwargs):
         """
@@ -29573,6 +30646,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_autonomous_database_backup.py.html>`__ to see an example of how to use update_autonomous_database_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseBackupId']
         resource_path = "/autonomousDatabaseBackups/{autonomousDatabaseBackupId}"
         method = "PUT"
         operation_name = "update_autonomous_database_backup"
@@ -29627,7 +30702,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabaseBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -29638,7 +30714,8 @@ class DatabaseClient(object):
                 response_type="AutonomousDatabaseBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_autonomous_database_regional_wallet(self, update_autonomous_database_wallet_details, **kwargs):
         """
@@ -29669,6 +30746,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_autonomous_database_regional_wallet.py.html>`__ to see an example of how to use update_autonomous_database_regional_wallet API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/autonomousDatabases/wallet"
         method = "PUT"
         operation_name = "update_autonomous_database_regional_wallet"
@@ -29709,7 +30788,8 @@ class DatabaseClient(object):
                 body=update_autonomous_database_wallet_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -29718,7 +30798,8 @@ class DatabaseClient(object):
                 body=update_autonomous_database_wallet_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_autonomous_database_wallet(self, autonomous_database_id, update_autonomous_database_wallet_details, **kwargs):
         """
@@ -29754,6 +30835,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_autonomous_database_wallet.py.html>`__ to see an example of how to use update_autonomous_database_wallet API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/wallet"
         method = "PUT"
         operation_name = "update_autonomous_database_wallet"
@@ -29805,7 +30888,8 @@ class DatabaseClient(object):
                 body=update_autonomous_database_wallet_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -29815,7 +30899,8 @@ class DatabaseClient(object):
                 body=update_autonomous_database_wallet_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_autonomous_exadata_infrastructure(self, autonomous_exadata_infrastructure_id, update_autonomous_exadata_infrastructures_details, **kwargs):
         """
@@ -29853,6 +30938,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_autonomous_exadata_infrastructure.py.html>`__ to see an example of how to use update_autonomous_exadata_infrastructure API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousExadataInfrastructureId']
         resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}"
         method = "PUT"
         operation_name = "update_autonomous_exadata_infrastructure"
@@ -29905,7 +30992,8 @@ class DatabaseClient(object):
                 response_type="AutonomousExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -29916,7 +31004,8 @@ class DatabaseClient(object):
                 response_type="AutonomousExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_autonomous_vm_cluster(self, autonomous_vm_cluster_id, update_autonomous_vm_cluster_details, **kwargs):
         """
@@ -29957,6 +31046,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_autonomous_vm_cluster.py.html>`__ to see an example of how to use update_autonomous_vm_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousVmClusterId']
         resource_path = "/autonomousVmClusters/{autonomousVmClusterId}"
         method = "PUT"
         operation_name = "update_autonomous_vm_cluster"
@@ -30011,7 +31102,8 @@ class DatabaseClient(object):
                 response_type="AutonomousVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -30022,7 +31114,8 @@ class DatabaseClient(object):
                 response_type="AutonomousVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_backup_destination(self, backup_destination_id, update_backup_destination_details, **kwargs):
         """
@@ -30066,6 +31159,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_backup_destination.py.html>`__ to see an example of how to use update_backup_destination API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['backupDestinationId']
         resource_path = "/backupDestinations/{backupDestinationId}"
         method = "PUT"
         operation_name = "update_backup_destination"
@@ -30120,7 +31215,8 @@ class DatabaseClient(object):
                 response_type="BackupDestination",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -30131,7 +31227,8 @@ class DatabaseClient(object):
                 response_type="BackupDestination",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_cloud_autonomous_vm_cluster(self, cloud_autonomous_vm_cluster_id, update_cloud_autonomous_vm_cluster_details, **kwargs):
         """
@@ -30172,6 +31269,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_cloud_autonomous_vm_cluster.py.html>`__ to see an example of how to use update_cloud_autonomous_vm_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudAutonomousVmClusterId']
         resource_path = "/cloudAutonomousVmClusters/{cloudAutonomousVmClusterId}"
         method = "PUT"
         operation_name = "update_cloud_autonomous_vm_cluster"
@@ -30226,7 +31325,8 @@ class DatabaseClient(object):
                 response_type="CloudAutonomousVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -30237,7 +31337,8 @@ class DatabaseClient(object):
                 response_type="CloudAutonomousVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_cloud_exadata_infrastructure(self, cloud_exadata_infrastructure_id, update_cloud_exadata_infrastructure_details, **kwargs):
         """
@@ -30278,6 +31379,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_cloud_exadata_infrastructure.py.html>`__ to see an example of how to use update_cloud_exadata_infrastructure API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudExadataInfrastructureId']
         resource_path = "/cloudExadataInfrastructures/{cloudExadataInfrastructureId}"
         method = "PUT"
         operation_name = "update_cloud_exadata_infrastructure"
@@ -30332,7 +31435,8 @@ class DatabaseClient(object):
                 response_type="CloudExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -30343,7 +31447,8 @@ class DatabaseClient(object):
                 response_type="CloudExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_cloud_vm_cluster(self, cloud_vm_cluster_id, update_cloud_vm_cluster_details, **kwargs):
         """
@@ -30384,6 +31489,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_cloud_vm_cluster.py.html>`__ to see an example of how to use update_cloud_vm_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudVmClusterId']
         resource_path = "/cloudVmClusters/{cloudVmClusterId}"
         method = "PUT"
         operation_name = "update_cloud_vm_cluster"
@@ -30438,7 +31545,8 @@ class DatabaseClient(object):
                 response_type="CloudVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -30449,7 +31557,8 @@ class DatabaseClient(object):
                 response_type="CloudVmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_cloud_vm_cluster_iorm_config(self, cloud_vm_cluster_id, cloud_vm_cluster_iorm_config_update_details, **kwargs):
         """
@@ -30490,6 +31599,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_cloud_vm_cluster_iorm_config.py.html>`__ to see an example of how to use update_cloud_vm_cluster_iorm_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cloudVmClusterId']
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig"
         method = "PUT"
         operation_name = "update_cloud_vm_cluster_iorm_config"
@@ -30544,7 +31655,8 @@ class DatabaseClient(object):
                 response_type="ExadataIormConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -30555,7 +31667,8 @@ class DatabaseClient(object):
                 response_type="ExadataIormConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_data_guard_association(self, database_id, data_guard_association_id, update_data_guard_association_details, **kwargs):
         """
@@ -30601,6 +31714,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_data_guard_association.py.html>`__ to see an example of how to use update_data_guard_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId', 'dataGuardAssociationId']
         resource_path = "/databases/{databaseId}/dataGuardAssociations/{dataGuardAssociationId}"
         method = "PUT"
         operation_name = "update_data_guard_association"
@@ -30656,7 +31771,8 @@ class DatabaseClient(object):
                 response_type="DataGuardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -30667,7 +31783,8 @@ class DatabaseClient(object):
                 response_type="DataGuardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_database(self, database_id, update_database_details, **kwargs):
         """
@@ -30705,6 +31822,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_database.py.html>`__ to see an example of how to use update_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId']
         resource_path = "/databases/{databaseId}"
         method = "PUT"
         operation_name = "update_database"
@@ -30757,7 +31876,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -30768,7 +31888,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_database_software_image(self, database_software_image_id, update_database_software_image_details, **kwargs):
         """
@@ -30806,6 +31927,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_database_software_image.py.html>`__ to see an example of how to use update_database_software_image API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseSoftwareImageId']
         resource_path = "/databaseSoftwareImages/{databaseSoftwareImageId}"
         method = "PUT"
         operation_name = "update_database_software_image"
@@ -30858,7 +31981,8 @@ class DatabaseClient(object):
                 response_type="DatabaseSoftwareImage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -30869,7 +31993,8 @@ class DatabaseClient(object):
                 response_type="DatabaseSoftwareImage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_db_home(self, db_home_id, update_db_home_details, **kwargs):
         """
@@ -30907,6 +32032,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_db_home.py.html>`__ to see an example of how to use update_db_home API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbHomeId']
         resource_path = "/dbHomes/{dbHomeId}"
         method = "PUT"
         operation_name = "update_db_home"
@@ -30959,7 +32086,8 @@ class DatabaseClient(object):
                 response_type="DbHome",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -30970,7 +32098,8 @@ class DatabaseClient(object):
                 response_type="DbHome",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_db_system(self, db_system_id, update_db_system_details, **kwargs):
         """
@@ -31015,6 +32144,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_db_system.py.html>`__ to see an example of how to use update_db_system API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}"
         method = "PUT"
         operation_name = "update_db_system"
@@ -31067,7 +32198,8 @@ class DatabaseClient(object):
                 response_type="DbSystem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -31078,7 +32210,8 @@ class DatabaseClient(object):
                 response_type="DbSystem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_exadata_infrastructure(self, exadata_infrastructure_id, update_exadata_infrastructure_details, **kwargs):
         """
@@ -31120,6 +32253,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_exadata_infrastructure.py.html>`__ to see an example of how to use update_exadata_infrastructure API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exadataInfrastructureId']
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}"
         method = "PUT"
         operation_name = "update_exadata_infrastructure"
@@ -31174,7 +32309,8 @@ class DatabaseClient(object):
                 response_type="ExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -31185,7 +32321,8 @@ class DatabaseClient(object):
                 response_type="ExadataInfrastructure",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_exadata_iorm_config(self, db_system_id, exadata_iorm_config_update_details, **kwargs):
         """
@@ -31236,6 +32373,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_exadata_iorm_config.py.html>`__ to see an example of how to use update_exadata_iorm_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/ExadataIormConfig"
         method = "PUT"
         operation_name = "update_exadata_iorm_config"
@@ -31290,7 +32429,8 @@ class DatabaseClient(object):
                 response_type="ExadataIormConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -31301,7 +32441,8 @@ class DatabaseClient(object):
                 response_type="ExadataIormConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_external_container_database(self, external_container_database_id, update_external_container_database_details, **kwargs):
         """
@@ -31345,6 +32486,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_external_container_database.py.html>`__ to see an example of how to use update_external_container_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalContainerDatabaseId']
         resource_path = "/externalcontainerdatabases/{externalContainerDatabaseId}"
         method = "PUT"
         operation_name = "update_external_container_database"
@@ -31399,7 +32542,8 @@ class DatabaseClient(object):
                 response_type="ExternalContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -31410,7 +32554,8 @@ class DatabaseClient(object):
                 response_type="ExternalContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_external_database_connector(self, external_database_connector_id, update_external_database_connector_details, **kwargs):
         """
@@ -31452,6 +32597,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_external_database_connector.py.html>`__ to see an example of how to use update_external_database_connector API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalDatabaseConnectorId']
         resource_path = "/externaldatabaseconnectors/{externalDatabaseConnectorId}"
         method = "PUT"
         operation_name = "update_external_database_connector"
@@ -31506,7 +32653,8 @@ class DatabaseClient(object):
                 response_type="ExternalDatabaseConnector",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -31517,7 +32665,8 @@ class DatabaseClient(object):
                 response_type="ExternalDatabaseConnector",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_external_non_container_database(self, external_non_container_database_id, update_external_non_container_database_details, **kwargs):
         """
@@ -31558,6 +32707,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_external_non_container_database.py.html>`__ to see an example of how to use update_external_non_container_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalNonContainerDatabaseId']
         resource_path = "/externalnoncontainerdatabases/{externalNonContainerDatabaseId}"
         method = "PUT"
         operation_name = "update_external_non_container_database"
@@ -31612,7 +32763,8 @@ class DatabaseClient(object):
                 response_type="ExternalNonContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -31623,7 +32775,8 @@ class DatabaseClient(object):
                 response_type="ExternalNonContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_external_pluggable_database(self, external_pluggable_database_id, update_external_pluggable_database_details, **kwargs):
         """
@@ -31666,6 +32819,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_external_pluggable_database.py.html>`__ to see an example of how to use update_external_pluggable_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalPluggableDatabaseId']
         resource_path = "/externalpluggabledatabases/{externalPluggableDatabaseId}"
         method = "PUT"
         operation_name = "update_external_pluggable_database"
@@ -31720,7 +32875,8 @@ class DatabaseClient(object):
                 response_type="ExternalPluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -31731,7 +32887,8 @@ class DatabaseClient(object):
                 response_type="ExternalPluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_key_store(self, key_store_id, update_key_store_details, **kwargs):
         """
@@ -31772,6 +32929,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_key_store.py.html>`__ to see an example of how to use update_key_store API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['keyStoreId']
         resource_path = "/keyStores/{keyStoreId}"
         method = "PUT"
         operation_name = "update_key_store"
@@ -31826,7 +32985,8 @@ class DatabaseClient(object):
                 response_type="KeyStore",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -31837,7 +32997,8 @@ class DatabaseClient(object):
                 response_type="KeyStore",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_maintenance_run(self, maintenance_run_id, update_maintenance_run_details, **kwargs):
         """
@@ -31873,6 +33034,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_maintenance_run.py.html>`__ to see an example of how to use update_maintenance_run API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maintenanceRunId']
         resource_path = "/maintenanceRuns/{maintenanceRunId}"
         method = "PUT"
         operation_name = "update_maintenance_run"
@@ -31925,7 +33088,8 @@ class DatabaseClient(object):
                 response_type="MaintenanceRun",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -31936,7 +33100,8 @@ class DatabaseClient(object):
                 response_type="MaintenanceRun",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_pluggable_database(self, pluggable_database_id, update_pluggable_database_details, **kwargs):
         """
@@ -31974,6 +33139,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_pluggable_database.py.html>`__ to see an example of how to use update_pluggable_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['pluggableDatabaseId']
         resource_path = "/pluggableDatabases/{pluggableDatabaseId}"
         method = "PUT"
         operation_name = "update_pluggable_database"
@@ -32026,7 +33193,8 @@ class DatabaseClient(object):
                 response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -32037,7 +33205,8 @@ class DatabaseClient(object):
                 response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_vm_cluster(self, vm_cluster_id, update_vm_cluster_details, **kwargs):
         """
@@ -32078,6 +33247,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_vm_cluster.py.html>`__ to see an example of how to use update_vm_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vmClusterId']
         resource_path = "/vmClusters/{vmClusterId}"
         method = "PUT"
         operation_name = "update_vm_cluster"
@@ -32132,7 +33303,8 @@ class DatabaseClient(object):
                 response_type="VmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -32143,7 +33315,8 @@ class DatabaseClient(object):
                 response_type="VmCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_id, update_vm_cluster_network_details, **kwargs):
         """
@@ -32190,6 +33363,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_vm_cluster_network.py.html>`__ to see an example of how to use update_vm_cluster_network API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exadataInfrastructureId', 'vmClusterNetworkId']
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}"
         method = "PUT"
         operation_name = "update_vm_cluster_network"
@@ -32245,7 +33420,8 @@ class DatabaseClient(object):
                 response_type="VmClusterNetwork",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -32256,7 +33432,8 @@ class DatabaseClient(object):
                 response_type="VmClusterNetwork",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def upgrade_database(self, database_id, upgrade_database_details, **kwargs):
         """
@@ -32297,6 +33474,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/upgrade_database.py.html>`__ to see an example of how to use upgrade_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseId']
         resource_path = "/databases/{databaseId}/actions/upgrade"
         method = "POST"
         operation_name = "upgrade_database"
@@ -32351,7 +33530,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -32362,7 +33542,8 @@ class DatabaseClient(object):
                 response_type="Database",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def upgrade_db_system(self, db_system_id, upgrade_db_system_details, **kwargs):
         """
@@ -32410,6 +33591,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/upgrade_db_system.py.html>`__ to see an example of how to use upgrade_db_system API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/actions/upgrade"
         method = "POST"
         operation_name = "upgrade_db_system"
@@ -32467,7 +33650,8 @@ class DatabaseClient(object):
                 response_type="DbSystem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -32478,7 +33662,8 @@ class DatabaseClient(object):
                 response_type="DbSystem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def validate_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_id, **kwargs):
         """
@@ -32523,6 +33708,8 @@ class DatabaseClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/validate_vm_cluster_network.py.html>`__ to see an example of how to use validate_vm_cluster_network API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exadataInfrastructureId', 'vmClusterNetworkId']
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}/actions/validate"
         method = "POST"
         operation_name = "validate_vm_cluster_network"
@@ -32578,7 +33765,8 @@ class DatabaseClient(object):
                 response_type="VmClusterNetwork",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -32588,4 +33776,5 @@ class DatabaseClient(object):
                 response_type="VmClusterNetwork",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

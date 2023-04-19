@@ -65,6 +65,9 @@ class DataFlowClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class DataFlowClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20200129',
             'service_endpoint_template': 'https://dataflow.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -149,6 +154,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/change_application_compartment.py.html>`__ to see an example of how to use change_application_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['applicationId']
         resource_path = "/applications/{applicationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_application_compartment"
@@ -205,7 +212,8 @@ class DataFlowClient(object):
                 body=change_application_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -215,7 +223,8 @@ class DataFlowClient(object):
                 body=change_application_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_private_endpoint_compartment(self, private_endpoint_id, change_private_endpoint_compartment_details, **kwargs):
         """
@@ -255,6 +264,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/change_private_endpoint_compartment.py.html>`__ to see an example of how to use change_private_endpoint_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateEndpointId']
         resource_path = "/privateEndpoints/{privateEndpointId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_private_endpoint_compartment"
@@ -308,7 +319,8 @@ class DataFlowClient(object):
                 body=change_private_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -318,7 +330,8 @@ class DataFlowClient(object):
                 body=change_private_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_run_compartment(self, run_id, change_run_compartment_details, **kwargs):
         """
@@ -367,6 +380,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/change_run_compartment.py.html>`__ to see an example of how to use change_run_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['runId']
         resource_path = "/runs/{runId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_run_compartment"
@@ -423,7 +438,8 @@ class DataFlowClient(object):
                 body=change_run_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -433,7 +449,8 @@ class DataFlowClient(object):
                 body=change_run_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_application(self, create_application_details, **kwargs):
         """
@@ -471,6 +488,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/create_application.py.html>`__ to see an example of how to use create_application API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/applications"
         method = "POST"
         operation_name = "create_application"
@@ -515,7 +534,8 @@ class DataFlowClient(object):
                 response_type="Application",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -525,7 +545,8 @@ class DataFlowClient(object):
                 response_type="Application",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_private_endpoint(self, create_private_endpoint_details, **kwargs):
         """
@@ -563,6 +584,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/create_private_endpoint.py.html>`__ to see an example of how to use create_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/privateEndpoints"
         method = "POST"
         operation_name = "create_private_endpoint"
@@ -607,7 +630,8 @@ class DataFlowClient(object):
                 response_type="PrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -617,7 +641,8 @@ class DataFlowClient(object):
                 response_type="PrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_run(self, create_run_details, **kwargs):
         """
@@ -655,6 +680,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/create_run.py.html>`__ to see an example of how to use create_run API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/runs"
         method = "POST"
         operation_name = "create_run"
@@ -699,7 +726,8 @@ class DataFlowClient(object):
                 response_type="Run",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -709,7 +737,8 @@ class DataFlowClient(object):
                 response_type="Run",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_statement(self, create_statement_details, run_id, **kwargs):
         """
@@ -744,6 +773,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/create_statement.py.html>`__ to see an example of how to use create_statement API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['runId']
         resource_path = "/runs/{runId}/statements"
         method = "POST"
         operation_name = "create_statement"
@@ -796,7 +827,8 @@ class DataFlowClient(object):
                 response_type="Statement",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -807,7 +839,8 @@ class DataFlowClient(object):
                 response_type="Statement",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_application(self, application_id, **kwargs):
         """
@@ -844,6 +877,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/delete_application.py.html>`__ to see an example of how to use delete_application API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['applicationId']
         resource_path = "/applications/{applicationId}"
         method = "DELETE"
         operation_name = "delete_application"
@@ -896,7 +931,8 @@ class DataFlowClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -905,7 +941,8 @@ class DataFlowClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_private_endpoint(self, private_endpoint_id, **kwargs):
         """
@@ -942,6 +979,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/delete_private_endpoint.py.html>`__ to see an example of how to use delete_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateEndpointId']
         resource_path = "/privateEndpoints/{privateEndpointId}"
         method = "DELETE"
         operation_name = "delete_private_endpoint"
@@ -994,7 +1033,8 @@ class DataFlowClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1003,7 +1043,8 @@ class DataFlowClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_run(self, run_id, **kwargs):
         """
@@ -1041,6 +1082,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/delete_run.py.html>`__ to see an example of how to use delete_run API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['runId']
         resource_path = "/runs/{runId}"
         method = "DELETE"
         operation_name = "delete_run"
@@ -1093,7 +1136,8 @@ class DataFlowClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1102,7 +1146,8 @@ class DataFlowClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_statement(self, run_id, statement_id, **kwargs):
         """
@@ -1142,6 +1187,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/delete_statement.py.html>`__ to see an example of how to use delete_statement API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['runId', 'statementId']
         resource_path = "/runs/{runId}/statements/{statementId}"
         method = "DELETE"
         operation_name = "delete_statement"
@@ -1197,7 +1244,8 @@ class DataFlowClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1206,7 +1254,8 @@ class DataFlowClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_application(self, application_id, **kwargs):
         """
@@ -1238,6 +1287,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/get_application.py.html>`__ to see an example of how to use get_application API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['applicationId']
         resource_path = "/applications/{applicationId}"
         method = "GET"
         operation_name = "get_application"
@@ -1291,7 +1342,8 @@ class DataFlowClient(object):
                 response_type="Application",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1301,7 +1353,8 @@ class DataFlowClient(object):
                 response_type="Application",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_private_endpoint(self, private_endpoint_id, **kwargs):
         """
@@ -1333,6 +1386,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/get_private_endpoint.py.html>`__ to see an example of how to use get_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateEndpointId']
         resource_path = "/privateEndpoints/{privateEndpointId}"
         method = "GET"
         operation_name = "get_private_endpoint"
@@ -1386,7 +1441,8 @@ class DataFlowClient(object):
                 response_type="PrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1396,7 +1452,8 @@ class DataFlowClient(object):
                 response_type="PrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_run(self, run_id, **kwargs):
         """
@@ -1428,6 +1485,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/get_run.py.html>`__ to see an example of how to use get_run API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['runId']
         resource_path = "/runs/{runId}"
         method = "GET"
         operation_name = "get_run"
@@ -1481,7 +1540,8 @@ class DataFlowClient(object):
                 response_type="Run",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1491,7 +1551,8 @@ class DataFlowClient(object):
                 response_type="Run",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_run_log(self, run_id, name, **kwargs):
         """
@@ -1526,6 +1587,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/get_run_log.py.html>`__ to see an example of how to use get_run_log API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['runId', 'name']
         resource_path = "/runs/{runId}/logs/{name}"
         method = "GET"
         operation_name = "get_run_log"
@@ -1580,7 +1643,8 @@ class DataFlowClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1590,7 +1654,8 @@ class DataFlowClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_statement(self, run_id, statement_id, **kwargs):
         """
@@ -1625,6 +1690,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/get_statement.py.html>`__ to see an example of how to use get_statement API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['runId', 'statementId']
         resource_path = "/runs/{runId}/statements/{statementId}"
         method = "GET"
         operation_name = "get_statement"
@@ -1679,7 +1746,8 @@ class DataFlowClient(object):
                 response_type="Statement",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1689,7 +1757,8 @@ class DataFlowClient(object):
                 response_type="Statement",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1721,6 +1790,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -1774,7 +1845,8 @@ class DataFlowClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1784,7 +1856,8 @@ class DataFlowClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_applications(self, compartment_id, **kwargs):
         """
@@ -1845,6 +1918,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/list_applications.py.html>`__ to see an example of how to use list_applications API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/applications"
         method = "GET"
         operation_name = "list_applications"
@@ -1923,7 +1998,8 @@ class DataFlowClient(object):
                 response_type="list[ApplicationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1933,7 +2009,8 @@ class DataFlowClient(object):
                 response_type="list[ApplicationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_private_endpoints(self, compartment_id, **kwargs):
         """
@@ -1996,6 +2073,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/list_private_endpoints.py.html>`__ to see an example of how to use list_private_endpoints API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/privateEndpoints"
         method = "GET"
         operation_name = "list_private_endpoints"
@@ -2081,7 +2160,8 @@ class DataFlowClient(object):
                 response_type="PrivateEndpointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2091,7 +2171,8 @@ class DataFlowClient(object):
                 response_type="PrivateEndpointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_run_logs(self, run_id, **kwargs):
         """
@@ -2130,6 +2211,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/list_run_logs.py.html>`__ to see an example of how to use list_run_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['runId']
         resource_path = "/runs/{runId}/logs"
         method = "GET"
         operation_name = "list_run_logs"
@@ -2192,7 +2275,8 @@ class DataFlowClient(object):
                 response_type="list[RunLogSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2203,7 +2287,8 @@ class DataFlowClient(object):
                 response_type="list[RunLogSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_runs(self, compartment_id, **kwargs):
         """
@@ -2272,6 +2357,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/list_runs.py.html>`__ to see an example of how to use list_runs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/runs"
         method = "GET"
         operation_name = "list_runs"
@@ -2361,7 +2448,8 @@ class DataFlowClient(object):
                 response_type="list[RunSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2371,7 +2459,8 @@ class DataFlowClient(object):
                 response_type="list[RunSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_statements(self, run_id, **kwargs):
         """
@@ -2425,6 +2514,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/list_statements.py.html>`__ to see an example of how to use list_statements API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['runId']
         resource_path = "/runs/{runId}/statements"
         method = "GET"
         operation_name = "list_statements"
@@ -2514,7 +2605,8 @@ class DataFlowClient(object):
                 response_type="StatementCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2525,7 +2617,8 @@ class DataFlowClient(object):
                 response_type="StatementCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -2564,6 +2657,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -2626,7 +2721,8 @@ class DataFlowClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2637,7 +2733,8 @@ class DataFlowClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -2676,6 +2773,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -2738,7 +2837,8 @@ class DataFlowClient(object):
                 response_type="WorkRequestLogCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2749,7 +2849,8 @@ class DataFlowClient(object):
                 response_type="WorkRequestLogCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -2788,6 +2889,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -2840,7 +2943,8 @@ class DataFlowClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2850,7 +2954,8 @@ class DataFlowClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_application(self, update_application_details, application_id, **kwargs):
         """
@@ -2890,6 +2995,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/update_application.py.html>`__ to see an example of how to use update_application API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['applicationId']
         resource_path = "/applications/{applicationId}"
         method = "PUT"
         operation_name = "update_application"
@@ -2944,7 +3051,8 @@ class DataFlowClient(object):
                 response_type="Application",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2955,7 +3063,8 @@ class DataFlowClient(object):
                 response_type="Application",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_private_endpoint(self, update_private_endpoint_details, private_endpoint_id, **kwargs):
         """
@@ -2997,6 +3106,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/update_private_endpoint.py.html>`__ to see an example of how to use update_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateEndpointId']
         resource_path = "/privateEndpoints/{privateEndpointId}"
         method = "PUT"
         operation_name = "update_private_endpoint"
@@ -3050,7 +3161,8 @@ class DataFlowClient(object):
                 body=update_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3060,7 +3172,8 @@ class DataFlowClient(object):
                 body=update_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_run(self, update_run_details, run_id, **kwargs):
         """
@@ -3100,6 +3213,8 @@ class DataFlowClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataflow/update_run.py.html>`__ to see an example of how to use update_run API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['runId']
         resource_path = "/runs/{runId}"
         method = "PUT"
         operation_name = "update_run"
@@ -3154,7 +3269,8 @@ class DataFlowClient(object):
                 response_type="Run",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3165,4 +3281,5 @@ class DataFlowClient(object):
                 response_type="Run",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

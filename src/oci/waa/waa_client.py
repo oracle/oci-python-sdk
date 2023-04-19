@@ -67,6 +67,9 @@ class WaaClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -93,8 +96,10 @@ class WaaClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20211230',
             'service_endpoint_template': 'https://waa.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -146,6 +151,8 @@ class WaaClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waa/change_web_app_acceleration_compartment.py.html>`__ to see an example of how to use change_web_app_acceleration_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['webAppAccelerationId']
         resource_path = "/webAppAccelerations/{webAppAccelerationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_web_app_acceleration_compartment"
@@ -199,7 +206,8 @@ class WaaClient(object):
                 body=change_web_app_acceleration_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -209,7 +217,8 @@ class WaaClient(object):
                 body=change_web_app_acceleration_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_web_app_acceleration_policy_compartment(self, web_app_acceleration_policy_id, change_web_app_acceleration_policy_compartment_details, **kwargs):
         """
@@ -251,6 +260,8 @@ class WaaClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waa/change_web_app_acceleration_policy_compartment.py.html>`__ to see an example of how to use change_web_app_acceleration_policy_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['webAppAccelerationPolicyId']
         resource_path = "/webAppAccelerationPolicies/{webAppAccelerationPolicyId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_web_app_acceleration_policy_compartment"
@@ -304,7 +315,8 @@ class WaaClient(object):
                 body=change_web_app_acceleration_policy_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -314,7 +326,8 @@ class WaaClient(object):
                 body=change_web_app_acceleration_policy_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_web_app_acceleration(self, create_web_app_acceleration_details, **kwargs):
         """
@@ -351,6 +364,8 @@ class WaaClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waa/create_web_app_acceleration.py.html>`__ to see an example of how to use create_web_app_acceleration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/webAppAccelerations"
         method = "POST"
         operation_name = "create_web_app_acceleration"
@@ -395,7 +410,8 @@ class WaaClient(object):
                 response_type="WebAppAcceleration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -405,7 +421,8 @@ class WaaClient(object):
                 response_type="WebAppAcceleration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_web_app_acceleration_policy(self, create_web_app_acceleration_policy_details, **kwargs):
         """
@@ -442,6 +459,8 @@ class WaaClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waa/create_web_app_acceleration_policy.py.html>`__ to see an example of how to use create_web_app_acceleration_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/webAppAccelerationPolicies"
         method = "POST"
         operation_name = "create_web_app_acceleration_policy"
@@ -486,7 +505,8 @@ class WaaClient(object):
                 response_type="WebAppAccelerationPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -496,7 +516,8 @@ class WaaClient(object):
                 response_type="WebAppAccelerationPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_web_app_acceleration(self, web_app_acceleration_id, **kwargs):
         """
@@ -534,6 +555,8 @@ class WaaClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waa/delete_web_app_acceleration.py.html>`__ to see an example of how to use delete_web_app_acceleration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['webAppAccelerationId']
         resource_path = "/webAppAccelerations/{webAppAccelerationId}"
         method = "DELETE"
         operation_name = "delete_web_app_acceleration"
@@ -586,7 +609,8 @@ class WaaClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -595,7 +619,8 @@ class WaaClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_web_app_acceleration_policy(self, web_app_acceleration_policy_id, **kwargs):
         """
@@ -633,6 +658,8 @@ class WaaClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waa/delete_web_app_acceleration_policy.py.html>`__ to see an example of how to use delete_web_app_acceleration_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['webAppAccelerationPolicyId']
         resource_path = "/webAppAccelerationPolicies/{webAppAccelerationPolicyId}"
         method = "DELETE"
         operation_name = "delete_web_app_acceleration_policy"
@@ -685,7 +712,8 @@ class WaaClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -694,7 +722,8 @@ class WaaClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_web_app_acceleration(self, web_app_acceleration_id, **kwargs):
         """
@@ -727,6 +756,8 @@ class WaaClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waa/get_web_app_acceleration.py.html>`__ to see an example of how to use get_web_app_acceleration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['webAppAccelerationId']
         resource_path = "/webAppAccelerations/{webAppAccelerationId}"
         method = "GET"
         operation_name = "get_web_app_acceleration"
@@ -778,7 +809,8 @@ class WaaClient(object):
                 response_type="WebAppAcceleration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -788,7 +820,8 @@ class WaaClient(object):
                 response_type="WebAppAcceleration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_web_app_acceleration_policy(self, web_app_acceleration_policy_id, **kwargs):
         """
@@ -821,6 +854,8 @@ class WaaClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waa/get_web_app_acceleration_policy.py.html>`__ to see an example of how to use get_web_app_acceleration_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['webAppAccelerationPolicyId']
         resource_path = "/webAppAccelerationPolicies/{webAppAccelerationPolicyId}"
         method = "GET"
         operation_name = "get_web_app_acceleration_policy"
@@ -872,7 +907,8 @@ class WaaClient(object):
                 response_type="WebAppAccelerationPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -882,7 +918,8 @@ class WaaClient(object):
                 response_type="WebAppAccelerationPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_web_app_acceleration_policies(self, compartment_id, **kwargs):
         """
@@ -946,6 +983,8 @@ class WaaClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waa/list_web_app_acceleration_policies.py.html>`__ to see an example of how to use list_web_app_acceleration_policies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/webAppAccelerationPolicies"
         method = "GET"
         operation_name = "list_web_app_acceleration_policies"
@@ -1020,7 +1059,8 @@ class WaaClient(object):
                 response_type="WebAppAccelerationPolicyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1030,7 +1070,8 @@ class WaaClient(object):
                 response_type="WebAppAccelerationPolicyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_web_app_accelerations(self, compartment_id, **kwargs):
         """
@@ -1100,6 +1141,8 @@ class WaaClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waa/list_web_app_accelerations.py.html>`__ to see an example of how to use list_web_app_accelerations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/webAppAccelerations"
         method = "GET"
         operation_name = "list_web_app_accelerations"
@@ -1176,7 +1219,8 @@ class WaaClient(object):
                 response_type="WebAppAccelerationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1186,7 +1230,8 @@ class WaaClient(object):
                 response_type="WebAppAccelerationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def purge_web_app_acceleration_cache(self, web_app_acceleration_id, purge_web_app_acceleration_cache_details, **kwargs):
         """
@@ -1223,6 +1268,8 @@ class WaaClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waa/purge_web_app_acceleration_cache.py.html>`__ to see an example of how to use purge_web_app_acceleration_cache API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['webAppAccelerationId']
         resource_path = "/webAppAccelerations/{webAppAccelerationId}/actions/purgeCache"
         method = "POST"
         operation_name = "purge_web_app_acceleration_cache"
@@ -1274,7 +1321,8 @@ class WaaClient(object):
                 body=purge_web_app_acceleration_cache_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1284,7 +1332,8 @@ class WaaClient(object):
                 body=purge_web_app_acceleration_cache_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_web_app_acceleration(self, web_app_acceleration_id, update_web_app_acceleration_details, **kwargs):
         """
@@ -1325,6 +1374,8 @@ class WaaClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waa/update_web_app_acceleration.py.html>`__ to see an example of how to use update_web_app_acceleration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['webAppAccelerationId']
         resource_path = "/webAppAccelerations/{webAppAccelerationId}"
         method = "PUT"
         operation_name = "update_web_app_acceleration"
@@ -1378,7 +1429,8 @@ class WaaClient(object):
                 body=update_web_app_acceleration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1388,7 +1440,8 @@ class WaaClient(object):
                 body=update_web_app_acceleration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_web_app_acceleration_policy(self, web_app_acceleration_policy_id, update_web_app_acceleration_policy_details, **kwargs):
         """
@@ -1429,6 +1482,8 @@ class WaaClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waa/update_web_app_acceleration_policy.py.html>`__ to see an example of how to use update_web_app_acceleration_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['webAppAccelerationPolicyId']
         resource_path = "/webAppAccelerationPolicies/{webAppAccelerationPolicyId}"
         method = "PUT"
         operation_name = "update_web_app_acceleration_policy"
@@ -1482,7 +1537,8 @@ class WaaClient(object):
                 body=update_web_app_acceleration_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1492,4 +1548,5 @@ class WaaClient(object):
                 body=update_web_app_acceleration_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

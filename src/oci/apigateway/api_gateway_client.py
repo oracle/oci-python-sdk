@@ -67,6 +67,9 @@ class ApiGatewayClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -93,8 +96,10 @@ class ApiGatewayClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20190501',
             'service_endpoint_template': 'https://apigateway.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -152,6 +157,8 @@ class ApiGatewayClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/change_api_compartment.py.html>`__ to see an example of how to use change_api_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['apiId']
         resource_path = "/apis/{apiId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_api_compartment"
@@ -208,7 +215,8 @@ class ApiGatewayClient(object):
                 body=change_api_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -218,7 +226,8 @@ class ApiGatewayClient(object):
                 body=change_api_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_certificate_compartment(self, certificate_id, change_certificate_compartment_details, **kwargs):
         """
@@ -266,6 +275,8 @@ class ApiGatewayClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/change_certificate_compartment.py.html>`__ to see an example of how to use change_certificate_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateId']
         resource_path = "/certificates/{certificateId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_certificate_compartment"
@@ -322,7 +333,8 @@ class ApiGatewayClient(object):
                 body=change_certificate_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -332,7 +344,8 @@ class ApiGatewayClient(object):
                 body=change_certificate_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_api(self, create_api_details, **kwargs):
         """
@@ -370,6 +383,8 @@ class ApiGatewayClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/create_api.py.html>`__ to see an example of how to use create_api API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/apis"
         method = "POST"
         operation_name = "create_api"
@@ -416,7 +431,8 @@ class ApiGatewayClient(object):
                 response_type="Api",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -426,7 +442,8 @@ class ApiGatewayClient(object):
                 response_type="Api",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_certificate(self, create_certificate_details, **kwargs):
         """
@@ -464,6 +481,8 @@ class ApiGatewayClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/create_certificate.py.html>`__ to see an example of how to use create_certificate API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/certificates"
         method = "POST"
         operation_name = "create_certificate"
@@ -510,7 +529,8 @@ class ApiGatewayClient(object):
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -520,7 +540,8 @@ class ApiGatewayClient(object):
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_sdk(self, create_sdk_details, **kwargs):
         """
@@ -558,6 +579,8 @@ class ApiGatewayClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/create_sdk.py.html>`__ to see an example of how to use create_sdk API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/sdks"
         method = "POST"
         operation_name = "create_sdk"
@@ -604,7 +627,8 @@ class ApiGatewayClient(object):
                 response_type="Sdk",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -614,7 +638,8 @@ class ApiGatewayClient(object):
                 response_type="Sdk",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_api(self, api_id, **kwargs):
         """
@@ -652,6 +677,8 @@ class ApiGatewayClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/delete_api.py.html>`__ to see an example of how to use delete_api API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['apiId']
         resource_path = "/apis/{apiId}"
         method = "DELETE"
         operation_name = "delete_api"
@@ -704,7 +731,8 @@ class ApiGatewayClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -713,7 +741,8 @@ class ApiGatewayClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_certificate(self, certificate_id, **kwargs):
         """
@@ -751,6 +780,8 @@ class ApiGatewayClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/delete_certificate.py.html>`__ to see an example of how to use delete_certificate API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateId']
         resource_path = "/certificates/{certificateId}"
         method = "DELETE"
         operation_name = "delete_certificate"
@@ -803,7 +834,8 @@ class ApiGatewayClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -812,7 +844,8 @@ class ApiGatewayClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_sdk(self, sdk_id, **kwargs):
         """
@@ -850,6 +883,8 @@ class ApiGatewayClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/delete_sdk.py.html>`__ to see an example of how to use delete_sdk API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sdkId']
         resource_path = "/sdks/{sdkId}"
         method = "DELETE"
         operation_name = "delete_sdk"
@@ -902,7 +937,8 @@ class ApiGatewayClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -911,7 +947,8 @@ class ApiGatewayClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_api(self, api_id, **kwargs):
         """
@@ -942,6 +979,8 @@ class ApiGatewayClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_api.py.html>`__ to see an example of how to use get_api API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['apiId']
         resource_path = "/apis/{apiId}"
         method = "GET"
         operation_name = "get_api"
@@ -995,7 +1034,8 @@ class ApiGatewayClient(object):
                 response_type="Api",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1005,7 +1045,8 @@ class ApiGatewayClient(object):
                 response_type="Api",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_api_content(self, api_id, **kwargs):
         """
@@ -1050,6 +1091,8 @@ class ApiGatewayClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_api_content.py.html>`__ to see an example of how to use get_api_content API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['apiId']
         resource_path = "/apis/{apiId}/content"
         method = "GET"
         operation_name = "get_api_content"
@@ -1107,7 +1150,8 @@ class ApiGatewayClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1117,7 +1161,8 @@ class ApiGatewayClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_api_deployment_specification(self, api_id, **kwargs):
         """
@@ -1155,6 +1200,8 @@ class ApiGatewayClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_api_deployment_specification.py.html>`__ to see an example of how to use get_api_deployment_specification API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['apiId']
         resource_path = "/apis/{apiId}/deploymentSpecification"
         method = "GET"
         operation_name = "get_api_deployment_specification"
@@ -1210,7 +1257,8 @@ class ApiGatewayClient(object):
                 response_type="ApiSpecification",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1220,7 +1268,8 @@ class ApiGatewayClient(object):
                 response_type="ApiSpecification",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_api_validations(self, api_id, **kwargs):
         """
@@ -1258,6 +1307,8 @@ class ApiGatewayClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_api_validations.py.html>`__ to see an example of how to use get_api_validations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['apiId']
         resource_path = "/apis/{apiId}/validations"
         method = "GET"
         operation_name = "get_api_validations"
@@ -1313,7 +1364,8 @@ class ApiGatewayClient(object):
                 response_type="ApiValidations",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1323,7 +1375,8 @@ class ApiGatewayClient(object):
                 response_type="ApiValidations",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_certificate(self, certificate_id, **kwargs):
         """
@@ -1354,6 +1407,8 @@ class ApiGatewayClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_certificate.py.html>`__ to see an example of how to use get_certificate API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateId']
         resource_path = "/certificates/{certificateId}"
         method = "GET"
         operation_name = "get_certificate"
@@ -1407,7 +1462,8 @@ class ApiGatewayClient(object):
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1417,7 +1473,8 @@ class ApiGatewayClient(object):
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_sdk(self, sdk_id, **kwargs):
         """
@@ -1448,6 +1505,8 @@ class ApiGatewayClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_sdk.py.html>`__ to see an example of how to use get_sdk API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sdkId']
         resource_path = "/sdks/{sdkId}"
         method = "GET"
         operation_name = "get_sdk"
@@ -1501,7 +1560,8 @@ class ApiGatewayClient(object):
                 response_type="Sdk",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1511,7 +1571,8 @@ class ApiGatewayClient(object):
                 response_type="Sdk",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_apis(self, compartment_id, **kwargs):
         """
@@ -1573,6 +1634,8 @@ class ApiGatewayClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/list_apis.py.html>`__ to see an example of how to use list_apis API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/apis"
         method = "GET"
         operation_name = "list_apis"
@@ -1654,7 +1717,8 @@ class ApiGatewayClient(object):
                 response_type="ApiCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1664,7 +1728,8 @@ class ApiGatewayClient(object):
                 response_type="ApiCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_certificates(self, compartment_id, **kwargs):
         """
@@ -1726,6 +1791,8 @@ class ApiGatewayClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/list_certificates.py.html>`__ to see an example of how to use list_certificates API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/certificates"
         method = "GET"
         operation_name = "list_certificates"
@@ -1807,7 +1874,8 @@ class ApiGatewayClient(object):
                 response_type="CertificateCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1817,7 +1885,8 @@ class ApiGatewayClient(object):
                 response_type="CertificateCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_sdk_language_types(self, compartment_id, **kwargs):
         """
@@ -1872,6 +1941,8 @@ class ApiGatewayClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/list_sdk_language_types.py.html>`__ to see an example of how to use list_sdk_language_types API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/sdkLanguageTypes"
         method = "GET"
         operation_name = "list_sdk_language_types"
@@ -1944,7 +2015,8 @@ class ApiGatewayClient(object):
                 response_type="SdkLanguageTypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1954,7 +2026,8 @@ class ApiGatewayClient(object):
                 response_type="SdkLanguageTypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_sdks(self, **kwargs):
         """
@@ -2019,6 +2092,8 @@ class ApiGatewayClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/list_sdks.py.html>`__ to see an example of how to use list_sdks API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/sdks"
         method = "GET"
         operation_name = "list_sdks"
@@ -2103,7 +2178,8 @@ class ApiGatewayClient(object):
                 response_type="SdkCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2113,7 +2189,8 @@ class ApiGatewayClient(object):
                 response_type="SdkCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_api(self, api_id, update_api_details, **kwargs):
         """
@@ -2154,6 +2231,8 @@ class ApiGatewayClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/update_api.py.html>`__ to see an example of how to use update_api API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['apiId']
         resource_path = "/apis/{apiId}"
         method = "PUT"
         operation_name = "update_api"
@@ -2207,7 +2286,8 @@ class ApiGatewayClient(object):
                 body=update_api_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2217,7 +2297,8 @@ class ApiGatewayClient(object):
                 body=update_api_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_certificate(self, certificate_id, update_certificate_details, **kwargs):
         """
@@ -2258,6 +2339,8 @@ class ApiGatewayClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/update_certificate.py.html>`__ to see an example of how to use update_certificate API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateId']
         resource_path = "/certificates/{certificateId}"
         method = "PUT"
         operation_name = "update_certificate"
@@ -2311,7 +2394,8 @@ class ApiGatewayClient(object):
                 body=update_certificate_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2321,7 +2405,8 @@ class ApiGatewayClient(object):
                 body=update_certificate_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_sdk(self, sdk_id, update_sdk_details, **kwargs):
         """
@@ -2362,6 +2447,8 @@ class ApiGatewayClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/update_sdk.py.html>`__ to see an example of how to use update_sdk API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sdkId']
         resource_path = "/sdks/{sdkId}"
         method = "PUT"
         operation_name = "update_sdk"
@@ -2415,7 +2502,8 @@ class ApiGatewayClient(object):
                 body=update_sdk_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2425,4 +2513,5 @@ class ApiGatewayClient(object):
                 body=update_sdk_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

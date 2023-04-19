@@ -66,6 +66,9 @@ class ComputeInstanceAgentClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -92,8 +95,10 @@ class ComputeInstanceAgentClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20180530',
             'service_endpoint_template': 'https://iaas.{region}.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -146,6 +151,8 @@ class ComputeInstanceAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/computeinstanceagent/cancel_instance_agent_command.py.html>`__ to see an example of how to use cancel_instance_agent_command API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instanceAgentCommandId']
         resource_path = "/instanceAgentCommands/{instanceAgentCommandId}"
         method = "DELETE"
         operation_name = "cancel_instance_agent_command"
@@ -198,7 +205,8 @@ class ComputeInstanceAgentClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -207,7 +215,8 @@ class ComputeInstanceAgentClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_instance_agent_command(self, create_instance_agent_command_details, **kwargs):
         """
@@ -252,6 +261,8 @@ class ComputeInstanceAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/computeinstanceagent/create_instance_agent_command.py.html>`__ to see an example of how to use create_instance_agent_command API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/instanceAgentCommands"
         method = "POST"
         operation_name = "create_instance_agent_command"
@@ -296,7 +307,8 @@ class ComputeInstanceAgentClient(object):
                 response_type="InstanceAgentCommand",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -306,7 +318,8 @@ class ComputeInstanceAgentClient(object):
                 response_type="InstanceAgentCommand",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_instance_agent_command(self, instance_agent_command_id, **kwargs):
         """
@@ -340,6 +353,8 @@ class ComputeInstanceAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/computeinstanceagent/get_instance_agent_command.py.html>`__ to see an example of how to use get_instance_agent_command API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instanceAgentCommandId']
         resource_path = "/instanceAgentCommands/{instanceAgentCommandId}"
         method = "GET"
         operation_name = "get_instance_agent_command"
@@ -391,7 +406,8 @@ class ComputeInstanceAgentClient(object):
                 response_type="InstanceAgentCommand",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -401,7 +417,8 @@ class ComputeInstanceAgentClient(object):
                 response_type="InstanceAgentCommand",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_instance_agent_command_execution(self, instance_agent_command_id, instance_id, **kwargs):
         """
@@ -440,6 +457,8 @@ class ComputeInstanceAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/computeinstanceagent/get_instance_agent_command_execution.py.html>`__ to see an example of how to use get_instance_agent_command_execution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instanceAgentCommandId', 'instanceId']
         resource_path = "/instanceAgentCommands/{instanceAgentCommandId}/status"
         method = "GET"
         operation_name = "get_instance_agent_command_execution"
@@ -497,7 +516,8 @@ class ComputeInstanceAgentClient(object):
                 response_type="InstanceAgentCommandExecution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -508,7 +528,8 @@ class ComputeInstanceAgentClient(object):
                 response_type="InstanceAgentCommandExecution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_instance_agent_command_executions(self, compartment_id, instance_id, **kwargs):
         """
@@ -584,6 +605,8 @@ class ComputeInstanceAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/computeinstanceagent/list_instance_agent_command_executions.py.html>`__ to see an example of how to use list_instance_agent_command_executions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'instanceId']
         resource_path = "/instanceAgentCommandExecutions"
         method = "GET"
         operation_name = "list_instance_agent_command_executions"
@@ -662,7 +685,8 @@ class ComputeInstanceAgentClient(object):
                 response_type="list[InstanceAgentCommandExecutionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -672,7 +696,8 @@ class ComputeInstanceAgentClient(object):
                 response_type="list[InstanceAgentCommandExecutionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_instance_agent_commands(self, compartment_id, **kwargs):
         """
@@ -737,6 +762,8 @@ class ComputeInstanceAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/computeinstanceagent/list_instance_agent_commands.py.html>`__ to see an example of how to use list_instance_agent_commands API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/instanceAgentCommands"
         method = "GET"
         operation_name = "list_instance_agent_commands"
@@ -805,7 +832,8 @@ class ComputeInstanceAgentClient(object):
                 response_type="list[InstanceAgentCommandSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -815,4 +843,5 @@ class ComputeInstanceAgentClient(object):
                 response_type="list[InstanceAgentCommandSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

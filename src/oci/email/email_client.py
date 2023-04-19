@@ -70,6 +70,9 @@ class EmailClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -96,8 +99,10 @@ class EmailClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20170907',
             'service_endpoint_template': 'https://ctrl.email.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -162,6 +167,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/change_email_domain_compartment.py.html>`__ to see an example of how to use change_email_domain_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['emailDomainId']
         resource_path = "/emailDomains/{emailDomainId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_email_domain_compartment"
@@ -218,7 +225,8 @@ class EmailClient(object):
                 body=change_email_domain_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -228,7 +236,8 @@ class EmailClient(object):
                 body=change_email_domain_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_sender_compartment(self, sender_id, change_sender_compartment_details, **kwargs):
         """
@@ -267,6 +276,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/change_sender_compartment.py.html>`__ to see an example of how to use change_sender_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['senderId']
         resource_path = "/senders/{senderId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_sender_compartment"
@@ -320,7 +331,8 @@ class EmailClient(object):
                 body=change_sender_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -330,7 +342,8 @@ class EmailClient(object):
                 body=change_sender_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_dkim(self, create_dkim_details, **kwargs):
         """
@@ -372,6 +385,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/create_dkim.py.html>`__ to see an example of how to use create_dkim API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/dkims"
         method = "POST"
         operation_name = "create_dkim"
@@ -416,7 +431,8 @@ class EmailClient(object):
                 response_type="Dkim",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -426,7 +442,8 @@ class EmailClient(object):
                 response_type="Dkim",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_email_domain(self, create_email_domain_details, **kwargs):
         """
@@ -464,6 +481,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/create_email_domain.py.html>`__ to see an example of how to use create_email_domain API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/emailDomains"
         method = "POST"
         operation_name = "create_email_domain"
@@ -508,7 +527,8 @@ class EmailClient(object):
                 response_type="EmailDomain",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -518,7 +538,8 @@ class EmailClient(object):
                 response_type="EmailDomain",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_sender(self, create_sender_details, **kwargs):
         """
@@ -549,6 +570,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/create_sender.py.html>`__ to see an example of how to use create_sender API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/senders"
         method = "POST"
         operation_name = "create_sender"
@@ -590,7 +613,8 @@ class EmailClient(object):
                 response_type="Sender",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -600,7 +624,8 @@ class EmailClient(object):
                 response_type="Sender",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_suppression(self, create_suppression_details, **kwargs):
         """
@@ -634,6 +659,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/create_suppression.py.html>`__ to see an example of how to use create_suppression API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/suppressions"
         method = "POST"
         operation_name = "create_suppression"
@@ -675,7 +702,8 @@ class EmailClient(object):
                 response_type="Suppression",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -685,7 +713,8 @@ class EmailClient(object):
                 response_type="Suppression",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_dkim(self, dkim_id, **kwargs):
         """
@@ -728,6 +757,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/delete_dkim.py.html>`__ to see an example of how to use delete_dkim API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dkimId']
         resource_path = "/dkims/{dkimId}"
         method = "DELETE"
         operation_name = "delete_dkim"
@@ -780,7 +811,8 @@ class EmailClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -789,7 +821,8 @@ class EmailClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_email_domain(self, email_domain_id, **kwargs):
         """
@@ -827,6 +860,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/delete_email_domain.py.html>`__ to see an example of how to use delete_email_domain API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['emailDomainId']
         resource_path = "/emailDomains/{emailDomainId}"
         method = "DELETE"
         operation_name = "delete_email_domain"
@@ -879,7 +914,8 @@ class EmailClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -888,7 +924,8 @@ class EmailClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_sender(self, sender_id, **kwargs):
         """
@@ -925,6 +962,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/delete_sender.py.html>`__ to see an example of how to use delete_sender API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['senderId']
         resource_path = "/senders/{senderId}"
         method = "DELETE"
         operation_name = "delete_sender"
@@ -977,7 +1016,8 @@ class EmailClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -986,7 +1026,8 @@ class EmailClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_suppression(self, suppression_id, **kwargs):
         """
@@ -1018,6 +1059,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/delete_suppression.py.html>`__ to see an example of how to use delete_suppression API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['suppressionId']
         resource_path = "/suppressions/{suppressionId}"
         method = "DELETE"
         operation_name = "delete_suppression"
@@ -1068,7 +1111,8 @@ class EmailClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1077,7 +1121,8 @@ class EmailClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_dkim(self, dkim_id, **kwargs):
         """
@@ -1110,6 +1155,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/get_dkim.py.html>`__ to see an example of how to use get_dkim API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dkimId']
         resource_path = "/dkims/{dkimId}"
         method = "GET"
         operation_name = "get_dkim"
@@ -1161,7 +1208,8 @@ class EmailClient(object):
                 response_type="Dkim",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1171,7 +1219,8 @@ class EmailClient(object):
                 response_type="Dkim",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_email_domain(self, email_domain_id, **kwargs):
         """
@@ -1204,6 +1253,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/get_email_domain.py.html>`__ to see an example of how to use get_email_domain API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['emailDomainId']
         resource_path = "/emailDomains/{emailDomainId}"
         method = "GET"
         operation_name = "get_email_domain"
@@ -1255,7 +1306,8 @@ class EmailClient(object):
                 response_type="EmailDomain",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1265,7 +1317,8 @@ class EmailClient(object):
                 response_type="EmailDomain",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_sender(self, sender_id, **kwargs):
         """
@@ -1296,6 +1349,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/get_sender.py.html>`__ to see an example of how to use get_sender API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['senderId']
         resource_path = "/senders/{senderId}"
         method = "GET"
         operation_name = "get_sender"
@@ -1347,7 +1402,8 @@ class EmailClient(object):
                 response_type="Sender",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1357,7 +1413,8 @@ class EmailClient(object):
                 response_type="Sender",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_suppression(self, suppression_id, **kwargs):
         """
@@ -1389,6 +1446,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/get_suppression.py.html>`__ to see an example of how to use get_suppression API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['suppressionId']
         resource_path = "/suppressions/{suppressionId}"
         method = "GET"
         operation_name = "get_suppression"
@@ -1440,7 +1499,8 @@ class EmailClient(object):
                 response_type="Suppression",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1450,7 +1510,8 @@ class EmailClient(object):
                 response_type="Suppression",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1481,6 +1542,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -1532,7 +1595,8 @@ class EmailClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1542,7 +1606,8 @@ class EmailClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_dkims(self, email_domain_id, **kwargs):
         """
@@ -1616,6 +1681,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/list_dkims.py.html>`__ to see an example of how to use list_dkims API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['emailDomainId']
         resource_path = "/dkims"
         method = "GET"
         operation_name = "list_dkims"
@@ -1697,7 +1764,8 @@ class EmailClient(object):
                 response_type="DkimCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1707,7 +1775,8 @@ class EmailClient(object):
                 response_type="DkimCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_email_domains(self, compartment_id, **kwargs):
         """
@@ -1779,6 +1848,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/list_email_domains.py.html>`__ to see an example of how to use list_email_domains API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/emailDomains"
         method = "GET"
         operation_name = "list_email_domains"
@@ -1860,7 +1931,8 @@ class EmailClient(object):
                 response_type="EmailDomainCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1870,7 +1942,8 @@ class EmailClient(object):
                 response_type="EmailDomainCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_senders(self, compartment_id, **kwargs):
         """
@@ -1939,6 +2012,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/list_senders.py.html>`__ to see an example of how to use list_senders API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/senders"
         method = "GET"
         operation_name = "list_senders"
@@ -2020,7 +2095,8 @@ class EmailClient(object):
                 response_type="list[SenderSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2030,7 +2106,8 @@ class EmailClient(object):
                 response_type="list[SenderSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_suppressions(self, compartment_id, **kwargs):
         """
@@ -2113,6 +2190,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/list_suppressions.py.html>`__ to see an example of how to use list_suppressions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/suppressions"
         method = "GET"
         operation_name = "list_suppressions"
@@ -2187,7 +2266,8 @@ class EmailClient(object):
                 response_type="list[SuppressionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2197,7 +2277,8 @@ class EmailClient(object):
                 response_type="list[SuppressionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -2242,6 +2323,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -2302,7 +2385,8 @@ class EmailClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2313,7 +2397,8 @@ class EmailClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -2358,6 +2443,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -2418,7 +2505,8 @@ class EmailClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2429,7 +2517,8 @@ class EmailClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -2477,6 +2566,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -2529,7 +2620,8 @@ class EmailClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2539,7 +2631,8 @@ class EmailClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_dkim(self, dkim_id, update_dkim_details, **kwargs):
         """
@@ -2580,6 +2673,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/update_dkim.py.html>`__ to see an example of how to use update_dkim API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dkimId']
         resource_path = "/dkims/{dkimId}"
         method = "PUT"
         operation_name = "update_dkim"
@@ -2633,7 +2728,8 @@ class EmailClient(object):
                 body=update_dkim_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2643,7 +2739,8 @@ class EmailClient(object):
                 body=update_dkim_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_email_domain(self, email_domain_id, update_email_domain_details, **kwargs):
         """
@@ -2684,6 +2781,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/update_email_domain.py.html>`__ to see an example of how to use update_email_domain API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['emailDomainId']
         resource_path = "/emailDomains/{emailDomainId}"
         method = "PUT"
         operation_name = "update_email_domain"
@@ -2737,7 +2836,8 @@ class EmailClient(object):
                 body=update_email_domain_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2747,7 +2847,8 @@ class EmailClient(object):
                 body=update_email_domain_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_sender(self, sender_id, update_sender_details, **kwargs):
         """
@@ -2791,6 +2892,8 @@ class EmailClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/update_sender.py.html>`__ to see an example of how to use update_sender API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['senderId']
         resource_path = "/senders/{senderId}"
         method = "PUT"
         operation_name = "update_sender"
@@ -2845,7 +2948,8 @@ class EmailClient(object):
                 response_type="Sender",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2856,4 +2960,5 @@ class EmailClient(object):
                 response_type="Sender",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

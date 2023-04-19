@@ -66,6 +66,9 @@ class LoadBalancerClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -92,8 +95,10 @@ class LoadBalancerClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20170115',
             'service_endpoint_template': 'https://iaas.{region}.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -162,6 +167,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/change_load_balancer_compartment.py.html>`__ to see an example of how to use change_load_balancer_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}/changeCompartment"
         method = "POST"
         operation_name = "change_load_balancer_compartment"
@@ -218,7 +225,8 @@ class LoadBalancerClient(object):
                 body=change_load_balancer_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -228,7 +236,8 @@ class LoadBalancerClient(object):
                 body=change_load_balancer_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_backend(self, create_backend_details, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -289,6 +298,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/create_backend.py.html>`__ to see an example of how to use create_backend API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'backendSetName']
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends"
         method = "POST"
         operation_name = "create_backend"
@@ -346,7 +357,8 @@ class LoadBalancerClient(object):
                 body=create_backend_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -356,7 +368,8 @@ class LoadBalancerClient(object):
                 body=create_backend_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_backend_set(self, create_backend_set_details, load_balancer_id, **kwargs):
         """
@@ -412,6 +425,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/create_backend_set.py.html>`__ to see an example of how to use create_backend_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets"
         method = "POST"
         operation_name = "create_backend_set"
@@ -468,7 +483,8 @@ class LoadBalancerClient(object):
                 body=create_backend_set_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -478,7 +494,8 @@ class LoadBalancerClient(object):
                 body=create_backend_set_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_certificate(self, create_certificate_details, load_balancer_id, **kwargs):
         """
@@ -534,6 +551,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/create_certificate.py.html>`__ to see an example of how to use create_certificate API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}/certificates"
         method = "POST"
         operation_name = "create_certificate"
@@ -590,7 +609,8 @@ class LoadBalancerClient(object):
                 body=create_certificate_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -600,7 +620,8 @@ class LoadBalancerClient(object):
                 body=create_certificate_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_hostname(self, create_hostname_details, load_balancer_id, **kwargs):
         """
@@ -659,6 +680,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/create_hostname.py.html>`__ to see an example of how to use create_hostname API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}/hostnames"
         method = "POST"
         operation_name = "create_hostname"
@@ -715,7 +738,8 @@ class LoadBalancerClient(object):
                 body=create_hostname_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -725,7 +749,8 @@ class LoadBalancerClient(object):
                 body=create_hostname_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_listener(self, create_listener_details, load_balancer_id, **kwargs):
         """
@@ -781,6 +806,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/create_listener.py.html>`__ to see an example of how to use create_listener API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}/listeners"
         method = "POST"
         operation_name = "create_listener"
@@ -837,7 +864,8 @@ class LoadBalancerClient(object):
                 body=create_listener_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -847,7 +875,8 @@ class LoadBalancerClient(object):
                 body=create_listener_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_load_balancer(self, create_load_balancer_details, **kwargs):
         """
@@ -917,6 +946,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/create_load_balancer.py.html>`__ to see an example of how to use create_load_balancer API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/loadBalancers"
         method = "POST"
         operation_name = "create_load_balancer"
@@ -960,7 +991,8 @@ class LoadBalancerClient(object):
                 body=create_load_balancer_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -969,7 +1001,8 @@ class LoadBalancerClient(object):
                 body=create_load_balancer_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_path_route_set(self, create_path_route_set_details, load_balancer_id, **kwargs):
         """
@@ -1028,6 +1061,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/create_path_route_set.py.html>`__ to see an example of how to use create_path_route_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}/pathRouteSets"
         method = "POST"
         operation_name = "create_path_route_set"
@@ -1084,7 +1119,8 @@ class LoadBalancerClient(object):
                 body=create_path_route_set_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1094,7 +1130,8 @@ class LoadBalancerClient(object):
                 body=create_path_route_set_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_routing_policy(self, create_routing_policy_details, load_balancer_id, **kwargs):
         """
@@ -1153,6 +1190,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/create_routing_policy.py.html>`__ to see an example of how to use create_routing_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}/routingPolicies"
         method = "POST"
         operation_name = "create_routing_policy"
@@ -1209,7 +1248,8 @@ class LoadBalancerClient(object):
                 body=create_routing_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1219,7 +1259,8 @@ class LoadBalancerClient(object):
                 body=create_routing_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_rule_set(self, load_balancer_id, create_rule_set_details, **kwargs):
         """
@@ -1278,6 +1319,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/create_rule_set.py.html>`__ to see an example of how to use create_rule_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}/ruleSets"
         method = "POST"
         operation_name = "create_rule_set"
@@ -1334,7 +1377,8 @@ class LoadBalancerClient(object):
                 body=create_rule_set_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1344,7 +1388,8 @@ class LoadBalancerClient(object):
                 body=create_rule_set_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_ssl_cipher_suite(self, create_ssl_cipher_suite_details, load_balancer_id, **kwargs):
         """
@@ -1400,6 +1445,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/create_ssl_cipher_suite.py.html>`__ to see an example of how to use create_ssl_cipher_suite API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}/sslCipherSuites"
         method = "POST"
         operation_name = "create_ssl_cipher_suite"
@@ -1456,7 +1503,8 @@ class LoadBalancerClient(object):
                 body=create_ssl_cipher_suite_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1466,7 +1514,8 @@ class LoadBalancerClient(object):
                 body=create_ssl_cipher_suite_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_backend(self, load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
@@ -1522,6 +1571,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/delete_backend.py.html>`__ to see an example of how to use delete_backend API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'backendSetName', 'backendName']
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         method = "DELETE"
         operation_name = "delete_backend"
@@ -1576,7 +1627,8 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1585,7 +1637,8 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_backend_set(self, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -1638,6 +1691,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/delete_backend_set.py.html>`__ to see an example of how to use delete_backend_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'backendSetName']
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}"
         method = "DELETE"
         operation_name = "delete_backend_set"
@@ -1691,7 +1746,8 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1700,7 +1756,8 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_certificate(self, load_balancer_id, certificate_name, **kwargs):
         """
@@ -1752,6 +1809,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/delete_certificate.py.html>`__ to see an example of how to use delete_certificate API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'certificateName']
         resource_path = "/loadBalancers/{loadBalancerId}/certificates/{certificateName}"
         method = "DELETE"
         operation_name = "delete_certificate"
@@ -1805,7 +1864,8 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1814,7 +1874,8 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_hostname(self, load_balancer_id, name, **kwargs):
         """
@@ -1865,6 +1926,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/delete_hostname.py.html>`__ to see an example of how to use delete_hostname API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'name']
         resource_path = "/loadBalancers/{loadBalancerId}/hostnames/{name}"
         method = "DELETE"
         operation_name = "delete_hostname"
@@ -1918,7 +1981,8 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1927,7 +1991,8 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_listener(self, load_balancer_id, listener_name, **kwargs):
         """
@@ -1978,6 +2043,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/delete_listener.py.html>`__ to see an example of how to use delete_listener API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'listenerName']
         resource_path = "/loadBalancers/{loadBalancerId}/listeners/{listenerName}"
         method = "DELETE"
         operation_name = "delete_listener"
@@ -2031,7 +2098,8 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2040,7 +2108,8 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_load_balancer(self, load_balancer_id, **kwargs):
         """
@@ -2086,6 +2155,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/delete_load_balancer.py.html>`__ to see an example of how to use delete_load_balancer API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}"
         method = "DELETE"
         operation_name = "delete_load_balancer"
@@ -2138,7 +2209,8 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2147,7 +2219,8 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_path_route_set(self, load_balancer_id, path_route_set_name, **kwargs):
         """
@@ -2201,6 +2274,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/delete_path_route_set.py.html>`__ to see an example of how to use delete_path_route_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'pathRouteSetName']
         resource_path = "/loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
         method = "DELETE"
         operation_name = "delete_path_route_set"
@@ -2254,7 +2329,8 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2263,7 +2339,8 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_routing_policy(self, load_balancer_id, routing_policy_name, **kwargs):
         """
@@ -2317,6 +2394,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/delete_routing_policy.py.html>`__ to see an example of how to use delete_routing_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'routingPolicyName']
         resource_path = "/loadBalancers/{loadBalancerId}/routingPolicies/{routingPolicyName}"
         method = "DELETE"
         operation_name = "delete_routing_policy"
@@ -2370,7 +2449,8 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2379,7 +2459,8 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_rule_set(self, load_balancer_id, rule_set_name, **kwargs):
         """
@@ -2433,6 +2514,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/delete_rule_set.py.html>`__ to see an example of how to use delete_rule_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'ruleSetName']
         resource_path = "/loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}"
         method = "DELETE"
         operation_name = "delete_rule_set"
@@ -2486,7 +2569,8 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2495,7 +2579,8 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_ssl_cipher_suite(self, load_balancer_id, name, **kwargs):
         """
@@ -2546,6 +2631,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/delete_ssl_cipher_suite.py.html>`__ to see an example of how to use delete_ssl_cipher_suite API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'name']
         resource_path = "/loadBalancers/{loadBalancerId}/sslCipherSuites/{name}"
         method = "DELETE"
         operation_name = "delete_ssl_cipher_suite"
@@ -2599,7 +2686,8 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2608,7 +2696,8 @@ class LoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_backend(self, load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
@@ -2664,6 +2753,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/get_backend.py.html>`__ to see an example of how to use get_backend API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'backendSetName', 'backendName']
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         method = "GET"
         operation_name = "get_backend"
@@ -2719,7 +2810,8 @@ class LoadBalancerClient(object):
                 response_type="Backend",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2729,7 +2821,8 @@ class LoadBalancerClient(object):
                 response_type="Backend",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_backend_health(self, load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
@@ -2785,6 +2878,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/get_backend_health.py.html>`__ to see an example of how to use get_backend_health API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'backendSetName', 'backendName']
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}/health"
         method = "GET"
         operation_name = "get_backend_health"
@@ -2840,7 +2935,8 @@ class LoadBalancerClient(object):
                 response_type="BackendHealth",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2850,7 +2946,8 @@ class LoadBalancerClient(object):
                 response_type="BackendHealth",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_backend_set(self, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -2901,6 +2998,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/get_backend_set.py.html>`__ to see an example of how to use get_backend_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'backendSetName']
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}"
         method = "GET"
         operation_name = "get_backend_set"
@@ -2955,7 +3054,8 @@ class LoadBalancerClient(object):
                 response_type="BackendSet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2965,7 +3065,8 @@ class LoadBalancerClient(object):
                 response_type="BackendSet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_backend_set_health(self, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -3016,6 +3117,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/get_backend_set_health.py.html>`__ to see an example of how to use get_backend_set_health API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'backendSetName']
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/health"
         method = "GET"
         operation_name = "get_backend_set_health"
@@ -3070,7 +3173,8 @@ class LoadBalancerClient(object):
                 response_type="BackendSetHealth",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3080,7 +3184,8 @@ class LoadBalancerClient(object):
                 response_type="BackendSetHealth",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_health_checker(self, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -3131,6 +3236,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/get_health_checker.py.html>`__ to see an example of how to use get_health_checker API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'backendSetName']
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/healthChecker"
         method = "GET"
         operation_name = "get_health_checker"
@@ -3185,7 +3292,8 @@ class LoadBalancerClient(object):
                 response_type="HealthChecker",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3195,7 +3303,8 @@ class LoadBalancerClient(object):
                 response_type="HealthChecker",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_hostname(self, load_balancer_id, name, **kwargs):
         """
@@ -3246,6 +3355,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/get_hostname.py.html>`__ to see an example of how to use get_hostname API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'name']
         resource_path = "/loadBalancers/{loadBalancerId}/hostnames/{name}"
         method = "GET"
         operation_name = "get_hostname"
@@ -3300,7 +3411,8 @@ class LoadBalancerClient(object):
                 response_type="Hostname",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3310,7 +3422,8 @@ class LoadBalancerClient(object):
                 response_type="Hostname",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_load_balancer(self, load_balancer_id, **kwargs):
         """
@@ -3356,6 +3469,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/get_load_balancer.py.html>`__ to see an example of how to use get_load_balancer API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}"
         method = "GET"
         operation_name = "get_load_balancer"
@@ -3409,7 +3524,8 @@ class LoadBalancerClient(object):
                 response_type="LoadBalancer",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3419,7 +3535,8 @@ class LoadBalancerClient(object):
                 response_type="LoadBalancer",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_load_balancer_health(self, load_balancer_id, **kwargs):
         """
@@ -3465,6 +3582,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/get_load_balancer_health.py.html>`__ to see an example of how to use get_load_balancer_health API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}/health"
         method = "GET"
         operation_name = "get_load_balancer_health"
@@ -3518,7 +3637,8 @@ class LoadBalancerClient(object):
                 response_type="LoadBalancerHealth",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3528,7 +3648,8 @@ class LoadBalancerClient(object):
                 response_type="LoadBalancerHealth",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_path_route_set(self, load_balancer_id, path_route_set_name, **kwargs):
         """
@@ -3579,6 +3700,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/get_path_route_set.py.html>`__ to see an example of how to use get_path_route_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'pathRouteSetName']
         resource_path = "/loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
         method = "GET"
         operation_name = "get_path_route_set"
@@ -3633,7 +3756,8 @@ class LoadBalancerClient(object):
                 response_type="PathRouteSet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3643,7 +3767,8 @@ class LoadBalancerClient(object):
                 response_type="PathRouteSet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_routing_policy(self, load_balancer_id, routing_policy_name, **kwargs):
         """
@@ -3694,6 +3819,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/get_routing_policy.py.html>`__ to see an example of how to use get_routing_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'routingPolicyName']
         resource_path = "/loadBalancers/{loadBalancerId}/routingPolicies/{routingPolicyName}"
         method = "GET"
         operation_name = "get_routing_policy"
@@ -3748,7 +3875,8 @@ class LoadBalancerClient(object):
                 response_type="RoutingPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3758,7 +3886,8 @@ class LoadBalancerClient(object):
                 response_type="RoutingPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_rule_set(self, load_balancer_id, rule_set_name, **kwargs):
         """
@@ -3809,6 +3938,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/get_rule_set.py.html>`__ to see an example of how to use get_rule_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'ruleSetName']
         resource_path = "/loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}"
         method = "GET"
         operation_name = "get_rule_set"
@@ -3863,7 +3994,8 @@ class LoadBalancerClient(object):
                 response_type="RuleSet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3873,7 +4005,8 @@ class LoadBalancerClient(object):
                 response_type="RuleSet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_ssl_cipher_suite(self, load_balancer_id, name, **kwargs):
         """
@@ -3924,6 +4057,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/get_ssl_cipher_suite.py.html>`__ to see an example of how to use get_ssl_cipher_suite API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'name']
         resource_path = "/loadBalancers/{loadBalancerId}/sslCipherSuites/{name}"
         method = "GET"
         operation_name = "get_ssl_cipher_suite"
@@ -3978,7 +4113,8 @@ class LoadBalancerClient(object):
                 response_type="SSLCipherSuite",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3988,7 +4124,8 @@ class LoadBalancerClient(object):
                 response_type="SSLCipherSuite",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -4022,6 +4159,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/loadBalancerWorkRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -4073,7 +4212,8 @@ class LoadBalancerClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4083,7 +4223,8 @@ class LoadBalancerClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_backend_sets(self, load_balancer_id, **kwargs):
         """
@@ -4129,6 +4270,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/list_backend_sets.py.html>`__ to see an example of how to use list_backend_sets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets"
         method = "GET"
         operation_name = "list_backend_sets"
@@ -4182,7 +4325,8 @@ class LoadBalancerClient(object):
                 response_type="list[BackendSet]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4192,7 +4336,8 @@ class LoadBalancerClient(object):
                 response_type="list[BackendSet]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_backends(self, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -4243,6 +4388,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/list_backends.py.html>`__ to see an example of how to use list_backends API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'backendSetName']
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends"
         method = "GET"
         operation_name = "list_backends"
@@ -4297,7 +4444,8 @@ class LoadBalancerClient(object):
                 response_type="list[Backend]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4307,7 +4455,8 @@ class LoadBalancerClient(object):
                 response_type="list[Backend]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_certificates(self, load_balancer_id, **kwargs):
         """
@@ -4354,6 +4503,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/list_certificates.py.html>`__ to see an example of how to use list_certificates API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}/certificates"
         method = "GET"
         operation_name = "list_certificates"
@@ -4407,7 +4558,8 @@ class LoadBalancerClient(object):
                 response_type="list[Certificate]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4417,7 +4569,8 @@ class LoadBalancerClient(object):
                 response_type="list[Certificate]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_hostnames(self, load_balancer_id, **kwargs):
         """
@@ -4464,6 +4617,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/list_hostnames.py.html>`__ to see an example of how to use list_hostnames API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}/hostnames"
         method = "GET"
         operation_name = "list_hostnames"
@@ -4517,7 +4672,8 @@ class LoadBalancerClient(object):
                 response_type="list[Hostname]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4527,7 +4683,8 @@ class LoadBalancerClient(object):
                 response_type="list[Hostname]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_listener_rules(self, load_balancer_id, listener_name, **kwargs):
         """
@@ -4582,6 +4739,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/list_listener_rules.py.html>`__ to see an example of how to use list_listener_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'listenerName']
         resource_path = "/loadBalancers/{loadBalancerId}/listeners/{listenerName}/rules"
         method = "GET"
         operation_name = "list_listener_rules"
@@ -4636,7 +4795,8 @@ class LoadBalancerClient(object):
                 response_type="list[ListenerRuleSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4646,7 +4806,8 @@ class LoadBalancerClient(object):
                 response_type="list[ListenerRuleSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_load_balancer_healths(self, compartment_id, **kwargs):
         """
@@ -4696,6 +4857,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/list_load_balancer_healths.py.html>`__ to see an example of how to use list_load_balancer_healths API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/loadBalancerHealths"
         method = "GET"
         operation_name = "list_load_balancer_healths"
@@ -4746,7 +4909,8 @@ class LoadBalancerClient(object):
                 response_type="list[LoadBalancerHealthSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4756,7 +4920,8 @@ class LoadBalancerClient(object):
                 response_type="list[LoadBalancerHealthSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_load_balancers(self, compartment_id, **kwargs):
         """
@@ -4834,6 +4999,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/list_load_balancers.py.html>`__ to see an example of how to use list_load_balancers API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/loadBalancers"
         method = "GET"
         operation_name = "list_load_balancers"
@@ -4915,7 +5082,8 @@ class LoadBalancerClient(object):
                 response_type="list[LoadBalancer]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4925,7 +5093,8 @@ class LoadBalancerClient(object):
                 response_type="list[LoadBalancer]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_path_route_sets(self, load_balancer_id, **kwargs):
         """
@@ -4972,6 +5141,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/list_path_route_sets.py.html>`__ to see an example of how to use list_path_route_sets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}/pathRouteSets"
         method = "GET"
         operation_name = "list_path_route_sets"
@@ -5025,7 +5196,8 @@ class LoadBalancerClient(object):
                 response_type="list[PathRouteSet]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5035,7 +5207,8 @@ class LoadBalancerClient(object):
                 response_type="list[PathRouteSet]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_policies(self, compartment_id, **kwargs):
         """
@@ -5085,6 +5258,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/list_policies.py.html>`__ to see an example of how to use list_policies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/loadBalancerPolicies"
         method = "GET"
         operation_name = "list_policies"
@@ -5135,7 +5310,8 @@ class LoadBalancerClient(object):
                 response_type="list[LoadBalancerPolicy]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5145,7 +5321,8 @@ class LoadBalancerClient(object):
                 response_type="list[LoadBalancerPolicy]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_protocols(self, compartment_id, **kwargs):
         """
@@ -5195,6 +5372,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/list_protocols.py.html>`__ to see an example of how to use list_protocols API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/loadBalancerProtocols"
         method = "GET"
         operation_name = "list_protocols"
@@ -5245,7 +5424,8 @@ class LoadBalancerClient(object):
                 response_type="list[LoadBalancerProtocol]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5255,7 +5435,8 @@ class LoadBalancerClient(object):
                 response_type="list[LoadBalancerProtocol]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_routing_policies(self, load_balancer_id, **kwargs):
         """
@@ -5317,6 +5498,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/list_routing_policies.py.html>`__ to see an example of how to use list_routing_policies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}/routingPolicies"
         method = "GET"
         operation_name = "list_routing_policies"
@@ -5379,7 +5562,8 @@ class LoadBalancerClient(object):
                 response_type="list[RoutingPolicy]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5390,7 +5574,8 @@ class LoadBalancerClient(object):
                 response_type="list[RoutingPolicy]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_rule_sets(self, load_balancer_id, **kwargs):
         """
@@ -5436,6 +5621,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/list_rule_sets.py.html>`__ to see an example of how to use list_rule_sets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}/ruleSets"
         method = "GET"
         operation_name = "list_rule_sets"
@@ -5489,7 +5676,8 @@ class LoadBalancerClient(object):
                 response_type="list[RuleSet]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5499,7 +5687,8 @@ class LoadBalancerClient(object):
                 response_type="list[RuleSet]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_shapes(self, compartment_id, **kwargs):
         """
@@ -5549,6 +5738,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/list_shapes.py.html>`__ to see an example of how to use list_shapes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/loadBalancerShapes"
         method = "GET"
         operation_name = "list_shapes"
@@ -5599,7 +5790,8 @@ class LoadBalancerClient(object):
                 response_type="list[LoadBalancerShape]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5609,7 +5801,8 @@ class LoadBalancerClient(object):
                 response_type="list[LoadBalancerShape]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_ssl_cipher_suites(self, load_balancer_id, **kwargs):
         """
@@ -5655,6 +5848,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/list_ssl_cipher_suites.py.html>`__ to see an example of how to use list_ssl_cipher_suites API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}/sslCipherSuites"
         method = "GET"
         operation_name = "list_ssl_cipher_suites"
@@ -5708,7 +5903,8 @@ class LoadBalancerClient(object):
                 response_type="list[SSLCipherSuite]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5718,7 +5914,8 @@ class LoadBalancerClient(object):
                 response_type="list[SSLCipherSuite]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, load_balancer_id, **kwargs):
         """
@@ -5768,6 +5965,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -5828,7 +6027,8 @@ class LoadBalancerClient(object):
                 response_type="list[WorkRequest]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5839,7 +6039,8 @@ class LoadBalancerClient(object):
                 response_type="list[WorkRequest]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_backend(self, update_backend_details, load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
@@ -5905,6 +6106,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/update_backend.py.html>`__ to see an example of how to use update_backend API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'backendSetName', 'backendName']
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         method = "PUT"
         operation_name = "update_backend"
@@ -5963,7 +6166,8 @@ class LoadBalancerClient(object):
                 body=update_backend_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5973,7 +6177,8 @@ class LoadBalancerClient(object):
                 body=update_backend_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_backend_set(self, update_backend_set_details, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -6034,6 +6239,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/update_backend_set.py.html>`__ to see an example of how to use update_backend_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'backendSetName']
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}"
         method = "PUT"
         operation_name = "update_backend_set"
@@ -6091,7 +6298,8 @@ class LoadBalancerClient(object):
                 body=update_backend_set_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6101,7 +6309,8 @@ class LoadBalancerClient(object):
                 body=update_backend_set_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_health_checker(self, health_checker, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -6162,6 +6371,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/update_health_checker.py.html>`__ to see an example of how to use update_health_checker API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'backendSetName']
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/healthChecker"
         method = "PUT"
         operation_name = "update_health_checker"
@@ -6219,7 +6430,8 @@ class LoadBalancerClient(object):
                 body=health_checker,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6229,7 +6441,8 @@ class LoadBalancerClient(object):
                 body=health_checker,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_hostname(self, update_hostname_details, load_balancer_id, name, **kwargs):
         """
@@ -6292,6 +6505,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/update_hostname.py.html>`__ to see an example of how to use update_hostname API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'name']
         resource_path = "/loadBalancers/{loadBalancerId}/hostnames/{name}"
         method = "PUT"
         operation_name = "update_hostname"
@@ -6349,7 +6564,8 @@ class LoadBalancerClient(object):
                 body=update_hostname_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6359,7 +6575,8 @@ class LoadBalancerClient(object):
                 body=update_hostname_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_listener(self, update_listener_details, load_balancer_id, listener_name, **kwargs):
         """
@@ -6420,6 +6637,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/update_listener.py.html>`__ to see an example of how to use update_listener API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'listenerName']
         resource_path = "/loadBalancers/{loadBalancerId}/listeners/{listenerName}"
         method = "PUT"
         operation_name = "update_listener"
@@ -6477,7 +6696,8 @@ class LoadBalancerClient(object):
                 body=update_listener_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6487,7 +6707,8 @@ class LoadBalancerClient(object):
                 body=update_listener_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_load_balancer(self, update_load_balancer_details, load_balancer_id, **kwargs):
         """
@@ -6543,6 +6764,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/update_load_balancer.py.html>`__ to see an example of how to use update_load_balancer API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}"
         method = "PUT"
         operation_name = "update_load_balancer"
@@ -6599,7 +6822,8 @@ class LoadBalancerClient(object):
                 body=update_load_balancer_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6609,7 +6833,8 @@ class LoadBalancerClient(object):
                 body=update_load_balancer_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_load_balancer_shape(self, load_balancer_id, update_load_balancer_shape_details, **kwargs):
         """
@@ -6670,6 +6895,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/update_load_balancer_shape.py.html>`__ to see an example of how to use update_load_balancer_shape API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}/updateShape"
         method = "PUT"
         operation_name = "update_load_balancer_shape"
@@ -6726,7 +6953,8 @@ class LoadBalancerClient(object):
                 body=update_load_balancer_shape_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6736,7 +6964,8 @@ class LoadBalancerClient(object):
                 body=update_load_balancer_shape_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_network_security_groups(self, update_network_security_groups_details, load_balancer_id, **kwargs):
         """
@@ -6792,6 +7021,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/update_network_security_groups.py.html>`__ to see an example of how to use update_network_security_groups API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId']
         resource_path = "/loadBalancers/{loadBalancerId}/networkSecurityGroups"
         method = "PUT"
         operation_name = "update_network_security_groups"
@@ -6848,7 +7079,8 @@ class LoadBalancerClient(object):
                 body=update_network_security_groups_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6858,7 +7090,8 @@ class LoadBalancerClient(object):
                 body=update_network_security_groups_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_path_route_set(self, update_path_route_set_details, load_balancer_id, path_route_set_name, **kwargs):
         """
@@ -6924,6 +7157,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/update_path_route_set.py.html>`__ to see an example of how to use update_path_route_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'pathRouteSetName']
         resource_path = "/loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
         method = "PUT"
         operation_name = "update_path_route_set"
@@ -6981,7 +7216,8 @@ class LoadBalancerClient(object):
                 body=update_path_route_set_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6991,7 +7227,8 @@ class LoadBalancerClient(object):
                 body=update_path_route_set_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_routing_policy(self, update_routing_policy_details, load_balancer_id, routing_policy_name, **kwargs):
         """
@@ -7055,6 +7292,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/update_routing_policy.py.html>`__ to see an example of how to use update_routing_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'routingPolicyName']
         resource_path = "/loadBalancers/{loadBalancerId}/routingPolicies/{routingPolicyName}"
         method = "PUT"
         operation_name = "update_routing_policy"
@@ -7112,7 +7351,8 @@ class LoadBalancerClient(object):
                 body=update_routing_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7122,7 +7362,8 @@ class LoadBalancerClient(object):
                 body=update_routing_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_rule_set(self, load_balancer_id, rule_set_name, update_rule_set_details, **kwargs):
         """
@@ -7186,6 +7427,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/update_rule_set.py.html>`__ to see an example of how to use update_rule_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'ruleSetName']
         resource_path = "/loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}"
         method = "PUT"
         operation_name = "update_rule_set"
@@ -7243,7 +7486,8 @@ class LoadBalancerClient(object):
                 body=update_rule_set_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7253,7 +7497,8 @@ class LoadBalancerClient(object):
                 body=update_rule_set_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_ssl_cipher_suite(self, update_ssl_cipher_suite_details, load_balancer_id, name, **kwargs):
         """
@@ -7314,6 +7559,8 @@ class LoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loadbalancer/update_ssl_cipher_suite.py.html>`__ to see an example of how to use update_ssl_cipher_suite API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['loadBalancerId', 'name']
         resource_path = "/loadBalancers/{loadBalancerId}/sslCipherSuites/{name}"
         method = "PUT"
         operation_name = "update_ssl_cipher_suite"
@@ -7371,7 +7618,8 @@ class LoadBalancerClient(object):
                 body=update_ssl_cipher_suite_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7381,4 +7629,5 @@ class LoadBalancerClient(object):
                 body=update_ssl_cipher_suite_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

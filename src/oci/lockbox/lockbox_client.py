@@ -67,6 +67,9 @@ class LockboxClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -93,8 +96,10 @@ class LockboxClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20220126',
             'service_endpoint_template': 'https://managed-access.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -142,6 +147,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
@@ -194,7 +201,8 @@ class LockboxClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -203,7 +211,8 @@ class LockboxClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_approval_template_compartment(self, approval_template_id, change_approval_template_compartment_details, **kwargs):
         """
@@ -251,6 +260,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/change_approval_template_compartment.py.html>`__ to see an example of how to use change_approval_template_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['approvalTemplateId']
         resource_path = "/approvalTemplates/{approvalTemplateId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_approval_template_compartment"
@@ -307,7 +318,8 @@ class LockboxClient(object):
                 body=change_approval_template_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -317,7 +329,8 @@ class LockboxClient(object):
                 body=change_approval_template_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_lockbox_compartment(self, lockbox_id, change_lockbox_compartment_details, **kwargs):
         """
@@ -365,6 +378,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/change_lockbox_compartment.py.html>`__ to see an example of how to use change_lockbox_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['lockboxId']
         resource_path = "/lockboxes/{lockboxId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_lockbox_compartment"
@@ -421,7 +436,8 @@ class LockboxClient(object):
                 body=change_lockbox_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -431,7 +447,8 @@ class LockboxClient(object):
                 body=change_lockbox_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_access_request(self, create_access_request_details, **kwargs):
         """
@@ -469,6 +486,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/create_access_request.py.html>`__ to see an example of how to use create_access_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/accessRequests"
         method = "POST"
         operation_name = "create_access_request"
@@ -513,7 +532,8 @@ class LockboxClient(object):
                 response_type="AccessRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -523,7 +543,8 @@ class LockboxClient(object):
                 response_type="AccessRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_approval_template(self, create_approval_template_details, **kwargs):
         """
@@ -561,6 +582,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/create_approval_template.py.html>`__ to see an example of how to use create_approval_template API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/approvalTemplates"
         method = "POST"
         operation_name = "create_approval_template"
@@ -605,7 +628,8 @@ class LockboxClient(object):
                 response_type="ApprovalTemplate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -615,7 +639,8 @@ class LockboxClient(object):
                 response_type="ApprovalTemplate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_lockbox(self, create_lockbox_details, **kwargs):
         """
@@ -653,6 +678,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/create_lockbox.py.html>`__ to see an example of how to use create_lockbox API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/lockboxes"
         method = "POST"
         operation_name = "create_lockbox"
@@ -697,7 +724,8 @@ class LockboxClient(object):
                 response_type="Lockbox",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -707,7 +735,8 @@ class LockboxClient(object):
                 response_type="Lockbox",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_approval_template(self, approval_template_id, **kwargs):
         """
@@ -745,6 +774,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/delete_approval_template.py.html>`__ to see an example of how to use delete_approval_template API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['approvalTemplateId']
         resource_path = "/approvalTemplates/{approvalTemplateId}"
         method = "DELETE"
         operation_name = "delete_approval_template"
@@ -797,7 +828,8 @@ class LockboxClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -806,7 +838,8 @@ class LockboxClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_lockbox(self, lockbox_id, **kwargs):
         """
@@ -851,6 +884,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/delete_lockbox.py.html>`__ to see an example of how to use delete_lockbox API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['lockboxId']
         resource_path = "/lockboxes/{lockboxId}"
         method = "DELETE"
         operation_name = "delete_lockbox"
@@ -906,7 +941,8 @@ class LockboxClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -915,7 +951,8 @@ class LockboxClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_access_materials(self, access_request_id, **kwargs):
         """
@@ -946,6 +983,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/get_access_materials.py.html>`__ to see an example of how to use get_access_materials API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['accessRequestId']
         resource_path = "/accessRequests/{accessRequestId}/accessMaterials"
         method = "GET"
         operation_name = "get_access_materials"
@@ -997,7 +1036,8 @@ class LockboxClient(object):
                 response_type="AccessMaterials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1007,7 +1047,8 @@ class LockboxClient(object):
                 response_type="AccessMaterials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_access_request(self, access_request_id, **kwargs):
         """
@@ -1038,6 +1079,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/get_access_request.py.html>`__ to see an example of how to use get_access_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['accessRequestId']
         resource_path = "/accessRequests/{accessRequestId}"
         method = "GET"
         operation_name = "get_access_request"
@@ -1089,7 +1132,8 @@ class LockboxClient(object):
                 response_type="AccessRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1099,7 +1143,8 @@ class LockboxClient(object):
                 response_type="AccessRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_approval_template(self, approval_template_id, **kwargs):
         """
@@ -1130,6 +1175,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/get_approval_template.py.html>`__ to see an example of how to use get_approval_template API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['approvalTemplateId']
         resource_path = "/approvalTemplates/{approvalTemplateId}"
         method = "GET"
         operation_name = "get_approval_template"
@@ -1181,7 +1228,8 @@ class LockboxClient(object):
                 response_type="ApprovalTemplate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1191,7 +1239,8 @@ class LockboxClient(object):
                 response_type="ApprovalTemplate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_lockbox(self, lockbox_id, **kwargs):
         """
@@ -1222,6 +1271,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/get_lockbox.py.html>`__ to see an example of how to use get_lockbox API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['lockboxId']
         resource_path = "/lockboxes/{lockboxId}"
         method = "GET"
         operation_name = "get_lockbox"
@@ -1273,7 +1324,8 @@ class LockboxClient(object):
                 response_type="Lockbox",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1283,7 +1335,8 @@ class LockboxClient(object):
                 response_type="Lockbox",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1314,6 +1367,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -1365,7 +1420,8 @@ class LockboxClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1375,7 +1431,8 @@ class LockboxClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def handle_access_request(self, access_request_id, handle_access_request_details, **kwargs):
         """
@@ -1423,6 +1480,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/handle_access_request.py.html>`__ to see an example of how to use handle_access_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['accessRequestId']
         resource_path = "/accessRequests/{accessRequestId}/actions/handle"
         method = "POST"
         operation_name = "handle_access_request"
@@ -1479,7 +1538,8 @@ class LockboxClient(object):
                 body=handle_access_request_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1489,7 +1549,8 @@ class LockboxClient(object):
                 body=handle_access_request_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_access_requests(self, **kwargs):
         """
@@ -1555,6 +1616,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/list_access_requests.py.html>`__ to see an example of how to use list_access_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/accessRequests"
         method = "GET"
         operation_name = "list_access_requests"
@@ -1648,7 +1711,8 @@ class LockboxClient(object):
                 response_type="AccessRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1658,7 +1722,8 @@ class LockboxClient(object):
                 response_type="AccessRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_approval_templates(self, **kwargs):
         """
@@ -1716,6 +1781,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/list_approval_templates.py.html>`__ to see an example of how to use list_approval_templates API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/approvalTemplates"
         method = "GET"
         operation_name = "list_approval_templates"
@@ -1798,7 +1865,8 @@ class LockboxClient(object):
                 response_type="ApprovalTemplateCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1808,7 +1876,8 @@ class LockboxClient(object):
                 response_type="ApprovalTemplateCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_lockboxes(self, **kwargs):
         """
@@ -1874,6 +1943,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/list_lockboxes.py.html>`__ to see an example of how to use list_lockboxes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/lockboxes"
         method = "GET"
         operation_name = "list_lockboxes"
@@ -1967,7 +2038,8 @@ class LockboxClient(object):
                 response_type="LockboxCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1977,7 +2049,8 @@ class LockboxClient(object):
                 response_type="LockboxCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -2024,6 +2097,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -2102,7 +2177,8 @@ class LockboxClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2113,7 +2189,8 @@ class LockboxClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -2160,6 +2237,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -2238,7 +2317,8 @@ class LockboxClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2249,7 +2329,8 @@ class LockboxClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, **kwargs):
         """
@@ -2307,6 +2388,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -2389,7 +2472,8 @@ class LockboxClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2399,7 +2483,8 @@ class LockboxClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_approval_template(self, approval_template_id, update_approval_template_details, **kwargs):
         """
@@ -2440,6 +2525,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/update_approval_template.py.html>`__ to see an example of how to use update_approval_template API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['approvalTemplateId']
         resource_path = "/approvalTemplates/{approvalTemplateId}"
         method = "PUT"
         operation_name = "update_approval_template"
@@ -2494,7 +2581,8 @@ class LockboxClient(object):
                 response_type="ApprovalTemplate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2505,7 +2593,8 @@ class LockboxClient(object):
                 response_type="ApprovalTemplate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_lockbox(self, lockbox_id, update_lockbox_details, **kwargs):
         """
@@ -2546,6 +2635,8 @@ class LockboxClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/update_lockbox.py.html>`__ to see an example of how to use update_lockbox API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['lockboxId']
         resource_path = "/lockboxes/{lockboxId}"
         method = "PUT"
         operation_name = "update_lockbox"
@@ -2600,7 +2691,8 @@ class LockboxClient(object):
                 response_type="Lockbox",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2611,4 +2703,5 @@ class LockboxClient(object):
                 response_type="Lockbox",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

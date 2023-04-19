@@ -66,6 +66,9 @@ class DataSafeClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -92,8 +95,10 @@ class DataSafeClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20181201',
             'service_endpoint_template': 'https://datasafe.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -150,6 +155,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/activate_target_database.py.html>`__ to see an example of how to use activate_target_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetDatabaseId']
         resource_path = "/targetDatabases/{targetDatabaseId}/actions/activate"
         method = "POST"
         operation_name = "activate_target_database"
@@ -208,7 +215,8 @@ class DataSafeClient(object):
                 body=activate_target_database_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -218,7 +226,8 @@ class DataSafeClient(object):
                 body=activate_target_database_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def add_masking_columns_from_sdm(self, masking_policy_id, **kwargs):
         """
@@ -259,6 +268,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/add_masking_columns_from_sdm.py.html>`__ to see an example of how to use add_masking_columns_from_sdm API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingPolicyId']
         resource_path = "/maskingPolicies/{maskingPolicyId}/actions/addMaskingColumnsFromSdm"
         method = "POST"
         operation_name = "add_masking_columns_from_sdm"
@@ -313,7 +324,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -322,7 +334,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def alerts_update(self, alerts_update_details, **kwargs):
         """
@@ -378,6 +391,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/alerts_update.py.html>`__ to see an example of how to use alerts_update API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/alerts/actions/updateAll"
         method = "POST"
         operation_name = "alerts_update"
@@ -441,7 +456,8 @@ class DataSafeClient(object):
                 body=alerts_update_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -451,7 +467,8 @@ class DataSafeClient(object):
                 body=alerts_update_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def apply_discovery_job_results(self, sensitive_data_model_id, apply_discovery_job_results_details, **kwargs):
         """
@@ -495,6 +512,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/apply_discovery_job_results.py.html>`__ to see an example of how to use apply_discovery_job_results API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveDataModelId']
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns/actions/applyDiscoveryJobResults"
         method = "POST"
         operation_name = "apply_discovery_job_results"
@@ -550,7 +569,8 @@ class DataSafeClient(object):
                 body=apply_discovery_job_results_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -560,7 +580,8 @@ class DataSafeClient(object):
                 body=apply_discovery_job_results_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def apply_sdm_masking_policy_difference(self, masking_policy_id, apply_sdm_masking_policy_difference_details, **kwargs):
         """
@@ -612,6 +633,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/apply_sdm_masking_policy_difference.py.html>`__ to see an example of how to use apply_sdm_masking_policy_difference API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingPolicyId']
         resource_path = "/maskingPolicies/{maskingPolicyId}/maskingColumns/actions/applyDifferenceToMaskingColumns"
         method = "POST"
         operation_name = "apply_sdm_masking_policy_difference"
@@ -670,7 +693,8 @@ class DataSafeClient(object):
                 body=apply_sdm_masking_policy_difference_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -680,7 +704,8 @@ class DataSafeClient(object):
                 body=apply_sdm_masking_policy_difference_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def calculate_audit_volume_available(self, audit_profile_id, calculate_audit_volume_available_details, **kwargs):
         """
@@ -727,6 +752,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/calculate_audit_volume_available.py.html>`__ to see an example of how to use calculate_audit_volume_available API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditProfileId']
         resource_path = "/auditProfiles/{auditProfileId}/actions/calculateAuditVolumeAvailable"
         method = "POST"
         operation_name = "calculate_audit_volume_available"
@@ -785,7 +812,8 @@ class DataSafeClient(object):
                 body=calculate_audit_volume_available_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -795,7 +823,8 @@ class DataSafeClient(object):
                 body=calculate_audit_volume_available_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def calculate_audit_volume_collected(self, audit_profile_id, calculate_audit_volume_collected_details, **kwargs):
         """
@@ -842,6 +871,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/calculate_audit_volume_collected.py.html>`__ to see an example of how to use calculate_audit_volume_collected API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditProfileId']
         resource_path = "/auditProfiles/{auditProfileId}/actions/calculateAuditVolumeCollected"
         method = "POST"
         operation_name = "calculate_audit_volume_collected"
@@ -900,7 +931,8 @@ class DataSafeClient(object):
                 body=calculate_audit_volume_collected_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -910,7 +942,8 @@ class DataSafeClient(object):
                 body=calculate_audit_volume_collected_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_work_request(self, work_request_id, **kwargs):
         """
@@ -954,6 +987,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
@@ -1011,7 +1046,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1020,7 +1056,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_alert_compartment(self, alert_id, change_alert_compartment_details, **kwargs):
         """
@@ -1067,6 +1104,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_alert_compartment.py.html>`__ to see an example of how to use change_alert_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['alertId']
         resource_path = "/alerts/{alertId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_alert_compartment"
@@ -1125,7 +1164,8 @@ class DataSafeClient(object):
                 body=change_alert_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1135,7 +1175,8 @@ class DataSafeClient(object):
                 body=change_alert_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_audit_archive_retrieval_compartment(self, audit_archive_retrieval_id, change_audit_archive_retrieval_compartment_details, **kwargs):
         """
@@ -1182,6 +1223,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_audit_archive_retrieval_compartment.py.html>`__ to see an example of how to use change_audit_archive_retrieval_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditArchiveRetrievalId']
         resource_path = "/auditArchiveRetrievals/{auditArchiveRetrievalId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_audit_archive_retrieval_compartment"
@@ -1240,7 +1283,8 @@ class DataSafeClient(object):
                 body=change_audit_archive_retrieval_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1250,7 +1294,8 @@ class DataSafeClient(object):
                 body=change_audit_archive_retrieval_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_audit_policy_compartment(self, audit_policy_id, change_audit_policy_compartment_details, **kwargs):
         """
@@ -1297,6 +1342,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_audit_policy_compartment.py.html>`__ to see an example of how to use change_audit_policy_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditPolicyId']
         resource_path = "/auditPolicies/{auditPolicyId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_audit_policy_compartment"
@@ -1355,7 +1402,8 @@ class DataSafeClient(object):
                 body=change_audit_policy_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1365,7 +1413,8 @@ class DataSafeClient(object):
                 body=change_audit_policy_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_audit_profile_compartment(self, audit_profile_id, change_audit_profile_compartment_details, **kwargs):
         """
@@ -1412,6 +1461,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_audit_profile_compartment.py.html>`__ to see an example of how to use change_audit_profile_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditProfileId']
         resource_path = "/auditProfiles/{auditProfileId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_audit_profile_compartment"
@@ -1470,7 +1521,8 @@ class DataSafeClient(object):
                 body=change_audit_profile_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1480,7 +1532,8 @@ class DataSafeClient(object):
                 body=change_audit_profile_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_data_safe_private_endpoint_compartment(self, data_safe_private_endpoint_id, change_data_safe_private_endpoint_compartment_details, **kwargs):
         """
@@ -1521,6 +1574,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_data_safe_private_endpoint_compartment.py.html>`__ to see an example of how to use change_data_safe_private_endpoint_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dataSafePrivateEndpointId']
         resource_path = "/dataSafePrivateEndpoints/{dataSafePrivateEndpointId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_data_safe_private_endpoint_compartment"
@@ -1576,7 +1631,8 @@ class DataSafeClient(object):
                 body=change_data_safe_private_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1586,7 +1642,8 @@ class DataSafeClient(object):
                 body=change_data_safe_private_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_discovery_job_compartment(self, discovery_job_id, change_discovery_job_compartment_details, **kwargs):
         """
@@ -1633,6 +1690,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_discovery_job_compartment.py.html>`__ to see an example of how to use change_discovery_job_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['discoveryJobId']
         resource_path = "/discoveryJobs/{discoveryJobId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_discovery_job_compartment"
@@ -1691,7 +1750,8 @@ class DataSafeClient(object):
                 body=change_discovery_job_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1701,7 +1761,8 @@ class DataSafeClient(object):
                 body=change_discovery_job_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_library_masking_format_compartment(self, library_masking_format_id, change_library_masking_format_compartment_details, **kwargs):
         """
@@ -1748,6 +1809,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_library_masking_format_compartment.py.html>`__ to see an example of how to use change_library_masking_format_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['libraryMaskingFormatId']
         resource_path = "/libraryMaskingFormats/{libraryMaskingFormatId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_library_masking_format_compartment"
@@ -1806,7 +1869,8 @@ class DataSafeClient(object):
                 body=change_library_masking_format_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1816,7 +1880,8 @@ class DataSafeClient(object):
                 body=change_library_masking_format_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_masking_policy_compartment(self, masking_policy_id, change_masking_policy_compartment_details, **kwargs):
         """
@@ -1863,6 +1928,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_masking_policy_compartment.py.html>`__ to see an example of how to use change_masking_policy_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingPolicyId']
         resource_path = "/maskingPolicies/{maskingPolicyId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_masking_policy_compartment"
@@ -1921,7 +1988,8 @@ class DataSafeClient(object):
                 body=change_masking_policy_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1931,7 +1999,8 @@ class DataSafeClient(object):
                 body=change_masking_policy_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_on_prem_connector_compartment(self, on_prem_connector_id, change_on_prem_connector_compartment_details, **kwargs):
         """
@@ -1978,6 +2047,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_on_prem_connector_compartment.py.html>`__ to see an example of how to use change_on_prem_connector_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['onPremConnectorId']
         resource_path = "/onPremConnectors/{onPremConnectorId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_on_prem_connector_compartment"
@@ -2036,7 +2107,8 @@ class DataSafeClient(object):
                 body=change_on_prem_connector_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2046,7 +2118,8 @@ class DataSafeClient(object):
                 body=change_on_prem_connector_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_report_compartment(self, report_id, change_report_compartment_details, **kwargs):
         """
@@ -2093,6 +2166,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_report_compartment.py.html>`__ to see an example of how to use change_report_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['reportId']
         resource_path = "/reports/{reportId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_report_compartment"
@@ -2151,7 +2226,8 @@ class DataSafeClient(object):
                 body=change_report_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2161,7 +2237,8 @@ class DataSafeClient(object):
                 body=change_report_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_report_definition_compartment(self, report_definition_id, change_report_definition_compartment_details, **kwargs):
         """
@@ -2208,6 +2285,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_report_definition_compartment.py.html>`__ to see an example of how to use change_report_definition_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['reportDefinitionId']
         resource_path = "/reportDefinitions/{reportDefinitionId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_report_definition_compartment"
@@ -2266,7 +2345,8 @@ class DataSafeClient(object):
                 body=change_report_definition_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2276,7 +2356,8 @@ class DataSafeClient(object):
                 body=change_report_definition_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_retention(self, audit_profile_id, change_retention_details, **kwargs):
         """
@@ -2323,6 +2404,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_retention.py.html>`__ to see an example of how to use change_retention API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditProfileId']
         resource_path = "/auditProfiles/{auditProfileId}/actions/changeRetention"
         method = "POST"
         operation_name = "change_retention"
@@ -2381,7 +2464,8 @@ class DataSafeClient(object):
                 body=change_retention_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2391,7 +2475,8 @@ class DataSafeClient(object):
                 body=change_retention_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_sdm_masking_policy_difference_compartment(self, sdm_masking_policy_difference_id, change_sdm_masking_policy_difference_compartment_details, **kwargs):
         """
@@ -2438,6 +2523,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_sdm_masking_policy_difference_compartment.py.html>`__ to see an example of how to use change_sdm_masking_policy_difference_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sdmMaskingPolicyDifferenceId']
         resource_path = "/sdmMaskingPolicyDifferences/{sdmMaskingPolicyDifferenceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_sdm_masking_policy_difference_compartment"
@@ -2496,7 +2583,8 @@ class DataSafeClient(object):
                 body=change_sdm_masking_policy_difference_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2506,7 +2594,8 @@ class DataSafeClient(object):
                 body=change_sdm_masking_policy_difference_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_security_assessment_compartment(self, security_assessment_id, change_security_assessment_compartment_details, **kwargs):
         """
@@ -2557,6 +2646,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_security_assessment_compartment.py.html>`__ to see an example of how to use change_security_assessment_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityAssessmentId']
         resource_path = "/securityAssessments/{securityAssessmentId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_security_assessment_compartment"
@@ -2615,7 +2706,8 @@ class DataSafeClient(object):
                 body=change_security_assessment_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2625,7 +2717,8 @@ class DataSafeClient(object):
                 body=change_security_assessment_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_sensitive_data_model_compartment(self, sensitive_data_model_id, change_sensitive_data_model_compartment_details, **kwargs):
         """
@@ -2672,6 +2765,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_sensitive_data_model_compartment.py.html>`__ to see an example of how to use change_sensitive_data_model_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveDataModelId']
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_sensitive_data_model_compartment"
@@ -2730,7 +2825,8 @@ class DataSafeClient(object):
                 body=change_sensitive_data_model_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2740,7 +2836,8 @@ class DataSafeClient(object):
                 body=change_sensitive_data_model_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_sensitive_type_compartment(self, sensitive_type_id, change_sensitive_type_compartment_details, **kwargs):
         """
@@ -2787,6 +2884,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_sensitive_type_compartment.py.html>`__ to see an example of how to use change_sensitive_type_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveTypeId']
         resource_path = "/sensitiveTypes/{sensitiveTypeId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_sensitive_type_compartment"
@@ -2845,7 +2944,8 @@ class DataSafeClient(object):
                 body=change_sensitive_type_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2855,7 +2955,8 @@ class DataSafeClient(object):
                 body=change_sensitive_type_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_target_alert_policy_association_compartment(self, target_alert_policy_association_id, change_target_alert_policy_association_compartment_details, **kwargs):
         """
@@ -2902,6 +3003,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_target_alert_policy_association_compartment.py.html>`__ to see an example of how to use change_target_alert_policy_association_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetAlertPolicyAssociationId']
         resource_path = "/targetAlertPolicyAssociations/{targetAlertPolicyAssociationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_target_alert_policy_association_compartment"
@@ -2960,7 +3063,8 @@ class DataSafeClient(object):
                 body=change_target_alert_policy_association_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2970,7 +3074,8 @@ class DataSafeClient(object):
                 body=change_target_alert_policy_association_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_target_database_compartment(self, target_database_id, change_target_database_compartment_details, **kwargs):
         """
@@ -3017,6 +3122,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_target_database_compartment.py.html>`__ to see an example of how to use change_target_database_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetDatabaseId']
         resource_path = "/targetDatabases/{targetDatabaseId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_target_database_compartment"
@@ -3075,7 +3182,8 @@ class DataSafeClient(object):
                 body=change_target_database_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3085,7 +3193,8 @@ class DataSafeClient(object):
                 body=change_target_database_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_user_assessment_compartment(self, user_assessment_id, change_user_assessment_compartment_details, **kwargs):
         """
@@ -3136,6 +3245,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/change_user_assessment_compartment.py.html>`__ to see an example of how to use change_user_assessment_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userAssessmentId']
         resource_path = "/userAssessments/{userAssessmentId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_user_assessment_compartment"
@@ -3194,7 +3305,8 @@ class DataSafeClient(object):
                 body=change_user_assessment_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3204,7 +3316,8 @@ class DataSafeClient(object):
                 body=change_user_assessment_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def compare_security_assessment(self, security_assessment_id, compare_security_assessment_details, **kwargs):
         """
@@ -3252,6 +3365,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/compare_security_assessment.py.html>`__ to see an example of how to use compare_security_assessment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityAssessmentId']
         resource_path = "/securityAssessments/{securityAssessmentId}/actions/compare"
         method = "POST"
         operation_name = "compare_security_assessment"
@@ -3310,7 +3425,8 @@ class DataSafeClient(object):
                 body=compare_security_assessment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3320,7 +3436,8 @@ class DataSafeClient(object):
                 body=compare_security_assessment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def compare_user_assessment(self, user_assessment_id, compare_user_assessment_details, **kwargs):
         """
@@ -3368,6 +3485,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/compare_user_assessment.py.html>`__ to see an example of how to use compare_user_assessment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userAssessmentId']
         resource_path = "/userAssessments/{userAssessmentId}/actions/compare"
         method = "POST"
         operation_name = "compare_user_assessment"
@@ -3426,7 +3545,8 @@ class DataSafeClient(object):
                 body=compare_user_assessment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3436,7 +3556,8 @@ class DataSafeClient(object):
                 body=compare_user_assessment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_audit_archive_retrieval(self, create_audit_archive_retrieval_details, **kwargs):
         """
@@ -3475,6 +3596,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_audit_archive_retrieval.py.html>`__ to see an example of how to use create_audit_archive_retrieval API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/auditArchiveRetrievals"
         method = "POST"
         operation_name = "create_audit_archive_retrieval"
@@ -3521,7 +3644,8 @@ class DataSafeClient(object):
                 response_type="AuditArchiveRetrieval",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3531,7 +3655,8 @@ class DataSafeClient(object):
                 response_type="AuditArchiveRetrieval",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_data_safe_private_endpoint(self, create_data_safe_private_endpoint_details, **kwargs):
         """
@@ -3568,6 +3693,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_data_safe_private_endpoint.py.html>`__ to see an example of how to use create_data_safe_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/dataSafePrivateEndpoints"
         method = "POST"
         operation_name = "create_data_safe_private_endpoint"
@@ -3614,7 +3741,8 @@ class DataSafeClient(object):
                 response_type="DataSafePrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3624,7 +3752,8 @@ class DataSafeClient(object):
                 response_type="DataSafePrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_discovery_job(self, create_discovery_job_details, **kwargs):
         """
@@ -3665,6 +3794,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_discovery_job.py.html>`__ to see an example of how to use create_discovery_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/discoveryJobs"
         method = "POST"
         operation_name = "create_discovery_job"
@@ -3711,7 +3842,8 @@ class DataSafeClient(object):
                 response_type="DiscoveryJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3721,7 +3853,8 @@ class DataSafeClient(object):
                 response_type="DiscoveryJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_library_masking_format(self, create_library_masking_format_details, **kwargs):
         """
@@ -3762,6 +3895,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_library_masking_format.py.html>`__ to see an example of how to use create_library_masking_format API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/libraryMaskingFormats"
         method = "POST"
         operation_name = "create_library_masking_format"
@@ -3808,7 +3943,8 @@ class DataSafeClient(object):
                 response_type="LibraryMaskingFormat",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3818,7 +3954,8 @@ class DataSafeClient(object):
                 response_type="LibraryMaskingFormat",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_masking_column(self, create_masking_column_details, masking_policy_id, **kwargs):
         """
@@ -3877,6 +4014,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_masking_column.py.html>`__ to see an example of how to use create_masking_column API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingPolicyId']
         resource_path = "/maskingPolicies/{maskingPolicyId}/maskingColumns"
         method = "POST"
         operation_name = "create_masking_column"
@@ -3933,7 +4072,8 @@ class DataSafeClient(object):
                 body=create_masking_column_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3943,7 +4083,8 @@ class DataSafeClient(object):
                 body=create_masking_column_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_masking_policy(self, create_masking_policy_details, **kwargs):
         """
@@ -3996,6 +4137,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_masking_policy.py.html>`__ to see an example of how to use create_masking_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/maskingPolicies"
         method = "POST"
         operation_name = "create_masking_policy"
@@ -4042,7 +4185,8 @@ class DataSafeClient(object):
                 response_type="MaskingPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4052,7 +4196,8 @@ class DataSafeClient(object):
                 response_type="MaskingPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_on_prem_connector(self, create_on_prem_connector_details, **kwargs):
         """
@@ -4089,6 +4234,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_on_prem_connector.py.html>`__ to see an example of how to use create_on_prem_connector API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/onPremConnectors"
         method = "POST"
         operation_name = "create_on_prem_connector"
@@ -4135,7 +4282,8 @@ class DataSafeClient(object):
                 response_type="OnPremConnector",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4145,7 +4293,8 @@ class DataSafeClient(object):
                 response_type="OnPremConnector",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_report_definition(self, create_report_definition_details, **kwargs):
         """
@@ -4182,6 +4331,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_report_definition.py.html>`__ to see an example of how to use create_report_definition API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/reportDefinitions"
         method = "POST"
         operation_name = "create_report_definition"
@@ -4228,7 +4379,8 @@ class DataSafeClient(object):
                 response_type="ReportDefinition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4238,7 +4390,8 @@ class DataSafeClient(object):
                 response_type="ReportDefinition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_sdm_masking_policy_difference(self, create_sdm_masking_policy_difference_details, **kwargs):
         """
@@ -4279,6 +4432,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_sdm_masking_policy_difference.py.html>`__ to see an example of how to use create_sdm_masking_policy_difference API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/sdmMaskingPolicyDifferences"
         method = "POST"
         operation_name = "create_sdm_masking_policy_difference"
@@ -4325,7 +4480,8 @@ class DataSafeClient(object):
                 response_type="SdmMaskingPolicyDifference",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4335,7 +4491,8 @@ class DataSafeClient(object):
                 response_type="SdmMaskingPolicyDifference",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_security_assessment(self, create_security_assessment_details, **kwargs):
         """
@@ -4376,6 +4533,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_security_assessment.py.html>`__ to see an example of how to use create_security_assessment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/securityAssessments"
         method = "POST"
         operation_name = "create_security_assessment"
@@ -4422,7 +4581,8 @@ class DataSafeClient(object):
                 response_type="SecurityAssessment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4432,7 +4592,8 @@ class DataSafeClient(object):
                 response_type="SecurityAssessment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_sensitive_column(self, sensitive_data_model_id, create_sensitive_column_details, **kwargs):
         """
@@ -4472,6 +4633,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_sensitive_column.py.html>`__ to see an example of how to use create_sensitive_column API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveDataModelId']
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns"
         method = "POST"
         operation_name = "create_sensitive_column"
@@ -4528,7 +4691,8 @@ class DataSafeClient(object):
                 body=create_sensitive_column_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4538,7 +4702,8 @@ class DataSafeClient(object):
                 body=create_sensitive_column_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_sensitive_data_model(self, create_sensitive_data_model_details, **kwargs):
         """
@@ -4577,6 +4742,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_sensitive_data_model.py.html>`__ to see an example of how to use create_sensitive_data_model API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/sensitiveDataModels"
         method = "POST"
         operation_name = "create_sensitive_data_model"
@@ -4623,7 +4790,8 @@ class DataSafeClient(object):
                 response_type="SensitiveDataModel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4633,7 +4801,8 @@ class DataSafeClient(object):
                 response_type="SensitiveDataModel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_sensitive_type(self, create_sensitive_type_details, **kwargs):
         """
@@ -4672,6 +4841,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_sensitive_type.py.html>`__ to see an example of how to use create_sensitive_type API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/sensitiveTypes"
         method = "POST"
         operation_name = "create_sensitive_type"
@@ -4718,7 +4889,8 @@ class DataSafeClient(object):
                 response_type="SensitiveType",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4728,7 +4900,8 @@ class DataSafeClient(object):
                 response_type="SensitiveType",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_target_alert_policy_association(self, create_target_alert_policy_association_details, **kwargs):
         """
@@ -4765,6 +4938,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_target_alert_policy_association.py.html>`__ to see an example of how to use create_target_alert_policy_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/targetAlertPolicyAssociations"
         method = "POST"
         operation_name = "create_target_alert_policy_association"
@@ -4811,7 +4986,8 @@ class DataSafeClient(object):
                 response_type="TargetAlertPolicyAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4821,7 +4997,8 @@ class DataSafeClient(object):
                 response_type="TargetAlertPolicyAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_target_database(self, create_target_database_details, **kwargs):
         """
@@ -4858,6 +5035,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_target_database.py.html>`__ to see an example of how to use create_target_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/targetDatabases"
         method = "POST"
         operation_name = "create_target_database"
@@ -4904,7 +5083,8 @@ class DataSafeClient(object):
                 response_type="TargetDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4914,7 +5094,8 @@ class DataSafeClient(object):
                 response_type="TargetDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_user_assessment(self, create_user_assessment_details, **kwargs):
         """
@@ -4955,6 +5136,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/create_user_assessment.py.html>`__ to see an example of how to use create_user_assessment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/userAssessments"
         method = "POST"
         operation_name = "create_user_assessment"
@@ -5001,7 +5184,8 @@ class DataSafeClient(object):
                 response_type="UserAssessment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5011,7 +5195,8 @@ class DataSafeClient(object):
                 response_type="UserAssessment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def deactivate_target_database(self, target_database_id, **kwargs):
         """
@@ -5055,6 +5240,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/deactivate_target_database.py.html>`__ to see an example of how to use deactivate_target_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetDatabaseId']
         resource_path = "/targetDatabases/{targetDatabaseId}/actions/deactivate"
         method = "POST"
         operation_name = "deactivate_target_database"
@@ -5112,7 +5299,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5121,7 +5309,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_audit_archive_retrieval(self, audit_archive_retrieval_id, **kwargs):
         """
@@ -5160,6 +5349,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_audit_archive_retrieval.py.html>`__ to see an example of how to use delete_audit_archive_retrieval API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditArchiveRetrievalId']
         resource_path = "/auditArchiveRetrievals/{auditArchiveRetrievalId}"
         method = "DELETE"
         operation_name = "delete_audit_archive_retrieval"
@@ -5214,7 +5405,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5223,7 +5415,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_audit_trail(self, audit_trail_id, **kwargs):
         """
@@ -5261,6 +5454,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_audit_trail.py.html>`__ to see an example of how to use delete_audit_trail API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditTrailId']
         resource_path = "/auditTrails/{auditTrailId}"
         method = "DELETE"
         operation_name = "delete_audit_trail"
@@ -5315,7 +5510,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5324,7 +5520,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_data_safe_private_endpoint(self, data_safe_private_endpoint_id, **kwargs):
         """
@@ -5362,6 +5559,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_data_safe_private_endpoint.py.html>`__ to see an example of how to use delete_data_safe_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dataSafePrivateEndpointId']
         resource_path = "/dataSafePrivateEndpoints/{dataSafePrivateEndpointId}"
         method = "DELETE"
         operation_name = "delete_data_safe_private_endpoint"
@@ -5416,7 +5615,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5425,7 +5625,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_discovery_job(self, discovery_job_id, **kwargs):
         """
@@ -5463,6 +5664,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_discovery_job.py.html>`__ to see an example of how to use delete_discovery_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['discoveryJobId']
         resource_path = "/discoveryJobs/{discoveryJobId}"
         method = "DELETE"
         operation_name = "delete_discovery_job"
@@ -5517,7 +5720,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5526,7 +5730,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_discovery_job_result(self, discovery_job_id, result_key, **kwargs):
         """
@@ -5567,6 +5772,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_discovery_job_result.py.html>`__ to see an example of how to use delete_discovery_job_result API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['discoveryJobId', 'resultKey']
         resource_path = "/discoveryJobs/{discoveryJobId}/results/{resultKey}"
         method = "DELETE"
         operation_name = "delete_discovery_job_result"
@@ -5622,7 +5829,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5631,7 +5839,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_library_masking_format(self, library_masking_format_id, **kwargs):
         """
@@ -5669,6 +5878,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_library_masking_format.py.html>`__ to see an example of how to use delete_library_masking_format API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['libraryMaskingFormatId']
         resource_path = "/libraryMaskingFormats/{libraryMaskingFormatId}"
         method = "DELETE"
         operation_name = "delete_library_masking_format"
@@ -5723,7 +5934,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5732,7 +5944,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_masking_column(self, masking_column_key, masking_policy_id, **kwargs):
         """
@@ -5773,6 +5986,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_masking_column.py.html>`__ to see an example of how to use delete_masking_column API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingColumnKey', 'maskingPolicyId']
         resource_path = "/maskingPolicies/{maskingPolicyId}/maskingColumns/{maskingColumnKey}"
         method = "DELETE"
         operation_name = "delete_masking_column"
@@ -5828,7 +6043,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5837,7 +6053,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_masking_policy(self, masking_policy_id, **kwargs):
         """
@@ -5875,6 +6092,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_masking_policy.py.html>`__ to see an example of how to use delete_masking_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingPolicyId']
         resource_path = "/maskingPolicies/{maskingPolicyId}"
         method = "DELETE"
         operation_name = "delete_masking_policy"
@@ -5929,7 +6148,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5938,7 +6158,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_on_prem_connector(self, on_prem_connector_id, **kwargs):
         """
@@ -5976,6 +6197,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_on_prem_connector.py.html>`__ to see an example of how to use delete_on_prem_connector API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['onPremConnectorId']
         resource_path = "/onPremConnectors/{onPremConnectorId}"
         method = "DELETE"
         operation_name = "delete_on_prem_connector"
@@ -6030,7 +6253,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6039,7 +6263,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_report_definition(self, report_definition_id, **kwargs):
         """
@@ -6077,6 +6302,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_report_definition.py.html>`__ to see an example of how to use delete_report_definition API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['reportDefinitionId']
         resource_path = "/reportDefinitions/{reportDefinitionId}"
         method = "DELETE"
         operation_name = "delete_report_definition"
@@ -6131,7 +6358,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6140,7 +6368,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_sdm_masking_policy_difference(self, sdm_masking_policy_difference_id, **kwargs):
         """
@@ -6178,6 +6407,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sdm_masking_policy_difference.py.html>`__ to see an example of how to use delete_sdm_masking_policy_difference API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sdmMaskingPolicyDifferenceId']
         resource_path = "/sdmMaskingPolicyDifferences/{sdmMaskingPolicyDifferenceId}"
         method = "DELETE"
         operation_name = "delete_sdm_masking_policy_difference"
@@ -6232,7 +6463,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6241,7 +6473,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_security_assessment(self, security_assessment_id, **kwargs):
         """
@@ -6282,6 +6515,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_security_assessment.py.html>`__ to see an example of how to use delete_security_assessment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityAssessmentId']
         resource_path = "/securityAssessments/{securityAssessmentId}"
         method = "DELETE"
         operation_name = "delete_security_assessment"
@@ -6336,7 +6571,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6345,7 +6581,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_sensitive_column(self, sensitive_data_model_id, sensitive_column_key, **kwargs):
         """
@@ -6386,6 +6623,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sensitive_column.py.html>`__ to see an example of how to use delete_sensitive_column API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveDataModelId', 'sensitiveColumnKey']
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns/{sensitiveColumnKey}"
         method = "DELETE"
         operation_name = "delete_sensitive_column"
@@ -6441,7 +6680,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6450,7 +6690,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_sensitive_data_model(self, sensitive_data_model_id, **kwargs):
         """
@@ -6488,6 +6729,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sensitive_data_model.py.html>`__ to see an example of how to use delete_sensitive_data_model API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveDataModelId']
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}"
         method = "DELETE"
         operation_name = "delete_sensitive_data_model"
@@ -6542,7 +6785,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6551,7 +6795,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_sensitive_type(self, sensitive_type_id, **kwargs):
         """
@@ -6589,6 +6834,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_sensitive_type.py.html>`__ to see an example of how to use delete_sensitive_type API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveTypeId']
         resource_path = "/sensitiveTypes/{sensitiveTypeId}"
         method = "DELETE"
         operation_name = "delete_sensitive_type"
@@ -6643,7 +6890,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6652,7 +6900,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_target_alert_policy_association(self, target_alert_policy_association_id, **kwargs):
         """
@@ -6690,6 +6939,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_target_alert_policy_association.py.html>`__ to see an example of how to use delete_target_alert_policy_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetAlertPolicyAssociationId']
         resource_path = "/targetAlertPolicyAssociations/{targetAlertPolicyAssociationId}"
         method = "DELETE"
         operation_name = "delete_target_alert_policy_association"
@@ -6744,7 +6995,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6753,7 +7005,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_target_database(self, target_database_id, **kwargs):
         """
@@ -6791,6 +7044,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_target_database.py.html>`__ to see an example of how to use delete_target_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetDatabaseId']
         resource_path = "/targetDatabases/{targetDatabaseId}"
         method = "DELETE"
         operation_name = "delete_target_database"
@@ -6845,7 +7100,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6854,7 +7110,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_user_assessment(self, user_assessment_id, **kwargs):
         """
@@ -6895,6 +7152,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/delete_user_assessment.py.html>`__ to see an example of how to use delete_user_assessment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userAssessmentId']
         resource_path = "/userAssessments/{userAssessmentId}"
         method = "DELETE"
         operation_name = "delete_user_assessment"
@@ -6949,7 +7208,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6958,7 +7218,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def discover_audit_trails(self, audit_profile_id, **kwargs):
         """
@@ -7005,6 +7266,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/discover_audit_trails.py.html>`__ to see an example of how to use discover_audit_trails API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditProfileId']
         resource_path = "/auditProfiles/{auditProfileId}/actions/discoverAuditTrails"
         method = "POST"
         operation_name = "discover_audit_trails"
@@ -7062,7 +7325,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7071,7 +7335,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def download_discovery_report(self, sensitive_data_model_id, download_discovery_report_details, **kwargs):
         """
@@ -7108,6 +7373,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_discovery_report.py.html>`__ to see an example of how to use download_discovery_report API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveDataModelId']
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/actions/downloadReport"
         method = "POST"
         operation_name = "download_discovery_report"
@@ -7162,7 +7429,8 @@ class DataSafeClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7173,7 +7441,8 @@ class DataSafeClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def download_masking_log(self, masking_policy_id, download_masking_log_details, **kwargs):
         """
@@ -7207,6 +7476,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_masking_log.py.html>`__ to see an example of how to use download_masking_log API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingPolicyId']
         resource_path = "/maskingPolicies/{maskingPolicyId}/actions/downloadLog"
         method = "POST"
         operation_name = "download_masking_log"
@@ -7261,7 +7532,8 @@ class DataSafeClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7272,7 +7544,8 @@ class DataSafeClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def download_masking_policy(self, masking_policy_id, download_masking_policy_details, **kwargs):
         """
@@ -7309,6 +7582,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_masking_policy.py.html>`__ to see an example of how to use download_masking_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingPolicyId']
         resource_path = "/maskingPolicies/{maskingPolicyId}/actions/download"
         method = "POST"
         operation_name = "download_masking_policy"
@@ -7363,7 +7638,8 @@ class DataSafeClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7374,7 +7650,8 @@ class DataSafeClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def download_masking_report(self, masking_policy_id, download_masking_report_details, **kwargs):
         """
@@ -7410,6 +7687,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_masking_report.py.html>`__ to see an example of how to use download_masking_report API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingPolicyId']
         resource_path = "/maskingPolicies/{maskingPolicyId}/actions/downloadReport"
         method = "POST"
         operation_name = "download_masking_report"
@@ -7464,7 +7743,8 @@ class DataSafeClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7475,7 +7755,8 @@ class DataSafeClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def download_privilege_script(self, **kwargs):
         """
@@ -7516,6 +7797,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_privilege_script.py.html>`__ to see an example of how to use download_privilege_script API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/actions/downloadPrivilegeScript"
         method = "POST"
         operation_name = "download_privilege_script"
@@ -7563,7 +7846,8 @@ class DataSafeClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7572,7 +7856,8 @@ class DataSafeClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def download_security_assessment_report(self, security_assessment_id, download_security_assessment_report_details, **kwargs):
         """
@@ -7620,6 +7905,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_security_assessment_report.py.html>`__ to see an example of how to use download_security_assessment_report API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityAssessmentId']
         resource_path = "/securityAssessments/{securityAssessmentId}/actions/downloadReport"
         method = "POST"
         operation_name = "download_security_assessment_report"
@@ -7679,7 +7966,8 @@ class DataSafeClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7690,7 +7978,8 @@ class DataSafeClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def download_sensitive_data_model(self, sensitive_data_model_id, download_sensitive_data_model_details, **kwargs):
         """
@@ -7727,6 +8016,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_sensitive_data_model.py.html>`__ to see an example of how to use download_sensitive_data_model API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveDataModelId']
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/actions/download"
         method = "POST"
         operation_name = "download_sensitive_data_model"
@@ -7781,7 +8072,8 @@ class DataSafeClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7792,7 +8084,8 @@ class DataSafeClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def download_user_assessment_report(self, user_assessment_id, download_user_assessment_report_details, **kwargs):
         """
@@ -7840,6 +8133,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/download_user_assessment_report.py.html>`__ to see an example of how to use download_user_assessment_report API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userAssessmentId']
         resource_path = "/userAssessments/{userAssessmentId}/actions/downloadReport"
         method = "POST"
         operation_name = "download_user_assessment_report"
@@ -7899,7 +8194,8 @@ class DataSafeClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7910,7 +8206,8 @@ class DataSafeClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def enable_data_safe_configuration(self, enable_data_safe_configuration_details, **kwargs):
         """
@@ -7951,6 +8248,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/enable_data_safe_configuration.py.html>`__ to see an example of how to use enable_data_safe_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/configuration"
         method = "PUT"
         operation_name = "enable_data_safe_configuration"
@@ -8002,7 +8301,8 @@ class DataSafeClient(object):
                 body=enable_data_safe_configuration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8012,7 +8312,8 @@ class DataSafeClient(object):
                 body=enable_data_safe_configuration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def generate_discovery_report_for_download(self, sensitive_data_model_id, generate_discovery_report_for_download_details, **kwargs):
         """
@@ -8049,6 +8350,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_discovery_report_for_download.py.html>`__ to see an example of how to use generate_discovery_report_for_download API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveDataModelId']
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/actions/generateReportForDownload"
         method = "POST"
         operation_name = "generate_discovery_report_for_download"
@@ -8102,7 +8405,8 @@ class DataSafeClient(object):
                 body=generate_discovery_report_for_download_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8112,7 +8416,8 @@ class DataSafeClient(object):
                 body=generate_discovery_report_for_download_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def generate_masking_policy_for_download(self, masking_policy_id, generate_masking_policy_for_download_details, **kwargs):
         """
@@ -8150,6 +8455,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_masking_policy_for_download.py.html>`__ to see an example of how to use generate_masking_policy_for_download API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingPolicyId']
         resource_path = "/maskingPolicies/{maskingPolicyId}/actions/generatePolicyForDownload"
         method = "POST"
         operation_name = "generate_masking_policy_for_download"
@@ -8203,7 +8510,8 @@ class DataSafeClient(object):
                 body=generate_masking_policy_for_download_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8213,7 +8521,8 @@ class DataSafeClient(object):
                 body=generate_masking_policy_for_download_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def generate_masking_report_for_download(self, masking_policy_id, generate_masking_report_for_download_details, **kwargs):
         """
@@ -8250,6 +8559,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_masking_report_for_download.py.html>`__ to see an example of how to use generate_masking_report_for_download API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingPolicyId']
         resource_path = "/maskingPolicies/{maskingPolicyId}/actions/generateReportForDownload"
         method = "POST"
         operation_name = "generate_masking_report_for_download"
@@ -8303,7 +8614,8 @@ class DataSafeClient(object):
                 body=generate_masking_report_for_download_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8313,7 +8625,8 @@ class DataSafeClient(object):
                 body=generate_masking_report_for_download_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def generate_on_prem_connector_configuration(self, generate_on_prem_connector_configuration_details, on_prem_connector_id, **kwargs):
         """
@@ -8360,6 +8673,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_on_prem_connector_configuration.py.html>`__ to see an example of how to use generate_on_prem_connector_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['onPremConnectorId']
         resource_path = "/onPremConnectors/{onPremConnectorId}/actions/generateConfiguration"
         method = "POST"
         operation_name = "generate_on_prem_connector_configuration"
@@ -8419,7 +8734,8 @@ class DataSafeClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8430,7 +8746,8 @@ class DataSafeClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def generate_report(self, report_definition_id, generate_report_details, **kwargs):
         """
@@ -8488,6 +8805,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_report.py.html>`__ to see an example of how to use generate_report API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['reportDefinitionId']
         resource_path = "/reportDefinitions/{reportDefinitionId}/actions/generateReport"
         method = "POST"
         operation_name = "generate_report"
@@ -8553,7 +8872,8 @@ class DataSafeClient(object):
                 body=generate_report_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8564,7 +8884,8 @@ class DataSafeClient(object):
                 body=generate_report_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def generate_security_assessment_report(self, security_assessment_id, generate_security_assessment_report_details, **kwargs):
         """
@@ -8612,6 +8933,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_security_assessment_report.py.html>`__ to see an example of how to use generate_security_assessment_report API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityAssessmentId']
         resource_path = "/securityAssessments/{securityAssessmentId}/actions/generateReport"
         method = "POST"
         operation_name = "generate_security_assessment_report"
@@ -8670,7 +8993,8 @@ class DataSafeClient(object):
                 body=generate_security_assessment_report_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8680,7 +9004,8 @@ class DataSafeClient(object):
                 body=generate_security_assessment_report_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def generate_sensitive_data_model_for_download(self, sensitive_data_model_id, generate_sensitive_data_model_for_download_details, **kwargs):
         """
@@ -8717,6 +9042,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_sensitive_data_model_for_download.py.html>`__ to see an example of how to use generate_sensitive_data_model_for_download API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveDataModelId']
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/actions/generateDataModelForDownload"
         method = "POST"
         operation_name = "generate_sensitive_data_model_for_download"
@@ -8770,7 +9097,8 @@ class DataSafeClient(object):
                 body=generate_sensitive_data_model_for_download_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8780,7 +9108,8 @@ class DataSafeClient(object):
                 body=generate_sensitive_data_model_for_download_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def generate_user_assessment_report(self, user_assessment_id, generate_user_assessment_report_details, **kwargs):
         """
@@ -8828,6 +9157,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/generate_user_assessment_report.py.html>`__ to see an example of how to use generate_user_assessment_report API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userAssessmentId']
         resource_path = "/userAssessments/{userAssessmentId}/actions/generateReport"
         method = "POST"
         operation_name = "generate_user_assessment_report"
@@ -8886,7 +9217,8 @@ class DataSafeClient(object):
                 body=generate_user_assessment_report_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8896,7 +9228,8 @@ class DataSafeClient(object):
                 body=generate_user_assessment_report_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_alert(self, alert_id, **kwargs):
         """
@@ -8927,6 +9260,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_alert.py.html>`__ to see an example of how to use get_alert API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['alertId']
         resource_path = "/alerts/{alertId}"
         method = "GET"
         operation_name = "get_alert"
@@ -8980,7 +9315,8 @@ class DataSafeClient(object):
                 response_type="Alert",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8990,7 +9326,8 @@ class DataSafeClient(object):
                 response_type="Alert",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_alert_policy(self, alert_policy_id, **kwargs):
         """
@@ -9021,6 +9358,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_alert_policy.py.html>`__ to see an example of how to use get_alert_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['alertPolicyId']
         resource_path = "/alertPolicies/{alertPolicyId}"
         method = "GET"
         operation_name = "get_alert_policy"
@@ -9074,7 +9413,8 @@ class DataSafeClient(object):
                 response_type="AlertPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9084,7 +9424,8 @@ class DataSafeClient(object):
                 response_type="AlertPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_audit_archive_retrieval(self, audit_archive_retrieval_id, **kwargs):
         """
@@ -9122,6 +9463,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_audit_archive_retrieval.py.html>`__ to see an example of how to use get_audit_archive_retrieval API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditArchiveRetrievalId']
         resource_path = "/auditArchiveRetrievals/{auditArchiveRetrievalId}"
         method = "GET"
         operation_name = "get_audit_archive_retrieval"
@@ -9177,7 +9520,8 @@ class DataSafeClient(object):
                 response_type="AuditArchiveRetrieval",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9187,7 +9531,8 @@ class DataSafeClient(object):
                 response_type="AuditArchiveRetrieval",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_audit_policy(self, audit_policy_id, **kwargs):
         """
@@ -9218,6 +9563,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_audit_policy.py.html>`__ to see an example of how to use get_audit_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditPolicyId']
         resource_path = "/auditPolicies/{auditPolicyId}"
         method = "GET"
         operation_name = "get_audit_policy"
@@ -9271,7 +9618,8 @@ class DataSafeClient(object):
                 response_type="AuditPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9281,7 +9629,8 @@ class DataSafeClient(object):
                 response_type="AuditPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_audit_profile(self, audit_profile_id, **kwargs):
         """
@@ -9312,6 +9661,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_audit_profile.py.html>`__ to see an example of how to use get_audit_profile API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditProfileId']
         resource_path = "/auditProfiles/{auditProfileId}"
         method = "GET"
         operation_name = "get_audit_profile"
@@ -9365,7 +9716,8 @@ class DataSafeClient(object):
                 response_type="AuditProfile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9375,7 +9727,8 @@ class DataSafeClient(object):
                 response_type="AuditProfile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_audit_trail(self, audit_trail_id, **kwargs):
         """
@@ -9406,6 +9759,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_audit_trail.py.html>`__ to see an example of how to use get_audit_trail API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditTrailId']
         resource_path = "/auditTrails/{auditTrailId}"
         method = "GET"
         operation_name = "get_audit_trail"
@@ -9459,7 +9814,8 @@ class DataSafeClient(object):
                 response_type="AuditTrail",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9469,7 +9825,8 @@ class DataSafeClient(object):
                 response_type="AuditTrail",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_compatible_formats_for_data_types(self, **kwargs):
         """
@@ -9513,6 +9870,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_compatible_formats_for_data_types.py.html>`__ to see an example of how to use get_compatible_formats_for_data_types API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/compatibleFormatsForDataTypes"
         method = "GET"
         operation_name = "get_compatible_formats_for_data_types"
@@ -9564,7 +9923,8 @@ class DataSafeClient(object):
                 response_type="CompatibleFormatsForDataTypes",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9574,7 +9934,8 @@ class DataSafeClient(object):
                 response_type="CompatibleFormatsForDataTypes",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_compatible_formats_for_sensitive_types(self, compartment_id, **kwargs):
         """
@@ -9630,6 +9991,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_compatible_formats_for_sensitive_types.py.html>`__ to see an example of how to use get_compatible_formats_for_sensitive_types API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/compatibleFormatsForSensitiveTypes"
         method = "GET"
         operation_name = "get_compatible_formats_for_sensitive_types"
@@ -9693,7 +10056,8 @@ class DataSafeClient(object):
                 response_type="CompatibleFormatsForSensitiveTypes",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9703,7 +10067,8 @@ class DataSafeClient(object):
                 response_type="CompatibleFormatsForSensitiveTypes",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_data_safe_configuration(self, **kwargs):
         """
@@ -9734,6 +10099,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_data_safe_configuration.py.html>`__ to see an example of how to use get_data_safe_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/configuration"
         method = "GET"
         operation_name = "get_data_safe_configuration"
@@ -9783,7 +10150,8 @@ class DataSafeClient(object):
                 response_type="DataSafeConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9793,7 +10161,8 @@ class DataSafeClient(object):
                 response_type="DataSafeConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_data_safe_private_endpoint(self, data_safe_private_endpoint_id, **kwargs):
         """
@@ -9824,6 +10193,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_data_safe_private_endpoint.py.html>`__ to see an example of how to use get_data_safe_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dataSafePrivateEndpointId']
         resource_path = "/dataSafePrivateEndpoints/{dataSafePrivateEndpointId}"
         method = "GET"
         operation_name = "get_data_safe_private_endpoint"
@@ -9877,7 +10248,8 @@ class DataSafeClient(object):
                 response_type="DataSafePrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9887,7 +10259,8 @@ class DataSafeClient(object):
                 response_type="DataSafePrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_difference_column(self, sdm_masking_policy_difference_id, difference_column_key, **kwargs):
         """
@@ -9921,6 +10294,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_difference_column.py.html>`__ to see an example of how to use get_difference_column API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sdmMaskingPolicyDifferenceId', 'differenceColumnKey']
         resource_path = "/sdmMaskingPolicyDifferences/{sdmMaskingPolicyDifferenceId}/differenceColumns/{differenceColumnKey}"
         method = "GET"
         operation_name = "get_difference_column"
@@ -9975,7 +10350,8 @@ class DataSafeClient(object):
                 response_type="DifferenceColumn",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9985,7 +10361,8 @@ class DataSafeClient(object):
                 response_type="DifferenceColumn",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_discovery_job(self, discovery_job_id, **kwargs):
         """
@@ -10016,6 +10393,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_discovery_job.py.html>`__ to see an example of how to use get_discovery_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['discoveryJobId']
         resource_path = "/discoveryJobs/{discoveryJobId}"
         method = "GET"
         operation_name = "get_discovery_job"
@@ -10069,7 +10448,8 @@ class DataSafeClient(object):
                 response_type="DiscoveryJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10079,7 +10459,8 @@ class DataSafeClient(object):
                 response_type="DiscoveryJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_discovery_job_result(self, discovery_job_id, result_key, **kwargs):
         """
@@ -10113,6 +10494,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_discovery_job_result.py.html>`__ to see an example of how to use get_discovery_job_result API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['discoveryJobId', 'resultKey']
         resource_path = "/discoveryJobs/{discoveryJobId}/results/{resultKey}"
         method = "GET"
         operation_name = "get_discovery_job_result"
@@ -10167,7 +10550,8 @@ class DataSafeClient(object):
                 response_type="DiscoveryJobResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10177,7 +10561,8 @@ class DataSafeClient(object):
                 response_type="DiscoveryJobResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_library_masking_format(self, library_masking_format_id, **kwargs):
         """
@@ -10208,6 +10593,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_library_masking_format.py.html>`__ to see an example of how to use get_library_masking_format API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['libraryMaskingFormatId']
         resource_path = "/libraryMaskingFormats/{libraryMaskingFormatId}"
         method = "GET"
         operation_name = "get_library_masking_format"
@@ -10261,7 +10648,8 @@ class DataSafeClient(object):
                 response_type="LibraryMaskingFormat",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10271,7 +10659,8 @@ class DataSafeClient(object):
                 response_type="LibraryMaskingFormat",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_masking_column(self, masking_policy_id, masking_column_key, **kwargs):
         """
@@ -10305,6 +10694,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_masking_column.py.html>`__ to see an example of how to use get_masking_column API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingPolicyId', 'maskingColumnKey']
         resource_path = "/maskingPolicies/{maskingPolicyId}/maskingColumns/{maskingColumnKey}"
         method = "GET"
         operation_name = "get_masking_column"
@@ -10359,7 +10750,8 @@ class DataSafeClient(object):
                 response_type="MaskingColumn",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10369,7 +10761,8 @@ class DataSafeClient(object):
                 response_type="MaskingColumn",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_masking_policy(self, masking_policy_id, **kwargs):
         """
@@ -10400,6 +10793,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_masking_policy.py.html>`__ to see an example of how to use get_masking_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingPolicyId']
         resource_path = "/maskingPolicies/{maskingPolicyId}"
         method = "GET"
         operation_name = "get_masking_policy"
@@ -10453,7 +10848,8 @@ class DataSafeClient(object):
                 response_type="MaskingPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10463,7 +10859,8 @@ class DataSafeClient(object):
                 response_type="MaskingPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_masking_report(self, masking_report_id, **kwargs):
         """
@@ -10494,6 +10891,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_masking_report.py.html>`__ to see an example of how to use get_masking_report API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingReportId']
         resource_path = "/maskingReports/{maskingReportId}"
         method = "GET"
         operation_name = "get_masking_report"
@@ -10547,7 +10946,8 @@ class DataSafeClient(object):
                 response_type="MaskingReport",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10557,7 +10957,8 @@ class DataSafeClient(object):
                 response_type="MaskingReport",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_on_prem_connector(self, on_prem_connector_id, **kwargs):
         """
@@ -10588,6 +10989,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_on_prem_connector.py.html>`__ to see an example of how to use get_on_prem_connector API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['onPremConnectorId']
         resource_path = "/onPremConnectors/{onPremConnectorId}"
         method = "GET"
         operation_name = "get_on_prem_connector"
@@ -10641,7 +11044,8 @@ class DataSafeClient(object):
                 response_type="OnPremConnector",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10651,7 +11055,8 @@ class DataSafeClient(object):
                 response_type="OnPremConnector",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_profile(self, user_assessment_id, profile_name, **kwargs):
         """
@@ -10688,6 +11093,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_profile.py.html>`__ to see an example of how to use get_profile API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userAssessmentId', 'profileName']
         resource_path = "/userAssessments/{userAssessmentId}/profiles/{profileName}"
         method = "GET"
         operation_name = "get_profile"
@@ -10742,7 +11149,8 @@ class DataSafeClient(object):
                 response_type="list[Profile]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10752,7 +11160,8 @@ class DataSafeClient(object):
                 response_type="list[Profile]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_report(self, report_id, **kwargs):
         """
@@ -10783,6 +11192,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_report.py.html>`__ to see an example of how to use get_report API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['reportId']
         resource_path = "/reports/{reportId}"
         method = "GET"
         operation_name = "get_report"
@@ -10836,7 +11247,8 @@ class DataSafeClient(object):
                 response_type="Report",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10846,7 +11258,8 @@ class DataSafeClient(object):
                 response_type="Report",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_report_content(self, report_id, **kwargs):
         """
@@ -10877,6 +11290,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_report_content.py.html>`__ to see an example of how to use get_report_content API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['reportId']
         resource_path = "/reports/{reportId}/content"
         method = "GET"
         operation_name = "get_report_content"
@@ -10930,7 +11345,8 @@ class DataSafeClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10940,7 +11356,8 @@ class DataSafeClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_report_definition(self, report_definition_id, **kwargs):
         """
@@ -10971,6 +11388,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_report_definition.py.html>`__ to see an example of how to use get_report_definition API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['reportDefinitionId']
         resource_path = "/reportDefinitions/{reportDefinitionId}"
         method = "GET"
         operation_name = "get_report_definition"
@@ -11024,7 +11443,8 @@ class DataSafeClient(object):
                 response_type="ReportDefinition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11034,7 +11454,8 @@ class DataSafeClient(object):
                 response_type="ReportDefinition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_sdm_masking_policy_difference(self, sdm_masking_policy_difference_id, **kwargs):
         """
@@ -11065,6 +11486,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sdm_masking_policy_difference.py.html>`__ to see an example of how to use get_sdm_masking_policy_difference API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sdmMaskingPolicyDifferenceId']
         resource_path = "/sdmMaskingPolicyDifferences/{sdmMaskingPolicyDifferenceId}"
         method = "GET"
         operation_name = "get_sdm_masking_policy_difference"
@@ -11118,7 +11541,8 @@ class DataSafeClient(object):
                 response_type="SdmMaskingPolicyDifference",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11128,7 +11552,8 @@ class DataSafeClient(object):
                 response_type="SdmMaskingPolicyDifference",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_security_assessment(self, security_assessment_id, **kwargs):
         """
@@ -11159,6 +11584,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_security_assessment.py.html>`__ to see an example of how to use get_security_assessment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityAssessmentId']
         resource_path = "/securityAssessments/{securityAssessmentId}"
         method = "GET"
         operation_name = "get_security_assessment"
@@ -11212,7 +11639,8 @@ class DataSafeClient(object):
                 response_type="SecurityAssessment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11222,7 +11650,8 @@ class DataSafeClient(object):
                 response_type="SecurityAssessment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_security_assessment_comparison(self, security_assessment_id, comparison_security_assessment_id, **kwargs):
         """
@@ -11256,6 +11685,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_security_assessment_comparison.py.html>`__ to see an example of how to use get_security_assessment_comparison API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityAssessmentId', 'comparisonSecurityAssessmentId']
         resource_path = "/securityAssessments/{securityAssessmentId}/comparison/{comparisonSecurityAssessmentId}"
         method = "GET"
         operation_name = "get_security_assessment_comparison"
@@ -11310,7 +11741,8 @@ class DataSafeClient(object):
                 response_type="SecurityAssessmentComparison",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11320,7 +11752,8 @@ class DataSafeClient(object):
                 response_type="SecurityAssessmentComparison",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_sensitive_column(self, sensitive_data_model_id, sensitive_column_key, **kwargs):
         """
@@ -11354,6 +11787,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sensitive_column.py.html>`__ to see an example of how to use get_sensitive_column API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveDataModelId', 'sensitiveColumnKey']
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns/{sensitiveColumnKey}"
         method = "GET"
         operation_name = "get_sensitive_column"
@@ -11408,7 +11843,8 @@ class DataSafeClient(object):
                 response_type="SensitiveColumn",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11418,7 +11854,8 @@ class DataSafeClient(object):
                 response_type="SensitiveColumn",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_sensitive_data_model(self, sensitive_data_model_id, **kwargs):
         """
@@ -11449,6 +11886,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sensitive_data_model.py.html>`__ to see an example of how to use get_sensitive_data_model API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveDataModelId']
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}"
         method = "GET"
         operation_name = "get_sensitive_data_model"
@@ -11502,7 +11941,8 @@ class DataSafeClient(object):
                 response_type="SensitiveDataModel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11512,7 +11952,8 @@ class DataSafeClient(object):
                 response_type="SensitiveDataModel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_sensitive_type(self, sensitive_type_id, **kwargs):
         """
@@ -11543,6 +11984,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_sensitive_type.py.html>`__ to see an example of how to use get_sensitive_type API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveTypeId']
         resource_path = "/sensitiveTypes/{sensitiveTypeId}"
         method = "GET"
         operation_name = "get_sensitive_type"
@@ -11596,7 +12039,8 @@ class DataSafeClient(object):
                 response_type="SensitiveType",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11606,7 +12050,8 @@ class DataSafeClient(object):
                 response_type="SensitiveType",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_target_alert_policy_association(self, target_alert_policy_association_id, **kwargs):
         """
@@ -11637,6 +12082,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_target_alert_policy_association.py.html>`__ to see an example of how to use get_target_alert_policy_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetAlertPolicyAssociationId']
         resource_path = "/targetAlertPolicyAssociations/{targetAlertPolicyAssociationId}"
         method = "GET"
         operation_name = "get_target_alert_policy_association"
@@ -11690,7 +12137,8 @@ class DataSafeClient(object):
                 response_type="TargetAlertPolicyAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11700,7 +12148,8 @@ class DataSafeClient(object):
                 response_type="TargetAlertPolicyAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_target_database(self, target_database_id, **kwargs):
         """
@@ -11731,6 +12180,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_target_database.py.html>`__ to see an example of how to use get_target_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetDatabaseId']
         resource_path = "/targetDatabases/{targetDatabaseId}"
         method = "GET"
         operation_name = "get_target_database"
@@ -11784,7 +12235,8 @@ class DataSafeClient(object):
                 response_type="TargetDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11794,7 +12246,8 @@ class DataSafeClient(object):
                 response_type="TargetDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_user_assessment(self, user_assessment_id, **kwargs):
         """
@@ -11825,6 +12278,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_user_assessment.py.html>`__ to see an example of how to use get_user_assessment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userAssessmentId']
         resource_path = "/userAssessments/{userAssessmentId}"
         method = "GET"
         operation_name = "get_user_assessment"
@@ -11878,7 +12333,8 @@ class DataSafeClient(object):
                 response_type="UserAssessment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11888,7 +12344,8 @@ class DataSafeClient(object):
                 response_type="UserAssessment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_user_assessment_comparison(self, user_assessment_id, comparison_user_assessment_id, **kwargs):
         """
@@ -11922,6 +12379,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_user_assessment_comparison.py.html>`__ to see an example of how to use get_user_assessment_comparison API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userAssessmentId', 'comparisonUserAssessmentId']
         resource_path = "/userAssessments/{userAssessmentId}/comparison/{comparisonUserAssessmentId}"
         method = "GET"
         operation_name = "get_user_assessment_comparison"
@@ -11976,7 +12435,8 @@ class DataSafeClient(object):
                 response_type="UserAssessmentComparison",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11986,7 +12446,8 @@ class DataSafeClient(object):
                 response_type="UserAssessmentComparison",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -12017,6 +12478,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -12070,7 +12533,8 @@ class DataSafeClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12080,7 +12544,8 @@ class DataSafeClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_alert_analytics(self, compartment_id, **kwargs):
         """
@@ -12208,6 +12673,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_alert_analytics.py.html>`__ to see an example of how to use list_alert_analytics API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/alertAnalytics"
         method = "GET"
         operation_name = "list_alert_analytics"
@@ -12322,7 +12789,8 @@ class DataSafeClient(object):
                 response_type="AlertAnalyticsCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12332,7 +12800,8 @@ class DataSafeClient(object):
                 response_type="AlertAnalyticsCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_alert_policies(self, compartment_id, **kwargs):
         """
@@ -12431,6 +12900,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_alert_policies.py.html>`__ to see an example of how to use list_alert_policies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/alertPolicies"
         method = "GET"
         operation_name = "list_alert_policies"
@@ -12540,7 +13011,8 @@ class DataSafeClient(object):
                 response_type="AlertPolicyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12550,7 +13022,8 @@ class DataSafeClient(object):
                 response_type="AlertPolicyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_alert_policy_rules(self, alert_policy_id, **kwargs):
         """
@@ -12592,6 +13065,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_alert_policy_rules.py.html>`__ to see an example of how to use list_alert_policy_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['alertPolicyId']
         resource_path = "/alertPolicies/{alertPolicyId}/rules"
         method = "GET"
         operation_name = "list_alert_policy_rules"
@@ -12654,7 +13129,8 @@ class DataSafeClient(object):
                 response_type="AlertPolicyRuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12665,7 +13141,8 @@ class DataSafeClient(object):
                 response_type="AlertPolicyRuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_alerts(self, compartment_id, **kwargs):
         """
@@ -12762,6 +13239,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_alerts.py.html>`__ to see an example of how to use list_alerts API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/alerts"
         method = "GET"
         operation_name = "list_alerts"
@@ -12857,7 +13336,8 @@ class DataSafeClient(object):
                 response_type="AlertCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12867,7 +13347,8 @@ class DataSafeClient(object):
                 response_type="AlertCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_audit_archive_retrievals(self, compartment_id, **kwargs):
         """
@@ -12949,6 +13430,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_archive_retrievals.py.html>`__ to see an example of how to use list_audit_archive_retrievals API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/auditArchiveRetrievals"
         method = "GET"
         operation_name = "list_audit_archive_retrievals"
@@ -13047,7 +13530,8 @@ class DataSafeClient(object):
                 response_type="AuditArchiveRetrievalCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13057,7 +13541,8 @@ class DataSafeClient(object):
                 response_type="AuditArchiveRetrievalCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_audit_event_analytics(self, compartment_id, **kwargs):
         """
@@ -13183,6 +13668,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_event_analytics.py.html>`__ to see an example of how to use list_audit_event_analytics API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/auditEventAnalytics"
         method = "GET"
         operation_name = "list_audit_event_analytics"
@@ -13297,7 +13784,8 @@ class DataSafeClient(object):
                 response_type="AuditEventAnalyticsCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13307,7 +13795,8 @@ class DataSafeClient(object):
                 response_type="AuditEventAnalyticsCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_audit_events(self, compartment_id, **kwargs):
         """
@@ -13394,6 +13883,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_events.py.html>`__ to see an example of how to use list_audit_events API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/auditEvents"
         method = "GET"
         operation_name = "list_audit_events"
@@ -13477,7 +13968,8 @@ class DataSafeClient(object):
                 response_type="AuditEventCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13487,7 +13979,8 @@ class DataSafeClient(object):
                 response_type="AuditEventCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_audit_policies(self, compartment_id, **kwargs):
         """
@@ -13580,6 +14073,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_policies.py.html>`__ to see an example of how to use list_audit_policies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/auditPolicies"
         method = "GET"
         operation_name = "list_audit_policies"
@@ -13676,7 +14171,8 @@ class DataSafeClient(object):
                 response_type="AuditPolicyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13686,7 +14182,8 @@ class DataSafeClient(object):
                 response_type="AuditPolicyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_audit_policy_analytics(self, compartment_id, **kwargs):
         """
@@ -13777,6 +14274,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_policy_analytics.py.html>`__ to see an example of how to use list_audit_policy_analytics API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/auditPolicyAnalytics"
         method = "GET"
         operation_name = "list_audit_policy_analytics"
@@ -13872,7 +14371,8 @@ class DataSafeClient(object):
                 response_type="AuditPolicyAnalyticCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13882,7 +14382,8 @@ class DataSafeClient(object):
                 response_type="AuditPolicyAnalyticCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_audit_profile_analytics(self, compartment_id, **kwargs):
         """
@@ -13952,6 +14453,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_profile_analytics.py.html>`__ to see an example of how to use list_audit_profile_analytics API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/auditProfileAnalytics"
         method = "GET"
         operation_name = "list_audit_profile_analytics"
@@ -14025,7 +14528,8 @@ class DataSafeClient(object):
                 response_type="AuditProfileAnalyticCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14035,7 +14539,8 @@ class DataSafeClient(object):
                 response_type="AuditProfileAnalyticCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_audit_profiles(self, compartment_id, **kwargs):
         """
@@ -14140,6 +14645,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_profiles.py.html>`__ to see an example of how to use list_audit_profiles API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/auditProfiles"
         method = "GET"
         operation_name = "list_audit_profiles"
@@ -14242,7 +14749,8 @@ class DataSafeClient(object):
                 response_type="AuditProfileCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14252,7 +14760,8 @@ class DataSafeClient(object):
                 response_type="AuditProfileCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_audit_trail_analytics(self, compartment_id, **kwargs):
         """
@@ -14325,6 +14834,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_trail_analytics.py.html>`__ to see an example of how to use list_audit_trail_analytics API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/auditTrailAnalytics"
         method = "GET"
         operation_name = "list_audit_trail_analytics"
@@ -14400,7 +14911,8 @@ class DataSafeClient(object):
                 response_type="AuditTrailAnalyticCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14410,7 +14922,8 @@ class DataSafeClient(object):
                 response_type="AuditTrailAnalyticCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_audit_trails(self, compartment_id, **kwargs):
         """
@@ -14507,6 +15020,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_audit_trails.py.html>`__ to see an example of how to use list_audit_trails API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/auditTrails"
         method = "GET"
         operation_name = "list_audit_trails"
@@ -14612,7 +15127,8 @@ class DataSafeClient(object):
                 response_type="AuditTrailCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14622,7 +15138,8 @@ class DataSafeClient(object):
                 response_type="AuditTrailCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_available_audit_volumes(self, audit_profile_id, work_request_id, **kwargs):
         """
@@ -14699,6 +15216,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_available_audit_volumes.py.html>`__ to see an example of how to use list_available_audit_volumes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditProfileId', 'workRequestId']
         resource_path = "/auditProfiles/{auditProfileId}/availableAuditVolumes"
         method = "GET"
         operation_name = "list_available_audit_volumes"
@@ -14786,7 +15305,8 @@ class DataSafeClient(object):
                 response_type="AvailableAuditVolumeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14797,7 +15317,8 @@ class DataSafeClient(object):
                 response_type="AvailableAuditVolumeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_collected_audit_volumes(self, audit_profile_id, work_request_id, **kwargs):
         """
@@ -14871,6 +15392,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_collected_audit_volumes.py.html>`__ to see an example of how to use list_collected_audit_volumes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditProfileId', 'workRequestId']
         resource_path = "/auditProfiles/{auditProfileId}/collectedAuditVolumes"
         method = "GET"
         operation_name = "list_collected_audit_volumes"
@@ -14956,7 +15479,8 @@ class DataSafeClient(object):
                 response_type="CollectedAuditVolumeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14967,7 +15491,8 @@ class DataSafeClient(object):
                 response_type="CollectedAuditVolumeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_columns(self, target_database_id, **kwargs):
         """
@@ -15039,6 +15564,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_columns.py.html>`__ to see an example of how to use list_columns API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetDatabaseId']
         resource_path = "/targetDatabases/{targetDatabaseId}/columns"
         method = "GET"
         operation_name = "list_columns"
@@ -15133,7 +15660,8 @@ class DataSafeClient(object):
                 response_type="list[ColumnSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15144,7 +15672,8 @@ class DataSafeClient(object):
                 response_type="list[ColumnSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_data_safe_private_endpoints(self, compartment_id, **kwargs):
         """
@@ -15220,6 +15749,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_data_safe_private_endpoints.py.html>`__ to see an example of how to use list_data_safe_private_endpoints API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/dataSafePrivateEndpoints"
         method = "GET"
         operation_name = "list_data_safe_private_endpoints"
@@ -15314,7 +15845,8 @@ class DataSafeClient(object):
                 response_type="list[DataSafePrivateEndpointSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15324,7 +15856,8 @@ class DataSafeClient(object):
                 response_type="list[DataSafePrivateEndpointSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_difference_columns(self, sdm_masking_policy_difference_id, **kwargs):
         """
@@ -15400,6 +15933,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_difference_columns.py.html>`__ to see an example of how to use list_difference_columns API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sdmMaskingPolicyDifferenceId']
         resource_path = "/sdmMaskingPolicyDifferences/{sdmMaskingPolicyDifferenceId}/differenceColumns"
         method = "GET"
         operation_name = "list_difference_columns"
@@ -15513,7 +16048,8 @@ class DataSafeClient(object):
                 response_type="SdmMaskingPolicyDifferenceColumnCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15524,7 +16060,8 @@ class DataSafeClient(object):
                 response_type="SdmMaskingPolicyDifferenceColumnCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_discovery_analytics(self, compartment_id, **kwargs):
         """
@@ -15582,6 +16119,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_discovery_analytics.py.html>`__ to see an example of how to use list_discovery_analytics API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/discoveryAnalytics"
         method = "GET"
         operation_name = "list_discovery_analytics"
@@ -15649,7 +16188,8 @@ class DataSafeClient(object):
                 response_type="DiscoveryAnalyticsCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15659,7 +16199,8 @@ class DataSafeClient(object):
                 response_type="DiscoveryAnalyticsCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_discovery_job_results(self, discovery_job_id, **kwargs):
         """
@@ -15733,6 +16274,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_discovery_job_results.py.html>`__ to see an example of how to use list_discovery_job_results API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['discoveryJobId']
         resource_path = "/discoveryJobs/{discoveryJobId}/results"
         method = "GET"
         operation_name = "list_discovery_job_results"
@@ -15839,7 +16382,8 @@ class DataSafeClient(object):
                 response_type="DiscoveryJobResultCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15850,7 +16394,8 @@ class DataSafeClient(object):
                 response_type="DiscoveryJobResultCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_discovery_jobs(self, compartment_id, **kwargs):
         """
@@ -15931,6 +16476,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_discovery_jobs.py.html>`__ to see an example of how to use list_discovery_jobs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/discoveryJobs"
         method = "GET"
         operation_name = "list_discovery_jobs"
@@ -16029,7 +16576,8 @@ class DataSafeClient(object):
                 response_type="DiscoveryJobCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16039,7 +16587,8 @@ class DataSafeClient(object):
                 response_type="DiscoveryJobCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_findings(self, security_assessment_id, **kwargs):
         """
@@ -16105,6 +16654,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_findings.py.html>`__ to see an example of how to use list_findings API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityAssessmentId']
         resource_path = "/securityAssessments/{securityAssessmentId}/findings"
         method = "GET"
         operation_name = "list_findings"
@@ -16198,7 +16749,8 @@ class DataSafeClient(object):
                 response_type="list[FindingSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16209,7 +16761,8 @@ class DataSafeClient(object):
                 response_type="list[FindingSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_grants(self, user_assessment_id, user_key, **kwargs):
         """
@@ -16287,6 +16840,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_grants.py.html>`__ to see an example of how to use list_grants API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userAssessmentId', 'userKey']
         resource_path = "/userAssessments/{userAssessmentId}/users/{userKey}/grants"
         method = "GET"
         operation_name = "list_grants"
@@ -16382,7 +16937,8 @@ class DataSafeClient(object):
                 response_type="list[GrantSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16393,7 +16949,8 @@ class DataSafeClient(object):
                 response_type="list[GrantSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_library_masking_formats(self, compartment_id, **kwargs):
         """
@@ -16490,6 +17047,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_library_masking_formats.py.html>`__ to see an example of how to use list_library_masking_formats API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/libraryMaskingFormats"
         method = "GET"
         operation_name = "list_library_masking_formats"
@@ -16597,7 +17156,8 @@ class DataSafeClient(object):
                 response_type="LibraryMaskingFormatCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16607,7 +17167,8 @@ class DataSafeClient(object):
                 response_type="LibraryMaskingFormatCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_masked_columns(self, masking_report_id, **kwargs):
         """
@@ -16678,6 +17239,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masked_columns.py.html>`__ to see an example of how to use list_masked_columns API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingReportId']
         resource_path = "/maskingReports/{maskingReportId}/maskedColumns"
         method = "GET"
         operation_name = "list_masked_columns"
@@ -16778,7 +17341,8 @@ class DataSafeClient(object):
                 response_type="MaskedColumnCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16789,7 +17353,8 @@ class DataSafeClient(object):
                 response_type="MaskedColumnCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_masking_analytics(self, compartment_id, **kwargs):
         """
@@ -16847,6 +17412,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_analytics.py.html>`__ to see an example of how to use list_masking_analytics API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/maskingAnalytics"
         method = "GET"
         operation_name = "list_masking_analytics"
@@ -16914,7 +17481,8 @@ class DataSafeClient(object):
                 response_type="MaskingAnalyticsCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16924,7 +17492,8 @@ class DataSafeClient(object):
                 response_type="MaskingAnalyticsCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_masking_columns(self, masking_policy_id, **kwargs):
         """
@@ -17047,6 +17616,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_columns.py.html>`__ to see an example of how to use list_masking_columns API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingPolicyId']
         resource_path = "/maskingPolicies/{maskingPolicyId}/maskingColumns"
         method = "GET"
         operation_name = "list_masking_columns"
@@ -17178,7 +17749,8 @@ class DataSafeClient(object):
                 response_type="MaskingColumnCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17189,7 +17761,8 @@ class DataSafeClient(object):
                 response_type="MaskingColumnCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_masking_objects(self, masking_policy_id, **kwargs):
         """
@@ -17252,6 +17825,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_objects.py.html>`__ to see an example of how to use list_masking_objects API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingPolicyId']
         resource_path = "/maskingPolicies/{maskingPolicyId}/maskingObjects"
         method = "GET"
         operation_name = "list_masking_objects"
@@ -17346,7 +17921,8 @@ class DataSafeClient(object):
                 response_type="MaskingObjectCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17357,7 +17933,8 @@ class DataSafeClient(object):
                 response_type="MaskingObjectCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_masking_policies(self, compartment_id, **kwargs):
         """
@@ -17455,6 +18032,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_policies.py.html>`__ to see an example of how to use list_masking_policies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/maskingPolicies"
         method = "GET"
         operation_name = "list_masking_policies"
@@ -17557,7 +18136,8 @@ class DataSafeClient(object):
                 response_type="MaskingPolicyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17567,7 +18147,8 @@ class DataSafeClient(object):
                 response_type="MaskingPolicyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_masking_reports(self, compartment_id, **kwargs):
         """
@@ -17636,6 +18217,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_reports.py.html>`__ to see an example of how to use list_masking_reports API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/maskingReports"
         method = "GET"
         operation_name = "list_masking_reports"
@@ -17721,7 +18304,8 @@ class DataSafeClient(object):
                 response_type="MaskingReportCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17731,7 +18315,8 @@ class DataSafeClient(object):
                 response_type="MaskingReportCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_masking_schemas(self, masking_policy_id, **kwargs):
         """
@@ -17786,6 +18371,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_masking_schemas.py.html>`__ to see an example of how to use list_masking_schemas API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingPolicyId']
         resource_path = "/maskingPolicies/{maskingPolicyId}/maskingSchemas"
         method = "GET"
         operation_name = "list_masking_schemas"
@@ -17868,7 +18455,8 @@ class DataSafeClient(object):
                 response_type="MaskingSchemaCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17879,7 +18467,8 @@ class DataSafeClient(object):
                 response_type="MaskingSchemaCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_on_prem_connectors(self, compartment_id, **kwargs):
         """
@@ -17955,6 +18544,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_on_prem_connectors.py.html>`__ to see an example of how to use list_on_prem_connectors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/onPremConnectors"
         method = "GET"
         operation_name = "list_on_prem_connectors"
@@ -18049,7 +18640,8 @@ class DataSafeClient(object):
                 response_type="list[OnPremConnectorSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18059,7 +18651,8 @@ class DataSafeClient(object):
                 response_type="list[OnPremConnectorSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_profile_analytics(self, user_assessment_id, compartment_id, **kwargs):
         """
@@ -18147,6 +18740,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_profile_analytics.py.html>`__ to see an example of how to use list_profile_analytics API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userAssessmentId', 'compartmentId']
         resource_path = "/userAssessments/{userAssessmentId}/profileAnalytics"
         method = "GET"
         operation_name = "list_profile_analytics"
@@ -18243,7 +18838,8 @@ class DataSafeClient(object):
                 response_type="list[ProfileAggregation]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18254,7 +18850,8 @@ class DataSafeClient(object):
                 response_type="list[ProfileAggregation]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_profile_summaries(self, user_assessment_id, compartment_id, **kwargs):
         """
@@ -18384,6 +18981,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_profile_summaries.py.html>`__ to see an example of how to use list_profile_summaries API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userAssessmentId', 'compartmentId']
         resource_path = "/userAssessments/{userAssessmentId}/profiles"
         method = "GET"
         operation_name = "list_profile_summaries"
@@ -18504,7 +19103,8 @@ class DataSafeClient(object):
                 response_type="list[ProfileSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18515,7 +19115,8 @@ class DataSafeClient(object):
                 response_type="list[ProfileSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_report_definitions(self, compartment_id, **kwargs):
         """
@@ -18603,6 +19204,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_report_definitions.py.html>`__ to see an example of how to use list_report_definitions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/reportDefinitions"
         method = "GET"
         operation_name = "list_report_definitions"
@@ -18715,7 +19318,8 @@ class DataSafeClient(object):
                 response_type="ReportDefinitionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18725,7 +19329,8 @@ class DataSafeClient(object):
                 response_type="ReportDefinitionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_reports(self, compartment_id, **kwargs):
         """
@@ -18804,6 +19409,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_reports.py.html>`__ to see an example of how to use list_reports API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/reports"
         method = "GET"
         operation_name = "list_reports"
@@ -18907,7 +19514,8 @@ class DataSafeClient(object):
                 response_type="ReportCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18917,7 +19525,8 @@ class DataSafeClient(object):
                 response_type="ReportCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_roles(self, target_database_id, **kwargs):
         """
@@ -18980,6 +19589,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_roles.py.html>`__ to see an example of how to use list_roles API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetDatabaseId']
         resource_path = "/targetDatabases/{targetDatabaseId}/roles"
         method = "GET"
         operation_name = "list_roles"
@@ -19068,7 +19679,8 @@ class DataSafeClient(object):
                 response_type="list[RoleSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19079,7 +19691,8 @@ class DataSafeClient(object):
                 response_type="list[RoleSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_schemas(self, target_database_id, **kwargs):
         """
@@ -19139,6 +19752,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_schemas.py.html>`__ to see an example of how to use list_schemas API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetDatabaseId']
         resource_path = "/targetDatabases/{targetDatabaseId}/schemas"
         method = "GET"
         operation_name = "list_schemas"
@@ -19225,7 +19840,8 @@ class DataSafeClient(object):
                 response_type="list[SchemaSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19236,7 +19852,8 @@ class DataSafeClient(object):
                 response_type="list[SchemaSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_sdm_masking_policy_differences(self, compartment_id, **kwargs):
         """
@@ -19314,6 +19931,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sdm_masking_policy_differences.py.html>`__ to see an example of how to use list_sdm_masking_policy_differences API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/sdmMaskingPolicyDifferences"
         method = "GET"
         operation_name = "list_sdm_masking_policy_differences"
@@ -19410,7 +20029,8 @@ class DataSafeClient(object):
                 response_type="SdmMaskingPolicyDifferenceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19420,7 +20040,8 @@ class DataSafeClient(object):
                 response_type="SdmMaskingPolicyDifferenceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_security_assessments(self, compartment_id, **kwargs):
         """
@@ -19544,6 +20165,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_security_assessments.py.html>`__ to see an example of how to use list_security_assessments API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/securityAssessments"
         method = "GET"
         operation_name = "list_security_assessments"
@@ -19666,7 +20289,8 @@ class DataSafeClient(object):
                 response_type="list[SecurityAssessmentSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19676,7 +20300,8 @@ class DataSafeClient(object):
                 response_type="list[SecurityAssessmentSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_sensitive_columns(self, sensitive_data_model_id, **kwargs):
         """
@@ -19808,6 +20433,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_columns.py.html>`__ to see an example of how to use list_sensitive_columns API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveDataModelId']
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns"
         method = "GET"
         operation_name = "list_sensitive_columns"
@@ -19951,7 +20578,8 @@ class DataSafeClient(object):
                 response_type="SensitiveColumnCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19962,7 +20590,8 @@ class DataSafeClient(object):
                 response_type="SensitiveColumnCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_sensitive_data_models(self, compartment_id, **kwargs):
         """
@@ -20057,6 +20686,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_data_models.py.html>`__ to see an example of how to use list_sensitive_data_models API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/sensitiveDataModels"
         method = "GET"
         operation_name = "list_sensitive_data_models"
@@ -20157,7 +20788,8 @@ class DataSafeClient(object):
                 response_type="SensitiveDataModelCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20167,7 +20799,8 @@ class DataSafeClient(object):
                 response_type="SensitiveDataModelCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_sensitive_objects(self, sensitive_data_model_id, **kwargs):
         """
@@ -20230,6 +20863,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_objects.py.html>`__ to see an example of how to use list_sensitive_objects API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveDataModelId']
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/sensitiveObjects"
         method = "GET"
         operation_name = "list_sensitive_objects"
@@ -20324,7 +20959,8 @@ class DataSafeClient(object):
                 response_type="SensitiveObjectCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20335,7 +20971,8 @@ class DataSafeClient(object):
                 response_type="SensitiveObjectCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_sensitive_schemas(self, sensitive_data_model_id, **kwargs):
         """
@@ -20390,6 +21027,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_schemas.py.html>`__ to see an example of how to use list_sensitive_schemas API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveDataModelId']
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/sensitiveSchemas"
         method = "GET"
         operation_name = "list_sensitive_schemas"
@@ -20472,7 +21111,8 @@ class DataSafeClient(object):
                 response_type="SensitiveSchemaCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20483,7 +21123,8 @@ class DataSafeClient(object):
                 response_type="SensitiveSchemaCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_sensitive_types(self, compartment_id, **kwargs):
         """
@@ -20591,6 +21232,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_types.py.html>`__ to see an example of how to use list_sensitive_types API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/sensitiveTypes"
         method = "GET"
         operation_name = "list_sensitive_types"
@@ -20711,7 +21354,8 @@ class DataSafeClient(object):
                 response_type="SensitiveTypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20721,7 +21365,8 @@ class DataSafeClient(object):
                 response_type="SensitiveTypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_tables(self, target_database_id, **kwargs):
         """
@@ -20784,6 +21429,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_tables.py.html>`__ to see an example of how to use list_tables API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetDatabaseId']
         resource_path = "/targetDatabases/{targetDatabaseId}/tables"
         method = "GET"
         operation_name = "list_tables"
@@ -20872,7 +21519,8 @@ class DataSafeClient(object):
                 response_type="list[TableSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20883,7 +21531,8 @@ class DataSafeClient(object):
                 response_type="list[TableSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_target_alert_policy_associations(self, compartment_id, **kwargs):
         """
@@ -20977,6 +21626,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_target_alert_policy_associations.py.html>`__ to see an example of how to use list_target_alert_policy_associations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/targetAlertPolicyAssociations"
         method = "GET"
         operation_name = "list_target_alert_policy_associations"
@@ -21077,7 +21728,8 @@ class DataSafeClient(object):
                 response_type="TargetAlertPolicyAssociationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21087,7 +21739,8 @@ class DataSafeClient(object):
                 response_type="TargetAlertPolicyAssociationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_target_databases(self, compartment_id, **kwargs):
         """
@@ -21176,6 +21829,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_target_databases.py.html>`__ to see an example of how to use list_target_databases API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/targetDatabases"
         method = "GET"
         operation_name = "list_target_databases"
@@ -21290,7 +21945,8 @@ class DataSafeClient(object):
                 response_type="list[TargetDatabaseSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21300,7 +21956,8 @@ class DataSafeClient(object):
                 response_type="list[TargetDatabaseSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_user_analytics(self, user_assessment_id, **kwargs):
         """
@@ -21434,6 +22091,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_user_analytics.py.html>`__ to see an example of how to use list_user_analytics API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userAssessmentId']
         resource_path = "/userAssessments/{userAssessmentId}/userAnalytics"
         method = "GET"
         operation_name = "list_user_analytics"
@@ -21549,7 +22208,8 @@ class DataSafeClient(object):
                 response_type="list[UserAggregation]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21560,7 +22220,8 @@ class DataSafeClient(object):
                 response_type="list[UserAggregation]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_user_assessments(self, compartment_id, **kwargs):
         """
@@ -21684,6 +22345,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_user_assessments.py.html>`__ to see an example of how to use list_user_assessments API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/userAssessments"
         method = "GET"
         operation_name = "list_user_assessments"
@@ -21806,7 +22469,8 @@ class DataSafeClient(object):
                 response_type="list[UserAssessmentSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21816,7 +22480,8 @@ class DataSafeClient(object):
                 response_type="list[UserAssessmentSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_users(self, user_assessment_id, **kwargs):
         """
@@ -21954,6 +22619,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_users.py.html>`__ to see an example of how to use list_users API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userAssessmentId']
         resource_path = "/userAssessments/{userAssessmentId}/users"
         method = "GET"
         operation_name = "list_users"
@@ -22075,7 +22742,8 @@ class DataSafeClient(object):
                 response_type="list[UserSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22086,7 +22754,8 @@ class DataSafeClient(object):
                 response_type="list[UserSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -22127,6 +22796,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -22189,7 +22860,8 @@ class DataSafeClient(object):
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22200,7 +22872,8 @@ class DataSafeClient(object):
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -22241,6 +22914,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -22303,7 +22978,8 @@ class DataSafeClient(object):
                 response_type="list[WorkRequestLogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22314,7 +22990,8 @@ class DataSafeClient(object):
                 response_type="list[WorkRequestLogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -22375,6 +23052,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -22451,7 +23130,8 @@ class DataSafeClient(object):
                 response_type="list[WorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22461,7 +23141,8 @@ class DataSafeClient(object):
                 response_type="list[WorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def mask_data(self, masking_policy_id, mask_data_details, **kwargs):
         """
@@ -22495,6 +23176,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/mask_data.py.html>`__ to see an example of how to use mask_data API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingPolicyId']
         resource_path = "/maskingPolicies/{maskingPolicyId}/actions/mask"
         method = "POST"
         operation_name = "mask_data"
@@ -22548,7 +23231,8 @@ class DataSafeClient(object):
                 body=mask_data_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22558,7 +23242,8 @@ class DataSafeClient(object):
                 body=mask_data_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def modify_global_settings(self, modify_global_settings_details, compartment_id, **kwargs):
         """
@@ -22605,6 +23290,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/modify_global_settings.py.html>`__ to see an example of how to use modify_global_settings API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/configuration/{compartmentId}/actions/modifyGlobalSettings"
         method = "POST"
         operation_name = "modify_global_settings"
@@ -22663,7 +23350,8 @@ class DataSafeClient(object):
                 body=modify_global_settings_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22673,7 +23361,8 @@ class DataSafeClient(object):
                 body=modify_global_settings_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def patch_alerts(self, patch_alerts_details, **kwargs):
         """
@@ -22723,6 +23412,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_alerts.py.html>`__ to see an example of how to use patch_alerts API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/alerts"
         method = "PATCH"
         operation_name = "patch_alerts"
@@ -22783,7 +23474,8 @@ class DataSafeClient(object):
                 body=patch_alerts_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22793,7 +23485,8 @@ class DataSafeClient(object):
                 body=patch_alerts_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def patch_discovery_job_results(self, discovery_job_id, patch_discovery_job_result_details, **kwargs):
         """
@@ -22835,6 +23528,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_discovery_job_results.py.html>`__ to see an example of how to use patch_discovery_job_results API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['discoveryJobId']
         resource_path = "/discoveryJobs/{discoveryJobId}/results"
         method = "PATCH"
         operation_name = "patch_discovery_job_results"
@@ -22890,7 +23585,8 @@ class DataSafeClient(object):
                 body=patch_discovery_job_result_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22900,7 +23596,8 @@ class DataSafeClient(object):
                 body=patch_discovery_job_result_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def patch_masking_columns(self, masking_policy_id, patch_masking_columns_details, **kwargs):
         """
@@ -22943,6 +23640,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_masking_columns.py.html>`__ to see an example of how to use patch_masking_columns API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingPolicyId']
         resource_path = "/maskingPolicies/{maskingPolicyId}/maskingColumns"
         method = "PATCH"
         operation_name = "patch_masking_columns"
@@ -22998,7 +23697,8 @@ class DataSafeClient(object):
                 body=patch_masking_columns_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23008,7 +23708,8 @@ class DataSafeClient(object):
                 body=patch_masking_columns_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def patch_sdm_masking_policy_difference_columns(self, sdm_masking_policy_difference_id, patch_sdm_masking_policy_difference_columns_details, **kwargs):
         """
@@ -23050,6 +23751,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_sdm_masking_policy_difference_columns.py.html>`__ to see an example of how to use patch_sdm_masking_policy_difference_columns API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sdmMaskingPolicyDifferenceId']
         resource_path = "/sdmMaskingPolicyDifferences/{sdmMaskingPolicyDifferenceId}/differenceColumns"
         method = "PATCH"
         operation_name = "patch_sdm_masking_policy_difference_columns"
@@ -23105,7 +23808,8 @@ class DataSafeClient(object):
                 body=patch_sdm_masking_policy_difference_columns_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23115,7 +23819,8 @@ class DataSafeClient(object):
                 body=patch_sdm_masking_policy_difference_columns_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def patch_sensitive_columns(self, sensitive_data_model_id, patch_sensitive_column_details, **kwargs):
         """
@@ -23158,6 +23863,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_sensitive_columns.py.html>`__ to see an example of how to use patch_sensitive_columns API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveDataModelId']
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns"
         method = "PATCH"
         operation_name = "patch_sensitive_columns"
@@ -23213,7 +23920,8 @@ class DataSafeClient(object):
                 body=patch_sensitive_column_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23223,7 +23931,8 @@ class DataSafeClient(object):
                 body=patch_sensitive_column_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def patch_target_alert_policy_association(self, patch_target_alert_policy_association_details, **kwargs):
         """
@@ -23261,6 +23970,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/patch_target_alert_policy_association.py.html>`__ to see an example of how to use patch_target_alert_policy_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/targetAlertPolicyAssociations"
         method = "PATCH"
         operation_name = "patch_target_alert_policy_association"
@@ -23305,7 +24016,8 @@ class DataSafeClient(object):
                 body=patch_target_alert_policy_association_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23314,7 +24026,8 @@ class DataSafeClient(object):
                 body=patch_target_alert_policy_association_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def provision_audit_policy(self, provision_audit_policy_details, audit_policy_id, **kwargs):
         """
@@ -23361,6 +24074,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/provision_audit_policy.py.html>`__ to see an example of how to use provision_audit_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditPolicyId']
         resource_path = "/auditPolicies/{auditPolicyId}/actions/provision"
         method = "POST"
         operation_name = "provision_audit_policy"
@@ -23419,7 +24134,8 @@ class DataSafeClient(object):
                 body=provision_audit_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23429,7 +24145,8 @@ class DataSafeClient(object):
                 body=provision_audit_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def refresh_security_assessment(self, security_assessment_id, run_security_assessment_details, **kwargs):
         """
@@ -23477,6 +24194,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/refresh_security_assessment.py.html>`__ to see an example of how to use refresh_security_assessment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityAssessmentId']
         resource_path = "/securityAssessments/{securityAssessmentId}/actions/refresh"
         method = "POST"
         operation_name = "refresh_security_assessment"
@@ -23535,7 +24254,8 @@ class DataSafeClient(object):
                 body=run_security_assessment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23545,7 +24265,8 @@ class DataSafeClient(object):
                 body=run_security_assessment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def refresh_user_assessment(self, user_assessment_id, run_user_assessment_details, **kwargs):
         """
@@ -23594,6 +24315,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/refresh_user_assessment.py.html>`__ to see an example of how to use refresh_user_assessment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userAssessmentId']
         resource_path = "/userAssessments/{userAssessmentId}/actions/refresh"
         method = "POST"
         operation_name = "refresh_user_assessment"
@@ -23652,7 +24375,8 @@ class DataSafeClient(object):
                 body=run_user_assessment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23662,7 +24386,8 @@ class DataSafeClient(object):
                 body=run_user_assessment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_schedule_report(self, report_definition_id, **kwargs):
         """
@@ -23706,6 +24431,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/remove_schedule_report.py.html>`__ to see an example of how to use remove_schedule_report API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['reportDefinitionId']
         resource_path = "/reportDefinitions/{reportDefinitionId}/actions/removeScheduleReport"
         method = "POST"
         operation_name = "remove_schedule_report"
@@ -23763,7 +24490,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23772,7 +24500,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def resume_audit_trail(self, audit_trail_id, **kwargs):
         """
@@ -23810,6 +24539,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/resume_audit_trail.py.html>`__ to see an example of how to use resume_audit_trail API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditTrailId']
         resource_path = "/auditTrails/{auditTrailId}/actions/resume"
         method = "POST"
         operation_name = "resume_audit_trail"
@@ -23864,7 +24595,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23873,7 +24605,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def resume_work_request(self, work_request_id, **kwargs):
         """
@@ -23917,6 +24650,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/resume_work_request.py.html>`__ to see an example of how to use resume_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/actions/resume"
         method = "POST"
         operation_name = "resume_work_request"
@@ -23974,7 +24709,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23983,7 +24719,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def retrieve_audit_policies(self, audit_policy_id, **kwargs):
         """
@@ -24027,6 +24764,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/retrieve_audit_policies.py.html>`__ to see an example of how to use retrieve_audit_policies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditPolicyId']
         resource_path = "/auditPolicies/{auditPolicyId}/actions/retrieveFromTarget"
         method = "POST"
         operation_name = "retrieve_audit_policies"
@@ -24084,7 +24823,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24093,7 +24833,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def schedule_report(self, report_definition_id, schedule_report_details, **kwargs):
         """
@@ -24140,6 +24881,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/schedule_report.py.html>`__ to see an example of how to use schedule_report API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['reportDefinitionId']
         resource_path = "/reportDefinitions/{reportDefinitionId}/actions/scheduleReport"
         method = "POST"
         operation_name = "schedule_report"
@@ -24198,7 +24941,8 @@ class DataSafeClient(object):
                 body=schedule_report_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24208,7 +24952,8 @@ class DataSafeClient(object):
                 body=schedule_report_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def set_security_assessment_baseline(self, security_assessment_id, **kwargs):
         """
@@ -24255,6 +25000,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/set_security_assessment_baseline.py.html>`__ to see an example of how to use set_security_assessment_baseline API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityAssessmentId']
         resource_path = "/securityAssessments/{securityAssessmentId}/actions/setBaseline"
         method = "POST"
         operation_name = "set_security_assessment_baseline"
@@ -24314,7 +25061,8 @@ class DataSafeClient(object):
                 body=kwargs.get('base_line_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24324,7 +25072,8 @@ class DataSafeClient(object):
                 body=kwargs.get('base_line_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def set_user_assessment_baseline(self, user_assessment_id, **kwargs):
         """
@@ -24371,6 +25120,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/set_user_assessment_baseline.py.html>`__ to see an example of how to use set_user_assessment_baseline API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userAssessmentId']
         resource_path = "/userAssessments/{userAssessmentId}/actions/setBaseline"
         method = "POST"
         operation_name = "set_user_assessment_baseline"
@@ -24430,7 +25181,8 @@ class DataSafeClient(object):
                 body=kwargs.get('base_line_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24440,7 +25192,8 @@ class DataSafeClient(object):
                 body=kwargs.get('base_line_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def start_audit_trail(self, start_audit_trail_details, audit_trail_id, **kwargs):
         """
@@ -24487,6 +25240,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/start_audit_trail.py.html>`__ to see an example of how to use start_audit_trail API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditTrailId']
         resource_path = "/auditTrails/{auditTrailId}/actions/start"
         method = "POST"
         operation_name = "start_audit_trail"
@@ -24545,7 +25300,8 @@ class DataSafeClient(object):
                 body=start_audit_trail_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24555,7 +25311,8 @@ class DataSafeClient(object):
                 body=start_audit_trail_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def stop_audit_trail(self, audit_trail_id, **kwargs):
         """
@@ -24593,6 +25350,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/stop_audit_trail.py.html>`__ to see an example of how to use stop_audit_trail API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditTrailId']
         resource_path = "/auditTrails/{auditTrailId}/actions/stop"
         method = "POST"
         operation_name = "stop_audit_trail"
@@ -24647,7 +25406,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24656,7 +25416,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def suspend_work_request(self, work_request_id, **kwargs):
         """
@@ -24700,6 +25461,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/suspend_work_request.py.html>`__ to see an example of how to use suspend_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/actions/suspend"
         method = "POST"
         operation_name = "suspend_work_request"
@@ -24757,7 +25520,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24766,7 +25530,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def unset_security_assessment_baseline(self, security_assessment_id, **kwargs):
         """
@@ -24811,6 +25576,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/unset_security_assessment_baseline.py.html>`__ to see an example of how to use unset_security_assessment_baseline API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityAssessmentId']
         resource_path = "/securityAssessments/{securityAssessmentId}/actions/unsetBaseline"
         method = "POST"
         operation_name = "unset_security_assessment_baseline"
@@ -24868,7 +25635,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24877,7 +25645,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def unset_user_assessment_baseline(self, user_assessment_id, **kwargs):
         """
@@ -24922,6 +25691,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/unset_user_assessment_baseline.py.html>`__ to see an example of how to use unset_user_assessment_baseline API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userAssessmentId']
         resource_path = "/userAssessments/{userAssessmentId}/actions/unsetBaseline"
         method = "POST"
         operation_name = "unset_user_assessment_baseline"
@@ -24979,7 +25750,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24988,7 +25760,8 @@ class DataSafeClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_alert(self, alert_id, update_alert_details, **kwargs):
         """
@@ -25029,6 +25802,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_alert.py.html>`__ to see an example of how to use update_alert API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['alertId']
         resource_path = "/alerts/{alertId}"
         method = "PUT"
         operation_name = "update_alert"
@@ -25085,7 +25860,8 @@ class DataSafeClient(object):
                 response_type="Alert",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25096,7 +25872,8 @@ class DataSafeClient(object):
                 response_type="Alert",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_audit_archive_retrieval(self, audit_archive_retrieval_id, update_audit_archive_retrieval_details, **kwargs):
         """
@@ -25137,6 +25914,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_audit_archive_retrieval.py.html>`__ to see an example of how to use update_audit_archive_retrieval API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditArchiveRetrievalId']
         resource_path = "/auditArchiveRetrievals/{auditArchiveRetrievalId}"
         method = "PUT"
         operation_name = "update_audit_archive_retrieval"
@@ -25192,7 +25971,8 @@ class DataSafeClient(object):
                 body=update_audit_archive_retrieval_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25202,7 +25982,8 @@ class DataSafeClient(object):
                 body=update_audit_archive_retrieval_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_audit_policy(self, audit_policy_id, update_audit_policy_details, **kwargs):
         """
@@ -25243,6 +26024,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_audit_policy.py.html>`__ to see an example of how to use update_audit_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditPolicyId']
         resource_path = "/auditPolicies/{auditPolicyId}"
         method = "PUT"
         operation_name = "update_audit_policy"
@@ -25298,7 +26081,8 @@ class DataSafeClient(object):
                 body=update_audit_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25308,7 +26092,8 @@ class DataSafeClient(object):
                 body=update_audit_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_audit_profile(self, audit_profile_id, update_audit_profile_details, **kwargs):
         """
@@ -25349,6 +26134,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_audit_profile.py.html>`__ to see an example of how to use update_audit_profile API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditProfileId']
         resource_path = "/auditProfiles/{auditProfileId}"
         method = "PUT"
         operation_name = "update_audit_profile"
@@ -25404,7 +26191,8 @@ class DataSafeClient(object):
                 body=update_audit_profile_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25414,7 +26202,8 @@ class DataSafeClient(object):
                 body=update_audit_profile_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_audit_trail(self, audit_trail_id, update_audit_trail_details, **kwargs):
         """
@@ -25455,6 +26244,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_audit_trail.py.html>`__ to see an example of how to use update_audit_trail API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['auditTrailId']
         resource_path = "/auditTrails/{auditTrailId}"
         method = "PUT"
         operation_name = "update_audit_trail"
@@ -25510,7 +26301,8 @@ class DataSafeClient(object):
                 body=update_audit_trail_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25520,7 +26312,8 @@ class DataSafeClient(object):
                 body=update_audit_trail_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_data_safe_private_endpoint(self, data_safe_private_endpoint_id, update_data_safe_private_endpoint_details, **kwargs):
         """
@@ -25561,6 +26354,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_data_safe_private_endpoint.py.html>`__ to see an example of how to use update_data_safe_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dataSafePrivateEndpointId']
         resource_path = "/dataSafePrivateEndpoints/{dataSafePrivateEndpointId}"
         method = "PUT"
         operation_name = "update_data_safe_private_endpoint"
@@ -25616,7 +26411,8 @@ class DataSafeClient(object):
                 body=update_data_safe_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25626,7 +26422,8 @@ class DataSafeClient(object):
                 body=update_data_safe_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_library_masking_format(self, library_masking_format_id, update_library_masking_format_details, **kwargs):
         """
@@ -25667,6 +26464,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_library_masking_format.py.html>`__ to see an example of how to use update_library_masking_format API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['libraryMaskingFormatId']
         resource_path = "/libraryMaskingFormats/{libraryMaskingFormatId}"
         method = "PUT"
         operation_name = "update_library_masking_format"
@@ -25722,7 +26521,8 @@ class DataSafeClient(object):
                 body=update_library_masking_format_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25732,7 +26532,8 @@ class DataSafeClient(object):
                 body=update_library_masking_format_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_masking_column(self, masking_column_key, masking_policy_id, update_masking_column_details, **kwargs):
         """
@@ -25777,6 +26578,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_masking_column.py.html>`__ to see an example of how to use update_masking_column API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingColumnKey', 'maskingPolicyId']
         resource_path = "/maskingPolicies/{maskingPolicyId}/maskingColumns/{maskingColumnKey}"
         method = "PUT"
         operation_name = "update_masking_column"
@@ -25833,7 +26636,8 @@ class DataSafeClient(object):
                 body=update_masking_column_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25843,7 +26647,8 @@ class DataSafeClient(object):
                 body=update_masking_column_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_masking_policy(self, masking_policy_id, update_masking_policy_details, **kwargs):
         """
@@ -25884,6 +26689,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_masking_policy.py.html>`__ to see an example of how to use update_masking_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingPolicyId']
         resource_path = "/maskingPolicies/{maskingPolicyId}"
         method = "PUT"
         operation_name = "update_masking_policy"
@@ -25939,7 +26746,8 @@ class DataSafeClient(object):
                 body=update_masking_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25949,7 +26757,8 @@ class DataSafeClient(object):
                 body=update_masking_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_on_prem_connector(self, on_prem_connector_id, update_on_prem_connector_details, **kwargs):
         """
@@ -25990,6 +26799,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_on_prem_connector.py.html>`__ to see an example of how to use update_on_prem_connector API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['onPremConnectorId']
         resource_path = "/onPremConnectors/{onPremConnectorId}"
         method = "PUT"
         operation_name = "update_on_prem_connector"
@@ -26045,7 +26856,8 @@ class DataSafeClient(object):
                 body=update_on_prem_connector_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26055,7 +26867,8 @@ class DataSafeClient(object):
                 body=update_on_prem_connector_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_on_prem_connector_wallet(self, update_on_prem_connector_wallet_details, on_prem_connector_id, **kwargs):
         """
@@ -26102,6 +26915,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_on_prem_connector_wallet.py.html>`__ to see an example of how to use update_on_prem_connector_wallet API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['onPremConnectorId']
         resource_path = "/onPremConnectors/{onPremConnectorId}/wallet"
         method = "PUT"
         operation_name = "update_on_prem_connector_wallet"
@@ -26160,7 +26975,8 @@ class DataSafeClient(object):
                 body=update_on_prem_connector_wallet_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26170,7 +26986,8 @@ class DataSafeClient(object):
                 body=update_on_prem_connector_wallet_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_report_definition(self, report_definition_id, update_report_definition_details, **kwargs):
         """
@@ -26217,6 +27034,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_report_definition.py.html>`__ to see an example of how to use update_report_definition API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['reportDefinitionId']
         resource_path = "/reportDefinitions/{reportDefinitionId}"
         method = "PUT"
         operation_name = "update_report_definition"
@@ -26275,7 +27094,8 @@ class DataSafeClient(object):
                 body=update_report_definition_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26285,7 +27105,8 @@ class DataSafeClient(object):
                 body=update_report_definition_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_sdm_masking_policy_difference(self, sdm_masking_policy_difference_id, update_sdm_masking_policy_difference_details, **kwargs):
         """
@@ -26326,6 +27147,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sdm_masking_policy_difference.py.html>`__ to see an example of how to use update_sdm_masking_policy_difference API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sdmMaskingPolicyDifferenceId']
         resource_path = "/sdmMaskingPolicyDifferences/{sdmMaskingPolicyDifferenceId}"
         method = "PUT"
         operation_name = "update_sdm_masking_policy_difference"
@@ -26381,7 +27204,8 @@ class DataSafeClient(object):
                 body=update_sdm_masking_policy_difference_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26391,7 +27215,8 @@ class DataSafeClient(object):
                 body=update_sdm_masking_policy_difference_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_security_assessment(self, security_assessment_id, update_security_assessment_details, **kwargs):
         """
@@ -26432,6 +27257,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_security_assessment.py.html>`__ to see an example of how to use update_security_assessment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityAssessmentId']
         resource_path = "/securityAssessments/{securityAssessmentId}"
         method = "PUT"
         operation_name = "update_security_assessment"
@@ -26487,7 +27314,8 @@ class DataSafeClient(object):
                 body=update_security_assessment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26497,7 +27325,8 @@ class DataSafeClient(object):
                 body=update_security_assessment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_sensitive_column(self, sensitive_data_model_id, sensitive_column_key, update_sensitive_column_details, **kwargs):
         """
@@ -26541,6 +27370,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sensitive_column.py.html>`__ to see an example of how to use update_sensitive_column API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveDataModelId', 'sensitiveColumnKey']
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns/{sensitiveColumnKey}"
         method = "PUT"
         operation_name = "update_sensitive_column"
@@ -26597,7 +27428,8 @@ class DataSafeClient(object):
                 body=update_sensitive_column_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26607,7 +27439,8 @@ class DataSafeClient(object):
                 body=update_sensitive_column_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_sensitive_data_model(self, sensitive_data_model_id, update_sensitive_data_model_details, **kwargs):
         """
@@ -26649,6 +27482,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sensitive_data_model.py.html>`__ to see an example of how to use update_sensitive_data_model API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveDataModelId']
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}"
         method = "PUT"
         operation_name = "update_sensitive_data_model"
@@ -26704,7 +27539,8 @@ class DataSafeClient(object):
                 body=update_sensitive_data_model_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26714,7 +27550,8 @@ class DataSafeClient(object):
                 body=update_sensitive_data_model_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_sensitive_type(self, sensitive_type_id, update_sensitive_type_details, **kwargs):
         """
@@ -26755,6 +27592,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_sensitive_type.py.html>`__ to see an example of how to use update_sensitive_type API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveTypeId']
         resource_path = "/sensitiveTypes/{sensitiveTypeId}"
         method = "PUT"
         operation_name = "update_sensitive_type"
@@ -26810,7 +27649,8 @@ class DataSafeClient(object):
                 body=update_sensitive_type_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26820,7 +27660,8 @@ class DataSafeClient(object):
                 body=update_sensitive_type_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_target_alert_policy_association(self, target_alert_policy_association_id, update_target_alert_policy_association_details, **kwargs):
         """
@@ -26861,6 +27702,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_target_alert_policy_association.py.html>`__ to see an example of how to use update_target_alert_policy_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetAlertPolicyAssociationId']
         resource_path = "/targetAlertPolicyAssociations/{targetAlertPolicyAssociationId}"
         method = "PUT"
         operation_name = "update_target_alert_policy_association"
@@ -26916,7 +27759,8 @@ class DataSafeClient(object):
                 body=update_target_alert_policy_association_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26926,7 +27770,8 @@ class DataSafeClient(object):
                 body=update_target_alert_policy_association_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_target_database(self, target_database_id, update_target_database_details, **kwargs):
         """
@@ -26973,6 +27818,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_target_database.py.html>`__ to see an example of how to use update_target_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetDatabaseId']
         resource_path = "/targetDatabases/{targetDatabaseId}"
         method = "PUT"
         operation_name = "update_target_database"
@@ -27031,7 +27878,8 @@ class DataSafeClient(object):
                 body=update_target_database_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -27041,7 +27889,8 @@ class DataSafeClient(object):
                 body=update_target_database_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_user_assessment(self, user_assessment_id, update_user_assessment_details, **kwargs):
         """
@@ -27082,6 +27931,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/update_user_assessment.py.html>`__ to see an example of how to use update_user_assessment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userAssessmentId']
         resource_path = "/userAssessments/{userAssessmentId}"
         method = "PUT"
         operation_name = "update_user_assessment"
@@ -27137,7 +27988,8 @@ class DataSafeClient(object):
                 body=update_user_assessment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -27147,7 +27999,8 @@ class DataSafeClient(object):
                 body=update_user_assessment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def upload_masking_policy(self, upload_masking_policy_details, masking_policy_id, **kwargs):
         """
@@ -27199,6 +28052,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/upload_masking_policy.py.html>`__ to see an example of how to use upload_masking_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['maskingPolicyId']
         resource_path = "/maskingPolicies/{maskingPolicyId}/actions/upload"
         method = "POST"
         operation_name = "upload_masking_policy"
@@ -27275,7 +28130,8 @@ class DataSafeClient(object):
                 body=upload_masking_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -27285,7 +28141,8 @@ class DataSafeClient(object):
                 body=upload_masking_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def upload_sensitive_data_model(self, sensitive_data_model_id, upload_sensitive_data_model_details, **kwargs):
         """
@@ -27336,6 +28193,8 @@ class DataSafeClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/upload_sensitive_data_model.py.html>`__ to see an example of how to use upload_sensitive_data_model API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveDataModelId']
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/actions/upload"
         method = "POST"
         operation_name = "upload_sensitive_data_model"
@@ -27412,7 +28271,8 @@ class DataSafeClient(object):
                 body=upload_sensitive_data_model_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -27422,4 +28282,5 @@ class DataSafeClient(object):
                 body=upload_sensitive_data_model_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

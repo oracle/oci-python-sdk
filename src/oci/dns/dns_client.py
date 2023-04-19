@@ -66,6 +66,9 @@ class DnsClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -92,8 +95,10 @@ class DnsClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20180115',
             'service_endpoint_template': 'https://dns.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -163,6 +168,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/change_resolver_compartment.py.html>`__ to see an example of how to use change_resolver_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['resolverId']
         resource_path = "/resolvers/{resolverId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_resolver_compartment"
@@ -235,7 +242,8 @@ class DnsClient(object):
                 body=change_resolver_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -246,7 +254,8 @@ class DnsClient(object):
                 body=change_resolver_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_steering_policy_compartment(self, steering_policy_id, change_steering_policy_compartment_details, **kwargs):
         """
@@ -302,6 +311,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/change_steering_policy_compartment.py.html>`__ to see an example of how to use change_steering_policy_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['steeringPolicyId']
         resource_path = "/steeringPolicies/{steeringPolicyId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_steering_policy_compartment"
@@ -374,7 +385,8 @@ class DnsClient(object):
                 body=change_steering_policy_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -385,7 +397,8 @@ class DnsClient(object):
                 body=change_steering_policy_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_tsig_key_compartment(self, tsig_key_id, change_tsig_key_compartment_details, **kwargs):
         """
@@ -441,6 +454,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/change_tsig_key_compartment.py.html>`__ to see an example of how to use change_tsig_key_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tsigKeyId']
         resource_path = "/tsigKeys/{tsigKeyId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_tsig_key_compartment"
@@ -513,7 +528,8 @@ class DnsClient(object):
                 body=change_tsig_key_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -524,7 +540,8 @@ class DnsClient(object):
                 body=change_tsig_key_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_view_compartment(self, view_id, change_view_compartment_details, **kwargs):
         """
@@ -582,6 +599,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/change_view_compartment.py.html>`__ to see an example of how to use change_view_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['viewId']
         resource_path = "/views/{viewId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_view_compartment"
@@ -654,7 +673,8 @@ class DnsClient(object):
                 body=change_view_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -665,7 +685,8 @@ class DnsClient(object):
                 body=change_view_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_zone_compartment(self, zone_id, change_zone_compartment_details, **kwargs):
         """
@@ -728,6 +749,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/change_zone_compartment.py.html>`__ to see an example of how to use change_zone_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['zoneId']
         resource_path = "/zones/{zoneId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_zone_compartment"
@@ -800,7 +823,8 @@ class DnsClient(object):
                 body=change_zone_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -811,7 +835,8 @@ class DnsClient(object):
                 body=change_zone_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_resolver_endpoint(self, resolver_id, create_resolver_endpoint_details, **kwargs):
         """
@@ -860,6 +885,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/create_resolver_endpoint.py.html>`__ to see an example of how to use create_resolver_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['resolverId']
         resource_path = "/resolvers/{resolverId}/endpoints"
         method = "POST"
         operation_name = "create_resolver_endpoint"
@@ -931,7 +958,8 @@ class DnsClient(object):
                 response_type="ResolverEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -943,7 +971,8 @@ class DnsClient(object):
                 response_type="ResolverEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_steering_policy(self, create_steering_policy_details, **kwargs):
         """
@@ -992,6 +1021,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/create_steering_policy.py.html>`__ to see an example of how to use create_steering_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/steeringPolicies"
         method = "POST"
         operation_name = "create_steering_policy"
@@ -1052,7 +1083,8 @@ class DnsClient(object):
                 response_type="SteeringPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1063,7 +1095,8 @@ class DnsClient(object):
                 response_type="SteeringPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_steering_policy_attachment(self, create_steering_policy_attachment_details, **kwargs):
         """
@@ -1114,6 +1147,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/create_steering_policy_attachment.py.html>`__ to see an example of how to use create_steering_policy_attachment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/steeringPolicyAttachments"
         method = "POST"
         operation_name = "create_steering_policy_attachment"
@@ -1174,7 +1209,8 @@ class DnsClient(object):
                 response_type="SteeringPolicyAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1185,7 +1221,8 @@ class DnsClient(object):
                 response_type="SteeringPolicyAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_tsig_key(self, create_tsig_key_details, **kwargs):
         """
@@ -1224,6 +1261,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/create_tsig_key.py.html>`__ to see an example of how to use create_tsig_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/tsigKeys"
         method = "POST"
         operation_name = "create_tsig_key"
@@ -1281,7 +1320,8 @@ class DnsClient(object):
                 response_type="TsigKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1292,7 +1332,8 @@ class DnsClient(object):
                 response_type="TsigKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_view(self, create_view_details, **kwargs):
         """
@@ -1338,6 +1379,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/create_view.py.html>`__ to see an example of how to use create_view API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/views"
         method = "POST"
         operation_name = "create_view"
@@ -1398,7 +1441,8 @@ class DnsClient(object):
                 response_type="View",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1409,7 +1453,8 @@ class DnsClient(object):
                 response_type="View",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_zone(self, create_zone_details, **kwargs):
         """
@@ -1458,6 +1503,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/create_zone.py.html>`__ to see an example of how to use create_zone API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/zones"
         method = "POST"
         operation_name = "create_zone"
@@ -1517,7 +1564,8 @@ class DnsClient(object):
                 response_type="Zone",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1528,7 +1576,8 @@ class DnsClient(object):
                 response_type="Zone",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_domain_records(self, zone_name_or_id, domain, **kwargs):
         """
@@ -1594,6 +1643,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/delete_domain_records.py.html>`__ to see an example of how to use delete_domain_records API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['zoneNameOrId', 'domain']
         resource_path = "/zones/{zoneNameOrId}/records/{domain}"
         method = "DELETE"
         operation_name = "delete_domain_records"
@@ -1669,7 +1720,8 @@ class DnsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1679,7 +1731,8 @@ class DnsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_resolver_endpoint(self, resolver_id, resolver_endpoint_name, **kwargs):
         """
@@ -1738,6 +1791,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/delete_resolver_endpoint.py.html>`__ to see an example of how to use delete_resolver_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['resolverId', 'resolverEndpointName']
         resource_path = "/resolvers/{resolverId}/endpoints/{resolverEndpointName}"
         method = "DELETE"
         operation_name = "delete_resolver_endpoint"
@@ -1809,7 +1864,8 @@ class DnsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1819,7 +1875,8 @@ class DnsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_rr_set(self, zone_name_or_id, domain, rtype, **kwargs):
         """
@@ -1888,6 +1945,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/delete_rr_set.py.html>`__ to see an example of how to use delete_rr_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['zoneNameOrId', 'domain', 'rtype']
         resource_path = "/zones/{zoneNameOrId}/records/{domain}/{rtype}"
         method = "DELETE"
         operation_name = "delete_rr_set"
@@ -1964,7 +2023,8 @@ class DnsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1974,7 +2034,8 @@ class DnsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_steering_policy(self, steering_policy_id, **kwargs):
         """
@@ -2030,6 +2091,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/delete_steering_policy.py.html>`__ to see an example of how to use delete_steering_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['steeringPolicyId']
         resource_path = "/steeringPolicies/{steeringPolicyId}"
         method = "DELETE"
         operation_name = "delete_steering_policy"
@@ -2100,7 +2163,8 @@ class DnsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2110,7 +2174,8 @@ class DnsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_steering_policy_attachment(self, steering_policy_attachment_id, **kwargs):
         """
@@ -2163,6 +2228,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/delete_steering_policy_attachment.py.html>`__ to see an example of how to use delete_steering_policy_attachment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['steeringPolicyAttachmentId']
         resource_path = "/steeringPolicyAttachments/{steeringPolicyAttachmentId}"
         method = "DELETE"
         operation_name = "delete_steering_policy_attachment"
@@ -2233,7 +2300,8 @@ class DnsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2243,7 +2311,8 @@ class DnsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_tsig_key(self, tsig_key_id, **kwargs):
         """
@@ -2295,6 +2364,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/delete_tsig_key.py.html>`__ to see an example of how to use delete_tsig_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tsigKeyId']
         resource_path = "/tsigKeys/{tsigKeyId}"
         method = "DELETE"
         operation_name = "delete_tsig_key"
@@ -2365,7 +2436,8 @@ class DnsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2375,7 +2447,8 @@ class DnsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_view(self, view_id, **kwargs):
         """
@@ -2432,6 +2505,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/delete_view.py.html>`__ to see an example of how to use delete_view API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['viewId']
         resource_path = "/views/{viewId}"
         method = "DELETE"
         operation_name = "delete_view"
@@ -2502,7 +2577,8 @@ class DnsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2512,7 +2588,8 @@ class DnsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_zone(self, zone_name_or_id, **kwargs):
         """
@@ -2576,6 +2653,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/delete_zone.py.html>`__ to see an example of how to use delete_zone API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['zoneNameOrId']
         resource_path = "/zones/{zoneNameOrId}"
         method = "DELETE"
         operation_name = "delete_zone"
@@ -2648,7 +2727,8 @@ class DnsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2658,7 +2738,8 @@ class DnsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_domain_records(self, zone_name_or_id, domain, **kwargs):
         """
@@ -2748,6 +2829,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_domain_records.py.html>`__ to see an example of how to use get_domain_records API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['zoneNameOrId', 'domain']
         resource_path = "/zones/{zoneNameOrId}/records/{domain}"
         method = "GET"
         operation_name = "get_domain_records"
@@ -2850,7 +2933,8 @@ class DnsClient(object):
                 response_type="RecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2861,7 +2945,8 @@ class DnsClient(object):
                 response_type="RecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_resolver(self, resolver_id, **kwargs):
         """
@@ -2914,6 +2999,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_resolver.py.html>`__ to see an example of how to use get_resolver API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['resolverId']
         resource_path = "/resolvers/{resolverId}"
         method = "GET"
         operation_name = "get_resolver"
@@ -2985,7 +3072,8 @@ class DnsClient(object):
                 response_type="Resolver",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2996,7 +3084,8 @@ class DnsClient(object):
                 response_type="Resolver",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_resolver_endpoint(self, resolver_id, resolver_endpoint_name, **kwargs):
         """
@@ -3052,6 +3141,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_resolver_endpoint.py.html>`__ to see an example of how to use get_resolver_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['resolverId', 'resolverEndpointName']
         resource_path = "/resolvers/{resolverId}/endpoints/{resolverEndpointName}"
         method = "GET"
         operation_name = "get_resolver_endpoint"
@@ -3124,7 +3215,8 @@ class DnsClient(object):
                 response_type="ResolverEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3135,7 +3227,8 @@ class DnsClient(object):
                 response_type="ResolverEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_rr_set(self, zone_name_or_id, domain, rtype, **kwargs):
         """
@@ -3211,6 +3304,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_rr_set.py.html>`__ to see an example of how to use get_rr_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['zoneNameOrId', 'domain', 'rtype']
         resource_path = "/zones/{zoneNameOrId}/records/{domain}/{rtype}"
         method = "GET"
         operation_name = "get_rr_set"
@@ -3294,7 +3389,8 @@ class DnsClient(object):
                 response_type="RRSet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3305,7 +3401,8 @@ class DnsClient(object):
                 response_type="RRSet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_steering_policy(self, steering_policy_id, **kwargs):
         """
@@ -3355,6 +3452,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_steering_policy.py.html>`__ to see an example of how to use get_steering_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['steeringPolicyId']
         resource_path = "/steeringPolicies/{steeringPolicyId}"
         method = "GET"
         operation_name = "get_steering_policy"
@@ -3426,7 +3525,8 @@ class DnsClient(object):
                 response_type="SteeringPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3437,7 +3537,8 @@ class DnsClient(object):
                 response_type="SteeringPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_steering_policy_attachment(self, steering_policy_attachment_id, **kwargs):
         """
@@ -3487,6 +3588,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_steering_policy_attachment.py.html>`__ to see an example of how to use get_steering_policy_attachment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['steeringPolicyAttachmentId']
         resource_path = "/steeringPolicyAttachments/{steeringPolicyAttachmentId}"
         method = "GET"
         operation_name = "get_steering_policy_attachment"
@@ -3558,7 +3661,8 @@ class DnsClient(object):
                 response_type="SteeringPolicyAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3569,7 +3673,8 @@ class DnsClient(object):
                 response_type="SteeringPolicyAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_tsig_key(self, tsig_key_id, **kwargs):
         """
@@ -3619,6 +3724,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_tsig_key.py.html>`__ to see an example of how to use get_tsig_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tsigKeyId']
         resource_path = "/tsigKeys/{tsigKeyId}"
         method = "GET"
         operation_name = "get_tsig_key"
@@ -3690,7 +3797,8 @@ class DnsClient(object):
                 response_type="TsigKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3701,7 +3809,8 @@ class DnsClient(object):
                 response_type="TsigKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_view(self, view_id, **kwargs):
         """
@@ -3755,6 +3864,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_view.py.html>`__ to see an example of how to use get_view API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['viewId']
         resource_path = "/views/{viewId}"
         method = "GET"
         operation_name = "get_view"
@@ -3826,7 +3937,8 @@ class DnsClient(object):
                 response_type="View",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3837,7 +3949,8 @@ class DnsClient(object):
                 response_type="View",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_zone(self, zone_name_or_id, **kwargs):
         """
@@ -3898,6 +4011,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_zone.py.html>`__ to see an example of how to use get_zone API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['zoneNameOrId']
         resource_path = "/zones/{zoneNameOrId}"
         method = "GET"
         operation_name = "get_zone"
@@ -3973,7 +4088,8 @@ class DnsClient(object):
                 response_type="Zone",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3984,7 +4100,8 @@ class DnsClient(object):
                 response_type="Zone",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_zone_content(self, zone_name_or_id, **kwargs):
         """
@@ -4037,6 +4154,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_zone_content.py.html>`__ to see an example of how to use get_zone_content API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['zoneNameOrId']
         resource_path = "/zones/{zoneNameOrId}/content"
         method = "GET"
         operation_name = "get_zone_content"
@@ -4110,7 +4229,8 @@ class DnsClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4121,7 +4241,8 @@ class DnsClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_zone_records(self, zone_name_or_id, **kwargs):
         """
@@ -4219,6 +4340,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/get_zone_records.py.html>`__ to see an example of how to use get_zone_records API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['zoneNameOrId']
         resource_path = "/zones/{zoneNameOrId}/records"
         method = "GET"
         operation_name = "get_zone_records"
@@ -4324,7 +4447,8 @@ class DnsClient(object):
                 response_type="RecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4335,7 +4459,8 @@ class DnsClient(object):
                 response_type="RecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_resolver_endpoints(self, resolver_id, **kwargs):
         """
@@ -4400,6 +4525,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/list_resolver_endpoints.py.html>`__ to see an example of how to use list_resolver_endpoints API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['resolverId']
         resource_path = "/resolvers/{resolverId}/endpoints"
         method = "GET"
         operation_name = "list_resolver_endpoints"
@@ -4500,7 +4627,8 @@ class DnsClient(object):
                 response_type="list[ResolverEndpointSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4511,7 +4639,8 @@ class DnsClient(object):
                 response_type="list[ResolverEndpointSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_resolvers(self, compartment_id, **kwargs):
         """
@@ -4581,6 +4710,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/list_resolvers.py.html>`__ to see an example of how to use list_resolvers API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/resolvers"
         method = "GET"
         operation_name = "list_resolvers"
@@ -4673,7 +4804,8 @@ class DnsClient(object):
                 response_type="list[ResolverSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4683,7 +4815,8 @@ class DnsClient(object):
                 response_type="list[ResolverSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_steering_policies(self, compartment_id, **kwargs):
         """
@@ -4772,6 +4905,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/list_steering_policies.py.html>`__ to see an example of how to use list_steering_policies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/steeringPolicies"
         method = "GET"
         operation_name = "list_steering_policies"
@@ -4874,7 +5009,8 @@ class DnsClient(object):
                 response_type="list[SteeringPolicySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4884,7 +5020,8 @@ class DnsClient(object):
                 response_type="list[SteeringPolicySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_steering_policy_attachments(self, compartment_id, **kwargs):
         """
@@ -4977,6 +5114,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/list_steering_policy_attachments.py.html>`__ to see an example of how to use list_steering_policy_attachments API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/steeringPolicyAttachments"
         method = "GET"
         operation_name = "list_steering_policy_attachments"
@@ -5081,7 +5220,8 @@ class DnsClient(object):
                 response_type="list[SteeringPolicyAttachmentSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5091,7 +5231,8 @@ class DnsClient(object):
                 response_type="list[SteeringPolicyAttachmentSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_tsig_keys(self, compartment_id, **kwargs):
         """
@@ -5156,6 +5297,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/list_tsig_keys.py.html>`__ to see an example of how to use list_tsig_keys API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/tsigKeys"
         method = "GET"
         operation_name = "list_tsig_keys"
@@ -5248,7 +5391,8 @@ class DnsClient(object):
                 response_type="list[TsigKeySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5258,7 +5402,8 @@ class DnsClient(object):
                 response_type="list[TsigKeySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_views(self, compartment_id, **kwargs):
         """
@@ -5328,6 +5473,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/list_views.py.html>`__ to see an example of how to use list_views API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/views"
         method = "GET"
         operation_name = "list_views"
@@ -5420,7 +5567,8 @@ class DnsClient(object):
                 response_type="list[ViewSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5430,7 +5578,8 @@ class DnsClient(object):
                 response_type="list[ViewSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_zone_transfer_servers(self, compartment_id, **kwargs):
         """
@@ -5473,6 +5622,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/list_zone_transfer_servers.py.html>`__ to see an example of how to use list_zone_transfer_servers API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/zoneTransferServers"
         method = "GET"
         operation_name = "list_zone_transfer_servers"
@@ -5532,7 +5683,8 @@ class DnsClient(object):
                 response_type="list[ZoneTransferServer]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5542,7 +5694,8 @@ class DnsClient(object):
                 response_type="list[ZoneTransferServer]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_zones(self, compartment_id, **kwargs):
         """
@@ -5636,6 +5789,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/list_zones.py.html>`__ to see an example of how to use list_zones API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/zones"
         method = "GET"
         operation_name = "list_zones"
@@ -5745,7 +5900,8 @@ class DnsClient(object):
                 response_type="list[ZoneSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5755,7 +5911,8 @@ class DnsClient(object):
                 response_type="list[ZoneSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def patch_domain_records(self, zone_name_or_id, domain, patch_domain_records_details, **kwargs):
         """
@@ -5826,6 +5983,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/patch_domain_records.py.html>`__ to see an example of how to use patch_domain_records API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['zoneNameOrId', 'domain']
         resource_path = "/zones/{zoneNameOrId}/records/{domain}"
         method = "PATCH"
         operation_name = "patch_domain_records"
@@ -5903,7 +6062,8 @@ class DnsClient(object):
                 response_type="RecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5915,7 +6075,8 @@ class DnsClient(object):
                 response_type="RecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def patch_rr_set(self, zone_name_or_id, domain, rtype, patch_rr_set_details, **kwargs):
         """
@@ -5987,6 +6148,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/patch_rr_set.py.html>`__ to see an example of how to use patch_rr_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['zoneNameOrId', 'domain', 'rtype']
         resource_path = "/zones/{zoneNameOrId}/records/{domain}/{rtype}"
         method = "PATCH"
         operation_name = "patch_rr_set"
@@ -6065,7 +6228,8 @@ class DnsClient(object):
                 response_type="RecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6077,7 +6241,8 @@ class DnsClient(object):
                 response_type="RecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def patch_zone_records(self, zone_name_or_id, patch_zone_records_details, **kwargs):
         """
@@ -6145,6 +6310,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/patch_zone_records.py.html>`__ to see an example of how to use patch_zone_records API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['zoneNameOrId']
         resource_path = "/zones/{zoneNameOrId}/records"
         method = "PATCH"
         operation_name = "patch_zone_records"
@@ -6221,7 +6388,8 @@ class DnsClient(object):
                 response_type="RecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6233,7 +6401,8 @@ class DnsClient(object):
                 response_type="RecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_domain_records(self, zone_name_or_id, domain, update_domain_records_details, **kwargs):
         """
@@ -6304,6 +6473,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/update_domain_records.py.html>`__ to see an example of how to use update_domain_records API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['zoneNameOrId', 'domain']
         resource_path = "/zones/{zoneNameOrId}/records/{domain}"
         method = "PUT"
         operation_name = "update_domain_records"
@@ -6381,7 +6552,8 @@ class DnsClient(object):
                 response_type="RecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6393,7 +6565,8 @@ class DnsClient(object):
                 response_type="RecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_resolver(self, resolver_id, update_resolver_details, **kwargs):
         """
@@ -6448,6 +6621,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/update_resolver.py.html>`__ to see an example of how to use update_resolver API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['resolverId']
         resource_path = "/resolvers/{resolverId}"
         method = "PUT"
         operation_name = "update_resolver"
@@ -6520,7 +6695,8 @@ class DnsClient(object):
                 response_type="Resolver",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6532,7 +6708,8 @@ class DnsClient(object):
                 response_type="Resolver",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_resolver_endpoint(self, resolver_id, resolver_endpoint_name, update_resolver_endpoint_details, **kwargs):
         """
@@ -6590,6 +6767,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/update_resolver_endpoint.py.html>`__ to see an example of how to use update_resolver_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['resolverId', 'resolverEndpointName']
         resource_path = "/resolvers/{resolverId}/endpoints/{resolverEndpointName}"
         method = "PUT"
         operation_name = "update_resolver_endpoint"
@@ -6663,7 +6842,8 @@ class DnsClient(object):
                 response_type="ResolverEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6675,7 +6855,8 @@ class DnsClient(object):
                 response_type="ResolverEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_rr_set(self, zone_name_or_id, domain, rtype, update_rr_set_details, **kwargs):
         """
@@ -6747,6 +6928,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/update_rr_set.py.html>`__ to see an example of how to use update_rr_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['zoneNameOrId', 'domain', 'rtype']
         resource_path = "/zones/{zoneNameOrId}/records/{domain}/{rtype}"
         method = "PUT"
         operation_name = "update_rr_set"
@@ -6825,7 +7008,8 @@ class DnsClient(object):
                 response_type="RecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6837,7 +7021,8 @@ class DnsClient(object):
                 response_type="RecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_steering_policy(self, steering_policy_id, update_steering_policy_details, **kwargs):
         """
@@ -6892,6 +7077,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/update_steering_policy.py.html>`__ to see an example of how to use update_steering_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['steeringPolicyId']
         resource_path = "/steeringPolicies/{steeringPolicyId}"
         method = "PUT"
         operation_name = "update_steering_policy"
@@ -6964,7 +7151,8 @@ class DnsClient(object):
                 response_type="SteeringPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6976,7 +7164,8 @@ class DnsClient(object):
                 response_type="SteeringPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_steering_policy_attachment(self, steering_policy_attachment_id, update_steering_policy_attachment_details, **kwargs):
         """
@@ -7031,6 +7220,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/update_steering_policy_attachment.py.html>`__ to see an example of how to use update_steering_policy_attachment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['steeringPolicyAttachmentId']
         resource_path = "/steeringPolicyAttachments/{steeringPolicyAttachmentId}"
         method = "PUT"
         operation_name = "update_steering_policy_attachment"
@@ -7103,7 +7294,8 @@ class DnsClient(object):
                 response_type="SteeringPolicyAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7115,7 +7307,8 @@ class DnsClient(object):
                 response_type="SteeringPolicyAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_tsig_key(self, tsig_key_id, update_tsig_key_details, **kwargs):
         """
@@ -7170,6 +7363,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/update_tsig_key.py.html>`__ to see an example of how to use update_tsig_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tsigKeyId']
         resource_path = "/tsigKeys/{tsigKeyId}"
         method = "PUT"
         operation_name = "update_tsig_key"
@@ -7242,7 +7437,8 @@ class DnsClient(object):
                 response_type="TsigKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7254,7 +7450,8 @@ class DnsClient(object):
                 response_type="TsigKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_view(self, view_id, update_view_details, **kwargs):
         """
@@ -7309,6 +7506,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/update_view.py.html>`__ to see an example of how to use update_view API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['viewId']
         resource_path = "/views/{viewId}"
         method = "PUT"
         operation_name = "update_view"
@@ -7381,7 +7580,8 @@ class DnsClient(object):
                 response_type="View",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7393,7 +7593,8 @@ class DnsClient(object):
                 response_type="View",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_zone(self, zone_name_or_id, update_zone_details, **kwargs):
         """
@@ -7463,6 +7664,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/update_zone.py.html>`__ to see an example of how to use update_zone API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['zoneNameOrId']
         resource_path = "/zones/{zoneNameOrId}"
         method = "PUT"
         operation_name = "update_zone"
@@ -7539,7 +7742,8 @@ class DnsClient(object):
                 response_type="Zone",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7551,7 +7755,8 @@ class DnsClient(object):
                 response_type="Zone",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_zone_records(self, zone_name_or_id, update_zone_records_details, **kwargs):
         """
@@ -7620,6 +7825,8 @@ class DnsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/update_zone_records.py.html>`__ to see an example of how to use update_zone_records API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['zoneNameOrId']
         resource_path = "/zones/{zoneNameOrId}/records"
         method = "PUT"
         operation_name = "update_zone_records"
@@ -7696,7 +7903,8 @@ class DnsClient(object):
                 response_type="RecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7708,4 +7916,5 @@ class DnsClient(object):
                 response_type="RecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

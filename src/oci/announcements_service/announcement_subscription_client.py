@@ -65,6 +65,9 @@ class AnnouncementSubscriptionClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class AnnouncementSubscriptionClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20180904',
             'service_endpoint_template': 'https://announcements.{region}.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -142,6 +147,8 @@ class AnnouncementSubscriptionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/announcementsservice/change_announcement_subscription_compartment.py.html>`__ to see an example of how to use change_announcement_subscription_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['announcementSubscriptionId']
         resource_path = "/announcementSubscriptions/{announcementSubscriptionId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_announcement_subscription_compartment"
@@ -195,7 +202,8 @@ class AnnouncementSubscriptionClient(object):
                 body=change_announcement_subscription_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -205,7 +213,8 @@ class AnnouncementSubscriptionClient(object):
                 body=change_announcement_subscription_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_announcement_subscription(self, create_announcement_subscription_details, **kwargs):
         """
@@ -246,6 +255,8 @@ class AnnouncementSubscriptionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/announcementsservice/create_announcement_subscription.py.html>`__ to see an example of how to use create_announcement_subscription API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/announcementSubscriptions"
         method = "POST"
         operation_name = "create_announcement_subscription"
@@ -290,7 +301,8 @@ class AnnouncementSubscriptionClient(object):
                 response_type="AnnouncementSubscription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -300,7 +312,8 @@ class AnnouncementSubscriptionClient(object):
                 response_type="AnnouncementSubscription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_filter_group(self, announcement_subscription_id, create_filter_group_details, **kwargs):
         """
@@ -347,6 +360,8 @@ class AnnouncementSubscriptionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/announcementsservice/create_filter_group.py.html>`__ to see an example of how to use create_filter_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['announcementSubscriptionId']
         resource_path = "/announcementSubscriptions/{announcementSubscriptionId}/filterGroups"
         method = "POST"
         operation_name = "create_filter_group"
@@ -404,7 +419,8 @@ class AnnouncementSubscriptionClient(object):
                 response_type="FilterGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -415,7 +431,8 @@ class AnnouncementSubscriptionClient(object):
                 response_type="FilterGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_announcement_subscription(self, announcement_subscription_id, **kwargs):
         """
@@ -452,6 +469,8 @@ class AnnouncementSubscriptionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/announcementsservice/delete_announcement_subscription.py.html>`__ to see an example of how to use delete_announcement_subscription API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['announcementSubscriptionId']
         resource_path = "/announcementSubscriptions/{announcementSubscriptionId}"
         method = "DELETE"
         operation_name = "delete_announcement_subscription"
@@ -504,7 +523,8 @@ class AnnouncementSubscriptionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -513,7 +533,8 @@ class AnnouncementSubscriptionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_filter_group(self, announcement_subscription_id, filter_group_name, **kwargs):
         """
@@ -553,6 +574,8 @@ class AnnouncementSubscriptionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/announcementsservice/delete_filter_group.py.html>`__ to see an example of how to use delete_filter_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['announcementSubscriptionId', 'filterGroupName']
         resource_path = "/announcementSubscriptions/{announcementSubscriptionId}/filterGroups/{filterGroupName}"
         method = "DELETE"
         operation_name = "delete_filter_group"
@@ -606,7 +629,8 @@ class AnnouncementSubscriptionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -615,7 +639,8 @@ class AnnouncementSubscriptionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_announcement_subscription(self, announcement_subscription_id, **kwargs):
         """
@@ -649,6 +674,8 @@ class AnnouncementSubscriptionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/announcementsservice/get_announcement_subscription.py.html>`__ to see an example of how to use get_announcement_subscription API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['announcementSubscriptionId']
         resource_path = "/announcementSubscriptions/{announcementSubscriptionId}"
         method = "GET"
         operation_name = "get_announcement_subscription"
@@ -700,7 +727,8 @@ class AnnouncementSubscriptionClient(object):
                 response_type="AnnouncementSubscription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -710,7 +738,8 @@ class AnnouncementSubscriptionClient(object):
                 response_type="AnnouncementSubscription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_announcement_subscriptions(self, compartment_id, **kwargs):
         """
@@ -771,6 +800,8 @@ class AnnouncementSubscriptionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/announcementsservice/list_announcement_subscriptions.py.html>`__ to see an example of how to use list_announcement_subscriptions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/announcementSubscriptions"
         method = "GET"
         operation_name = "list_announcement_subscriptions"
@@ -852,7 +883,8 @@ class AnnouncementSubscriptionClient(object):
                 response_type="AnnouncementSubscriptionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -862,7 +894,8 @@ class AnnouncementSubscriptionClient(object):
                 response_type="AnnouncementSubscriptionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_announcement_subscription(self, announcement_subscription_id, update_announcement_subscription_details, **kwargs):
         """
@@ -902,6 +935,8 @@ class AnnouncementSubscriptionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/announcementsservice/update_announcement_subscription.py.html>`__ to see an example of how to use update_announcement_subscription API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['announcementSubscriptionId']
         resource_path = "/announcementSubscriptions/{announcementSubscriptionId}"
         method = "PUT"
         operation_name = "update_announcement_subscription"
@@ -956,7 +991,8 @@ class AnnouncementSubscriptionClient(object):
                 response_type="AnnouncementSubscription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -967,7 +1003,8 @@ class AnnouncementSubscriptionClient(object):
                 response_type="AnnouncementSubscription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_filter_group(self, announcement_subscription_id, filter_group_name, update_filter_group_details, **kwargs):
         """
@@ -1010,6 +1047,8 @@ class AnnouncementSubscriptionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/announcementsservice/update_filter_group.py.html>`__ to see an example of how to use update_filter_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['announcementSubscriptionId', 'filterGroupName']
         resource_path = "/announcementSubscriptions/{announcementSubscriptionId}/filterGroups/{filterGroupName}"
         method = "PUT"
         operation_name = "update_filter_group"
@@ -1065,7 +1104,8 @@ class AnnouncementSubscriptionClient(object):
                 response_type="FilterGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1076,4 +1116,5 @@ class AnnouncementSubscriptionClient(object):
                 response_type="FilterGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

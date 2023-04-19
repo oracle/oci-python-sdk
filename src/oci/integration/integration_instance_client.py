@@ -65,6 +65,9 @@ class IntegrationInstanceClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class IntegrationInstanceClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20190131',
             'service_endpoint_template': 'https://integration.{region}.ocp.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -151,6 +156,8 @@ class IntegrationInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/change_integration_instance_compartment.py.html>`__ to see an example of how to use change_integration_instance_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['integrationInstanceId']
         resource_path = "/integrationInstances/{integrationInstanceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_integration_instance_compartment"
@@ -207,7 +214,8 @@ class IntegrationInstanceClient(object):
                 body=change_integration_instance_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -217,7 +225,8 @@ class IntegrationInstanceClient(object):
                 body=change_integration_instance_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_integration_instance_network_endpoint(self, integration_instance_id, change_integration_instance_network_endpoint_details, **kwargs):
         """
@@ -267,6 +276,8 @@ class IntegrationInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/change_integration_instance_network_endpoint.py.html>`__ to see an example of how to use change_integration_instance_network_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['integrationInstanceId']
         resource_path = "/integrationInstances/{integrationInstanceId}/actions/changeNetworkEndpoint"
         method = "POST"
         operation_name = "change_integration_instance_network_endpoint"
@@ -323,7 +334,8 @@ class IntegrationInstanceClient(object):
                 body=change_integration_instance_network_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -333,7 +345,8 @@ class IntegrationInstanceClient(object):
                 body=change_integration_instance_network_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_integration_instance(self, create_integration_instance_details, **kwargs):
         """
@@ -372,6 +385,8 @@ class IntegrationInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/create_integration_instance.py.html>`__ to see an example of how to use create_integration_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/integrationInstances"
         method = "POST"
         operation_name = "create_integration_instance"
@@ -415,7 +430,8 @@ class IntegrationInstanceClient(object):
                 body=create_integration_instance_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -424,7 +440,8 @@ class IntegrationInstanceClient(object):
                 body=create_integration_instance_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_integration_instance(self, integration_instance_id, **kwargs):
         """
@@ -462,6 +479,8 @@ class IntegrationInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/delete_integration_instance.py.html>`__ to see an example of how to use delete_integration_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['integrationInstanceId']
         resource_path = "/integrationInstances/{integrationInstanceId}"
         method = "DELETE"
         operation_name = "delete_integration_instance"
@@ -514,7 +533,8 @@ class IntegrationInstanceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -523,7 +543,8 @@ class IntegrationInstanceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_integration_instance(self, integration_instance_id, **kwargs):
         """
@@ -554,6 +575,8 @@ class IntegrationInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/get_integration_instance.py.html>`__ to see an example of how to use get_integration_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['integrationInstanceId']
         resource_path = "/integrationInstances/{integrationInstanceId}"
         method = "GET"
         operation_name = "get_integration_instance"
@@ -605,7 +628,8 @@ class IntegrationInstanceClient(object):
                 response_type="IntegrationInstance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -615,7 +639,8 @@ class IntegrationInstanceClient(object):
                 response_type="IntegrationInstance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -646,6 +671,8 @@ class IntegrationInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -697,7 +724,8 @@ class IntegrationInstanceClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -707,7 +735,8 @@ class IntegrationInstanceClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_integration_instances(self, compartment_id, **kwargs):
         """
@@ -766,6 +795,8 @@ class IntegrationInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/list_integration_instances.py.html>`__ to see an example of how to use list_integration_instances API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/integrationInstances"
         method = "GET"
         operation_name = "list_integration_instances"
@@ -845,7 +876,8 @@ class IntegrationInstanceClient(object):
                 response_type="list[IntegrationInstanceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -855,7 +887,8 @@ class IntegrationInstanceClient(object):
                 response_type="list[IntegrationInstanceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, compartment_id, work_request_id, **kwargs):
         """
@@ -895,6 +928,8 @@ class IntegrationInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId', 'compartmentId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -956,7 +991,8 @@ class IntegrationInstanceClient(object):
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -967,7 +1003,8 @@ class IntegrationInstanceClient(object):
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, compartment_id, work_request_id, **kwargs):
         """
@@ -1007,6 +1044,8 @@ class IntegrationInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId', 'compartmentId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -1068,7 +1107,8 @@ class IntegrationInstanceClient(object):
                 response_type="list[WorkRequestLogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1079,7 +1119,8 @@ class IntegrationInstanceClient(object):
                 response_type="list[WorkRequestLogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -1119,6 +1160,8 @@ class IntegrationInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -1171,7 +1214,8 @@ class IntegrationInstanceClient(object):
                 response_type="list[WorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1181,7 +1225,8 @@ class IntegrationInstanceClient(object):
                 response_type="list[WorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def start_integration_instance(self, integration_instance_id, **kwargs):
         """
@@ -1227,6 +1272,8 @@ class IntegrationInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/start_integration_instance.py.html>`__ to see an example of how to use start_integration_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['integrationInstanceId']
         resource_path = "/integrationInstances/{integrationInstanceId}/actions/start"
         method = "POST"
         operation_name = "start_integration_instance"
@@ -1282,7 +1329,8 @@ class IntegrationInstanceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1291,7 +1339,8 @@ class IntegrationInstanceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def stop_integration_instance(self, integration_instance_id, **kwargs):
         """
@@ -1337,6 +1386,8 @@ class IntegrationInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/stop_integration_instance.py.html>`__ to see an example of how to use stop_integration_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['integrationInstanceId']
         resource_path = "/integrationInstances/{integrationInstanceId}/actions/stop"
         method = "POST"
         operation_name = "stop_integration_instance"
@@ -1392,7 +1443,8 @@ class IntegrationInstanceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1401,7 +1453,8 @@ class IntegrationInstanceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_integration_instance(self, integration_instance_id, update_integration_instance_details, **kwargs):
         """
@@ -1442,6 +1495,8 @@ class IntegrationInstanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/integration/update_integration_instance.py.html>`__ to see an example of how to use update_integration_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['integrationInstanceId']
         resource_path = "/integrationInstances/{integrationInstanceId}"
         method = "PUT"
         operation_name = "update_integration_instance"
@@ -1495,7 +1550,8 @@ class IntegrationInstanceClient(object):
                 body=update_integration_instance_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1505,4 +1561,5 @@ class IntegrationInstanceClient(object):
                 body=update_integration_instance_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

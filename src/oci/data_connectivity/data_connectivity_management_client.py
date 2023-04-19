@@ -65,6 +65,9 @@ class DataConnectivityManagementClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class DataConnectivityManagementClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20210217',
             'service_endpoint_template': 'https://dataconnectivity.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -149,6 +154,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/change_endpoint_compartment.py.html>`__ to see an example of how to use change_endpoint_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['endpointId']
         resource_path = "/endpoints/{endpointId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_endpoint_compartment"
@@ -212,7 +219,8 @@ class DataConnectivityManagementClient(object):
                 body=change_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -223,7 +231,8 @@ class DataConnectivityManagementClient(object):
                 body=change_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_registry_compartment(self, registry_id, change_registry_compartment_details, **kwargs):
         """
@@ -267,6 +276,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/change_registry_compartment.py.html>`__ to see an example of how to use change_registry_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId']
         resource_path = "/registries/{registryId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_registry_compartment"
@@ -323,7 +334,8 @@ class DataConnectivityManagementClient(object):
                 body=change_registry_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -333,7 +345,8 @@ class DataConnectivityManagementClient(object):
                 body=change_registry_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_attach_data_asset(self, registry_id, endpoint_id, create_attach_data_asset_details, **kwargs):
         """
@@ -380,6 +393,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/create_attach_data_asset.py.html>`__ to see an example of how to use create_attach_data_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'endpointId']
         resource_path = "/registries/{registryId}/endpoints/{endpointId}/actions/attachDataAssets"
         method = "POST"
         operation_name = "create_attach_data_asset"
@@ -438,7 +453,8 @@ class DataConnectivityManagementClient(object):
                 response_type="AttachDataAssetInfo",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -449,7 +465,8 @@ class DataConnectivityManagementClient(object):
                 response_type="AttachDataAssetInfo",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_connection(self, registry_id, create_connection_details, **kwargs):
         """
@@ -488,6 +505,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/create_connection.py.html>`__ to see an example of how to use create_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId']
         resource_path = "/registries/{registryId}/connections"
         method = "POST"
         operation_name = "create_connection"
@@ -545,7 +564,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -556,7 +576,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_connection_validation(self, registry_id, create_connection_validation_details, **kwargs):
         """
@@ -598,6 +619,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/create_connection_validation.py.html>`__ to see an example of how to use create_connection_validation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId']
         resource_path = "/registries/{registryId}/connectionValidations"
         method = "POST"
         operation_name = "create_connection_validation"
@@ -662,7 +685,8 @@ class DataConnectivityManagementClient(object):
                 response_type="ConnectionValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -674,7 +698,8 @@ class DataConnectivityManagementClient(object):
                 response_type="ConnectionValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_connectivity_validation(self, registry_id, create_connectivity_validation_details, **kwargs):
         """
@@ -716,6 +741,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/create_connectivity_validation.py.html>`__ to see an example of how to use create_connectivity_validation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId']
         resource_path = "/registries/{registryId}/actions/connectivityValidation"
         method = "POST"
         operation_name = "create_connectivity_validation"
@@ -780,7 +807,8 @@ class DataConnectivityManagementClient(object):
                 response_type="ConnectivityValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -792,7 +820,8 @@ class DataConnectivityManagementClient(object):
                 response_type="ConnectivityValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_data_asset(self, registry_id, create_data_asset_details, **kwargs):
         """
@@ -831,6 +860,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/create_data_asset.py.html>`__ to see an example of how to use create_data_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId']
         resource_path = "/registries/{registryId}/dataAssets"
         method = "POST"
         operation_name = "create_data_asset"
@@ -888,7 +919,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -899,7 +931,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_data_preview(self, registry_id, create_data_preview_details, **kwargs):
         """
@@ -946,6 +979,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/create_data_preview.py.html>`__ to see an example of how to use create_data_preview API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId']
         resource_path = "/registries/{registryId}/actions/dataPreview"
         method = "POST"
         operation_name = "create_data_preview"
@@ -1012,7 +1047,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DataPreview",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1024,7 +1060,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DataPreview",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_data_profile(self, registry_id, create_data_profile_details, **kwargs):
         """
@@ -1071,6 +1108,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/create_data_profile.py.html>`__ to see an example of how to use create_data_profile API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId']
         resource_path = "/registries/{registryId}/actions/dataProfile"
         method = "POST"
         operation_name = "create_data_profile"
@@ -1137,7 +1176,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DataProfile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1149,7 +1189,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DataProfile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_de_reference_artifact(self, registry_id, dcms_artifact_id, create_de_reference_artifact_details, **kwargs):
         """
@@ -1196,6 +1237,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/create_de_reference_artifact.py.html>`__ to see an example of how to use create_de_reference_artifact API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'dcmsArtifactId']
         resource_path = "/registries/{registryId}/dcmsArtifacts/{dcmsArtifactId}/actions/deReferenceArtifact"
         method = "POST"
         operation_name = "create_de_reference_artifact"
@@ -1256,7 +1299,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DeReferenceInfo",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1267,7 +1311,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DeReferenceInfo",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_detach_data_asset(self, registry_id, endpoint_id, create_detach_data_asset_details, **kwargs):
         """
@@ -1314,6 +1359,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/create_detach_data_asset.py.html>`__ to see an example of how to use create_detach_data_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'endpointId']
         resource_path = "/registries/{registryId}/endpoints/{endpointId}/actions/detachDataAssets"
         method = "POST"
         operation_name = "create_detach_data_asset"
@@ -1372,7 +1419,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DetachDataAssetInfo",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1383,7 +1431,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DetachDataAssetInfo",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_endpoint(self, create_endpoint_details, **kwargs):
         """
@@ -1422,6 +1471,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/create_endpoint.py.html>`__ to see an example of how to use create_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/endpoints"
         method = "POST"
         operation_name = "create_endpoint"
@@ -1472,7 +1523,8 @@ class DataConnectivityManagementClient(object):
                 body=create_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1482,7 +1534,8 @@ class DataConnectivityManagementClient(object):
                 body=create_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_entity_shape(self, registry_id, connection_key, schema_resource_name, create_entity_shape_details, **kwargs):
         """
@@ -1540,6 +1593,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/create_entity_shape.py.html>`__ to see an example of how to use create_entity_shape API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'connectionKey', 'schemaResourceName']
         resource_path = "/registries/{registryId}/connections/{connectionKey}/schemas/{schemaResourceName}/actions/entityShapes"
         method = "POST"
         operation_name = "create_entity_shape"
@@ -1617,7 +1672,8 @@ class DataConnectivityManagementClient(object):
                 response_type="EntityShape",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1629,7 +1685,8 @@ class DataConnectivityManagementClient(object):
                 response_type="EntityShape",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_execute_operation_job(self, registry_id, connection_key, schema_resource_name, create_execute_operation_job_details, **kwargs):
         """
@@ -1677,6 +1734,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/create_execute_operation_job.py.html>`__ to see an example of how to use create_execute_operation_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'connectionKey', 'schemaResourceName']
         resource_path = "/registries/{registryId}/connections/{connectionKey}/schemas/{schemaResourceName}/actions/executeOperationJobs"
         method = "POST"
         operation_name = "create_execute_operation_job"
@@ -1741,7 +1800,8 @@ class DataConnectivityManagementClient(object):
                 response_type="ExecuteOperationJobDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1753,7 +1813,8 @@ class DataConnectivityManagementClient(object):
                 response_type="ExecuteOperationJobDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_folder(self, registry_id, create_folder_details, **kwargs):
         """
@@ -1792,6 +1853,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/create_folder.py.html>`__ to see an example of how to use create_folder API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId']
         resource_path = "/registries/{registryId}/folders"
         method = "POST"
         operation_name = "create_folder"
@@ -1849,7 +1912,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1860,7 +1924,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_full_push_down_task(self, registry_id, create_full_push_down_task_details, **kwargs):
         """
@@ -1907,6 +1972,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/create_full_push_down_task.py.html>`__ to see an example of how to use create_full_push_down_task API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId']
         resource_path = "/registries/{registryId}/actions/fullPushDownTask"
         method = "POST"
         operation_name = "create_full_push_down_task"
@@ -1973,7 +2040,8 @@ class DataConnectivityManagementClient(object):
                 response_type="FullPushDownTaskResponse",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1985,7 +2053,8 @@ class DataConnectivityManagementClient(object):
                 response_type="FullPushDownTaskResponse",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_reference_artifact(self, registry_id, dcms_artifact_id, create_reference_artifact_details, **kwargs):
         """
@@ -2032,6 +2101,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/create_reference_artifact.py.html>`__ to see an example of how to use create_reference_artifact API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'dcmsArtifactId']
         resource_path = "/registries/{registryId}/dcmsArtifacts/{dcmsArtifactId}/actions/referenceArtifact"
         method = "POST"
         operation_name = "create_reference_artifact"
@@ -2092,7 +2163,8 @@ class DataConnectivityManagementClient(object):
                 response_type="ReferenceInfo",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2103,7 +2175,8 @@ class DataConnectivityManagementClient(object):
                 response_type="ReferenceInfo",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_registry(self, create_registry_details, **kwargs):
         """
@@ -2139,6 +2212,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/create_registry.py.html>`__ to see an example of how to use create_registry API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/registries"
         method = "POST"
         operation_name = "create_registry"
@@ -2182,7 +2257,8 @@ class DataConnectivityManagementClient(object):
                 body=create_registry_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2191,7 +2267,8 @@ class DataConnectivityManagementClient(object):
                 body=create_registry_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_test_network_connectivity(self, registry_id, create_test_network_connectivity_details, **kwargs):
         """
@@ -2238,6 +2315,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/create_test_network_connectivity.py.html>`__ to see an example of how to use create_test_network_connectivity API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId']
         resource_path = "/registries/{registryId}/actions/testNetworkConnectivity"
         method = "POST"
         operation_name = "create_test_network_connectivity"
@@ -2302,7 +2381,8 @@ class DataConnectivityManagementClient(object):
                 response_type="TestNetworkConnectivity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2314,7 +2394,8 @@ class DataConnectivityManagementClient(object):
                 response_type="TestNetworkConnectivity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_connection(self, registry_id, connection_key, **kwargs):
         """
@@ -2355,6 +2436,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/delete_connection.py.html>`__ to see an example of how to use delete_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'connectionKey']
         resource_path = "/registries/{registryId}/connections/{connectionKey}"
         method = "DELETE"
         operation_name = "delete_connection"
@@ -2408,7 +2491,8 @@ class DataConnectivityManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2417,7 +2501,8 @@ class DataConnectivityManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_data_asset(self, registry_id, data_asset_key, **kwargs):
         """
@@ -2458,6 +2543,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/delete_data_asset.py.html>`__ to see an example of how to use delete_data_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'dataAssetKey']
         resource_path = "/registries/{registryId}/dataAssets/{dataAssetKey}"
         method = "DELETE"
         operation_name = "delete_data_asset"
@@ -2511,7 +2598,8 @@ class DataConnectivityManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2520,7 +2608,8 @@ class DataConnectivityManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_endpoint(self, endpoint_id, **kwargs):
         """
@@ -2564,6 +2653,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/delete_endpoint.py.html>`__ to see an example of how to use delete_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['endpointId']
         resource_path = "/endpoints/{endpointId}"
         method = "DELETE"
         operation_name = "delete_endpoint"
@@ -2625,7 +2716,8 @@ class DataConnectivityManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2635,7 +2727,8 @@ class DataConnectivityManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_folder(self, registry_id, folder_key, **kwargs):
         """
@@ -2676,6 +2769,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/delete_folder.py.html>`__ to see an example of how to use delete_folder API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'folderKey']
         resource_path = "/registries/{registryId}/folders/{folderKey}"
         method = "DELETE"
         operation_name = "delete_folder"
@@ -2729,7 +2824,8 @@ class DataConnectivityManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2738,7 +2834,8 @@ class DataConnectivityManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_network_connectivity_status(self, registry_id, network_validation_status_key, **kwargs):
         """
@@ -2779,6 +2876,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/delete_network_connectivity_status.py.html>`__ to see an example of how to use delete_network_connectivity_status API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'networkValidationStatusKey']
         resource_path = "/registries/{registryId}/networkConnectivityStatus/{networkValidationStatusKey}"
         method = "DELETE"
         operation_name = "delete_network_connectivity_status"
@@ -2832,7 +2931,8 @@ class DataConnectivityManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2841,7 +2941,8 @@ class DataConnectivityManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_registry(self, registry_id, **kwargs):
         """
@@ -2882,6 +2983,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/delete_registry.py.html>`__ to see an example of how to use delete_registry API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId']
         resource_path = "/registries/{registryId}"
         method = "DELETE"
         operation_name = "delete_registry"
@@ -2941,7 +3044,8 @@ class DataConnectivityManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2951,7 +3055,8 @@ class DataConnectivityManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def derive_entities(self, registry_id, derive_entities_details, **kwargs):
         """
@@ -2990,6 +3095,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/derive_entities.py.html>`__ to see an example of how to use derive_entities API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId']
         resource_path = "/registries/{registryId}/actions/deriveEntities"
         method = "POST"
         operation_name = "derive_entities"
@@ -3045,7 +3152,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DeriveEntities",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3056,7 +3164,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DeriveEntities",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_connection(self, registry_id, connection_key, **kwargs):
         """
@@ -3092,6 +3201,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/get_connection.py.html>`__ to see an example of how to use get_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'connectionKey']
         resource_path = "/registries/{registryId}/connections/{connectionKey}"
         method = "GET"
         operation_name = "get_connection"
@@ -3146,7 +3257,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3156,7 +3268,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_data_asset(self, registry_id, data_asset_key, **kwargs):
         """
@@ -3192,6 +3305,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/get_data_asset.py.html>`__ to see an example of how to use get_data_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'dataAssetKey']
         resource_path = "/registries/{registryId}/dataAssets/{dataAssetKey}"
         method = "GET"
         operation_name = "get_data_asset"
@@ -3246,7 +3361,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3256,7 +3372,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_data_entity(self, registry_id, connection_key, schema_resource_name, data_entity_key, **kwargs):
         """
@@ -3301,6 +3418,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/get_data_entity.py.html>`__ to see an example of how to use get_data_entity API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'connectionKey', 'schemaResourceName', 'dataEntityKey']
         resource_path = "/registries/{registryId}/connections/{connectionKey}/schemas/{schemaResourceName}/dataEntities/{dataEntityKey}"
         method = "GET"
         operation_name = "get_data_entity"
@@ -3364,7 +3483,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DataEntity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3375,7 +3495,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DataEntity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_endpoint(self, endpoint_id, **kwargs):
         """
@@ -3411,6 +3532,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/get_endpoint.py.html>`__ to see an example of how to use get_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['endpointId']
         resource_path = "/endpoints/{endpointId}"
         method = "GET"
         operation_name = "get_endpoint"
@@ -3471,7 +3594,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Endpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3482,7 +3606,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Endpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_engine_configurations(self, registry_id, connection_key, **kwargs):
         """
@@ -3523,6 +3648,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/get_engine_configurations.py.html>`__ to see an example of how to use get_engine_configurations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'connectionKey']
         resource_path = "/registries/{registryId}/connections/{connectionKey}/engineConfigurations"
         method = "GET"
         operation_name = "get_engine_configurations"
@@ -3589,7 +3716,8 @@ class DataConnectivityManagementClient(object):
                 response_type="ConfigDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3600,7 +3728,8 @@ class DataConnectivityManagementClient(object):
                 response_type="ConfigDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_execute_operation_job(self, registry_id, connection_key, schema_resource_name, execute_operation_job_key, **kwargs):
         """
@@ -3645,6 +3774,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/get_execute_operation_job.py.html>`__ to see an example of how to use get_execute_operation_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'connectionKey', 'schemaResourceName', 'executeOperationJobKey']
         resource_path = "/registries/{registryId}/connections/{connectionKey}/schemas/{schemaResourceName}/executeOperationJobs/{executeOperationJobKey}"
         method = "GET"
         operation_name = "get_execute_operation_job"
@@ -3708,7 +3839,8 @@ class DataConnectivityManagementClient(object):
                 response_type="ExecuteOperationJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3719,7 +3851,8 @@ class DataConnectivityManagementClient(object):
                 response_type="ExecuteOperationJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_folder(self, registry_id, folder_key, **kwargs):
         """
@@ -3755,6 +3888,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/get_folder.py.html>`__ to see an example of how to use get_folder API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'folderKey']
         resource_path = "/registries/{registryId}/folders/{folderKey}"
         method = "GET"
         operation_name = "get_folder"
@@ -3809,7 +3944,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3819,7 +3955,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_network_connectivity_status(self, registry_id, data_asset_key, **kwargs):
         """
@@ -3866,6 +4003,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/get_network_connectivity_status.py.html>`__ to see an example of how to use get_network_connectivity_status API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'dataAssetKey']
         resource_path = "/registries/{registryId}/dataAssets/{dataAssetKey}/networkConnectivityStatus"
         method = "GET"
         operation_name = "get_network_connectivity_status"
@@ -3932,7 +4071,8 @@ class DataConnectivityManagementClient(object):
                 response_type="NetworkConnectivityStatus",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3943,7 +4083,8 @@ class DataConnectivityManagementClient(object):
                 response_type="NetworkConnectivityStatus",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_operation(self, registry_id, connection_key, schema_resource_name, operation_resource_name, **kwargs):
         """
@@ -3988,6 +4129,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/get_operation.py.html>`__ to see an example of how to use get_operation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'connectionKey', 'schemaResourceName', 'operationResourceName']
         resource_path = "/registries/{registryId}/connections/{connectionKey}/schemas/{schemaResourceName}/operations/{operationResourceName}"
         method = "GET"
         operation_name = "get_operation"
@@ -4051,7 +4194,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Operation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4062,7 +4206,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Operation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_registry(self, registry_id, **kwargs):
         """
@@ -4095,6 +4240,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/get_registry.py.html>`__ to see an example of how to use get_registry API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId']
         resource_path = "/registries/{registryId}"
         method = "GET"
         operation_name = "get_registry"
@@ -4148,7 +4295,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Registry",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4158,7 +4306,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Registry",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_schema(self, registry_id, connection_key, schema_resource_name, **kwargs):
         """
@@ -4200,6 +4349,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/get_schema.py.html>`__ to see an example of how to use get_schema API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'connectionKey', 'schemaResourceName']
         resource_path = "/registries/{registryId}/connections/{connectionKey}/schemas/{schemaResourceName}"
         method = "GET"
         operation_name = "get_schema"
@@ -4262,7 +4413,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Schema",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4273,7 +4425,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Schema",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_type(self, registry_id, type_key, **kwargs):
         """
@@ -4312,6 +4465,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/get_type.py.html>`__ to see an example of how to use get_type API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'typeKey']
         resource_path = "/registries/{registryId}/types/{typeKey}"
         method = "GET"
         operation_name = "get_type"
@@ -4373,7 +4528,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Type",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4384,7 +4540,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Type",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -4417,6 +4574,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -4470,7 +4629,8 @@ class DataConnectivityManagementClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4480,7 +4640,8 @@ class DataConnectivityManagementClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_connections(self, registry_id, data_asset_key, **kwargs):
         """
@@ -4550,6 +4711,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/list_connections.py.html>`__ to see an example of how to use list_connections API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'dataAssetKey']
         resource_path = "/registries/{registryId}/connections"
         method = "GET"
         operation_name = "list_connections"
@@ -4646,7 +4809,8 @@ class DataConnectivityManagementClient(object):
                 response_type="ConnectionSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4657,7 +4821,8 @@ class DataConnectivityManagementClient(object):
                 response_type="ConnectionSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_data_assets(self, registry_id, **kwargs):
         """
@@ -4736,6 +4901,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/list_data_assets.py.html>`__ to see an example of how to use list_data_assets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId']
         resource_path = "/registries/{registryId}/dataAssets"
         method = "GET"
         operation_name = "list_data_assets"
@@ -4839,7 +5006,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DataAssetSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4850,7 +5018,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DataAssetSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_data_entities(self, registry_id, connection_key, schema_resource_name, **kwargs):
         """
@@ -4935,6 +5104,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/list_data_entities.py.html>`__ to see an example of how to use list_data_entities API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'connectionKey', 'schemaResourceName']
         resource_path = "/registries/{registryId}/connections/{connectionKey}/schemas/{schemaResourceName}/dataEntities"
         method = "GET"
         operation_name = "list_data_entities"
@@ -5040,7 +5211,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DataEntitySummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5051,7 +5223,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DataEntitySummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_endpoints(self, compartment_id, **kwargs):
         """
@@ -5115,6 +5288,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/list_endpoints.py.html>`__ to see an example of how to use list_endpoints API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/endpoints"
         method = "GET"
         operation_name = "list_endpoints"
@@ -5198,7 +5373,8 @@ class DataConnectivityManagementClient(object):
                 response_type="EndpointSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5208,7 +5384,8 @@ class DataConnectivityManagementClient(object):
                 response_type="EndpointSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_folders(self, registry_id, **kwargs):
         """
@@ -5275,6 +5452,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/list_folders.py.html>`__ to see an example of how to use list_folders API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId']
         resource_path = "/registries/{registryId}/folders"
         method = "GET"
         operation_name = "list_folders"
@@ -5370,7 +5549,8 @@ class DataConnectivityManagementClient(object):
                 response_type="FolderSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5381,7 +5561,8 @@ class DataConnectivityManagementClient(object):
                 response_type="FolderSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_operations(self, registry_id, connection_key, schema_resource_name, **kwargs):
         """
@@ -5446,6 +5627,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/list_operations.py.html>`__ to see an example of how to use list_operations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'connectionKey', 'schemaResourceName']
         resource_path = "/registries/{registryId}/connections/{connectionKey}/schemas/{schemaResourceName}/operations"
         method = "GET"
         operation_name = "list_operations"
@@ -5532,7 +5715,8 @@ class DataConnectivityManagementClient(object):
                 response_type="OperationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5543,7 +5727,8 @@ class DataConnectivityManagementClient(object):
                 response_type="OperationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_reference_artifacts(self, registry_id, dcms_artifact_id, **kwargs):
         """
@@ -5619,6 +5804,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/list_reference_artifacts.py.html>`__ to see an example of how to use list_reference_artifacts API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'dcmsArtifactId']
         resource_path = "/registries/{registryId}/dcmsArtifacts/{dcmsArtifactId}/referenceArtifacts"
         method = "GET"
         operation_name = "list_reference_artifacts"
@@ -5719,7 +5906,8 @@ class DataConnectivityManagementClient(object):
                 response_type="ReferenceArtifactSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5730,7 +5918,8 @@ class DataConnectivityManagementClient(object):
                 response_type="ReferenceArtifactSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_registries(self, compartment_id, **kwargs):
         """
@@ -5784,6 +5973,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/list_registries.py.html>`__ to see an example of how to use list_registries API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/registries"
         method = "GET"
         operation_name = "list_registries"
@@ -5849,7 +6040,8 @@ class DataConnectivityManagementClient(object):
                 response_type="RegistrySummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5859,7 +6051,8 @@ class DataConnectivityManagementClient(object):
                 response_type="RegistrySummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_schemas(self, registry_id, connection_key, **kwargs):
         """
@@ -5933,6 +6126,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/list_schemas.py.html>`__ to see an example of how to use list_schemas API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'connectionKey']
         resource_path = "/registries/{registryId}/connections/{connectionKey}/schemas"
         method = "GET"
         operation_name = "list_schemas"
@@ -6026,7 +6221,8 @@ class DataConnectivityManagementClient(object):
                 response_type="SchemaSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6037,7 +6233,8 @@ class DataConnectivityManagementClient(object):
                 response_type="SchemaSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_types(self, registry_id, **kwargs):
         """
@@ -6096,6 +6293,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/list_types.py.html>`__ to see an example of how to use list_types API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId']
         resource_path = "/registries/{registryId}/types"
         method = "GET"
         operation_name = "list_types"
@@ -6180,7 +6379,8 @@ class DataConnectivityManagementClient(object):
                 response_type="TypesSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6191,7 +6391,8 @@ class DataConnectivityManagementClient(object):
                 response_type="TypesSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -6234,6 +6435,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/workRequestErrors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -6296,7 +6499,8 @@ class DataConnectivityManagementClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6307,7 +6511,8 @@ class DataConnectivityManagementClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -6350,6 +6555,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -6412,7 +6619,8 @@ class DataConnectivityManagementClient(object):
                 response_type="WorkRequestLogCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6423,7 +6631,8 @@ class DataConnectivityManagementClient(object):
                 response_type="WorkRequestLogCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -6474,6 +6683,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -6537,7 +6748,8 @@ class DataConnectivityManagementClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6547,7 +6759,8 @@ class DataConnectivityManagementClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_connection(self, registry_id, connection_key, update_connection_details, **kwargs):
         """
@@ -6591,6 +6804,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/update_connection.py.html>`__ to see an example of how to use update_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'connectionKey']
         resource_path = "/registries/{registryId}/connections/{connectionKey}"
         method = "PUT"
         operation_name = "update_connection"
@@ -6646,7 +6861,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6657,7 +6873,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_data_asset(self, registry_id, data_asset_key, update_data_asset_details, **kwargs):
         """
@@ -6701,6 +6918,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/update_data_asset.py.html>`__ to see an example of how to use update_data_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'dataAssetKey']
         resource_path = "/registries/{registryId}/dataAssets/{dataAssetKey}"
         method = "PUT"
         operation_name = "update_data_asset"
@@ -6756,7 +6975,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6767,7 +6987,8 @@ class DataConnectivityManagementClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_endpoint(self, endpoint_id, update_endpoint_details, **kwargs):
         """
@@ -6811,6 +7032,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/update_endpoint.py.html>`__ to see an example of how to use update_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['endpointId']
         resource_path = "/endpoints/{endpointId}"
         method = "PUT"
         operation_name = "update_endpoint"
@@ -6872,7 +7095,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Endpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6884,7 +7108,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Endpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_folder(self, registry_id, folder_key, update_folder_details, **kwargs):
         """
@@ -6928,6 +7153,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/update_folder.py.html>`__ to see an example of how to use update_folder API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId', 'folderKey']
         resource_path = "/registries/{registryId}/folders/{folderKey}"
         method = "PUT"
         operation_name = "update_folder"
@@ -6983,7 +7210,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6994,7 +7222,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_registry(self, registry_id, update_registry_details, **kwargs):
         """
@@ -7035,6 +7264,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/update_registry.py.html>`__ to see an example of how to use update_registry API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['registryId']
         resource_path = "/registries/{registryId}"
         method = "PUT"
         operation_name = "update_registry"
@@ -7089,7 +7320,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Registry",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7100,7 +7332,8 @@ class DataConnectivityManagementClient(object):
                 response_type="Registry",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def validate_data_asset_network_reachablity(self, endpoint_id, **kwargs):
         """
@@ -7144,6 +7377,8 @@ class DataConnectivityManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataconnectivity/validate_data_asset_network_reachablity.py.html>`__ to see an example of how to use validate_data_asset_network_reachablity API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['endpointId']
         resource_path = "/endpoints/{endpointId}/actions/validateDataAssetNetworkReachablity"
         method = "POST"
         operation_name = "validate_data_asset_network_reachablity"
@@ -7206,7 +7441,8 @@ class DataConnectivityManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7216,4 +7452,5 @@ class DataConnectivityManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

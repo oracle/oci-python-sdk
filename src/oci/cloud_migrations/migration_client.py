@@ -66,6 +66,9 @@ class MigrationClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -92,8 +95,10 @@ class MigrationClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20220919',
             'service_endpoint_template': 'https://cloudmigration.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -141,6 +146,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
@@ -195,7 +202,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -204,7 +212,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_migration_compartment(self, migration_id, change_migration_compartment_details, **kwargs):
         """
@@ -252,6 +261,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/change_migration_compartment.py.html>`__ to see an example of how to use change_migration_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['migrationId']
         resource_path = "/migrations/{migrationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_migration_compartment"
@@ -310,7 +321,8 @@ class MigrationClient(object):
                 body=change_migration_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -320,7 +332,8 @@ class MigrationClient(object):
                 body=change_migration_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_migration_plan_compartment(self, migration_plan_id, change_migration_plan_compartment_details, **kwargs):
         """
@@ -368,6 +381,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/change_migration_plan_compartment.py.html>`__ to see an example of how to use change_migration_plan_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['migrationPlanId']
         resource_path = "/migrationPlans/{migrationPlanId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_migration_plan_compartment"
@@ -426,7 +441,8 @@ class MigrationClient(object):
                 body=change_migration_plan_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -436,7 +452,8 @@ class MigrationClient(object):
                 body=change_migration_plan_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_replication_schedule_compartment(self, replication_schedule_id, change_replication_schedule_compartment_details, **kwargs):
         """
@@ -484,6 +501,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/change_replication_schedule_compartment.py.html>`__ to see an example of how to use change_replication_schedule_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['replicationScheduleId']
         resource_path = "/replicationSchedules/{replicationScheduleId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_replication_schedule_compartment"
@@ -542,7 +561,8 @@ class MigrationClient(object):
                 body=change_replication_schedule_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -552,7 +572,8 @@ class MigrationClient(object):
                 body=change_replication_schedule_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_migration(self, create_migration_details, **kwargs):
         """
@@ -590,6 +611,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/create_migration.py.html>`__ to see an example of how to use create_migration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/migrations"
         method = "POST"
         operation_name = "create_migration"
@@ -636,7 +659,8 @@ class MigrationClient(object):
                 response_type="Migration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -646,7 +670,8 @@ class MigrationClient(object):
                 response_type="Migration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_migration_asset(self, create_migration_asset_details, **kwargs):
         """
@@ -684,6 +709,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/create_migration_asset.py.html>`__ to see an example of how to use create_migration_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/migrationAssets"
         method = "POST"
         operation_name = "create_migration_asset"
@@ -730,7 +757,8 @@ class MigrationClient(object):
                 response_type="MigrationAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -740,7 +768,8 @@ class MigrationClient(object):
                 response_type="MigrationAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_migration_plan(self, create_migration_plan_details, **kwargs):
         """
@@ -778,6 +807,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/create_migration_plan.py.html>`__ to see an example of how to use create_migration_plan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/migrationPlans"
         method = "POST"
         operation_name = "create_migration_plan"
@@ -824,7 +855,8 @@ class MigrationClient(object):
                 response_type="MigrationPlan",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -834,7 +866,8 @@ class MigrationClient(object):
                 response_type="MigrationPlan",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_replication_schedule(self, create_replication_schedule_details, **kwargs):
         """
@@ -872,6 +905,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/create_replication_schedule.py.html>`__ to see an example of how to use create_replication_schedule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/replicationSchedules"
         method = "POST"
         operation_name = "create_replication_schedule"
@@ -918,7 +953,8 @@ class MigrationClient(object):
                 response_type="ReplicationSchedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -928,7 +964,8 @@ class MigrationClient(object):
                 response_type="ReplicationSchedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_target_asset(self, create_target_asset_details, **kwargs):
         """
@@ -966,6 +1003,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/create_target_asset.py.html>`__ to see an example of how to use create_target_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/targetAssets"
         method = "POST"
         operation_name = "create_target_asset"
@@ -1012,7 +1051,8 @@ class MigrationClient(object):
                 response_type="TargetAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1022,7 +1062,8 @@ class MigrationClient(object):
                 response_type="TargetAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_migration(self, migration_id, **kwargs):
         """
@@ -1060,6 +1101,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/delete_migration.py.html>`__ to see an example of how to use delete_migration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['migrationId']
         resource_path = "/migrations/{migrationId}"
         method = "DELETE"
         operation_name = "delete_migration"
@@ -1114,7 +1157,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1123,7 +1167,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_migration_asset(self, migration_asset_id, **kwargs):
         """
@@ -1161,6 +1206,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/delete_migration_asset.py.html>`__ to see an example of how to use delete_migration_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['migrationAssetId']
         resource_path = "/migrationAssets/{migrationAssetId}"
         method = "DELETE"
         operation_name = "delete_migration_asset"
@@ -1215,7 +1262,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1224,7 +1272,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_migration_plan(self, migration_plan_id, **kwargs):
         """
@@ -1262,6 +1311,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/delete_migration_plan.py.html>`__ to see an example of how to use delete_migration_plan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['migrationPlanId']
         resource_path = "/migrationPlans/{migrationPlanId}"
         method = "DELETE"
         operation_name = "delete_migration_plan"
@@ -1316,7 +1367,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1325,7 +1377,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_replication_schedule(self, replication_schedule_id, **kwargs):
         """
@@ -1363,6 +1416,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/delete_replication_schedule.py.html>`__ to see an example of how to use delete_replication_schedule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['replicationScheduleId']
         resource_path = "/replicationSchedules/{replicationScheduleId}"
         method = "DELETE"
         operation_name = "delete_replication_schedule"
@@ -1417,7 +1472,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1426,7 +1482,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_target_asset(self, target_asset_id, **kwargs):
         """
@@ -1464,6 +1521,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/delete_target_asset.py.html>`__ to see an example of how to use delete_target_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetAssetId']
         resource_path = "/targetAssets/{targetAssetId}"
         method = "DELETE"
         operation_name = "delete_target_asset"
@@ -1518,7 +1577,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1527,7 +1587,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def execute_migration_plan(self, migration_plan_id, **kwargs):
         """
@@ -1572,6 +1633,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/execute_migration_plan.py.html>`__ to see an example of how to use execute_migration_plan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['migrationPlanId']
         resource_path = "/migrationPlans/{migrationPlanId}/actions/execute"
         method = "POST"
         operation_name = "execute_migration_plan"
@@ -1629,7 +1692,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1638,7 +1702,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def export_migration_plan(self, migration_plan_id, **kwargs):
         """
@@ -1669,6 +1734,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/export_migration_plan.py.html>`__ to see an example of how to use export_migration_plan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['migrationPlanId']
         resource_path = "/migrationPlans/{migrationPlanId}/actions/export"
         method = "GET"
         operation_name = "export_migration_plan"
@@ -1722,7 +1789,8 @@ class MigrationClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1732,7 +1800,8 @@ class MigrationClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_migration(self, migration_id, **kwargs):
         """
@@ -1763,6 +1832,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/get_migration.py.html>`__ to see an example of how to use get_migration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['migrationId']
         resource_path = "/migrations/{migrationId}"
         method = "GET"
         operation_name = "get_migration"
@@ -1816,7 +1887,8 @@ class MigrationClient(object):
                 response_type="Migration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1826,7 +1898,8 @@ class MigrationClient(object):
                 response_type="Migration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_migration_asset(self, migration_asset_id, **kwargs):
         """
@@ -1857,6 +1930,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/get_migration_asset.py.html>`__ to see an example of how to use get_migration_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['migrationAssetId']
         resource_path = "/migrationAssets/{migrationAssetId}"
         method = "GET"
         operation_name = "get_migration_asset"
@@ -1910,7 +1985,8 @@ class MigrationClient(object):
                 response_type="MigrationAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1920,7 +1996,8 @@ class MigrationClient(object):
                 response_type="MigrationAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_migration_plan(self, migration_plan_id, **kwargs):
         """
@@ -1951,6 +2028,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/get_migration_plan.py.html>`__ to see an example of how to use get_migration_plan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['migrationPlanId']
         resource_path = "/migrationPlans/{migrationPlanId}"
         method = "GET"
         operation_name = "get_migration_plan"
@@ -2004,7 +2083,8 @@ class MigrationClient(object):
                 response_type="MigrationPlan",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2014,7 +2094,8 @@ class MigrationClient(object):
                 response_type="MigrationPlan",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_replication_progress(self, migration_asset_id, **kwargs):
         """
@@ -2045,6 +2126,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/get_replication_progress.py.html>`__ to see an example of how to use get_replication_progress API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['migrationAssetId']
         resource_path = "/migrationAssets/{migrationAssetId}/actions/replicationProgress"
         method = "GET"
         operation_name = "get_replication_progress"
@@ -2098,7 +2181,8 @@ class MigrationClient(object):
                 response_type="ReplicationProgress",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2108,7 +2192,8 @@ class MigrationClient(object):
                 response_type="ReplicationProgress",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_replication_schedule(self, replication_schedule_id, **kwargs):
         """
@@ -2139,6 +2224,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/get_replication_schedule.py.html>`__ to see an example of how to use get_replication_schedule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['replicationScheduleId']
         resource_path = "/replicationSchedules/{replicationScheduleId}"
         method = "GET"
         operation_name = "get_replication_schedule"
@@ -2192,7 +2279,8 @@ class MigrationClient(object):
                 response_type="ReplicationSchedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2202,7 +2290,8 @@ class MigrationClient(object):
                 response_type="ReplicationSchedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_target_asset(self, target_asset_id, **kwargs):
         """
@@ -2233,6 +2322,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/get_target_asset.py.html>`__ to see an example of how to use get_target_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetAssetId']
         resource_path = "/targetAssets/{targetAssetId}"
         method = "GET"
         operation_name = "get_target_asset"
@@ -2286,7 +2377,8 @@ class MigrationClient(object):
                 response_type="TargetAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2296,7 +2388,8 @@ class MigrationClient(object):
                 response_type="TargetAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -2327,6 +2420,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -2380,7 +2475,8 @@ class MigrationClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2390,7 +2486,8 @@ class MigrationClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def import_migration_plan(self, migration_plan_id, import_migration_plan_details, **kwargs):
         """
@@ -2445,6 +2542,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/import_migration_plan.py.html>`__ to see an example of how to use import_migration_plan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['migrationPlanId']
         resource_path = "/migrationPlans/{migrationPlanId}/actions/import"
         method = "POST"
         operation_name = "import_migration_plan"
@@ -2524,7 +2623,8 @@ class MigrationClient(object):
                 body=import_migration_plan_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2534,7 +2634,8 @@ class MigrationClient(object):
                 body=import_migration_plan_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_available_shapes(self, migration_plan_id, **kwargs):
         """
@@ -2593,6 +2694,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/list_available_shapes.py.html>`__ to see an example of how to use list_available_shapes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['migrationPlanId']
         resource_path = "/migrationPlans/{migrationPlanId}/availableShapes"
         method = "GET"
         operation_name = "list_available_shapes"
@@ -2681,7 +2784,8 @@ class MigrationClient(object):
                 response_type="AvailableShapesCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2692,7 +2796,8 @@ class MigrationClient(object):
                 response_type="AvailableShapesCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_migration_assets(self, **kwargs):
         """
@@ -2750,6 +2855,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/list_migration_assets.py.html>`__ to see an example of how to use list_migration_assets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/migrationAssets"
         method = "GET"
         operation_name = "list_migration_assets"
@@ -2834,7 +2941,8 @@ class MigrationClient(object):
                 response_type="MigrationAssetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2844,7 +2952,8 @@ class MigrationClient(object):
                 response_type="MigrationAssetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_migration_plans(self, **kwargs):
         """
@@ -2905,6 +3014,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/list_migration_plans.py.html>`__ to see an example of how to use list_migration_plans API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/migrationPlans"
         method = "GET"
         operation_name = "list_migration_plans"
@@ -2991,7 +3102,8 @@ class MigrationClient(object):
                 response_type="MigrationPlanCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3001,7 +3113,8 @@ class MigrationClient(object):
                 response_type="MigrationPlanCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_migrations(self, **kwargs):
         """
@@ -3059,6 +3172,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/list_migrations.py.html>`__ to see an example of how to use list_migrations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/migrations"
         method = "GET"
         operation_name = "list_migrations"
@@ -3143,7 +3258,8 @@ class MigrationClient(object):
                 response_type="MigrationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3153,7 +3269,8 @@ class MigrationClient(object):
                 response_type="MigrationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_replication_schedules(self, **kwargs):
         """
@@ -3211,6 +3328,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/list_replication_schedules.py.html>`__ to see an example of how to use list_replication_schedules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/replicationSchedules"
         method = "GET"
         operation_name = "list_replication_schedules"
@@ -3295,7 +3414,8 @@ class MigrationClient(object):
                 response_type="ReplicationScheduleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3305,7 +3425,8 @@ class MigrationClient(object):
                 response_type="ReplicationScheduleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_target_assets(self, **kwargs):
         """
@@ -3363,6 +3484,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/list_target_assets.py.html>`__ to see an example of how to use list_target_assets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/targetAssets"
         method = "GET"
         operation_name = "list_target_assets"
@@ -3447,7 +3570,8 @@ class MigrationClient(object):
                 response_type="TargetAssetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3457,7 +3581,8 @@ class MigrationClient(object):
                 response_type="TargetAssetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -3504,6 +3629,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -3584,7 +3711,8 @@ class MigrationClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3595,7 +3723,8 @@ class MigrationClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -3642,6 +3771,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -3722,7 +3853,8 @@ class MigrationClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3733,7 +3865,8 @@ class MigrationClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, **kwargs):
         """
@@ -3796,6 +3929,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -3889,7 +4024,8 @@ class MigrationClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3899,7 +4035,8 @@ class MigrationClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def refresh_migration(self, migration_id, **kwargs):
         """
@@ -3944,6 +4081,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/refresh_migration.py.html>`__ to see an example of how to use refresh_migration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['migrationId']
         resource_path = "/migrations/{migrationId}/actions/refresh"
         method = "POST"
         operation_name = "refresh_migration"
@@ -4001,7 +4140,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4010,7 +4150,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def refresh_migration_asset(self, migration_asset_id, **kwargs):
         """
@@ -4055,6 +4196,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/refresh_migration_asset.py.html>`__ to see an example of how to use refresh_migration_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['migrationAssetId']
         resource_path = "/migrationAssets/{migrationAssetId}/actions/refresh"
         method = "POST"
         operation_name = "refresh_migration_asset"
@@ -4112,7 +4255,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4121,7 +4265,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def refresh_migration_plan(self, migration_plan_id, **kwargs):
         """
@@ -4166,6 +4311,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/refresh_migration_plan.py.html>`__ to see an example of how to use refresh_migration_plan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['migrationPlanId']
         resource_path = "/migrationPlans/{migrationPlanId}/actions/refresh"
         method = "POST"
         operation_name = "refresh_migration_plan"
@@ -4223,7 +4370,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4232,7 +4380,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def start_asset_replication(self, migration_asset_id, **kwargs):
         """
@@ -4277,6 +4426,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/start_asset_replication.py.html>`__ to see an example of how to use start_asset_replication API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['migrationAssetId']
         resource_path = "/migrationAssets/{migrationAssetId}/actions/startAssetReplication"
         method = "POST"
         operation_name = "start_asset_replication"
@@ -4334,7 +4485,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4343,7 +4495,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def start_migration_replication(self, migration_id, **kwargs):
         """
@@ -4388,6 +4541,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/start_migration_replication.py.html>`__ to see an example of how to use start_migration_replication API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['migrationId']
         resource_path = "/migrations/{migrationId}/actions/startMigrationReplication"
         method = "POST"
         operation_name = "start_migration_replication"
@@ -4445,7 +4600,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4454,7 +4610,8 @@ class MigrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_migration(self, migration_id, update_migration_details, **kwargs):
         """
@@ -4495,6 +4652,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/update_migration.py.html>`__ to see an example of how to use update_migration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['migrationId']
         resource_path = "/migrations/{migrationId}"
         method = "PUT"
         operation_name = "update_migration"
@@ -4551,7 +4710,8 @@ class MigrationClient(object):
                 response_type="Migration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4562,7 +4722,8 @@ class MigrationClient(object):
                 response_type="Migration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_migration_asset(self, migration_asset_id, update_migration_asset_details, **kwargs):
         """
@@ -4603,6 +4764,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/update_migration_asset.py.html>`__ to see an example of how to use update_migration_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['migrationAssetId']
         resource_path = "/migrationAssets/{migrationAssetId}"
         method = "PUT"
         operation_name = "update_migration_asset"
@@ -4659,7 +4822,8 @@ class MigrationClient(object):
                 response_type="MigrationAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4670,7 +4834,8 @@ class MigrationClient(object):
                 response_type="MigrationAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_migration_plan(self, migration_plan_id, update_migration_plan_details, **kwargs):
         """
@@ -4718,6 +4883,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/update_migration_plan.py.html>`__ to see an example of how to use update_migration_plan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['migrationPlanId']
         resource_path = "/migrationPlans/{migrationPlanId}"
         method = "PUT"
         operation_name = "update_migration_plan"
@@ -4776,7 +4943,8 @@ class MigrationClient(object):
                 body=update_migration_plan_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4786,7 +4954,8 @@ class MigrationClient(object):
                 body=update_migration_plan_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_replication_schedule(self, replication_schedule_id, update_replication_schedule_details, **kwargs):
         """
@@ -4834,6 +5003,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/update_replication_schedule.py.html>`__ to see an example of how to use update_replication_schedule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['replicationScheduleId']
         resource_path = "/replicationSchedules/{replicationScheduleId}"
         method = "PUT"
         operation_name = "update_replication_schedule"
@@ -4892,7 +5063,8 @@ class MigrationClient(object):
                 body=update_replication_schedule_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4902,7 +5074,8 @@ class MigrationClient(object):
                 body=update_replication_schedule_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_target_asset(self, target_asset_id, update_target_asset_details, **kwargs):
         """
@@ -4950,6 +5123,8 @@ class MigrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudmigrations/update_target_asset.py.html>`__ to see an example of how to use update_target_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetAssetId']
         resource_path = "/targetAssets/{targetAssetId}"
         method = "PUT"
         operation_name = "update_target_asset"
@@ -5008,7 +5183,8 @@ class MigrationClient(object):
                 body=update_target_asset_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5018,4 +5194,5 @@ class MigrationClient(object):
                 body=update_target_asset_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

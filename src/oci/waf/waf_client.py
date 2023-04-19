@@ -66,6 +66,9 @@ class WafClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -92,8 +95,10 @@ class WafClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20210930',
             'service_endpoint_template': 'https://waf.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -145,6 +150,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/change_network_address_list_compartment.py.html>`__ to see an example of how to use change_network_address_list_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkAddressListId']
         resource_path = "/networkAddressLists/{networkAddressListId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_network_address_list_compartment"
@@ -200,7 +207,8 @@ class WafClient(object):
                 body=change_network_address_list_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -210,7 +218,8 @@ class WafClient(object):
                 body=change_network_address_list_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_web_app_firewall_compartment(self, web_app_firewall_id, change_web_app_firewall_compartment_details, **kwargs):
         """
@@ -252,6 +261,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/change_web_app_firewall_compartment.py.html>`__ to see an example of how to use change_web_app_firewall_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['webAppFirewallId']
         resource_path = "/webAppFirewalls/{webAppFirewallId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_web_app_firewall_compartment"
@@ -307,7 +318,8 @@ class WafClient(object):
                 body=change_web_app_firewall_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -317,7 +329,8 @@ class WafClient(object):
                 body=change_web_app_firewall_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_web_app_firewall_policy_compartment(self, web_app_firewall_policy_id, change_web_app_firewall_policy_compartment_details, **kwargs):
         """
@@ -359,6 +372,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/change_web_app_firewall_policy_compartment.py.html>`__ to see an example of how to use change_web_app_firewall_policy_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['webAppFirewallPolicyId']
         resource_path = "/webAppFirewallPolicies/{webAppFirewallPolicyId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_web_app_firewall_policy_compartment"
@@ -414,7 +429,8 @@ class WafClient(object):
                 body=change_web_app_firewall_policy_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -424,7 +440,8 @@ class WafClient(object):
                 body=change_web_app_firewall_policy_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_network_address_list(self, create_network_address_list_details, **kwargs):
         """
@@ -461,6 +478,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/create_network_address_list.py.html>`__ to see an example of how to use create_network_address_list API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/networkAddressLists"
         method = "POST"
         operation_name = "create_network_address_list"
@@ -507,7 +526,8 @@ class WafClient(object):
                 response_type="NetworkAddressList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -517,7 +537,8 @@ class WafClient(object):
                 response_type="NetworkAddressList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_web_app_firewall(self, create_web_app_firewall_details, **kwargs):
         """
@@ -554,6 +575,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/create_web_app_firewall.py.html>`__ to see an example of how to use create_web_app_firewall API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/webAppFirewalls"
         method = "POST"
         operation_name = "create_web_app_firewall"
@@ -600,7 +623,8 @@ class WafClient(object):
                 response_type="WebAppFirewall",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -610,7 +634,8 @@ class WafClient(object):
                 response_type="WebAppFirewall",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_web_app_firewall_policy(self, create_web_app_firewall_policy_details, **kwargs):
         """
@@ -647,6 +672,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/create_web_app_firewall_policy.py.html>`__ to see an example of how to use create_web_app_firewall_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/webAppFirewallPolicies"
         method = "POST"
         operation_name = "create_web_app_firewall_policy"
@@ -693,7 +720,8 @@ class WafClient(object):
                 response_type="WebAppFirewallPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -703,7 +731,8 @@ class WafClient(object):
                 response_type="WebAppFirewallPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_network_address_list(self, network_address_list_id, **kwargs):
         """
@@ -741,6 +770,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/delete_network_address_list.py.html>`__ to see an example of how to use delete_network_address_list API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkAddressListId']
         resource_path = "/networkAddressLists/{networkAddressListId}"
         method = "DELETE"
         operation_name = "delete_network_address_list"
@@ -795,7 +826,8 @@ class WafClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -804,7 +836,8 @@ class WafClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_web_app_firewall(self, web_app_firewall_id, **kwargs):
         """
@@ -842,6 +875,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/delete_web_app_firewall.py.html>`__ to see an example of how to use delete_web_app_firewall API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['webAppFirewallId']
         resource_path = "/webAppFirewalls/{webAppFirewallId}"
         method = "DELETE"
         operation_name = "delete_web_app_firewall"
@@ -896,7 +931,8 @@ class WafClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -905,7 +941,8 @@ class WafClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_web_app_firewall_policy(self, web_app_firewall_policy_id, **kwargs):
         """
@@ -943,6 +980,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/delete_web_app_firewall_policy.py.html>`__ to see an example of how to use delete_web_app_firewall_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['webAppFirewallPolicyId']
         resource_path = "/webAppFirewallPolicies/{webAppFirewallPolicyId}"
         method = "DELETE"
         operation_name = "delete_web_app_firewall_policy"
@@ -997,7 +1036,8 @@ class WafClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1006,7 +1046,8 @@ class WafClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_network_address_list(self, network_address_list_id, **kwargs):
         """
@@ -1039,6 +1080,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/get_network_address_list.py.html>`__ to see an example of how to use get_network_address_list API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkAddressListId']
         resource_path = "/networkAddressLists/{networkAddressListId}"
         method = "GET"
         operation_name = "get_network_address_list"
@@ -1092,7 +1135,8 @@ class WafClient(object):
                 response_type="NetworkAddressList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1102,7 +1146,8 @@ class WafClient(object):
                 response_type="NetworkAddressList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_web_app_firewall(self, web_app_firewall_id, **kwargs):
         """
@@ -1135,6 +1180,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/get_web_app_firewall.py.html>`__ to see an example of how to use get_web_app_firewall API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['webAppFirewallId']
         resource_path = "/webAppFirewalls/{webAppFirewallId}"
         method = "GET"
         operation_name = "get_web_app_firewall"
@@ -1188,7 +1235,8 @@ class WafClient(object):
                 response_type="WebAppFirewall",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1198,7 +1246,8 @@ class WafClient(object):
                 response_type="WebAppFirewall",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_web_app_firewall_policy(self, web_app_firewall_policy_id, **kwargs):
         """
@@ -1231,6 +1280,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/get_web_app_firewall_policy.py.html>`__ to see an example of how to use get_web_app_firewall_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['webAppFirewallPolicyId']
         resource_path = "/webAppFirewallPolicies/{webAppFirewallPolicyId}"
         method = "GET"
         operation_name = "get_web_app_firewall_policy"
@@ -1284,7 +1335,8 @@ class WafClient(object):
                 response_type="WebAppFirewallPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1294,7 +1346,8 @@ class WafClient(object):
                 response_type="WebAppFirewallPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1327,6 +1380,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -1380,7 +1435,8 @@ class WafClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1390,7 +1446,8 @@ class WafClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_network_address_lists(self, compartment_id, **kwargs):
         """
@@ -1454,6 +1511,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/list_network_address_lists.py.html>`__ to see an example of how to use list_network_address_lists API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/networkAddressLists"
         method = "GET"
         operation_name = "list_network_address_lists"
@@ -1530,7 +1589,8 @@ class WafClient(object):
                 response_type="NetworkAddressListCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1540,7 +1600,8 @@ class WafClient(object):
                 response_type="NetworkAddressListCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_protection_capabilities(self, compartment_id, **kwargs):
         """
@@ -1611,6 +1672,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/list_protection_capabilities.py.html>`__ to see an example of how to use list_protection_capabilities API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/protectionCapabilities"
         method = "GET"
         operation_name = "list_protection_capabilities"
@@ -1698,7 +1761,8 @@ class WafClient(object):
                 response_type="ProtectionCapabilityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1708,7 +1772,8 @@ class WafClient(object):
                 response_type="ProtectionCapabilityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_protection_capability_group_tags(self, compartment_id, **kwargs):
         """
@@ -1768,6 +1833,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/list_protection_capability_group_tags.py.html>`__ to see an example of how to use list_protection_capability_group_tags API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/protectionCapabilities/groupTags"
         method = "GET"
         operation_name = "list_protection_capability_group_tags"
@@ -1849,7 +1916,8 @@ class WafClient(object):
                 response_type="ProtectionCapabilityGroupTagCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1859,7 +1927,8 @@ class WafClient(object):
                 response_type="ProtectionCapabilityGroupTagCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_web_app_firewall_policies(self, compartment_id, **kwargs):
         """
@@ -1923,6 +1992,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/list_web_app_firewall_policies.py.html>`__ to see an example of how to use list_web_app_firewall_policies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/webAppFirewallPolicies"
         method = "GET"
         operation_name = "list_web_app_firewall_policies"
@@ -1999,7 +2070,8 @@ class WafClient(object):
                 response_type="WebAppFirewallPolicyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2009,7 +2081,8 @@ class WafClient(object):
                 response_type="WebAppFirewallPolicyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_web_app_firewalls(self, compartment_id, **kwargs):
         """
@@ -2078,6 +2151,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/list_web_app_firewalls.py.html>`__ to see an example of how to use list_web_app_firewalls API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/webAppFirewalls"
         method = "GET"
         operation_name = "list_web_app_firewalls"
@@ -2156,7 +2231,8 @@ class WafClient(object):
                 response_type="WebAppFirewallCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2166,7 +2242,8 @@ class WafClient(object):
                 response_type="WebAppFirewallCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -2206,6 +2283,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -2268,7 +2347,8 @@ class WafClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2279,7 +2359,8 @@ class WafClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -2319,6 +2400,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -2381,7 +2464,8 @@ class WafClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2392,7 +2476,8 @@ class WafClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -2437,6 +2522,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -2491,7 +2578,8 @@ class WafClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2501,7 +2589,8 @@ class WafClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_network_address_list(self, network_address_list_id, update_network_address_list_details, **kwargs):
         """
@@ -2542,6 +2631,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/update_network_address_list.py.html>`__ to see an example of how to use update_network_address_list API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkAddressListId']
         resource_path = "/networkAddressLists/{networkAddressListId}"
         method = "PUT"
         operation_name = "update_network_address_list"
@@ -2597,7 +2688,8 @@ class WafClient(object):
                 body=update_network_address_list_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2607,7 +2699,8 @@ class WafClient(object):
                 body=update_network_address_list_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_web_app_firewall(self, web_app_firewall_id, update_web_app_firewall_details, **kwargs):
         """
@@ -2648,6 +2741,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/update_web_app_firewall.py.html>`__ to see an example of how to use update_web_app_firewall API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['webAppFirewallId']
         resource_path = "/webAppFirewalls/{webAppFirewallId}"
         method = "PUT"
         operation_name = "update_web_app_firewall"
@@ -2703,7 +2798,8 @@ class WafClient(object):
                 body=update_web_app_firewall_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2713,7 +2809,8 @@ class WafClient(object):
                 body=update_web_app_firewall_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_web_app_firewall_policy(self, web_app_firewall_policy_id, update_web_app_firewall_policy_details, **kwargs):
         """
@@ -2754,6 +2851,8 @@ class WafClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waf/update_web_app_firewall_policy.py.html>`__ to see an example of how to use update_web_app_firewall_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['webAppFirewallPolicyId']
         resource_path = "/webAppFirewallPolicies/{webAppFirewallPolicyId}"
         method = "PUT"
         operation_name = "update_web_app_firewall_policy"
@@ -2809,7 +2908,8 @@ class WafClient(object):
                 body=update_web_app_firewall_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2819,4 +2919,5 @@ class WafClient(object):
                 body=update_web_app_firewall_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

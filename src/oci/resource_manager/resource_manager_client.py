@@ -68,6 +68,9 @@ class ResourceManagerClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -94,8 +97,10 @@ class ResourceManagerClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20180917',
             'service_endpoint_template': 'https://resourcemanager.{region}.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -154,6 +159,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/cancel_job.py.html>`__ to see an example of how to use cancel_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['jobId']
         resource_path = "/jobs/{jobId}"
         method = "DELETE"
         operation_name = "cancel_job"
@@ -215,7 +222,8 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -225,7 +233,8 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_configuration_source_provider_compartment(self, configuration_source_provider_id, change_configuration_source_provider_compartment_details, **kwargs):
         """
@@ -278,6 +287,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/change_configuration_source_provider_compartment.py.html>`__ to see an example of how to use change_configuration_source_provider_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['configurationSourceProviderId']
         resource_path = "/configurationSourceProviders/{configurationSourceProviderId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_configuration_source_provider_compartment"
@@ -336,7 +347,8 @@ class ResourceManagerClient(object):
                 body=change_configuration_source_provider_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -346,7 +358,8 @@ class ResourceManagerClient(object):
                 body=change_configuration_source_provider_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_private_endpoint_compartment(self, private_endpoint_id, change_private_endpoint_compartment_details, **kwargs):
         """
@@ -399,6 +412,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/change_private_endpoint_compartment.py.html>`__ to see an example of how to use change_private_endpoint_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateEndpointId']
         resource_path = "/privateEndpoints/{privateEndpointId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_private_endpoint_compartment"
@@ -457,7 +472,8 @@ class ResourceManagerClient(object):
                 body=change_private_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -467,7 +483,8 @@ class ResourceManagerClient(object):
                 body=change_private_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_stack_compartment(self, stack_id, change_stack_compartment_details, **kwargs):
         """
@@ -520,6 +537,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/change_stack_compartment.py.html>`__ to see an example of how to use change_stack_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['stackId']
         resource_path = "/stacks/{stackId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_stack_compartment"
@@ -578,7 +597,8 @@ class ResourceManagerClient(object):
                 body=change_stack_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -588,7 +608,8 @@ class ResourceManagerClient(object):
                 body=change_stack_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_template_compartment(self, template_id, change_template_compartment_details, **kwargs):
         """
@@ -641,6 +662,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/change_template_compartment.py.html>`__ to see an example of how to use change_template_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['templateId']
         resource_path = "/templates/{templateId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_template_compartment"
@@ -699,7 +722,8 @@ class ResourceManagerClient(object):
                 body=change_template_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -709,7 +733,8 @@ class ResourceManagerClient(object):
                 body=change_template_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_configuration_source_provider(self, create_configuration_source_provider_details, **kwargs):
         """
@@ -752,6 +777,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/create_configuration_source_provider.py.html>`__ to see an example of how to use create_configuration_source_provider API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/configurationSourceProviders"
         method = "POST"
         operation_name = "create_configuration_source_provider"
@@ -798,7 +825,8 @@ class ResourceManagerClient(object):
                 response_type="ConfigurationSourceProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -808,7 +836,8 @@ class ResourceManagerClient(object):
                 response_type="ConfigurationSourceProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_job(self, create_job_details, **kwargs):
         """
@@ -847,6 +876,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/create_job.py.html>`__ to see an example of how to use create_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/jobs"
         method = "POST"
         operation_name = "create_job"
@@ -893,7 +924,8 @@ class ResourceManagerClient(object):
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -903,7 +935,8 @@ class ResourceManagerClient(object):
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_private_endpoint(self, create_private_endpoint_details, **kwargs):
         """
@@ -942,6 +975,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/create_private_endpoint.py.html>`__ to see an example of how to use create_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/privateEndpoints"
         method = "POST"
         operation_name = "create_private_endpoint"
@@ -988,7 +1023,8 @@ class ResourceManagerClient(object):
                 response_type="PrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -998,7 +1034,8 @@ class ResourceManagerClient(object):
                 response_type="PrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_stack(self, create_stack_details, **kwargs):
         """
@@ -1045,6 +1082,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/create_stack.py.html>`__ to see an example of how to use create_stack API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/stacks"
         method = "POST"
         operation_name = "create_stack"
@@ -1091,7 +1130,8 @@ class ResourceManagerClient(object):
                 response_type="Stack",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1101,7 +1141,8 @@ class ResourceManagerClient(object):
                 response_type="Stack",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_template(self, create_template_details, **kwargs):
         """
@@ -1140,6 +1181,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/create_template.py.html>`__ to see an example of how to use create_template API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/templates"
         method = "POST"
         operation_name = "create_template"
@@ -1186,7 +1229,8 @@ class ResourceManagerClient(object):
                 response_type="Template",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1196,7 +1240,8 @@ class ResourceManagerClient(object):
                 response_type="Template",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_configuration_source_provider(self, configuration_source_provider_id, **kwargs):
         """
@@ -1235,6 +1280,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/delete_configuration_source_provider.py.html>`__ to see an example of how to use delete_configuration_source_provider API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['configurationSourceProviderId']
         resource_path = "/configurationSourceProviders/{configurationSourceProviderId}"
         method = "DELETE"
         operation_name = "delete_configuration_source_provider"
@@ -1289,7 +1336,8 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1298,7 +1346,8 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_private_endpoint(self, private_endpoint_id, **kwargs):
         """
@@ -1337,6 +1386,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/delete_private_endpoint.py.html>`__ to see an example of how to use delete_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateEndpointId']
         resource_path = "/privateEndpoints/{privateEndpointId}"
         method = "DELETE"
         operation_name = "delete_private_endpoint"
@@ -1391,7 +1442,8 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1400,7 +1452,8 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_stack(self, stack_id, **kwargs):
         """
@@ -1439,6 +1492,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/delete_stack.py.html>`__ to see an example of how to use delete_stack API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['stackId']
         resource_path = "/stacks/{stackId}"
         method = "DELETE"
         operation_name = "delete_stack"
@@ -1493,7 +1548,8 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1502,7 +1558,8 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_template(self, template_id, **kwargs):
         """
@@ -1541,6 +1598,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/delete_template.py.html>`__ to see an example of how to use delete_template API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['templateId']
         resource_path = "/templates/{templateId}"
         method = "DELETE"
         operation_name = "delete_template"
@@ -1595,7 +1654,8 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1604,7 +1664,8 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def detect_stack_drift(self, stack_id, **kwargs):
         """
@@ -1653,6 +1714,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/detect_stack_drift.py.html>`__ to see an example of how to use detect_stack_drift API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['stackId']
         resource_path = "/stacks/{stackId}/actions/detectDrift"
         method = "POST"
         operation_name = "detect_stack_drift"
@@ -1712,7 +1775,8 @@ class ResourceManagerClient(object):
                 body=kwargs.get('detect_stack_drift_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1722,7 +1786,8 @@ class ResourceManagerClient(object):
                 body=kwargs.get('detect_stack_drift_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_configuration_source_provider(self, configuration_source_provider_id, **kwargs):
         """
@@ -1756,6 +1821,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/get_configuration_source_provider.py.html>`__ to see an example of how to use get_configuration_source_provider API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['configurationSourceProviderId']
         resource_path = "/configurationSourceProviders/{configurationSourceProviderId}"
         method = "GET"
         operation_name = "get_configuration_source_provider"
@@ -1809,7 +1876,8 @@ class ResourceManagerClient(object):
                 response_type="ConfigurationSourceProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1819,7 +1887,8 @@ class ResourceManagerClient(object):
                 response_type="ConfigurationSourceProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_job(self, job_id, **kwargs):
         """
@@ -1853,6 +1922,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/get_job.py.html>`__ to see an example of how to use get_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['jobId']
         resource_path = "/jobs/{jobId}"
         method = "GET"
         operation_name = "get_job"
@@ -1906,7 +1977,8 @@ class ResourceManagerClient(object):
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1916,7 +1988,8 @@ class ResourceManagerClient(object):
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_job_detailed_log_content(self, job_id, **kwargs):
         """
@@ -1952,6 +2025,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/get_job_detailed_log_content.py.html>`__ to see an example of how to use get_job_detailed_log_content API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['jobId']
         resource_path = "/jobs/{jobId}/detailedLogContent"
         method = "GET"
         operation_name = "get_job_detailed_log_content"
@@ -2005,7 +2080,8 @@ class ResourceManagerClient(object):
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2015,7 +2091,8 @@ class ResourceManagerClient(object):
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_job_logs(self, job_id, **kwargs):
         """
@@ -2084,6 +2161,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/get_job_logs.py.html>`__ to see an example of how to use get_job_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['jobId']
         resource_path = "/jobs/{jobId}/logs"
         method = "GET"
         operation_name = "get_job_logs"
@@ -2170,7 +2249,8 @@ class ResourceManagerClient(object):
                 response_type="list[LogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2181,7 +2261,8 @@ class ResourceManagerClient(object):
                 response_type="list[LogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_job_logs_content(self, job_id, **kwargs):
         """
@@ -2216,6 +2297,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/get_job_logs_content.py.html>`__ to see an example of how to use get_job_logs_content API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['jobId']
         resource_path = "/jobs/{jobId}/logs/content"
         method = "GET"
         operation_name = "get_job_logs_content"
@@ -2269,7 +2352,8 @@ class ResourceManagerClient(object):
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2279,7 +2363,8 @@ class ResourceManagerClient(object):
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_job_tf_config(self, job_id, **kwargs):
         """
@@ -2314,6 +2399,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/get_job_tf_config.py.html>`__ to see an example of how to use get_job_tf_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['jobId']
         resource_path = "/jobs/{jobId}/tfConfig"
         method = "GET"
         operation_name = "get_job_tf_config"
@@ -2367,7 +2454,8 @@ class ResourceManagerClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2377,7 +2465,8 @@ class ResourceManagerClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_job_tf_plan(self, job_id, **kwargs):
         """
@@ -2420,6 +2509,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/get_job_tf_plan.py.html>`__ to see an example of how to use get_job_tf_plan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['jobId']
         resource_path = "/jobs/{jobId}/tfPlan"
         method = "GET"
         operation_name = "get_job_tf_plan"
@@ -2487,7 +2578,8 @@ class ResourceManagerClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2498,7 +2590,8 @@ class ResourceManagerClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_job_tf_state(self, job_id, **kwargs):
         """
@@ -2532,6 +2625,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/get_job_tf_state.py.html>`__ to see an example of how to use get_job_tf_state API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['jobId']
         resource_path = "/jobs/{jobId}/tfState"
         method = "GET"
         operation_name = "get_job_tf_state"
@@ -2585,7 +2680,8 @@ class ResourceManagerClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2595,7 +2691,8 @@ class ResourceManagerClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_private_endpoint(self, private_endpoint_id, **kwargs):
         """
@@ -2629,6 +2726,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/get_private_endpoint.py.html>`__ to see an example of how to use get_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateEndpointId']
         resource_path = "/privateEndpoints/{privateEndpointId}"
         method = "GET"
         operation_name = "get_private_endpoint"
@@ -2682,7 +2781,8 @@ class ResourceManagerClient(object):
                 response_type="PrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2692,7 +2792,8 @@ class ResourceManagerClient(object):
                 response_type="PrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_reachable_ip(self, private_ip, private_endpoint_id, **kwargs):
         """
@@ -2737,6 +2838,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/get_reachable_ip.py.html>`__ to see an example of how to use get_reachable_ip API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateEndpointId', 'privateIp']
         resource_path = "/privateEndpoints/{privateEndpointId}/reachableIp"
         method = "GET"
         operation_name = "get_reachable_ip"
@@ -2799,7 +2902,8 @@ class ResourceManagerClient(object):
                 response_type="ReachableIp",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2810,7 +2914,8 @@ class ResourceManagerClient(object):
                 response_type="ReachableIp",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_stack(self, stack_id, **kwargs):
         """
@@ -2844,6 +2949,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/get_stack.py.html>`__ to see an example of how to use get_stack API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['stackId']
         resource_path = "/stacks/{stackId}"
         method = "GET"
         operation_name = "get_stack"
@@ -2897,7 +3004,8 @@ class ResourceManagerClient(object):
                 response_type="Stack",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2907,7 +3015,8 @@ class ResourceManagerClient(object):
                 response_type="Stack",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_stack_tf_config(self, stack_id, **kwargs):
         """
@@ -2942,6 +3051,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/get_stack_tf_config.py.html>`__ to see an example of how to use get_stack_tf_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['stackId']
         resource_path = "/stacks/{stackId}/tfConfig"
         method = "GET"
         operation_name = "get_stack_tf_config"
@@ -2995,7 +3106,8 @@ class ResourceManagerClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3005,7 +3117,8 @@ class ResourceManagerClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_stack_tf_state(self, stack_id, **kwargs):
         """
@@ -3039,6 +3152,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/get_stack_tf_state.py.html>`__ to see an example of how to use get_stack_tf_state API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['stackId']
         resource_path = "/stacks/{stackId}/tfState"
         method = "GET"
         operation_name = "get_stack_tf_state"
@@ -3092,7 +3207,8 @@ class ResourceManagerClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3102,7 +3218,8 @@ class ResourceManagerClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_template(self, template_id, **kwargs):
         """
@@ -3136,6 +3253,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/get_template.py.html>`__ to see an example of how to use get_template API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['templateId']
         resource_path = "/templates/{templateId}"
         method = "GET"
         operation_name = "get_template"
@@ -3189,7 +3308,8 @@ class ResourceManagerClient(object):
                 response_type="Template",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3199,7 +3319,8 @@ class ResourceManagerClient(object):
                 response_type="Template",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_template_logo(self, template_id, **kwargs):
         """
@@ -3234,6 +3355,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/get_template_logo.py.html>`__ to see an example of how to use get_template_logo API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['templateId']
         resource_path = "/templates/{templateId}/logo"
         method = "GET"
         operation_name = "get_template_logo"
@@ -3287,7 +3410,8 @@ class ResourceManagerClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3297,7 +3421,8 @@ class ResourceManagerClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_template_tf_config(self, template_id, **kwargs):
         """
@@ -3332,6 +3457,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/get_template_tf_config.py.html>`__ to see an example of how to use get_template_tf_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['templateId']
         resource_path = "/templates/{templateId}/tfConfig"
         method = "GET"
         operation_name = "get_template_tf_config"
@@ -3385,7 +3512,8 @@ class ResourceManagerClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3395,7 +3523,8 @@ class ResourceManagerClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -3429,6 +3558,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -3482,7 +3613,8 @@ class ResourceManagerClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3492,7 +3624,8 @@ class ResourceManagerClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_configuration_source_providers(self, **kwargs):
         """
@@ -3566,6 +3699,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/list_configuration_source_providers.py.html>`__ to see an example of how to use list_configuration_source_providers API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/configurationSourceProviders"
         method = "GET"
         operation_name = "list_configuration_source_providers"
@@ -3643,7 +3778,8 @@ class ResourceManagerClient(object):
                 response_type="ConfigurationSourceProviderCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3653,7 +3789,8 @@ class ResourceManagerClient(object):
                 response_type="ConfigurationSourceProviderCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_job_associated_resources(self, job_id, **kwargs):
         """
@@ -3710,6 +3847,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/list_job_associated_resources.py.html>`__ to see an example of how to use list_job_associated_resources API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['jobId']
         resource_path = "/jobs/{jobId}/associatedResources"
         method = "GET"
         operation_name = "list_job_associated_resources"
@@ -3776,7 +3915,8 @@ class ResourceManagerClient(object):
                 response_type="AssociatedResourcesCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3787,7 +3927,8 @@ class ResourceManagerClient(object):
                 response_type="AssociatedResourcesCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_job_outputs(self, job_id, **kwargs):
         """
@@ -3838,6 +3979,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/list_job_outputs.py.html>`__ to see an example of how to use list_job_outputs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['jobId']
         resource_path = "/jobs/{jobId}/outputs"
         method = "GET"
         operation_name = "list_job_outputs"
@@ -3902,7 +4045,8 @@ class ResourceManagerClient(object):
                 response_type="JobOutputsCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3913,7 +4057,8 @@ class ResourceManagerClient(object):
                 response_type="JobOutputsCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_jobs(self, **kwargs):
         """
@@ -4009,6 +4154,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/list_jobs.py.html>`__ to see an example of how to use list_jobs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/jobs"
         method = "GET"
         operation_name = "list_jobs"
@@ -4095,7 +4242,8 @@ class ResourceManagerClient(object):
                 response_type="list[JobSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4105,7 +4253,8 @@ class ResourceManagerClient(object):
                 response_type="list[JobSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_private_endpoints(self, **kwargs):
         """
@@ -4181,6 +4330,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/list_private_endpoints.py.html>`__ to see an example of how to use list_private_endpoints API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/privateEndpoints"
         method = "GET"
         operation_name = "list_private_endpoints"
@@ -4258,7 +4409,8 @@ class ResourceManagerClient(object):
                 response_type="PrivateEndpointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4268,7 +4420,8 @@ class ResourceManagerClient(object):
                 response_type="PrivateEndpointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_resource_discovery_services(self, **kwargs):
         """
@@ -4306,6 +4459,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/list_resource_discovery_services.py.html>`__ to see an example of how to use list_resource_discovery_services API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/resourceDiscoveryServices"
         method = "GET"
         operation_name = "list_resource_discovery_services"
@@ -4355,7 +4510,8 @@ class ResourceManagerClient(object):
                 response_type="ResourceDiscoveryServiceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4365,7 +4521,8 @@ class ResourceManagerClient(object):
                 response_type="ResourceDiscoveryServiceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_stack_associated_resources(self, stack_id, **kwargs):
         """
@@ -4422,6 +4579,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/list_stack_associated_resources.py.html>`__ to see an example of how to use list_stack_associated_resources API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['stackId']
         resource_path = "/stacks/{stackId}/associatedResources"
         method = "GET"
         operation_name = "list_stack_associated_resources"
@@ -4488,7 +4647,8 @@ class ResourceManagerClient(object):
                 response_type="AssociatedResourcesCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4499,7 +4659,8 @@ class ResourceManagerClient(object):
                 response_type="AssociatedResourcesCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_stack_resource_drift_details(self, stack_id, **kwargs):
         """
@@ -4562,6 +4723,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/list_stack_resource_drift_details.py.html>`__ to see an example of how to use list_stack_resource_drift_details API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['stackId']
         resource_path = "/stacks/{stackId}/actions/listResourceDriftDetails"
         method = "POST"
         operation_name = "list_stack_resource_drift_details"
@@ -4628,7 +4791,8 @@ class ResourceManagerClient(object):
                 response_type="StackResourceDriftCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4639,7 +4803,8 @@ class ResourceManagerClient(object):
                 response_type="StackResourceDriftCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_stacks(self, **kwargs):
         """
@@ -4727,6 +4892,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/list_stacks.py.html>`__ to see an example of how to use list_stacks API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/stacks"
         method = "GET"
         operation_name = "list_stacks"
@@ -4811,7 +4978,8 @@ class ResourceManagerClient(object):
                 response_type="list[StackSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4821,7 +4989,8 @@ class ResourceManagerClient(object):
                 response_type="list[StackSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_template_categories(self, **kwargs):
         """
@@ -4850,6 +5019,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/list_template_categories.py.html>`__ to see an example of how to use list_template_categories API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/templateCategories"
         method = "GET"
         operation_name = "list_template_categories"
@@ -4892,7 +5063,8 @@ class ResourceManagerClient(object):
                 response_type="TemplateCategorySummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4901,7 +5073,8 @@ class ResourceManagerClient(object):
                 response_type="TemplateCategorySummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_templates(self, **kwargs):
         """
@@ -4978,6 +5151,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/list_templates.py.html>`__ to see an example of how to use list_templates API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/templates"
         method = "GET"
         operation_name = "list_templates"
@@ -5055,7 +5230,8 @@ class ResourceManagerClient(object):
                 response_type="TemplateSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5065,7 +5241,8 @@ class ResourceManagerClient(object):
                 response_type="TemplateSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_terraform_versions(self, **kwargs):
         """
@@ -5099,6 +5276,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/list_terraform_versions.py.html>`__ to see an example of how to use list_terraform_versions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/terraformVersions"
         method = "GET"
         operation_name = "list_terraform_versions"
@@ -5148,7 +5327,8 @@ class ResourceManagerClient(object):
                 response_type="TerraformVersionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5158,7 +5338,8 @@ class ResourceManagerClient(object):
                 response_type="TerraformVersionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -5214,6 +5395,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -5287,7 +5470,8 @@ class ResourceManagerClient(object):
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5298,7 +5482,8 @@ class ResourceManagerClient(object):
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -5354,6 +5539,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -5427,7 +5614,8 @@ class ResourceManagerClient(object):
                 response_type="list[WorkRequestLogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5438,7 +5626,8 @@ class ResourceManagerClient(object):
                 response_type="list[WorkRequestLogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -5489,6 +5678,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -5543,7 +5734,8 @@ class ResourceManagerClient(object):
                 response_type="list[WorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5553,7 +5745,8 @@ class ResourceManagerClient(object):
                 response_type="list[WorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_configuration_source_provider(self, configuration_source_provider_id, update_configuration_source_provider_details, **kwargs):
         """
@@ -5599,6 +5792,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/update_configuration_source_provider.py.html>`__ to see an example of how to use update_configuration_source_provider API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['configurationSourceProviderId']
         resource_path = "/configurationSourceProviders/{configurationSourceProviderId}"
         method = "PUT"
         operation_name = "update_configuration_source_provider"
@@ -5655,7 +5850,8 @@ class ResourceManagerClient(object):
                 response_type="ConfigurationSourceProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5666,7 +5862,8 @@ class ResourceManagerClient(object):
                 response_type="ConfigurationSourceProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_job(self, job_id, update_job_details, **kwargs):
         """
@@ -5708,6 +5905,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/update_job.py.html>`__ to see an example of how to use update_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['jobId']
         resource_path = "/jobs/{jobId}"
         method = "PUT"
         operation_name = "update_job"
@@ -5764,7 +5963,8 @@ class ResourceManagerClient(object):
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5775,7 +5975,8 @@ class ResourceManagerClient(object):
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_private_endpoint(self, private_endpoint_id, update_private_endpoint_details, **kwargs):
         """
@@ -5817,6 +6018,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/update_private_endpoint.py.html>`__ to see an example of how to use update_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateEndpointId']
         resource_path = "/privateEndpoints/{privateEndpointId}"
         method = "PUT"
         operation_name = "update_private_endpoint"
@@ -5873,7 +6076,8 @@ class ResourceManagerClient(object):
                 response_type="PrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5884,7 +6088,8 @@ class ResourceManagerClient(object):
                 response_type="PrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_stack(self, stack_id, update_stack_details, **kwargs):
         """
@@ -5932,6 +6137,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/update_stack.py.html>`__ to see an example of how to use update_stack API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['stackId']
         resource_path = "/stacks/{stackId}"
         method = "PUT"
         operation_name = "update_stack"
@@ -5988,7 +6195,8 @@ class ResourceManagerClient(object):
                 response_type="Stack",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5999,7 +6207,8 @@ class ResourceManagerClient(object):
                 response_type="Stack",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_template(self, template_id, update_template_details, **kwargs):
         """
@@ -6041,6 +6250,8 @@ class ResourceManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/update_template.py.html>`__ to see an example of how to use update_template API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['templateId']
         resource_path = "/templates/{templateId}"
         method = "PUT"
         operation_name = "update_template"
@@ -6097,7 +6308,8 @@ class ResourceManagerClient(object):
                 response_type="Template",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6108,4 +6320,5 @@ class ResourceManagerClient(object):
                 response_type="Template",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

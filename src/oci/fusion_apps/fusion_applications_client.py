@@ -65,6 +65,9 @@ class FusionApplicationsClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class FusionApplicationsClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20211201',
             'service_endpoint_template': 'https://fusionapps.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -151,6 +156,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/change_fusion_environment_compartment.py.html>`__ to see an example of how to use change_fusion_environment_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentId']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_fusion_environment_compartment"
@@ -209,7 +216,8 @@ class FusionApplicationsClient(object):
                 body=change_fusion_environment_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -219,7 +227,8 @@ class FusionApplicationsClient(object):
                 body=change_fusion_environment_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_fusion_environment_family_compartment(self, fusion_environment_family_id, change_fusion_environment_family_compartment_details, **kwargs):
         """
@@ -268,6 +277,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/change_fusion_environment_family_compartment.py.html>`__ to see an example of how to use change_fusion_environment_family_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentFamilyId']
         resource_path = "/fusionEnvironmentFamilies/{fusionEnvironmentFamilyId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_fusion_environment_family_compartment"
@@ -326,7 +337,8 @@ class FusionApplicationsClient(object):
                 body=change_fusion_environment_family_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -336,7 +348,8 @@ class FusionApplicationsClient(object):
                 body=change_fusion_environment_family_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_data_masking_activity(self, fusion_environment_id, create_data_masking_activity_details, **kwargs):
         """
@@ -377,6 +390,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/create_data_masking_activity.py.html>`__ to see an example of how to use create_data_masking_activity API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentId']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}/dataMaskingActivities"
         method = "POST"
         operation_name = "create_data_masking_activity"
@@ -433,7 +448,8 @@ class FusionApplicationsClient(object):
                 body=create_data_masking_activity_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -443,7 +459,8 @@ class FusionApplicationsClient(object):
                 body=create_data_masking_activity_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_fusion_environment(self, create_fusion_environment_details, **kwargs):
         """
@@ -481,6 +498,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/create_fusion_environment.py.html>`__ to see an example of how to use create_fusion_environment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/fusionEnvironments"
         method = "POST"
         operation_name = "create_fusion_environment"
@@ -526,7 +545,8 @@ class FusionApplicationsClient(object):
                 body=create_fusion_environment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -535,7 +555,8 @@ class FusionApplicationsClient(object):
                 body=create_fusion_environment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_fusion_environment_admin_user(self, create_fusion_environment_admin_user_details, fusion_environment_id, **kwargs):
         """
@@ -576,6 +597,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/create_fusion_environment_admin_user.py.html>`__ to see an example of how to use create_fusion_environment_admin_user API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentId']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}/adminUsers"
         method = "POST"
         operation_name = "create_fusion_environment_admin_user"
@@ -632,7 +655,8 @@ class FusionApplicationsClient(object):
                 body=create_fusion_environment_admin_user_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -642,7 +666,8 @@ class FusionApplicationsClient(object):
                 body=create_fusion_environment_admin_user_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_fusion_environment_family(self, create_fusion_environment_family_details, **kwargs):
         """
@@ -680,6 +705,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/create_fusion_environment_family.py.html>`__ to see an example of how to use create_fusion_environment_family API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/fusionEnvironmentFamilies"
         method = "POST"
         operation_name = "create_fusion_environment_family"
@@ -725,7 +752,8 @@ class FusionApplicationsClient(object):
                 body=create_fusion_environment_family_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -734,7 +762,8 @@ class FusionApplicationsClient(object):
                 body=create_fusion_environment_family_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_refresh_activity(self, fusion_environment_id, create_refresh_activity_details, **kwargs):
         """
@@ -775,6 +804,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/create_refresh_activity.py.html>`__ to see an example of how to use create_refresh_activity API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentId']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}/refreshActivities"
         method = "POST"
         operation_name = "create_refresh_activity"
@@ -831,7 +862,8 @@ class FusionApplicationsClient(object):
                 body=create_refresh_activity_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -841,7 +873,8 @@ class FusionApplicationsClient(object):
                 body=create_refresh_activity_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_fusion_environment(self, fusion_environment_id, **kwargs):
         """
@@ -879,6 +912,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/delete_fusion_environment.py.html>`__ to see an example of how to use delete_fusion_environment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentId']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}"
         method = "DELETE"
         operation_name = "delete_fusion_environment"
@@ -933,7 +968,8 @@ class FusionApplicationsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -942,7 +978,8 @@ class FusionApplicationsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_fusion_environment_admin_user(self, admin_username, fusion_environment_id, **kwargs):
         """
@@ -983,6 +1020,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/delete_fusion_environment_admin_user.py.html>`__ to see an example of how to use delete_fusion_environment_admin_user API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['adminUsername', 'fusionEnvironmentId']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}/adminUsers/{adminUsername}"
         method = "DELETE"
         operation_name = "delete_fusion_environment_admin_user"
@@ -1038,7 +1077,8 @@ class FusionApplicationsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1047,7 +1087,8 @@ class FusionApplicationsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_fusion_environment_family(self, fusion_environment_family_id, **kwargs):
         """
@@ -1085,6 +1126,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/delete_fusion_environment_family.py.html>`__ to see an example of how to use delete_fusion_environment_family API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentFamilyId']
         resource_path = "/fusionEnvironmentFamilies/{fusionEnvironmentFamilyId}"
         method = "DELETE"
         operation_name = "delete_fusion_environment_family"
@@ -1139,7 +1182,8 @@ class FusionApplicationsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1148,7 +1192,8 @@ class FusionApplicationsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_refresh_activity(self, fusion_environment_id, refresh_activity_id, **kwargs):
         """
@@ -1189,6 +1234,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/delete_refresh_activity.py.html>`__ to see an example of how to use delete_refresh_activity API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentId', 'refreshActivityId']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}/refreshActivities/{refreshActivityId}"
         method = "DELETE"
         operation_name = "delete_refresh_activity"
@@ -1244,7 +1291,8 @@ class FusionApplicationsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1253,7 +1301,8 @@ class FusionApplicationsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_data_masking_activity(self, fusion_environment_id, data_masking_activity_id, **kwargs):
         """
@@ -1287,6 +1336,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/get_data_masking_activity.py.html>`__ to see an example of how to use get_data_masking_activity API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentId', 'dataMaskingActivityId']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}/dataMaskingActivities/{dataMaskingActivityId}"
         method = "GET"
         operation_name = "get_data_masking_activity"
@@ -1341,7 +1392,8 @@ class FusionApplicationsClient(object):
                 response_type="DataMaskingActivity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1351,7 +1403,8 @@ class FusionApplicationsClient(object):
                 response_type="DataMaskingActivity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_fusion_environment(self, fusion_environment_id, **kwargs):
         """
@@ -1382,6 +1435,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/get_fusion_environment.py.html>`__ to see an example of how to use get_fusion_environment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentId']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}"
         method = "GET"
         operation_name = "get_fusion_environment"
@@ -1435,7 +1490,8 @@ class FusionApplicationsClient(object):
                 response_type="FusionEnvironment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1445,7 +1501,8 @@ class FusionApplicationsClient(object):
                 response_type="FusionEnvironment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_fusion_environment_family(self, fusion_environment_family_id, **kwargs):
         """
@@ -1476,6 +1533,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/get_fusion_environment_family.py.html>`__ to see an example of how to use get_fusion_environment_family API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentFamilyId']
         resource_path = "/fusionEnvironmentFamilies/{fusionEnvironmentFamilyId}"
         method = "GET"
         operation_name = "get_fusion_environment_family"
@@ -1529,7 +1588,8 @@ class FusionApplicationsClient(object):
                 response_type="FusionEnvironmentFamily",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1539,7 +1599,8 @@ class FusionApplicationsClient(object):
                 response_type="FusionEnvironmentFamily",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_fusion_environment_family_limits_and_usage(self, fusion_environment_family_id, **kwargs):
         """
@@ -1570,6 +1631,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/get_fusion_environment_family_limits_and_usage.py.html>`__ to see an example of how to use get_fusion_environment_family_limits_and_usage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentFamilyId']
         resource_path = "/fusionEnvironmentFamilies/{fusionEnvironmentFamilyId}/limitsAndUsage"
         method = "GET"
         operation_name = "get_fusion_environment_family_limits_and_usage"
@@ -1623,7 +1686,8 @@ class FusionApplicationsClient(object):
                 response_type="FusionEnvironmentFamilyLimitsAndUsage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1633,7 +1697,8 @@ class FusionApplicationsClient(object):
                 response_type="FusionEnvironmentFamilyLimitsAndUsage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_fusion_environment_family_subscription_detail(self, fusion_environment_family_id, **kwargs):
         """
@@ -1664,6 +1729,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/get_fusion_environment_family_subscription_detail.py.html>`__ to see an example of how to use get_fusion_environment_family_subscription_detail API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentFamilyId']
         resource_path = "/fusionEnvironmentFamilies/{fusionEnvironmentFamilyId}/subscriptionDetails"
         method = "GET"
         operation_name = "get_fusion_environment_family_subscription_detail"
@@ -1717,7 +1784,8 @@ class FusionApplicationsClient(object):
                 response_type="SubscriptionDetail",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1727,7 +1795,8 @@ class FusionApplicationsClient(object):
                 response_type="SubscriptionDetail",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_fusion_environment_status(self, fusion_environment_id, **kwargs):
         """
@@ -1758,6 +1827,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/get_fusion_environment_status.py.html>`__ to see an example of how to use get_fusion_environment_status API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentId']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}/status"
         method = "GET"
         operation_name = "get_fusion_environment_status"
@@ -1811,7 +1882,8 @@ class FusionApplicationsClient(object):
                 response_type="FusionEnvironmentStatus",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1821,7 +1893,8 @@ class FusionApplicationsClient(object):
                 response_type="FusionEnvironmentStatus",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_refresh_activity(self, fusion_environment_id, refresh_activity_id, **kwargs):
         """
@@ -1855,6 +1928,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/get_refresh_activity.py.html>`__ to see an example of how to use get_refresh_activity API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentId', 'refreshActivityId']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}/refreshActivities/{refreshActivityId}"
         method = "GET"
         operation_name = "get_refresh_activity"
@@ -1909,7 +1984,8 @@ class FusionApplicationsClient(object):
                 response_type="RefreshActivity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1919,7 +1995,8 @@ class FusionApplicationsClient(object):
                 response_type="RefreshActivity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_scheduled_activity(self, fusion_environment_id, scheduled_activity_id, **kwargs):
         """
@@ -1953,6 +2030,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/get_scheduled_activity.py.html>`__ to see an example of how to use get_scheduled_activity API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentId', 'scheduledActivityId']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}/scheduledActivities/{scheduledActivityId}"
         method = "GET"
         operation_name = "get_scheduled_activity"
@@ -2007,7 +2086,8 @@ class FusionApplicationsClient(object):
                 response_type="ScheduledActivity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2017,7 +2097,8 @@ class FusionApplicationsClient(object):
                 response_type="ScheduledActivity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_service_attachment(self, fusion_environment_id, service_attachment_id, **kwargs):
         """
@@ -2051,6 +2132,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/get_service_attachment.py.html>`__ to see an example of how to use get_service_attachment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentId', 'serviceAttachmentId']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}/serviceAttachments/{serviceAttachmentId}"
         method = "GET"
         operation_name = "get_service_attachment"
@@ -2105,7 +2188,8 @@ class FusionApplicationsClient(object):
                 response_type="ServiceAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2115,7 +2199,8 @@ class FusionApplicationsClient(object):
                 response_type="ServiceAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -2146,6 +2231,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -2199,7 +2286,8 @@ class FusionApplicationsClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2209,7 +2297,8 @@ class FusionApplicationsClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_admin_users(self, fusion_environment_id, **kwargs):
         """
@@ -2240,6 +2329,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/list_admin_users.py.html>`__ to see an example of how to use list_admin_users API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentId']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}/adminUsers"
         method = "GET"
         operation_name = "list_admin_users"
@@ -2293,7 +2384,8 @@ class FusionApplicationsClient(object):
                 response_type="AdminUserCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2303,7 +2395,8 @@ class FusionApplicationsClient(object):
                 response_type="AdminUserCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_data_masking_activities(self, fusion_environment_id, **kwargs):
         """
@@ -2355,6 +2448,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/list_data_masking_activities.py.html>`__ to see an example of how to use list_data_masking_activities API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentId']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}/dataMaskingActivities"
         method = "GET"
         operation_name = "list_data_masking_activities"
@@ -2444,7 +2539,8 @@ class FusionApplicationsClient(object):
                 response_type="DataMaskingActivityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2455,7 +2551,8 @@ class FusionApplicationsClient(object):
                 response_type="DataMaskingActivityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_fusion_environment_families(self, compartment_id, **kwargs):
         """
@@ -2513,6 +2610,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/list_fusion_environment_families.py.html>`__ to see an example of how to use list_fusion_environment_families API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/fusionEnvironmentFamilies"
         method = "GET"
         operation_name = "list_fusion_environment_families"
@@ -2596,7 +2695,8 @@ class FusionApplicationsClient(object):
                 response_type="FusionEnvironmentFamilyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2606,7 +2706,8 @@ class FusionApplicationsClient(object):
                 response_type="FusionEnvironmentFamilyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_fusion_environments(self, compartment_id, **kwargs):
         """
@@ -2664,6 +2765,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/list_fusion_environments.py.html>`__ to see an example of how to use list_fusion_environments API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/fusionEnvironments"
         method = "GET"
         operation_name = "list_fusion_environments"
@@ -2747,7 +2850,8 @@ class FusionApplicationsClient(object):
                 response_type="FusionEnvironmentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2757,7 +2861,8 @@ class FusionApplicationsClient(object):
                 response_type="FusionEnvironmentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_refresh_activities(self, fusion_environment_id, **kwargs):
         """
@@ -2818,6 +2923,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/list_refresh_activities.py.html>`__ to see an example of how to use list_refresh_activities API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentId']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}/refreshActivities"
         method = "GET"
         operation_name = "list_refresh_activities"
@@ -2913,7 +3020,8 @@ class FusionApplicationsClient(object):
                 response_type="RefreshActivityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2924,7 +3032,8 @@ class FusionApplicationsClient(object):
                 response_type="RefreshActivityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_scheduled_activities(self, fusion_environment_id, **kwargs):
         """
@@ -2990,6 +3099,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/list_scheduled_activities.py.html>`__ to see an example of how to use list_scheduled_activities API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentId']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}/scheduledActivities"
         method = "GET"
         operation_name = "list_scheduled_activities"
@@ -3094,7 +3205,8 @@ class FusionApplicationsClient(object):
                 response_type="ScheduledActivityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3105,7 +3217,8 @@ class FusionApplicationsClient(object):
                 response_type="ScheduledActivityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_service_attachments(self, fusion_environment_id, **kwargs):
         """
@@ -3165,6 +3278,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/list_service_attachments.py.html>`__ to see an example of how to use list_service_attachments API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentId']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}/serviceAttachments"
         method = "GET"
         operation_name = "list_service_attachments"
@@ -3265,7 +3380,8 @@ class FusionApplicationsClient(object):
                 response_type="ServiceAttachmentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3276,7 +3392,8 @@ class FusionApplicationsClient(object):
                 response_type="ServiceAttachmentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_time_available_for_refreshes(self, fusion_environment_id, **kwargs):
         """
@@ -3323,6 +3440,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/list_time_available_for_refreshes.py.html>`__ to see an example of how to use list_time_available_for_refreshes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentId']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}/timeAvailableForRefresh"
         method = "GET"
         operation_name = "list_time_available_for_refreshes"
@@ -3403,7 +3522,8 @@ class FusionApplicationsClient(object):
                 response_type="TimeAvailableForRefreshCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3414,7 +3534,8 @@ class FusionApplicationsClient(object):
                 response_type="TimeAvailableForRefreshCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -3461,6 +3582,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -3541,7 +3664,8 @@ class FusionApplicationsClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3552,7 +3676,8 @@ class FusionApplicationsClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -3599,6 +3724,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -3679,7 +3806,8 @@ class FusionApplicationsClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3690,7 +3818,8 @@ class FusionApplicationsClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -3745,6 +3874,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -3826,7 +3957,8 @@ class FusionApplicationsClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3836,7 +3968,8 @@ class FusionApplicationsClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def reset_fusion_environment_password(self, reset_fusion_environment_password_details, fusion_environment_id, admin_username, **kwargs):
         """
@@ -3887,6 +4020,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/reset_fusion_environment_password.py.html>`__ to see an example of how to use reset_fusion_environment_password API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentId', 'adminUsername']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}/adminUsers/{adminUsername}/actions/resetPassword"
         method = "POST"
         operation_name = "reset_fusion_environment_password"
@@ -3946,7 +4081,8 @@ class FusionApplicationsClient(object):
                 body=reset_fusion_environment_password_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3956,7 +4092,8 @@ class FusionApplicationsClient(object):
                 body=reset_fusion_environment_password_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_fusion_environment(self, fusion_environment_id, update_fusion_environment_details, **kwargs):
         """
@@ -3997,6 +4134,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/update_fusion_environment.py.html>`__ to see an example of how to use update_fusion_environment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentId']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}"
         method = "PUT"
         operation_name = "update_fusion_environment"
@@ -4052,7 +4191,8 @@ class FusionApplicationsClient(object):
                 body=update_fusion_environment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4062,7 +4202,8 @@ class FusionApplicationsClient(object):
                 body=update_fusion_environment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_fusion_environment_family(self, fusion_environment_family_id, update_fusion_environment_family_details, **kwargs):
         """
@@ -4103,6 +4244,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/update_fusion_environment_family.py.html>`__ to see an example of how to use update_fusion_environment_family API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentFamilyId']
         resource_path = "/fusionEnvironmentFamilies/{fusionEnvironmentFamilyId}"
         method = "PUT"
         operation_name = "update_fusion_environment_family"
@@ -4158,7 +4301,8 @@ class FusionApplicationsClient(object):
                 body=update_fusion_environment_family_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4168,7 +4312,8 @@ class FusionApplicationsClient(object):
                 body=update_fusion_environment_family_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_refresh_activity(self, fusion_environment_id, refresh_activity_id, update_refresh_activity_details, **kwargs):
         """
@@ -4212,6 +4357,8 @@ class FusionApplicationsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/fusionapps/update_refresh_activity.py.html>`__ to see an example of how to use update_refresh_activity API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fusionEnvironmentId', 'refreshActivityId']
         resource_path = "/fusionEnvironments/{fusionEnvironmentId}/refreshActivities/{refreshActivityId}"
         method = "PUT"
         operation_name = "update_refresh_activity"
@@ -4269,7 +4416,8 @@ class FusionApplicationsClient(object):
                 response_type="RefreshActivity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4280,4 +4428,5 @@ class FusionApplicationsClient(object):
                 response_type="RefreshActivity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

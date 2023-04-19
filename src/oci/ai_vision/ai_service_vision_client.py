@@ -65,6 +65,9 @@ class AIServiceVisionClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class AIServiceVisionClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20220125',
             'service_endpoint_template': 'https://vision.aiservice.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -133,6 +138,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/analyze_document.py.html>`__ to see an example of how to use analyze_document API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/actions/analyzeDocument"
         method = "POST"
         operation_name = "analyze_document"
@@ -176,7 +183,8 @@ class AIServiceVisionClient(object):
                 response_type="AnalyzeDocumentResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -186,7 +194,8 @@ class AIServiceVisionClient(object):
                 response_type="AnalyzeDocumentResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def analyze_image(self, analyze_image_details, **kwargs):
         """
@@ -217,6 +226,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/analyze_image.py.html>`__ to see an example of how to use analyze_image API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/actions/analyzeImage"
         method = "POST"
         operation_name = "analyze_image"
@@ -260,7 +271,8 @@ class AIServiceVisionClient(object):
                 response_type="AnalyzeImageResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -270,7 +282,8 @@ class AIServiceVisionClient(object):
                 response_type="AnalyzeImageResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_document_job(self, document_job_id, **kwargs):
         """
@@ -308,6 +321,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/cancel_document_job.py.html>`__ to see an example of how to use cancel_document_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['documentJobId']
         resource_path = "/documentJobs/{documentJobId}/actions/cancel"
         method = "POST"
         operation_name = "cancel_document_job"
@@ -360,7 +375,8 @@ class AIServiceVisionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -369,7 +385,8 @@ class AIServiceVisionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_image_job(self, image_job_id, **kwargs):
         """
@@ -407,6 +424,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/cancel_image_job.py.html>`__ to see an example of how to use cancel_image_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['imageJobId']
         resource_path = "/imageJobs/{imageJobId}/actions/cancel"
         method = "POST"
         operation_name = "cancel_image_job"
@@ -459,7 +478,8 @@ class AIServiceVisionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -468,7 +488,8 @@ class AIServiceVisionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_work_request(self, work_request_id, **kwargs):
         """
@@ -506,6 +527,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
@@ -558,7 +581,8 @@ class AIServiceVisionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -567,7 +591,8 @@ class AIServiceVisionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_model_compartment(self, model_id, change_model_compartment_details, **kwargs):
         """
@@ -608,6 +633,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/change_model_compartment.py.html>`__ to see an example of how to use change_model_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['modelId']
         resource_path = "/models/{modelId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_model_compartment"
@@ -661,7 +688,8 @@ class AIServiceVisionClient(object):
                 body=change_model_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -671,7 +699,8 @@ class AIServiceVisionClient(object):
                 body=change_model_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_project_compartment(self, project_id, change_project_compartment_details, **kwargs):
         """
@@ -712,6 +741,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/change_project_compartment.py.html>`__ to see an example of how to use change_project_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['projectId']
         resource_path = "/projects/{projectId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_project_compartment"
@@ -765,7 +796,8 @@ class AIServiceVisionClient(object):
                 body=change_project_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -775,7 +807,8 @@ class AIServiceVisionClient(object):
                 body=change_project_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_document_job(self, create_document_job_details, **kwargs):
         """
@@ -813,6 +846,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/create_document_job.py.html>`__ to see an example of how to use create_document_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/documentJobs"
         method = "POST"
         operation_name = "create_document_job"
@@ -857,7 +892,8 @@ class AIServiceVisionClient(object):
                 response_type="DocumentJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -867,7 +903,8 @@ class AIServiceVisionClient(object):
                 response_type="DocumentJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_image_job(self, create_image_job_details, **kwargs):
         """
@@ -905,6 +942,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/create_image_job.py.html>`__ to see an example of how to use create_image_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/imageJobs"
         method = "POST"
         operation_name = "create_image_job"
@@ -949,7 +988,8 @@ class AIServiceVisionClient(object):
                 response_type="ImageJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -959,7 +999,8 @@ class AIServiceVisionClient(object):
                 response_type="ImageJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_model(self, create_model_details, **kwargs):
         """
@@ -997,6 +1038,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/create_model.py.html>`__ to see an example of how to use create_model API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/models"
         method = "POST"
         operation_name = "create_model"
@@ -1041,7 +1084,8 @@ class AIServiceVisionClient(object):
                 response_type="Model",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1051,7 +1095,8 @@ class AIServiceVisionClient(object):
                 response_type="Model",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_project(self, create_project_details, **kwargs):
         """
@@ -1089,6 +1134,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/create_project.py.html>`__ to see an example of how to use create_project API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/projects"
         method = "POST"
         operation_name = "create_project"
@@ -1133,7 +1180,8 @@ class AIServiceVisionClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1143,7 +1191,8 @@ class AIServiceVisionClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_model(self, model_id, **kwargs):
         """
@@ -1181,6 +1230,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/delete_model.py.html>`__ to see an example of how to use delete_model API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['modelId']
         resource_path = "/models/{modelId}"
         method = "DELETE"
         operation_name = "delete_model"
@@ -1233,7 +1284,8 @@ class AIServiceVisionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1242,7 +1294,8 @@ class AIServiceVisionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_project(self, project_id, **kwargs):
         """
@@ -1280,6 +1333,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/delete_project.py.html>`__ to see an example of how to use delete_project API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['projectId']
         resource_path = "/projects/{projectId}"
         method = "DELETE"
         operation_name = "delete_project"
@@ -1332,7 +1387,8 @@ class AIServiceVisionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1341,7 +1397,8 @@ class AIServiceVisionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_document_job(self, document_job_id, **kwargs):
         """
@@ -1372,6 +1429,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/get_document_job.py.html>`__ to see an example of how to use get_document_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['documentJobId']
         resource_path = "/documentJobs/{documentJobId}"
         method = "GET"
         operation_name = "get_document_job"
@@ -1423,7 +1482,8 @@ class AIServiceVisionClient(object):
                 response_type="DocumentJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1433,7 +1493,8 @@ class AIServiceVisionClient(object):
                 response_type="DocumentJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_image_job(self, image_job_id, **kwargs):
         """
@@ -1464,6 +1525,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/get_image_job.py.html>`__ to see an example of how to use get_image_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['imageJobId']
         resource_path = "/imageJobs/{imageJobId}"
         method = "GET"
         operation_name = "get_image_job"
@@ -1515,7 +1578,8 @@ class AIServiceVisionClient(object):
                 response_type="ImageJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1525,7 +1589,8 @@ class AIServiceVisionClient(object):
                 response_type="ImageJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_model(self, model_id, **kwargs):
         """
@@ -1556,6 +1621,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/get_model.py.html>`__ to see an example of how to use get_model API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['modelId']
         resource_path = "/models/{modelId}"
         method = "GET"
         operation_name = "get_model"
@@ -1607,7 +1674,8 @@ class AIServiceVisionClient(object):
                 response_type="Model",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1617,7 +1685,8 @@ class AIServiceVisionClient(object):
                 response_type="Model",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_project(self, project_id, **kwargs):
         """
@@ -1648,6 +1717,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/get_project.py.html>`__ to see an example of how to use get_project API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['projectId']
         resource_path = "/projects/{projectId}"
         method = "GET"
         operation_name = "get_project"
@@ -1699,7 +1770,8 @@ class AIServiceVisionClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1709,7 +1781,8 @@ class AIServiceVisionClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1740,6 +1813,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -1791,7 +1866,8 @@ class AIServiceVisionClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1801,7 +1877,8 @@ class AIServiceVisionClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_models(self, **kwargs):
         """
@@ -1862,6 +1939,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/list_models.py.html>`__ to see an example of how to use list_models API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/models"
         method = "GET"
         operation_name = "list_models"
@@ -1946,7 +2025,8 @@ class AIServiceVisionClient(object):
                 response_type="ModelCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1956,7 +2036,8 @@ class AIServiceVisionClient(object):
                 response_type="ModelCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_projects(self, **kwargs):
         """
@@ -2014,6 +2095,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/list_projects.py.html>`__ to see an example of how to use list_projects API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/projects"
         method = "GET"
         operation_name = "list_projects"
@@ -2096,7 +2179,8 @@ class AIServiceVisionClient(object):
                 response_type="ProjectCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2106,7 +2190,8 @@ class AIServiceVisionClient(object):
                 response_type="ProjectCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -2153,6 +2238,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -2231,7 +2318,8 @@ class AIServiceVisionClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2242,7 +2330,8 @@ class AIServiceVisionClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -2289,6 +2378,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -2367,7 +2458,8 @@ class AIServiceVisionClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2378,7 +2470,8 @@ class AIServiceVisionClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, **kwargs):
         """
@@ -2436,6 +2529,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -2518,7 +2613,8 @@ class AIServiceVisionClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2528,7 +2624,8 @@ class AIServiceVisionClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_model(self, model_id, update_model_details, **kwargs):
         """
@@ -2569,6 +2666,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/update_model.py.html>`__ to see an example of how to use update_model API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['modelId']
         resource_path = "/models/{modelId}"
         method = "PUT"
         operation_name = "update_model"
@@ -2622,7 +2721,8 @@ class AIServiceVisionClient(object):
                 body=update_model_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2632,7 +2732,8 @@ class AIServiceVisionClient(object):
                 body=update_model_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_project(self, project_id, update_project_details, **kwargs):
         """
@@ -2673,6 +2774,8 @@ class AIServiceVisionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aivision/update_project.py.html>`__ to see an example of how to use update_project API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['projectId']
         resource_path = "/projects/{projectId}"
         method = "PUT"
         operation_name = "update_project"
@@ -2726,7 +2829,8 @@ class AIServiceVisionClient(object):
                 body=update_project_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2736,4 +2840,5 @@ class AIServiceVisionClient(object):
                 body=update_project_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

@@ -65,6 +65,9 @@ class StackMonitoringClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class StackMonitoringClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20210330',
             'service_endpoint_template': 'https://stack-monitoring.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -148,6 +153,8 @@ class StackMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/associate_monitored_resources.py.html>`__ to see an example of how to use associate_monitored_resources API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/monitoredResources/actions/associateMonitoredResources"
         method = "POST"
         operation_name = "associate_monitored_resources"
@@ -194,7 +201,8 @@ class StackMonitoringClient(object):
                 response_type="MonitoredResourceAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -204,7 +212,8 @@ class StackMonitoringClient(object):
                 response_type="MonitoredResourceAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_monitored_resource_compartment(self, monitored_resource_id, change_monitored_resource_compartment_details, **kwargs):
         """
@@ -255,6 +264,8 @@ class StackMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/change_monitored_resource_compartment.py.html>`__ to see an example of how to use change_monitored_resource_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['monitoredResourceId']
         resource_path = "/monitoredResources/{monitoredResourceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_monitored_resource_compartment"
@@ -311,7 +322,8 @@ class StackMonitoringClient(object):
                 body=change_monitored_resource_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -321,7 +333,8 @@ class StackMonitoringClient(object):
                 body=change_monitored_resource_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_discovery_job(self, create_discovery_job_details, **kwargs):
         """
@@ -360,6 +373,8 @@ class StackMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/create_discovery_job.py.html>`__ to see an example of how to use create_discovery_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/discoveryJobs"
         method = "POST"
         operation_name = "create_discovery_job"
@@ -404,7 +419,8 @@ class StackMonitoringClient(object):
                 response_type="DiscoveryJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -414,7 +430,8 @@ class StackMonitoringClient(object):
                 response_type="DiscoveryJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_monitored_resource(self, create_monitored_resource_details, **kwargs):
         """
@@ -459,6 +476,8 @@ class StackMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/create_monitored_resource.py.html>`__ to see an example of how to use create_monitored_resource API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/monitoredResources"
         method = "POST"
         operation_name = "create_monitored_resource"
@@ -505,7 +524,8 @@ class StackMonitoringClient(object):
                 response_type="MonitoredResource",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -515,7 +535,8 @@ class StackMonitoringClient(object):
                 response_type="MonitoredResource",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_discovery_job(self, discovery_job_id, **kwargs):
         """
@@ -554,6 +575,8 @@ class StackMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/delete_discovery_job.py.html>`__ to see an example of how to use delete_discovery_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['discoveryJobId']
         resource_path = "/discoveryJobs/{discoveryJobId}"
         method = "DELETE"
         operation_name = "delete_discovery_job"
@@ -608,7 +631,8 @@ class StackMonitoringClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -617,7 +641,8 @@ class StackMonitoringClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_monitored_resource(self, monitored_resource_id, **kwargs):
         """
@@ -661,6 +686,8 @@ class StackMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/delete_monitored_resource.py.html>`__ to see an example of how to use delete_monitored_resource API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['monitoredResourceId']
         resource_path = "/monitoredResources/{monitoredResourceId}"
         method = "DELETE"
         operation_name = "delete_monitored_resource"
@@ -720,7 +747,8 @@ class StackMonitoringClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -730,7 +758,8 @@ class StackMonitoringClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def disable_external_database(self, monitored_resource_id, **kwargs):
         """
@@ -778,6 +807,8 @@ class StackMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/disable_external_database.py.html>`__ to see an example of how to use disable_external_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['monitoredResourceId']
         resource_path = "/monitoredResources/{monitoredResourceId}/actions/disableExternalDatabase"
         method = "POST"
         operation_name = "disable_external_database"
@@ -833,7 +864,8 @@ class StackMonitoringClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -842,7 +874,8 @@ class StackMonitoringClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def disassociate_monitored_resources(self, disassociate_monitored_resources_details, **kwargs):
         """
@@ -888,6 +921,8 @@ class StackMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/disassociate_monitored_resources.py.html>`__ to see an example of how to use disassociate_monitored_resources API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/monitoredResources/actions/disassociateMonitoredResources"
         method = "POST"
         operation_name = "disassociate_monitored_resources"
@@ -933,7 +968,8 @@ class StackMonitoringClient(object):
                 body=disassociate_monitored_resources_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -942,7 +978,8 @@ class StackMonitoringClient(object):
                 body=disassociate_monitored_resources_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_discovery_job(self, discovery_job_id, **kwargs):
         """
@@ -974,6 +1011,8 @@ class StackMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/get_discovery_job.py.html>`__ to see an example of how to use get_discovery_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['discoveryJobId']
         resource_path = "/discoveryJobs/{discoveryJobId}"
         method = "GET"
         operation_name = "get_discovery_job"
@@ -1027,7 +1066,8 @@ class StackMonitoringClient(object):
                 response_type="DiscoveryJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1037,7 +1077,8 @@ class StackMonitoringClient(object):
                 response_type="DiscoveryJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_monitored_resource(self, monitored_resource_id, **kwargs):
         """
@@ -1071,6 +1112,8 @@ class StackMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/get_monitored_resource.py.html>`__ to see an example of how to use get_monitored_resource API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['monitoredResourceId']
         resource_path = "/monitoredResources/{monitoredResourceId}"
         method = "GET"
         operation_name = "get_monitored_resource"
@@ -1124,7 +1167,8 @@ class StackMonitoringClient(object):
                 response_type="MonitoredResource",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1134,7 +1178,8 @@ class StackMonitoringClient(object):
                 response_type="MonitoredResource",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1168,6 +1213,8 @@ class StackMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -1221,7 +1268,8 @@ class StackMonitoringClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1231,7 +1279,8 @@ class StackMonitoringClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_discovery_job_logs(self, discovery_job_id, **kwargs):
         """
@@ -1292,6 +1341,8 @@ class StackMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/list_discovery_job_logs.py.html>`__ to see an example of how to use list_discovery_job_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['discoveryJobId']
         resource_path = "/discoveryJobs/{discoveryJobId}/logs"
         method = "GET"
         operation_name = "list_discovery_job_logs"
@@ -1381,7 +1432,8 @@ class StackMonitoringClient(object):
                 response_type="DiscoveryJobLogCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1392,7 +1444,8 @@ class StackMonitoringClient(object):
                 response_type="DiscoveryJobLogCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_discovery_jobs(self, compartment_id, **kwargs):
         """
@@ -1451,6 +1504,8 @@ class StackMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/list_discovery_jobs.py.html>`__ to see an example of how to use list_discovery_jobs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/discoveryJobs"
         method = "GET"
         operation_name = "list_discovery_jobs"
@@ -1523,7 +1578,8 @@ class StackMonitoringClient(object):
                 response_type="DiscoveryJobCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1533,7 +1589,8 @@ class StackMonitoringClient(object):
                 response_type="DiscoveryJobCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1591,6 +1648,8 @@ class StackMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -1671,7 +1730,8 @@ class StackMonitoringClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1682,7 +1742,8 @@ class StackMonitoringClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -1740,6 +1801,8 @@ class StackMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -1820,7 +1883,8 @@ class StackMonitoringClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1831,7 +1895,8 @@ class StackMonitoringClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -1898,6 +1963,8 @@ class StackMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -1981,7 +2048,8 @@ class StackMonitoringClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1991,7 +2059,8 @@ class StackMonitoringClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def search_associated_resources(self, search_associated_resources_details, **kwargs):
         """
@@ -2075,6 +2144,8 @@ class StackMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/search_associated_resources.py.html>`__ to see an example of how to use search_associated_resources API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/monitoredResources/actions/searchAssociatedResources"
         method = "POST"
         operation_name = "search_associated_resources"
@@ -2136,7 +2207,8 @@ class StackMonitoringClient(object):
                 response_type="AssociatedResourcesCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2147,7 +2219,8 @@ class StackMonitoringClient(object):
                 response_type="AssociatedResourcesCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def search_monitored_resource_associations(self, search_monitored_resource_associations_details, **kwargs):
         """
@@ -2207,6 +2280,8 @@ class StackMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/search_monitored_resource_associations.py.html>`__ to see an example of how to use search_monitored_resource_associations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/monitoredResources/actions/searchAssociations"
         method = "POST"
         operation_name = "search_monitored_resource_associations"
@@ -2264,7 +2339,8 @@ class StackMonitoringClient(object):
                 response_type="MonitoredResourceAssociationsCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2275,7 +2351,8 @@ class StackMonitoringClient(object):
                 response_type="MonitoredResourceAssociationsCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def search_monitored_resource_members(self, monitored_resource_id, search_monitored_resource_members_details, **kwargs):
         """
@@ -2350,6 +2427,8 @@ class StackMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/search_monitored_resource_members.py.html>`__ to see an example of how to use search_monitored_resource_members API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['monitoredResourceId']
         resource_path = "/monitoredResources/{monitoredResourceId}/actions/listMembers"
         method = "POST"
         operation_name = "search_monitored_resource_members"
@@ -2436,7 +2515,8 @@ class StackMonitoringClient(object):
                 response_type="MonitoredResourceMembersCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2448,7 +2528,8 @@ class StackMonitoringClient(object):
                 response_type="MonitoredResourceMembersCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def search_monitored_resources(self, search_monitored_resources_details, **kwargs):
         """
@@ -2532,6 +2613,8 @@ class StackMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/search_monitored_resources.py.html>`__ to see an example of how to use search_monitored_resources API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/monitoredResources/actions/search"
         method = "POST"
         operation_name = "search_monitored_resources"
@@ -2593,7 +2676,8 @@ class StackMonitoringClient(object):
                 response_type="MonitoredResourceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2604,7 +2688,8 @@ class StackMonitoringClient(object):
                 response_type="MonitoredResourceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_monitored_resource(self, monitored_resource_id, update_monitored_resource_details, **kwargs):
         """
@@ -2648,6 +2733,8 @@ class StackMonitoringClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/update_monitored_resource.py.html>`__ to see an example of how to use update_monitored_resource API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['monitoredResourceId']
         resource_path = "/monitoredResources/{monitoredResourceId}"
         method = "PUT"
         operation_name = "update_monitored_resource"
@@ -2701,7 +2788,8 @@ class StackMonitoringClient(object):
                 body=update_monitored_resource_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2711,4 +2799,5 @@ class StackMonitoringClient(object):
                 body=update_monitored_resource_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

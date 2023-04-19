@@ -65,6 +65,9 @@ class SubscriptionServiceClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class SubscriptionServiceClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20191001',
             'service_endpoint_template': 'https://ospap.oracle.com',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -156,6 +161,8 @@ class SubscriptionServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ospgateway/authorize_subscription_payment.py.html>`__ to see an example of how to use authorize_subscription_payment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subscriptionId', 'ospHomeRegion', 'compartmentId']
         resource_path = "/subscriptions/{subscriptionId}/actions/psd2auth"
         method = "POST"
         operation_name = "authorize_subscription_payment"
@@ -220,7 +227,8 @@ class SubscriptionServiceClient(object):
                 response_type="AuthorizeSubscriptionPaymentReceipt",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -232,7 +240,8 @@ class SubscriptionServiceClient(object):
                 response_type="AuthorizeSubscriptionPaymentReceipt",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_subscription(self, subscription_id, osp_home_region, compartment_id, **kwargs):
         """
@@ -272,6 +281,8 @@ class SubscriptionServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ospgateway/get_subscription.py.html>`__ to see an example of how to use get_subscription API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subscriptionId', 'ospHomeRegion', 'compartmentId']
         resource_path = "/subscriptions/{subscriptionId}"
         method = "GET"
         operation_name = "get_subscription"
@@ -330,7 +341,8 @@ class SubscriptionServiceClient(object):
                 response_type="Subscription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -341,7 +353,8 @@ class SubscriptionServiceClient(object):
                 response_type="Subscription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_subscriptions(self, osp_home_region, compartment_id, **kwargs):
         """
@@ -394,6 +407,8 @@ class SubscriptionServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ospgateway/list_subscriptions.py.html>`__ to see an example of how to use list_subscriptions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ospHomeRegion', 'compartmentId']
         resource_path = "/subscriptions"
         method = "GET"
         operation_name = "list_subscriptions"
@@ -463,7 +478,8 @@ class SubscriptionServiceClient(object):
                 response_type="SubscriptionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -473,7 +489,8 @@ class SubscriptionServiceClient(object):
                 response_type="SubscriptionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def pay_subscription(self, osp_home_region, subscription_id, compartment_id, pay_subscription_details, **kwargs):
         """
@@ -527,6 +544,8 @@ class SubscriptionServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ospgateway/pay_subscription.py.html>`__ to see an example of how to use pay_subscription API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subscriptionId', 'ospHomeRegion', 'compartmentId']
         resource_path = "/subscriptions/{subscriptionId}/actions/pay"
         method = "POST"
         operation_name = "pay_subscription"
@@ -591,7 +610,8 @@ class SubscriptionServiceClient(object):
                 response_type="PaySubscriptionReceipt",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -603,7 +623,8 @@ class SubscriptionServiceClient(object):
                 response_type="PaySubscriptionReceipt",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_subscription(self, subscription_id, osp_home_region, compartment_id, update_subscription_details, **kwargs):
         """
@@ -653,6 +674,8 @@ class SubscriptionServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ospgateway/update_subscription.py.html>`__ to see an example of how to use update_subscription API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subscriptionId', 'ospHomeRegion', 'compartmentId']
         resource_path = "/subscriptions/{subscriptionId}"
         method = "PUT"
         operation_name = "update_subscription"
@@ -714,7 +737,8 @@ class SubscriptionServiceClient(object):
                 response_type="Subscription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -726,4 +750,5 @@ class SubscriptionServiceClient(object):
                 response_type="Subscription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

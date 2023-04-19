@@ -65,6 +65,9 @@ class DatabaseToolsClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class DatabaseToolsClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20201005',
             'service_endpoint_template': 'https://dbtools.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -156,6 +161,8 @@ class DatabaseToolsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasetools/change_database_tools_connection_compartment.py.html>`__ to see an example of how to use change_database_tools_connection_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseToolsConnectionId']
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_database_tools_connection_compartment"
@@ -212,7 +219,8 @@ class DatabaseToolsClient(object):
                 body=change_database_tools_connection_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -222,7 +230,8 @@ class DatabaseToolsClient(object):
                 body=change_database_tools_connection_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_database_tools_private_endpoint_compartment(self, database_tools_private_endpoint_id, change_database_tools_private_endpoint_compartment_details, **kwargs):
         """
@@ -276,6 +285,8 @@ class DatabaseToolsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasetools/change_database_tools_private_endpoint_compartment.py.html>`__ to see an example of how to use change_database_tools_private_endpoint_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseToolsPrivateEndpointId']
         resource_path = "/databaseToolsPrivateEndpoints/{databaseToolsPrivateEndpointId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_database_tools_private_endpoint_compartment"
@@ -332,7 +343,8 @@ class DatabaseToolsClient(object):
                 body=change_database_tools_private_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -342,7 +354,8 @@ class DatabaseToolsClient(object):
                 body=change_database_tools_private_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_database_tools_connection(self, create_database_tools_connection_details, **kwargs):
         """
@@ -380,6 +393,8 @@ class DatabaseToolsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasetools/create_database_tools_connection.py.html>`__ to see an example of how to use create_database_tools_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/databaseToolsConnections"
         method = "POST"
         operation_name = "create_database_tools_connection"
@@ -424,7 +439,8 @@ class DatabaseToolsClient(object):
                 response_type="DatabaseToolsConnection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -434,7 +450,8 @@ class DatabaseToolsClient(object):
                 response_type="DatabaseToolsConnection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_database_tools_private_endpoint(self, create_database_tools_private_endpoint_details, **kwargs):
         """
@@ -472,6 +489,8 @@ class DatabaseToolsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasetools/create_database_tools_private_endpoint.py.html>`__ to see an example of how to use create_database_tools_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/databaseToolsPrivateEndpoints"
         method = "POST"
         operation_name = "create_database_tools_private_endpoint"
@@ -516,7 +535,8 @@ class DatabaseToolsClient(object):
                 response_type="DatabaseToolsPrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -526,7 +546,8 @@ class DatabaseToolsClient(object):
                 response_type="DatabaseToolsPrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_database_tools_connection(self, database_tools_connection_id, **kwargs):
         """
@@ -566,6 +587,8 @@ class DatabaseToolsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasetools/delete_database_tools_connection.py.html>`__ to see an example of how to use delete_database_tools_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseToolsConnectionId']
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}"
         method = "DELETE"
         operation_name = "delete_database_tools_connection"
@@ -618,7 +641,8 @@ class DatabaseToolsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -627,7 +651,8 @@ class DatabaseToolsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_database_tools_private_endpoint(self, database_tools_private_endpoint_id, **kwargs):
         """
@@ -667,6 +692,8 @@ class DatabaseToolsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasetools/delete_database_tools_private_endpoint.py.html>`__ to see an example of how to use delete_database_tools_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseToolsPrivateEndpointId']
         resource_path = "/databaseToolsPrivateEndpoints/{databaseToolsPrivateEndpointId}"
         method = "DELETE"
         operation_name = "delete_database_tools_private_endpoint"
@@ -719,7 +746,8 @@ class DatabaseToolsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -728,7 +756,8 @@ class DatabaseToolsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_database_tools_connection(self, database_tools_connection_id, **kwargs):
         """
@@ -761,6 +790,8 @@ class DatabaseToolsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasetools/get_database_tools_connection.py.html>`__ to see an example of how to use get_database_tools_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseToolsConnectionId']
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}"
         method = "GET"
         operation_name = "get_database_tools_connection"
@@ -814,7 +845,8 @@ class DatabaseToolsClient(object):
                 response_type="DatabaseToolsConnection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -824,7 +856,8 @@ class DatabaseToolsClient(object):
                 response_type="DatabaseToolsConnection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_database_tools_endpoint_service(self, database_tools_endpoint_service_id, **kwargs):
         """
@@ -857,6 +890,8 @@ class DatabaseToolsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasetools/get_database_tools_endpoint_service.py.html>`__ to see an example of how to use get_database_tools_endpoint_service API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseToolsEndpointServiceId']
         resource_path = "/databaseToolsEndpointServices/{databaseToolsEndpointServiceId}"
         method = "GET"
         operation_name = "get_database_tools_endpoint_service"
@@ -910,7 +945,8 @@ class DatabaseToolsClient(object):
                 response_type="DatabaseToolsEndpointService",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -920,7 +956,8 @@ class DatabaseToolsClient(object):
                 response_type="DatabaseToolsEndpointService",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_database_tools_private_endpoint(self, database_tools_private_endpoint_id, **kwargs):
         """
@@ -953,6 +990,8 @@ class DatabaseToolsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasetools/get_database_tools_private_endpoint.py.html>`__ to see an example of how to use get_database_tools_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseToolsPrivateEndpointId']
         resource_path = "/databaseToolsPrivateEndpoints/{databaseToolsPrivateEndpointId}"
         method = "GET"
         operation_name = "get_database_tools_private_endpoint"
@@ -1006,7 +1045,8 @@ class DatabaseToolsClient(object):
                 response_type="DatabaseToolsPrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1016,7 +1056,8 @@ class DatabaseToolsClient(object):
                 response_type="DatabaseToolsPrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1047,6 +1088,8 @@ class DatabaseToolsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasetools/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -1100,7 +1143,8 @@ class DatabaseToolsClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1110,7 +1154,8 @@ class DatabaseToolsClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_database_tools_connections(self, compartment_id, **kwargs):
         """
@@ -1170,6 +1215,8 @@ class DatabaseToolsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasetools/list_database_tools_connections.py.html>`__ to see an example of how to use list_database_tools_connections API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/databaseToolsConnections"
         method = "GET"
         operation_name = "list_database_tools_connections"
@@ -1261,7 +1308,8 @@ class DatabaseToolsClient(object):
                 response_type="DatabaseToolsConnectionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1271,7 +1319,8 @@ class DatabaseToolsClient(object):
                 response_type="DatabaseToolsConnectionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_database_tools_endpoint_services(self, compartment_id, **kwargs):
         """
@@ -1329,6 +1378,8 @@ class DatabaseToolsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasetools/list_database_tools_endpoint_services.py.html>`__ to see an example of how to use list_database_tools_endpoint_services API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/databaseToolsEndpointServices"
         method = "GET"
         operation_name = "list_database_tools_endpoint_services"
@@ -1412,7 +1463,8 @@ class DatabaseToolsClient(object):
                 response_type="DatabaseToolsEndpointServiceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1422,7 +1474,8 @@ class DatabaseToolsClient(object):
                 response_type="DatabaseToolsEndpointServiceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_database_tools_private_endpoints(self, compartment_id, **kwargs):
         """
@@ -1483,6 +1536,8 @@ class DatabaseToolsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasetools/list_database_tools_private_endpoints.py.html>`__ to see an example of how to use list_database_tools_private_endpoints API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/databaseToolsPrivateEndpoints"
         method = "GET"
         operation_name = "list_database_tools_private_endpoints"
@@ -1568,7 +1623,8 @@ class DatabaseToolsClient(object):
                 response_type="DatabaseToolsPrivateEndpointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1578,7 +1634,8 @@ class DatabaseToolsClient(object):
                 response_type="DatabaseToolsPrivateEndpointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1625,6 +1682,8 @@ class DatabaseToolsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasetools/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -1705,7 +1764,8 @@ class DatabaseToolsClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1716,7 +1776,8 @@ class DatabaseToolsClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -1763,6 +1824,8 @@ class DatabaseToolsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasetools/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -1843,7 +1906,8 @@ class DatabaseToolsClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1854,7 +1918,8 @@ class DatabaseToolsClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -1906,6 +1971,8 @@ class DatabaseToolsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasetools/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -1978,7 +2045,8 @@ class DatabaseToolsClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1988,7 +2056,8 @@ class DatabaseToolsClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_database_tools_connection(self, database_tools_connection_id, update_database_tools_connection_details, **kwargs):
         """
@@ -2031,6 +2100,8 @@ class DatabaseToolsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasetools/update_database_tools_connection.py.html>`__ to see an example of how to use update_database_tools_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseToolsConnectionId']
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}"
         method = "PUT"
         operation_name = "update_database_tools_connection"
@@ -2084,7 +2155,8 @@ class DatabaseToolsClient(object):
                 body=update_database_tools_connection_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2094,7 +2166,8 @@ class DatabaseToolsClient(object):
                 body=update_database_tools_connection_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_database_tools_private_endpoint(self, database_tools_private_endpoint_id, update_database_tools_private_endpoint_details, **kwargs):
         """
@@ -2137,6 +2210,8 @@ class DatabaseToolsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasetools/update_database_tools_private_endpoint.py.html>`__ to see an example of how to use update_database_tools_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseToolsPrivateEndpointId']
         resource_path = "/databaseToolsPrivateEndpoints/{databaseToolsPrivateEndpointId}"
         method = "PUT"
         operation_name = "update_database_tools_private_endpoint"
@@ -2190,7 +2265,8 @@ class DatabaseToolsClient(object):
                 body=update_database_tools_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2200,7 +2276,8 @@ class DatabaseToolsClient(object):
                 body=update_database_tools_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def validate_database_tools_connection(self, database_tools_connection_id, validate_database_tools_connection_details, **kwargs):
         """
@@ -2243,6 +2320,8 @@ class DatabaseToolsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasetools/validate_database_tools_connection.py.html>`__ to see an example of how to use validate_database_tools_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseToolsConnectionId']
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/actions/validateConnection"
         method = "POST"
         operation_name = "validate_database_tools_connection"
@@ -2297,7 +2376,8 @@ class DatabaseToolsClient(object):
                 response_type="ValidateDatabaseToolsConnectionResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2308,4 +2388,5 @@ class DatabaseToolsClient(object):
                 response_type="ValidateDatabaseToolsConnectionResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

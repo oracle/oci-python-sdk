@@ -65,6 +65,9 @@ class NetworkFirewallClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class NetworkFirewallClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20211001',
             'service_endpoint_template': 'https://network-firewall.{region}.ocs.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -140,6 +145,8 @@ class NetworkFirewallClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkfirewall/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
@@ -194,7 +201,8 @@ class NetworkFirewallClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -203,7 +211,8 @@ class NetworkFirewallClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_network_firewall_compartment(self, network_firewall_id, change_network_firewall_compartment_details, **kwargs):
         """
@@ -246,6 +255,8 @@ class NetworkFirewallClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkfirewall/change_network_firewall_compartment.py.html>`__ to see an example of how to use change_network_firewall_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkFirewallId']
         resource_path = "/networkFirewalls/{networkFirewallId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_network_firewall_compartment"
@@ -301,7 +312,8 @@ class NetworkFirewallClient(object):
                 body=change_network_firewall_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -311,7 +323,8 @@ class NetworkFirewallClient(object):
                 body=change_network_firewall_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_network_firewall_policy_compartment(self, network_firewall_policy_id, change_network_firewall_policy_compartment_details, **kwargs):
         """
@@ -359,6 +372,8 @@ class NetworkFirewallClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkfirewall/change_network_firewall_policy_compartment.py.html>`__ to see an example of how to use change_network_firewall_policy_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkFirewallPolicyId']
         resource_path = "/networkFirewallPolicies/{networkFirewallPolicyId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_network_firewall_policy_compartment"
@@ -417,7 +432,8 @@ class NetworkFirewallClient(object):
                 body=change_network_firewall_policy_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -427,7 +443,8 @@ class NetworkFirewallClient(object):
                 body=change_network_firewall_policy_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_network_firewall(self, create_network_firewall_details, **kwargs):
         """
@@ -465,6 +482,8 @@ class NetworkFirewallClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkfirewall/create_network_firewall.py.html>`__ to see an example of how to use create_network_firewall API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/networkFirewalls"
         method = "POST"
         operation_name = "create_network_firewall"
@@ -511,7 +530,8 @@ class NetworkFirewallClient(object):
                 response_type="NetworkFirewall",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -521,7 +541,8 @@ class NetworkFirewallClient(object):
                 response_type="NetworkFirewall",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_network_firewall_policy(self, create_network_firewall_policy_details, **kwargs):
         """
@@ -559,6 +580,8 @@ class NetworkFirewallClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkfirewall/create_network_firewall_policy.py.html>`__ to see an example of how to use create_network_firewall_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/networkFirewallPolicies"
         method = "POST"
         operation_name = "create_network_firewall_policy"
@@ -605,7 +628,8 @@ class NetworkFirewallClient(object):
                 response_type="NetworkFirewallPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -615,7 +639,8 @@ class NetworkFirewallClient(object):
                 response_type="NetworkFirewallPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_network_firewall(self, network_firewall_id, **kwargs):
         """
@@ -655,6 +680,8 @@ class NetworkFirewallClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkfirewall/delete_network_firewall.py.html>`__ to see an example of how to use delete_network_firewall API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkFirewallId']
         resource_path = "/networkFirewalls/{networkFirewallId}"
         method = "DELETE"
         operation_name = "delete_network_firewall"
@@ -709,7 +736,8 @@ class NetworkFirewallClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -718,7 +746,8 @@ class NetworkFirewallClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_network_firewall_policy(self, network_firewall_policy_id, **kwargs):
         """
@@ -756,6 +785,8 @@ class NetworkFirewallClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkfirewall/delete_network_firewall_policy.py.html>`__ to see an example of how to use delete_network_firewall_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkFirewallPolicyId']
         resource_path = "/networkFirewallPolicies/{networkFirewallPolicyId}"
         method = "DELETE"
         operation_name = "delete_network_firewall_policy"
@@ -810,7 +841,8 @@ class NetworkFirewallClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -819,7 +851,8 @@ class NetworkFirewallClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_network_firewall(self, network_firewall_id, **kwargs):
         """
@@ -852,6 +885,8 @@ class NetworkFirewallClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkfirewall/get_network_firewall.py.html>`__ to see an example of how to use get_network_firewall API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkFirewallId']
         resource_path = "/networkFirewalls/{networkFirewallId}"
         method = "GET"
         operation_name = "get_network_firewall"
@@ -905,7 +940,8 @@ class NetworkFirewallClient(object):
                 response_type="NetworkFirewall",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -915,7 +951,8 @@ class NetworkFirewallClient(object):
                 response_type="NetworkFirewall",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_network_firewall_policy(self, network_firewall_policy_id, **kwargs):
         """
@@ -946,6 +983,8 @@ class NetworkFirewallClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkfirewall/get_network_firewall_policy.py.html>`__ to see an example of how to use get_network_firewall_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkFirewallPolicyId']
         resource_path = "/networkFirewallPolicies/{networkFirewallPolicyId}"
         method = "GET"
         operation_name = "get_network_firewall_policy"
@@ -999,7 +1038,8 @@ class NetworkFirewallClient(object):
                 response_type="NetworkFirewallPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1009,7 +1049,8 @@ class NetworkFirewallClient(object):
                 response_type="NetworkFirewallPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1040,6 +1081,8 @@ class NetworkFirewallClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkfirewall/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -1093,7 +1136,8 @@ class NetworkFirewallClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1103,7 +1147,8 @@ class NetworkFirewallClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_network_firewall_policies(self, compartment_id, **kwargs):
         """
@@ -1161,6 +1206,8 @@ class NetworkFirewallClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkfirewall/list_network_firewall_policies.py.html>`__ to see an example of how to use list_network_firewall_policies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/networkFirewallPolicies"
         method = "GET"
         operation_name = "list_network_firewall_policies"
@@ -1244,7 +1291,8 @@ class NetworkFirewallClient(object):
                 response_type="NetworkFirewallPolicySummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1254,7 +1302,8 @@ class NetworkFirewallClient(object):
                 response_type="NetworkFirewallPolicySummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_network_firewalls(self, compartment_id, **kwargs):
         """
@@ -1322,6 +1371,8 @@ class NetworkFirewallClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkfirewall/list_network_firewalls.py.html>`__ to see an example of how to use list_network_firewalls API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/networkFirewalls"
         method = "GET"
         operation_name = "list_network_firewalls"
@@ -1409,7 +1460,8 @@ class NetworkFirewallClient(object):
                 response_type="NetworkFirewallCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1419,7 +1471,8 @@ class NetworkFirewallClient(object):
                 response_type="NetworkFirewallCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1466,6 +1519,8 @@ class NetworkFirewallClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkfirewall/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -1546,7 +1601,8 @@ class NetworkFirewallClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1557,7 +1613,8 @@ class NetworkFirewallClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -1604,6 +1661,8 @@ class NetworkFirewallClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkfirewall/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -1684,7 +1743,8 @@ class NetworkFirewallClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1695,7 +1755,8 @@ class NetworkFirewallClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -1753,6 +1814,8 @@ class NetworkFirewallClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkfirewall/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -1836,7 +1899,8 @@ class NetworkFirewallClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1846,7 +1910,8 @@ class NetworkFirewallClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_network_firewall(self, network_firewall_id, update_network_firewall_details, **kwargs):
         """
@@ -1889,6 +1954,8 @@ class NetworkFirewallClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkfirewall/update_network_firewall.py.html>`__ to see an example of how to use update_network_firewall API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkFirewallId']
         resource_path = "/networkFirewalls/{networkFirewallId}"
         method = "PUT"
         operation_name = "update_network_firewall"
@@ -1944,7 +2011,8 @@ class NetworkFirewallClient(object):
                 body=update_network_firewall_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1954,7 +2022,8 @@ class NetworkFirewallClient(object):
                 body=update_network_firewall_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_network_firewall_policy(self, network_firewall_policy_id, update_network_firewall_policy_details, **kwargs):
         """
@@ -1995,6 +2064,8 @@ class NetworkFirewallClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkfirewall/update_network_firewall_policy.py.html>`__ to see an example of how to use update_network_firewall_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkFirewallPolicyId']
         resource_path = "/networkFirewallPolicies/{networkFirewallPolicyId}"
         method = "PUT"
         operation_name = "update_network_firewall_policy"
@@ -2050,7 +2121,8 @@ class NetworkFirewallClient(object):
                 body=update_network_firewall_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2060,4 +2132,5 @@ class NetworkFirewallClient(object):
                 body=update_network_firewall_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

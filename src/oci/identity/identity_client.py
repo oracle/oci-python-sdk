@@ -65,6 +65,9 @@ class IdentityClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class IdentityClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20160918',
             'service_endpoint_template': 'https://identity.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -152,6 +157,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/activate_domain.py.html>`__ to see an example of how to use activate_domain API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['domainId']
         resource_path = "/domains/{domainId}/actions/activate"
         method = "POST"
         operation_name = "activate_domain"
@@ -209,7 +216,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -218,7 +226,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def activate_mfa_totp_device(self, user_id, mfa_totp_device_id, mfa_totp_token, **kwargs):
         """
@@ -264,6 +273,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/activate_mfa_totp_device.py.html>`__ to see an example of how to use activate_mfa_totp_device API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId', 'mfaTotpDeviceId']
         resource_path = "/users/{userId}/mfaTotpDevices/{mfaTotpDeviceId}/actions/activate"
         method = "POST"
         operation_name = "activate_mfa_totp_device"
@@ -322,7 +333,8 @@ class IdentityClient(object):
                 response_type="MfaTotpDeviceSummary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -333,7 +345,8 @@ class IdentityClient(object):
                 response_type="MfaTotpDeviceSummary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def add_tag_default_lock(self, tag_default_id, add_lock_details, **kwargs):
         """
@@ -380,6 +393,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/add_tag_default_lock.py.html>`__ to see an example of how to use add_tag_default_lock API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tagDefaultId']
         resource_path = "/tagDefaults/{tagDefaultId}/actions/addLock"
         method = "POST"
         operation_name = "add_tag_default_lock"
@@ -439,7 +454,8 @@ class IdentityClient(object):
                 response_type="TagDefault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -450,7 +466,8 @@ class IdentityClient(object):
                 response_type="TagDefault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def add_tag_namespace_lock(self, tag_namespace_id, add_lock_details, **kwargs):
         """
@@ -497,6 +514,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/add_tag_namespace_lock.py.html>`__ to see an example of how to use add_tag_namespace_lock API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tagNamespaceId']
         resource_path = "/tagNamespaces/{tagNamespaceId}/actions/addLock"
         method = "POST"
         operation_name = "add_tag_namespace_lock"
@@ -556,7 +575,8 @@ class IdentityClient(object):
                 response_type="TagNamespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -567,7 +587,8 @@ class IdentityClient(object):
                 response_type="TagNamespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def add_user_to_group(self, add_user_to_group_details, **kwargs):
         """
@@ -605,6 +626,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/add_user_to_group.py.html>`__ to see an example of how to use add_user_to_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/userGroupMemberships"
         method = "POST"
         operation_name = "add_user_to_group"
@@ -649,7 +672,8 @@ class IdentityClient(object):
                 response_type="UserGroupMembership",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -659,7 +683,8 @@ class IdentityClient(object):
                 response_type="UserGroupMembership",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def assemble_effective_tag_set(self, compartment_id, **kwargs):
         """
@@ -695,6 +720,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/assemble_effective_tag_set.py.html>`__ to see an example of how to use assemble_effective_tag_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/tagDefaults/actions/assembleEffectiveTagSet"
         method = "GET"
         operation_name = "assemble_effective_tag_set"
@@ -749,7 +776,8 @@ class IdentityClient(object):
                 response_type="list[TagDefaultSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -759,7 +787,8 @@ class IdentityClient(object):
                 response_type="list[TagDefaultSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def bulk_delete_resources(self, compartment_id, bulk_delete_resources_details, **kwargs):
         """
@@ -807,6 +836,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/bulk_delete_resources.py.html>`__ to see an example of how to use bulk_delete_resources API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/compartments/{compartmentId}/actions/bulkDeleteResources"
         method = "POST"
         operation_name = "bulk_delete_resources"
@@ -863,7 +894,8 @@ class IdentityClient(object):
                 body=bulk_delete_resources_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -873,7 +905,8 @@ class IdentityClient(object):
                 body=bulk_delete_resources_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def bulk_delete_tags(self, bulk_delete_tags_details, **kwargs):
         """
@@ -935,6 +968,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/bulk_delete_tags.py.html>`__ to see an example of how to use bulk_delete_tags API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/tags/actions/bulkDelete"
         method = "POST"
         operation_name = "bulk_delete_tags"
@@ -987,7 +1022,8 @@ class IdentityClient(object):
                 body=bulk_delete_tags_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -997,7 +1033,8 @@ class IdentityClient(object):
                 body=bulk_delete_tags_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def bulk_edit_tags(self, **kwargs):
         """
@@ -1049,6 +1086,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/bulk_edit_tags.py.html>`__ to see an example of how to use bulk_edit_tags API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/tags/actions/bulkEdit"
         method = "POST"
         operation_name = "bulk_edit_tags"
@@ -1095,7 +1134,8 @@ class IdentityClient(object):
                 body=kwargs.get('bulk_edit_tags_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1104,7 +1144,8 @@ class IdentityClient(object):
                 body=kwargs.get('bulk_edit_tags_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def bulk_move_resources(self, compartment_id, bulk_move_resources_details, **kwargs):
         """
@@ -1152,6 +1193,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/bulk_move_resources.py.html>`__ to see an example of how to use bulk_move_resources API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/compartments/{compartmentId}/actions/bulkMoveResources"
         method = "POST"
         operation_name = "bulk_move_resources"
@@ -1208,7 +1251,8 @@ class IdentityClient(object):
                 body=bulk_move_resources_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1218,7 +1262,8 @@ class IdentityClient(object):
                 body=bulk_move_resources_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cascade_delete_tag_namespace(self, tag_namespace_id, **kwargs):
         """
@@ -1283,6 +1328,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/cascade_delete_tag_namespace.py.html>`__ to see an example of how to use cascade_delete_tag_namespace API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tagNamespaceId']
         resource_path = "/tagNamespaces/{tagNamespaceId}/actions/cascadeDelete"
         method = "POST"
         operation_name = "cascade_delete_tag_namespace"
@@ -1347,7 +1394,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1357,7 +1405,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_domain_compartment(self, domain_id, change_domain_compartment_details, **kwargs):
         """
@@ -1407,6 +1456,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/change_domain_compartment.py.html>`__ to see an example of how to use change_domain_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['domainId']
         resource_path = "/domains/{domainId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_domain_compartment"
@@ -1465,7 +1516,8 @@ class IdentityClient(object):
                 body=change_domain_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1475,7 +1527,8 @@ class IdentityClient(object):
                 body=change_domain_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_domain_license_type(self, domain_id, change_domain_license_type_details, **kwargs):
         """
@@ -1530,6 +1583,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/change_domain_license_type.py.html>`__ to see an example of how to use change_domain_license_type API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['domainId']
         resource_path = "/domains/{domainId}/actions/changeLicenseType"
         method = "POST"
         operation_name = "change_domain_license_type"
@@ -1588,7 +1643,8 @@ class IdentityClient(object):
                 body=change_domain_license_type_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1598,7 +1654,8 @@ class IdentityClient(object):
                 body=change_domain_license_type_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_tag_namespace_compartment(self, tag_namespace_id, change_tag_namespace_compartment_detail, **kwargs):
         """
@@ -1646,6 +1703,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/change_tag_namespace_compartment.py.html>`__ to see an example of how to use change_tag_namespace_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tagNamespaceId']
         resource_path = "/tagNamespaces/{tagNamespaceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_tag_namespace_compartment"
@@ -1707,7 +1766,8 @@ class IdentityClient(object):
                 body=change_tag_namespace_compartment_detail,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1718,7 +1778,8 @@ class IdentityClient(object):
                 body=change_tag_namespace_compartment_detail,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_auth_token(self, create_auth_token_details, user_id, **kwargs):
         """
@@ -1767,6 +1828,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_auth_token.py.html>`__ to see an example of how to use create_auth_token API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}/authTokens"
         method = "POST"
         operation_name = "create_auth_token"
@@ -1822,7 +1885,8 @@ class IdentityClient(object):
                 response_type="AuthToken",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1833,7 +1897,8 @@ class IdentityClient(object):
                 response_type="AuthToken",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_compartment(self, create_compartment_details, **kwargs):
         """
@@ -1887,6 +1952,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_compartment.py.html>`__ to see an example of how to use create_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/compartments"
         method = "POST"
         operation_name = "create_compartment"
@@ -1931,7 +1998,8 @@ class IdentityClient(object):
                 response_type="Compartment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1941,7 +2009,8 @@ class IdentityClient(object):
                 response_type="Compartment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_customer_secret_key(self, create_customer_secret_key_details, user_id, **kwargs):
         """
@@ -1991,6 +2060,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_customer_secret_key.py.html>`__ to see an example of how to use create_customer_secret_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}/customerSecretKeys"
         method = "POST"
         operation_name = "create_customer_secret_key"
@@ -2046,7 +2117,8 @@ class IdentityClient(object):
                 response_type="CustomerSecretKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2057,7 +2129,8 @@ class IdentityClient(object):
                 response_type="CustomerSecretKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_db_credential(self, create_db_credential_details, user_id, **kwargs):
         """
@@ -2099,6 +2172,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_db_credential.py.html>`__ to see an example of how to use create_db_credential API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}/dbCredentials"
         method = "POST"
         operation_name = "create_db_credential"
@@ -2156,7 +2231,8 @@ class IdentityClient(object):
                 response_type="DbCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2167,7 +2243,8 @@ class IdentityClient(object):
                 response_type="DbCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_domain(self, create_domain_details, **kwargs):
         """
@@ -2213,6 +2290,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_domain.py.html>`__ to see an example of how to use create_domain API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/domains"
         method = "POST"
         operation_name = "create_domain"
@@ -2258,7 +2337,8 @@ class IdentityClient(object):
                 body=create_domain_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2267,7 +2347,8 @@ class IdentityClient(object):
                 body=create_domain_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_dynamic_group(self, create_dynamic_group_details, **kwargs):
         """
@@ -2322,6 +2403,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_dynamic_group.py.html>`__ to see an example of how to use create_dynamic_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/dynamicGroups"
         method = "POST"
         operation_name = "create_dynamic_group"
@@ -2366,7 +2449,8 @@ class IdentityClient(object):
                 response_type="DynamicGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2376,7 +2460,8 @@ class IdentityClient(object):
                 response_type="DynamicGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_group(self, create_group_details, **kwargs):
         """
@@ -2434,6 +2519,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_group.py.html>`__ to see an example of how to use create_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/groups"
         method = "POST"
         operation_name = "create_group"
@@ -2478,7 +2565,8 @@ class IdentityClient(object):
                 response_type="Group",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2488,7 +2576,8 @@ class IdentityClient(object):
                 response_type="Group",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_identity_provider(self, create_identity_provider_details, **kwargs):
         """
@@ -2546,6 +2635,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_identity_provider.py.html>`__ to see an example of how to use create_identity_provider API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/identityProviders"
         method = "POST"
         operation_name = "create_identity_provider"
@@ -2590,7 +2681,8 @@ class IdentityClient(object):
                 response_type="IdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2600,7 +2692,8 @@ class IdentityClient(object):
                 response_type="IdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_idp_group_mapping(self, create_idp_group_mapping_details, identity_provider_id, **kwargs):
         """
@@ -2643,6 +2736,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_idp_group_mapping.py.html>`__ to see an example of how to use create_idp_group_mapping API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['identityProviderId']
         resource_path = "/identityProviders/{identityProviderId}/groupMappings"
         method = "POST"
         operation_name = "create_idp_group_mapping"
@@ -2698,7 +2793,8 @@ class IdentityClient(object):
                 response_type="IdpGroupMapping",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2709,7 +2805,8 @@ class IdentityClient(object):
                 response_type="IdpGroupMapping",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_mfa_totp_device(self, user_id, **kwargs):
         """
@@ -2744,6 +2841,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_mfa_totp_device.py.html>`__ to see an example of how to use create_mfa_totp_device API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}/mfaTotpDevices"
         method = "POST"
         operation_name = "create_mfa_totp_device"
@@ -2798,7 +2897,8 @@ class IdentityClient(object):
                 response_type="MfaTotpDevice",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2808,7 +2908,8 @@ class IdentityClient(object):
                 response_type="MfaTotpDevice",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_network_source(self, create_network_source_details, **kwargs):
         """
@@ -2867,6 +2968,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_network_source.py.html>`__ to see an example of how to use create_network_source API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/networkSources"
         method = "POST"
         operation_name = "create_network_source"
@@ -2911,7 +3014,8 @@ class IdentityClient(object):
                 response_type="NetworkSources",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2921,7 +3025,8 @@ class IdentityClient(object):
                 response_type="NetworkSources",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_o_auth_client_credential(self, user_id, create_o_auth2_client_credential_details, **kwargs):
         """
@@ -2959,6 +3064,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_o_auth_client_credential.py.html>`__ to see an example of how to use create_o_auth_client_credential API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}/oauth2ClientCredentials"
         method = "POST"
         operation_name = "create_o_auth_client_credential"
@@ -3014,7 +3121,8 @@ class IdentityClient(object):
                 response_type="OAuth2ClientCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3025,7 +3133,8 @@ class IdentityClient(object):
                 response_type="OAuth2ClientCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_or_reset_ui_password(self, user_id, **kwargs):
         """
@@ -3076,6 +3185,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_or_reset_ui_password.py.html>`__ to see an example of how to use create_or_reset_ui_password API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}/uiPassword"
         method = "POST"
         operation_name = "create_or_reset_ui_password"
@@ -3130,7 +3241,8 @@ class IdentityClient(object):
                 response_type="UIPassword",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3140,7 +3252,8 @@ class IdentityClient(object):
                 response_type="UIPassword",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_policy(self, create_policy_details, **kwargs):
         """
@@ -3195,6 +3308,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_policy.py.html>`__ to see an example of how to use create_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/policies"
         method = "POST"
         operation_name = "create_policy"
@@ -3239,7 +3354,8 @@ class IdentityClient(object):
                 response_type="Policy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3249,7 +3365,8 @@ class IdentityClient(object):
                 response_type="Policy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_region_subscription(self, create_region_subscription_details, tenancy_id, **kwargs):
         """
@@ -3287,6 +3404,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_region_subscription.py.html>`__ to see an example of how to use create_region_subscription API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tenancyId']
         resource_path = "/tenancies/{tenancyId}/regionSubscriptions"
         method = "POST"
         operation_name = "create_region_subscription"
@@ -3342,7 +3461,8 @@ class IdentityClient(object):
                 response_type="RegionSubscription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3353,7 +3473,8 @@ class IdentityClient(object):
                 response_type="RegionSubscription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_smtp_credential(self, create_smtp_credential_details, user_id, **kwargs):
         """
@@ -3394,6 +3515,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_smtp_credential.py.html>`__ to see an example of how to use create_smtp_credential API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}/smtpCredentials"
         method = "POST"
         operation_name = "create_smtp_credential"
@@ -3449,7 +3572,8 @@ class IdentityClient(object):
                 response_type="SmtpCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3460,7 +3584,8 @@ class IdentityClient(object):
                 response_type="SmtpCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_swift_password(self, create_swift_password_details, user_id, **kwargs):
         """
@@ -3511,6 +3636,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_swift_password.py.html>`__ to see an example of how to use create_swift_password API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}/swiftPasswords"
         method = "POST"
         operation_name = "create_swift_password"
@@ -3566,7 +3693,8 @@ class IdentityClient(object):
                 response_type="SwiftPassword",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3577,7 +3705,8 @@ class IdentityClient(object):
                 response_type="SwiftPassword",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_tag(self, tag_namespace_id, create_tag_details, **kwargs):
         """
@@ -3639,6 +3768,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_tag.py.html>`__ to see an example of how to use create_tag API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tagNamespaceId']
         resource_path = "/tagNamespaces/{tagNamespaceId}/tags"
         method = "POST"
         operation_name = "create_tag"
@@ -3701,7 +3832,8 @@ class IdentityClient(object):
                 response_type="Tag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3713,7 +3845,8 @@ class IdentityClient(object):
                 response_type="Tag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_tag_default(self, create_tag_default_details, **kwargs):
         """
@@ -3759,6 +3892,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_tag_default.py.html>`__ to see an example of how to use create_tag_default API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/tagDefaults"
         method = "POST"
         operation_name = "create_tag_default"
@@ -3805,7 +3940,8 @@ class IdentityClient(object):
                 response_type="TagDefault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3815,7 +3951,8 @@ class IdentityClient(object):
                 response_type="TagDefault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_tag_namespace(self, create_tag_namespace_details, **kwargs):
         """
@@ -3863,6 +4000,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_tag_namespace.py.html>`__ to see an example of how to use create_tag_namespace API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/tagNamespaces"
         method = "POST"
         operation_name = "create_tag_namespace"
@@ -3907,7 +4046,8 @@ class IdentityClient(object):
                 response_type="TagNamespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3917,7 +4057,8 @@ class IdentityClient(object):
                 response_type="TagNamespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_user(self, create_user_details, **kwargs):
         """
@@ -3990,6 +4131,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_user.py.html>`__ to see an example of how to use create_user API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/users"
         method = "POST"
         operation_name = "create_user"
@@ -4034,7 +4177,8 @@ class IdentityClient(object):
                 response_type="User",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4044,7 +4188,8 @@ class IdentityClient(object):
                 response_type="User",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def deactivate_domain(self, domain_id, **kwargs):
         """
@@ -4096,6 +4241,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/deactivate_domain.py.html>`__ to see an example of how to use deactivate_domain API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['domainId']
         resource_path = "/domains/{domainId}/actions/deactivate"
         method = "POST"
         operation_name = "deactivate_domain"
@@ -4153,7 +4300,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4162,7 +4310,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_api_key(self, user_id, fingerprint, **kwargs):
         """
@@ -4203,6 +4352,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_api_key.py.html>`__ to see an example of how to use delete_api_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId', 'fingerprint']
         resource_path = "/users/{userId}/apiKeys/{fingerprint}"
         method = "DELETE"
         operation_name = "delete_api_key"
@@ -4256,7 +4407,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4265,7 +4417,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_auth_token(self, user_id, auth_token_id, **kwargs):
         """
@@ -4301,6 +4454,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_auth_token.py.html>`__ to see an example of how to use delete_auth_token API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId', 'authTokenId']
         resource_path = "/users/{userId}/authTokens/{authTokenId}"
         method = "DELETE"
         operation_name = "delete_auth_token"
@@ -4354,7 +4509,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4363,7 +4519,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_compartment(self, compartment_id, **kwargs):
         """
@@ -4396,6 +4553,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_compartment.py.html>`__ to see an example of how to use delete_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/compartments/{compartmentId}"
         method = "DELETE"
         operation_name = "delete_compartment"
@@ -4448,7 +4607,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4457,7 +4617,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_customer_secret_key(self, user_id, customer_secret_key_id, **kwargs):
         """
@@ -4493,6 +4654,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_customer_secret_key.py.html>`__ to see an example of how to use delete_customer_secret_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId', 'customerSecretKeyId']
         resource_path = "/users/{userId}/customerSecretKeys/{customerSecretKeyId}"
         method = "DELETE"
         operation_name = "delete_customer_secret_key"
@@ -4546,7 +4709,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4555,7 +4719,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_db_credential(self, user_id, db_credential_id, **kwargs):
         """
@@ -4595,6 +4760,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_db_credential.py.html>`__ to see an example of how to use delete_db_credential API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId', 'dbCredentialId']
         resource_path = "/users/{userId}/dbCredentials/{dbCredentialId}"
         method = "DELETE"
         operation_name = "delete_db_credential"
@@ -4650,7 +4817,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4659,7 +4827,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_domain(self, domain_id, **kwargs):
         """
@@ -4702,6 +4871,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_domain.py.html>`__ to see an example of how to use delete_domain API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['domainId']
         resource_path = "/domains/{domainId}"
         method = "DELETE"
         operation_name = "delete_domain"
@@ -4756,7 +4927,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4765,7 +4937,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_dynamic_group(self, dynamic_group_id, **kwargs):
         """
@@ -4798,6 +4971,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_dynamic_group.py.html>`__ to see an example of how to use delete_dynamic_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dynamicGroupId']
         resource_path = "/dynamicGroups/{dynamicGroupId}"
         method = "DELETE"
         operation_name = "delete_dynamic_group"
@@ -4850,7 +5025,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4859,7 +5035,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_group(self, group_id, **kwargs):
         """
@@ -4892,6 +5069,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_group.py.html>`__ to see an example of how to use delete_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['groupId']
         resource_path = "/groups/{groupId}"
         method = "DELETE"
         operation_name = "delete_group"
@@ -4944,7 +5123,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4953,7 +5133,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_identity_provider(self, identity_provider_id, **kwargs):
         """
@@ -4991,6 +5172,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_identity_provider.py.html>`__ to see an example of how to use delete_identity_provider API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['identityProviderId']
         resource_path = "/identityProviders/{identityProviderId}"
         method = "DELETE"
         operation_name = "delete_identity_provider"
@@ -5043,7 +5226,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5052,7 +5236,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_idp_group_mapping(self, identity_provider_id, mapping_id, **kwargs):
         """
@@ -5092,6 +5277,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_idp_group_mapping.py.html>`__ to see an example of how to use delete_idp_group_mapping API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['identityProviderId', 'mappingId']
         resource_path = "/identityProviders/{identityProviderId}/groupMappings/{mappingId}"
         method = "DELETE"
         operation_name = "delete_idp_group_mapping"
@@ -5145,7 +5332,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5154,7 +5342,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_mfa_totp_device(self, user_id, mfa_totp_device_id, **kwargs):
         """
@@ -5190,6 +5379,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_mfa_totp_device.py.html>`__ to see an example of how to use delete_mfa_totp_device API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId', 'mfaTotpDeviceId']
         resource_path = "/users/{userId}/mfaTotpDevices/{mfaTotpDeviceId}"
         method = "DELETE"
         operation_name = "delete_mfa_totp_device"
@@ -5243,7 +5434,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5252,7 +5444,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_network_source(self, network_source_id, **kwargs):
         """
@@ -5285,6 +5478,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_network_source.py.html>`__ to see an example of how to use delete_network_source API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkSourceId']
         resource_path = "/networkSources/{networkSourceId}"
         method = "DELETE"
         operation_name = "delete_network_source"
@@ -5337,7 +5532,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5346,7 +5542,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_o_auth_client_credential(self, user_id, oauth2_client_credential_id, **kwargs):
         """
@@ -5382,6 +5579,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_o_auth_client_credential.py.html>`__ to see an example of how to use delete_o_auth_client_credential API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId', 'oauth2ClientCredentialId']
         resource_path = "/users/{userId}/oauth2ClientCredentials/{oauth2ClientCredentialId}"
         method = "DELETE"
         operation_name = "delete_o_auth_client_credential"
@@ -5435,7 +5634,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5444,7 +5644,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_policy(self, policy_id, **kwargs):
         """
@@ -5477,6 +5678,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_policy.py.html>`__ to see an example of how to use delete_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['policyId']
         resource_path = "/policies/{policyId}"
         method = "DELETE"
         operation_name = "delete_policy"
@@ -5529,7 +5732,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5538,7 +5742,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_smtp_credential(self, user_id, smtp_credential_id, **kwargs):
         """
@@ -5574,6 +5779,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_smtp_credential.py.html>`__ to see an example of how to use delete_smtp_credential API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId', 'smtpCredentialId']
         resource_path = "/users/{userId}/smtpCredentials/{smtpCredentialId}"
         method = "DELETE"
         operation_name = "delete_smtp_credential"
@@ -5627,7 +5834,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5636,7 +5844,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_swift_password(self, user_id, swift_password_id, **kwargs):
         """
@@ -5674,6 +5883,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_swift_password.py.html>`__ to see an example of how to use delete_swift_password API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId', 'swiftPasswordId']
         resource_path = "/users/{userId}/swiftPasswords/{swiftPasswordId}"
         method = "DELETE"
         operation_name = "delete_swift_password"
@@ -5727,7 +5938,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5736,7 +5948,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_tag(self, tag_namespace_id, tag_name, **kwargs):
         """
@@ -5794,6 +6007,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_tag.py.html>`__ to see an example of how to use delete_tag API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tagNamespaceId', 'tagName']
         resource_path = "/tagNamespaces/{tagNamespaceId}/tags/{tagName}"
         method = "DELETE"
         operation_name = "delete_tag"
@@ -5854,7 +6069,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5864,7 +6080,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_tag_default(self, tag_default_id, **kwargs):
         """
@@ -5904,6 +6121,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_tag_default.py.html>`__ to see an example of how to use delete_tag_default API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tagDefaultId']
         resource_path = "/tagDefaults/{tagDefaultId}"
         method = "DELETE"
         operation_name = "delete_tag_default"
@@ -5965,7 +6184,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5975,7 +6195,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_tag_namespace(self, tag_namespace_id, **kwargs):
         """
@@ -6021,6 +6242,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_tag_namespace.py.html>`__ to see an example of how to use delete_tag_namespace API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tagNamespaceId']
         resource_path = "/tagNamespaces/{tagNamespaceId}"
         method = "DELETE"
         operation_name = "delete_tag_namespace"
@@ -6082,7 +6305,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6092,7 +6316,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_user(self, user_id, **kwargs):
         """
@@ -6125,6 +6350,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_user.py.html>`__ to see an example of how to use delete_user API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}"
         method = "DELETE"
         operation_name = "delete_user"
@@ -6177,7 +6404,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6186,7 +6414,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def enable_replication_to_region(self, domain_id, enable_replication_to_region_details, **kwargs):
         """
@@ -6242,6 +6471,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/enable_replication_to_region.py.html>`__ to see an example of how to use enable_replication_to_region API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['domainId']
         resource_path = "/domains/{domainId}/actions/enableReplicationToRegion"
         method = "POST"
         operation_name = "enable_replication_to_region"
@@ -6300,7 +6531,8 @@ class IdentityClient(object):
                 body=enable_replication_to_region_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6310,7 +6542,8 @@ class IdentityClient(object):
                 body=enable_replication_to_region_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def generate_totp_seed(self, user_id, mfa_totp_device_id, **kwargs):
         """
@@ -6346,6 +6579,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/generate_totp_seed.py.html>`__ to see an example of how to use generate_totp_seed API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId', 'mfaTotpDeviceId']
         resource_path = "/users/{userId}/mfaTotpDevices/{mfaTotpDeviceId}/actions/generateSeed"
         method = "POST"
         operation_name = "generate_totp_seed"
@@ -6400,7 +6635,8 @@ class IdentityClient(object):
                 response_type="MfaTotpDevice",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6410,7 +6646,8 @@ class IdentityClient(object):
                 response_type="MfaTotpDevice",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_authentication_policy(self, compartment_id, **kwargs):
         """
@@ -6439,6 +6676,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_authentication_policy.py.html>`__ to see an example of how to use get_authentication_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/authenticationPolicies/{compartmentId}"
         method = "GET"
         operation_name = "get_authentication_policy"
@@ -6485,7 +6724,8 @@ class IdentityClient(object):
                 response_type="AuthenticationPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6495,7 +6735,8 @@ class IdentityClient(object):
                 response_type="AuthenticationPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_compartment(self, compartment_id, **kwargs):
         """
@@ -6530,6 +6771,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_compartment.py.html>`__ to see an example of how to use get_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/compartments/{compartmentId}"
         method = "GET"
         operation_name = "get_compartment"
@@ -6576,7 +6819,8 @@ class IdentityClient(object):
                 response_type="Compartment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6586,7 +6830,8 @@ class IdentityClient(object):
                 response_type="Compartment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_domain(self, domain_id, **kwargs):
         """
@@ -6618,6 +6863,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_domain.py.html>`__ to see an example of how to use get_domain API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['domainId']
         resource_path = "/domains/{domainId}"
         method = "GET"
         operation_name = "get_domain"
@@ -6671,7 +6918,8 @@ class IdentityClient(object):
                 response_type="Domain",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6681,7 +6929,8 @@ class IdentityClient(object):
                 response_type="Domain",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_dynamic_group(self, dynamic_group_id, **kwargs):
         """
@@ -6709,6 +6958,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_dynamic_group.py.html>`__ to see an example of how to use get_dynamic_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dynamicGroupId']
         resource_path = "/dynamicGroups/{dynamicGroupId}"
         method = "GET"
         operation_name = "get_dynamic_group"
@@ -6755,7 +7006,8 @@ class IdentityClient(object):
                 response_type="DynamicGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6765,7 +7017,8 @@ class IdentityClient(object):
                 response_type="DynamicGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_group(self, group_id, **kwargs):
         """
@@ -6797,6 +7050,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_group.py.html>`__ to see an example of how to use get_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['groupId']
         resource_path = "/groups/{groupId}"
         method = "GET"
         operation_name = "get_group"
@@ -6843,7 +7098,8 @@ class IdentityClient(object):
                 response_type="Group",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6853,7 +7109,8 @@ class IdentityClient(object):
                 response_type="Group",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_iam_work_request(self, iam_work_request_id, **kwargs):
         """
@@ -6885,6 +7142,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_iam_work_request.py.html>`__ to see an example of how to use get_iam_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['iamWorkRequestId']
         resource_path = "/iamWorkRequests/{iamWorkRequestId}"
         method = "GET"
         operation_name = "get_iam_work_request"
@@ -6938,7 +7197,8 @@ class IdentityClient(object):
                 response_type="IamWorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6948,7 +7208,8 @@ class IdentityClient(object):
                 response_type="IamWorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_identity_provider(self, identity_provider_id, **kwargs):
         """
@@ -6980,6 +7241,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_identity_provider.py.html>`__ to see an example of how to use get_identity_provider API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['identityProviderId']
         resource_path = "/identityProviders/{identityProviderId}"
         method = "GET"
         operation_name = "get_identity_provider"
@@ -7026,7 +7289,8 @@ class IdentityClient(object):
                 response_type="IdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7036,7 +7300,8 @@ class IdentityClient(object):
                 response_type="IdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_idp_group_mapping(self, identity_provider_id, mapping_id, **kwargs):
         """
@@ -7071,6 +7336,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_idp_group_mapping.py.html>`__ to see an example of how to use get_idp_group_mapping API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['identityProviderId', 'mappingId']
         resource_path = "/identityProviders/{identityProviderId}/groupMappings/{mappingId}"
         method = "GET"
         operation_name = "get_idp_group_mapping"
@@ -7118,7 +7385,8 @@ class IdentityClient(object):
                 response_type="IdpGroupMapping",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7128,7 +7396,8 @@ class IdentityClient(object):
                 response_type="IdpGroupMapping",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_mfa_totp_device(self, user_id, mfa_totp_device_id, **kwargs):
         """
@@ -7159,6 +7428,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_mfa_totp_device.py.html>`__ to see an example of how to use get_mfa_totp_device API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId', 'mfaTotpDeviceId']
         resource_path = "/users/{userId}/mfaTotpDevices/{mfaTotpDeviceId}"
         method = "GET"
         operation_name = "get_mfa_totp_device"
@@ -7206,7 +7477,8 @@ class IdentityClient(object):
                 response_type="MfaTotpDeviceSummary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7216,7 +7488,8 @@ class IdentityClient(object):
                 response_type="MfaTotpDeviceSummary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_network_source(self, network_source_id, **kwargs):
         """
@@ -7244,6 +7517,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_network_source.py.html>`__ to see an example of how to use get_network_source API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkSourceId']
         resource_path = "/networkSources/{networkSourceId}"
         method = "GET"
         operation_name = "get_network_source"
@@ -7290,7 +7565,8 @@ class IdentityClient(object):
                 response_type="NetworkSources",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7300,7 +7576,8 @@ class IdentityClient(object):
                 response_type="NetworkSources",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_policy(self, policy_id, **kwargs):
         """
@@ -7328,6 +7605,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_policy.py.html>`__ to see an example of how to use get_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['policyId']
         resource_path = "/policies/{policyId}"
         method = "GET"
         operation_name = "get_policy"
@@ -7374,7 +7653,8 @@ class IdentityClient(object):
                 response_type="Policy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7384,7 +7664,8 @@ class IdentityClient(object):
                 response_type="Policy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_standard_tag_template(self, compartment_id, standard_tag_namespace_name, **kwargs):
         """
@@ -7415,6 +7696,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_standard_tag_template.py.html>`__ to see an example of how to use get_standard_tag_template API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['standardTagNamespaceName', 'compartmentId']
         resource_path = "/tags/standardTagNamespaceTemplates/{standardTagNamespaceName}"
         method = "GET"
         operation_name = "get_standard_tag_template"
@@ -7467,7 +7750,8 @@ class IdentityClient(object):
                 response_type="StandardTagNamespaceTemplate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7478,7 +7762,8 @@ class IdentityClient(object):
                 response_type="StandardTagNamespaceTemplate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_tag(self, tag_namespace_id, tag_name, **kwargs):
         """
@@ -7509,6 +7794,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_tag.py.html>`__ to see an example of how to use get_tag API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tagNamespaceId', 'tagName']
         resource_path = "/tagNamespaces/{tagNamespaceId}/tags/{tagName}"
         method = "GET"
         operation_name = "get_tag"
@@ -7556,7 +7843,8 @@ class IdentityClient(object):
                 response_type="Tag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7566,7 +7854,8 @@ class IdentityClient(object):
                 response_type="Tag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_tag_default(self, tag_default_id, **kwargs):
         """
@@ -7594,6 +7883,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_tag_default.py.html>`__ to see an example of how to use get_tag_default API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tagDefaultId']
         resource_path = "/tagDefaults/{tagDefaultId}"
         method = "GET"
         operation_name = "get_tag_default"
@@ -7640,7 +7931,8 @@ class IdentityClient(object):
                 response_type="TagDefault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7650,7 +7942,8 @@ class IdentityClient(object):
                 response_type="TagDefault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_tag_namespace(self, tag_namespace_id, **kwargs):
         """
@@ -7678,6 +7971,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_tag_namespace.py.html>`__ to see an example of how to use get_tag_namespace API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tagNamespaceId']
         resource_path = "/tagNamespaces/{tagNamespaceId}"
         method = "GET"
         operation_name = "get_tag_namespace"
@@ -7724,7 +8019,8 @@ class IdentityClient(object):
                 response_type="TagNamespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7734,7 +8030,8 @@ class IdentityClient(object):
                 response_type="TagNamespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_tagging_work_request(self, work_request_id, **kwargs):
         """
@@ -7763,6 +8060,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_tagging_work_request.py.html>`__ to see an example of how to use get_tagging_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/taggingWorkRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_tagging_work_request"
@@ -7809,7 +8108,8 @@ class IdentityClient(object):
                 response_type="TaggingWorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7819,7 +8119,8 @@ class IdentityClient(object):
                 response_type="TaggingWorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_tenancy(self, tenancy_id, **kwargs):
         """
@@ -7847,6 +8148,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_tenancy.py.html>`__ to see an example of how to use get_tenancy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tenancyId']
         resource_path = "/tenancies/{tenancyId}"
         method = "GET"
         operation_name = "get_tenancy"
@@ -7893,7 +8196,8 @@ class IdentityClient(object):
                 response_type="Tenancy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7903,7 +8207,8 @@ class IdentityClient(object):
                 response_type="Tenancy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_user(self, user_id, **kwargs):
         """
@@ -7931,6 +8236,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_user.py.html>`__ to see an example of how to use get_user API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}"
         method = "GET"
         operation_name = "get_user"
@@ -7977,7 +8284,8 @@ class IdentityClient(object):
                 response_type="User",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7987,7 +8295,8 @@ class IdentityClient(object):
                 response_type="User",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_user_group_membership(self, user_group_membership_id, **kwargs):
         """
@@ -8015,6 +8324,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_user_group_membership.py.html>`__ to see an example of how to use get_user_group_membership API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userGroupMembershipId']
         resource_path = "/userGroupMemberships/{userGroupMembershipId}"
         method = "GET"
         operation_name = "get_user_group_membership"
@@ -8061,7 +8372,8 @@ class IdentityClient(object):
                 response_type="UserGroupMembership",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8071,7 +8383,8 @@ class IdentityClient(object):
                 response_type="UserGroupMembership",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_user_ui_password_information(self, user_id, **kwargs):
         """
@@ -8100,6 +8413,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_user_ui_password_information.py.html>`__ to see an example of how to use get_user_ui_password_information API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}/uiPassword"
         method = "GET"
         operation_name = "get_user_ui_password_information"
@@ -8146,7 +8461,8 @@ class IdentityClient(object):
                 response_type="UIPasswordInformation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8156,7 +8472,8 @@ class IdentityClient(object):
                 response_type="UIPasswordInformation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -8185,6 +8502,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -8231,7 +8550,8 @@ class IdentityClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8241,7 +8561,8 @@ class IdentityClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def import_standard_tags(self, **kwargs):
         """
@@ -8281,6 +8602,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/import_standard_tags.py.html>`__ to see an example of how to use import_standard_tags API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/tags/actions/importStandardTags"
         method = "POST"
         operation_name = "import_standard_tags"
@@ -8327,7 +8650,8 @@ class IdentityClient(object):
                 body=kwargs.get('import_standard_tags_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8336,7 +8660,8 @@ class IdentityClient(object):
                 body=kwargs.get('import_standard_tags_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_allowed_domain_license_types(self, **kwargs):
         """
@@ -8372,6 +8697,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_allowed_domain_license_types.py.html>`__ to see an example of how to use list_allowed_domain_license_types API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/allowedDomainLicenseTypes"
         method = "GET"
         operation_name = "list_allowed_domain_license_types"
@@ -8421,7 +8748,8 @@ class IdentityClient(object):
                 response_type="list[AllowedDomainLicenseTypeSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8431,7 +8759,8 @@ class IdentityClient(object):
                 response_type="list[AllowedDomainLicenseTypeSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_api_keys(self, user_id, **kwargs):
         """
@@ -8462,6 +8791,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_api_keys.py.html>`__ to see an example of how to use list_api_keys API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}/apiKeys"
         method = "GET"
         operation_name = "list_api_keys"
@@ -8508,7 +8839,8 @@ class IdentityClient(object):
                 response_type="list[ApiKey]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8518,7 +8850,8 @@ class IdentityClient(object):
                 response_type="list[ApiKey]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_auth_tokens(self, user_id, **kwargs):
         """
@@ -8547,6 +8880,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_auth_tokens.py.html>`__ to see an example of how to use list_auth_tokens API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}/authTokens"
         method = "GET"
         operation_name = "list_auth_tokens"
@@ -8593,7 +8928,8 @@ class IdentityClient(object):
                 response_type="list[AuthToken]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8603,7 +8939,8 @@ class IdentityClient(object):
                 response_type="list[AuthToken]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_availability_domains(self, compartment_id, **kwargs):
         """
@@ -8637,6 +8974,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_availability_domains.py.html>`__ to see an example of how to use list_availability_domains API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/availabilityDomains"
         method = "GET"
         operation_name = "list_availability_domains"
@@ -8678,7 +9017,8 @@ class IdentityClient(object):
                 response_type="list[AvailabilityDomain]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8688,7 +9028,8 @@ class IdentityClient(object):
                 response_type="list[AvailabilityDomain]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_bulk_action_resource_types(self, bulk_action_type, **kwargs):
         """
@@ -8732,6 +9073,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_bulk_action_resource_types.py.html>`__ to see an example of how to use list_bulk_action_resource_types API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bulkActionType']
         resource_path = "/compartments/bulkActionResourceTypes"
         method = "GET"
         operation_name = "list_bulk_action_resource_types"
@@ -8787,7 +9130,8 @@ class IdentityClient(object):
                 response_type="BulkActionResourceTypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8797,7 +9141,8 @@ class IdentityClient(object):
                 response_type="BulkActionResourceTypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_bulk_edit_tags_resource_types(self, **kwargs):
         """
@@ -8828,6 +9173,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_bulk_edit_tags_resource_types.py.html>`__ to see an example of how to use list_bulk_edit_tags_resource_types API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/tags/bulkEditResourceTypes"
         method = "GET"
         operation_name = "list_bulk_edit_tags_resource_types"
@@ -8876,7 +9223,8 @@ class IdentityClient(object):
                 response_type="BulkEditTagsResourceTypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8886,7 +9234,8 @@ class IdentityClient(object):
                 response_type="BulkEditTagsResourceTypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_compartments(self, compartment_id, **kwargs):
         """
@@ -8983,6 +9332,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_compartments.py.html>`__ to see an example of how to use list_compartments API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/compartments"
         method = "GET"
         operation_name = "list_compartments"
@@ -9072,7 +9423,8 @@ class IdentityClient(object):
                 response_type="list[Compartment]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9082,7 +9434,8 @@ class IdentityClient(object):
                 response_type="list[Compartment]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_cost_tracking_tags(self, compartment_id, **kwargs):
         """
@@ -9119,6 +9472,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_cost_tracking_tags.py.html>`__ to see an example of how to use list_cost_tracking_tags API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/tagNamespaces/actions/listCostTrackingTags"
         method = "GET"
         operation_name = "list_cost_tracking_tags"
@@ -9168,7 +9523,8 @@ class IdentityClient(object):
                 response_type="list[Tag]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9178,7 +9534,8 @@ class IdentityClient(object):
                 response_type="list[Tag]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_customer_secret_keys(self, user_id, **kwargs):
         """
@@ -9207,6 +9564,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_customer_secret_keys.py.html>`__ to see an example of how to use list_customer_secret_keys API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}/customerSecretKeys"
         method = "GET"
         operation_name = "list_customer_secret_keys"
@@ -9253,7 +9612,8 @@ class IdentityClient(object):
                 response_type="list[CustomerSecretKeySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9263,7 +9623,8 @@ class IdentityClient(object):
                 response_type="list[CustomerSecretKeySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_db_credentials(self, user_id, **kwargs):
         """
@@ -9327,6 +9688,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_db_credentials.py.html>`__ to see an example of how to use list_db_credentials API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}/dbCredentials"
         method = "GET"
         operation_name = "list_db_credentials"
@@ -9418,7 +9781,8 @@ class IdentityClient(object):
                 response_type="list[DbCredentialSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9429,7 +9793,8 @@ class IdentityClient(object):
                 response_type="list[DbCredentialSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_domains(self, compartment_id, **kwargs):
         """
@@ -9511,6 +9876,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_domains.py.html>`__ to see an example of how to use list_domains API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/domains"
         method = "GET"
         operation_name = "list_domains"
@@ -9604,7 +9971,8 @@ class IdentityClient(object):
                 response_type="list[DomainSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9614,7 +9982,8 @@ class IdentityClient(object):
                 response_type="list[DomainSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_dynamic_groups(self, compartment_id, **kwargs):
         """
@@ -9678,6 +10047,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_dynamic_groups.py.html>`__ to see an example of how to use list_dynamic_groups API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/dynamicGroups"
         method = "GET"
         operation_name = "list_dynamic_groups"
@@ -9756,7 +10127,8 @@ class IdentityClient(object):
                 response_type="list[DynamicGroup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9766,7 +10138,8 @@ class IdentityClient(object):
                 response_type="list[DynamicGroup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_fault_domains(self, compartment_id, availability_domain, **kwargs):
         """
@@ -9801,6 +10174,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_fault_domains.py.html>`__ to see an example of how to use list_fault_domains API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'availabilityDomain']
         resource_path = "/faultDomains"
         method = "GET"
         operation_name = "list_fault_domains"
@@ -9843,7 +10218,8 @@ class IdentityClient(object):
                 response_type="list[FaultDomain]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9853,7 +10229,8 @@ class IdentityClient(object):
                 response_type="list[FaultDomain]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_groups(self, compartment_id, **kwargs):
         """
@@ -9917,6 +10294,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_groups.py.html>`__ to see an example of how to use list_groups API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/groups"
         method = "GET"
         operation_name = "list_groups"
@@ -9995,7 +10374,8 @@ class IdentityClient(object):
                 response_type="list[Group]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10005,7 +10385,8 @@ class IdentityClient(object):
                 response_type="list[Group]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_iam_work_request_errors(self, iam_work_request_id, **kwargs):
         """
@@ -10049,6 +10430,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_iam_work_request_errors.py.html>`__ to see an example of how to use list_iam_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['iamWorkRequestId']
         resource_path = "/iamWorkRequests/{iamWorkRequestId}/errors"
         method = "GET"
         operation_name = "list_iam_work_request_errors"
@@ -10120,7 +10503,8 @@ class IdentityClient(object):
                 response_type="list[IamWorkRequestErrorSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10131,7 +10515,8 @@ class IdentityClient(object):
                 response_type="list[IamWorkRequestErrorSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_iam_work_request_logs(self, iam_work_request_id, **kwargs):
         """
@@ -10175,6 +10560,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_iam_work_request_logs.py.html>`__ to see an example of how to use list_iam_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['iamWorkRequestId']
         resource_path = "/iamWorkRequests/{iamWorkRequestId}/logs"
         method = "GET"
         operation_name = "list_iam_work_request_logs"
@@ -10246,7 +10633,8 @@ class IdentityClient(object):
                 response_type="list[IamWorkRequestLogSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10257,7 +10645,8 @@ class IdentityClient(object):
                 response_type="list[IamWorkRequestLogSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_iam_work_requests(self, compartment_id, **kwargs):
         """
@@ -10298,6 +10687,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_iam_work_requests.py.html>`__ to see an example of how to use list_iam_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/iamWorkRequests"
         method = "GET"
         operation_name = "list_iam_work_requests"
@@ -10352,7 +10743,8 @@ class IdentityClient(object):
                 response_type="list[IamWorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10362,7 +10754,8 @@ class IdentityClient(object):
                 response_type="list[IamWorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_identity_provider_groups(self, identity_provider_id, **kwargs):
         """
@@ -10408,6 +10801,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_identity_provider_groups.py.html>`__ to see an example of how to use list_identity_provider_groups API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['identityProviderId']
         resource_path = "/identityProviders/{identityProviderId}/groups"
         method = "GET"
         operation_name = "list_identity_provider_groups"
@@ -10478,7 +10873,8 @@ class IdentityClient(object):
                 response_type="list[IdentityProviderGroupSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10489,7 +10885,8 @@ class IdentityClient(object):
                 response_type="list[IdentityProviderGroupSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_identity_providers(self, protocol, compartment_id, **kwargs):
         """
@@ -10562,6 +10959,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_identity_providers.py.html>`__ to see an example of how to use list_identity_providers API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['protocol', 'compartmentId']
         resource_path = "/identityProviders"
         method = "GET"
         operation_name = "list_identity_providers"
@@ -10641,7 +11040,8 @@ class IdentityClient(object):
                 response_type="list[IdentityProvider]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10651,7 +11051,8 @@ class IdentityClient(object):
                 response_type="list[IdentityProvider]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_idp_group_mappings(self, identity_provider_id, **kwargs):
         """
@@ -10689,6 +11090,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_idp_group_mappings.py.html>`__ to see an example of how to use list_idp_group_mappings API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['identityProviderId']
         resource_path = "/identityProviders/{identityProviderId}/groupMappings"
         method = "GET"
         operation_name = "list_idp_group_mappings"
@@ -10748,7 +11151,8 @@ class IdentityClient(object):
                 response_type="list[IdpGroupMapping]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10759,7 +11163,8 @@ class IdentityClient(object):
                 response_type="list[IdpGroupMapping]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_mfa_totp_devices(self, user_id, **kwargs):
         """
@@ -10812,6 +11217,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_mfa_totp_devices.py.html>`__ to see an example of how to use list_mfa_totp_devices API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}/mfaTotpDevices"
         method = "GET"
         operation_name = "list_mfa_totp_devices"
@@ -10889,7 +11296,8 @@ class IdentityClient(object):
                 response_type="list[MfaTotpDeviceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10900,7 +11308,8 @@ class IdentityClient(object):
                 response_type="list[MfaTotpDeviceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_network_sources(self, compartment_id, **kwargs):
         """
@@ -10964,6 +11373,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_network_sources.py.html>`__ to see an example of how to use list_network_sources API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/networkSources"
         method = "GET"
         operation_name = "list_network_sources"
@@ -11042,7 +11453,8 @@ class IdentityClient(object):
                 response_type="list[NetworkSourcesSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11052,7 +11464,8 @@ class IdentityClient(object):
                 response_type="list[NetworkSourcesSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_o_auth_client_credentials(self, user_id, **kwargs):
         """
@@ -11091,6 +11504,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_o_auth_client_credentials.py.html>`__ to see an example of how to use list_o_auth_client_credentials API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}/oauth2ClientCredentials"
         method = "GET"
         operation_name = "list_o_auth_client_credentials"
@@ -11159,7 +11574,8 @@ class IdentityClient(object):
                 response_type="list[OAuth2ClientCredentialSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11170,7 +11586,8 @@ class IdentityClient(object):
                 response_type="list[OAuth2ClientCredentialSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_policies(self, compartment_id, **kwargs):
         """
@@ -11236,6 +11653,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_policies.py.html>`__ to see an example of how to use list_policies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/policies"
         method = "GET"
         operation_name = "list_policies"
@@ -11314,7 +11733,8 @@ class IdentityClient(object):
                 response_type="list[Policy]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11324,7 +11744,8 @@ class IdentityClient(object):
                 response_type="list[Policy]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_region_subscriptions(self, tenancy_id, **kwargs):
         """
@@ -11352,6 +11773,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_region_subscriptions.py.html>`__ to see an example of how to use list_region_subscriptions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tenancyId']
         resource_path = "/tenancies/{tenancyId}/regionSubscriptions"
         method = "GET"
         operation_name = "list_region_subscriptions"
@@ -11398,7 +11821,8 @@ class IdentityClient(object):
                 response_type="list[RegionSubscription]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11408,7 +11832,8 @@ class IdentityClient(object):
                 response_type="list[RegionSubscription]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_regions(self, **kwargs):
         """
@@ -11433,6 +11858,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_regions.py.html>`__ to see an example of how to use list_regions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/regions"
         method = "GET"
         operation_name = "list_regions"
@@ -11468,7 +11895,8 @@ class IdentityClient(object):
                 response_type="list[Region]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11477,7 +11905,8 @@ class IdentityClient(object):
                 response_type="list[Region]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_smtp_credentials(self, user_id, **kwargs):
         """
@@ -11506,6 +11935,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_smtp_credentials.py.html>`__ to see an example of how to use list_smtp_credentials API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}/smtpCredentials"
         method = "GET"
         operation_name = "list_smtp_credentials"
@@ -11552,7 +11983,8 @@ class IdentityClient(object):
                 response_type="list[SmtpCredentialSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11562,7 +11994,8 @@ class IdentityClient(object):
                 response_type="list[SmtpCredentialSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_standard_tag_namespaces(self, compartment_id, **kwargs):
         """
@@ -11596,6 +12029,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_standard_tag_namespaces.py.html>`__ to see an example of how to use list_standard_tag_namespaces API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/tags/standardTagNamespaceTemplates"
         method = "GET"
         operation_name = "list_standard_tag_namespaces"
@@ -11645,7 +12080,8 @@ class IdentityClient(object):
                 response_type="list[StandardTagNamespaceTemplateSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11655,7 +12091,8 @@ class IdentityClient(object):
                 response_type="list[StandardTagNamespaceTemplateSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_swift_passwords(self, user_id, **kwargs):
         """
@@ -11686,6 +12123,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_swift_passwords.py.html>`__ to see an example of how to use list_swift_passwords API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}/swiftPasswords"
         method = "GET"
         operation_name = "list_swift_passwords"
@@ -11732,7 +12171,8 @@ class IdentityClient(object):
                 response_type="list[SwiftPassword]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11742,7 +12182,8 @@ class IdentityClient(object):
                 response_type="list[SwiftPassword]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_tag_defaults(self, **kwargs):
         """
@@ -11787,6 +12228,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tag_defaults.py.html>`__ to see an example of how to use list_tag_defaults API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/tagDefaults"
         method = "GET"
         operation_name = "list_tag_defaults"
@@ -11850,7 +12293,8 @@ class IdentityClient(object):
                 response_type="list[TagDefaultSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11860,7 +12304,8 @@ class IdentityClient(object):
                 response_type="list[TagDefaultSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_tag_namespaces(self, compartment_id, **kwargs):
         """
@@ -11903,6 +12348,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tag_namespaces.py.html>`__ to see an example of how to use list_tag_namespaces API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/tagNamespaces"
         method = "GET"
         operation_name = "list_tag_namespaces"
@@ -11963,7 +12410,8 @@ class IdentityClient(object):
                 response_type="list[TagNamespaceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11973,7 +12421,8 @@ class IdentityClient(object):
                 response_type="list[TagNamespaceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_tagging_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -12007,6 +12456,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tagging_work_request_errors.py.html>`__ to see an example of how to use list_tagging_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/taggingWorkRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_tagging_work_request_errors"
@@ -12066,7 +12517,8 @@ class IdentityClient(object):
                 response_type="list[TaggingWorkRequestErrorSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12077,7 +12529,8 @@ class IdentityClient(object):
                 response_type="list[TaggingWorkRequestErrorSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_tagging_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -12111,6 +12564,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tagging_work_request_logs.py.html>`__ to see an example of how to use list_tagging_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/taggingWorkRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_tagging_work_request_logs"
@@ -12170,7 +12625,8 @@ class IdentityClient(object):
                 response_type="list[TaggingWorkRequestLogSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12181,7 +12637,8 @@ class IdentityClient(object):
                 response_type="list[TaggingWorkRequestLogSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_tagging_work_requests(self, compartment_id, **kwargs):
         """
@@ -12218,6 +12675,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tagging_work_requests.py.html>`__ to see an example of how to use list_tagging_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/taggingWorkRequests"
         method = "GET"
         operation_name = "list_tagging_work_requests"
@@ -12269,7 +12728,8 @@ class IdentityClient(object):
                 response_type="list[TaggingWorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12279,7 +12739,8 @@ class IdentityClient(object):
                 response_type="list[TaggingWorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_tags(self, tag_namespace_id, **kwargs):
         """
@@ -12318,6 +12779,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_tags.py.html>`__ to see an example of how to use list_tags API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tagNamespaceId']
         resource_path = "/tagNamespaces/{tagNamespaceId}/tags"
         method = "GET"
         operation_name = "list_tags"
@@ -12386,7 +12849,8 @@ class IdentityClient(object):
                 response_type="list[TagSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12397,7 +12861,8 @@ class IdentityClient(object):
                 response_type="list[TagSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_user_group_memberships(self, compartment_id, **kwargs):
         """
@@ -12448,6 +12913,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_user_group_memberships.py.html>`__ to see an example of how to use list_user_group_memberships API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/userGroupMemberships"
         method = "GET"
         operation_name = "list_user_group_memberships"
@@ -12501,7 +12968,8 @@ class IdentityClient(object):
                 response_type="list[UserGroupMembership]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12511,7 +12979,8 @@ class IdentityClient(object):
                 response_type="list[UserGroupMembership]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_users(self, compartment_id, **kwargs):
         """
@@ -12581,6 +13050,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_users.py.html>`__ to see an example of how to use list_users API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/users"
         method = "GET"
         operation_name = "list_users"
@@ -12663,7 +13134,8 @@ class IdentityClient(object):
                 response_type="list[User]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12673,7 +13145,8 @@ class IdentityClient(object):
                 response_type="list[User]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -12710,6 +13183,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -12761,7 +13236,8 @@ class IdentityClient(object):
                 response_type="list[WorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12771,7 +13247,8 @@ class IdentityClient(object):
                 response_type="list[WorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def move_compartment(self, compartment_id, move_compartment_details, **kwargs):
         """
@@ -12827,6 +13304,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/move_compartment.py.html>`__ to see an example of how to use move_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/compartments/{compartmentId}/actions/moveCompartment"
         method = "POST"
         operation_name = "move_compartment"
@@ -12885,7 +13364,8 @@ class IdentityClient(object):
                 body=move_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12895,7 +13375,8 @@ class IdentityClient(object):
                 body=move_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def recover_compartment(self, compartment_id, **kwargs):
         """
@@ -12932,6 +13413,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/recover_compartment.py.html>`__ to see an example of how to use recover_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/compartments/{compartmentId}/actions/recoverCompartment"
         method = "POST"
         operation_name = "recover_compartment"
@@ -12987,7 +13470,8 @@ class IdentityClient(object):
                 response_type="Compartment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12997,7 +13481,8 @@ class IdentityClient(object):
                 response_type="Compartment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_tag_default_lock(self, tag_default_id, remove_lock_details, **kwargs):
         """
@@ -13044,6 +13529,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/remove_tag_default_lock.py.html>`__ to see an example of how to use remove_tag_default_lock API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tagDefaultId']
         resource_path = "/tagDefaults/{tagDefaultId}/actions/removeLock"
         method = "POST"
         operation_name = "remove_tag_default_lock"
@@ -13103,7 +13590,8 @@ class IdentityClient(object):
                 response_type="TagDefault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13114,7 +13602,8 @@ class IdentityClient(object):
                 response_type="TagDefault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_tag_namespace_lock(self, tag_namespace_id, remove_lock_details, **kwargs):
         """
@@ -13161,6 +13650,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/remove_tag_namespace_lock.py.html>`__ to see an example of how to use remove_tag_namespace_lock API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tagNamespaceId']
         resource_path = "/tagNamespaces/{tagNamespaceId}/actions/removeLock"
         method = "POST"
         operation_name = "remove_tag_namespace_lock"
@@ -13220,7 +13711,8 @@ class IdentityClient(object):
                 response_type="TagNamespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13231,7 +13723,8 @@ class IdentityClient(object):
                 response_type="TagNamespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_user_from_group(self, user_group_membership_id, **kwargs):
         """
@@ -13264,6 +13757,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/remove_user_from_group.py.html>`__ to see an example of how to use remove_user_from_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userGroupMembershipId']
         resource_path = "/userGroupMemberships/{userGroupMembershipId}"
         method = "DELETE"
         operation_name = "remove_user_from_group"
@@ -13316,7 +13811,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13325,7 +13821,8 @@ class IdentityClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def reset_idp_scim_client(self, identity_provider_id, **kwargs):
         """
@@ -13353,6 +13850,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/reset_idp_scim_client.py.html>`__ to see an example of how to use reset_idp_scim_client API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['identityProviderId']
         resource_path = "/identityProviders/{identityProviderId}/actions/resetScimClient"
         method = "POST"
         operation_name = "reset_idp_scim_client"
@@ -13399,7 +13898,8 @@ class IdentityClient(object):
                 response_type="ScimClientCredentials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13409,7 +13909,8 @@ class IdentityClient(object):
                 response_type="ScimClientCredentials",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_auth_token(self, user_id, auth_token_id, update_auth_token_details, **kwargs):
         """
@@ -13448,6 +13949,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_auth_token.py.html>`__ to see an example of how to use update_auth_token API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId', 'authTokenId']
         resource_path = "/users/{userId}/authTokens/{authTokenId}"
         method = "PUT"
         operation_name = "update_auth_token"
@@ -13503,7 +14006,8 @@ class IdentityClient(object):
                 response_type="AuthToken",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13514,7 +14018,8 @@ class IdentityClient(object):
                 response_type="AuthToken",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_authentication_policy(self, compartment_id, update_authentication_policy_details, **kwargs):
         """
@@ -13550,6 +14055,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_authentication_policy.py.html>`__ to see an example of how to use update_authentication_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/authenticationPolicies/{compartmentId}"
         method = "PUT"
         operation_name = "update_authentication_policy"
@@ -13604,7 +14111,8 @@ class IdentityClient(object):
                 response_type="AuthenticationPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13615,7 +14123,8 @@ class IdentityClient(object):
                 response_type="AuthenticationPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_compartment(self, compartment_id, update_compartment_details, **kwargs):
         """
@@ -13651,6 +14160,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_compartment.py.html>`__ to see an example of how to use update_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/compartments/{compartmentId}"
         method = "PUT"
         operation_name = "update_compartment"
@@ -13705,7 +14216,8 @@ class IdentityClient(object):
                 response_type="Compartment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13716,7 +14228,8 @@ class IdentityClient(object):
                 response_type="Compartment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_customer_secret_key(self, user_id, customer_secret_key_id, update_customer_secret_key_details, **kwargs):
         """
@@ -13755,6 +14268,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_customer_secret_key.py.html>`__ to see an example of how to use update_customer_secret_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId', 'customerSecretKeyId']
         resource_path = "/users/{userId}/customerSecretKeys/{customerSecretKeyId}"
         method = "PUT"
         operation_name = "update_customer_secret_key"
@@ -13810,7 +14325,8 @@ class IdentityClient(object):
                 response_type="CustomerSecretKeySummary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13821,7 +14337,8 @@ class IdentityClient(object):
                 response_type="CustomerSecretKeySummary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_domain(self, domain_id, update_domain_details, **kwargs):
         """
@@ -13864,6 +14381,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_domain.py.html>`__ to see an example of how to use update_domain API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['domainId']
         resource_path = "/domains/{domainId}"
         method = "PUT"
         operation_name = "update_domain"
@@ -13919,7 +14438,8 @@ class IdentityClient(object):
                 body=update_domain_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13929,7 +14449,8 @@ class IdentityClient(object):
                 body=update_domain_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_dynamic_group(self, dynamic_group_id, update_dynamic_group_details, **kwargs):
         """
@@ -13965,6 +14486,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_dynamic_group.py.html>`__ to see an example of how to use update_dynamic_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dynamicGroupId']
         resource_path = "/dynamicGroups/{dynamicGroupId}"
         method = "PUT"
         operation_name = "update_dynamic_group"
@@ -14019,7 +14542,8 @@ class IdentityClient(object):
                 response_type="DynamicGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14030,7 +14554,8 @@ class IdentityClient(object):
                 response_type="DynamicGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_group(self, group_id, update_group_details, **kwargs):
         """
@@ -14066,6 +14591,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_group.py.html>`__ to see an example of how to use update_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['groupId']
         resource_path = "/groups/{groupId}"
         method = "PUT"
         operation_name = "update_group"
@@ -14120,7 +14647,8 @@ class IdentityClient(object):
                 response_type="Group",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14131,7 +14659,8 @@ class IdentityClient(object):
                 response_type="Group",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_identity_provider(self, identity_provider_id, update_identity_provider_details, **kwargs):
         """
@@ -14171,6 +14700,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_identity_provider.py.html>`__ to see an example of how to use update_identity_provider API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['identityProviderId']
         resource_path = "/identityProviders/{identityProviderId}"
         method = "PUT"
         operation_name = "update_identity_provider"
@@ -14225,7 +14756,8 @@ class IdentityClient(object):
                 response_type="IdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14236,7 +14768,8 @@ class IdentityClient(object):
                 response_type="IdentityProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_idp_group_mapping(self, identity_provider_id, mapping_id, update_idp_group_mapping_details, **kwargs):
         """
@@ -14279,6 +14812,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_idp_group_mapping.py.html>`__ to see an example of how to use update_idp_group_mapping API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['identityProviderId', 'mappingId']
         resource_path = "/identityProviders/{identityProviderId}/groupMappings/{mappingId}"
         method = "PUT"
         operation_name = "update_idp_group_mapping"
@@ -14334,7 +14869,8 @@ class IdentityClient(object):
                 response_type="IdpGroupMapping",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14345,7 +14881,8 @@ class IdentityClient(object):
                 response_type="IdpGroupMapping",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_network_source(self, network_source_id, update_network_source_details, **kwargs):
         """
@@ -14381,6 +14918,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_network_source.py.html>`__ to see an example of how to use update_network_source API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkSourceId']
         resource_path = "/networkSources/{networkSourceId}"
         method = "PUT"
         operation_name = "update_network_source"
@@ -14435,7 +14974,8 @@ class IdentityClient(object):
                 response_type="NetworkSources",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14446,7 +14986,8 @@ class IdentityClient(object):
                 response_type="NetworkSources",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_o_auth_client_credential(self, user_id, oauth2_client_credential_id, update_o_auth2_client_credential_details, **kwargs):
         """
@@ -14485,6 +15026,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_o_auth_client_credential.py.html>`__ to see an example of how to use update_o_auth_client_credential API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId', 'oauth2ClientCredentialId']
         resource_path = "/users/{userId}/oauth2ClientCredentials/{oauth2ClientCredentialId}"
         method = "PUT"
         operation_name = "update_o_auth_client_credential"
@@ -14540,7 +15083,8 @@ class IdentityClient(object):
                 response_type="OAuth2ClientCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14551,7 +15095,8 @@ class IdentityClient(object):
                 response_type="OAuth2ClientCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_policy(self, policy_id, update_policy_details, **kwargs):
         """
@@ -14589,6 +15134,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_policy.py.html>`__ to see an example of how to use update_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['policyId']
         resource_path = "/policies/{policyId}"
         method = "PUT"
         operation_name = "update_policy"
@@ -14643,7 +15190,8 @@ class IdentityClient(object):
                 response_type="Policy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14654,7 +15202,8 @@ class IdentityClient(object):
                 response_type="Policy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_smtp_credential(self, user_id, smtp_credential_id, update_smtp_credential_details, **kwargs):
         """
@@ -14693,6 +15242,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_smtp_credential.py.html>`__ to see an example of how to use update_smtp_credential API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId', 'smtpCredentialId']
         resource_path = "/users/{userId}/smtpCredentials/{smtpCredentialId}"
         method = "PUT"
         operation_name = "update_smtp_credential"
@@ -14748,7 +15299,8 @@ class IdentityClient(object):
                 response_type="SmtpCredentialSummary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14759,7 +15311,8 @@ class IdentityClient(object):
                 response_type="SmtpCredentialSummary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_swift_password(self, user_id, swift_password_id, update_swift_password_details, **kwargs):
         """
@@ -14800,6 +15353,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_swift_password.py.html>`__ to see an example of how to use update_swift_password API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId', 'swiftPasswordId']
         resource_path = "/users/{userId}/swiftPasswords/{swiftPasswordId}"
         method = "PUT"
         operation_name = "update_swift_password"
@@ -14855,7 +15410,8 @@ class IdentityClient(object):
                 response_type="SwiftPassword",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14866,7 +15422,8 @@ class IdentityClient(object):
                 response_type="SwiftPassword",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_tag(self, tag_namespace_id, tag_name, update_tag_details, **kwargs):
         """
@@ -14917,6 +15474,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_tag.py.html>`__ to see an example of how to use update_tag API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tagNamespaceId', 'tagName']
         resource_path = "/tagNamespaces/{tagNamespaceId}/tags/{tagName}"
         method = "PUT"
         operation_name = "update_tag"
@@ -14979,7 +15538,8 @@ class IdentityClient(object):
                 response_type="Tag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14991,7 +15551,8 @@ class IdentityClient(object):
                 response_type="Tag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_tag_default(self, tag_default_id, update_tag_default_details, **kwargs):
         """
@@ -15039,6 +15600,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_tag_default.py.html>`__ to see an example of how to use update_tag_default API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tagDefaultId']
         resource_path = "/tagDefaults/{tagDefaultId}"
         method = "PUT"
         operation_name = "update_tag_default"
@@ -15102,7 +15665,8 @@ class IdentityClient(object):
                 response_type="TagDefault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15114,7 +15678,8 @@ class IdentityClient(object):
                 response_type="TagDefault",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_tag_namespace(self, tag_namespace_id, update_tag_namespace_details, **kwargs):
         """
@@ -15158,6 +15723,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_tag_namespace.py.html>`__ to see an example of how to use update_tag_namespace API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tagNamespaceId']
         resource_path = "/tagNamespaces/{tagNamespaceId}"
         method = "PUT"
         operation_name = "update_tag_namespace"
@@ -15216,7 +15783,8 @@ class IdentityClient(object):
                 response_type="TagNamespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15228,7 +15796,8 @@ class IdentityClient(object):
                 response_type="TagNamespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_user(self, user_id, update_user_details, **kwargs):
         """
@@ -15264,6 +15833,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_user.py.html>`__ to see an example of how to use update_user API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}"
         method = "PUT"
         operation_name = "update_user"
@@ -15318,7 +15889,8 @@ class IdentityClient(object):
                 response_type="User",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15329,7 +15901,8 @@ class IdentityClient(object):
                 response_type="User",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_user_capabilities(self, user_id, update_user_capabilities_details, **kwargs):
         """
@@ -15365,6 +15938,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_user_capabilities.py.html>`__ to see an example of how to use update_user_capabilities API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}/capabilities"
         method = "PUT"
         operation_name = "update_user_capabilities"
@@ -15419,7 +15994,8 @@ class IdentityClient(object):
                 response_type="User",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15430,7 +16006,8 @@ class IdentityClient(object):
                 response_type="User",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_user_state(self, user_id, update_state_details, **kwargs):
         """
@@ -15466,6 +16043,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_user_state.py.html>`__ to see an example of how to use update_user_state API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}/state"
         method = "PUT"
         operation_name = "update_user_state"
@@ -15520,7 +16099,8 @@ class IdentityClient(object):
                 response_type="User",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15531,7 +16111,8 @@ class IdentityClient(object):
                 response_type="User",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def upload_api_key(self, user_id, create_api_key_details, **kwargs):
         """
@@ -15583,6 +16164,8 @@ class IdentityClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/upload_api_key.py.html>`__ to see an example of how to use upload_api_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userId']
         resource_path = "/users/{userId}/apiKeys"
         method = "POST"
         operation_name = "upload_api_key"
@@ -15638,7 +16221,8 @@ class IdentityClient(object):
                 response_type="ApiKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15649,4 +16233,5 @@ class IdentityClient(object):
                 response_type="ApiKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

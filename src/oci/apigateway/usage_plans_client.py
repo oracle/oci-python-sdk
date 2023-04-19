@@ -67,6 +67,9 @@ class UsagePlansClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -93,8 +96,10 @@ class UsagePlansClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20190501',
             'service_endpoint_template': 'https://apigateway.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -152,6 +157,8 @@ class UsagePlansClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/change_usage_plan_compartment.py.html>`__ to see an example of how to use change_usage_plan_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['usagePlanId']
         resource_path = "/usagePlans/{usagePlanId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_usage_plan_compartment"
@@ -208,7 +215,8 @@ class UsagePlansClient(object):
                 body=change_usage_plan_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -218,7 +226,8 @@ class UsagePlansClient(object):
                 body=change_usage_plan_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_usage_plan(self, create_usage_plan_details, **kwargs):
         """
@@ -256,6 +265,8 @@ class UsagePlansClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/create_usage_plan.py.html>`__ to see an example of how to use create_usage_plan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/usagePlans"
         method = "POST"
         operation_name = "create_usage_plan"
@@ -302,7 +313,8 @@ class UsagePlansClient(object):
                 response_type="UsagePlan",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -312,7 +324,8 @@ class UsagePlansClient(object):
                 response_type="UsagePlan",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_usage_plan(self, usage_plan_id, **kwargs):
         """
@@ -350,6 +363,8 @@ class UsagePlansClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/delete_usage_plan.py.html>`__ to see an example of how to use delete_usage_plan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['usagePlanId']
         resource_path = "/usagePlans/{usagePlanId}"
         method = "DELETE"
         operation_name = "delete_usage_plan"
@@ -402,7 +417,8 @@ class UsagePlansClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -411,7 +427,8 @@ class UsagePlansClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_usage_plan(self, usage_plan_id, **kwargs):
         """
@@ -442,6 +459,8 @@ class UsagePlansClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_usage_plan.py.html>`__ to see an example of how to use get_usage_plan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['usagePlanId']
         resource_path = "/usagePlans/{usagePlanId}"
         method = "GET"
         operation_name = "get_usage_plan"
@@ -495,7 +514,8 @@ class UsagePlansClient(object):
                 response_type="UsagePlan",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -505,7 +525,8 @@ class UsagePlansClient(object):
                 response_type="UsagePlan",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_usage_plans(self, compartment_id, **kwargs):
         """
@@ -566,6 +587,8 @@ class UsagePlansClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/list_usage_plans.py.html>`__ to see an example of how to use list_usage_plans API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/usagePlans"
         method = "GET"
         operation_name = "list_usage_plans"
@@ -647,7 +670,8 @@ class UsagePlansClient(object):
                 response_type="UsagePlanCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -657,7 +681,8 @@ class UsagePlansClient(object):
                 response_type="UsagePlanCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_usage_plan(self, usage_plan_id, update_usage_plan_details, **kwargs):
         """
@@ -698,6 +723,8 @@ class UsagePlansClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/update_usage_plan.py.html>`__ to see an example of how to use update_usage_plan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['usagePlanId']
         resource_path = "/usagePlans/{usagePlanId}"
         method = "PUT"
         operation_name = "update_usage_plan"
@@ -751,7 +778,8 @@ class UsagePlansClient(object):
                 body=update_usage_plan_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -761,4 +789,5 @@ class UsagePlansClient(object):
                 body=update_usage_plan_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

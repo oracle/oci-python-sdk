@@ -67,6 +67,9 @@ class GenericArtifactsContentClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -93,8 +96,10 @@ class GenericArtifactsContentClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20160918',
             'service_endpoint_template': 'https://generic.artifacts.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -144,6 +149,8 @@ class GenericArtifactsContentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/genericartifactscontent/get_generic_artifact_content.py.html>`__ to see an example of how to use get_generic_artifact_content API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['artifactId']
         resource_path = "/generic/artifacts/{artifactId}/content"
         method = "GET"
         operation_name = "get_generic_artifact_content"
@@ -195,7 +202,8 @@ class GenericArtifactsContentClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -205,7 +213,8 @@ class GenericArtifactsContentClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_generic_artifact_content_by_path(self, repository_id, artifact_path, version, **kwargs):
         """
@@ -255,6 +264,8 @@ class GenericArtifactsContentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/genericartifactscontent/get_generic_artifact_content_by_path.py.html>`__ to see an example of how to use get_generic_artifact_content_by_path API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId', 'artifactPath', 'version']
         resource_path = "/generic/repositories/{repositoryId}/artifactPaths/{artifactPath}/versions/{version}/content"
         method = "GET"
         operation_name = "get_generic_artifact_content_by_path"
@@ -308,7 +319,8 @@ class GenericArtifactsContentClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -318,7 +330,8 @@ class GenericArtifactsContentClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def put_generic_artifact_content_by_path(self, repository_id, artifact_path, version, generic_artifact_content_body, **kwargs):
         """
@@ -381,6 +394,8 @@ class GenericArtifactsContentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/genericartifactscontent/put_generic_artifact_content_by_path.py.html>`__ to see an example of how to use put_generic_artifact_content_by_path API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId', 'artifactPath', 'version']
         resource_path = "/generic/repositories/{repositoryId}/artifactPaths/{artifactPath}/versions/{version}/content"
         method = "PUT"
         operation_name = "put_generic_artifact_content_by_path"
@@ -459,7 +474,8 @@ class GenericArtifactsContentClient(object):
                 enforce_content_headers=False,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -471,4 +487,5 @@ class GenericArtifactsContentClient(object):
                 enforce_content_headers=False,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

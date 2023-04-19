@@ -65,6 +65,9 @@ class DatabaseRecoveryClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class DatabaseRecoveryClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20210216',
             'service_endpoint_template': 'https://recovery.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -143,6 +148,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/change_protected_database_compartment.py.html>`__ to see an example of how to use change_protected_database_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['protectedDatabaseId']
         resource_path = "/protectedDatabases/{protectedDatabaseId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_protected_database_compartment"
@@ -198,7 +205,8 @@ class DatabaseRecoveryClient(object):
                 body=change_protected_database_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -208,7 +216,8 @@ class DatabaseRecoveryClient(object):
                 body=change_protected_database_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_protection_policy_compartment(self, protection_policy_id, change_protection_policy_compartment_details, **kwargs):
         """
@@ -249,6 +258,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/change_protection_policy_compartment.py.html>`__ to see an example of how to use change_protection_policy_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['protectionPolicyId']
         resource_path = "/protectionPolicies/{protectionPolicyId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_protection_policy_compartment"
@@ -304,7 +315,8 @@ class DatabaseRecoveryClient(object):
                 body=change_protection_policy_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -314,7 +326,8 @@ class DatabaseRecoveryClient(object):
                 body=change_protection_policy_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_recovery_service_subnet_compartment(self, recovery_service_subnet_id, change_recovery_service_subnet_compartment_details, **kwargs):
         """
@@ -355,6 +368,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/change_recovery_service_subnet_compartment.py.html>`__ to see an example of how to use change_recovery_service_subnet_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['recoveryServiceSubnetId']
         resource_path = "/recoveryServiceSubnets/{recoveryServiceSubnetId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_recovery_service_subnet_compartment"
@@ -410,7 +425,8 @@ class DatabaseRecoveryClient(object):
                 body=change_recovery_service_subnet_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -420,7 +436,8 @@ class DatabaseRecoveryClient(object):
                 body=change_recovery_service_subnet_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_protected_database(self, create_protected_database_details, **kwargs):
         """
@@ -458,6 +475,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/create_protected_database.py.html>`__ to see an example of how to use create_protected_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/protectedDatabases"
         method = "POST"
         operation_name = "create_protected_database"
@@ -504,7 +523,8 @@ class DatabaseRecoveryClient(object):
                 response_type="ProtectedDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -514,7 +534,8 @@ class DatabaseRecoveryClient(object):
                 response_type="ProtectedDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_protection_policy(self, create_protection_policy_details, **kwargs):
         """
@@ -552,6 +573,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/create_protection_policy.py.html>`__ to see an example of how to use create_protection_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/protectionPolicies"
         method = "POST"
         operation_name = "create_protection_policy"
@@ -598,7 +621,8 @@ class DatabaseRecoveryClient(object):
                 response_type="ProtectionPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -608,7 +632,8 @@ class DatabaseRecoveryClient(object):
                 response_type="ProtectionPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_recovery_service_subnet(self, create_recovery_service_subnet_details, **kwargs):
         """
@@ -646,6 +671,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/create_recovery_service_subnet.py.html>`__ to see an example of how to use create_recovery_service_subnet API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/recoveryServiceSubnets"
         method = "POST"
         operation_name = "create_recovery_service_subnet"
@@ -692,7 +719,8 @@ class DatabaseRecoveryClient(object):
                 response_type="RecoveryServiceSubnet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -702,7 +730,8 @@ class DatabaseRecoveryClient(object):
                 response_type="RecoveryServiceSubnet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_protected_database(self, protected_database_id, **kwargs):
         """
@@ -740,6 +769,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/delete_protected_database.py.html>`__ to see an example of how to use delete_protected_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['protectedDatabaseId']
         resource_path = "/protectedDatabases/{protectedDatabaseId}"
         method = "DELETE"
         operation_name = "delete_protected_database"
@@ -794,7 +825,8 @@ class DatabaseRecoveryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -803,7 +835,8 @@ class DatabaseRecoveryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_protection_policy(self, protection_policy_id, **kwargs):
         """
@@ -842,6 +875,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/delete_protection_policy.py.html>`__ to see an example of how to use delete_protection_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['protectionPolicyId']
         resource_path = "/protectionPolicies/{protectionPolicyId}"
         method = "DELETE"
         operation_name = "delete_protection_policy"
@@ -896,7 +931,8 @@ class DatabaseRecoveryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -905,7 +941,8 @@ class DatabaseRecoveryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_recovery_service_subnet(self, recovery_service_subnet_id, **kwargs):
         """
@@ -943,6 +980,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/delete_recovery_service_subnet.py.html>`__ to see an example of how to use delete_recovery_service_subnet API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['recoveryServiceSubnetId']
         resource_path = "/recoveryServiceSubnets/{recoveryServiceSubnetId}"
         method = "DELETE"
         operation_name = "delete_recovery_service_subnet"
@@ -997,7 +1036,8 @@ class DatabaseRecoveryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1006,7 +1046,8 @@ class DatabaseRecoveryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def fetch_protected_database_configuration(self, protected_database_id, **kwargs):
         """
@@ -1047,6 +1088,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/fetch_protected_database_configuration.py.html>`__ to see an example of how to use fetch_protected_database_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['protectedDatabaseId']
         resource_path = "/protectedDatabases/{protectedDatabaseId}/actions/getConfiguration"
         method = "POST"
         operation_name = "fetch_protected_database_configuration"
@@ -1104,7 +1147,8 @@ class DatabaseRecoveryClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1115,7 +1159,8 @@ class DatabaseRecoveryClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_protected_database(self, protected_database_id, **kwargs):
         """
@@ -1146,6 +1191,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/get_protected_database.py.html>`__ to see an example of how to use get_protected_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['protectedDatabaseId']
         resource_path = "/protectedDatabases/{protectedDatabaseId}"
         method = "GET"
         operation_name = "get_protected_database"
@@ -1199,7 +1246,8 @@ class DatabaseRecoveryClient(object):
                 response_type="ProtectedDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1209,7 +1257,8 @@ class DatabaseRecoveryClient(object):
                 response_type="ProtectedDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_protection_policy(self, protection_policy_id, **kwargs):
         """
@@ -1240,6 +1289,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/get_protection_policy.py.html>`__ to see an example of how to use get_protection_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['protectionPolicyId']
         resource_path = "/protectionPolicies/{protectionPolicyId}"
         method = "GET"
         operation_name = "get_protection_policy"
@@ -1293,7 +1344,8 @@ class DatabaseRecoveryClient(object):
                 response_type="ProtectionPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1303,7 +1355,8 @@ class DatabaseRecoveryClient(object):
                 response_type="ProtectionPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_recovery_service_subnet(self, recovery_service_subnet_id, **kwargs):
         """
@@ -1334,6 +1387,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/get_recovery_service_subnet.py.html>`__ to see an example of how to use get_recovery_service_subnet API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['recoveryServiceSubnetId']
         resource_path = "/recoveryServiceSubnets/{recoveryServiceSubnetId}"
         method = "GET"
         operation_name = "get_recovery_service_subnet"
@@ -1387,7 +1442,8 @@ class DatabaseRecoveryClient(object):
                 response_type="RecoveryServiceSubnet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1397,7 +1453,8 @@ class DatabaseRecoveryClient(object):
                 response_type="RecoveryServiceSubnet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1428,6 +1485,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -1481,7 +1540,8 @@ class DatabaseRecoveryClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1491,7 +1551,8 @@ class DatabaseRecoveryClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_protected_databases(self, compartment_id, **kwargs):
         """
@@ -1561,6 +1622,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/list_protected_databases.py.html>`__ to see an example of how to use list_protected_databases API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/protectedDatabases"
         method = "GET"
         operation_name = "list_protected_databases"
@@ -1648,7 +1711,8 @@ class DatabaseRecoveryClient(object):
                 response_type="ProtectedDatabaseCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1658,7 +1722,8 @@ class DatabaseRecoveryClient(object):
                 response_type="ProtectedDatabaseCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_protection_policies(self, compartment_id, **kwargs):
         """
@@ -1727,6 +1792,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/list_protection_policies.py.html>`__ to see an example of how to use list_protection_policies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/protectionPolicies"
         method = "GET"
         operation_name = "list_protection_policies"
@@ -1819,7 +1886,8 @@ class DatabaseRecoveryClient(object):
                 response_type="ProtectionPolicyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1829,7 +1897,8 @@ class DatabaseRecoveryClient(object):
                 response_type="ProtectionPolicyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_recovery_service_subnets(self, compartment_id, **kwargs):
         """
@@ -1903,6 +1972,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/list_recovery_service_subnets.py.html>`__ to see an example of how to use list_recovery_service_subnets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/recoveryServiceSubnets"
         method = "GET"
         operation_name = "list_recovery_service_subnets"
@@ -1988,7 +2059,8 @@ class DatabaseRecoveryClient(object):
                 response_type="RecoveryServiceSubnetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1998,7 +2070,8 @@ class DatabaseRecoveryClient(object):
                 response_type="RecoveryServiceSubnetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -2048,6 +2121,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -2128,7 +2203,8 @@ class DatabaseRecoveryClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2139,7 +2215,8 @@ class DatabaseRecoveryClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -2189,6 +2266,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -2269,7 +2348,8 @@ class DatabaseRecoveryClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2280,7 +2360,8 @@ class DatabaseRecoveryClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -2341,6 +2422,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -2424,7 +2507,8 @@ class DatabaseRecoveryClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2434,7 +2518,8 @@ class DatabaseRecoveryClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_protected_database(self, protected_database_id, update_protected_database_details, **kwargs):
         """
@@ -2475,6 +2560,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/update_protected_database.py.html>`__ to see an example of how to use update_protected_database API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['protectedDatabaseId']
         resource_path = "/protectedDatabases/{protectedDatabaseId}"
         method = "PUT"
         operation_name = "update_protected_database"
@@ -2530,7 +2617,8 @@ class DatabaseRecoveryClient(object):
                 body=update_protected_database_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2540,7 +2628,8 @@ class DatabaseRecoveryClient(object):
                 body=update_protected_database_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_protection_policy(self, protection_policy_id, update_protection_policy_details, **kwargs):
         """
@@ -2581,6 +2670,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/update_protection_policy.py.html>`__ to see an example of how to use update_protection_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['protectionPolicyId']
         resource_path = "/protectionPolicies/{protectionPolicyId}"
         method = "PUT"
         operation_name = "update_protection_policy"
@@ -2636,7 +2727,8 @@ class DatabaseRecoveryClient(object):
                 body=update_protection_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2646,7 +2738,8 @@ class DatabaseRecoveryClient(object):
                 body=update_protection_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_recovery_service_subnet(self, recovery_service_subnet_id, update_recovery_service_subnet_details, **kwargs):
         """
@@ -2687,6 +2780,8 @@ class DatabaseRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/update_recovery_service_subnet.py.html>`__ to see an example of how to use update_recovery_service_subnet API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['recoveryServiceSubnetId']
         resource_path = "/recoveryServiceSubnets/{recoveryServiceSubnetId}"
         method = "PUT"
         operation_name = "update_recovery_service_subnet"
@@ -2742,7 +2837,8 @@ class DatabaseRecoveryClient(object):
                 body=update_recovery_service_subnet_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2752,4 +2848,5 @@ class DatabaseRecoveryClient(object):
                 body=update_recovery_service_subnet_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
