@@ -14,14 +14,14 @@ echo Creating venv to install sdk locally
 virtualenv .sdk-venv
 . .sdk-venv/bin/activate
 
-# Set up python3 pyenv(v3.8.6)
+# Set up python3 pyenv(v3.6.5)
 echo "Setup python environment"
 curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
-export PYTHON_3_VERSION=3.8.6
+export PYTHON_3_VERSION=3.6.5
 pyenv install $PYTHON_3_VERSION -s
 pyenv shell $PYTHON_3_VERSION
 
@@ -78,7 +78,7 @@ if [ $TEST_ENABLE = "false" ]; then
   echo "TESTS HAVE BEEN DISABLED."
 else
   pip install -r requirements.txt
-  tox -e flake8,py38 -- --vcr-record-mode=none
+  tox -e flake8,py36 -- --vcr-record-mode=none
 fi
 
 echo installing Wheel
