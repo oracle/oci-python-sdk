@@ -30,22 +30,29 @@ class ExternalDbSystemBasicInfo(object):
             The value to assign to the compartment_id property of this ExternalDbSystemBasicInfo.
         :type compartment_id: str
 
+        :param exadata_infra_info:
+            The value to assign to the exadata_infra_info property of this ExternalDbSystemBasicInfo.
+        :type exadata_infra_info: oci.database_management.models.ExternalExadataInfraBasicInfo
+
         """
         self.swagger_types = {
             'id': 'str',
             'display_name': 'str',
-            'compartment_id': 'str'
+            'compartment_id': 'str',
+            'exadata_infra_info': 'ExternalExadataInfraBasicInfo'
         }
 
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
-            'compartment_id': 'compartmentId'
+            'compartment_id': 'compartmentId',
+            'exadata_infra_info': 'exadataInfraInfo'
         }
 
         self._id = None
         self._display_name = None
         self._compartment_id = None
+        self._exadata_infra_info = None
 
     @property
     def id(self):
@@ -126,6 +133,26 @@ class ExternalDbSystemBasicInfo(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def exadata_infra_info(self):
+        """
+        Gets the exadata_infra_info of this ExternalDbSystemBasicInfo.
+
+        :return: The exadata_infra_info of this ExternalDbSystemBasicInfo.
+        :rtype: oci.database_management.models.ExternalExadataInfraBasicInfo
+        """
+        return self._exadata_infra_info
+
+    @exadata_infra_info.setter
+    def exadata_infra_info(self, exadata_infra_info):
+        """
+        Sets the exadata_infra_info of this ExternalDbSystemBasicInfo.
+
+        :param exadata_infra_info: The exadata_infra_info of this ExternalDbSystemBasicInfo.
+        :type: oci.database_management.models.ExternalExadataInfraBasicInfo
+        """
+        self._exadata_infra_info = exadata_infra_info
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.oci.dpd.dbmgmt.api</groupId>
         <artifactId>dbmgmt-dbadmin-spec</artifactId>
-        <version>20201101.153</version>
+        <version>20201101.173</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

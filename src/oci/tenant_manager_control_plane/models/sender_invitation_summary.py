@@ -74,6 +74,10 @@ class SenderInvitationSummary(object):
             The value to assign to the display_name property of this SenderInvitationSummary.
         :type display_name: str
 
+        :param subjects:
+            The value to assign to the subjects property of this SenderInvitationSummary.
+        :type subjects: list[oci.tenant_manager_control_plane.models.InvitationSubject]
+
         :param recipient_invitation_id:
             The value to assign to the recipient_invitation_id property of this SenderInvitationSummary.
         :type recipient_invitation_id: str
@@ -123,6 +127,7 @@ class SenderInvitationSummary(object):
             'id': 'str',
             'compartment_id': 'str',
             'display_name': 'str',
+            'subjects': 'list[InvitationSubject]',
             'recipient_invitation_id': 'str',
             'recipient_tenancy_id': 'str',
             'lifecycle_state': 'str',
@@ -139,6 +144,7 @@ class SenderInvitationSummary(object):
             'id': 'id',
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
+            'subjects': 'subjects',
             'recipient_invitation_id': 'recipientInvitationId',
             'recipient_tenancy_id': 'recipientTenancyId',
             'lifecycle_state': 'lifecycleState',
@@ -154,6 +160,7 @@ class SenderInvitationSummary(object):
         self._id = None
         self._compartment_id = None
         self._display_name = None
+        self._subjects = None
         self._recipient_invitation_id = None
         self._recipient_tenancy_id = None
         self._lifecycle_state = None
@@ -236,6 +243,30 @@ class SenderInvitationSummary(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def subjects(self):
+        """
+        **[Required]** Gets the subjects of this SenderInvitationSummary.
+        The list of subjects the invitation contains.
+
+
+        :return: The subjects of this SenderInvitationSummary.
+        :rtype: list[oci.tenant_manager_control_plane.models.InvitationSubject]
+        """
+        return self._subjects
+
+    @subjects.setter
+    def subjects(self, subjects):
+        """
+        Sets the subjects of this SenderInvitationSummary.
+        The list of subjects the invitation contains.
+
+
+        :param subjects: The subjects of this SenderInvitationSummary.
+        :type: list[oci.tenant_manager_control_plane.models.InvitationSubject]
+        """
+        self._subjects = subjects
 
     @property
     def recipient_invitation_id(self):
@@ -349,7 +380,7 @@ class SenderInvitationSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this SenderInvitationSummary.
-        Date-time when this sender invitation was created.
+        Date and time when the sender invitation was created.
 
 
         :return: The time_created of this SenderInvitationSummary.
@@ -361,7 +392,7 @@ class SenderInvitationSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this SenderInvitationSummary.
-        Date-time when this sender invitation was created.
+        Date and time when the sender invitation was created.
 
 
         :param time_created: The time_created of this SenderInvitationSummary.
@@ -373,7 +404,7 @@ class SenderInvitationSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this SenderInvitationSummary.
-        Date-time when this sender invitation was last updated.
+        Date and time when the sender invitation was last updated.
 
 
         :return: The time_updated of this SenderInvitationSummary.
@@ -385,7 +416,7 @@ class SenderInvitationSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this SenderInvitationSummary.
-        Date-time when this sender invitation was last updated.
+        Date and time when the sender invitation was last updated.
 
 
         :param time_updated: The time_updated of this SenderInvitationSummary.

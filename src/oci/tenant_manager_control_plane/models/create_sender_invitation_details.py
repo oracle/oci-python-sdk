@@ -34,6 +34,10 @@ class CreateSenderInvitationDetails(object):
             The value to assign to the display_name property of this CreateSenderInvitationDetails.
         :type display_name: str
 
+        :param subjects:
+            The value to assign to the subjects property of this CreateSenderInvitationDetails.
+        :type subjects: list[oci.tenant_manager_control_plane.models.InvitationSubject]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateSenderInvitationDetails.
         :type freeform_tags: dict(str, str)
@@ -48,6 +52,7 @@ class CreateSenderInvitationDetails(object):
             'recipient_tenancy_id': 'str',
             'recipient_email_address': 'str',
             'display_name': 'str',
+            'subjects': 'list[InvitationSubject]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -57,6 +62,7 @@ class CreateSenderInvitationDetails(object):
             'recipient_tenancy_id': 'recipientTenancyId',
             'recipient_email_address': 'recipientEmailAddress',
             'display_name': 'displayName',
+            'subjects': 'subjects',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -65,6 +71,7 @@ class CreateSenderInvitationDetails(object):
         self._recipient_tenancy_id = None
         self._recipient_email_address = None
         self._display_name = None
+        self._subjects = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -163,6 +170,30 @@ class CreateSenderInvitationDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def subjects(self):
+        """
+        Gets the subjects of this CreateSenderInvitationDetails.
+        The list of subjects this invitation contains.
+
+
+        :return: The subjects of this CreateSenderInvitationDetails.
+        :rtype: list[oci.tenant_manager_control_plane.models.InvitationSubject]
+        """
+        return self._subjects
+
+    @subjects.setter
+    def subjects(self, subjects):
+        """
+        Sets the subjects of this CreateSenderInvitationDetails.
+        The list of subjects this invitation contains.
+
+
+        :param subjects: The subjects of this CreateSenderInvitationDetails.
+        :type: list[oci.tenant_manager_control_plane.models.InvitationSubject]
+        """
+        self._subjects = subjects
 
     @property
     def freeform_tags(self):

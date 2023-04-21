@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class OrganizationClient(object):
     """
-    The Organizations API allows you to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and its resources.
+    Use the Organizations API to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and organization resources. For more information, see [Organization Management Overview](/iaas/Content/General/Concepts/organization_management_overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -115,7 +115,7 @@ class OrganizationClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            OCID of the compartment. Always a tenancy OCID.
 
         :param str organization_tenancy_id: (required)
             OCID of the child tenancy.
@@ -132,7 +132,7 @@ class OrganizationClient(object):
             server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            will be rejected.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -247,7 +247,7 @@ class OrganizationClient(object):
             server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            will be rejected.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -351,7 +351,7 @@ class OrganizationClient(object):
             server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            will be rejected.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -755,7 +755,7 @@ class OrganizationClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            OCID of the compartment. Always a tenancy OCID.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -852,7 +852,7 @@ class OrganizationClient(object):
 
     def restore_organization_tenancy(self, organization_tenancy_id, **kwargs):
         """
-        An asynchronous API to restore tenancy.
+        An asynchronous API to restore a tenancy.
 
 
         :param str organization_tenancy_id: (required)
@@ -959,7 +959,7 @@ class OrganizationClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            OCID of the compartment. Always a tenancy OCID.
 
         :param str organization_tenancy_id: (required)
             OCID of the child tenancy.
@@ -976,7 +976,7 @@ class OrganizationClient(object):
             server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            will be rejected.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1080,7 +1080,7 @@ class OrganizationClient(object):
 
     def update_organization(self, organization_id, update_organization_details, **kwargs):
         """
-        Assign the default subscription to the organization.
+        Map the default subscription to the organization.
 
 
         :param str organization_id: (required)
@@ -1104,7 +1104,7 @@ class OrganizationClient(object):
             server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            will be rejected.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

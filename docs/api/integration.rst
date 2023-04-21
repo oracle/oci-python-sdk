@@ -21,6 +21,7 @@ Integration
     oci.integration.models.AttachmentDetails
     oci.integration.models.ChangeIntegrationInstanceCompartmentDetails
     oci.integration.models.ChangeIntegrationInstanceNetworkEndpointDetails
+    oci.integration.models.ChangePrivateEndpointOutboundConnectionDetails
     oci.integration.models.CreateCustomEndpointDetails
     oci.integration.models.CreateIntegrationInstanceDetails
     oci.integration.models.CustomEndpointDetails
@@ -28,6 +29,9 @@ Integration
     oci.integration.models.IntegrationInstance
     oci.integration.models.IntegrationInstanceSummary
     oci.integration.models.NetworkEndpointDetails
+    oci.integration.models.NoneOutboundConnection
+    oci.integration.models.OutboundConnection
+    oci.integration.models.PrivateEndpointOutboundConnection
     oci.integration.models.PublicEndpointDetails
     oci.integration.models.UpdateCustomEndpointDetails
     oci.integration.models.UpdateIntegrationInstanceDetails

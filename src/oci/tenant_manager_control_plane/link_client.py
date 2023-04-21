@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class LinkClient(object):
     """
-    The Organizations API allows you to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and its resources.
+    Use the Organizations API to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and organization resources. For more information, see [Organization Management Overview](/iaas/Content/General/Concepts/organization_management_overview.htm).
     """
 
     def __init__(self, config, **kwargs):

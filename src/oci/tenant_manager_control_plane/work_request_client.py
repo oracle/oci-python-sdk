@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class WorkRequestClient(object):
     """
-    The Organizations API allows you to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and its resources.
+    Use the Organizations API to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and organization resources. For more information, see [Organization Management Overview](/iaas/Content/General/Concepts/organization_management_overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -463,7 +463,7 @@ class WorkRequestClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            OCID of the compartment. Always a tenancy OCID.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.

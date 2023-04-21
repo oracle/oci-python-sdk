@@ -118,6 +118,48 @@ def test_change_integration_instance_network_endpoint(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="&lt;tbd&gt;_ww@oracle.com" jiraProject="&lt;tbc&gt;" opsJiraProject="&lt;tbd&gt;"
+def test_change_private_endpoint_outbound_connection(testing_service_client):
+    if not testing_service_client.is_api_enabled('integration', 'ChangePrivateEndpointOutboundConnection'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('integration', util.camelize('integration_instance'), 'ChangePrivateEndpointOutboundConnection')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='integration', api_name='ChangePrivateEndpointOutboundConnection')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.integration.IntegrationInstanceClient(config, service_endpoint=service_endpoint)
+            response = client.change_private_endpoint_outbound_connection(
+                integration_instance_id=request.pop(util.camelize('integrationInstanceId')),
+                change_private_endpoint_outbound_connection_details=request.pop(util.camelize('ChangePrivateEndpointOutboundConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'integration',
+            'ChangePrivateEndpointOutboundConnection',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_private_endpoint_outbound_connection',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="&lt;tbd&gt;_ww@oracle.com" jiraProject="&lt;tbc&gt;" opsJiraProject="&lt;tbd&gt;"
 def test_create_integration_instance(testing_service_client):
     if not testing_service_client.is_api_enabled('integration', 'CreateIntegrationInstance'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -195,6 +237,47 @@ def test_delete_integration_instance(testing_service_client):
             service_error,
             'delete_integration_instance',
             True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="&lt;tbd&gt;_ww@oracle.com" jiraProject="&lt;tbc&gt;" opsJiraProject="&lt;tbd&gt;"
+def test_enable_process_automation(testing_service_client):
+    if not testing_service_client.is_api_enabled('integration', 'EnableProcessAutomation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('integration', util.camelize('integration_instance'), 'EnableProcessAutomation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='integration', api_name='EnableProcessAutomation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.integration.IntegrationInstanceClient(config, service_endpoint=service_endpoint)
+            response = client.enable_process_automation(
+                integration_instance_id=request.pop(util.camelize('integrationInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'integration',
+            'EnableProcessAutomation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'enable_process_automation',
+            False,
             False
         )
 

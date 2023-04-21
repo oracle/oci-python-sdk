@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class OrdersClient(object):
     """
-    The Organizations API allows you to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and its resources.
+    Use the Organizations API to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and organization resources. For more information, see [Organization Management Overview](/iaas/Content/General/Concepts/organization_management_overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -118,14 +118,14 @@ class OrdersClient(object):
             The information needed to activate an order in a tenancy.
 
         :param str activation_token: (required)
-            Activation Token containing an order ID. A JWT RFC 7519 formatted string.
+            Activation token containing an order ID. A JWT RFC 7519-formatted string.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request, so it can be retried in case of a timeout or
             server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            will be rejected.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -220,11 +220,11 @@ class OrdersClient(object):
 
     def get_order(self, activation_token, **kwargs):
         """
-        Returns the Order Details given by the order ID in the JWT.
+        Returns the order details given by the order ID in the JWT.
 
 
         :param str activation_token: (required)
-            Activation Token containing an order ID. A JWT RFC 7519 formatted string.
+            Activation token containing an order ID. A JWT RFC 7519-formatted string.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.

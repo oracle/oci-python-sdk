@@ -100,7 +100,7 @@ class Promotion(object):
     def duration(self):
         """
         Gets the duration of this Promotion.
-        How long the promotion related to the subscription, if any, is valid in duration units.
+        Specifies how long the promotion related to the subscription, if any, is valid in duration units.
 
 
         :return: The duration of this Promotion.
@@ -112,7 +112,7 @@ class Promotion(object):
     def duration(self, duration):
         """
         Sets the duration of this Promotion.
-        How long the promotion related to the subscription, if any, is valid in duration units.
+        Specifies how long the promotion related to the subscription, if any, is valid in duration units.
 
 
         :param duration: The duration of this Promotion.
@@ -148,7 +148,7 @@ class Promotion(object):
     def amount(self):
         """
         Gets the amount of this Promotion.
-        Total amount of credit for the promotion related to the subscription if there is one.
+        If a subscription is present, indicates the total amount of promotional subscription credit.
 
 
         :return: The amount of this Promotion.
@@ -160,7 +160,7 @@ class Promotion(object):
     def amount(self, amount):
         """
         Sets the amount of this Promotion.
-        Total amount of credit for the promotion related to the subscription if there is one.
+        If a subscription is present, indicates the total amount of promotional subscription credit.
 
 
         :param amount: The amount of this Promotion.
@@ -172,7 +172,7 @@ class Promotion(object):
     def status(self):
         """
         Gets the status of this Promotion.
-        Current status of the promotion related to the subscription if there is one.
+        If a subscription is present, indicates the current status of the subscription promotion.
 
         Allowed values for this property are: "INITIALIZED", "ACTIVE", "EXPIRED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -187,7 +187,7 @@ class Promotion(object):
     def status(self, status):
         """
         Sets the status of this Promotion.
-        Current status of the promotion related to the subscription if there is one.
+        If a subscription is present, indicates the current status of the subscription promotion.
 
 
         :param status: The status of this Promotion.
@@ -202,7 +202,7 @@ class Promotion(object):
     def is_intent_to_pay(self):
         """
         Gets the is_intent_to_pay of this Promotion.
-        Whether or not customer intends to pay once the promotion is done.
+        Speficies whether or not the customer intends to pay after the promotion has expired.
 
 
         :return: The is_intent_to_pay of this Promotion.
@@ -214,7 +214,7 @@ class Promotion(object):
     def is_intent_to_pay(self, is_intent_to_pay):
         """
         Sets the is_intent_to_pay of this Promotion.
-        Whether or not customer intends to pay once the promotion is done.
+        Speficies whether or not the customer intends to pay after the promotion has expired.
 
 
         :param is_intent_to_pay: The is_intent_to_pay of this Promotion.
@@ -250,7 +250,7 @@ class Promotion(object):
     def time_started(self):
         """
         Gets the time_started of this Promotion.
-        Date-time for when the promotion starts.
+        Date and time when the promotion starts.
 
 
         :return: The time_started of this Promotion.
@@ -262,7 +262,7 @@ class Promotion(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this Promotion.
-        Date-time for when the promotion starts.
+        Date and time when the promotion starts.
 
 
         :param time_started: The time_started of this Promotion.
@@ -274,7 +274,7 @@ class Promotion(object):
     def time_expired(self):
         """
         Gets the time_expired of this Promotion.
-        Date-time for when the promotion ends.
+        Date and time when the promotion ends.
 
 
         :return: The time_expired of this Promotion.
@@ -286,7 +286,7 @@ class Promotion(object):
     def time_expired(self, time_expired):
         """
         Sets the time_expired of this Promotion.
-        Date-time for when the promotion ends.
+        Date and time when the promotion ends.
 
 
         :param time_expired: The time_expired of this Promotion.

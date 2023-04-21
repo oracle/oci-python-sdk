@@ -246,6 +246,7 @@ from .modify_database_management_details import ModifyDatabaseManagementDetails
 from .modify_pluggable_database_management_details import ModifyPluggableDatabaseManagementDetails
 from .month import Month
 from .mount_type_details import MountTypeDetails
+from .network_bonding_mode_details import NetworkBondingModeDetails
 from .node_details import NodeDetails
 from .ocp_us import OCPUs
 from .operations_insights_config import OperationsInsightsConfig
@@ -572,6 +573,7 @@ database_type_mapping = {
     "ModifyPluggableDatabaseManagementDetails": ModifyPluggableDatabaseManagementDetails,
     "Month": Month,
     "MountTypeDetails": MountTypeDetails,
+    "NetworkBondingModeDetails": NetworkBondingModeDetails,
     "NodeDetails": NodeDetails,
     "OCPUs": OCPUs,
     "OperationsInsightsConfig": OperationsInsightsConfig,

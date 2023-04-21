@@ -314,6 +314,48 @@ def test_change_external_db_system_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_change_external_exadata_infrastructure_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ChangeExternalExadataInfrastructureCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ChangeExternalExadataInfrastructureCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ChangeExternalExadataInfrastructureCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.change_external_exadata_infrastructure_compartment(
+                external_exadata_infrastructure_id=request.pop(util.camelize('externalExadataInfrastructureId')),
+                change_external_exadata_infrastructure_compartment_details=request.pop(util.camelize('ChangeExternalExadataInfrastructureCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ChangeExternalExadataInfrastructureCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_external_exadata_infrastructure_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_change_job_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'ChangeJobCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -433,6 +475,47 @@ def test_check_external_db_system_connector_connection_status(testing_service_cl
             result,
             service_error,
             'externalDbSystemConnector',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_check_external_exadata_storage_connector(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'CheckExternalExadataStorageConnector'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'CheckExternalExadataStorageConnector')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='CheckExternalExadataStorageConnector')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.check_external_exadata_storage_connector(
+                external_exadata_storage_connector_id=request.pop(util.camelize('externalExadataStorageConnectorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'CheckExternalExadataStorageConnector',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalExadataStorageConnectorStatus',
             False,
             False
         )
@@ -597,6 +680,88 @@ def test_create_external_db_system_discovery(testing_service_client):
             result,
             service_error,
             'externalDbSystemDiscovery',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_create_external_exadata_infrastructure(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'CreateExternalExadataInfrastructure'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'CreateExternalExadataInfrastructure')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='CreateExternalExadataInfrastructure')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.create_external_exadata_infrastructure(
+                create_external_exadata_infrastructure_details=request.pop(util.camelize('CreateExternalExadataInfrastructureDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'CreateExternalExadataInfrastructure',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalExadataInfrastructure',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_create_external_exadata_storage_connector(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'CreateExternalExadataStorageConnector'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'CreateExternalExadataStorageConnector')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='CreateExternalExadataStorageConnector')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.create_external_exadata_storage_connector(
+                create_external_exadata_storage_connector_details=request.pop(util.camelize('CreateExternalExadataStorageConnectorDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'CreateExternalExadataStorageConnector',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalExadataStorageConnector',
             False,
             False
         )
@@ -891,6 +1056,88 @@ def test_delete_external_db_system_discovery(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_delete_external_exadata_infrastructure(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'DeleteExternalExadataInfrastructure'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'DeleteExternalExadataInfrastructure')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='DeleteExternalExadataInfrastructure')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.delete_external_exadata_infrastructure(
+                external_exadata_infrastructure_id=request.pop(util.camelize('externalExadataInfrastructureId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'DeleteExternalExadataInfrastructure',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_external_exadata_infrastructure',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_delete_external_exadata_storage_connector(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'DeleteExternalExadataStorageConnector'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'DeleteExternalExadataStorageConnector')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='DeleteExternalExadataStorageConnector')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.delete_external_exadata_storage_connector(
+                external_exadata_storage_connector_id=request.pop(util.camelize('externalExadataStorageConnectorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'DeleteExternalExadataStorageConnector',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_external_exadata_storage_connector',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_delete_job(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'DeleteJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1056,6 +1303,88 @@ def test_disable_external_db_system_database_management(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_disable_external_exadata_infrastructure_management(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'DisableExternalExadataInfrastructureManagement'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'DisableExternalExadataInfrastructureManagement')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='DisableExternalExadataInfrastructureManagement')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.disable_external_exadata_infrastructure_management(
+                external_exadata_infrastructure_id=request.pop(util.camelize('externalExadataInfrastructureId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'DisableExternalExadataInfrastructureManagement',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'disable_external_exadata_infrastructure_management',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_discover_external_exadata_infrastructure(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'DiscoverExternalExadataInfrastructure'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'DiscoverExternalExadataInfrastructure')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='DiscoverExternalExadataInfrastructure')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.discover_external_exadata_infrastructure(
+                discover_external_exadata_infrastructure_details=request.pop(util.camelize('DiscoverExternalExadataInfrastructureDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'DiscoverExternalExadataInfrastructure',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalExadataInfrastructureDiscovery',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_drop_tablespace(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'DropTablespace'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1135,6 +1464,48 @@ def test_enable_external_db_system_database_management(testing_service_client):
             result,
             service_error,
             'enable_external_db_system_database_management',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_enable_external_exadata_infrastructure_management(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'EnableExternalExadataInfrastructureManagement'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'EnableExternalExadataInfrastructureManagement')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='EnableExternalExadataInfrastructureManagement')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.enable_external_exadata_infrastructure_management(
+                external_exadata_infrastructure_id=request.pop(util.camelize('externalExadataInfrastructureId')),
+                enable_external_exadata_infrastructure_management_details=request.pop(util.camelize('EnableExternalExadataInfrastructureManagementDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'EnableExternalExadataInfrastructureManagement',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'enable_external_exadata_infrastructure_management',
             False,
             False
         )
@@ -1846,6 +2217,170 @@ def test_get_external_db_system_discovery(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_external_exadata_infrastructure(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetExternalExadataInfrastructure'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetExternalExadataInfrastructure')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetExternalExadataInfrastructure')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_external_exadata_infrastructure(
+                external_exadata_infrastructure_id=request.pop(util.camelize('externalExadataInfrastructureId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetExternalExadataInfrastructure',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalExadataInfrastructure',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_external_exadata_storage_connector(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetExternalExadataStorageConnector'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetExternalExadataStorageConnector')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetExternalExadataStorageConnector')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_external_exadata_storage_connector(
+                external_exadata_storage_connector_id=request.pop(util.camelize('externalExadataStorageConnectorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetExternalExadataStorageConnector',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalExadataStorageConnector',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_external_exadata_storage_grid(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetExternalExadataStorageGrid'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetExternalExadataStorageGrid')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetExternalExadataStorageGrid')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_external_exadata_storage_grid(
+                external_exadata_storage_grid_id=request.pop(util.camelize('externalExadataStorageGridId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetExternalExadataStorageGrid',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalExadataStorageGrid',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_external_exadata_storage_server(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetExternalExadataStorageServer'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetExternalExadataStorageServer')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetExternalExadataStorageServer')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_external_exadata_storage_server(
+                external_exadata_storage_server_id=request.pop(util.camelize('externalExadataStorageServerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetExternalExadataStorageServer',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalExadataStorageServer',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_get_external_listener(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'GetExternalListener'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1881,6 +2416,47 @@ def test_get_external_listener(testing_service_client):
             result,
             service_error,
             'externalListener',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_iorm_plan(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetIormPlan'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetIormPlan')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetIormPlan')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_iorm_plan(
+                external_exadata_storage_server_id=request.pop(util.camelize('externalExadataStorageServerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetIormPlan',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'iormPlan',
             False,
             False
         )
@@ -2086,6 +2662,47 @@ def test_get_managed_database_group(testing_service_client):
             result,
             service_error,
             'managedDatabaseGroup',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_open_alert_history(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetOpenAlertHistory'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetOpenAlertHistory')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetOpenAlertHistory')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_open_alert_history(
+                external_exadata_storage_server_id=request.pop(util.camelize('externalExadataStorageServerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetOpenAlertHistory',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'openAlertHistory',
             False,
             False
         )
@@ -2341,6 +2958,47 @@ def test_get_tablespace(testing_service_client):
             result,
             service_error,
             'tablespace',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_top_sql_cpu_activity(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetTopSqlCpuActivity'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetTopSqlCpuActivity')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetTopSqlCpuActivity')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_top_sql_cpu_activity(
+                external_exadata_storage_server_id=request.pop(util.camelize('externalExadataStorageServerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetTopSqlCpuActivity',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'topSqlCpuActivity',
             False,
             False
         )
@@ -3693,6 +4351,201 @@ def test_list_external_db_systems(testing_service_client):
             result,
             service_error,
             'externalDbSystemCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_external_exadata_infrastructures(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListExternalExadataInfrastructures'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListExternalExadataInfrastructures')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListExternalExadataInfrastructures')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_external_exadata_infrastructures(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_external_exadata_infrastructures(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_external_exadata_infrastructures(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListExternalExadataInfrastructures',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalExadataInfrastructureCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_external_exadata_storage_connectors(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListExternalExadataStorageConnectors'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListExternalExadataStorageConnectors')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListExternalExadataStorageConnectors')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_external_exadata_storage_connectors(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                external_exadata_infrastructure_id=request.pop(util.camelize('externalExadataInfrastructureId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_external_exadata_storage_connectors(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    external_exadata_infrastructure_id=request.pop(util.camelize('externalExadataInfrastructureId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_external_exadata_storage_connectors(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        external_exadata_infrastructure_id=request.pop(util.camelize('externalExadataInfrastructureId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListExternalExadataStorageConnectors',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalExadataStorageConnectorCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_external_exadata_storage_servers(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListExternalExadataStorageServers'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListExternalExadataStorageServers')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListExternalExadataStorageServers')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_external_exadata_storage_servers(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                external_exadata_infrastructure_id=request.pop(util.camelize('externalExadataInfrastructureId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_external_exadata_storage_servers(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    external_exadata_infrastructure_id=request.pop(util.camelize('externalExadataInfrastructureId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_external_exadata_storage_servers(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        external_exadata_infrastructure_id=request.pop(util.camelize('externalExadataInfrastructureId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListExternalExadataStorageServers',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalExadataStorageServerCollection',
             False,
             True
         )
@@ -6699,6 +7552,90 @@ def test_update_external_db_system_discovery(testing_service_client):
             result,
             service_error,
             'externalDbSystemDiscovery',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_update_external_exadata_infrastructure(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'UpdateExternalExadataInfrastructure'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'UpdateExternalExadataInfrastructure')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='UpdateExternalExadataInfrastructure')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.update_external_exadata_infrastructure(
+                external_exadata_infrastructure_id=request.pop(util.camelize('externalExadataInfrastructureId')),
+                update_external_exadata_infrastructure_details=request.pop(util.camelize('UpdateExternalExadataInfrastructureDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'UpdateExternalExadataInfrastructure',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalExadataInfrastructure',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_update_external_exadata_storage_connector(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'UpdateExternalExadataStorageConnector'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'UpdateExternalExadataStorageConnector')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='UpdateExternalExadataStorageConnector')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.update_external_exadata_storage_connector(
+                external_exadata_storage_connector_id=request.pop(util.camelize('externalExadataStorageConnectorId')),
+                update_external_exadata_storage_connector_details=request.pop(util.camelize('UpdateExternalExadataStorageConnectorDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'UpdateExternalExadataStorageConnector',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'externalExadataStorageConnector',
             False,
             False
         )

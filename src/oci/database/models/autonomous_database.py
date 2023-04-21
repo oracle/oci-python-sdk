@@ -414,6 +414,10 @@ class AutonomousDatabase(object):
             The value to assign to the data_storage_size_in_gbs property of this AutonomousDatabase.
         :type data_storage_size_in_gbs: int
 
+        :param used_data_storage_size_in_gbs:
+            The value to assign to the used_data_storage_size_in_gbs property of this AutonomousDatabase.
+        :type used_data_storage_size_in_gbs: int
+
         :param infrastructure_type:
             The value to assign to the infrastructure_type property of this AutonomousDatabase.
             Allowed values for this property are: "CLOUD", "CLOUD_AT_CUSTOMER", 'UNKNOWN_ENUM_VALUE'.
@@ -767,6 +771,7 @@ class AutonomousDatabase(object):
             'data_storage_size_in_tbs': 'int',
             'memory_per_oracle_compute_unit_in_gbs': 'int',
             'data_storage_size_in_gbs': 'int',
+            'used_data_storage_size_in_gbs': 'int',
             'infrastructure_type': 'str',
             'is_dedicated': 'bool',
             'autonomous_container_database_id': 'str',
@@ -872,6 +877,7 @@ class AutonomousDatabase(object):
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
             'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs',
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
+            'used_data_storage_size_in_gbs': 'usedDataStorageSizeInGBs',
             'infrastructure_type': 'infrastructureType',
             'is_dedicated': 'isDedicated',
             'autonomous_container_database_id': 'autonomousContainerDatabaseId',
@@ -976,6 +982,7 @@ class AutonomousDatabase(object):
         self._data_storage_size_in_tbs = None
         self._memory_per_oracle_compute_unit_in_gbs = None
         self._data_storage_size_in_gbs = None
+        self._used_data_storage_size_in_gbs = None
         self._infrastructure_type = None
         self._is_dedicated = None
         self._autonomous_container_database_id = None
@@ -1809,6 +1816,30 @@ class AutonomousDatabase(object):
         :type: int
         """
         self._data_storage_size_in_gbs = data_storage_size_in_gbs
+
+    @property
+    def used_data_storage_size_in_gbs(self):
+        """
+        Gets the used_data_storage_size_in_gbs of this AutonomousDatabase.
+        The storage space consumed by Autonomous Database in GBs.
+
+
+        :return: The used_data_storage_size_in_gbs of this AutonomousDatabase.
+        :rtype: int
+        """
+        return self._used_data_storage_size_in_gbs
+
+    @used_data_storage_size_in_gbs.setter
+    def used_data_storage_size_in_gbs(self, used_data_storage_size_in_gbs):
+        """
+        Sets the used_data_storage_size_in_gbs of this AutonomousDatabase.
+        The storage space consumed by Autonomous Database in GBs.
+
+
+        :param used_data_storage_size_in_gbs: The used_data_storage_size_in_gbs of this AutonomousDatabase.
+        :type: int
+        """
+        self._used_data_storage_size_in_gbs = used_data_storage_size_in_gbs
 
     @property
     def infrastructure_type(self):

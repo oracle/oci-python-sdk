@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class SenderInvitationClient(object):
     """
-    The Organizations API allows you to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and its resources.
+    Use the Organizations API to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and organization resources. For more information, see [Organization Management Overview](/iaas/Content/General/Concepts/organization_management_overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -129,7 +129,7 @@ class SenderInvitationClient(object):
             server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            will be rejected.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -235,7 +235,7 @@ class SenderInvitationClient(object):
             server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            will be rejected.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -420,7 +420,7 @@ class SenderInvitationClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            OCID of the compartment. Always a tenancy OCID.
 
         :param str recipient_tenancy_id: (optional)
             The tenancy that the invitation is addressed to.
@@ -586,7 +586,7 @@ class SenderInvitationClient(object):
 
     def update_sender_invitation(self, sender_invitation_id, update_sender_invitation_details, **kwargs):
         """
-        Updates the SenderInvitation.
+        Updates the sender invitation.
 
 
         :param str sender_invitation_id: (required)

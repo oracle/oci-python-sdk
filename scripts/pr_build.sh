@@ -26,7 +26,7 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
-export PYTHON_3_VERSION=3.8.6
+export PYTHON_3_VERSION=3.6.5
 pyenv install $PYTHON_3_VERSION -s
 pyenv shell $PYTHON_3_VERSION
 
@@ -69,7 +69,7 @@ if [[ $TEST_ENABLE = "false" ]]; then
   tox -e flake8
 else
   echo "Tests enabled"
-  tox -e flake8,py38 -- \
+  tox -e flake8,py36 -- \
       --vcr-record-mode=none \
       --cov-config .pr_coveragerc \
       --cov=oci \

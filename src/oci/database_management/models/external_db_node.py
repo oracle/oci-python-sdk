@@ -100,6 +100,10 @@ class ExternalDbNode(object):
             The value to assign to the lifecycle_details property of this ExternalDbNode.
         :type lifecycle_details: str
 
+        :param domain_name:
+            The value to assign to the domain_name property of this ExternalDbNode.
+        :type domain_name: str
+
         :param time_created:
             The value to assign to the time_created property of this ExternalDbNode.
         :type time_created: datetime
@@ -122,6 +126,7 @@ class ExternalDbNode(object):
             'additional_details': 'dict(str, str)',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'domain_name': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
@@ -139,6 +144,7 @@ class ExternalDbNode(object):
             'additional_details': 'additionalDetails',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'domain_name': 'domainName',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
@@ -155,6 +161,7 @@ class ExternalDbNode(object):
         self._additional_details = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._domain_name = None
         self._time_created = None
         self._time_updated = None
 
@@ -469,6 +476,30 @@ class ExternalDbNode(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def domain_name(self):
+        """
+        Gets the domain_name of this ExternalDbNode.
+        Name of the domain.
+
+
+        :return: The domain_name of this ExternalDbNode.
+        :rtype: str
+        """
+        return self._domain_name
+
+    @domain_name.setter
+    def domain_name(self, domain_name):
+        """
+        Sets the domain_name of this ExternalDbNode.
+        Name of the domain.
+
+
+        :param domain_name: The domain_name of this ExternalDbNode.
+        :type: str
+        """
+        self._domain_name = domain_name
 
     @property
     def time_created(self):

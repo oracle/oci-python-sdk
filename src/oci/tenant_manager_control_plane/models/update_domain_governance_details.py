@@ -58,7 +58,7 @@ class UpdateDomainGovernanceDetails(object):
     def subscription_email(self):
         """
         Gets the subscription_email of this UpdateDomainGovernanceDetails.
-        The email to notify the user, and that the ONS subscription will be created with. The ONS subscription for the previous email will also be deleted.
+        Email address to be used to notify the user, and that the ONS subscription will be created with. The ONS subscription for the previous email will also be deleted.
 
 
         :return: The subscription_email of this UpdateDomainGovernanceDetails.
@@ -70,7 +70,7 @@ class UpdateDomainGovernanceDetails(object):
     def subscription_email(self, subscription_email):
         """
         Sets the subscription_email of this UpdateDomainGovernanceDetails.
-        The email to notify the user, and that the ONS subscription will be created with. The ONS subscription for the previous email will also be deleted.
+        Email address to be used to notify the user, and that the ONS subscription will be created with. The ONS subscription for the previous email will also be deleted.
 
 
         :param subscription_email: The subscription_email of this UpdateDomainGovernanceDetails.

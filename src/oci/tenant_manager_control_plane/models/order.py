@@ -113,7 +113,7 @@ class Order(object):
     def admin_email(self):
         """
         **[Required]** Gets the admin_email of this Order.
-        Administrator email owning the subscription.
+        Email address of the administrator who owns the subscription.
 
 
         :return: The admin_email of this Order.
@@ -125,7 +125,7 @@ class Order(object):
     def admin_email(self, admin_email):
         """
         Sets the admin_email of this Order.
-        Administrator email owning the subscription.
+        Email address of the administrator who owns the subscription.
 
 
         :param admin_email: The admin_email of this Order.

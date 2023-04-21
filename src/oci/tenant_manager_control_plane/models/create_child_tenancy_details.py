@@ -13,6 +13,14 @@ class CreateChildTenancyDetails(object):
     The parameters for creating a child tenancy.
     """
 
+    #: A constant which can be used with the governance_status property of a CreateChildTenancyDetails.
+    #: This constant has a value of "OPTED_IN"
+    GOVERNANCE_STATUS_OPTED_IN = "OPTED_IN"
+
+    #: A constant which can be used with the governance_status property of a CreateChildTenancyDetails.
+    #: This constant has a value of "OPTED_OUT"
+    GOVERNANCE_STATUS_OPTED_OUT = "OPTED_OUT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateChildTenancyDetails object with values from keyword arguments.
@@ -38,13 +46,19 @@ class CreateChildTenancyDetails(object):
             The value to assign to the policy_name property of this CreateChildTenancyDetails.
         :type policy_name: str
 
+        :param governance_status:
+            The value to assign to the governance_status property of this CreateChildTenancyDetails.
+            Allowed values for this property are: "OPTED_IN", "OPTED_OUT"
+        :type governance_status: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
             'tenancy_name': 'str',
             'home_region': 'str',
             'admin_email': 'str',
-            'policy_name': 'str'
+            'policy_name': 'str',
+            'governance_status': 'str'
         }
 
         self.attribute_map = {
@@ -52,7 +66,8 @@ class CreateChildTenancyDetails(object):
             'tenancy_name': 'tenancyName',
             'home_region': 'homeRegion',
             'admin_email': 'adminEmail',
-            'policy_name': 'policyName'
+            'policy_name': 'policyName',
+            'governance_status': 'governanceStatus'
         }
 
         self._compartment_id = None
@@ -60,6 +75,7 @@ class CreateChildTenancyDetails(object):
         self._home_region = None
         self._admin_email = None
         self._policy_name = None
+        self._governance_status = None
 
     @property
     def compartment_id(self):
@@ -137,7 +153,7 @@ class CreateChildTenancyDetails(object):
     def admin_email(self):
         """
         **[Required]** Gets the admin_email of this CreateChildTenancyDetails.
-        The email address of the administrator of the child tenancy.
+        Email address of the child tenancy administrator.
 
 
         :return: The admin_email of this CreateChildTenancyDetails.
@@ -149,7 +165,7 @@ class CreateChildTenancyDetails(object):
     def admin_email(self, admin_email):
         """
         Sets the admin_email of this CreateChildTenancyDetails.
-        The email address of the administrator of the child tenancy.
+        Email address of the child tenancy administrator.
 
 
         :param admin_email: The admin_email of this CreateChildTenancyDetails.
@@ -180,6 +196,38 @@ class CreateChildTenancyDetails(object):
         :type: str
         """
         self._policy_name = policy_name
+
+    @property
+    def governance_status(self):
+        """
+        Gets the governance_status of this CreateChildTenancyDetails.
+        The governance status of the child tenancy.
+
+        Allowed values for this property are: "OPTED_IN", "OPTED_OUT"
+
+
+        :return: The governance_status of this CreateChildTenancyDetails.
+        :rtype: str
+        """
+        return self._governance_status
+
+    @governance_status.setter
+    def governance_status(self, governance_status):
+        """
+        Sets the governance_status of this CreateChildTenancyDetails.
+        The governance status of the child tenancy.
+
+
+        :param governance_status: The governance_status of this CreateChildTenancyDetails.
+        :type: str
+        """
+        allowed_values = ["OPTED_IN", "OPTED_OUT"]
+        if not value_allowed_none_or_none_sentinel(governance_status, allowed_values):
+            raise ValueError(
+                "Invalid value for `governance_status`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._governance_status = governance_status
 
     def __repr__(self):
         return formatted_flat_dict(self)

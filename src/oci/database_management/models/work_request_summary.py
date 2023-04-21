@@ -53,6 +53,22 @@ class WorkRequestSummary(object):
     #: This constant has a value of "CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT"
     OPERATION_TYPE_CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT = "CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT"
 
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DISABLE_EXADATA_INFRASTURCTURE"
+    OPERATION_TYPE_DISABLE_EXADATA_INFRASTURCTURE = "DISABLE_EXADATA_INFRASTURCTURE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "ENABLE_EXADATA_INFRASTRUCTURE"
+    OPERATION_TYPE_ENABLE_EXADATA_INFRASTRUCTURE = "ENABLE_EXADATA_INFRASTRUCTURE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_EXADATA_INFRASTRUCTURE"
+    OPERATION_TYPE_DELETE_EXADATA_INFRASTRUCTURE = "DELETE_EXADATA_INFRASTRUCTURE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CHANGE_EXADATA_COMPARTMENT"
+    OPERATION_TYPE_CHANGE_EXADATA_COMPARTMENT = "CHANGE_EXADATA_COMPARTMENT"
+
     #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -84,7 +100,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "CREATE_DB_SYSTEM_DISCOVERY", "CREATE_DB_SYSTEM", "UPDATE_DB_SYSTEM", "DB_SYSTEM_ENABLE_DBMGMT", "DB_SYSTEM_DISABLE_DBMGMT", "DELETE_DB_SYSTEM", "UPDATE_EXTERNAL_DB_SYSTEM_CONNECTOR", "CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "CREATE_DB_SYSTEM_DISCOVERY", "CREATE_DB_SYSTEM", "UPDATE_DB_SYSTEM", "DB_SYSTEM_ENABLE_DBMGMT", "DB_SYSTEM_DISABLE_DBMGMT", "DELETE_DB_SYSTEM", "UPDATE_EXTERNAL_DB_SYSTEM_CONNECTOR", "CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT", "DISABLE_EXADATA_INFRASTURCTURE", "ENABLE_EXADATA_INFRASTRUCTURE", "DELETE_EXADATA_INFRASTRUCTURE", "CHANGE_EXADATA_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -163,7 +179,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         The type of work request.
 
-        Allowed values for this property are: "CREATE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "CREATE_DB_SYSTEM_DISCOVERY", "CREATE_DB_SYSTEM", "UPDATE_DB_SYSTEM", "DB_SYSTEM_ENABLE_DBMGMT", "DB_SYSTEM_DISABLE_DBMGMT", "DELETE_DB_SYSTEM", "UPDATE_EXTERNAL_DB_SYSTEM_CONNECTOR", "CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "CREATE_DB_SYSTEM_DISCOVERY", "CREATE_DB_SYSTEM", "UPDATE_DB_SYSTEM", "DB_SYSTEM_ENABLE_DBMGMT", "DB_SYSTEM_DISABLE_DBMGMT", "DELETE_DB_SYSTEM", "UPDATE_EXTERNAL_DB_SYSTEM_CONNECTOR", "CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT", "DISABLE_EXADATA_INFRASTURCTURE", "ENABLE_EXADATA_INFRASTRUCTURE", "DELETE_EXADATA_INFRASTRUCTURE", "CHANGE_EXADATA_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -182,7 +198,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "CREATE_DB_SYSTEM_DISCOVERY", "CREATE_DB_SYSTEM", "UPDATE_DB_SYSTEM", "DB_SYSTEM_ENABLE_DBMGMT", "DB_SYSTEM_DISABLE_DBMGMT", "DELETE_DB_SYSTEM", "UPDATE_EXTERNAL_DB_SYSTEM_CONNECTOR", "CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT"]
+        allowed_values = ["CREATE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "CREATE_DB_SYSTEM_DISCOVERY", "CREATE_DB_SYSTEM", "UPDATE_DB_SYSTEM", "DB_SYSTEM_ENABLE_DBMGMT", "DB_SYSTEM_DISABLE_DBMGMT", "DELETE_DB_SYSTEM", "UPDATE_EXTERNAL_DB_SYSTEM_CONNECTOR", "CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT", "DISABLE_EXADATA_INFRASTURCTURE", "ENABLE_EXADATA_INFRASTRUCTURE", "DELETE_EXADATA_INFRASTRUCTURE", "CHANGE_EXADATA_COMPARTMENT"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
