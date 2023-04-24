@@ -4,13 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.99.1 - TBD
+2.99.1 - 2023-04-25
 ====================
 
 Added
 -----
-* TBD
-
+* Support for enabling mTLS authentication with Listener and for providing custom value for TLS port and Non-TLS Port during AVM Cluster Creation in Database service
+* Support for usedDataStorageSizeInGbs property for autonomous database in the Database service
+* Support for csiNumber organization in Tenant Manager Control Plane service
+* Support for creating and updating an infrastructure with LACP support in Database service
+* Support for changePrivateEndpointOutboundConnection operation in Integration Cloud service
+* Support for Enable Process in Integration Cloud service
+* Support for Disaster Recovery, DR enablement, switchover, and failover feature in Fusion Apps service
+* Support for discovery and monitoring of External Exadata infrastructure in Database Management Service
+ 
 ====================
 2.99.0 - 2023-04-18
 ====================
