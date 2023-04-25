@@ -65,6 +65,9 @@ class GoldenGateClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class GoldenGateClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20200407',
             'service_endpoint_template': 'https://goldengate.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -148,6 +153,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/cancel_deployment_backup.py.html>`__ to see an example of how to use cancel_deployment_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentBackupId']
         resource_path = "/deploymentBackups/{deploymentBackupId}/actions/cancel"
         method = "POST"
         operation_name = "cancel_deployment_backup"
@@ -206,7 +213,8 @@ class GoldenGateClient(object):
                 body=cancel_deployment_backup_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -216,7 +224,8 @@ class GoldenGateClient(object):
                 body=cancel_deployment_backup_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_snooze_deployment_upgrade(self, deployment_upgrade_id, cancel_snooze_deployment_upgrade_details, **kwargs):
         """
@@ -262,6 +271,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/cancel_snooze_deployment_upgrade.py.html>`__ to see an example of how to use cancel_snooze_deployment_upgrade API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentUpgradeId']
         resource_path = "/deploymentUpgrades/{deploymentUpgradeId}/actions/cancelSnooze"
         method = "POST"
         operation_name = "cancel_snooze_deployment_upgrade"
@@ -320,7 +331,8 @@ class GoldenGateClient(object):
                 body=cancel_snooze_deployment_upgrade_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -330,7 +342,8 @@ class GoldenGateClient(object):
                 body=cancel_snooze_deployment_upgrade_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_connection_compartment(self, connection_id, change_connection_compartment_details, **kwargs):
         """
@@ -377,6 +390,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/change_connection_compartment.py.html>`__ to see an example of how to use change_connection_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['connectionId']
         resource_path = "/connections/{connectionId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_connection_compartment"
@@ -432,7 +447,8 @@ class GoldenGateClient(object):
                 body=change_connection_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -442,7 +458,8 @@ class GoldenGateClient(object):
                 body=change_connection_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_database_registration_compartment(self, database_registration_id, change_database_registration_compartment_details, **kwargs):
         """
@@ -494,6 +511,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/change_database_registration_compartment.py.html>`__ to see an example of how to use change_database_registration_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseRegistrationId']
         resource_path = "/databaseRegistrations/{databaseRegistrationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_database_registration_compartment"
@@ -552,7 +571,8 @@ class GoldenGateClient(object):
                 body=change_database_registration_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -562,7 +582,8 @@ class GoldenGateClient(object):
                 body=change_database_registration_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_deployment_backup_compartment(self, deployment_backup_id, change_deployment_backup_compartment_details, **kwargs):
         """
@@ -613,6 +634,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/change_deployment_backup_compartment.py.html>`__ to see an example of how to use change_deployment_backup_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentBackupId']
         resource_path = "/deploymentBackups/{deploymentBackupId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_deployment_backup_compartment"
@@ -671,7 +694,8 @@ class GoldenGateClient(object):
                 body=change_deployment_backup_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -681,7 +705,8 @@ class GoldenGateClient(object):
                 body=change_deployment_backup_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_deployment_compartment(self, deployment_id, change_deployment_compartment_details, **kwargs):
         """
@@ -732,6 +757,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/change_deployment_compartment.py.html>`__ to see an example of how to use change_deployment_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId']
         resource_path = "/deployments/{deploymentId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_deployment_compartment"
@@ -790,7 +817,8 @@ class GoldenGateClient(object):
                 body=change_deployment_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -800,7 +828,8 @@ class GoldenGateClient(object):
                 body=change_deployment_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def collect_deployment_diagnostic(self, deployment_id, collect_deployment_diagnostic_details, **kwargs):
         """
@@ -846,6 +875,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/collect_deployment_diagnostic.py.html>`__ to see an example of how to use collect_deployment_diagnostic API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId']
         resource_path = "/deployments/{deploymentId}/actions/collectDiagnostics"
         method = "POST"
         operation_name = "collect_deployment_diagnostic"
@@ -904,7 +935,8 @@ class GoldenGateClient(object):
                 body=collect_deployment_diagnostic_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -914,7 +946,8 @@ class GoldenGateClient(object):
                 body=collect_deployment_diagnostic_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_connection(self, create_connection_details, **kwargs):
         """
@@ -951,6 +984,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/create_connection.py.html>`__ to see an example of how to use create_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/connections"
         method = "POST"
         operation_name = "create_connection"
@@ -997,7 +1032,8 @@ class GoldenGateClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1007,7 +1043,8 @@ class GoldenGateClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_connection_assignment(self, create_connection_assignment_details, **kwargs):
         """
@@ -1044,6 +1081,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/create_connection_assignment.py.html>`__ to see an example of how to use create_connection_assignment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/connectionAssignments"
         method = "POST"
         operation_name = "create_connection_assignment"
@@ -1090,7 +1129,8 @@ class GoldenGateClient(object):
                 response_type="ConnectionAssignment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1100,7 +1140,8 @@ class GoldenGateClient(object):
                 response_type="ConnectionAssignment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_database_registration(self, create_database_registration_details, **kwargs):
         """
@@ -1138,6 +1179,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/create_database_registration.py.html>`__ to see an example of how to use create_database_registration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/databaseRegistrations"
         method = "POST"
         operation_name = "create_database_registration"
@@ -1184,7 +1227,8 @@ class GoldenGateClient(object):
                 response_type="DatabaseRegistration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1194,7 +1238,8 @@ class GoldenGateClient(object):
                 response_type="DatabaseRegistration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_deployment(self, create_deployment_details, **kwargs):
         """
@@ -1231,6 +1276,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/create_deployment.py.html>`__ to see an example of how to use create_deployment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/deployments"
         method = "POST"
         operation_name = "create_deployment"
@@ -1277,7 +1324,8 @@ class GoldenGateClient(object):
                 response_type="Deployment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1287,7 +1335,8 @@ class GoldenGateClient(object):
                 response_type="Deployment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_deployment_backup(self, create_deployment_backup_details, **kwargs):
         """
@@ -1324,6 +1373,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/create_deployment_backup.py.html>`__ to see an example of how to use create_deployment_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/deploymentBackups"
         method = "POST"
         operation_name = "create_deployment_backup"
@@ -1369,7 +1420,8 @@ class GoldenGateClient(object):
                 body=create_deployment_backup_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1378,7 +1430,8 @@ class GoldenGateClient(object):
                 body=create_deployment_backup_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_connection(self, connection_id, **kwargs):
         """
@@ -1417,6 +1470,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/delete_connection.py.html>`__ to see an example of how to use delete_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['connectionId']
         resource_path = "/connections/{connectionId}"
         method = "DELETE"
         operation_name = "delete_connection"
@@ -1471,7 +1526,8 @@ class GoldenGateClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1480,7 +1536,8 @@ class GoldenGateClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_connection_assignment(self, connection_assignment_id, **kwargs):
         """
@@ -1519,6 +1576,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/delete_connection_assignment.py.html>`__ to see an example of how to use delete_connection_assignment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['connectionAssignmentId']
         resource_path = "/connectionAssignments/{connectionAssignmentId}"
         method = "DELETE"
         operation_name = "delete_connection_assignment"
@@ -1573,7 +1632,8 @@ class GoldenGateClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1582,7 +1642,8 @@ class GoldenGateClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_database_registration(self, database_registration_id, **kwargs):
         """
@@ -1620,6 +1681,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/delete_database_registration.py.html>`__ to see an example of how to use delete_database_registration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseRegistrationId']
         resource_path = "/databaseRegistrations/{databaseRegistrationId}"
         method = "DELETE"
         operation_name = "delete_database_registration"
@@ -1674,7 +1737,8 @@ class GoldenGateClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1683,7 +1747,8 @@ class GoldenGateClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_deployment(self, deployment_id, **kwargs):
         """
@@ -1720,6 +1785,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/delete_deployment.py.html>`__ to see an example of how to use delete_deployment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId']
         resource_path = "/deployments/{deploymentId}"
         method = "DELETE"
         operation_name = "delete_deployment"
@@ -1774,7 +1841,8 @@ class GoldenGateClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1783,7 +1851,8 @@ class GoldenGateClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_deployment_backup(self, deployment_backup_id, **kwargs):
         """
@@ -1820,6 +1889,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/delete_deployment_backup.py.html>`__ to see an example of how to use delete_deployment_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentBackupId']
         resource_path = "/deploymentBackups/{deploymentBackupId}"
         method = "DELETE"
         operation_name = "delete_deployment_backup"
@@ -1874,7 +1945,8 @@ class GoldenGateClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1883,7 +1955,8 @@ class GoldenGateClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def deployment_wallet_exists(self, deployment_id, deployment_wallet_exists_details, **kwargs):
         """
@@ -1929,6 +2002,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/deployment_wallet_exists.py.html>`__ to see an example of how to use deployment_wallet_exists API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId']
         resource_path = "/deployments/{deploymentId}/actions/walletExists"
         method = "POST"
         operation_name = "deployment_wallet_exists"
@@ -1988,7 +2063,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentWalletExistsResponseDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1999,7 +2075,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentWalletExistsResponseDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def export_deployment_wallet(self, deployment_id, export_deployment_wallet_details, **kwargs):
         """
@@ -2045,6 +2122,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/export_deployment_wallet.py.html>`__ to see an example of how to use export_deployment_wallet API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId']
         resource_path = "/deployments/{deploymentId}/actions/exportWallet"
         method = "POST"
         operation_name = "export_deployment_wallet"
@@ -2103,7 +2182,8 @@ class GoldenGateClient(object):
                 body=export_deployment_wallet_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2113,7 +2193,8 @@ class GoldenGateClient(object):
                 body=export_deployment_wallet_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_connection(self, connection_id, **kwargs):
         """
@@ -2146,6 +2227,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_connection.py.html>`__ to see an example of how to use get_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['connectionId']
         resource_path = "/connections/{connectionId}"
         method = "GET"
         operation_name = "get_connection"
@@ -2199,7 +2282,8 @@ class GoldenGateClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2209,7 +2293,8 @@ class GoldenGateClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_connection_assignment(self, connection_assignment_id, **kwargs):
         """
@@ -2242,6 +2327,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_connection_assignment.py.html>`__ to see an example of how to use get_connection_assignment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['connectionAssignmentId']
         resource_path = "/connectionAssignments/{connectionAssignmentId}"
         method = "GET"
         operation_name = "get_connection_assignment"
@@ -2295,7 +2382,8 @@ class GoldenGateClient(object):
                 response_type="ConnectionAssignment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2305,7 +2393,8 @@ class GoldenGateClient(object):
                 response_type="ConnectionAssignment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_database_registration(self, database_registration_id, **kwargs):
         """
@@ -2337,6 +2426,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_database_registration.py.html>`__ to see an example of how to use get_database_registration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseRegistrationId']
         resource_path = "/databaseRegistrations/{databaseRegistrationId}"
         method = "GET"
         operation_name = "get_database_registration"
@@ -2390,7 +2481,8 @@ class GoldenGateClient(object):
                 response_type="DatabaseRegistration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2400,7 +2492,8 @@ class GoldenGateClient(object):
                 response_type="DatabaseRegistration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_deployment(self, deployment_id, **kwargs):
         """
@@ -2431,6 +2524,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_deployment.py.html>`__ to see an example of how to use get_deployment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId']
         resource_path = "/deployments/{deploymentId}"
         method = "GET"
         operation_name = "get_deployment"
@@ -2484,7 +2579,8 @@ class GoldenGateClient(object):
                 response_type="Deployment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2494,7 +2590,8 @@ class GoldenGateClient(object):
                 response_type="Deployment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_deployment_backup(self, deployment_backup_id, **kwargs):
         """
@@ -2525,6 +2622,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_deployment_backup.py.html>`__ to see an example of how to use get_deployment_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentBackupId']
         resource_path = "/deploymentBackups/{deploymentBackupId}"
         method = "GET"
         operation_name = "get_deployment_backup"
@@ -2578,7 +2677,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2588,7 +2688,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_deployment_upgrade(self, deployment_upgrade_id, **kwargs):
         """
@@ -2619,6 +2720,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_deployment_upgrade.py.html>`__ to see an example of how to use get_deployment_upgrade API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentUpgradeId']
         resource_path = "/deploymentUpgrades/{deploymentUpgradeId}"
         method = "GET"
         operation_name = "get_deployment_upgrade"
@@ -2672,7 +2775,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentUpgrade",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2682,7 +2786,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentUpgrade",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -2715,6 +2820,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -2768,7 +2875,8 @@ class GoldenGateClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2778,7 +2886,8 @@ class GoldenGateClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def import_deployment_wallet(self, deployment_id, import_deployment_wallet_details, **kwargs):
         """
@@ -2824,6 +2933,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/import_deployment_wallet.py.html>`__ to see an example of how to use import_deployment_wallet API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId']
         resource_path = "/deployments/{deploymentId}/actions/importWallet"
         method = "POST"
         operation_name = "import_deployment_wallet"
@@ -2882,7 +2993,8 @@ class GoldenGateClient(object):
                 body=import_deployment_wallet_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2892,7 +3004,8 @@ class GoldenGateClient(object):
                 body=import_deployment_wallet_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_connection_assignments(self, compartment_id, **kwargs):
         """
@@ -2963,6 +3076,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_connection_assignments.py.html>`__ to see an example of how to use list_connection_assignments API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/connectionAssignments"
         method = "GET"
         operation_name = "list_connection_assignments"
@@ -3048,7 +3163,8 @@ class GoldenGateClient(object):
                 response_type="ConnectionAssignmentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3058,7 +3174,8 @@ class GoldenGateClient(object):
                 response_type="ConnectionAssignmentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_connections(self, compartment_id, **kwargs):
         """
@@ -3140,6 +3257,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_connections.py.html>`__ to see an example of how to use list_connections API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/connections"
         method = "GET"
         operation_name = "list_connections"
@@ -3254,7 +3373,8 @@ class GoldenGateClient(object):
                 response_type="ConnectionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3264,7 +3384,8 @@ class GoldenGateClient(object):
                 response_type="ConnectionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_database_registrations(self, compartment_id, **kwargs):
         """
@@ -3326,6 +3447,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_database_registrations.py.html>`__ to see an example of how to use list_database_registrations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/databaseRegistrations"
         method = "GET"
         operation_name = "list_database_registrations"
@@ -3407,7 +3530,8 @@ class GoldenGateClient(object):
                 response_type="DatabaseRegistrationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3417,7 +3541,8 @@ class GoldenGateClient(object):
                 response_type="DatabaseRegistrationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_deployment_backups(self, compartment_id, **kwargs):
         """
@@ -3483,6 +3608,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployment_backups.py.html>`__ to see an example of how to use list_deployment_backups API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/deploymentBackups"
         method = "GET"
         operation_name = "list_deployment_backups"
@@ -3566,7 +3693,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentBackupCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3576,7 +3704,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentBackupCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_deployment_types(self, compartment_id, **kwargs):
         """
@@ -3640,6 +3769,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployment_types.py.html>`__ to see an example of how to use list_deployment_types API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/deploymentTypes"
         method = "GET"
         operation_name = "list_deployment_types"
@@ -3723,7 +3854,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentTypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3733,7 +3865,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentTypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_deployment_upgrades(self, compartment_id, **kwargs):
         """
@@ -3799,6 +3932,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployment_upgrades.py.html>`__ to see an example of how to use list_deployment_upgrades API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/deploymentUpgrades"
         method = "GET"
         operation_name = "list_deployment_upgrades"
@@ -3882,7 +4017,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentUpgradeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3892,7 +4028,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentUpgradeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_deployment_versions(self, compartment_id, **kwargs):
         """
@@ -3955,6 +4092,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployment_versions.py.html>`__ to see an example of how to use list_deployment_versions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/deploymentVersions"
         method = "GET"
         operation_name = "list_deployment_versions"
@@ -4036,7 +4175,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentVersionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4046,7 +4186,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentVersionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_deployment_wallets_operations(self, deployment_id, **kwargs):
         """
@@ -4098,6 +4239,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployment_wallets_operations.py.html>`__ to see an example of how to use list_deployment_wallets_operations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId']
         resource_path = "/deployments/{deploymentId}/deploymentWalletsOperations"
         method = "GET"
         operation_name = "list_deployment_wallets_operations"
@@ -4180,7 +4323,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentWalletsOperationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4191,7 +4335,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentWalletsOperationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_deployments(self, compartment_id, **kwargs):
         """
@@ -4271,6 +4416,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployments.py.html>`__ to see an example of how to use list_deployments API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/deployments"
         method = "GET"
         operation_name = "list_deployments"
@@ -4376,7 +4523,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4386,7 +4534,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_messages(self, deployment_id, **kwargs):
         """
@@ -4424,6 +4573,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_messages.py.html>`__ to see an example of how to use list_messages API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId']
         resource_path = "/messages"
         method = "GET"
         operation_name = "list_messages"
@@ -4476,7 +4627,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentMessageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4486,7 +4638,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentMessageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_trail_files(self, deployment_id, **kwargs):
         """
@@ -4542,6 +4695,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_trail_files.py.html>`__ to see an example of how to use list_trail_files API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId']
         resource_path = "/trailFiles"
         method = "GET"
         operation_name = "list_trail_files"
@@ -4616,7 +4771,8 @@ class GoldenGateClient(object):
                 response_type="TrailFileCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4626,7 +4782,8 @@ class GoldenGateClient(object):
                 response_type="TrailFileCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_trail_sequences(self, deployment_id, trail_file_id, **kwargs):
         """
@@ -4685,6 +4842,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_trail_sequences.py.html>`__ to see an example of how to use list_trail_sequences API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId', 'trailFileId']
         resource_path = "/trailSequences"
         method = "GET"
         operation_name = "list_trail_sequences"
@@ -4760,7 +4919,8 @@ class GoldenGateClient(object):
                 response_type="TrailSequenceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4770,7 +4930,8 @@ class GoldenGateClient(object):
                 response_type="TrailSequenceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -4810,6 +4971,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -4872,7 +5035,8 @@ class GoldenGateClient(object):
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4883,7 +5047,8 @@ class GoldenGateClient(object):
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -4923,6 +5088,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -4985,7 +5152,8 @@ class GoldenGateClient(object):
                 response_type="list[WorkRequestLogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4996,7 +5164,8 @@ class GoldenGateClient(object):
                 response_type="list[WorkRequestLogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -5042,6 +5211,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -5096,7 +5267,8 @@ class GoldenGateClient(object):
                 response_type="list[WorkRequest]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5106,7 +5278,8 @@ class GoldenGateClient(object):
                 response_type="list[WorkRequest]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def restore_deployment(self, deployment_backup_id, restore_deployment_details, **kwargs):
         """
@@ -5152,6 +5325,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/restore_deployment.py.html>`__ to see an example of how to use restore_deployment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentBackupId']
         resource_path = "/deploymentBackups/{deploymentBackupId}/actions/restore"
         method = "POST"
         operation_name = "restore_deployment"
@@ -5210,7 +5385,8 @@ class GoldenGateClient(object):
                 body=restore_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5220,7 +5396,8 @@ class GoldenGateClient(object):
                 body=restore_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def rollback_deployment_upgrade(self, deployment_upgrade_id, rollback_deployment_upgrade_details, **kwargs):
         """
@@ -5266,6 +5443,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/rollback_deployment_upgrade.py.html>`__ to see an example of how to use rollback_deployment_upgrade API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentUpgradeId']
         resource_path = "/deploymentUpgrades/{deploymentUpgradeId}/actions/rollback"
         method = "POST"
         operation_name = "rollback_deployment_upgrade"
@@ -5324,7 +5503,8 @@ class GoldenGateClient(object):
                 body=rollback_deployment_upgrade_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5334,7 +5514,8 @@ class GoldenGateClient(object):
                 body=rollback_deployment_upgrade_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def snooze_deployment_upgrade(self, deployment_upgrade_id, snooze_deployment_upgrade_details, **kwargs):
         """
@@ -5380,6 +5561,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/snooze_deployment_upgrade.py.html>`__ to see an example of how to use snooze_deployment_upgrade API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentUpgradeId']
         resource_path = "/deploymentUpgrades/{deploymentUpgradeId}/actions/snooze"
         method = "POST"
         operation_name = "snooze_deployment_upgrade"
@@ -5438,7 +5621,8 @@ class GoldenGateClient(object):
                 body=snooze_deployment_upgrade_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5448,7 +5632,8 @@ class GoldenGateClient(object):
                 body=snooze_deployment_upgrade_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def start_deployment(self, deployment_id, start_deployment_details, **kwargs):
         """
@@ -5494,6 +5679,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/start_deployment.py.html>`__ to see an example of how to use start_deployment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId']
         resource_path = "/deployments/{deploymentId}/actions/start"
         method = "POST"
         operation_name = "start_deployment"
@@ -5552,7 +5739,8 @@ class GoldenGateClient(object):
                 body=start_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5562,7 +5750,8 @@ class GoldenGateClient(object):
                 body=start_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def stop_deployment(self, deployment_id, stop_deployment_details, **kwargs):
         """
@@ -5608,6 +5797,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/stop_deployment.py.html>`__ to see an example of how to use stop_deployment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId']
         resource_path = "/deployments/{deploymentId}/actions/stop"
         method = "POST"
         operation_name = "stop_deployment"
@@ -5666,7 +5857,8 @@ class GoldenGateClient(object):
                 body=stop_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5676,7 +5868,8 @@ class GoldenGateClient(object):
                 body=stop_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_connection(self, connection_id, update_connection_details, **kwargs):
         """
@@ -5718,6 +5911,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/update_connection.py.html>`__ to see an example of how to use update_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['connectionId']
         resource_path = "/connections/{connectionId}"
         method = "PUT"
         operation_name = "update_connection"
@@ -5773,7 +5968,8 @@ class GoldenGateClient(object):
                 body=update_connection_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5783,7 +5979,8 @@ class GoldenGateClient(object):
                 body=update_connection_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_database_registration(self, database_registration_id, update_database_registration_details, **kwargs):
         """
@@ -5824,6 +6021,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/update_database_registration.py.html>`__ to see an example of how to use update_database_registration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['databaseRegistrationId']
         resource_path = "/databaseRegistrations/{databaseRegistrationId}"
         method = "PUT"
         operation_name = "update_database_registration"
@@ -5879,7 +6078,8 @@ class GoldenGateClient(object):
                 body=update_database_registration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5889,7 +6089,8 @@ class GoldenGateClient(object):
                 body=update_database_registration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_deployment(self, deployment_id, update_deployment_details, **kwargs):
         """
@@ -5929,6 +6130,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/update_deployment.py.html>`__ to see an example of how to use update_deployment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId']
         resource_path = "/deployments/{deploymentId}"
         method = "PUT"
         operation_name = "update_deployment"
@@ -5984,7 +6187,8 @@ class GoldenGateClient(object):
                 body=update_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5994,7 +6198,8 @@ class GoldenGateClient(object):
                 body=update_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_deployment_backup(self, deployment_backup_id, update_deployment_backup_details, **kwargs):
         """
@@ -6034,6 +6239,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/update_deployment_backup.py.html>`__ to see an example of how to use update_deployment_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentBackupId']
         resource_path = "/deploymentBackups/{deploymentBackupId}"
         method = "PUT"
         operation_name = "update_deployment_backup"
@@ -6090,7 +6297,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6101,7 +6309,8 @@ class GoldenGateClient(object):
                 response_type="DeploymentBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def upgrade_deployment(self, deployment_id, upgrade_deployment_details, **kwargs):
         """
@@ -6147,6 +6356,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/upgrade_deployment.py.html>`__ to see an example of how to use upgrade_deployment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId']
         resource_path = "/deployments/{deploymentId}/actions/upgrade"
         method = "POST"
         operation_name = "upgrade_deployment"
@@ -6205,7 +6416,8 @@ class GoldenGateClient(object):
                 body=upgrade_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6215,7 +6427,8 @@ class GoldenGateClient(object):
                 body=upgrade_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def upgrade_deployment_upgrade(self, deployment_upgrade_id, upgrade_deployment_upgrade_details, **kwargs):
         """
@@ -6261,6 +6474,8 @@ class GoldenGateClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/upgrade_deployment_upgrade.py.html>`__ to see an example of how to use upgrade_deployment_upgrade API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentUpgradeId']
         resource_path = "/deploymentUpgrades/{deploymentUpgradeId}/actions/upgrade"
         method = "POST"
         operation_name = "upgrade_deployment_upgrade"
@@ -6319,7 +6534,8 @@ class GoldenGateClient(object):
                 body=upgrade_deployment_upgrade_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6329,4 +6545,5 @@ class GoldenGateClient(object):
                 body=upgrade_deployment_upgrade_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

@@ -65,6 +65,9 @@ class ServiceMeshClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class ServiceMeshClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20220615',
             'service_endpoint_template': 'https://servicemesh.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -140,6 +145,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
@@ -194,7 +201,8 @@ class ServiceMeshClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -203,7 +211,8 @@ class ServiceMeshClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_access_policy_compartment(self, access_policy_id, change_access_policy_compartment_details, **kwargs):
         """
@@ -251,6 +260,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/change_access_policy_compartment.py.html>`__ to see an example of how to use change_access_policy_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['accessPolicyId']
         resource_path = "/accessPolicies/{accessPolicyId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_access_policy_compartment"
@@ -309,7 +320,8 @@ class ServiceMeshClient(object):
                 body=change_access_policy_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -319,7 +331,8 @@ class ServiceMeshClient(object):
                 body=change_access_policy_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_ingress_gateway_compartment(self, ingress_gateway_id, change_ingress_gateway_compartment_details, **kwargs):
         """
@@ -367,6 +380,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/change_ingress_gateway_compartment.py.html>`__ to see an example of how to use change_ingress_gateway_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ingressGatewayId']
         resource_path = "/ingressGateways/{ingressGatewayId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_ingress_gateway_compartment"
@@ -425,7 +440,8 @@ class ServiceMeshClient(object):
                 body=change_ingress_gateway_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -435,7 +451,8 @@ class ServiceMeshClient(object):
                 body=change_ingress_gateway_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_ingress_gateway_route_table_compartment(self, ingress_gateway_route_table_id, change_ingress_gateway_route_table_compartment_details, **kwargs):
         """
@@ -483,6 +500,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/change_ingress_gateway_route_table_compartment.py.html>`__ to see an example of how to use change_ingress_gateway_route_table_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ingressGatewayRouteTableId']
         resource_path = "/ingressGatewayRouteTables/{ingressGatewayRouteTableId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_ingress_gateway_route_table_compartment"
@@ -541,7 +560,8 @@ class ServiceMeshClient(object):
                 body=change_ingress_gateway_route_table_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -551,7 +571,8 @@ class ServiceMeshClient(object):
                 body=change_ingress_gateway_route_table_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_mesh_compartment(self, mesh_id, change_mesh_compartment_details, **kwargs):
         """
@@ -599,6 +620,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/change_mesh_compartment.py.html>`__ to see an example of how to use change_mesh_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['meshId']
         resource_path = "/meshes/{meshId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_mesh_compartment"
@@ -657,7 +680,8 @@ class ServiceMeshClient(object):
                 body=change_mesh_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -667,7 +691,8 @@ class ServiceMeshClient(object):
                 body=change_mesh_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_virtual_deployment_compartment(self, virtual_deployment_id, change_virtual_deployment_compartment_details, **kwargs):
         """
@@ -715,6 +740,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/change_virtual_deployment_compartment.py.html>`__ to see an example of how to use change_virtual_deployment_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualDeploymentId']
         resource_path = "/virtualDeployments/{virtualDeploymentId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_virtual_deployment_compartment"
@@ -773,7 +800,8 @@ class ServiceMeshClient(object):
                 body=change_virtual_deployment_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -783,7 +811,8 @@ class ServiceMeshClient(object):
                 body=change_virtual_deployment_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_virtual_service_compartment(self, virtual_service_id, change_virtual_service_compartment_details, **kwargs):
         """
@@ -831,6 +860,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/change_virtual_service_compartment.py.html>`__ to see an example of how to use change_virtual_service_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualServiceId']
         resource_path = "/virtualServices/{virtualServiceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_virtual_service_compartment"
@@ -889,7 +920,8 @@ class ServiceMeshClient(object):
                 body=change_virtual_service_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -899,7 +931,8 @@ class ServiceMeshClient(object):
                 body=change_virtual_service_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_virtual_service_route_table_compartment(self, virtual_service_route_table_id, change_virtual_service_route_table_compartment_details, **kwargs):
         """
@@ -947,6 +980,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/change_virtual_service_route_table_compartment.py.html>`__ to see an example of how to use change_virtual_service_route_table_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualServiceRouteTableId']
         resource_path = "/virtualServiceRouteTables/{virtualServiceRouteTableId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_virtual_service_route_table_compartment"
@@ -1005,7 +1040,8 @@ class ServiceMeshClient(object):
                 body=change_virtual_service_route_table_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1015,7 +1051,8 @@ class ServiceMeshClient(object):
                 body=change_virtual_service_route_table_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_access_policy(self, create_access_policy_details, **kwargs):
         """
@@ -1053,6 +1090,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/create_access_policy.py.html>`__ to see an example of how to use create_access_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/accessPolicies"
         method = "POST"
         operation_name = "create_access_policy"
@@ -1099,7 +1138,8 @@ class ServiceMeshClient(object):
                 response_type="AccessPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1109,7 +1149,8 @@ class ServiceMeshClient(object):
                 response_type="AccessPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_ingress_gateway(self, create_ingress_gateway_details, **kwargs):
         """
@@ -1147,6 +1188,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/create_ingress_gateway.py.html>`__ to see an example of how to use create_ingress_gateway API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/ingressGateways"
         method = "POST"
         operation_name = "create_ingress_gateway"
@@ -1193,7 +1236,8 @@ class ServiceMeshClient(object):
                 response_type="IngressGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1203,7 +1247,8 @@ class ServiceMeshClient(object):
                 response_type="IngressGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_ingress_gateway_route_table(self, create_ingress_gateway_route_table_details, **kwargs):
         """
@@ -1241,6 +1286,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/create_ingress_gateway_route_table.py.html>`__ to see an example of how to use create_ingress_gateway_route_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/ingressGatewayRouteTables"
         method = "POST"
         operation_name = "create_ingress_gateway_route_table"
@@ -1287,7 +1334,8 @@ class ServiceMeshClient(object):
                 response_type="IngressGatewayRouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1297,7 +1345,8 @@ class ServiceMeshClient(object):
                 response_type="IngressGatewayRouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_mesh(self, create_mesh_details, **kwargs):
         """
@@ -1335,6 +1384,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/create_mesh.py.html>`__ to see an example of how to use create_mesh API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/meshes"
         method = "POST"
         operation_name = "create_mesh"
@@ -1381,7 +1432,8 @@ class ServiceMeshClient(object):
                 response_type="Mesh",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1391,7 +1443,8 @@ class ServiceMeshClient(object):
                 response_type="Mesh",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_virtual_deployment(self, create_virtual_deployment_details, **kwargs):
         """
@@ -1429,6 +1482,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/create_virtual_deployment.py.html>`__ to see an example of how to use create_virtual_deployment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/virtualDeployments"
         method = "POST"
         operation_name = "create_virtual_deployment"
@@ -1475,7 +1530,8 @@ class ServiceMeshClient(object):
                 response_type="VirtualDeployment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1485,7 +1541,8 @@ class ServiceMeshClient(object):
                 response_type="VirtualDeployment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_virtual_service(self, create_virtual_service_details, **kwargs):
         """
@@ -1523,6 +1580,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/create_virtual_service.py.html>`__ to see an example of how to use create_virtual_service API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/virtualServices"
         method = "POST"
         operation_name = "create_virtual_service"
@@ -1569,7 +1628,8 @@ class ServiceMeshClient(object):
                 response_type="VirtualService",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1579,7 +1639,8 @@ class ServiceMeshClient(object):
                 response_type="VirtualService",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_virtual_service_route_table(self, create_virtual_service_route_table_details, **kwargs):
         """
@@ -1617,6 +1678,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/create_virtual_service_route_table.py.html>`__ to see an example of how to use create_virtual_service_route_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/virtualServiceRouteTables"
         method = "POST"
         operation_name = "create_virtual_service_route_table"
@@ -1663,7 +1726,8 @@ class ServiceMeshClient(object):
                 response_type="VirtualServiceRouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1673,7 +1737,8 @@ class ServiceMeshClient(object):
                 response_type="VirtualServiceRouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_access_policy(self, access_policy_id, **kwargs):
         """
@@ -1711,6 +1776,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/delete_access_policy.py.html>`__ to see an example of how to use delete_access_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['accessPolicyId']
         resource_path = "/accessPolicies/{accessPolicyId}"
         method = "DELETE"
         operation_name = "delete_access_policy"
@@ -1765,7 +1832,8 @@ class ServiceMeshClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1774,7 +1842,8 @@ class ServiceMeshClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_ingress_gateway(self, ingress_gateway_id, **kwargs):
         """
@@ -1812,6 +1881,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/delete_ingress_gateway.py.html>`__ to see an example of how to use delete_ingress_gateway API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ingressGatewayId']
         resource_path = "/ingressGateways/{ingressGatewayId}"
         method = "DELETE"
         operation_name = "delete_ingress_gateway"
@@ -1866,7 +1937,8 @@ class ServiceMeshClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1875,7 +1947,8 @@ class ServiceMeshClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_ingress_gateway_route_table(self, ingress_gateway_route_table_id, **kwargs):
         """
@@ -1913,6 +1986,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/delete_ingress_gateway_route_table.py.html>`__ to see an example of how to use delete_ingress_gateway_route_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ingressGatewayRouteTableId']
         resource_path = "/ingressGatewayRouteTables/{ingressGatewayRouteTableId}"
         method = "DELETE"
         operation_name = "delete_ingress_gateway_route_table"
@@ -1967,7 +2042,8 @@ class ServiceMeshClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1976,7 +2052,8 @@ class ServiceMeshClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_mesh(self, mesh_id, **kwargs):
         """
@@ -2014,6 +2091,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/delete_mesh.py.html>`__ to see an example of how to use delete_mesh API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['meshId']
         resource_path = "/meshes/{meshId}"
         method = "DELETE"
         operation_name = "delete_mesh"
@@ -2068,7 +2147,8 @@ class ServiceMeshClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2077,7 +2157,8 @@ class ServiceMeshClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_virtual_deployment(self, virtual_deployment_id, **kwargs):
         """
@@ -2115,6 +2196,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/delete_virtual_deployment.py.html>`__ to see an example of how to use delete_virtual_deployment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualDeploymentId']
         resource_path = "/virtualDeployments/{virtualDeploymentId}"
         method = "DELETE"
         operation_name = "delete_virtual_deployment"
@@ -2169,7 +2252,8 @@ class ServiceMeshClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2178,7 +2262,8 @@ class ServiceMeshClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_virtual_service(self, virtual_service_id, **kwargs):
         """
@@ -2216,6 +2301,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/delete_virtual_service.py.html>`__ to see an example of how to use delete_virtual_service API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualServiceId']
         resource_path = "/virtualServices/{virtualServiceId}"
         method = "DELETE"
         operation_name = "delete_virtual_service"
@@ -2270,7 +2357,8 @@ class ServiceMeshClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2279,7 +2367,8 @@ class ServiceMeshClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_virtual_service_route_table(self, virtual_service_route_table_id, **kwargs):
         """
@@ -2317,6 +2406,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/delete_virtual_service_route_table.py.html>`__ to see an example of how to use delete_virtual_service_route_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualServiceRouteTableId']
         resource_path = "/virtualServiceRouteTables/{virtualServiceRouteTableId}"
         method = "DELETE"
         operation_name = "delete_virtual_service_route_table"
@@ -2371,7 +2462,8 @@ class ServiceMeshClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2380,7 +2472,8 @@ class ServiceMeshClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_access_policy(self, access_policy_id, **kwargs):
         """
@@ -2411,6 +2504,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/get_access_policy.py.html>`__ to see an example of how to use get_access_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['accessPolicyId']
         resource_path = "/accessPolicies/{accessPolicyId}"
         method = "GET"
         operation_name = "get_access_policy"
@@ -2464,7 +2559,8 @@ class ServiceMeshClient(object):
                 response_type="AccessPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2474,7 +2570,8 @@ class ServiceMeshClient(object):
                 response_type="AccessPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_ingress_gateway(self, ingress_gateway_id, **kwargs):
         """
@@ -2505,6 +2602,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/get_ingress_gateway.py.html>`__ to see an example of how to use get_ingress_gateway API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ingressGatewayId']
         resource_path = "/ingressGateways/{ingressGatewayId}"
         method = "GET"
         operation_name = "get_ingress_gateway"
@@ -2558,7 +2657,8 @@ class ServiceMeshClient(object):
                 response_type="IngressGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2568,7 +2668,8 @@ class ServiceMeshClient(object):
                 response_type="IngressGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_ingress_gateway_route_table(self, ingress_gateway_route_table_id, **kwargs):
         """
@@ -2599,6 +2700,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/get_ingress_gateway_route_table.py.html>`__ to see an example of how to use get_ingress_gateway_route_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ingressGatewayRouteTableId']
         resource_path = "/ingressGatewayRouteTables/{ingressGatewayRouteTableId}"
         method = "GET"
         operation_name = "get_ingress_gateway_route_table"
@@ -2652,7 +2755,8 @@ class ServiceMeshClient(object):
                 response_type="IngressGatewayRouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2662,7 +2766,8 @@ class ServiceMeshClient(object):
                 response_type="IngressGatewayRouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_mesh(self, mesh_id, **kwargs):
         """
@@ -2693,6 +2798,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/get_mesh.py.html>`__ to see an example of how to use get_mesh API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['meshId']
         resource_path = "/meshes/{meshId}"
         method = "GET"
         operation_name = "get_mesh"
@@ -2746,7 +2853,8 @@ class ServiceMeshClient(object):
                 response_type="Mesh",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2756,7 +2864,8 @@ class ServiceMeshClient(object):
                 response_type="Mesh",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_proxy_details(self, **kwargs):
         """
@@ -2784,6 +2893,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/get_proxy_details.py.html>`__ to see an example of how to use get_proxy_details API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/proxyDetails"
         method = "GET"
         operation_name = "get_proxy_details"
@@ -2826,7 +2937,8 @@ class ServiceMeshClient(object):
                 response_type="ProxyDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2835,7 +2947,8 @@ class ServiceMeshClient(object):
                 response_type="ProxyDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_virtual_deployment(self, virtual_deployment_id, **kwargs):
         """
@@ -2866,6 +2979,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/get_virtual_deployment.py.html>`__ to see an example of how to use get_virtual_deployment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualDeploymentId']
         resource_path = "/virtualDeployments/{virtualDeploymentId}"
         method = "GET"
         operation_name = "get_virtual_deployment"
@@ -2919,7 +3034,8 @@ class ServiceMeshClient(object):
                 response_type="VirtualDeployment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2929,7 +3045,8 @@ class ServiceMeshClient(object):
                 response_type="VirtualDeployment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_virtual_service(self, virtual_service_id, **kwargs):
         """
@@ -2960,6 +3077,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/get_virtual_service.py.html>`__ to see an example of how to use get_virtual_service API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualServiceId']
         resource_path = "/virtualServices/{virtualServiceId}"
         method = "GET"
         operation_name = "get_virtual_service"
@@ -3013,7 +3132,8 @@ class ServiceMeshClient(object):
                 response_type="VirtualService",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3023,7 +3143,8 @@ class ServiceMeshClient(object):
                 response_type="VirtualService",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_virtual_service_route_table(self, virtual_service_route_table_id, **kwargs):
         """
@@ -3054,6 +3175,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/get_virtual_service_route_table.py.html>`__ to see an example of how to use get_virtual_service_route_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualServiceRouteTableId']
         resource_path = "/virtualServiceRouteTables/{virtualServiceRouteTableId}"
         method = "GET"
         operation_name = "get_virtual_service_route_table"
@@ -3107,7 +3230,8 @@ class ServiceMeshClient(object):
                 response_type="VirtualServiceRouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3117,7 +3241,8 @@ class ServiceMeshClient(object):
                 response_type="VirtualServiceRouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -3148,6 +3273,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -3201,7 +3328,8 @@ class ServiceMeshClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3211,7 +3339,8 @@ class ServiceMeshClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_access_policies(self, compartment_id, **kwargs):
         """
@@ -3272,6 +3401,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/list_access_policies.py.html>`__ to see an example of how to use list_access_policies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/accessPolicies"
         method = "GET"
         operation_name = "list_access_policies"
@@ -3357,7 +3488,8 @@ class ServiceMeshClient(object):
                 response_type="AccessPolicyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3367,7 +3499,8 @@ class ServiceMeshClient(object):
                 response_type="AccessPolicyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_ingress_gateway_route_tables(self, compartment_id, **kwargs):
         """
@@ -3428,6 +3561,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/list_ingress_gateway_route_tables.py.html>`__ to see an example of how to use list_ingress_gateway_route_tables API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/ingressGatewayRouteTables"
         method = "GET"
         operation_name = "list_ingress_gateway_route_tables"
@@ -3513,7 +3648,8 @@ class ServiceMeshClient(object):
                 response_type="IngressGatewayRouteTableCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3523,7 +3659,8 @@ class ServiceMeshClient(object):
                 response_type="IngressGatewayRouteTableCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_ingress_gateways(self, compartment_id, **kwargs):
         """
@@ -3584,6 +3721,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/list_ingress_gateways.py.html>`__ to see an example of how to use list_ingress_gateways API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/ingressGateways"
         method = "GET"
         operation_name = "list_ingress_gateways"
@@ -3669,7 +3808,8 @@ class ServiceMeshClient(object):
                 response_type="IngressGatewayCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3679,7 +3819,8 @@ class ServiceMeshClient(object):
                 response_type="IngressGatewayCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_meshes(self, compartment_id, **kwargs):
         """
@@ -3737,6 +3878,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/list_meshes.py.html>`__ to see an example of how to use list_meshes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/meshes"
         method = "GET"
         operation_name = "list_meshes"
@@ -3820,7 +3963,8 @@ class ServiceMeshClient(object):
                 response_type="MeshCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3830,7 +3974,8 @@ class ServiceMeshClient(object):
                 response_type="MeshCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_virtual_deployments(self, compartment_id, **kwargs):
         """
@@ -3891,6 +4036,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/list_virtual_deployments.py.html>`__ to see an example of how to use list_virtual_deployments API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/virtualDeployments"
         method = "GET"
         operation_name = "list_virtual_deployments"
@@ -3976,7 +4123,8 @@ class ServiceMeshClient(object):
                 response_type="VirtualDeploymentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3986,7 +4134,8 @@ class ServiceMeshClient(object):
                 response_type="VirtualDeploymentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_virtual_service_route_tables(self, compartment_id, **kwargs):
         """
@@ -4047,6 +4196,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/list_virtual_service_route_tables.py.html>`__ to see an example of how to use list_virtual_service_route_tables API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/virtualServiceRouteTables"
         method = "GET"
         operation_name = "list_virtual_service_route_tables"
@@ -4132,7 +4283,8 @@ class ServiceMeshClient(object):
                 response_type="VirtualServiceRouteTableCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4142,7 +4294,8 @@ class ServiceMeshClient(object):
                 response_type="VirtualServiceRouteTableCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_virtual_services(self, compartment_id, **kwargs):
         """
@@ -4203,6 +4356,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/list_virtual_services.py.html>`__ to see an example of how to use list_virtual_services API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/virtualServices"
         method = "GET"
         operation_name = "list_virtual_services"
@@ -4288,7 +4443,8 @@ class ServiceMeshClient(object):
                 response_type="VirtualServiceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4298,7 +4454,8 @@ class ServiceMeshClient(object):
                 response_type="VirtualServiceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -4345,6 +4502,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -4425,7 +4584,8 @@ class ServiceMeshClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4436,7 +4596,8 @@ class ServiceMeshClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -4483,6 +4644,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -4563,7 +4726,8 @@ class ServiceMeshClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4574,7 +4738,8 @@ class ServiceMeshClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -4632,6 +4797,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -4715,7 +4882,8 @@ class ServiceMeshClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4725,7 +4893,8 @@ class ServiceMeshClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_access_policy(self, access_policy_id, update_access_policy_details, **kwargs):
         """
@@ -4773,6 +4942,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/update_access_policy.py.html>`__ to see an example of how to use update_access_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['accessPolicyId']
         resource_path = "/accessPolicies/{accessPolicyId}"
         method = "PUT"
         operation_name = "update_access_policy"
@@ -4831,7 +5002,8 @@ class ServiceMeshClient(object):
                 body=update_access_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4841,7 +5013,8 @@ class ServiceMeshClient(object):
                 body=update_access_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_ingress_gateway(self, ingress_gateway_id, update_ingress_gateway_details, **kwargs):
         """
@@ -4889,6 +5062,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/update_ingress_gateway.py.html>`__ to see an example of how to use update_ingress_gateway API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ingressGatewayId']
         resource_path = "/ingressGateways/{ingressGatewayId}"
         method = "PUT"
         operation_name = "update_ingress_gateway"
@@ -4947,7 +5122,8 @@ class ServiceMeshClient(object):
                 body=update_ingress_gateway_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4957,7 +5133,8 @@ class ServiceMeshClient(object):
                 body=update_ingress_gateway_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_ingress_gateway_route_table(self, ingress_gateway_route_table_id, update_ingress_gateway_route_table_details, **kwargs):
         """
@@ -5005,6 +5182,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/update_ingress_gateway_route_table.py.html>`__ to see an example of how to use update_ingress_gateway_route_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ingressGatewayRouteTableId']
         resource_path = "/ingressGatewayRouteTables/{ingressGatewayRouteTableId}"
         method = "PUT"
         operation_name = "update_ingress_gateway_route_table"
@@ -5063,7 +5242,8 @@ class ServiceMeshClient(object):
                 body=update_ingress_gateway_route_table_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5073,7 +5253,8 @@ class ServiceMeshClient(object):
                 body=update_ingress_gateway_route_table_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_mesh(self, mesh_id, update_mesh_details, **kwargs):
         """
@@ -5121,6 +5302,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/update_mesh.py.html>`__ to see an example of how to use update_mesh API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['meshId']
         resource_path = "/meshes/{meshId}"
         method = "PUT"
         operation_name = "update_mesh"
@@ -5179,7 +5362,8 @@ class ServiceMeshClient(object):
                 body=update_mesh_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5189,7 +5373,8 @@ class ServiceMeshClient(object):
                 body=update_mesh_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_virtual_deployment(self, virtual_deployment_id, update_virtual_deployment_details, **kwargs):
         """
@@ -5237,6 +5422,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/update_virtual_deployment.py.html>`__ to see an example of how to use update_virtual_deployment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualDeploymentId']
         resource_path = "/virtualDeployments/{virtualDeploymentId}"
         method = "PUT"
         operation_name = "update_virtual_deployment"
@@ -5295,7 +5482,8 @@ class ServiceMeshClient(object):
                 body=update_virtual_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5305,7 +5493,8 @@ class ServiceMeshClient(object):
                 body=update_virtual_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_virtual_service(self, virtual_service_id, update_virtual_service_details, **kwargs):
         """
@@ -5353,6 +5542,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/update_virtual_service.py.html>`__ to see an example of how to use update_virtual_service API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualServiceId']
         resource_path = "/virtualServices/{virtualServiceId}"
         method = "PUT"
         operation_name = "update_virtual_service"
@@ -5411,7 +5602,8 @@ class ServiceMeshClient(object):
                 body=update_virtual_service_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5421,7 +5613,8 @@ class ServiceMeshClient(object):
                 body=update_virtual_service_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_virtual_service_route_table(self, virtual_service_route_table_id, update_virtual_service_route_table_details, **kwargs):
         """
@@ -5469,6 +5662,8 @@ class ServiceMeshClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicemesh/update_virtual_service_route_table.py.html>`__ to see an example of how to use update_virtual_service_route_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualServiceRouteTableId']
         resource_path = "/virtualServiceRouteTables/{virtualServiceRouteTableId}"
         method = "PUT"
         operation_name = "update_virtual_service_route_table"
@@ -5527,7 +5722,8 @@ class ServiceMeshClient(object):
                 body=update_virtual_service_route_table_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5537,4 +5733,5 @@ class ServiceMeshClient(object):
                 body=update_virtual_service_route_table_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

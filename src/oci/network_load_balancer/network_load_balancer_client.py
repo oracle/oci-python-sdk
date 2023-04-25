@@ -65,6 +65,9 @@ class NetworkLoadBalancerClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class NetworkLoadBalancerClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20200501',
             'service_endpoint_template': 'https://network-load-balancer-api.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -156,6 +161,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/change_network_load_balancer_compartment.py.html>`__ to see an example of how to use change_network_load_balancer_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_network_load_balancer_compartment"
@@ -212,7 +219,8 @@ class NetworkLoadBalancerClient(object):
                 body=change_network_load_balancer_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -222,7 +230,8 @@ class NetworkLoadBalancerClient(object):
                 body=change_network_load_balancer_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_backend(self, network_load_balancer_id, create_backend_details, backend_set_name, **kwargs):
         """
@@ -278,6 +287,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/create_backend.py.html>`__ to see an example of how to use create_backend API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId', 'backendSetName']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends"
         method = "POST"
         operation_name = "create_backend"
@@ -335,7 +346,8 @@ class NetworkLoadBalancerClient(object):
                 body=create_backend_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -345,7 +357,8 @@ class NetworkLoadBalancerClient(object):
                 body=create_backend_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_backend_set(self, network_load_balancer_id, create_backend_set_details, **kwargs):
         """
@@ -396,6 +409,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/create_backend_set.py.html>`__ to see an example of how to use create_backend_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets"
         method = "POST"
         operation_name = "create_backend_set"
@@ -452,7 +467,8 @@ class NetworkLoadBalancerClient(object):
                 body=create_backend_set_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -462,7 +478,8 @@ class NetworkLoadBalancerClient(object):
                 body=create_backend_set_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_listener(self, network_load_balancer_id, create_listener_details, **kwargs):
         """
@@ -513,6 +530,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/create_listener.py.html>`__ to see an example of how to use create_listener API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/listeners"
         method = "POST"
         operation_name = "create_listener"
@@ -569,7 +588,8 @@ class NetworkLoadBalancerClient(object):
                 body=create_listener_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -579,7 +599,8 @@ class NetworkLoadBalancerClient(object):
                 body=create_listener_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_network_load_balancer(self, create_network_load_balancer_details, **kwargs):
         """
@@ -618,6 +639,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/create_network_load_balancer.py.html>`__ to see an example of how to use create_network_load_balancer API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/networkLoadBalancers"
         method = "POST"
         operation_name = "create_network_load_balancer"
@@ -662,7 +685,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="NetworkLoadBalancer",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -672,7 +696,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="NetworkLoadBalancer",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_backend(self, network_load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
@@ -726,6 +751,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/delete_backend.py.html>`__ to see an example of how to use delete_backend API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId', 'backendSetName', 'backendName']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         method = "DELETE"
         operation_name = "delete_backend"
@@ -780,7 +807,8 @@ class NetworkLoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -789,7 +817,8 @@ class NetworkLoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_backend_set(self, network_load_balancer_id, backend_set_name, **kwargs):
         """
@@ -837,6 +866,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/delete_backend_set.py.html>`__ to see an example of how to use delete_backend_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId', 'backendSetName']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
         method = "DELETE"
         operation_name = "delete_backend_set"
@@ -890,7 +921,8 @@ class NetworkLoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -899,7 +931,8 @@ class NetworkLoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_listener(self, network_load_balancer_id, listener_name, **kwargs):
         """
@@ -945,6 +978,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/delete_listener.py.html>`__ to see an example of how to use delete_listener API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId', 'listenerName']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/listeners/{listenerName}"
         method = "DELETE"
         operation_name = "delete_listener"
@@ -998,7 +1033,8 @@ class NetworkLoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1007,7 +1043,8 @@ class NetworkLoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_network_load_balancer(self, network_load_balancer_id, **kwargs):
         """
@@ -1048,6 +1085,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/delete_network_load_balancer.py.html>`__ to see an example of how to use delete_network_load_balancer API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}"
         method = "DELETE"
         operation_name = "delete_network_load_balancer"
@@ -1100,7 +1139,8 @@ class NetworkLoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1109,7 +1149,8 @@ class NetworkLoadBalancerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_backend(self, network_load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
@@ -1163,6 +1204,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/get_backend.py.html>`__ to see an example of how to use get_backend API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId', 'backendSetName', 'backendName']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         method = "GET"
         operation_name = "get_backend"
@@ -1218,7 +1261,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="Backend",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1228,7 +1272,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="Backend",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_backend_health(self, network_load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
@@ -1275,6 +1320,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/get_backend_health.py.html>`__ to see an example of how to use get_backend_health API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId', 'backendSetName', 'backendName']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends/{backendName}/health"
         method = "GET"
         operation_name = "get_backend_health"
@@ -1328,7 +1375,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="BackendHealth",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1338,7 +1386,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="BackendHealth",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_backend_set(self, network_load_balancer_id, backend_set_name, **kwargs):
         """
@@ -1384,6 +1433,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/get_backend_set.py.html>`__ to see an example of how to use get_backend_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId', 'backendSetName']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
         method = "GET"
         operation_name = "get_backend_set"
@@ -1438,7 +1489,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="BackendSet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1448,7 +1500,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="BackendSet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_backend_set_health(self, network_load_balancer_id, backend_set_name, **kwargs):
         """
@@ -1487,6 +1540,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/get_backend_set_health.py.html>`__ to see an example of how to use get_backend_set_health API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId', 'backendSetName']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/health"
         method = "GET"
         operation_name = "get_backend_set_health"
@@ -1539,7 +1594,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="BackendSetHealth",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1549,7 +1605,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="BackendSetHealth",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_health_checker(self, network_load_balancer_id, backend_set_name, **kwargs):
         """
@@ -1602,6 +1659,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/get_health_checker.py.html>`__ to see an example of how to use get_health_checker API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId', 'backendSetName']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/healthChecker"
         method = "GET"
         operation_name = "get_health_checker"
@@ -1659,7 +1718,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="HealthChecker",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1669,7 +1729,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="HealthChecker",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_listener(self, network_load_balancer_id, listener_name, **kwargs):
         """
@@ -1715,6 +1776,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/get_listener.py.html>`__ to see an example of how to use get_listener API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId', 'listenerName']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/listeners/{listenerName}"
         method = "GET"
         operation_name = "get_listener"
@@ -1769,7 +1832,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="Listener",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1779,7 +1843,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="Listener",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_network_load_balancer(self, network_load_balancer_id, **kwargs):
         """
@@ -1820,6 +1885,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/get_network_load_balancer.py.html>`__ to see an example of how to use get_network_load_balancer API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}"
         method = "GET"
         operation_name = "get_network_load_balancer"
@@ -1873,7 +1940,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="NetworkLoadBalancer",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1883,7 +1951,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="NetworkLoadBalancer",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_network_load_balancer_health(self, network_load_balancer_id, **kwargs):
         """
@@ -1917,6 +1986,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/get_network_load_balancer_health.py.html>`__ to see an example of how to use get_network_load_balancer_health API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/health"
         method = "GET"
         operation_name = "get_network_load_balancer_health"
@@ -1968,7 +2039,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="NetworkLoadBalancerHealth",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1978,7 +2050,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="NetworkLoadBalancerHealth",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -2010,6 +2083,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -2061,7 +2136,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2071,7 +2147,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_backend_sets(self, network_load_balancer_id, **kwargs):
         """
@@ -2136,6 +2213,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/list_backend_sets.py.html>`__ to see an example of how to use list_backend_sets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets"
         method = "GET"
         operation_name = "list_backend_sets"
@@ -2216,7 +2295,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="BackendSetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2227,7 +2307,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="BackendSetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_backends(self, network_load_balancer_id, backend_set_name, **kwargs):
         """
@@ -2297,6 +2378,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/list_backends.py.html>`__ to see an example of how to use list_backends API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId', 'backendSetName']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends"
         method = "GET"
         operation_name = "list_backends"
@@ -2378,7 +2461,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="BackendCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2389,7 +2473,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="BackendCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_listeners(self, network_load_balancer_id, **kwargs):
         """
@@ -2454,6 +2539,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/list_listeners.py.html>`__ to see an example of how to use list_listeners API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/listeners"
         method = "GET"
         operation_name = "list_listeners"
@@ -2534,7 +2621,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="ListenerCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2545,7 +2633,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="ListenerCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_network_load_balancer_healths(self, compartment_id, **kwargs):
         """
@@ -2603,6 +2692,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/list_network_load_balancer_healths.py.html>`__ to see an example of how to use list_network_load_balancer_healths API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/networkLoadBalancers/health"
         method = "GET"
         operation_name = "list_network_load_balancer_healths"
@@ -2671,7 +2762,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="NetworkLoadBalancerHealthCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2681,7 +2773,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="NetworkLoadBalancerHealthCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_network_load_balancers(self, compartment_id, **kwargs):
         """
@@ -2747,6 +2840,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/list_network_load_balancers.py.html>`__ to see an example of how to use list_network_load_balancers API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/networkLoadBalancers"
         method = "GET"
         operation_name = "list_network_load_balancers"
@@ -2826,7 +2921,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="NetworkLoadBalancerCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2836,7 +2932,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="NetworkLoadBalancerCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_network_load_balancers_policies(self, **kwargs):
         """
@@ -2889,6 +2986,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/list_network_load_balancers_policies.py.html>`__ to see an example of how to use list_network_load_balancers_policies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/networkLoadBalancersPolicies"
         method = "GET"
         operation_name = "list_network_load_balancers_policies"
@@ -2956,7 +3055,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="NetworkLoadBalancersPolicyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2966,7 +3066,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="NetworkLoadBalancersPolicyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_network_load_balancers_protocols(self, **kwargs):
         """
@@ -3020,6 +3121,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/list_network_load_balancers_protocols.py.html>`__ to see an example of how to use list_network_load_balancers_protocols API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/networkLoadBalancersProtocols"
         method = "GET"
         operation_name = "list_network_load_balancers_protocols"
@@ -3087,7 +3190,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="NetworkLoadBalancersProtocolCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3097,7 +3201,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="NetworkLoadBalancersProtocolCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, compartment_id, **kwargs):
         """
@@ -3147,6 +3252,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId', 'compartmentId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -3208,7 +3315,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3219,7 +3327,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, compartment_id, **kwargs):
         """
@@ -3269,6 +3378,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId', 'compartmentId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -3330,7 +3441,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3341,7 +3453,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -3388,6 +3501,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -3438,7 +3553,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3448,7 +3564,8 @@ class NetworkLoadBalancerClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_backend(self, network_load_balancer_id, update_backend_details, backend_set_name, backend_name, **kwargs):
         """
@@ -3512,6 +3629,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/update_backend.py.html>`__ to see an example of how to use update_backend API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId', 'backendSetName', 'backendName']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         method = "PUT"
         operation_name = "update_backend"
@@ -3570,7 +3689,8 @@ class NetworkLoadBalancerClient(object):
                 body=update_backend_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3580,7 +3700,8 @@ class NetworkLoadBalancerClient(object):
                 body=update_backend_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_backend_set(self, network_load_balancer_id, update_backend_set_details, backend_set_name, **kwargs):
         """
@@ -3636,6 +3757,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/update_backend_set.py.html>`__ to see an example of how to use update_backend_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId', 'backendSetName']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
         method = "PUT"
         operation_name = "update_backend_set"
@@ -3693,7 +3816,8 @@ class NetworkLoadBalancerClient(object):
                 body=update_backend_set_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3703,7 +3827,8 @@ class NetworkLoadBalancerClient(object):
                 body=update_backend_set_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_health_checker(self, network_load_balancer_id, update_health_checker_details, backend_set_name, **kwargs):
         """
@@ -3759,6 +3884,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/update_health_checker.py.html>`__ to see an example of how to use update_health_checker API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId', 'backendSetName']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/healthChecker"
         method = "PUT"
         operation_name = "update_health_checker"
@@ -3816,7 +3943,8 @@ class NetworkLoadBalancerClient(object):
                 body=update_health_checker_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3826,7 +3954,8 @@ class NetworkLoadBalancerClient(object):
                 body=update_health_checker_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_listener(self, network_load_balancer_id, update_listener_details, listener_name, **kwargs):
         """
@@ -3882,6 +4011,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/update_listener.py.html>`__ to see an example of how to use update_listener API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId', 'listenerName']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/listeners/{listenerName}"
         method = "PUT"
         operation_name = "update_listener"
@@ -3939,7 +4070,8 @@ class NetworkLoadBalancerClient(object):
                 body=update_listener_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3949,7 +4081,8 @@ class NetworkLoadBalancerClient(object):
                 body=update_listener_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_network_load_balancer(self, network_load_balancer_id, update_network_load_balancer_details, **kwargs):
         """
@@ -3993,6 +4126,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/update_network_load_balancer.py.html>`__ to see an example of how to use update_network_load_balancer API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}"
         method = "PUT"
         operation_name = "update_network_load_balancer"
@@ -4046,7 +4181,8 @@ class NetworkLoadBalancerClient(object):
                 body=update_network_load_balancer_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4056,7 +4192,8 @@ class NetworkLoadBalancerClient(object):
                 body=update_network_load_balancer_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_network_security_groups(self, network_load_balancer_id, update_network_security_groups_details, **kwargs):
         """
@@ -4107,6 +4244,8 @@ class NetworkLoadBalancerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/networkloadbalancer/update_network_security_groups.py.html>`__ to see an example of how to use update_network_security_groups API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkLoadBalancerId']
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/networkSecurityGroups"
         method = "PUT"
         operation_name = "update_network_security_groups"
@@ -4163,7 +4302,8 @@ class NetworkLoadBalancerClient(object):
                 body=update_network_security_groups_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4173,4 +4313,5 @@ class NetworkLoadBalancerClient(object):
                 body=update_network_security_groups_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

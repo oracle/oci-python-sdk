@@ -37,6 +37,14 @@ class WorkRequestSubResource(object):
     #: This constant has a value of "FAILED"
     ACTION_TYPE_FAILED = "FAILED"
 
+    #: A constant which can be used with the action_type property of a WorkRequestSubResource.
+    #: This constant has a value of "ENABLED"
+    ACTION_TYPE_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the action_type property of a WorkRequestSubResource.
+    #: This constant has a value of "DISABLED"
+    ACTION_TYPE_DISABLED = "DISABLED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new WorkRequestSubResource object with values from keyword arguments.
@@ -52,7 +60,7 @@ class WorkRequestSubResource(object):
 
         :param action_type:
             The value to assign to the action_type property of this WorkRequestSubResource.
-            Allowed values for this property are: "CREATED", "UPDATED", "DELETED", "IN_PROGRESS", "RELATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATED", "UPDATED", "DELETED", "IN_PROGRESS", "RELATED", "FAILED", "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type action_type: str
 
@@ -151,7 +159,7 @@ class WorkRequestSubResource(object):
         work is complete for that resource at which point it will transition to CREATED, UPDATED,
         or DELETED, respectively.
 
-        Allowed values for this property are: "CREATED", "UPDATED", "DELETED", "IN_PROGRESS", "RELATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATED", "UPDATED", "DELETED", "IN_PROGRESS", "RELATED", "FAILED", "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -173,7 +181,7 @@ class WorkRequestSubResource(object):
         :param action_type: The action_type of this WorkRequestSubResource.
         :type: str
         """
-        allowed_values = ["CREATED", "UPDATED", "DELETED", "IN_PROGRESS", "RELATED", "FAILED"]
+        allowed_values = ["CREATED", "UPDATED", "DELETED", "IN_PROGRESS", "RELATED", "FAILED", "ENABLED", "DISABLED"]
         if not value_allowed_none_or_none_sentinel(action_type, allowed_values):
             action_type = 'UNKNOWN_ENUM_VALUE'
         self._action_type = action_type

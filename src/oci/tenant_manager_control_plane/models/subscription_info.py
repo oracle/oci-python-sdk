@@ -89,7 +89,7 @@ class SubscriptionInfo(object):
     def service(self):
         """
         **[Required]** Gets the service of this SubscriptionInfo.
-        Service name for subscription.
+        Subscription service name.
 
 
         :return: The service of this SubscriptionInfo.
@@ -101,7 +101,7 @@ class SubscriptionInfo(object):
     def service(self, service):
         """
         Sets the service of this SubscriptionInfo.
-        Service name for subscription.
+        Subscription service name.
 
 
         :param service: The service of this SubscriptionInfo.

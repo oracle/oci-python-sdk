@@ -65,6 +65,9 @@ class DbSystemClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class DbSystemClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20190415',
             'service_endpoint_template': 'https://mysql.{region}.ocp.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -156,6 +161,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/add_analytics_cluster.py.html>`__ to see an example of how to use add_analytics_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/analyticsCluster/actions/add"
         method = "POST"
         operation_name = "add_analytics_cluster"
@@ -215,7 +222,8 @@ class DbSystemClient(object):
                 response_type="AnalyticsCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -226,7 +234,8 @@ class DbSystemClient(object):
                 response_type="AnalyticsCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def add_heat_wave_cluster(self, db_system_id, add_heat_wave_cluster_details, **kwargs):
         """
@@ -279,6 +288,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/add_heat_wave_cluster.py.html>`__ to see an example of how to use add_heat_wave_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/heatWaveCluster/actions/add"
         method = "POST"
         operation_name = "add_heat_wave_cluster"
@@ -338,7 +349,8 @@ class DbSystemClient(object):
                 response_type="HeatWaveCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -349,7 +361,8 @@ class DbSystemClient(object):
                 response_type="HeatWaveCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_db_system(self, create_db_system_details, **kwargs):
         """
@@ -390,6 +403,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/create_db_system.py.html>`__ to see an example of how to use create_db_system API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/dbSystems"
         method = "POST"
         operation_name = "create_db_system"
@@ -436,7 +451,8 @@ class DbSystemClient(object):
                 response_type="DbSystem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -446,7 +462,8 @@ class DbSystemClient(object):
                 response_type="DbSystem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_analytics_cluster(self, db_system_id, **kwargs):
         """
@@ -490,6 +507,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/delete_analytics_cluster.py.html>`__ to see an example of how to use delete_analytics_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/analyticsCluster"
         method = "DELETE"
         operation_name = "delete_analytics_cluster"
@@ -544,7 +563,8 @@ class DbSystemClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -553,7 +573,8 @@ class DbSystemClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_db_system(self, db_system_id, **kwargs):
         """
@@ -596,6 +617,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/delete_db_system.py.html>`__ to see an example of how to use delete_db_system API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}"
         method = "DELETE"
         operation_name = "delete_db_system"
@@ -650,7 +673,8 @@ class DbSystemClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -659,7 +683,8 @@ class DbSystemClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_heat_wave_cluster(self, db_system_id, **kwargs):
         """
@@ -702,6 +727,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/delete_heat_wave_cluster.py.html>`__ to see an example of how to use delete_heat_wave_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/heatWaveCluster"
         method = "DELETE"
         operation_name = "delete_heat_wave_cluster"
@@ -756,7 +783,8 @@ class DbSystemClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -765,7 +793,8 @@ class DbSystemClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def generate_analytics_cluster_memory_estimate(self, db_system_id, **kwargs):
         """
@@ -809,6 +838,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/generate_analytics_cluster_memory_estimate.py.html>`__ to see an example of how to use generate_analytics_cluster_memory_estimate API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/analyticsClusterMemoryEstimate/actions/generate"
         method = "POST"
         operation_name = "generate_analytics_cluster_memory_estimate"
@@ -865,7 +896,8 @@ class DbSystemClient(object):
                 response_type="AnalyticsClusterMemoryEstimate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -875,7 +907,8 @@ class DbSystemClient(object):
                 response_type="AnalyticsClusterMemoryEstimate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def generate_heat_wave_cluster_memory_estimate(self, db_system_id, **kwargs):
         """
@@ -918,6 +951,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/generate_heat_wave_cluster_memory_estimate.py.html>`__ to see an example of how to use generate_heat_wave_cluster_memory_estimate API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/heatWaveClusterMemoryEstimate/actions/generate"
         method = "POST"
         operation_name = "generate_heat_wave_cluster_memory_estimate"
@@ -974,7 +1009,8 @@ class DbSystemClient(object):
                 response_type="HeatWaveClusterMemoryEstimate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -984,7 +1020,8 @@ class DbSystemClient(object):
                 response_type="HeatWaveClusterMemoryEstimate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_analytics_cluster(self, db_system_id, **kwargs):
         """
@@ -1027,6 +1064,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/get_analytics_cluster.py.html>`__ to see an example of how to use get_analytics_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/analyticsCluster"
         method = "GET"
         operation_name = "get_analytics_cluster"
@@ -1082,7 +1121,8 @@ class DbSystemClient(object):
                 response_type="AnalyticsCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1092,7 +1132,8 @@ class DbSystemClient(object):
                 response_type="AnalyticsCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_analytics_cluster_memory_estimate(self, db_system_id, **kwargs):
         """
@@ -1129,6 +1170,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/get_analytics_cluster_memory_estimate.py.html>`__ to see an example of how to use get_analytics_cluster_memory_estimate API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/analyticsClusterMemoryEstimate"
         method = "GET"
         operation_name = "get_analytics_cluster_memory_estimate"
@@ -1182,7 +1225,8 @@ class DbSystemClient(object):
                 response_type="AnalyticsClusterMemoryEstimate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1192,7 +1236,8 @@ class DbSystemClient(object):
                 response_type="AnalyticsClusterMemoryEstimate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_db_system(self, db_system_id, **kwargs):
         """
@@ -1234,6 +1279,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/get_db_system.py.html>`__ to see an example of how to use get_db_system API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}"
         method = "GET"
         operation_name = "get_db_system"
@@ -1289,7 +1336,8 @@ class DbSystemClient(object):
                 response_type="DbSystem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1299,7 +1347,8 @@ class DbSystemClient(object):
                 response_type="DbSystem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_heat_wave_cluster(self, db_system_id, **kwargs):
         """
@@ -1341,6 +1390,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/get_heat_wave_cluster.py.html>`__ to see an example of how to use get_heat_wave_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/heatWaveCluster"
         method = "GET"
         operation_name = "get_heat_wave_cluster"
@@ -1396,7 +1447,8 @@ class DbSystemClient(object):
                 response_type="HeatWaveCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1406,7 +1458,8 @@ class DbSystemClient(object):
                 response_type="HeatWaveCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_heat_wave_cluster_memory_estimate(self, db_system_id, **kwargs):
         """
@@ -1442,6 +1495,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/get_heat_wave_cluster_memory_estimate.py.html>`__ to see an example of how to use get_heat_wave_cluster_memory_estimate API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/heatWaveClusterMemoryEstimate"
         method = "GET"
         operation_name = "get_heat_wave_cluster_memory_estimate"
@@ -1495,7 +1550,8 @@ class DbSystemClient(object):
                 response_type="HeatWaveClusterMemoryEstimate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1505,7 +1561,8 @@ class DbSystemClient(object):
                 response_type="HeatWaveClusterMemoryEstimate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_db_systems(self, compartment_id, **kwargs):
         """
@@ -1595,6 +1652,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/list_db_systems.py.html>`__ to see an example of how to use list_db_systems API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/dbSystems"
         method = "GET"
         operation_name = "list_db_systems"
@@ -1686,7 +1745,8 @@ class DbSystemClient(object):
                 response_type="list[DbSystemSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1696,7 +1756,8 @@ class DbSystemClient(object):
                 response_type="list[DbSystemSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def restart_analytics_cluster(self, db_system_id, **kwargs):
         """
@@ -1747,6 +1808,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/restart_analytics_cluster.py.html>`__ to see an example of how to use restart_analytics_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/analyticsCluster/actions/restart"
         method = "POST"
         operation_name = "restart_analytics_cluster"
@@ -1804,7 +1867,8 @@ class DbSystemClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1813,7 +1877,8 @@ class DbSystemClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def restart_db_system(self, db_system_id, restart_db_system_details, **kwargs):
         """
@@ -1866,6 +1931,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/restart_db_system.py.html>`__ to see an example of how to use restart_db_system API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/actions/restart"
         method = "POST"
         operation_name = "restart_db_system"
@@ -1924,7 +1991,8 @@ class DbSystemClient(object):
                 body=restart_db_system_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1934,7 +2002,8 @@ class DbSystemClient(object):
                 body=restart_db_system_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def restart_heat_wave_cluster(self, db_system_id, **kwargs):
         """
@@ -1984,6 +2053,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/restart_heat_wave_cluster.py.html>`__ to see an example of how to use restart_heat_wave_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/heatWaveCluster/actions/restart"
         method = "POST"
         operation_name = "restart_heat_wave_cluster"
@@ -2041,7 +2112,8 @@ class DbSystemClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2050,7 +2122,8 @@ class DbSystemClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def start_analytics_cluster(self, db_system_id, **kwargs):
         """
@@ -2101,6 +2174,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/start_analytics_cluster.py.html>`__ to see an example of how to use start_analytics_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/analyticsCluster/actions/start"
         method = "POST"
         operation_name = "start_analytics_cluster"
@@ -2158,7 +2233,8 @@ class DbSystemClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2167,7 +2243,8 @@ class DbSystemClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def start_db_system(self, db_system_id, **kwargs):
         """
@@ -2217,6 +2294,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/start_db_system.py.html>`__ to see an example of how to use start_db_system API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/actions/start"
         method = "POST"
         operation_name = "start_db_system"
@@ -2274,7 +2353,8 @@ class DbSystemClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2283,7 +2363,8 @@ class DbSystemClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def start_heat_wave_cluster(self, db_system_id, **kwargs):
         """
@@ -2333,6 +2414,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/start_heat_wave_cluster.py.html>`__ to see an example of how to use start_heat_wave_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/heatWaveCluster/actions/start"
         method = "POST"
         operation_name = "start_heat_wave_cluster"
@@ -2390,7 +2473,8 @@ class DbSystemClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2399,7 +2483,8 @@ class DbSystemClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def stop_analytics_cluster(self, db_system_id, **kwargs):
         """
@@ -2450,6 +2535,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/stop_analytics_cluster.py.html>`__ to see an example of how to use stop_analytics_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/analyticsCluster/actions/stop"
         method = "POST"
         operation_name = "stop_analytics_cluster"
@@ -2507,7 +2594,8 @@ class DbSystemClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2516,7 +2604,8 @@ class DbSystemClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def stop_db_system(self, db_system_id, stop_db_system_details, **kwargs):
         """
@@ -2571,6 +2660,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/stop_db_system.py.html>`__ to see an example of how to use stop_db_system API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/actions/stop"
         method = "POST"
         operation_name = "stop_db_system"
@@ -2629,7 +2720,8 @@ class DbSystemClient(object):
                 body=stop_db_system_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2639,7 +2731,8 @@ class DbSystemClient(object):
                 body=stop_db_system_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def stop_heat_wave_cluster(self, db_system_id, **kwargs):
         """
@@ -2689,6 +2782,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/stop_heat_wave_cluster.py.html>`__ to see an example of how to use stop_heat_wave_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/heatWaveCluster/actions/stop"
         method = "POST"
         operation_name = "stop_heat_wave_cluster"
@@ -2746,7 +2841,8 @@ class DbSystemClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2755,7 +2851,8 @@ class DbSystemClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_analytics_cluster(self, db_system_id, update_analytics_cluster_details, **kwargs):
         """
@@ -2801,6 +2898,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/update_analytics_cluster.py.html>`__ to see an example of how to use update_analytics_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/analyticsCluster"
         method = "PUT"
         operation_name = "update_analytics_cluster"
@@ -2856,7 +2955,8 @@ class DbSystemClient(object):
                 body=update_analytics_cluster_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2866,7 +2966,8 @@ class DbSystemClient(object):
                 body=update_analytics_cluster_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_db_system(self, db_system_id, update_db_system_details, **kwargs):
         """
@@ -2918,6 +3019,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/update_db_system.py.html>`__ to see an example of how to use update_db_system API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}"
         method = "PUT"
         operation_name = "update_db_system"
@@ -2973,7 +3076,8 @@ class DbSystemClient(object):
                 body=update_db_system_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2983,7 +3087,8 @@ class DbSystemClient(object):
                 body=update_db_system_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_heat_wave_cluster(self, db_system_id, update_heat_wave_cluster_details, **kwargs):
         """
@@ -3028,6 +3133,8 @@ class DbSystemClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mysql/update_heat_wave_cluster.py.html>`__ to see an example of how to use update_heat_wave_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbSystemId']
         resource_path = "/dbSystems/{dbSystemId}/heatWaveCluster"
         method = "PUT"
         operation_name = "update_heat_wave_cluster"
@@ -3083,7 +3190,8 @@ class DbSystemClient(object):
                 body=update_heat_wave_cluster_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3093,4 +3201,5 @@ class DbSystemClient(object):
                 body=update_heat_wave_cluster_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

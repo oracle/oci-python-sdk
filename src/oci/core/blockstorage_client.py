@@ -71,6 +71,9 @@ class BlockstorageClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -97,8 +100,10 @@ class BlockstorageClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20160918',
             'service_endpoint_template': 'https://iaas.{region}.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -149,6 +154,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_boot_volume_backup_compartment.py.html>`__ to see an example of how to use change_boot_volume_backup_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bootVolumeBackupId']
         resource_path = "/bootVolumeBackups/{bootVolumeBackupId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_boot_volume_backup_compartment"
@@ -200,7 +207,8 @@ class BlockstorageClient(object):
                 body=change_boot_volume_backup_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -210,7 +218,8 @@ class BlockstorageClient(object):
                 body=change_boot_volume_backup_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_boot_volume_compartment(self, boot_volume_id, change_boot_volume_compartment_details, **kwargs):
         """
@@ -249,6 +258,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_boot_volume_compartment.py.html>`__ to see an example of how to use change_boot_volume_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bootVolumeId']
         resource_path = "/bootVolumes/{bootVolumeId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_boot_volume_compartment"
@@ -300,7 +311,8 @@ class BlockstorageClient(object):
                 body=change_boot_volume_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -310,7 +322,8 @@ class BlockstorageClient(object):
                 body=change_boot_volume_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_volume_backup_compartment(self, volume_backup_id, change_volume_backup_compartment_details, **kwargs):
         """
@@ -349,6 +362,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_volume_backup_compartment.py.html>`__ to see an example of how to use change_volume_backup_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeBackupId']
         resource_path = "/volumeBackups/{volumeBackupId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_volume_backup_compartment"
@@ -400,7 +415,8 @@ class BlockstorageClient(object):
                 body=change_volume_backup_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -410,7 +426,8 @@ class BlockstorageClient(object):
                 body=change_volume_backup_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_volume_compartment(self, volume_id, change_volume_compartment_details, **kwargs):
         """
@@ -449,6 +466,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_volume_compartment.py.html>`__ to see an example of how to use change_volume_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeId']
         resource_path = "/volumes/{volumeId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_volume_compartment"
@@ -500,7 +519,8 @@ class BlockstorageClient(object):
                 body=change_volume_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -510,7 +530,8 @@ class BlockstorageClient(object):
                 body=change_volume_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_volume_group_backup_compartment(self, volume_group_backup_id, change_volume_group_backup_compartment_details, **kwargs):
         """
@@ -549,6 +570,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_volume_group_backup_compartment.py.html>`__ to see an example of how to use change_volume_group_backup_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeGroupBackupId']
         resource_path = "/volumeGroupBackups/{volumeGroupBackupId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_volume_group_backup_compartment"
@@ -600,7 +623,8 @@ class BlockstorageClient(object):
                 body=change_volume_group_backup_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -610,7 +634,8 @@ class BlockstorageClient(object):
                 body=change_volume_group_backup_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_volume_group_compartment(self, volume_group_id, change_volume_group_compartment_details, **kwargs):
         """
@@ -649,6 +674,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_volume_group_compartment.py.html>`__ to see an example of how to use change_volume_group_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeGroupId']
         resource_path = "/volumeGroups/{volumeGroupId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_volume_group_compartment"
@@ -700,7 +727,8 @@ class BlockstorageClient(object):
                 body=change_volume_group_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -710,7 +738,8 @@ class BlockstorageClient(object):
                 body=change_volume_group_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def copy_boot_volume_backup(self, boot_volume_backup_id, copy_boot_volume_backup_details, **kwargs):
         """
@@ -755,6 +784,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/copy_boot_volume_backup.py.html>`__ to see an example of how to use copy_boot_volume_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bootVolumeBackupId']
         resource_path = "/bootVolumeBackups/{bootVolumeBackupId}/actions/copy"
         method = "POST"
         operation_name = "copy_boot_volume_backup"
@@ -810,7 +841,8 @@ class BlockstorageClient(object):
                 response_type="BootVolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -821,7 +853,8 @@ class BlockstorageClient(object):
                 response_type="BootVolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def copy_volume_backup(self, volume_backup_id, copy_volume_backup_details, **kwargs):
         """
@@ -866,6 +899,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/copy_volume_backup.py.html>`__ to see an example of how to use copy_volume_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeBackupId']
         resource_path = "/volumeBackups/{volumeBackupId}/actions/copy"
         method = "POST"
         operation_name = "copy_volume_backup"
@@ -921,7 +956,8 @@ class BlockstorageClient(object):
                 response_type="VolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -932,7 +968,8 @@ class BlockstorageClient(object):
                 response_type="VolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def copy_volume_group_backup(self, volume_group_backup_id, copy_volume_group_backup_details, **kwargs):
         """
@@ -977,6 +1014,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/copy_volume_group_backup.py.html>`__ to see an example of how to use copy_volume_group_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeGroupBackupId']
         resource_path = "/volumeGroupBackups/{volumeGroupBackupId}/actions/copy"
         method = "POST"
         operation_name = "copy_volume_group_backup"
@@ -1032,7 +1071,8 @@ class BlockstorageClient(object):
                 response_type="VolumeGroupBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1043,7 +1083,8 @@ class BlockstorageClient(object):
                 response_type="VolumeGroupBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_boot_volume(self, create_boot_volume_details, **kwargs):
         """
@@ -1083,6 +1124,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_boot_volume.py.html>`__ to see an example of how to use create_boot_volume API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/bootVolumes"
         method = "POST"
         operation_name = "create_boot_volume"
@@ -1125,7 +1168,8 @@ class BlockstorageClient(object):
                 response_type="BootVolume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1135,7 +1179,8 @@ class BlockstorageClient(object):
                 response_type="BootVolume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_boot_volume_backup(self, create_boot_volume_backup_details, **kwargs):
         """
@@ -1177,6 +1222,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_boot_volume_backup.py.html>`__ to see an example of how to use create_boot_volume_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/bootVolumeBackups"
         method = "POST"
         operation_name = "create_boot_volume_backup"
@@ -1219,7 +1266,8 @@ class BlockstorageClient(object):
                 response_type="BootVolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1229,7 +1277,8 @@ class BlockstorageClient(object):
                 response_type="BootVolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_volume(self, create_volume_details, **kwargs):
         """
@@ -1281,6 +1330,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume.py.html>`__ to see an example of how to use create_volume API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/volumes"
         method = "POST"
         operation_name = "create_volume"
@@ -1323,7 +1374,8 @@ class BlockstorageClient(object):
                 response_type="Volume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1333,7 +1385,8 @@ class BlockstorageClient(object):
                 response_type="Volume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_volume_backup(self, create_volume_backup_details, **kwargs):
         """
@@ -1375,6 +1428,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume_backup.py.html>`__ to see an example of how to use create_volume_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/volumeBackups"
         method = "POST"
         operation_name = "create_volume_backup"
@@ -1417,7 +1472,8 @@ class BlockstorageClient(object):
                 response_type="VolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1427,7 +1483,8 @@ class BlockstorageClient(object):
                 response_type="VolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_volume_backup_policy(self, create_volume_backup_policy_details, **kwargs):
         """
@@ -1471,6 +1528,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume_backup_policy.py.html>`__ to see an example of how to use create_volume_backup_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/volumeBackupPolicies"
         method = "POST"
         operation_name = "create_volume_backup_policy"
@@ -1515,7 +1574,8 @@ class BlockstorageClient(object):
                 response_type="VolumeBackupPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1525,7 +1585,8 @@ class BlockstorageClient(object):
                 response_type="VolumeBackupPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_volume_backup_policy_assignment(self, create_volume_backup_policy_assignment_details, **kwargs):
         """
@@ -1555,6 +1616,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume_backup_policy_assignment.py.html>`__ to see an example of how to use create_volume_backup_policy_assignment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/volumeBackupPolicyAssignments"
         method = "POST"
         operation_name = "create_volume_backup_policy_assignment"
@@ -1589,7 +1652,8 @@ class BlockstorageClient(object):
                 response_type="VolumeBackupPolicyAssignment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1599,7 +1663,8 @@ class BlockstorageClient(object):
                 response_type="VolumeBackupPolicyAssignment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_volume_group(self, create_volume_group_details, **kwargs):
         """
@@ -1642,6 +1707,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume_group.py.html>`__ to see an example of how to use create_volume_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/volumeGroups"
         method = "POST"
         operation_name = "create_volume_group"
@@ -1684,7 +1751,8 @@ class BlockstorageClient(object):
                 response_type="VolumeGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1694,7 +1762,8 @@ class BlockstorageClient(object):
                 response_type="VolumeGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_volume_group_backup(self, create_volume_group_backup_details, **kwargs):
         """
@@ -1732,6 +1801,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_volume_group_backup.py.html>`__ to see an example of how to use create_volume_group_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/volumeGroupBackups"
         method = "POST"
         operation_name = "create_volume_group_backup"
@@ -1774,7 +1845,8 @@ class BlockstorageClient(object):
                 response_type="VolumeGroupBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1784,7 +1856,8 @@ class BlockstorageClient(object):
                 response_type="VolumeGroupBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_boot_volume(self, boot_volume_id, **kwargs):
         """
@@ -1822,6 +1895,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_boot_volume.py.html>`__ to see an example of how to use delete_boot_volume API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bootVolumeId']
         resource_path = "/bootVolumes/{bootVolumeId}"
         method = "DELETE"
         operation_name = "delete_boot_volume"
@@ -1872,7 +1947,8 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1881,7 +1957,8 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_boot_volume_backup(self, boot_volume_backup_id, **kwargs):
         """
@@ -1914,6 +1991,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_boot_volume_backup.py.html>`__ to see an example of how to use delete_boot_volume_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bootVolumeBackupId']
         resource_path = "/bootVolumeBackups/{bootVolumeBackupId}"
         method = "DELETE"
         operation_name = "delete_boot_volume_backup"
@@ -1964,7 +2043,8 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1973,7 +2053,8 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_boot_volume_kms_key(self, boot_volume_id, **kwargs):
         """
@@ -2006,6 +2087,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_boot_volume_kms_key.py.html>`__ to see an example of how to use delete_boot_volume_kms_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bootVolumeId']
         resource_path = "/bootVolumes/{bootVolumeId}/kmsKey"
         method = "DELETE"
         operation_name = "delete_boot_volume_kms_key"
@@ -2056,7 +2139,8 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2065,7 +2149,8 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_volume(self, volume_id, **kwargs):
         """
@@ -2103,6 +2188,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume.py.html>`__ to see an example of how to use delete_volume API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeId']
         resource_path = "/volumes/{volumeId}"
         method = "DELETE"
         operation_name = "delete_volume"
@@ -2153,7 +2240,8 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2162,7 +2250,8 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_volume_backup(self, volume_backup_id, **kwargs):
         """
@@ -2195,6 +2284,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_backup.py.html>`__ to see an example of how to use delete_volume_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeBackupId']
         resource_path = "/volumeBackups/{volumeBackupId}"
         method = "DELETE"
         operation_name = "delete_volume_backup"
@@ -2245,7 +2336,8 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2254,7 +2346,8 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_volume_backup_policy(self, policy_id, **kwargs):
         """
@@ -2297,6 +2390,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_backup_policy.py.html>`__ to see an example of how to use delete_volume_backup_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['policyId']
         resource_path = "/volumeBackupPolicies/{policyId}"
         method = "DELETE"
         operation_name = "delete_volume_backup_policy"
@@ -2349,7 +2444,8 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2358,7 +2454,8 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_volume_backup_policy_assignment(self, policy_assignment_id, **kwargs):
         """
@@ -2391,6 +2488,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_backup_policy_assignment.py.html>`__ to see an example of how to use delete_volume_backup_policy_assignment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['policyAssignmentId']
         resource_path = "/volumeBackupPolicyAssignments/{policyAssignmentId}"
         method = "DELETE"
         operation_name = "delete_volume_backup_policy_assignment"
@@ -2441,7 +2540,8 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2450,7 +2550,8 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_volume_group(self, volume_group_id, **kwargs):
         """
@@ -2486,6 +2587,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_group.py.html>`__ to see an example of how to use delete_volume_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeGroupId']
         resource_path = "/volumeGroups/{volumeGroupId}"
         method = "DELETE"
         operation_name = "delete_volume_group"
@@ -2536,7 +2639,8 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2545,7 +2649,8 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_volume_group_backup(self, volume_group_backup_id, **kwargs):
         """
@@ -2581,6 +2686,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_group_backup.py.html>`__ to see an example of how to use delete_volume_group_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeGroupBackupId']
         resource_path = "/volumeGroupBackups/{volumeGroupBackupId}"
         method = "DELETE"
         operation_name = "delete_volume_group_backup"
@@ -2631,7 +2738,8 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2640,7 +2748,8 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_volume_kms_key(self, volume_id, **kwargs):
         """
@@ -2673,6 +2782,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_volume_kms_key.py.html>`__ to see an example of how to use delete_volume_kms_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeId']
         resource_path = "/volumes/{volumeId}/kmsKey"
         method = "DELETE"
         operation_name = "delete_volume_kms_key"
@@ -2723,7 +2834,8 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2732,7 +2844,8 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_block_volume_replica(self, block_volume_replica_id, **kwargs):
         """
@@ -2760,6 +2873,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_block_volume_replica.py.html>`__ to see an example of how to use get_block_volume_replica API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['blockVolumeReplicaId']
         resource_path = "/blockVolumeReplicas/{blockVolumeReplicaId}"
         method = "GET"
         operation_name = "get_block_volume_replica"
@@ -2804,7 +2919,8 @@ class BlockstorageClient(object):
                 response_type="BlockVolumeReplica",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2814,7 +2930,8 @@ class BlockstorageClient(object):
                 response_type="BlockVolumeReplica",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_boot_volume(self, boot_volume_id, **kwargs):
         """
@@ -2842,6 +2959,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_boot_volume.py.html>`__ to see an example of how to use get_boot_volume API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bootVolumeId']
         resource_path = "/bootVolumes/{bootVolumeId}"
         method = "GET"
         operation_name = "get_boot_volume"
@@ -2886,7 +3005,8 @@ class BlockstorageClient(object):
                 response_type="BootVolume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2896,7 +3016,8 @@ class BlockstorageClient(object):
                 response_type="BootVolume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_boot_volume_backup(self, boot_volume_backup_id, **kwargs):
         """
@@ -2924,6 +3045,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_boot_volume_backup.py.html>`__ to see an example of how to use get_boot_volume_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bootVolumeBackupId']
         resource_path = "/bootVolumeBackups/{bootVolumeBackupId}"
         method = "GET"
         operation_name = "get_boot_volume_backup"
@@ -2968,7 +3091,8 @@ class BlockstorageClient(object):
                 response_type="BootVolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2978,7 +3102,8 @@ class BlockstorageClient(object):
                 response_type="BootVolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_boot_volume_kms_key(self, boot_volume_id, **kwargs):
         """
@@ -3011,6 +3136,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_boot_volume_kms_key.py.html>`__ to see an example of how to use get_boot_volume_kms_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bootVolumeId']
         resource_path = "/bootVolumes/{bootVolumeId}/kmsKey"
         method = "GET"
         operation_name = "get_boot_volume_kms_key"
@@ -3062,7 +3189,8 @@ class BlockstorageClient(object):
                 response_type="BootVolumeKmsKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3072,7 +3200,8 @@ class BlockstorageClient(object):
                 response_type="BootVolumeKmsKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_boot_volume_replica(self, boot_volume_replica_id, **kwargs):
         """
@@ -3100,6 +3229,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_boot_volume_replica.py.html>`__ to see an example of how to use get_boot_volume_replica API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bootVolumeReplicaId']
         resource_path = "/bootVolumeReplicas/{bootVolumeReplicaId}"
         method = "GET"
         operation_name = "get_boot_volume_replica"
@@ -3144,7 +3275,8 @@ class BlockstorageClient(object):
                 response_type="BootVolumeReplica",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3154,7 +3286,8 @@ class BlockstorageClient(object):
                 response_type="BootVolumeReplica",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_volume(self, volume_id, **kwargs):
         """
@@ -3182,6 +3315,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume.py.html>`__ to see an example of how to use get_volume API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeId']
         resource_path = "/volumes/{volumeId}"
         method = "GET"
         operation_name = "get_volume"
@@ -3226,7 +3361,8 @@ class BlockstorageClient(object):
                 response_type="Volume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3236,7 +3372,8 @@ class BlockstorageClient(object):
                 response_type="Volume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_volume_backup(self, volume_backup_id, **kwargs):
         """
@@ -3264,6 +3401,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_backup.py.html>`__ to see an example of how to use get_volume_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeBackupId']
         resource_path = "/volumeBackups/{volumeBackupId}"
         method = "GET"
         operation_name = "get_volume_backup"
@@ -3308,7 +3447,8 @@ class BlockstorageClient(object):
                 response_type="VolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3318,7 +3458,8 @@ class BlockstorageClient(object):
                 response_type="VolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_volume_backup_policy(self, policy_id, **kwargs):
         """
@@ -3346,6 +3487,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_backup_policy.py.html>`__ to see an example of how to use get_volume_backup_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['policyId']
         resource_path = "/volumeBackupPolicies/{policyId}"
         method = "GET"
         operation_name = "get_volume_backup_policy"
@@ -3390,7 +3533,8 @@ class BlockstorageClient(object):
                 response_type="VolumeBackupPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3400,7 +3544,8 @@ class BlockstorageClient(object):
                 response_type="VolumeBackupPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_volume_backup_policy_asset_assignment(self, asset_id, **kwargs):
         """
@@ -3446,6 +3591,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_backup_policy_asset_assignment.py.html>`__ to see an example of how to use get_volume_backup_policy_asset_assignment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['assetId']
         resource_path = "/volumeBackupPolicyAssignments"
         method = "GET"
         operation_name = "get_volume_backup_policy_asset_assignment"
@@ -3493,7 +3640,8 @@ class BlockstorageClient(object):
                 response_type="list[VolumeBackupPolicyAssignment]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3503,7 +3651,8 @@ class BlockstorageClient(object):
                 response_type="list[VolumeBackupPolicyAssignment]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_volume_backup_policy_assignment(self, policy_assignment_id, **kwargs):
         """
@@ -3531,6 +3680,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_backup_policy_assignment.py.html>`__ to see an example of how to use get_volume_backup_policy_assignment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['policyAssignmentId']
         resource_path = "/volumeBackupPolicyAssignments/{policyAssignmentId}"
         method = "GET"
         operation_name = "get_volume_backup_policy_assignment"
@@ -3575,7 +3726,8 @@ class BlockstorageClient(object):
                 response_type="VolumeBackupPolicyAssignment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3585,7 +3737,8 @@ class BlockstorageClient(object):
                 response_type="VolumeBackupPolicyAssignment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_volume_group(self, volume_group_id, **kwargs):
         """
@@ -3615,6 +3768,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_group.py.html>`__ to see an example of how to use get_volume_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeGroupId']
         resource_path = "/volumeGroups/{volumeGroupId}"
         method = "GET"
         operation_name = "get_volume_group"
@@ -3659,7 +3814,8 @@ class BlockstorageClient(object):
                 response_type="VolumeGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3669,7 +3825,8 @@ class BlockstorageClient(object):
                 response_type="VolumeGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_volume_group_backup(self, volume_group_backup_id, **kwargs):
         """
@@ -3699,6 +3856,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_group_backup.py.html>`__ to see an example of how to use get_volume_group_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeGroupBackupId']
         resource_path = "/volumeGroupBackups/{volumeGroupBackupId}"
         method = "GET"
         operation_name = "get_volume_group_backup"
@@ -3743,7 +3902,8 @@ class BlockstorageClient(object):
                 response_type="VolumeGroupBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3753,7 +3913,8 @@ class BlockstorageClient(object):
                 response_type="VolumeGroupBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_volume_group_replica(self, volume_group_replica_id, **kwargs):
         """
@@ -3781,6 +3942,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_group_replica.py.html>`__ to see an example of how to use get_volume_group_replica API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeGroupReplicaId']
         resource_path = "/volumeGroupReplicas/{volumeGroupReplicaId}"
         method = "GET"
         operation_name = "get_volume_group_replica"
@@ -3825,7 +3988,8 @@ class BlockstorageClient(object):
                 response_type="VolumeGroupReplica",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3835,7 +3999,8 @@ class BlockstorageClient(object):
                 response_type="VolumeGroupReplica",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_volume_kms_key(self, volume_id, **kwargs):
         """
@@ -3868,6 +4033,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_volume_kms_key.py.html>`__ to see an example of how to use get_volume_kms_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeId']
         resource_path = "/volumes/{volumeId}/kmsKey"
         method = "GET"
         operation_name = "get_volume_kms_key"
@@ -3919,7 +4086,8 @@ class BlockstorageClient(object):
                 response_type="VolumeKmsKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3929,7 +4097,8 @@ class BlockstorageClient(object):
                 response_type="VolumeKmsKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_block_volume_replicas(self, **kwargs):
         """
@@ -4009,6 +4178,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_block_volume_replicas.py.html>`__ to see an example of how to use list_block_volume_replicas API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/blockVolumeReplicas"
         method = "GET"
         operation_name = "list_block_volume_replicas"
@@ -4090,7 +4261,8 @@ class BlockstorageClient(object):
                 response_type="list[BlockVolumeReplica]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4100,7 +4272,8 @@ class BlockstorageClient(object):
                 response_type="list[BlockVolumeReplica]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_boot_volume_backups(self, compartment_id, **kwargs):
         """
@@ -4179,6 +4352,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_boot_volume_backups.py.html>`__ to see an example of how to use list_boot_volume_backups API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/bootVolumeBackups"
         method = "GET"
         operation_name = "list_boot_volume_backups"
@@ -4259,7 +4434,8 @@ class BlockstorageClient(object):
                 response_type="list[BootVolumeBackup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4269,7 +4445,8 @@ class BlockstorageClient(object):
                 response_type="list[BootVolumeBackup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_boot_volume_replicas(self, **kwargs):
         """
@@ -4349,6 +4526,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_boot_volume_replicas.py.html>`__ to see an example of how to use list_boot_volume_replicas API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/bootVolumeReplicas"
         method = "GET"
         operation_name = "list_boot_volume_replicas"
@@ -4430,7 +4609,8 @@ class BlockstorageClient(object):
                 response_type="list[BootVolumeReplica]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4440,7 +4620,8 @@ class BlockstorageClient(object):
                 response_type="list[BootVolumeReplica]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_boot_volumes(self, **kwargs):
         """
@@ -4494,6 +4675,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_boot_volumes.py.html>`__ to see an example of how to use list_boot_volumes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/bootVolumes"
         method = "GET"
         operation_name = "list_boot_volumes"
@@ -4546,7 +4729,8 @@ class BlockstorageClient(object):
                 response_type="list[BootVolume]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4556,7 +4740,8 @@ class BlockstorageClient(object):
                 response_type="list[BootVolume]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_volume_backup_policies(self, **kwargs):
         """
@@ -4606,6 +4791,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volume_backup_policies.py.html>`__ to see an example of how to use list_volume_backup_policies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/volumeBackupPolicies"
         method = "GET"
         operation_name = "list_volume_backup_policies"
@@ -4654,7 +4841,8 @@ class BlockstorageClient(object):
                 response_type="list[VolumeBackupPolicy]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4664,7 +4852,8 @@ class BlockstorageClient(object):
                 response_type="list[VolumeBackupPolicy]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_volume_backups(self, compartment_id, **kwargs):
         """
@@ -4743,6 +4932,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volume_backups.py.html>`__ to see an example of how to use list_volume_backups API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/volumeBackups"
         method = "GET"
         operation_name = "list_volume_backups"
@@ -4823,7 +5014,8 @@ class BlockstorageClient(object):
                 response_type="list[VolumeBackup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4833,7 +5025,8 @@ class BlockstorageClient(object):
                 response_type="list[VolumeBackup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_volume_group_backups(self, compartment_id, **kwargs):
         """
@@ -4906,6 +5099,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volume_group_backups.py.html>`__ to see an example of how to use list_volume_group_backups API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/volumeGroupBackups"
         method = "GET"
         operation_name = "list_volume_group_backups"
@@ -4975,7 +5170,8 @@ class BlockstorageClient(object):
                 response_type="list[VolumeGroupBackup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4985,7 +5181,8 @@ class BlockstorageClient(object):
                 response_type="list[VolumeGroupBackup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_volume_group_replicas(self, availability_domain, compartment_id, **kwargs):
         """
@@ -5065,6 +5262,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volume_group_replicas.py.html>`__ to see an example of how to use list_volume_group_replicas API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['availabilityDomain', 'compartmentId']
         resource_path = "/volumeGroupReplicas"
         method = "GET"
         operation_name = "list_volume_group_replicas"
@@ -5142,7 +5341,8 @@ class BlockstorageClient(object):
                 response_type="list[VolumeGroupReplica]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5152,7 +5352,8 @@ class BlockstorageClient(object):
                 response_type="list[VolumeGroupReplica]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_volume_groups(self, compartment_id, **kwargs):
         """
@@ -5233,6 +5434,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volume_groups.py.html>`__ to see an example of how to use list_volume_groups API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/volumeGroups"
         method = "GET"
         operation_name = "list_volume_groups"
@@ -5311,7 +5514,8 @@ class BlockstorageClient(object):
                 response_type="list[VolumeGroup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5321,7 +5525,8 @@ class BlockstorageClient(object):
                 response_type="list[VolumeGroup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_volumes(self, **kwargs):
         """
@@ -5402,6 +5607,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_volumes.py.html>`__ to see an example of how to use list_volumes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/volumes"
         method = "GET"
         operation_name = "list_volumes"
@@ -5483,7 +5690,8 @@ class BlockstorageClient(object):
                 response_type="list[Volume]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5493,7 +5701,8 @@ class BlockstorageClient(object):
                 response_type="list[Volume]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_boot_volume(self, boot_volume_id, update_boot_volume_details, **kwargs):
         """
@@ -5529,6 +5738,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_boot_volume.py.html>`__ to see an example of how to use update_boot_volume API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bootVolumeId']
         resource_path = "/bootVolumes/{bootVolumeId}"
         method = "PUT"
         operation_name = "update_boot_volume"
@@ -5581,7 +5792,8 @@ class BlockstorageClient(object):
                 response_type="BootVolume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5592,7 +5804,8 @@ class BlockstorageClient(object):
                 response_type="BootVolume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_boot_volume_backup(self, boot_volume_backup_id, update_boot_volume_backup_details, **kwargs):
         """
@@ -5629,6 +5842,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_boot_volume_backup.py.html>`__ to see an example of how to use update_boot_volume_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bootVolumeBackupId']
         resource_path = "/bootVolumeBackups/{bootVolumeBackupId}"
         method = "PUT"
         operation_name = "update_boot_volume_backup"
@@ -5681,7 +5896,8 @@ class BlockstorageClient(object):
                 response_type="BootVolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5692,7 +5908,8 @@ class BlockstorageClient(object):
                 response_type="BootVolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_boot_volume_kms_key(self, boot_volume_id, update_boot_volume_kms_key_details, **kwargs):
         """
@@ -5728,6 +5945,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_boot_volume_kms_key.py.html>`__ to see an example of how to use update_boot_volume_kms_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bootVolumeId']
         resource_path = "/bootVolumes/{bootVolumeId}/kmsKey"
         method = "PUT"
         operation_name = "update_boot_volume_kms_key"
@@ -5780,7 +5999,8 @@ class BlockstorageClient(object):
                 response_type="BootVolumeKmsKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5791,7 +6011,8 @@ class BlockstorageClient(object):
                 response_type="BootVolumeKmsKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_volume(self, volume_id, update_volume_details, **kwargs):
         """
@@ -5828,6 +6049,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume.py.html>`__ to see an example of how to use update_volume API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeId']
         resource_path = "/volumes/{volumeId}"
         method = "PUT"
         operation_name = "update_volume"
@@ -5880,7 +6103,8 @@ class BlockstorageClient(object):
                 response_type="Volume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5891,7 +6115,8 @@ class BlockstorageClient(object):
                 response_type="Volume",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_volume_backup(self, volume_backup_id, update_volume_backup_details, **kwargs):
         """
@@ -5928,6 +6153,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume_backup.py.html>`__ to see an example of how to use update_volume_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeBackupId']
         resource_path = "/volumeBackups/{volumeBackupId}"
         method = "PUT"
         operation_name = "update_volume_backup"
@@ -5980,7 +6207,8 @@ class BlockstorageClient(object):
                 response_type="VolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5991,7 +6219,8 @@ class BlockstorageClient(object):
                 response_type="VolumeBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_volume_backup_policy(self, policy_id, update_volume_backup_policy_details, **kwargs):
         """
@@ -6044,6 +6273,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume_backup_policy.py.html>`__ to see an example of how to use update_volume_backup_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['policyId']
         resource_path = "/volumeBackupPolicies/{policyId}"
         method = "PUT"
         operation_name = "update_volume_backup_policy"
@@ -6101,7 +6332,8 @@ class BlockstorageClient(object):
                 response_type="VolumeBackupPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6112,7 +6344,8 @@ class BlockstorageClient(object):
                 response_type="VolumeBackupPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_volume_group(self, volume_group_id, update_volume_group_details, **kwargs):
         """
@@ -6160,6 +6393,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume_group.py.html>`__ to see an example of how to use update_volume_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeGroupId']
         resource_path = "/volumeGroups/{volumeGroupId}"
         method = "PUT"
         operation_name = "update_volume_group"
@@ -6219,7 +6454,8 @@ class BlockstorageClient(object):
                 response_type="VolumeGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6231,7 +6467,8 @@ class BlockstorageClient(object):
                 response_type="VolumeGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_volume_group_backup(self, volume_group_backup_id, update_volume_group_backup_details, **kwargs):
         """
@@ -6269,6 +6506,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume_group_backup.py.html>`__ to see an example of how to use update_volume_group_backup API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeGroupBackupId']
         resource_path = "/volumeGroupBackups/{volumeGroupBackupId}"
         method = "PUT"
         operation_name = "update_volume_group_backup"
@@ -6321,7 +6560,8 @@ class BlockstorageClient(object):
                 response_type="VolumeGroupBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6332,7 +6572,8 @@ class BlockstorageClient(object):
                 response_type="VolumeGroupBackup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_volume_kms_key(self, volume_id, update_volume_kms_key_details, **kwargs):
         """
@@ -6368,6 +6609,8 @@ class BlockstorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_volume_kms_key.py.html>`__ to see an example of how to use update_volume_kms_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['volumeId']
         resource_path = "/volumes/{volumeId}/kmsKey"
         method = "PUT"
         operation_name = "update_volume_kms_key"
@@ -6420,7 +6663,8 @@ class BlockstorageClient(object):
                 response_type="VolumeKmsKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6431,4 +6675,5 @@ class BlockstorageClient(object):
                 response_type="VolumeKmsKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

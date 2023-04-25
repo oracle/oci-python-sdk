@@ -65,6 +65,9 @@ class MarketplaceClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class MarketplaceClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20181001',
             'service_endpoint_template': 'https://marketplace.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -148,6 +153,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/change_publication_compartment.py.html>`__ to see an example of how to use change_publication_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['publicationId']
         resource_path = "/publications/{publicationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_publication_compartment"
@@ -206,7 +213,8 @@ class MarketplaceClient(object):
                 body=change_publication_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -216,7 +224,8 @@ class MarketplaceClient(object):
                 body=change_publication_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_accepted_agreement(self, create_accepted_agreement_details, **kwargs):
         """
@@ -255,6 +264,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/create_accepted_agreement.py.html>`__ to see an example of how to use create_accepted_agreement API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/acceptedAgreements"
         method = "POST"
         operation_name = "create_accepted_agreement"
@@ -301,7 +312,8 @@ class MarketplaceClient(object):
                 response_type="AcceptedAgreement",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -311,7 +323,8 @@ class MarketplaceClient(object):
                 response_type="AcceptedAgreement",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_publication(self, create_publication_details, **kwargs):
         """
@@ -349,6 +362,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/create_publication.py.html>`__ to see an example of how to use create_publication API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/publications"
         method = "POST"
         operation_name = "create_publication"
@@ -395,7 +410,8 @@ class MarketplaceClient(object):
                 response_type="Publication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -405,7 +421,8 @@ class MarketplaceClient(object):
                 response_type="Publication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_accepted_agreement(self, accepted_agreement_id, **kwargs):
         """
@@ -447,6 +464,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/delete_accepted_agreement.py.html>`__ to see an example of how to use delete_accepted_agreement API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['acceptedAgreementId']
         resource_path = "/acceptedAgreements/{acceptedAgreementId}"
         method = "DELETE"
         operation_name = "delete_accepted_agreement"
@@ -508,7 +527,8 @@ class MarketplaceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -518,7 +538,8 @@ class MarketplaceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_publication(self, publication_id, **kwargs):
         """
@@ -555,6 +576,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/delete_publication.py.html>`__ to see an example of how to use delete_publication API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['publicationId']
         resource_path = "/publications/{publicationId}"
         method = "DELETE"
         operation_name = "delete_publication"
@@ -609,7 +632,8 @@ class MarketplaceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -618,7 +642,8 @@ class MarketplaceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_accepted_agreement(self, accepted_agreement_id, **kwargs):
         """
@@ -650,6 +675,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_accepted_agreement.py.html>`__ to see an example of how to use get_accepted_agreement API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['acceptedAgreementId']
         resource_path = "/acceptedAgreements/{acceptedAgreementId}"
         method = "GET"
         operation_name = "get_accepted_agreement"
@@ -703,7 +730,8 @@ class MarketplaceClient(object):
                 response_type="AcceptedAgreement",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -713,7 +741,8 @@ class MarketplaceClient(object):
                 response_type="AcceptedAgreement",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_agreement(self, listing_id, package_version, agreement_id, **kwargs):
         """
@@ -755,6 +784,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_agreement.py.html>`__ to see an example of how to use get_agreement API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['listingId', 'packageVersion', 'agreementId']
         resource_path = "/listings/{listingId}/packages/{packageVersion}/agreements/{agreementId}"
         method = "GET"
         operation_name = "get_agreement"
@@ -817,7 +848,8 @@ class MarketplaceClient(object):
                 response_type="Agreement",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -828,7 +860,8 @@ class MarketplaceClient(object):
                 response_type="Agreement",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_listing(self, listing_id, **kwargs):
         """
@@ -883,6 +916,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_listing.py.html>`__ to see an example of how to use get_listing API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['listingId']
         resource_path = "/listings/{listingId}"
         method = "GET"
         operation_name = "get_listing"
@@ -943,7 +978,8 @@ class MarketplaceClient(object):
                 response_type="Listing",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -954,7 +990,8 @@ class MarketplaceClient(object):
                 response_type="Listing",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_package(self, listing_id, package_version, **kwargs):
         """
@@ -1011,6 +1048,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_package.py.html>`__ to see an example of how to use get_package API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['listingId', 'packageVersion']
         resource_path = "/listings/{listingId}/packages/{packageVersion}"
         method = "GET"
         operation_name = "get_package"
@@ -1072,7 +1111,8 @@ class MarketplaceClient(object):
                 response_type="ListingPackage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1083,7 +1123,8 @@ class MarketplaceClient(object):
                 response_type="ListingPackage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_publication(self, publication_id, **kwargs):
         """
@@ -1115,6 +1156,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_publication.py.html>`__ to see an example of how to use get_publication API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['publicationId']
         resource_path = "/publications/{publicationId}"
         method = "GET"
         operation_name = "get_publication"
@@ -1168,7 +1211,8 @@ class MarketplaceClient(object):
                 response_type="Publication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1178,7 +1222,8 @@ class MarketplaceClient(object):
                 response_type="Publication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_publication_package(self, publication_id, package_version, **kwargs):
         """
@@ -1213,6 +1258,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/get_publication_package.py.html>`__ to see an example of how to use get_publication_package API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['publicationId', 'packageVersion']
         resource_path = "/publications/{publicationId}/packages/{packageVersion}"
         method = "GET"
         operation_name = "get_publication_package"
@@ -1267,7 +1314,8 @@ class MarketplaceClient(object):
                 response_type="PublicationPackage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1277,7 +1325,8 @@ class MarketplaceClient(object):
                 response_type="PublicationPackage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_accepted_agreements(self, compartment_id, **kwargs):
         """
@@ -1340,6 +1389,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_accepted_agreements.py.html>`__ to see an example of how to use list_accepted_agreements API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/acceptedAgreements"
         method = "GET"
         operation_name = "list_accepted_agreements"
@@ -1418,7 +1469,8 @@ class MarketplaceClient(object):
                 response_type="list[AcceptedAgreementSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1428,7 +1480,8 @@ class MarketplaceClient(object):
                 response_type="list[AcceptedAgreementSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_agreements(self, listing_id, package_version, **kwargs):
         """
@@ -1472,6 +1525,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_agreements.py.html>`__ to see an example of how to use list_agreements API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['listingId', 'packageVersion']
         resource_path = "/listings/{listingId}/packages/{packageVersion}/agreements"
         method = "GET"
         operation_name = "list_agreements"
@@ -1537,7 +1592,8 @@ class MarketplaceClient(object):
                 response_type="list[AgreementSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1548,7 +1604,8 @@ class MarketplaceClient(object):
                 response_type="list[AgreementSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_categories(self, **kwargs):
         """
@@ -1587,6 +1644,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_categories.py.html>`__ to see an example of how to use list_categories API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/categories"
         method = "GET"
         operation_name = "list_categories"
@@ -1640,7 +1699,8 @@ class MarketplaceClient(object):
                 response_type="list[CategorySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1650,7 +1710,8 @@ class MarketplaceClient(object):
                 response_type="list[CategorySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_listings(self, **kwargs):
         """
@@ -1756,6 +1817,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_listings.py.html>`__ to see an example of how to use list_listings API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/listings"
         method = "GET"
         operation_name = "list_listings"
@@ -1863,7 +1926,8 @@ class MarketplaceClient(object):
                 response_type="list[ListingSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1873,7 +1937,8 @@ class MarketplaceClient(object):
                 response_type="list[ListingSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_packages(self, listing_id, **kwargs):
         """
@@ -1951,6 +2016,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_packages.py.html>`__ to see an example of how to use list_packages API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['listingId']
         resource_path = "/listings/{listingId}/packages"
         method = "GET"
         operation_name = "list_packages"
@@ -2037,7 +2104,8 @@ class MarketplaceClient(object):
                 response_type="list[ListingPackageSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2048,7 +2116,8 @@ class MarketplaceClient(object):
                 response_type="list[ListingPackageSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_publication_packages(self, publication_id, **kwargs):
         """
@@ -2104,6 +2173,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_publication_packages.py.html>`__ to see an example of how to use list_publication_packages API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['publicationId']
         resource_path = "/publications/{publicationId}/packages"
         method = "GET"
         operation_name = "list_publication_packages"
@@ -2188,7 +2259,8 @@ class MarketplaceClient(object):
                 response_type="list[PublicationPackageSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2199,7 +2271,8 @@ class MarketplaceClient(object):
                 response_type="list[PublicationPackageSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_publications(self, compartment_id, listing_type, **kwargs):
         """
@@ -2263,6 +2336,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_publications.py.html>`__ to see an example of how to use list_publications API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'listingType']
         resource_path = "/publications"
         method = "GET"
         operation_name = "list_publications"
@@ -2346,7 +2421,8 @@ class MarketplaceClient(object):
                 response_type="list[PublicationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2356,7 +2432,8 @@ class MarketplaceClient(object):
                 response_type="list[PublicationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_publishers(self, **kwargs):
         """
@@ -2397,6 +2474,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_publishers.py.html>`__ to see an example of how to use list_publishers API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/publishers"
         method = "GET"
         operation_name = "list_publishers"
@@ -2452,7 +2531,8 @@ class MarketplaceClient(object):
                 response_type="list[PublisherSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2462,7 +2542,8 @@ class MarketplaceClient(object):
                 response_type="list[PublisherSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_report_types(self, compartment_id, **kwargs):
         """
@@ -2497,6 +2578,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_report_types.py.html>`__ to see an example of how to use list_report_types API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/reportTypes"
         method = "GET"
         operation_name = "list_report_types"
@@ -2547,7 +2630,8 @@ class MarketplaceClient(object):
                 response_type="ReportTypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2557,7 +2641,8 @@ class MarketplaceClient(object):
                 response_type="ReportTypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_reports(self, report_type, date, compartment_id, **kwargs):
         """
@@ -2600,6 +2685,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_reports.py.html>`__ to see an example of how to use list_reports API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['reportType', 'date', 'compartmentId']
         resource_path = "/reports"
         method = "GET"
         operation_name = "list_reports"
@@ -2652,7 +2739,8 @@ class MarketplaceClient(object):
                 response_type="ReportCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2662,7 +2750,8 @@ class MarketplaceClient(object):
                 response_type="ReportCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_taxes(self, listing_id, **kwargs):
         """
@@ -2697,6 +2786,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/list_taxes.py.html>`__ to see an example of how to use list_taxes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['listingId']
         resource_path = "/listings/{listingId}/taxes"
         method = "GET"
         operation_name = "list_taxes"
@@ -2757,7 +2848,8 @@ class MarketplaceClient(object):
                 response_type="list[TaxSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2768,7 +2860,8 @@ class MarketplaceClient(object):
                 response_type="list[TaxSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def search_listings(self, search_listings_details, **kwargs):
         """
@@ -2807,6 +2900,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/search_listings.py.html>`__ to see an example of how to use search_listings API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/searchListings"
         method = "POST"
         operation_name = "search_listings"
@@ -2859,7 +2954,8 @@ class MarketplaceClient(object):
                 response_type="list[ListingSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2870,7 +2966,8 @@ class MarketplaceClient(object):
                 response_type="list[ListingSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_accepted_agreement(self, accepted_agreement_id, update_accepted_agreement_details, **kwargs):
         """
@@ -2916,6 +3013,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/update_accepted_agreement.py.html>`__ to see an example of how to use update_accepted_agreement API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['acceptedAgreementId']
         resource_path = "/acceptedAgreements/{acceptedAgreementId}"
         method = "PUT"
         operation_name = "update_accepted_agreement"
@@ -2975,7 +3074,8 @@ class MarketplaceClient(object):
                 response_type="AcceptedAgreement",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2986,7 +3086,8 @@ class MarketplaceClient(object):
                 response_type="AcceptedAgreement",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_publication(self, publication_id, update_publication_details, **kwargs):
         """
@@ -3032,6 +3133,8 @@ class MarketplaceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/marketplace/update_publication.py.html>`__ to see an example of how to use update_publication API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['publicationId']
         resource_path = "/publications/{publicationId}"
         method = "PUT"
         operation_name = "update_publication"
@@ -3091,7 +3194,8 @@ class MarketplaceClient(object):
                 response_type="Publication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3102,4 +3206,5 @@ class MarketplaceClient(object):
                 response_type="Publication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

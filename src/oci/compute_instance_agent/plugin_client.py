@@ -66,6 +66,9 @@ class PluginClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -92,8 +95,10 @@ class PluginClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20180530',
             'service_endpoint_template': 'https://iaas.{region}.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -143,6 +148,8 @@ class PluginClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/computeinstanceagent/get_instance_agent_plugin.py.html>`__ to see an example of how to use get_instance_agent_plugin API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instanceagentId', 'pluginName', 'compartmentId']
         resource_path = "/instanceagents/{instanceagentId}/plugins/{pluginName}"
         method = "GET"
         operation_name = "get_instance_agent_plugin"
@@ -201,7 +208,8 @@ class PluginClient(object):
                 response_type="InstanceAgentPlugin",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -212,7 +220,8 @@ class PluginClient(object):
                 response_type="InstanceAgentPlugin",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_instance_agent_plugins(self, compartment_id, instanceagent_id, **kwargs):
         """
@@ -288,6 +297,8 @@ class PluginClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/computeinstanceagent/list_instance_agent_plugins.py.html>`__ to see an example of how to use list_instance_agent_plugins API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instanceagentId', 'compartmentId']
         resource_path = "/instanceagents/{instanceagentId}/plugins"
         method = "GET"
         operation_name = "list_instance_agent_plugins"
@@ -378,7 +389,8 @@ class PluginClient(object):
                 response_type="list[InstanceAgentPluginSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -389,4 +401,5 @@ class PluginClient(object):
                 response_type="list[InstanceAgentPluginSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

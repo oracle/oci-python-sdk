@@ -65,6 +65,9 @@ class InventoryClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class InventoryClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20220509',
             'service_endpoint_template': 'https://cloudbridge.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -170,6 +175,8 @@ class InventoryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/analyze_assets.py.html>`__ to see an example of how to use analyze_assets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'aggregationProperties']
         resource_path = "/assetAnalytics"
         method = "GET"
         operation_name = "analyze_assets"
@@ -258,7 +265,8 @@ class InventoryClient(object):
                 response_type="AssetAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -268,7 +276,8 @@ class InventoryClient(object):
                 response_type="AssetAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_asset_compartment(self, asset_id, change_asset_compartment_details, **kwargs):
         """
@@ -316,6 +325,8 @@ class InventoryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/change_asset_compartment.py.html>`__ to see an example of how to use change_asset_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['assetId']
         resource_path = "/assets/{assetId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_asset_compartment"
@@ -374,7 +385,8 @@ class InventoryClient(object):
                 body=change_asset_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -384,7 +396,8 @@ class InventoryClient(object):
                 body=change_asset_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_asset_tags(self, asset_id, change_asset_tags_details, **kwargs):
         """
@@ -432,6 +445,8 @@ class InventoryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/change_asset_tags.py.html>`__ to see an example of how to use change_asset_tags API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['assetId']
         resource_path = "/assets/{assetId}/actions/changeTags"
         method = "POST"
         operation_name = "change_asset_tags"
@@ -491,7 +506,8 @@ class InventoryClient(object):
                 response_type="Asset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -502,7 +518,8 @@ class InventoryClient(object):
                 response_type="Asset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_asset(self, create_asset_details, **kwargs):
         """
@@ -540,6 +557,8 @@ class InventoryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/create_asset.py.html>`__ to see an example of how to use create_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/assets"
         method = "POST"
         operation_name = "create_asset"
@@ -586,7 +605,8 @@ class InventoryClient(object):
                 response_type="Asset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -596,7 +616,8 @@ class InventoryClient(object):
                 response_type="Asset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_inventory(self, create_inventory_details, **kwargs):
         """
@@ -634,6 +655,8 @@ class InventoryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/create_inventory.py.html>`__ to see an example of how to use create_inventory API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/inventories"
         method = "POST"
         operation_name = "create_inventory"
@@ -679,7 +702,8 @@ class InventoryClient(object):
                 body=create_inventory_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -688,7 +712,8 @@ class InventoryClient(object):
                 body=create_inventory_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_asset(self, asset_id, **kwargs):
         """
@@ -726,6 +751,8 @@ class InventoryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/delete_asset.py.html>`__ to see an example of how to use delete_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['assetId']
         resource_path = "/assets/{assetId}"
         method = "DELETE"
         operation_name = "delete_asset"
@@ -780,7 +807,8 @@ class InventoryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -789,7 +817,8 @@ class InventoryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_inventory(self, inventory_id, **kwargs):
         """
@@ -827,6 +856,8 @@ class InventoryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/delete_inventory.py.html>`__ to see an example of how to use delete_inventory API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['inventoryId']
         resource_path = "/inventories/{inventoryId}"
         method = "DELETE"
         operation_name = "delete_inventory"
@@ -881,7 +912,8 @@ class InventoryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -890,7 +922,8 @@ class InventoryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_asset(self, asset_id, **kwargs):
         """
@@ -921,6 +954,8 @@ class InventoryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/get_asset.py.html>`__ to see an example of how to use get_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['assetId']
         resource_path = "/assets/{assetId}"
         method = "GET"
         operation_name = "get_asset"
@@ -974,7 +1009,8 @@ class InventoryClient(object):
                 response_type="Asset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -984,7 +1020,8 @@ class InventoryClient(object):
                 response_type="Asset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_inventory(self, inventory_id, **kwargs):
         """
@@ -1015,6 +1052,8 @@ class InventoryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/get_inventory.py.html>`__ to see an example of how to use get_inventory API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['inventoryId']
         resource_path = "/inventories/{inventoryId}"
         method = "GET"
         operation_name = "get_inventory"
@@ -1068,7 +1107,8 @@ class InventoryClient(object):
                 response_type="Inventory",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1078,7 +1118,8 @@ class InventoryClient(object):
                 response_type="Inventory",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def import_inventory(self, import_inventory_details, inventory_id, **kwargs):
         """
@@ -1119,6 +1160,8 @@ class InventoryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/import_inventory.py.html>`__ to see an example of how to use import_inventory API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['inventoryId']
         resource_path = "/inventories/{inventoryId}/actions/import"
         method = "POST"
         operation_name = "import_inventory"
@@ -1175,7 +1218,8 @@ class InventoryClient(object):
                 body=import_inventory_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1185,7 +1229,8 @@ class InventoryClient(object):
                 body=import_inventory_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_assets(self, compartment_id, **kwargs):
         """
@@ -1257,6 +1302,8 @@ class InventoryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/list_assets.py.html>`__ to see an example of how to use list_assets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/assets"
         method = "GET"
         operation_name = "list_assets"
@@ -1355,7 +1402,8 @@ class InventoryClient(object):
                 response_type="AssetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1365,7 +1413,8 @@ class InventoryClient(object):
                 response_type="AssetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_historical_metrics(self, asset_id, **kwargs):
         """
@@ -1412,6 +1461,8 @@ class InventoryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/list_historical_metrics.py.html>`__ to see an example of how to use list_historical_metrics API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['assetId']
         resource_path = "/assets/{assetId}/historicalMetrics"
         method = "GET"
         operation_name = "list_historical_metrics"
@@ -1492,7 +1543,8 @@ class InventoryClient(object):
                 response_type="HistoricalMetricCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1503,7 +1555,8 @@ class InventoryClient(object):
                 response_type="HistoricalMetricCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_inventories(self, compartment_id, **kwargs):
         """
@@ -1555,6 +1608,8 @@ class InventoryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/list_inventories.py.html>`__ to see an example of how to use list_inventories API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/inventories"
         method = "GET"
         operation_name = "list_inventories"
@@ -1634,7 +1689,8 @@ class InventoryClient(object):
                 response_type="InventoryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1644,7 +1700,8 @@ class InventoryClient(object):
                 response_type="InventoryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def submit_historical_metrics(self, submit_historical_metrics_details, asset_id, **kwargs):
         """
@@ -1685,6 +1742,8 @@ class InventoryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/submit_historical_metrics.py.html>`__ to see an example of how to use submit_historical_metrics API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['assetId']
         resource_path = "/assets/{assetId}/actions/submitHistoricalMetrics"
         method = "POST"
         operation_name = "submit_historical_metrics"
@@ -1741,7 +1800,8 @@ class InventoryClient(object):
                 response_type="HistoricalMetricCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1752,7 +1812,8 @@ class InventoryClient(object):
                 response_type="HistoricalMetricCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_asset(self, asset_id, update_asset_details, **kwargs):
         """
@@ -1793,6 +1854,8 @@ class InventoryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/update_asset.py.html>`__ to see an example of how to use update_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['assetId']
         resource_path = "/assets/{assetId}"
         method = "PUT"
         operation_name = "update_asset"
@@ -1849,7 +1912,8 @@ class InventoryClient(object):
                 response_type="Asset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1860,7 +1924,8 @@ class InventoryClient(object):
                 response_type="Asset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_inventory(self, inventory_id, update_inventory_details, **kwargs):
         """
@@ -1901,6 +1966,8 @@ class InventoryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/update_inventory.py.html>`__ to see an example of how to use update_inventory API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['inventoryId']
         resource_path = "/inventories/{inventoryId}"
         method = "PUT"
         operation_name = "update_inventory"
@@ -1957,7 +2024,8 @@ class InventoryClient(object):
                 response_type="Inventory",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1968,4 +2036,5 @@ class InventoryClient(object):
                 response_type="Inventory",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

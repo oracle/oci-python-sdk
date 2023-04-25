@@ -65,6 +65,9 @@ class GovernanceRuleClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class GovernanceRuleClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20220504',
             'service_endpoint_template': 'https://governance-rules.organizations.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -140,6 +145,8 @@ class GovernanceRuleClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/governancerulescontrolplane/create_governance_rule.py.html>`__ to see an example of how to use create_governance_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/governanceRules"
         method = "POST"
         operation_name = "create_governance_rule"
@@ -184,7 +191,8 @@ class GovernanceRuleClient(object):
                 response_type="GovernanceRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -194,7 +202,8 @@ class GovernanceRuleClient(object):
                 response_type="GovernanceRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_inclusion_criterion(self, create_inclusion_criterion_details, **kwargs):
         """
@@ -232,6 +241,8 @@ class GovernanceRuleClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/governancerulescontrolplane/create_inclusion_criterion.py.html>`__ to see an example of how to use create_inclusion_criterion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/inclusionCriteria"
         method = "POST"
         operation_name = "create_inclusion_criterion"
@@ -276,7 +287,8 @@ class GovernanceRuleClient(object):
                 response_type="InclusionCriterion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -286,7 +298,8 @@ class GovernanceRuleClient(object):
                 response_type="InclusionCriterion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_governance_rule(self, governance_rule_id, **kwargs):
         """
@@ -324,6 +337,8 @@ class GovernanceRuleClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/governancerulescontrolplane/delete_governance_rule.py.html>`__ to see an example of how to use delete_governance_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['governanceRuleId']
         resource_path = "/governanceRules/{governanceRuleId}"
         method = "DELETE"
         operation_name = "delete_governance_rule"
@@ -376,7 +391,8 @@ class GovernanceRuleClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -385,7 +401,8 @@ class GovernanceRuleClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_inclusion_criterion(self, inclusion_criterion_id, **kwargs):
         """
@@ -423,6 +440,8 @@ class GovernanceRuleClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/governancerulescontrolplane/delete_inclusion_criterion.py.html>`__ to see an example of how to use delete_inclusion_criterion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['inclusionCriterionId']
         resource_path = "/inclusionCriteria/{inclusionCriterionId}"
         method = "DELETE"
         operation_name = "delete_inclusion_criterion"
@@ -475,7 +494,8 @@ class GovernanceRuleClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -484,7 +504,8 @@ class GovernanceRuleClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_enforced_governance_rule(self, enforced_governance_rule_id, **kwargs):
         """
@@ -515,6 +536,8 @@ class GovernanceRuleClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/governancerulescontrolplane/get_enforced_governance_rule.py.html>`__ to see an example of how to use get_enforced_governance_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['enforcedGovernanceRuleId']
         resource_path = "/enforcedGovernanceRules/{enforcedGovernanceRuleId}"
         method = "GET"
         operation_name = "get_enforced_governance_rule"
@@ -566,7 +589,8 @@ class GovernanceRuleClient(object):
                 response_type="EnforcedGovernanceRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -576,7 +600,8 @@ class GovernanceRuleClient(object):
                 response_type="EnforcedGovernanceRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_governance_rule(self, governance_rule_id, **kwargs):
         """
@@ -607,6 +632,8 @@ class GovernanceRuleClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/governancerulescontrolplane/get_governance_rule.py.html>`__ to see an example of how to use get_governance_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['governanceRuleId']
         resource_path = "/governanceRules/{governanceRuleId}"
         method = "GET"
         operation_name = "get_governance_rule"
@@ -658,7 +685,8 @@ class GovernanceRuleClient(object):
                 response_type="GovernanceRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -668,7 +696,8 @@ class GovernanceRuleClient(object):
                 response_type="GovernanceRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_inclusion_criterion(self, inclusion_criterion_id, **kwargs):
         """
@@ -699,6 +728,8 @@ class GovernanceRuleClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/governancerulescontrolplane/get_inclusion_criterion.py.html>`__ to see an example of how to use get_inclusion_criterion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['inclusionCriterionId']
         resource_path = "/inclusionCriteria/{inclusionCriterionId}"
         method = "GET"
         operation_name = "get_inclusion_criterion"
@@ -750,7 +781,8 @@ class GovernanceRuleClient(object):
                 response_type="InclusionCriterion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -760,7 +792,8 @@ class GovernanceRuleClient(object):
                 response_type="InclusionCriterion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_tenancy_attachment(self, tenancy_attachment_id, **kwargs):
         """
@@ -791,6 +824,8 @@ class GovernanceRuleClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/governancerulescontrolplane/get_tenancy_attachment.py.html>`__ to see an example of how to use get_tenancy_attachment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tenancyAttachmentId']
         resource_path = "/tenancyAttachments/{tenancyAttachmentId}"
         method = "GET"
         operation_name = "get_tenancy_attachment"
@@ -842,7 +877,8 @@ class GovernanceRuleClient(object):
                 response_type="TenancyAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -852,7 +888,8 @@ class GovernanceRuleClient(object):
                 response_type="TenancyAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_enforced_governance_rules(self, **kwargs):
         """
@@ -911,6 +948,8 @@ class GovernanceRuleClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/governancerulescontrolplane/list_enforced_governance_rules.py.html>`__ to see an example of how to use list_enforced_governance_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/enforcedGovernanceRules"
         method = "GET"
         operation_name = "list_enforced_governance_rules"
@@ -993,7 +1032,8 @@ class GovernanceRuleClient(object):
                 response_type="EnforcedGovernanceRuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1003,7 +1043,8 @@ class GovernanceRuleClient(object):
                 response_type="EnforcedGovernanceRuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_governance_rules(self, **kwargs):
         """
@@ -1067,6 +1108,8 @@ class GovernanceRuleClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/governancerulescontrolplane/list_governance_rules.py.html>`__ to see an example of how to use list_governance_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/governanceRules"
         method = "GET"
         operation_name = "list_governance_rules"
@@ -1158,7 +1201,8 @@ class GovernanceRuleClient(object):
                 response_type="GovernanceRuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1168,7 +1212,8 @@ class GovernanceRuleClient(object):
                 response_type="GovernanceRuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_inclusion_criteria(self, governance_rule_id, **kwargs):
         """
@@ -1224,6 +1269,8 @@ class GovernanceRuleClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/governancerulescontrolplane/list_inclusion_criteria.py.html>`__ to see an example of how to use list_inclusion_criteria API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['governanceRuleId']
         resource_path = "/inclusionCriteria"
         method = "GET"
         operation_name = "list_inclusion_criteria"
@@ -1303,7 +1350,8 @@ class GovernanceRuleClient(object):
                 response_type="InclusionCriterionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1313,7 +1361,8 @@ class GovernanceRuleClient(object):
                 response_type="InclusionCriterionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_tenancy_attachments(self, **kwargs):
         """
@@ -1375,6 +1424,8 @@ class GovernanceRuleClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/governancerulescontrolplane/list_tenancy_attachments.py.html>`__ to see an example of how to use list_tenancy_attachments API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/tenancyAttachments"
         method = "GET"
         operation_name = "list_tenancy_attachments"
@@ -1459,7 +1510,8 @@ class GovernanceRuleClient(object):
                 response_type="TenancyAttachmentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1469,7 +1521,8 @@ class GovernanceRuleClient(object):
                 response_type="TenancyAttachmentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def retry_governance_rule(self, governance_rule_id, **kwargs):
         """
@@ -1516,6 +1569,8 @@ class GovernanceRuleClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/governancerulescontrolplane/retry_governance_rule.py.html>`__ to see an example of how to use retry_governance_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['governanceRuleId']
         resource_path = "/governanceRules/{governanceRuleId}/actions/retry"
         method = "POST"
         operation_name = "retry_governance_rule"
@@ -1571,7 +1626,8 @@ class GovernanceRuleClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1580,7 +1636,8 @@ class GovernanceRuleClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def retry_tenancy_attachment(self, tenancy_attachment_id, **kwargs):
         """
@@ -1626,6 +1683,8 @@ class GovernanceRuleClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/governancerulescontrolplane/retry_tenancy_attachment.py.html>`__ to see an example of how to use retry_tenancy_attachment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tenancyAttachmentId']
         resource_path = "/tenancyAttachments/{tenancyAttachmentId}/actions/retry"
         method = "POST"
         operation_name = "retry_tenancy_attachment"
@@ -1681,7 +1740,8 @@ class GovernanceRuleClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1690,7 +1750,8 @@ class GovernanceRuleClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_governance_rule(self, governance_rule_id, update_governance_rule_details, **kwargs):
         """
@@ -1731,6 +1792,8 @@ class GovernanceRuleClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/governancerulescontrolplane/update_governance_rule.py.html>`__ to see an example of how to use update_governance_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['governanceRuleId']
         resource_path = "/governanceRules/{governanceRuleId}"
         method = "PUT"
         operation_name = "update_governance_rule"
@@ -1784,7 +1847,8 @@ class GovernanceRuleClient(object):
                 body=update_governance_rule_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1794,4 +1858,5 @@ class GovernanceRuleClient(object):
                 body=update_governance_rule_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

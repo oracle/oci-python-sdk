@@ -67,6 +67,9 @@ class ContainerEngineClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -93,8 +96,10 @@ class ContainerEngineClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20180222',
             'service_endpoint_template': 'https://containerengine.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -144,6 +149,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/cluster_migrate_to_native_vcn.py.html>`__ to see an example of how to use cluster_migrate_to_native_vcn API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['clusterId']
         resource_path = "/clusters/{clusterId}/actions/migrateToNativeVcn"
         method = "POST"
         operation_name = "cluster_migrate_to_native_vcn"
@@ -199,7 +206,8 @@ class ContainerEngineClient(object):
                 body=cluster_migrate_to_native_vcn_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -209,7 +217,8 @@ class ContainerEngineClient(object):
                 body=cluster_migrate_to_native_vcn_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_cluster(self, create_cluster_details, **kwargs):
         """
@@ -245,6 +254,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/create_cluster.py.html>`__ to see an example of how to use create_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/clusters"
         method = "POST"
         operation_name = "create_cluster"
@@ -290,7 +301,8 @@ class ContainerEngineClient(object):
                 body=create_cluster_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -299,7 +311,8 @@ class ContainerEngineClient(object):
                 body=create_cluster_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_kubeconfig(self, cluster_id, **kwargs):
         """
@@ -334,6 +347,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/create_kubeconfig.py.html>`__ to see an example of how to use create_kubeconfig API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['clusterId']
         resource_path = "/clusters/{clusterId}/kubeconfig/content"
         method = "POST"
         operation_name = "create_kubeconfig"
@@ -389,7 +404,8 @@ class ContainerEngineClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -400,7 +416,8 @@ class ContainerEngineClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_node_pool(self, create_node_pool_details, **kwargs):
         """
@@ -436,6 +453,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/create_node_pool.py.html>`__ to see an example of how to use create_node_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/nodePools"
         method = "POST"
         operation_name = "create_node_pool"
@@ -481,7 +500,8 @@ class ContainerEngineClient(object):
                 body=create_node_pool_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -490,7 +510,8 @@ class ContainerEngineClient(object):
                 body=create_node_pool_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_virtual_node_pool(self, create_virtual_node_pool_details, **kwargs):
         """
@@ -526,6 +547,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/create_virtual_node_pool.py.html>`__ to see an example of how to use create_virtual_node_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/virtualNodePools"
         method = "POST"
         operation_name = "create_virtual_node_pool"
@@ -571,7 +594,8 @@ class ContainerEngineClient(object):
                 body=create_virtual_node_pool_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -580,7 +604,8 @@ class ContainerEngineClient(object):
                 body=create_virtual_node_pool_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_cluster(self, cluster_id, **kwargs):
         """
@@ -617,6 +642,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/delete_cluster.py.html>`__ to see an example of how to use delete_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['clusterId']
         resource_path = "/clusters/{clusterId}"
         method = "DELETE"
         operation_name = "delete_cluster"
@@ -671,7 +698,8 @@ class ContainerEngineClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -680,7 +708,8 @@ class ContainerEngineClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_node(self, node_pool_id, node_id, **kwargs):
         """
@@ -730,6 +759,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/delete_node.py.html>`__ to see an example of how to use delete_node API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['nodePoolId', 'nodeId']
         resource_path = "/nodePools/{nodePoolId}/node/{nodeId}"
         method = "DELETE"
         operation_name = "delete_node"
@@ -796,7 +827,8 @@ class ContainerEngineClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -806,7 +838,8 @@ class ContainerEngineClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_node_pool(self, node_pool_id, **kwargs):
         """
@@ -850,6 +883,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/delete_node_pool.py.html>`__ to see an example of how to use delete_node_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['nodePoolId']
         resource_path = "/nodePools/{nodePoolId}"
         method = "DELETE"
         operation_name = "delete_node_pool"
@@ -913,7 +948,8 @@ class ContainerEngineClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -923,7 +959,8 @@ class ContainerEngineClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_virtual_node_pool(self, virtual_node_pool_id, **kwargs):
         """
@@ -967,6 +1004,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/delete_virtual_node_pool.py.html>`__ to see an example of how to use delete_virtual_node_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualNodePoolId']
         resource_path = "/virtualNodePools/{virtualNodePoolId}"
         method = "DELETE"
         operation_name = "delete_virtual_node_pool"
@@ -1030,7 +1069,8 @@ class ContainerEngineClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1040,7 +1080,8 @@ class ContainerEngineClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_work_request(self, work_request_id, **kwargs):
         """
@@ -1077,6 +1118,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/delete_work_request.py.html>`__ to see an example of how to use delete_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "delete_work_request"
@@ -1131,7 +1174,8 @@ class ContainerEngineClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1140,7 +1184,8 @@ class ContainerEngineClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def disable_addon(self, cluster_id, addon_name, is_remove_existing_add_on, **kwargs):
         """
@@ -1183,6 +1228,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/disable_addon.py.html>`__ to see an example of how to use disable_addon API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['clusterId', 'addonName', 'isRemoveExistingAddOn']
         resource_path = "/clusters/{clusterId}/addons/{addonName}"
         method = "DELETE"
         operation_name = "disable_addon"
@@ -1244,7 +1291,8 @@ class ContainerEngineClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1254,7 +1302,8 @@ class ContainerEngineClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_addon(self, cluster_id, addon_name, **kwargs):
         """
@@ -1289,6 +1338,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/get_addon.py.html>`__ to see an example of how to use get_addon API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['clusterId', 'addonName']
         resource_path = "/clusters/{clusterId}/addons/{addonName}"
         method = "GET"
         operation_name = "get_addon"
@@ -1343,7 +1394,8 @@ class ContainerEngineClient(object):
                 response_type="Addon",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1353,7 +1405,8 @@ class ContainerEngineClient(object):
                 response_type="Addon",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_cluster(self, cluster_id, **kwargs):
         """
@@ -1385,6 +1438,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/get_cluster.py.html>`__ to see an example of how to use get_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['clusterId']
         resource_path = "/clusters/{clusterId}"
         method = "GET"
         operation_name = "get_cluster"
@@ -1438,7 +1493,8 @@ class ContainerEngineClient(object):
                 response_type="Cluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1448,7 +1504,8 @@ class ContainerEngineClient(object):
                 response_type="Cluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_cluster_migrate_to_native_vcn_status(self, cluster_id, **kwargs):
         """
@@ -1480,6 +1537,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/get_cluster_migrate_to_native_vcn_status.py.html>`__ to see an example of how to use get_cluster_migrate_to_native_vcn_status API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['clusterId']
         resource_path = "/clusters/{clusterId}/migrateToNativeVcnStatus"
         method = "GET"
         operation_name = "get_cluster_migrate_to_native_vcn_status"
@@ -1533,7 +1592,8 @@ class ContainerEngineClient(object):
                 response_type="ClusterMigrateToNativeVcnStatus",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1543,7 +1603,8 @@ class ContainerEngineClient(object):
                 response_type="ClusterMigrateToNativeVcnStatus",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_cluster_options(self, cluster_option_id, **kwargs):
         """
@@ -1578,6 +1639,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/get_cluster_options.py.html>`__ to see an example of how to use get_cluster_options API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['clusterOptionId']
         resource_path = "/clusterOptions/{clusterOptionId}"
         method = "GET"
         operation_name = "get_cluster_options"
@@ -1638,7 +1701,8 @@ class ContainerEngineClient(object):
                 response_type="ClusterOptions",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1649,7 +1713,8 @@ class ContainerEngineClient(object):
                 response_type="ClusterOptions",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_node_pool(self, node_pool_id, **kwargs):
         """
@@ -1681,6 +1746,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/get_node_pool.py.html>`__ to see an example of how to use get_node_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['nodePoolId']
         resource_path = "/nodePools/{nodePoolId}"
         method = "GET"
         operation_name = "get_node_pool"
@@ -1734,7 +1801,8 @@ class ContainerEngineClient(object):
                 response_type="NodePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1744,7 +1812,8 @@ class ContainerEngineClient(object):
                 response_type="NodePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_node_pool_options(self, node_pool_option_id, **kwargs):
         """
@@ -1779,6 +1848,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/get_node_pool_options.py.html>`__ to see an example of how to use get_node_pool_options API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['nodePoolOptionId']
         resource_path = "/nodePoolOptions/{nodePoolOptionId}"
         method = "GET"
         operation_name = "get_node_pool_options"
@@ -1839,7 +1910,8 @@ class ContainerEngineClient(object):
                 response_type="NodePoolOptions",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1850,7 +1922,8 @@ class ContainerEngineClient(object):
                 response_type="NodePoolOptions",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_virtual_node(self, virtual_node_pool_id, virtual_node_id, **kwargs):
         """
@@ -1885,6 +1958,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/get_virtual_node.py.html>`__ to see an example of how to use get_virtual_node API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualNodePoolId', 'virtualNodeId']
         resource_path = "/virtualNodePools/{virtualNodePoolId}/virtualNodes/{virtualNodeId}"
         method = "GET"
         operation_name = "get_virtual_node"
@@ -1939,7 +2014,8 @@ class ContainerEngineClient(object):
                 response_type="VirtualNode",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1949,7 +2025,8 @@ class ContainerEngineClient(object):
                 response_type="VirtualNode",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_virtual_node_pool(self, virtual_node_pool_id, **kwargs):
         """
@@ -1981,6 +2058,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/get_virtual_node_pool.py.html>`__ to see an example of how to use get_virtual_node_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualNodePoolId']
         resource_path = "/virtualNodePools/{virtualNodePoolId}"
         method = "GET"
         operation_name = "get_virtual_node_pool"
@@ -2034,7 +2113,8 @@ class ContainerEngineClient(object):
                 response_type="VirtualNodePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2044,7 +2124,8 @@ class ContainerEngineClient(object):
                 response_type="VirtualNodePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -2076,6 +2157,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -2129,7 +2212,8 @@ class ContainerEngineClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2139,7 +2223,8 @@ class ContainerEngineClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def install_addon(self, cluster_id, install_addon_details, **kwargs):
         """
@@ -2183,6 +2268,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/install_addon.py.html>`__ to see an example of how to use install_addon API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['clusterId']
         resource_path = "/clusters/{clusterId}/addons"
         method = "POST"
         operation_name = "install_addon"
@@ -2241,7 +2328,8 @@ class ContainerEngineClient(object):
                 body=install_addon_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2251,7 +2339,8 @@ class ContainerEngineClient(object):
                 body=install_addon_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_addon_options(self, kubernetes_version, **kwargs):
         """
@@ -2309,6 +2398,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/list_addon_options.py.html>`__ to see an example of how to use list_addon_options API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['kubernetesVersion']
         resource_path = "/addonOptions"
         method = "GET"
         operation_name = "list_addon_options"
@@ -2381,7 +2472,8 @@ class ContainerEngineClient(object):
                 response_type="list[AddonOptionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2391,7 +2483,8 @@ class ContainerEngineClient(object):
                 response_type="list[AddonOptionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_addons(self, cluster_id, **kwargs):
         """
@@ -2446,6 +2539,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/list_addons.py.html>`__ to see an example of how to use list_addons API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['clusterId']
         resource_path = "/clusters/{clusterId}/addons"
         method = "GET"
         operation_name = "list_addons"
@@ -2526,7 +2621,8 @@ class ContainerEngineClient(object):
                 response_type="list[AddonSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2537,7 +2633,8 @@ class ContainerEngineClient(object):
                 response_type="list[AddonSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_clusters(self, compartment_id, **kwargs):
         """
@@ -2600,6 +2697,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/list_clusters.py.html>`__ to see an example of how to use list_clusters API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/clusters"
         method = "GET"
         operation_name = "list_clusters"
@@ -2682,7 +2781,8 @@ class ContainerEngineClient(object):
                 response_type="list[ClusterSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2692,7 +2792,8 @@ class ContainerEngineClient(object):
                 response_type="list[ClusterSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_node_pools(self, compartment_id, **kwargs):
         """
@@ -2758,6 +2859,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/list_node_pools.py.html>`__ to see an example of how to use list_node_pools API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/nodePools"
         method = "GET"
         operation_name = "list_node_pools"
@@ -2842,7 +2945,8 @@ class ContainerEngineClient(object):
                 response_type="list[NodePoolSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2852,7 +2956,8 @@ class ContainerEngineClient(object):
                 response_type="list[NodePoolSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_pod_shapes(self, compartment_id, **kwargs):
         """
@@ -2913,6 +3018,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/list_pod_shapes.py.html>`__ to see an example of how to use list_pod_shapes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/podShapes"
         method = "GET"
         operation_name = "list_pod_shapes"
@@ -2987,7 +3094,8 @@ class ContainerEngineClient(object):
                 response_type="list[PodShapeSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2997,7 +3105,8 @@ class ContainerEngineClient(object):
                 response_type="list[PodShapeSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_virtual_node_pools(self, compartment_id, **kwargs):
         """
@@ -3063,6 +3172,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/list_virtual_node_pools.py.html>`__ to see an example of how to use list_virtual_node_pools API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/virtualNodePools"
         method = "GET"
         operation_name = "list_virtual_node_pools"
@@ -3147,7 +3258,8 @@ class ContainerEngineClient(object):
                 response_type="list[VirtualNodePoolSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3157,7 +3269,8 @@ class ContainerEngineClient(object):
                 response_type="list[VirtualNodePoolSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_virtual_nodes(self, virtual_node_pool_id, **kwargs):
         """
@@ -3215,6 +3328,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/list_virtual_nodes.py.html>`__ to see an example of how to use list_virtual_nodes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualNodePoolId']
         resource_path = "/virtualNodePools/{virtualNodePoolId}/virtualNodes"
         method = "GET"
         operation_name = "list_virtual_nodes"
@@ -3297,7 +3412,8 @@ class ContainerEngineClient(object):
                 response_type="list[VirtualNodeSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3308,7 +3424,8 @@ class ContainerEngineClient(object):
                 response_type="list[VirtualNodeSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, compartment_id, work_request_id, **kwargs):
         """
@@ -3343,6 +3460,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId', 'compartmentId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -3402,7 +3521,8 @@ class ContainerEngineClient(object):
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3413,7 +3533,8 @@ class ContainerEngineClient(object):
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, compartment_id, work_request_id, **kwargs):
         """
@@ -3448,6 +3569,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId', 'compartmentId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -3507,7 +3630,8 @@ class ContainerEngineClient(object):
                 response_type="list[WorkRequestLogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3518,7 +3642,8 @@ class ContainerEngineClient(object):
                 response_type="list[WorkRequestLogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -3587,6 +3712,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -3672,7 +3799,8 @@ class ContainerEngineClient(object):
                 response_type="list[WorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3682,7 +3810,8 @@ class ContainerEngineClient(object):
                 response_type="list[WorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_addon(self, cluster_id, addon_name, update_addon_details, **kwargs):
         """
@@ -3725,6 +3854,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/update_addon.py.html>`__ to see an example of how to use update_addon API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['clusterId', 'addonName']
         resource_path = "/clusters/{clusterId}/addons/{addonName}"
         method = "PUT"
         operation_name = "update_addon"
@@ -3781,7 +3912,8 @@ class ContainerEngineClient(object):
                 body=update_addon_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3791,7 +3923,8 @@ class ContainerEngineClient(object):
                 body=update_addon_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_cluster(self, cluster_id, update_cluster_details, **kwargs):
         """
@@ -3831,6 +3964,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/update_cluster.py.html>`__ to see an example of how to use update_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['clusterId']
         resource_path = "/clusters/{clusterId}"
         method = "PUT"
         operation_name = "update_cluster"
@@ -3886,7 +4021,8 @@ class ContainerEngineClient(object):
                 body=update_cluster_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3896,7 +4032,8 @@ class ContainerEngineClient(object):
                 body=update_cluster_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_cluster_endpoint_config(self, cluster_id, update_cluster_endpoint_config_details, **kwargs):
         """
@@ -3936,6 +4073,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/update_cluster_endpoint_config.py.html>`__ to see an example of how to use update_cluster_endpoint_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['clusterId']
         resource_path = "/clusters/{clusterId}/actions/updateEndpointConfig"
         method = "POST"
         operation_name = "update_cluster_endpoint_config"
@@ -3991,7 +4130,8 @@ class ContainerEngineClient(object):
                 body=update_cluster_endpoint_config_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4001,7 +4141,8 @@ class ContainerEngineClient(object):
                 body=update_cluster_endpoint_config_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_node_pool(self, node_pool_id, update_node_pool_details, **kwargs):
         """
@@ -4048,6 +4189,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/update_node_pool.py.html>`__ to see an example of how to use update_node_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['nodePoolId']
         resource_path = "/nodePools/{nodePoolId}"
         method = "PUT"
         operation_name = "update_node_pool"
@@ -4112,7 +4255,8 @@ class ContainerEngineClient(object):
                 body=update_node_pool_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4123,7 +4267,8 @@ class ContainerEngineClient(object):
                 body=update_node_pool_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_virtual_node_pool(self, virtual_node_pool_id, update_virtual_node_pool_details, **kwargs):
         """
@@ -4163,6 +4308,8 @@ class ContainerEngineClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/containerengine/update_virtual_node_pool.py.html>`__ to see an example of how to use update_virtual_node_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualNodePoolId']
         resource_path = "/virtualNodePools/{virtualNodePoolId}"
         method = "PUT"
         operation_name = "update_virtual_node_pool"
@@ -4218,7 +4365,8 @@ class ContainerEngineClient(object):
                 body=update_virtual_node_pool_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4228,4 +4376,5 @@ class ContainerEngineClient(object):
                 body=update_virtual_node_pool_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

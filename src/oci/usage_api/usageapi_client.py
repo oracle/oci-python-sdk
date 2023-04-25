@@ -65,6 +65,9 @@ class UsageapiClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class UsageapiClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20200107',
             'service_endpoint_template': 'https://usageapi.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -141,6 +146,8 @@ class UsageapiClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/create_custom_table.py.html>`__ to see an example of how to use create_custom_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/customTables"
         method = "POST"
         operation_name = "create_custom_table"
@@ -185,7 +192,8 @@ class UsageapiClient(object):
                 response_type="CustomTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -195,7 +203,8 @@ class UsageapiClient(object):
                 response_type="CustomTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_query(self, create_query_details, **kwargs):
         """
@@ -234,6 +243,8 @@ class UsageapiClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/create_query.py.html>`__ to see an example of how to use create_query API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/queries"
         method = "POST"
         operation_name = "create_query"
@@ -278,7 +289,8 @@ class UsageapiClient(object):
                 response_type="Query",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -288,7 +300,8 @@ class UsageapiClient(object):
                 response_type="Query",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_schedule(self, create_schedule_details, **kwargs):
         """
@@ -327,6 +340,8 @@ class UsageapiClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/create_schedule.py.html>`__ to see an example of how to use create_schedule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/schedules"
         method = "POST"
         operation_name = "create_schedule"
@@ -371,7 +386,8 @@ class UsageapiClient(object):
                 response_type="Schedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -381,7 +397,8 @@ class UsageapiClient(object):
                 response_type="Schedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_custom_table(self, custom_table_id, **kwargs):
         """
@@ -420,6 +437,8 @@ class UsageapiClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/delete_custom_table.py.html>`__ to see an example of how to use delete_custom_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['customTableId']
         resource_path = "/customTables/{customTableId}"
         method = "DELETE"
         operation_name = "delete_custom_table"
@@ -472,7 +491,8 @@ class UsageapiClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -481,7 +501,8 @@ class UsageapiClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_query(self, query_id, **kwargs):
         """
@@ -520,6 +541,8 @@ class UsageapiClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/delete_query.py.html>`__ to see an example of how to use delete_query API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['queryId']
         resource_path = "/queries/{queryId}"
         method = "DELETE"
         operation_name = "delete_query"
@@ -572,7 +595,8 @@ class UsageapiClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -581,7 +605,8 @@ class UsageapiClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_schedule(self, schedule_id, **kwargs):
         """
@@ -620,6 +645,8 @@ class UsageapiClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/delete_schedule.py.html>`__ to see an example of how to use delete_schedule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['scheduleId']
         resource_path = "/schedules/{scheduleId}"
         method = "DELETE"
         operation_name = "delete_schedule"
@@ -672,7 +699,8 @@ class UsageapiClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -681,7 +709,8 @@ class UsageapiClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_custom_table(self, custom_table_id, **kwargs):
         """
@@ -713,6 +742,8 @@ class UsageapiClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/get_custom_table.py.html>`__ to see an example of how to use get_custom_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['customTableId']
         resource_path = "/customTables/{customTableId}"
         method = "GET"
         operation_name = "get_custom_table"
@@ -764,7 +795,8 @@ class UsageapiClient(object):
                 response_type="CustomTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -774,7 +806,8 @@ class UsageapiClient(object):
                 response_type="CustomTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_query(self, query_id, **kwargs):
         """
@@ -806,6 +839,8 @@ class UsageapiClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/get_query.py.html>`__ to see an example of how to use get_query API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['queryId']
         resource_path = "/queries/{queryId}"
         method = "GET"
         operation_name = "get_query"
@@ -857,7 +892,8 @@ class UsageapiClient(object):
                 response_type="Query",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -867,7 +903,8 @@ class UsageapiClient(object):
                 response_type="Query",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_schedule(self, schedule_id, **kwargs):
         """
@@ -899,6 +936,8 @@ class UsageapiClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/get_schedule.py.html>`__ to see an example of how to use get_schedule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['scheduleId']
         resource_path = "/schedules/{scheduleId}"
         method = "GET"
         operation_name = "get_schedule"
@@ -950,7 +989,8 @@ class UsageapiClient(object):
                 response_type="Schedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -960,7 +1000,8 @@ class UsageapiClient(object):
                 response_type="Schedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_scheduled_run(self, scheduled_run_id, **kwargs):
         """
@@ -992,6 +1033,8 @@ class UsageapiClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/get_scheduled_run.py.html>`__ to see an example of how to use get_scheduled_run API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['scheduledRunId']
         resource_path = "/scheduledRuns/{scheduledRunId}"
         method = "GET"
         operation_name = "get_scheduled_run"
@@ -1043,7 +1086,8 @@ class UsageapiClient(object):
                 response_type="ScheduledRun",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1053,7 +1097,8 @@ class UsageapiClient(object):
                 response_type="ScheduledRun",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_custom_tables(self, compartment_id, saved_report_id, **kwargs):
         """
@@ -1105,6 +1150,8 @@ class UsageapiClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/list_custom_tables.py.html>`__ to see an example of how to use list_custom_tables API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'savedReportId']
         resource_path = "/customTables"
         method = "GET"
         operation_name = "list_custom_tables"
@@ -1174,7 +1221,8 @@ class UsageapiClient(object):
                 response_type="CustomTableCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1184,7 +1232,8 @@ class UsageapiClient(object):
                 response_type="CustomTableCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_queries(self, compartment_id, **kwargs):
         """
@@ -1233,6 +1282,8 @@ class UsageapiClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/list_queries.py.html>`__ to see an example of how to use list_queries API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/queries"
         method = "GET"
         operation_name = "list_queries"
@@ -1301,7 +1352,8 @@ class UsageapiClient(object):
                 response_type="QueryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1311,7 +1363,8 @@ class UsageapiClient(object):
                 response_type="QueryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_scheduled_runs(self, schedule_id, **kwargs):
         """
@@ -1360,6 +1413,8 @@ class UsageapiClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/list_scheduled_runs.py.html>`__ to see an example of how to use list_scheduled_runs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['scheduleId']
         resource_path = "/scheduledRuns"
         method = "GET"
         operation_name = "list_scheduled_runs"
@@ -1428,7 +1483,8 @@ class UsageapiClient(object):
                 response_type="ScheduledRunCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1438,7 +1494,8 @@ class UsageapiClient(object):
                 response_type="ScheduledRunCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_schedules(self, compartment_id, **kwargs):
         """
@@ -1490,6 +1547,8 @@ class UsageapiClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/list_schedules.py.html>`__ to see an example of how to use list_schedules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/schedules"
         method = "GET"
         operation_name = "list_schedules"
@@ -1560,7 +1619,8 @@ class UsageapiClient(object):
                 response_type="ScheduleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1570,7 +1630,8 @@ class UsageapiClient(object):
                 response_type="ScheduleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def request_summarized_configurations(self, tenant_id, **kwargs):
         """
@@ -1602,6 +1663,8 @@ class UsageapiClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/request_summarized_configurations.py.html>`__ to see an example of how to use request_summarized_configurations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['tenantId']
         resource_path = "/configuration"
         method = "GET"
         operation_name = "request_summarized_configurations"
@@ -1648,7 +1711,8 @@ class UsageapiClient(object):
                 response_type="ConfigurationAggregation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1658,7 +1722,8 @@ class UsageapiClient(object):
                 response_type="ConfigurationAggregation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def request_summarized_usages(self, request_summarized_usages_details, **kwargs):
         """
@@ -1697,6 +1762,8 @@ class UsageapiClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/request_summarized_usages.py.html>`__ to see an example of how to use request_summarized_usages API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/usage"
         method = "POST"
         operation_name = "request_summarized_usages"
@@ -1747,7 +1814,8 @@ class UsageapiClient(object):
                 response_type="UsageAggregation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1758,7 +1826,8 @@ class UsageapiClient(object):
                 response_type="UsageAggregation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_custom_table(self, update_custom_table_details, custom_table_id, **kwargs):
         """
@@ -1800,6 +1869,8 @@ class UsageapiClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/update_custom_table.py.html>`__ to see an example of how to use update_custom_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['customTableId']
         resource_path = "/customTables/{customTableId}"
         method = "PUT"
         operation_name = "update_custom_table"
@@ -1854,7 +1925,8 @@ class UsageapiClient(object):
                 response_type="CustomTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1865,7 +1937,8 @@ class UsageapiClient(object):
                 response_type="CustomTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_query(self, update_query_details, query_id, **kwargs):
         """
@@ -1907,6 +1980,8 @@ class UsageapiClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/update_query.py.html>`__ to see an example of how to use update_query API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['queryId']
         resource_path = "/queries/{queryId}"
         method = "PUT"
         operation_name = "update_query"
@@ -1961,7 +2036,8 @@ class UsageapiClient(object):
                 response_type="Query",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1972,7 +2048,8 @@ class UsageapiClient(object):
                 response_type="Query",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_schedule(self, update_schedule_details, schedule_id, **kwargs):
         """
@@ -2014,6 +2091,8 @@ class UsageapiClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usageapi/update_schedule.py.html>`__ to see an example of how to use update_schedule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['scheduleId']
         resource_path = "/schedules/{scheduleId}"
         method = "PUT"
         operation_name = "update_schedule"
@@ -2068,7 +2147,8 @@ class UsageapiClient(object):
                 response_type="Schedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2079,4 +2159,5 @@ class UsageapiClient(object):
                 response_type="Schedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

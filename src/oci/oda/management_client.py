@@ -65,6 +65,9 @@ class ManagementClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class ManagementClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20190506',
             'service_endpoint_template': 'https://digitalassistant-api.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -158,6 +163,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/change_oda_private_endpoint_compartment.py.html>`__ to see an example of how to use change_oda_private_endpoint_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaPrivateEndpointId']
         resource_path = "/odaPrivateEndpoints/{odaPrivateEndpointId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_oda_private_endpoint_compartment"
@@ -216,7 +223,8 @@ class ManagementClient(object):
                 body=change_oda_private_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -226,7 +234,8 @@ class ManagementClient(object):
                 body=change_oda_private_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def configure_digital_assistant_parameters(self, oda_instance_id, configure_digital_assistant_parameters_details, **kwargs):
         """
@@ -260,6 +269,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/configure_digital_assistant_parameters.py.html>`__ to see an example of how to use configure_digital_assistant_parameters API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId']
         resource_path = "/odaInstances/{odaInstanceId}/actions/configureDigitalAssistantParameters"
         method = "POST"
         operation_name = "configure_digital_assistant_parameters"
@@ -313,7 +324,8 @@ class ManagementClient(object):
                 body=configure_digital_assistant_parameters_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -323,7 +335,8 @@ class ManagementClient(object):
                 body=configure_digital_assistant_parameters_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_authentication_provider(self, oda_instance_id, create_authentication_provider_details, **kwargs):
         """
@@ -365,6 +378,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/create_authentication_provider.py.html>`__ to see an example of how to use create_authentication_provider API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId']
         resource_path = "/odaInstances/{odaInstanceId}/authenticationProviders"
         method = "POST"
         operation_name = "create_authentication_provider"
@@ -422,7 +437,8 @@ class ManagementClient(object):
                 response_type="AuthenticationProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -433,7 +449,8 @@ class ManagementClient(object):
                 response_type="AuthenticationProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_channel(self, oda_instance_id, create_channel_details, **kwargs):
         """
@@ -475,6 +492,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/create_channel.py.html>`__ to see an example of how to use create_channel API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId']
         resource_path = "/odaInstances/{odaInstanceId}/channels"
         method = "POST"
         operation_name = "create_channel"
@@ -532,7 +551,8 @@ class ManagementClient(object):
                 response_type="CreateChannelResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -543,7 +563,8 @@ class ManagementClient(object):
                 response_type="CreateChannelResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_digital_assistant(self, oda_instance_id, create_digital_assistant_details, **kwargs):
         """
@@ -585,6 +606,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/create_digital_assistant.py.html>`__ to see an example of how to use create_digital_assistant API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId']
         resource_path = "/odaInstances/{odaInstanceId}/digitalAssistants"
         method = "POST"
         operation_name = "create_digital_assistant"
@@ -641,7 +664,8 @@ class ManagementClient(object):
                 body=create_digital_assistant_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -651,7 +675,8 @@ class ManagementClient(object):
                 body=create_digital_assistant_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_oda_private_endpoint(self, create_oda_private_endpoint_details, **kwargs):
         """
@@ -693,6 +718,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/create_oda_private_endpoint.py.html>`__ to see an example of how to use create_oda_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/odaPrivateEndpoints"
         method = "POST"
         operation_name = "create_oda_private_endpoint"
@@ -739,7 +766,8 @@ class ManagementClient(object):
                 response_type="OdaPrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -749,7 +777,8 @@ class ManagementClient(object):
                 response_type="OdaPrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_oda_private_endpoint_attachment(self, create_oda_private_endpoint_attachment_details, **kwargs):
         """
@@ -791,6 +820,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/create_oda_private_endpoint_attachment.py.html>`__ to see an example of how to use create_oda_private_endpoint_attachment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/odaPrivateEndpointAttachments"
         method = "POST"
         operation_name = "create_oda_private_endpoint_attachment"
@@ -837,7 +868,8 @@ class ManagementClient(object):
                 response_type="OdaPrivateEndpointAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -847,7 +879,8 @@ class ManagementClient(object):
                 response_type="OdaPrivateEndpointAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_oda_private_endpoint_scan_proxy(self, create_oda_private_endpoint_scan_proxy_details, oda_private_endpoint_id, **kwargs):
         """
@@ -894,6 +927,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/create_oda_private_endpoint_scan_proxy.py.html>`__ to see an example of how to use create_oda_private_endpoint_scan_proxy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaPrivateEndpointId']
         resource_path = "/odaPrivateEndpoints/{odaPrivateEndpointId}/odaPrivateEndpointScanProxies"
         method = "POST"
         operation_name = "create_oda_private_endpoint_scan_proxy"
@@ -951,7 +986,8 @@ class ManagementClient(object):
                 response_type="OdaPrivateEndpointScanProxy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -962,7 +998,8 @@ class ManagementClient(object):
                 response_type="OdaPrivateEndpointScanProxy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_skill(self, oda_instance_id, create_skill_details, **kwargs):
         """
@@ -1004,6 +1041,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/create_skill.py.html>`__ to see an example of how to use create_skill API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId']
         resource_path = "/odaInstances/{odaInstanceId}/skills"
         method = "POST"
         operation_name = "create_skill"
@@ -1060,7 +1099,8 @@ class ManagementClient(object):
                 body=create_skill_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1070,7 +1110,8 @@ class ManagementClient(object):
                 body=create_skill_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_skill_parameter(self, oda_instance_id, skill_id, create_skill_parameter_details, **kwargs):
         """
@@ -1115,6 +1156,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/create_skill_parameter.py.html>`__ to see an example of how to use create_skill_parameter API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'skillId']
         resource_path = "/odaInstances/{odaInstanceId}/skills/{skillId}/parameters"
         method = "POST"
         operation_name = "create_skill_parameter"
@@ -1173,7 +1216,8 @@ class ManagementClient(object):
                 response_type="SkillParameter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1184,7 +1228,8 @@ class ManagementClient(object):
                 response_type="SkillParameter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_translator(self, oda_instance_id, create_translator_details, **kwargs):
         """
@@ -1226,6 +1271,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/create_translator.py.html>`__ to see an example of how to use create_translator API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId']
         resource_path = "/odaInstances/{odaInstanceId}/translators"
         method = "POST"
         operation_name = "create_translator"
@@ -1283,7 +1330,8 @@ class ManagementClient(object):
                 response_type="Translator",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1294,7 +1342,8 @@ class ManagementClient(object):
                 response_type="Translator",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_authentication_provider(self, oda_instance_id, authentication_provider_id, **kwargs):
         """
@@ -1336,6 +1385,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/delete_authentication_provider.py.html>`__ to see an example of how to use delete_authentication_provider API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'authenticationProviderId']
         resource_path = "/odaInstances/{odaInstanceId}/authenticationProviders/{authenticationProviderId}"
         method = "DELETE"
         operation_name = "delete_authentication_provider"
@@ -1391,7 +1442,8 @@ class ManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1400,7 +1452,8 @@ class ManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_channel(self, oda_instance_id, channel_id, **kwargs):
         """
@@ -1442,6 +1495,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/delete_channel.py.html>`__ to see an example of how to use delete_channel API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'channelId']
         resource_path = "/odaInstances/{odaInstanceId}/channels/{channelId}"
         method = "DELETE"
         operation_name = "delete_channel"
@@ -1497,7 +1552,8 @@ class ManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1506,7 +1562,8 @@ class ManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_digital_assistant(self, oda_instance_id, digital_assistant_id, **kwargs):
         """
@@ -1548,6 +1605,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/delete_digital_assistant.py.html>`__ to see an example of how to use delete_digital_assistant API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'digitalAssistantId']
         resource_path = "/odaInstances/{odaInstanceId}/digitalAssistants/{digitalAssistantId}"
         method = "DELETE"
         operation_name = "delete_digital_assistant"
@@ -1603,7 +1662,8 @@ class ManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1612,7 +1672,8 @@ class ManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_oda_private_endpoint(self, oda_private_endpoint_id, **kwargs):
         """
@@ -1654,6 +1715,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/delete_oda_private_endpoint.py.html>`__ to see an example of how to use delete_oda_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaPrivateEndpointId']
         resource_path = "/odaPrivateEndpoints/{odaPrivateEndpointId}"
         method = "DELETE"
         operation_name = "delete_oda_private_endpoint"
@@ -1708,7 +1771,8 @@ class ManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1717,7 +1781,8 @@ class ManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_oda_private_endpoint_attachment(self, oda_private_endpoint_attachment_id, **kwargs):
         """
@@ -1759,6 +1824,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/delete_oda_private_endpoint_attachment.py.html>`__ to see an example of how to use delete_oda_private_endpoint_attachment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaPrivateEndpointAttachmentId']
         resource_path = "/odaPrivateEndpointAttachments/{odaPrivateEndpointAttachmentId}"
         method = "DELETE"
         operation_name = "delete_oda_private_endpoint_attachment"
@@ -1813,7 +1880,8 @@ class ManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1822,7 +1890,8 @@ class ManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_oda_private_endpoint_scan_proxy(self, oda_private_endpoint_scan_proxy_id, oda_private_endpoint_id, **kwargs):
         """
@@ -1867,6 +1936,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/delete_oda_private_endpoint_scan_proxy.py.html>`__ to see an example of how to use delete_oda_private_endpoint_scan_proxy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaPrivateEndpointScanProxyId', 'odaPrivateEndpointId']
         resource_path = "/odaPrivateEndpoints/{odaPrivateEndpointId}/odaPrivateEndpointScanProxies/{odaPrivateEndpointScanProxyId}"
         method = "DELETE"
         operation_name = "delete_oda_private_endpoint_scan_proxy"
@@ -1922,7 +1993,8 @@ class ManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1931,7 +2003,8 @@ class ManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_skill(self, oda_instance_id, skill_id, **kwargs):
         """
@@ -1973,6 +2046,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/delete_skill.py.html>`__ to see an example of how to use delete_skill API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'skillId']
         resource_path = "/odaInstances/{odaInstanceId}/skills/{skillId}"
         method = "DELETE"
         operation_name = "delete_skill"
@@ -2028,7 +2103,8 @@ class ManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2037,7 +2113,8 @@ class ManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_skill_parameter(self, oda_instance_id, skill_id, parameter_name, **kwargs):
         """
@@ -2082,6 +2159,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/delete_skill_parameter.py.html>`__ to see an example of how to use delete_skill_parameter API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'skillId', 'parameterName']
         resource_path = "/odaInstances/{odaInstanceId}/skills/{skillId}/parameters/{parameterName}"
         method = "DELETE"
         operation_name = "delete_skill_parameter"
@@ -2138,7 +2217,8 @@ class ManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2147,7 +2227,8 @@ class ManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_translator(self, oda_instance_id, translator_id, **kwargs):
         """
@@ -2189,6 +2270,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/delete_translator.py.html>`__ to see an example of how to use delete_translator API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'translatorId']
         resource_path = "/odaInstances/{odaInstanceId}/translators/{translatorId}"
         method = "DELETE"
         operation_name = "delete_translator"
@@ -2244,7 +2327,8 @@ class ManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2253,7 +2337,8 @@ class ManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def export_digital_assistant(self, oda_instance_id, digital_assistant_id, export_digital_assistant_details, **kwargs):
         """
@@ -2290,6 +2375,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/export_digital_assistant.py.html>`__ to see an example of how to use export_digital_assistant API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'digitalAssistantId']
         resource_path = "/odaInstances/{odaInstanceId}/digitalAssistants/{digitalAssistantId}/actions/export"
         method = "POST"
         operation_name = "export_digital_assistant"
@@ -2344,7 +2431,8 @@ class ManagementClient(object):
                 body=export_digital_assistant_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2354,7 +2442,8 @@ class ManagementClient(object):
                 body=export_digital_assistant_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def export_skill(self, oda_instance_id, skill_id, export_skill_details, **kwargs):
         """
@@ -2391,6 +2480,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/export_skill.py.html>`__ to see an example of how to use export_skill API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'skillId']
         resource_path = "/odaInstances/{odaInstanceId}/skills/{skillId}/actions/export"
         method = "POST"
         operation_name = "export_skill"
@@ -2445,7 +2536,8 @@ class ManagementClient(object):
                 body=export_skill_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2455,7 +2547,8 @@ class ManagementClient(object):
                 body=export_skill_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_authentication_provider(self, oda_instance_id, authentication_provider_id, **kwargs):
         """
@@ -2494,6 +2587,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/get_authentication_provider.py.html>`__ to see an example of how to use get_authentication_provider API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'authenticationProviderId']
         resource_path = "/odaInstances/{odaInstanceId}/authenticationProviders/{authenticationProviderId}"
         method = "GET"
         operation_name = "get_authentication_provider"
@@ -2550,7 +2645,8 @@ class ManagementClient(object):
                 response_type="AuthenticationProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2560,7 +2656,8 @@ class ManagementClient(object):
                 response_type="AuthenticationProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_channel(self, oda_instance_id, channel_id, **kwargs):
         """
@@ -2599,6 +2696,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/get_channel.py.html>`__ to see an example of how to use get_channel API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'channelId']
         resource_path = "/odaInstances/{odaInstanceId}/channels/{channelId}"
         method = "GET"
         operation_name = "get_channel"
@@ -2655,7 +2754,8 @@ class ManagementClient(object):
                 response_type="Channel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2665,7 +2765,8 @@ class ManagementClient(object):
                 response_type="Channel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_digital_assistant(self, oda_instance_id, digital_assistant_id, **kwargs):
         """
@@ -2704,6 +2805,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/get_digital_assistant.py.html>`__ to see an example of how to use get_digital_assistant API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'digitalAssistantId']
         resource_path = "/odaInstances/{odaInstanceId}/digitalAssistants/{digitalAssistantId}"
         method = "GET"
         operation_name = "get_digital_assistant"
@@ -2760,7 +2863,8 @@ class ManagementClient(object):
                 response_type="DigitalAssistant",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2770,7 +2874,8 @@ class ManagementClient(object):
                 response_type="DigitalAssistant",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_digital_assistant_parameter(self, oda_instance_id, digital_assistant_id, parameter_name, **kwargs):
         """
@@ -2812,6 +2917,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/get_digital_assistant_parameter.py.html>`__ to see an example of how to use get_digital_assistant_parameter API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'digitalAssistantId', 'parameterName']
         resource_path = "/odaInstances/{odaInstanceId}/digitalAssistants/{digitalAssistantId}/parameters/{parameterName}"
         method = "GET"
         operation_name = "get_digital_assistant_parameter"
@@ -2869,7 +2976,8 @@ class ManagementClient(object):
                 response_type="DigitalAssistantParameter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2879,7 +2987,8 @@ class ManagementClient(object):
                 response_type="DigitalAssistantParameter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_oda_private_endpoint(self, oda_private_endpoint_id, **kwargs):
         """
@@ -2912,6 +3021,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/get_oda_private_endpoint.py.html>`__ to see an example of how to use get_oda_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaPrivateEndpointId']
         resource_path = "/odaPrivateEndpoints/{odaPrivateEndpointId}"
         method = "GET"
         operation_name = "get_oda_private_endpoint"
@@ -2965,7 +3076,8 @@ class ManagementClient(object):
                 response_type="OdaPrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2975,7 +3087,8 @@ class ManagementClient(object):
                 response_type="OdaPrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_oda_private_endpoint_attachment(self, oda_private_endpoint_attachment_id, **kwargs):
         """
@@ -3008,6 +3121,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/get_oda_private_endpoint_attachment.py.html>`__ to see an example of how to use get_oda_private_endpoint_attachment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaPrivateEndpointAttachmentId']
         resource_path = "/odaPrivateEndpointAttachments/{odaPrivateEndpointAttachmentId}"
         method = "GET"
         operation_name = "get_oda_private_endpoint_attachment"
@@ -3061,7 +3176,8 @@ class ManagementClient(object):
                 response_type="OdaPrivateEndpointAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3071,7 +3187,8 @@ class ManagementClient(object):
                 response_type="OdaPrivateEndpointAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_oda_private_endpoint_scan_proxy(self, oda_private_endpoint_scan_proxy_id, oda_private_endpoint_id, **kwargs):
         """
@@ -3107,6 +3224,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/get_oda_private_endpoint_scan_proxy.py.html>`__ to see an example of how to use get_oda_private_endpoint_scan_proxy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaPrivateEndpointScanProxyId', 'odaPrivateEndpointId']
         resource_path = "/odaPrivateEndpoints/{odaPrivateEndpointId}/odaPrivateEndpointScanProxies/{odaPrivateEndpointScanProxyId}"
         method = "GET"
         operation_name = "get_oda_private_endpoint_scan_proxy"
@@ -3161,7 +3280,8 @@ class ManagementClient(object):
                 response_type="OdaPrivateEndpointScanProxy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3171,7 +3291,8 @@ class ManagementClient(object):
                 response_type="OdaPrivateEndpointScanProxy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_skill(self, oda_instance_id, skill_id, **kwargs):
         """
@@ -3210,6 +3331,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/get_skill.py.html>`__ to see an example of how to use get_skill API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'skillId']
         resource_path = "/odaInstances/{odaInstanceId}/skills/{skillId}"
         method = "GET"
         operation_name = "get_skill"
@@ -3266,7 +3389,8 @@ class ManagementClient(object):
                 response_type="Skill",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3276,7 +3400,8 @@ class ManagementClient(object):
                 response_type="Skill",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_skill_parameter(self, oda_instance_id, skill_id, parameter_name, **kwargs):
         """
@@ -3318,6 +3443,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/get_skill_parameter.py.html>`__ to see an example of how to use get_skill_parameter API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'skillId', 'parameterName']
         resource_path = "/odaInstances/{odaInstanceId}/skills/{skillId}/parameters/{parameterName}"
         method = "GET"
         operation_name = "get_skill_parameter"
@@ -3375,7 +3502,8 @@ class ManagementClient(object):
                 response_type="SkillParameter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3385,7 +3513,8 @@ class ManagementClient(object):
                 response_type="SkillParameter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_translator(self, oda_instance_id, translator_id, **kwargs):
         """
@@ -3424,6 +3553,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/get_translator.py.html>`__ to see an example of how to use get_translator API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'translatorId']
         resource_path = "/odaInstances/{odaInstanceId}/translators/{translatorId}"
         method = "GET"
         operation_name = "get_translator"
@@ -3480,7 +3611,8 @@ class ManagementClient(object):
                 response_type="Translator",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3490,7 +3622,8 @@ class ManagementClient(object):
                 response_type="Translator",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def import_bot(self, oda_instance_id, import_bot_details, **kwargs):
         """
@@ -3532,6 +3665,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/import_bot.py.html>`__ to see an example of how to use import_bot API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId']
         resource_path = "/odaInstances/{odaInstanceId}/actions/importBot"
         method = "POST"
         operation_name = "import_bot"
@@ -3588,7 +3723,8 @@ class ManagementClient(object):
                 body=import_bot_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3598,7 +3734,8 @@ class ManagementClient(object):
                 body=import_bot_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_authentication_providers(self, oda_instance_id, **kwargs):
         """
@@ -3675,6 +3812,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/list_authentication_providers.py.html>`__ to see an example of how to use list_authentication_providers API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId']
         resource_path = "/odaInstances/{odaInstanceId}/authenticationProviders"
         method = "GET"
         operation_name = "list_authentication_providers"
@@ -3777,7 +3916,8 @@ class ManagementClient(object):
                 response_type="AuthenticationProviderCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3788,7 +3928,8 @@ class ManagementClient(object):
                 response_type="AuthenticationProviderCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_channels(self, oda_instance_id, **kwargs):
         """
@@ -3869,6 +4010,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/list_channels.py.html>`__ to see an example of how to use list_channels API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId']
         resource_path = "/odaInstances/{odaInstanceId}/channels"
         method = "GET"
         operation_name = "list_channels"
@@ -3980,7 +4123,8 @@ class ManagementClient(object):
                 response_type="ChannelCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3991,7 +4135,8 @@ class ManagementClient(object):
                 response_type="ChannelCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_digital_assistant_parameters(self, oda_instance_id, digital_assistant_id, **kwargs):
         """
@@ -4060,6 +4205,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/list_digital_assistant_parameters.py.html>`__ to see an example of how to use list_digital_assistant_parameters API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'digitalAssistantId']
         resource_path = "/odaInstances/{odaInstanceId}/digitalAssistants/{digitalAssistantId}/parameters"
         method = "GET"
         operation_name = "list_digital_assistant_parameters"
@@ -4152,7 +4299,8 @@ class ManagementClient(object):
                 response_type="DigitalAssistantParameterCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4163,7 +4311,8 @@ class ManagementClient(object):
                 response_type="DigitalAssistantParameterCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_digital_assistants(self, oda_instance_id, **kwargs):
         """
@@ -4254,6 +4403,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/list_digital_assistants.py.html>`__ to see an example of how to use list_digital_assistants API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId']
         resource_path = "/odaInstances/{odaInstanceId}/digitalAssistants"
         method = "GET"
         operation_name = "list_digital_assistants"
@@ -4357,7 +4508,8 @@ class ManagementClient(object):
                 response_type="DigitalAssistantCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4368,7 +4520,8 @@ class ManagementClient(object):
                 response_type="DigitalAssistantCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_oda_private_endpoint_attachments(self, oda_private_endpoint_id, compartment_id, **kwargs):
         """
@@ -4436,6 +4589,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/list_oda_private_endpoint_attachments.py.html>`__ to see an example of how to use list_oda_private_endpoint_attachments API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaPrivateEndpointId', 'compartmentId']
         resource_path = "/odaPrivateEndpointAttachments"
         method = "GET"
         operation_name = "list_oda_private_endpoint_attachments"
@@ -4516,7 +4671,8 @@ class ManagementClient(object):
                 response_type="OdaPrivateEndpointAttachmentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4526,7 +4682,8 @@ class ManagementClient(object):
                 response_type="OdaPrivateEndpointAttachmentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_oda_private_endpoint_scan_proxies(self, oda_private_endpoint_id, **kwargs):
         """
@@ -4592,6 +4749,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/list_oda_private_endpoint_scan_proxies.py.html>`__ to see an example of how to use list_oda_private_endpoint_scan_proxies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaPrivateEndpointId']
         resource_path = "/odaPrivateEndpoints/{odaPrivateEndpointId}/odaPrivateEndpointScanProxies"
         method = "GET"
         operation_name = "list_oda_private_endpoint_scan_proxies"
@@ -4681,7 +4840,8 @@ class ManagementClient(object):
                 response_type="OdaPrivateEndpointScanProxyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4692,7 +4852,8 @@ class ManagementClient(object):
                 response_type="OdaPrivateEndpointScanProxyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_oda_private_endpoints(self, compartment_id, **kwargs):
         """
@@ -4761,6 +4922,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/list_oda_private_endpoints.py.html>`__ to see an example of how to use list_oda_private_endpoints API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/odaPrivateEndpoints"
         method = "GET"
         operation_name = "list_oda_private_endpoints"
@@ -4842,7 +5005,8 @@ class ManagementClient(object):
                 response_type="OdaPrivateEndpointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4852,7 +5016,8 @@ class ManagementClient(object):
                 response_type="OdaPrivateEndpointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_skill_parameters(self, oda_instance_id, skill_id, **kwargs):
         """
@@ -4921,6 +5086,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/list_skill_parameters.py.html>`__ to see an example of how to use list_skill_parameters API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'skillId']
         resource_path = "/odaInstances/{odaInstanceId}/skills/{skillId}/parameters"
         method = "GET"
         operation_name = "list_skill_parameters"
@@ -5013,7 +5180,8 @@ class ManagementClient(object):
                 response_type="SkillParameterCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5024,7 +5192,8 @@ class ManagementClient(object):
                 response_type="SkillParameterCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_skills(self, oda_instance_id, **kwargs):
         """
@@ -5115,6 +5284,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/list_skills.py.html>`__ to see an example of how to use list_skills API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId']
         resource_path = "/odaInstances/{odaInstanceId}/skills"
         method = "GET"
         operation_name = "list_skills"
@@ -5218,7 +5389,8 @@ class ManagementClient(object):
                 response_type="SkillCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5229,7 +5401,8 @@ class ManagementClient(object):
                 response_type="SkillCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_translators(self, oda_instance_id, **kwargs):
         """
@@ -5306,6 +5479,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/list_translators.py.html>`__ to see an example of how to use list_translators API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId']
         resource_path = "/odaInstances/{odaInstanceId}/translators"
         method = "GET"
         operation_name = "list_translators"
@@ -5408,7 +5583,8 @@ class ManagementClient(object):
                 response_type="TranslatorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5419,7 +5595,8 @@ class ManagementClient(object):
                 response_type="TranslatorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def publish_digital_assistant(self, oda_instance_id, digital_assistant_id, **kwargs):
         """
@@ -5462,6 +5639,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/publish_digital_assistant.py.html>`__ to see an example of how to use publish_digital_assistant API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'digitalAssistantId']
         resource_path = "/odaInstances/{odaInstanceId}/digitalAssistants/{digitalAssistantId}/actions/publish"
         method = "POST"
         operation_name = "publish_digital_assistant"
@@ -5518,7 +5697,8 @@ class ManagementClient(object):
                 response_type="DigitalAssistant",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5528,7 +5708,8 @@ class ManagementClient(object):
                 response_type="DigitalAssistant",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def publish_skill(self, oda_instance_id, skill_id, **kwargs):
         """
@@ -5571,6 +5752,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/publish_skill.py.html>`__ to see an example of how to use publish_skill API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'skillId']
         resource_path = "/odaInstances/{odaInstanceId}/skills/{skillId}/actions/publish"
         method = "POST"
         operation_name = "publish_skill"
@@ -5627,7 +5810,8 @@ class ManagementClient(object):
                 response_type="Skill",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5637,7 +5821,8 @@ class ManagementClient(object):
                 response_type="Skill",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def rotate_channel_keys(self, oda_instance_id, channel_id, **kwargs):
         """
@@ -5681,6 +5866,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/rotate_channel_keys.py.html>`__ to see an example of how to use rotate_channel_keys API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'channelId']
         resource_path = "/odaInstances/{odaInstanceId}/channels/{channelId}/actions/rotateKeys"
         method = "POST"
         operation_name = "rotate_channel_keys"
@@ -5737,7 +5924,8 @@ class ManagementClient(object):
                 response_type="CreateChannelResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5747,7 +5935,8 @@ class ManagementClient(object):
                 response_type="CreateChannelResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def start_channel(self, oda_instance_id, channel_id, **kwargs):
         """
@@ -5789,6 +5978,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/start_channel.py.html>`__ to see an example of how to use start_channel API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'channelId']
         resource_path = "/odaInstances/{odaInstanceId}/channels/{channelId}/actions/start"
         method = "POST"
         operation_name = "start_channel"
@@ -5845,7 +6036,8 @@ class ManagementClient(object):
                 response_type="Channel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5855,7 +6047,8 @@ class ManagementClient(object):
                 response_type="Channel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def stop_channel(self, oda_instance_id, channel_id, **kwargs):
         """
@@ -5897,6 +6090,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/stop_channel.py.html>`__ to see an example of how to use stop_channel API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'channelId']
         resource_path = "/odaInstances/{odaInstanceId}/channels/{channelId}/actions/stop"
         method = "POST"
         operation_name = "stop_channel"
@@ -5953,7 +6148,8 @@ class ManagementClient(object):
                 response_type="Channel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5963,7 +6159,8 @@ class ManagementClient(object):
                 response_type="Channel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_authentication_provider(self, oda_instance_id, authentication_provider_id, update_authentication_provider_details, **kwargs):
         """
@@ -6008,6 +6205,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/update_authentication_provider.py.html>`__ to see an example of how to use update_authentication_provider API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'authenticationProviderId']
         resource_path = "/odaInstances/{odaInstanceId}/authenticationProviders/{authenticationProviderId}"
         method = "PUT"
         operation_name = "update_authentication_provider"
@@ -6065,7 +6264,8 @@ class ManagementClient(object):
                 response_type="AuthenticationProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6076,7 +6276,8 @@ class ManagementClient(object):
                 response_type="AuthenticationProvider",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_channel(self, oda_instance_id, channel_id, update_channel_details, **kwargs):
         """
@@ -6121,6 +6322,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/update_channel.py.html>`__ to see an example of how to use update_channel API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'channelId']
         resource_path = "/odaInstances/{odaInstanceId}/channels/{channelId}"
         method = "PUT"
         operation_name = "update_channel"
@@ -6178,7 +6381,8 @@ class ManagementClient(object):
                 response_type="Channel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6189,7 +6393,8 @@ class ManagementClient(object):
                 response_type="Channel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_digital_assistant(self, oda_instance_id, digital_assistant_id, update_digital_assistant_details, **kwargs):
         """
@@ -6234,6 +6439,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/update_digital_assistant.py.html>`__ to see an example of how to use update_digital_assistant API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'digitalAssistantId']
         resource_path = "/odaInstances/{odaInstanceId}/digitalAssistants/{digitalAssistantId}"
         method = "PUT"
         operation_name = "update_digital_assistant"
@@ -6291,7 +6498,8 @@ class ManagementClient(object):
                 response_type="DigitalAssistant",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6302,7 +6510,8 @@ class ManagementClient(object):
                 response_type="DigitalAssistant",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_digital_assistant_parameter(self, oda_instance_id, digital_assistant_id, parameter_name, update_digital_assistant_parameter_details, **kwargs):
         """
@@ -6350,6 +6559,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/update_digital_assistant_parameter.py.html>`__ to see an example of how to use update_digital_assistant_parameter API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'digitalAssistantId', 'parameterName']
         resource_path = "/odaInstances/{odaInstanceId}/digitalAssistants/{digitalAssistantId}/parameters/{parameterName}"
         method = "PUT"
         operation_name = "update_digital_assistant_parameter"
@@ -6408,7 +6619,8 @@ class ManagementClient(object):
                 response_type="DigitalAssistantParameter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6419,7 +6631,8 @@ class ManagementClient(object):
                 response_type="DigitalAssistantParameter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_oda_private_endpoint(self, oda_private_endpoint_id, update_oda_private_endpoint_details, **kwargs):
         """
@@ -6463,6 +6676,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/update_oda_private_endpoint.py.html>`__ to see an example of how to use update_oda_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaPrivateEndpointId']
         resource_path = "/odaPrivateEndpoints/{odaPrivateEndpointId}"
         method = "PUT"
         operation_name = "update_oda_private_endpoint"
@@ -6518,7 +6733,8 @@ class ManagementClient(object):
                 body=update_oda_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6528,7 +6744,8 @@ class ManagementClient(object):
                 body=update_oda_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_skill(self, oda_instance_id, skill_id, update_skill_details, **kwargs):
         """
@@ -6573,6 +6790,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/update_skill.py.html>`__ to see an example of how to use update_skill API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'skillId']
         resource_path = "/odaInstances/{odaInstanceId}/skills/{skillId}"
         method = "PUT"
         operation_name = "update_skill"
@@ -6630,7 +6849,8 @@ class ManagementClient(object):
                 response_type="Skill",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6641,7 +6861,8 @@ class ManagementClient(object):
                 response_type="Skill",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_skill_parameter(self, oda_instance_id, skill_id, parameter_name, update_skill_parameter_details, **kwargs):
         """
@@ -6689,6 +6910,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/update_skill_parameter.py.html>`__ to see an example of how to use update_skill_parameter API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'skillId', 'parameterName']
         resource_path = "/odaInstances/{odaInstanceId}/skills/{skillId}/parameters/{parameterName}"
         method = "PUT"
         operation_name = "update_skill_parameter"
@@ -6747,7 +6970,8 @@ class ManagementClient(object):
                 response_type="SkillParameter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6758,7 +6982,8 @@ class ManagementClient(object):
                 response_type="SkillParameter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_translator(self, oda_instance_id, translator_id, update_translator_details, **kwargs):
         """
@@ -6803,6 +7028,8 @@ class ManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/update_translator.py.html>`__ to see an example of how to use update_translator API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'translatorId']
         resource_path = "/odaInstances/{odaInstanceId}/translators/{translatorId}"
         method = "PUT"
         operation_name = "update_translator"
@@ -6860,7 +7087,8 @@ class ManagementClient(object):
                 response_type="Translator",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6871,4 +7099,5 @@ class ManagementClient(object):
                 response_type="Translator",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

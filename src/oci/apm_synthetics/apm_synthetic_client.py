@@ -65,6 +65,9 @@ class ApmSyntheticClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class ApmSyntheticClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20200630',
             'service_endpoint_template': 'https://apm-synthetic.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -147,6 +152,8 @@ class ApmSyntheticClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmsynthetics/aggregate_network_data.py.html>`__ to see an example of how to use aggregate_network_data API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['monitorId', 'apmDomainId']
         resource_path = "/monitors/{monitorId}/actions/aggregateNetworkData"
         method = "POST"
         operation_name = "aggregate_network_data"
@@ -210,7 +217,8 @@ class ApmSyntheticClient(object):
                 response_type="AggregatedNetworkDataResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -222,7 +230,8 @@ class ApmSyntheticClient(object):
                 response_type="AggregatedNetworkDataResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_dedicated_vantage_point(self, apm_domain_id, create_dedicated_vantage_point_details, **kwargs):
         """
@@ -264,6 +273,8 @@ class ApmSyntheticClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmsynthetics/create_dedicated_vantage_point.py.html>`__ to see an example of how to use create_dedicated_vantage_point API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['apmDomainId']
         resource_path = "/dedicatedVantagePoints"
         method = "POST"
         operation_name = "create_dedicated_vantage_point"
@@ -316,7 +327,8 @@ class ApmSyntheticClient(object):
                 response_type="DedicatedVantagePoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -327,7 +339,8 @@ class ApmSyntheticClient(object):
                 response_type="DedicatedVantagePoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_monitor(self, apm_domain_id, create_monitor_details, **kwargs):
         """
@@ -369,6 +382,8 @@ class ApmSyntheticClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmsynthetics/create_monitor.py.html>`__ to see an example of how to use create_monitor API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['apmDomainId']
         resource_path = "/monitors"
         method = "POST"
         operation_name = "create_monitor"
@@ -421,7 +436,8 @@ class ApmSyntheticClient(object):
                 response_type="Monitor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -432,7 +448,8 @@ class ApmSyntheticClient(object):
                 response_type="Monitor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_script(self, apm_domain_id, create_script_details, **kwargs):
         """
@@ -474,6 +491,8 @@ class ApmSyntheticClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmsynthetics/create_script.py.html>`__ to see an example of how to use create_script API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['apmDomainId']
         resource_path = "/scripts"
         method = "POST"
         operation_name = "create_script"
@@ -526,7 +545,8 @@ class ApmSyntheticClient(object):
                 response_type="Script",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -537,7 +557,8 @@ class ApmSyntheticClient(object):
                 response_type="Script",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_dedicated_vantage_point(self, apm_domain_id, dedicated_vantage_point_id, **kwargs):
         """
@@ -579,6 +600,8 @@ class ApmSyntheticClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmsynthetics/delete_dedicated_vantage_point.py.html>`__ to see an example of how to use delete_dedicated_vantage_point API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dedicatedVantagePointId', 'apmDomainId']
         resource_path = "/dedicatedVantagePoints/{dedicatedVantagePointId}"
         method = "DELETE"
         operation_name = "delete_dedicated_vantage_point"
@@ -639,7 +662,8 @@ class ApmSyntheticClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -649,7 +673,8 @@ class ApmSyntheticClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_monitor(self, apm_domain_id, monitor_id, **kwargs):
         """
@@ -691,6 +716,8 @@ class ApmSyntheticClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmsynthetics/delete_monitor.py.html>`__ to see an example of how to use delete_monitor API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['monitorId', 'apmDomainId']
         resource_path = "/monitors/{monitorId}"
         method = "DELETE"
         operation_name = "delete_monitor"
@@ -751,7 +778,8 @@ class ApmSyntheticClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -761,7 +789,8 @@ class ApmSyntheticClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_script(self, apm_domain_id, script_id, **kwargs):
         """
@@ -803,6 +832,8 @@ class ApmSyntheticClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmsynthetics/delete_script.py.html>`__ to see an example of how to use delete_script API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['scriptId', 'apmDomainId']
         resource_path = "/scripts/{scriptId}"
         method = "DELETE"
         operation_name = "delete_script"
@@ -863,7 +894,8 @@ class ApmSyntheticClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -873,7 +905,8 @@ class ApmSyntheticClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_dedicated_vantage_point(self, apm_domain_id, dedicated_vantage_point_id, **kwargs):
         """
@@ -908,6 +941,8 @@ class ApmSyntheticClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmsynthetics/get_dedicated_vantage_point.py.html>`__ to see an example of how to use get_dedicated_vantage_point API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dedicatedVantagePointId', 'apmDomainId']
         resource_path = "/dedicatedVantagePoints/{dedicatedVantagePointId}"
         method = "GET"
         operation_name = "get_dedicated_vantage_point"
@@ -967,7 +1002,8 @@ class ApmSyntheticClient(object):
                 response_type="DedicatedVantagePoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -978,7 +1014,8 @@ class ApmSyntheticClient(object):
                 response_type="DedicatedVantagePoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_monitor(self, apm_domain_id, monitor_id, **kwargs):
         """
@@ -1013,6 +1050,8 @@ class ApmSyntheticClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmsynthetics/get_monitor.py.html>`__ to see an example of how to use get_monitor API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['monitorId', 'apmDomainId']
         resource_path = "/monitors/{monitorId}"
         method = "GET"
         operation_name = "get_monitor"
@@ -1072,7 +1111,8 @@ class ApmSyntheticClient(object):
                 response_type="Monitor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1083,7 +1123,8 @@ class ApmSyntheticClient(object):
                 response_type="Monitor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_monitor_result(self, apm_domain_id, monitor_id, vantage_point, result_type, result_content_type, execution_time, **kwargs):
         """
@@ -1130,6 +1171,8 @@ class ApmSyntheticClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmsynthetics/get_monitor_result.py.html>`__ to see an example of how to use get_monitor_result API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['monitorId', 'executionTime', 'apmDomainId', 'vantagePoint', 'resultType', 'resultContentType']
         resource_path = "/monitors/{monitorId}/results/{executionTime}"
         method = "GET"
         operation_name = "get_monitor_result"
@@ -1193,7 +1236,8 @@ class ApmSyntheticClient(object):
                 response_type="MonitorResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1204,7 +1248,8 @@ class ApmSyntheticClient(object):
                 response_type="MonitorResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_script(self, apm_domain_id, script_id, **kwargs):
         """
@@ -1239,6 +1284,8 @@ class ApmSyntheticClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmsynthetics/get_script.py.html>`__ to see an example of how to use get_script API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['scriptId', 'apmDomainId']
         resource_path = "/scripts/{scriptId}"
         method = "GET"
         operation_name = "get_script"
@@ -1298,7 +1345,8 @@ class ApmSyntheticClient(object):
                 response_type="Script",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1309,7 +1357,8 @@ class ApmSyntheticClient(object):
                 response_type="Script",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_dedicated_vantage_points(self, apm_domain_id, **kwargs):
         """
@@ -1377,6 +1426,8 @@ class ApmSyntheticClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmsynthetics/list_dedicated_vantage_points.py.html>`__ to see an example of how to use list_dedicated_vantage_points API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['apmDomainId']
         resource_path = "/dedicatedVantagePoints"
         method = "GET"
         operation_name = "list_dedicated_vantage_points"
@@ -1460,7 +1511,8 @@ class ApmSyntheticClient(object):
                 response_type="DedicatedVantagePointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1470,7 +1522,8 @@ class ApmSyntheticClient(object):
                 response_type="DedicatedVantagePointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_monitors(self, apm_domain_id, **kwargs):
         """
@@ -1551,6 +1604,8 @@ class ApmSyntheticClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmsynthetics/list_monitors.py.html>`__ to see an example of how to use list_monitors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['apmDomainId']
         resource_path = "/monitors"
         method = "GET"
         operation_name = "list_monitors"
@@ -1642,7 +1697,8 @@ class ApmSyntheticClient(object):
                 response_type="MonitorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1652,7 +1708,8 @@ class ApmSyntheticClient(object):
                 response_type="MonitorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_public_vantage_points(self, apm_domain_id, **kwargs):
         """
@@ -1713,6 +1770,8 @@ class ApmSyntheticClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmsynthetics/list_public_vantage_points.py.html>`__ to see an example of how to use list_public_vantage_points API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['apmDomainId']
         resource_path = "/publicVantagePoints"
         method = "GET"
         operation_name = "list_public_vantage_points"
@@ -1787,7 +1846,8 @@ class ApmSyntheticClient(object):
                 response_type="PublicVantagePointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1797,7 +1857,8 @@ class ApmSyntheticClient(object):
                 response_type="PublicVantagePointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_scripts(self, apm_domain_id, **kwargs):
         """
@@ -1860,6 +1921,8 @@ class ApmSyntheticClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmsynthetics/list_scripts.py.html>`__ to see an example of how to use list_scripts API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['apmDomainId']
         resource_path = "/scripts"
         method = "GET"
         operation_name = "list_scripts"
@@ -1934,7 +1997,8 @@ class ApmSyntheticClient(object):
                 response_type="ScriptCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1944,7 +2008,8 @@ class ApmSyntheticClient(object):
                 response_type="ScriptCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_dedicated_vantage_point(self, apm_domain_id, dedicated_vantage_point_id, update_dedicated_vantage_point_details, **kwargs):
         """
@@ -1989,6 +2054,8 @@ class ApmSyntheticClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmsynthetics/update_dedicated_vantage_point.py.html>`__ to see an example of how to use update_dedicated_vantage_point API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dedicatedVantagePointId', 'apmDomainId']
         resource_path = "/dedicatedVantagePoints/{dedicatedVantagePointId}"
         method = "PUT"
         operation_name = "update_dedicated_vantage_point"
@@ -2051,7 +2118,8 @@ class ApmSyntheticClient(object):
                 response_type="DedicatedVantagePoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2063,7 +2131,8 @@ class ApmSyntheticClient(object):
                 response_type="DedicatedVantagePoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_monitor(self, apm_domain_id, monitor_id, update_monitor_details, **kwargs):
         """
@@ -2108,6 +2177,8 @@ class ApmSyntheticClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmsynthetics/update_monitor.py.html>`__ to see an example of how to use update_monitor API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['monitorId', 'apmDomainId']
         resource_path = "/monitors/{monitorId}"
         method = "PUT"
         operation_name = "update_monitor"
@@ -2170,7 +2241,8 @@ class ApmSyntheticClient(object):
                 response_type="Monitor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2182,7 +2254,8 @@ class ApmSyntheticClient(object):
                 response_type="Monitor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_script(self, apm_domain_id, script_id, update_script_details, **kwargs):
         """
@@ -2227,6 +2300,8 @@ class ApmSyntheticClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmsynthetics/update_script.py.html>`__ to see an example of how to use update_script API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['scriptId', 'apmDomainId']
         resource_path = "/scripts/{scriptId}"
         method = "PUT"
         operation_name = "update_script"
@@ -2289,7 +2364,8 @@ class ApmSyntheticClient(object):
                 response_type="Script",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2301,4 +2377,5 @@ class ApmSyntheticClient(object):
                 response_type="Script",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

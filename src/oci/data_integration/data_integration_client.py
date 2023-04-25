@@ -65,6 +65,9 @@ class DataIntegrationClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class DataIntegrationClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20200430',
             'service_endpoint_template': 'https://dataintegration.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -146,6 +151,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/change_compartment.py.html>`__ to see an example of how to use change_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_compartment"
@@ -202,7 +209,8 @@ class DataIntegrationClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -212,7 +220,8 @@ class DataIntegrationClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_dis_application_compartment(self, workspace_id, dis_application_id, change_dis_application_compartment_details, **kwargs):
         """
@@ -259,6 +268,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/change_dis_application_compartment.py.html>`__ to see an example of how to use change_dis_application_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'disApplicationId']
         resource_path = "/workspaces/{workspaceId}/disApplications/{disApplicationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_dis_application_compartment"
@@ -316,7 +327,8 @@ class DataIntegrationClient(object):
                 body=change_dis_application_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -326,7 +338,8 @@ class DataIntegrationClient(object):
                 body=change_dis_application_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_application(self, workspace_id, create_application_details, **kwargs):
         """
@@ -365,6 +378,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_application.py.html>`__ to see an example of how to use create_application API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/applications"
         method = "POST"
         operation_name = "create_application"
@@ -420,7 +435,8 @@ class DataIntegrationClient(object):
                 response_type="Application",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -431,7 +447,8 @@ class DataIntegrationClient(object):
                 response_type="Application",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_application_detailed_description(self, workspace_id, application_key, create_application_detailed_description_details, **kwargs):
         """
@@ -473,6 +490,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_application_detailed_description.py.html>`__ to see an example of how to use create_application_detailed_description API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/detailedDescription"
         method = "POST"
         operation_name = "create_application_detailed_description"
@@ -529,7 +548,8 @@ class DataIntegrationClient(object):
                 response_type="DetailedDescription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -540,7 +560,8 @@ class DataIntegrationClient(object):
                 response_type="DetailedDescription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_connection(self, workspace_id, create_connection_details, **kwargs):
         """
@@ -579,6 +600,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_connection.py.html>`__ to see an example of how to use create_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/connections"
         method = "POST"
         operation_name = "create_connection"
@@ -634,7 +657,8 @@ class DataIntegrationClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -645,7 +669,8 @@ class DataIntegrationClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_connection_validation(self, workspace_id, create_connection_validation_details, **kwargs):
         """
@@ -684,6 +709,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_connection_validation.py.html>`__ to see an example of how to use create_connection_validation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/connectionValidations"
         method = "POST"
         operation_name = "create_connection_validation"
@@ -739,7 +766,8 @@ class DataIntegrationClient(object):
                 response_type="ConnectionValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -750,7 +778,8 @@ class DataIntegrationClient(object):
                 response_type="ConnectionValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_copy_object_request(self, workspace_id, create_copy_object_request_details, **kwargs):
         """
@@ -789,6 +818,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_copy_object_request.py.html>`__ to see an example of how to use create_copy_object_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/copyObjectRequests"
         method = "POST"
         operation_name = "create_copy_object_request"
@@ -844,7 +875,8 @@ class DataIntegrationClient(object):
                 response_type="CopyObjectRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -855,7 +887,8 @@ class DataIntegrationClient(object):
                 response_type="CopyObjectRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_data_asset(self, workspace_id, create_data_asset_details, **kwargs):
         """
@@ -894,6 +927,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_data_asset.py.html>`__ to see an example of how to use create_data_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/dataAssets"
         method = "POST"
         operation_name = "create_data_asset"
@@ -949,7 +984,8 @@ class DataIntegrationClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -960,7 +996,8 @@ class DataIntegrationClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_data_flow(self, workspace_id, create_data_flow_details, **kwargs):
         """
@@ -999,6 +1036,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_data_flow.py.html>`__ to see an example of how to use create_data_flow API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/dataFlows"
         method = "POST"
         operation_name = "create_data_flow"
@@ -1054,7 +1093,8 @@ class DataIntegrationClient(object):
                 response_type="DataFlow",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1065,7 +1105,8 @@ class DataIntegrationClient(object):
                 response_type="DataFlow",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_data_flow_validation(self, workspace_id, create_data_flow_validation_details, **kwargs):
         """
@@ -1104,6 +1145,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_data_flow_validation.py.html>`__ to see an example of how to use create_data_flow_validation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/dataFlowValidations"
         method = "POST"
         operation_name = "create_data_flow_validation"
@@ -1159,7 +1202,8 @@ class DataIntegrationClient(object):
                 response_type="DataFlowValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1170,7 +1214,8 @@ class DataIntegrationClient(object):
                 response_type="DataFlowValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_dis_application(self, workspace_id, create_dis_application_details, **kwargs):
         """
@@ -1209,6 +1254,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_dis_application.py.html>`__ to see an example of how to use create_dis_application API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/disApplications"
         method = "POST"
         operation_name = "create_dis_application"
@@ -1264,7 +1311,8 @@ class DataIntegrationClient(object):
                 response_type="DisApplication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1275,7 +1323,8 @@ class DataIntegrationClient(object):
                 response_type="DisApplication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_dis_application_detailed_description(self, workspace_id, application_key, create_dis_application_detailed_description_details, **kwargs):
         """
@@ -1317,6 +1366,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_dis_application_detailed_description.py.html>`__ to see an example of how to use create_dis_application_detailed_description API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/disApplications/{applicationKey}/detailedDescription"
         method = "POST"
         operation_name = "create_dis_application_detailed_description"
@@ -1373,7 +1424,8 @@ class DataIntegrationClient(object):
                 response_type="DetailedDescription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1384,7 +1436,8 @@ class DataIntegrationClient(object):
                 response_type="DetailedDescription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_entity_shape(self, workspace_id, connection_key, schema_resource_name, create_entity_shape_details, **kwargs):
         """
@@ -1434,6 +1487,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_entity_shape.py.html>`__ to see an example of how to use create_entity_shape API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'connectionKey', 'schemaResourceName']
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}/schemas/{schemaResourceName}/entityShapes"
         method = "POST"
         operation_name = "create_entity_shape"
@@ -1493,7 +1548,8 @@ class DataIntegrationClient(object):
                 response_type="EntityShape",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1504,7 +1560,8 @@ class DataIntegrationClient(object):
                 response_type="EntityShape",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_external_publication(self, workspace_id, task_key, create_external_publication_details, **kwargs):
         """
@@ -1546,6 +1603,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_external_publication.py.html>`__ to see an example of how to use create_external_publication API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'taskKey']
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublications"
         method = "POST"
         operation_name = "create_external_publication"
@@ -1602,7 +1661,8 @@ class DataIntegrationClient(object):
                 response_type="ExternalPublication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1613,7 +1673,8 @@ class DataIntegrationClient(object):
                 response_type="ExternalPublication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_external_publication_validation(self, workspace_id, task_key, create_external_publication_validation_details, **kwargs):
         """
@@ -1655,6 +1716,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_external_publication_validation.py.html>`__ to see an example of how to use create_external_publication_validation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'taskKey']
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublicationValidations"
         method = "POST"
         operation_name = "create_external_publication_validation"
@@ -1711,7 +1774,8 @@ class DataIntegrationClient(object):
                 response_type="ExternalPublicationValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1722,7 +1786,8 @@ class DataIntegrationClient(object):
                 response_type="ExternalPublicationValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_folder(self, workspace_id, create_folder_details, **kwargs):
         """
@@ -1762,6 +1827,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_folder.py.html>`__ to see an example of how to use create_folder API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/folders"
         method = "POST"
         operation_name = "create_folder"
@@ -1817,7 +1884,8 @@ class DataIntegrationClient(object):
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1828,7 +1896,8 @@ class DataIntegrationClient(object):
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_function_library(self, workspace_id, create_function_library_details, **kwargs):
         """
@@ -1868,6 +1937,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_function_library.py.html>`__ to see an example of how to use create_function_library API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/functionLibraries"
         method = "POST"
         operation_name = "create_function_library"
@@ -1923,7 +1994,8 @@ class DataIntegrationClient(object):
                 response_type="FunctionLibrary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1934,7 +2006,8 @@ class DataIntegrationClient(object):
                 response_type="FunctionLibrary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_patch(self, workspace_id, application_key, create_patch_details, **kwargs):
         """
@@ -1976,6 +2049,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_patch.py.html>`__ to see an example of how to use create_patch API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/patches"
         method = "POST"
         operation_name = "create_patch"
@@ -2032,7 +2107,8 @@ class DataIntegrationClient(object):
                 response_type="Patch",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2043,7 +2119,8 @@ class DataIntegrationClient(object):
                 response_type="Patch",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_pipeline(self, workspace_id, create_pipeline_details, **kwargs):
         """
@@ -2082,6 +2159,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_pipeline.py.html>`__ to see an example of how to use create_pipeline API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/pipelines"
         method = "POST"
         operation_name = "create_pipeline"
@@ -2137,7 +2216,8 @@ class DataIntegrationClient(object):
                 response_type="Pipeline",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2148,7 +2228,8 @@ class DataIntegrationClient(object):
                 response_type="Pipeline",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_pipeline_validation(self, workspace_id, create_pipeline_validation_details, **kwargs):
         """
@@ -2187,6 +2268,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_pipeline_validation.py.html>`__ to see an example of how to use create_pipeline_validation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/pipelineValidations"
         method = "POST"
         operation_name = "create_pipeline_validation"
@@ -2242,7 +2325,8 @@ class DataIntegrationClient(object):
                 response_type="PipelineValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2253,7 +2337,8 @@ class DataIntegrationClient(object):
                 response_type="PipelineValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_project(self, workspace_id, create_project_details, **kwargs):
         """
@@ -2292,6 +2377,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_project.py.html>`__ to see an example of how to use create_project API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/projects"
         method = "POST"
         operation_name = "create_project"
@@ -2347,7 +2434,8 @@ class DataIntegrationClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2358,7 +2446,8 @@ class DataIntegrationClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_schedule(self, workspace_id, application_key, create_schedule_details, **kwargs):
         """
@@ -2400,6 +2489,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_schedule.py.html>`__ to see an example of how to use create_schedule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/schedules"
         method = "POST"
         operation_name = "create_schedule"
@@ -2456,7 +2547,8 @@ class DataIntegrationClient(object):
                 response_type="Schedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2467,7 +2559,8 @@ class DataIntegrationClient(object):
                 response_type="Schedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_task(self, workspace_id, create_task_details, **kwargs):
         """
@@ -2506,6 +2599,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_task.py.html>`__ to see an example of how to use create_task API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/tasks"
         method = "POST"
         operation_name = "create_task"
@@ -2561,7 +2656,8 @@ class DataIntegrationClient(object):
                 response_type="Task",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2572,7 +2668,8 @@ class DataIntegrationClient(object):
                 response_type="Task",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_task_run(self, workspace_id, application_key, create_task_run_details, **kwargs):
         """
@@ -2614,6 +2711,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_task_run.py.html>`__ to see an example of how to use create_task_run API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskRuns"
         method = "POST"
         operation_name = "create_task_run"
@@ -2670,7 +2769,8 @@ class DataIntegrationClient(object):
                 response_type="TaskRun",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2681,7 +2781,8 @@ class DataIntegrationClient(object):
                 response_type="TaskRun",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_task_schedule(self, workspace_id, application_key, create_task_schedule_details, **kwargs):
         """
@@ -2723,6 +2824,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_task_schedule.py.html>`__ to see an example of how to use create_task_schedule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskSchedules"
         method = "POST"
         operation_name = "create_task_schedule"
@@ -2779,7 +2882,8 @@ class DataIntegrationClient(object):
                 response_type="TaskSchedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2790,7 +2894,8 @@ class DataIntegrationClient(object):
                 response_type="TaskSchedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_task_validation(self, workspace_id, create_task_validation_details, **kwargs):
         """
@@ -2829,6 +2934,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_task_validation.py.html>`__ to see an example of how to use create_task_validation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/taskValidations"
         method = "POST"
         operation_name = "create_task_validation"
@@ -2884,7 +2991,8 @@ class DataIntegrationClient(object):
                 response_type="TaskValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2895,7 +3003,8 @@ class DataIntegrationClient(object):
                 response_type="TaskValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_user_defined_function(self, workspace_id, create_user_defined_function_details, **kwargs):
         """
@@ -2934,6 +3043,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_user_defined_function.py.html>`__ to see an example of how to use create_user_defined_function API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/userDefinedFunctions"
         method = "POST"
         operation_name = "create_user_defined_function"
@@ -2989,7 +3100,8 @@ class DataIntegrationClient(object):
                 response_type="UserDefinedFunction",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3000,7 +3112,8 @@ class DataIntegrationClient(object):
                 response_type="UserDefinedFunction",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_user_defined_function_validation(self, workspace_id, create_user_defined_function_validation_details, **kwargs):
         """
@@ -3039,6 +3152,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_user_defined_function_validation.py.html>`__ to see an example of how to use create_user_defined_function_validation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/userDefinedFunctionValidations"
         method = "POST"
         operation_name = "create_user_defined_function_validation"
@@ -3094,7 +3209,8 @@ class DataIntegrationClient(object):
                 response_type="UserDefinedFunctionValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3105,7 +3221,8 @@ class DataIntegrationClient(object):
                 response_type="UserDefinedFunctionValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_workspace(self, create_workspace_details, **kwargs):
         """
@@ -3141,6 +3258,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_workspace.py.html>`__ to see an example of how to use create_workspace API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/workspaces"
         method = "POST"
         operation_name = "create_workspace"
@@ -3184,7 +3303,8 @@ class DataIntegrationClient(object):
                 body=create_workspace_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3193,7 +3313,8 @@ class DataIntegrationClient(object):
                 body=create_workspace_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_application(self, workspace_id, application_key, **kwargs):
         """
@@ -3234,6 +3355,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_application.py.html>`__ to see an example of how to use delete_application API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}"
         method = "DELETE"
         operation_name = "delete_application"
@@ -3287,7 +3410,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3296,7 +3420,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_application_detailed_description(self, workspace_id, application_key, **kwargs):
         """
@@ -3337,6 +3462,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_application_detailed_description.py.html>`__ to see an example of how to use delete_application_detailed_description API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/detailedDescription"
         method = "DELETE"
         operation_name = "delete_application_detailed_description"
@@ -3390,7 +3517,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3399,7 +3527,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_connection(self, workspace_id, connection_key, **kwargs):
         """
@@ -3440,6 +3569,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_connection.py.html>`__ to see an example of how to use delete_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'connectionKey']
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}"
         method = "DELETE"
         operation_name = "delete_connection"
@@ -3493,7 +3624,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3502,7 +3634,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_connection_validation(self, workspace_id, connection_validation_key, **kwargs):
         """
@@ -3543,6 +3676,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_connection_validation.py.html>`__ to see an example of how to use delete_connection_validation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'connectionValidationKey']
         resource_path = "/workspaces/{workspaceId}/connectionValidations/{connectionValidationKey}"
         method = "DELETE"
         operation_name = "delete_connection_validation"
@@ -3596,7 +3731,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3605,7 +3741,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_copy_object_request(self, workspace_id, copy_object_request_key, **kwargs):
         """
@@ -3646,6 +3783,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_copy_object_request.py.html>`__ to see an example of how to use delete_copy_object_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'copyObjectRequestKey']
         resource_path = "/workspaces/{workspaceId}/copyObjectRequests/{copyObjectRequestKey}"
         method = "DELETE"
         operation_name = "delete_copy_object_request"
@@ -3699,7 +3838,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3708,7 +3848,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_data_asset(self, workspace_id, data_asset_key, **kwargs):
         """
@@ -3749,6 +3890,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_data_asset.py.html>`__ to see an example of how to use delete_data_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'dataAssetKey']
         resource_path = "/workspaces/{workspaceId}/dataAssets/{dataAssetKey}"
         method = "DELETE"
         operation_name = "delete_data_asset"
@@ -3802,7 +3945,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3811,7 +3955,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_data_flow(self, workspace_id, data_flow_key, **kwargs):
         """
@@ -3852,6 +3997,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_data_flow.py.html>`__ to see an example of how to use delete_data_flow API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'dataFlowKey']
         resource_path = "/workspaces/{workspaceId}/dataFlows/{dataFlowKey}"
         method = "DELETE"
         operation_name = "delete_data_flow"
@@ -3905,7 +4052,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3914,7 +4062,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_data_flow_validation(self, workspace_id, data_flow_validation_key, **kwargs):
         """
@@ -3955,6 +4104,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_data_flow_validation.py.html>`__ to see an example of how to use delete_data_flow_validation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'dataFlowValidationKey']
         resource_path = "/workspaces/{workspaceId}/dataFlowValidations/{dataFlowValidationKey}"
         method = "DELETE"
         operation_name = "delete_data_flow_validation"
@@ -4008,7 +4159,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4017,7 +4169,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_dis_application(self, workspace_id, dis_application_id, **kwargs):
         """
@@ -4058,6 +4211,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_dis_application.py.html>`__ to see an example of how to use delete_dis_application API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'disApplicationId']
         resource_path = "/workspaces/{workspaceId}/disApplications/{disApplicationId}"
         method = "DELETE"
         operation_name = "delete_dis_application"
@@ -4111,7 +4266,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4120,7 +4276,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_dis_application_detailed_description(self, workspace_id, application_key, **kwargs):
         """
@@ -4161,6 +4318,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_dis_application_detailed_description.py.html>`__ to see an example of how to use delete_dis_application_detailed_description API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/disApplications/{applicationKey}/detailedDescription"
         method = "DELETE"
         operation_name = "delete_dis_application_detailed_description"
@@ -4214,7 +4373,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4223,7 +4383,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_external_publication(self, workspace_id, task_key, external_publications_key, **kwargs):
         """
@@ -4267,6 +4428,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_external_publication.py.html>`__ to see an example of how to use delete_external_publication API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'taskKey', 'externalPublicationsKey']
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublications/{externalPublicationsKey}"
         method = "DELETE"
         operation_name = "delete_external_publication"
@@ -4321,7 +4484,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4330,7 +4494,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_external_publication_validation(self, workspace_id, task_key, external_publication_validation_key, **kwargs):
         """
@@ -4374,6 +4539,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_external_publication_validation.py.html>`__ to see an example of how to use delete_external_publication_validation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'taskKey', 'externalPublicationValidationKey']
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublicationValidations/{externalPublicationValidationKey}"
         method = "DELETE"
         operation_name = "delete_external_publication_validation"
@@ -4428,7 +4595,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4437,7 +4605,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_folder(self, workspace_id, folder_key, **kwargs):
         """
@@ -4478,6 +4647,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_folder.py.html>`__ to see an example of how to use delete_folder API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'folderKey']
         resource_path = "/workspaces/{workspaceId}/folders/{folderKey}"
         method = "DELETE"
         operation_name = "delete_folder"
@@ -4531,7 +4702,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4540,7 +4712,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_function_library(self, workspace_id, function_library_key, **kwargs):
         """
@@ -4581,6 +4754,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_function_library.py.html>`__ to see an example of how to use delete_function_library API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'functionLibraryKey']
         resource_path = "/workspaces/{workspaceId}/functionLibraries/{functionLibraryKey}"
         method = "DELETE"
         operation_name = "delete_function_library"
@@ -4634,7 +4809,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4643,7 +4819,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_patch(self, workspace_id, application_key, patch_key, **kwargs):
         """
@@ -4687,6 +4864,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_patch.py.html>`__ to see an example of how to use delete_patch API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey', 'patchKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/patches/{patchKey}"
         method = "DELETE"
         operation_name = "delete_patch"
@@ -4741,7 +4920,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4750,7 +4930,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_pipeline(self, workspace_id, pipeline_key, **kwargs):
         """
@@ -4791,6 +4972,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_pipeline.py.html>`__ to see an example of how to use delete_pipeline API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'pipelineKey']
         resource_path = "/workspaces/{workspaceId}/pipelines/{pipelineKey}"
         method = "DELETE"
         operation_name = "delete_pipeline"
@@ -4844,7 +5027,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4853,7 +5037,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_pipeline_validation(self, workspace_id, pipeline_validation_key, **kwargs):
         """
@@ -4894,6 +5079,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_pipeline_validation.py.html>`__ to see an example of how to use delete_pipeline_validation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'pipelineValidationKey']
         resource_path = "/workspaces/{workspaceId}/pipelineValidations/{pipelineValidationKey}"
         method = "DELETE"
         operation_name = "delete_pipeline_validation"
@@ -4947,7 +5134,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4956,7 +5144,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_project(self, workspace_id, project_key, **kwargs):
         """
@@ -4997,6 +5186,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_project.py.html>`__ to see an example of how to use delete_project API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'projectKey']
         resource_path = "/workspaces/{workspaceId}/projects/{projectKey}"
         method = "DELETE"
         operation_name = "delete_project"
@@ -5050,7 +5241,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5059,7 +5251,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_schedule(self, workspace_id, application_key, schedule_key, **kwargs):
         """
@@ -5103,6 +5296,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_schedule.py.html>`__ to see an example of how to use delete_schedule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey', 'scheduleKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/schedules/{scheduleKey}"
         method = "DELETE"
         operation_name = "delete_schedule"
@@ -5157,7 +5352,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5166,7 +5362,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_task(self, workspace_id, task_key, **kwargs):
         """
@@ -5207,6 +5404,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_task.py.html>`__ to see an example of how to use delete_task API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'taskKey']
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}"
         method = "DELETE"
         operation_name = "delete_task"
@@ -5260,7 +5459,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5269,7 +5469,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_task_run(self, workspace_id, application_key, task_run_key, **kwargs):
         """
@@ -5313,6 +5514,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_task_run.py.html>`__ to see an example of how to use delete_task_run API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey', 'taskRunKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskRuns/{taskRunKey}"
         method = "DELETE"
         operation_name = "delete_task_run"
@@ -5367,7 +5570,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5376,7 +5580,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_task_schedule(self, workspace_id, application_key, task_schedule_key, **kwargs):
         """
@@ -5420,6 +5625,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_task_schedule.py.html>`__ to see an example of how to use delete_task_schedule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey', 'taskScheduleKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskSchedules/{taskScheduleKey}"
         method = "DELETE"
         operation_name = "delete_task_schedule"
@@ -5474,7 +5681,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5483,7 +5691,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_task_validation(self, workspace_id, task_validation_key, **kwargs):
         """
@@ -5524,6 +5733,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_task_validation.py.html>`__ to see an example of how to use delete_task_validation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'taskValidationKey']
         resource_path = "/workspaces/{workspaceId}/taskValidations/{taskValidationKey}"
         method = "DELETE"
         operation_name = "delete_task_validation"
@@ -5577,7 +5788,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5586,7 +5798,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_user_defined_function(self, workspace_id, user_defined_function_key, **kwargs):
         """
@@ -5627,6 +5840,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_user_defined_function.py.html>`__ to see an example of how to use delete_user_defined_function API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'userDefinedFunctionKey']
         resource_path = "/workspaces/{workspaceId}/userDefinedFunctions/{userDefinedFunctionKey}"
         method = "DELETE"
         operation_name = "delete_user_defined_function"
@@ -5680,7 +5895,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5689,7 +5905,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_user_defined_function_validation(self, workspace_id, user_defined_function_validation_key, **kwargs):
         """
@@ -5730,6 +5947,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_user_defined_function_validation.py.html>`__ to see an example of how to use delete_user_defined_function_validation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'userDefinedFunctionValidationKey']
         resource_path = "/workspaces/{workspaceId}/userDefinedFunctionValidations/{userDefinedFunctionValidationKey}"
         method = "DELETE"
         operation_name = "delete_user_defined_function_validation"
@@ -5783,7 +6002,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5792,7 +6012,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_workspace(self, workspace_id, **kwargs):
         """
@@ -5836,6 +6057,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_workspace.py.html>`__ to see an example of how to use delete_workspace API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}"
         method = "DELETE"
         operation_name = "delete_workspace"
@@ -5897,7 +6120,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5907,7 +6131,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_application(self, workspace_id, application_key, **kwargs):
         """
@@ -5943,6 +6168,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_application.py.html>`__ to see an example of how to use get_application API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}"
         method = "GET"
         operation_name = "get_application"
@@ -5995,7 +6222,8 @@ class DataIntegrationClient(object):
                 response_type="Application",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6005,7 +6233,8 @@ class DataIntegrationClient(object):
                 response_type="Application",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_application_detailed_description(self, workspace_id, application_key, **kwargs):
         """
@@ -6041,6 +6270,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_application_detailed_description.py.html>`__ to see an example of how to use get_application_detailed_description API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/detailedDescription"
         method = "GET"
         operation_name = "get_application_detailed_description"
@@ -6093,7 +6324,8 @@ class DataIntegrationClient(object):
                 response_type="DetailedDescription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6103,7 +6335,8 @@ class DataIntegrationClient(object):
                 response_type="DetailedDescription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_connection(self, workspace_id, connection_key, **kwargs):
         """
@@ -6139,6 +6372,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_connection.py.html>`__ to see an example of how to use get_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'connectionKey']
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}"
         method = "GET"
         operation_name = "get_connection"
@@ -6191,7 +6426,8 @@ class DataIntegrationClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6201,7 +6437,8 @@ class DataIntegrationClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_connection_validation(self, workspace_id, connection_validation_key, **kwargs):
         """
@@ -6237,6 +6474,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_connection_validation.py.html>`__ to see an example of how to use get_connection_validation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'connectionValidationKey']
         resource_path = "/workspaces/{workspaceId}/connectionValidations/{connectionValidationKey}"
         method = "GET"
         operation_name = "get_connection_validation"
@@ -6289,7 +6528,8 @@ class DataIntegrationClient(object):
                 response_type="ConnectionValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6299,7 +6539,8 @@ class DataIntegrationClient(object):
                 response_type="ConnectionValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_copy_object_request(self, workspace_id, copy_object_request_key, **kwargs):
         """
@@ -6335,6 +6576,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_copy_object_request.py.html>`__ to see an example of how to use get_copy_object_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'copyObjectRequestKey']
         resource_path = "/workspaces/{workspaceId}/copyObjectRequests/{copyObjectRequestKey}"
         method = "GET"
         operation_name = "get_copy_object_request"
@@ -6387,7 +6630,8 @@ class DataIntegrationClient(object):
                 response_type="CopyObjectRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6397,7 +6641,8 @@ class DataIntegrationClient(object):
                 response_type="CopyObjectRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_count_statistic(self, workspace_id, count_statistic_key, **kwargs):
         """
@@ -6434,6 +6679,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_count_statistic.py.html>`__ to see an example of how to use get_count_statistic API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'countStatisticKey']
         resource_path = "/workspaces/{workspaceId}/countStatistics/{countStatisticKey}"
         method = "GET"
         operation_name = "get_count_statistic"
@@ -6486,7 +6733,8 @@ class DataIntegrationClient(object):
                 response_type="CountStatistic",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6496,7 +6744,8 @@ class DataIntegrationClient(object):
                 response_type="CountStatistic",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_data_asset(self, workspace_id, data_asset_key, **kwargs):
         """
@@ -6532,6 +6781,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_data_asset.py.html>`__ to see an example of how to use get_data_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'dataAssetKey']
         resource_path = "/workspaces/{workspaceId}/dataAssets/{dataAssetKey}"
         method = "GET"
         operation_name = "get_data_asset"
@@ -6584,7 +6835,8 @@ class DataIntegrationClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6594,7 +6846,8 @@ class DataIntegrationClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_data_entity(self, workspace_id, connection_key, schema_resource_name, data_entity_key, **kwargs):
         """
@@ -6636,6 +6889,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_data_entity.py.html>`__ to see an example of how to use get_data_entity API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'connectionKey', 'schemaResourceName', 'dataEntityKey']
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}/schemas/{schemaResourceName}/dataEntities/{dataEntityKey}"
         method = "GET"
         operation_name = "get_data_entity"
@@ -6690,7 +6945,8 @@ class DataIntegrationClient(object):
                 response_type="DataEntity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6700,7 +6956,8 @@ class DataIntegrationClient(object):
                 response_type="DataEntity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_data_flow(self, workspace_id, data_flow_key, **kwargs):
         """
@@ -6739,6 +6996,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_data_flow.py.html>`__ to see an example of how to use get_data_flow API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'dataFlowKey']
         resource_path = "/workspaces/{workspaceId}/dataFlows/{dataFlowKey}"
         method = "GET"
         operation_name = "get_data_flow"
@@ -6798,7 +7057,8 @@ class DataIntegrationClient(object):
                 response_type="DataFlow",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6809,7 +7069,8 @@ class DataIntegrationClient(object):
                 response_type="DataFlow",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_data_flow_validation(self, workspace_id, data_flow_validation_key, **kwargs):
         """
@@ -6845,6 +7106,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_data_flow_validation.py.html>`__ to see an example of how to use get_data_flow_validation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'dataFlowValidationKey']
         resource_path = "/workspaces/{workspaceId}/dataFlowValidations/{dataFlowValidationKey}"
         method = "GET"
         operation_name = "get_data_flow_validation"
@@ -6897,7 +7160,8 @@ class DataIntegrationClient(object):
                 response_type="DataFlowValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6907,7 +7171,8 @@ class DataIntegrationClient(object):
                 response_type="DataFlowValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_dependent_object(self, workspace_id, application_key, dependent_object_key, **kwargs):
         """
@@ -6946,6 +7211,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_dependent_object.py.html>`__ to see an example of how to use get_dependent_object API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey', 'dependentObjectKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/dependentObjects/{dependentObjectKey}"
         method = "GET"
         operation_name = "get_dependent_object"
@@ -6999,7 +7266,8 @@ class DataIntegrationClient(object):
                 response_type="DependentObject",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7009,7 +7277,8 @@ class DataIntegrationClient(object):
                 response_type="DependentObject",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_dis_application(self, workspace_id, dis_application_id, **kwargs):
         """
@@ -7045,6 +7314,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_dis_application.py.html>`__ to see an example of how to use get_dis_application API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'disApplicationId']
         resource_path = "/workspaces/{workspaceId}/disApplications/{disApplicationId}"
         method = "GET"
         operation_name = "get_dis_application"
@@ -7097,7 +7368,8 @@ class DataIntegrationClient(object):
                 response_type="DisApplication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7107,7 +7379,8 @@ class DataIntegrationClient(object):
                 response_type="DisApplication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_dis_application_detailed_description(self, workspace_id, application_key, **kwargs):
         """
@@ -7143,6 +7416,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_dis_application_detailed_description.py.html>`__ to see an example of how to use get_dis_application_detailed_description API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/disApplications/{applicationKey}/detailedDescription"
         method = "GET"
         operation_name = "get_dis_application_detailed_description"
@@ -7195,7 +7470,8 @@ class DataIntegrationClient(object):
                 response_type="DetailedDescription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7205,7 +7481,8 @@ class DataIntegrationClient(object):
                 response_type="DetailedDescription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_external_publication(self, workspace_id, task_key, external_publications_key, **kwargs):
         """
@@ -7244,6 +7521,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_external_publication.py.html>`__ to see an example of how to use get_external_publication API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'taskKey', 'externalPublicationsKey']
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublications/{externalPublicationsKey}"
         method = "GET"
         operation_name = "get_external_publication"
@@ -7297,7 +7576,8 @@ class DataIntegrationClient(object):
                 response_type="ExternalPublication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7307,7 +7587,8 @@ class DataIntegrationClient(object):
                 response_type="ExternalPublication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_external_publication_validation(self, workspace_id, task_key, external_publication_validation_key, **kwargs):
         """
@@ -7346,6 +7627,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_external_publication_validation.py.html>`__ to see an example of how to use get_external_publication_validation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'taskKey', 'externalPublicationValidationKey']
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublicationValidations/{externalPublicationValidationKey}"
         method = "GET"
         operation_name = "get_external_publication_validation"
@@ -7399,7 +7682,8 @@ class DataIntegrationClient(object):
                 response_type="ExternalPublicationValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7409,7 +7693,8 @@ class DataIntegrationClient(object):
                 response_type="ExternalPublicationValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_folder(self, workspace_id, folder_key, **kwargs):
         """
@@ -7450,6 +7735,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_folder.py.html>`__ to see an example of how to use get_folder API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'folderKey']
         resource_path = "/workspaces/{workspaceId}/folders/{folderKey}"
         method = "GET"
         operation_name = "get_folder"
@@ -7517,7 +7804,8 @@ class DataIntegrationClient(object):
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7528,7 +7816,8 @@ class DataIntegrationClient(object):
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_function_library(self, workspace_id, function_library_key, **kwargs):
         """
@@ -7569,6 +7858,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_function_library.py.html>`__ to see an example of how to use get_function_library API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'functionLibraryKey']
         resource_path = "/workspaces/{workspaceId}/functionLibraries/{functionLibraryKey}"
         method = "GET"
         operation_name = "get_function_library"
@@ -7636,7 +7927,8 @@ class DataIntegrationClient(object):
                 response_type="FunctionLibrary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7647,7 +7939,8 @@ class DataIntegrationClient(object):
                 response_type="FunctionLibrary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_patch(self, workspace_id, application_key, patch_key, **kwargs):
         """
@@ -7686,6 +7979,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_patch.py.html>`__ to see an example of how to use get_patch API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey', 'patchKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/patches/{patchKey}"
         method = "GET"
         operation_name = "get_patch"
@@ -7739,7 +8034,8 @@ class DataIntegrationClient(object):
                 response_type="Patch",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7749,7 +8045,8 @@ class DataIntegrationClient(object):
                 response_type="Patch",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_pipeline(self, workspace_id, pipeline_key, **kwargs):
         """
@@ -7788,6 +8085,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_pipeline.py.html>`__ to see an example of how to use get_pipeline API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'pipelineKey']
         resource_path = "/workspaces/{workspaceId}/pipelines/{pipelineKey}"
         method = "GET"
         operation_name = "get_pipeline"
@@ -7847,7 +8146,8 @@ class DataIntegrationClient(object):
                 response_type="Pipeline",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7858,7 +8158,8 @@ class DataIntegrationClient(object):
                 response_type="Pipeline",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_pipeline_validation(self, workspace_id, pipeline_validation_key, **kwargs):
         """
@@ -7894,6 +8195,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_pipeline_validation.py.html>`__ to see an example of how to use get_pipeline_validation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'pipelineValidationKey']
         resource_path = "/workspaces/{workspaceId}/pipelineValidations/{pipelineValidationKey}"
         method = "GET"
         operation_name = "get_pipeline_validation"
@@ -7946,7 +8249,8 @@ class DataIntegrationClient(object):
                 response_type="PipelineValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7956,7 +8260,8 @@ class DataIntegrationClient(object):
                 response_type="PipelineValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_project(self, workspace_id, project_key, **kwargs):
         """
@@ -7997,6 +8302,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_project.py.html>`__ to see an example of how to use get_project API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'projectKey']
         resource_path = "/workspaces/{workspaceId}/projects/{projectKey}"
         method = "GET"
         operation_name = "get_project"
@@ -8064,7 +8371,8 @@ class DataIntegrationClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8075,7 +8383,8 @@ class DataIntegrationClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_published_object(self, workspace_id, application_key, published_object_key, **kwargs):
         """
@@ -8117,6 +8426,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_published_object.py.html>`__ to see an example of how to use get_published_object API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey', 'publishedObjectKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/publishedObjects/{publishedObjectKey}"
         method = "GET"
         operation_name = "get_published_object"
@@ -8177,7 +8488,8 @@ class DataIntegrationClient(object):
                 response_type="PublishedObject",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8188,7 +8500,8 @@ class DataIntegrationClient(object):
                 response_type="PublishedObject",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_reference(self, workspace_id, application_key, reference_key, **kwargs):
         """
@@ -8227,6 +8540,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_reference.py.html>`__ to see an example of how to use get_reference API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey', 'referenceKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/references/{referenceKey}"
         method = "GET"
         operation_name = "get_reference"
@@ -8280,7 +8595,8 @@ class DataIntegrationClient(object):
                 response_type="Reference",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8290,7 +8606,8 @@ class DataIntegrationClient(object):
                 response_type="Reference",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_runtime_operator(self, workspace_id, application_key, runtime_pipeline_key, runtime_operator_key, **kwargs):
         """
@@ -8332,6 +8649,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_runtime_operator.py.html>`__ to see an example of how to use get_runtime_operator API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey', 'runtimePipelineKey', 'runtimeOperatorKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/runtimePipelines/{runtimePipelineKey}/runtimeOperators/{runtimeOperatorKey}"
         method = "GET"
         operation_name = "get_runtime_operator"
@@ -8386,7 +8705,8 @@ class DataIntegrationClient(object):
                 response_type="RuntimeOperator",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8396,7 +8716,8 @@ class DataIntegrationClient(object):
                 response_type="RuntimeOperator",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_runtime_pipeline(self, workspace_id, application_key, runtime_pipeline_key, **kwargs):
         """
@@ -8438,6 +8759,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_runtime_pipeline.py.html>`__ to see an example of how to use get_runtime_pipeline API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey', 'runtimePipelineKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/runtimePipelines/{runtimePipelineKey}"
         method = "GET"
         operation_name = "get_runtime_pipeline"
@@ -8498,7 +8821,8 @@ class DataIntegrationClient(object):
                 response_type="RuntimePipeline",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8509,7 +8833,8 @@ class DataIntegrationClient(object):
                 response_type="RuntimePipeline",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_schedule(self, workspace_id, application_key, schedule_key, **kwargs):
         """
@@ -8548,6 +8873,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_schedule.py.html>`__ to see an example of how to use get_schedule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey', 'scheduleKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/schedules/{scheduleKey}"
         method = "GET"
         operation_name = "get_schedule"
@@ -8601,7 +8928,8 @@ class DataIntegrationClient(object):
                 response_type="Schedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8611,7 +8939,8 @@ class DataIntegrationClient(object):
                 response_type="Schedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_schema(self, workspace_id, connection_key, schema_resource_name, **kwargs):
         """
@@ -8650,6 +8979,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_schema.py.html>`__ to see an example of how to use get_schema API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'connectionKey', 'schemaResourceName']
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}/schemas/{schemaResourceName}"
         method = "GET"
         operation_name = "get_schema"
@@ -8703,7 +9034,8 @@ class DataIntegrationClient(object):
                 response_type="Schema",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8713,7 +9045,8 @@ class DataIntegrationClient(object):
                 response_type="Schema",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_task(self, workspace_id, task_key, **kwargs):
         """
@@ -8752,6 +9085,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_task.py.html>`__ to see an example of how to use get_task API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'taskKey']
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}"
         method = "GET"
         operation_name = "get_task"
@@ -8811,7 +9146,8 @@ class DataIntegrationClient(object):
                 response_type="Task",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8822,7 +9158,8 @@ class DataIntegrationClient(object):
                 response_type="Task",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_task_run(self, workspace_id, application_key, task_run_key, **kwargs):
         """
@@ -8861,6 +9198,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_task_run.py.html>`__ to see an example of how to use get_task_run API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey', 'taskRunKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskRuns/{taskRunKey}"
         method = "GET"
         operation_name = "get_task_run"
@@ -8914,7 +9253,8 @@ class DataIntegrationClient(object):
                 response_type="TaskRun",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8924,7 +9264,8 @@ class DataIntegrationClient(object):
                 response_type="TaskRun",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_task_schedule(self, workspace_id, application_key, task_schedule_key, **kwargs):
         """
@@ -8963,6 +9304,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_task_schedule.py.html>`__ to see an example of how to use get_task_schedule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey', 'taskScheduleKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskSchedules/{taskScheduleKey}"
         method = "GET"
         operation_name = "get_task_schedule"
@@ -9016,7 +9359,8 @@ class DataIntegrationClient(object):
                 response_type="TaskSchedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9026,7 +9370,8 @@ class DataIntegrationClient(object):
                 response_type="TaskSchedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_task_validation(self, workspace_id, task_validation_key, **kwargs):
         """
@@ -9062,6 +9407,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_task_validation.py.html>`__ to see an example of how to use get_task_validation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'taskValidationKey']
         resource_path = "/workspaces/{workspaceId}/taskValidations/{taskValidationKey}"
         method = "GET"
         operation_name = "get_task_validation"
@@ -9114,7 +9461,8 @@ class DataIntegrationClient(object):
                 response_type="TaskValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9124,7 +9472,8 @@ class DataIntegrationClient(object):
                 response_type="TaskValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_template(self, workspace_id, template_id, **kwargs):
         """
@@ -9160,6 +9509,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_template.py.html>`__ to see an example of how to use get_template API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'templateId']
         resource_path = "/workspaces/{workspaceId}/templates/{templateId}"
         method = "GET"
         operation_name = "get_template"
@@ -9212,7 +9563,8 @@ class DataIntegrationClient(object):
                 response_type="Template",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9222,7 +9574,8 @@ class DataIntegrationClient(object):
                 response_type="Template",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_user_defined_function(self, workspace_id, user_defined_function_key, **kwargs):
         """
@@ -9258,6 +9611,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_user_defined_function.py.html>`__ to see an example of how to use get_user_defined_function API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'userDefinedFunctionKey']
         resource_path = "/workspaces/{workspaceId}/userDefinedFunctions/{userDefinedFunctionKey}"
         method = "GET"
         operation_name = "get_user_defined_function"
@@ -9310,7 +9665,8 @@ class DataIntegrationClient(object):
                 response_type="UserDefinedFunction",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9320,7 +9676,8 @@ class DataIntegrationClient(object):
                 response_type="UserDefinedFunction",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_user_defined_function_validation(self, workspace_id, user_defined_function_validation_key, **kwargs):
         """
@@ -9356,6 +9713,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_user_defined_function_validation.py.html>`__ to see an example of how to use get_user_defined_function_validation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'userDefinedFunctionValidationKey']
         resource_path = "/workspaces/{workspaceId}/userDefinedFunctionValidations/{userDefinedFunctionValidationKey}"
         method = "GET"
         operation_name = "get_user_defined_function_validation"
@@ -9408,7 +9767,8 @@ class DataIntegrationClient(object):
                 response_type="UserDefinedFunctionValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9418,7 +9778,8 @@ class DataIntegrationClient(object):
                 response_type="UserDefinedFunctionValidation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -9451,6 +9812,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -9502,7 +9865,8 @@ class DataIntegrationClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9512,7 +9876,8 @@ class DataIntegrationClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_workspace(self, workspace_id, **kwargs):
         """
@@ -9545,6 +9910,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_workspace.py.html>`__ to see an example of how to use get_workspace API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}"
         method = "GET"
         operation_name = "get_workspace"
@@ -9596,7 +9963,8 @@ class DataIntegrationClient(object):
                 response_type="Workspace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9606,7 +9974,8 @@ class DataIntegrationClient(object):
                 response_type="Workspace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_applications(self, workspace_id, **kwargs):
         """
@@ -9671,6 +10040,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_applications.py.html>`__ to see an example of how to use list_applications API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/applications"
         method = "GET"
         operation_name = "list_applications"
@@ -9757,7 +10128,8 @@ class DataIntegrationClient(object):
                 response_type="ApplicationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9768,7 +10140,8 @@ class DataIntegrationClient(object):
                 response_type="ApplicationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_connection_validations(self, workspace_id, **kwargs):
         """
@@ -9833,6 +10206,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_connection_validations.py.html>`__ to see an example of how to use list_connection_validations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/connectionValidations"
         method = "GET"
         operation_name = "list_connection_validations"
@@ -9919,7 +10294,8 @@ class DataIntegrationClient(object):
                 response_type="ConnectionValidationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9930,7 +10306,8 @@ class DataIntegrationClient(object):
                 response_type="ConnectionValidationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_connections(self, workspace_id, data_asset_key, **kwargs):
         """
@@ -9995,6 +10372,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_connections.py.html>`__ to see an example of how to use list_connections API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'dataAssetKey']
         resource_path = "/workspaces/{workspaceId}/connections"
         method = "GET"
         operation_name = "list_connections"
@@ -10080,7 +10459,8 @@ class DataIntegrationClient(object):
                 response_type="ConnectionSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10091,7 +10471,8 @@ class DataIntegrationClient(object):
                 response_type="ConnectionSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_copy_object_requests(self, workspace_id, **kwargs):
         """
@@ -10163,6 +10544,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_copy_object_requests.py.html>`__ to see an example of how to use list_copy_object_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/copyObjectRequests"
         method = "GET"
         operation_name = "list_copy_object_requests"
@@ -10265,7 +10648,8 @@ class DataIntegrationClient(object):
                 response_type="CopyObjectRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10276,7 +10660,8 @@ class DataIntegrationClient(object):
                 response_type="CopyObjectRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_data_assets(self, workspace_id, **kwargs):
         """
@@ -10338,6 +10723,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_data_assets.py.html>`__ to see an example of how to use list_data_assets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/dataAssets"
         method = "GET"
         operation_name = "list_data_assets"
@@ -10422,7 +10809,8 @@ class DataIntegrationClient(object):
                 response_type="DataAssetSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10433,7 +10821,8 @@ class DataIntegrationClient(object):
                 response_type="DataAssetSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_data_entities(self, workspace_id, connection_key, schema_resource_name, **kwargs):
         """
@@ -10510,6 +10899,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_data_entities.py.html>`__ to see an example of how to use list_data_entities API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'connectionKey', 'schemaResourceName']
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}/schemas/{schemaResourceName}/dataEntities"
         method = "GET"
         operation_name = "list_data_entities"
@@ -10602,7 +10993,8 @@ class DataIntegrationClient(object):
                 response_type="DataEntitySummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10613,7 +11005,8 @@ class DataIntegrationClient(object):
                 response_type="DataEntitySummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_data_flow_validations(self, workspace_id, **kwargs):
         """
@@ -10678,6 +11071,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_data_flow_validations.py.html>`__ to see an example of how to use list_data_flow_validations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/dataFlowValidations"
         method = "GET"
         operation_name = "list_data_flow_validations"
@@ -10764,7 +11159,8 @@ class DataIntegrationClient(object):
                 response_type="DataFlowValidationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10775,7 +11171,8 @@ class DataIntegrationClient(object):
                 response_type="DataFlowValidationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_data_flows(self, workspace_id, **kwargs):
         """
@@ -10840,6 +11237,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_data_flows.py.html>`__ to see an example of how to use list_data_flows API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/dataFlows"
         method = "GET"
         operation_name = "list_data_flows"
@@ -10926,7 +11325,8 @@ class DataIntegrationClient(object):
                 response_type="DataFlowSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10937,7 +11337,8 @@ class DataIntegrationClient(object):
                 response_type="DataFlowSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_dependent_objects(self, workspace_id, application_key, **kwargs):
         """
@@ -11015,6 +11416,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_dependent_objects.py.html>`__ to see an example of how to use list_dependent_objects API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/dependentObjects"
         method = "GET"
         operation_name = "list_dependent_objects"
@@ -11106,7 +11509,8 @@ class DataIntegrationClient(object):
                 response_type="DependentObjectSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11117,7 +11521,8 @@ class DataIntegrationClient(object):
                 response_type="DependentObjectSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_dis_application_task_run_lineages(self, workspace_id, dis_application_id, **kwargs):
         """
@@ -11191,6 +11596,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_dis_application_task_run_lineages.py.html>`__ to see an example of how to use list_dis_application_task_run_lineages API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'disApplicationId']
         resource_path = "/workspaces/{workspaceId}/disApplications/{disApplicationId}/taskRunLineages"
         method = "GET"
         operation_name = "list_dis_application_task_run_lineages"
@@ -11282,7 +11689,8 @@ class DataIntegrationClient(object):
                 response_type="TaskRunLineageSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11293,7 +11701,8 @@ class DataIntegrationClient(object):
                 response_type="TaskRunLineageSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_dis_applications(self, workspace_id, compartment_id, **kwargs):
         """
@@ -11361,6 +11770,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_dis_applications.py.html>`__ to see an example of how to use list_dis_applications API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'compartmentId']
         resource_path = "/workspaces/{workspaceId}/disApplications"
         method = "GET"
         operation_name = "list_dis_applications"
@@ -11448,7 +11859,8 @@ class DataIntegrationClient(object):
                 response_type="DisApplicationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11459,7 +11871,8 @@ class DataIntegrationClient(object):
                 response_type="DisApplicationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_external_publication_validations(self, workspace_id, task_key, **kwargs):
         """
@@ -11524,6 +11937,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_external_publication_validations.py.html>`__ to see an example of how to use list_external_publication_validations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'taskKey']
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublicationValidations"
         method = "GET"
         operation_name = "list_external_publication_validations"
@@ -11609,7 +12024,8 @@ class DataIntegrationClient(object):
                 response_type="ExternalPublicationValidationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11620,7 +12036,8 @@ class DataIntegrationClient(object):
                 response_type="ExternalPublicationValidationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_external_publications(self, workspace_id, task_key, **kwargs):
         """
@@ -11682,6 +12099,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_external_publications.py.html>`__ to see an example of how to use list_external_publications API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'taskKey']
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublications"
         method = "GET"
         operation_name = "list_external_publications"
@@ -11765,7 +12184,8 @@ class DataIntegrationClient(object):
                 response_type="ExternalPublicationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11776,7 +12196,8 @@ class DataIntegrationClient(object):
                 response_type="ExternalPublicationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_folders(self, workspace_id, **kwargs):
         """
@@ -11844,6 +12265,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_folders.py.html>`__ to see an example of how to use list_folders API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/folders"
         method = "GET"
         operation_name = "list_folders"
@@ -11932,7 +12355,8 @@ class DataIntegrationClient(object):
                 response_type="FolderSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11943,7 +12367,8 @@ class DataIntegrationClient(object):
                 response_type="FolderSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_function_libraries(self, workspace_id, **kwargs):
         """
@@ -12008,6 +12433,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_function_libraries.py.html>`__ to see an example of how to use list_function_libraries API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/functionLibraries"
         method = "GET"
         operation_name = "list_function_libraries"
@@ -12094,7 +12521,8 @@ class DataIntegrationClient(object):
                 response_type="FunctionLibrarySummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12105,7 +12533,8 @@ class DataIntegrationClient(object):
                 response_type="FunctionLibrarySummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_patch_changes(self, workspace_id, application_key, **kwargs):
         """
@@ -12170,6 +12599,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_patch_changes.py.html>`__ to see an example of how to use list_patch_changes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/patchChanges"
         method = "GET"
         operation_name = "list_patch_changes"
@@ -12255,7 +12686,8 @@ class DataIntegrationClient(object):
                 response_type="PatchChangeSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12266,7 +12698,8 @@ class DataIntegrationClient(object):
                 response_type="PatchChangeSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_patches(self, workspace_id, application_key, **kwargs):
         """
@@ -12331,6 +12764,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_patches.py.html>`__ to see an example of how to use list_patches API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/patches"
         method = "GET"
         operation_name = "list_patches"
@@ -12416,7 +12851,8 @@ class DataIntegrationClient(object):
                 response_type="PatchSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12427,7 +12863,8 @@ class DataIntegrationClient(object):
                 response_type="PatchSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_pipeline_validations(self, workspace_id, **kwargs):
         """
@@ -12492,6 +12929,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_pipeline_validations.py.html>`__ to see an example of how to use list_pipeline_validations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/pipelineValidations"
         method = "GET"
         operation_name = "list_pipeline_validations"
@@ -12578,7 +13017,8 @@ class DataIntegrationClient(object):
                 response_type="PipelineValidationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12589,7 +13029,8 @@ class DataIntegrationClient(object):
                 response_type="PipelineValidationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_pipelines(self, workspace_id, **kwargs):
         """
@@ -12654,6 +13095,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_pipelines.py.html>`__ to see an example of how to use list_pipelines API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/pipelines"
         method = "GET"
         operation_name = "list_pipelines"
@@ -12740,7 +13183,8 @@ class DataIntegrationClient(object):
                 response_type="PipelineSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12751,7 +13195,8 @@ class DataIntegrationClient(object):
                 response_type="PipelineSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_projects(self, workspace_id, **kwargs):
         """
@@ -12816,6 +13261,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_projects.py.html>`__ to see an example of how to use list_projects API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/projects"
         method = "GET"
         operation_name = "list_projects"
@@ -12902,7 +13349,8 @@ class DataIntegrationClient(object):
                 response_type="ProjectSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12913,7 +13361,8 @@ class DataIntegrationClient(object):
                 response_type="ProjectSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_published_objects(self, workspace_id, application_key, **kwargs):
         """
@@ -12994,6 +13443,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_published_objects.py.html>`__ to see an example of how to use list_published_objects API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/publishedObjects"
         method = "GET"
         operation_name = "list_published_objects"
@@ -13087,7 +13538,8 @@ class DataIntegrationClient(object):
                 response_type="PublishedObjectSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13098,7 +13550,8 @@ class DataIntegrationClient(object):
                 response_type="PublishedObjectSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_references(self, workspace_id, application_key, **kwargs):
         """
@@ -13157,6 +13610,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_references.py.html>`__ to see an example of how to use list_references API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/references"
         method = "GET"
         operation_name = "list_references"
@@ -13238,7 +13693,8 @@ class DataIntegrationClient(object):
                 response_type="ReferenceSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13249,7 +13705,8 @@ class DataIntegrationClient(object):
                 response_type="ReferenceSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_runtime_operators(self, workspace_id, application_key, runtime_pipeline_key, **kwargs):
         """
@@ -13323,6 +13780,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_runtime_operators.py.html>`__ to see an example of how to use list_runtime_operators API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey', 'runtimePipelineKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/runtimePipelines/{runtimePipelineKey}/runtimeOperators"
         method = "GET"
         operation_name = "list_runtime_operators"
@@ -13413,7 +13872,8 @@ class DataIntegrationClient(object):
                 response_type="RuntimeOperatorSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13424,7 +13884,8 @@ class DataIntegrationClient(object):
                 response_type="RuntimeOperatorSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_runtime_pipelines(self, workspace_id, application_key, **kwargs):
         """
@@ -13501,6 +13962,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_runtime_pipelines.py.html>`__ to see an example of how to use list_runtime_pipelines API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/runtimePipelines"
         method = "GET"
         operation_name = "list_runtime_pipelines"
@@ -13594,7 +14057,8 @@ class DataIntegrationClient(object):
                 response_type="RuntimePipelineSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13605,7 +14069,8 @@ class DataIntegrationClient(object):
                 response_type="RuntimePipelineSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_schedules(self, workspace_id, application_key, **kwargs):
         """
@@ -13673,6 +14138,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_schedules.py.html>`__ to see an example of how to use list_schedules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/schedules"
         method = "GET"
         operation_name = "list_schedules"
@@ -13760,7 +14227,8 @@ class DataIntegrationClient(object):
                 response_type="ScheduleSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13771,7 +14239,8 @@ class DataIntegrationClient(object):
                 response_type="ScheduleSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_schemas(self, workspace_id, connection_key, schema_resource_name, **kwargs):
         """
@@ -13842,6 +14311,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_schemas.py.html>`__ to see an example of how to use list_schemas API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'connectionKey', 'schemaResourceName']
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}/schemas"
         method = "GET"
         operation_name = "list_schemas"
@@ -13930,7 +14401,8 @@ class DataIntegrationClient(object):
                 response_type="SchemaSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13941,7 +14413,8 @@ class DataIntegrationClient(object):
                 response_type="SchemaSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_task_run_lineages(self, workspace_id, application_key, **kwargs):
         """
@@ -14015,6 +14488,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_task_run_lineages.py.html>`__ to see an example of how to use list_task_run_lineages API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskRunLineages"
         method = "GET"
         operation_name = "list_task_run_lineages"
@@ -14106,7 +14581,8 @@ class DataIntegrationClient(object):
                 response_type="TaskRunLineageSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14117,7 +14593,8 @@ class DataIntegrationClient(object):
                 response_type="TaskRunLineageSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_task_run_logs(self, workspace_id, application_key, task_run_key, **kwargs):
         """
@@ -14176,6 +14653,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_task_run_logs.py.html>`__ to see an example of how to use list_task_run_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey', 'taskRunKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskRuns/{taskRunKey}/logs"
         method = "GET"
         operation_name = "list_task_run_logs"
@@ -14256,7 +14735,8 @@ class DataIntegrationClient(object):
                 response_type="list[TaskRunLogSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14267,7 +14747,8 @@ class DataIntegrationClient(object):
                 response_type="list[TaskRunLogSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_task_runs(self, workspace_id, application_key, **kwargs):
         """
@@ -14347,6 +14828,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_task_runs.py.html>`__ to see an example of how to use list_task_runs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskRuns"
         method = "GET"
         operation_name = "list_task_runs"
@@ -14442,7 +14925,8 @@ class DataIntegrationClient(object):
                 response_type="TaskRunSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14453,7 +14937,8 @@ class DataIntegrationClient(object):
                 response_type="TaskRunSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_task_schedules(self, workspace_id, application_key, **kwargs):
         """
@@ -14524,6 +15009,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_task_schedules.py.html>`__ to see an example of how to use list_task_schedules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskSchedules"
         method = "GET"
         operation_name = "list_task_schedules"
@@ -14613,7 +15100,8 @@ class DataIntegrationClient(object):
                 response_type="TaskScheduleSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14624,7 +15112,8 @@ class DataIntegrationClient(object):
                 response_type="TaskScheduleSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_task_validations(self, workspace_id, **kwargs):
         """
@@ -14689,6 +15178,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_task_validations.py.html>`__ to see an example of how to use list_task_validations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/taskValidations"
         method = "GET"
         operation_name = "list_task_validations"
@@ -14775,7 +15266,8 @@ class DataIntegrationClient(object):
                 response_type="TaskValidationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14786,7 +15278,8 @@ class DataIntegrationClient(object):
                 response_type="TaskValidationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_tasks(self, workspace_id, **kwargs):
         """
@@ -14857,6 +15350,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_tasks.py.html>`__ to see an example of how to use list_tasks API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/tasks"
         method = "GET"
         operation_name = "list_tasks"
@@ -14947,7 +15442,8 @@ class DataIntegrationClient(object):
                 response_type="TaskSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14958,7 +15454,8 @@ class DataIntegrationClient(object):
                 response_type="TaskSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_templates(self, workspace_id, **kwargs):
         """
@@ -15020,6 +15517,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_templates.py.html>`__ to see an example of how to use list_templates API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/templates"
         method = "GET"
         operation_name = "list_templates"
@@ -15104,7 +15603,8 @@ class DataIntegrationClient(object):
                 response_type="TemplateSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15115,7 +15615,8 @@ class DataIntegrationClient(object):
                 response_type="TemplateSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_user_defined_function_validations(self, workspace_id, **kwargs):
         """
@@ -15180,6 +15681,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_user_defined_function_validations.py.html>`__ to see an example of how to use list_user_defined_function_validations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/userDefinedFunctionValidations"
         method = "GET"
         operation_name = "list_user_defined_function_validations"
@@ -15266,7 +15769,8 @@ class DataIntegrationClient(object):
                 response_type="UserDefinedFunctionValidationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15277,7 +15781,8 @@ class DataIntegrationClient(object):
                 response_type="UserDefinedFunctionValidationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_user_defined_functions(self, workspace_id, **kwargs):
         """
@@ -15342,6 +15847,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_user_defined_functions.py.html>`__ to see an example of how to use list_user_defined_functions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/userDefinedFunctions"
         method = "GET"
         operation_name = "list_user_defined_functions"
@@ -15428,7 +15935,8 @@ class DataIntegrationClient(object):
                 response_type="UserDefinedFunctionSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15439,7 +15947,8 @@ class DataIntegrationClient(object):
                 response_type="UserDefinedFunctionSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -15492,6 +16001,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/workRequestErrors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -15570,7 +16081,8 @@ class DataIntegrationClient(object):
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15581,7 +16093,8 @@ class DataIntegrationClient(object):
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -15634,6 +16147,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -15712,7 +16227,8 @@ class DataIntegrationClient(object):
                 response_type="list[WorkRequestLogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15723,7 +16239,8 @@ class DataIntegrationClient(object):
                 response_type="list[WorkRequestLogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -15784,6 +16301,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -15863,7 +16382,8 @@ class DataIntegrationClient(object):
                 response_type="list[WorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15873,7 +16393,8 @@ class DataIntegrationClient(object):
                 response_type="list[WorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_workspaces(self, compartment_id, **kwargs):
         """
@@ -15934,6 +16455,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_workspaces.py.html>`__ to see an example of how to use list_workspaces API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workspaces"
         method = "GET"
         operation_name = "list_workspaces"
@@ -16013,7 +16536,8 @@ class DataIntegrationClient(object):
                 response_type="list[WorkspaceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16023,7 +16547,8 @@ class DataIntegrationClient(object):
                 response_type="list[WorkspaceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def start_workspace(self, workspace_id, **kwargs):
         """
@@ -16064,6 +16589,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/start_workspace.py.html>`__ to see an example of how to use start_workspace API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/actions/start"
         method = "POST"
         operation_name = "start_workspace"
@@ -16119,7 +16646,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16128,7 +16656,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def stop_workspace(self, workspace_id, **kwargs):
         """
@@ -16175,6 +16704,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/stop_workspace.py.html>`__ to see an example of how to use stop_workspace API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}/actions/stop"
         method = "POST"
         operation_name = "stop_workspace"
@@ -16239,7 +16770,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16249,7 +16781,8 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_application(self, workspace_id, application_key, update_application_details, **kwargs):
         """
@@ -16293,6 +16826,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_application.py.html>`__ to see an example of how to use update_application API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}"
         method = "PUT"
         operation_name = "update_application"
@@ -16348,7 +16883,8 @@ class DataIntegrationClient(object):
                 response_type="Application",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16359,7 +16895,8 @@ class DataIntegrationClient(object):
                 response_type="Application",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_application_detailed_description(self, workspace_id, application_key, update_application_detailed_description_details, **kwargs):
         """
@@ -16403,6 +16940,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_application_detailed_description.py.html>`__ to see an example of how to use update_application_detailed_description API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/detailedDescription"
         method = "PUT"
         operation_name = "update_application_detailed_description"
@@ -16458,7 +16997,8 @@ class DataIntegrationClient(object):
                 response_type="DetailedDescription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16469,7 +17009,8 @@ class DataIntegrationClient(object):
                 response_type="DetailedDescription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_connection(self, workspace_id, connection_key, update_connection_details, **kwargs):
         """
@@ -16513,6 +17054,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_connection.py.html>`__ to see an example of how to use update_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'connectionKey']
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}"
         method = "PUT"
         operation_name = "update_connection"
@@ -16568,7 +17111,8 @@ class DataIntegrationClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16579,7 +17123,8 @@ class DataIntegrationClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_copy_object_request(self, workspace_id, copy_object_request_key, update_copy_object_request_details, **kwargs):
         """
@@ -16623,6 +17168,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_copy_object_request.py.html>`__ to see an example of how to use update_copy_object_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'copyObjectRequestKey']
         resource_path = "/workspaces/{workspaceId}/copyObjectRequests/{copyObjectRequestKey}"
         method = "PUT"
         operation_name = "update_copy_object_request"
@@ -16678,7 +17225,8 @@ class DataIntegrationClient(object):
                 response_type="CopyObjectRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16689,7 +17237,8 @@ class DataIntegrationClient(object):
                 response_type="CopyObjectRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_data_asset(self, workspace_id, data_asset_key, update_data_asset_details, **kwargs):
         """
@@ -16733,6 +17282,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_data_asset.py.html>`__ to see an example of how to use update_data_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'dataAssetKey']
         resource_path = "/workspaces/{workspaceId}/dataAssets/{dataAssetKey}"
         method = "PUT"
         operation_name = "update_data_asset"
@@ -16788,7 +17339,8 @@ class DataIntegrationClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16799,7 +17351,8 @@ class DataIntegrationClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_data_flow(self, workspace_id, data_flow_key, update_data_flow_details, **kwargs):
         """
@@ -16843,6 +17396,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_data_flow.py.html>`__ to see an example of how to use update_data_flow API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'dataFlowKey']
         resource_path = "/workspaces/{workspaceId}/dataFlows/{dataFlowKey}"
         method = "PUT"
         operation_name = "update_data_flow"
@@ -16898,7 +17453,8 @@ class DataIntegrationClient(object):
                 response_type="DataFlow",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16909,7 +17465,8 @@ class DataIntegrationClient(object):
                 response_type="DataFlow",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_dis_application(self, workspace_id, dis_application_id, update_dis_application_details, **kwargs):
         """
@@ -16953,6 +17510,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_dis_application.py.html>`__ to see an example of how to use update_dis_application API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'disApplicationId']
         resource_path = "/workspaces/{workspaceId}/disApplications/{disApplicationId}"
         method = "PUT"
         operation_name = "update_dis_application"
@@ -17008,7 +17567,8 @@ class DataIntegrationClient(object):
                 response_type="DisApplication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17019,7 +17579,8 @@ class DataIntegrationClient(object):
                 response_type="DisApplication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_dis_application_detailed_description(self, workspace_id, application_key, update_dis_application_detailed_description_details, **kwargs):
         """
@@ -17063,6 +17624,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_dis_application_detailed_description.py.html>`__ to see an example of how to use update_dis_application_detailed_description API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey']
         resource_path = "/workspaces/{workspaceId}/disApplications/{applicationKey}/detailedDescription"
         method = "PUT"
         operation_name = "update_dis_application_detailed_description"
@@ -17118,7 +17681,8 @@ class DataIntegrationClient(object):
                 response_type="DetailedDescription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17129,7 +17693,8 @@ class DataIntegrationClient(object):
                 response_type="DetailedDescription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_external_publication(self, workspace_id, task_key, external_publications_key, update_external_publication_details, **kwargs):
         """
@@ -17176,6 +17741,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_external_publication.py.html>`__ to see an example of how to use update_external_publication API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'taskKey', 'externalPublicationsKey']
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublications/{externalPublicationsKey}"
         method = "PUT"
         operation_name = "update_external_publication"
@@ -17232,7 +17799,8 @@ class DataIntegrationClient(object):
                 response_type="ExternalPublication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17243,7 +17811,8 @@ class DataIntegrationClient(object):
                 response_type="ExternalPublication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_folder(self, workspace_id, folder_key, update_folder_details, **kwargs):
         """
@@ -17287,6 +17856,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_folder.py.html>`__ to see an example of how to use update_folder API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'folderKey']
         resource_path = "/workspaces/{workspaceId}/folders/{folderKey}"
         method = "PUT"
         operation_name = "update_folder"
@@ -17342,7 +17913,8 @@ class DataIntegrationClient(object):
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17353,7 +17925,8 @@ class DataIntegrationClient(object):
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_function_library(self, workspace_id, function_library_key, update_function_library_details, **kwargs):
         """
@@ -17397,6 +17970,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_function_library.py.html>`__ to see an example of how to use update_function_library API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'functionLibraryKey']
         resource_path = "/workspaces/{workspaceId}/functionLibraries/{functionLibraryKey}"
         method = "PUT"
         operation_name = "update_function_library"
@@ -17452,7 +18027,8 @@ class DataIntegrationClient(object):
                 response_type="FunctionLibrary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17463,7 +18039,8 @@ class DataIntegrationClient(object):
                 response_type="FunctionLibrary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_pipeline(self, workspace_id, pipeline_key, update_pipeline_details, **kwargs):
         """
@@ -17507,6 +18084,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_pipeline.py.html>`__ to see an example of how to use update_pipeline API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'pipelineKey']
         resource_path = "/workspaces/{workspaceId}/pipelines/{pipelineKey}"
         method = "PUT"
         operation_name = "update_pipeline"
@@ -17562,7 +18141,8 @@ class DataIntegrationClient(object):
                 response_type="Pipeline",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17573,7 +18153,8 @@ class DataIntegrationClient(object):
                 response_type="Pipeline",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_project(self, workspace_id, project_key, update_project_details, **kwargs):
         """
@@ -17617,6 +18198,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_project.py.html>`__ to see an example of how to use update_project API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'projectKey']
         resource_path = "/workspaces/{workspaceId}/projects/{projectKey}"
         method = "PUT"
         operation_name = "update_project"
@@ -17672,7 +18255,8 @@ class DataIntegrationClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17683,7 +18267,8 @@ class DataIntegrationClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_reference(self, workspace_id, application_key, reference_key, update_reference_details, **kwargs):
         """
@@ -17733,6 +18318,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_reference.py.html>`__ to see an example of how to use update_reference API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey', 'referenceKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/references/{referenceKey}"
         method = "PUT"
         operation_name = "update_reference"
@@ -17792,7 +18379,8 @@ class DataIntegrationClient(object):
                 response_type="Reference",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17803,7 +18391,8 @@ class DataIntegrationClient(object):
                 response_type="Reference",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_schedule(self, workspace_id, application_key, schedule_key, update_schedule_details, **kwargs):
         """
@@ -17850,6 +18439,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_schedule.py.html>`__ to see an example of how to use update_schedule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey', 'scheduleKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/schedules/{scheduleKey}"
         method = "PUT"
         operation_name = "update_schedule"
@@ -17906,7 +18497,8 @@ class DataIntegrationClient(object):
                 response_type="Schedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17917,7 +18509,8 @@ class DataIntegrationClient(object):
                 response_type="Schedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_task(self, workspace_id, task_key, update_task_details, **kwargs):
         """
@@ -17961,6 +18554,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_task.py.html>`__ to see an example of how to use update_task API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'taskKey']
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}"
         method = "PUT"
         operation_name = "update_task"
@@ -18016,7 +18611,8 @@ class DataIntegrationClient(object):
                 response_type="Task",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18027,7 +18623,8 @@ class DataIntegrationClient(object):
                 response_type="Task",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_task_run(self, workspace_id, application_key, task_run_key, update_task_run_details, **kwargs):
         """
@@ -18074,6 +18671,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_task_run.py.html>`__ to see an example of how to use update_task_run API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey', 'taskRunKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskRuns/{taskRunKey}"
         method = "PUT"
         operation_name = "update_task_run"
@@ -18130,7 +18729,8 @@ class DataIntegrationClient(object):
                 response_type="TaskRunDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18141,7 +18741,8 @@ class DataIntegrationClient(object):
                 response_type="TaskRunDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_task_schedule(self, workspace_id, application_key, task_schedule_key, update_task_schedule_details, **kwargs):
         """
@@ -18188,6 +18789,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_task_schedule.py.html>`__ to see an example of how to use update_task_schedule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'applicationKey', 'taskScheduleKey']
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskSchedules/{taskScheduleKey}"
         method = "PUT"
         operation_name = "update_task_schedule"
@@ -18244,7 +18847,8 @@ class DataIntegrationClient(object):
                 response_type="TaskSchedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18255,7 +18859,8 @@ class DataIntegrationClient(object):
                 response_type="TaskSchedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_user_defined_function(self, workspace_id, user_defined_function_key, update_user_defined_function_details, **kwargs):
         """
@@ -18299,6 +18904,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_user_defined_function.py.html>`__ to see an example of how to use update_user_defined_function API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId', 'userDefinedFunctionKey']
         resource_path = "/workspaces/{workspaceId}/userDefinedFunctions/{userDefinedFunctionKey}"
         method = "PUT"
         operation_name = "update_user_defined_function"
@@ -18354,7 +18961,8 @@ class DataIntegrationClient(object):
                 response_type="UserDefinedFunction",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18365,7 +18973,8 @@ class DataIntegrationClient(object):
                 response_type="UserDefinedFunction",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_workspace(self, workspace_id, update_workspace_details, **kwargs):
         """
@@ -18406,6 +19015,8 @@ class DataIntegrationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_workspace.py.html>`__ to see an example of how to use update_workspace API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workspaceId']
         resource_path = "/workspaces/{workspaceId}"
         method = "PUT"
         operation_name = "update_workspace"
@@ -18460,7 +19071,8 @@ class DataIntegrationClient(object):
                 response_type="Workspace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18471,4 +19083,5 @@ class DataIntegrationClient(object):
                 response_type="Workspace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

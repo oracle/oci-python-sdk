@@ -65,6 +65,9 @@ class DataLabelingManagementClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class DataLabelingManagementClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20211001',
             'service_endpoint_template': 'https://datalabeling-cp.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -150,6 +155,8 @@ class DataLabelingManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservice/add_dataset_labels.py.html>`__ to see an example of how to use add_dataset_labels API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['datasetId']
         resource_path = "/datasets/{datasetId}/actions/addLabels"
         method = "POST"
         operation_name = "add_dataset_labels"
@@ -208,7 +215,8 @@ class DataLabelingManagementClient(object):
                 body=add_dataset_labels_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -218,7 +226,8 @@ class DataLabelingManagementClient(object):
                 body=add_dataset_labels_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_dataset_compartment(self, dataset_id, change_dataset_compartment_details, **kwargs):
         """
@@ -259,6 +268,8 @@ class DataLabelingManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservice/change_dataset_compartment.py.html>`__ to see an example of how to use change_dataset_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['datasetId']
         resource_path = "/datasets/{datasetId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_dataset_compartment"
@@ -314,7 +325,8 @@ class DataLabelingManagementClient(object):
                 body=change_dataset_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -324,7 +336,8 @@ class DataLabelingManagementClient(object):
                 body=change_dataset_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_dataset(self, create_dataset_details, **kwargs):
         """
@@ -362,6 +375,8 @@ class DataLabelingManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservice/create_dataset.py.html>`__ to see an example of how to use create_dataset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/datasets"
         method = "POST"
         operation_name = "create_dataset"
@@ -408,7 +423,8 @@ class DataLabelingManagementClient(object):
                 response_type="Dataset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -418,7 +434,8 @@ class DataLabelingManagementClient(object):
                 response_type="Dataset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_dataset(self, dataset_id, **kwargs):
         """
@@ -456,6 +473,8 @@ class DataLabelingManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservice/delete_dataset.py.html>`__ to see an example of how to use delete_dataset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['datasetId']
         resource_path = "/datasets/{datasetId}"
         method = "DELETE"
         operation_name = "delete_dataset"
@@ -510,7 +529,8 @@ class DataLabelingManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -519,7 +539,8 @@ class DataLabelingManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def generate_dataset_records(self, dataset_id, generate_dataset_records_details, **kwargs):
         """
@@ -567,6 +588,8 @@ class DataLabelingManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservice/generate_dataset_records.py.html>`__ to see an example of how to use generate_dataset_records API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['datasetId']
         resource_path = "/datasets/{datasetId}/actions/generateDatasetRecords"
         method = "POST"
         operation_name = "generate_dataset_records"
@@ -625,7 +648,8 @@ class DataLabelingManagementClient(object):
                 body=generate_dataset_records_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -635,7 +659,8 @@ class DataLabelingManagementClient(object):
                 body=generate_dataset_records_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_dataset(self, dataset_id, **kwargs):
         """
@@ -666,6 +691,8 @@ class DataLabelingManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservice/get_dataset.py.html>`__ to see an example of how to use get_dataset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['datasetId']
         resource_path = "/datasets/{datasetId}"
         method = "GET"
         operation_name = "get_dataset"
@@ -719,7 +746,8 @@ class DataLabelingManagementClient(object):
                 response_type="Dataset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -729,7 +757,8 @@ class DataLabelingManagementClient(object):
                 response_type="Dataset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -760,6 +789,8 @@ class DataLabelingManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservice/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -813,7 +844,8 @@ class DataLabelingManagementClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -823,7 +855,8 @@ class DataLabelingManagementClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_annotation_formats(self, compartment_id, **kwargs):
         """
@@ -865,6 +898,8 @@ class DataLabelingManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservice/list_annotation_formats.py.html>`__ to see an example of how to use list_annotation_formats API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/annotationFormats"
         method = "GET"
         operation_name = "list_annotation_formats"
@@ -926,7 +961,8 @@ class DataLabelingManagementClient(object):
                 response_type="AnnotationFormatCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -936,7 +972,8 @@ class DataLabelingManagementClient(object):
                 response_type="AnnotationFormatCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_datasets(self, compartment_id, **kwargs):
         """
@@ -997,6 +1034,8 @@ class DataLabelingManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservice/list_datasets.py.html>`__ to see an example of how to use list_datasets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/datasets"
         method = "GET"
         operation_name = "list_datasets"
@@ -1082,7 +1121,8 @@ class DataLabelingManagementClient(object):
                 response_type="DatasetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1092,7 +1132,8 @@ class DataLabelingManagementClient(object):
                 response_type="DatasetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1129,6 +1170,8 @@ class DataLabelingManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservice/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -1191,7 +1234,8 @@ class DataLabelingManagementClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1202,7 +1246,8 @@ class DataLabelingManagementClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -1239,6 +1284,8 @@ class DataLabelingManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservice/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -1301,7 +1348,8 @@ class DataLabelingManagementClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1312,7 +1360,8 @@ class DataLabelingManagementClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -1352,6 +1401,8 @@ class DataLabelingManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservice/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -1406,7 +1457,8 @@ class DataLabelingManagementClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1416,7 +1468,8 @@ class DataLabelingManagementClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_dataset_labels(self, dataset_id, remove_dataset_labels_details, **kwargs):
         """
@@ -1464,6 +1517,8 @@ class DataLabelingManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservice/remove_dataset_labels.py.html>`__ to see an example of how to use remove_dataset_labels API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['datasetId']
         resource_path = "/datasets/{datasetId}/actions/removeLabels"
         method = "POST"
         operation_name = "remove_dataset_labels"
@@ -1522,7 +1577,8 @@ class DataLabelingManagementClient(object):
                 body=remove_dataset_labels_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1532,7 +1588,8 @@ class DataLabelingManagementClient(object):
                 body=remove_dataset_labels_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def rename_dataset_labels(self, dataset_id, rename_dataset_labels_details, **kwargs):
         """
@@ -1580,6 +1637,8 @@ class DataLabelingManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservice/rename_dataset_labels.py.html>`__ to see an example of how to use rename_dataset_labels API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['datasetId']
         resource_path = "/datasets/{datasetId}/actions/renameLabels"
         method = "POST"
         operation_name = "rename_dataset_labels"
@@ -1638,7 +1697,8 @@ class DataLabelingManagementClient(object):
                 body=rename_dataset_labels_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1648,7 +1708,8 @@ class DataLabelingManagementClient(object):
                 body=rename_dataset_labels_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def snapshot_dataset(self, dataset_id, snapshot_dataset_details, **kwargs):
         """
@@ -1697,6 +1758,8 @@ class DataLabelingManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservice/snapshot_dataset.py.html>`__ to see an example of how to use snapshot_dataset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['datasetId']
         resource_path = "/datasets/{datasetId}/actions/snapshot"
         method = "POST"
         operation_name = "snapshot_dataset"
@@ -1755,7 +1818,8 @@ class DataLabelingManagementClient(object):
                 body=snapshot_dataset_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1765,7 +1829,8 @@ class DataLabelingManagementClient(object):
                 body=snapshot_dataset_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_dataset(self, dataset_id, update_dataset_details, **kwargs):
         """
@@ -1806,6 +1871,8 @@ class DataLabelingManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datalabelingservice/update_dataset.py.html>`__ to see an example of how to use update_dataset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['datasetId']
         resource_path = "/datasets/{datasetId}"
         method = "PUT"
         operation_name = "update_dataset"
@@ -1862,7 +1929,8 @@ class DataLabelingManagementClient(object):
                 response_type="Dataset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1873,4 +1941,5 @@ class DataLabelingManagementClient(object):
                 response_type="Dataset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

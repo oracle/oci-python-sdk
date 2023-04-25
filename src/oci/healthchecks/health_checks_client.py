@@ -67,6 +67,9 @@ class HealthChecksClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -93,8 +96,10 @@ class HealthChecksClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20180501',
             'service_endpoint_template': 'https://healthchecks.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -154,6 +159,8 @@ class HealthChecksClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/healthchecks/change_http_monitor_compartment.py.html>`__ to see an example of how to use change_http_monitor_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['monitorId']
         resource_path = "/httpMonitors/{monitorId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_http_monitor_compartment"
@@ -210,7 +217,8 @@ class HealthChecksClient(object):
                 body=change_http_monitor_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -220,7 +228,8 @@ class HealthChecksClient(object):
                 body=change_http_monitor_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_ping_monitor_compartment(self, monitor_id, change_ping_monitor_compartment_details, **kwargs):
         """
@@ -270,6 +279,8 @@ class HealthChecksClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/healthchecks/change_ping_monitor_compartment.py.html>`__ to see an example of how to use change_ping_monitor_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['monitorId']
         resource_path = "/pingMonitors/{monitorId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_ping_monitor_compartment"
@@ -326,7 +337,8 @@ class HealthChecksClient(object):
                 body=change_ping_monitor_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -336,7 +348,8 @@ class HealthChecksClient(object):
                 body=change_ping_monitor_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_http_monitor(self, create_http_monitor_details, **kwargs):
         """
@@ -378,6 +391,8 @@ class HealthChecksClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/healthchecks/create_http_monitor.py.html>`__ to see an example of how to use create_http_monitor API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/httpMonitors"
         method = "POST"
         operation_name = "create_http_monitor"
@@ -422,7 +437,8 @@ class HealthChecksClient(object):
                 response_type="HttpMonitor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -432,7 +448,8 @@ class HealthChecksClient(object):
                 response_type="HttpMonitor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_on_demand_http_probe(self, create_on_demand_http_probe_details, **kwargs):
         """
@@ -467,6 +484,8 @@ class HealthChecksClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/healthchecks/create_on_demand_http_probe.py.html>`__ to see an example of how to use create_on_demand_http_probe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/httpProbeResults"
         method = "POST"
         operation_name = "create_on_demand_http_probe"
@@ -508,7 +527,8 @@ class HealthChecksClient(object):
                 response_type="HttpProbe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -518,7 +538,8 @@ class HealthChecksClient(object):
                 response_type="HttpProbe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_on_demand_ping_probe(self, create_on_demand_ping_probe_details, **kwargs):
         """
@@ -553,6 +574,8 @@ class HealthChecksClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/healthchecks/create_on_demand_ping_probe.py.html>`__ to see an example of how to use create_on_demand_ping_probe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/pingProbeResults"
         method = "POST"
         operation_name = "create_on_demand_ping_probe"
@@ -594,7 +617,8 @@ class HealthChecksClient(object):
                 response_type="PingProbe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -604,7 +628,8 @@ class HealthChecksClient(object):
                 response_type="PingProbe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_ping_monitor(self, create_ping_monitor_details, **kwargs):
         """
@@ -646,6 +671,8 @@ class HealthChecksClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/healthchecks/create_ping_monitor.py.html>`__ to see an example of how to use create_ping_monitor API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/pingMonitors"
         method = "POST"
         operation_name = "create_ping_monitor"
@@ -690,7 +717,8 @@ class HealthChecksClient(object):
                 response_type="PingMonitor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -700,7 +728,8 @@ class HealthChecksClient(object):
                 response_type="PingMonitor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_http_monitor(self, monitor_id, **kwargs):
         """
@@ -739,6 +768,8 @@ class HealthChecksClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/healthchecks/delete_http_monitor.py.html>`__ to see an example of how to use delete_http_monitor API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['monitorId']
         resource_path = "/httpMonitors/{monitorId}"
         method = "DELETE"
         operation_name = "delete_http_monitor"
@@ -791,7 +822,8 @@ class HealthChecksClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -800,7 +832,8 @@ class HealthChecksClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_ping_monitor(self, monitor_id, **kwargs):
         """
@@ -839,6 +872,8 @@ class HealthChecksClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/healthchecks/delete_ping_monitor.py.html>`__ to see an example of how to use delete_ping_monitor API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['monitorId']
         resource_path = "/pingMonitors/{monitorId}"
         method = "DELETE"
         operation_name = "delete_ping_monitor"
@@ -891,7 +926,8 @@ class HealthChecksClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -900,7 +936,8 @@ class HealthChecksClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_http_monitor(self, monitor_id, **kwargs):
         """
@@ -938,6 +975,8 @@ class HealthChecksClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/healthchecks/get_http_monitor.py.html>`__ to see an example of how to use get_http_monitor API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['monitorId']
         resource_path = "/httpMonitors/{monitorId}"
         method = "GET"
         operation_name = "get_http_monitor"
@@ -991,7 +1030,8 @@ class HealthChecksClient(object):
                 response_type="HttpMonitor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1001,7 +1041,8 @@ class HealthChecksClient(object):
                 response_type="HttpMonitor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_ping_monitor(self, monitor_id, **kwargs):
         """
@@ -1039,6 +1080,8 @@ class HealthChecksClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/healthchecks/get_ping_monitor.py.html>`__ to see an example of how to use get_ping_monitor API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['monitorId']
         resource_path = "/pingMonitors/{monitorId}"
         method = "GET"
         operation_name = "get_ping_monitor"
@@ -1092,7 +1135,8 @@ class HealthChecksClient(object):
                 response_type="PingMonitor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1102,7 +1146,8 @@ class HealthChecksClient(object):
                 response_type="PingMonitor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_health_checks_vantage_points(self, **kwargs):
         """
@@ -1154,6 +1199,8 @@ class HealthChecksClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/healthchecks/list_health_checks_vantage_points.py.html>`__ to see an example of how to use list_health_checks_vantage_points API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/vantagePoints"
         method = "GET"
         operation_name = "list_health_checks_vantage_points"
@@ -1225,7 +1272,8 @@ class HealthChecksClient(object):
                 response_type="list[HealthChecksVantagePointSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1235,7 +1283,8 @@ class HealthChecksClient(object):
                 response_type="list[HealthChecksVantagePointSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_http_monitors(self, compartment_id, **kwargs):
         """
@@ -1290,6 +1339,8 @@ class HealthChecksClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/healthchecks/list_http_monitors.py.html>`__ to see an example of how to use list_http_monitors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/httpMonitors"
         method = "GET"
         operation_name = "list_http_monitors"
@@ -1362,7 +1413,8 @@ class HealthChecksClient(object):
                 response_type="list[HttpMonitorSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1372,7 +1424,8 @@ class HealthChecksClient(object):
                 response_type="list[HttpMonitorSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_http_probe_results(self, probe_configuration_id, **kwargs):
         """
@@ -1427,6 +1480,8 @@ class HealthChecksClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/healthchecks/list_http_probe_results.py.html>`__ to see an example of how to use list_http_probe_results API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['probeConfigurationId']
         resource_path = "/httpProbeResults/{probeConfigurationId}"
         method = "GET"
         operation_name = "list_http_probe_results"
@@ -1502,7 +1557,8 @@ class HealthChecksClient(object):
                 response_type="list[HttpProbeResultSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1513,7 +1569,8 @@ class HealthChecksClient(object):
                 response_type="list[HttpProbeResultSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_ping_monitors(self, compartment_id, **kwargs):
         """
@@ -1571,6 +1628,8 @@ class HealthChecksClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/healthchecks/list_ping_monitors.py.html>`__ to see an example of how to use list_ping_monitors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/pingMonitors"
         method = "GET"
         operation_name = "list_ping_monitors"
@@ -1643,7 +1702,8 @@ class HealthChecksClient(object):
                 response_type="list[PingMonitorSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1653,7 +1713,8 @@ class HealthChecksClient(object):
                 response_type="list[PingMonitorSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_ping_probe_results(self, probe_configuration_id, **kwargs):
         """
@@ -1712,6 +1773,8 @@ class HealthChecksClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/healthchecks/list_ping_probe_results.py.html>`__ to see an example of how to use list_ping_probe_results API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['probeConfigurationId']
         resource_path = "/pingProbeResults/{probeConfigurationId}"
         method = "GET"
         operation_name = "list_ping_probe_results"
@@ -1787,7 +1850,8 @@ class HealthChecksClient(object):
                 response_type="list[PingProbeResultSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1798,7 +1862,8 @@ class HealthChecksClient(object):
                 response_type="list[PingProbeResultSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_http_monitor(self, monitor_id, update_http_monitor_details, **kwargs):
         """
@@ -1841,6 +1906,8 @@ class HealthChecksClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/healthchecks/update_http_monitor.py.html>`__ to see an example of how to use update_http_monitor API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['monitorId']
         resource_path = "/httpMonitors/{monitorId}"
         method = "PUT"
         operation_name = "update_http_monitor"
@@ -1895,7 +1962,8 @@ class HealthChecksClient(object):
                 response_type="HttpMonitor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1906,7 +1974,8 @@ class HealthChecksClient(object):
                 response_type="HttpMonitor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_ping_monitor(self, monitor_id, update_ping_monitor_details, **kwargs):
         """
@@ -1949,6 +2018,8 @@ class HealthChecksClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/healthchecks/update_ping_monitor.py.html>`__ to see an example of how to use update_ping_monitor API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['monitorId']
         resource_path = "/pingMonitors/{monitorId}"
         method = "PUT"
         operation_name = "update_ping_monitor"
@@ -2003,7 +2074,8 @@ class HealthChecksClient(object):
                 response_type="PingMonitor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2014,4 +2086,5 @@ class HealthChecksClient(object):
                 response_type="PingMonitor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

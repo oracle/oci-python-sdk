@@ -67,6 +67,9 @@ class AnomalyDetectionClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -93,8 +96,10 @@ class AnomalyDetectionClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20210101',
             'service_endpoint_template': 'https://anomalydetection.aiservice.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -142,6 +147,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
@@ -196,7 +203,8 @@ class AnomalyDetectionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -205,7 +213,8 @@ class AnomalyDetectionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_ai_private_endpoint_compartment(self, ai_private_endpoint_id, change_ai_private_endpoint_compartment_details, **kwargs):
         """
@@ -253,6 +262,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/change_ai_private_endpoint_compartment.py.html>`__ to see an example of how to use change_ai_private_endpoint_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['aiPrivateEndpointId']
         resource_path = "/aiPrivateEndpoints/{aiPrivateEndpointId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_ai_private_endpoint_compartment"
@@ -311,7 +322,8 @@ class AnomalyDetectionClient(object):
                 body=change_ai_private_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -321,7 +333,8 @@ class AnomalyDetectionClient(object):
                 body=change_ai_private_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_data_asset_compartment(self, data_asset_id, change_data_asset_compartment_details, **kwargs):
         """
@@ -369,6 +382,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/change_data_asset_compartment.py.html>`__ to see an example of how to use change_data_asset_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dataAssetId']
         resource_path = "/dataAssets/{dataAssetId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_data_asset_compartment"
@@ -428,7 +443,8 @@ class AnomalyDetectionClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -439,7 +455,8 @@ class AnomalyDetectionClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_detect_anomaly_job_compartment(self, detect_anomaly_job_id, change_detect_anomaly_job_compartment_details, **kwargs):
         """
@@ -480,6 +497,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/change_detect_anomaly_job_compartment.py.html>`__ to see an example of how to use change_detect_anomaly_job_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['detectAnomalyJobId']
         resource_path = "/detectAnomalyJobs/{detectAnomalyJobId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_detect_anomaly_job_compartment"
@@ -535,7 +554,8 @@ class AnomalyDetectionClient(object):
                 body=change_detect_anomaly_job_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -545,7 +565,8 @@ class AnomalyDetectionClient(object):
                 body=change_detect_anomaly_job_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_model_compartment(self, model_id, change_model_compartment_details, **kwargs):
         """
@@ -593,6 +614,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/change_model_compartment.py.html>`__ to see an example of how to use change_model_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['modelId']
         resource_path = "/models/{modelId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_model_compartment"
@@ -651,7 +674,8 @@ class AnomalyDetectionClient(object):
                 body=change_model_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -661,7 +685,8 @@ class AnomalyDetectionClient(object):
                 body=change_model_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_project_compartment(self, project_id, change_project_compartment_details, **kwargs):
         """
@@ -709,6 +734,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/change_project_compartment.py.html>`__ to see an example of how to use change_project_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['projectId']
         resource_path = "/projects/{projectId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_project_compartment"
@@ -767,7 +794,8 @@ class AnomalyDetectionClient(object):
                 body=change_project_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -777,7 +805,8 @@ class AnomalyDetectionClient(object):
                 body=change_project_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_ai_private_endpoint(self, create_ai_private_endpoint_details, **kwargs):
         """
@@ -815,6 +844,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/create_ai_private_endpoint.py.html>`__ to see an example of how to use create_ai_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/aiPrivateEndpoints"
         method = "POST"
         operation_name = "create_ai_private_endpoint"
@@ -860,7 +891,8 @@ class AnomalyDetectionClient(object):
                 body=create_ai_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -869,7 +901,8 @@ class AnomalyDetectionClient(object):
                 body=create_ai_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_data_asset(self, create_data_asset_details, **kwargs):
         """
@@ -907,6 +940,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/create_data_asset.py.html>`__ to see an example of how to use create_data_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/dataAssets"
         method = "POST"
         operation_name = "create_data_asset"
@@ -953,7 +988,8 @@ class AnomalyDetectionClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -963,7 +999,8 @@ class AnomalyDetectionClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_detect_anomaly_job(self, create_detect_anomaly_job_details, **kwargs):
         """
@@ -1009,6 +1046,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/create_detect_anomaly_job.py.html>`__ to see an example of how to use create_detect_anomaly_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/detectAnomalyJobs"
         method = "POST"
         operation_name = "create_detect_anomaly_job"
@@ -1055,7 +1094,8 @@ class AnomalyDetectionClient(object):
                 response_type="DetectAnomalyJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1065,7 +1105,8 @@ class AnomalyDetectionClient(object):
                 response_type="DetectAnomalyJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_model(self, create_model_details, **kwargs):
         """
@@ -1103,6 +1144,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/create_model.py.html>`__ to see an example of how to use create_model API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/models"
         method = "POST"
         operation_name = "create_model"
@@ -1149,7 +1192,8 @@ class AnomalyDetectionClient(object):
                 response_type="Model",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1159,7 +1203,8 @@ class AnomalyDetectionClient(object):
                 response_type="Model",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_project(self, create_project_details, **kwargs):
         """
@@ -1197,6 +1242,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/create_project.py.html>`__ to see an example of how to use create_project API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/projects"
         method = "POST"
         operation_name = "create_project"
@@ -1243,7 +1290,8 @@ class AnomalyDetectionClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1253,7 +1301,8 @@ class AnomalyDetectionClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_ai_private_endpoint(self, ai_private_endpoint_id, **kwargs):
         """
@@ -1291,6 +1340,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/delete_ai_private_endpoint.py.html>`__ to see an example of how to use delete_ai_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['aiPrivateEndpointId']
         resource_path = "/aiPrivateEndpoints/{aiPrivateEndpointId}"
         method = "DELETE"
         operation_name = "delete_ai_private_endpoint"
@@ -1345,7 +1396,8 @@ class AnomalyDetectionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1354,7 +1406,8 @@ class AnomalyDetectionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_data_asset(self, data_asset_id, **kwargs):
         """
@@ -1392,6 +1445,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/delete_data_asset.py.html>`__ to see an example of how to use delete_data_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dataAssetId']
         resource_path = "/dataAssets/{dataAssetId}"
         method = "DELETE"
         operation_name = "delete_data_asset"
@@ -1446,7 +1501,8 @@ class AnomalyDetectionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1455,7 +1511,8 @@ class AnomalyDetectionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_detect_anomaly_job(self, detect_anomaly_job_id, **kwargs):
         """
@@ -1493,6 +1550,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/delete_detect_anomaly_job.py.html>`__ to see an example of how to use delete_detect_anomaly_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['detectAnomalyJobId']
         resource_path = "/detectAnomalyJobs/{detectAnomalyJobId}"
         method = "DELETE"
         operation_name = "delete_detect_anomaly_job"
@@ -1547,7 +1606,8 @@ class AnomalyDetectionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1556,7 +1616,8 @@ class AnomalyDetectionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_model(self, model_id, **kwargs):
         """
@@ -1594,6 +1655,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/delete_model.py.html>`__ to see an example of how to use delete_model API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['modelId']
         resource_path = "/models/{modelId}"
         method = "DELETE"
         operation_name = "delete_model"
@@ -1648,7 +1711,8 @@ class AnomalyDetectionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1657,7 +1721,8 @@ class AnomalyDetectionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_project(self, project_id, **kwargs):
         """
@@ -1695,6 +1760,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/delete_project.py.html>`__ to see an example of how to use delete_project API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['projectId']
         resource_path = "/projects/{projectId}"
         method = "DELETE"
         operation_name = "delete_project"
@@ -1749,7 +1816,8 @@ class AnomalyDetectionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1758,7 +1826,8 @@ class AnomalyDetectionClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def detect_anomalies(self, detect_anomalies_details, **kwargs):
         """
@@ -1811,6 +1880,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/detect_anomalies.py.html>`__ to see an example of how to use detect_anomalies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/actions/detectAnomalies"
         method = "POST"
         operation_name = "detect_anomalies"
@@ -1859,7 +1930,8 @@ class AnomalyDetectionClient(object):
                 response_type="AnomalyDetectResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1869,7 +1941,8 @@ class AnomalyDetectionClient(object):
                 response_type="AnomalyDetectResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_ai_private_endpoint(self, ai_private_endpoint_id, **kwargs):
         """
@@ -1900,6 +1973,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/get_ai_private_endpoint.py.html>`__ to see an example of how to use get_ai_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['aiPrivateEndpointId']
         resource_path = "/aiPrivateEndpoints/{aiPrivateEndpointId}"
         method = "GET"
         operation_name = "get_ai_private_endpoint"
@@ -1953,7 +2028,8 @@ class AnomalyDetectionClient(object):
                 response_type="AiPrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1963,7 +2039,8 @@ class AnomalyDetectionClient(object):
                 response_type="AiPrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_data_asset(self, data_asset_id, **kwargs):
         """
@@ -1994,6 +2071,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/get_data_asset.py.html>`__ to see an example of how to use get_data_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dataAssetId']
         resource_path = "/dataAssets/{dataAssetId}"
         method = "GET"
         operation_name = "get_data_asset"
@@ -2047,7 +2126,8 @@ class AnomalyDetectionClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2057,7 +2137,8 @@ class AnomalyDetectionClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_detect_anomaly_job(self, detect_anomaly_job_id, **kwargs):
         """
@@ -2088,6 +2169,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/get_detect_anomaly_job.py.html>`__ to see an example of how to use get_detect_anomaly_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['detectAnomalyJobId']
         resource_path = "/detectAnomalyJobs/{detectAnomalyJobId}"
         method = "GET"
         operation_name = "get_detect_anomaly_job"
@@ -2141,7 +2224,8 @@ class AnomalyDetectionClient(object):
                 response_type="DetectAnomalyJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2151,7 +2235,8 @@ class AnomalyDetectionClient(object):
                 response_type="DetectAnomalyJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_model(self, model_id, **kwargs):
         """
@@ -2182,6 +2267,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/get_model.py.html>`__ to see an example of how to use get_model API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['modelId']
         resource_path = "/models/{modelId}"
         method = "GET"
         operation_name = "get_model"
@@ -2235,7 +2322,8 @@ class AnomalyDetectionClient(object):
                 response_type="Model",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2245,7 +2333,8 @@ class AnomalyDetectionClient(object):
                 response_type="Model",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_project(self, project_id, **kwargs):
         """
@@ -2276,6 +2365,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/get_project.py.html>`__ to see an example of how to use get_project API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['projectId']
         resource_path = "/projects/{projectId}"
         method = "GET"
         operation_name = "get_project"
@@ -2329,7 +2420,8 @@ class AnomalyDetectionClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2339,7 +2431,8 @@ class AnomalyDetectionClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -2370,6 +2463,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -2423,7 +2518,8 @@ class AnomalyDetectionClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2433,7 +2529,8 @@ class AnomalyDetectionClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_ai_private_endpoints(self, compartment_id, **kwargs):
         """
@@ -2492,6 +2589,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/list_ai_private_endpoints.py.html>`__ to see an example of how to use list_ai_private_endpoints API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/aiPrivateEndpoints"
         method = "GET"
         operation_name = "list_ai_private_endpoints"
@@ -2575,7 +2674,8 @@ class AnomalyDetectionClient(object):
                 response_type="AiPrivateEndpointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2585,7 +2685,8 @@ class AnomalyDetectionClient(object):
                 response_type="AiPrivateEndpointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_data_assets(self, compartment_id, **kwargs):
         """
@@ -2644,6 +2745,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/list_data_assets.py.html>`__ to see an example of how to use list_data_assets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/dataAssets"
         method = "GET"
         operation_name = "list_data_assets"
@@ -2727,7 +2830,8 @@ class AnomalyDetectionClient(object):
                 response_type="DataAssetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2737,7 +2841,8 @@ class AnomalyDetectionClient(object):
                 response_type="DataAssetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_detect_anomaly_jobs(self, compartment_id, **kwargs):
         """
@@ -2802,6 +2907,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/list_detect_anomaly_jobs.py.html>`__ to see an example of how to use list_detect_anomaly_jobs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/detectAnomalyJobs"
         method = "GET"
         operation_name = "list_detect_anomaly_jobs"
@@ -2889,7 +2996,8 @@ class AnomalyDetectionClient(object):
                 response_type="DetectAnomalyJobCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2899,7 +3007,8 @@ class AnomalyDetectionClient(object):
                 response_type="DetectAnomalyJobCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_models(self, compartment_id, **kwargs):
         """
@@ -2961,6 +3070,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/list_models.py.html>`__ to see an example of how to use list_models API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/models"
         method = "GET"
         operation_name = "list_models"
@@ -3044,7 +3155,8 @@ class AnomalyDetectionClient(object):
                 response_type="ModelCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3054,7 +3166,8 @@ class AnomalyDetectionClient(object):
                 response_type="ModelCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_projects(self, compartment_id, **kwargs):
         """
@@ -3113,6 +3226,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/list_projects.py.html>`__ to see an example of how to use list_projects API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/projects"
         method = "GET"
         operation_name = "list_projects"
@@ -3194,7 +3309,8 @@ class AnomalyDetectionClient(object):
                 response_type="ProjectCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3204,7 +3320,8 @@ class AnomalyDetectionClient(object):
                 response_type="ProjectCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -3241,6 +3358,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -3303,7 +3422,8 @@ class AnomalyDetectionClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3314,7 +3434,8 @@ class AnomalyDetectionClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -3351,6 +3472,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -3413,7 +3536,8 @@ class AnomalyDetectionClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3424,7 +3548,8 @@ class AnomalyDetectionClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -3464,6 +3589,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -3518,7 +3645,8 @@ class AnomalyDetectionClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3528,7 +3656,8 @@ class AnomalyDetectionClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_ai_private_endpoint(self, ai_private_endpoint_id, update_ai_private_endpoint_details, **kwargs):
         """
@@ -3569,6 +3698,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/update_ai_private_endpoint.py.html>`__ to see an example of how to use update_ai_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['aiPrivateEndpointId']
         resource_path = "/aiPrivateEndpoints/{aiPrivateEndpointId}"
         method = "PUT"
         operation_name = "update_ai_private_endpoint"
@@ -3624,7 +3755,8 @@ class AnomalyDetectionClient(object):
                 body=update_ai_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3634,7 +3766,8 @@ class AnomalyDetectionClient(object):
                 body=update_ai_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_data_asset(self, data_asset_id, update_data_asset_details, **kwargs):
         """
@@ -3675,6 +3808,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/update_data_asset.py.html>`__ to see an example of how to use update_data_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dataAssetId']
         resource_path = "/dataAssets/{dataAssetId}"
         method = "PUT"
         operation_name = "update_data_asset"
@@ -3731,7 +3866,8 @@ class AnomalyDetectionClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3742,7 +3878,8 @@ class AnomalyDetectionClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_detect_anomaly_job(self, detect_anomaly_job_id, update_detect_anomaly_job_details, **kwargs):
         """
@@ -3783,6 +3920,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/update_detect_anomaly_job.py.html>`__ to see an example of how to use update_detect_anomaly_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['detectAnomalyJobId']
         resource_path = "/detectAnomalyJobs/{detectAnomalyJobId}"
         method = "PUT"
         operation_name = "update_detect_anomaly_job"
@@ -3839,7 +3978,8 @@ class AnomalyDetectionClient(object):
                 response_type="DetectAnomalyJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3850,7 +3990,8 @@ class AnomalyDetectionClient(object):
                 response_type="DetectAnomalyJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_model(self, model_id, update_model_details, **kwargs):
         """
@@ -3891,6 +4032,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/update_model.py.html>`__ to see an example of how to use update_model API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['modelId']
         resource_path = "/models/{modelId}"
         method = "PUT"
         operation_name = "update_model"
@@ -3946,7 +4089,8 @@ class AnomalyDetectionClient(object):
                 body=update_model_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3956,7 +4100,8 @@ class AnomalyDetectionClient(object):
                 body=update_model_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_project(self, project_id, update_project_details, **kwargs):
         """
@@ -3997,6 +4142,8 @@ class AnomalyDetectionClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aianomalydetection/update_project.py.html>`__ to see an example of how to use update_project API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['projectId']
         resource_path = "/projects/{projectId}"
         method = "PUT"
         operation_name = "update_project"
@@ -4053,7 +4200,8 @@ class AnomalyDetectionClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4064,4 +4212,5 @@ class AnomalyDetectionClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

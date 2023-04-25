@@ -65,6 +65,9 @@ class DiscoveryClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class DiscoveryClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20220509',
             'service_endpoint_template': 'https://cloudbridge.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -152,6 +157,8 @@ class DiscoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/change_asset_source_compartment.py.html>`__ to see an example of how to use change_asset_source_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['assetSourceId']
         resource_path = "/assetSources/{assetSourceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_asset_source_compartment"
@@ -210,7 +217,8 @@ class DiscoveryClient(object):
                 body=change_asset_source_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -220,7 +228,8 @@ class DiscoveryClient(object):
                 body=change_asset_source_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_discovery_schedule_compartment(self, discovery_schedule_id, change_discovery_schedule_compartment_details, **kwargs):
         """
@@ -270,6 +279,8 @@ class DiscoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/change_discovery_schedule_compartment.py.html>`__ to see an example of how to use change_discovery_schedule_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['discoveryScheduleId']
         resource_path = "/discoverySchedules/{discoveryScheduleId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_discovery_schedule_compartment"
@@ -328,7 +339,8 @@ class DiscoveryClient(object):
                 body=change_discovery_schedule_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -338,7 +350,8 @@ class DiscoveryClient(object):
                 body=change_discovery_schedule_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_asset_source(self, create_asset_source_details, **kwargs):
         """
@@ -376,6 +389,8 @@ class DiscoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/create_asset_source.py.html>`__ to see an example of how to use create_asset_source API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/assetSources"
         method = "POST"
         operation_name = "create_asset_source"
@@ -422,7 +437,8 @@ class DiscoveryClient(object):
                 response_type="AssetSource",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -432,7 +448,8 @@ class DiscoveryClient(object):
                 response_type="AssetSource",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_discovery_schedule(self, create_discovery_schedule_details, **kwargs):
         """
@@ -470,6 +487,8 @@ class DiscoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/create_discovery_schedule.py.html>`__ to see an example of how to use create_discovery_schedule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/discoverySchedules"
         method = "POST"
         operation_name = "create_discovery_schedule"
@@ -516,7 +535,8 @@ class DiscoveryClient(object):
                 response_type="DiscoverySchedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -526,7 +546,8 @@ class DiscoveryClient(object):
                 response_type="DiscoverySchedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_asset_source(self, asset_source_id, **kwargs):
         """
@@ -566,6 +587,8 @@ class DiscoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/delete_asset_source.py.html>`__ to see an example of how to use delete_asset_source API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['assetSourceId']
         resource_path = "/assetSources/{assetSourceId}"
         method = "DELETE"
         operation_name = "delete_asset_source"
@@ -620,7 +643,8 @@ class DiscoveryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -629,7 +653,8 @@ class DiscoveryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_discovery_schedule(self, discovery_schedule_id, **kwargs):
         """
@@ -669,6 +694,8 @@ class DiscoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/delete_discovery_schedule.py.html>`__ to see an example of how to use delete_discovery_schedule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['discoveryScheduleId']
         resource_path = "/discoverySchedules/{discoveryScheduleId}"
         method = "DELETE"
         operation_name = "delete_discovery_schedule"
@@ -723,7 +750,8 @@ class DiscoveryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -732,7 +760,8 @@ class DiscoveryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_asset_source(self, asset_source_id, **kwargs):
         """
@@ -765,6 +794,8 @@ class DiscoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/get_asset_source.py.html>`__ to see an example of how to use get_asset_source API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['assetSourceId']
         resource_path = "/assetSources/{assetSourceId}"
         method = "GET"
         operation_name = "get_asset_source"
@@ -818,7 +849,8 @@ class DiscoveryClient(object):
                 response_type="AssetSource",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -828,7 +860,8 @@ class DiscoveryClient(object):
                 response_type="AssetSource",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_discovery_schedule(self, discovery_schedule_id, **kwargs):
         """
@@ -861,6 +894,8 @@ class DiscoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/get_discovery_schedule.py.html>`__ to see an example of how to use get_discovery_schedule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['discoveryScheduleId']
         resource_path = "/discoverySchedules/{discoveryScheduleId}"
         method = "GET"
         operation_name = "get_discovery_schedule"
@@ -914,7 +949,8 @@ class DiscoveryClient(object):
                 response_type="DiscoverySchedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -924,7 +960,8 @@ class DiscoveryClient(object):
                 response_type="DiscoverySchedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_asset_source_connections(self, asset_source_id, **kwargs):
         """
@@ -963,6 +1000,8 @@ class DiscoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/list_asset_source_connections.py.html>`__ to see an example of how to use list_asset_source_connections API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['assetSourceId']
         resource_path = "/assetSources/{assetSourceId}/actions/listConnections"
         method = "POST"
         operation_name = "list_asset_source_connections"
@@ -1025,7 +1064,8 @@ class DiscoveryClient(object):
                 response_type="AssetSourceConnectionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1036,7 +1076,8 @@ class DiscoveryClient(object):
                 response_type="AssetSourceConnectionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_asset_sources(self, compartment_id, **kwargs):
         """
@@ -1096,6 +1137,8 @@ class DiscoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/list_asset_sources.py.html>`__ to see an example of how to use list_asset_sources API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/assetSources"
         method = "GET"
         operation_name = "list_asset_sources"
@@ -1179,7 +1222,8 @@ class DiscoveryClient(object):
                 response_type="AssetSourceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1189,7 +1233,8 @@ class DiscoveryClient(object):
                 response_type="AssetSourceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_discovery_schedules(self, compartment_id, **kwargs):
         """
@@ -1249,6 +1294,8 @@ class DiscoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/list_discovery_schedules.py.html>`__ to see an example of how to use list_discovery_schedules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/discoverySchedules"
         method = "GET"
         operation_name = "list_discovery_schedules"
@@ -1332,7 +1379,8 @@ class DiscoveryClient(object):
                 response_type="DiscoveryScheduleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1342,7 +1390,8 @@ class DiscoveryClient(object):
                 response_type="DiscoveryScheduleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def refresh_asset_source(self, asset_source_id, **kwargs):
         """
@@ -1382,6 +1431,8 @@ class DiscoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/refresh_asset_source.py.html>`__ to see an example of how to use refresh_asset_source API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['assetSourceId']
         resource_path = "/assetSources/{assetSourceId}/actions/refresh"
         method = "POST"
         operation_name = "refresh_asset_source"
@@ -1437,7 +1488,8 @@ class DiscoveryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1446,7 +1498,8 @@ class DiscoveryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_asset_source(self, asset_source_id, update_asset_source_details, **kwargs):
         """
@@ -1489,6 +1542,8 @@ class DiscoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/update_asset_source.py.html>`__ to see an example of how to use update_asset_source API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['assetSourceId']
         resource_path = "/assetSources/{assetSourceId}"
         method = "PUT"
         operation_name = "update_asset_source"
@@ -1544,7 +1599,8 @@ class DiscoveryClient(object):
                 body=update_asset_source_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1554,7 +1610,8 @@ class DiscoveryClient(object):
                 body=update_asset_source_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_discovery_schedule(self, update_discovery_schedule_details, discovery_schedule_id, **kwargs):
         """
@@ -1597,6 +1654,8 @@ class DiscoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudbridge/update_discovery_schedule.py.html>`__ to see an example of how to use update_discovery_schedule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['discoveryScheduleId']
         resource_path = "/discoverySchedules/{discoveryScheduleId}"
         method = "PUT"
         operation_name = "update_discovery_schedule"
@@ -1653,7 +1712,8 @@ class DiscoveryClient(object):
                 response_type="DiscoverySchedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1664,4 +1724,5 @@ class DiscoveryClient(object):
                 response_type="DiscoverySchedule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

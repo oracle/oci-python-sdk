@@ -70,6 +70,9 @@ class AutoScalingClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -96,8 +99,10 @@ class AutoScalingClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20181001',
             'service_endpoint_template': 'https://autoscaling.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -161,6 +166,8 @@ class AutoScalingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/change_auto_scaling_configuration_compartment.py.html>`__ to see an example of how to use change_auto_scaling_configuration_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autoScalingConfigurationId']
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_auto_scaling_configuration_compartment"
@@ -217,7 +224,8 @@ class AutoScalingClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -227,7 +235,8 @@ class AutoScalingClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_auto_scaling_configuration(self, create_auto_scaling_configuration_details, **kwargs):
         """
@@ -264,6 +273,8 @@ class AutoScalingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/create_auto_scaling_configuration.py.html>`__ to see an example of how to use create_auto_scaling_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/autoScalingConfigurations"
         method = "POST"
         operation_name = "create_auto_scaling_configuration"
@@ -308,7 +319,8 @@ class AutoScalingClient(object):
                 response_type="AutoScalingConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -318,7 +330,8 @@ class AutoScalingClient(object):
                 response_type="AutoScalingConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_auto_scaling_policy(self, auto_scaling_configuration_id, create_auto_scaling_policy_details, **kwargs):
         """
@@ -368,6 +381,8 @@ class AutoScalingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/create_auto_scaling_policy.py.html>`__ to see an example of how to use create_auto_scaling_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autoScalingConfigurationId']
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}/policies"
         method = "POST"
         operation_name = "create_auto_scaling_policy"
@@ -423,7 +438,8 @@ class AutoScalingClient(object):
                 response_type="AutoScalingPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -434,7 +450,8 @@ class AutoScalingClient(object):
                 response_type="AutoScalingPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_auto_scaling_configuration(self, auto_scaling_configuration_id, **kwargs):
         """
@@ -471,6 +488,8 @@ class AutoScalingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/delete_auto_scaling_configuration.py.html>`__ to see an example of how to use delete_auto_scaling_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autoScalingConfigurationId']
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}"
         method = "DELETE"
         operation_name = "delete_auto_scaling_configuration"
@@ -523,7 +542,8 @@ class AutoScalingClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -532,7 +552,8 @@ class AutoScalingClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_auto_scaling_policy(self, auto_scaling_configuration_id, auto_scaling_policy_id, **kwargs):
         """
@@ -572,6 +593,8 @@ class AutoScalingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/delete_auto_scaling_policy.py.html>`__ to see an example of how to use delete_auto_scaling_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autoScalingConfigurationId', 'autoScalingPolicyId']
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}/policies/{autoScalingPolicyId}"
         method = "DELETE"
         operation_name = "delete_auto_scaling_policy"
@@ -625,7 +648,8 @@ class AutoScalingClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -634,7 +658,8 @@ class AutoScalingClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_auto_scaling_configuration(self, auto_scaling_configuration_id, **kwargs):
         """
@@ -666,6 +691,8 @@ class AutoScalingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/get_auto_scaling_configuration.py.html>`__ to see an example of how to use get_auto_scaling_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autoScalingConfigurationId']
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}"
         method = "GET"
         operation_name = "get_auto_scaling_configuration"
@@ -717,7 +744,8 @@ class AutoScalingClient(object):
                 response_type="AutoScalingConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -727,7 +755,8 @@ class AutoScalingClient(object):
                 response_type="AutoScalingConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_auto_scaling_policy(self, auto_scaling_configuration_id, auto_scaling_policy_id, **kwargs):
         """
@@ -762,6 +791,8 @@ class AutoScalingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/get_auto_scaling_policy.py.html>`__ to see an example of how to use get_auto_scaling_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autoScalingConfigurationId', 'autoScalingPolicyId']
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}/policies/{autoScalingPolicyId}"
         method = "GET"
         operation_name = "get_auto_scaling_policy"
@@ -814,7 +845,8 @@ class AutoScalingClient(object):
                 response_type="AutoScalingPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -824,7 +856,8 @@ class AutoScalingClient(object):
                 response_type="AutoScalingPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_auto_scaling_configurations(self, compartment_id, **kwargs):
         """
@@ -886,6 +919,8 @@ class AutoScalingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/list_auto_scaling_configurations.py.html>`__ to see an example of how to use list_auto_scaling_configurations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/autoScalingConfigurations"
         method = "GET"
         operation_name = "list_auto_scaling_configurations"
@@ -956,7 +991,8 @@ class AutoScalingClient(object):
                 response_type="list[AutoScalingConfigurationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -966,7 +1002,8 @@ class AutoScalingClient(object):
                 response_type="list[AutoScalingConfigurationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_auto_scaling_policies(self, auto_scaling_configuration_id, **kwargs):
         """
@@ -1026,6 +1063,8 @@ class AutoScalingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/list_auto_scaling_policies.py.html>`__ to see an example of how to use list_auto_scaling_policies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autoScalingConfigurationId']
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}/policies"
         method = "GET"
         operation_name = "list_auto_scaling_policies"
@@ -1106,7 +1145,8 @@ class AutoScalingClient(object):
                 response_type="list[AutoScalingPolicySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1117,7 +1157,8 @@ class AutoScalingClient(object):
                 response_type="list[AutoScalingPolicySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_auto_scaling_configuration(self, auto_scaling_configuration_id, update_auto_scaling_configuration_details, **kwargs):
         """
@@ -1165,6 +1206,8 @@ class AutoScalingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/update_auto_scaling_configuration.py.html>`__ to see an example of how to use update_auto_scaling_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autoScalingConfigurationId']
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}"
         method = "PUT"
         operation_name = "update_auto_scaling_configuration"
@@ -1222,7 +1265,8 @@ class AutoScalingClient(object):
                 response_type="AutoScalingConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1233,7 +1277,8 @@ class AutoScalingClient(object):
                 response_type="AutoScalingConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_auto_scaling_policy(self, auto_scaling_configuration_id, auto_scaling_policy_id, update_auto_scaling_policy_details, **kwargs):
         """
@@ -1283,6 +1328,8 @@ class AutoScalingClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/autoscaling/update_auto_scaling_policy.py.html>`__ to see an example of how to use update_auto_scaling_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autoScalingConfigurationId', 'autoScalingPolicyId']
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}/policies/{autoScalingPolicyId}"
         method = "PUT"
         operation_name = "update_auto_scaling_policy"
@@ -1341,7 +1388,8 @@ class AutoScalingClient(object):
                 response_type="AutoScalingPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1352,4 +1400,5 @@ class AutoScalingClient(object):
                 response_type="AutoScalingPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

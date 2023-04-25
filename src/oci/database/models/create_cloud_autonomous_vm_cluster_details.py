@@ -79,6 +79,10 @@ class CreateCloudAutonomousVmClusterDetails(object):
             Allowed values for this property are: "ECPU", "OCPU"
         :type compute_model: str
 
+        :param is_mtls_enabled_vm_cluster:
+            The value to assign to the is_mtls_enabled_vm_cluster property of this CreateCloudAutonomousVmClusterDetails.
+        :type is_mtls_enabled_vm_cluster: bool
+
         :param db_servers:
             The value to assign to the db_servers property of this CreateCloudAutonomousVmClusterDetails.
         :type db_servers: list[str]
@@ -86,6 +90,14 @@ class CreateCloudAutonomousVmClusterDetails(object):
         :param maintenance_window_details:
             The value to assign to the maintenance_window_details property of this CreateCloudAutonomousVmClusterDetails.
         :type maintenance_window_details: oci.database.models.MaintenanceWindow
+
+        :param scan_listener_port_tls:
+            The value to assign to the scan_listener_port_tls property of this CreateCloudAutonomousVmClusterDetails.
+        :type scan_listener_port_tls: int
+
+        :param scan_listener_port_non_tls:
+            The value to assign to the scan_listener_port_non_tls property of this CreateCloudAutonomousVmClusterDetails.
+        :type scan_listener_port_non_tls: int
 
         :param license_model:
             The value to assign to the license_model property of this CreateCloudAutonomousVmClusterDetails.
@@ -117,8 +129,11 @@ class CreateCloudAutonomousVmClusterDetails(object):
             'autonomous_data_storage_size_in_tbs': 'float',
             'cluster_time_zone': 'str',
             'compute_model': 'str',
+            'is_mtls_enabled_vm_cluster': 'bool',
             'db_servers': 'list[str]',
             'maintenance_window_details': 'MaintenanceWindow',
+            'scan_listener_port_tls': 'int',
+            'scan_listener_port_non_tls': 'int',
             'license_model': 'str',
             'nsg_ids': 'list[str]',
             'freeform_tags': 'dict(str, str)',
@@ -137,8 +152,11 @@ class CreateCloudAutonomousVmClusterDetails(object):
             'autonomous_data_storage_size_in_tbs': 'autonomousDataStorageSizeInTBs',
             'cluster_time_zone': 'clusterTimeZone',
             'compute_model': 'computeModel',
+            'is_mtls_enabled_vm_cluster': 'isMtlsEnabledVmCluster',
             'db_servers': 'dbServers',
             'maintenance_window_details': 'maintenanceWindowDetails',
+            'scan_listener_port_tls': 'scanListenerPortTls',
+            'scan_listener_port_non_tls': 'scanListenerPortNonTls',
             'license_model': 'licenseModel',
             'nsg_ids': 'nsgIds',
             'freeform_tags': 'freeformTags',
@@ -156,8 +174,11 @@ class CreateCloudAutonomousVmClusterDetails(object):
         self._autonomous_data_storage_size_in_tbs = None
         self._cluster_time_zone = None
         self._compute_model = None
+        self._is_mtls_enabled_vm_cluster = None
         self._db_servers = None
         self._maintenance_window_details = None
+        self._scan_listener_port_tls = None
+        self._scan_listener_port_non_tls = None
         self._license_model = None
         self._nsg_ids = None
         self._freeform_tags = None
@@ -456,6 +477,30 @@ class CreateCloudAutonomousVmClusterDetails(object):
         self._compute_model = compute_model
 
     @property
+    def is_mtls_enabled_vm_cluster(self):
+        """
+        Gets the is_mtls_enabled_vm_cluster of this CreateCloudAutonomousVmClusterDetails.
+        Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+
+
+        :return: The is_mtls_enabled_vm_cluster of this CreateCloudAutonomousVmClusterDetails.
+        :rtype: bool
+        """
+        return self._is_mtls_enabled_vm_cluster
+
+    @is_mtls_enabled_vm_cluster.setter
+    def is_mtls_enabled_vm_cluster(self, is_mtls_enabled_vm_cluster):
+        """
+        Sets the is_mtls_enabled_vm_cluster of this CreateCloudAutonomousVmClusterDetails.
+        Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+
+
+        :param is_mtls_enabled_vm_cluster: The is_mtls_enabled_vm_cluster of this CreateCloudAutonomousVmClusterDetails.
+        :type: bool
+        """
+        self._is_mtls_enabled_vm_cluster = is_mtls_enabled_vm_cluster
+
+    @property
     def db_servers(self):
         """
         Gets the db_servers of this CreateCloudAutonomousVmClusterDetails.
@@ -498,6 +543,54 @@ class CreateCloudAutonomousVmClusterDetails(object):
         :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window_details = maintenance_window_details
+
+    @property
+    def scan_listener_port_tls(self):
+        """
+        Gets the scan_listener_port_tls of this CreateCloudAutonomousVmClusterDetails.
+        The SCAN Listener TLS port. Default is 2484.
+
+
+        :return: The scan_listener_port_tls of this CreateCloudAutonomousVmClusterDetails.
+        :rtype: int
+        """
+        return self._scan_listener_port_tls
+
+    @scan_listener_port_tls.setter
+    def scan_listener_port_tls(self, scan_listener_port_tls):
+        """
+        Sets the scan_listener_port_tls of this CreateCloudAutonomousVmClusterDetails.
+        The SCAN Listener TLS port. Default is 2484.
+
+
+        :param scan_listener_port_tls: The scan_listener_port_tls of this CreateCloudAutonomousVmClusterDetails.
+        :type: int
+        """
+        self._scan_listener_port_tls = scan_listener_port_tls
+
+    @property
+    def scan_listener_port_non_tls(self):
+        """
+        Gets the scan_listener_port_non_tls of this CreateCloudAutonomousVmClusterDetails.
+        The SCAN Listener Non TLS port. Default is 1521.
+
+
+        :return: The scan_listener_port_non_tls of this CreateCloudAutonomousVmClusterDetails.
+        :rtype: int
+        """
+        return self._scan_listener_port_non_tls
+
+    @scan_listener_port_non_tls.setter
+    def scan_listener_port_non_tls(self, scan_listener_port_non_tls):
+        """
+        Sets the scan_listener_port_non_tls of this CreateCloudAutonomousVmClusterDetails.
+        The SCAN Listener Non TLS port. Default is 1521.
+
+
+        :param scan_listener_port_non_tls: The scan_listener_port_non_tls of this CreateCloudAutonomousVmClusterDetails.
+        :type: int
+        """
+        self._scan_listener_port_non_tls = scan_listener_port_non_tls
 
     @property
     def license_model(self):

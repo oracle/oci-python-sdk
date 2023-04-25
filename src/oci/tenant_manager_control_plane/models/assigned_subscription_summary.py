@@ -92,6 +92,10 @@ class AssignedSubscriptionSummary(object):
             The value to assign to the time_created property of this AssignedSubscriptionSummary.
         :type time_created: datetime
 
+        :param csi_number:
+            The value to assign to the csi_number property of this AssignedSubscriptionSummary.
+        :type csi_number: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -104,7 +108,8 @@ class AssignedSubscriptionSummary(object):
             'start_date': 'datetime',
             'end_date': 'datetime',
             'time_updated': 'datetime',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'csi_number': 'str'
         }
 
         self.attribute_map = {
@@ -118,7 +123,8 @@ class AssignedSubscriptionSummary(object):
             'start_date': 'startDate',
             'end_date': 'endDate',
             'time_updated': 'timeUpdated',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'csi_number': 'csiNumber'
         }
 
         self._id = None
@@ -132,6 +138,7 @@ class AssignedSubscriptionSummary(object):
         self._end_date = None
         self._time_updated = None
         self._time_created = None
+        self._csi_number = None
 
     @property
     def id(self):
@@ -402,6 +409,30 @@ class AssignedSubscriptionSummary(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def csi_number(self):
+        """
+        Gets the csi_number of this AssignedSubscriptionSummary.
+        Customer service identifier for the customer associated with the subscription.
+
+
+        :return: The csi_number of this AssignedSubscriptionSummary.
+        :rtype: str
+        """
+        return self._csi_number
+
+    @csi_number.setter
+    def csi_number(self, csi_number):
+        """
+        Sets the csi_number of this AssignedSubscriptionSummary.
+        Customer service identifier for the customer associated with the subscription.
+
+
+        :param csi_number: The csi_number of this AssignedSubscriptionSummary.
+        :type: str
+        """
+        self._csi_number = csi_number
 
     def __repr__(self):
         return formatted_flat_dict(self)

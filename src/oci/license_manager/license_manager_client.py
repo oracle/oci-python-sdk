@@ -65,6 +65,9 @@ class LicenseManagerClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class LicenseManagerClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20220430',
             'service_endpoint_template': 'https://licensemanager.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -134,6 +139,8 @@ class LicenseManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/licensemanager/bulk_upload_license_records.py.html>`__ to see an example of how to use bulk_upload_license_records API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/licenses/actions/bulkUpload"
         method = "POST"
         operation_name = "bulk_upload_license_records"
@@ -177,7 +184,8 @@ class LicenseManagerClient(object):
                 response_type="BulkUploadResponse",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -187,7 +195,8 @@ class LicenseManagerClient(object):
                 response_type="BulkUploadResponse",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_license_record(self, create_license_record_details, product_license_id, **kwargs):
         """
@@ -228,6 +237,8 @@ class LicenseManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/licensemanager/create_license_record.py.html>`__ to see an example of how to use create_license_record API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['productLicenseId']
         resource_path = "/licenseRecords"
         method = "POST"
         operation_name = "create_license_record"
@@ -280,7 +291,8 @@ class LicenseManagerClient(object):
                 response_type="LicenseRecord",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -291,7 +303,8 @@ class LicenseManagerClient(object):
                 response_type="LicenseRecord",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_product_license(self, create_product_license_details, **kwargs):
         """
@@ -329,6 +342,8 @@ class LicenseManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/licensemanager/create_product_license.py.html>`__ to see an example of how to use create_product_license API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/productLicenses"
         method = "POST"
         operation_name = "create_product_license"
@@ -375,7 +390,8 @@ class LicenseManagerClient(object):
                 response_type="ProductLicense",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -385,7 +401,8 @@ class LicenseManagerClient(object):
                 response_type="ProductLicense",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_license_record(self, license_record_id, **kwargs):
         """
@@ -422,6 +439,8 @@ class LicenseManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/licensemanager/delete_license_record.py.html>`__ to see an example of how to use delete_license_record API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['licenseRecordId']
         resource_path = "/licenseRecords/{licenseRecordId}"
         method = "DELETE"
         operation_name = "delete_license_record"
@@ -476,7 +495,8 @@ class LicenseManagerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -485,7 +505,8 @@ class LicenseManagerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_product_license(self, product_license_id, **kwargs):
         """
@@ -522,6 +543,8 @@ class LicenseManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/licensemanager/delete_product_license.py.html>`__ to see an example of how to use delete_product_license API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['productLicenseId']
         resource_path = "/productLicenses/{productLicenseId}"
         method = "DELETE"
         operation_name = "delete_product_license"
@@ -576,7 +599,8 @@ class LicenseManagerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -585,7 +609,8 @@ class LicenseManagerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_bulk_upload_template(self, **kwargs):
         """
@@ -614,6 +639,8 @@ class LicenseManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/licensemanager/get_bulk_upload_template.py.html>`__ to see an example of how to use get_bulk_upload_template API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/licenses/actions/bulkUploadTemplate"
         method = "GET"
         operation_name = "get_bulk_upload_template"
@@ -656,7 +683,8 @@ class LicenseManagerClient(object):
                 response_type="BulkUploadTemplate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -665,7 +693,8 @@ class LicenseManagerClient(object):
                 response_type="BulkUploadTemplate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_configuration(self, compartment_id, **kwargs):
         """
@@ -699,6 +728,8 @@ class LicenseManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/licensemanager/get_configuration.py.html>`__ to see an example of how to use get_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/configuration"
         method = "GET"
         operation_name = "get_configuration"
@@ -747,7 +778,8 @@ class LicenseManagerClient(object):
                 response_type="Configuration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -757,7 +789,8 @@ class LicenseManagerClient(object):
                 response_type="Configuration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_license_metric(self, compartment_id, **kwargs):
         """
@@ -794,6 +827,8 @@ class LicenseManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/licensemanager/get_license_metric.py.html>`__ to see an example of how to use get_license_metric API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/licenseMetrics"
         method = "GET"
         operation_name = "get_license_metric"
@@ -844,7 +879,8 @@ class LicenseManagerClient(object):
                 response_type="LicenseMetric",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -854,7 +890,8 @@ class LicenseManagerClient(object):
                 response_type="LicenseMetric",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_license_record(self, license_record_id, **kwargs):
         """
@@ -886,6 +923,8 @@ class LicenseManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/licensemanager/get_license_record.py.html>`__ to see an example of how to use get_license_record API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['licenseRecordId']
         resource_path = "/licenseRecords/{licenseRecordId}"
         method = "GET"
         operation_name = "get_license_record"
@@ -939,7 +978,8 @@ class LicenseManagerClient(object):
                 response_type="LicenseRecord",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -949,7 +989,8 @@ class LicenseManagerClient(object):
                 response_type="LicenseRecord",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_product_license(self, product_license_id, **kwargs):
         """
@@ -981,6 +1022,8 @@ class LicenseManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/licensemanager/get_product_license.py.html>`__ to see an example of how to use get_product_license API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['productLicenseId']
         resource_path = "/productLicenses/{productLicenseId}"
         method = "GET"
         operation_name = "get_product_license"
@@ -1034,7 +1077,8 @@ class LicenseManagerClient(object):
                 response_type="ProductLicense",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1044,7 +1088,8 @@ class LicenseManagerClient(object):
                 response_type="ProductLicense",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_license_records(self, product_license_id, **kwargs):
         """
@@ -1096,6 +1141,8 @@ class LicenseManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/licensemanager/list_license_records.py.html>`__ to see an example of how to use list_license_records API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['productLicenseId']
         resource_path = "/licenseRecords"
         method = "GET"
         operation_name = "list_license_records"
@@ -1166,7 +1213,8 @@ class LicenseManagerClient(object):
                 response_type="LicenseRecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1176,7 +1224,8 @@ class LicenseManagerClient(object):
                 response_type="LicenseRecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_product_license_consumers(self, product_license_id, compartment_id, **kwargs):
         """
@@ -1236,6 +1285,8 @@ class LicenseManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/licensemanager/list_product_license_consumers.py.html>`__ to see an example of how to use list_product_license_consumers API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['productLicenseId', 'compartmentId']
         resource_path = "/productLicenseConsumers"
         method = "GET"
         operation_name = "list_product_license_consumers"
@@ -1309,7 +1360,8 @@ class LicenseManagerClient(object):
                 response_type="ProductLicenseConsumerCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1319,7 +1371,8 @@ class LicenseManagerClient(object):
                 response_type="ProductLicenseConsumerCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_product_licenses(self, compartment_id, **kwargs):
         """
@@ -1376,6 +1429,8 @@ class LicenseManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/licensemanager/list_product_licenses.py.html>`__ to see an example of how to use list_product_licenses API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/productLicenses"
         method = "GET"
         operation_name = "list_product_licenses"
@@ -1448,7 +1503,8 @@ class LicenseManagerClient(object):
                 response_type="ProductLicenseCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1458,7 +1514,8 @@ class LicenseManagerClient(object):
                 response_type="ProductLicenseCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_top_utilized_product_licenses(self, compartment_id, **kwargs):
         """
@@ -1515,6 +1572,8 @@ class LicenseManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/licensemanager/list_top_utilized_product_licenses.py.html>`__ to see an example of how to use list_top_utilized_product_licenses API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/topUtilizedProductLicenses"
         method = "GET"
         operation_name = "list_top_utilized_product_licenses"
@@ -1587,7 +1646,8 @@ class LicenseManagerClient(object):
                 response_type="TopUtilizedProductLicenseCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1597,7 +1657,8 @@ class LicenseManagerClient(object):
                 response_type="TopUtilizedProductLicenseCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_top_utilized_resources(self, compartment_id, **kwargs):
         """
@@ -1659,6 +1720,8 @@ class LicenseManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/licensemanager/list_top_utilized_resources.py.html>`__ to see an example of how to use list_top_utilized_resources API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/topUtilizedResources"
         method = "GET"
         operation_name = "list_top_utilized_resources"
@@ -1740,7 +1803,8 @@ class LicenseManagerClient(object):
                 response_type="TopUtilizedResourceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1750,7 +1814,8 @@ class LicenseManagerClient(object):
                 response_type="TopUtilizedResourceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_configuration(self, compartment_id, update_configuration_details, **kwargs):
         """
@@ -1792,6 +1857,8 @@ class LicenseManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/licensemanager/update_configuration.py.html>`__ to see an example of how to use update_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/configuration"
         method = "PUT"
         operation_name = "update_configuration"
@@ -1843,7 +1910,8 @@ class LicenseManagerClient(object):
                 response_type="Configuration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1854,7 +1922,8 @@ class LicenseManagerClient(object):
                 response_type="Configuration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_license_record(self, license_record_id, update_license_record_details, **kwargs):
         """
@@ -1894,6 +1963,8 @@ class LicenseManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/licensemanager/update_license_record.py.html>`__ to see an example of how to use update_license_record API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['licenseRecordId']
         resource_path = "/licenseRecords/{licenseRecordId}"
         method = "PUT"
         operation_name = "update_license_record"
@@ -1950,7 +2021,8 @@ class LicenseManagerClient(object):
                 response_type="LicenseRecord",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1961,7 +2033,8 @@ class LicenseManagerClient(object):
                 response_type="LicenseRecord",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_product_license(self, product_license_id, update_product_license_details, **kwargs):
         """
@@ -2001,6 +2074,8 @@ class LicenseManagerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/licensemanager/update_product_license.py.html>`__ to see an example of how to use update_product_license API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['productLicenseId']
         resource_path = "/productLicenses/{productLicenseId}"
         method = "PUT"
         operation_name = "update_product_license"
@@ -2057,7 +2132,8 @@ class LicenseManagerClient(object):
                 response_type="ProductLicense",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2068,4 +2144,5 @@ class LicenseManagerClient(object):
                 response_type="ProductLicense",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

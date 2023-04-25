@@ -65,6 +65,9 @@ class WaasClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class WaasClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20181116',
             'service_endpoint_template': 'https://waas.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -144,6 +149,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/accept_recommendations.py.html>`__ to see an example of how to use accept_recommendations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/actions/acceptWafConfigRecommendations"
         method = "POST"
         operation_name = "accept_recommendations"
@@ -197,7 +204,8 @@ class WaasClient(object):
                 body=protection_rule_keys,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -207,7 +215,8 @@ class WaasClient(object):
                 body=protection_rule_keys,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_work_request(self, work_request_id, **kwargs):
         """
@@ -247,6 +256,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
@@ -302,7 +313,8 @@ class WaasClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -311,7 +323,8 @@ class WaasClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_address_list_compartment(self, address_list_id, change_address_list_compartment_details, **kwargs):
         """
@@ -357,6 +370,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/change_address_list_compartment.py.html>`__ to see an example of how to use change_address_list_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['addressListId']
         resource_path = "/addressLists/{addressListId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_address_list_compartment"
@@ -413,7 +428,8 @@ class WaasClient(object):
                 body=change_address_list_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -423,7 +439,8 @@ class WaasClient(object):
                 body=change_address_list_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_certificate_compartment(self, certificate_id, change_certificate_compartment_details, **kwargs):
         """
@@ -468,6 +485,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/change_certificate_compartment.py.html>`__ to see an example of how to use change_certificate_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateId']
         resource_path = "/certificates/{certificateId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_certificate_compartment"
@@ -524,7 +543,8 @@ class WaasClient(object):
                 body=change_certificate_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -534,7 +554,8 @@ class WaasClient(object):
                 body=change_certificate_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_custom_protection_rule_compartment(self, custom_protection_rule_id, change_custom_protection_rule_compartment_details, **kwargs):
         """
@@ -578,6 +599,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/change_custom_protection_rule_compartment.py.html>`__ to see an example of how to use change_custom_protection_rule_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['customProtectionRuleId']
         resource_path = "/customProtectionRules/{customProtectionRuleId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_custom_protection_rule_compartment"
@@ -634,7 +657,8 @@ class WaasClient(object):
                 body=change_custom_protection_rule_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -644,7 +668,8 @@ class WaasClient(object):
                 body=change_custom_protection_rule_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_waas_policy_compartment(self, waas_policy_id, change_waas_policy_compartment_details, **kwargs):
         """
@@ -689,6 +714,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/change_waas_policy_compartment.py.html>`__ to see an example of how to use change_waas_policy_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_waas_policy_compartment"
@@ -745,7 +772,8 @@ class WaasClient(object):
                 body=change_waas_policy_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -755,7 +783,8 @@ class WaasClient(object):
                 body=change_waas_policy_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_address_list(self, create_address_list_details, **kwargs):
         """
@@ -790,6 +819,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/create_address_list.py.html>`__ to see an example of how to use create_address_list API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/addressLists"
         method = "POST"
         operation_name = "create_address_list"
@@ -834,7 +865,8 @@ class WaasClient(object):
                 response_type="AddressList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -844,7 +876,8 @@ class WaasClient(object):
                 response_type="AddressList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_certificate(self, create_certificate_details, **kwargs):
         """
@@ -883,6 +916,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/create_certificate.py.html>`__ to see an example of how to use create_certificate API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/certificates"
         method = "POST"
         operation_name = "create_certificate"
@@ -927,7 +962,8 @@ class WaasClient(object):
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -937,7 +973,8 @@ class WaasClient(object):
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_custom_protection_rule(self, create_custom_protection_rule_details, **kwargs):
         """
@@ -977,6 +1014,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/create_custom_protection_rule.py.html>`__ to see an example of how to use create_custom_protection_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/customProtectionRules"
         method = "POST"
         operation_name = "create_custom_protection_rule"
@@ -1021,7 +1060,8 @@ class WaasClient(object):
                 response_type="CustomProtectionRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1031,7 +1071,8 @@ class WaasClient(object):
                 response_type="CustomProtectionRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_waas_policy(self, create_waas_policy_details, **kwargs):
         """
@@ -1081,6 +1122,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/create_waas_policy.py.html>`__ to see an example of how to use create_waas_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/waasPolicies"
         method = "POST"
         operation_name = "create_waas_policy"
@@ -1124,7 +1167,8 @@ class WaasClient(object):
                 body=create_waas_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1133,7 +1177,8 @@ class WaasClient(object):
                 body=create_waas_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_address_list(self, address_list_id, **kwargs):
         """
@@ -1173,6 +1218,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/delete_address_list.py.html>`__ to see an example of how to use delete_address_list API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['addressListId']
         resource_path = "/addressLists/{addressListId}"
         method = "DELETE"
         operation_name = "delete_address_list"
@@ -1228,7 +1275,8 @@ class WaasClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1237,7 +1285,8 @@ class WaasClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_certificate(self, certificate_id, **kwargs):
         """
@@ -1277,6 +1326,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/delete_certificate.py.html>`__ to see an example of how to use delete_certificate API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateId']
         resource_path = "/certificates/{certificateId}"
         method = "DELETE"
         operation_name = "delete_certificate"
@@ -1332,7 +1383,8 @@ class WaasClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1341,7 +1393,8 @@ class WaasClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_custom_protection_rule(self, custom_protection_rule_id, **kwargs):
         """
@@ -1381,6 +1434,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/delete_custom_protection_rule.py.html>`__ to see an example of how to use delete_custom_protection_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['customProtectionRuleId']
         resource_path = "/customProtectionRules/{customProtectionRuleId}"
         method = "DELETE"
         operation_name = "delete_custom_protection_rule"
@@ -1436,7 +1491,8 @@ class WaasClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1445,7 +1501,8 @@ class WaasClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_waas_policy(self, waas_policy_id, **kwargs):
         """
@@ -1485,6 +1542,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/delete_waas_policy.py.html>`__ to see an example of how to use delete_waas_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}"
         method = "DELETE"
         operation_name = "delete_waas_policy"
@@ -1540,7 +1599,8 @@ class WaasClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1549,7 +1609,8 @@ class WaasClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_address_list(self, address_list_id, **kwargs):
         """
@@ -1582,6 +1643,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_address_list.py.html>`__ to see an example of how to use get_address_list API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['addressListId']
         resource_path = "/addressLists/{addressListId}"
         method = "GET"
         operation_name = "get_address_list"
@@ -1635,7 +1698,8 @@ class WaasClient(object):
                 response_type="AddressList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1645,7 +1709,8 @@ class WaasClient(object):
                 response_type="AddressList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_certificate(self, certificate_id, **kwargs):
         """
@@ -1678,6 +1743,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_certificate.py.html>`__ to see an example of how to use get_certificate API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateId']
         resource_path = "/certificates/{certificateId}"
         method = "GET"
         operation_name = "get_certificate"
@@ -1731,7 +1798,8 @@ class WaasClient(object):
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1741,7 +1809,8 @@ class WaasClient(object):
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_custom_protection_rule(self, custom_protection_rule_id, **kwargs):
         """
@@ -1774,6 +1843,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_custom_protection_rule.py.html>`__ to see an example of how to use get_custom_protection_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['customProtectionRuleId']
         resource_path = "/customProtectionRules/{customProtectionRuleId}"
         method = "GET"
         operation_name = "get_custom_protection_rule"
@@ -1827,7 +1898,8 @@ class WaasClient(object):
                 response_type="CustomProtectionRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1837,7 +1909,8 @@ class WaasClient(object):
                 response_type="CustomProtectionRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_device_fingerprint_challenge(self, waas_policy_id, **kwargs):
         """
@@ -1870,6 +1943,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_device_fingerprint_challenge.py.html>`__ to see an example of how to use get_device_fingerprint_challenge API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/deviceFingerprintChallenge"
         method = "GET"
         operation_name = "get_device_fingerprint_challenge"
@@ -1923,7 +1998,8 @@ class WaasClient(object):
                 response_type="DeviceFingerprintChallenge",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1933,7 +2009,8 @@ class WaasClient(object):
                 response_type="DeviceFingerprintChallenge",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_human_interaction_challenge(self, waas_policy_id, **kwargs):
         """
@@ -1966,6 +2043,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_human_interaction_challenge.py.html>`__ to see an example of how to use get_human_interaction_challenge API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/humanInteractionChallenge"
         method = "GET"
         operation_name = "get_human_interaction_challenge"
@@ -2019,7 +2098,8 @@ class WaasClient(object):
                 response_type="HumanInteractionChallenge",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2029,7 +2109,8 @@ class WaasClient(object):
                 response_type="HumanInteractionChallenge",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_js_challenge(self, waas_policy_id, **kwargs):
         """
@@ -2062,6 +2143,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_js_challenge.py.html>`__ to see an example of how to use get_js_challenge API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/jsChallenge"
         method = "GET"
         operation_name = "get_js_challenge"
@@ -2115,7 +2198,8 @@ class WaasClient(object):
                 response_type="JsChallenge",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2125,7 +2209,8 @@ class WaasClient(object):
                 response_type="JsChallenge",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_policy_config(self, waas_policy_id, **kwargs):
         """
@@ -2158,6 +2243,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_policy_config.py.html>`__ to see an example of how to use get_policy_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/policyConfig"
         method = "GET"
         operation_name = "get_policy_config"
@@ -2211,7 +2298,8 @@ class WaasClient(object):
                 response_type="PolicyConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2221,7 +2309,8 @@ class WaasClient(object):
                 response_type="PolicyConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_protection_rule(self, waas_policy_id, protection_rule_key, **kwargs):
         """
@@ -2257,6 +2346,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_protection_rule.py.html>`__ to see an example of how to use get_protection_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId', 'protectionRuleKey']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/protectionRules/{protectionRuleKey}"
         method = "GET"
         operation_name = "get_protection_rule"
@@ -2311,7 +2402,8 @@ class WaasClient(object):
                 response_type="ProtectionRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2321,7 +2413,8 @@ class WaasClient(object):
                 response_type="ProtectionRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_protection_settings(self, waas_policy_id, **kwargs):
         """
@@ -2354,6 +2447,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_protection_settings.py.html>`__ to see an example of how to use get_protection_settings API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/protectionSettings"
         method = "GET"
         operation_name = "get_protection_settings"
@@ -2407,7 +2502,8 @@ class WaasClient(object):
                 response_type="ProtectionSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2417,7 +2513,8 @@ class WaasClient(object):
                 response_type="ProtectionSettings",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_waas_policy(self, waas_policy_id, **kwargs):
         """
@@ -2450,6 +2547,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_waas_policy.py.html>`__ to see an example of how to use get_waas_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}"
         method = "GET"
         operation_name = "get_waas_policy"
@@ -2503,7 +2602,8 @@ class WaasClient(object):
                 response_type="WaasPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2513,7 +2613,8 @@ class WaasClient(object):
                 response_type="WaasPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_waf_address_rate_limiting(self, waas_policy_id, **kwargs):
         """
@@ -2546,6 +2647,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_waf_address_rate_limiting.py.html>`__ to see an example of how to use get_waf_address_rate_limiting API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/addressRateLimiting"
         method = "GET"
         operation_name = "get_waf_address_rate_limiting"
@@ -2599,7 +2702,8 @@ class WaasClient(object):
                 response_type="AddressRateLimiting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2609,7 +2713,8 @@ class WaasClient(object):
                 response_type="AddressRateLimiting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_waf_config(self, waas_policy_id, **kwargs):
         """
@@ -2642,6 +2747,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_waf_config.py.html>`__ to see an example of how to use get_waf_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig"
         method = "GET"
         operation_name = "get_waf_config"
@@ -2695,7 +2802,8 @@ class WaasClient(object):
                 response_type="WafConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2705,7 +2813,8 @@ class WaasClient(object):
                 response_type="WafConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -2738,6 +2847,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -2791,7 +2902,8 @@ class WaasClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2801,7 +2913,8 @@ class WaasClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_access_rules(self, waas_policy_id, **kwargs):
         """
@@ -2841,6 +2954,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_access_rules.py.html>`__ to see an example of how to use list_access_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/accessRules"
         method = "GET"
         operation_name = "list_access_rules"
@@ -2903,7 +3018,8 @@ class WaasClient(object):
                 response_type="list[AccessRule]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2914,7 +3030,8 @@ class WaasClient(object):
                 response_type="list[AccessRule]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_address_lists(self, compartment_id, **kwargs):
         """
@@ -2980,6 +3097,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_address_lists.py.html>`__ to see an example of how to use list_address_lists API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/addressLists"
         method = "GET"
         operation_name = "list_address_lists"
@@ -3068,7 +3187,8 @@ class WaasClient(object):
                 response_type="list[AddressListSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3078,7 +3198,8 @@ class WaasClient(object):
                 response_type="list[AddressListSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_caching_rules(self, waas_policy_id, **kwargs):
         """
@@ -3118,6 +3239,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_caching_rules.py.html>`__ to see an example of how to use list_caching_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/cachingRules"
         method = "GET"
         operation_name = "list_caching_rules"
@@ -3180,7 +3303,8 @@ class WaasClient(object):
                 response_type="list[CachingRuleSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3191,7 +3315,8 @@ class WaasClient(object):
                 response_type="list[CachingRuleSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_captchas(self, waas_policy_id, **kwargs):
         """
@@ -3234,6 +3359,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_captchas.py.html>`__ to see an example of how to use list_captchas API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/captchas"
         method = "GET"
         operation_name = "list_captchas"
@@ -3296,7 +3423,8 @@ class WaasClient(object):
                 response_type="list[Captcha]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3307,7 +3435,8 @@ class WaasClient(object):
                 response_type="list[Captcha]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_certificates(self, compartment_id, **kwargs):
         """
@@ -3373,6 +3502,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_certificates.py.html>`__ to see an example of how to use list_certificates API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/certificates"
         method = "GET"
         operation_name = "list_certificates"
@@ -3461,7 +3592,8 @@ class WaasClient(object):
                 response_type="list[CertificateSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3471,7 +3603,8 @@ class WaasClient(object):
                 response_type="list[CertificateSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_custom_protection_rules(self, compartment_id, **kwargs):
         """
@@ -3537,6 +3670,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_custom_protection_rules.py.html>`__ to see an example of how to use list_custom_protection_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/customProtectionRules"
         method = "GET"
         operation_name = "list_custom_protection_rules"
@@ -3625,7 +3760,8 @@ class WaasClient(object):
                 response_type="list[CustomProtectionRuleSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3635,7 +3771,8 @@ class WaasClient(object):
                 response_type="list[CustomProtectionRuleSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_edge_subnets(self, **kwargs):
         """
@@ -3679,6 +3816,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_edge_subnets.py.html>`__ to see an example of how to use list_edge_subnets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/edgeSubnets"
         method = "GET"
         operation_name = "list_edge_subnets"
@@ -3748,7 +3887,8 @@ class WaasClient(object):
                 response_type="list[EdgeSubnet]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3758,7 +3898,8 @@ class WaasClient(object):
                 response_type="list[EdgeSubnet]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_good_bots(self, waas_policy_id, **kwargs):
         """
@@ -3799,6 +3940,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_good_bots.py.html>`__ to see an example of how to use list_good_bots API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/goodBots"
         method = "GET"
         operation_name = "list_good_bots"
@@ -3861,7 +4004,8 @@ class WaasClient(object):
                 response_type="list[GoodBot]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3872,7 +4016,8 @@ class WaasClient(object):
                 response_type="list[GoodBot]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_protection_rules(self, waas_policy_id, **kwargs):
         """
@@ -3920,6 +4065,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_protection_rules.py.html>`__ to see an example of how to use list_protection_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/protectionRules"
         method = "GET"
         operation_name = "list_protection_rules"
@@ -3994,7 +4141,8 @@ class WaasClient(object):
                 response_type="list[ProtectionRule]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4005,7 +4153,8 @@ class WaasClient(object):
                 response_type="list[ProtectionRule]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_recommendations(self, waas_policy_id, **kwargs):
         """
@@ -4054,6 +4203,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_recommendations.py.html>`__ to see an example of how to use list_recommendations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/recommendations"
         method = "GET"
         operation_name = "list_recommendations"
@@ -4125,7 +4276,8 @@ class WaasClient(object):
                 response_type="list[Recommendation]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4136,7 +4288,8 @@ class WaasClient(object):
                 response_type="list[Recommendation]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_threat_feeds(self, waas_policy_id, **kwargs):
         """
@@ -4177,6 +4330,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_threat_feeds.py.html>`__ to see an example of how to use list_threat_feeds API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/threatFeeds"
         method = "GET"
         operation_name = "list_threat_feeds"
@@ -4239,7 +4394,8 @@ class WaasClient(object):
                 response_type="list[ThreatFeed]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4250,7 +4406,8 @@ class WaasClient(object):
                 response_type="list[ThreatFeed]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_waas_policies(self, compartment_id, **kwargs):
         """
@@ -4316,6 +4473,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waas_policies.py.html>`__ to see an example of how to use list_waas_policies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/waasPolicies"
         method = "GET"
         operation_name = "list_waas_policies"
@@ -4404,7 +4563,8 @@ class WaasClient(object):
                 response_type="list[WaasPolicySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4414,7 +4574,8 @@ class WaasClient(object):
                 response_type="list[WaasPolicySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_waas_policy_custom_protection_rules(self, waas_policy_id, **kwargs):
         """
@@ -4461,6 +4622,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waas_policy_custom_protection_rules.py.html>`__ to see an example of how to use list_waas_policy_custom_protection_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/customProtectionRules"
         method = "GET"
         operation_name = "list_waas_policy_custom_protection_rules"
@@ -4535,7 +4698,8 @@ class WaasClient(object):
                 response_type="list[WaasPolicyCustomProtectionRuleSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4546,7 +4710,8 @@ class WaasClient(object):
                 response_type="list[WaasPolicyCustomProtectionRuleSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_waf_blocked_requests(self, waas_policy_id, **kwargs):
         """
@@ -4596,6 +4761,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waf_blocked_requests.py.html>`__ to see an example of how to use list_waf_blocked_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/reports/waf/blocked"
         method = "GET"
         operation_name = "list_waf_blocked_requests"
@@ -4672,7 +4839,8 @@ class WaasClient(object):
                 response_type="list[WafBlockedRequest]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4683,7 +4851,8 @@ class WaasClient(object):
                 response_type="list[WafBlockedRequest]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_waf_logs(self, waas_policy_id, **kwargs):
         """
@@ -4791,6 +4960,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waf_logs.py.html>`__ to see an example of how to use list_waf_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafLogs"
         method = "GET"
         operation_name = "list_waf_logs"
@@ -4915,7 +5086,8 @@ class WaasClient(object):
                 response_type="list[WafLog]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4926,7 +5098,8 @@ class WaasClient(object):
                 response_type="list[WafLog]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_waf_requests(self, waas_policy_id, **kwargs):
         """
@@ -4973,6 +5146,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waf_requests.py.html>`__ to see an example of how to use list_waf_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/reports/waf/requests"
         method = "GET"
         operation_name = "list_waf_requests"
@@ -5039,7 +5214,8 @@ class WaasClient(object):
                 response_type="list[WafRequest]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5050,7 +5226,8 @@ class WaasClient(object):
                 response_type="list[WafRequest]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_waf_traffic(self, waas_policy_id, **kwargs):
         """
@@ -5096,6 +5273,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_waf_traffic.py.html>`__ to see an example of how to use list_waf_traffic API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/reports/waf/traffic"
         method = "GET"
         operation_name = "list_waf_traffic"
@@ -5162,7 +5341,8 @@ class WaasClient(object):
                 response_type="list[WafTrafficDatum]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5173,7 +5353,8 @@ class WaasClient(object):
                 response_type="list[WafTrafficDatum]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_whitelists(self, waas_policy_id, **kwargs):
         """
@@ -5212,6 +5393,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_whitelists.py.html>`__ to see an example of how to use list_whitelists API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/whitelists"
         method = "GET"
         operation_name = "list_whitelists"
@@ -5274,7 +5457,8 @@ class WaasClient(object):
                 response_type="list[Whitelist]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5285,7 +5469,8 @@ class WaasClient(object):
                 response_type="list[Whitelist]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, waas_policy_id, compartment_id, **kwargs):
         """
@@ -5339,6 +5524,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId', 'compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -5410,7 +5597,8 @@ class WaasClient(object):
                 response_type="list[WorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5420,7 +5608,8 @@ class WaasClient(object):
                 response_type="list[WorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def purge_cache(self, waas_policy_id, **kwargs):
         """
@@ -5461,6 +5650,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/purge_cache.py.html>`__ to see an example of how to use purge_cache API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/actions/purgeCache"
         method = "POST"
         operation_name = "purge_cache"
@@ -5515,7 +5706,8 @@ class WaasClient(object):
                 body=kwargs.get('purge_cache'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5525,7 +5717,8 @@ class WaasClient(object):
                 body=kwargs.get('purge_cache'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_access_rules(self, waas_policy_id, access_rules, **kwargs):
         """
@@ -5575,6 +5768,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_access_rules.py.html>`__ to see an example of how to use update_access_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/accessRules"
         method = "PUT"
         operation_name = "update_access_rules"
@@ -5631,7 +5826,8 @@ class WaasClient(object):
                 body=access_rules,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5641,7 +5837,8 @@ class WaasClient(object):
                 body=access_rules,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_address_list(self, address_list_id, **kwargs):
         """
@@ -5680,6 +5877,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_address_list.py.html>`__ to see an example of how to use update_address_list API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['addressListId']
         resource_path = "/addressLists/{addressListId}"
         method = "PUT"
         operation_name = "update_address_list"
@@ -5735,7 +5934,8 @@ class WaasClient(object):
                 response_type="AddressList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5746,7 +5946,8 @@ class WaasClient(object):
                 response_type="AddressList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_caching_rules(self, waas_policy_id, caching_rules_details, **kwargs):
         """
@@ -5796,6 +5997,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_caching_rules.py.html>`__ to see an example of how to use update_caching_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/cachingRules"
         method = "PUT"
         operation_name = "update_caching_rules"
@@ -5852,7 +6055,8 @@ class WaasClient(object):
                 body=caching_rules_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5862,7 +6066,8 @@ class WaasClient(object):
                 body=caching_rules_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_captchas(self, waas_policy_id, captchas, **kwargs):
         """
@@ -5913,6 +6118,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_captchas.py.html>`__ to see an example of how to use update_captchas API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/captchas"
         method = "PUT"
         operation_name = "update_captchas"
@@ -5969,7 +6176,8 @@ class WaasClient(object):
                 body=captchas,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5979,7 +6187,8 @@ class WaasClient(object):
                 body=captchas,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_certificate(self, certificate_id, **kwargs):
         """
@@ -6018,6 +6227,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_certificate.py.html>`__ to see an example of how to use update_certificate API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateId']
         resource_path = "/certificates/{certificateId}"
         method = "PUT"
         operation_name = "update_certificate"
@@ -6073,7 +6284,8 @@ class WaasClient(object):
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6084,7 +6296,8 @@ class WaasClient(object):
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_custom_protection_rule(self, custom_protection_rule_id, update_custom_protection_rule_details, **kwargs):
         """
@@ -6127,6 +6340,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_custom_protection_rule.py.html>`__ to see an example of how to use update_custom_protection_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['customProtectionRuleId']
         resource_path = "/customProtectionRules/{customProtectionRuleId}"
         method = "PUT"
         operation_name = "update_custom_protection_rule"
@@ -6184,7 +6399,8 @@ class WaasClient(object):
                 response_type="CustomProtectionRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6195,7 +6411,8 @@ class WaasClient(object):
                 response_type="CustomProtectionRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_device_fingerprint_challenge(self, waas_policy_id, update_device_fingerprint_challenge_details, **kwargs):
         """
@@ -6242,6 +6459,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_device_fingerprint_challenge.py.html>`__ to see an example of how to use update_device_fingerprint_challenge API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/deviceFingerprintChallenge"
         method = "PUT"
         operation_name = "update_device_fingerprint_challenge"
@@ -6298,7 +6517,8 @@ class WaasClient(object):
                 body=update_device_fingerprint_challenge_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6308,7 +6528,8 @@ class WaasClient(object):
                 body=update_device_fingerprint_challenge_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_good_bots(self, waas_policy_id, good_bots, **kwargs):
         """
@@ -6354,6 +6575,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_good_bots.py.html>`__ to see an example of how to use update_good_bots API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/goodBots"
         method = "PUT"
         operation_name = "update_good_bots"
@@ -6410,7 +6633,8 @@ class WaasClient(object):
                 body=good_bots,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6420,7 +6644,8 @@ class WaasClient(object):
                 body=good_bots,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_human_interaction_challenge(self, waas_policy_id, update_human_interaction_challenge_details, **kwargs):
         """
@@ -6463,6 +6688,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_human_interaction_challenge.py.html>`__ to see an example of how to use update_human_interaction_challenge API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/humanInteractionChallenge"
         method = "PUT"
         operation_name = "update_human_interaction_challenge"
@@ -6519,7 +6746,8 @@ class WaasClient(object):
                 body=update_human_interaction_challenge_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6529,7 +6757,8 @@ class WaasClient(object):
                 body=update_human_interaction_challenge_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_js_challenge(self, waas_policy_id, update_js_challenge_details, **kwargs):
         """
@@ -6574,6 +6803,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_js_challenge.py.html>`__ to see an example of how to use update_js_challenge API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/jsChallenge"
         method = "PUT"
         operation_name = "update_js_challenge"
@@ -6630,7 +6861,8 @@ class WaasClient(object):
                 body=update_js_challenge_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6640,7 +6872,8 @@ class WaasClient(object):
                 body=update_js_challenge_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_policy_config(self, waas_policy_id, update_policy_config_details, **kwargs):
         """
@@ -6683,6 +6916,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_policy_config.py.html>`__ to see an example of how to use update_policy_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/policyConfig"
         method = "PUT"
         operation_name = "update_policy_config"
@@ -6739,7 +6974,8 @@ class WaasClient(object):
                 body=update_policy_config_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6749,7 +6985,8 @@ class WaasClient(object):
                 body=update_policy_config_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_protection_rules(self, waas_policy_id, protection_rules, **kwargs):
         """
@@ -6791,6 +7028,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_protection_rules.py.html>`__ to see an example of how to use update_protection_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/protectionRules"
         method = "PUT"
         operation_name = "update_protection_rules"
@@ -6844,7 +7083,8 @@ class WaasClient(object):
                 body=protection_rules,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6854,7 +7094,8 @@ class WaasClient(object):
                 body=protection_rules,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_protection_settings(self, waas_policy_id, update_protection_settings_details, **kwargs):
         """
@@ -6897,6 +7138,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_protection_settings.py.html>`__ to see an example of how to use update_protection_settings API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/protectionSettings"
         method = "PUT"
         operation_name = "update_protection_settings"
@@ -6953,7 +7196,8 @@ class WaasClient(object):
                 body=update_protection_settings_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6963,7 +7207,8 @@ class WaasClient(object):
                 body=update_protection_settings_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_threat_feeds(self, waas_policy_id, threat_feeds, **kwargs):
         """
@@ -7002,6 +7247,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_threat_feeds.py.html>`__ to see an example of how to use update_threat_feeds API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/threatFeeds"
         method = "PUT"
         operation_name = "update_threat_feeds"
@@ -7055,7 +7302,8 @@ class WaasClient(object):
                 body=threat_feeds,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7065,7 +7313,8 @@ class WaasClient(object):
                 body=threat_feeds,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_waas_policy(self, waas_policy_id, update_waas_policy_details, **kwargs):
         """
@@ -7110,6 +7359,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_waas_policy.py.html>`__ to see an example of how to use update_waas_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}"
         method = "PUT"
         operation_name = "update_waas_policy"
@@ -7166,7 +7417,8 @@ class WaasClient(object):
                 body=update_waas_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7176,7 +7428,8 @@ class WaasClient(object):
                 body=update_waas_policy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_waas_policy_custom_protection_rules(self, waas_policy_id, update_custom_protection_rules_details, **kwargs):
         """
@@ -7220,6 +7473,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_waas_policy_custom_protection_rules.py.html>`__ to see an example of how to use update_waas_policy_custom_protection_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/customProtectionRules"
         method = "PUT"
         operation_name = "update_waas_policy_custom_protection_rules"
@@ -7276,7 +7531,8 @@ class WaasClient(object):
                 body=update_custom_protection_rules_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7286,7 +7542,8 @@ class WaasClient(object):
                 body=update_custom_protection_rules_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_waf_address_rate_limiting(self, waas_policy_id, update_waf_address_rate_limiting_details, **kwargs):
         """
@@ -7329,6 +7586,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_waf_address_rate_limiting.py.html>`__ to see an example of how to use update_waf_address_rate_limiting API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/addressRateLimiting"
         method = "PUT"
         operation_name = "update_waf_address_rate_limiting"
@@ -7385,7 +7644,8 @@ class WaasClient(object):
                 body=update_waf_address_rate_limiting_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7395,7 +7655,8 @@ class WaasClient(object):
                 body=update_waf_address_rate_limiting_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_waf_config(self, waas_policy_id, update_waf_config_details, **kwargs):
         """
@@ -7445,6 +7706,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_waf_config.py.html>`__ to see an example of how to use update_waf_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig"
         method = "PUT"
         operation_name = "update_waf_config"
@@ -7501,7 +7764,8 @@ class WaasClient(object):
                 body=update_waf_config_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7511,7 +7775,8 @@ class WaasClient(object):
                 body=update_waf_config_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_whitelists(self, waas_policy_id, whitelists, **kwargs):
         """
@@ -7561,6 +7826,8 @@ class WaasClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/waas/update_whitelists.py.html>`__ to see an example of how to use update_whitelists API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['waasPolicyId']
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/whitelists"
         method = "PUT"
         operation_name = "update_whitelists"
@@ -7617,7 +7884,8 @@ class WaasClient(object):
                 body=whitelists,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7627,4 +7895,5 @@ class WaasClient(object):
                 body=whitelists,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

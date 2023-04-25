@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class DomainGovernanceClient(object):
     """
-    The Organizations API allows you to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and its resources.
+    Use the Organizations API to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and organization resources. For more information, see [Organization Management Overview](/iaas/Content/General/Concepts/organization_management_overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -65,6 +65,9 @@ class DomainGovernanceClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class DomainGovernanceClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20200801',
             'service_endpoint_template': 'https://organizations.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -117,7 +122,7 @@ class DomainGovernanceClient(object):
             server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            will be rejected.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -140,6 +145,8 @@ class DomainGovernanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/create_domain_governance.py.html>`__ to see an example of how to use create_domain_governance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/domainGovernances"
         method = "POST"
         operation_name = "create_domain_governance"
@@ -184,7 +191,8 @@ class DomainGovernanceClient(object):
                 response_type="DomainGovernance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -194,7 +202,8 @@ class DomainGovernanceClient(object):
                 response_type="DomainGovernance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_domain_governance(self, domain_governance_id, **kwargs):
         """
@@ -232,6 +241,8 @@ class DomainGovernanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/delete_domain_governance.py.html>`__ to see an example of how to use delete_domain_governance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['domainGovernanceId']
         resource_path = "/domainGovernances/{domainGovernanceId}"
         method = "DELETE"
         operation_name = "delete_domain_governance"
@@ -284,7 +295,8 @@ class DomainGovernanceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -293,7 +305,8 @@ class DomainGovernanceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_domain_governance(self, domain_governance_id, **kwargs):
         """
@@ -324,6 +337,8 @@ class DomainGovernanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/get_domain_governance.py.html>`__ to see an example of how to use get_domain_governance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['domainGovernanceId']
         resource_path = "/domainGovernances/{domainGovernanceId}"
         method = "GET"
         operation_name = "get_domain_governance"
@@ -375,7 +390,8 @@ class DomainGovernanceClient(object):
                 response_type="DomainGovernance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -385,7 +401,8 @@ class DomainGovernanceClient(object):
                 response_type="DomainGovernance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_domain_governances(self, compartment_id, **kwargs):
         """
@@ -393,7 +410,7 @@ class DomainGovernanceClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            OCID of the compartment. Always a tenancy OCID.
 
         :param str domain_id: (optional)
             The domain OCID.
@@ -449,6 +466,8 @@ class DomainGovernanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/list_domain_governances.py.html>`__ to see an example of how to use list_domain_governances API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/domainGovernances"
         method = "GET"
         operation_name = "list_domain_governances"
@@ -532,7 +551,8 @@ class DomainGovernanceClient(object):
                 response_type="DomainGovernanceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -542,7 +562,8 @@ class DomainGovernanceClient(object):
                 response_type="DomainGovernanceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_domain_governance(self, domain_governance_id, update_domain_governance_details, **kwargs):
         """
@@ -583,6 +604,8 @@ class DomainGovernanceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/update_domain_governance.py.html>`__ to see an example of how to use update_domain_governance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['domainGovernanceId']
         resource_path = "/domainGovernances/{domainGovernanceId}"
         method = "PUT"
         operation_name = "update_domain_governance"
@@ -637,7 +660,8 @@ class DomainGovernanceClient(object):
                 response_type="DomainGovernance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -648,4 +672,5 @@ class DomainGovernanceClient(object):
                 response_type="DomainGovernance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

@@ -65,6 +65,9 @@ class KmsManagementClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class KmsManagementClient(object):
             'service_endpoint': service_endpoint,
             'base_path': '/',
             'service_endpoint_template': 'https://kms.{region}.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -154,6 +159,8 @@ class KmsManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/backup_key.py.html>`__ to see an example of how to use backup_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['keyId']
         resource_path = "/20180608/keys/{keyId}/actions/backup"
         method = "POST"
         operation_name = "backup_key"
@@ -212,7 +219,8 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -223,7 +231,8 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_key_deletion(self, key_id, **kwargs):
         """
@@ -278,6 +287,8 @@ class KmsManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/cancel_key_deletion.py.html>`__ to see an example of how to use cancel_key_deletion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['keyId']
         resource_path = "/20180608/keys/{keyId}/actions/cancelDeletion"
         method = "POST"
         operation_name = "cancel_key_deletion"
@@ -334,7 +345,8 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -344,7 +356,8 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_key_version_deletion(self, key_id, key_version_id, **kwargs):
         """
@@ -402,6 +415,8 @@ class KmsManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/cancel_key_version_deletion.py.html>`__ to see an example of how to use cancel_key_version_deletion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['keyId', 'keyVersionId']
         resource_path = "/20180608/keys/{keyId}/keyVersions/{keyVersionId}/actions/cancelDeletion"
         method = "POST"
         operation_name = "cancel_key_version_deletion"
@@ -459,7 +474,8 @@ class KmsManagementClient(object):
                 response_type="KeyVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -469,7 +485,8 @@ class KmsManagementClient(object):
                 response_type="KeyVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_key_compartment(self, key_id, change_key_compartment_details, **kwargs):
         """
@@ -529,6 +546,8 @@ class KmsManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/change_key_compartment.py.html>`__ to see an example of how to use change_key_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['keyId']
         resource_path = "/20180608/keys/{keyId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_key_compartment"
@@ -585,7 +604,8 @@ class KmsManagementClient(object):
                 body=change_key_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -595,7 +615,8 @@ class KmsManagementClient(object):
                 body=change_key_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_key(self, create_key_details, **kwargs):
         """
@@ -641,6 +662,8 @@ class KmsManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/create_key.py.html>`__ to see an example of how to use create_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/20180608/keys"
         method = "POST"
         operation_name = "create_key"
@@ -685,7 +708,8 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -695,7 +719,8 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_key_version(self, key_id, **kwargs):
         """
@@ -744,6 +769,8 @@ class KmsManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/create_key_version.py.html>`__ to see an example of how to use create_key_version API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['keyId']
         resource_path = "/20180608/keys/{keyId}/keyVersions"
         method = "POST"
         operation_name = "create_key_version"
@@ -798,7 +825,8 @@ class KmsManagementClient(object):
                 response_type="KeyVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -808,7 +836,8 @@ class KmsManagementClient(object):
                 response_type="KeyVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def disable_key(self, key_id, **kwargs):
         """
@@ -862,6 +891,8 @@ class KmsManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/disable_key.py.html>`__ to see an example of how to use disable_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['keyId']
         resource_path = "/20180608/keys/{keyId}/actions/disable"
         method = "POST"
         operation_name = "disable_key"
@@ -918,7 +949,8 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -928,7 +960,8 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def enable_key(self, key_id, **kwargs):
         """
@@ -982,6 +1015,8 @@ class KmsManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/enable_key.py.html>`__ to see an example of how to use enable_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['keyId']
         resource_path = "/20180608/keys/{keyId}/actions/enable"
         method = "POST"
         operation_name = "enable_key"
@@ -1038,7 +1073,8 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1048,7 +1084,8 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_key(self, key_id, **kwargs):
         """
@@ -1086,6 +1123,8 @@ class KmsManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/get_key.py.html>`__ to see an example of how to use get_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['keyId']
         resource_path = "/20180608/keys/{keyId}"
         method = "GET"
         operation_name = "get_key"
@@ -1137,7 +1176,8 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1147,7 +1187,8 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_key_version(self, key_id, key_version_id, **kwargs):
         """
@@ -1188,6 +1229,8 @@ class KmsManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/get_key_version.py.html>`__ to see an example of how to use get_key_version API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['keyId', 'keyVersionId']
         resource_path = "/20180608/keys/{keyId}/keyVersions/{keyVersionId}"
         method = "GET"
         operation_name = "get_key_version"
@@ -1240,7 +1283,8 @@ class KmsManagementClient(object):
                 response_type="KeyVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1250,7 +1294,8 @@ class KmsManagementClient(object):
                 response_type="KeyVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_replication_status(self, replication_id, **kwargs):
         """
@@ -1286,6 +1331,8 @@ class KmsManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/get_replication_status.py.html>`__ to see an example of how to use get_replication_status API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['replicationId']
         resource_path = "/20180608/replicaOperations/{replicationId}/status"
         method = "GET"
         operation_name = "get_replication_status"
@@ -1337,7 +1384,8 @@ class KmsManagementClient(object):
                 response_type="ReplicationStatusDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1347,7 +1395,8 @@ class KmsManagementClient(object):
                 response_type="ReplicationStatusDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_wrapping_key(self, **kwargs):
         """
@@ -1378,6 +1427,8 @@ class KmsManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/get_wrapping_key.py.html>`__ to see an example of how to use get_wrapping_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/20180608/wrappingKeys"
         method = "GET"
         operation_name = "get_wrapping_key"
@@ -1418,7 +1469,8 @@ class KmsManagementClient(object):
                 response_type="WrappingKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1427,7 +1479,8 @@ class KmsManagementClient(object):
                 response_type="WrappingKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def import_key(self, import_key_details, **kwargs):
         """
@@ -1470,6 +1523,8 @@ class KmsManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/import_key.py.html>`__ to see an example of how to use import_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/20180608/keys/import"
         method = "POST"
         operation_name = "import_key"
@@ -1514,7 +1569,8 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1524,7 +1580,8 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def import_key_version(self, key_id, import_key_version_details, **kwargs):
         """
@@ -1572,6 +1629,8 @@ class KmsManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/import_key_version.py.html>`__ to see an example of how to use import_key_version API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['keyId']
         resource_path = "/20180608/keys/{keyId}/keyVersions/import"
         method = "POST"
         operation_name = "import_key_version"
@@ -1627,7 +1686,8 @@ class KmsManagementClient(object):
                 response_type="KeyVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1638,7 +1698,8 @@ class KmsManagementClient(object):
                 response_type="KeyVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_key_versions(self, key_id, **kwargs):
         """
@@ -1698,6 +1759,8 @@ class KmsManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/list_key_versions.py.html>`__ to see an example of how to use list_key_versions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['keyId']
         resource_path = "/20180608/keys/{keyId}/keyVersions"
         method = "GET"
         operation_name = "list_key_versions"
@@ -1776,7 +1839,8 @@ class KmsManagementClient(object):
                 response_type="list[KeyVersionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1787,7 +1851,8 @@ class KmsManagementClient(object):
                 response_type="list[KeyVersionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_keys(self, compartment_id, **kwargs):
         """
@@ -1866,6 +1931,8 @@ class KmsManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/list_keys.py.html>`__ to see an example of how to use list_keys API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/20180608/keys"
         method = "GET"
         operation_name = "list_keys"
@@ -1963,7 +2030,8 @@ class KmsManagementClient(object):
                 response_type="list[KeySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1973,7 +2041,8 @@ class KmsManagementClient(object):
                 response_type="list[KeySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def restore_key_from_file(self, restore_key_from_file_details, **kwargs):
         """
@@ -2042,6 +2111,8 @@ class KmsManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/restore_key_from_file.py.html>`__ to see an example of how to use restore_key_from_file API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/20180608/keys/actions/restoreFromFile"
         method = "POST"
         operation_name = "restore_key_from_file"
@@ -2113,7 +2184,8 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2123,7 +2195,8 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def restore_key_from_object_store(self, **kwargs):
         """
@@ -2173,6 +2246,8 @@ class KmsManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/restore_key_from_object_store.py.html>`__ to see an example of how to use restore_key_from_object_store API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/20180608/keys/actions/restoreFromObjectStore"
         method = "POST"
         operation_name = "restore_key_from_object_store"
@@ -2220,7 +2295,8 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2230,7 +2306,8 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def schedule_key_deletion(self, key_id, schedule_key_deletion_details, **kwargs):
         """
@@ -2287,6 +2364,8 @@ class KmsManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/schedule_key_deletion.py.html>`__ to see an example of how to use schedule_key_deletion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['keyId']
         resource_path = "/20180608/keys/{keyId}/actions/scheduleDeletion"
         method = "POST"
         operation_name = "schedule_key_deletion"
@@ -2344,7 +2423,8 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2355,7 +2435,8 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def schedule_key_version_deletion(self, key_id, key_version_id, schedule_key_version_deletion_details, **kwargs):
         """
@@ -2415,6 +2496,8 @@ class KmsManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/schedule_key_version_deletion.py.html>`__ to see an example of how to use schedule_key_version_deletion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['keyId', 'keyVersionId']
         resource_path = "/20180608/keys/{keyId}/keyVersions/{keyVersionId}/actions/scheduleDeletion"
         method = "POST"
         operation_name = "schedule_key_version_deletion"
@@ -2473,7 +2556,8 @@ class KmsManagementClient(object):
                 response_type="KeyVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2484,7 +2568,8 @@ class KmsManagementClient(object):
                 response_type="KeyVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_key(self, key_id, update_key_details, **kwargs):
         """
@@ -2534,6 +2619,8 @@ class KmsManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/keymanagement/update_key.py.html>`__ to see an example of how to use update_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['keyId']
         resource_path = "/20180608/keys/{keyId}"
         method = "PUT"
         operation_name = "update_key"
@@ -2588,7 +2675,8 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2599,4 +2687,5 @@ class KmsManagementClient(object):
                 response_type="Key",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

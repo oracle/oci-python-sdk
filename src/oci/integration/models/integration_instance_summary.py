@@ -170,6 +170,10 @@ class IntegrationInstanceSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type shape: str
 
+        :param private_endpoint_outbound_connection:
+            The value to assign to the private_endpoint_outbound_connection property of this IntegrationInstanceSummary.
+        :type private_endpoint_outbound_connection: oci.integration.models.OutboundConnection
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -191,7 +195,8 @@ class IntegrationInstanceSummary(object):
             'network_endpoint_details': 'NetworkEndpointDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'shape': 'str'
+            'shape': 'str',
+            'private_endpoint_outbound_connection': 'OutboundConnection'
         }
 
         self.attribute_map = {
@@ -214,7 +219,8 @@ class IntegrationInstanceSummary(object):
             'network_endpoint_details': 'networkEndpointDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'shape': 'shape'
+            'shape': 'shape',
+            'private_endpoint_outbound_connection': 'privateEndpointOutboundConnection'
         }
 
         self._id = None
@@ -237,6 +243,7 @@ class IntegrationInstanceSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._shape = None
+        self._private_endpoint_outbound_connection = None
 
     @property
     def id(self):
@@ -745,6 +752,26 @@ class IntegrationInstanceSummary(object):
         if not value_allowed_none_or_none_sentinel(shape, allowed_values):
             shape = 'UNKNOWN_ENUM_VALUE'
         self._shape = shape
+
+    @property
+    def private_endpoint_outbound_connection(self):
+        """
+        Gets the private_endpoint_outbound_connection of this IntegrationInstanceSummary.
+
+        :return: The private_endpoint_outbound_connection of this IntegrationInstanceSummary.
+        :rtype: oci.integration.models.OutboundConnection
+        """
+        return self._private_endpoint_outbound_connection
+
+    @private_endpoint_outbound_connection.setter
+    def private_endpoint_outbound_connection(self, private_endpoint_outbound_connection):
+        """
+        Sets the private_endpoint_outbound_connection of this IntegrationInstanceSummary.
+
+        :param private_endpoint_outbound_connection: The private_endpoint_outbound_connection of this IntegrationInstanceSummary.
+        :type: oci.integration.models.OutboundConnection
+        """
+        self._private_endpoint_outbound_connection = private_endpoint_outbound_connection
 
     def __repr__(self):
         return formatted_flat_dict(self)

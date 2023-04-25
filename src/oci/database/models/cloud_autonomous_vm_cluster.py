@@ -158,6 +158,10 @@ class CloudAutonomousVmCluster(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type compute_model: str
 
+        :param is_mtls_enabled_vm_cluster:
+            The value to assign to the is_mtls_enabled_vm_cluster property of this CloudAutonomousVmCluster.
+        :type is_mtls_enabled_vm_cluster: bool
+
         :param cpu_core_count_per_node:
             The value to assign to the cpu_core_count_per_node property of this CloudAutonomousVmCluster.
         :type cpu_core_count_per_node: int
@@ -183,6 +187,14 @@ class CloudAutonomousVmCluster(object):
         :param maintenance_window:
             The value to assign to the maintenance_window property of this CloudAutonomousVmCluster.
         :type maintenance_window: oci.database.models.MaintenanceWindow
+
+        :param scan_listener_port_tls:
+            The value to assign to the scan_listener_port_tls property of this CloudAutonomousVmCluster.
+        :type scan_listener_port_tls: int
+
+        :param scan_listener_port_non_tls:
+            The value to assign to the scan_listener_port_non_tls property of this CloudAutonomousVmCluster.
+        :type scan_listener_port_non_tls: int
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CloudAutonomousVmCluster.
@@ -249,12 +261,15 @@ class CloudAutonomousVmCluster(object):
             'cpu_core_count': 'int',
             'ocpu_count': 'float',
             'compute_model': 'str',
+            'is_mtls_enabled_vm_cluster': 'bool',
             'cpu_core_count_per_node': 'int',
             'memory_size_in_gbs': 'int',
             'license_model': 'str',
             'last_maintenance_run_id': 'str',
             'next_maintenance_run_id': 'str',
             'maintenance_window': 'MaintenanceWindow',
+            'scan_listener_port_tls': 'int',
+            'scan_listener_port_non_tls': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'available_cpus': 'float',
@@ -291,12 +306,15 @@ class CloudAutonomousVmCluster(object):
             'cpu_core_count': 'cpuCoreCount',
             'ocpu_count': 'ocpuCount',
             'compute_model': 'computeModel',
+            'is_mtls_enabled_vm_cluster': 'isMtlsEnabledVmCluster',
             'cpu_core_count_per_node': 'cpuCoreCountPerNode',
             'memory_size_in_gbs': 'memorySizeInGBs',
             'license_model': 'licenseModel',
             'last_maintenance_run_id': 'lastMaintenanceRunId',
             'next_maintenance_run_id': 'nextMaintenanceRunId',
             'maintenance_window': 'maintenanceWindow',
+            'scan_listener_port_tls': 'scanListenerPortTls',
+            'scan_listener_port_non_tls': 'scanListenerPortNonTls',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'available_cpus': 'availableCpus',
@@ -332,12 +350,15 @@ class CloudAutonomousVmCluster(object):
         self._cpu_core_count = None
         self._ocpu_count = None
         self._compute_model = None
+        self._is_mtls_enabled_vm_cluster = None
         self._cpu_core_count_per_node = None
         self._memory_size_in_gbs = None
         self._license_model = None
         self._last_maintenance_run_id = None
         self._next_maintenance_run_id = None
         self._maintenance_window = None
+        self._scan_listener_port_tls = None
+        self._scan_listener_port_non_tls = None
         self._freeform_tags = None
         self._defined_tags = None
         self._available_cpus = None
@@ -962,6 +983,30 @@ class CloudAutonomousVmCluster(object):
         self._compute_model = compute_model
 
     @property
+    def is_mtls_enabled_vm_cluster(self):
+        """
+        Gets the is_mtls_enabled_vm_cluster of this CloudAutonomousVmCluster.
+        Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+
+
+        :return: The is_mtls_enabled_vm_cluster of this CloudAutonomousVmCluster.
+        :rtype: bool
+        """
+        return self._is_mtls_enabled_vm_cluster
+
+    @is_mtls_enabled_vm_cluster.setter
+    def is_mtls_enabled_vm_cluster(self, is_mtls_enabled_vm_cluster):
+        """
+        Sets the is_mtls_enabled_vm_cluster of this CloudAutonomousVmCluster.
+        Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+
+
+        :param is_mtls_enabled_vm_cluster: The is_mtls_enabled_vm_cluster of this CloudAutonomousVmCluster.
+        :type: bool
+        """
+        self._is_mtls_enabled_vm_cluster = is_mtls_enabled_vm_cluster
+
+    @property
     def cpu_core_count_per_node(self):
         """
         Gets the cpu_core_count_per_node of this CloudAutonomousVmCluster.
@@ -1130,6 +1175,54 @@ class CloudAutonomousVmCluster(object):
         :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window = maintenance_window
+
+    @property
+    def scan_listener_port_tls(self):
+        """
+        Gets the scan_listener_port_tls of this CloudAutonomousVmCluster.
+        The SCAN Listenenr TLS port. Default is 2484.
+
+
+        :return: The scan_listener_port_tls of this CloudAutonomousVmCluster.
+        :rtype: int
+        """
+        return self._scan_listener_port_tls
+
+    @scan_listener_port_tls.setter
+    def scan_listener_port_tls(self, scan_listener_port_tls):
+        """
+        Sets the scan_listener_port_tls of this CloudAutonomousVmCluster.
+        The SCAN Listenenr TLS port. Default is 2484.
+
+
+        :param scan_listener_port_tls: The scan_listener_port_tls of this CloudAutonomousVmCluster.
+        :type: int
+        """
+        self._scan_listener_port_tls = scan_listener_port_tls
+
+    @property
+    def scan_listener_port_non_tls(self):
+        """
+        Gets the scan_listener_port_non_tls of this CloudAutonomousVmCluster.
+        The SCAN Listener Non TLS port. Default is 1521.
+
+
+        :return: The scan_listener_port_non_tls of this CloudAutonomousVmCluster.
+        :rtype: int
+        """
+        return self._scan_listener_port_non_tls
+
+    @scan_listener_port_non_tls.setter
+    def scan_listener_port_non_tls(self, scan_listener_port_non_tls):
+        """
+        Sets the scan_listener_port_non_tls of this CloudAutonomousVmCluster.
+        The SCAN Listener Non TLS port. Default is 1521.
+
+
+        :param scan_listener_port_non_tls: The scan_listener_port_non_tls of this CloudAutonomousVmCluster.
+        :type: int
+        """
+        self._scan_listener_port_non_tls = scan_listener_port_non_tls
 
     @property
     def freeform_tags(self):

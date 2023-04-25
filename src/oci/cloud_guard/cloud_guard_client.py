@@ -67,6 +67,9 @@ class CloudGuardClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -93,8 +96,10 @@ class CloudGuardClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20200131',
             'service_endpoint_template': 'https://cloudguard-cp-api.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -152,6 +157,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/add_compartment.py.html>`__ to see an example of how to use add_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityZoneId']
         resource_path = "/securityZones/{securityZoneId}/actions/addCompartment"
         method = "POST"
         operation_name = "add_compartment"
@@ -209,7 +216,8 @@ class CloudGuardClient(object):
                 response_type="SecurityZone",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -220,7 +228,8 @@ class CloudGuardClient(object):
                 response_type="SecurityZone",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_work_request(self, work_request_id, **kwargs):
         """
@@ -258,6 +267,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
@@ -310,7 +321,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -319,7 +331,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_data_source_compartment(self, data_source_id, change_data_source_compartment_details, **kwargs):
         """
@@ -367,6 +380,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_data_source_compartment.py.html>`__ to see an example of how to use change_data_source_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dataSourceId']
         resource_path = "/dataSources/{dataSourceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_data_source_compartment"
@@ -423,7 +438,8 @@ class CloudGuardClient(object):
                 body=change_data_source_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -433,7 +449,8 @@ class CloudGuardClient(object):
                 body=change_data_source_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_detector_recipe_compartment(self, detector_recipe_id, change_detector_recipe_compartment_details, **kwargs):
         """
@@ -481,6 +498,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_detector_recipe_compartment.py.html>`__ to see an example of how to use change_detector_recipe_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['detectorRecipeId']
         resource_path = "/detectorRecipes/{detectorRecipeId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_detector_recipe_compartment"
@@ -537,7 +556,8 @@ class CloudGuardClient(object):
                 body=change_detector_recipe_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -547,7 +567,8 @@ class CloudGuardClient(object):
                 body=change_detector_recipe_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_managed_list_compartment(self, managed_list_id, change_managed_list_compartment_details, **kwargs):
         """
@@ -595,6 +616,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_managed_list_compartment.py.html>`__ to see an example of how to use change_managed_list_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedListId']
         resource_path = "/managedLists/{managedListId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_managed_list_compartment"
@@ -651,7 +674,8 @@ class CloudGuardClient(object):
                 body=change_managed_list_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -661,7 +685,8 @@ class CloudGuardClient(object):
                 body=change_managed_list_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_responder_recipe_compartment(self, responder_recipe_id, change_responder_recipe_compartment_details, **kwargs):
         """
@@ -709,6 +734,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_responder_recipe_compartment.py.html>`__ to see an example of how to use change_responder_recipe_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['responderRecipeId']
         resource_path = "/responderRecipes/{responderRecipeId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_responder_recipe_compartment"
@@ -765,7 +792,8 @@ class CloudGuardClient(object):
                 body=change_responder_recipe_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -775,7 +803,8 @@ class CloudGuardClient(object):
                 body=change_responder_recipe_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_security_recipe_compartment(self, security_recipe_id, change_security_recipe_compartment_details, **kwargs):
         """
@@ -823,6 +852,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_security_recipe_compartment.py.html>`__ to see an example of how to use change_security_recipe_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityRecipeId']
         resource_path = "/securityRecipes/{securityRecipeId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_security_recipe_compartment"
@@ -879,7 +910,8 @@ class CloudGuardClient(object):
                 body=change_security_recipe_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -889,7 +921,8 @@ class CloudGuardClient(object):
                 body=change_security_recipe_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_security_zone_compartment(self, security_zone_id, change_security_zone_compartment_details, **kwargs):
         """
@@ -937,6 +970,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_security_zone_compartment.py.html>`__ to see an example of how to use change_security_zone_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityZoneId']
         resource_path = "/securityZones/{securityZoneId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_security_zone_compartment"
@@ -993,7 +1028,8 @@ class CloudGuardClient(object):
                 body=change_security_zone_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1003,7 +1039,8 @@ class CloudGuardClient(object):
                 body=change_security_zone_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_data_mask_rule(self, create_data_mask_rule_details, **kwargs):
         """
@@ -1041,6 +1078,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_data_mask_rule.py.html>`__ to see an example of how to use create_data_mask_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/dataMaskRules"
         method = "POST"
         operation_name = "create_data_mask_rule"
@@ -1085,7 +1124,8 @@ class CloudGuardClient(object):
                 response_type="DataMaskRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1095,7 +1135,8 @@ class CloudGuardClient(object):
                 response_type="DataMaskRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_data_source(self, create_data_source_details, **kwargs):
         """
@@ -1133,6 +1174,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_data_source.py.html>`__ to see an example of how to use create_data_source API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/dataSources"
         method = "POST"
         operation_name = "create_data_source"
@@ -1176,7 +1219,8 @@ class CloudGuardClient(object):
                 body=create_data_source_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1185,7 +1229,8 @@ class CloudGuardClient(object):
                 body=create_data_source_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_detector_recipe(self, create_detector_recipe_details, **kwargs):
         """
@@ -1223,6 +1268,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_detector_recipe.py.html>`__ to see an example of how to use create_detector_recipe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/detectorRecipes"
         method = "POST"
         operation_name = "create_detector_recipe"
@@ -1267,7 +1314,8 @@ class CloudGuardClient(object):
                 response_type="DetectorRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1277,7 +1325,8 @@ class CloudGuardClient(object):
                 response_type="DetectorRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_detector_recipe_detector_rule(self, detector_recipe_id, create_detector_recipe_detector_rule_details, **kwargs):
         """
@@ -1318,6 +1367,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_detector_recipe_detector_rule.py.html>`__ to see an example of how to use create_detector_recipe_detector_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['detectorRecipeId']
         resource_path = "/detectorRecipes/{detectorRecipeId}/detectorRules"
         method = "POST"
         operation_name = "create_detector_recipe_detector_rule"
@@ -1373,7 +1424,8 @@ class CloudGuardClient(object):
                 response_type="DetectorRecipeDetectorRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1384,7 +1436,8 @@ class CloudGuardClient(object):
                 response_type="DetectorRecipeDetectorRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_managed_list(self, create_managed_list_details, **kwargs):
         """
@@ -1422,6 +1475,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_managed_list.py.html>`__ to see an example of how to use create_managed_list API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/managedLists"
         method = "POST"
         operation_name = "create_managed_list"
@@ -1466,7 +1521,8 @@ class CloudGuardClient(object):
                 response_type="ManagedList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1476,7 +1532,8 @@ class CloudGuardClient(object):
                 response_type="ManagedList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_responder_recipe(self, create_responder_recipe_details, **kwargs):
         """
@@ -1514,6 +1571,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_responder_recipe.py.html>`__ to see an example of how to use create_responder_recipe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/responderRecipes"
         method = "POST"
         operation_name = "create_responder_recipe"
@@ -1558,7 +1617,8 @@ class CloudGuardClient(object):
                 response_type="ResponderRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1568,7 +1628,8 @@ class CloudGuardClient(object):
                 response_type="ResponderRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_security_recipe(self, create_security_recipe_details, **kwargs):
         """
@@ -1606,6 +1667,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_security_recipe.py.html>`__ to see an example of how to use create_security_recipe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/securityRecipes"
         method = "POST"
         operation_name = "create_security_recipe"
@@ -1650,7 +1713,8 @@ class CloudGuardClient(object):
                 response_type="SecurityRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1660,7 +1724,8 @@ class CloudGuardClient(object):
                 response_type="SecurityRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_security_zone(self, create_security_zone_details, **kwargs):
         """
@@ -1698,6 +1763,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_security_zone.py.html>`__ to see an example of how to use create_security_zone API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/securityZones"
         method = "POST"
         operation_name = "create_security_zone"
@@ -1742,7 +1809,8 @@ class CloudGuardClient(object):
                 response_type="SecurityZone",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1752,7 +1820,8 @@ class CloudGuardClient(object):
                 response_type="SecurityZone",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_target(self, create_target_details, **kwargs):
         """
@@ -1790,6 +1859,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_target.py.html>`__ to see an example of how to use create_target API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/targets"
         method = "POST"
         operation_name = "create_target"
@@ -1834,7 +1905,8 @@ class CloudGuardClient(object):
                 response_type="Target",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1844,7 +1916,8 @@ class CloudGuardClient(object):
                 response_type="Target",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_target_detector_recipe(self, target_id, attach_target_detector_recipe_details, **kwargs):
         """
@@ -1885,6 +1958,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_target_detector_recipe.py.html>`__ to see an example of how to use create_target_detector_recipe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetId']
         resource_path = "/targets/{targetId}/targetDetectorRecipes"
         method = "POST"
         operation_name = "create_target_detector_recipe"
@@ -1940,7 +2015,8 @@ class CloudGuardClient(object):
                 response_type="TargetDetectorRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1951,7 +2027,8 @@ class CloudGuardClient(object):
                 response_type="TargetDetectorRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_target_responder_recipe(self, target_id, attach_target_responder_recipe_details, **kwargs):
         """
@@ -1992,6 +2069,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_target_responder_recipe.py.html>`__ to see an example of how to use create_target_responder_recipe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetId']
         resource_path = "/targets/{targetId}/targetResponderRecipes"
         method = "POST"
         operation_name = "create_target_responder_recipe"
@@ -2047,7 +2126,8 @@ class CloudGuardClient(object):
                 response_type="TargetResponderRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2058,7 +2138,8 @@ class CloudGuardClient(object):
                 response_type="TargetResponderRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_data_mask_rule(self, data_mask_rule_id, **kwargs):
         """
@@ -2096,6 +2177,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_data_mask_rule.py.html>`__ to see an example of how to use delete_data_mask_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dataMaskRuleId']
         resource_path = "/dataMaskRules/{dataMaskRuleId}"
         method = "DELETE"
         operation_name = "delete_data_mask_rule"
@@ -2148,7 +2231,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2157,7 +2241,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_data_source(self, data_source_id, **kwargs):
         """
@@ -2202,6 +2287,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_data_source.py.html>`__ to see an example of how to use delete_data_source API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dataSourceId']
         resource_path = "/dataSources/{dataSourceId}"
         method = "DELETE"
         operation_name = "delete_data_source"
@@ -2257,7 +2344,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2266,7 +2354,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_detector_recipe(self, detector_recipe_id, **kwargs):
         """
@@ -2311,6 +2400,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_detector_recipe.py.html>`__ to see an example of how to use delete_detector_recipe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['detectorRecipeId']
         resource_path = "/detectorRecipes/{detectorRecipeId}"
         method = "DELETE"
         operation_name = "delete_detector_recipe"
@@ -2366,7 +2457,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2375,7 +2467,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_detector_recipe_detector_rule(self, detector_recipe_id, detector_rule_id, **kwargs):
         """
@@ -2416,6 +2509,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_detector_recipe_detector_rule.py.html>`__ to see an example of how to use delete_detector_recipe_detector_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['detectorRecipeId', 'detectorRuleId']
         resource_path = "/detectorRecipes/{detectorRecipeId}/detectorRules/{detectorRuleId}"
         method = "DELETE"
         operation_name = "delete_detector_recipe_detector_rule"
@@ -2469,7 +2564,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2478,7 +2574,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_detector_recipe_detector_rule_data_source(self, detector_recipe_id, detector_rule_id, data_source_id, **kwargs):
         """
@@ -2522,6 +2619,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_detector_recipe_detector_rule_data_source.py.html>`__ to see an example of how to use delete_detector_recipe_detector_rule_data_source API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['detectorRecipeId', 'detectorRuleId', 'dataSourceId']
         resource_path = "/detectorRecipes/{detectorRecipeId}/detectorRules/{detectorRuleId}/dataSources/{dataSourceId}"
         method = "DELETE"
         operation_name = "delete_detector_recipe_detector_rule_data_source"
@@ -2576,7 +2675,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2585,7 +2685,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_managed_list(self, managed_list_id, **kwargs):
         """
@@ -2630,6 +2731,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_managed_list.py.html>`__ to see an example of how to use delete_managed_list API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedListId']
         resource_path = "/managedLists/{managedListId}"
         method = "DELETE"
         operation_name = "delete_managed_list"
@@ -2685,7 +2788,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2694,7 +2798,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_responder_recipe(self, responder_recipe_id, **kwargs):
         """
@@ -2732,6 +2837,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_responder_recipe.py.html>`__ to see an example of how to use delete_responder_recipe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['responderRecipeId']
         resource_path = "/responderRecipes/{responderRecipeId}"
         method = "DELETE"
         operation_name = "delete_responder_recipe"
@@ -2784,7 +2891,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2793,7 +2901,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_security_recipe(self, security_recipe_id, **kwargs):
         """
@@ -2831,6 +2940,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_security_recipe.py.html>`__ to see an example of how to use delete_security_recipe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityRecipeId']
         resource_path = "/securityRecipes/{securityRecipeId}"
         method = "DELETE"
         operation_name = "delete_security_recipe"
@@ -2883,7 +2994,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2892,7 +3004,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_security_zone(self, security_zone_id, **kwargs):
         """
@@ -2930,6 +3043,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_security_zone.py.html>`__ to see an example of how to use delete_security_zone API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityZoneId']
         resource_path = "/securityZones/{securityZoneId}"
         method = "DELETE"
         operation_name = "delete_security_zone"
@@ -2982,7 +3097,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2991,7 +3107,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_target(self, target_id, **kwargs):
         """
@@ -3029,6 +3146,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_target.py.html>`__ to see an example of how to use delete_target API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetId']
         resource_path = "/targets/{targetId}"
         method = "DELETE"
         operation_name = "delete_target"
@@ -3081,7 +3200,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3090,7 +3210,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_target_detector_recipe(self, target_id, target_detector_recipe_id, **kwargs):
         """
@@ -3131,6 +3252,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_target_detector_recipe.py.html>`__ to see an example of how to use delete_target_detector_recipe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetId', 'targetDetectorRecipeId']
         resource_path = "/targets/{targetId}/targetDetectorRecipes/{targetDetectorRecipeId}"
         method = "DELETE"
         operation_name = "delete_target_detector_recipe"
@@ -3184,7 +3307,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3193,7 +3317,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_target_responder_recipe(self, target_id, target_responder_recipe_id, **kwargs):
         """
@@ -3234,6 +3359,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_target_responder_recipe.py.html>`__ to see an example of how to use delete_target_responder_recipe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetId', 'targetResponderRecipeId']
         resource_path = "/targets/{targetId}/targetResponderRecipes/{targetResponderRecipeId}"
         method = "DELETE"
         operation_name = "delete_target_responder_recipe"
@@ -3287,7 +3414,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3296,7 +3424,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def execute_responder_execution(self, responder_execution_id, compartment_id, **kwargs):
         """
@@ -3347,6 +3476,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/execute_responder_execution.py.html>`__ to see an example of how to use execute_responder_execution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['responderExecutionId', 'compartmentId']
         resource_path = "/responderExecutions/{responderExecutionId}/actions/execute"
         method = "POST"
         operation_name = "execute_responder_execution"
@@ -3410,7 +3541,8 @@ class CloudGuardClient(object):
                 body=kwargs.get('execute_responder_execution_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3421,7 +3553,8 @@ class CloudGuardClient(object):
                 body=kwargs.get('execute_responder_execution_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_condition_metadata_type(self, condition_metadata_type_id, **kwargs):
         """
@@ -3460,6 +3593,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_condition_metadata_type.py.html>`__ to see an example of how to use get_condition_metadata_type API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['conditionMetadataTypeId']
         resource_path = "/conditionMetadataTypes/{conditionMetadataTypeId}"
         method = "GET"
         operation_name = "get_condition_metadata_type"
@@ -3520,7 +3655,8 @@ class CloudGuardClient(object):
                 response_type="ConditionMetadataType",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3531,7 +3667,8 @@ class CloudGuardClient(object):
                 response_type="ConditionMetadataType",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_configuration(self, compartment_id, **kwargs):
         """
@@ -3562,6 +3699,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_configuration.py.html>`__ to see an example of how to use get_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/configuration"
         method = "GET"
         operation_name = "get_configuration"
@@ -3608,7 +3747,8 @@ class CloudGuardClient(object):
                 response_type="Configuration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3618,7 +3758,8 @@ class CloudGuardClient(object):
                 response_type="Configuration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_data_mask_rule(self, data_mask_rule_id, **kwargs):
         """
@@ -3649,6 +3790,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_data_mask_rule.py.html>`__ to see an example of how to use get_data_mask_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dataMaskRuleId']
         resource_path = "/dataMaskRules/{dataMaskRuleId}"
         method = "GET"
         operation_name = "get_data_mask_rule"
@@ -3700,7 +3843,8 @@ class CloudGuardClient(object):
                 response_type="DataMaskRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3710,7 +3854,8 @@ class CloudGuardClient(object):
                 response_type="DataMaskRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_data_source(self, data_source_id, **kwargs):
         """
@@ -3741,6 +3886,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_data_source.py.html>`__ to see an example of how to use get_data_source API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dataSourceId']
         resource_path = "/dataSources/{dataSourceId}"
         method = "GET"
         operation_name = "get_data_source"
@@ -3792,7 +3939,8 @@ class CloudGuardClient(object):
                 response_type="DataSource",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3802,7 +3950,8 @@ class CloudGuardClient(object):
                 response_type="DataSource",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_detector(self, detector_id, **kwargs):
         """
@@ -3833,6 +3982,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_detector.py.html>`__ to see an example of how to use get_detector API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['detectorId']
         resource_path = "/detectors/{detectorId}"
         method = "GET"
         operation_name = "get_detector"
@@ -3884,7 +4035,8 @@ class CloudGuardClient(object):
                 response_type="Detector",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3894,7 +4046,8 @@ class CloudGuardClient(object):
                 response_type="Detector",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_detector_recipe(self, detector_recipe_id, **kwargs):
         """
@@ -3925,6 +4078,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_detector_recipe.py.html>`__ to see an example of how to use get_detector_recipe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['detectorRecipeId']
         resource_path = "/detectorRecipes/{detectorRecipeId}"
         method = "GET"
         operation_name = "get_detector_recipe"
@@ -3976,7 +4131,8 @@ class CloudGuardClient(object):
                 response_type="DetectorRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3986,7 +4142,8 @@ class CloudGuardClient(object):
                 response_type="DetectorRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_detector_recipe_detector_rule(self, detector_recipe_id, detector_rule_id, **kwargs):
         """
@@ -4020,6 +4177,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_detector_recipe_detector_rule.py.html>`__ to see an example of how to use get_detector_recipe_detector_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['detectorRecipeId', 'detectorRuleId']
         resource_path = "/detectorRecipes/{detectorRecipeId}/detectorRules/{detectorRuleId}"
         method = "GET"
         operation_name = "get_detector_recipe_detector_rule"
@@ -4072,7 +4231,8 @@ class CloudGuardClient(object):
                 response_type="DetectorRecipeDetectorRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4082,7 +4242,8 @@ class CloudGuardClient(object):
                 response_type="DetectorRecipeDetectorRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_detector_rule(self, detector_id, detector_rule_id, **kwargs):
         """
@@ -4116,6 +4277,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_detector_rule.py.html>`__ to see an example of how to use get_detector_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['detectorId', 'detectorRuleId']
         resource_path = "/detectors/{detectorId}/detectorRules/{detectorRuleId}"
         method = "GET"
         operation_name = "get_detector_rule"
@@ -4168,7 +4331,8 @@ class CloudGuardClient(object):
                 response_type="DetectorRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4178,7 +4342,8 @@ class CloudGuardClient(object):
                 response_type="DetectorRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_managed_list(self, managed_list_id, **kwargs):
         """
@@ -4209,6 +4374,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_managed_list.py.html>`__ to see an example of how to use get_managed_list API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedListId']
         resource_path = "/managedLists/{managedListId}"
         method = "GET"
         operation_name = "get_managed_list"
@@ -4260,7 +4427,8 @@ class CloudGuardClient(object):
                 response_type="ManagedList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4270,7 +4438,8 @@ class CloudGuardClient(object):
                 response_type="ManagedList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_problem(self, problem_id, **kwargs):
         """
@@ -4301,6 +4470,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_problem.py.html>`__ to see an example of how to use get_problem API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['problemId']
         resource_path = "/problems/{problemId}"
         method = "GET"
         operation_name = "get_problem"
@@ -4352,7 +4523,8 @@ class CloudGuardClient(object):
                 response_type="Problem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4362,7 +4534,8 @@ class CloudGuardClient(object):
                 response_type="Problem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_resource_profile(self, resource_profile_id, **kwargs):
         """
@@ -4393,6 +4566,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_resource_profile.py.html>`__ to see an example of how to use get_resource_profile API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['resourceProfileId']
         resource_path = "/resourceProfiles/{resourceProfileId}"
         method = "GET"
         operation_name = "get_resource_profile"
@@ -4444,7 +4619,8 @@ class CloudGuardClient(object):
                 response_type="ResourceProfile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4454,7 +4630,8 @@ class CloudGuardClient(object):
                 response_type="ResourceProfile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_responder_execution(self, responder_execution_id, **kwargs):
         """
@@ -4485,6 +4662,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_responder_execution.py.html>`__ to see an example of how to use get_responder_execution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['responderExecutionId']
         resource_path = "/responderExecutions/{responderExecutionId}"
         method = "GET"
         operation_name = "get_responder_execution"
@@ -4536,7 +4715,8 @@ class CloudGuardClient(object):
                 response_type="ResponderExecution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4546,7 +4726,8 @@ class CloudGuardClient(object):
                 response_type="ResponderExecution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_responder_recipe(self, responder_recipe_id, **kwargs):
         """
@@ -4577,6 +4758,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_responder_recipe.py.html>`__ to see an example of how to use get_responder_recipe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['responderRecipeId']
         resource_path = "/responderRecipes/{responderRecipeId}"
         method = "GET"
         operation_name = "get_responder_recipe"
@@ -4628,7 +4811,8 @@ class CloudGuardClient(object):
                 response_type="ResponderRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4638,7 +4822,8 @@ class CloudGuardClient(object):
                 response_type="ResponderRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_responder_recipe_responder_rule(self, responder_recipe_id, responder_rule_id, **kwargs):
         """
@@ -4672,6 +4857,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_responder_recipe_responder_rule.py.html>`__ to see an example of how to use get_responder_recipe_responder_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['responderRecipeId', 'responderRuleId']
         resource_path = "/responderRecipes/{responderRecipeId}/responderRules/{responderRuleId}"
         method = "GET"
         operation_name = "get_responder_recipe_responder_rule"
@@ -4724,7 +4911,8 @@ class CloudGuardClient(object):
                 response_type="ResponderRecipeResponderRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4734,7 +4922,8 @@ class CloudGuardClient(object):
                 response_type="ResponderRecipeResponderRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_responder_rule(self, responder_rule_id, **kwargs):
         """
@@ -4765,6 +4954,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_responder_rule.py.html>`__ to see an example of how to use get_responder_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['responderRuleId']
         resource_path = "/responderRules/{responderRuleId}"
         method = "GET"
         operation_name = "get_responder_rule"
@@ -4816,7 +5007,8 @@ class CloudGuardClient(object):
                 response_type="ResponderRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4826,7 +5018,8 @@ class CloudGuardClient(object):
                 response_type="ResponderRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_security_policy(self, security_policy_id, **kwargs):
         """
@@ -4857,6 +5050,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_security_policy.py.html>`__ to see an example of how to use get_security_policy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityPolicyId']
         resource_path = "/securityPolicies/{securityPolicyId}"
         method = "GET"
         operation_name = "get_security_policy"
@@ -4908,7 +5103,8 @@ class CloudGuardClient(object):
                 response_type="SecurityPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4918,7 +5114,8 @@ class CloudGuardClient(object):
                 response_type="SecurityPolicy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_security_recipe(self, security_recipe_id, **kwargs):
         """
@@ -4949,6 +5146,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_security_recipe.py.html>`__ to see an example of how to use get_security_recipe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityRecipeId']
         resource_path = "/securityRecipes/{securityRecipeId}"
         method = "GET"
         operation_name = "get_security_recipe"
@@ -5000,7 +5199,8 @@ class CloudGuardClient(object):
                 response_type="SecurityRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5010,7 +5210,8 @@ class CloudGuardClient(object):
                 response_type="SecurityRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_security_zone(self, security_zone_id, **kwargs):
         """
@@ -5041,6 +5242,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_security_zone.py.html>`__ to see an example of how to use get_security_zone API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityZoneId']
         resource_path = "/securityZones/{securityZoneId}"
         method = "GET"
         operation_name = "get_security_zone"
@@ -5092,7 +5295,8 @@ class CloudGuardClient(object):
                 response_type="SecurityZone",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5102,7 +5306,8 @@ class CloudGuardClient(object):
                 response_type="SecurityZone",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_sighting(self, sighting_id, **kwargs):
         """
@@ -5133,6 +5338,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_sighting.py.html>`__ to see an example of how to use get_sighting API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sightingId']
         resource_path = "/sightings/{sightingId}"
         method = "GET"
         operation_name = "get_sighting"
@@ -5184,7 +5391,8 @@ class CloudGuardClient(object):
                 response_type="Sighting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5194,7 +5402,8 @@ class CloudGuardClient(object):
                 response_type="Sighting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_target(self, target_id, **kwargs):
         """
@@ -5225,6 +5434,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_target.py.html>`__ to see an example of how to use get_target API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetId']
         resource_path = "/targets/{targetId}"
         method = "GET"
         operation_name = "get_target"
@@ -5276,7 +5487,8 @@ class CloudGuardClient(object):
                 response_type="Target",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5286,7 +5498,8 @@ class CloudGuardClient(object):
                 response_type="Target",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_target_detector_recipe(self, target_id, target_detector_recipe_id, **kwargs):
         """
@@ -5320,6 +5533,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_target_detector_recipe.py.html>`__ to see an example of how to use get_target_detector_recipe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetId', 'targetDetectorRecipeId']
         resource_path = "/targets/{targetId}/targetDetectorRecipes/{targetDetectorRecipeId}"
         method = "GET"
         operation_name = "get_target_detector_recipe"
@@ -5372,7 +5587,8 @@ class CloudGuardClient(object):
                 response_type="TargetDetectorRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5382,7 +5598,8 @@ class CloudGuardClient(object):
                 response_type="TargetDetectorRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_target_detector_recipe_detector_rule(self, target_id, target_detector_recipe_id, detector_rule_id, **kwargs):
         """
@@ -5419,6 +5636,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_target_detector_recipe_detector_rule.py.html>`__ to see an example of how to use get_target_detector_recipe_detector_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetId', 'targetDetectorRecipeId', 'detectorRuleId']
         resource_path = "/targets/{targetId}/targetDetectorRecipes/{targetDetectorRecipeId}/detectorRules/{detectorRuleId}"
         method = "GET"
         operation_name = "get_target_detector_recipe_detector_rule"
@@ -5472,7 +5691,8 @@ class CloudGuardClient(object):
                 response_type="TargetDetectorRecipeDetectorRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5482,7 +5702,8 @@ class CloudGuardClient(object):
                 response_type="TargetDetectorRecipeDetectorRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_target_responder_recipe(self, target_id, target_responder_recipe_id, **kwargs):
         """
@@ -5516,6 +5737,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_target_responder_recipe.py.html>`__ to see an example of how to use get_target_responder_recipe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetId', 'targetResponderRecipeId']
         resource_path = "/targets/{targetId}/targetResponderRecipes/{targetResponderRecipeId}"
         method = "GET"
         operation_name = "get_target_responder_recipe"
@@ -5568,7 +5791,8 @@ class CloudGuardClient(object):
                 response_type="TargetResponderRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5578,7 +5802,8 @@ class CloudGuardClient(object):
                 response_type="TargetResponderRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_target_responder_recipe_responder_rule(self, target_id, target_responder_recipe_id, responder_rule_id, **kwargs):
         """
@@ -5615,6 +5840,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_target_responder_recipe_responder_rule.py.html>`__ to see an example of how to use get_target_responder_recipe_responder_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetId', 'targetResponderRecipeId', 'responderRuleId']
         resource_path = "/targets/{targetId}/targetResponderRecipes/{targetResponderRecipeId}/responderRules/{responderRuleId}"
         method = "GET"
         operation_name = "get_target_responder_recipe_responder_rule"
@@ -5668,7 +5895,8 @@ class CloudGuardClient(object):
                 response_type="TargetResponderRecipeResponderRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5678,7 +5906,8 @@ class CloudGuardClient(object):
                 response_type="TargetResponderRecipeResponderRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -5709,6 +5938,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -5760,7 +5991,8 @@ class CloudGuardClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5770,7 +6002,8 @@ class CloudGuardClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_condition_metadata_types(self, compartment_id, **kwargs):
         """
@@ -5822,6 +6055,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_condition_metadata_types.py.html>`__ to see an example of how to use list_condition_metadata_types API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/conditionMetadataTypes"
         method = "GET"
         operation_name = "list_condition_metadata_types"
@@ -5899,7 +6134,8 @@ class CloudGuardClient(object):
                 response_type="ConditionMetadataTypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5909,7 +6145,8 @@ class CloudGuardClient(object):
                 response_type="ConditionMetadataTypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_data_mask_rules(self, compartment_id, **kwargs):
         """
@@ -5987,6 +6224,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_data_mask_rules.py.html>`__ to see an example of how to use list_data_mask_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/dataMaskRules"
         method = "GET"
         operation_name = "list_data_mask_rules"
@@ -6090,7 +6329,8 @@ class CloudGuardClient(object):
                 response_type="DataMaskRuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6100,7 +6340,8 @@ class CloudGuardClient(object):
                 response_type="DataMaskRuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_data_source_events(self, data_source_id, **kwargs):
         """
@@ -6150,6 +6391,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_data_source_events.py.html>`__ to see an example of how to use list_data_source_events API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dataSourceId']
         resource_path = "/dataSources/{dataSourceId}/events"
         method = "GET"
         operation_name = "list_data_source_events"
@@ -6230,7 +6473,8 @@ class CloudGuardClient(object):
                 response_type="DataSourceEventCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6241,7 +6485,8 @@ class CloudGuardClient(object):
                 response_type="DataSourceEventCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_data_sources(self, compartment_id, **kwargs):
         """
@@ -6335,6 +6580,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_data_sources.py.html>`__ to see an example of how to use list_data_sources API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/dataSources"
         method = "GET"
         operation_name = "list_data_sources"
@@ -6443,7 +6690,8 @@ class CloudGuardClient(object):
                 response_type="DataSourceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6453,7 +6701,8 @@ class CloudGuardClient(object):
                 response_type="DataSourceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_detector_recipe_detector_rules(self, detector_recipe_id, compartment_id, **kwargs):
         """
@@ -6511,6 +6760,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_detector_recipe_detector_rules.py.html>`__ to see an example of how to use list_detector_recipe_detector_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['detectorRecipeId', 'compartmentId']
         resource_path = "/detectorRecipes/{detectorRecipeId}/detectorRules"
         method = "GET"
         operation_name = "list_detector_recipe_detector_rules"
@@ -6601,7 +6852,8 @@ class CloudGuardClient(object):
                 response_type="DetectorRecipeDetectorRuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6612,7 +6864,8 @@ class CloudGuardClient(object):
                 response_type="DetectorRecipeDetectorRuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_detector_recipes(self, compartment_id, **kwargs):
         """
@@ -6701,6 +6954,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_detector_recipes.py.html>`__ to see an example of how to use list_detector_recipes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/detectorRecipes"
         method = "GET"
         operation_name = "list_detector_recipes"
@@ -6793,7 +7048,8 @@ class CloudGuardClient(object):
                 response_type="DetectorRecipeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6803,7 +7059,8 @@ class CloudGuardClient(object):
                 response_type="DetectorRecipeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_detector_rules(self, detector_id, compartment_id, **kwargs):
         """
@@ -6861,6 +7118,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_detector_rules.py.html>`__ to see an example of how to use list_detector_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['detectorId', 'compartmentId']
         resource_path = "/detectors/{detectorId}/detectorRules"
         method = "GET"
         operation_name = "list_detector_rules"
@@ -6951,7 +7210,8 @@ class CloudGuardClient(object):
                 response_type="DetectorRuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6962,7 +7222,8 @@ class CloudGuardClient(object):
                 response_type="DetectorRuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_detectors(self, compartment_id, **kwargs):
         """
@@ -7014,6 +7275,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_detectors.py.html>`__ to see an example of how to use list_detectors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/detectors"
         method = "GET"
         operation_name = "list_detectors"
@@ -7091,7 +7354,8 @@ class CloudGuardClient(object):
                 response_type="DetectorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7101,7 +7365,8 @@ class CloudGuardClient(object):
                 response_type="DetectorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_impacted_resources(self, problem_id, **kwargs):
         """
@@ -7148,6 +7413,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_impacted_resources.py.html>`__ to see an example of how to use list_impacted_resources API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['problemId']
         resource_path = "/problems/{problemId}/impactedResources"
         method = "GET"
         operation_name = "list_impacted_resources"
@@ -7226,7 +7493,8 @@ class CloudGuardClient(object):
                 response_type="ImpactedResourceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7237,7 +7505,8 @@ class CloudGuardClient(object):
                 response_type="ImpactedResourceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_managed_list_types(self, compartment_id, **kwargs):
         """
@@ -7289,6 +7558,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_managed_list_types.py.html>`__ to see an example of how to use list_managed_list_types API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/managedListTypes"
         method = "GET"
         operation_name = "list_managed_list_types"
@@ -7366,7 +7637,8 @@ class CloudGuardClient(object):
                 response_type="ManagedListTypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7376,7 +7648,8 @@ class CloudGuardClient(object):
                 response_type="ManagedListTypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_managed_lists(self, compartment_id, **kwargs):
         """
@@ -7469,6 +7742,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_managed_lists.py.html>`__ to see an example of how to use list_managed_lists API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/managedLists"
         method = "GET"
         operation_name = "list_managed_lists"
@@ -7570,7 +7845,8 @@ class CloudGuardClient(object):
                 response_type="ManagedListCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7580,7 +7856,8 @@ class CloudGuardClient(object):
                 response_type="ManagedListCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_policies(self, compartment_id, **kwargs):
         """
@@ -7627,6 +7904,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_policies.py.html>`__ to see an example of how to use list_policies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/policies"
         method = "GET"
         operation_name = "list_policies"
@@ -7695,7 +7974,8 @@ class CloudGuardClient(object):
                 response_type="PolicyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7705,7 +7985,8 @@ class CloudGuardClient(object):
                 response_type="PolicyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_problem_endpoints(self, problem_id, **kwargs):
         """
@@ -7752,6 +8033,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_problem_endpoints.py.html>`__ to see an example of how to use list_problem_endpoints API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['problemId']
         resource_path = "/problems/{problemId}/endpoints"
         method = "GET"
         operation_name = "list_problem_endpoints"
@@ -7830,7 +8113,8 @@ class CloudGuardClient(object):
                 response_type="ProblemEndpointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7841,7 +8125,8 @@ class CloudGuardClient(object):
                 response_type="ProblemEndpointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_problem_entities(self, problem_id, **kwargs):
         """
@@ -7888,6 +8173,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_problem_entities.py.html>`__ to see an example of how to use list_problem_entities API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['problemId']
         resource_path = "/problems/{problemId}/entities"
         method = "GET"
         operation_name = "list_problem_entities"
@@ -7966,7 +8253,8 @@ class CloudGuardClient(object):
                 response_type="ProblemEntityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7977,7 +8265,8 @@ class CloudGuardClient(object):
                 response_type="ProblemEntityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_problem_histories(self, compartment_id, problem_id, **kwargs):
         """
@@ -8027,6 +8316,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_problem_histories.py.html>`__ to see an example of how to use list_problem_histories API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['problemId', 'compartmentId']
         resource_path = "/problems/{problemId}/histories"
         method = "GET"
         operation_name = "list_problem_histories"
@@ -8106,7 +8397,8 @@ class CloudGuardClient(object):
                 response_type="ProblemHistoryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8117,7 +8409,8 @@ class CloudGuardClient(object):
                 response_type="ProblemHistoryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_problems(self, compartment_id, **kwargs):
         """
@@ -8255,6 +8548,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_problems.py.html>`__ to see an example of how to use list_problems API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/problems"
         method = "GET"
         operation_name = "list_problems"
@@ -8398,7 +8693,8 @@ class CloudGuardClient(object):
                 response_type="ProblemCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8408,7 +8704,8 @@ class CloudGuardClient(object):
                 response_type="ProblemCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_recommendations(self, compartment_id, **kwargs):
         """
@@ -8483,6 +8780,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_recommendations.py.html>`__ to see an example of how to use list_recommendations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/recommendations"
         method = "GET"
         operation_name = "list_recommendations"
@@ -8582,7 +8881,8 @@ class CloudGuardClient(object):
                 response_type="RecommendationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8592,7 +8892,8 @@ class CloudGuardClient(object):
                 response_type="RecommendationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_resource_profile_endpoints(self, resource_profile_id, **kwargs):
         """
@@ -8639,6 +8940,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_profile_endpoints.py.html>`__ to see an example of how to use list_resource_profile_endpoints API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['resourceProfileId']
         resource_path = "/resourceProfiles/{resourceProfileId}/endpoints"
         method = "GET"
         operation_name = "list_resource_profile_endpoints"
@@ -8717,7 +9020,8 @@ class CloudGuardClient(object):
                 response_type="ResourceProfileEndpointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8728,7 +9032,8 @@ class CloudGuardClient(object):
                 response_type="ResourceProfileEndpointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_resource_profile_impacted_resources(self, resource_profile_id, **kwargs):
         """
@@ -8775,6 +9080,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_profile_impacted_resources.py.html>`__ to see an example of how to use list_resource_profile_impacted_resources API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['resourceProfileId']
         resource_path = "/resourceProfiles/{resourceProfileId}/impactedResources"
         method = "GET"
         operation_name = "list_resource_profile_impacted_resources"
@@ -8853,7 +9160,8 @@ class CloudGuardClient(object):
                 response_type="ResourceProfileImpactedResourceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8864,7 +9172,8 @@ class CloudGuardClient(object):
                 response_type="ResourceProfileImpactedResourceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_resource_profiles(self, compartment_id, **kwargs):
         """
@@ -8966,6 +9275,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_profiles.py.html>`__ to see an example of how to use list_resource_profiles API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/resourceProfiles"
         method = "GET"
         operation_name = "list_resource_profiles"
@@ -9063,7 +9374,8 @@ class CloudGuardClient(object):
                 response_type="ResourceProfileCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9073,7 +9385,8 @@ class CloudGuardClient(object):
                 response_type="ResourceProfileCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_resource_types(self, compartment_id, **kwargs):
         """
@@ -9130,6 +9443,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_types.py.html>`__ to see an example of how to use list_resource_types API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/resourceTypes"
         method = "GET"
         operation_name = "list_resource_types"
@@ -9216,7 +9531,8 @@ class CloudGuardClient(object):
                 response_type="ResourceTypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9226,7 +9542,8 @@ class CloudGuardClient(object):
                 response_type="ResourceTypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_responder_activities(self, problem_id, **kwargs):
         """
@@ -9273,6 +9590,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_responder_activities.py.html>`__ to see an example of how to use list_responder_activities API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['problemId']
         resource_path = "/problems/{problemId}/responderActivities"
         method = "GET"
         operation_name = "list_responder_activities"
@@ -9351,7 +9670,8 @@ class CloudGuardClient(object):
                 response_type="ResponderActivityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9362,7 +9682,8 @@ class CloudGuardClient(object):
                 response_type="ResponderActivityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_responder_executions(self, compartment_id, **kwargs):
         """
@@ -9460,6 +9781,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_responder_executions.py.html>`__ to see an example of how to use list_responder_executions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/responderExecutions"
         method = "GET"
         operation_name = "list_responder_executions"
@@ -9580,7 +9903,8 @@ class CloudGuardClient(object):
                 response_type="ResponderExecutionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9590,7 +9914,8 @@ class CloudGuardClient(object):
                 response_type="ResponderExecutionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_responder_recipe_responder_rules(self, responder_recipe_id, compartment_id, **kwargs):
         """
@@ -9648,6 +9973,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_responder_recipe_responder_rules.py.html>`__ to see an example of how to use list_responder_recipe_responder_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['responderRecipeId', 'compartmentId']
         resource_path = "/responderRecipes/{responderRecipeId}/responderRules"
         method = "GET"
         operation_name = "list_responder_recipe_responder_rules"
@@ -9738,7 +10065,8 @@ class CloudGuardClient(object):
                 response_type="ResponderRecipeResponderRuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9749,7 +10077,8 @@ class CloudGuardClient(object):
                 response_type="ResponderRecipeResponderRuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_responder_recipes(self, compartment_id, **kwargs):
         """
@@ -9837,6 +10166,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_responder_recipes.py.html>`__ to see an example of how to use list_responder_recipes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/responderRecipes"
         method = "GET"
         operation_name = "list_responder_recipes"
@@ -9929,7 +10260,8 @@ class CloudGuardClient(object):
                 response_type="ResponderRecipeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9939,7 +10271,8 @@ class CloudGuardClient(object):
                 response_type="ResponderRecipeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_responder_rules(self, compartment_id, **kwargs):
         """
@@ -9994,6 +10327,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_responder_rules.py.html>`__ to see an example of how to use list_responder_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/responderRules"
         method = "GET"
         operation_name = "list_responder_rules"
@@ -10073,7 +10408,8 @@ class CloudGuardClient(object):
                 response_type="ResponderRuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10083,7 +10419,8 @@ class CloudGuardClient(object):
                 response_type="ResponderRuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_security_policies(self, compartment_id, **kwargs):
         """
@@ -10141,6 +10478,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_security_policies.py.html>`__ to see an example of how to use list_security_policies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/securityPolicies"
         method = "GET"
         operation_name = "list_security_policies"
@@ -10222,7 +10561,8 @@ class CloudGuardClient(object):
                 response_type="SecurityPolicyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10232,7 +10572,8 @@ class CloudGuardClient(object):
                 response_type="SecurityPolicyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_security_recipes(self, compartment_id, **kwargs):
         """
@@ -10290,6 +10631,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_security_recipes.py.html>`__ to see an example of how to use list_security_recipes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/securityRecipes"
         method = "GET"
         operation_name = "list_security_recipes"
@@ -10371,7 +10714,8 @@ class CloudGuardClient(object):
                 response_type="SecurityRecipeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10381,7 +10725,8 @@ class CloudGuardClient(object):
                 response_type="SecurityRecipeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_security_zones(self, compartment_id, **kwargs):
         """
@@ -10445,6 +10790,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_security_zones.py.html>`__ to see an example of how to use list_security_zones API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/securityZones"
         method = "GET"
         operation_name = "list_security_zones"
@@ -10530,7 +10877,8 @@ class CloudGuardClient(object):
                 response_type="SecurityZoneCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10540,7 +10888,8 @@ class CloudGuardClient(object):
                 response_type="SecurityZoneCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_sighting_endpoints(self, sighting_id, **kwargs):
         """
@@ -10587,6 +10936,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_sighting_endpoints.py.html>`__ to see an example of how to use list_sighting_endpoints API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sightingId']
         resource_path = "/sightings/{sightingId}/endpoints"
         method = "GET"
         operation_name = "list_sighting_endpoints"
@@ -10665,7 +11016,8 @@ class CloudGuardClient(object):
                 response_type="SightingEndpointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10676,7 +11028,8 @@ class CloudGuardClient(object):
                 response_type="SightingEndpointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_sighting_impacted_resources(self, sighting_id, **kwargs):
         """
@@ -10723,6 +11076,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_sighting_impacted_resources.py.html>`__ to see an example of how to use list_sighting_impacted_resources API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sightingId']
         resource_path = "/sightings/{sightingId}/impactedResources"
         method = "GET"
         operation_name = "list_sighting_impacted_resources"
@@ -10801,7 +11156,8 @@ class CloudGuardClient(object):
                 response_type="SightingImpactedResourceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10812,7 +11168,8 @@ class CloudGuardClient(object):
                 response_type="SightingImpactedResourceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_sightings(self, compartment_id, **kwargs):
         """
@@ -10898,6 +11255,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_sightings.py.html>`__ to see an example of how to use list_sightings API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/sightings"
         method = "GET"
         operation_name = "list_sightings"
@@ -10985,7 +11344,8 @@ class CloudGuardClient(object):
                 response_type="SightingCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10995,7 +11355,8 @@ class CloudGuardClient(object):
                 response_type="SightingCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_tactics(self, compartment_id, **kwargs):
         """
@@ -11047,6 +11408,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_tactics.py.html>`__ to see an example of how to use list_tactics API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/tactics"
         method = "GET"
         operation_name = "list_tactics"
@@ -11124,7 +11487,8 @@ class CloudGuardClient(object):
                 response_type="TacticCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11134,7 +11498,8 @@ class CloudGuardClient(object):
                 response_type="TacticCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_target_detector_recipe_detector_rules(self, target_id, target_detector_recipe_id, compartment_id, **kwargs):
         """
@@ -11195,6 +11560,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_target_detector_recipe_detector_rules.py.html>`__ to see an example of how to use list_target_detector_recipe_detector_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetId', 'targetDetectorRecipeId', 'compartmentId']
         resource_path = "/targets/{targetId}/targetDetectorRecipes/{targetDetectorRecipeId}/detectorRules"
         method = "GET"
         operation_name = "list_target_detector_recipe_detector_rules"
@@ -11286,7 +11653,8 @@ class CloudGuardClient(object):
                 response_type="TargetDetectorRecipeDetectorRuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11297,7 +11665,8 @@ class CloudGuardClient(object):
                 response_type="TargetDetectorRecipeDetectorRuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_target_detector_recipes(self, target_id, compartment_id, **kwargs):
         """
@@ -11355,6 +11724,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_target_detector_recipes.py.html>`__ to see an example of how to use list_target_detector_recipes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetId', 'compartmentId']
         resource_path = "/targets/{targetId}/targetDetectorRecipes"
         method = "GET"
         operation_name = "list_target_detector_recipes"
@@ -11445,7 +11816,8 @@ class CloudGuardClient(object):
                 response_type="TargetDetectorRecipeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11456,7 +11828,8 @@ class CloudGuardClient(object):
                 response_type="TargetDetectorRecipeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_target_responder_recipe_responder_rules(self, target_id, target_responder_recipe_id, compartment_id, **kwargs):
         """
@@ -11517,6 +11890,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_target_responder_recipe_responder_rules.py.html>`__ to see an example of how to use list_target_responder_recipe_responder_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetId', 'targetResponderRecipeId', 'compartmentId']
         resource_path = "/targets/{targetId}/targetResponderRecipes/{targetResponderRecipeId}/responderRules"
         method = "GET"
         operation_name = "list_target_responder_recipe_responder_rules"
@@ -11608,7 +11983,8 @@ class CloudGuardClient(object):
                 response_type="TargetResponderRecipeResponderRuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11619,7 +11995,8 @@ class CloudGuardClient(object):
                 response_type="TargetResponderRecipeResponderRuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_target_responder_recipes(self, target_id, compartment_id, **kwargs):
         """
@@ -11677,6 +12054,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_target_responder_recipes.py.html>`__ to see an example of how to use list_target_responder_recipes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetId', 'compartmentId']
         resource_path = "/targets/{targetId}/targetResponderRecipes"
         method = "GET"
         operation_name = "list_target_responder_recipes"
@@ -11767,7 +12146,8 @@ class CloudGuardClient(object):
                 response_type="TargetResponderRecipeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11778,7 +12158,8 @@ class CloudGuardClient(object):
                 response_type="TargetResponderRecipeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_targets(self, compartment_id, **kwargs):
         """
@@ -11866,6 +12247,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_targets.py.html>`__ to see an example of how to use list_targets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/targets"
         method = "GET"
         operation_name = "list_targets"
@@ -11958,7 +12341,8 @@ class CloudGuardClient(object):
                 response_type="TargetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11968,7 +12352,8 @@ class CloudGuardClient(object):
                 response_type="TargetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_techniques(self, compartment_id, **kwargs):
         """
@@ -12023,6 +12408,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_techniques.py.html>`__ to see an example of how to use list_techniques API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/techniques"
         method = "GET"
         operation_name = "list_techniques"
@@ -12102,7 +12489,8 @@ class CloudGuardClient(object):
                 response_type="TechniqueCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12112,7 +12500,8 @@ class CloudGuardClient(object):
                 response_type="TechniqueCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -12159,6 +12548,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -12237,7 +12628,8 @@ class CloudGuardClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12248,7 +12640,8 @@ class CloudGuardClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -12295,6 +12688,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -12373,7 +12768,8 @@ class CloudGuardClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12384,7 +12780,8 @@ class CloudGuardClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -12439,6 +12836,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -12518,7 +12917,8 @@ class CloudGuardClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12528,7 +12928,8 @@ class CloudGuardClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_compartment(self, security_zone_id, remove_compartment_details, **kwargs):
         """
@@ -12576,6 +12977,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/remove_compartment.py.html>`__ to see an example of how to use remove_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityZoneId']
         resource_path = "/securityZones/{securityZoneId}/actions/removeCompartment"
         method = "POST"
         operation_name = "remove_compartment"
@@ -12633,7 +13036,8 @@ class CloudGuardClient(object):
                 response_type="SecurityZone",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12644,7 +13048,8 @@ class CloudGuardClient(object):
                 response_type="SecurityZone",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def request_risk_scores(self, compartment_id, **kwargs):
         """
@@ -12681,6 +13086,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_risk_scores.py.html>`__ to see an example of how to use request_risk_scores API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/riskScores"
         method = "POST"
         operation_name = "request_risk_scores"
@@ -12731,7 +13138,8 @@ class CloudGuardClient(object):
                 response_type="RiskScoreAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12741,7 +13149,8 @@ class CloudGuardClient(object):
                 response_type="RiskScoreAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def request_security_score_summarized_trend(self, compartment_id, **kwargs):
         """
@@ -12785,6 +13194,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_security_score_summarized_trend.py.html>`__ to see an example of how to use request_security_score_summarized_trend API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/securityScores/actions/summarizeTrend"
         method = "POST"
         operation_name = "request_security_score_summarized_trend"
@@ -12839,7 +13250,8 @@ class CloudGuardClient(object):
                 response_type="SecurityScoreTrendAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12849,7 +13261,8 @@ class CloudGuardClient(object):
                 response_type="SecurityScoreTrendAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def request_security_scores(self, compartment_id, **kwargs):
         """
@@ -12886,6 +13299,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_security_scores.py.html>`__ to see an example of how to use request_security_scores API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/securityScores"
         method = "POST"
         operation_name = "request_security_scores"
@@ -12936,7 +13351,8 @@ class CloudGuardClient(object):
                 response_type="SecurityScoreAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12946,7 +13362,8 @@ class CloudGuardClient(object):
                 response_type="SecurityScoreAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def request_summarized_activity_problems(self, compartment_id, **kwargs):
         """
@@ -13017,6 +13434,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_activity_problems.py.html>`__ to see an example of how to use request_summarized_activity_problems API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/problems/actions/summarizeActivityProblems"
         method = "POST"
         operation_name = "request_summarized_activity_problems"
@@ -13080,7 +13499,8 @@ class CloudGuardClient(object):
                 response_type="ActivityProblemAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13090,7 +13510,8 @@ class CloudGuardClient(object):
                 response_type="ActivityProblemAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def request_summarized_problems(self, list_dimensions, compartment_id, **kwargs):
         """
@@ -13158,6 +13579,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_problems.py.html>`__ to see an example of how to use request_summarized_problems API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['listDimensions', 'compartmentId']
         resource_path = "/problems/actions/summarize"
         method = "POST"
         operation_name = "request_summarized_problems"
@@ -13227,7 +13650,8 @@ class CloudGuardClient(object):
                 response_type="ProblemAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13237,7 +13661,8 @@ class CloudGuardClient(object):
                 response_type="ProblemAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def request_summarized_responder_executions(self, responder_executions_dimensions, compartment_id, **kwargs):
         """
@@ -13317,6 +13742,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_responder_executions.py.html>`__ to see an example of how to use request_summarized_responder_executions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['responderExecutionsDimensions', 'compartmentId']
         resource_path = "/responderExecutions/actions/summarize"
         method = "POST"
         operation_name = "request_summarized_responder_executions"
@@ -13406,7 +13833,8 @@ class CloudGuardClient(object):
                 response_type="ResponderExecutionAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13416,7 +13844,8 @@ class CloudGuardClient(object):
                 response_type="ResponderExecutionAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def request_summarized_risk_scores(self, compartment_id, **kwargs):
         """
@@ -13453,6 +13882,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_risk_scores.py.html>`__ to see an example of how to use request_summarized_risk_scores API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/problems/actions/summarizeRiskScore"
         method = "POST"
         operation_name = "request_summarized_risk_scores"
@@ -13503,7 +13934,8 @@ class CloudGuardClient(object):
                 response_type="RiskScoreAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13513,7 +13945,8 @@ class CloudGuardClient(object):
                 response_type="RiskScoreAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def request_summarized_security_scores(self, compartment_id, **kwargs):
         """
@@ -13550,6 +13983,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_security_scores.py.html>`__ to see an example of how to use request_summarized_security_scores API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/problems/actions/summarizeSecurityScore"
         method = "POST"
         operation_name = "request_summarized_security_scores"
@@ -13600,7 +14035,8 @@ class CloudGuardClient(object):
                 response_type="SecurityScoreAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13610,7 +14046,8 @@ class CloudGuardClient(object):
                 response_type="SecurityScoreAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def request_summarized_top_trend_resource_profile_risk_scores(self, compartment_id, **kwargs):
         """
@@ -13676,6 +14113,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_top_trend_resource_profile_risk_scores.py.html>`__ to see an example of how to use request_summarized_top_trend_resource_profile_risk_scores API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/resourceProfileRiskScores/actions/summarizeTopTrends"
         method = "POST"
         operation_name = "request_summarized_top_trend_resource_profile_risk_scores"
@@ -13752,7 +14191,8 @@ class CloudGuardClient(object):
                 response_type="ResourceProfileRiskScoreAggregationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13762,7 +14202,8 @@ class CloudGuardClient(object):
                 response_type="ResourceProfileRiskScoreAggregationSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def request_summarized_trend_problems(self, compartment_id, **kwargs):
         """
@@ -13831,6 +14272,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_trend_problems.py.html>`__ to see an example of how to use request_summarized_trend_problems API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/problems/actions/summarizeTrend"
         method = "POST"
         operation_name = "request_summarized_trend_problems"
@@ -13896,7 +14339,8 @@ class CloudGuardClient(object):
                 response_type="ProblemTrendAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13906,7 +14350,8 @@ class CloudGuardClient(object):
                 response_type="ProblemTrendAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def request_summarized_trend_resource_risk_scores(self, request_summarized_trend_resource_risk_scores_details, compartment_id, **kwargs):
         """
@@ -13967,6 +14412,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_trend_resource_risk_scores.py.html>`__ to see an example of how to use request_summarized_trend_resource_risk_scores API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/resourceRiskScores/actions/summarizeTrend"
         method = "POST"
         operation_name = "request_summarized_trend_resource_risk_scores"
@@ -14033,7 +14480,8 @@ class CloudGuardClient(object):
                 response_type="ResourceRiskScoreAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14044,7 +14492,8 @@ class CloudGuardClient(object):
                 response_type="ResourceRiskScoreAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def request_summarized_trend_responder_executions(self, compartment_id, **kwargs):
         """
@@ -14113,6 +14562,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_trend_responder_executions.py.html>`__ to see an example of how to use request_summarized_trend_responder_executions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/responderExecutions/actions/summarizeTrend"
         method = "POST"
         operation_name = "request_summarized_trend_responder_executions"
@@ -14178,7 +14629,8 @@ class CloudGuardClient(object):
                 response_type="ResponderExecutionTrendAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14188,7 +14640,8 @@ class CloudGuardClient(object):
                 response_type="ResponderExecutionTrendAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def request_summarized_trend_security_scores(self, compartment_id, **kwargs):
         """
@@ -14231,6 +14684,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_trend_security_scores.py.html>`__ to see an example of how to use request_summarized_trend_security_scores API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/problems/actions/summarizeSecurityScoreTrend"
         method = "POST"
         operation_name = "request_summarized_trend_security_scores"
@@ -14285,7 +14740,8 @@ class CloudGuardClient(object):
                 response_type="SecurityScoreTrendAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14295,7 +14751,8 @@ class CloudGuardClient(object):
                 response_type="SecurityScoreTrendAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def skip_bulk_responder_execution(self, skip_bulk_responder_execution_details, **kwargs):
         """
@@ -14327,6 +14784,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/skip_bulk_responder_execution.py.html>`__ to see an example of how to use skip_bulk_responder_execution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/responderExecutions/actions/bulkSkip"
         method = "POST"
         operation_name = "skip_bulk_responder_execution"
@@ -14367,7 +14826,8 @@ class CloudGuardClient(object):
                 body=skip_bulk_responder_execution_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14376,7 +14836,8 @@ class CloudGuardClient(object):
                 body=skip_bulk_responder_execution_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def skip_responder_execution(self, responder_execution_id, compartment_id, **kwargs):
         """
@@ -14424,6 +14885,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/skip_responder_execution.py.html>`__ to see an example of how to use skip_responder_execution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['responderExecutionId', 'compartmentId']
         resource_path = "/responderExecutions/{responderExecutionId}/actions/skip"
         method = "POST"
         operation_name = "skip_responder_execution"
@@ -14485,7 +14948,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14495,7 +14959,8 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def trigger_responder(self, problem_id, trigger_responder_details, **kwargs):
         """
@@ -14543,6 +15008,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/trigger_responder.py.html>`__ to see an example of how to use trigger_responder API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['problemId']
         resource_path = "/problems/{problemId}/actions/triggerResponder"
         method = "POST"
         operation_name = "trigger_responder"
@@ -14599,7 +15066,8 @@ class CloudGuardClient(object):
                 body=trigger_responder_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14609,7 +15077,8 @@ class CloudGuardClient(object):
                 body=trigger_responder_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_bulk_problem_status(self, update_bulk_problem_status_details, **kwargs):
         """
@@ -14641,6 +15110,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_bulk_problem_status.py.html>`__ to see an example of how to use update_bulk_problem_status API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/problems/actions/bulkUpdateStatus"
         method = "POST"
         operation_name = "update_bulk_problem_status"
@@ -14681,7 +15152,8 @@ class CloudGuardClient(object):
                 body=update_bulk_problem_status_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14690,7 +15162,8 @@ class CloudGuardClient(object):
                 body=update_bulk_problem_status_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_configuration(self, update_configuration_details, compartment_id, **kwargs):
         """
@@ -14738,6 +15211,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_configuration.py.html>`__ to see an example of how to use update_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/configuration"
         method = "PUT"
         operation_name = "update_configuration"
@@ -14790,7 +15265,8 @@ class CloudGuardClient(object):
                 response_type="Configuration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14801,7 +15277,8 @@ class CloudGuardClient(object):
                 response_type="Configuration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_data_mask_rule(self, data_mask_rule_id, update_data_mask_rule_details, **kwargs):
         """
@@ -14842,6 +15319,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_data_mask_rule.py.html>`__ to see an example of how to use update_data_mask_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dataMaskRuleId']
         resource_path = "/dataMaskRules/{dataMaskRuleId}"
         method = "PUT"
         operation_name = "update_data_mask_rule"
@@ -14896,7 +15375,8 @@ class CloudGuardClient(object):
                 response_type="DataMaskRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14907,7 +15387,8 @@ class CloudGuardClient(object):
                 response_type="DataMaskRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_data_source(self, data_source_id, update_data_source_details, **kwargs):
         """
@@ -14955,6 +15436,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_data_source.py.html>`__ to see an example of how to use update_data_source API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dataSourceId']
         resource_path = "/dataSources/{dataSourceId}"
         method = "PUT"
         operation_name = "update_data_source"
@@ -15011,7 +15494,8 @@ class CloudGuardClient(object):
                 body=update_data_source_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15021,7 +15505,8 @@ class CloudGuardClient(object):
                 body=update_data_source_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_detector_recipe(self, detector_recipe_id, update_detector_recipe_details, **kwargs):
         """
@@ -15069,6 +15554,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_detector_recipe.py.html>`__ to see an example of how to use update_detector_recipe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['detectorRecipeId']
         resource_path = "/detectorRecipes/{detectorRecipeId}"
         method = "PUT"
         operation_name = "update_detector_recipe"
@@ -15126,7 +15613,8 @@ class CloudGuardClient(object):
                 response_type="DetectorRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15137,7 +15625,8 @@ class CloudGuardClient(object):
                 response_type="DetectorRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_detector_recipe_detector_rule(self, detector_recipe_id, detector_rule_id, update_detector_recipe_detector_rule_details, **kwargs):
         """
@@ -15181,6 +15670,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_detector_recipe_detector_rule.py.html>`__ to see an example of how to use update_detector_recipe_detector_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['detectorRecipeId', 'detectorRuleId']
         resource_path = "/detectorRecipes/{detectorRecipeId}/detectorRules/{detectorRuleId}"
         method = "PUT"
         operation_name = "update_detector_recipe_detector_rule"
@@ -15236,7 +15727,8 @@ class CloudGuardClient(object):
                 response_type="DetectorRecipeDetectorRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15247,7 +15739,8 @@ class CloudGuardClient(object):
                 response_type="DetectorRecipeDetectorRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_managed_list(self, managed_list_id, update_managed_list_details, **kwargs):
         """
@@ -15295,6 +15788,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_managed_list.py.html>`__ to see an example of how to use update_managed_list API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedListId']
         resource_path = "/managedLists/{managedListId}"
         method = "PUT"
         operation_name = "update_managed_list"
@@ -15352,7 +15847,8 @@ class CloudGuardClient(object):
                 response_type="ManagedList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15363,7 +15859,8 @@ class CloudGuardClient(object):
                 response_type="ManagedList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_problem_status(self, problem_id, update_problem_status_details, **kwargs):
         """
@@ -15411,6 +15908,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_problem_status.py.html>`__ to see an example of how to use update_problem_status API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['problemId']
         resource_path = "/problems/{problemId}/actions/updateStatus"
         method = "POST"
         operation_name = "update_problem_status"
@@ -15468,7 +15967,8 @@ class CloudGuardClient(object):
                 response_type="Problem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15479,7 +15979,8 @@ class CloudGuardClient(object):
                 response_type="Problem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_responder_recipe(self, responder_recipe_id, update_responder_recipe_details, **kwargs):
         """
@@ -15520,6 +16021,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_responder_recipe.py.html>`__ to see an example of how to use update_responder_recipe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['responderRecipeId']
         resource_path = "/responderRecipes/{responderRecipeId}"
         method = "PUT"
         operation_name = "update_responder_recipe"
@@ -15574,7 +16077,8 @@ class CloudGuardClient(object):
                 response_type="ResponderRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15585,7 +16089,8 @@ class CloudGuardClient(object):
                 response_type="ResponderRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_responder_recipe_responder_rule(self, responder_recipe_id, responder_rule_id, update_responder_recipe_responder_rule_details, **kwargs):
         """
@@ -15629,6 +16134,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_responder_recipe_responder_rule.py.html>`__ to see an example of how to use update_responder_recipe_responder_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['responderRecipeId', 'responderRuleId']
         resource_path = "/responderRecipes/{responderRecipeId}/responderRules/{responderRuleId}"
         method = "PUT"
         operation_name = "update_responder_recipe_responder_rule"
@@ -15684,7 +16191,8 @@ class CloudGuardClient(object):
                 response_type="ResponderRecipeResponderRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15695,7 +16203,8 @@ class CloudGuardClient(object):
                 response_type="ResponderRecipeResponderRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_security_recipe(self, security_recipe_id, update_security_recipe_details, **kwargs):
         """
@@ -15736,6 +16245,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_security_recipe.py.html>`__ to see an example of how to use update_security_recipe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityRecipeId']
         resource_path = "/securityRecipes/{securityRecipeId}"
         method = "PUT"
         operation_name = "update_security_recipe"
@@ -15790,7 +16301,8 @@ class CloudGuardClient(object):
                 response_type="SecurityRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15801,7 +16313,8 @@ class CloudGuardClient(object):
                 response_type="SecurityRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_security_zone(self, security_zone_id, update_security_zone_details, **kwargs):
         """
@@ -15842,6 +16355,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_security_zone.py.html>`__ to see an example of how to use update_security_zone API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityZoneId']
         resource_path = "/securityZones/{securityZoneId}"
         method = "PUT"
         operation_name = "update_security_zone"
@@ -15896,7 +16411,8 @@ class CloudGuardClient(object):
                 response_type="SecurityZone",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15907,7 +16423,8 @@ class CloudGuardClient(object):
                 response_type="SecurityZone",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_target(self, target_id, update_target_details, **kwargs):
         """
@@ -15948,6 +16465,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_target.py.html>`__ to see an example of how to use update_target API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetId']
         resource_path = "/targets/{targetId}"
         method = "PUT"
         operation_name = "update_target"
@@ -16002,7 +16521,8 @@ class CloudGuardClient(object):
                 response_type="Target",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16013,7 +16533,8 @@ class CloudGuardClient(object):
                 response_type="Target",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_target_detector_recipe(self, target_id, target_detector_recipe_id, update_target_detector_recipe_details, **kwargs):
         """
@@ -16057,6 +16578,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_target_detector_recipe.py.html>`__ to see an example of how to use update_target_detector_recipe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetId', 'targetDetectorRecipeId']
         resource_path = "/targets/{targetId}/targetDetectorRecipes/{targetDetectorRecipeId}"
         method = "PUT"
         operation_name = "update_target_detector_recipe"
@@ -16112,7 +16635,8 @@ class CloudGuardClient(object):
                 response_type="TargetDetectorRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16123,7 +16647,8 @@ class CloudGuardClient(object):
                 response_type="TargetDetectorRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_target_detector_recipe_detector_rule(self, target_id, target_detector_recipe_id, detector_rule_id, update_target_detector_recipe_detector_rule_details, **kwargs):
         """
@@ -16170,6 +16695,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_target_detector_recipe_detector_rule.py.html>`__ to see an example of how to use update_target_detector_recipe_detector_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetId', 'targetDetectorRecipeId', 'detectorRuleId']
         resource_path = "/targets/{targetId}/targetDetectorRecipes/{targetDetectorRecipeId}/detectorRules/{detectorRuleId}"
         method = "PUT"
         operation_name = "update_target_detector_recipe_detector_rule"
@@ -16226,7 +16753,8 @@ class CloudGuardClient(object):
                 response_type="TargetDetectorRecipeDetectorRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16237,7 +16765,8 @@ class CloudGuardClient(object):
                 response_type="TargetDetectorRecipeDetectorRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_target_responder_recipe(self, target_id, target_responder_recipe_id, update_target_responder_recipe_details, **kwargs):
         """
@@ -16281,6 +16810,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_target_responder_recipe.py.html>`__ to see an example of how to use update_target_responder_recipe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetId', 'targetResponderRecipeId']
         resource_path = "/targets/{targetId}/targetResponderRecipes/{targetResponderRecipeId}"
         method = "PUT"
         operation_name = "update_target_responder_recipe"
@@ -16336,7 +16867,8 @@ class CloudGuardClient(object):
                 response_type="TargetResponderRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16347,7 +16879,8 @@ class CloudGuardClient(object):
                 response_type="TargetResponderRecipe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_target_responder_recipe_responder_rule(self, target_id, target_responder_recipe_id, responder_rule_id, update_target_responder_recipe_responder_rule_details, **kwargs):
         """
@@ -16394,6 +16927,8 @@ class CloudGuardClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_target_responder_recipe_responder_rule.py.html>`__ to see an example of how to use update_target_responder_recipe_responder_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['targetId', 'targetResponderRecipeId', 'responderRuleId']
         resource_path = "/targets/{targetId}/targetResponderRecipes/{targetResponderRecipeId}/responderRules/{responderRuleId}"
         method = "PUT"
         operation_name = "update_target_responder_recipe_responder_rule"
@@ -16450,7 +16985,8 @@ class CloudGuardClient(object):
                 response_type="TargetResponderRecipeResponderRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16461,4 +16997,5 @@ class CloudGuardClient(object):
                 response_type="TargetResponderRecipeResponderRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

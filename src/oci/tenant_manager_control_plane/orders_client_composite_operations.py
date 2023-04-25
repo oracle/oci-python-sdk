@@ -32,7 +32,7 @@ class OrdersClientCompositeOperations(object):
             The information needed to activate an order in a tenancy.
 
         :param str activation_token: (required)
-            Activation Token containing an order ID. A JWT RFC 7519 formatted string.
+            Activation token containing an order ID. A JWT RFC 7519-formatted string.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.tenant_manager_control_plane.models.WorkRequest.status`

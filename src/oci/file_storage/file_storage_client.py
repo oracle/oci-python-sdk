@@ -66,6 +66,9 @@ class FileStorageClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -92,8 +95,10 @@ class FileStorageClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20171215',
             'service_endpoint_template': 'https://filestorage.{region}.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -149,6 +154,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/change_file_system_compartment.py.html>`__ to see an example of how to use change_file_system_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fileSystemId']
         resource_path = "/fileSystems/{fileSystemId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_file_system_compartment"
@@ -202,7 +209,8 @@ class FileStorageClient(object):
                 body=change_file_system_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -212,7 +220,8 @@ class FileStorageClient(object):
                 body=change_file_system_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_mount_target_compartment(self, mount_target_id, change_mount_target_compartment_details, **kwargs):
         """
@@ -258,6 +267,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/change_mount_target_compartment.py.html>`__ to see an example of how to use change_mount_target_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mountTargetId']
         resource_path = "/mountTargets/{mountTargetId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_mount_target_compartment"
@@ -311,7 +322,8 @@ class FileStorageClient(object):
                 body=change_mount_target_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -321,7 +333,8 @@ class FileStorageClient(object):
                 body=change_mount_target_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_replication_compartment(self, replication_id, change_replication_compartment_details, **kwargs):
         """
@@ -368,6 +381,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/change_replication_compartment.py.html>`__ to see an example of how to use change_replication_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['replicationId']
         resource_path = "/replications/{replicationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_replication_compartment"
@@ -421,7 +436,8 @@ class FileStorageClient(object):
                 body=change_replication_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -431,7 +447,8 @@ class FileStorageClient(object):
                 body=change_replication_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_export(self, create_export_details, **kwargs):
         """
@@ -471,6 +488,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/create_export.py.html>`__ to see an example of how to use create_export API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/exports"
         method = "POST"
         operation_name = "create_export"
@@ -515,7 +534,8 @@ class FileStorageClient(object):
                 response_type="Export",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -525,7 +545,8 @@ class FileStorageClient(object):
                 response_type="Export",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_file_system(self, create_file_system_details, **kwargs):
         """
@@ -597,6 +618,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/create_file_system.py.html>`__ to see an example of how to use create_file_system API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/fileSystems"
         method = "POST"
         operation_name = "create_file_system"
@@ -641,7 +664,8 @@ class FileStorageClient(object):
                 response_type="FileSystem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -651,7 +675,8 @@ class FileStorageClient(object):
                 response_type="FileSystem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_mount_target(self, create_mount_target_details, **kwargs):
         """
@@ -725,6 +750,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/create_mount_target.py.html>`__ to see an example of how to use create_mount_target API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/mountTargets"
         method = "POST"
         operation_name = "create_mount_target"
@@ -769,7 +796,8 @@ class FileStorageClient(object):
                 response_type="MountTarget",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -779,7 +807,8 @@ class FileStorageClient(object):
                 response_type="MountTarget",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_replication(self, create_replication_details, **kwargs):
         """
@@ -849,6 +878,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/create_replication.py.html>`__ to see an example of how to use create_replication API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/replications"
         method = "POST"
         operation_name = "create_replication"
@@ -893,7 +924,8 @@ class FileStorageClient(object):
                 response_type="Replication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -903,7 +935,8 @@ class FileStorageClient(object):
                 response_type="Replication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_snapshot(self, create_snapshot_details, **kwargs):
         """
@@ -943,6 +976,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/create_snapshot.py.html>`__ to see an example of how to use create_snapshot API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/snapshots"
         method = "POST"
         operation_name = "create_snapshot"
@@ -987,7 +1022,8 @@ class FileStorageClient(object):
                 response_type="Snapshot",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -997,7 +1033,8 @@ class FileStorageClient(object):
                 response_type="Snapshot",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_export(self, export_id, **kwargs):
         """
@@ -1038,6 +1075,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/delete_export.py.html>`__ to see an example of how to use delete_export API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exportId']
         resource_path = "/exports/{exportId}"
         method = "DELETE"
         operation_name = "delete_export"
@@ -1090,7 +1129,8 @@ class FileStorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1099,7 +1139,8 @@ class FileStorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_file_system(self, file_system_id, **kwargs):
         """
@@ -1142,6 +1183,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/delete_file_system.py.html>`__ to see an example of how to use delete_file_system API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fileSystemId']
         resource_path = "/fileSystems/{fileSystemId}"
         method = "DELETE"
         operation_name = "delete_file_system"
@@ -1194,7 +1237,8 @@ class FileStorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1203,7 +1247,8 @@ class FileStorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_mount_target(self, mount_target_id, **kwargs):
         """
@@ -1245,6 +1290,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/delete_mount_target.py.html>`__ to see an example of how to use delete_mount_target API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mountTargetId']
         resource_path = "/mountTargets/{mountTargetId}"
         method = "DELETE"
         operation_name = "delete_mount_target"
@@ -1297,7 +1344,8 @@ class FileStorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1306,7 +1354,8 @@ class FileStorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_replication(self, replication_id, **kwargs):
         """
@@ -1355,6 +1404,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/delete_replication.py.html>`__ to see an example of how to use delete_replication API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['replicationId']
         resource_path = "/replications/{replicationId}"
         method = "DELETE"
         operation_name = "delete_replication"
@@ -1421,7 +1472,8 @@ class FileStorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1431,7 +1483,8 @@ class FileStorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_replication_target(self, replication_target_id, **kwargs):
         """
@@ -1475,6 +1528,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/delete_replication_target.py.html>`__ to see an example of how to use delete_replication_target API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['replicationTargetId']
         resource_path = "/replicationTargets/{replicationTargetId}"
         method = "DELETE"
         operation_name = "delete_replication_target"
@@ -1527,7 +1582,8 @@ class FileStorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1536,7 +1592,8 @@ class FileStorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_snapshot(self, snapshot_id, **kwargs):
         """
@@ -1577,6 +1634,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/delete_snapshot.py.html>`__ to see an example of how to use delete_snapshot API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['snapshotId']
         resource_path = "/snapshots/{snapshotId}"
         method = "DELETE"
         operation_name = "delete_snapshot"
@@ -1629,7 +1688,8 @@ class FileStorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1638,7 +1698,8 @@ class FileStorageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def estimate_replication(self, file_system_id, **kwargs):
         """
@@ -1682,6 +1743,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/estimate_replication.py.html>`__ to see an example of how to use estimate_replication API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fileSystemId']
         resource_path = "/fileSystems/{fileSystemId}/actions/estimateReplication"
         method = "POST"
         operation_name = "estimate_replication"
@@ -1742,7 +1805,8 @@ class FileStorageClient(object):
                 response_type="ReplicationEstimate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1753,7 +1817,8 @@ class FileStorageClient(object):
                 response_type="ReplicationEstimate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_export(self, export_id, **kwargs):
         """
@@ -1787,6 +1852,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/get_export.py.html>`__ to see an example of how to use get_export API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exportId']
         resource_path = "/exports/{exportId}"
         method = "GET"
         operation_name = "get_export"
@@ -1838,7 +1905,8 @@ class FileStorageClient(object):
                 response_type="Export",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1848,7 +1916,8 @@ class FileStorageClient(object):
                 response_type="Export",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_export_set(self, export_set_id, **kwargs):
         """
@@ -1882,6 +1951,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/get_export_set.py.html>`__ to see an example of how to use get_export_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exportSetId']
         resource_path = "/exportSets/{exportSetId}"
         method = "GET"
         operation_name = "get_export_set"
@@ -1933,7 +2004,8 @@ class FileStorageClient(object):
                 response_type="ExportSet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1943,7 +2015,8 @@ class FileStorageClient(object):
                 response_type="ExportSet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_file_system(self, file_system_id, **kwargs):
         """
@@ -1977,6 +2050,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/get_file_system.py.html>`__ to see an example of how to use get_file_system API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fileSystemId']
         resource_path = "/fileSystems/{fileSystemId}"
         method = "GET"
         operation_name = "get_file_system"
@@ -2028,7 +2103,8 @@ class FileStorageClient(object):
                 response_type="FileSystem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2038,7 +2114,8 @@ class FileStorageClient(object):
                 response_type="FileSystem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_mount_target(self, mount_target_id, **kwargs):
         """
@@ -2072,6 +2149,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/get_mount_target.py.html>`__ to see an example of how to use get_mount_target API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mountTargetId']
         resource_path = "/mountTargets/{mountTargetId}"
         method = "GET"
         operation_name = "get_mount_target"
@@ -2123,7 +2202,8 @@ class FileStorageClient(object):
                 response_type="MountTarget",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2133,7 +2213,8 @@ class FileStorageClient(object):
                 response_type="MountTarget",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_replication(self, replication_id, **kwargs):
         """
@@ -2167,6 +2248,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/get_replication.py.html>`__ to see an example of how to use get_replication API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['replicationId']
         resource_path = "/replications/{replicationId}"
         method = "GET"
         operation_name = "get_replication"
@@ -2218,7 +2301,8 @@ class FileStorageClient(object):
                 response_type="Replication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2228,7 +2312,8 @@ class FileStorageClient(object):
                 response_type="Replication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_replication_target(self, replication_target_id, **kwargs):
         """
@@ -2262,6 +2347,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/get_replication_target.py.html>`__ to see an example of how to use get_replication_target API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['replicationTargetId']
         resource_path = "/replicationTargets/{replicationTargetId}"
         method = "GET"
         operation_name = "get_replication_target"
@@ -2313,7 +2400,8 @@ class FileStorageClient(object):
                 response_type="ReplicationTarget",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2323,7 +2411,8 @@ class FileStorageClient(object):
                 response_type="ReplicationTarget",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_snapshot(self, snapshot_id, **kwargs):
         """
@@ -2357,6 +2446,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/get_snapshot.py.html>`__ to see an example of how to use get_snapshot API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['snapshotId']
         resource_path = "/snapshots/{snapshotId}"
         method = "GET"
         operation_name = "get_snapshot"
@@ -2408,7 +2499,8 @@ class FileStorageClient(object):
                 response_type="Snapshot",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2418,7 +2510,8 @@ class FileStorageClient(object):
                 response_type="Snapshot",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_export_sets(self, compartment_id, availability_domain, **kwargs):
         """
@@ -2510,6 +2603,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/list_export_sets.py.html>`__ to see an example of how to use list_export_sets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'availabilityDomain']
         resource_path = "/exportSets"
         method = "GET"
         operation_name = "list_export_sets"
@@ -2592,7 +2687,8 @@ class FileStorageClient(object):
                 response_type="list[ExportSetSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2602,7 +2698,8 @@ class FileStorageClient(object):
                 response_type="list[ExportSetSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_exports(self, **kwargs):
         """
@@ -2696,6 +2793,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/list_exports.py.html>`__ to see an example of how to use list_exports API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/exports"
         method = "GET"
         operation_name = "list_exports"
@@ -2780,7 +2879,8 @@ class FileStorageClient(object):
                 response_type="list[ExportSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2790,7 +2890,8 @@ class FileStorageClient(object):
                 response_type="list[ExportSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_file_systems(self, compartment_id, availability_domain, **kwargs):
         """
@@ -2894,6 +2995,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/list_file_systems.py.html>`__ to see an example of how to use list_file_systems API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'availabilityDomain']
         resource_path = "/fileSystems"
         method = "GET"
         operation_name = "list_file_systems"
@@ -2980,7 +3083,8 @@ class FileStorageClient(object):
                 response_type="list[FileSystemSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2990,7 +3094,8 @@ class FileStorageClient(object):
                 response_type="list[FileSystemSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_mount_targets(self, compartment_id, availability_domain, **kwargs):
         """
@@ -3087,6 +3192,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/list_mount_targets.py.html>`__ to see an example of how to use list_mount_targets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'availabilityDomain']
         resource_path = "/mountTargets"
         method = "GET"
         operation_name = "list_mount_targets"
@@ -3171,7 +3278,8 @@ class FileStorageClient(object):
                 response_type="list[MountTargetSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3181,7 +3289,8 @@ class FileStorageClient(object):
                 response_type="list[MountTargetSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_replication_targets(self, compartment_id, availability_domain, **kwargs):
         """
@@ -3273,6 +3382,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/list_replication_targets.py.html>`__ to see an example of how to use list_replication_targets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'availabilityDomain']
         resource_path = "/replicationTargets"
         method = "GET"
         operation_name = "list_replication_targets"
@@ -3355,7 +3466,8 @@ class FileStorageClient(object):
                 response_type="list[ReplicationTargetSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3365,7 +3477,8 @@ class FileStorageClient(object):
                 response_type="list[ReplicationTargetSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_replications(self, compartment_id, availability_domain, **kwargs):
         """
@@ -3462,6 +3575,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/list_replications.py.html>`__ to see an example of how to use list_replications API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'availabilityDomain']
         resource_path = "/replications"
         method = "GET"
         operation_name = "list_replications"
@@ -3546,7 +3661,8 @@ class FileStorageClient(object):
                 response_type="list[ReplicationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3556,7 +3672,8 @@ class FileStorageClient(object):
                 response_type="list[ReplicationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_snapshots(self, file_system_id, **kwargs):
         """
@@ -3630,6 +3747,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/list_snapshots.py.html>`__ to see an example of how to use list_snapshots API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fileSystemId']
         resource_path = "/snapshots"
         method = "GET"
         operation_name = "list_snapshots"
@@ -3700,7 +3819,8 @@ class FileStorageClient(object):
                 response_type="list[SnapshotSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3710,7 +3830,8 @@ class FileStorageClient(object):
                 response_type="list[SnapshotSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_export(self, export_id, update_export_details, **kwargs):
         """
@@ -3754,6 +3875,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/update_export.py.html>`__ to see an example of how to use update_export API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exportId']
         resource_path = "/exports/{exportId}"
         method = "PUT"
         operation_name = "update_export"
@@ -3808,7 +3931,8 @@ class FileStorageClient(object):
                 response_type="Export",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3819,7 +3943,8 @@ class FileStorageClient(object):
                 response_type="Export",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_export_set(self, export_set_id, update_export_set_details, **kwargs):
         """
@@ -3863,6 +3988,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/update_export_set.py.html>`__ to see an example of how to use update_export_set API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['exportSetId']
         resource_path = "/exportSets/{exportSetId}"
         method = "PUT"
         operation_name = "update_export_set"
@@ -3917,7 +4044,8 @@ class FileStorageClient(object):
                 response_type="ExportSet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3928,7 +4056,8 @@ class FileStorageClient(object):
                 response_type="ExportSet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_file_system(self, file_system_id, update_file_system_details, **kwargs):
         """
@@ -3973,6 +4102,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/update_file_system.py.html>`__ to see an example of how to use update_file_system API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fileSystemId']
         resource_path = "/fileSystems/{fileSystemId}"
         method = "PUT"
         operation_name = "update_file_system"
@@ -4027,7 +4158,8 @@ class FileStorageClient(object):
                 response_type="FileSystem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4038,7 +4170,8 @@ class FileStorageClient(object):
                 response_type="FileSystem",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_mount_target(self, mount_target_id, update_mount_target_details, **kwargs):
         """
@@ -4082,6 +4215,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/update_mount_target.py.html>`__ to see an example of how to use update_mount_target API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mountTargetId']
         resource_path = "/mountTargets/{mountTargetId}"
         method = "PUT"
         operation_name = "update_mount_target"
@@ -4136,7 +4271,8 @@ class FileStorageClient(object):
                 response_type="MountTarget",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4147,7 +4283,8 @@ class FileStorageClient(object):
                 response_type="MountTarget",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_replication(self, replication_id, update_replication_details, **kwargs):
         """
@@ -4191,6 +4328,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/update_replication.py.html>`__ to see an example of how to use update_replication API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['replicationId']
         resource_path = "/replications/{replicationId}"
         method = "PUT"
         operation_name = "update_replication"
@@ -4245,7 +4384,8 @@ class FileStorageClient(object):
                 response_type="Replication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4256,7 +4396,8 @@ class FileStorageClient(object):
                 response_type="Replication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_snapshot(self, snapshot_id, update_snapshot_details, **kwargs):
         """
@@ -4300,6 +4441,8 @@ class FileStorageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/filestorage/update_snapshot.py.html>`__ to see an example of how to use update_snapshot API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['snapshotId']
         resource_path = "/snapshots/{snapshotId}"
         method = "PUT"
         operation_name = "update_snapshot"
@@ -4354,7 +4497,8 @@ class FileStorageClient(object):
                 response_type="Snapshot",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4365,4 +4509,5 @@ class FileStorageClient(object):
                 response_type="Snapshot",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

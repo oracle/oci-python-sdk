@@ -67,6 +67,9 @@ class DisasterRecoveryClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -93,8 +96,10 @@ class DisasterRecoveryClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20220125',
             'service_endpoint_template': 'https://disaster-recovery.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -155,6 +160,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/associate_dr_protection_group.py.html>`__ to see an example of how to use associate_dr_protection_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drProtectionGroupId']
         resource_path = "/drProtectionGroups/{drProtectionGroupId}/actions/associate"
         method = "POST"
         operation_name = "associate_dr_protection_group"
@@ -211,7 +218,8 @@ class DisasterRecoveryClient(object):
                 body=associate_dr_protection_group_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -221,7 +229,8 @@ class DisasterRecoveryClient(object):
                 body=associate_dr_protection_group_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_dr_plan_execution(self, cancel_dr_plan_execution_details, dr_plan_execution_id, **kwargs):
         """
@@ -271,6 +280,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/cancel_dr_plan_execution.py.html>`__ to see an example of how to use cancel_dr_plan_execution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drPlanExecutionId']
         resource_path = "/drPlanExecutions/{drPlanExecutionId}/actions/cancel"
         method = "POST"
         operation_name = "cancel_dr_plan_execution"
@@ -327,7 +338,8 @@ class DisasterRecoveryClient(object):
                 body=cancel_dr_plan_execution_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -337,7 +349,8 @@ class DisasterRecoveryClient(object):
                 body=cancel_dr_plan_execution_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_work_request(self, work_request_id, **kwargs):
         """
@@ -377,6 +390,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
@@ -429,7 +444,8 @@ class DisasterRecoveryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -438,7 +454,8 @@ class DisasterRecoveryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_dr_protection_group_compartment(self, change_dr_protection_group_compartment_details, dr_protection_group_id, **kwargs):
         """
@@ -488,6 +505,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/change_dr_protection_group_compartment.py.html>`__ to see an example of how to use change_dr_protection_group_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drProtectionGroupId']
         resource_path = "/drProtectionGroups/{drProtectionGroupId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_dr_protection_group_compartment"
@@ -544,7 +563,8 @@ class DisasterRecoveryClient(object):
                 body=change_dr_protection_group_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -554,7 +574,8 @@ class DisasterRecoveryClient(object):
                 body=change_dr_protection_group_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_dr_plan(self, create_dr_plan_details, **kwargs):
         """
@@ -592,6 +613,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/create_dr_plan.py.html>`__ to see an example of how to use create_dr_plan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/drPlans"
         method = "POST"
         operation_name = "create_dr_plan"
@@ -636,7 +659,8 @@ class DisasterRecoveryClient(object):
                 response_type="DrPlan",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -646,7 +670,8 @@ class DisasterRecoveryClient(object):
                 response_type="DrPlan",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_dr_plan_execution(self, create_dr_plan_execution_details, **kwargs):
         """
@@ -684,6 +709,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/create_dr_plan_execution.py.html>`__ to see an example of how to use create_dr_plan_execution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/drPlanExecutions"
         method = "POST"
         operation_name = "create_dr_plan_execution"
@@ -728,7 +755,8 @@ class DisasterRecoveryClient(object):
                 response_type="DrPlanExecution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -738,7 +766,8 @@ class DisasterRecoveryClient(object):
                 response_type="DrPlanExecution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_dr_protection_group(self, create_dr_protection_group_details, **kwargs):
         """
@@ -776,6 +805,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/create_dr_protection_group.py.html>`__ to see an example of how to use create_dr_protection_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/drProtectionGroups"
         method = "POST"
         operation_name = "create_dr_protection_group"
@@ -820,7 +851,8 @@ class DisasterRecoveryClient(object):
                 response_type="DrProtectionGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -830,7 +862,8 @@ class DisasterRecoveryClient(object):
                 response_type="DrProtectionGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_dr_plan(self, dr_plan_id, **kwargs):
         """
@@ -870,6 +903,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/delete_dr_plan.py.html>`__ to see an example of how to use delete_dr_plan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drPlanId']
         resource_path = "/drPlans/{drPlanId}"
         method = "DELETE"
         operation_name = "delete_dr_plan"
@@ -922,7 +957,8 @@ class DisasterRecoveryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -931,7 +967,8 @@ class DisasterRecoveryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_dr_plan_execution(self, dr_plan_execution_id, **kwargs):
         """
@@ -971,6 +1008,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/delete_dr_plan_execution.py.html>`__ to see an example of how to use delete_dr_plan_execution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drPlanExecutionId']
         resource_path = "/drPlanExecutions/{drPlanExecutionId}"
         method = "DELETE"
         operation_name = "delete_dr_plan_execution"
@@ -1023,7 +1062,8 @@ class DisasterRecoveryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1032,7 +1072,8 @@ class DisasterRecoveryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_dr_protection_group(self, dr_protection_group_id, **kwargs):
         """
@@ -1072,6 +1113,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/delete_dr_protection_group.py.html>`__ to see an example of how to use delete_dr_protection_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drProtectionGroupId']
         resource_path = "/drProtectionGroups/{drProtectionGroupId}"
         method = "DELETE"
         operation_name = "delete_dr_protection_group"
@@ -1124,7 +1167,8 @@ class DisasterRecoveryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1133,7 +1177,8 @@ class DisasterRecoveryClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def disassociate_dr_protection_group(self, disassociate_dr_protection_group_details, dr_protection_group_id, **kwargs):
         """
@@ -1184,6 +1229,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/disassociate_dr_protection_group.py.html>`__ to see an example of how to use disassociate_dr_protection_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drProtectionGroupId']
         resource_path = "/drProtectionGroups/{drProtectionGroupId}/actions/disassociate"
         method = "POST"
         operation_name = "disassociate_dr_protection_group"
@@ -1240,7 +1287,8 @@ class DisasterRecoveryClient(object):
                 body=disassociate_dr_protection_group_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1250,7 +1298,8 @@ class DisasterRecoveryClient(object):
                 body=disassociate_dr_protection_group_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_dr_plan(self, dr_plan_id, **kwargs):
         """
@@ -1283,6 +1332,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/get_dr_plan.py.html>`__ to see an example of how to use get_dr_plan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drPlanId']
         resource_path = "/drPlans/{drPlanId}"
         method = "GET"
         operation_name = "get_dr_plan"
@@ -1334,7 +1385,8 @@ class DisasterRecoveryClient(object):
                 response_type="DrPlan",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1344,7 +1396,8 @@ class DisasterRecoveryClient(object):
                 response_type="DrPlan",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_dr_plan_execution(self, dr_plan_execution_id, **kwargs):
         """
@@ -1377,6 +1430,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/get_dr_plan_execution.py.html>`__ to see an example of how to use get_dr_plan_execution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drPlanExecutionId']
         resource_path = "/drPlanExecutions/{drPlanExecutionId}"
         method = "GET"
         operation_name = "get_dr_plan_execution"
@@ -1428,7 +1483,8 @@ class DisasterRecoveryClient(object):
                 response_type="DrPlanExecution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1438,7 +1494,8 @@ class DisasterRecoveryClient(object):
                 response_type="DrPlanExecution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_dr_protection_group(self, dr_protection_group_id, **kwargs):
         """
@@ -1471,6 +1528,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/get_dr_protection_group.py.html>`__ to see an example of how to use get_dr_protection_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drProtectionGroupId']
         resource_path = "/drProtectionGroups/{drProtectionGroupId}"
         method = "GET"
         operation_name = "get_dr_protection_group"
@@ -1522,7 +1581,8 @@ class DisasterRecoveryClient(object):
                 response_type="DrProtectionGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1532,7 +1592,8 @@ class DisasterRecoveryClient(object):
                 response_type="DrProtectionGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1565,6 +1626,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -1616,7 +1679,8 @@ class DisasterRecoveryClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1626,7 +1690,8 @@ class DisasterRecoveryClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def ignore_dr_plan_execution(self, ignore_dr_plan_execution_details, dr_plan_execution_id, **kwargs):
         """
@@ -1676,6 +1741,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/ignore_dr_plan_execution.py.html>`__ to see an example of how to use ignore_dr_plan_execution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drPlanExecutionId']
         resource_path = "/drPlanExecutions/{drPlanExecutionId}/actions/ignore"
         method = "POST"
         operation_name = "ignore_dr_plan_execution"
@@ -1732,7 +1799,8 @@ class DisasterRecoveryClient(object):
                 body=ignore_dr_plan_execution_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1742,7 +1810,8 @@ class DisasterRecoveryClient(object):
                 body=ignore_dr_plan_execution_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_dr_plan_executions(self, dr_protection_group_id, **kwargs):
         """
@@ -1829,6 +1898,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/list_dr_plan_executions.py.html>`__ to see an example of how to use list_dr_plan_executions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drProtectionGroupId']
         resource_path = "/drPlanExecutions"
         method = "GET"
         operation_name = "list_dr_plan_executions"
@@ -1919,7 +1990,8 @@ class DisasterRecoveryClient(object):
                 response_type="DrPlanExecutionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1929,7 +2001,8 @@ class DisasterRecoveryClient(object):
                 response_type="DrPlanExecutionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_dr_plans(self, dr_protection_group_id, **kwargs):
         """
@@ -2016,6 +2089,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/list_dr_plans.py.html>`__ to see an example of how to use list_dr_plans API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drProtectionGroupId']
         resource_path = "/drPlans"
         method = "GET"
         operation_name = "list_dr_plans"
@@ -2106,7 +2181,8 @@ class DisasterRecoveryClient(object):
                 response_type="DrPlanCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2116,7 +2192,8 @@ class DisasterRecoveryClient(object):
                 response_type="DrPlanCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_dr_protection_groups(self, compartment_id, **kwargs):
         """
@@ -2198,6 +2275,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/list_dr_protection_groups.py.html>`__ to see an example of how to use list_dr_protection_groups API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/drProtectionGroups"
         method = "GET"
         operation_name = "list_dr_protection_groups"
@@ -2279,7 +2358,8 @@ class DisasterRecoveryClient(object):
                 response_type="DrProtectionGroupCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2289,7 +2369,8 @@ class DisasterRecoveryClient(object):
                 response_type="DrProtectionGroupCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -2354,6 +2435,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -2432,7 +2515,8 @@ class DisasterRecoveryClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2443,7 +2527,8 @@ class DisasterRecoveryClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -2508,6 +2593,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -2586,7 +2673,8 @@ class DisasterRecoveryClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2597,7 +2685,8 @@ class DisasterRecoveryClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, **kwargs):
         """
@@ -2676,6 +2765,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -2758,7 +2849,8 @@ class DisasterRecoveryClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2768,7 +2860,8 @@ class DisasterRecoveryClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def pause_dr_plan_execution(self, pause_dr_plan_execution_details, dr_plan_execution_id, **kwargs):
         """
@@ -2818,6 +2911,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/pause_dr_plan_execution.py.html>`__ to see an example of how to use pause_dr_plan_execution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drPlanExecutionId']
         resource_path = "/drPlanExecutions/{drPlanExecutionId}/actions/pause"
         method = "POST"
         operation_name = "pause_dr_plan_execution"
@@ -2874,7 +2969,8 @@ class DisasterRecoveryClient(object):
                 body=pause_dr_plan_execution_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2884,7 +2980,8 @@ class DisasterRecoveryClient(object):
                 body=pause_dr_plan_execution_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def resume_dr_plan_execution(self, resume_dr_plan_execution_details, dr_plan_execution_id, **kwargs):
         """
@@ -2934,6 +3031,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/resume_dr_plan_execution.py.html>`__ to see an example of how to use resume_dr_plan_execution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drPlanExecutionId']
         resource_path = "/drPlanExecutions/{drPlanExecutionId}/actions/resume"
         method = "POST"
         operation_name = "resume_dr_plan_execution"
@@ -2990,7 +3089,8 @@ class DisasterRecoveryClient(object):
                 body=resume_dr_plan_execution_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3000,7 +3100,8 @@ class DisasterRecoveryClient(object):
                 body=resume_dr_plan_execution_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def retry_dr_plan_execution(self, retry_dr_plan_execution_details, dr_plan_execution_id, **kwargs):
         """
@@ -3050,6 +3151,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/retry_dr_plan_execution.py.html>`__ to see an example of how to use retry_dr_plan_execution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drPlanExecutionId']
         resource_path = "/drPlanExecutions/{drPlanExecutionId}/actions/retry"
         method = "POST"
         operation_name = "retry_dr_plan_execution"
@@ -3106,7 +3209,8 @@ class DisasterRecoveryClient(object):
                 body=retry_dr_plan_execution_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3116,7 +3220,8 @@ class DisasterRecoveryClient(object):
                 body=retry_dr_plan_execution_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_dr_plan(self, update_dr_plan_details, dr_plan_id, **kwargs):
         """
@@ -3159,6 +3264,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/update_dr_plan.py.html>`__ to see an example of how to use update_dr_plan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drPlanId']
         resource_path = "/drPlans/{drPlanId}"
         method = "PUT"
         operation_name = "update_dr_plan"
@@ -3212,7 +3319,8 @@ class DisasterRecoveryClient(object):
                 body=update_dr_plan_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3222,7 +3330,8 @@ class DisasterRecoveryClient(object):
                 body=update_dr_plan_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_dr_plan_execution(self, update_dr_plan_execution_details, dr_plan_execution_id, **kwargs):
         """
@@ -3265,6 +3374,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/update_dr_plan_execution.py.html>`__ to see an example of how to use update_dr_plan_execution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drPlanExecutionId']
         resource_path = "/drPlanExecutions/{drPlanExecutionId}"
         method = "PUT"
         operation_name = "update_dr_plan_execution"
@@ -3318,7 +3429,8 @@ class DisasterRecoveryClient(object):
                 body=update_dr_plan_execution_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3328,7 +3440,8 @@ class DisasterRecoveryClient(object):
                 body=update_dr_plan_execution_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_dr_protection_group(self, update_dr_protection_group_details, dr_protection_group_id, **kwargs):
         """
@@ -3371,6 +3484,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/update_dr_protection_group.py.html>`__ to see an example of how to use update_dr_protection_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drProtectionGroupId']
         resource_path = "/drProtectionGroups/{drProtectionGroupId}"
         method = "PUT"
         operation_name = "update_dr_protection_group"
@@ -3424,7 +3539,8 @@ class DisasterRecoveryClient(object):
                 body=update_dr_protection_group_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3434,7 +3550,8 @@ class DisasterRecoveryClient(object):
                 body=update_dr_protection_group_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_dr_protection_group_role(self, update_dr_protection_group_role_details, dr_protection_group_id, **kwargs):
         """
@@ -3484,6 +3601,8 @@ class DisasterRecoveryClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/disasterrecovery/update_dr_protection_group_role.py.html>`__ to see an example of how to use update_dr_protection_group_role API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drProtectionGroupId']
         resource_path = "/drProtectionGroups/{drProtectionGroupId}/actions/updateRole"
         method = "POST"
         operation_name = "update_dr_protection_group_role"
@@ -3540,7 +3659,8 @@ class DisasterRecoveryClient(object):
                 body=update_dr_protection_group_role_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3550,4 +3670,5 @@ class DisasterRecoveryClient(object):
                 body=update_dr_protection_group_role_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

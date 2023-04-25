@@ -66,6 +66,9 @@ class ConfigClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -92,8 +95,10 @@ class ConfigClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20210201',
             'service_endpoint_template': 'https://apm-config.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -149,6 +154,8 @@ class ConfigClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmconfig/create_config.py.html>`__ to see an example of how to use create_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['apmDomainId']
         resource_path = "/configs"
         method = "POST"
         operation_name = "create_config"
@@ -203,7 +210,8 @@ class ConfigClient(object):
                 response_type="Config",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -214,7 +222,8 @@ class ConfigClient(object):
                 response_type="Config",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_config(self, apm_domain_id, config_id, **kwargs):
         """
@@ -258,6 +267,8 @@ class ConfigClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmconfig/delete_config.py.html>`__ to see an example of how to use delete_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['configId', 'apmDomainId']
         resource_path = "/configs/{configId}"
         method = "DELETE"
         operation_name = "delete_config"
@@ -318,7 +329,8 @@ class ConfigClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -328,7 +340,8 @@ class ConfigClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_config(self, apm_domain_id, config_id, **kwargs):
         """
@@ -365,6 +378,8 @@ class ConfigClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmconfig/get_config.py.html>`__ to see an example of how to use get_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['configId', 'apmDomainId']
         resource_path = "/configs/{configId}"
         method = "GET"
         operation_name = "get_config"
@@ -424,7 +439,8 @@ class ConfigClient(object):
                 response_type="Config",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -435,7 +451,8 @@ class ConfigClient(object):
                 response_type="Config",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_configs(self, apm_domain_id, **kwargs):
         """
@@ -524,6 +541,8 @@ class ConfigClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmconfig/list_configs.py.html>`__ to see an example of how to use list_configs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['apmDomainId']
         resource_path = "/configs"
         method = "GET"
         operation_name = "list_configs"
@@ -608,7 +627,8 @@ class ConfigClient(object):
                 response_type="ConfigCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -618,7 +638,8 @@ class ConfigClient(object):
                 response_type="ConfigCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def retrieve_namespace_metrics(self, apm_domain_id, retrieve_namespace_metrics_details, **kwargs):
         """
@@ -653,6 +674,8 @@ class ConfigClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmconfig/retrieve_namespace_metrics.py.html>`__ to see an example of how to use retrieve_namespace_metrics API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['apmDomainId']
         resource_path = "/actions/retrieveNamespaceMetrics"
         method = "POST"
         operation_name = "retrieve_namespace_metrics"
@@ -702,7 +725,8 @@ class ConfigClient(object):
                 response_type="NamespaceMetricCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -713,7 +737,8 @@ class ConfigClient(object):
                 response_type="NamespaceMetricCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def retrieve_namespaces(self, apm_domain_id, **kwargs):
         """
@@ -745,6 +770,8 @@ class ConfigClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmconfig/retrieve_namespaces.py.html>`__ to see an example of how to use retrieve_namespaces API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['apmDomainId']
         resource_path = "/actions/retrieveNamespaces"
         method = "POST"
         operation_name = "retrieve_namespaces"
@@ -793,7 +820,8 @@ class ConfigClient(object):
                 response_type="NamespaceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -803,7 +831,8 @@ class ConfigClient(object):
                 response_type="NamespaceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_config(self, apm_domain_id, config_id, update_config_details, **kwargs):
         """
@@ -854,6 +883,8 @@ class ConfigClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmconfig/update_config.py.html>`__ to see an example of how to use update_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['configId', 'apmDomainId']
         resource_path = "/configs/{configId}"
         method = "PUT"
         operation_name = "update_config"
@@ -918,7 +949,8 @@ class ConfigClient(object):
                 response_type="Config",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -930,7 +962,8 @@ class ConfigClient(object):
                 response_type="Config",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def validate_span_filter_pattern(self, apm_domain_id, validate_span_filter_pattern_details, **kwargs):
         """
@@ -966,6 +999,8 @@ class ConfigClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmconfig/validate_span_filter_pattern.py.html>`__ to see an example of how to use validate_span_filter_pattern API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['apmDomainId']
         resource_path = "/actions/validateSpanFilterPattern"
         method = "POST"
         operation_name = "validate_span_filter_pattern"
@@ -1014,7 +1049,8 @@ class ConfigClient(object):
                 body=validate_span_filter_pattern_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1024,4 +1060,5 @@ class ConfigClient(object):
                 body=validate_span_filter_pattern_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

@@ -67,6 +67,9 @@ class OptimizerClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -93,8 +96,10 @@ class OptimizerClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20200606',
             'service_endpoint_template': 'https://optimizer.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -146,6 +151,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/bulk_apply_recommendations.py.html>`__ to see an example of how to use bulk_apply_recommendations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['recommendationId']
         resource_path = "/recommendations/{recommendationId}/actions/bulkApplyRecommendations"
         method = "POST"
         operation_name = "bulk_apply_recommendations"
@@ -200,7 +207,8 @@ class OptimizerClient(object):
                 body=bulk_apply_recommendations_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -210,7 +218,8 @@ class OptimizerClient(object):
                 body=bulk_apply_recommendations_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_profile(self, create_profile_details, **kwargs):
         """
@@ -249,6 +258,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/create_profile.py.html>`__ to see an example of how to use create_profile API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/profiles"
         method = "POST"
         operation_name = "create_profile"
@@ -293,7 +304,8 @@ class OptimizerClient(object):
                 response_type="Profile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -303,7 +315,8 @@ class OptimizerClient(object):
                 response_type="Profile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_profile(self, profile_id, **kwargs):
         """
@@ -342,6 +355,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/delete_profile.py.html>`__ to see an example of how to use delete_profile API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['profileId']
         resource_path = "/profiles/{profileId}"
         method = "DELETE"
         operation_name = "delete_profile"
@@ -394,7 +409,8 @@ class OptimizerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -403,7 +419,8 @@ class OptimizerClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def filter_resource_actions(self, compartment_id, compartment_id_in_subtree, query_details, **kwargs):
         """
@@ -483,6 +500,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/filter_resource_actions.py.html>`__ to see an example of how to use filter_resource_actions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'compartmentIdInSubtree']
         resource_path = "/actions/filterResourceActions"
         method = "POST"
         operation_name = "filter_resource_actions"
@@ -543,7 +562,8 @@ class OptimizerClient(object):
                 response_type="ResourceActionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -554,7 +574,8 @@ class OptimizerClient(object):
                 response_type="ResourceActionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_category(self, category_id, **kwargs):
         """
@@ -586,6 +607,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/get_category.py.html>`__ to see an example of how to use get_category API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['categoryId']
         resource_path = "/categories/{categoryId}"
         method = "GET"
         operation_name = "get_category"
@@ -637,7 +660,8 @@ class OptimizerClient(object):
                 response_type="Category",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -647,7 +671,8 @@ class OptimizerClient(object):
                 response_type="Category",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_enrollment_status(self, enrollment_status_id, **kwargs):
         """
@@ -679,6 +704,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/get_enrollment_status.py.html>`__ to see an example of how to use get_enrollment_status API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['enrollmentStatusId']
         resource_path = "/enrollmentStatus/{enrollmentStatusId}"
         method = "GET"
         operation_name = "get_enrollment_status"
@@ -730,7 +757,8 @@ class OptimizerClient(object):
                 response_type="EnrollmentStatus",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -740,7 +768,8 @@ class OptimizerClient(object):
                 response_type="EnrollmentStatus",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_profile(self, profile_id, **kwargs):
         """
@@ -772,6 +801,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/get_profile.py.html>`__ to see an example of how to use get_profile API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['profileId']
         resource_path = "/profiles/{profileId}"
         method = "GET"
         operation_name = "get_profile"
@@ -823,7 +854,8 @@ class OptimizerClient(object):
                 response_type="Profile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -833,7 +865,8 @@ class OptimizerClient(object):
                 response_type="Profile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_recommendation(self, recommendation_id, **kwargs):
         """
@@ -865,6 +898,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/get_recommendation.py.html>`__ to see an example of how to use get_recommendation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['recommendationId']
         resource_path = "/recommendations/{recommendationId}"
         method = "GET"
         operation_name = "get_recommendation"
@@ -916,7 +951,8 @@ class OptimizerClient(object):
                 response_type="Recommendation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -926,7 +962,8 @@ class OptimizerClient(object):
                 response_type="Recommendation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_resource_action(self, resource_action_id, **kwargs):
         """
@@ -958,6 +995,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/get_resource_action.py.html>`__ to see an example of how to use get_resource_action API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['resourceActionId']
         resource_path = "/resourceActions/{resourceActionId}"
         method = "GET"
         operation_name = "get_resource_action"
@@ -1009,7 +1048,8 @@ class OptimizerClient(object):
                 response_type="ResourceAction",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1019,7 +1059,8 @@ class OptimizerClient(object):
                 response_type="ResourceAction",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1051,6 +1092,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -1102,7 +1145,8 @@ class OptimizerClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1112,7 +1156,8 @@ class OptimizerClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_categories(self, compartment_id, compartment_id_in_subtree, **kwargs):
         """
@@ -1201,6 +1246,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/list_categories.py.html>`__ to see an example of how to use list_categories API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'compartmentIdInSubtree']
         resource_path = "/categories"
         method = "GET"
         operation_name = "list_categories"
@@ -1285,7 +1332,8 @@ class OptimizerClient(object):
                 response_type="CategoryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1295,7 +1343,8 @@ class OptimizerClient(object):
                 response_type="CategoryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_enrollment_statuses(self, compartment_id, **kwargs):
         """
@@ -1353,6 +1402,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/list_enrollment_statuses.py.html>`__ to see an example of how to use list_enrollment_statuses API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/enrollmentStatus"
         method = "GET"
         operation_name = "list_enrollment_statuses"
@@ -1439,7 +1490,8 @@ class OptimizerClient(object):
                 response_type="EnrollmentStatusCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1449,7 +1501,8 @@ class OptimizerClient(object):
                 response_type="EnrollmentStatusCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_histories(self, compartment_id, compartment_id_in_subtree, **kwargs):
         """
@@ -1525,6 +1578,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/list_histories.py.html>`__ to see an example of how to use list_histories API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'compartmentIdInSubtree']
         resource_path = "/histories"
         method = "GET"
         operation_name = "list_histories"
@@ -1620,7 +1675,8 @@ class OptimizerClient(object):
                 response_type="HistoryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1630,7 +1686,8 @@ class OptimizerClient(object):
                 response_type="HistoryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_profile_levels(self, compartment_id, compartment_id_in_subtree, **kwargs):
         """
@@ -1689,6 +1746,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/list_profile_levels.py.html>`__ to see an example of how to use list_profile_levels API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'compartmentIdInSubtree']
         resource_path = "/profileLevels"
         method = "GET"
         operation_name = "list_profile_levels"
@@ -1762,7 +1821,8 @@ class OptimizerClient(object):
                 response_type="ProfileLevelCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1772,7 +1832,8 @@ class OptimizerClient(object):
                 response_type="ProfileLevelCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_profiles(self, compartment_id, **kwargs):
         """
@@ -1828,6 +1889,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/list_profiles.py.html>`__ to see an example of how to use list_profiles API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/profiles"
         method = "GET"
         operation_name = "list_profiles"
@@ -1907,7 +1970,8 @@ class OptimizerClient(object):
                 response_type="ProfileCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1917,7 +1981,8 @@ class OptimizerClient(object):
                 response_type="ProfileCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_recommendation_strategies(self, compartment_id, compartment_id_in_subtree, **kwargs):
         """
@@ -1976,6 +2041,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/list_recommendation_strategies.py.html>`__ to see an example of how to use list_recommendation_strategies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'compartmentIdInSubtree']
         resource_path = "/recommendationStrategies"
         method = "GET"
         operation_name = "list_recommendation_strategies"
@@ -2049,7 +2116,8 @@ class OptimizerClient(object):
                 response_type="RecommendationStrategyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2059,7 +2127,8 @@ class OptimizerClient(object):
                 response_type="RecommendationStrategyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_recommendations(self, compartment_id, compartment_id_in_subtree, **kwargs):
         """
@@ -2159,6 +2228,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/list_recommendations.py.html>`__ to see an example of how to use list_recommendations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'compartmentIdInSubtree']
         resource_path = "/recommendations"
         method = "GET"
         operation_name = "list_recommendations"
@@ -2256,7 +2327,8 @@ class OptimizerClient(object):
                 response_type="RecommendationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2266,7 +2338,8 @@ class OptimizerClient(object):
                 response_type="RecommendationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_resource_action_queryable_fields(self, compartment_id, compartment_id_in_subtree, **kwargs):
         """
@@ -2309,6 +2382,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/list_resource_action_queryable_fields.py.html>`__ to see an example of how to use list_resource_action_queryable_fields API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'compartmentIdInSubtree']
         resource_path = "/resourceActions/actions/getQueryableFields"
         method = "GET"
         operation_name = "list_resource_action_queryable_fields"
@@ -2360,7 +2435,8 @@ class OptimizerClient(object):
                 response_type="QueryableFieldCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2370,7 +2446,8 @@ class OptimizerClient(object):
                 response_type="QueryableFieldCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_resource_actions(self, compartment_id, compartment_id_in_subtree, **kwargs):
         """
@@ -2473,6 +2550,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/list_resource_actions.py.html>`__ to see an example of how to use list_resource_actions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'compartmentIdInSubtree']
         resource_path = "/resourceActions"
         method = "GET"
         operation_name = "list_resource_actions"
@@ -2572,7 +2651,8 @@ class OptimizerClient(object):
                 response_type="ResourceActionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2582,7 +2662,8 @@ class OptimizerClient(object):
                 response_type="ResourceActionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -2620,6 +2701,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -2680,7 +2763,8 @@ class OptimizerClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2691,7 +2775,8 @@ class OptimizerClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -2729,6 +2814,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -2789,7 +2876,8 @@ class OptimizerClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2800,7 +2888,8 @@ class OptimizerClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -2838,6 +2927,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -2888,7 +2979,8 @@ class OptimizerClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2898,7 +2990,8 @@ class OptimizerClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_enrollment_status(self, enrollment_status_id, update_enrollment_status_details, **kwargs):
         """
@@ -2940,6 +3033,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/update_enrollment_status.py.html>`__ to see an example of how to use update_enrollment_status API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['enrollmentStatusId']
         resource_path = "/enrollmentStatus/{enrollmentStatusId}"
         method = "PUT"
         operation_name = "update_enrollment_status"
@@ -2994,7 +3089,8 @@ class OptimizerClient(object):
                 response_type="EnrollmentStatus",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3005,7 +3101,8 @@ class OptimizerClient(object):
                 response_type="EnrollmentStatus",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_profile(self, profile_id, update_profile_details, **kwargs):
         """
@@ -3047,6 +3144,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/update_profile.py.html>`__ to see an example of how to use update_profile API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['profileId']
         resource_path = "/profiles/{profileId}"
         method = "PUT"
         operation_name = "update_profile"
@@ -3101,7 +3200,8 @@ class OptimizerClient(object):
                 response_type="Profile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3112,7 +3212,8 @@ class OptimizerClient(object):
                 response_type="Profile",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_recommendation(self, recommendation_id, update_recommendation_details, **kwargs):
         """
@@ -3159,6 +3260,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/update_recommendation.py.html>`__ to see an example of how to use update_recommendation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['recommendationId']
         resource_path = "/recommendations/{recommendationId}"
         method = "PUT"
         operation_name = "update_recommendation"
@@ -3213,7 +3316,8 @@ class OptimizerClient(object):
                 response_type="Recommendation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3224,7 +3328,8 @@ class OptimizerClient(object):
                 response_type="Recommendation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_resource_action(self, resource_action_id, update_resource_action_details, **kwargs):
         """
@@ -3271,6 +3376,8 @@ class OptimizerClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/optimizer/update_resource_action.py.html>`__ to see an example of how to use update_resource_action API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['resourceActionId']
         resource_path = "/resourceActions/{resourceActionId}"
         method = "PUT"
         operation_name = "update_resource_action"
@@ -3325,7 +3432,8 @@ class OptimizerClient(object):
                 response_type="ResourceAction",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3336,4 +3444,5 @@ class OptimizerClient(object):
                 response_type="ResourceAction",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
