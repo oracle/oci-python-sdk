@@ -65,6 +65,9 @@ class JavaManagementServiceClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class JavaManagementServiceClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20210610',
             'service_endpoint_template': 'https://javamanagement.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -152,6 +157,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/add_fleet_installation_sites.py.html>`__ to see an example of how to use add_fleet_installation_sites API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/actions/addInstallationSites"
         method = "POST"
         operation_name = "add_fleet_installation_sites"
@@ -210,7 +217,8 @@ class JavaManagementServiceClient(object):
                 body=add_fleet_installation_sites_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -220,7 +228,8 @@ class JavaManagementServiceClient(object):
                 body=add_fleet_installation_sites_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_work_request(self, work_request_id, **kwargs):
         """
@@ -260,6 +269,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/cancel_work_request.py.html>`__ to see an example of how to use cancel_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
@@ -314,7 +325,8 @@ class JavaManagementServiceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -323,7 +335,8 @@ class JavaManagementServiceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_fleet_compartment(self, fleet_id, change_fleet_compartment_details, **kwargs):
         """
@@ -373,6 +386,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/change_fleet_compartment.py.html>`__ to see an example of how to use change_fleet_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_fleet_compartment"
@@ -431,7 +446,8 @@ class JavaManagementServiceClient(object):
                 body=change_fleet_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -441,7 +457,8 @@ class JavaManagementServiceClient(object):
                 body=change_fleet_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_blocklist(self, fleet_id, create_blocklist_details, **kwargs):
         """
@@ -484,6 +501,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/create_blocklist.py.html>`__ to see an example of how to use create_blocklist API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/blocklists"
         method = "POST"
         operation_name = "create_blocklist"
@@ -541,7 +560,8 @@ class JavaManagementServiceClient(object):
                 response_type="Blocklist",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -552,7 +572,8 @@ class JavaManagementServiceClient(object):
                 response_type="Blocklist",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_fleet(self, create_fleet_details, **kwargs):
         """
@@ -598,6 +619,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/create_fleet.py.html>`__ to see an example of how to use create_fleet API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/fleets"
         method = "POST"
         operation_name = "create_fleet"
@@ -643,7 +666,8 @@ class JavaManagementServiceClient(object):
                 body=create_fleet_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -652,7 +676,8 @@ class JavaManagementServiceClient(object):
                 body=create_fleet_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_blocklist(self, fleet_id, blocklist_key, **kwargs):
         """
@@ -695,6 +720,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/delete_blocklist.py.html>`__ to see an example of how to use delete_blocklist API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId', 'blocklistKey']
         resource_path = "/fleets/{fleetId}/blocklists/{blocklistKey}"
         method = "DELETE"
         operation_name = "delete_blocklist"
@@ -750,7 +777,8 @@ class JavaManagementServiceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -759,7 +787,8 @@ class JavaManagementServiceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_crypto_analysis_result(self, fleet_id, crypto_analysis_result_id, **kwargs):
         """
@@ -802,6 +831,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/delete_crypto_analysis_result.py.html>`__ to see an example of how to use delete_crypto_analysis_result API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId', 'cryptoAnalysisResultId']
         resource_path = "/fleets/{fleetId}/cryptoAnalysisResults/{cryptoAnalysisResultId}"
         method = "DELETE"
         operation_name = "delete_crypto_analysis_result"
@@ -857,7 +888,8 @@ class JavaManagementServiceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -866,7 +898,8 @@ class JavaManagementServiceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_fleet(self, fleet_id, **kwargs):
         """
@@ -906,6 +939,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/delete_fleet.py.html>`__ to see an example of how to use delete_fleet API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}"
         method = "DELETE"
         operation_name = "delete_fleet"
@@ -960,7 +995,8 @@ class JavaManagementServiceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -969,7 +1005,8 @@ class JavaManagementServiceClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def generate_agent_deploy_script(self, fleet_id, generate_agent_deploy_script_details, **kwargs):
         """
@@ -1005,6 +1042,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/generate_agent_deploy_script.py.html>`__ to see an example of how to use generate_agent_deploy_script API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/actions/generateAgentDeployScript"
         method = "POST"
         operation_name = "generate_agent_deploy_script"
@@ -1059,7 +1098,8 @@ class JavaManagementServiceClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1070,7 +1110,8 @@ class JavaManagementServiceClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_crypto_analysis_result(self, fleet_id, crypto_analysis_result_id, **kwargs):
         """
@@ -1106,6 +1147,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_crypto_analysis_result.py.html>`__ to see an example of how to use get_crypto_analysis_result API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId', 'cryptoAnalysisResultId']
         resource_path = "/fleets/{fleetId}/cryptoAnalysisResults/{cryptoAnalysisResultId}"
         method = "GET"
         operation_name = "get_crypto_analysis_result"
@@ -1160,7 +1203,8 @@ class JavaManagementServiceClient(object):
                 response_type="CryptoAnalysisResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1170,7 +1214,8 @@ class JavaManagementServiceClient(object):
                 response_type="CryptoAnalysisResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_fleet(self, fleet_id, **kwargs):
         """
@@ -1203,6 +1248,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_fleet.py.html>`__ to see an example of how to use get_fleet API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}"
         method = "GET"
         operation_name = "get_fleet"
@@ -1256,7 +1303,8 @@ class JavaManagementServiceClient(object):
                 response_type="Fleet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1266,7 +1314,8 @@ class JavaManagementServiceClient(object):
                 response_type="Fleet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_fleet_advanced_feature_configuration(self, fleet_id, **kwargs):
         """
@@ -1306,6 +1355,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_fleet_advanced_feature_configuration.py.html>`__ to see an example of how to use get_fleet_advanced_feature_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/advancedFeatureConfiguration"
         method = "GET"
         operation_name = "get_fleet_advanced_feature_configuration"
@@ -1361,7 +1412,8 @@ class JavaManagementServiceClient(object):
                 response_type="FleetAdvancedFeatureConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1371,7 +1423,8 @@ class JavaManagementServiceClient(object):
                 response_type="FleetAdvancedFeatureConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_fleet_agent_configuration(self, fleet_id, **kwargs):
         """
@@ -1404,6 +1457,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_fleet_agent_configuration.py.html>`__ to see an example of how to use get_fleet_agent_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/agentConfiguration"
         method = "GET"
         operation_name = "get_fleet_agent_configuration"
@@ -1457,7 +1512,8 @@ class JavaManagementServiceClient(object):
                 response_type="FleetAgentConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1467,7 +1523,8 @@ class JavaManagementServiceClient(object):
                 response_type="FleetAgentConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_java_family(self, family_version, **kwargs):
         """
@@ -1498,6 +1555,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_java_family.py.html>`__ to see an example of how to use get_java_family API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['familyVersion']
         resource_path = "/javaFamilies/{familyVersion}"
         method = "GET"
         operation_name = "get_java_family"
@@ -1551,7 +1610,8 @@ class JavaManagementServiceClient(object):
                 response_type="JavaFamily",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1561,7 +1621,8 @@ class JavaManagementServiceClient(object):
                 response_type="JavaFamily",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_java_release(self, release_version, **kwargs):
         """
@@ -1592,6 +1653,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_java_release.py.html>`__ to see an example of how to use get_java_release API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['releaseVersion']
         resource_path = "/javaReleases/{releaseVersion}"
         method = "GET"
         operation_name = "get_java_release"
@@ -1645,7 +1708,8 @@ class JavaManagementServiceClient(object):
                 response_type="JavaRelease",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1655,7 +1719,8 @@ class JavaManagementServiceClient(object):
                 response_type="JavaRelease",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1688,6 +1753,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -1741,7 +1808,8 @@ class JavaManagementServiceClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1751,7 +1819,8 @@ class JavaManagementServiceClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_blocklists(self, fleet_id, **kwargs):
         """
@@ -1810,6 +1879,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_blocklists.py.html>`__ to see an example of how to use list_blocklists API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/blocklists"
         method = "GET"
         operation_name = "list_blocklists"
@@ -1901,7 +1972,8 @@ class JavaManagementServiceClient(object):
                 response_type="BlocklistCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1912,7 +1984,8 @@ class JavaManagementServiceClient(object):
                 response_type="BlocklistCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_crypto_analysis_results(self, fleet_id, **kwargs):
         """
@@ -1982,6 +2055,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_crypto_analysis_results.py.html>`__ to see an example of how to use list_crypto_analysis_results API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/cryptoAnalysisResults"
         method = "GET"
         operation_name = "list_crypto_analysis_results"
@@ -2077,7 +2152,8 @@ class JavaManagementServiceClient(object):
                 response_type="CryptoAnalysisResultCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2088,7 +2164,8 @@ class JavaManagementServiceClient(object):
                 response_type="CryptoAnalysisResultCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_fleets(self, **kwargs):
         """
@@ -2156,6 +2233,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_fleets.py.html>`__ to see an example of how to use list_fleets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/fleets"
         method = "GET"
         operation_name = "list_fleets"
@@ -2242,7 +2321,8 @@ class JavaManagementServiceClient(object):
                 response_type="FleetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2252,7 +2332,8 @@ class JavaManagementServiceClient(object):
                 response_type="FleetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_installation_sites(self, fleet_id, **kwargs):
         """
@@ -2345,6 +2426,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_installation_sites.py.html>`__ to see an example of how to use list_installation_sites API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/installationSites"
         method = "GET"
         operation_name = "list_installation_sites"
@@ -2462,7 +2545,8 @@ class JavaManagementServiceClient(object):
                 response_type="InstallationSiteCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2473,7 +2557,8 @@ class JavaManagementServiceClient(object):
                 response_type="InstallationSiteCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_java_families(self, **kwargs):
         """
@@ -2524,6 +2609,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_java_families.py.html>`__ to see an example of how to use list_java_families API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/javaFamilies"
         method = "GET"
         operation_name = "list_java_families"
@@ -2597,7 +2684,8 @@ class JavaManagementServiceClient(object):
                 response_type="JavaFamilyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2607,7 +2695,8 @@ class JavaManagementServiceClient(object):
                 response_type="JavaFamilyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_java_releases(self, **kwargs):
         """
@@ -2672,6 +2761,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_java_releases.py.html>`__ to see an example of how to use list_java_releases API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/javaReleases"
         method = "GET"
         operation_name = "list_java_releases"
@@ -2772,7 +2863,8 @@ class JavaManagementServiceClient(object):
                 response_type="JavaReleaseCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2782,7 +2874,8 @@ class JavaManagementServiceClient(object):
                 response_type="JavaReleaseCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_jre_usage(self, **kwargs):
         """
@@ -2857,6 +2950,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_jre_usage.py.html>`__ to see an example of how to use list_jre_usage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/listJreUsage"
         method = "GET"
         operation_name = "list_jre_usage"
@@ -2938,7 +3033,8 @@ class JavaManagementServiceClient(object):
                 response_type="JreUsageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2948,7 +3044,8 @@ class JavaManagementServiceClient(object):
                 response_type="JreUsageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_items(self, work_request_id, **kwargs):
         """
@@ -2987,6 +3084,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_work_items.py.html>`__ to see an example of how to use list_work_items API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/workItems"
         method = "GET"
         operation_name = "list_work_items"
@@ -3049,7 +3148,8 @@ class JavaManagementServiceClient(object):
                 response_type="WorkItemCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3060,7 +3160,8 @@ class JavaManagementServiceClient(object):
                 response_type="WorkItemCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -3099,6 +3200,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -3161,7 +3264,8 @@ class JavaManagementServiceClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3172,7 +3276,8 @@ class JavaManagementServiceClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -3211,6 +3316,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -3273,7 +3380,8 @@ class JavaManagementServiceClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3284,7 +3392,8 @@ class JavaManagementServiceClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, **kwargs):
         """
@@ -3331,6 +3440,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -3388,7 +3499,8 @@ class JavaManagementServiceClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3398,7 +3510,8 @@ class JavaManagementServiceClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_fleet_installation_sites(self, fleet_id, remove_fleet_installation_sites_details, **kwargs):
         """
@@ -3448,6 +3561,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/remove_fleet_installation_sites.py.html>`__ to see an example of how to use remove_fleet_installation_sites API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/actions/removeInstallationSites"
         method = "POST"
         operation_name = "remove_fleet_installation_sites"
@@ -3506,7 +3621,8 @@ class JavaManagementServiceClient(object):
                 body=remove_fleet_installation_sites_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3516,7 +3632,8 @@ class JavaManagementServiceClient(object):
                 body=remove_fleet_installation_sites_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def request_crypto_analyses(self, fleet_id, request_crypto_analyses_details, **kwargs):
         """
@@ -3553,6 +3670,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/request_crypto_analyses.py.html>`__ to see an example of how to use request_crypto_analyses API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/actions/requestCryptoAnalyses"
         method = "POST"
         operation_name = "request_crypto_analyses"
@@ -3606,7 +3725,8 @@ class JavaManagementServiceClient(object):
                 body=request_crypto_analyses_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3616,7 +3736,8 @@ class JavaManagementServiceClient(object):
                 body=request_crypto_analyses_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def request_jfr_recordings(self, fleet_id, request_jfr_recordings_details, **kwargs):
         """
@@ -3653,6 +3774,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/request_jfr_recordings.py.html>`__ to see an example of how to use request_jfr_recordings API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/actions/requestJfrRecordings"
         method = "POST"
         operation_name = "request_jfr_recordings"
@@ -3706,7 +3829,8 @@ class JavaManagementServiceClient(object):
                 body=request_jfr_recordings_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3716,7 +3840,8 @@ class JavaManagementServiceClient(object):
                 body=request_jfr_recordings_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def scan_java_server_usage(self, fleet_id, scan_java_server_usage_details, **kwargs):
         """
@@ -3766,6 +3891,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/scan_java_server_usage.py.html>`__ to see an example of how to use scan_java_server_usage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/actions/scanJavaServerUsage"
         method = "POST"
         operation_name = "scan_java_server_usage"
@@ -3824,7 +3951,8 @@ class JavaManagementServiceClient(object):
                 body=scan_java_server_usage_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3834,7 +3962,8 @@ class JavaManagementServiceClient(object):
                 body=scan_java_server_usage_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def scan_library_usage(self, fleet_id, scan_library_usage_details, **kwargs):
         """
@@ -3884,6 +4013,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/scan_library_usage.py.html>`__ to see an example of how to use scan_library_usage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/actions/scanLibraryUsage"
         method = "POST"
         operation_name = "scan_library_usage"
@@ -3942,7 +4073,8 @@ class JavaManagementServiceClient(object):
                 body=scan_library_usage_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3952,7 +4084,8 @@ class JavaManagementServiceClient(object):
                 body=scan_library_usage_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def summarize_application_usage(self, fleet_id, **kwargs):
         """
@@ -4057,6 +4190,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_application_usage.py.html>`__ to see an example of how to use summarize_application_usage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/actions/summarizeApplicationUsage"
         method = "GET"
         operation_name = "summarize_application_usage"
@@ -4181,7 +4316,8 @@ class JavaManagementServiceClient(object):
                 response_type="ApplicationUsageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4192,7 +4328,8 @@ class JavaManagementServiceClient(object):
                 response_type="ApplicationUsageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def summarize_deployed_application_usage(self, fleet_id, **kwargs):
         """
@@ -4273,6 +4410,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_deployed_application_usage.py.html>`__ to see an example of how to use summarize_deployed_application_usage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/actions/summarizeDeployedApplicationUsage"
         method = "GET"
         operation_name = "summarize_deployed_application_usage"
@@ -4371,7 +4510,8 @@ class JavaManagementServiceClient(object):
                 response_type="DeployedApplicationUsageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4382,7 +4522,8 @@ class JavaManagementServiceClient(object):
                 response_type="DeployedApplicationUsageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def summarize_installation_usage(self, fleet_id, **kwargs):
         """
@@ -4477,6 +4618,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_installation_usage.py.html>`__ to see an example of how to use summarize_installation_usage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/actions/summarizeInstallationUsage"
         method = "GET"
         operation_name = "summarize_installation_usage"
@@ -4595,7 +4738,8 @@ class JavaManagementServiceClient(object):
                 response_type="InstallationUsageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4606,7 +4750,8 @@ class JavaManagementServiceClient(object):
                 response_type="InstallationUsageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def summarize_java_server_instance_usage(self, fleet_id, **kwargs):
         """
@@ -4687,6 +4832,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_java_server_instance_usage.py.html>`__ to see an example of how to use summarize_java_server_instance_usage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/actions/summarizeJavaServerInstanceUsage"
         method = "GET"
         operation_name = "summarize_java_server_instance_usage"
@@ -4785,7 +4932,8 @@ class JavaManagementServiceClient(object):
                 response_type="JavaServerInstanceUsageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4796,7 +4944,8 @@ class JavaManagementServiceClient(object):
                 response_type="JavaServerInstanceUsageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def summarize_java_server_usage(self, fleet_id, **kwargs):
         """
@@ -4868,6 +5017,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_java_server_usage.py.html>`__ to see an example of how to use summarize_java_server_usage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/actions/summarizeJavaServerUsage"
         method = "GET"
         operation_name = "summarize_java_server_usage"
@@ -4960,7 +5111,8 @@ class JavaManagementServiceClient(object):
                 response_type="JavaServerUsageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4971,7 +5123,8 @@ class JavaManagementServiceClient(object):
                 response_type="JavaServerUsageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def summarize_jre_usage(self, fleet_id, **kwargs):
         """
@@ -5070,6 +5223,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_jre_usage.py.html>`__ to see an example of how to use summarize_jre_usage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/actions/summarizeJreUsage"
         method = "GET"
         operation_name = "summarize_jre_usage"
@@ -5195,7 +5350,8 @@ class JavaManagementServiceClient(object):
                 response_type="JreUsageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5206,7 +5362,8 @@ class JavaManagementServiceClient(object):
                 response_type="JreUsageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def summarize_library_usage(self, fleet_id, **kwargs):
         """
@@ -5284,6 +5441,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_library_usage.py.html>`__ to see an example of how to use summarize_library_usage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/actions/summarizeLibraryUsage"
         method = "GET"
         operation_name = "summarize_library_usage"
@@ -5380,7 +5539,8 @@ class JavaManagementServiceClient(object):
                 response_type="LibraryUsageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5391,7 +5551,8 @@ class JavaManagementServiceClient(object):
                 response_type="LibraryUsageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def summarize_managed_instance_usage(self, fleet_id, **kwargs):
         """
@@ -5495,6 +5656,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_managed_instance_usage.py.html>`__ to see an example of how to use summarize_managed_instance_usage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/actions/summarizeManagedInstanceUsage"
         method = "GET"
         operation_name = "summarize_managed_instance_usage"
@@ -5624,7 +5787,8 @@ class JavaManagementServiceClient(object):
                 response_type="ManagedInstanceUsageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5635,7 +5799,8 @@ class JavaManagementServiceClient(object):
                 response_type="ManagedInstanceUsageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def summarize_resource_inventory(self, **kwargs):
         """
@@ -5678,6 +5843,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/summarize_resource_inventory.py.html>`__ to see an example of how to use summarize_resource_inventory API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/summarizeResourceInventory"
         method = "GET"
         operation_name = "summarize_resource_inventory"
@@ -5731,7 +5898,8 @@ class JavaManagementServiceClient(object):
                 response_type="ResourceInventory",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5741,7 +5909,8 @@ class JavaManagementServiceClient(object):
                 response_type="ResourceInventory",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_fleet(self, fleet_id, update_fleet_details, **kwargs):
         """
@@ -5784,6 +5953,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/update_fleet.py.html>`__ to see an example of how to use update_fleet API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}"
         method = "PUT"
         operation_name = "update_fleet"
@@ -5839,7 +6010,8 @@ class JavaManagementServiceClient(object):
                 body=update_fleet_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5849,7 +6021,8 @@ class JavaManagementServiceClient(object):
                 body=update_fleet_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_fleet_advanced_feature_configuration(self, fleet_id, update_fleet_advanced_feature_configuration_details, **kwargs):
         """
@@ -5900,6 +6073,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/update_fleet_advanced_feature_configuration.py.html>`__ to see an example of how to use update_fleet_advanced_feature_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/advancedFeatureConfiguration"
         method = "PUT"
         operation_name = "update_fleet_advanced_feature_configuration"
@@ -5959,7 +6134,8 @@ class JavaManagementServiceClient(object):
                 response_type="FleetAdvancedFeatureConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5970,7 +6146,8 @@ class JavaManagementServiceClient(object):
                 response_type="FleetAdvancedFeatureConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_fleet_agent_configuration(self, fleet_id, update_fleet_agent_configuration_details, **kwargs):
         """
@@ -6013,6 +6190,8 @@ class JavaManagementServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/update_fleet_agent_configuration.py.html>`__ to see an example of how to use update_fleet_agent_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
         resource_path = "/fleets/{fleetId}/agentConfiguration"
         method = "PUT"
         operation_name = "update_fleet_agent_configuration"
@@ -6068,7 +6247,8 @@ class JavaManagementServiceClient(object):
                 body=update_fleet_agent_configuration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6078,4 +6258,5 @@ class JavaManagementServiceClient(object):
                 body=update_fleet_agent_configuration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

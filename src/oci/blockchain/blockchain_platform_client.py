@@ -65,6 +65,9 @@ class BlockchainPlatformClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class BlockchainPlatformClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20191010',
             'service_endpoint_template': 'https://blockchain.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -150,6 +155,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/change_blockchain_platform_compartment.py.html>`__ to see an example of how to use change_blockchain_platform_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['blockchainPlatformId']
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_blockchain_platform_compartment"
@@ -206,7 +213,8 @@ class BlockchainPlatformClient(object):
                 body=change_blockchain_platform_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -216,7 +224,8 @@ class BlockchainPlatformClient(object):
                 body=change_blockchain_platform_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_blockchain_platform(self, create_blockchain_platform_details, **kwargs):
         """
@@ -254,6 +263,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/create_blockchain_platform.py.html>`__ to see an example of how to use create_blockchain_platform API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/blockchainPlatforms"
         method = "POST"
         operation_name = "create_blockchain_platform"
@@ -297,7 +308,8 @@ class BlockchainPlatformClient(object):
                 body=create_blockchain_platform_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -306,7 +318,8 @@ class BlockchainPlatformClient(object):
                 body=create_blockchain_platform_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_osn(self, blockchain_platform_id, create_osn_details, **kwargs):
         """
@@ -354,6 +367,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/create_osn.py.html>`__ to see an example of how to use create_osn API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['blockchainPlatformId']
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/osns"
         method = "POST"
         operation_name = "create_osn"
@@ -410,7 +425,8 @@ class BlockchainPlatformClient(object):
                 body=create_osn_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -420,7 +436,8 @@ class BlockchainPlatformClient(object):
                 body=create_osn_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_peer(self, blockchain_platform_id, create_peer_details, **kwargs):
         """
@@ -461,6 +478,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/create_peer.py.html>`__ to see an example of how to use create_peer API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['blockchainPlatformId']
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/peers"
         method = "POST"
         operation_name = "create_peer"
@@ -515,7 +534,8 @@ class BlockchainPlatformClient(object):
                 body=create_peer_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -525,7 +545,8 @@ class BlockchainPlatformClient(object):
                 body=create_peer_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_blockchain_platform(self, blockchain_platform_id, **kwargs):
         """
@@ -570,6 +591,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/delete_blockchain_platform.py.html>`__ to see an example of how to use delete_blockchain_platform API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['blockchainPlatformId']
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}"
         method = "DELETE"
         operation_name = "delete_blockchain_platform"
@@ -625,7 +648,8 @@ class BlockchainPlatformClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -634,7 +658,8 @@ class BlockchainPlatformClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_osn(self, blockchain_platform_id, osn_id, **kwargs):
         """
@@ -675,6 +700,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/delete_osn.py.html>`__ to see an example of how to use delete_osn API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['blockchainPlatformId', 'osnId']
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}"
         method = "DELETE"
         operation_name = "delete_osn"
@@ -728,7 +755,8 @@ class BlockchainPlatformClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -737,7 +765,8 @@ class BlockchainPlatformClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_peer(self, blockchain_platform_id, peer_id, **kwargs):
         """
@@ -785,6 +814,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/delete_peer.py.html>`__ to see an example of how to use delete_peer API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['blockchainPlatformId', 'peerId']
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/peers/{peerId}"
         method = "DELETE"
         operation_name = "delete_peer"
@@ -841,7 +872,8 @@ class BlockchainPlatformClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -850,7 +882,8 @@ class BlockchainPlatformClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_work_request(self, work_request_id, **kwargs):
         """
@@ -888,6 +921,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/delete_work_request.py.html>`__ to see an example of how to use delete_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "delete_work_request"
@@ -940,7 +975,8 @@ class BlockchainPlatformClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -949,7 +985,8 @@ class BlockchainPlatformClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_blockchain_platform(self, blockchain_platform_id, **kwargs):
         """
@@ -980,6 +1017,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/get_blockchain_platform.py.html>`__ to see an example of how to use get_blockchain_platform API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['blockchainPlatformId']
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}"
         method = "GET"
         operation_name = "get_blockchain_platform"
@@ -1031,7 +1070,8 @@ class BlockchainPlatformClient(object):
                 response_type="BlockchainPlatform",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1041,7 +1081,8 @@ class BlockchainPlatformClient(object):
                 response_type="BlockchainPlatform",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_osn(self, blockchain_platform_id, osn_id, **kwargs):
         """
@@ -1075,6 +1116,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/get_osn.py.html>`__ to see an example of how to use get_osn API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['blockchainPlatformId', 'osnId']
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}"
         method = "GET"
         operation_name = "get_osn"
@@ -1127,7 +1170,8 @@ class BlockchainPlatformClient(object):
                 response_type="Osn",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1137,7 +1181,8 @@ class BlockchainPlatformClient(object):
                 response_type="Osn",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_peer(self, blockchain_platform_id, peer_id, **kwargs):
         """
@@ -1171,6 +1216,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/get_peer.py.html>`__ to see an example of how to use get_peer API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['blockchainPlatformId', 'peerId']
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/peers/{peerId}"
         method = "GET"
         operation_name = "get_peer"
@@ -1223,7 +1270,8 @@ class BlockchainPlatformClient(object):
                 response_type="Peer",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1233,7 +1281,8 @@ class BlockchainPlatformClient(object):
                 response_type="Peer",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1264,6 +1313,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -1315,7 +1366,8 @@ class BlockchainPlatformClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1325,7 +1377,8 @@ class BlockchainPlatformClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_blockchain_platform_patches(self, blockchain_platform_id, **kwargs):
         """
@@ -1362,6 +1415,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/list_blockchain_platform_patches.py.html>`__ to see an example of how to use list_blockchain_platform_patches API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['blockchainPlatformId']
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/patches"
         method = "GET"
         operation_name = "list_blockchain_platform_patches"
@@ -1422,7 +1477,8 @@ class BlockchainPlatformClient(object):
                 response_type="BlockchainPlatformPatchCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1433,7 +1489,8 @@ class BlockchainPlatformClient(object):
                 response_type="BlockchainPlatformPatchCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_blockchain_platforms(self, compartment_id, **kwargs):
         """
@@ -1490,6 +1547,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/list_blockchain_platforms.py.html>`__ to see an example of how to use list_blockchain_platforms API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/blockchainPlatforms"
         method = "GET"
         operation_name = "list_blockchain_platforms"
@@ -1569,7 +1628,8 @@ class BlockchainPlatformClient(object):
                 response_type="BlockchainPlatformCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1579,7 +1639,8 @@ class BlockchainPlatformClient(object):
                 response_type="BlockchainPlatformCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_osns(self, blockchain_platform_id, **kwargs):
         """
@@ -1637,6 +1698,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/list_osns.py.html>`__ to see an example of how to use list_osns API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['blockchainPlatformId']
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/osns"
         method = "GET"
         operation_name = "list_osns"
@@ -1720,7 +1783,8 @@ class BlockchainPlatformClient(object):
                 response_type="OsnCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1731,7 +1795,8 @@ class BlockchainPlatformClient(object):
                 response_type="OsnCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_peers(self, blockchain_platform_id, **kwargs):
         """
@@ -1789,6 +1854,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/list_peers.py.html>`__ to see an example of how to use list_peers API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['blockchainPlatformId']
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/peers"
         method = "GET"
         operation_name = "list_peers"
@@ -1872,7 +1939,8 @@ class BlockchainPlatformClient(object):
                 response_type="PeerCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1883,7 +1951,8 @@ class BlockchainPlatformClient(object):
                 response_type="PeerCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1920,6 +1989,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -1980,7 +2051,8 @@ class BlockchainPlatformClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1991,7 +2063,8 @@ class BlockchainPlatformClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -2028,6 +2101,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -2088,7 +2163,8 @@ class BlockchainPlatformClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2099,7 +2175,8 @@ class BlockchainPlatformClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, blockchain_platform_id, **kwargs):
         """
@@ -2149,6 +2226,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'blockchainPlatformId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -2218,7 +2297,8 @@ class BlockchainPlatformClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2228,7 +2308,8 @@ class BlockchainPlatformClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def preview_scale_blockchain_platform(self, blockchain_platform_id, scale_blockchain_platform_details, **kwargs):
         """
@@ -2262,6 +2343,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/preview_scale_blockchain_platform.py.html>`__ to see an example of how to use preview_scale_blockchain_platform API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['blockchainPlatformId']
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/actions/scale/preview"
         method = "POST"
         operation_name = "preview_scale_blockchain_platform"
@@ -2314,7 +2397,8 @@ class BlockchainPlatformClient(object):
                 response_type="ScaledBlockchainPlatformPreview",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2325,7 +2409,8 @@ class BlockchainPlatformClient(object):
                 response_type="ScaledBlockchainPlatformPreview",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def scale_blockchain_platform(self, blockchain_platform_id, scale_blockchain_platform_details, **kwargs):
         """
@@ -2373,6 +2458,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/scale_blockchain_platform.py.html>`__ to see an example of how to use scale_blockchain_platform API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['blockchainPlatformId']
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/actions/scale"
         method = "POST"
         operation_name = "scale_blockchain_platform"
@@ -2429,7 +2516,8 @@ class BlockchainPlatformClient(object):
                 body=scale_blockchain_platform_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2439,7 +2527,8 @@ class BlockchainPlatformClient(object):
                 body=scale_blockchain_platform_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def start_blockchain_platform(self, blockchain_platform_id, **kwargs):
         """
@@ -2484,6 +2573,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/start_blockchain_platform.py.html>`__ to see an example of how to use start_blockchain_platform API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['blockchainPlatformId']
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/actions/start"
         method = "POST"
         operation_name = "start_blockchain_platform"
@@ -2539,7 +2630,8 @@ class BlockchainPlatformClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2548,7 +2640,8 @@ class BlockchainPlatformClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def stop_blockchain_platform(self, blockchain_platform_id, **kwargs):
         """
@@ -2593,6 +2686,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/stop_blockchain_platform.py.html>`__ to see an example of how to use stop_blockchain_platform API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['blockchainPlatformId']
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/actions/stop"
         method = "POST"
         operation_name = "stop_blockchain_platform"
@@ -2648,7 +2743,8 @@ class BlockchainPlatformClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2657,7 +2753,8 @@ class BlockchainPlatformClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_blockchain_platform(self, update_blockchain_platform_details, blockchain_platform_id, **kwargs):
         """
@@ -2705,6 +2802,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/update_blockchain_platform.py.html>`__ to see an example of how to use update_blockchain_platform API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['blockchainPlatformId']
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}"
         method = "PUT"
         operation_name = "update_blockchain_platform"
@@ -2761,7 +2860,8 @@ class BlockchainPlatformClient(object):
                 body=update_blockchain_platform_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2771,7 +2871,8 @@ class BlockchainPlatformClient(object):
                 body=update_blockchain_platform_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_osn(self, blockchain_platform_id, osn_id, update_osn_details, **kwargs):
         """
@@ -2822,6 +2923,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/update_osn.py.html>`__ to see an example of how to use update_osn API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['blockchainPlatformId', 'osnId']
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}"
         method = "PUT"
         operation_name = "update_osn"
@@ -2879,7 +2982,8 @@ class BlockchainPlatformClient(object):
                 body=update_osn_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2889,7 +2993,8 @@ class BlockchainPlatformClient(object):
                 body=update_osn_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_peer(self, blockchain_platform_id, peer_id, update_peer_details, **kwargs):
         """
@@ -2940,6 +3045,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/update_peer.py.html>`__ to see an example of how to use update_peer API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['blockchainPlatformId', 'peerId']
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/peers/{peerId}"
         method = "PUT"
         operation_name = "update_peer"
@@ -2997,7 +3104,8 @@ class BlockchainPlatformClient(object):
                 body=update_peer_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3007,7 +3115,8 @@ class BlockchainPlatformClient(object):
                 body=update_peer_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def upgrade_blockchain_platform(self, upgrade_blockchain_platform_details, blockchain_platform_id, **kwargs):
         """
@@ -3055,6 +3164,8 @@ class BlockchainPlatformClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/blockchain/upgrade_blockchain_platform.py.html>`__ to see an example of how to use upgrade_blockchain_platform API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['blockchainPlatformId']
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/actions/upgrade"
         method = "POST"
         operation_name = "upgrade_blockchain_platform"
@@ -3111,7 +3222,8 @@ class BlockchainPlatformClient(object):
                 body=upgrade_blockchain_platform_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3121,4 +3233,5 @@ class BlockchainPlatformClient(object):
                 body=upgrade_blockchain_platform_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

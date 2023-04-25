@@ -65,6 +65,9 @@ class BdsClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class BdsClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20190531',
             'service_endpoint_template': 'https://bigdataservice.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -153,6 +158,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/activate_bds_metastore_configuration.py.html>`__ to see an example of how to use activate_bds_metastore_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId', 'metastoreConfigId']
         resource_path = "/bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}/actions/activate"
         method = "POST"
         operation_name = "activate_bds_metastore_configuration"
@@ -210,7 +217,8 @@ class BdsClient(object):
                 body=activate_bds_metastore_configuration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -220,7 +228,8 @@ class BdsClient(object):
                 body=activate_bds_metastore_configuration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def add_auto_scaling_configuration(self, bds_instance_id, add_auto_scaling_configuration_details, **kwargs):
         """
@@ -268,6 +277,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/add_auto_scaling_configuration.py.html>`__ to see an example of how to use add_auto_scaling_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}/autoScalingConfiguration"
         method = "POST"
         operation_name = "add_auto_scaling_configuration"
@@ -324,7 +335,8 @@ class BdsClient(object):
                 body=add_auto_scaling_configuration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -334,7 +346,8 @@ class BdsClient(object):
                 body=add_auto_scaling_configuration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def add_block_storage(self, bds_instance_id, add_block_storage_details, **kwargs):
         """
@@ -382,6 +395,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/add_block_storage.py.html>`__ to see an example of how to use add_block_storage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/addBlockStorage"
         method = "POST"
         operation_name = "add_block_storage"
@@ -438,7 +453,8 @@ class BdsClient(object):
                 body=add_block_storage_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -448,7 +464,8 @@ class BdsClient(object):
                 body=add_block_storage_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def add_cloud_sql(self, bds_instance_id, add_cloud_sql_details, **kwargs):
         """
@@ -496,6 +513,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/add_cloud_sql.py.html>`__ to see an example of how to use add_cloud_sql API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/addCloudSql"
         method = "POST"
         operation_name = "add_cloud_sql"
@@ -552,7 +571,8 @@ class BdsClient(object):
                 body=add_cloud_sql_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -562,7 +582,8 @@ class BdsClient(object):
                 body=add_cloud_sql_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def add_worker_nodes(self, bds_instance_id, add_worker_nodes_details, **kwargs):
         """
@@ -610,6 +631,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/add_worker_nodes.py.html>`__ to see an example of how to use add_worker_nodes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/addWorkerNodes"
         method = "POST"
         operation_name = "add_worker_nodes"
@@ -666,7 +689,8 @@ class BdsClient(object):
                 body=add_worker_nodes_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -676,7 +700,8 @@ class BdsClient(object):
                 body=add_worker_nodes_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_bds_instance_compartment(self, bds_instance_id, change_bds_instance_compartment_details, **kwargs):
         """
@@ -724,6 +749,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/change_bds_instance_compartment.py.html>`__ to see an example of how to use change_bds_instance_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_bds_instance_compartment"
@@ -780,7 +807,8 @@ class BdsClient(object):
                 body=change_bds_instance_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -790,7 +818,8 @@ class BdsClient(object):
                 body=change_bds_instance_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_shape(self, bds_instance_id, change_shape_details, **kwargs):
         """
@@ -838,6 +867,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/change_shape.py.html>`__ to see an example of how to use change_shape API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/changeShape"
         method = "POST"
         operation_name = "change_shape"
@@ -894,7 +925,8 @@ class BdsClient(object):
                 body=change_shape_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -904,7 +936,8 @@ class BdsClient(object):
                 body=change_shape_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_bds_api_key(self, bds_instance_id, create_bds_api_key_details, **kwargs):
         """
@@ -945,6 +978,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/create_bds_api_key.py.html>`__ to see an example of how to use create_bds_api_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}/apiKeys"
         method = "POST"
         operation_name = "create_bds_api_key"
@@ -999,7 +1034,8 @@ class BdsClient(object):
                 body=create_bds_api_key_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1009,7 +1045,8 @@ class BdsClient(object):
                 body=create_bds_api_key_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_bds_instance(self, create_bds_instance_details, **kwargs):
         """
@@ -1047,6 +1084,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/create_bds_instance.py.html>`__ to see an example of how to use create_bds_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/bdsInstances"
         method = "POST"
         operation_name = "create_bds_instance"
@@ -1090,7 +1129,8 @@ class BdsClient(object):
                 body=create_bds_instance_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1099,7 +1139,8 @@ class BdsClient(object):
                 body=create_bds_instance_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_bds_metastore_configuration(self, bds_instance_id, create_bds_metastore_configuration_details, **kwargs):
         """
@@ -1140,6 +1181,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/create_bds_metastore_configuration.py.html>`__ to see an example of how to use create_bds_metastore_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}/metastoreConfigs"
         method = "POST"
         operation_name = "create_bds_metastore_configuration"
@@ -1194,7 +1237,8 @@ class BdsClient(object):
                 body=create_bds_metastore_configuration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1204,7 +1248,8 @@ class BdsClient(object):
                 body=create_bds_metastore_configuration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_bds_api_key(self, bds_instance_id, api_key_id, **kwargs):
         """
@@ -1245,6 +1290,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/delete_bds_api_key.py.html>`__ to see an example of how to use delete_bds_api_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId', 'apiKeyId']
         resource_path = "/bdsInstances/{bdsInstanceId}/apiKeys/{apiKeyId}"
         method = "DELETE"
         operation_name = "delete_bds_api_key"
@@ -1298,7 +1345,8 @@ class BdsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1307,7 +1355,8 @@ class BdsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_bds_instance(self, bds_instance_id, **kwargs):
         """
@@ -1345,6 +1394,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/delete_bds_instance.py.html>`__ to see an example of how to use delete_bds_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}"
         method = "DELETE"
         operation_name = "delete_bds_instance"
@@ -1397,7 +1448,8 @@ class BdsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1406,7 +1458,8 @@ class BdsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_bds_metastore_configuration(self, bds_instance_id, metastore_config_id, **kwargs):
         """
@@ -1447,6 +1500,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/delete_bds_metastore_configuration.py.html>`__ to see an example of how to use delete_bds_metastore_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId', 'metastoreConfigId']
         resource_path = "/bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}"
         method = "DELETE"
         operation_name = "delete_bds_metastore_configuration"
@@ -1500,7 +1555,8 @@ class BdsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1509,7 +1565,8 @@ class BdsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def execute_bootstrap_script(self, bds_instance_id, execute_bootstrap_script_details, **kwargs):
         """
@@ -1557,6 +1614,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/execute_bootstrap_script.py.html>`__ to see an example of how to use execute_bootstrap_script API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/executeBootstrapScript"
         method = "POST"
         operation_name = "execute_bootstrap_script"
@@ -1613,7 +1672,8 @@ class BdsClient(object):
                 body=execute_bootstrap_script_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1623,7 +1683,8 @@ class BdsClient(object):
                 body=execute_bootstrap_script_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_auto_scaling_configuration(self, bds_instance_id, auto_scaling_configuration_id, **kwargs):
         """
@@ -1657,6 +1718,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/get_auto_scaling_configuration.py.html>`__ to see an example of how to use get_auto_scaling_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId', 'autoScalingConfigurationId']
         resource_path = "/bdsInstances/{bdsInstanceId}/autoScalingConfiguration/{autoScalingConfigurationId}"
         method = "GET"
         operation_name = "get_auto_scaling_configuration"
@@ -1709,7 +1772,8 @@ class BdsClient(object):
                 response_type="AutoScalingConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1719,7 +1783,8 @@ class BdsClient(object):
                 response_type="AutoScalingConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_bds_api_key(self, bds_instance_id, api_key_id, **kwargs):
         """
@@ -1753,6 +1818,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/get_bds_api_key.py.html>`__ to see an example of how to use get_bds_api_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId', 'apiKeyId']
         resource_path = "/bdsInstances/{bdsInstanceId}/apiKeys/{apiKeyId}"
         method = "GET"
         operation_name = "get_bds_api_key"
@@ -1805,7 +1872,8 @@ class BdsClient(object):
                 response_type="BdsApiKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1815,7 +1883,8 @@ class BdsClient(object):
                 response_type="BdsApiKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_bds_instance(self, bds_instance_id, **kwargs):
         """
@@ -1846,6 +1915,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/get_bds_instance.py.html>`__ to see an example of how to use get_bds_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}"
         method = "GET"
         operation_name = "get_bds_instance"
@@ -1897,7 +1968,8 @@ class BdsClient(object):
                 response_type="BdsInstance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1907,7 +1979,8 @@ class BdsClient(object):
                 response_type="BdsInstance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_bds_metastore_configuration(self, bds_instance_id, metastore_config_id, **kwargs):
         """
@@ -1941,6 +2014,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/get_bds_metastore_configuration.py.html>`__ to see an example of how to use get_bds_metastore_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId', 'metastoreConfigId']
         resource_path = "/bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}"
         method = "GET"
         operation_name = "get_bds_metastore_configuration"
@@ -1993,7 +2068,8 @@ class BdsClient(object):
                 response_type="BdsMetastoreConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2003,7 +2079,8 @@ class BdsClient(object):
                 response_type="BdsMetastoreConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -2034,6 +2111,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -2085,7 +2164,8 @@ class BdsClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2095,7 +2175,8 @@ class BdsClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def install_patch(self, bds_instance_id, install_patch_details, **kwargs):
         """
@@ -2143,6 +2224,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/install_patch.py.html>`__ to see an example of how to use install_patch API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/installPatch"
         method = "POST"
         operation_name = "install_patch"
@@ -2199,7 +2282,8 @@ class BdsClient(object):
                 body=install_patch_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2209,7 +2293,8 @@ class BdsClient(object):
                 body=install_patch_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_auto_scaling_configurations(self, compartment_id, bds_instance_id, **kwargs):
         """
@@ -2267,6 +2352,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/list_auto_scaling_configurations.py.html>`__ to see an example of how to use list_auto_scaling_configurations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId', 'compartmentId']
         resource_path = "/bdsInstances/{bdsInstanceId}/autoScalingConfiguration"
         method = "GET"
         operation_name = "list_auto_scaling_configurations"
@@ -2357,7 +2444,8 @@ class BdsClient(object):
                 response_type="list[AutoScalingConfigurationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2368,7 +2456,8 @@ class BdsClient(object):
                 response_type="list[AutoScalingConfigurationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_bds_api_keys(self, bds_instance_id, **kwargs):
         """
@@ -2426,6 +2515,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/list_bds_api_keys.py.html>`__ to see an example of how to use list_bds_api_keys API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}/apiKeys"
         method = "GET"
         operation_name = "list_bds_api_keys"
@@ -2517,7 +2608,8 @@ class BdsClient(object):
                 response_type="list[BdsApiKeySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2528,7 +2620,8 @@ class BdsClient(object):
                 response_type="list[BdsApiKeySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_bds_instances(self, compartment_id, **kwargs):
         """
@@ -2583,6 +2676,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/list_bds_instances.py.html>`__ to see an example of how to use list_bds_instances API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/bdsInstances"
         method = "GET"
         operation_name = "list_bds_instances"
@@ -2662,7 +2757,8 @@ class BdsClient(object):
                 response_type="list[BdsInstanceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2672,7 +2768,8 @@ class BdsClient(object):
                 response_type="list[BdsInstanceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_bds_metastore_configurations(self, bds_instance_id, **kwargs):
         """
@@ -2738,6 +2835,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/list_bds_metastore_configurations.py.html>`__ to see an example of how to use list_bds_metastore_configurations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}/metastoreConfigs"
         method = "GET"
         operation_name = "list_bds_metastore_configurations"
@@ -2840,7 +2939,8 @@ class BdsClient(object):
                 response_type="list[BdsMetastoreConfigurationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2851,7 +2951,8 @@ class BdsClient(object):
                 response_type="list[BdsMetastoreConfigurationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_patch_histories(self, bds_instance_id, **kwargs):
         """
@@ -2906,6 +3007,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/list_patch_histories.py.html>`__ to see an example of how to use list_patch_histories API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}/patchHistory"
         method = "GET"
         operation_name = "list_patch_histories"
@@ -2995,7 +3098,8 @@ class BdsClient(object):
                 response_type="list[PatchHistorySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3006,7 +3110,8 @@ class BdsClient(object):
                 response_type="list[PatchHistorySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_patches(self, bds_instance_id, **kwargs):
         """
@@ -3043,6 +3148,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/list_patches.py.html>`__ to see an example of how to use list_patches API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}/patches"
         method = "GET"
         operation_name = "list_patches"
@@ -3103,7 +3210,8 @@ class BdsClient(object):
                 response_type="list[PatchSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3114,7 +3222,8 @@ class BdsClient(object):
                 response_type="list[PatchSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -3161,6 +3270,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -3239,7 +3350,8 @@ class BdsClient(object):
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3250,7 +3362,8 @@ class BdsClient(object):
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -3297,6 +3410,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -3375,7 +3490,8 @@ class BdsClient(object):
                 response_type="list[WorkRequestLogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3386,7 +3502,8 @@ class BdsClient(object):
                 response_type="list[WorkRequestLogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -3436,6 +3553,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -3506,7 +3625,8 @@ class BdsClient(object):
                 response_type="list[WorkRequest]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3516,7 +3636,8 @@ class BdsClient(object):
                 response_type="list[WorkRequest]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_auto_scaling_configuration(self, bds_instance_id, auto_scaling_configuration_id, remove_auto_scaling_configuration_details, **kwargs):
         """
@@ -3567,6 +3688,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/remove_auto_scaling_configuration.py.html>`__ to see an example of how to use remove_auto_scaling_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId', 'autoScalingConfigurationId']
         resource_path = "/bdsInstances/{bdsInstanceId}/autoScalingConfiguration/{autoScalingConfigurationId}/actions/remove"
         method = "POST"
         operation_name = "remove_auto_scaling_configuration"
@@ -3624,7 +3747,8 @@ class BdsClient(object):
                 body=remove_auto_scaling_configuration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3634,7 +3758,8 @@ class BdsClient(object):
                 body=remove_auto_scaling_configuration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_cloud_sql(self, bds_instance_id, remove_cloud_sql_details, **kwargs):
         """
@@ -3682,6 +3807,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/remove_cloud_sql.py.html>`__ to see an example of how to use remove_cloud_sql API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/removeCloudSql"
         method = "POST"
         operation_name = "remove_cloud_sql"
@@ -3738,7 +3865,8 @@ class BdsClient(object):
                 body=remove_cloud_sql_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3748,7 +3876,8 @@ class BdsClient(object):
                 body=remove_cloud_sql_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_node(self, bds_instance_id, remove_node_details, **kwargs):
         """
@@ -3789,6 +3918,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/remove_node.py.html>`__ to see an example of how to use remove_node API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/removeNode"
         method = "POST"
         operation_name = "remove_node"
@@ -3842,7 +3973,8 @@ class BdsClient(object):
                 body=remove_node_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3852,7 +3984,8 @@ class BdsClient(object):
                 body=remove_node_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def restart_node(self, bds_instance_id, restart_node_details, **kwargs):
         """
@@ -3900,6 +4033,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/restart_node.py.html>`__ to see an example of how to use restart_node API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/restartNode"
         method = "POST"
         operation_name = "restart_node"
@@ -3956,7 +4091,8 @@ class BdsClient(object):
                 body=restart_node_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3966,7 +4102,8 @@ class BdsClient(object):
                 body=restart_node_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def start_bds_instance(self, bds_instance_id, start_bds_instance_details, **kwargs):
         """
@@ -4007,6 +4144,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/start_bds_instance.py.html>`__ to see an example of how to use start_bds_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/start"
         method = "POST"
         operation_name = "start_bds_instance"
@@ -4060,7 +4199,8 @@ class BdsClient(object):
                 body=start_bds_instance_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4070,7 +4210,8 @@ class BdsClient(object):
                 body=start_bds_instance_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def stop_bds_instance(self, bds_instance_id, stop_bds_instance_details, **kwargs):
         """
@@ -4111,6 +4252,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/stop_bds_instance.py.html>`__ to see an example of how to use stop_bds_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/stop"
         method = "POST"
         operation_name = "stop_bds_instance"
@@ -4164,7 +4307,8 @@ class BdsClient(object):
                 body=stop_bds_instance_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4174,7 +4318,8 @@ class BdsClient(object):
                 body=stop_bds_instance_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def test_bds_metastore_configuration(self, bds_instance_id, metastore_config_id, test_bds_metastore_configuration_details, **kwargs):
         """
@@ -4218,6 +4363,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/test_bds_metastore_configuration.py.html>`__ to see an example of how to use test_bds_metastore_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId', 'metastoreConfigId']
         resource_path = "/bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}/actions/test"
         method = "POST"
         operation_name = "test_bds_metastore_configuration"
@@ -4272,7 +4419,8 @@ class BdsClient(object):
                 body=test_bds_metastore_configuration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4282,7 +4430,8 @@ class BdsClient(object):
                 body=test_bds_metastore_configuration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def test_bds_object_storage_connection(self, bds_instance_id, api_key_id, test_bds_object_storage_connection_details, **kwargs):
         """
@@ -4319,6 +4468,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/test_bds_object_storage_connection.py.html>`__ to see an example of how to use test_bds_object_storage_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId', 'apiKeyId']
         resource_path = "/bdsInstances/{bdsInstanceId}/apiKeys/{apiKeyId}/actions/testObjectStorageConnection"
         method = "POST"
         operation_name = "test_bds_object_storage_connection"
@@ -4371,7 +4522,8 @@ class BdsClient(object):
                 body=test_bds_object_storage_connection_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4381,7 +4533,8 @@ class BdsClient(object):
                 body=test_bds_object_storage_connection_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_auto_scaling_configuration(self, bds_instance_id, auto_scaling_configuration_id, update_auto_scaling_configuration_details, **kwargs):
         """
@@ -4432,6 +4585,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/update_auto_scaling_configuration.py.html>`__ to see an example of how to use update_auto_scaling_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId', 'autoScalingConfigurationId']
         resource_path = "/bdsInstances/{bdsInstanceId}/autoScalingConfiguration/{autoScalingConfigurationId}"
         method = "PUT"
         operation_name = "update_auto_scaling_configuration"
@@ -4489,7 +4644,8 @@ class BdsClient(object):
                 body=update_auto_scaling_configuration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4499,7 +4655,8 @@ class BdsClient(object):
                 body=update_auto_scaling_configuration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_bds_instance(self, bds_instance_id, update_bds_instance_details, **kwargs):
         """
@@ -4540,6 +4697,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/update_bds_instance.py.html>`__ to see an example of how to use update_bds_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
         resource_path = "/bdsInstances/{bdsInstanceId}"
         method = "PUT"
         operation_name = "update_bds_instance"
@@ -4593,7 +4752,8 @@ class BdsClient(object):
                 body=update_bds_instance_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4603,7 +4763,8 @@ class BdsClient(object):
                 body=update_bds_instance_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_bds_metastore_configuration(self, bds_instance_id, metastore_config_id, update_bds_metastore_configuration_details, **kwargs):
         """
@@ -4647,6 +4808,8 @@ class BdsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/update_bds_metastore_configuration.py.html>`__ to see an example of how to use update_bds_metastore_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId', 'metastoreConfigId']
         resource_path = "/bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}"
         method = "PUT"
         operation_name = "update_bds_metastore_configuration"
@@ -4701,7 +4864,8 @@ class BdsClient(object):
                 body=update_bds_metastore_configuration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4711,4 +4875,5 @@ class BdsClient(object):
                 body=update_bds_metastore_configuration_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

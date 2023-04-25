@@ -63,6 +63,9 @@ class StreamClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -89,8 +92,10 @@ class StreamClient(object):
             'service_endpoint': service_endpoint,
             'base_path': '/20180418',
             'service_endpoint_template': 'https://streaming.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -134,6 +139,8 @@ class StreamClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/consumer_commit.py.html>`__ to see an example of how to use consumer_commit API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamId', 'cursor']
         resource_path = "/streams/{streamId}/commit"
         method = "POST"
         operation_name = "consumer_commit"
@@ -193,7 +200,8 @@ class StreamClient(object):
                 response_type="Cursor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -204,7 +212,8 @@ class StreamClient(object):
                 response_type="Cursor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def consumer_heartbeat(self, stream_id, cursor, **kwargs):
         """
@@ -239,6 +248,8 @@ class StreamClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/consumer_heartbeat.py.html>`__ to see an example of how to use consumer_heartbeat API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamId', 'cursor']
         resource_path = "/streams/{streamId}/heartbeat"
         method = "POST"
         operation_name = "consumer_heartbeat"
@@ -298,7 +309,8 @@ class StreamClient(object):
                 response_type="Cursor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -309,7 +321,8 @@ class StreamClient(object):
                 response_type="Cursor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_cursor(self, stream_id, create_cursor_details, **kwargs):
         """
@@ -348,6 +361,8 @@ class StreamClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/create_cursor.py.html>`__ to see an example of how to use create_cursor API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamId']
         resource_path = "/streams/{streamId}/cursors"
         method = "POST"
         operation_name = "create_cursor"
@@ -402,7 +417,8 @@ class StreamClient(object):
                 response_type="Cursor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -413,7 +429,8 @@ class StreamClient(object):
                 response_type="Cursor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_group_cursor(self, stream_id, create_group_cursor_details, **kwargs):
         """
@@ -448,6 +465,8 @@ class StreamClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/create_group_cursor.py.html>`__ to see an example of how to use create_group_cursor API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamId']
         resource_path = "/streams/{streamId}/groupCursors"
         method = "POST"
         operation_name = "create_group_cursor"
@@ -502,7 +521,8 @@ class StreamClient(object):
                 response_type="Cursor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -513,7 +533,8 @@ class StreamClient(object):
                 response_type="Cursor",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_group(self, stream_id, group_name, **kwargs):
         """
@@ -548,6 +569,8 @@ class StreamClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/get_group.py.html>`__ to see an example of how to use get_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamId', 'groupName']
         resource_path = "/streams/{streamId}/groups/{groupName}"
         method = "GET"
         operation_name = "get_group"
@@ -602,7 +625,8 @@ class StreamClient(object):
                 response_type="Group",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -612,7 +636,8 @@ class StreamClient(object):
                 response_type="Group",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_messages(self, stream_id, cursor, **kwargs):
         """
@@ -653,6 +678,8 @@ class StreamClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/get_messages.py.html>`__ to see an example of how to use get_messages API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamId', 'cursor']
         resource_path = "/streams/{streamId}/messages"
         method = "GET"
         operation_name = "get_messages"
@@ -714,7 +741,8 @@ class StreamClient(object):
                 response_type="list[Message]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -725,7 +753,8 @@ class StreamClient(object):
                 response_type="list[Message]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def put_messages(self, stream_id, put_messages_details, **kwargs):
         """
@@ -763,6 +792,8 @@ class StreamClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/put_messages.py.html>`__ to see an example of how to use put_messages API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamId']
         resource_path = "/streams/{streamId}/messages"
         method = "POST"
         operation_name = "put_messages"
@@ -816,7 +847,8 @@ class StreamClient(object):
                 enforce_content_headers=False,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -828,7 +860,8 @@ class StreamClient(object):
                 enforce_content_headers=False,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_group(self, stream_id, group_name, update_group_details, **kwargs):
         """
@@ -866,6 +899,8 @@ class StreamClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/update_group.py.html>`__ to see an example of how to use update_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamId', 'groupName']
         resource_path = "/streams/{streamId}/groups/{groupName}"
         method = "PUT"
         operation_name = "update_group"
@@ -920,7 +955,8 @@ class StreamClient(object):
                 body=update_group_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -930,4 +966,5 @@ class StreamClient(object):
                 body=update_group_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

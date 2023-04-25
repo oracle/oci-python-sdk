@@ -65,6 +65,9 @@ class RewardsClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class RewardsClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20190111',
             'service_endpoint_template': 'https://identity.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -156,6 +161,8 @@ class RewardsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usage/create_redeemable_user.py.html>`__ to see an example of how to use create_redeemable_user API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subscriptionId', 'tenancyId']
         resource_path = "/subscriptions/{subscriptionId}/redeemableUsers"
         method = "POST"
         operation_name = "create_redeemable_user"
@@ -221,7 +228,8 @@ class RewardsClient(object):
                 response_type="RedeemableUserCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -233,7 +241,8 @@ class RewardsClient(object):
                 response_type="RedeemableUserCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_redeemable_user(self, email_id, tenancy_id, subscription_id, **kwargs):
         """
@@ -277,6 +286,8 @@ class RewardsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usage/delete_redeemable_user.py.html>`__ to see an example of how to use delete_redeemable_user API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subscriptionId', 'emailId', 'tenancyId']
         resource_path = "/subscriptions/{subscriptionId}/redeemableUsers"
         method = "DELETE"
         operation_name = "delete_redeemable_user"
@@ -336,7 +347,8 @@ class RewardsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -346,7 +358,8 @@ class RewardsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_products(self, tenancy_id, subscription_id, usage_period_key, **kwargs):
         """
@@ -404,6 +417,8 @@ class RewardsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usage/list_products.py.html>`__ to see an example of how to use list_products API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subscriptionId', 'tenancyId', 'usagePeriodKey']
         resource_path = "/subscriptions/{subscriptionId}/products"
         method = "GET"
         operation_name = "list_products"
@@ -493,7 +508,8 @@ class RewardsClient(object):
                 response_type="ProductCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -504,7 +520,8 @@ class RewardsClient(object):
                 response_type="ProductCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_redeemable_users(self, tenancy_id, subscription_id, **kwargs):
         """
@@ -554,6 +571,8 @@ class RewardsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usage/list_redeemable_users.py.html>`__ to see an example of how to use list_redeemable_users API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subscriptionId', 'tenancyId']
         resource_path = "/subscriptions/{subscriptionId}/redeemableUsers"
         method = "GET"
         operation_name = "list_redeemable_users"
@@ -633,7 +652,8 @@ class RewardsClient(object):
                 response_type="RedeemableUserCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -644,7 +664,8 @@ class RewardsClient(object):
                 response_type="RedeemableUserCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_redemptions(self, tenancy_id, subscription_id, **kwargs):
         """
@@ -700,6 +721,8 @@ class RewardsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usage/list_redemptions.py.html>`__ to see an example of how to use list_redemptions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subscriptionId', 'tenancyId']
         resource_path = "/subscriptions/{subscriptionId}/redemptions"
         method = "GET"
         operation_name = "list_redemptions"
@@ -783,7 +806,8 @@ class RewardsClient(object):
                 response_type="RedemptionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -794,7 +818,8 @@ class RewardsClient(object):
                 response_type="RedemptionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_rewards(self, tenancy_id, subscription_id, **kwargs):
         """
@@ -828,6 +853,8 @@ class RewardsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usage/list_rewards.py.html>`__ to see an example of how to use list_rewards API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subscriptionId', 'tenancyId']
         resource_path = "/subscriptions/{subscriptionId}/rewards"
         method = "GET"
         operation_name = "list_rewards"
@@ -885,7 +912,8 @@ class RewardsClient(object):
                 response_type="RewardCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -896,4 +924,5 @@ class RewardsClient(object):
                 response_type="RewardCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

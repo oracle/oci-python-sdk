@@ -65,6 +65,9 @@ class BudgetClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class BudgetClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20190111',
             'service_endpoint_template': 'https://usage.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -143,6 +148,8 @@ class BudgetClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/budget/create_alert_rule.py.html>`__ to see an example of how to use create_alert_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['budgetId']
         resource_path = "/budgets/{budgetId}/alertRules"
         method = "POST"
         operation_name = "create_alert_rule"
@@ -198,7 +205,8 @@ class BudgetClient(object):
                 response_type="AlertRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -209,7 +217,8 @@ class BudgetClient(object):
                 response_type="AlertRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_budget(self, create_budget_details, **kwargs):
         """
@@ -247,6 +256,8 @@ class BudgetClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/budget/create_budget.py.html>`__ to see an example of how to use create_budget API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/budgets"
         method = "POST"
         operation_name = "create_budget"
@@ -291,7 +302,8 @@ class BudgetClient(object):
                 response_type="Budget",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -301,7 +313,8 @@ class BudgetClient(object):
                 response_type="Budget",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_alert_rule(self, budget_id, alert_rule_id, **kwargs):
         """
@@ -342,6 +355,8 @@ class BudgetClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/budget/delete_alert_rule.py.html>`__ to see an example of how to use delete_alert_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['budgetId', 'alertRuleId']
         resource_path = "/budgets/{budgetId}/alertRules/{alertRuleId}"
         method = "DELETE"
         operation_name = "delete_alert_rule"
@@ -395,7 +410,8 @@ class BudgetClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -404,7 +420,8 @@ class BudgetClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_budget(self, budget_id, **kwargs):
         """
@@ -442,6 +459,8 @@ class BudgetClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/budget/delete_budget.py.html>`__ to see an example of how to use delete_budget API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['budgetId']
         resource_path = "/budgets/{budgetId}"
         method = "DELETE"
         operation_name = "delete_budget"
@@ -494,7 +513,8 @@ class BudgetClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -503,7 +523,8 @@ class BudgetClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_alert_rule(self, budget_id, alert_rule_id, **kwargs):
         """
@@ -537,6 +558,8 @@ class BudgetClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/budget/get_alert_rule.py.html>`__ to see an example of how to use get_alert_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['budgetId', 'alertRuleId']
         resource_path = "/budgets/{budgetId}/alertRules/{alertRuleId}"
         method = "GET"
         operation_name = "get_alert_rule"
@@ -589,7 +612,8 @@ class BudgetClient(object):
                 response_type="AlertRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -599,7 +623,8 @@ class BudgetClient(object):
                 response_type="AlertRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_budget(self, budget_id, **kwargs):
         """
@@ -630,6 +655,8 @@ class BudgetClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/budget/get_budget.py.html>`__ to see an example of how to use get_budget API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['budgetId']
         resource_path = "/budgets/{budgetId}"
         method = "GET"
         operation_name = "get_budget"
@@ -681,7 +708,8 @@ class BudgetClient(object):
                 response_type="Budget",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -691,7 +719,8 @@ class BudgetClient(object):
                 response_type="Budget",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_alert_rules(self, budget_id, **kwargs):
         """
@@ -750,6 +779,8 @@ class BudgetClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/budget/list_alert_rules.py.html>`__ to see an example of how to use list_alert_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['budgetId']
         resource_path = "/budgets/{budgetId}/alertRules"
         method = "GET"
         operation_name = "list_alert_rules"
@@ -839,7 +870,8 @@ class BudgetClient(object):
                 response_type="list[AlertRuleSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -850,7 +882,8 @@ class BudgetClient(object):
                 response_type="list[AlertRuleSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_budgets(self, compartment_id, **kwargs):
         """
@@ -924,6 +957,8 @@ class BudgetClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/budget/list_budgets.py.html>`__ to see an example of how to use list_budgets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/budgets"
         method = "GET"
         operation_name = "list_budgets"
@@ -1012,7 +1047,8 @@ class BudgetClient(object):
                 response_type="list[BudgetSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1022,7 +1058,8 @@ class BudgetClient(object):
                 response_type="list[BudgetSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_alert_rule(self, budget_id, alert_rule_id, update_alert_rule_details, **kwargs):
         """
@@ -1066,6 +1103,8 @@ class BudgetClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/budget/update_alert_rule.py.html>`__ to see an example of how to use update_alert_rule API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['budgetId', 'alertRuleId']
         resource_path = "/budgets/{budgetId}/alertRules/{alertRuleId}"
         method = "PUT"
         operation_name = "update_alert_rule"
@@ -1121,7 +1160,8 @@ class BudgetClient(object):
                 response_type="AlertRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1132,7 +1172,8 @@ class BudgetClient(object):
                 response_type="AlertRule",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_budget(self, budget_id, update_budget_details, **kwargs):
         """
@@ -1173,6 +1214,8 @@ class BudgetClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/budget/update_budget.py.html>`__ to see an example of how to use update_budget API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['budgetId']
         resource_path = "/budgets/{budgetId}"
         method = "PUT"
         operation_name = "update_budget"
@@ -1227,7 +1270,8 @@ class BudgetClient(object):
                 response_type="Budget",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1238,4 +1282,5 @@ class BudgetClient(object):
                 response_type="Budget",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

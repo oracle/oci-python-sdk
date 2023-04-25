@@ -525,7 +525,7 @@ class AssignedSubscription(object):
     def subscription_tier(self):
         """
         Gets the subscription_tier of this AssignedSubscription.
-        Tier for the subscription, such as if it is a free promotion subscription or a paid subscription.
+        Tier for the subscription, whether it is a free promotion subscription or a paid subscription.
 
 
         :return: The subscription_tier of this AssignedSubscription.
@@ -537,7 +537,7 @@ class AssignedSubscription(object):
     def subscription_tier(self, subscription_tier):
         """
         Sets the subscription_tier of this AssignedSubscription.
-        Tier for the subscription, such as if it is a free promotion subscription or a paid subscription.
+        Tier for the subscription, whether it is a free promotion subscription or a paid subscription.
 
 
         :param subscription_tier: The subscription_tier of this AssignedSubscription.
@@ -549,7 +549,7 @@ class AssignedSubscription(object):
     def is_government_subscription(self):
         """
         Gets the is_government_subscription of this AssignedSubscription.
-        Denotes if the subscription is a government subscription or not.
+        Denotes whether or not the subscription is a government subscription.
 
 
         :return: The is_government_subscription of this AssignedSubscription.
@@ -561,7 +561,7 @@ class AssignedSubscription(object):
     def is_government_subscription(self, is_government_subscription):
         """
         Sets the is_government_subscription of this AssignedSubscription.
-        Denotes if the subscription is a government subscription or not.
+        Denotes whether or not the subscription is a government subscription.
 
 
         :param is_government_subscription: The is_government_subscription of this AssignedSubscription.
@@ -597,7 +597,7 @@ class AssignedSubscription(object):
     def purchase_entitlement_id(self):
         """
         Gets the purchase_entitlement_id of this AssignedSubscription.
-        Purchase entitlement id associated with the subscription.
+        Purchase entitlement ID associated with the subscription.
 
 
         :return: The purchase_entitlement_id of this AssignedSubscription.
@@ -609,7 +609,7 @@ class AssignedSubscription(object):
     def purchase_entitlement_id(self, purchase_entitlement_id):
         """
         Sets the purchase_entitlement_id of this AssignedSubscription.
-        Purchase entitlement id associated with the subscription.
+        Purchase entitlement ID associated with the subscription.
 
 
         :param purchase_entitlement_id: The purchase_entitlement_id of this AssignedSubscription.

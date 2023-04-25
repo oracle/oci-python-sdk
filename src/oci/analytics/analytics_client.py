@@ -65,6 +65,9 @@ class AnalyticsClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class AnalyticsClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20190331',
             'service_endpoint_template': 'https://analytics.{region}.ocp.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -150,6 +155,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/change_analytics_instance_compartment.py.html>`__ to see an example of how to use change_analytics_instance_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['analyticsInstanceId']
         resource_path = "/analyticsInstances/{analyticsInstanceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_analytics_instance_compartment"
@@ -208,7 +215,8 @@ class AnalyticsClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -218,7 +226,8 @@ class AnalyticsClient(object):
                 body=change_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_analytics_instance_network_endpoint(self, analytics_instance_id, change_analytics_instance_network_endpoint_details, **kwargs):
         """
@@ -266,6 +275,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/change_analytics_instance_network_endpoint.py.html>`__ to see an example of how to use change_analytics_instance_network_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['analyticsInstanceId']
         resource_path = "/analyticsInstances/{analyticsInstanceId}/actions/changeNetworkEndpoint"
         method = "POST"
         operation_name = "change_analytics_instance_network_endpoint"
@@ -324,7 +335,8 @@ class AnalyticsClient(object):
                 body=change_analytics_instance_network_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -334,7 +346,8 @@ class AnalyticsClient(object):
                 body=change_analytics_instance_network_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_analytics_instance(self, create_analytics_instance_details, **kwargs):
         """
@@ -374,6 +387,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/create_analytics_instance.py.html>`__ to see an example of how to use create_analytics_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/analyticsInstances"
         method = "POST"
         operation_name = "create_analytics_instance"
@@ -420,7 +435,8 @@ class AnalyticsClient(object):
                 response_type="AnalyticsInstance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -430,7 +446,8 @@ class AnalyticsClient(object):
                 response_type="AnalyticsInstance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_private_access_channel(self, analytics_instance_id, create_private_access_channel_details, **kwargs):
         """
@@ -473,6 +490,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/create_private_access_channel.py.html>`__ to see an example of how to use create_private_access_channel API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['analyticsInstanceId']
         resource_path = "/analyticsInstances/{analyticsInstanceId}/privateAccessChannels"
         method = "POST"
         operation_name = "create_private_access_channel"
@@ -529,7 +548,8 @@ class AnalyticsClient(object):
                 body=create_private_access_channel_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -539,7 +559,8 @@ class AnalyticsClient(object):
                 body=create_private_access_channel_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_vanity_url(self, analytics_instance_id, create_vanity_url_details, **kwargs):
         """
@@ -582,6 +603,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/create_vanity_url.py.html>`__ to see an example of how to use create_vanity_url API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['analyticsInstanceId']
         resource_path = "/analyticsInstances/{analyticsInstanceId}/vanityUrls"
         method = "POST"
         operation_name = "create_vanity_url"
@@ -638,7 +661,8 @@ class AnalyticsClient(object):
                 body=create_vanity_url_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -648,7 +672,8 @@ class AnalyticsClient(object):
                 body=create_vanity_url_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_analytics_instance(self, analytics_instance_id, **kwargs):
         """
@@ -693,6 +718,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/delete_analytics_instance.py.html>`__ to see an example of how to use delete_analytics_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['analyticsInstanceId']
         resource_path = "/analyticsInstances/{analyticsInstanceId}"
         method = "DELETE"
         operation_name = "delete_analytics_instance"
@@ -750,7 +777,8 @@ class AnalyticsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -759,7 +787,8 @@ class AnalyticsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_private_access_channel(self, private_access_channel_key, analytics_instance_id, **kwargs):
         """
@@ -806,6 +835,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/delete_private_access_channel.py.html>`__ to see an example of how to use delete_private_access_channel API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateAccessChannelKey', 'analyticsInstanceId']
         resource_path = "/analyticsInstances/{analyticsInstanceId}/privateAccessChannels/{privateAccessChannelKey}"
         method = "DELETE"
         operation_name = "delete_private_access_channel"
@@ -864,7 +895,8 @@ class AnalyticsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -873,7 +905,8 @@ class AnalyticsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_vanity_url(self, analytics_instance_id, vanity_url_key, **kwargs):
         """
@@ -920,6 +953,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/delete_vanity_url.py.html>`__ to see an example of how to use delete_vanity_url API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['analyticsInstanceId', 'vanityUrlKey']
         resource_path = "/analyticsInstances/{analyticsInstanceId}/vanityUrls/{vanityUrlKey}"
         method = "DELETE"
         operation_name = "delete_vanity_url"
@@ -978,7 +1013,8 @@ class AnalyticsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -987,7 +1023,8 @@ class AnalyticsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_work_request(self, work_request_id, **kwargs):
         """
@@ -1024,6 +1061,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/delete_work_request.py.html>`__ to see an example of how to use delete_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "delete_work_request"
@@ -1076,7 +1115,8 @@ class AnalyticsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1085,7 +1125,8 @@ class AnalyticsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_analytics_instance(self, analytics_instance_id, **kwargs):
         """
@@ -1117,6 +1158,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/get_analytics_instance.py.html>`__ to see an example of how to use get_analytics_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['analyticsInstanceId']
         resource_path = "/analyticsInstances/{analyticsInstanceId}"
         method = "GET"
         operation_name = "get_analytics_instance"
@@ -1170,7 +1213,8 @@ class AnalyticsClient(object):
                 response_type="AnalyticsInstance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1180,7 +1224,8 @@ class AnalyticsClient(object):
                 response_type="AnalyticsInstance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_private_access_channel(self, private_access_channel_key, analytics_instance_id, **kwargs):
         """
@@ -1215,6 +1260,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/get_private_access_channel.py.html>`__ to see an example of how to use get_private_access_channel API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateAccessChannelKey', 'analyticsInstanceId']
         resource_path = "/analyticsInstances/{analyticsInstanceId}/privateAccessChannels/{privateAccessChannelKey}"
         method = "GET"
         operation_name = "get_private_access_channel"
@@ -1269,7 +1316,8 @@ class AnalyticsClient(object):
                 response_type="PrivateAccessChannel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1279,7 +1327,8 @@ class AnalyticsClient(object):
                 response_type="PrivateAccessChannel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1311,6 +1360,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -1364,7 +1415,8 @@ class AnalyticsClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1374,7 +1426,8 @@ class AnalyticsClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_analytics_instances(self, compartment_id, **kwargs):
         """
@@ -1454,6 +1507,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/list_analytics_instances.py.html>`__ to see an example of how to use list_analytics_instances API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/analyticsInstances"
         method = "GET"
         operation_name = "list_analytics_instances"
@@ -1553,7 +1608,8 @@ class AnalyticsClient(object):
                 response_type="list[AnalyticsInstanceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1563,7 +1619,8 @@ class AnalyticsClient(object):
                 response_type="list[AnalyticsInstanceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1611,6 +1668,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -1673,7 +1732,8 @@ class AnalyticsClient(object):
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1684,7 +1744,8 @@ class AnalyticsClient(object):
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -1732,6 +1793,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -1794,7 +1857,8 @@ class AnalyticsClient(object):
                 response_type="list[WorkRequestLog]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1805,7 +1869,8 @@ class AnalyticsClient(object):
                 response_type="list[WorkRequestLog]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -1876,6 +1941,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -1967,7 +2034,8 @@ class AnalyticsClient(object):
                 response_type="list[WorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1977,7 +2045,8 @@ class AnalyticsClient(object):
                 response_type="list[WorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def scale_analytics_instance(self, analytics_instance_id, scale_analytics_instance_details, **kwargs):
         """
@@ -2025,6 +2094,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/scale_analytics_instance.py.html>`__ to see an example of how to use scale_analytics_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['analyticsInstanceId']
         resource_path = "/analyticsInstances/{analyticsInstanceId}/actions/scale"
         method = "POST"
         operation_name = "scale_analytics_instance"
@@ -2083,7 +2154,8 @@ class AnalyticsClient(object):
                 body=scale_analytics_instance_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2093,7 +2165,8 @@ class AnalyticsClient(object):
                 body=scale_analytics_instance_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def set_kms_key(self, analytics_instance_id, set_kms_key_details, **kwargs):
         """
@@ -2140,6 +2213,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/set_kms_key.py.html>`__ to see an example of how to use set_kms_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['analyticsInstanceId']
         resource_path = "/analyticsInstances/{analyticsInstanceId}/actions/setKmsKey"
         method = "POST"
         operation_name = "set_kms_key"
@@ -2198,7 +2273,8 @@ class AnalyticsClient(object):
                 body=set_kms_key_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2208,7 +2284,8 @@ class AnalyticsClient(object):
                 body=set_kms_key_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def start_analytics_instance(self, analytics_instance_id, **kwargs):
         """
@@ -2253,6 +2330,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/start_analytics_instance.py.html>`__ to see an example of how to use start_analytics_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['analyticsInstanceId']
         resource_path = "/analyticsInstances/{analyticsInstanceId}/actions/start"
         method = "POST"
         operation_name = "start_analytics_instance"
@@ -2310,7 +2389,8 @@ class AnalyticsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2319,7 +2399,8 @@ class AnalyticsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def stop_analytics_instance(self, analytics_instance_id, **kwargs):
         """
@@ -2364,6 +2445,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/stop_analytics_instance.py.html>`__ to see an example of how to use stop_analytics_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['analyticsInstanceId']
         resource_path = "/analyticsInstances/{analyticsInstanceId}/actions/stop"
         method = "POST"
         operation_name = "stop_analytics_instance"
@@ -2421,7 +2504,8 @@ class AnalyticsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2430,7 +2514,8 @@ class AnalyticsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_analytics_instance(self, analytics_instance_id, update_analytics_instance_details, **kwargs):
         """
@@ -2472,6 +2557,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/update_analytics_instance.py.html>`__ to see an example of how to use update_analytics_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['analyticsInstanceId']
         resource_path = "/analyticsInstances/{analyticsInstanceId}"
         method = "PUT"
         operation_name = "update_analytics_instance"
@@ -2526,7 +2613,8 @@ class AnalyticsClient(object):
                 response_type="AnalyticsInstance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2537,7 +2625,8 @@ class AnalyticsClient(object):
                 response_type="AnalyticsInstance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_private_access_channel(self, private_access_channel_key, analytics_instance_id, update_private_access_channel_details, **kwargs):
         """
@@ -2587,6 +2676,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/update_private_access_channel.py.html>`__ to see an example of how to use update_private_access_channel API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateAccessChannelKey', 'analyticsInstanceId']
         resource_path = "/analyticsInstances/{analyticsInstanceId}/privateAccessChannels/{privateAccessChannelKey}"
         method = "PUT"
         operation_name = "update_private_access_channel"
@@ -2646,7 +2737,8 @@ class AnalyticsClient(object):
                 body=update_private_access_channel_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2656,7 +2748,8 @@ class AnalyticsClient(object):
                 body=update_private_access_channel_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_vanity_url(self, analytics_instance_id, vanity_url_key, update_vanity_url_details, **kwargs):
         """
@@ -2706,6 +2799,8 @@ class AnalyticsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/analytics/update_vanity_url.py.html>`__ to see an example of how to use update_vanity_url API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['analyticsInstanceId', 'vanityUrlKey']
         resource_path = "/analyticsInstances/{analyticsInstanceId}/vanityUrls/{vanityUrlKey}"
         method = "PUT"
         operation_name = "update_vanity_url"
@@ -2765,7 +2860,8 @@ class AnalyticsClient(object):
                 body=update_vanity_url_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2775,4 +2871,5 @@ class AnalyticsClient(object):
                 body=update_vanity_url_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

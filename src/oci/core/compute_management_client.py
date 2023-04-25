@@ -71,6 +71,9 @@ class ComputeManagementClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -97,8 +100,10 @@ class ComputeManagementClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20160918',
             'service_endpoint_template': 'https://iaas.{region}.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -154,6 +159,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/attach_instance_pool_instance.py.html>`__ to see an example of how to use attach_instance_pool_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instancePoolId']
         resource_path = "/instancePools/{instancePoolId}/instances"
         method = "POST"
         operation_name = "attach_instance_pool_instance"
@@ -207,7 +214,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePoolInstance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -218,7 +226,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePoolInstance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def attach_load_balancer(self, instance_pool_id, attach_load_balancer_details, **kwargs):
         """
@@ -263,6 +272,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/attach_load_balancer.py.html>`__ to see an example of how to use attach_load_balancer API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instancePoolId']
         resource_path = "/instancePools/{instancePoolId}/actions/attachLoadBalancer"
         method = "POST"
         operation_name = "attach_load_balancer"
@@ -318,7 +329,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -329,7 +341,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_cluster_network_compartment(self, cluster_network_id, change_cluster_network_compartment_details, **kwargs):
         """
@@ -385,6 +398,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_cluster_network_compartment.py.html>`__ to see an example of how to use change_cluster_network_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['clusterNetworkId']
         resource_path = "/clusterNetworks/{clusterNetworkId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_cluster_network_compartment"
@@ -441,7 +456,8 @@ class ComputeManagementClient(object):
                 body=change_cluster_network_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -451,7 +467,8 @@ class ComputeManagementClient(object):
                 body=change_cluster_network_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_instance_configuration_compartment(self, instance_configuration_id, change_instance_configuration_compartment_details, **kwargs):
         """
@@ -513,6 +530,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_instance_configuration_compartment.py.html>`__ to see an example of how to use change_instance_configuration_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instanceConfigurationId']
         resource_path = "/instanceConfigurations/{instanceConfigurationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_instance_configuration_compartment"
@@ -569,7 +588,8 @@ class ComputeManagementClient(object):
                 body=change_instance_configuration_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -579,7 +599,8 @@ class ComputeManagementClient(object):
                 body=change_instance_configuration_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_instance_pool_compartment(self, instance_pool_id, change_instance_pool_compartment_details, **kwargs):
         """
@@ -635,6 +656,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_instance_pool_compartment.py.html>`__ to see an example of how to use change_instance_pool_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instancePoolId']
         resource_path = "/instancePools/{instancePoolId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_instance_pool_compartment"
@@ -691,7 +714,8 @@ class ComputeManagementClient(object):
                 body=change_instance_pool_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -701,7 +725,8 @@ class ComputeManagementClient(object):
                 body=change_instance_pool_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_cluster_network(self, create_cluster_network_details, **kwargs):
         """
@@ -739,6 +764,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_cluster_network.py.html>`__ to see an example of how to use create_cluster_network API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/clusterNetworks"
         method = "POST"
         operation_name = "create_cluster_network"
@@ -781,7 +808,8 @@ class ComputeManagementClient(object):
                 response_type="ClusterNetwork",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -791,7 +819,8 @@ class ComputeManagementClient(object):
                 response_type="ClusterNetwork",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_instance_configuration(self, create_instance_configuration, **kwargs):
         """
@@ -827,6 +856,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_instance_configuration.py.html>`__ to see an example of how to use create_instance_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/instanceConfigurations"
         method = "POST"
         operation_name = "create_instance_configuration"
@@ -869,7 +900,8 @@ class ComputeManagementClient(object):
                 response_type="InstanceConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -879,7 +911,8 @@ class ComputeManagementClient(object):
                 response_type="InstanceConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_instance_pool(self, create_instance_pool_details, **kwargs):
         """
@@ -914,6 +947,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_instance_pool.py.html>`__ to see an example of how to use create_instance_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/instancePools"
         method = "POST"
         operation_name = "create_instance_pool"
@@ -956,7 +991,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -966,7 +1002,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_instance_configuration(self, instance_configuration_id, **kwargs):
         """
@@ -999,6 +1036,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_instance_configuration.py.html>`__ to see an example of how to use delete_instance_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instanceConfigurationId']
         resource_path = "/instanceConfigurations/{instanceConfigurationId}"
         method = "DELETE"
         operation_name = "delete_instance_configuration"
@@ -1049,7 +1088,8 @@ class ComputeManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1058,7 +1098,8 @@ class ComputeManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def detach_instance_pool_instance(self, instance_pool_id, detach_instance_pool_instance_details, **kwargs):
         """
@@ -1098,6 +1139,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/detach_instance_pool_instance.py.html>`__ to see an example of how to use detach_instance_pool_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instancePoolId']
         resource_path = "/instancePools/{instancePoolId}/actions/detachInstance"
         method = "POST"
         operation_name = "detach_instance_pool_instance"
@@ -1150,7 +1193,8 @@ class ComputeManagementClient(object):
                 body=detach_instance_pool_instance_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1160,7 +1204,8 @@ class ComputeManagementClient(object):
                 body=detach_instance_pool_instance_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def detach_load_balancer(self, instance_pool_id, detach_load_balancer_details, **kwargs):
         """
@@ -1205,6 +1250,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/detach_load_balancer.py.html>`__ to see an example of how to use detach_load_balancer API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instancePoolId']
         resource_path = "/instancePools/{instancePoolId}/actions/detachLoadBalancer"
         method = "POST"
         operation_name = "detach_load_balancer"
@@ -1260,7 +1307,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1271,7 +1319,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_cluster_network(self, cluster_network_id, **kwargs):
         """
@@ -1301,6 +1350,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_cluster_network.py.html>`__ to see an example of how to use get_cluster_network API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['clusterNetworkId']
         resource_path = "/clusterNetworks/{clusterNetworkId}"
         method = "GET"
         operation_name = "get_cluster_network"
@@ -1345,7 +1396,8 @@ class ComputeManagementClient(object):
                 response_type="ClusterNetwork",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1355,7 +1407,8 @@ class ComputeManagementClient(object):
                 response_type="ClusterNetwork",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_instance_configuration(self, instance_configuration_id, **kwargs):
         """
@@ -1383,6 +1436,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_instance_configuration.py.html>`__ to see an example of how to use get_instance_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instanceConfigurationId']
         resource_path = "/instanceConfigurations/{instanceConfigurationId}"
         method = "GET"
         operation_name = "get_instance_configuration"
@@ -1427,7 +1482,8 @@ class ComputeManagementClient(object):
                 response_type="InstanceConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1437,7 +1493,8 @@ class ComputeManagementClient(object):
                 response_type="InstanceConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_instance_pool(self, instance_pool_id, **kwargs):
         """
@@ -1467,6 +1524,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_instance_pool.py.html>`__ to see an example of how to use get_instance_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instancePoolId']
         resource_path = "/instancePools/{instancePoolId}"
         method = "GET"
         operation_name = "get_instance_pool"
@@ -1511,7 +1570,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1521,7 +1581,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_instance_pool_instance(self, instance_pool_id, instance_id, **kwargs):
         """
@@ -1556,6 +1617,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_instance_pool_instance.py.html>`__ to see an example of how to use get_instance_pool_instance API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instancePoolId', 'instanceId']
         resource_path = "/instancePools/{instancePoolId}/instances/{instanceId}"
         method = "GET"
         operation_name = "get_instance_pool_instance"
@@ -1601,7 +1664,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePoolInstance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1611,7 +1675,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePoolInstance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_instance_pool_load_balancer_attachment(self, instance_pool_id, instance_pool_load_balancer_attachment_id, **kwargs):
         """
@@ -1644,6 +1709,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_instance_pool_load_balancer_attachment.py.html>`__ to see an example of how to use get_instance_pool_load_balancer_attachment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instancePoolId', 'instancePoolLoadBalancerAttachmentId']
         resource_path = "/instancePools/{instancePoolId}/loadBalancerAttachments/{instancePoolLoadBalancerAttachmentId}"
         method = "GET"
         operation_name = "get_instance_pool_load_balancer_attachment"
@@ -1689,7 +1756,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePoolLoadBalancerAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1699,7 +1767,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePoolLoadBalancerAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def launch_instance_configuration(self, instance_configuration_id, instance_configuration, **kwargs):
         """
@@ -1743,6 +1812,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/launch_instance_configuration.py.html>`__ to see an example of how to use launch_instance_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instanceConfigurationId']
         resource_path = "/instanceConfigurations/{instanceConfigurationId}/actions/launch"
         method = "POST"
         operation_name = "launch_instance_configuration"
@@ -1796,7 +1867,8 @@ class ComputeManagementClient(object):
                 response_type="Instance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1807,7 +1879,8 @@ class ComputeManagementClient(object):
                 response_type="Instance",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_cluster_network_instances(self, compartment_id, cluster_network_id, **kwargs):
         """
@@ -1879,6 +1952,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_cluster_network_instances.py.html>`__ to see an example of how to use list_cluster_network_instances API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['clusterNetworkId', 'compartmentId']
         resource_path = "/clusterNetworks/{clusterNetworkId}/instances"
         method = "GET"
         operation_name = "list_cluster_network_instances"
@@ -1957,7 +2032,8 @@ class ComputeManagementClient(object):
                 response_type="list[InstanceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1968,7 +2044,8 @@ class ComputeManagementClient(object):
                 response_type="list[InstanceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_cluster_networks(self, compartment_id, **kwargs):
         """
@@ -2041,6 +2118,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_cluster_networks.py.html>`__ to see an example of how to use list_cluster_networks API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/clusterNetworks"
         method = "GET"
         operation_name = "list_cluster_networks"
@@ -2117,7 +2196,8 @@ class ComputeManagementClient(object):
                 response_type="list[ClusterNetworkSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2127,7 +2207,8 @@ class ComputeManagementClient(object):
                 response_type="list[ClusterNetworkSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_instance_configurations(self, compartment_id, **kwargs):
         """
@@ -2191,6 +2272,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_instance_configurations.py.html>`__ to see an example of how to use list_instance_configurations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/instanceConfigurations"
         method = "GET"
         operation_name = "list_instance_configurations"
@@ -2256,7 +2339,8 @@ class ComputeManagementClient(object):
                 response_type="list[InstanceConfigurationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2266,7 +2350,8 @@ class ComputeManagementClient(object):
                 response_type="list[InstanceConfigurationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_instance_pool_instances(self, compartment_id, instance_pool_id, **kwargs):
         """
@@ -2338,6 +2423,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_instance_pool_instances.py.html>`__ to see an example of how to use list_instance_pool_instances API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instancePoolId', 'compartmentId']
         resource_path = "/instancePools/{instancePoolId}/instances"
         method = "GET"
         operation_name = "list_instance_pool_instances"
@@ -2416,7 +2503,8 @@ class ComputeManagementClient(object):
                 response_type="list[InstanceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2427,7 +2515,8 @@ class ComputeManagementClient(object):
                 response_type="list[InstanceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_instance_pools(self, compartment_id, **kwargs):
         """
@@ -2500,6 +2589,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_instance_pools.py.html>`__ to see an example of how to use list_instance_pools API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/instancePools"
         method = "GET"
         operation_name = "list_instance_pools"
@@ -2576,7 +2667,8 @@ class ComputeManagementClient(object):
                 response_type="list[InstancePoolSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2586,7 +2678,8 @@ class ComputeManagementClient(object):
                 response_type="list[InstancePoolSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def reset_instance_pool(self, instance_pool_id, **kwargs):
         """
@@ -2629,6 +2722,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/reset_instance_pool.py.html>`__ to see an example of how to use reset_instance_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instancePoolId']
         resource_path = "/instancePools/{instancePoolId}/actions/reset"
         method = "POST"
         operation_name = "reset_instance_pool"
@@ -2683,7 +2778,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2693,7 +2789,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def softreset_instance_pool(self, instance_pool_id, **kwargs):
         """
@@ -2739,6 +2836,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/softreset_instance_pool.py.html>`__ to see an example of how to use softreset_instance_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instancePoolId']
         resource_path = "/instancePools/{instancePoolId}/actions/softreset"
         method = "POST"
         operation_name = "softreset_instance_pool"
@@ -2793,7 +2892,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2803,7 +2903,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def start_instance_pool(self, instance_pool_id, **kwargs):
         """
@@ -2846,6 +2947,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/start_instance_pool.py.html>`__ to see an example of how to use start_instance_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instancePoolId']
         resource_path = "/instancePools/{instancePoolId}/actions/start"
         method = "POST"
         operation_name = "start_instance_pool"
@@ -2900,7 +3003,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2910,7 +3014,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def stop_instance_pool(self, instance_pool_id, **kwargs):
         """
@@ -2953,6 +3058,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/stop_instance_pool.py.html>`__ to see an example of how to use stop_instance_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instancePoolId']
         resource_path = "/instancePools/{instancePoolId}/actions/stop"
         method = "POST"
         operation_name = "stop_instance_pool"
@@ -3007,7 +3114,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3017,7 +3125,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def terminate_cluster_network(self, cluster_network_id, **kwargs):
         """
@@ -3055,6 +3164,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/terminate_cluster_network.py.html>`__ to see an example of how to use terminate_cluster_network API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['clusterNetworkId']
         resource_path = "/clusterNetworks/{clusterNetworkId}"
         method = "DELETE"
         operation_name = "terminate_cluster_network"
@@ -3105,7 +3216,8 @@ class ComputeManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3114,7 +3226,8 @@ class ComputeManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def terminate_instance_pool(self, instance_pool_id, **kwargs):
         """
@@ -3156,6 +3269,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/terminate_instance_pool.py.html>`__ to see an example of how to use terminate_instance_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instancePoolId']
         resource_path = "/instancePools/{instancePoolId}"
         method = "DELETE"
         operation_name = "terminate_instance_pool"
@@ -3206,7 +3321,8 @@ class ComputeManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3215,7 +3331,8 @@ class ComputeManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_cluster_network(self, cluster_network_id, update_cluster_network_details, **kwargs):
         """
@@ -3260,6 +3377,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_cluster_network.py.html>`__ to see an example of how to use update_cluster_network API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['clusterNetworkId']
         resource_path = "/clusterNetworks/{clusterNetworkId}"
         method = "PUT"
         operation_name = "update_cluster_network"
@@ -3315,7 +3434,8 @@ class ComputeManagementClient(object):
                 response_type="ClusterNetwork",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3326,7 +3446,8 @@ class ComputeManagementClient(object):
                 response_type="ClusterNetwork",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_instance_configuration(self, instance_configuration_id, update_instance_configuration_details, **kwargs):
         """
@@ -3369,6 +3490,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_instance_configuration.py.html>`__ to see an example of how to use update_instance_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instanceConfigurationId']
         resource_path = "/instanceConfigurations/{instanceConfigurationId}"
         method = "PUT"
         operation_name = "update_instance_configuration"
@@ -3424,7 +3547,8 @@ class ComputeManagementClient(object):
                 response_type="InstanceConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3435,7 +3559,8 @@ class ComputeManagementClient(object):
                 response_type="InstanceConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_instance_pool(self, instance_pool_id, update_instance_pool_details, **kwargs):
         """
@@ -3482,6 +3607,8 @@ class ComputeManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_instance_pool.py.html>`__ to see an example of how to use update_instance_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['instancePoolId']
         resource_path = "/instancePools/{instancePoolId}"
         method = "PUT"
         operation_name = "update_instance_pool"
@@ -3537,7 +3664,8 @@ class ComputeManagementClient(object):
                 response_type="InstancePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3548,4 +3676,5 @@ class ComputeManagementClient(object):
                 response_type="InstancePool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

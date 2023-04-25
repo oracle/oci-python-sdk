@@ -260,6 +260,7 @@ Database
     oci.database.models.ModifyPluggableDatabaseManagementDetails
     oci.database.models.Month
     oci.database.models.MountTypeDetails
+    oci.database.models.NetworkBondingModeDetails
     oci.database.models.NodeDetails
     oci.database.models.OCPUs
     oci.database.models.OperationsInsightsConfig

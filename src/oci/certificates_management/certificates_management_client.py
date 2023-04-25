@@ -65,6 +65,9 @@ class CertificatesManagementClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class CertificatesManagementClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20210224',
             'service_endpoint_template': 'https://certificatesmanagement.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -142,6 +147,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/cancel_certificate_authority_deletion.py.html>`__ to see an example of how to use cancel_certificate_authority_deletion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateAuthorityId']
         resource_path = "/certificateAuthorities/{certificateAuthorityId}/actions/cancelDeletion"
         method = "POST"
         operation_name = "cancel_certificate_authority_deletion"
@@ -194,7 +201,8 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -203,7 +211,8 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_certificate_authority_version_deletion(self, certificate_authority_id, certificate_authority_version_number, **kwargs):
         """
@@ -248,6 +257,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/cancel_certificate_authority_version_deletion.py.html>`__ to see an example of how to use cancel_certificate_authority_version_deletion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateAuthorityId', 'certificateAuthorityVersionNumber']
         resource_path = "/certificateAuthorities/{certificateAuthorityId}/version/{certificateAuthorityVersionNumber}/actions/cancelDeletion"
         method = "POST"
         operation_name = "cancel_certificate_authority_version_deletion"
@@ -301,7 +312,8 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -310,7 +322,8 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_certificate_deletion(self, certificate_id, **kwargs):
         """
@@ -352,6 +365,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/cancel_certificate_deletion.py.html>`__ to see an example of how to use cancel_certificate_deletion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateId']
         resource_path = "/certificates/{certificateId}/actions/cancelDeletion"
         method = "POST"
         operation_name = "cancel_certificate_deletion"
@@ -404,7 +419,8 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -413,7 +429,8 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_certificate_version_deletion(self, certificate_id, certificate_version_number, **kwargs):
         """
@@ -456,6 +473,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/cancel_certificate_version_deletion.py.html>`__ to see an example of how to use cancel_certificate_version_deletion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateId', 'certificateVersionNumber']
         resource_path = "/certificates/{certificateId}/version/{certificateVersionNumber}/actions/cancelDeletion"
         method = "POST"
         operation_name = "cancel_certificate_version_deletion"
@@ -509,7 +528,8 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -518,7 +538,8 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_ca_bundle_compartment(self, ca_bundle_id, change_ca_bundle_compartment_details, **kwargs):
         """
@@ -574,6 +595,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/change_ca_bundle_compartment.py.html>`__ to see an example of how to use change_ca_bundle_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['caBundleId']
         resource_path = "/caBundles/{caBundleId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_ca_bundle_compartment"
@@ -630,7 +653,8 @@ class CertificatesManagementClient(object):
                 body=change_ca_bundle_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -640,7 +664,8 @@ class CertificatesManagementClient(object):
                 body=change_ca_bundle_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_certificate_authority_compartment(self, certificate_authority_id, change_certificate_authority_compartment_details, **kwargs):
         """
@@ -696,6 +721,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/change_certificate_authority_compartment.py.html>`__ to see an example of how to use change_certificate_authority_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateAuthorityId']
         resource_path = "/certificateAuthorities/{certificateAuthorityId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_certificate_authority_compartment"
@@ -752,7 +779,8 @@ class CertificatesManagementClient(object):
                 body=change_certificate_authority_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -762,7 +790,8 @@ class CertificatesManagementClient(object):
                 body=change_certificate_authority_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_certificate_compartment(self, certificate_id, change_certificate_compartment_details, **kwargs):
         """
@@ -818,6 +847,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/change_certificate_compartment.py.html>`__ to see an example of how to use change_certificate_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateId']
         resource_path = "/certificates/{certificateId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_certificate_compartment"
@@ -874,7 +905,8 @@ class CertificatesManagementClient(object):
                 body=change_certificate_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -884,7 +916,8 @@ class CertificatesManagementClient(object):
                 body=change_certificate_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_ca_bundle(self, create_ca_bundle_details, **kwargs):
         """
@@ -925,6 +958,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/create_ca_bundle.py.html>`__ to see an example of how to use create_ca_bundle API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/caBundles"
         method = "POST"
         operation_name = "create_ca_bundle"
@@ -969,7 +1004,8 @@ class CertificatesManagementClient(object):
                 response_type="CaBundle",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -979,7 +1015,8 @@ class CertificatesManagementClient(object):
                 response_type="CaBundle",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_certificate(self, create_certificate_details, **kwargs):
         """
@@ -1020,6 +1057,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/create_certificate.py.html>`__ to see an example of how to use create_certificate API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/certificates"
         method = "POST"
         operation_name = "create_certificate"
@@ -1064,7 +1103,8 @@ class CertificatesManagementClient(object):
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1074,7 +1114,8 @@ class CertificatesManagementClient(object):
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_certificate_authority(self, create_certificate_authority_details, **kwargs):
         """
@@ -1115,6 +1156,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/create_certificate_authority.py.html>`__ to see an example of how to use create_certificate_authority API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/certificateAuthorities"
         method = "POST"
         operation_name = "create_certificate_authority"
@@ -1159,7 +1202,8 @@ class CertificatesManagementClient(object):
                 response_type="CertificateAuthority",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1169,7 +1213,8 @@ class CertificatesManagementClient(object):
                 response_type="CertificateAuthority",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_ca_bundle(self, ca_bundle_id, **kwargs):
         """
@@ -1209,6 +1254,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/delete_ca_bundle.py.html>`__ to see an example of how to use delete_ca_bundle API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['caBundleId']
         resource_path = "/caBundles/{caBundleId}"
         method = "DELETE"
         operation_name = "delete_ca_bundle"
@@ -1261,7 +1308,8 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1270,7 +1318,8 @@ class CertificatesManagementClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_association(self, association_id, **kwargs):
         """
@@ -1303,6 +1352,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/get_association.py.html>`__ to see an example of how to use get_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['associationId']
         resource_path = "/associations/{associationId}"
         method = "GET"
         operation_name = "get_association"
@@ -1354,7 +1405,8 @@ class CertificatesManagementClient(object):
                 response_type="Association",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1364,7 +1416,8 @@ class CertificatesManagementClient(object):
                 response_type="Association",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_ca_bundle(self, ca_bundle_id, **kwargs):
         """
@@ -1397,6 +1450,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/get_ca_bundle.py.html>`__ to see an example of how to use get_ca_bundle API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['caBundleId']
         resource_path = "/caBundles/{caBundleId}"
         method = "GET"
         operation_name = "get_ca_bundle"
@@ -1448,7 +1503,8 @@ class CertificatesManagementClient(object):
                 response_type="CaBundle",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1458,7 +1514,8 @@ class CertificatesManagementClient(object):
                 response_type="CaBundle",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_certificate(self, certificate_id, **kwargs):
         """
@@ -1491,6 +1548,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/get_certificate.py.html>`__ to see an example of how to use get_certificate API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateId']
         resource_path = "/certificates/{certificateId}"
         method = "GET"
         operation_name = "get_certificate"
@@ -1542,7 +1601,8 @@ class CertificatesManagementClient(object):
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1552,7 +1612,8 @@ class CertificatesManagementClient(object):
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_certificate_authority(self, certificate_authority_id, **kwargs):
         """
@@ -1585,6 +1646,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/get_certificate_authority.py.html>`__ to see an example of how to use get_certificate_authority API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateAuthorityId']
         resource_path = "/certificateAuthorities/{certificateAuthorityId}"
         method = "GET"
         operation_name = "get_certificate_authority"
@@ -1636,7 +1699,8 @@ class CertificatesManagementClient(object):
                 response_type="CertificateAuthority",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1646,7 +1710,8 @@ class CertificatesManagementClient(object):
                 response_type="CertificateAuthority",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_certificate_authority_version(self, certificate_authority_id, certificate_authority_version_number, **kwargs):
         """
@@ -1682,6 +1747,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/get_certificate_authority_version.py.html>`__ to see an example of how to use get_certificate_authority_version API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateAuthorityId', 'certificateAuthorityVersionNumber']
         resource_path = "/certificateAuthorities/{certificateAuthorityId}/version/{certificateAuthorityVersionNumber}"
         method = "GET"
         operation_name = "get_certificate_authority_version"
@@ -1734,7 +1801,8 @@ class CertificatesManagementClient(object):
                 response_type="CertificateAuthorityVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1744,7 +1812,8 @@ class CertificatesManagementClient(object):
                 response_type="CertificateAuthorityVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_certificate_version(self, certificate_id, certificate_version_number, **kwargs):
         """
@@ -1780,6 +1849,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/get_certificate_version.py.html>`__ to see an example of how to use get_certificate_version API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateId', 'certificateVersionNumber']
         resource_path = "/certificates/{certificateId}/version/{certificateVersionNumber}"
         method = "GET"
         operation_name = "get_certificate_version"
@@ -1832,7 +1903,8 @@ class CertificatesManagementClient(object):
                 response_type="CertificateVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1842,7 +1914,8 @@ class CertificatesManagementClient(object):
                 response_type="CertificateVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_associations(self, **kwargs):
         """
@@ -1911,6 +1984,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/list_associations.py.html>`__ to see an example of how to use list_associations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/associations"
         method = "GET"
         operation_name = "list_associations"
@@ -1997,7 +2072,8 @@ class CertificatesManagementClient(object):
                 response_type="AssociationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2007,7 +2083,8 @@ class CertificatesManagementClient(object):
                 response_type="AssociationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_ca_bundles(self, **kwargs):
         """
@@ -2070,6 +2147,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/list_ca_bundles.py.html>`__ to see an example of how to use list_ca_bundles API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/caBundles"
         method = "GET"
         operation_name = "list_ca_bundles"
@@ -2152,7 +2231,8 @@ class CertificatesManagementClient(object):
                 response_type="CaBundleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2162,7 +2242,8 @@ class CertificatesManagementClient(object):
                 response_type="CaBundleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_certificate_authorities(self, **kwargs):
         """
@@ -2229,6 +2310,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/list_certificate_authorities.py.html>`__ to see an example of how to use list_certificate_authorities API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/certificateAuthorities"
         method = "GET"
         operation_name = "list_certificate_authorities"
@@ -2313,7 +2396,8 @@ class CertificatesManagementClient(object):
                 response_type="CertificateAuthorityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2323,7 +2407,8 @@ class CertificatesManagementClient(object):
                 response_type="CertificateAuthorityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_certificate_authority_versions(self, certificate_authority_id, **kwargs):
         """
@@ -2377,6 +2462,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/list_certificate_authority_versions.py.html>`__ to see an example of how to use list_certificate_authority_versions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateAuthorityId']
         resource_path = "/certificateAuthorities/{certificateAuthorityId}/versions"
         method = "GET"
         operation_name = "list_certificate_authority_versions"
@@ -2457,7 +2544,8 @@ class CertificatesManagementClient(object):
                 response_type="CertificateAuthorityVersionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2468,7 +2556,8 @@ class CertificatesManagementClient(object):
                 response_type="CertificateAuthorityVersionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_certificate_versions(self, certificate_id, **kwargs):
         """
@@ -2522,6 +2611,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/list_certificate_versions.py.html>`__ to see an example of how to use list_certificate_versions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateId']
         resource_path = "/certificates/{certificateId}/versions"
         method = "GET"
         operation_name = "list_certificate_versions"
@@ -2602,7 +2693,8 @@ class CertificatesManagementClient(object):
                 response_type="CertificateVersionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2613,7 +2705,8 @@ class CertificatesManagementClient(object):
                 response_type="CertificateVersionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_certificates(self, **kwargs):
         """
@@ -2680,6 +2773,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/list_certificates.py.html>`__ to see an example of how to use list_certificates API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/certificates"
         method = "GET"
         operation_name = "list_certificates"
@@ -2764,7 +2859,8 @@ class CertificatesManagementClient(object):
                 response_type="CertificateCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2774,7 +2870,8 @@ class CertificatesManagementClient(object):
                 response_type="CertificateCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def revoke_certificate_authority_version(self, certificate_authority_id, certificate_authority_version_number, revoke_certificate_authority_version_details, **kwargs):
         """
@@ -2828,6 +2925,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/revoke_certificate_authority_version.py.html>`__ to see an example of how to use revoke_certificate_authority_version API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateAuthorityId', 'certificateAuthorityVersionNumber']
         resource_path = "/certificateAuthorities/{certificateAuthorityId}/version/{certificateAuthorityVersionNumber}/actions/revoke"
         method = "POST"
         operation_name = "revoke_certificate_authority_version"
@@ -2885,7 +2984,8 @@ class CertificatesManagementClient(object):
                 body=revoke_certificate_authority_version_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2895,7 +2995,8 @@ class CertificatesManagementClient(object):
                 body=revoke_certificate_authority_version_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def revoke_certificate_version(self, certificate_id, certificate_version_number, revoke_certificate_version_details, **kwargs):
         """
@@ -2949,6 +3050,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/revoke_certificate_version.py.html>`__ to see an example of how to use revoke_certificate_version API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateId', 'certificateVersionNumber']
         resource_path = "/certificates/{certificateId}/version/{certificateVersionNumber}/actions/revoke"
         method = "POST"
         operation_name = "revoke_certificate_version"
@@ -3006,7 +3109,8 @@ class CertificatesManagementClient(object):
                 body=revoke_certificate_version_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3016,7 +3120,8 @@ class CertificatesManagementClient(object):
                 body=revoke_certificate_version_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def schedule_certificate_authority_deletion(self, certificate_authority_id, schedule_certificate_authority_deletion_details, **kwargs):
         """
@@ -3059,6 +3164,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/schedule_certificate_authority_deletion.py.html>`__ to see an example of how to use schedule_certificate_authority_deletion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateAuthorityId']
         resource_path = "/certificateAuthorities/{certificateAuthorityId}/actions/scheduleDeletion"
         method = "POST"
         operation_name = "schedule_certificate_authority_deletion"
@@ -3112,7 +3219,8 @@ class CertificatesManagementClient(object):
                 body=schedule_certificate_authority_deletion_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3122,7 +3230,8 @@ class CertificatesManagementClient(object):
                 body=schedule_certificate_authority_deletion_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def schedule_certificate_authority_version_deletion(self, certificate_authority_id, certificate_authority_version_number, schedule_certificate_authority_version_deletion_details, **kwargs):
         """
@@ -3170,6 +3279,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/schedule_certificate_authority_version_deletion.py.html>`__ to see an example of how to use schedule_certificate_authority_version_deletion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateAuthorityId', 'certificateAuthorityVersionNumber']
         resource_path = "/certificateAuthorities/{certificateAuthorityId}/version/{certificateAuthorityVersionNumber}/actions/scheduleDeletion"
         method = "POST"
         operation_name = "schedule_certificate_authority_version_deletion"
@@ -3224,7 +3335,8 @@ class CertificatesManagementClient(object):
                 body=schedule_certificate_authority_version_deletion_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3234,7 +3346,8 @@ class CertificatesManagementClient(object):
                 body=schedule_certificate_authority_version_deletion_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def schedule_certificate_deletion(self, certificate_id, schedule_certificate_deletion_details, **kwargs):
         """
@@ -3282,6 +3395,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/schedule_certificate_deletion.py.html>`__ to see an example of how to use schedule_certificate_deletion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateId']
         resource_path = "/certificates/{certificateId}/actions/scheduleDeletion"
         method = "POST"
         operation_name = "schedule_certificate_deletion"
@@ -3335,7 +3450,8 @@ class CertificatesManagementClient(object):
                 body=schedule_certificate_deletion_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3345,7 +3461,8 @@ class CertificatesManagementClient(object):
                 body=schedule_certificate_deletion_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def schedule_certificate_version_deletion(self, certificate_id, certificate_version_number, schedule_certificate_version_deletion_details, **kwargs):
         """
@@ -3394,6 +3511,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/schedule_certificate_version_deletion.py.html>`__ to see an example of how to use schedule_certificate_version_deletion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateId', 'certificateVersionNumber']
         resource_path = "/certificates/{certificateId}/version/{certificateVersionNumber}/actions/scheduleDeletion"
         method = "POST"
         operation_name = "schedule_certificate_version_deletion"
@@ -3448,7 +3567,8 @@ class CertificatesManagementClient(object):
                 body=schedule_certificate_version_deletion_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3458,7 +3578,8 @@ class CertificatesManagementClient(object):
                 body=schedule_certificate_version_deletion_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_ca_bundle(self, ca_bundle_id, update_ca_bundle_details, **kwargs):
         """
@@ -3501,6 +3622,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/update_ca_bundle.py.html>`__ to see an example of how to use update_ca_bundle API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['caBundleId']
         resource_path = "/caBundles/{caBundleId}"
         method = "PUT"
         operation_name = "update_ca_bundle"
@@ -3555,7 +3678,8 @@ class CertificatesManagementClient(object):
                 response_type="CaBundle",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3566,7 +3690,8 @@ class CertificatesManagementClient(object):
                 response_type="CaBundle",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_certificate(self, certificate_id, update_certificate_details, **kwargs):
         """
@@ -3609,6 +3734,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/update_certificate.py.html>`__ to see an example of how to use update_certificate API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateId']
         resource_path = "/certificates/{certificateId}"
         method = "PUT"
         operation_name = "update_certificate"
@@ -3663,7 +3790,8 @@ class CertificatesManagementClient(object):
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3674,7 +3802,8 @@ class CertificatesManagementClient(object):
                 response_type="Certificate",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_certificate_authority(self, certificate_authority_id, update_certificate_authority_details, **kwargs):
         """
@@ -3717,6 +3846,8 @@ class CertificatesManagementClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/certificatesmanagement/update_certificate_authority.py.html>`__ to see an example of how to use update_certificate_authority API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['certificateAuthorityId']
         resource_path = "/certificateAuthorities/{certificateAuthorityId}"
         method = "PUT"
         operation_name = "update_certificate_authority"
@@ -3771,7 +3902,8 @@ class CertificatesManagementClient(object):
                 response_type="CertificateAuthority",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3782,4 +3914,5 @@ class CertificatesManagementClient(object):
                 response_type="CertificateAuthority",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

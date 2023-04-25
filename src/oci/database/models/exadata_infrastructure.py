@@ -57,6 +57,10 @@ class ExadataInfrastructure(object):
     #: This constant has a value of "MAINTENANCE_IN_PROGRESS"
     LIFECYCLE_STATE_MAINTENANCE_IN_PROGRESS = "MAINTENANCE_IN_PROGRESS"
 
+    #: A constant which can be used with the lifecycle_state property of a ExadataInfrastructure.
+    #: This constant has a value of "WAITING_FOR_CONNECTIVITY"
+    LIFECYCLE_STATE_WAITING_FOR_CONNECTIVITY = "WAITING_FOR_CONNECTIVITY"
+
     #: A constant which can be used with the additional_compute_system_model property of a ExadataInfrastructure.
     #: This constant has a value of "X7"
     ADDITIONAL_COMPUTE_SYSTEM_MODEL_X7 = "X7"
@@ -96,7 +100,7 @@ class ExadataInfrastructure(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ExadataInfrastructure.
-            Allowed values for this property are: "CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED", "MAINTENANCE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED", "MAINTENANCE_IN_PROGRESS", "WAITING_FOR_CONNECTIVITY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -268,6 +272,10 @@ class ExadataInfrastructure(object):
             The value to assign to the is_cps_offline_report_enabled property of this ExadataInfrastructure.
         :type is_cps_offline_report_enabled: bool
 
+        :param network_bonding_mode_details:
+            The value to assign to the network_bonding_mode_details property of this ExadataInfrastructure.
+        :type network_bonding_mode_details: oci.database.models.NetworkBondingModeDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ExadataInfrastructure.
         :type freeform_tags: dict(str, str)
@@ -322,6 +330,7 @@ class ExadataInfrastructure(object):
             'last_maintenance_run_id': 'str',
             'next_maintenance_run_id': 'str',
             'is_cps_offline_report_enabled': 'bool',
+            'network_bonding_mode_details': 'NetworkBondingModeDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -371,6 +380,7 @@ class ExadataInfrastructure(object):
             'last_maintenance_run_id': 'lastMaintenanceRunId',
             'next_maintenance_run_id': 'nextMaintenanceRunId',
             'is_cps_offline_report_enabled': 'isCpsOfflineReportEnabled',
+            'network_bonding_mode_details': 'networkBondingModeDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -419,6 +429,7 @@ class ExadataInfrastructure(object):
         self._last_maintenance_run_id = None
         self._next_maintenance_run_id = None
         self._is_cps_offline_report_enabled = None
+        self._network_bonding_mode_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -484,7 +495,7 @@ class ExadataInfrastructure(object):
         **[Required]** Gets the lifecycle_state of this ExadataInfrastructure.
         The current lifecycle state of the Exadata infrastructure.
 
-        Allowed values for this property are: "CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED", "MAINTENANCE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED", "MAINTENANCE_IN_PROGRESS", "WAITING_FOR_CONNECTIVITY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -503,7 +514,7 @@ class ExadataInfrastructure(object):
         :param lifecycle_state: The lifecycle_state of this ExadataInfrastructure.
         :type: str
         """
-        allowed_values = ["CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED", "MAINTENANCE_IN_PROGRESS"]
+        allowed_values = ["CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED", "MAINTENANCE_IN_PROGRESS", "WAITING_FOR_CONNECTIVITY"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -1519,6 +1530,26 @@ class ExadataInfrastructure(object):
         :type: bool
         """
         self._is_cps_offline_report_enabled = is_cps_offline_report_enabled
+
+    @property
+    def network_bonding_mode_details(self):
+        """
+        Gets the network_bonding_mode_details of this ExadataInfrastructure.
+
+        :return: The network_bonding_mode_details of this ExadataInfrastructure.
+        :rtype: oci.database.models.NetworkBondingModeDetails
+        """
+        return self._network_bonding_mode_details
+
+    @network_bonding_mode_details.setter
+    def network_bonding_mode_details(self, network_bonding_mode_details):
+        """
+        Sets the network_bonding_mode_details of this ExadataInfrastructure.
+
+        :param network_bonding_mode_details: The network_bonding_mode_details of this ExadataInfrastructure.
+        :type: oci.database.models.NetworkBondingModeDetails
+        """
+        self._network_bonding_mode_details = network_bonding_mode_details
 
     @property
     def freeform_tags(self):

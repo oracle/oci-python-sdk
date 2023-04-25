@@ -66,6 +66,9 @@ class EventClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -92,8 +95,10 @@ class EventClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20190801',
             'service_endpoint_template': 'https://osms.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -154,6 +159,8 @@ class EventClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagement/delete_event_content.py.html>`__ to see an example of how to use delete_event_content API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceId', 'eventId', 'compartmentId']
         resource_path = "/managedInstances/{managedInstanceId}/events/{eventId}/content"
         method = "DELETE"
         operation_name = "delete_event_content"
@@ -216,7 +223,8 @@ class EventClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -226,7 +234,8 @@ class EventClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_event(self, managed_instance_id, event_id, compartment_id, **kwargs):
         """
@@ -263,6 +272,8 @@ class EventClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagement/get_event.py.html>`__ to see an example of how to use get_event API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceId', 'eventId', 'compartmentId']
         resource_path = "/managedInstances/{managedInstanceId}/events/{eventId}"
         method = "GET"
         operation_name = "get_event"
@@ -321,7 +332,8 @@ class EventClient(object):
                 response_type="Event",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -332,7 +344,8 @@ class EventClient(object):
                 response_type="Event",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_event_content(self, managed_instance_id, event_id, compartment_id, **kwargs):
         """
@@ -369,6 +382,8 @@ class EventClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagement/get_event_content.py.html>`__ to see an example of how to use get_event_content API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceId', 'eventId', 'compartmentId']
         resource_path = "/managedInstances/{managedInstanceId}/events/{eventId}/content"
         method = "GET"
         operation_name = "get_event_content"
@@ -427,7 +442,8 @@ class EventClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -438,7 +454,8 @@ class EventClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_event_report(self, managed_instance_id, compartment_id, **kwargs):
         """
@@ -480,6 +497,8 @@ class EventClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagement/get_event_report.py.html>`__ to see an example of how to use get_event_report API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceId', 'compartmentId']
         resource_path = "/managedInstances/{managedInstanceId}/events/report"
         method = "GET"
         operation_name = "get_event_report"
@@ -541,7 +560,8 @@ class EventClient(object):
                 response_type="EventReport",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -552,7 +572,8 @@ class EventClient(object):
                 response_type="EventReport",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_events(self, managed_instance_id, compartment_id, **kwargs):
         """
@@ -618,6 +639,8 @@ class EventClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagement/list_events.py.html>`__ to see an example of how to use list_events API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceId', 'compartmentId']
         resource_path = "/managedInstances/{managedInstanceId}/events"
         method = "GET"
         operation_name = "list_events"
@@ -712,7 +735,8 @@ class EventClient(object):
                 response_type="EventCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -723,7 +747,8 @@ class EventClient(object):
                 response_type="EventCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_related_events(self, event_fingerprint, compartment_id, **kwargs):
         """
@@ -781,6 +806,8 @@ class EventClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagement/list_related_events.py.html>`__ to see an example of how to use list_related_events API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['eventFingerprint', 'compartmentId']
         resource_path = "/relatedEvents"
         method = "GET"
         operation_name = "list_related_events"
@@ -854,7 +881,8 @@ class EventClient(object):
                 response_type="RelatedEventCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -864,7 +892,8 @@ class EventClient(object):
                 response_type="RelatedEventCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_event(self, managed_instance_id, event_id, compartment_id, update_event_details, **kwargs):
         """
@@ -911,6 +940,8 @@ class EventClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagement/update_event.py.html>`__ to see an example of how to use update_event API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceId', 'eventId', 'compartmentId']
         resource_path = "/managedInstances/{managedInstanceId}/events/{eventId}"
         method = "PUT"
         operation_name = "update_event"
@@ -972,7 +1003,8 @@ class EventClient(object):
                 response_type="Event",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -984,7 +1016,8 @@ class EventClient(object):
                 response_type="Event",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def upload_event_content(self, managed_instance_id, event_id, compartment_id, **kwargs):
         """
@@ -1035,6 +1068,8 @@ class EventClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagement/upload_event_content.py.html>`__ to see an example of how to use upload_event_content API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceId', 'eventId', 'compartmentId']
         resource_path = "/managedInstances/{managedInstanceId}/events/{eventId}/content/actions/upload"
         method = "POST"
         operation_name = "upload_event_content"
@@ -1097,7 +1132,8 @@ class EventClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1107,4 +1143,5 @@ class EventClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

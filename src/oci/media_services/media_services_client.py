@@ -67,6 +67,9 @@ class MediaServicesClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -93,8 +96,10 @@ class MediaServicesClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20211101',
             'service_endpoint_template': 'https://mediaservices.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -152,6 +157,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/change_media_asset_compartment.py.html>`__ to see an example of how to use change_media_asset_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaAssetId']
         resource_path = "/mediaAssets/{mediaAssetId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_media_asset_compartment"
@@ -210,7 +217,8 @@ class MediaServicesClient(object):
                 body=change_media_asset_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -220,7 +228,8 @@ class MediaServicesClient(object):
                 body=change_media_asset_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_media_workflow_compartment(self, media_workflow_id, change_media_workflow_compartment_details, **kwargs):
         """
@@ -268,6 +277,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/change_media_workflow_compartment.py.html>`__ to see an example of how to use change_media_workflow_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaWorkflowId']
         resource_path = "/mediaWorkflows/{mediaWorkflowId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_media_workflow_compartment"
@@ -326,7 +337,8 @@ class MediaServicesClient(object):
                 body=change_media_workflow_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -336,7 +348,8 @@ class MediaServicesClient(object):
                 body=change_media_workflow_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_media_workflow_configuration_compartment(self, media_workflow_configuration_id, change_media_workflow_configuration_compartment_details, **kwargs):
         """
@@ -384,6 +397,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/change_media_workflow_configuration_compartment.py.html>`__ to see an example of how to use change_media_workflow_configuration_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaWorkflowConfigurationId']
         resource_path = "/mediaWorkflowConfigurations/{mediaWorkflowConfigurationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_media_workflow_configuration_compartment"
@@ -442,7 +457,8 @@ class MediaServicesClient(object):
                 body=change_media_workflow_configuration_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -452,7 +468,8 @@ class MediaServicesClient(object):
                 body=change_media_workflow_configuration_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_media_workflow_job_compartment(self, media_workflow_job_id, change_media_workflow_job_compartment_details, **kwargs):
         """
@@ -500,6 +517,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/change_media_workflow_job_compartment.py.html>`__ to see an example of how to use change_media_workflow_job_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaWorkflowJobId']
         resource_path = "/mediaWorkflowJobs/{mediaWorkflowJobId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_media_workflow_job_compartment"
@@ -558,7 +577,8 @@ class MediaServicesClient(object):
                 body=change_media_workflow_job_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -568,7 +588,8 @@ class MediaServicesClient(object):
                 body=change_media_workflow_job_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_stream_distribution_channel_compartment(self, stream_distribution_channel_id, change_stream_distribution_channel_compartment_details, **kwargs):
         """
@@ -616,6 +637,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/change_stream_distribution_channel_compartment.py.html>`__ to see an example of how to use change_stream_distribution_channel_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamDistributionChannelId']
         resource_path = "/streamDistributionChannels/{streamDistributionChannelId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_stream_distribution_channel_compartment"
@@ -674,7 +697,8 @@ class MediaServicesClient(object):
                 body=change_stream_distribution_channel_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -684,7 +708,8 @@ class MediaServicesClient(object):
                 body=change_stream_distribution_channel_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_media_asset(self, create_media_asset_details, **kwargs):
         """
@@ -722,6 +747,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/create_media_asset.py.html>`__ to see an example of how to use create_media_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/mediaAssets"
         method = "POST"
         operation_name = "create_media_asset"
@@ -768,7 +795,8 @@ class MediaServicesClient(object):
                 response_type="MediaAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -778,7 +806,8 @@ class MediaServicesClient(object):
                 response_type="MediaAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_media_workflow(self, create_media_workflow_details, **kwargs):
         """
@@ -816,6 +845,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/create_media_workflow.py.html>`__ to see an example of how to use create_media_workflow API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/mediaWorkflows"
         method = "POST"
         operation_name = "create_media_workflow"
@@ -862,7 +893,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflow",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -872,7 +904,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflow",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_media_workflow_configuration(self, create_media_workflow_configuration_details, **kwargs):
         """
@@ -910,6 +943,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/create_media_workflow_configuration.py.html>`__ to see an example of how to use create_media_workflow_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/mediaWorkflowConfigurations"
         method = "POST"
         operation_name = "create_media_workflow_configuration"
@@ -956,7 +991,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -966,7 +1002,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_media_workflow_job(self, create_media_workflow_job_details, **kwargs):
         """
@@ -1004,6 +1041,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/create_media_workflow_job.py.html>`__ to see an example of how to use create_media_workflow_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/mediaWorkflowJobs"
         method = "POST"
         operation_name = "create_media_workflow_job"
@@ -1050,7 +1089,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1060,7 +1100,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_stream_cdn_config(self, create_stream_cdn_config_details, **kwargs):
         """
@@ -1098,6 +1139,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/create_stream_cdn_config.py.html>`__ to see an example of how to use create_stream_cdn_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/streamCdnConfigs"
         method = "POST"
         operation_name = "create_stream_cdn_config"
@@ -1144,7 +1187,8 @@ class MediaServicesClient(object):
                 response_type="StreamCdnConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1154,7 +1198,8 @@ class MediaServicesClient(object):
                 response_type="StreamCdnConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_stream_distribution_channel(self, create_stream_distribution_channel_details, **kwargs):
         """
@@ -1192,6 +1237,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/create_stream_distribution_channel.py.html>`__ to see an example of how to use create_stream_distribution_channel API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/streamDistributionChannels"
         method = "POST"
         operation_name = "create_stream_distribution_channel"
@@ -1238,7 +1285,8 @@ class MediaServicesClient(object):
                 response_type="StreamDistributionChannel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1248,7 +1296,8 @@ class MediaServicesClient(object):
                 response_type="StreamDistributionChannel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_stream_packaging_config(self, create_stream_packaging_config_details, **kwargs):
         """
@@ -1286,6 +1335,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/create_stream_packaging_config.py.html>`__ to see an example of how to use create_stream_packaging_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/streamPackagingConfigs"
         method = "POST"
         operation_name = "create_stream_packaging_config"
@@ -1332,7 +1383,8 @@ class MediaServicesClient(object):
                 response_type="StreamPackagingConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1342,7 +1394,8 @@ class MediaServicesClient(object):
                 response_type="StreamPackagingConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_media_asset(self, media_asset_id, **kwargs):
         """
@@ -1385,6 +1438,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_media_asset.py.html>`__ to see an example of how to use delete_media_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaAssetId']
         resource_path = "/mediaAssets/{mediaAssetId}"
         method = "DELETE"
         operation_name = "delete_media_asset"
@@ -1453,7 +1508,8 @@ class MediaServicesClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1463,7 +1519,8 @@ class MediaServicesClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_media_asset_distribution_channel_attachment(self, media_asset_id, distribution_channel_id, **kwargs):
         """
@@ -1507,6 +1564,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_media_asset_distribution_channel_attachment.py.html>`__ to see an example of how to use delete_media_asset_distribution_channel_attachment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaAssetId', 'distributionChannelId']
         resource_path = "/mediaAssets/{mediaAssetId}/distributionChannelAttachments/{distributionChannelId}"
         method = "DELETE"
         operation_name = "delete_media_asset_distribution_channel_attachment"
@@ -1569,7 +1628,8 @@ class MediaServicesClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1579,7 +1639,8 @@ class MediaServicesClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_media_workflow(self, media_workflow_id, **kwargs):
         """
@@ -1617,6 +1678,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_media_workflow.py.html>`__ to see an example of how to use delete_media_workflow API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaWorkflowId']
         resource_path = "/mediaWorkflows/{mediaWorkflowId}"
         method = "DELETE"
         operation_name = "delete_media_workflow"
@@ -1671,7 +1734,8 @@ class MediaServicesClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1680,7 +1744,8 @@ class MediaServicesClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_media_workflow_configuration(self, media_workflow_configuration_id, **kwargs):
         """
@@ -1718,6 +1783,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_media_workflow_configuration.py.html>`__ to see an example of how to use delete_media_workflow_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaWorkflowConfigurationId']
         resource_path = "/mediaWorkflowConfigurations/{mediaWorkflowConfigurationId}"
         method = "DELETE"
         operation_name = "delete_media_workflow_configuration"
@@ -1772,7 +1839,8 @@ class MediaServicesClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1781,7 +1849,8 @@ class MediaServicesClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_media_workflow_job(self, media_workflow_job_id, **kwargs):
         """
@@ -1819,6 +1888,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_media_workflow_job.py.html>`__ to see an example of how to use delete_media_workflow_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaWorkflowJobId']
         resource_path = "/mediaWorkflowJobs/{mediaWorkflowJobId}"
         method = "DELETE"
         operation_name = "delete_media_workflow_job"
@@ -1873,7 +1944,8 @@ class MediaServicesClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1882,7 +1954,8 @@ class MediaServicesClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_stream_cdn_config(self, stream_cdn_config_id, **kwargs):
         """
@@ -1920,6 +1993,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_stream_cdn_config.py.html>`__ to see an example of how to use delete_stream_cdn_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamCdnConfigId']
         resource_path = "/streamCdnConfigs/{streamCdnConfigId}"
         method = "DELETE"
         operation_name = "delete_stream_cdn_config"
@@ -1974,7 +2049,8 @@ class MediaServicesClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1983,7 +2059,8 @@ class MediaServicesClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_stream_distribution_channel(self, stream_distribution_channel_id, **kwargs):
         """
@@ -2021,6 +2098,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_stream_distribution_channel.py.html>`__ to see an example of how to use delete_stream_distribution_channel API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamDistributionChannelId']
         resource_path = "/streamDistributionChannels/{streamDistributionChannelId}"
         method = "DELETE"
         operation_name = "delete_stream_distribution_channel"
@@ -2075,7 +2154,8 @@ class MediaServicesClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2084,7 +2164,8 @@ class MediaServicesClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_stream_packaging_config(self, stream_packaging_config_id, **kwargs):
         """
@@ -2122,6 +2203,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/delete_stream_packaging_config.py.html>`__ to see an example of how to use delete_stream_packaging_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamPackagingConfigId']
         resource_path = "/streamPackagingConfigs/{streamPackagingConfigId}"
         method = "DELETE"
         operation_name = "delete_stream_packaging_config"
@@ -2176,7 +2259,8 @@ class MediaServicesClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2185,7 +2269,8 @@ class MediaServicesClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_media_asset(self, media_asset_id, **kwargs):
         """
@@ -2216,6 +2301,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_media_asset.py.html>`__ to see an example of how to use get_media_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaAssetId']
         resource_path = "/mediaAssets/{mediaAssetId}"
         method = "GET"
         operation_name = "get_media_asset"
@@ -2269,7 +2356,8 @@ class MediaServicesClient(object):
                 response_type="MediaAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2279,7 +2367,8 @@ class MediaServicesClient(object):
                 response_type="MediaAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_media_asset_distribution_channel_attachment(self, media_asset_id, distribution_channel_id, **kwargs):
         """
@@ -2316,6 +2405,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_media_asset_distribution_channel_attachment.py.html>`__ to see an example of how to use get_media_asset_distribution_channel_attachment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaAssetId', 'distributionChannelId']
         resource_path = "/mediaAssets/{mediaAssetId}/distributionChannelAttachments/{distributionChannelId}"
         method = "GET"
         operation_name = "get_media_asset_distribution_channel_attachment"
@@ -2377,7 +2468,8 @@ class MediaServicesClient(object):
                 response_type="MediaAssetDistributionChannelAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2388,7 +2480,8 @@ class MediaServicesClient(object):
                 response_type="MediaAssetDistributionChannelAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_media_workflow(self, media_workflow_id, **kwargs):
         """
@@ -2419,6 +2512,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_media_workflow.py.html>`__ to see an example of how to use get_media_workflow API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaWorkflowId']
         resource_path = "/mediaWorkflows/{mediaWorkflowId}"
         method = "GET"
         operation_name = "get_media_workflow"
@@ -2472,7 +2567,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflow",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2482,7 +2578,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflow",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_media_workflow_configuration(self, media_workflow_configuration_id, **kwargs):
         """
@@ -2513,6 +2610,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_media_workflow_configuration.py.html>`__ to see an example of how to use get_media_workflow_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaWorkflowConfigurationId']
         resource_path = "/mediaWorkflowConfigurations/{mediaWorkflowConfigurationId}"
         method = "GET"
         operation_name = "get_media_workflow_configuration"
@@ -2566,7 +2665,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2576,7 +2676,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_media_workflow_job(self, media_workflow_job_id, **kwargs):
         """
@@ -2607,6 +2708,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_media_workflow_job.py.html>`__ to see an example of how to use get_media_workflow_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaWorkflowJobId']
         resource_path = "/mediaWorkflowJobs/{mediaWorkflowJobId}"
         method = "GET"
         operation_name = "get_media_workflow_job"
@@ -2660,7 +2763,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2670,7 +2774,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_media_workflow_job_fact(self, media_workflow_job_id, key, **kwargs):
         """
@@ -2704,6 +2809,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_media_workflow_job_fact.py.html>`__ to see an example of how to use get_media_workflow_job_fact API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaWorkflowJobId', 'key']
         resource_path = "/mediaWorkflowJobs/{mediaWorkflowJobId}/facts/{key}"
         method = "GET"
         operation_name = "get_media_workflow_job_fact"
@@ -2758,7 +2865,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowJobFact",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2768,7 +2876,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowJobFact",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_stream_cdn_config(self, stream_cdn_config_id, **kwargs):
         """
@@ -2799,6 +2908,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_stream_cdn_config.py.html>`__ to see an example of how to use get_stream_cdn_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamCdnConfigId']
         resource_path = "/streamCdnConfigs/{streamCdnConfigId}"
         method = "GET"
         operation_name = "get_stream_cdn_config"
@@ -2852,7 +2963,8 @@ class MediaServicesClient(object):
                 response_type="StreamCdnConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2862,7 +2974,8 @@ class MediaServicesClient(object):
                 response_type="StreamCdnConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_stream_distribution_channel(self, stream_distribution_channel_id, **kwargs):
         """
@@ -2893,6 +3006,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_stream_distribution_channel.py.html>`__ to see an example of how to use get_stream_distribution_channel API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamDistributionChannelId']
         resource_path = "/streamDistributionChannels/{streamDistributionChannelId}"
         method = "GET"
         operation_name = "get_stream_distribution_channel"
@@ -2946,7 +3061,8 @@ class MediaServicesClient(object):
                 response_type="StreamDistributionChannel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2956,7 +3072,8 @@ class MediaServicesClient(object):
                 response_type="StreamDistributionChannel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_stream_packaging_config(self, stream_packaging_config_id, **kwargs):
         """
@@ -2987,6 +3104,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_stream_packaging_config.py.html>`__ to see an example of how to use get_stream_packaging_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamPackagingConfigId']
         resource_path = "/streamPackagingConfigs/{streamPackagingConfigId}"
         method = "GET"
         operation_name = "get_stream_packaging_config"
@@ -3040,7 +3159,8 @@ class MediaServicesClient(object):
                 response_type="StreamPackagingConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3050,7 +3170,8 @@ class MediaServicesClient(object):
                 response_type="StreamPackagingConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def ingest_stream_distribution_channel(self, stream_distribution_channel_id, ingest_stream_distribution_channel_details, **kwargs):
         """
@@ -3091,6 +3212,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/ingest_stream_distribution_channel.py.html>`__ to see an example of how to use ingest_stream_distribution_channel API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamDistributionChannelId']
         resource_path = "/streamDistributionChannels/{streamDistributionChannelId}/actions/ingest"
         method = "POST"
         operation_name = "ingest_stream_distribution_channel"
@@ -3148,7 +3271,8 @@ class MediaServicesClient(object):
                 response_type="IngestStreamDistributionChannelResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3159,7 +3283,8 @@ class MediaServicesClient(object):
                 response_type="IngestStreamDistributionChannelResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_media_asset_distribution_channel_attachments(self, media_asset_id, **kwargs):
         """
@@ -3213,6 +3338,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_media_asset_distribution_channel_attachments.py.html>`__ to see an example of how to use list_media_asset_distribution_channel_attachments API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaAssetId']
         resource_path = "/mediaAssets/{mediaAssetId}/distributionChannelAttachments"
         method = "GET"
         operation_name = "list_media_asset_distribution_channel_attachments"
@@ -3297,7 +3424,8 @@ class MediaServicesClient(object):
                 response_type="MediaAssetDistributionChannelAttachmentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3308,7 +3436,8 @@ class MediaServicesClient(object):
                 response_type="MediaAssetDistributionChannelAttachmentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_media_assets(self, **kwargs):
         """
@@ -3393,6 +3522,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_media_assets.py.html>`__ to see an example of how to use list_media_assets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/mediaAssets"
         method = "GET"
         operation_name = "list_media_assets"
@@ -3500,7 +3631,8 @@ class MediaServicesClient(object):
                 response_type="MediaAssetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3510,7 +3642,8 @@ class MediaServicesClient(object):
                 response_type="MediaAssetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_media_workflow_configurations(self, **kwargs):
         """
@@ -3570,6 +3703,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_media_workflow_configurations.py.html>`__ to see an example of how to use list_media_workflow_configurations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/mediaWorkflowConfigurations"
         method = "GET"
         operation_name = "list_media_workflow_configurations"
@@ -3654,7 +3789,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowConfigurationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3664,7 +3800,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowConfigurationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_media_workflow_job_facts(self, media_workflow_job_id, **kwargs):
         """
@@ -3720,6 +3857,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_media_workflow_job_facts.py.html>`__ to see an example of how to use list_media_workflow_job_facts API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaWorkflowJobId']
         resource_path = "/mediaWorkflowJobs/{mediaWorkflowJobId}/facts"
         method = "GET"
         operation_name = "list_media_workflow_job_facts"
@@ -3811,7 +3950,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowJobFactCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3822,7 +3962,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowJobFactCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_media_workflow_jobs(self, **kwargs):
         """
@@ -3884,6 +4025,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_media_workflow_jobs.py.html>`__ to see an example of how to use list_media_workflow_jobs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/mediaWorkflowJobs"
         method = "GET"
         operation_name = "list_media_workflow_jobs"
@@ -3970,7 +4113,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowJobCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3980,7 +4124,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowJobCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_media_workflow_task_declarations(self, **kwargs):
         """
@@ -4037,6 +4182,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_media_workflow_task_declarations.py.html>`__ to see an example of how to use list_media_workflow_task_declarations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/mediaWorkflowTaskDeclarations"
         method = "GET"
         operation_name = "list_media_workflow_task_declarations"
@@ -4114,7 +4261,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowTaskDeclarationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4124,7 +4272,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowTaskDeclarationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_media_workflows(self, **kwargs):
         """
@@ -4184,6 +4333,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_media_workflows.py.html>`__ to see an example of how to use list_media_workflows API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/mediaWorkflows"
         method = "GET"
         operation_name = "list_media_workflows"
@@ -4268,7 +4419,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4278,7 +4430,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_stream_cdn_configs(self, distribution_channel_id, **kwargs):
         """
@@ -4338,6 +4491,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_stream_cdn_configs.py.html>`__ to see an example of how to use list_stream_cdn_configs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['distributionChannelId']
         resource_path = "/streamCdnConfigs"
         method = "GET"
         operation_name = "list_stream_cdn_configs"
@@ -4421,7 +4576,8 @@ class MediaServicesClient(object):
                 response_type="StreamCdnConfigCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4431,7 +4587,8 @@ class MediaServicesClient(object):
                 response_type="StreamCdnConfigCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_stream_distribution_channels(self, **kwargs):
         """
@@ -4491,6 +4648,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_stream_distribution_channels.py.html>`__ to see an example of how to use list_stream_distribution_channels API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/streamDistributionChannels"
         method = "GET"
         operation_name = "list_stream_distribution_channels"
@@ -4575,7 +4734,8 @@ class MediaServicesClient(object):
                 response_type="StreamDistributionChannelCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4585,7 +4745,8 @@ class MediaServicesClient(object):
                 response_type="StreamDistributionChannelCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_stream_packaging_configs(self, distribution_channel_id, **kwargs):
         """
@@ -4645,6 +4806,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_stream_packaging_configs.py.html>`__ to see an example of how to use list_stream_packaging_configs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['distributionChannelId']
         resource_path = "/streamPackagingConfigs"
         method = "GET"
         operation_name = "list_stream_packaging_configs"
@@ -4728,7 +4891,8 @@ class MediaServicesClient(object):
                 response_type="StreamPackagingConfigCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4738,7 +4902,8 @@ class MediaServicesClient(object):
                 response_type="StreamPackagingConfigCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_system_media_workflows(self, **kwargs):
         """
@@ -4784,6 +4949,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_system_media_workflows.py.html>`__ to see an example of how to use list_system_media_workflows API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/systemMediaWorkflows"
         method = "GET"
         operation_name = "list_system_media_workflows"
@@ -4848,7 +5015,8 @@ class MediaServicesClient(object):
                 response_type="SystemMediaWorkflowCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4858,7 +5026,8 @@ class MediaServicesClient(object):
                 response_type="SystemMediaWorkflowCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_media_asset(self, media_asset_id, update_media_asset_details, **kwargs):
         """
@@ -4899,6 +5068,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/update_media_asset.py.html>`__ to see an example of how to use update_media_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaAssetId']
         resource_path = "/mediaAssets/{mediaAssetId}"
         method = "PUT"
         operation_name = "update_media_asset"
@@ -4955,7 +5126,8 @@ class MediaServicesClient(object):
                 response_type="MediaAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4966,7 +5138,8 @@ class MediaServicesClient(object):
                 response_type="MediaAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_media_workflow(self, media_workflow_id, update_media_workflow_details, **kwargs):
         """
@@ -5007,6 +5180,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/update_media_workflow.py.html>`__ to see an example of how to use update_media_workflow API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaWorkflowId']
         resource_path = "/mediaWorkflows/{mediaWorkflowId}"
         method = "PUT"
         operation_name = "update_media_workflow"
@@ -5063,7 +5238,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflow",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5074,7 +5250,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflow",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_media_workflow_configuration(self, media_workflow_configuration_id, update_media_workflow_configuration_details, **kwargs):
         """
@@ -5115,6 +5292,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/update_media_workflow_configuration.py.html>`__ to see an example of how to use update_media_workflow_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaWorkflowConfigurationId']
         resource_path = "/mediaWorkflowConfigurations/{mediaWorkflowConfigurationId}"
         method = "PUT"
         operation_name = "update_media_workflow_configuration"
@@ -5171,7 +5350,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5182,7 +5362,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_media_workflow_job(self, media_workflow_job_id, update_media_workflow_job_details, **kwargs):
         """
@@ -5223,6 +5404,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/update_media_workflow_job.py.html>`__ to see an example of how to use update_media_workflow_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaWorkflowJobId']
         resource_path = "/mediaWorkflowJobs/{mediaWorkflowJobId}"
         method = "PUT"
         operation_name = "update_media_workflow_job"
@@ -5279,7 +5462,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5290,7 +5474,8 @@ class MediaServicesClient(object):
                 response_type="MediaWorkflowJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_stream_cdn_config(self, stream_cdn_config_id, update_stream_cdn_config_details, **kwargs):
         """
@@ -5331,6 +5516,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/update_stream_cdn_config.py.html>`__ to see an example of how to use update_stream_cdn_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamCdnConfigId']
         resource_path = "/streamCdnConfigs/{streamCdnConfigId}"
         method = "PUT"
         operation_name = "update_stream_cdn_config"
@@ -5387,7 +5574,8 @@ class MediaServicesClient(object):
                 response_type="StreamCdnConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5398,7 +5586,8 @@ class MediaServicesClient(object):
                 response_type="StreamCdnConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_stream_distribution_channel(self, stream_distribution_channel_id, update_stream_distribution_channel_details, **kwargs):
         """
@@ -5439,6 +5628,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/update_stream_distribution_channel.py.html>`__ to see an example of how to use update_stream_distribution_channel API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamDistributionChannelId']
         resource_path = "/streamDistributionChannels/{streamDistributionChannelId}"
         method = "PUT"
         operation_name = "update_stream_distribution_channel"
@@ -5495,7 +5686,8 @@ class MediaServicesClient(object):
                 response_type="StreamDistributionChannel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5506,7 +5698,8 @@ class MediaServicesClient(object):
                 response_type="StreamDistributionChannel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_stream_packaging_config(self, stream_packaging_config_id, update_stream_packaging_config_details, **kwargs):
         """
@@ -5547,6 +5740,8 @@ class MediaServicesClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/update_stream_packaging_config.py.html>`__ to see an example of how to use update_stream_packaging_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamPackagingConfigId']
         resource_path = "/streamPackagingConfigs/{streamPackagingConfigId}"
         method = "PUT"
         operation_name = "update_stream_packaging_config"
@@ -5603,7 +5798,8 @@ class MediaServicesClient(object):
                 response_type="StreamPackagingConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5614,4 +5810,5 @@ class MediaServicesClient(object):
                 response_type="StreamPackagingConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

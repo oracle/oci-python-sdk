@@ -65,6 +65,9 @@ class AIServiceSpeechClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class AIServiceSpeechClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20220101',
             'service_endpoint_template': 'https://speech.aiservice.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -147,6 +152,8 @@ class AIServiceSpeechClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aispeech/cancel_transcription_job.py.html>`__ to see an example of how to use cancel_transcription_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['transcriptionJobId']
         resource_path = "/transcriptionJobs/{transcriptionJobId}/actions/cancel"
         method = "POST"
         operation_name = "cancel_transcription_job"
@@ -202,7 +209,8 @@ class AIServiceSpeechClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -211,7 +219,8 @@ class AIServiceSpeechClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_transcription_task(self, transcription_job_id, transcription_task_id, **kwargs):
         """
@@ -259,6 +268,8 @@ class AIServiceSpeechClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aispeech/cancel_transcription_task.py.html>`__ to see an example of how to use cancel_transcription_task API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['transcriptionJobId', 'transcriptionTaskId']
         resource_path = "/transcriptionJobs/{transcriptionJobId}/transcriptionTasks/{transcriptionTaskId}/actions/cancel"
         method = "POST"
         operation_name = "cancel_transcription_task"
@@ -315,7 +326,8 @@ class AIServiceSpeechClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -324,7 +336,8 @@ class AIServiceSpeechClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_transcription_job_compartment(self, transcription_job_id, change_transcription_job_compartment_details, **kwargs):
         """
@@ -372,6 +385,8 @@ class AIServiceSpeechClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aispeech/change_transcription_job_compartment.py.html>`__ to see an example of how to use change_transcription_job_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['transcriptionJobId']
         resource_path = "/transcriptionJobs/{transcriptionJobId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_transcription_job_compartment"
@@ -428,7 +443,8 @@ class AIServiceSpeechClient(object):
                 body=change_transcription_job_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -438,7 +454,8 @@ class AIServiceSpeechClient(object):
                 body=change_transcription_job_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_transcription_job(self, create_transcription_job_details, **kwargs):
         """
@@ -476,6 +493,8 @@ class AIServiceSpeechClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aispeech/create_transcription_job.py.html>`__ to see an example of how to use create_transcription_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/transcriptionJobs"
         method = "POST"
         operation_name = "create_transcription_job"
@@ -520,7 +539,8 @@ class AIServiceSpeechClient(object):
                 response_type="TranscriptionJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -530,7 +550,8 @@ class AIServiceSpeechClient(object):
                 response_type="TranscriptionJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_transcription_job(self, transcription_job_id, **kwargs):
         """
@@ -561,6 +582,8 @@ class AIServiceSpeechClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aispeech/get_transcription_job.py.html>`__ to see an example of how to use get_transcription_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['transcriptionJobId']
         resource_path = "/transcriptionJobs/{transcriptionJobId}"
         method = "GET"
         operation_name = "get_transcription_job"
@@ -612,7 +635,8 @@ class AIServiceSpeechClient(object):
                 response_type="TranscriptionJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -622,7 +646,8 @@ class AIServiceSpeechClient(object):
                 response_type="TranscriptionJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_transcription_task(self, transcription_job_id, transcription_task_id, **kwargs):
         """
@@ -656,6 +681,8 @@ class AIServiceSpeechClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aispeech/get_transcription_task.py.html>`__ to see an example of how to use get_transcription_task API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['transcriptionJobId', 'transcriptionTaskId']
         resource_path = "/transcriptionJobs/{transcriptionJobId}/transcriptionTasks/{transcriptionTaskId}"
         method = "GET"
         operation_name = "get_transcription_task"
@@ -708,7 +735,8 @@ class AIServiceSpeechClient(object):
                 response_type="TranscriptionTask",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -718,7 +746,8 @@ class AIServiceSpeechClient(object):
                 response_type="TranscriptionTask",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_transcription_jobs(self, **kwargs):
         """
@@ -776,6 +805,8 @@ class AIServiceSpeechClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aispeech/list_transcription_jobs.py.html>`__ to see an example of how to use list_transcription_jobs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/transcriptionJobs"
         method = "GET"
         operation_name = "list_transcription_jobs"
@@ -858,7 +889,8 @@ class AIServiceSpeechClient(object):
                 response_type="TranscriptionJobCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -868,7 +900,8 @@ class AIServiceSpeechClient(object):
                 response_type="TranscriptionJobCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_transcription_tasks(self, transcription_job_id, **kwargs):
         """
@@ -926,6 +959,8 @@ class AIServiceSpeechClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aispeech/list_transcription_tasks.py.html>`__ to see an example of how to use list_transcription_tasks API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['transcriptionJobId']
         resource_path = "/transcriptionJobs/{transcriptionJobId}/transcriptionTasks"
         method = "GET"
         operation_name = "list_transcription_tasks"
@@ -1017,7 +1052,8 @@ class AIServiceSpeechClient(object):
                 response_type="TranscriptionTaskCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1028,7 +1064,8 @@ class AIServiceSpeechClient(object):
                 response_type="TranscriptionTaskCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_transcription_job(self, transcription_job_id, update_transcription_job_details, **kwargs):
         """
@@ -1069,6 +1106,8 @@ class AIServiceSpeechClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/aispeech/update_transcription_job.py.html>`__ to see an example of how to use update_transcription_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['transcriptionJobId']
         resource_path = "/transcriptionJobs/{transcriptionJobId}"
         method = "PUT"
         operation_name = "update_transcription_job"
@@ -1123,7 +1162,8 @@ class AIServiceSpeechClient(object):
                 response_type="TranscriptionJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1134,4 +1174,5 @@ class AIServiceSpeechClient(object):
                 response_type="TranscriptionJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

@@ -66,6 +66,9 @@ class NotificationControlPlaneClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -92,8 +95,10 @@ class NotificationControlPlaneClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20181201',
             'service_endpoint_template': 'https://notification.{region}.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -158,6 +163,8 @@ class NotificationControlPlaneClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/change_topic_compartment.py.html>`__ to see an example of how to use change_topic_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['topicId']
         resource_path = "/topics/{topicId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_topic_compartment"
@@ -214,7 +221,8 @@ class NotificationControlPlaneClient(object):
                 body=change_topic_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -224,7 +232,8 @@ class NotificationControlPlaneClient(object):
                 body=change_topic_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_topic(self, create_topic_details, **kwargs):
         """
@@ -280,6 +289,8 @@ class NotificationControlPlaneClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/create_topic.py.html>`__ to see an example of how to use create_topic API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/topics"
         method = "POST"
         operation_name = "create_topic"
@@ -324,7 +335,8 @@ class NotificationControlPlaneClient(object):
                 response_type="NotificationTopic",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -334,7 +346,8 @@ class NotificationControlPlaneClient(object):
                 response_type="NotificationTopic",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_topic(self, topic_id, **kwargs):
         """
@@ -375,6 +388,8 @@ class NotificationControlPlaneClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/delete_topic.py.html>`__ to see an example of how to use delete_topic API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['topicId']
         resource_path = "/topics/{topicId}"
         method = "DELETE"
         operation_name = "delete_topic"
@@ -427,7 +442,8 @@ class NotificationControlPlaneClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -436,7 +452,8 @@ class NotificationControlPlaneClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_topic(self, topic_id, **kwargs):
         """
@@ -472,6 +489,8 @@ class NotificationControlPlaneClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/get_topic.py.html>`__ to see an example of how to use get_topic API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['topicId']
         resource_path = "/topics/{topicId}"
         method = "GET"
         operation_name = "get_topic"
@@ -523,7 +542,8 @@ class NotificationControlPlaneClient(object):
                 response_type="NotificationTopic",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -533,7 +553,8 @@ class NotificationControlPlaneClient(object):
                 response_type="NotificationTopic",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_topics(self, compartment_id, **kwargs):
         """
@@ -602,6 +623,8 @@ class NotificationControlPlaneClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/list_topics.py.html>`__ to see an example of how to use list_topics API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/topics"
         method = "GET"
         operation_name = "list_topics"
@@ -683,7 +706,8 @@ class NotificationControlPlaneClient(object):
                 response_type="list[NotificationTopicSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -693,7 +717,8 @@ class NotificationControlPlaneClient(object):
                 response_type="list[NotificationTopicSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_topic(self, topic_id, topic_attributes_details, **kwargs):
         """
@@ -737,6 +762,8 @@ class NotificationControlPlaneClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/update_topic.py.html>`__ to see an example of how to use update_topic API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['topicId']
         resource_path = "/topics/{topicId}"
         method = "PUT"
         operation_name = "update_topic"
@@ -791,7 +818,8 @@ class NotificationControlPlaneClient(object):
                 response_type="NotificationTopic",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -802,4 +830,5 @@ class NotificationControlPlaneClient(object):
                 response_type="NotificationTopic",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

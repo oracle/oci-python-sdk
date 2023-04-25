@@ -66,6 +66,9 @@ class ArtifactsClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -92,8 +95,10 @@ class ArtifactsClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20160918',
             'service_endpoint_template': 'https://artifacts.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -158,6 +163,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/change_container_repository_compartment.py.html>`__ to see an example of how to use change_container_repository_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId']
         resource_path = "/container/repositories/{repositoryId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_container_repository_compartment"
@@ -214,7 +221,8 @@ class ArtifactsClient(object):
                 body=change_container_repository_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -224,7 +232,8 @@ class ArtifactsClient(object):
                 body=change_container_repository_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_repository_compartment(self, repository_id, change_repository_compartment_details, **kwargs):
         """
@@ -279,6 +288,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/change_repository_compartment.py.html>`__ to see an example of how to use change_repository_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId']
         resource_path = "/repositories/{repositoryId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_repository_compartment"
@@ -335,7 +346,8 @@ class ArtifactsClient(object):
                 body=change_repository_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -345,7 +357,8 @@ class ArtifactsClient(object):
                 body=change_repository_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_container_image_signature(self, create_container_image_signature_details, **kwargs):
         """
@@ -389,6 +402,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/create_container_image_signature.py.html>`__ to see an example of how to use create_container_image_signature API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/container/imageSignatures"
         method = "POST"
         operation_name = "create_container_image_signature"
@@ -435,7 +450,8 @@ class ArtifactsClient(object):
                 response_type="ContainerImageSignature",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -445,7 +461,8 @@ class ArtifactsClient(object):
                 response_type="ContainerImageSignature",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_container_repository(self, create_container_repository_details, **kwargs):
         """
@@ -484,6 +501,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/create_container_repository.py.html>`__ to see an example of how to use create_container_repository API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/container/repositories"
         method = "POST"
         operation_name = "create_container_repository"
@@ -528,7 +547,8 @@ class ArtifactsClient(object):
                 response_type="ContainerRepository",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -538,7 +558,8 @@ class ArtifactsClient(object):
                 response_type="ContainerRepository",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_repository(self, create_repository_details, **kwargs):
         """
@@ -577,6 +598,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/create_repository.py.html>`__ to see an example of how to use create_repository API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/repositories"
         method = "POST"
         operation_name = "create_repository"
@@ -621,7 +644,8 @@ class ArtifactsClient(object):
                 response_type="Repository",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -631,7 +655,8 @@ class ArtifactsClient(object):
                 response_type="Repository",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_container_image(self, image_id, **kwargs):
         """
@@ -672,6 +697,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/delete_container_image.py.html>`__ to see an example of how to use delete_container_image API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['imageId']
         resource_path = "/container/images/{imageId}"
         method = "DELETE"
         operation_name = "delete_container_image"
@@ -724,7 +751,8 @@ class ArtifactsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -733,7 +761,8 @@ class ArtifactsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_container_image_signature(self, image_signature_id, **kwargs):
         """
@@ -774,6 +803,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/delete_container_image_signature.py.html>`__ to see an example of how to use delete_container_image_signature API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['imageSignatureId']
         resource_path = "/container/imageSignatures/{imageSignatureId}"
         method = "DELETE"
         operation_name = "delete_container_image_signature"
@@ -826,7 +857,8 @@ class ArtifactsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -835,7 +867,8 @@ class ArtifactsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_container_repository(self, repository_id, **kwargs):
         """
@@ -876,6 +909,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/delete_container_repository.py.html>`__ to see an example of how to use delete_container_repository API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId']
         resource_path = "/container/repositories/{repositoryId}"
         method = "DELETE"
         operation_name = "delete_container_repository"
@@ -928,7 +963,8 @@ class ArtifactsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -937,7 +973,8 @@ class ArtifactsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_generic_artifact(self, artifact_id, **kwargs):
         """
@@ -980,6 +1017,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/delete_generic_artifact.py.html>`__ to see an example of how to use delete_generic_artifact API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['artifactId']
         resource_path = "/generic/artifacts/{artifactId}"
         method = "DELETE"
         operation_name = "delete_generic_artifact"
@@ -1032,7 +1071,8 @@ class ArtifactsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1041,7 +1081,8 @@ class ArtifactsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_generic_artifact_by_path(self, repository_id, artifact_path, version, **kwargs):
         """
@@ -1092,6 +1133,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/delete_generic_artifact_by_path.py.html>`__ to see an example of how to use delete_generic_artifact_by_path API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId', 'artifactPath', 'version']
         resource_path = "/generic/repositories/{repositoryId}/artifactPaths/{artifactPath}/versions/{version}"
         method = "DELETE"
         operation_name = "delete_generic_artifact_by_path"
@@ -1146,7 +1189,8 @@ class ArtifactsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1155,7 +1199,8 @@ class ArtifactsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_repository(self, repository_id, **kwargs):
         """
@@ -1196,6 +1241,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/delete_repository.py.html>`__ to see an example of how to use delete_repository API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId']
         resource_path = "/repositories/{repositoryId}"
         method = "DELETE"
         operation_name = "delete_repository"
@@ -1248,7 +1295,8 @@ class ArtifactsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1257,7 +1305,8 @@ class ArtifactsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_container_configuration(self, compartment_id, **kwargs):
         """
@@ -1291,6 +1340,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/get_container_configuration.py.html>`__ to see an example of how to use get_container_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/container/configuration"
         method = "GET"
         operation_name = "get_container_configuration"
@@ -1337,7 +1388,8 @@ class ArtifactsClient(object):
                 response_type="ContainerConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1347,7 +1399,8 @@ class ArtifactsClient(object):
                 response_type="ContainerConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_container_image(self, image_id, **kwargs):
         """
@@ -1383,6 +1436,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/get_container_image.py.html>`__ to see an example of how to use get_container_image API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['imageId']
         resource_path = "/container/images/{imageId}"
         method = "GET"
         operation_name = "get_container_image"
@@ -1434,7 +1489,8 @@ class ArtifactsClient(object):
                 response_type="ContainerImage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1444,7 +1500,8 @@ class ArtifactsClient(object):
                 response_type="ContainerImage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_container_image_signature(self, image_signature_id, **kwargs):
         """
@@ -1480,6 +1537,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/get_container_image_signature.py.html>`__ to see an example of how to use get_container_image_signature API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['imageSignatureId']
         resource_path = "/container/imageSignatures/{imageSignatureId}"
         method = "GET"
         operation_name = "get_container_image_signature"
@@ -1531,7 +1590,8 @@ class ArtifactsClient(object):
                 response_type="ContainerImageSignature",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1541,7 +1601,8 @@ class ArtifactsClient(object):
                 response_type="ContainerImageSignature",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_container_repository(self, repository_id, **kwargs):
         """
@@ -1577,6 +1638,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/get_container_repository.py.html>`__ to see an example of how to use get_container_repository API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId']
         resource_path = "/container/repositories/{repositoryId}"
         method = "GET"
         operation_name = "get_container_repository"
@@ -1628,7 +1691,8 @@ class ArtifactsClient(object):
                 response_type="ContainerRepository",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1638,7 +1702,8 @@ class ArtifactsClient(object):
                 response_type="ContainerRepository",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_generic_artifact(self, artifact_id, **kwargs):
         """
@@ -1676,6 +1741,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/get_generic_artifact.py.html>`__ to see an example of how to use get_generic_artifact API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['artifactId']
         resource_path = "/generic/artifacts/{artifactId}"
         method = "GET"
         operation_name = "get_generic_artifact"
@@ -1727,7 +1794,8 @@ class ArtifactsClient(object):
                 response_type="GenericArtifact",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1737,7 +1805,8 @@ class ArtifactsClient(object):
                 response_type="GenericArtifact",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_generic_artifact_by_path(self, repository_id, artifact_path, version, **kwargs):
         """
@@ -1783,6 +1852,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/get_generic_artifact_by_path.py.html>`__ to see an example of how to use get_generic_artifact_by_path API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId', 'artifactPath', 'version']
         resource_path = "/generic/repositories/{repositoryId}/artifactPaths/{artifactPath}/versions/{version}"
         method = "GET"
         operation_name = "get_generic_artifact_by_path"
@@ -1836,7 +1907,8 @@ class ArtifactsClient(object):
                 response_type="GenericArtifact",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1846,7 +1918,8 @@ class ArtifactsClient(object):
                 response_type="GenericArtifact",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_repository(self, repository_id, **kwargs):
         """
@@ -1882,6 +1955,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/get_repository.py.html>`__ to see an example of how to use get_repository API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId']
         resource_path = "/repositories/{repositoryId}"
         method = "GET"
         operation_name = "get_repository"
@@ -1933,7 +2008,8 @@ class ArtifactsClient(object):
                 response_type="Repository",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1943,7 +2019,8 @@ class ArtifactsClient(object):
                 response_type="Repository",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_container_image_signatures(self, compartment_id, **kwargs):
         """
@@ -2056,6 +2133,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/list_container_image_signatures.py.html>`__ to see an example of how to use list_container_image_signatures API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/container/imageSignatures"
         method = "GET"
         operation_name = "list_container_image_signatures"
@@ -2149,7 +2228,8 @@ class ArtifactsClient(object):
                 response_type="ContainerImageSignatureCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2159,7 +2239,8 @@ class ArtifactsClient(object):
                 response_type="ContainerImageSignatureCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_container_images(self, compartment_id, **kwargs):
         """
@@ -2259,6 +2340,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/list_container_images.py.html>`__ to see an example of how to use list_container_images API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/container/images"
         method = "GET"
         operation_name = "list_container_images"
@@ -2343,7 +2426,8 @@ class ArtifactsClient(object):
                 response_type="ContainerImageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2353,7 +2437,8 @@ class ArtifactsClient(object):
                 response_type="ContainerImageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_container_repositories(self, compartment_id, **kwargs):
         """
@@ -2440,6 +2525,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/list_container_repositories.py.html>`__ to see an example of how to use list_container_repositories API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/container/repositories"
         method = "GET"
         operation_name = "list_container_repositories"
@@ -2518,7 +2605,8 @@ class ArtifactsClient(object):
                 response_type="ContainerRepositoryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2528,7 +2616,8 @@ class ArtifactsClient(object):
                 response_type="ContainerRepositoryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_generic_artifacts(self, compartment_id, repository_id, **kwargs):
         """
@@ -2617,6 +2706,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/list_generic_artifacts.py.html>`__ to see an example of how to use list_generic_artifacts API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'repositoryId']
         resource_path = "/generic/artifacts"
         method = "GET"
         operation_name = "list_generic_artifacts"
@@ -2698,7 +2789,8 @@ class ArtifactsClient(object):
                 response_type="GenericArtifactCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2708,7 +2800,8 @@ class ArtifactsClient(object):
                 response_type="GenericArtifactCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_repositories(self, compartment_id, **kwargs):
         """
@@ -2788,6 +2881,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/list_repositories.py.html>`__ to see an example of how to use list_repositories API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/repositories"
         method = "GET"
         operation_name = "list_repositories"
@@ -2864,7 +2959,8 @@ class ArtifactsClient(object):
                 response_type="RepositoryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2874,7 +2970,8 @@ class ArtifactsClient(object):
                 response_type="RepositoryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_container_version(self, image_id, remove_container_version_details, **kwargs):
         """
@@ -2925,6 +3022,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/remove_container_version.py.html>`__ to see an example of how to use remove_container_version API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['imageId']
         resource_path = "/container/images/{imageId}/actions/removeVersion"
         method = "POST"
         operation_name = "remove_container_version"
@@ -2982,7 +3081,8 @@ class ArtifactsClient(object):
                 response_type="ContainerImage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2993,7 +3093,8 @@ class ArtifactsClient(object):
                 response_type="ContainerImage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def restore_container_image(self, image_id, restore_container_image_details, **kwargs):
         """
@@ -3044,6 +3145,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/restore_container_image.py.html>`__ to see an example of how to use restore_container_image API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['imageId']
         resource_path = "/container/images/{imageId}/actions/restore"
         method = "POST"
         operation_name = "restore_container_image"
@@ -3101,7 +3204,8 @@ class ArtifactsClient(object):
                 response_type="ContainerImage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3112,7 +3216,8 @@ class ArtifactsClient(object):
                 response_type="ContainerImage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_container_configuration(self, compartment_id, update_container_configuration_details, **kwargs):
         """
@@ -3154,6 +3259,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/update_container_configuration.py.html>`__ to see an example of how to use update_container_configuration API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/container/configuration"
         method = "PUT"
         operation_name = "update_container_configuration"
@@ -3203,7 +3310,8 @@ class ArtifactsClient(object):
                 response_type="ContainerConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3214,7 +3322,8 @@ class ArtifactsClient(object):
                 response_type="ContainerConfiguration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_container_repository(self, repository_id, update_container_repository_details, **kwargs):
         """
@@ -3258,6 +3367,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/update_container_repository.py.html>`__ to see an example of how to use update_container_repository API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId']
         resource_path = "/container/repositories/{repositoryId}"
         method = "PUT"
         operation_name = "update_container_repository"
@@ -3312,7 +3423,8 @@ class ArtifactsClient(object):
                 response_type="ContainerRepository",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3323,7 +3435,8 @@ class ArtifactsClient(object):
                 response_type="ContainerRepository",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_generic_artifact(self, artifact_id, update_generic_artifact_details, **kwargs):
         """
@@ -3371,6 +3484,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/update_generic_artifact.py.html>`__ to see an example of how to use update_generic_artifact API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['artifactId']
         resource_path = "/generic/artifacts/{artifactId}"
         method = "PUT"
         operation_name = "update_generic_artifact"
@@ -3425,7 +3540,8 @@ class ArtifactsClient(object):
                 response_type="GenericArtifact",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3436,7 +3552,8 @@ class ArtifactsClient(object):
                 response_type="GenericArtifact",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_generic_artifact_by_path(self, repository_id, artifact_path, version, update_generic_artifact_by_path_details, **kwargs):
         """
@@ -3490,6 +3607,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/update_generic_artifact_by_path.py.html>`__ to see an example of how to use update_generic_artifact_by_path API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId', 'artifactPath', 'version']
         resource_path = "/generic/repositories/{repositoryId}/artifactPaths/{artifactPath}/versions/{version}"
         method = "PUT"
         operation_name = "update_generic_artifact_by_path"
@@ -3546,7 +3665,8 @@ class ArtifactsClient(object):
                 response_type="GenericArtifact",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3557,7 +3677,8 @@ class ArtifactsClient(object):
                 response_type="GenericArtifact",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_repository(self, repository_id, update_repository_details, **kwargs):
         """
@@ -3601,6 +3722,8 @@ class ArtifactsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/artifacts/update_repository.py.html>`__ to see an example of how to use update_repository API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId']
         resource_path = "/repositories/{repositoryId}"
         method = "PUT"
         operation_name = "update_repository"
@@ -3655,7 +3778,8 @@ class ArtifactsClient(object):
                 response_type="Repository",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3666,4 +3790,5 @@ class ArtifactsClient(object):
                 response_type="Repository",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

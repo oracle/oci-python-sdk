@@ -71,6 +71,9 @@ class VirtualNetworkClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -97,8 +100,10 @@ class VirtualNetworkClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20160918',
             'service_endpoint_template': 'https://iaas.{region}.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -143,6 +148,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/add_drg_route_distribution_statements.py.html>`__ to see an example of how to use add_drg_route_distribution_statements API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgRouteDistributionId']
         resource_path = "/drgRouteDistributions/{drgRouteDistributionId}/actions/addDrgRouteDistributionStatements"
         method = "POST"
         operation_name = "add_drg_route_distribution_statements"
@@ -188,7 +195,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DrgRouteDistributionStatement]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -199,7 +207,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DrgRouteDistributionStatement]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def add_drg_route_rules(self, drg_route_table_id, add_drg_route_rules_details, **kwargs):
         """
@@ -239,6 +248,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/add_drg_route_rules.py.html>`__ to see an example of how to use add_drg_route_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgRouteTableId']
         resource_path = "/drgRouteTables/{drgRouteTableId}/actions/addDrgRouteRules"
         method = "POST"
         operation_name = "add_drg_route_rules"
@@ -292,7 +303,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DrgRouteRule]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -303,7 +315,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DrgRouteRule]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def add_ipv6_subnet_cidr(self, subnet_id, add_subnet_ipv6_cidr_details, **kwargs):
         """
@@ -352,6 +365,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/add_ipv6_subnet_cidr.py.html>`__ to see an example of how to use add_ipv6_subnet_cidr API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subnetId']
         resource_path = "/subnets/{subnetId}/actions/addIpv6Cidr"
         method = "POST"
         operation_name = "add_ipv6_subnet_cidr"
@@ -408,7 +423,8 @@ class VirtualNetworkClient(object):
                 body=add_subnet_ipv6_cidr_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -418,7 +434,8 @@ class VirtualNetworkClient(object):
                 body=add_subnet_ipv6_cidr_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def add_ipv6_vcn_cidr(self, vcn_id, **kwargs):
         """
@@ -468,6 +485,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/add_ipv6_vcn_cidr.py.html>`__ to see an example of how to use add_ipv6_vcn_cidr API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vcnId']
         resource_path = "/vcns/{vcnId}/actions/addIpv6Cidr"
         method = "POST"
         operation_name = "add_ipv6_vcn_cidr"
@@ -525,7 +544,8 @@ class VirtualNetworkClient(object):
                 body=kwargs.get('add_vcn_ipv6_cidr_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -535,7 +555,8 @@ class VirtualNetworkClient(object):
                 body=kwargs.get('add_vcn_ipv6_cidr_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def add_network_security_group_security_rules(self, network_security_group_id, add_network_security_group_security_rules_details, **kwargs):
         """
@@ -568,6 +589,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/add_network_security_group_security_rules.py.html>`__ to see an example of how to use add_network_security_group_security_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkSecurityGroupId']
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}/actions/addSecurityRules"
         method = "POST"
         operation_name = "add_network_security_group_security_rules"
@@ -613,7 +636,8 @@ class VirtualNetworkClient(object):
                 response_type="AddedNetworkSecurityGroupSecurityRules",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -624,7 +648,8 @@ class VirtualNetworkClient(object):
                 response_type="AddedNetworkSecurityGroupSecurityRules",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def add_public_ip_pool_capacity(self, public_ip_pool_id, add_public_ip_pool_capacity_details, **kwargs):
         """
@@ -670,6 +695,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/add_public_ip_pool_capacity.py.html>`__ to see an example of how to use add_public_ip_pool_capacity API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['publicIpPoolId']
         resource_path = "/publicIpPools/{publicIpPoolId}/actions/addCapacity"
         method = "POST"
         operation_name = "add_public_ip_pool_capacity"
@@ -725,7 +752,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIpPool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -736,7 +764,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIpPool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def add_vcn_cidr(self, vcn_id, add_vcn_cidr_details, **kwargs):
         """
@@ -791,6 +820,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/add_vcn_cidr.py.html>`__ to see an example of how to use add_vcn_cidr API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vcnId']
         resource_path = "/vcns/{vcnId}/actions/addCidr"
         method = "POST"
         operation_name = "add_vcn_cidr"
@@ -847,7 +878,8 @@ class VirtualNetworkClient(object):
                 body=add_vcn_cidr_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -857,7 +889,8 @@ class VirtualNetworkClient(object):
                 body=add_vcn_cidr_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def advertise_byoip_range(self, byoip_range_id, **kwargs):
         """
@@ -892,6 +925,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/advertise_byoip_range.py.html>`__ to see an example of how to use advertise_byoip_range API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['byoipRangeId']
         resource_path = "/byoipRanges/{byoipRangeId}/actions/advertise"
         method = "POST"
         operation_name = "advertise_byoip_range"
@@ -942,7 +977,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -951,7 +987,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def attach_service_id(self, service_gateway_id, attach_service_details, **kwargs):
         """
@@ -998,6 +1035,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/attach_service_id.py.html>`__ to see an example of how to use attach_service_id API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['serviceGatewayId']
         resource_path = "/serviceGateways/{serviceGatewayId}/actions/attachService"
         method = "POST"
         operation_name = "attach_service_id"
@@ -1050,7 +1089,8 @@ class VirtualNetworkClient(object):
                 response_type="ServiceGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1061,7 +1101,8 @@ class VirtualNetworkClient(object):
                 response_type="ServiceGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def bulk_add_virtual_circuit_public_prefixes(self, virtual_circuit_id, bulk_add_virtual_circuit_public_prefixes_details, **kwargs):
         """
@@ -1097,6 +1138,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/bulk_add_virtual_circuit_public_prefixes.py.html>`__ to see an example of how to use bulk_add_virtual_circuit_public_prefixes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualCircuitId']
         resource_path = "/virtualCircuits/{virtualCircuitId}/actions/bulkAddPublicPrefixes"
         method = "POST"
         operation_name = "bulk_add_virtual_circuit_public_prefixes"
@@ -1143,7 +1186,8 @@ class VirtualNetworkClient(object):
                 body=bulk_add_virtual_circuit_public_prefixes_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1153,7 +1197,8 @@ class VirtualNetworkClient(object):
                 body=bulk_add_virtual_circuit_public_prefixes_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def bulk_delete_virtual_circuit_public_prefixes(self, virtual_circuit_id, bulk_delete_virtual_circuit_public_prefixes_details, **kwargs):
         """
@@ -1189,6 +1234,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/bulk_delete_virtual_circuit_public_prefixes.py.html>`__ to see an example of how to use bulk_delete_virtual_circuit_public_prefixes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualCircuitId']
         resource_path = "/virtualCircuits/{virtualCircuitId}/actions/bulkDeletePublicPrefixes"
         method = "POST"
         operation_name = "bulk_delete_virtual_circuit_public_prefixes"
@@ -1235,7 +1282,8 @@ class VirtualNetworkClient(object):
                 body=bulk_delete_virtual_circuit_public_prefixes_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1245,7 +1293,8 @@ class VirtualNetworkClient(object):
                 body=bulk_delete_virtual_circuit_public_prefixes_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_byoip_range_compartment(self, byoip_range_id, change_byoip_range_compartment_details, **kwargs):
         """
@@ -1293,6 +1342,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_byoip_range_compartment.py.html>`__ to see an example of how to use change_byoip_range_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['byoipRangeId']
         resource_path = "/byoipRanges/{byoipRangeId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_byoip_range_compartment"
@@ -1347,7 +1398,8 @@ class VirtualNetworkClient(object):
                 body=change_byoip_range_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1357,7 +1409,8 @@ class VirtualNetworkClient(object):
                 body=change_byoip_range_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_capture_filter_compartment(self, capture_filter_id, change_capture_filter_compartment_details, **kwargs):
         """
@@ -1410,6 +1463,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_capture_filter_compartment.py.html>`__ to see an example of how to use change_capture_filter_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['captureFilterId']
         resource_path = "/captureFilters/{captureFilterId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_capture_filter_compartment"
@@ -1466,7 +1521,8 @@ class VirtualNetworkClient(object):
                 body=change_capture_filter_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1476,7 +1532,8 @@ class VirtualNetworkClient(object):
                 body=change_capture_filter_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_cpe_compartment(self, cpe_id, change_cpe_compartment_details, **kwargs):
         """
@@ -1524,6 +1581,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_cpe_compartment.py.html>`__ to see an example of how to use change_cpe_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cpeId']
         resource_path = "/cpes/{cpeId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_cpe_compartment"
@@ -1580,7 +1639,8 @@ class VirtualNetworkClient(object):
                 body=change_cpe_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1590,7 +1650,8 @@ class VirtualNetworkClient(object):
                 body=change_cpe_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_cross_connect_compartment(self, cross_connect_id, change_cross_connect_compartment_details, **kwargs):
         """
@@ -1638,6 +1699,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_cross_connect_compartment.py.html>`__ to see an example of how to use change_cross_connect_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['crossConnectId']
         resource_path = "/crossConnects/{crossConnectId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_cross_connect_compartment"
@@ -1694,7 +1757,8 @@ class VirtualNetworkClient(object):
                 body=change_cross_connect_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1704,7 +1768,8 @@ class VirtualNetworkClient(object):
                 body=change_cross_connect_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_cross_connect_group_compartment(self, cross_connect_group_id, change_cross_connect_group_compartment_details, **kwargs):
         """
@@ -1752,6 +1817,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_cross_connect_group_compartment.py.html>`__ to see an example of how to use change_cross_connect_group_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['crossConnectGroupId']
         resource_path = "/crossConnectGroups/{crossConnectGroupId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_cross_connect_group_compartment"
@@ -1808,7 +1875,8 @@ class VirtualNetworkClient(object):
                 body=change_cross_connect_group_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1818,7 +1886,8 @@ class VirtualNetworkClient(object):
                 body=change_cross_connect_group_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_dhcp_options_compartment(self, dhcp_id, change_dhcp_options_compartment_details, **kwargs):
         """
@@ -1866,6 +1935,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_dhcp_options_compartment.py.html>`__ to see an example of how to use change_dhcp_options_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dhcpId']
         resource_path = "/dhcps/{dhcpId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_dhcp_options_compartment"
@@ -1920,7 +1991,8 @@ class VirtualNetworkClient(object):
                 body=change_dhcp_options_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1930,7 +2002,8 @@ class VirtualNetworkClient(object):
                 body=change_dhcp_options_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_drg_compartment(self, drg_id, change_drg_compartment_details, **kwargs):
         """
@@ -1978,6 +2051,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_drg_compartment.py.html>`__ to see an example of how to use change_drg_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgId']
         resource_path = "/drgs/{drgId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_drg_compartment"
@@ -2032,7 +2107,8 @@ class VirtualNetworkClient(object):
                 body=change_drg_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2042,7 +2118,8 @@ class VirtualNetworkClient(object):
                 body=change_drg_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_internet_gateway_compartment(self, ig_id, change_internet_gateway_compartment_details, **kwargs):
         """
@@ -2090,6 +2167,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_internet_gateway_compartment.py.html>`__ to see an example of how to use change_internet_gateway_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['igId']
         resource_path = "/internetGateways/{igId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_internet_gateway_compartment"
@@ -2144,7 +2223,8 @@ class VirtualNetworkClient(object):
                 body=change_internet_gateway_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2154,7 +2234,8 @@ class VirtualNetworkClient(object):
                 body=change_internet_gateway_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_ip_sec_connection_compartment(self, ipsc_id, change_ip_sec_connection_compartment_details, **kwargs):
         """
@@ -2202,6 +2283,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_ip_sec_connection_compartment.py.html>`__ to see an example of how to use change_ip_sec_connection_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ipscId']
         resource_path = "/ipsecConnections/{ipscId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_ip_sec_connection_compartment"
@@ -2258,7 +2341,8 @@ class VirtualNetworkClient(object):
                 body=change_ip_sec_connection_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2268,7 +2352,8 @@ class VirtualNetworkClient(object):
                 body=change_ip_sec_connection_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_local_peering_gateway_compartment(self, local_peering_gateway_id, change_local_peering_gateway_compartment_details, **kwargs):
         """
@@ -2316,6 +2401,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_local_peering_gateway_compartment.py.html>`__ to see an example of how to use change_local_peering_gateway_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['localPeeringGatewayId']
         resource_path = "/localPeeringGateways/{localPeeringGatewayId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_local_peering_gateway_compartment"
@@ -2370,7 +2457,8 @@ class VirtualNetworkClient(object):
                 body=change_local_peering_gateway_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2380,7 +2468,8 @@ class VirtualNetworkClient(object):
                 body=change_local_peering_gateway_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_nat_gateway_compartment(self, nat_gateway_id, change_nat_gateway_compartment_details, **kwargs):
         """
@@ -2428,6 +2517,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_nat_gateway_compartment.py.html>`__ to see an example of how to use change_nat_gateway_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['natGatewayId']
         resource_path = "/natGateways/{natGatewayId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_nat_gateway_compartment"
@@ -2482,7 +2573,8 @@ class VirtualNetworkClient(object):
                 body=change_nat_gateway_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2492,7 +2584,8 @@ class VirtualNetworkClient(object):
                 body=change_nat_gateway_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_network_security_group_compartment(self, network_security_group_id, change_network_security_group_compartment_details, **kwargs):
         """
@@ -2539,6 +2632,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_network_security_group_compartment.py.html>`__ to see an example of how to use change_network_security_group_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkSecurityGroupId']
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_network_security_group_compartment"
@@ -2593,7 +2688,8 @@ class VirtualNetworkClient(object):
                 body=change_network_security_group_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2603,7 +2699,8 @@ class VirtualNetworkClient(object):
                 body=change_network_security_group_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_public_ip_compartment(self, public_ip_id, change_public_ip_compartment_details, **kwargs):
         """
@@ -2654,6 +2751,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_public_ip_compartment.py.html>`__ to see an example of how to use change_public_ip_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['publicIpId']
         resource_path = "/publicIps/{publicIpId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_public_ip_compartment"
@@ -2708,7 +2807,8 @@ class VirtualNetworkClient(object):
                 body=change_public_ip_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2718,7 +2818,8 @@ class VirtualNetworkClient(object):
                 body=change_public_ip_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_public_ip_pool_compartment(self, public_ip_pool_id, change_public_ip_pool_compartment_details, **kwargs):
         """
@@ -2766,6 +2867,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_public_ip_pool_compartment.py.html>`__ to see an example of how to use change_public_ip_pool_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['publicIpPoolId']
         resource_path = "/publicIpPools/{publicIpPoolId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_public_ip_pool_compartment"
@@ -2820,7 +2923,8 @@ class VirtualNetworkClient(object):
                 body=change_public_ip_pool_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2830,7 +2934,8 @@ class VirtualNetworkClient(object):
                 body=change_public_ip_pool_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_remote_peering_connection_compartment(self, remote_peering_connection_id, change_remote_peering_connection_compartment_details, **kwargs):
         """
@@ -2878,6 +2983,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_remote_peering_connection_compartment.py.html>`__ to see an example of how to use change_remote_peering_connection_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['remotePeeringConnectionId']
         resource_path = "/remotePeeringConnections/{remotePeeringConnectionId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_remote_peering_connection_compartment"
@@ -2934,7 +3041,8 @@ class VirtualNetworkClient(object):
                 body=change_remote_peering_connection_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2944,7 +3052,8 @@ class VirtualNetworkClient(object):
                 body=change_remote_peering_connection_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_route_table_compartment(self, rt_id, change_route_table_compartment_details, **kwargs):
         """
@@ -2992,6 +3101,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_route_table_compartment.py.html>`__ to see an example of how to use change_route_table_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['rtId']
         resource_path = "/routeTables/{rtId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_route_table_compartment"
@@ -3046,7 +3157,8 @@ class VirtualNetworkClient(object):
                 body=change_route_table_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3056,7 +3168,8 @@ class VirtualNetworkClient(object):
                 body=change_route_table_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_security_list_compartment(self, security_list_id, change_security_list_compartment_details, **kwargs):
         """
@@ -3104,6 +3217,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_security_list_compartment.py.html>`__ to see an example of how to use change_security_list_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityListId']
         resource_path = "/securityLists/{securityListId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_security_list_compartment"
@@ -3158,7 +3273,8 @@ class VirtualNetworkClient(object):
                 body=change_security_list_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3168,7 +3284,8 @@ class VirtualNetworkClient(object):
                 body=change_security_list_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_service_gateway_compartment(self, service_gateway_id, change_service_gateway_compartment_details, **kwargs):
         """
@@ -3216,6 +3333,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_service_gateway_compartment.py.html>`__ to see an example of how to use change_service_gateway_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['serviceGatewayId']
         resource_path = "/serviceGateways/{serviceGatewayId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_service_gateway_compartment"
@@ -3270,7 +3389,8 @@ class VirtualNetworkClient(object):
                 body=change_service_gateway_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3280,7 +3400,8 @@ class VirtualNetworkClient(object):
                 body=change_service_gateway_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_subnet_compartment(self, subnet_id, change_subnet_compartment_details, **kwargs):
         """
@@ -3328,6 +3449,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_subnet_compartment.py.html>`__ to see an example of how to use change_subnet_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subnetId']
         resource_path = "/subnets/{subnetId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_subnet_compartment"
@@ -3382,7 +3505,8 @@ class VirtualNetworkClient(object):
                 body=change_subnet_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3392,7 +3516,8 @@ class VirtualNetworkClient(object):
                 body=change_subnet_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_vcn_compartment(self, vcn_id, change_vcn_compartment_details, **kwargs):
         """
@@ -3440,6 +3565,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_vcn_compartment.py.html>`__ to see an example of how to use change_vcn_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vcnId']
         resource_path = "/vcns/{vcnId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_vcn_compartment"
@@ -3494,7 +3621,8 @@ class VirtualNetworkClient(object):
                 body=change_vcn_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3504,7 +3632,8 @@ class VirtualNetworkClient(object):
                 body=change_vcn_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_virtual_circuit_compartment(self, virtual_circuit_id, change_virtual_circuit_compartment_details, **kwargs):
         """
@@ -3552,6 +3681,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_virtual_circuit_compartment.py.html>`__ to see an example of how to use change_virtual_circuit_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualCircuitId']
         resource_path = "/virtualCircuits/{virtualCircuitId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_virtual_circuit_compartment"
@@ -3608,7 +3739,8 @@ class VirtualNetworkClient(object):
                 body=change_virtual_circuit_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3618,7 +3750,8 @@ class VirtualNetworkClient(object):
                 body=change_virtual_circuit_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_vlan_compartment(self, vlan_id, change_vlan_compartment_details, **kwargs):
         """
@@ -3671,6 +3804,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_vlan_compartment.py.html>`__ to see an example of how to use change_vlan_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vlanId']
         resource_path = "/vlans/{vlanId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_vlan_compartment"
@@ -3727,7 +3862,8 @@ class VirtualNetworkClient(object):
                 body=change_vlan_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3737,7 +3873,8 @@ class VirtualNetworkClient(object):
                 body=change_vlan_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_vtap_compartment(self, vtap_id, change_vtap_compartment_details, **kwargs):
         """
@@ -3790,6 +3927,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/change_vtap_compartment.py.html>`__ to see an example of how to use change_vtap_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vtapId']
         resource_path = "/vtaps/{vtapId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_vtap_compartment"
@@ -3846,7 +3985,8 @@ class VirtualNetworkClient(object):
                 body=change_vtap_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3856,7 +3996,8 @@ class VirtualNetworkClient(object):
                 body=change_vtap_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def connect_local_peering_gateways(self, local_peering_gateway_id, connect_local_peering_gateways_details, **kwargs):
         """
@@ -3898,6 +4039,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/connect_local_peering_gateways.py.html>`__ to see an example of how to use connect_local_peering_gateways API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['localPeeringGatewayId']
         resource_path = "/localPeeringGateways/{localPeeringGatewayId}/actions/connect"
         method = "POST"
         operation_name = "connect_local_peering_gateways"
@@ -3942,7 +4085,8 @@ class VirtualNetworkClient(object):
                 body=connect_local_peering_gateways_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3952,7 +4096,8 @@ class VirtualNetworkClient(object):
                 body=connect_local_peering_gateways_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def connect_remote_peering_connections(self, remote_peering_connection_id, connect_remote_peering_connections_details, **kwargs):
         """
@@ -3994,6 +4139,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/connect_remote_peering_connections.py.html>`__ to see an example of how to use connect_remote_peering_connections API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['remotePeeringConnectionId']
         resource_path = "/remotePeeringConnections/{remotePeeringConnectionId}/actions/connect"
         method = "POST"
         operation_name = "connect_remote_peering_connections"
@@ -4040,7 +4187,8 @@ class VirtualNetworkClient(object):
                 body=connect_remote_peering_connections_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4050,7 +4198,8 @@ class VirtualNetworkClient(object):
                 body=connect_remote_peering_connections_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_byoip_range(self, create_byoip_range_details, **kwargs):
         """
@@ -4089,6 +4238,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_byoip_range.py.html>`__ to see an example of how to use create_byoip_range API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/byoipRanges"
         method = "POST"
         operation_name = "create_byoip_range"
@@ -4133,7 +4284,8 @@ class VirtualNetworkClient(object):
                 response_type="ByoipRange",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4143,7 +4295,8 @@ class VirtualNetworkClient(object):
                 response_type="ByoipRange",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_capture_filter(self, create_capture_filter_details, **kwargs):
         """
@@ -4194,6 +4347,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_capture_filter.py.html>`__ to see an example of how to use create_capture_filter API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/captureFilters"
         method = "POST"
         operation_name = "create_capture_filter"
@@ -4238,7 +4393,8 @@ class VirtualNetworkClient(object):
                 response_type="CaptureFilter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4248,7 +4404,8 @@ class VirtualNetworkClient(object):
                 response_type="CaptureFilter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_cpe(self, create_cpe_details, **kwargs):
         """
@@ -4303,6 +4460,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_cpe.py.html>`__ to see an example of how to use create_cpe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/cpes"
         method = "POST"
         operation_name = "create_cpe"
@@ -4347,7 +4506,8 @@ class VirtualNetworkClient(object):
                 response_type="Cpe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4357,7 +4517,8 @@ class VirtualNetworkClient(object):
                 response_type="Cpe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_cross_connect(self, create_cross_connect_details, **kwargs):
         """
@@ -4415,6 +4576,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_cross_connect.py.html>`__ to see an example of how to use create_cross_connect API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/crossConnects"
         method = "POST"
         operation_name = "create_cross_connect"
@@ -4459,7 +4622,8 @@ class VirtualNetworkClient(object):
                 response_type="CrossConnect",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4469,7 +4633,8 @@ class VirtualNetworkClient(object):
                 response_type="CrossConnect",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_cross_connect_group(self, create_cross_connect_group_details, **kwargs):
         """
@@ -4523,6 +4688,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_cross_connect_group.py.html>`__ to see an example of how to use create_cross_connect_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/crossConnectGroups"
         method = "POST"
         operation_name = "create_cross_connect_group"
@@ -4567,7 +4734,8 @@ class VirtualNetworkClient(object):
                 response_type="CrossConnectGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4577,7 +4745,8 @@ class VirtualNetworkClient(object):
                 response_type="CrossConnectGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_dhcp_options(self, create_dhcp_details, **kwargs):
         """
@@ -4627,6 +4796,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_dhcp_options.py.html>`__ to see an example of how to use create_dhcp_options API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/dhcps"
         method = "POST"
         operation_name = "create_dhcp_options"
@@ -4669,7 +4840,8 @@ class VirtualNetworkClient(object):
                 response_type="DhcpOptions",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4679,7 +4851,8 @@ class VirtualNetworkClient(object):
                 response_type="DhcpOptions",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_drg(self, create_drg_details, **kwargs):
         """
@@ -4730,6 +4903,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_drg.py.html>`__ to see an example of how to use create_drg API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/drgs"
         method = "POST"
         operation_name = "create_drg"
@@ -4772,7 +4947,8 @@ class VirtualNetworkClient(object):
                 response_type="Drg",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4782,7 +4958,8 @@ class VirtualNetworkClient(object):
                 response_type="Drg",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_drg_attachment(self, create_drg_attachment_details, **kwargs):
         """
@@ -4831,6 +5008,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_drg_attachment.py.html>`__ to see an example of how to use create_drg_attachment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/drgAttachments"
         method = "POST"
         operation_name = "create_drg_attachment"
@@ -4873,7 +5052,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4883,7 +5063,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_drg_route_distribution(self, create_drg_route_distribution_details, **kwargs):
         """
@@ -4921,6 +5102,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_drg_route_distribution.py.html>`__ to see an example of how to use create_drg_route_distribution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/drgRouteDistributions"
         method = "POST"
         operation_name = "create_drg_route_distribution"
@@ -4963,7 +5146,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgRouteDistribution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4973,7 +5157,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgRouteDistribution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_drg_route_table(self, create_drg_route_table_details, **kwargs):
         """
@@ -5009,6 +5194,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_drg_route_table.py.html>`__ to see an example of how to use create_drg_route_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/drgRouteTables"
         method = "POST"
         operation_name = "create_drg_route_table"
@@ -5051,7 +5238,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgRouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5061,7 +5249,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgRouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_internet_gateway(self, create_internet_gateway_details, **kwargs):
         """
@@ -5119,6 +5308,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_internet_gateway.py.html>`__ to see an example of how to use create_internet_gateway API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/internetGateways"
         method = "POST"
         operation_name = "create_internet_gateway"
@@ -5161,7 +5352,8 @@ class VirtualNetworkClient(object):
                 response_type="InternetGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5171,7 +5363,8 @@ class VirtualNetworkClient(object):
                 response_type="InternetGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_ip_sec_connection(self, create_ip_sec_connection_details, **kwargs):
         """
@@ -5238,6 +5431,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_ip_sec_connection.py.html>`__ to see an example of how to use create_ip_sec_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/ipsecConnections"
         method = "POST"
         operation_name = "create_ip_sec_connection"
@@ -5282,7 +5477,8 @@ class VirtualNetworkClient(object):
                 response_type="IPSecConnection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5292,7 +5488,8 @@ class VirtualNetworkClient(object):
                 response_type="IPSecConnection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_ipv6(self, create_ipv6_details, **kwargs):
         """
@@ -5331,6 +5528,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_ipv6.py.html>`__ to see an example of how to use create_ipv6 API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/ipv6"
         method = "POST"
         operation_name = "create_ipv6"
@@ -5375,7 +5574,8 @@ class VirtualNetworkClient(object):
                 response_type="Ipv6",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5385,7 +5585,8 @@ class VirtualNetworkClient(object):
                 response_type="Ipv6",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_local_peering_gateway(self, create_local_peering_gateway_details, **kwargs):
         """
@@ -5420,6 +5621,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_local_peering_gateway.py.html>`__ to see an example of how to use create_local_peering_gateway API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/localPeeringGateways"
         method = "POST"
         operation_name = "create_local_peering_gateway"
@@ -5462,7 +5665,8 @@ class VirtualNetworkClient(object):
                 response_type="LocalPeeringGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5472,7 +5676,8 @@ class VirtualNetworkClient(object):
                 response_type="LocalPeeringGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_nat_gateway(self, create_nat_gateway_details, **kwargs):
         """
@@ -5508,6 +5713,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_nat_gateway.py.html>`__ to see an example of how to use create_nat_gateway API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/natGateways"
         method = "POST"
         operation_name = "create_nat_gateway"
@@ -5550,7 +5757,8 @@ class VirtualNetworkClient(object):
                 response_type="NatGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5560,7 +5768,8 @@ class VirtualNetworkClient(object):
                 response_type="NatGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_network_security_group(self, create_network_security_group_details, **kwargs):
         """
@@ -5595,6 +5804,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_network_security_group.py.html>`__ to see an example of how to use create_network_security_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/networkSecurityGroups"
         method = "POST"
         operation_name = "create_network_security_group"
@@ -5637,7 +5848,8 @@ class VirtualNetworkClient(object):
                 response_type="NetworkSecurityGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5647,7 +5859,8 @@ class VirtualNetworkClient(object):
                 response_type="NetworkSecurityGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_private_ip(self, create_private_ip_details, **kwargs):
         """
@@ -5686,6 +5899,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_private_ip.py.html>`__ to see an example of how to use create_private_ip API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/privateIps"
         method = "POST"
         operation_name = "create_private_ip"
@@ -5728,7 +5943,8 @@ class VirtualNetworkClient(object):
                 response_type="PrivateIp",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5738,7 +5954,8 @@ class VirtualNetworkClient(object):
                 response_type="PrivateIp",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_public_ip(self, create_public_ip_details, **kwargs):
         """
@@ -5796,6 +6013,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_public_ip.py.html>`__ to see an example of how to use create_public_ip API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/publicIps"
         method = "POST"
         operation_name = "create_public_ip"
@@ -5838,7 +6057,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIp",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5848,7 +6068,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIp",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_public_ip_pool(self, create_public_ip_pool_details, **kwargs):
         """
@@ -5887,6 +6108,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_public_ip_pool.py.html>`__ to see an example of how to use create_public_ip_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/publicIpPools"
         method = "POST"
         operation_name = "create_public_ip_pool"
@@ -5931,7 +6154,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIpPool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5941,7 +6165,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIpPool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_remote_peering_connection(self, create_remote_peering_connection_details, **kwargs):
         """
@@ -5976,6 +6201,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_remote_peering_connection.py.html>`__ to see an example of how to use create_remote_peering_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/remotePeeringConnections"
         method = "POST"
         operation_name = "create_remote_peering_connection"
@@ -6020,7 +6247,8 @@ class VirtualNetworkClient(object):
                 response_type="RemotePeeringConnection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6030,7 +6258,8 @@ class VirtualNetworkClient(object):
                 response_type="RemotePeeringConnection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_route_table(self, create_route_table_details, **kwargs):
         """
@@ -6085,6 +6314,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_route_table.py.html>`__ to see an example of how to use create_route_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/routeTables"
         method = "POST"
         operation_name = "create_route_table"
@@ -6127,7 +6358,8 @@ class VirtualNetworkClient(object):
                 response_type="RouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6137,7 +6369,8 @@ class VirtualNetworkClient(object):
                 response_type="RouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_security_list(self, create_security_list_details, **kwargs):
         """
@@ -6191,6 +6424,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_security_list.py.html>`__ to see an example of how to use create_security_list API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/securityLists"
         method = "POST"
         operation_name = "create_security_list"
@@ -6233,7 +6468,8 @@ class VirtualNetworkClient(object):
                 response_type="SecurityList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6243,7 +6479,8 @@ class VirtualNetworkClient(object):
                 response_type="SecurityList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_service_gateway(self, create_service_gateway_details, **kwargs):
         """
@@ -6290,6 +6527,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_service_gateway.py.html>`__ to see an example of how to use create_service_gateway API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/serviceGateways"
         method = "POST"
         operation_name = "create_service_gateway"
@@ -6332,7 +6571,8 @@ class VirtualNetworkClient(object):
                 response_type="ServiceGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6342,7 +6582,8 @@ class VirtualNetworkClient(object):
                 response_type="ServiceGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_subnet(self, create_subnet_details, **kwargs):
         """
@@ -6417,6 +6658,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_subnet.py.html>`__ to see an example of how to use create_subnet API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/subnets"
         method = "POST"
         operation_name = "create_subnet"
@@ -6459,7 +6702,8 @@ class VirtualNetworkClient(object):
                 response_type="Subnet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6469,7 +6713,8 @@ class VirtualNetworkClient(object):
                 response_type="Subnet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_vcn(self, create_vcn_details, **kwargs):
         """
@@ -6545,6 +6790,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_vcn.py.html>`__ to see an example of how to use create_vcn API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/vcns"
         method = "POST"
         operation_name = "create_vcn"
@@ -6587,7 +6834,8 @@ class VirtualNetworkClient(object):
                 response_type="Vcn",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6597,7 +6845,8 @@ class VirtualNetworkClient(object):
                 response_type="Vcn",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_virtual_circuit(self, create_virtual_circuit_details, **kwargs):
         """
@@ -6658,6 +6907,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_virtual_circuit.py.html>`__ to see an example of how to use create_virtual_circuit API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/virtualCircuits"
         method = "POST"
         operation_name = "create_virtual_circuit"
@@ -6702,7 +6953,8 @@ class VirtualNetworkClient(object):
                 response_type="VirtualCircuit",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6712,7 +6964,8 @@ class VirtualNetworkClient(object):
                 response_type="VirtualCircuit",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_vlan(self, create_vlan_details, **kwargs):
         """
@@ -6751,6 +7004,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_vlan.py.html>`__ to see an example of how to use create_vlan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/vlans"
         method = "POST"
         operation_name = "create_vlan"
@@ -6795,7 +7050,8 @@ class VirtualNetworkClient(object):
                 response_type="Vlan",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6805,7 +7061,8 @@ class VirtualNetworkClient(object):
                 response_type="Vlan",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_vtap(self, create_vtap_details, **kwargs):
         """
@@ -6856,6 +7113,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/create_vtap.py.html>`__ to see an example of how to use create_vtap API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/vtaps"
         method = "POST"
         operation_name = "create_vtap"
@@ -6900,7 +7159,8 @@ class VirtualNetworkClient(object):
                 response_type="Vtap",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6910,7 +7170,8 @@ class VirtualNetworkClient(object):
                 response_type="Vtap",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_byoip_range(self, byoip_range_id, **kwargs):
         """
@@ -6955,6 +7216,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_byoip_range.py.html>`__ to see an example of how to use delete_byoip_range API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['byoipRangeId']
         resource_path = "/byoipRanges/{byoipRangeId}"
         method = "DELETE"
         operation_name = "delete_byoip_range"
@@ -7007,7 +7270,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7016,7 +7280,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_capture_filter(self, capture_filter_id, **kwargs):
         """
@@ -7056,6 +7321,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_capture_filter.py.html>`__ to see an example of how to use delete_capture_filter API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['captureFilterId']
         resource_path = "/captureFilters/{captureFilterId}"
         method = "DELETE"
         operation_name = "delete_capture_filter"
@@ -7108,7 +7375,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7117,7 +7385,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_cpe(self, cpe_id, **kwargs):
         """
@@ -7154,6 +7423,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_cpe.py.html>`__ to see an example of how to use delete_cpe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cpeId']
         resource_path = "/cpes/{cpeId}"
         method = "DELETE"
         operation_name = "delete_cpe"
@@ -7206,7 +7477,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7215,7 +7487,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_cross_connect(self, cross_connect_id, **kwargs):
         """
@@ -7251,6 +7524,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_cross_connect.py.html>`__ to see an example of how to use delete_cross_connect API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['crossConnectId']
         resource_path = "/crossConnects/{crossConnectId}"
         method = "DELETE"
         operation_name = "delete_cross_connect"
@@ -7303,7 +7578,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7312,7 +7588,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_cross_connect_group(self, cross_connect_group_id, **kwargs):
         """
@@ -7349,6 +7626,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_cross_connect_group.py.html>`__ to see an example of how to use delete_cross_connect_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['crossConnectGroupId']
         resource_path = "/crossConnectGroups/{crossConnectGroupId}"
         method = "DELETE"
         operation_name = "delete_cross_connect_group"
@@ -7401,7 +7680,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7410,7 +7690,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_dhcp_options(self, dhcp_id, **kwargs):
         """
@@ -7449,6 +7730,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_dhcp_options.py.html>`__ to see an example of how to use delete_dhcp_options API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dhcpId']
         resource_path = "/dhcps/{dhcpId}"
         method = "DELETE"
         operation_name = "delete_dhcp_options"
@@ -7499,7 +7782,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7508,7 +7792,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_drg(self, drg_id, **kwargs):
         """
@@ -7546,6 +7831,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_drg.py.html>`__ to see an example of how to use delete_drg API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgId']
         resource_path = "/drgs/{drgId}"
         method = "DELETE"
         operation_name = "delete_drg"
@@ -7596,7 +7883,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7605,7 +7893,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_drg_attachment(self, drg_attachment_id, **kwargs):
         """
@@ -7642,6 +7931,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_drg_attachment.py.html>`__ to see an example of how to use delete_drg_attachment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgAttachmentId']
         resource_path = "/drgAttachments/{drgAttachmentId}"
         method = "DELETE"
         operation_name = "delete_drg_attachment"
@@ -7692,7 +7983,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7701,7 +7993,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_drg_route_distribution(self, drg_route_distribution_id, **kwargs):
         """
@@ -7738,6 +8031,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_drg_route_distribution.py.html>`__ to see an example of how to use delete_drg_route_distribution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgRouteDistributionId']
         resource_path = "/drgRouteDistributions/{drgRouteDistributionId}"
         method = "DELETE"
         operation_name = "delete_drg_route_distribution"
@@ -7788,7 +8083,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7797,7 +8093,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_drg_route_table(self, drg_route_table_id, **kwargs):
         """
@@ -7832,6 +8129,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_drg_route_table.py.html>`__ to see an example of how to use delete_drg_route_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgRouteTableId']
         resource_path = "/drgRouteTables/{drgRouteTableId}"
         method = "DELETE"
         operation_name = "delete_drg_route_table"
@@ -7882,7 +8181,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7891,7 +8191,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_internet_gateway(self, ig_id, **kwargs):
         """
@@ -7930,6 +8231,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_internet_gateway.py.html>`__ to see an example of how to use delete_internet_gateway API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['igId']
         resource_path = "/internetGateways/{igId}"
         method = "DELETE"
         operation_name = "delete_internet_gateway"
@@ -7980,7 +8283,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7989,7 +8293,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_ip_sec_connection(self, ipsc_id, **kwargs):
         """
@@ -8031,6 +8336,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_ip_sec_connection.py.html>`__ to see an example of how to use delete_ip_sec_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ipscId']
         resource_path = "/ipsecConnections/{ipscId}"
         method = "DELETE"
         operation_name = "delete_ip_sec_connection"
@@ -8083,7 +8390,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8092,7 +8400,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_ipv6(self, ipv6_id, **kwargs):
         """
@@ -8134,6 +8443,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_ipv6.py.html>`__ to see an example of how to use delete_ipv6 API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ipv6Id']
         resource_path = "/ipv6/{ipv6Id}"
         method = "DELETE"
         operation_name = "delete_ipv6"
@@ -8186,7 +8497,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8195,7 +8507,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_local_peering_gateway(self, local_peering_gateway_id, **kwargs):
         """
@@ -8233,6 +8546,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_local_peering_gateway.py.html>`__ to see an example of how to use delete_local_peering_gateway API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['localPeeringGatewayId']
         resource_path = "/localPeeringGateways/{localPeeringGatewayId}"
         method = "DELETE"
         operation_name = "delete_local_peering_gateway"
@@ -8283,7 +8598,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8292,7 +8608,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_nat_gateway(self, nat_gateway_id, **kwargs):
         """
@@ -8331,6 +8648,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_nat_gateway.py.html>`__ to see an example of how to use delete_nat_gateway API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['natGatewayId']
         resource_path = "/natGateways/{natGatewayId}"
         method = "DELETE"
         operation_name = "delete_nat_gateway"
@@ -8381,7 +8700,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8390,7 +8710,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_network_security_group(self, network_security_group_id, **kwargs):
         """
@@ -8434,6 +8755,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_network_security_group.py.html>`__ to see an example of how to use delete_network_security_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkSecurityGroupId']
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}"
         method = "DELETE"
         operation_name = "delete_network_security_group"
@@ -8484,7 +8807,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8493,7 +8817,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_private_ip(self, private_ip_id, **kwargs):
         """
@@ -8541,6 +8866,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_private_ip.py.html>`__ to see an example of how to use delete_private_ip API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateIpId']
         resource_path = "/privateIps/{privateIpId}"
         method = "DELETE"
         operation_name = "delete_private_ip"
@@ -8591,7 +8918,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8600,7 +8928,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_public_ip(self, public_ip_id, **kwargs):
         """
@@ -8651,6 +8980,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_public_ip.py.html>`__ to see an example of how to use delete_public_ip API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['publicIpId']
         resource_path = "/publicIps/{publicIpId}"
         method = "DELETE"
         operation_name = "delete_public_ip"
@@ -8701,7 +9032,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8710,7 +9042,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_public_ip_pool(self, public_ip_pool_id, **kwargs):
         """
@@ -8753,6 +9086,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_public_ip_pool.py.html>`__ to see an example of how to use delete_public_ip_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['publicIpPoolId']
         resource_path = "/publicIpPools/{publicIpPoolId}"
         method = "DELETE"
         operation_name = "delete_public_ip_pool"
@@ -8805,7 +9140,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8814,7 +9150,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_remote_peering_connection(self, remote_peering_connection_id, **kwargs):
         """
@@ -8852,6 +9189,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_remote_peering_connection.py.html>`__ to see an example of how to use delete_remote_peering_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['remotePeeringConnectionId']
         resource_path = "/remotePeeringConnections/{remotePeeringConnectionId}"
         method = "DELETE"
         operation_name = "delete_remote_peering_connection"
@@ -8904,7 +9243,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8913,7 +9253,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_route_table(self, rt_id, **kwargs):
         """
@@ -8952,6 +9293,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_route_table.py.html>`__ to see an example of how to use delete_route_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['rtId']
         resource_path = "/routeTables/{rtId}"
         method = "DELETE"
         operation_name = "delete_route_table"
@@ -9002,7 +9345,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9011,7 +9355,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_security_list(self, security_list_id, **kwargs):
         """
@@ -9050,6 +9395,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_security_list.py.html>`__ to see an example of how to use delete_security_list API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityListId']
         resource_path = "/securityLists/{securityListId}"
         method = "DELETE"
         operation_name = "delete_security_list"
@@ -9100,7 +9447,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9109,7 +9457,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_service_gateway(self, service_gateway_id, **kwargs):
         """
@@ -9145,6 +9494,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_service_gateway.py.html>`__ to see an example of how to use delete_service_gateway API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['serviceGatewayId']
         resource_path = "/serviceGateways/{serviceGatewayId}"
         method = "DELETE"
         operation_name = "delete_service_gateway"
@@ -9195,7 +9546,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9204,7 +9556,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_subnet(self, subnet_id, **kwargs):
         """
@@ -9241,6 +9594,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_subnet.py.html>`__ to see an example of how to use delete_subnet API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subnetId']
         resource_path = "/subnets/{subnetId}"
         method = "DELETE"
         operation_name = "delete_subnet"
@@ -9291,7 +9646,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9300,7 +9656,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_vcn(self, vcn_id, **kwargs):
         """
@@ -9340,6 +9697,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_vcn.py.html>`__ to see an example of how to use delete_vcn API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vcnId']
         resource_path = "/vcns/{vcnId}"
         method = "DELETE"
         operation_name = "delete_vcn"
@@ -9390,7 +9749,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9399,7 +9759,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_virtual_circuit(self, virtual_circuit_id, **kwargs):
         """
@@ -9438,6 +9799,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_virtual_circuit.py.html>`__ to see an example of how to use delete_virtual_circuit API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualCircuitId']
         resource_path = "/virtualCircuits/{virtualCircuitId}"
         method = "DELETE"
         operation_name = "delete_virtual_circuit"
@@ -9490,7 +9853,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9499,7 +9863,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_vlan(self, vlan_id, **kwargs):
         """
@@ -9538,6 +9903,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_vlan.py.html>`__ to see an example of how to use delete_vlan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vlanId']
         resource_path = "/vlans/{vlanId}"
         method = "DELETE"
         operation_name = "delete_vlan"
@@ -9590,7 +9957,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9599,7 +9967,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_vtap(self, vtap_id, **kwargs):
         """
@@ -9639,6 +10008,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/delete_vtap.py.html>`__ to see an example of how to use delete_vtap API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vtapId']
         resource_path = "/vtaps/{vtapId}"
         method = "DELETE"
         operation_name = "delete_vtap"
@@ -9691,7 +10062,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9700,7 +10072,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def detach_service_id(self, service_gateway_id, detach_service_details, **kwargs):
         """
@@ -9749,6 +10122,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/detach_service_id.py.html>`__ to see an example of how to use detach_service_id API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['serviceGatewayId']
         resource_path = "/serviceGateways/{serviceGatewayId}/actions/detachService"
         method = "POST"
         operation_name = "detach_service_id"
@@ -9801,7 +10176,8 @@ class VirtualNetworkClient(object):
                 response_type="ServiceGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9812,7 +10188,8 @@ class VirtualNetworkClient(object):
                 response_type="ServiceGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_all_drg_attachments(self, drg_id, **kwargs):
         """
@@ -9870,6 +10247,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_all_drg_attachments.py.html>`__ to see an example of how to use get_all_drg_attachments API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgId']
         resource_path = "/drgs/{drgId}/actions/getAllDrgAttachments"
         method = "POST"
         operation_name = "get_all_drg_attachments"
@@ -9941,7 +10320,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DrgAttachmentInfo]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9952,7 +10332,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DrgAttachmentInfo]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_allowed_ike_ip_sec_parameters(self, **kwargs):
         """
@@ -9981,6 +10362,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_allowed_ike_ip_sec_parameters.py.html>`__ to see an example of how to use get_allowed_ike_ip_sec_parameters API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/ipsecAlgorithms"
         method = "GET"
         operation_name = "get_allowed_ike_ip_sec_parameters"
@@ -10023,7 +10406,8 @@ class VirtualNetworkClient(object):
                 response_type="AllowedIkeIPSecParameters",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10032,7 +10416,8 @@ class VirtualNetworkClient(object):
                 response_type="AllowedIkeIPSecParameters",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_byoip_range(self, byoip_range_id, **kwargs):
         """
@@ -10068,6 +10453,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_byoip_range.py.html>`__ to see an example of how to use get_byoip_range API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['byoipRangeId']
         resource_path = "/byoipRanges/{byoipRangeId}"
         method = "GET"
         operation_name = "get_byoip_range"
@@ -10119,7 +10506,8 @@ class VirtualNetworkClient(object):
                 response_type="ByoipRange",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10129,7 +10517,8 @@ class VirtualNetworkClient(object):
                 response_type="ByoipRange",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_capture_filter(self, capture_filter_id, **kwargs):
         """
@@ -10163,6 +10552,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_capture_filter.py.html>`__ to see an example of how to use get_capture_filter API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['captureFilterId']
         resource_path = "/captureFilters/{captureFilterId}"
         method = "GET"
         operation_name = "get_capture_filter"
@@ -10214,7 +10605,8 @@ class VirtualNetworkClient(object):
                 response_type="CaptureFilter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10224,7 +10616,8 @@ class VirtualNetworkClient(object):
                 response_type="CaptureFilter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_cpe(self, cpe_id, **kwargs):
         """
@@ -10254,6 +10647,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_cpe.py.html>`__ to see an example of how to use get_cpe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cpeId']
         resource_path = "/cpes/{cpeId}"
         method = "GET"
         operation_name = "get_cpe"
@@ -10300,7 +10695,8 @@ class VirtualNetworkClient(object):
                 response_type="Cpe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10310,7 +10706,8 @@ class VirtualNetworkClient(object):
                 response_type="Cpe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_cpe_device_config_content(self, cpe_id, **kwargs):
         """
@@ -10361,6 +10758,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_cpe_device_config_content.py.html>`__ to see an example of how to use get_cpe_device_config_content API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cpeId']
         resource_path = "/cpes/{cpeId}/cpeConfigContent"
         method = "GET"
         operation_name = "get_cpe_device_config_content"
@@ -10414,7 +10813,8 @@ class VirtualNetworkClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10424,7 +10824,8 @@ class VirtualNetworkClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_cpe_device_shape(self, cpe_device_shape_id, **kwargs):
         """
@@ -10466,6 +10867,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_cpe_device_shape.py.html>`__ to see an example of how to use get_cpe_device_shape API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cpeDeviceShapeId']
         resource_path = "/cpeDeviceShapes/{cpeDeviceShapeId}"
         method = "GET"
         operation_name = "get_cpe_device_shape"
@@ -10519,7 +10922,8 @@ class VirtualNetworkClient(object):
                 response_type="CpeDeviceShapeDetail",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10529,7 +10933,8 @@ class VirtualNetworkClient(object):
                 response_type="CpeDeviceShapeDetail",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_cross_connect(self, cross_connect_id, **kwargs):
         """
@@ -10559,6 +10964,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_cross_connect.py.html>`__ to see an example of how to use get_cross_connect API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['crossConnectId']
         resource_path = "/crossConnects/{crossConnectId}"
         method = "GET"
         operation_name = "get_cross_connect"
@@ -10605,7 +11012,8 @@ class VirtualNetworkClient(object):
                 response_type="CrossConnect",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10615,7 +11023,8 @@ class VirtualNetworkClient(object):
                 response_type="CrossConnect",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_cross_connect_group(self, cross_connect_group_id, **kwargs):
         """
@@ -10645,6 +11054,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_cross_connect_group.py.html>`__ to see an example of how to use get_cross_connect_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['crossConnectGroupId']
         resource_path = "/crossConnectGroups/{crossConnectGroupId}"
         method = "GET"
         operation_name = "get_cross_connect_group"
@@ -10691,7 +11102,8 @@ class VirtualNetworkClient(object):
                 response_type="CrossConnectGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10701,7 +11113,8 @@ class VirtualNetworkClient(object):
                 response_type="CrossConnectGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_cross_connect_letter_of_authority(self, cross_connect_id, **kwargs):
         """
@@ -10731,6 +11144,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_cross_connect_letter_of_authority.py.html>`__ to see an example of how to use get_cross_connect_letter_of_authority API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['crossConnectId']
         resource_path = "/crossConnects/{crossConnectId}/letterOfAuthority"
         method = "GET"
         operation_name = "get_cross_connect_letter_of_authority"
@@ -10777,7 +11192,8 @@ class VirtualNetworkClient(object):
                 response_type="LetterOfAuthority",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10787,7 +11203,8 @@ class VirtualNetworkClient(object):
                 response_type="LetterOfAuthority",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_cross_connect_status(self, cross_connect_id, **kwargs):
         """
@@ -10817,6 +11234,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_cross_connect_status.py.html>`__ to see an example of how to use get_cross_connect_status API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['crossConnectId']
         resource_path = "/crossConnects/{crossConnectId}/status"
         method = "GET"
         operation_name = "get_cross_connect_status"
@@ -10863,7 +11282,8 @@ class VirtualNetworkClient(object):
                 response_type="CrossConnectStatus",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10873,7 +11293,8 @@ class VirtualNetworkClient(object):
                 response_type="CrossConnectStatus",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_dhcp_options(self, dhcp_id, **kwargs):
         """
@@ -10903,6 +11324,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_dhcp_options.py.html>`__ to see an example of how to use get_dhcp_options API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dhcpId']
         resource_path = "/dhcps/{dhcpId}"
         method = "GET"
         operation_name = "get_dhcp_options"
@@ -10947,7 +11370,8 @@ class VirtualNetworkClient(object):
                 response_type="DhcpOptions",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10957,7 +11381,8 @@ class VirtualNetworkClient(object):
                 response_type="DhcpOptions",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_drg(self, drg_id, **kwargs):
         """
@@ -10987,6 +11412,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_drg.py.html>`__ to see an example of how to use get_drg API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgId']
         resource_path = "/drgs/{drgId}"
         method = "GET"
         operation_name = "get_drg"
@@ -11031,7 +11458,8 @@ class VirtualNetworkClient(object):
                 response_type="Drg",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11041,7 +11469,8 @@ class VirtualNetworkClient(object):
                 response_type="Drg",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_drg_attachment(self, drg_attachment_id, **kwargs):
         """
@@ -11071,6 +11500,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_drg_attachment.py.html>`__ to see an example of how to use get_drg_attachment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgAttachmentId']
         resource_path = "/drgAttachments/{drgAttachmentId}"
         method = "GET"
         operation_name = "get_drg_attachment"
@@ -11115,7 +11546,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11125,7 +11557,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_drg_redundancy_status(self, drg_id, **kwargs):
         """
@@ -11162,6 +11595,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_drg_redundancy_status.py.html>`__ to see an example of how to use get_drg_redundancy_status API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgId']
         resource_path = "/drgs/{drgId}/redundancyStatus"
         method = "GET"
         operation_name = "get_drg_redundancy_status"
@@ -11215,7 +11650,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgRedundancyStatus",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11225,7 +11661,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgRedundancyStatus",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_drg_route_distribution(self, drg_route_distribution_id, **kwargs):
         """
@@ -11255,6 +11692,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_drg_route_distribution.py.html>`__ to see an example of how to use get_drg_route_distribution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgRouteDistributionId']
         resource_path = "/drgRouteDistributions/{drgRouteDistributionId}"
         method = "GET"
         operation_name = "get_drg_route_distribution"
@@ -11299,7 +11738,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgRouteDistribution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11309,7 +11749,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgRouteDistribution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_drg_route_table(self, drg_route_table_id, **kwargs):
         """
@@ -11339,6 +11780,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_drg_route_table.py.html>`__ to see an example of how to use get_drg_route_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgRouteTableId']
         resource_path = "/drgRouteTables/{drgRouteTableId}"
         method = "GET"
         operation_name = "get_drg_route_table"
@@ -11383,7 +11826,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgRouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11393,7 +11837,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgRouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_fast_connect_provider_service(self, provider_service_id, **kwargs):
         """
@@ -11426,6 +11871,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_fast_connect_provider_service.py.html>`__ to see an example of how to use get_fast_connect_provider_service API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['providerServiceId']
         resource_path = "/fastConnectProviderServices/{providerServiceId}"
         method = "GET"
         operation_name = "get_fast_connect_provider_service"
@@ -11472,7 +11919,8 @@ class VirtualNetworkClient(object):
                 response_type="FastConnectProviderService",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11482,7 +11930,8 @@ class VirtualNetworkClient(object):
                 response_type="FastConnectProviderService",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_fast_connect_provider_service_key(self, provider_service_id, provider_service_key_name, **kwargs):
         """
@@ -11519,6 +11968,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_fast_connect_provider_service_key.py.html>`__ to see an example of how to use get_fast_connect_provider_service_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['providerServiceId', 'providerServiceKeyName']
         resource_path = "/fastConnectProviderServices/{providerServiceId}/providerServiceKeys/{providerServiceKeyName}"
         method = "GET"
         operation_name = "get_fast_connect_provider_service_key"
@@ -11566,7 +12017,8 @@ class VirtualNetworkClient(object):
                 response_type="FastConnectProviderServiceKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11576,7 +12028,8 @@ class VirtualNetworkClient(object):
                 response_type="FastConnectProviderServiceKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_internet_gateway(self, ig_id, **kwargs):
         """
@@ -11606,6 +12059,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_internet_gateway.py.html>`__ to see an example of how to use get_internet_gateway API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['igId']
         resource_path = "/internetGateways/{igId}"
         method = "GET"
         operation_name = "get_internet_gateway"
@@ -11650,7 +12105,8 @@ class VirtualNetworkClient(object):
                 response_type="InternetGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11660,7 +12116,8 @@ class VirtualNetworkClient(object):
                 response_type="InternetGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_ip_sec_connection(self, ipsc_id, **kwargs):
         """
@@ -11692,6 +12149,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_ip_sec_connection.py.html>`__ to see an example of how to use get_ip_sec_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ipscId']
         resource_path = "/ipsecConnections/{ipscId}"
         method = "GET"
         operation_name = "get_ip_sec_connection"
@@ -11738,7 +12197,8 @@ class VirtualNetworkClient(object):
                 response_type="IPSecConnection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11748,7 +12208,8 @@ class VirtualNetworkClient(object):
                 response_type="IPSecConnection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_ip_sec_connection_device_config(self, ipsc_id, **kwargs):
         """
@@ -11781,6 +12242,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_ip_sec_connection_device_config.py.html>`__ to see an example of how to use get_ip_sec_connection_device_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ipscId']
         resource_path = "/ipsecConnections/{ipscId}/deviceConfig"
         method = "GET"
         operation_name = "get_ip_sec_connection_device_config"
@@ -11827,7 +12290,8 @@ class VirtualNetworkClient(object):
                 response_type="IPSecConnectionDeviceConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11837,7 +12301,8 @@ class VirtualNetworkClient(object):
                 response_type="IPSecConnectionDeviceConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_ip_sec_connection_device_status(self, ipsc_id, **kwargs):
         """
@@ -11868,6 +12333,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_ip_sec_connection_device_status.py.html>`__ to see an example of how to use get_ip_sec_connection_device_status API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ipscId']
         resource_path = "/ipsecConnections/{ipscId}/deviceStatus"
         method = "GET"
         operation_name = "get_ip_sec_connection_device_status"
@@ -11914,7 +12381,8 @@ class VirtualNetworkClient(object):
                 response_type="IPSecConnectionDeviceStatus",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11924,7 +12392,8 @@ class VirtualNetworkClient(object):
                 response_type="IPSecConnectionDeviceStatus",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_ip_sec_connection_tunnel(self, ipsc_id, tunnel_id, **kwargs):
         """
@@ -11961,6 +12430,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_ip_sec_connection_tunnel.py.html>`__ to see an example of how to use get_ip_sec_connection_tunnel API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ipscId', 'tunnelId']
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}"
         method = "GET"
         operation_name = "get_ip_sec_connection_tunnel"
@@ -12008,7 +12479,8 @@ class VirtualNetworkClient(object):
                 response_type="IPSecConnectionTunnel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12018,7 +12490,8 @@ class VirtualNetworkClient(object):
                 response_type="IPSecConnectionTunnel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_ip_sec_connection_tunnel_error(self, ipsc_id, tunnel_id, **kwargs):
         """
@@ -12053,6 +12526,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_ip_sec_connection_tunnel_error.py.html>`__ to see an example of how to use get_ip_sec_connection_tunnel_error API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ipscId', 'tunnelId']
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/error"
         method = "GET"
         operation_name = "get_ip_sec_connection_tunnel_error"
@@ -12100,7 +12575,8 @@ class VirtualNetworkClient(object):
                 response_type="IPSecConnectionTunnelErrorDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12110,7 +12586,8 @@ class VirtualNetworkClient(object):
                 response_type="IPSecConnectionTunnelErrorDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_ip_sec_connection_tunnel_shared_secret(self, ipsc_id, tunnel_id, **kwargs):
         """
@@ -12146,6 +12623,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_ip_sec_connection_tunnel_shared_secret.py.html>`__ to see an example of how to use get_ip_sec_connection_tunnel_shared_secret API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ipscId', 'tunnelId']
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/sharedSecret"
         method = "GET"
         operation_name = "get_ip_sec_connection_tunnel_shared_secret"
@@ -12193,7 +12672,8 @@ class VirtualNetworkClient(object):
                 response_type="IPSecConnectionTunnelSharedSecret",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12203,7 +12683,8 @@ class VirtualNetworkClient(object):
                 response_type="IPSecConnectionTunnelSharedSecret",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_ipsec_cpe_device_config_content(self, ipsc_id, **kwargs):
         """
@@ -12255,6 +12736,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_ipsec_cpe_device_config_content.py.html>`__ to see an example of how to use get_ipsec_cpe_device_config_content API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ipscId']
         resource_path = "/ipsecConnections/{ipscId}/cpeConfigContent"
         method = "GET"
         operation_name = "get_ipsec_cpe_device_config_content"
@@ -12308,7 +12791,8 @@ class VirtualNetworkClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12318,7 +12802,8 @@ class VirtualNetworkClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_ipv6(self, ipv6_id, **kwargs):
         """
@@ -12358,6 +12843,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_ipv6.py.html>`__ to see an example of how to use get_ipv6 API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ipv6Id']
         resource_path = "/ipv6/{ipv6Id}"
         method = "GET"
         operation_name = "get_ipv6"
@@ -12409,7 +12896,8 @@ class VirtualNetworkClient(object):
                 response_type="Ipv6",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12419,7 +12907,8 @@ class VirtualNetworkClient(object):
                 response_type="Ipv6",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_local_peering_gateway(self, local_peering_gateway_id, **kwargs):
         """
@@ -12449,6 +12938,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_local_peering_gateway.py.html>`__ to see an example of how to use get_local_peering_gateway API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['localPeeringGatewayId']
         resource_path = "/localPeeringGateways/{localPeeringGatewayId}"
         method = "GET"
         operation_name = "get_local_peering_gateway"
@@ -12493,7 +12984,8 @@ class VirtualNetworkClient(object):
                 response_type="LocalPeeringGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12503,7 +12995,8 @@ class VirtualNetworkClient(object):
                 response_type="LocalPeeringGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_nat_gateway(self, nat_gateway_id, **kwargs):
         """
@@ -12533,6 +13026,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_nat_gateway.py.html>`__ to see an example of how to use get_nat_gateway API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['natGatewayId']
         resource_path = "/natGateways/{natGatewayId}"
         method = "GET"
         operation_name = "get_nat_gateway"
@@ -12577,7 +13072,8 @@ class VirtualNetworkClient(object):
                 response_type="NatGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12587,7 +13083,8 @@ class VirtualNetworkClient(object):
                 response_type="NatGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_network_security_group(self, network_security_group_id, **kwargs):
         """
@@ -12623,6 +13120,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_network_security_group.py.html>`__ to see an example of how to use get_network_security_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkSecurityGroupId']
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}"
         method = "GET"
         operation_name = "get_network_security_group"
@@ -12667,7 +13166,8 @@ class VirtualNetworkClient(object):
                 response_type="NetworkSecurityGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12677,7 +13177,8 @@ class VirtualNetworkClient(object):
                 response_type="NetworkSecurityGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_networking_topology(self, compartment_id, **kwargs):
         """
@@ -12739,6 +13240,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_networking_topology.py.html>`__ to see an example of how to use get_networking_topology API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/networkingTopology"
         method = "GET"
         operation_name = "get_networking_topology"
@@ -12800,7 +13303,8 @@ class VirtualNetworkClient(object):
                 response_type="NetworkingTopology",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12810,7 +13314,8 @@ class VirtualNetworkClient(object):
                 response_type="NetworkingTopology",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_private_ip(self, private_ip_id, **kwargs):
         """
@@ -12846,6 +13351,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_private_ip.py.html>`__ to see an example of how to use get_private_ip API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateIpId']
         resource_path = "/privateIps/{privateIpId}"
         method = "GET"
         operation_name = "get_private_ip"
@@ -12890,7 +13397,8 @@ class VirtualNetworkClient(object):
                 response_type="PrivateIp",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12900,7 +13408,8 @@ class VirtualNetworkClient(object):
                 response_type="PrivateIp",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_public_ip(self, public_ip_id, **kwargs):
         """
@@ -12944,6 +13453,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_public_ip.py.html>`__ to see an example of how to use get_public_ip API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['publicIpId']
         resource_path = "/publicIps/{publicIpId}"
         method = "GET"
         operation_name = "get_public_ip"
@@ -12988,7 +13499,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIp",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12998,7 +13510,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIp",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_public_ip_by_ip_address(self, get_public_ip_by_ip_address_details, **kwargs):
         """
@@ -13032,6 +13545,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_public_ip_by_ip_address.py.html>`__ to see an example of how to use get_public_ip_by_ip_address API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/publicIps/actions/getByIpAddress"
         method = "POST"
         operation_name = "get_public_ip_by_ip_address"
@@ -13066,7 +13581,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIp",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13076,7 +13592,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIp",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_public_ip_by_private_ip_id(self, get_public_ip_by_private_ip_id_details, **kwargs):
         """
@@ -13118,6 +13635,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_public_ip_by_private_ip_id.py.html>`__ to see an example of how to use get_public_ip_by_private_ip_id API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/publicIps/actions/getByPrivateIpId"
         method = "POST"
         operation_name = "get_public_ip_by_private_ip_id"
@@ -13152,7 +13671,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIp",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13162,7 +13682,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIp",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_public_ip_pool(self, public_ip_pool_id, **kwargs):
         """
@@ -13198,6 +13719,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_public_ip_pool.py.html>`__ to see an example of how to use get_public_ip_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['publicIpPoolId']
         resource_path = "/publicIpPools/{publicIpPoolId}"
         method = "GET"
         operation_name = "get_public_ip_pool"
@@ -13249,7 +13772,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIpPool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13259,7 +13783,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIpPool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_remote_peering_connection(self, remote_peering_connection_id, **kwargs):
         """
@@ -13289,6 +13814,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_remote_peering_connection.py.html>`__ to see an example of how to use get_remote_peering_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['remotePeeringConnectionId']
         resource_path = "/remotePeeringConnections/{remotePeeringConnectionId}"
         method = "GET"
         operation_name = "get_remote_peering_connection"
@@ -13335,7 +13862,8 @@ class VirtualNetworkClient(object):
                 response_type="RemotePeeringConnection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13345,7 +13873,8 @@ class VirtualNetworkClient(object):
                 response_type="RemotePeeringConnection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_route_table(self, rt_id, **kwargs):
         """
@@ -13375,6 +13904,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_route_table.py.html>`__ to see an example of how to use get_route_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['rtId']
         resource_path = "/routeTables/{rtId}"
         method = "GET"
         operation_name = "get_route_table"
@@ -13419,7 +13950,8 @@ class VirtualNetworkClient(object):
                 response_type="RouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13429,7 +13961,8 @@ class VirtualNetworkClient(object):
                 response_type="RouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_security_list(self, security_list_id, **kwargs):
         """
@@ -13459,6 +13992,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_security_list.py.html>`__ to see an example of how to use get_security_list API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityListId']
         resource_path = "/securityLists/{securityListId}"
         method = "GET"
         operation_name = "get_security_list"
@@ -13503,7 +14038,8 @@ class VirtualNetworkClient(object):
                 response_type="SecurityList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13513,7 +14049,8 @@ class VirtualNetworkClient(object):
                 response_type="SecurityList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_service(self, service_id, **kwargs):
         """
@@ -13543,6 +14080,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_service.py.html>`__ to see an example of how to use get_service API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['serviceId']
         resource_path = "/services/{serviceId}"
         method = "GET"
         operation_name = "get_service"
@@ -13587,7 +14126,8 @@ class VirtualNetworkClient(object):
                 response_type="Service",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13597,7 +14137,8 @@ class VirtualNetworkClient(object):
                 response_type="Service",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_service_gateway(self, service_gateway_id, **kwargs):
         """
@@ -13627,6 +14168,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_service_gateway.py.html>`__ to see an example of how to use get_service_gateway API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['serviceGatewayId']
         resource_path = "/serviceGateways/{serviceGatewayId}"
         method = "GET"
         operation_name = "get_service_gateway"
@@ -13671,7 +14214,8 @@ class VirtualNetworkClient(object):
                 response_type="ServiceGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13681,7 +14225,8 @@ class VirtualNetworkClient(object):
                 response_type="ServiceGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_subnet(self, subnet_id, **kwargs):
         """
@@ -13711,6 +14256,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_subnet.py.html>`__ to see an example of how to use get_subnet API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subnetId']
         resource_path = "/subnets/{subnetId}"
         method = "GET"
         operation_name = "get_subnet"
@@ -13755,7 +14302,8 @@ class VirtualNetworkClient(object):
                 response_type="Subnet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13765,7 +14313,8 @@ class VirtualNetworkClient(object):
                 response_type="Subnet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_subnet_topology(self, compartment_id, subnet_id, **kwargs):
         """
@@ -13832,6 +14381,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_subnet_topology.py.html>`__ to see an example of how to use get_subnet_topology API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'subnetId']
         resource_path = "/subnetTopology"
         method = "GET"
         operation_name = "get_subnet_topology"
@@ -13894,7 +14445,8 @@ class VirtualNetworkClient(object):
                 response_type="SubnetTopology",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13904,7 +14456,8 @@ class VirtualNetworkClient(object):
                 response_type="SubnetTopology",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_tunnel_cpe_device_config(self, ipsc_id, tunnel_id, **kwargs):
         """
@@ -13947,6 +14500,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_tunnel_cpe_device_config.py.html>`__ to see an example of how to use get_tunnel_cpe_device_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ipscId', 'tunnelId']
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/tunnelDeviceConfig"
         method = "GET"
         operation_name = "get_tunnel_cpe_device_config"
@@ -14001,7 +14556,8 @@ class VirtualNetworkClient(object):
                 response_type="TunnelCpeDeviceConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14011,7 +14567,8 @@ class VirtualNetworkClient(object):
                 response_type="TunnelCpeDeviceConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_tunnel_cpe_device_config_content(self, ipsc_id, tunnel_id, **kwargs):
         """
@@ -14067,6 +14624,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_tunnel_cpe_device_config_content.py.html>`__ to see an example of how to use get_tunnel_cpe_device_config_content API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ipscId', 'tunnelId']
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/tunnelDeviceConfig/content"
         method = "GET"
         operation_name = "get_tunnel_cpe_device_config_content"
@@ -14121,7 +14680,8 @@ class VirtualNetworkClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14131,7 +14691,8 @@ class VirtualNetworkClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_upgrade_status(self, drg_id, **kwargs):
         """
@@ -14165,6 +14726,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_upgrade_status.py.html>`__ to see an example of how to use get_upgrade_status API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgId']
         resource_path = "/drgs/{drgId}/actions/upgradeStatus"
         method = "GET"
         operation_name = "get_upgrade_status"
@@ -14216,7 +14779,8 @@ class VirtualNetworkClient(object):
                 response_type="UpgradeStatus",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14226,7 +14790,8 @@ class VirtualNetworkClient(object):
                 response_type="UpgradeStatus",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_vcn(self, vcn_id, **kwargs):
         """
@@ -14256,6 +14821,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_vcn.py.html>`__ to see an example of how to use get_vcn API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vcnId']
         resource_path = "/vcns/{vcnId}"
         method = "GET"
         operation_name = "get_vcn"
@@ -14300,7 +14867,8 @@ class VirtualNetworkClient(object):
                 response_type="Vcn",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14310,7 +14878,8 @@ class VirtualNetworkClient(object):
                 response_type="Vcn",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_vcn_dns_resolver_association(self, vcn_id, **kwargs):
         """
@@ -14344,6 +14913,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_vcn_dns_resolver_association.py.html>`__ to see an example of how to use get_vcn_dns_resolver_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vcnId']
         resource_path = "/vcns/{vcnId}/dnsResolverAssociation"
         method = "GET"
         operation_name = "get_vcn_dns_resolver_association"
@@ -14395,7 +14966,8 @@ class VirtualNetworkClient(object):
                 response_type="VcnDnsResolverAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14405,7 +14977,8 @@ class VirtualNetworkClient(object):
                 response_type="VcnDnsResolverAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_vcn_topology(self, compartment_id, vcn_id, **kwargs):
         """
@@ -14472,6 +15045,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_vcn_topology.py.html>`__ to see an example of how to use get_vcn_topology API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'vcnId']
         resource_path = "/vcnTopology"
         method = "GET"
         operation_name = "get_vcn_topology"
@@ -14534,7 +15109,8 @@ class VirtualNetworkClient(object):
                 response_type="VcnTopology",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14544,7 +15120,8 @@ class VirtualNetworkClient(object):
                 response_type="VcnTopology",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_virtual_circuit(self, virtual_circuit_id, **kwargs):
         """
@@ -14574,6 +15151,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_virtual_circuit.py.html>`__ to see an example of how to use get_virtual_circuit API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualCircuitId']
         resource_path = "/virtualCircuits/{virtualCircuitId}"
         method = "GET"
         operation_name = "get_virtual_circuit"
@@ -14620,7 +15199,8 @@ class VirtualNetworkClient(object):
                 response_type="VirtualCircuit",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14630,7 +15210,8 @@ class VirtualNetworkClient(object):
                 response_type="VirtualCircuit",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_vlan(self, vlan_id, **kwargs):
         """
@@ -14664,6 +15245,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_vlan.py.html>`__ to see an example of how to use get_vlan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vlanId']
         resource_path = "/vlans/{vlanId}"
         method = "GET"
         operation_name = "get_vlan"
@@ -14715,7 +15298,8 @@ class VirtualNetworkClient(object):
                 response_type="Vlan",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14725,7 +15309,8 @@ class VirtualNetworkClient(object):
                 response_type="Vlan",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_vnic(self, vnic_id, **kwargs):
         """
@@ -14760,6 +15345,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_vnic.py.html>`__ to see an example of how to use get_vnic API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vnicId']
         resource_path = "/vnics/{vnicId}"
         method = "GET"
         operation_name = "get_vnic"
@@ -14804,7 +15391,8 @@ class VirtualNetworkClient(object):
                 response_type="Vnic",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14814,7 +15402,8 @@ class VirtualNetworkClient(object):
                 response_type="Vnic",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_vtap(self, vtap_id, **kwargs):
         """
@@ -14848,6 +15437,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_vtap.py.html>`__ to see an example of how to use get_vtap API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vtapId']
         resource_path = "/vtaps/{vtapId}"
         method = "GET"
         operation_name = "get_vtap"
@@ -14899,7 +15490,8 @@ class VirtualNetworkClient(object):
                 response_type="Vtap",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14909,7 +15501,8 @@ class VirtualNetworkClient(object):
                 response_type="Vtap",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_allowed_peer_regions_for_remote_peering(self, **kwargs):
         """
@@ -14937,6 +15530,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_allowed_peer_regions_for_remote_peering.py.html>`__ to see an example of how to use list_allowed_peer_regions_for_remote_peering API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/allowedPeerRegionsForRemotePeering"
         method = "GET"
         operation_name = "list_allowed_peer_regions_for_remote_peering"
@@ -14972,7 +15567,8 @@ class VirtualNetworkClient(object):
                 response_type="list[PeerRegionForRemotePeering]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14981,7 +15577,8 @@ class VirtualNetworkClient(object):
                 response_type="list[PeerRegionForRemotePeering]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_byoip_allocated_ranges(self, byoip_range_id, **kwargs):
         """
@@ -15032,6 +15629,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_byoip_allocated_ranges.py.html>`__ to see an example of how to use list_byoip_allocated_ranges API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['byoipRangeId']
         resource_path = "/byoipRanges/{byoipRangeId}/byoipAllocatedRanges"
         method = "GET"
         operation_name = "list_byoip_allocated_ranges"
@@ -15092,7 +15691,8 @@ class VirtualNetworkClient(object):
                 response_type="ByoipAllocatedRangeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15103,7 +15703,8 @@ class VirtualNetworkClient(object):
                 response_type="ByoipAllocatedRangeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_byoip_ranges(self, compartment_id, **kwargs):
         """
@@ -15178,6 +15779,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_byoip_ranges.py.html>`__ to see an example of how to use list_byoip_ranges API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/byoipRanges"
         method = "GET"
         operation_name = "list_byoip_ranges"
@@ -15250,7 +15853,8 @@ class VirtualNetworkClient(object):
                 response_type="ByoipRangeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15260,7 +15864,8 @@ class VirtualNetworkClient(object):
                 response_type="ByoipRangeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_capture_filters(self, compartment_id, **kwargs):
         """
@@ -15337,6 +15942,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_capture_filters.py.html>`__ to see an example of how to use list_capture_filters API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/captureFilters"
         method = "GET"
         operation_name = "list_capture_filters"
@@ -15416,7 +16023,8 @@ class VirtualNetworkClient(object):
                 response_type="list[CaptureFilter]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15426,7 +16034,8 @@ class VirtualNetworkClient(object):
                 response_type="list[CaptureFilter]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_cpe_device_shapes(self, **kwargs):
         """
@@ -15485,6 +16094,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_cpe_device_shapes.py.html>`__ to see an example of how to use list_cpe_device_shapes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/cpeDeviceShapes"
         method = "GET"
         operation_name = "list_cpe_device_shapes"
@@ -15536,7 +16147,8 @@ class VirtualNetworkClient(object):
                 response_type="list[CpeDeviceShapeSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15546,7 +16158,8 @@ class VirtualNetworkClient(object):
                 response_type="list[CpeDeviceShapeSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_cpes(self, compartment_id, **kwargs):
         """
@@ -15592,6 +16205,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_cpes.py.html>`__ to see an example of how to use list_cpes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/cpes"
         method = "GET"
         operation_name = "list_cpes"
@@ -15641,7 +16256,8 @@ class VirtualNetworkClient(object):
                 response_type="list[Cpe]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15651,7 +16267,8 @@ class VirtualNetworkClient(object):
                 response_type="list[Cpe]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_cross_connect_groups(self, compartment_id, **kwargs):
         """
@@ -15724,6 +16341,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_cross_connect_groups.py.html>`__ to see an example of how to use list_cross_connect_groups API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/crossConnectGroups"
         method = "GET"
         operation_name = "list_cross_connect_groups"
@@ -15802,7 +16421,8 @@ class VirtualNetworkClient(object):
                 response_type="list[CrossConnectGroup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15812,7 +16432,8 @@ class VirtualNetworkClient(object):
                 response_type="list[CrossConnectGroup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_cross_connect_locations(self, compartment_id, **kwargs):
         """
@@ -15859,6 +16480,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_cross_connect_locations.py.html>`__ to see an example of how to use list_cross_connect_locations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/crossConnectLocations"
         method = "GET"
         operation_name = "list_cross_connect_locations"
@@ -15908,7 +16531,8 @@ class VirtualNetworkClient(object):
                 response_type="list[CrossConnectLocation]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15918,7 +16542,8 @@ class VirtualNetworkClient(object):
                 response_type="list[CrossConnectLocation]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_cross_connect_mappings(self, virtual_circuit_id, **kwargs):
         """
@@ -15953,6 +16578,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_cross_connect_mappings.py.html>`__ to see an example of how to use list_cross_connect_mappings API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualCircuitId']
         resource_path = "/virtualCircuits/{virtualCircuitId}/crossConnectMappings"
         method = "GET"
         operation_name = "list_cross_connect_mappings"
@@ -16006,7 +16633,8 @@ class VirtualNetworkClient(object):
                 response_type="CrossConnectMappingDetailsCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16016,7 +16644,8 @@ class VirtualNetworkClient(object):
                 response_type="CrossConnectMappingDetailsCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_cross_connects(self, compartment_id, **kwargs):
         """
@@ -16097,6 +16726,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_cross_connects.py.html>`__ to see an example of how to use list_cross_connects API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/crossConnects"
         method = "GET"
         operation_name = "list_cross_connects"
@@ -16177,7 +16808,8 @@ class VirtualNetworkClient(object):
                 response_type="list[CrossConnect]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16187,7 +16819,8 @@ class VirtualNetworkClient(object):
                 response_type="list[CrossConnect]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_crossconnect_port_speed_shapes(self, compartment_id, **kwargs):
         """
@@ -16235,6 +16868,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_crossconnect_port_speed_shapes.py.html>`__ to see an example of how to use list_crossconnect_port_speed_shapes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/crossConnectPortSpeedShapes"
         method = "GET"
         operation_name = "list_crossconnect_port_speed_shapes"
@@ -16284,7 +16919,8 @@ class VirtualNetworkClient(object):
                 response_type="list[CrossConnectPortSpeedShape]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16294,7 +16930,8 @@ class VirtualNetworkClient(object):
                 response_type="list[CrossConnectPortSpeedShape]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_dhcp_options(self, compartment_id, **kwargs):
         """
@@ -16375,6 +17012,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_dhcp_options.py.html>`__ to see an example of how to use list_dhcp_options API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/dhcps"
         method = "GET"
         operation_name = "list_dhcp_options"
@@ -16453,7 +17092,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DhcpOptions]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16463,7 +17103,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DhcpOptions]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_drg_attachments(self, compartment_id, **kwargs):
         """
@@ -16566,6 +17207,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_drg_attachments.py.html>`__ to see an example of how to use list_drg_attachments API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/drgAttachments"
         method = "GET"
         operation_name = "list_drg_attachments"
@@ -16659,7 +17302,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DrgAttachment]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16669,7 +17313,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DrgAttachment]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_drg_route_distribution_statements(self, drg_route_distribution_id, **kwargs):
         """
@@ -16726,6 +17371,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_drg_route_distribution_statements.py.html>`__ to see an example of how to use list_drg_route_distribution_statements API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgRouteDistributionId']
         resource_path = "/drgRouteDistributions/{drgRouteDistributionId}/drgRouteDistributionStatements"
         method = "GET"
         operation_name = "list_drg_route_distribution_statements"
@@ -16801,7 +17448,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DrgRouteDistributionStatement]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16812,7 +17460,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DrgRouteDistributionStatement]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_drg_route_distributions(self, drg_id, **kwargs):
         """
@@ -16888,6 +17537,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_drg_route_distributions.py.html>`__ to see an example of how to use list_drg_route_distributions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgId']
         resource_path = "/drgRouteDistributions"
         method = "GET"
         operation_name = "list_drg_route_distributions"
@@ -16964,7 +17615,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DrgRouteDistribution]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16974,7 +17626,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DrgRouteDistribution]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_drg_route_rules(self, drg_route_table_id, **kwargs):
         """
@@ -17026,6 +17679,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_drg_route_rules.py.html>`__ to see an example of how to use list_drg_route_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgRouteTableId']
         resource_path = "/drgRouteTables/{drgRouteTableId}/drgRouteRules"
         method = "GET"
         operation_name = "list_drg_route_rules"
@@ -17092,7 +17747,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DrgRouteRule]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17103,7 +17759,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DrgRouteRule]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_drg_route_tables(self, drg_id, **kwargs):
         """
@@ -17183,6 +17840,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_drg_route_tables.py.html>`__ to see an example of how to use list_drg_route_tables API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgId']
         resource_path = "/drgRouteTables"
         method = "GET"
         operation_name = "list_drg_route_tables"
@@ -17261,7 +17920,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DrgRouteTable]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17271,7 +17931,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DrgRouteTable]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_drgs(self, compartment_id, **kwargs):
         """
@@ -17317,6 +17978,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_drgs.py.html>`__ to see an example of how to use list_drgs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/drgs"
         method = "GET"
         operation_name = "list_drgs"
@@ -17364,7 +18027,8 @@ class VirtualNetworkClient(object):
                 response_type="list[Drg]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17374,7 +18038,8 @@ class VirtualNetworkClient(object):
                 response_type="list[Drg]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_fast_connect_provider_services(self, compartment_id, **kwargs):
         """
@@ -17429,6 +18094,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_fast_connect_provider_services.py.html>`__ to see an example of how to use list_fast_connect_provider_services API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/fastConnectProviderServices"
         method = "GET"
         operation_name = "list_fast_connect_provider_services"
@@ -17478,7 +18145,8 @@ class VirtualNetworkClient(object):
                 response_type="list[FastConnectProviderService]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17488,7 +18156,8 @@ class VirtualNetworkClient(object):
                 response_type="list[FastConnectProviderService]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_fast_connect_provider_virtual_circuit_bandwidth_shapes(self, provider_service_id, **kwargs):
         """
@@ -17539,6 +18208,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_fast_connect_provider_virtual_circuit_bandwidth_shapes.py.html>`__ to see an example of how to use list_fast_connect_provider_virtual_circuit_bandwidth_shapes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['providerServiceId']
         resource_path = "/fastConnectProviderServices/{providerServiceId}/virtualCircuitBandwidthShapes"
         method = "GET"
         operation_name = "list_fast_connect_provider_virtual_circuit_bandwidth_shapes"
@@ -17598,7 +18269,8 @@ class VirtualNetworkClient(object):
                 response_type="list[VirtualCircuitBandwidthShape]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17609,7 +18281,8 @@ class VirtualNetworkClient(object):
                 response_type="list[VirtualCircuitBandwidthShape]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_internet_gateways(self, compartment_id, **kwargs):
         """
@@ -17688,6 +18361,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_internet_gateways.py.html>`__ to see an example of how to use list_internet_gateways API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/internetGateways"
         method = "GET"
         operation_name = "list_internet_gateways"
@@ -17766,7 +18441,8 @@ class VirtualNetworkClient(object):
                 response_type="list[InternetGateway]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17776,7 +18452,8 @@ class VirtualNetworkClient(object):
                 response_type="list[InternetGateway]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_ip_sec_connection_tunnel_routes(self, ipsc_id, tunnel_id, **kwargs):
         """
@@ -17834,6 +18511,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_ip_sec_connection_tunnel_routes.py.html>`__ to see an example of how to use list_ip_sec_connection_tunnel_routes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ipscId', 'tunnelId']
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/routes"
         method = "GET"
         operation_name = "list_ip_sec_connection_tunnel_routes"
@@ -17903,7 +18582,8 @@ class VirtualNetworkClient(object):
                 response_type="list[TunnelRouteSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17914,7 +18594,8 @@ class VirtualNetworkClient(object):
                 response_type="list[TunnelRouteSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_ip_sec_connection_tunnel_security_associations(self, ipsc_id, tunnel_id, **kwargs):
         """
@@ -17965,6 +18646,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_ip_sec_connection_tunnel_security_associations.py.html>`__ to see an example of how to use list_ip_sec_connection_tunnel_security_associations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ipscId', 'tunnelId']
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/tunnelSecurityAssociations"
         method = "GET"
         operation_name = "list_ip_sec_connection_tunnel_security_associations"
@@ -18025,7 +18708,8 @@ class VirtualNetworkClient(object):
                 response_type="list[TunnelSecurityAssociationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18036,7 +18720,8 @@ class VirtualNetworkClient(object):
                 response_type="list[TunnelSecurityAssociationSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_ip_sec_connection_tunnels(self, ipsc_id, **kwargs):
         """
@@ -18082,6 +18767,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_ip_sec_connection_tunnels.py.html>`__ to see an example of how to use list_ip_sec_connection_tunnels API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ipscId']
         resource_path = "/ipsecConnections/{ipscId}/tunnels"
         method = "GET"
         operation_name = "list_ip_sec_connection_tunnels"
@@ -18141,7 +18828,8 @@ class VirtualNetworkClient(object):
                 response_type="list[IPSecConnectionTunnel]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18152,7 +18840,8 @@ class VirtualNetworkClient(object):
                 response_type="list[IPSecConnectionTunnel]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_ip_sec_connections(self, compartment_id, **kwargs):
         """
@@ -18209,6 +18898,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_ip_sec_connections.py.html>`__ to see an example of how to use list_ip_sec_connections API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/ipsecConnections"
         method = "GET"
         operation_name = "list_ip_sec_connections"
@@ -18262,7 +18953,8 @@ class VirtualNetworkClient(object):
                 response_type="list[IPSecConnection]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18272,7 +18964,8 @@ class VirtualNetworkClient(object):
                 response_type="list[IPSecConnection]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_ipv6s(self, **kwargs):
         """
@@ -18341,6 +19034,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_ipv6s.py.html>`__ to see an example of how to use list_ipv6s API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/ipv6"
         method = "GET"
         operation_name = "list_ipv6s"
@@ -18396,7 +19091,8 @@ class VirtualNetworkClient(object):
                 response_type="list[Ipv6]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18406,7 +19102,8 @@ class VirtualNetworkClient(object):
                 response_type="list[Ipv6]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_local_peering_gateways(self, compartment_id, **kwargs):
         """
@@ -18458,6 +19155,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_local_peering_gateways.py.html>`__ to see an example of how to use list_local_peering_gateways API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/localPeeringGateways"
         method = "GET"
         operation_name = "list_local_peering_gateways"
@@ -18507,7 +19206,8 @@ class VirtualNetworkClient(object):
                 response_type="list[LocalPeeringGateway]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18517,7 +19217,8 @@ class VirtualNetworkClient(object):
                 response_type="list[LocalPeeringGateway]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_nat_gateways(self, compartment_id, **kwargs):
         """
@@ -18596,6 +19297,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_nat_gateways.py.html>`__ to see an example of how to use list_nat_gateways API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/natGateways"
         method = "GET"
         operation_name = "list_nat_gateways"
@@ -18674,7 +19377,8 @@ class VirtualNetworkClient(object):
                 response_type="list[NatGateway]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18684,7 +19388,8 @@ class VirtualNetworkClient(object):
                 response_type="list[NatGateway]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_network_security_group_security_rules(self, network_security_group_id, **kwargs):
         """
@@ -18747,6 +19452,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_network_security_group_security_rules.py.html>`__ to see an example of how to use list_network_security_group_security_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkSecurityGroupId']
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}/securityRules"
         method = "GET"
         operation_name = "list_network_security_group_security_rules"
@@ -18831,7 +19538,8 @@ class VirtualNetworkClient(object):
                 response_type="list[SecurityRule]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18842,7 +19550,8 @@ class VirtualNetworkClient(object):
                 response_type="list[SecurityRule]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_network_security_group_vnics(self, network_security_group_id, **kwargs):
         """
@@ -18899,6 +19608,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_network_security_group_vnics.py.html>`__ to see an example of how to use list_network_security_group_vnics API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkSecurityGroupId']
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}/vnics"
         method = "GET"
         operation_name = "list_network_security_group_vnics"
@@ -18974,7 +19685,8 @@ class VirtualNetworkClient(object):
                 response_type="list[NetworkSecurityGroupVnic]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18985,7 +19697,8 @@ class VirtualNetworkClient(object):
                 response_type="list[NetworkSecurityGroupVnic]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_network_security_groups(self, **kwargs):
         """
@@ -19069,6 +19782,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_network_security_groups.py.html>`__ to see an example of how to use list_network_security_groups API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/networkSecurityGroups"
         method = "GET"
         operation_name = "list_network_security_groups"
@@ -19150,7 +19865,8 @@ class VirtualNetworkClient(object):
                 response_type="list[NetworkSecurityGroup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19160,7 +19876,8 @@ class VirtualNetworkClient(object):
                 response_type="list[NetworkSecurityGroup]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_private_ips(self, **kwargs):
         """
@@ -19239,6 +19956,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_private_ips.py.html>`__ to see an example of how to use list_private_ips API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/privateIps"
         method = "GET"
         operation_name = "list_private_ips"
@@ -19293,7 +20012,8 @@ class VirtualNetworkClient(object):
                 response_type="list[PrivateIp]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19303,7 +20023,8 @@ class VirtualNetworkClient(object):
                 response_type="list[PrivateIp]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_public_ip_pools(self, compartment_id, **kwargs):
         """
@@ -19378,6 +20099,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_public_ip_pools.py.html>`__ to see an example of how to use list_public_ip_pools API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/publicIpPools"
         method = "GET"
         operation_name = "list_public_ip_pools"
@@ -19450,7 +20173,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIpPoolCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19460,7 +20184,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIpPoolCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_public_ips(self, scope, compartment_id, **kwargs):
         """
@@ -19552,6 +20277,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_public_ips.py.html>`__ to see an example of how to use list_public_ips API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['scope', 'compartmentId']
         resource_path = "/publicIps"
         method = "GET"
         operation_name = "list_public_ips"
@@ -19619,7 +20346,8 @@ class VirtualNetworkClient(object):
                 response_type="list[PublicIp]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19629,7 +20357,8 @@ class VirtualNetworkClient(object):
                 response_type="list[PublicIp]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_remote_peering_connections(self, compartment_id, **kwargs):
         """
@@ -19681,6 +20410,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_remote_peering_connections.py.html>`__ to see an example of how to use list_remote_peering_connections API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/remotePeeringConnections"
         method = "GET"
         operation_name = "list_remote_peering_connections"
@@ -19732,7 +20463,8 @@ class VirtualNetworkClient(object):
                 response_type="list[RemotePeeringConnection]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19742,7 +20474,8 @@ class VirtualNetworkClient(object):
                 response_type="list[RemotePeeringConnection]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_route_tables(self, compartment_id, **kwargs):
         """
@@ -19823,6 +20556,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_route_tables.py.html>`__ to see an example of how to use list_route_tables API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/routeTables"
         method = "GET"
         operation_name = "list_route_tables"
@@ -19901,7 +20636,8 @@ class VirtualNetworkClient(object):
                 response_type="list[RouteTable]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19911,7 +20647,8 @@ class VirtualNetworkClient(object):
                 response_type="list[RouteTable]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_security_lists(self, compartment_id, **kwargs):
         """
@@ -19990,6 +20727,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_security_lists.py.html>`__ to see an example of how to use list_security_lists API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/securityLists"
         method = "GET"
         operation_name = "list_security_lists"
@@ -20068,7 +20807,8 @@ class VirtualNetworkClient(object):
                 response_type="list[SecurityList]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20078,7 +20818,8 @@ class VirtualNetworkClient(object):
                 response_type="list[SecurityList]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_service_gateways(self, compartment_id, **kwargs):
         """
@@ -20154,6 +20895,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_service_gateways.py.html>`__ to see an example of how to use list_service_gateways API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/serviceGateways"
         method = "GET"
         operation_name = "list_service_gateways"
@@ -20230,7 +20973,8 @@ class VirtualNetworkClient(object):
                 response_type="list[ServiceGateway]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20240,7 +20984,8 @@ class VirtualNetworkClient(object):
                 response_type="list[ServiceGateway]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_services(self, **kwargs):
         """
@@ -20282,6 +21027,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_services.py.html>`__ to see an example of how to use list_services API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/services"
         method = "GET"
         operation_name = "list_services"
@@ -20328,7 +21075,8 @@ class VirtualNetworkClient(object):
                 response_type="list[Service]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20338,7 +21086,8 @@ class VirtualNetworkClient(object):
                 response_type="list[Service]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_subnets(self, compartment_id, **kwargs):
         """
@@ -20417,6 +21166,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_subnets.py.html>`__ to see an example of how to use list_subnets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/subnets"
         method = "GET"
         operation_name = "list_subnets"
@@ -20495,7 +21246,8 @@ class VirtualNetworkClient(object):
                 response_type="list[Subnet]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20505,7 +21257,8 @@ class VirtualNetworkClient(object):
                 response_type="list[Subnet]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_vcns(self, compartment_id, **kwargs):
         """
@@ -20578,6 +21331,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_vcns.py.html>`__ to see an example of how to use list_vcns API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/vcns"
         method = "GET"
         operation_name = "list_vcns"
@@ -20654,7 +21409,8 @@ class VirtualNetworkClient(object):
                 response_type="list[Vcn]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20664,7 +21420,8 @@ class VirtualNetworkClient(object):
                 response_type="list[Vcn]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_virtual_circuit_bandwidth_shapes(self, compartment_id, **kwargs):
         """
@@ -20712,6 +21469,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_virtual_circuit_bandwidth_shapes.py.html>`__ to see an example of how to use list_virtual_circuit_bandwidth_shapes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/virtualCircuitBandwidthShapes"
         method = "GET"
         operation_name = "list_virtual_circuit_bandwidth_shapes"
@@ -20761,7 +21520,8 @@ class VirtualNetworkClient(object):
                 response_type="list[VirtualCircuitBandwidthShape]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20771,7 +21531,8 @@ class VirtualNetworkClient(object):
                 response_type="list[VirtualCircuitBandwidthShape]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_virtual_circuit_public_prefixes(self, virtual_circuit_id, **kwargs):
         """
@@ -20810,6 +21571,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_virtual_circuit_public_prefixes.py.html>`__ to see an example of how to use list_virtual_circuit_public_prefixes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualCircuitId']
         resource_path = "/virtualCircuits/{virtualCircuitId}/publicPrefixes"
         method = "GET"
         operation_name = "list_virtual_circuit_public_prefixes"
@@ -20874,7 +21637,8 @@ class VirtualNetworkClient(object):
                 response_type="list[VirtualCircuitPublicPrefix]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20885,7 +21649,8 @@ class VirtualNetworkClient(object):
                 response_type="list[VirtualCircuitPublicPrefix]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_virtual_circuits(self, compartment_id, **kwargs):
         """
@@ -20958,6 +21723,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_virtual_circuits.py.html>`__ to see an example of how to use list_virtual_circuits API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/virtualCircuits"
         method = "GET"
         operation_name = "list_virtual_circuits"
@@ -21036,7 +21803,8 @@ class VirtualNetworkClient(object):
                 response_type="list[VirtualCircuit]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21046,7 +21814,8 @@ class VirtualNetworkClient(object):
                 response_type="list[VirtualCircuit]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_vlans(self, compartment_id, **kwargs):
         """
@@ -21128,6 +21897,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_vlans.py.html>`__ to see an example of how to use list_vlans API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/vlans"
         method = "GET"
         operation_name = "list_vlans"
@@ -21209,7 +21980,8 @@ class VirtualNetworkClient(object):
                 response_type="list[Vlan]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21219,7 +21991,8 @@ class VirtualNetworkClient(object):
                 response_type="list[Vlan]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_vtaps(self, compartment_id, **kwargs):
         """
@@ -21320,6 +22093,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/list_vtaps.py.html>`__ to see an example of how to use list_vtaps API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/vtaps"
         method = "GET"
         operation_name = "list_vtaps"
@@ -21409,7 +22184,8 @@ class VirtualNetworkClient(object):
                 response_type="list[Vtap]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21419,7 +22195,8 @@ class VirtualNetworkClient(object):
                 response_type="list[Vtap]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def modify_vcn_cidr(self, vcn_id, modify_vcn_cidr_details, **kwargs):
         """
@@ -21476,6 +22253,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/modify_vcn_cidr.py.html>`__ to see an example of how to use modify_vcn_cidr API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vcnId']
         resource_path = "/vcns/{vcnId}/actions/modifyCidr"
         method = "POST"
         operation_name = "modify_vcn_cidr"
@@ -21532,7 +22311,8 @@ class VirtualNetworkClient(object):
                 body=modify_vcn_cidr_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21542,7 +22322,8 @@ class VirtualNetworkClient(object):
                 body=modify_vcn_cidr_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_drg_route_distribution_statements(self, drg_route_distribution_id, remove_drg_route_distribution_statements_details, **kwargs):
         """
@@ -21575,6 +22356,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/remove_drg_route_distribution_statements.py.html>`__ to see an example of how to use remove_drg_route_distribution_statements API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgRouteDistributionId']
         resource_path = "/drgRouteDistributions/{drgRouteDistributionId}/actions/removeDrgRouteDistributionStatements"
         method = "POST"
         operation_name = "remove_drg_route_distribution_statements"
@@ -21619,7 +22402,8 @@ class VirtualNetworkClient(object):
                 body=remove_drg_route_distribution_statements_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21629,7 +22413,8 @@ class VirtualNetworkClient(object):
                 body=remove_drg_route_distribution_statements_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_drg_route_rules(self, drg_route_table_id, remove_drg_route_rules_details, **kwargs):
         """
@@ -21662,6 +22447,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/remove_drg_route_rules.py.html>`__ to see an example of how to use remove_drg_route_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgRouteTableId']
         resource_path = "/drgRouteTables/{drgRouteTableId}/actions/removeDrgRouteRules"
         method = "POST"
         operation_name = "remove_drg_route_rules"
@@ -21706,7 +22493,8 @@ class VirtualNetworkClient(object):
                 body=remove_drg_route_rules_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21716,7 +22504,8 @@ class VirtualNetworkClient(object):
                 body=remove_drg_route_rules_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_export_drg_route_distribution(self, drg_attachment_id, **kwargs):
         """
@@ -21755,6 +22544,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/remove_export_drg_route_distribution.py.html>`__ to see an example of how to use remove_export_drg_route_distribution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgAttachmentId']
         resource_path = "/drgAttachments/{drgAttachmentId}/actions/removeExportDrgRouteDistribution"
         method = "POST"
         operation_name = "remove_export_drg_route_distribution"
@@ -21808,7 +22599,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21818,7 +22610,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_import_drg_route_distribution(self, drg_route_table_id, **kwargs):
         """
@@ -21858,6 +22651,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/remove_import_drg_route_distribution.py.html>`__ to see an example of how to use remove_import_drg_route_distribution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgRouteTableId']
         resource_path = "/drgRouteTables/{drgRouteTableId}/actions/removeImportDrgRouteDistribution"
         method = "POST"
         operation_name = "remove_import_drg_route_distribution"
@@ -21911,7 +22706,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgRouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21921,7 +22717,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgRouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_ipv6_subnet_cidr(self, subnet_id, remove_subnet_ipv6_cidr_details, **kwargs):
         """
@@ -21970,6 +22767,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/remove_ipv6_subnet_cidr.py.html>`__ to see an example of how to use remove_ipv6_subnet_cidr API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subnetId']
         resource_path = "/subnets/{subnetId}/actions/removeIpv6Cidr"
         method = "POST"
         operation_name = "remove_ipv6_subnet_cidr"
@@ -22026,7 +22825,8 @@ class VirtualNetworkClient(object):
                 body=remove_subnet_ipv6_cidr_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22036,7 +22836,8 @@ class VirtualNetworkClient(object):
                 body=remove_subnet_ipv6_cidr_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_ipv6_vcn_cidr(self, vcn_id, **kwargs):
         """
@@ -22085,6 +22886,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/remove_ipv6_vcn_cidr.py.html>`__ to see an example of how to use remove_ipv6_vcn_cidr API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vcnId']
         resource_path = "/vcns/{vcnId}/actions/removeIpv6Cidr"
         method = "POST"
         operation_name = "remove_ipv6_vcn_cidr"
@@ -22142,7 +22945,8 @@ class VirtualNetworkClient(object):
                 body=kwargs.get('remove_vcn_ipv6_cidr_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22152,7 +22956,8 @@ class VirtualNetworkClient(object):
                 body=kwargs.get('remove_vcn_ipv6_cidr_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_network_security_group_security_rules(self, network_security_group_id, remove_network_security_group_security_rules_details, **kwargs):
         """
@@ -22186,6 +22991,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/remove_network_security_group_security_rules.py.html>`__ to see an example of how to use remove_network_security_group_security_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkSecurityGroupId']
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}/actions/removeSecurityRules"
         method = "POST"
         operation_name = "remove_network_security_group_security_rules"
@@ -22230,7 +23037,8 @@ class VirtualNetworkClient(object):
                 body=remove_network_security_group_security_rules_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22240,7 +23048,8 @@ class VirtualNetworkClient(object):
                 body=remove_network_security_group_security_rules_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_public_ip_pool_capacity(self, public_ip_pool_id, remove_public_ip_pool_capacity_details, **kwargs):
         """
@@ -22284,6 +23093,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/remove_public_ip_pool_capacity.py.html>`__ to see an example of how to use remove_public_ip_pool_capacity API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['publicIpPoolId']
         resource_path = "/publicIpPools/{publicIpPoolId}/actions/removeCapacity"
         method = "POST"
         operation_name = "remove_public_ip_pool_capacity"
@@ -22339,7 +23150,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIpPool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22350,7 +23162,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIpPool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_vcn_cidr(self, vcn_id, remove_vcn_cidr_details, **kwargs):
         """
@@ -22403,6 +23216,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/remove_vcn_cidr.py.html>`__ to see an example of how to use remove_vcn_cidr API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vcnId']
         resource_path = "/vcns/{vcnId}/actions/removeCidr"
         method = "POST"
         operation_name = "remove_vcn_cidr"
@@ -22459,7 +23274,8 @@ class VirtualNetworkClient(object):
                 body=remove_vcn_cidr_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22469,7 +23285,8 @@ class VirtualNetworkClient(object):
                 body=remove_vcn_cidr_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_byoip_range(self, byoip_range_id, update_byoip_range_details, **kwargs):
         """
@@ -22511,6 +23328,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_byoip_range.py.html>`__ to see an example of how to use update_byoip_range API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['byoipRangeId']
         resource_path = "/byoipRanges/{byoipRangeId}"
         method = "PUT"
         operation_name = "update_byoip_range"
@@ -22565,7 +23384,8 @@ class VirtualNetworkClient(object):
                 response_type="ByoipRange",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22576,7 +23396,8 @@ class VirtualNetworkClient(object):
                 response_type="ByoipRange",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_capture_filter(self, capture_filter_id, update_capture_filter_details, **kwargs):
         """
@@ -22618,6 +23439,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_capture_filter.py.html>`__ to see an example of how to use update_capture_filter API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['captureFilterId']
         resource_path = "/captureFilters/{captureFilterId}"
         method = "PUT"
         operation_name = "update_capture_filter"
@@ -22672,7 +23495,8 @@ class VirtualNetworkClient(object):
                 response_type="CaptureFilter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22683,7 +23507,8 @@ class VirtualNetworkClient(object):
                 response_type="CaptureFilter",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_cpe(self, cpe_id, update_cpe_details, **kwargs):
         """
@@ -22722,6 +23547,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_cpe.py.html>`__ to see an example of how to use update_cpe API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['cpeId']
         resource_path = "/cpes/{cpeId}"
         method = "PUT"
         operation_name = "update_cpe"
@@ -22776,7 +23603,8 @@ class VirtualNetworkClient(object):
                 response_type="Cpe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22787,7 +23615,8 @@ class VirtualNetworkClient(object):
                 response_type="Cpe",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_cross_connect(self, cross_connect_id, update_cross_connect_details, **kwargs):
         """
@@ -22825,6 +23654,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_cross_connect.py.html>`__ to see an example of how to use update_cross_connect API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['crossConnectId']
         resource_path = "/crossConnects/{crossConnectId}"
         method = "PUT"
         operation_name = "update_cross_connect"
@@ -22879,7 +23710,8 @@ class VirtualNetworkClient(object):
                 response_type="CrossConnect",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22890,7 +23722,8 @@ class VirtualNetworkClient(object):
                 response_type="CrossConnect",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_cross_connect_group(self, cross_connect_group_id, update_cross_connect_group_details, **kwargs):
         """
@@ -22929,6 +23762,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_cross_connect_group.py.html>`__ to see an example of how to use update_cross_connect_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['crossConnectGroupId']
         resource_path = "/crossConnectGroups/{crossConnectGroupId}"
         method = "PUT"
         operation_name = "update_cross_connect_group"
@@ -22983,7 +23818,8 @@ class VirtualNetworkClient(object):
                 response_type="CrossConnectGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22994,7 +23830,8 @@ class VirtualNetworkClient(object):
                 response_type="CrossConnectGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_dhcp_options(self, dhcp_id, update_dhcp_details, **kwargs):
         """
@@ -23035,6 +23872,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_dhcp_options.py.html>`__ to see an example of how to use update_dhcp_options API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dhcpId']
         resource_path = "/dhcps/{dhcpId}"
         method = "PUT"
         operation_name = "update_dhcp_options"
@@ -23087,7 +23926,8 @@ class VirtualNetworkClient(object):
                 response_type="DhcpOptions",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23098,7 +23938,8 @@ class VirtualNetworkClient(object):
                 response_type="DhcpOptions",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_drg(self, drg_id, update_drg_details, **kwargs):
         """
@@ -23136,6 +23977,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_drg.py.html>`__ to see an example of how to use update_drg API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgId']
         resource_path = "/drgs/{drgId}"
         method = "PUT"
         operation_name = "update_drg"
@@ -23188,7 +24031,8 @@ class VirtualNetworkClient(object):
                 response_type="Drg",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23199,7 +24043,8 @@ class VirtualNetworkClient(object):
                 response_type="Drg",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_drg_attachment(self, drg_attachment_id, update_drg_attachment_details, **kwargs):
         """
@@ -23238,6 +24083,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_drg_attachment.py.html>`__ to see an example of how to use update_drg_attachment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgAttachmentId']
         resource_path = "/drgAttachments/{drgAttachmentId}"
         method = "PUT"
         operation_name = "update_drg_attachment"
@@ -23290,7 +24137,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23301,7 +24149,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgAttachment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_drg_route_distribution(self, drg_route_distribution_id, update_drg_route_distribution_details, **kwargs):
         """
@@ -23339,6 +24188,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_drg_route_distribution.py.html>`__ to see an example of how to use update_drg_route_distribution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgRouteDistributionId']
         resource_path = "/drgRouteDistributions/{drgRouteDistributionId}"
         method = "PUT"
         operation_name = "update_drg_route_distribution"
@@ -23391,7 +24242,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgRouteDistribution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23402,7 +24254,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgRouteDistribution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_drg_route_distribution_statements(self, drg_route_distribution_id, update_drg_route_distribution_statements_details, **kwargs):
         """
@@ -23435,6 +24288,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_drg_route_distribution_statements.py.html>`__ to see an example of how to use update_drg_route_distribution_statements API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgRouteDistributionId']
         resource_path = "/drgRouteDistributions/{drgRouteDistributionId}/actions/updateDrgRouteDistributionStatements"
         method = "POST"
         operation_name = "update_drg_route_distribution_statements"
@@ -23480,7 +24335,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DrgRouteDistributionStatement]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23491,7 +24347,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DrgRouteDistributionStatement]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_drg_route_rules(self, drg_route_table_id, update_drg_route_rules_details, **kwargs):
         """
@@ -23524,6 +24381,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_drg_route_rules.py.html>`__ to see an example of how to use update_drg_route_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgRouteTableId']
         resource_path = "/drgRouteTables/{drgRouteTableId}/actions/updateDrgRouteRules"
         method = "POST"
         operation_name = "update_drg_route_rules"
@@ -23569,7 +24428,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DrgRouteRule]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23580,7 +24440,8 @@ class VirtualNetworkClient(object):
                 response_type="list[DrgRouteRule]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_drg_route_table(self, drg_route_table_id, update_drg_route_table_details, **kwargs):
         """
@@ -23618,6 +24479,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_drg_route_table.py.html>`__ to see an example of how to use update_drg_route_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgRouteTableId']
         resource_path = "/drgRouteTables/{drgRouteTableId}"
         method = "PUT"
         operation_name = "update_drg_route_table"
@@ -23670,7 +24533,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgRouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23681,7 +24545,8 @@ class VirtualNetworkClient(object):
                 response_type="DrgRouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_internet_gateway(self, ig_id, update_internet_gateway_details, **kwargs):
         """
@@ -23723,6 +24588,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_internet_gateway.py.html>`__ to see an example of how to use update_internet_gateway API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['igId']
         resource_path = "/internetGateways/{igId}"
         method = "PUT"
         operation_name = "update_internet_gateway"
@@ -23775,7 +24642,8 @@ class VirtualNetworkClient(object):
                 response_type="InternetGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23786,7 +24654,8 @@ class VirtualNetworkClient(object):
                 response_type="InternetGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_ip_sec_connection(self, ipsc_id, update_ip_sec_connection_details, **kwargs):
         """
@@ -23827,6 +24696,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_ip_sec_connection.py.html>`__ to see an example of how to use update_ip_sec_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ipscId']
         resource_path = "/ipsecConnections/{ipscId}"
         method = "PUT"
         operation_name = "update_ip_sec_connection"
@@ -23881,7 +24752,8 @@ class VirtualNetworkClient(object):
                 response_type="IPSecConnection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23892,7 +24764,8 @@ class VirtualNetworkClient(object):
                 response_type="IPSecConnection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_ip_sec_connection_tunnel(self, ipsc_id, tunnel_id, update_ip_sec_connection_tunnel_details, **kwargs):
         """
@@ -23950,6 +24823,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_ip_sec_connection_tunnel.py.html>`__ to see an example of how to use update_ip_sec_connection_tunnel API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ipscId', 'tunnelId']
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}"
         method = "PUT"
         operation_name = "update_ip_sec_connection_tunnel"
@@ -24007,7 +24882,8 @@ class VirtualNetworkClient(object):
                 response_type="IPSecConnectionTunnel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24018,7 +24894,8 @@ class VirtualNetworkClient(object):
                 response_type="IPSecConnectionTunnel",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_ip_sec_connection_tunnel_shared_secret(self, ipsc_id, tunnel_id, update_ip_sec_connection_tunnel_shared_secret_details, **kwargs):
         """
@@ -24063,6 +24940,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_ip_sec_connection_tunnel_shared_secret.py.html>`__ to see an example of how to use update_ip_sec_connection_tunnel_shared_secret API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ipscId', 'tunnelId']
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/sharedSecret"
         method = "PUT"
         operation_name = "update_ip_sec_connection_tunnel_shared_secret"
@@ -24118,7 +24997,8 @@ class VirtualNetworkClient(object):
                 response_type="IPSecConnectionTunnelSharedSecret",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24129,7 +25009,8 @@ class VirtualNetworkClient(object):
                 response_type="IPSecConnectionTunnelSharedSecret",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_ipv6(self, ipv6_id, update_ipv6_details, **kwargs):
         """
@@ -24179,6 +25060,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_ipv6.py.html>`__ to see an example of how to use update_ipv6 API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ipv6Id']
         resource_path = "/ipv6/{ipv6Id}"
         method = "PUT"
         operation_name = "update_ipv6"
@@ -24233,7 +25116,8 @@ class VirtualNetworkClient(object):
                 response_type="Ipv6",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24244,7 +25128,8 @@ class VirtualNetworkClient(object):
                 response_type="Ipv6",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_local_peering_gateway(self, local_peering_gateway_id, update_local_peering_gateway_details, **kwargs):
         """
@@ -24282,6 +25167,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_local_peering_gateway.py.html>`__ to see an example of how to use update_local_peering_gateway API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['localPeeringGatewayId']
         resource_path = "/localPeeringGateways/{localPeeringGatewayId}"
         method = "PUT"
         operation_name = "update_local_peering_gateway"
@@ -24334,7 +25221,8 @@ class VirtualNetworkClient(object):
                 response_type="LocalPeeringGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24345,7 +25233,8 @@ class VirtualNetworkClient(object):
                 response_type="LocalPeeringGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_nat_gateway(self, nat_gateway_id, update_nat_gateway_details, **kwargs):
         """
@@ -24383,6 +25272,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_nat_gateway.py.html>`__ to see an example of how to use update_nat_gateway API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['natGatewayId']
         resource_path = "/natGateways/{natGatewayId}"
         method = "PUT"
         operation_name = "update_nat_gateway"
@@ -24435,7 +25326,8 @@ class VirtualNetworkClient(object):
                 response_type="NatGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24446,7 +25338,8 @@ class VirtualNetworkClient(object):
                 response_type="NatGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_network_security_group(self, network_security_group_id, update_network_security_group_details, **kwargs):
         """
@@ -24500,6 +25393,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_network_security_group.py.html>`__ to see an example of how to use update_network_security_group API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkSecurityGroupId']
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}"
         method = "PUT"
         operation_name = "update_network_security_group"
@@ -24552,7 +25447,8 @@ class VirtualNetworkClient(object):
                 response_type="NetworkSecurityGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24563,7 +25459,8 @@ class VirtualNetworkClient(object):
                 response_type="NetworkSecurityGroup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_network_security_group_security_rules(self, network_security_group_id, update_network_security_group_security_rules_details, **kwargs):
         """
@@ -24597,6 +25494,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_network_security_group_security_rules.py.html>`__ to see an example of how to use update_network_security_group_security_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['networkSecurityGroupId']
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}/actions/updateSecurityRules"
         method = "POST"
         operation_name = "update_network_security_group_security_rules"
@@ -24642,7 +25541,8 @@ class VirtualNetworkClient(object):
                 response_type="UpdatedNetworkSecurityGroupSecurityRules",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24653,7 +25553,8 @@ class VirtualNetworkClient(object):
                 response_type="UpdatedNetworkSecurityGroupSecurityRules",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_private_ip(self, private_ip_id, update_private_ip_details, **kwargs):
         """
@@ -24702,6 +25603,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_private_ip.py.html>`__ to see an example of how to use update_private_ip API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateIpId']
         resource_path = "/privateIps/{privateIpId}"
         method = "PUT"
         operation_name = "update_private_ip"
@@ -24754,7 +25657,8 @@ class VirtualNetworkClient(object):
                 response_type="PrivateIp",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24765,7 +25669,8 @@ class VirtualNetworkClient(object):
                 response_type="PrivateIp",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_public_ip(self, public_ip_id, update_public_ip_details, **kwargs):
         """
@@ -24844,6 +25749,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_public_ip.py.html>`__ to see an example of how to use update_public_ip API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['publicIpId']
         resource_path = "/publicIps/{publicIpId}"
         method = "PUT"
         operation_name = "update_public_ip"
@@ -24896,7 +25803,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIp",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24907,7 +25815,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIp",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_public_ip_pool(self, public_ip_pool_id, update_public_ip_pool_details, **kwargs):
         """
@@ -24949,6 +25858,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_public_ip_pool.py.html>`__ to see an example of how to use update_public_ip_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['publicIpPoolId']
         resource_path = "/publicIpPools/{publicIpPoolId}"
         method = "PUT"
         operation_name = "update_public_ip_pool"
@@ -25003,7 +25914,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIpPool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25014,7 +25926,8 @@ class VirtualNetworkClient(object):
                 response_type="PublicIpPool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_remote_peering_connection(self, remote_peering_connection_id, update_remote_peering_connection_details, **kwargs):
         """
@@ -25052,6 +25965,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_remote_peering_connection.py.html>`__ to see an example of how to use update_remote_peering_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['remotePeeringConnectionId']
         resource_path = "/remotePeeringConnections/{remotePeeringConnectionId}"
         method = "PUT"
         operation_name = "update_remote_peering_connection"
@@ -25106,7 +26021,8 @@ class VirtualNetworkClient(object):
                 response_type="RemotePeeringConnection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25117,7 +26033,8 @@ class VirtualNetworkClient(object):
                 response_type="RemotePeeringConnection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_route_table(self, rt_id, update_route_table_details, **kwargs):
         """
@@ -25158,6 +26075,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_route_table.py.html>`__ to see an example of how to use update_route_table API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['rtId']
         resource_path = "/routeTables/{rtId}"
         method = "PUT"
         operation_name = "update_route_table"
@@ -25210,7 +26129,8 @@ class VirtualNetworkClient(object):
                 response_type="RouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25221,7 +26141,8 @@ class VirtualNetworkClient(object):
                 response_type="RouteTable",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_security_list(self, security_list_id, update_security_list_details, **kwargs):
         """
@@ -25263,6 +26184,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_security_list.py.html>`__ to see an example of how to use update_security_list API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityListId']
         resource_path = "/securityLists/{securityListId}"
         method = "PUT"
         operation_name = "update_security_list"
@@ -25315,7 +26238,8 @@ class VirtualNetworkClient(object):
                 response_type="SecurityList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25326,7 +26250,8 @@ class VirtualNetworkClient(object):
                 response_type="SecurityList",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_service_gateway(self, service_gateway_id, update_service_gateway_details, **kwargs):
         """
@@ -25365,6 +26290,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_service_gateway.py.html>`__ to see an example of how to use update_service_gateway API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['serviceGatewayId']
         resource_path = "/serviceGateways/{serviceGatewayId}"
         method = "PUT"
         operation_name = "update_service_gateway"
@@ -25417,7 +26344,8 @@ class VirtualNetworkClient(object):
                 response_type="ServiceGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25428,7 +26356,8 @@ class VirtualNetworkClient(object):
                 response_type="ServiceGateway",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_subnet(self, subnet_id, update_subnet_details, **kwargs):
         """
@@ -25466,6 +26395,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_subnet.py.html>`__ to see an example of how to use update_subnet API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subnetId']
         resource_path = "/subnets/{subnetId}"
         method = "PUT"
         operation_name = "update_subnet"
@@ -25518,7 +26449,8 @@ class VirtualNetworkClient(object):
                 response_type="Subnet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25529,7 +26461,8 @@ class VirtualNetworkClient(object):
                 response_type="Subnet",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_tunnel_cpe_device_config(self, ipsc_id, tunnel_id, update_tunnel_cpe_device_config_details, **kwargs):
         """
@@ -25585,6 +26518,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_tunnel_cpe_device_config.py.html>`__ to see an example of how to use update_tunnel_cpe_device_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ipscId', 'tunnelId']
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/tunnelDeviceConfig"
         method = "PUT"
         operation_name = "update_tunnel_cpe_device_config"
@@ -25645,7 +26580,8 @@ class VirtualNetworkClient(object):
                 response_type="TunnelCpeDeviceConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25656,7 +26592,8 @@ class VirtualNetworkClient(object):
                 response_type="TunnelCpeDeviceConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_vcn(self, vcn_id, update_vcn_details, **kwargs):
         """
@@ -25694,6 +26631,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_vcn.py.html>`__ to see an example of how to use update_vcn API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vcnId']
         resource_path = "/vcns/{vcnId}"
         method = "PUT"
         operation_name = "update_vcn"
@@ -25746,7 +26685,8 @@ class VirtualNetworkClient(object):
                 response_type="Vcn",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25757,7 +26697,8 @@ class VirtualNetworkClient(object):
                 response_type="Vcn",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_virtual_circuit(self, virtual_circuit_id, update_virtual_circuit_details, **kwargs):
         """
@@ -25820,6 +26761,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_virtual_circuit.py.html>`__ to see an example of how to use update_virtual_circuit API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['virtualCircuitId']
         resource_path = "/virtualCircuits/{virtualCircuitId}"
         method = "PUT"
         operation_name = "update_virtual_circuit"
@@ -25874,7 +26817,8 @@ class VirtualNetworkClient(object):
                 response_type="VirtualCircuit",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25885,7 +26829,8 @@ class VirtualNetworkClient(object):
                 response_type="VirtualCircuit",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_vlan(self, vlan_id, update_vlan_details, **kwargs):
         """
@@ -25928,6 +26873,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_vlan.py.html>`__ to see an example of how to use update_vlan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vlanId']
         resource_path = "/vlans/{vlanId}"
         method = "PUT"
         operation_name = "update_vlan"
@@ -25982,7 +26929,8 @@ class VirtualNetworkClient(object):
                 response_type="Vlan",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25993,7 +26941,8 @@ class VirtualNetworkClient(object):
                 response_type="Vlan",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_vnic(self, vnic_id, update_vnic_details, **kwargs):
         """
@@ -26031,6 +26980,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_vnic.py.html>`__ to see an example of how to use update_vnic API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vnicId']
         resource_path = "/vnics/{vnicId}"
         method = "PUT"
         operation_name = "update_vnic"
@@ -26083,7 +27034,8 @@ class VirtualNetworkClient(object):
                 response_type="Vnic",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26094,7 +27046,8 @@ class VirtualNetworkClient(object):
                 response_type="Vnic",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_vtap(self, vtap_id, update_vtap_details, **kwargs):
         """
@@ -26136,6 +27089,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/update_vtap.py.html>`__ to see an example of how to use update_vtap API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['vtapId']
         resource_path = "/vtaps/{vtapId}"
         method = "PUT"
         operation_name = "update_vtap"
@@ -26190,7 +27145,8 @@ class VirtualNetworkClient(object):
                 response_type="Vtap",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26201,7 +27157,8 @@ class VirtualNetworkClient(object):
                 response_type="Vtap",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def upgrade_drg(self, drg_id, **kwargs):
         """
@@ -26243,6 +27200,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/upgrade_drg.py.html>`__ to see an example of how to use upgrade_drg API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['drgId']
         resource_path = "/drgs/{drgId}/actions/upgrade"
         method = "POST"
         operation_name = "upgrade_drg"
@@ -26296,7 +27255,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26305,7 +27265,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def validate_byoip_range(self, byoip_range_id, **kwargs):
         """
@@ -26342,6 +27303,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/validate_byoip_range.py.html>`__ to see an example of how to use validate_byoip_range API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['byoipRangeId']
         resource_path = "/byoipRanges/{byoipRangeId}/actions/validate"
         method = "POST"
         operation_name = "validate_byoip_range"
@@ -26392,7 +27355,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26401,7 +27365,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def withdraw_byoip_range(self, byoip_range_id, **kwargs):
         """
@@ -26435,6 +27400,8 @@ class VirtualNetworkClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/withdraw_byoip_range.py.html>`__ to see an example of how to use withdraw_byoip_range API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['byoipRangeId']
         resource_path = "/byoipRanges/{byoipRangeId}/actions/withdraw"
         method = "POST"
         operation_name = "withdraw_byoip_range"
@@ -26485,7 +27452,8 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26494,4 +27462,5 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

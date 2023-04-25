@@ -108,6 +108,10 @@ class UpdateExadataInfrastructureDetails(object):
             The value to assign to the is_cps_offline_report_enabled property of this UpdateExadataInfrastructureDetails.
         :type is_cps_offline_report_enabled: bool
 
+        :param network_bonding_mode_details:
+            The value to assign to the network_bonding_mode_details property of this UpdateExadataInfrastructureDetails.
+        :type network_bonding_mode_details: oci.database.models.NetworkBondingModeDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateExadataInfrastructureDetails.
         :type freeform_tags: dict(str, str)
@@ -136,6 +140,7 @@ class UpdateExadataInfrastructureDetails(object):
             'ntp_server': 'list[str]',
             'time_zone': 'str',
             'is_cps_offline_report_enabled': 'bool',
+            'network_bonding_mode_details': 'NetworkBondingModeDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -159,6 +164,7 @@ class UpdateExadataInfrastructureDetails(object):
             'ntp_server': 'ntpServer',
             'time_zone': 'timeZone',
             'is_cps_offline_report_enabled': 'isCpsOfflineReportEnabled',
+            'network_bonding_mode_details': 'networkBondingModeDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -181,6 +187,7 @@ class UpdateExadataInfrastructureDetails(object):
         self._ntp_server = None
         self._time_zone = None
         self._is_cps_offline_report_enabled = None
+        self._network_bonding_mode_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -631,6 +638,26 @@ class UpdateExadataInfrastructureDetails(object):
         :type: bool
         """
         self._is_cps_offline_report_enabled = is_cps_offline_report_enabled
+
+    @property
+    def network_bonding_mode_details(self):
+        """
+        Gets the network_bonding_mode_details of this UpdateExadataInfrastructureDetails.
+
+        :return: The network_bonding_mode_details of this UpdateExadataInfrastructureDetails.
+        :rtype: oci.database.models.NetworkBondingModeDetails
+        """
+        return self._network_bonding_mode_details
+
+    @network_bonding_mode_details.setter
+    def network_bonding_mode_details(self, network_bonding_mode_details):
+        """
+        Sets the network_bonding_mode_details of this UpdateExadataInfrastructureDetails.
+
+        :param network_bonding_mode_details: The network_bonding_mode_details of this UpdateExadataInfrastructureDetails.
+        :type: oci.database.models.NetworkBondingModeDetails
+        """
+        self._network_bonding_mode_details = network_bonding_mode_details
 
     @property
     def freeform_tags(self):

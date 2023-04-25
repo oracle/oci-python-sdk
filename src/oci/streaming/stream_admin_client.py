@@ -65,6 +65,9 @@ class StreamAdminClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class StreamAdminClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20180418',
             'service_endpoint_template': 'https://streaming.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -140,6 +145,8 @@ class StreamAdminClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/change_connect_harness_compartment.py.html>`__ to see an example of how to use change_connect_harness_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['connectHarnessId']
         resource_path = "/connectharnesses/{connectHarnessId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_connect_harness_compartment"
@@ -195,7 +202,8 @@ class StreamAdminClient(object):
                 body=change_connect_harness_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -205,7 +213,8 @@ class StreamAdminClient(object):
                 body=change_connect_harness_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_stream_compartment(self, stream_id, change_stream_compartment_details, **kwargs):
         """
@@ -245,6 +254,8 @@ class StreamAdminClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/change_stream_compartment.py.html>`__ to see an example of how to use change_stream_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamId']
         resource_path = "/streams/{streamId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_stream_compartment"
@@ -300,7 +311,8 @@ class StreamAdminClient(object):
                 body=change_stream_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -310,7 +322,8 @@ class StreamAdminClient(object):
                 body=change_stream_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_stream_pool_compartment(self, stream_pool_id, change_stream_pool_compartment_details, **kwargs):
         """
@@ -348,6 +361,8 @@ class StreamAdminClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/change_stream_pool_compartment.py.html>`__ to see an example of how to use change_stream_pool_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamPoolId']
         resource_path = "/streampools/{streamPoolId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_stream_pool_compartment"
@@ -403,7 +418,8 @@ class StreamAdminClient(object):
                 body=change_stream_pool_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -413,7 +429,8 @@ class StreamAdminClient(object):
                 body=change_stream_pool_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_connect_harness(self, create_connect_harness_details, **kwargs):
         """
@@ -449,6 +466,8 @@ class StreamAdminClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/create_connect_harness.py.html>`__ to see an example of how to use create_connect_harness API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/connectharnesses"
         method = "POST"
         operation_name = "create_connect_harness"
@@ -495,7 +514,8 @@ class StreamAdminClient(object):
                 response_type="ConnectHarness",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -505,7 +525,8 @@ class StreamAdminClient(object):
                 response_type="ConnectHarness",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_stream(self, create_stream_details, **kwargs):
         """
@@ -541,6 +562,8 @@ class StreamAdminClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/create_stream.py.html>`__ to see an example of how to use create_stream API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/streams"
         method = "POST"
         operation_name = "create_stream"
@@ -584,7 +607,8 @@ class StreamAdminClient(object):
                 response_type="Stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -594,7 +618,8 @@ class StreamAdminClient(object):
                 response_type="Stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_stream_pool(self, create_stream_pool_details, **kwargs):
         """
@@ -631,6 +656,8 @@ class StreamAdminClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/create_stream_pool.py.html>`__ to see an example of how to use create_stream_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/streampools"
         method = "POST"
         operation_name = "create_stream_pool"
@@ -677,7 +704,8 @@ class StreamAdminClient(object):
                 response_type="StreamPool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -687,7 +715,8 @@ class StreamAdminClient(object):
                 response_type="StreamPool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_connect_harness(self, connect_harness_id, **kwargs):
         """
@@ -726,6 +755,8 @@ class StreamAdminClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/delete_connect_harness.py.html>`__ to see an example of how to use delete_connect_harness API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['connectHarnessId']
         resource_path = "/connectharnesses/{connectHarnessId}"
         method = "DELETE"
         operation_name = "delete_connect_harness"
@@ -780,7 +811,8 @@ class StreamAdminClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -789,7 +821,8 @@ class StreamAdminClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_stream(self, stream_id, **kwargs):
         """
@@ -828,6 +861,8 @@ class StreamAdminClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/delete_stream.py.html>`__ to see an example of how to use delete_stream API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamId']
         resource_path = "/streams/{streamId}"
         method = "DELETE"
         operation_name = "delete_stream"
@@ -882,7 +917,8 @@ class StreamAdminClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -891,7 +927,8 @@ class StreamAdminClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_stream_pool(self, stream_pool_id, **kwargs):
         """
@@ -927,6 +964,8 @@ class StreamAdminClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/delete_stream_pool.py.html>`__ to see an example of how to use delete_stream_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamPoolId']
         resource_path = "/streampools/{streamPoolId}"
         method = "DELETE"
         operation_name = "delete_stream_pool"
@@ -981,7 +1020,8 @@ class StreamAdminClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -990,7 +1030,8 @@ class StreamAdminClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_connect_harness(self, connect_harness_id, **kwargs):
         """
@@ -1022,6 +1063,8 @@ class StreamAdminClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/get_connect_harness.py.html>`__ to see an example of how to use get_connect_harness API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['connectHarnessId']
         resource_path = "/connectharnesses/{connectHarnessId}"
         method = "GET"
         operation_name = "get_connect_harness"
@@ -1075,7 +1118,8 @@ class StreamAdminClient(object):
                 response_type="ConnectHarness",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1085,7 +1129,8 @@ class StreamAdminClient(object):
                 response_type="ConnectHarness",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_stream(self, stream_id, **kwargs):
         """
@@ -1117,6 +1162,8 @@ class StreamAdminClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/get_stream.py.html>`__ to see an example of how to use get_stream API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamId']
         resource_path = "/streams/{streamId}"
         method = "GET"
         operation_name = "get_stream"
@@ -1170,7 +1217,8 @@ class StreamAdminClient(object):
                 response_type="Stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1180,7 +1228,8 @@ class StreamAdminClient(object):
                 response_type="Stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_stream_pool(self, stream_pool_id, **kwargs):
         """
@@ -1212,6 +1261,8 @@ class StreamAdminClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/get_stream_pool.py.html>`__ to see an example of how to use get_stream_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamPoolId']
         resource_path = "/streampools/{streamPoolId}"
         method = "GET"
         operation_name = "get_stream_pool"
@@ -1265,7 +1316,8 @@ class StreamAdminClient(object):
                 response_type="StreamPool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1275,7 +1327,8 @@ class StreamAdminClient(object):
                 response_type="StreamPool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_connect_harnesses(self, compartment_id, **kwargs):
         """
@@ -1334,6 +1387,8 @@ class StreamAdminClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/list_connect_harnesses.py.html>`__ to see an example of how to use list_connect_harnesses API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/connectharnesses"
         method = "GET"
         operation_name = "list_connect_harnesses"
@@ -1417,7 +1472,8 @@ class StreamAdminClient(object):
                 response_type="list[ConnectHarnessSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1427,7 +1483,8 @@ class StreamAdminClient(object):
                 response_type="list[ConnectHarnessSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_stream_pools(self, compartment_id, **kwargs):
         """
@@ -1486,6 +1543,8 @@ class StreamAdminClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/list_stream_pools.py.html>`__ to see an example of how to use list_stream_pools API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/streampools"
         method = "GET"
         operation_name = "list_stream_pools"
@@ -1569,7 +1628,8 @@ class StreamAdminClient(object):
                 response_type="list[StreamPoolSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1579,7 +1639,8 @@ class StreamAdminClient(object):
                 response_type="list[StreamPoolSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_streams(self, **kwargs):
         """
@@ -1644,6 +1705,8 @@ class StreamAdminClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/list_streams.py.html>`__ to see an example of how to use list_streams API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/streams"
         method = "GET"
         operation_name = "list_streams"
@@ -1730,7 +1793,8 @@ class StreamAdminClient(object):
                 response_type="list[StreamSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1740,7 +1804,8 @@ class StreamAdminClient(object):
                 response_type="list[StreamSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_connect_harness(self, connect_harness_id, update_connect_harness_details, **kwargs):
         """
@@ -1778,6 +1843,8 @@ class StreamAdminClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/update_connect_harness.py.html>`__ to see an example of how to use update_connect_harness API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['connectHarnessId']
         resource_path = "/connectharnesses/{connectHarnessId}"
         method = "PUT"
         operation_name = "update_connect_harness"
@@ -1834,7 +1901,8 @@ class StreamAdminClient(object):
                 response_type="ConnectHarness",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1845,7 +1913,8 @@ class StreamAdminClient(object):
                 response_type="ConnectHarness",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_stream(self, stream_id, update_stream_details, **kwargs):
         """
@@ -1883,6 +1952,8 @@ class StreamAdminClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/update_stream.py.html>`__ to see an example of how to use update_stream API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamId']
         resource_path = "/streams/{streamId}"
         method = "PUT"
         operation_name = "update_stream"
@@ -1939,7 +2010,8 @@ class StreamAdminClient(object):
                 response_type="Stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1950,7 +2022,8 @@ class StreamAdminClient(object):
                 response_type="Stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_stream_pool(self, stream_pool_id, update_stream_pool_details, **kwargs):
         """
@@ -1988,6 +2061,8 @@ class StreamAdminClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/streaming/update_stream_pool.py.html>`__ to see an example of how to use update_stream_pool API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamPoolId']
         resource_path = "/streampools/{streamPoolId}"
         method = "PUT"
         operation_name = "update_stream_pool"
@@ -2044,7 +2119,8 @@ class StreamAdminClient(object):
                 response_type="StreamPool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2055,4 +2131,5 @@ class StreamAdminClient(object):
                 response_type="StreamPool",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

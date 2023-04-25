@@ -59,6 +59,7 @@ from .change_database_parameter_details import ChangeDatabaseParameterDetails
 from .change_database_parameters_details import ChangeDatabaseParametersDetails
 from .change_db_management_private_endpoint_compartment_details import ChangeDbManagementPrivateEndpointCompartmentDetails
 from .change_external_db_system_compartment_details import ChangeExternalDbSystemCompartmentDetails
+from .change_external_exadata_infrastructure_compartment_details import ChangeExternalExadataInfrastructureCompartmentDetails
 from .change_job_compartment_details import ChangeJobCompartmentDetails
 from .change_managed_database_group_compartment_details import ChangeManagedDatabaseGroupCompartmentDetails
 from .child_database import ChildDatabase
@@ -72,6 +73,8 @@ from .create_external_db_system_connector_details import CreateExternalDbSystemC
 from .create_external_db_system_details import CreateExternalDbSystemDetails
 from .create_external_db_system_discovery_details import CreateExternalDbSystemDiscoveryDetails
 from .create_external_db_system_macs_connector_details import CreateExternalDbSystemMacsConnectorDetails
+from .create_external_exadata_infrastructure_details import CreateExternalExadataInfrastructureDetails
+from .create_external_exadata_storage_connector_details import CreateExternalExadataStorageConnectorDetails
 from .create_job_details import CreateJobDetails
 from .create_managed_database_group_details import CreateManagedDatabaseGroupDetails
 from .create_sql_job_details import CreateSqlJobDetails
@@ -92,6 +95,8 @@ from .database_management_config import DatabaseManagementConfig
 from .database_parameter_summary import DatabaseParameterSummary
 from .database_parameter_update_status import DatabaseParameterUpdateStatus
 from .database_parameters_collection import DatabaseParametersCollection
+from .database_plan import DatabasePlan
+from .database_plan_directive import DatabasePlanDirective
 from .database_ssl_connection_credentials import DatabaseSslConnectionCredentials
 from .database_storage_aggregate_metrics import DatabaseStorageAggregateMetrics
 from .database_time_aggregate_metrics import DatabaseTimeAggregateMetrics
@@ -101,6 +106,8 @@ from .db_management_analytics_metric import DbManagementAnalyticsMetric
 from .db_management_private_endpoint import DbManagementPrivateEndpoint
 from .db_management_private_endpoint_collection import DbManagementPrivateEndpointCollection
 from .db_management_private_endpoint_summary import DbManagementPrivateEndpointSummary
+from .dbm_resource import DbmResource
+from .discover_external_exadata_infrastructure_details import DiscoverExternalExadataInfrastructureDetails
 from .discovered_external_asm import DiscoveredExternalAsm
 from .discovered_external_asm_instance import DiscoveredExternalAsmInstance
 from .discovered_external_cluster import DiscoveredExternalCluster
@@ -114,6 +121,8 @@ from .discovered_external_pluggable_database import DiscoveredExternalPluggableD
 from .drop_sql_tuning_task_details import DropSqlTuningTaskDetails
 from .drop_tablespace_details import DropTablespaceDetails
 from .enable_external_db_system_database_management_details import EnableExternalDbSystemDatabaseManagementDetails
+from .enable_external_exadata_infrastructure_management_details import EnableExternalExadataInfrastructureManagementDetails
+from .entity_discovered import EntityDiscovered
 from .execution_plan_stats_comparision import ExecutionPlanStatsComparision
 from .external_asm import ExternalAsm
 from .external_asm_collection import ExternalAsmCollection
@@ -142,6 +151,7 @@ from .external_database_collection import ExternalDatabaseCollection
 from .external_database_connection_info import ExternalDatabaseConnectionInfo
 from .external_database_instance import ExternalDatabaseInstance
 from .external_database_summary import ExternalDatabaseSummary
+from .external_database_system_discovery_summary import ExternalDatabaseSystemDiscoverySummary
 from .external_db_home import ExternalDbHome
 from .external_db_home_collection import ExternalDbHomeCollection
 from .external_db_home_summary import ExternalDbHomeSummary
@@ -163,6 +173,22 @@ from .external_db_system_discovery_macs_connector import ExternalDbSystemDiscove
 from .external_db_system_discovery_summary import ExternalDbSystemDiscoverySummary
 from .external_db_system_macs_connector import ExternalDbSystemMacsConnector
 from .external_db_system_summary import ExternalDbSystemSummary
+from .external_exadata_database_system_summary import ExternalExadataDatabaseSystemSummary
+from .external_exadata_infra_basic_info import ExternalExadataInfraBasicInfo
+from .external_exadata_infrastructure import ExternalExadataInfrastructure
+from .external_exadata_infrastructure_collection import ExternalExadataInfrastructureCollection
+from .external_exadata_infrastructure_discovery import ExternalExadataInfrastructureDiscovery
+from .external_exadata_infrastructure_discovery_summary import ExternalExadataInfrastructureDiscoverySummary
+from .external_exadata_infrastructure_summary import ExternalExadataInfrastructureSummary
+from .external_exadata_storage_connector import ExternalExadataStorageConnector
+from .external_exadata_storage_connector_collection import ExternalExadataStorageConnectorCollection
+from .external_exadata_storage_connector_status import ExternalExadataStorageConnectorStatus
+from .external_exadata_storage_connector_summary import ExternalExadataStorageConnectorSummary
+from .external_exadata_storage_grid import ExternalExadataStorageGrid
+from .external_exadata_storage_grid_summary import ExternalExadataStorageGridSummary
+from .external_exadata_storage_server import ExternalExadataStorageServer
+from .external_exadata_storage_server_collection import ExternalExadataStorageServerCollection
+from .external_exadata_storage_server_summary import ExternalExadataStorageServerSummary
 from .external_listener import ExternalListener
 from .external_listener_collection import ExternalListenerCollection
 from .external_listener_endpoint import ExternalListenerEndpoint
@@ -175,6 +201,8 @@ from .external_listener_tcp_endpoint import ExternalListenerTcpEndpoint
 from .external_listener_tcps_endpoint import ExternalListenerTcpsEndpoint
 from .external_serviced_asm import ExternalServicedAsm
 from .external_serviced_database import ExternalServicedDatabase
+from .external_storage_grid_discovery_summary import ExternalStorageGridDiscoverySummary
+from .external_storage_server_discovery_summary import ExternalStorageServerDiscoverySummary
 from .failed_connections_aggregate_metrics import FailedConnectionsAggregateMetrics
 from .finding_schema_or_operation import FindingSchemaOrOperation
 from .fleet_metric_definition import FleetMetricDefinition
@@ -185,6 +213,7 @@ from .historic_addm_result import HistoricAddmResult
 from .implement_optimizer_statistics_advisor_recommendations_details import ImplementOptimizerStatisticsAdvisorRecommendationsDetails
 from .implement_optimizer_statistics_advisor_recommendations_job import ImplementOptimizerStatisticsAdvisorRecommendationsJob
 from .instance_details import InstanceDetails
+from .iorm_plan import IormPlan
 from .job import Job
 from .job_collection import JobCollection
 from .job_database import JobDatabase
@@ -219,6 +248,8 @@ from .object_privilege_collection import ObjectPrivilegeCollection
 from .object_privilege_summary import ObjectPrivilegeSummary
 from .object_storage_job_execution_result_details import ObjectStorageJobExecutionResultDetails
 from .object_storage_job_execution_result_location import ObjectStorageJobExecutionResultLocation
+from .open_alert_history import OpenAlertHistory
+from .open_alert_summary import OpenAlertSummary
 from .optimizer_database import OptimizerDatabase
 from .optimizer_statistics_advisor_execution import OptimizerStatisticsAdvisorExecution
 from .optimizer_statistics_advisor_execution_report import OptimizerStatisticsAdvisorExecutionReport
@@ -252,12 +283,14 @@ from .remove_data_file_details import RemoveDataFileDetails
 from .remove_managed_database_from_managed_database_group_details import RemoveManagedDatabaseFromManagedDatabaseGroupDetails
 from .reset_database_parameters_details import ResetDatabaseParametersDetails
 from .resize_data_file_details import ResizeDataFileDetails
+from .rest_credential import RestCredential
 from .role_collection import RoleCollection
 from .role_summary import RoleSummary
 from .rule_finding import RuleFinding
 from .run_historic_addm_details import RunHistoricAddmDetails
 from .schema_definition import SchemaDefinition
 from .snapshot_details import SnapshotDetails
+from .sql_cpu_activity import SqlCpuActivity
 from .sql_job import SqlJob
 from .sql_tuning_advisor_task_collection import SqlTuningAdvisorTaskCollection
 from .sql_tuning_advisor_task_finding_collection import SqlTuningAdvisorTaskFindingCollection
@@ -303,6 +336,7 @@ from .test_preferred_credential_details import TestPreferredCredentialDetails
 from .test_preferred_credential_status import TestPreferredCredentialStatus
 from .time_series_metric_data_point import TimeSeriesMetricDataPoint
 from .time_series_metric_definition import TimeSeriesMetricDefinition
+from .top_sql_cpu_activity import TopSqlCpuActivity
 from .update_basic_preferred_credential_details import UpdateBasicPreferredCredentialDetails
 from .update_database_parameters_result import UpdateDatabaseParametersResult
 from .update_db_management_private_endpoint_details import UpdateDbManagementPrivateEndpointDetails
@@ -314,6 +348,8 @@ from .update_external_db_system_connector_details import UpdateExternalDbSystemC
 from .update_external_db_system_details import UpdateExternalDbSystemDetails
 from .update_external_db_system_discovery_details import UpdateExternalDbSystemDiscoveryDetails
 from .update_external_db_system_macs_connector_details import UpdateExternalDbSystemMacsConnectorDetails
+from .update_external_exadata_infrastructure_details import UpdateExternalExadataInfrastructureDetails
+from .update_external_exadata_storage_connector_details import UpdateExternalExadataStorageConnectorDetails
 from .update_external_listener_details import UpdateExternalListenerDetails
 from .update_job_details import UpdateJobDetails
 from .update_managed_database_group_details import UpdateManagedDatabaseGroupDetails
@@ -390,6 +426,7 @@ database_management_type_mapping = {
     "ChangeDatabaseParametersDetails": ChangeDatabaseParametersDetails,
     "ChangeDbManagementPrivateEndpointCompartmentDetails": ChangeDbManagementPrivateEndpointCompartmentDetails,
     "ChangeExternalDbSystemCompartmentDetails": ChangeExternalDbSystemCompartmentDetails,
+    "ChangeExternalExadataInfrastructureCompartmentDetails": ChangeExternalExadataInfrastructureCompartmentDetails,
     "ChangeJobCompartmentDetails": ChangeJobCompartmentDetails,
     "ChangeManagedDatabaseGroupCompartmentDetails": ChangeManagedDatabaseGroupCompartmentDetails,
     "ChildDatabase": ChildDatabase,
@@ -403,6 +440,8 @@ database_management_type_mapping = {
     "CreateExternalDbSystemDetails": CreateExternalDbSystemDetails,
     "CreateExternalDbSystemDiscoveryDetails": CreateExternalDbSystemDiscoveryDetails,
     "CreateExternalDbSystemMacsConnectorDetails": CreateExternalDbSystemMacsConnectorDetails,
+    "CreateExternalExadataInfrastructureDetails": CreateExternalExadataInfrastructureDetails,
+    "CreateExternalExadataStorageConnectorDetails": CreateExternalExadataStorageConnectorDetails,
     "CreateJobDetails": CreateJobDetails,
     "CreateManagedDatabaseGroupDetails": CreateManagedDatabaseGroupDetails,
     "CreateSqlJobDetails": CreateSqlJobDetails,
@@ -423,6 +462,8 @@ database_management_type_mapping = {
     "DatabaseParameterSummary": DatabaseParameterSummary,
     "DatabaseParameterUpdateStatus": DatabaseParameterUpdateStatus,
     "DatabaseParametersCollection": DatabaseParametersCollection,
+    "DatabasePlan": DatabasePlan,
+    "DatabasePlanDirective": DatabasePlanDirective,
     "DatabaseSslConnectionCredentials": DatabaseSslConnectionCredentials,
     "DatabaseStorageAggregateMetrics": DatabaseStorageAggregateMetrics,
     "DatabaseTimeAggregateMetrics": DatabaseTimeAggregateMetrics,
@@ -432,6 +473,8 @@ database_management_type_mapping = {
     "DbManagementPrivateEndpoint": DbManagementPrivateEndpoint,
     "DbManagementPrivateEndpointCollection": DbManagementPrivateEndpointCollection,
     "DbManagementPrivateEndpointSummary": DbManagementPrivateEndpointSummary,
+    "DbmResource": DbmResource,
+    "DiscoverExternalExadataInfrastructureDetails": DiscoverExternalExadataInfrastructureDetails,
     "DiscoveredExternalAsm": DiscoveredExternalAsm,
     "DiscoveredExternalAsmInstance": DiscoveredExternalAsmInstance,
     "DiscoveredExternalCluster": DiscoveredExternalCluster,
@@ -445,6 +488,8 @@ database_management_type_mapping = {
     "DropSqlTuningTaskDetails": DropSqlTuningTaskDetails,
     "DropTablespaceDetails": DropTablespaceDetails,
     "EnableExternalDbSystemDatabaseManagementDetails": EnableExternalDbSystemDatabaseManagementDetails,
+    "EnableExternalExadataInfrastructureManagementDetails": EnableExternalExadataInfrastructureManagementDetails,
+    "EntityDiscovered": EntityDiscovered,
     "ExecutionPlanStatsComparision": ExecutionPlanStatsComparision,
     "ExternalAsm": ExternalAsm,
     "ExternalAsmCollection": ExternalAsmCollection,
@@ -473,6 +518,7 @@ database_management_type_mapping = {
     "ExternalDatabaseConnectionInfo": ExternalDatabaseConnectionInfo,
     "ExternalDatabaseInstance": ExternalDatabaseInstance,
     "ExternalDatabaseSummary": ExternalDatabaseSummary,
+    "ExternalDatabaseSystemDiscoverySummary": ExternalDatabaseSystemDiscoverySummary,
     "ExternalDbHome": ExternalDbHome,
     "ExternalDbHomeCollection": ExternalDbHomeCollection,
     "ExternalDbHomeSummary": ExternalDbHomeSummary,
@@ -494,6 +540,22 @@ database_management_type_mapping = {
     "ExternalDbSystemDiscoverySummary": ExternalDbSystemDiscoverySummary,
     "ExternalDbSystemMacsConnector": ExternalDbSystemMacsConnector,
     "ExternalDbSystemSummary": ExternalDbSystemSummary,
+    "ExternalExadataDatabaseSystemSummary": ExternalExadataDatabaseSystemSummary,
+    "ExternalExadataInfraBasicInfo": ExternalExadataInfraBasicInfo,
+    "ExternalExadataInfrastructure": ExternalExadataInfrastructure,
+    "ExternalExadataInfrastructureCollection": ExternalExadataInfrastructureCollection,
+    "ExternalExadataInfrastructureDiscovery": ExternalExadataInfrastructureDiscovery,
+    "ExternalExadataInfrastructureDiscoverySummary": ExternalExadataInfrastructureDiscoverySummary,
+    "ExternalExadataInfrastructureSummary": ExternalExadataInfrastructureSummary,
+    "ExternalExadataStorageConnector": ExternalExadataStorageConnector,
+    "ExternalExadataStorageConnectorCollection": ExternalExadataStorageConnectorCollection,
+    "ExternalExadataStorageConnectorStatus": ExternalExadataStorageConnectorStatus,
+    "ExternalExadataStorageConnectorSummary": ExternalExadataStorageConnectorSummary,
+    "ExternalExadataStorageGrid": ExternalExadataStorageGrid,
+    "ExternalExadataStorageGridSummary": ExternalExadataStorageGridSummary,
+    "ExternalExadataStorageServer": ExternalExadataStorageServer,
+    "ExternalExadataStorageServerCollection": ExternalExadataStorageServerCollection,
+    "ExternalExadataStorageServerSummary": ExternalExadataStorageServerSummary,
     "ExternalListener": ExternalListener,
     "ExternalListenerCollection": ExternalListenerCollection,
     "ExternalListenerEndpoint": ExternalListenerEndpoint,
@@ -506,6 +568,8 @@ database_management_type_mapping = {
     "ExternalListenerTcpsEndpoint": ExternalListenerTcpsEndpoint,
     "ExternalServicedAsm": ExternalServicedAsm,
     "ExternalServicedDatabase": ExternalServicedDatabase,
+    "ExternalStorageGridDiscoverySummary": ExternalStorageGridDiscoverySummary,
+    "ExternalStorageServerDiscoverySummary": ExternalStorageServerDiscoverySummary,
     "FailedConnectionsAggregateMetrics": FailedConnectionsAggregateMetrics,
     "FindingSchemaOrOperation": FindingSchemaOrOperation,
     "FleetMetricDefinition": FleetMetricDefinition,
@@ -516,6 +580,7 @@ database_management_type_mapping = {
     "ImplementOptimizerStatisticsAdvisorRecommendationsDetails": ImplementOptimizerStatisticsAdvisorRecommendationsDetails,
     "ImplementOptimizerStatisticsAdvisorRecommendationsJob": ImplementOptimizerStatisticsAdvisorRecommendationsJob,
     "InstanceDetails": InstanceDetails,
+    "IormPlan": IormPlan,
     "Job": Job,
     "JobCollection": JobCollection,
     "JobDatabase": JobDatabase,
@@ -550,6 +615,8 @@ database_management_type_mapping = {
     "ObjectPrivilegeSummary": ObjectPrivilegeSummary,
     "ObjectStorageJobExecutionResultDetails": ObjectStorageJobExecutionResultDetails,
     "ObjectStorageJobExecutionResultLocation": ObjectStorageJobExecutionResultLocation,
+    "OpenAlertHistory": OpenAlertHistory,
+    "OpenAlertSummary": OpenAlertSummary,
     "OptimizerDatabase": OptimizerDatabase,
     "OptimizerStatisticsAdvisorExecution": OptimizerStatisticsAdvisorExecution,
     "OptimizerStatisticsAdvisorExecutionReport": OptimizerStatisticsAdvisorExecutionReport,
@@ -583,12 +650,14 @@ database_management_type_mapping = {
     "RemoveManagedDatabaseFromManagedDatabaseGroupDetails": RemoveManagedDatabaseFromManagedDatabaseGroupDetails,
     "ResetDatabaseParametersDetails": ResetDatabaseParametersDetails,
     "ResizeDataFileDetails": ResizeDataFileDetails,
+    "RestCredential": RestCredential,
     "RoleCollection": RoleCollection,
     "RoleSummary": RoleSummary,
     "RuleFinding": RuleFinding,
     "RunHistoricAddmDetails": RunHistoricAddmDetails,
     "SchemaDefinition": SchemaDefinition,
     "SnapshotDetails": SnapshotDetails,
+    "SqlCpuActivity": SqlCpuActivity,
     "SqlJob": SqlJob,
     "SqlTuningAdvisorTaskCollection": SqlTuningAdvisorTaskCollection,
     "SqlTuningAdvisorTaskFindingCollection": SqlTuningAdvisorTaskFindingCollection,
@@ -634,6 +703,7 @@ database_management_type_mapping = {
     "TestPreferredCredentialStatus": TestPreferredCredentialStatus,
     "TimeSeriesMetricDataPoint": TimeSeriesMetricDataPoint,
     "TimeSeriesMetricDefinition": TimeSeriesMetricDefinition,
+    "TopSqlCpuActivity": TopSqlCpuActivity,
     "UpdateBasicPreferredCredentialDetails": UpdateBasicPreferredCredentialDetails,
     "UpdateDatabaseParametersResult": UpdateDatabaseParametersResult,
     "UpdateDbManagementPrivateEndpointDetails": UpdateDbManagementPrivateEndpointDetails,
@@ -645,6 +715,8 @@ database_management_type_mapping = {
     "UpdateExternalDbSystemDetails": UpdateExternalDbSystemDetails,
     "UpdateExternalDbSystemDiscoveryDetails": UpdateExternalDbSystemDiscoveryDetails,
     "UpdateExternalDbSystemMacsConnectorDetails": UpdateExternalDbSystemMacsConnectorDetails,
+    "UpdateExternalExadataInfrastructureDetails": UpdateExternalExadataInfrastructureDetails,
+    "UpdateExternalExadataStorageConnectorDetails": UpdateExternalExadataStorageConnectorDetails,
     "UpdateExternalListenerDetails": UpdateExternalListenerDetails,
     "UpdateJobDetails": UpdateJobDetails,
     "UpdateManagedDatabaseGroupDetails": UpdateManagedDatabaseGroupDetails,

@@ -65,6 +65,9 @@ class ServiceCatalogClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class ServiceCatalogClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20210527',
             'service_endpoint_template': 'https://service-catalog.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -142,6 +147,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/bulk_replace_service_catalog_associations.py.html>`__ to see an example of how to use bulk_replace_service_catalog_associations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['serviceCatalogId']
         resource_path = "/serviceCatalogs/{serviceCatalogId}/actions/bulkReplaceAssociations"
         method = "PUT"
         operation_name = "bulk_replace_service_catalog_associations"
@@ -195,7 +202,8 @@ class ServiceCatalogClient(object):
                 body=bulk_replace_service_catalog_associations_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -205,7 +213,8 @@ class ServiceCatalogClient(object):
                 body=bulk_replace_service_catalog_associations_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_private_application_compartment(self, private_application_id, change_private_application_compartment_details, **kwargs):
         """
@@ -245,6 +254,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/change_private_application_compartment.py.html>`__ to see an example of how to use change_private_application_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateApplicationId']
         resource_path = "/privateApplications/{privateApplicationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_private_application_compartment"
@@ -298,7 +309,8 @@ class ServiceCatalogClient(object):
                 body=change_private_application_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -308,7 +320,8 @@ class ServiceCatalogClient(object):
                 body=change_private_application_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_service_catalog_compartment(self, service_catalog_id, change_service_catalog_compartment_details, **kwargs):
         """
@@ -348,6 +361,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/change_service_catalog_compartment.py.html>`__ to see an example of how to use change_service_catalog_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['serviceCatalogId']
         resource_path = "/serviceCatalogs/{serviceCatalogId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_service_catalog_compartment"
@@ -401,7 +416,8 @@ class ServiceCatalogClient(object):
                 body=change_service_catalog_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -411,7 +427,8 @@ class ServiceCatalogClient(object):
                 body=change_service_catalog_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_private_application(self, create_private_application_details, **kwargs):
         """
@@ -449,6 +466,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/create_private_application.py.html>`__ to see an example of how to use create_private_application API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/privateApplications"
         method = "POST"
         operation_name = "create_private_application"
@@ -493,7 +512,8 @@ class ServiceCatalogClient(object):
                 response_type="PrivateApplication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -503,7 +523,8 @@ class ServiceCatalogClient(object):
                 response_type="PrivateApplication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_service_catalog(self, create_service_catalog_details, **kwargs):
         """
@@ -541,6 +562,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/create_service_catalog.py.html>`__ to see an example of how to use create_service_catalog API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/serviceCatalogs"
         method = "POST"
         operation_name = "create_service_catalog"
@@ -585,7 +608,8 @@ class ServiceCatalogClient(object):
                 response_type="ServiceCatalog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -595,7 +619,8 @@ class ServiceCatalogClient(object):
                 response_type="ServiceCatalog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_service_catalog_association(self, create_service_catalog_association_details, **kwargs):
         """
@@ -633,6 +658,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/create_service_catalog_association.py.html>`__ to see an example of how to use create_service_catalog_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/serviceCatalogAssociations"
         method = "POST"
         operation_name = "create_service_catalog_association"
@@ -677,7 +704,8 @@ class ServiceCatalogClient(object):
                 response_type="ServiceCatalogAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -687,7 +715,8 @@ class ServiceCatalogClient(object):
                 response_type="ServiceCatalogAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_private_application(self, private_application_id, **kwargs):
         """
@@ -724,6 +753,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/delete_private_application.py.html>`__ to see an example of how to use delete_private_application API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateApplicationId']
         resource_path = "/privateApplications/{privateApplicationId}"
         method = "DELETE"
         operation_name = "delete_private_application"
@@ -776,7 +807,8 @@ class ServiceCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -785,7 +817,8 @@ class ServiceCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_service_catalog(self, service_catalog_id, **kwargs):
         """
@@ -822,6 +855,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/delete_service_catalog.py.html>`__ to see an example of how to use delete_service_catalog API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['serviceCatalogId']
         resource_path = "/serviceCatalogs/{serviceCatalogId}"
         method = "DELETE"
         operation_name = "delete_service_catalog"
@@ -874,7 +909,8 @@ class ServiceCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -883,7 +919,8 @@ class ServiceCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_service_catalog_association(self, service_catalog_association_id, **kwargs):
         """
@@ -920,6 +957,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/delete_service_catalog_association.py.html>`__ to see an example of how to use delete_service_catalog_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['serviceCatalogAssociationId']
         resource_path = "/serviceCatalogAssociations/{serviceCatalogAssociationId}"
         method = "DELETE"
         operation_name = "delete_service_catalog_association"
@@ -972,7 +1011,8 @@ class ServiceCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -981,7 +1021,8 @@ class ServiceCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_private_application(self, private_application_id, **kwargs):
         """
@@ -1013,6 +1054,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/get_private_application.py.html>`__ to see an example of how to use get_private_application API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateApplicationId']
         resource_path = "/privateApplications/{privateApplicationId}"
         method = "GET"
         operation_name = "get_private_application"
@@ -1064,7 +1107,8 @@ class ServiceCatalogClient(object):
                 response_type="PrivateApplication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1074,7 +1118,8 @@ class ServiceCatalogClient(object):
                 response_type="PrivateApplication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_private_application_action_download_logo(self, private_application_id, **kwargs):
         """
@@ -1106,6 +1151,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/get_private_application_action_download_logo.py.html>`__ to see an example of how to use get_private_application_action_download_logo API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateApplicationId']
         resource_path = "/privateApplications/{privateApplicationId}/actions/downloadLogo"
         method = "GET"
         operation_name = "get_private_application_action_download_logo"
@@ -1157,7 +1204,8 @@ class ServiceCatalogClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1167,7 +1215,8 @@ class ServiceCatalogClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_private_application_package(self, private_application_package_id, **kwargs):
         """
@@ -1199,6 +1248,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/get_private_application_package.py.html>`__ to see an example of how to use get_private_application_package API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateApplicationPackageId']
         resource_path = "/privateApplicationPackages/{privateApplicationPackageId}"
         method = "GET"
         operation_name = "get_private_application_package"
@@ -1250,7 +1301,8 @@ class ServiceCatalogClient(object):
                 response_type="PrivateApplicationPackage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1260,7 +1312,8 @@ class ServiceCatalogClient(object):
                 response_type="PrivateApplicationPackage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_private_application_package_action_download_config(self, private_application_package_id, **kwargs):
         """
@@ -1292,6 +1345,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/get_private_application_package_action_download_config.py.html>`__ to see an example of how to use get_private_application_package_action_download_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateApplicationPackageId']
         resource_path = "/privateApplicationPackages/{privateApplicationPackageId}/actions/downloadConfig"
         method = "GET"
         operation_name = "get_private_application_package_action_download_config"
@@ -1343,7 +1398,8 @@ class ServiceCatalogClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1353,7 +1409,8 @@ class ServiceCatalogClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_service_catalog(self, service_catalog_id, **kwargs):
         """
@@ -1385,6 +1442,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/get_service_catalog.py.html>`__ to see an example of how to use get_service_catalog API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['serviceCatalogId']
         resource_path = "/serviceCatalogs/{serviceCatalogId}"
         method = "GET"
         operation_name = "get_service_catalog"
@@ -1436,7 +1495,8 @@ class ServiceCatalogClient(object):
                 response_type="ServiceCatalog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1446,7 +1506,8 @@ class ServiceCatalogClient(object):
                 response_type="ServiceCatalog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_service_catalog_association(self, service_catalog_association_id, **kwargs):
         """
@@ -1478,6 +1539,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/get_service_catalog_association.py.html>`__ to see an example of how to use get_service_catalog_association API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['serviceCatalogAssociationId']
         resource_path = "/serviceCatalogAssociations/{serviceCatalogAssociationId}"
         method = "GET"
         operation_name = "get_service_catalog_association"
@@ -1529,7 +1592,8 @@ class ServiceCatalogClient(object):
                 response_type="ServiceCatalogAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1539,7 +1603,8 @@ class ServiceCatalogClient(object):
                 response_type="ServiceCatalogAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1571,6 +1636,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -1622,7 +1689,8 @@ class ServiceCatalogClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1632,7 +1700,8 @@ class ServiceCatalogClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_applications(self, **kwargs):
         """
@@ -1707,6 +1776,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/list_applications.py.html>`__ to see an example of how to use list_applications API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/applications"
         method = "GET"
         operation_name = "list_applications"
@@ -1799,7 +1870,8 @@ class ServiceCatalogClient(object):
                 response_type="ApplicationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1809,7 +1881,8 @@ class ServiceCatalogClient(object):
                 response_type="ApplicationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_private_application_packages(self, private_application_id, **kwargs):
         """
@@ -1871,6 +1944,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/list_private_application_packages.py.html>`__ to see an example of how to use list_private_application_packages API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateApplicationId']
         resource_path = "/privateApplicationPackages"
         method = "GET"
         operation_name = "list_private_application_packages"
@@ -1953,7 +2028,8 @@ class ServiceCatalogClient(object):
                 response_type="PrivateApplicationPackageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1963,7 +2039,8 @@ class ServiceCatalogClient(object):
                 response_type="PrivateApplicationPackageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_private_applications(self, compartment_id, **kwargs):
         """
@@ -2018,6 +2095,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/list_private_applications.py.html>`__ to see an example of how to use list_private_applications API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/privateApplications"
         method = "GET"
         operation_name = "list_private_applications"
@@ -2090,7 +2169,8 @@ class ServiceCatalogClient(object):
                 response_type="PrivateApplicationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2100,7 +2180,8 @@ class ServiceCatalogClient(object):
                 response_type="PrivateApplicationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_service_catalog_associations(self, **kwargs):
         """
@@ -2157,6 +2238,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/list_service_catalog_associations.py.html>`__ to see an example of how to use list_service_catalog_associations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/serviceCatalogAssociations"
         method = "GET"
         operation_name = "list_service_catalog_associations"
@@ -2232,7 +2315,8 @@ class ServiceCatalogClient(object):
                 response_type="ServiceCatalogAssociationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2242,7 +2326,8 @@ class ServiceCatalogClient(object):
                 response_type="ServiceCatalogAssociationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_service_catalogs(self, compartment_id, **kwargs):
         """
@@ -2296,6 +2381,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/list_service_catalogs.py.html>`__ to see an example of how to use list_service_catalogs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/serviceCatalogs"
         method = "GET"
         operation_name = "list_service_catalogs"
@@ -2368,7 +2455,8 @@ class ServiceCatalogClient(object):
                 response_type="ServiceCatalogCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2378,7 +2466,8 @@ class ServiceCatalogClient(object):
                 response_type="ServiceCatalogCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -2426,6 +2515,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -2504,7 +2595,8 @@ class ServiceCatalogClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2515,7 +2607,8 @@ class ServiceCatalogClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -2563,6 +2656,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -2641,7 +2736,8 @@ class ServiceCatalogClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2652,7 +2748,8 @@ class ServiceCatalogClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, **kwargs):
         """
@@ -2711,6 +2808,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -2793,7 +2892,8 @@ class ServiceCatalogClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2803,7 +2903,8 @@ class ServiceCatalogClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_private_application(self, private_application_id, update_private_application_details, **kwargs):
         """
@@ -2843,6 +2944,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/update_private_application.py.html>`__ to see an example of how to use update_private_application API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['privateApplicationId']
         resource_path = "/privateApplications/{privateApplicationId}"
         method = "PUT"
         operation_name = "update_private_application"
@@ -2897,7 +3000,8 @@ class ServiceCatalogClient(object):
                 response_type="PrivateApplication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2908,7 +3012,8 @@ class ServiceCatalogClient(object):
                 response_type="PrivateApplication",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_service_catalog(self, service_catalog_id, update_service_catalog_details, **kwargs):
         """
@@ -2948,6 +3053,8 @@ class ServiceCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/servicecatalog/update_service_catalog.py.html>`__ to see an example of how to use update_service_catalog API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['serviceCatalogId']
         resource_path = "/serviceCatalogs/{serviceCatalogId}"
         method = "PUT"
         operation_name = "update_service_catalog"
@@ -3002,7 +3109,8 @@ class ServiceCatalogClient(object):
                 response_type="ServiceCatalog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3013,4 +3121,5 @@ class ServiceCatalogClient(object):
                 response_type="ServiceCatalog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

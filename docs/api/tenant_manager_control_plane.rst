@@ -8,6 +8,7 @@ Tenant Manager Control Plane
 
     oci.tenant_manager_control_plane.DomainClient
     oci.tenant_manager_control_plane.DomainGovernanceClient
+    oci.tenant_manager_control_plane.GovernanceClient
     oci.tenant_manager_control_plane.LinkClient
     oci.tenant_manager_control_plane.OrdersClient
     oci.tenant_manager_control_plane.OrganizationClient
@@ -17,6 +18,7 @@ Tenant Manager Control Plane
     oci.tenant_manager_control_plane.WorkRequestClient
     oci.tenant_manager_control_plane.DomainClientCompositeOperations
     oci.tenant_manager_control_plane.DomainGovernanceClientCompositeOperations
+    oci.tenant_manager_control_plane.GovernanceClientCompositeOperations
     oci.tenant_manager_control_plane.LinkClientCompositeOperations
     oci.tenant_manager_control_plane.OrdersClientCompositeOperations
     oci.tenant_manager_control_plane.OrganizationClientCompositeOperations

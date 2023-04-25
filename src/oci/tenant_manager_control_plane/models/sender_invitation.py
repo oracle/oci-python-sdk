@@ -70,6 +70,10 @@ class SenderInvitation(object):
             The value to assign to the compartment_id property of this SenderInvitation.
         :type compartment_id: str
 
+        :param subjects:
+            The value to assign to the subjects property of this SenderInvitation.
+        :type subjects: list[oci.tenant_manager_control_plane.models.InvitationSubject]
+
         :param recipient_invitation_id:
             The value to assign to the recipient_invitation_id property of this SenderInvitation.
         :type recipient_invitation_id: str
@@ -122,6 +126,7 @@ class SenderInvitation(object):
         self.swagger_types = {
             'id': 'str',
             'compartment_id': 'str',
+            'subjects': 'list[InvitationSubject]',
             'recipient_invitation_id': 'str',
             'recipient_tenancy_id': 'str',
             'lifecycle_state': 'str',
@@ -138,6 +143,7 @@ class SenderInvitation(object):
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
+            'subjects': 'subjects',
             'recipient_invitation_id': 'recipientInvitationId',
             'recipient_tenancy_id': 'recipientTenancyId',
             'lifecycle_state': 'lifecycleState',
@@ -153,6 +159,7 @@ class SenderInvitation(object):
 
         self._id = None
         self._compartment_id = None
+        self._subjects = None
         self._recipient_invitation_id = None
         self._recipient_tenancy_id = None
         self._lifecycle_state = None
@@ -212,6 +219,30 @@ class SenderInvitation(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def subjects(self):
+        """
+        **[Required]** Gets the subjects of this SenderInvitation.
+        The list of subjects the invitation contains.
+
+
+        :return: The subjects of this SenderInvitation.
+        :rtype: list[oci.tenant_manager_control_plane.models.InvitationSubject]
+        """
+        return self._subjects
+
+    @subjects.setter
+    def subjects(self, subjects):
+        """
+        Sets the subjects of this SenderInvitation.
+        The list of subjects the invitation contains.
+
+
+        :param subjects: The subjects of this SenderInvitation.
+        :type: list[oci.tenant_manager_control_plane.models.InvitationSubject]
+        """
+        self._subjects = subjects
 
     @property
     def recipient_invitation_id(self):
@@ -349,7 +380,7 @@ class SenderInvitation(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this SenderInvitation.
-        Date-time when this sender invitation was created.
+        Date and time when the sender invitation was created.
 
 
         :return: The time_created of this SenderInvitation.
@@ -361,7 +392,7 @@ class SenderInvitation(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this SenderInvitation.
-        Date-time when this sender invitation was created.
+        Date and time when the sender invitation was created.
 
 
         :param time_created: The time_created of this SenderInvitation.
@@ -373,7 +404,7 @@ class SenderInvitation(object):
     def time_updated(self):
         """
         Gets the time_updated of this SenderInvitation.
-        Date-time when this sender invitation was last updated.
+        Date and time when the sender invitation was last updated.
 
 
         :return: The time_updated of this SenderInvitation.
@@ -385,7 +416,7 @@ class SenderInvitation(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this SenderInvitation.
-        Date-time when this sender invitation was last updated.
+        Date and time when the sender invitation was last updated.
 
 
         :param time_updated: The time_updated of this SenderInvitation.

@@ -67,6 +67,9 @@ class SubscribersClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -93,8 +96,10 @@ class SubscribersClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20190501',
             'service_endpoint_template': 'https://apigateway.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -152,6 +157,8 @@ class SubscribersClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/change_subscriber_compartment.py.html>`__ to see an example of how to use change_subscriber_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subscriberId']
         resource_path = "/subscribers/{subscriberId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_subscriber_compartment"
@@ -208,7 +215,8 @@ class SubscribersClient(object):
                 body=change_subscriber_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -218,7 +226,8 @@ class SubscribersClient(object):
                 body=change_subscriber_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_subscriber(self, create_subscriber_details, **kwargs):
         """
@@ -256,6 +265,8 @@ class SubscribersClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/create_subscriber.py.html>`__ to see an example of how to use create_subscriber API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/subscribers"
         method = "POST"
         operation_name = "create_subscriber"
@@ -302,7 +313,8 @@ class SubscribersClient(object):
                 response_type="Subscriber",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -312,7 +324,8 @@ class SubscribersClient(object):
                 response_type="Subscriber",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_subscriber(self, subscriber_id, **kwargs):
         """
@@ -350,6 +363,8 @@ class SubscribersClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/delete_subscriber.py.html>`__ to see an example of how to use delete_subscriber API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subscriberId']
         resource_path = "/subscribers/{subscriberId}"
         method = "DELETE"
         operation_name = "delete_subscriber"
@@ -402,7 +417,8 @@ class SubscribersClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -411,7 +427,8 @@ class SubscribersClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_subscriber(self, subscriber_id, **kwargs):
         """
@@ -442,6 +459,8 @@ class SubscribersClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/get_subscriber.py.html>`__ to see an example of how to use get_subscriber API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subscriberId']
         resource_path = "/subscribers/{subscriberId}"
         method = "GET"
         operation_name = "get_subscriber"
@@ -495,7 +514,8 @@ class SubscribersClient(object):
                 response_type="Subscriber",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -505,7 +525,8 @@ class SubscribersClient(object):
                 response_type="Subscriber",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_subscribers(self, compartment_id, **kwargs):
         """
@@ -566,6 +587,8 @@ class SubscribersClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/list_subscribers.py.html>`__ to see an example of how to use list_subscribers API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/subscribers"
         method = "GET"
         operation_name = "list_subscribers"
@@ -647,7 +670,8 @@ class SubscribersClient(object):
                 response_type="SubscriberCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -657,7 +681,8 @@ class SubscribersClient(object):
                 response_type="SubscriberCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_subscriber(self, subscriber_id, update_subscriber_details, **kwargs):
         """
@@ -698,6 +723,8 @@ class SubscribersClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apigateway/update_subscriber.py.html>`__ to see an example of how to use update_subscriber API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subscriberId']
         resource_path = "/subscribers/{subscriberId}"
         method = "PUT"
         operation_name = "update_subscriber"
@@ -751,7 +778,8 @@ class SubscribersClient(object):
                 body=update_subscriber_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -761,4 +789,5 @@ class SubscribersClient(object):
                 body=update_subscriber_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

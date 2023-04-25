@@ -65,6 +65,9 @@ class OdapackageClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class OdapackageClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20190506',
             'service_endpoint_template': 'https://digitalassistant-api.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -147,6 +152,8 @@ class OdapackageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/create_imported_package.py.html>`__ to see an example of how to use create_imported_package API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId']
         resource_path = "/odaInstances/{odaInstanceId}/importedPackages"
         method = "POST"
         operation_name = "create_imported_package"
@@ -204,7 +211,8 @@ class OdapackageClient(object):
                 response_type="ImportedPackage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -215,7 +223,8 @@ class OdapackageClient(object):
                 response_type="ImportedPackage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_imported_package(self, oda_instance_id, package_id, **kwargs):
         """
@@ -268,6 +277,8 @@ class OdapackageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/delete_imported_package.py.html>`__ to see an example of how to use delete_imported_package API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'packageId']
         resource_path = "/odaInstances/{odaInstanceId}/importedPackages/{packageId}"
         method = "DELETE"
         operation_name = "delete_imported_package"
@@ -326,7 +337,8 @@ class OdapackageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -335,7 +347,8 @@ class OdapackageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_imported_package(self, oda_instance_id, package_id, **kwargs):
         """
@@ -369,6 +382,8 @@ class OdapackageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/get_imported_package.py.html>`__ to see an example of how to use get_imported_package API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'packageId']
         resource_path = "/odaInstances/{odaInstanceId}/importedPackages/{packageId}"
         method = "GET"
         operation_name = "get_imported_package"
@@ -423,7 +438,8 @@ class OdapackageClient(object):
                 response_type="ImportedPackage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -433,7 +449,8 @@ class OdapackageClient(object):
                 response_type="ImportedPackage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_package(self, oda_instance_id, package_id, **kwargs):
         """
@@ -467,6 +484,8 @@ class OdapackageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/get_package.py.html>`__ to see an example of how to use get_package API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'packageId']
         resource_path = "/odaInstances/{odaInstanceId}/packages/{packageId}"
         method = "GET"
         operation_name = "get_package"
@@ -521,7 +540,8 @@ class OdapackageClient(object):
                 response_type="Package",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -531,7 +551,8 @@ class OdapackageClient(object):
                 response_type="Package",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_imported_packages(self, oda_instance_id, **kwargs):
         """
@@ -590,6 +611,8 @@ class OdapackageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/list_imported_packages.py.html>`__ to see an example of how to use list_imported_packages API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId']
         resource_path = "/odaInstances/{odaInstanceId}/importedPackages"
         method = "GET"
         operation_name = "list_imported_packages"
@@ -672,7 +695,8 @@ class OdapackageClient(object):
                 response_type="list[ImportedPackageSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -683,7 +707,8 @@ class OdapackageClient(object):
                 response_type="list[ImportedPackageSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_packages(self, **kwargs):
         """
@@ -769,6 +794,8 @@ class OdapackageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/list_packages.py.html>`__ to see an example of how to use list_packages API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/packages"
         method = "GET"
         operation_name = "list_packages"
@@ -850,7 +877,8 @@ class OdapackageClient(object):
                 response_type="list[PackageSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -860,7 +888,8 @@ class OdapackageClient(object):
                 response_type="list[PackageSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_imported_package(self, update_imported_package_details, oda_instance_id, package_id, **kwargs):
         """
@@ -919,6 +948,8 @@ class OdapackageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/update_imported_package.py.html>`__ to see an example of how to use update_imported_package API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'packageId']
         resource_path = "/odaInstances/{odaInstanceId}/importedPackages/{packageId}"
         method = "PUT"
         operation_name = "update_imported_package"
@@ -986,7 +1017,8 @@ class OdapackageClient(object):
                 response_type="ImportedPackage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -998,4 +1030,5 @@ class OdapackageClient(object):
                 response_type="ImportedPackage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

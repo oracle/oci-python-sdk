@@ -127,7 +127,7 @@ class CreateDomainGovernanceDetails(object):
     def subscription_email(self):
         """
         **[Required]** Gets the subscription_email of this CreateDomainGovernanceDetails.
-        The email to notify the user, and that the ONS subscription will be created with.
+        Email address to be used to notify the user, and that the ONS subscription will be created with.
 
 
         :return: The subscription_email of this CreateDomainGovernanceDetails.
@@ -139,7 +139,7 @@ class CreateDomainGovernanceDetails(object):
     def subscription_email(self, subscription_email):
         """
         Sets the subscription_email of this CreateDomainGovernanceDetails.
-        The email to notify the user, and that the ONS subscription will be created with.
+        Email address to be used to notify the user, and that the ONS subscription will be created with.
 
 
         :param subscription_email: The subscription_email of this CreateDomainGovernanceDetails.

@@ -78,6 +78,10 @@ class RecipientInvitationSummary(object):
             The value to assign to the display_name property of this RecipientInvitationSummary.
         :type display_name: str
 
+        :param subjects:
+            The value to assign to the subjects property of this RecipientInvitationSummary.
+        :type subjects: list[oci.tenant_manager_control_plane.models.InvitationSubject]
+
         :param sender_invitation_id:
             The value to assign to the sender_invitation_id property of this RecipientInvitationSummary.
         :type sender_invitation_id: str
@@ -127,6 +131,7 @@ class RecipientInvitationSummary(object):
             'id': 'str',
             'compartment_id': 'str',
             'display_name': 'str',
+            'subjects': 'list[InvitationSubject]',
             'sender_invitation_id': 'str',
             'sender_tenancy_id': 'str',
             'lifecycle_state': 'str',
@@ -143,6 +148,7 @@ class RecipientInvitationSummary(object):
             'id': 'id',
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
+            'subjects': 'subjects',
             'sender_invitation_id': 'senderInvitationId',
             'sender_tenancy_id': 'senderTenancyId',
             'lifecycle_state': 'lifecycleState',
@@ -158,6 +164,7 @@ class RecipientInvitationSummary(object):
         self._id = None
         self._compartment_id = None
         self._display_name = None
+        self._subjects = None
         self._sender_invitation_id = None
         self._sender_tenancy_id = None
         self._lifecycle_state = None
@@ -240,6 +247,30 @@ class RecipientInvitationSummary(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def subjects(self):
+        """
+        **[Required]** Gets the subjects of this RecipientInvitationSummary.
+        The list of subjects the invitation contains.
+
+
+        :return: The subjects of this RecipientInvitationSummary.
+        :rtype: list[oci.tenant_manager_control_plane.models.InvitationSubject]
+        """
+        return self._subjects
+
+    @subjects.setter
+    def subjects(self, subjects):
+        """
+        Sets the subjects of this RecipientInvitationSummary.
+        The list of subjects the invitation contains.
+
+
+        :param subjects: The subjects of this RecipientInvitationSummary.
+        :type: list[oci.tenant_manager_control_plane.models.InvitationSubject]
+        """
+        self._subjects = subjects
 
     @property
     def sender_invitation_id(self):
@@ -353,7 +384,7 @@ class RecipientInvitationSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this RecipientInvitationSummary.
-        Date-time when this recipient invitation was created.
+        Date and time when the recipient invitation was created.
 
 
         :return: The time_created of this RecipientInvitationSummary.
@@ -365,7 +396,7 @@ class RecipientInvitationSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this RecipientInvitationSummary.
-        Date-time when this recipient invitation was created.
+        Date and time when the recipient invitation was created.
 
 
         :param time_created: The time_created of this RecipientInvitationSummary.
@@ -377,7 +408,7 @@ class RecipientInvitationSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this RecipientInvitationSummary.
-        Date-time when this recipient invitation was last updated.
+        Date and time when the recipient invitation was last updated.
 
 
         :return: The time_updated of this RecipientInvitationSummary.
@@ -389,7 +420,7 @@ class RecipientInvitationSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this RecipientInvitationSummary.
-        Date-time when this recipient invitation was last updated.
+        Date and time when the recipient invitation was last updated.
 
 
         :param time_updated: The time_updated of this RecipientInvitationSummary.

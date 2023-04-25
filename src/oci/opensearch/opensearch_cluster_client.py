@@ -65,6 +65,9 @@ class OpensearchClusterClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class OpensearchClusterClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20180828',
             'service_endpoint_template': 'https://search-indexing.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -150,6 +155,8 @@ class OpensearchClusterClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opensearch/backup_opensearch_cluster.py.html>`__ to see an example of how to use backup_opensearch_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['opensearchClusterId']
         resource_path = "/opensearchClusters/{opensearchClusterId}/actions/backup"
         method = "POST"
         operation_name = "backup_opensearch_cluster"
@@ -206,7 +213,8 @@ class OpensearchClusterClient(object):
                 body=backup_opensearch_cluster_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -216,7 +224,8 @@ class OpensearchClusterClient(object):
                 body=backup_opensearch_cluster_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_opensearch_cluster(self, create_opensearch_cluster_details, **kwargs):
         """
@@ -254,6 +263,8 @@ class OpensearchClusterClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opensearch/create_opensearch_cluster.py.html>`__ to see an example of how to use create_opensearch_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/opensearchClusters"
         method = "POST"
         operation_name = "create_opensearch_cluster"
@@ -297,7 +308,8 @@ class OpensearchClusterClient(object):
                 body=create_opensearch_cluster_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -306,7 +318,8 @@ class OpensearchClusterClient(object):
                 body=create_opensearch_cluster_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_opensearch_cluster(self, opensearch_cluster_id, **kwargs):
         """
@@ -344,6 +357,8 @@ class OpensearchClusterClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opensearch/delete_opensearch_cluster.py.html>`__ to see an example of how to use delete_opensearch_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['opensearchClusterId']
         resource_path = "/opensearchClusters/{opensearchClusterId}"
         method = "DELETE"
         operation_name = "delete_opensearch_cluster"
@@ -396,7 +411,8 @@ class OpensearchClusterClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -405,7 +421,8 @@ class OpensearchClusterClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_opensearch_cluster(self, opensearch_cluster_id, **kwargs):
         """
@@ -436,6 +453,8 @@ class OpensearchClusterClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opensearch/get_opensearch_cluster.py.html>`__ to see an example of how to use get_opensearch_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['opensearchClusterId']
         resource_path = "/opensearchClusters/{opensearchClusterId}"
         method = "GET"
         operation_name = "get_opensearch_cluster"
@@ -487,7 +506,8 @@ class OpensearchClusterClient(object):
                 response_type="OpensearchCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -497,7 +517,8 @@ class OpensearchClusterClient(object):
                 response_type="OpensearchCluster",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -528,6 +549,8 @@ class OpensearchClusterClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opensearch/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -579,7 +602,8 @@ class OpensearchClusterClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -589,7 +613,8 @@ class OpensearchClusterClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_opensearch_clusters(self, compartment_id, **kwargs):
         """
@@ -647,6 +672,8 @@ class OpensearchClusterClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opensearch/list_opensearch_clusters.py.html>`__ to see an example of how to use list_opensearch_clusters API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/opensearchClusters"
         method = "GET"
         operation_name = "list_opensearch_clusters"
@@ -728,7 +755,8 @@ class OpensearchClusterClient(object):
                 response_type="OpensearchClusterCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -738,7 +766,8 @@ class OpensearchClusterClient(object):
                 response_type="OpensearchClusterCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_opensearch_versions(self, compartment_id, **kwargs):
         """
@@ -772,6 +801,8 @@ class OpensearchClusterClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opensearch/list_opensearch_versions.py.html>`__ to see an example of how to use list_opensearch_versions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/opensearch/versions"
         method = "GET"
         operation_name = "list_opensearch_versions"
@@ -819,7 +850,8 @@ class OpensearchClusterClient(object):
                 response_type="OpensearchVersionsCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -829,7 +861,8 @@ class OpensearchClusterClient(object):
                 response_type="OpensearchVersionsCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -866,6 +899,8 @@ class OpensearchClusterClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opensearch/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -926,7 +961,8 @@ class OpensearchClusterClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -937,7 +973,8 @@ class OpensearchClusterClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -974,6 +1011,8 @@ class OpensearchClusterClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opensearch/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -1034,7 +1073,8 @@ class OpensearchClusterClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1045,7 +1085,8 @@ class OpensearchClusterClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -1088,6 +1129,8 @@ class OpensearchClusterClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opensearch/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -1142,7 +1185,8 @@ class OpensearchClusterClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1152,7 +1196,8 @@ class OpensearchClusterClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def opensearch_cluster_restore(self, opensearch_cluster_id, restore_opensearch_cluster_details, **kwargs):
         """
@@ -1200,6 +1245,8 @@ class OpensearchClusterClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opensearch/opensearch_cluster_restore.py.html>`__ to see an example of how to use opensearch_cluster_restore API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['opensearchClusterId']
         resource_path = "/opensearchClusters/{opensearchClusterId}/actions/restore"
         method = "POST"
         operation_name = "opensearch_cluster_restore"
@@ -1256,7 +1303,8 @@ class OpensearchClusterClient(object):
                 body=restore_opensearch_cluster_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1266,7 +1314,8 @@ class OpensearchClusterClient(object):
                 body=restore_opensearch_cluster_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def resize_opensearch_cluster_horizontal(self, opensearch_cluster_id, resize_opensearch_cluster_horizontal_details, **kwargs):
         """
@@ -1314,6 +1363,8 @@ class OpensearchClusterClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opensearch/resize_opensearch_cluster_horizontal.py.html>`__ to see an example of how to use resize_opensearch_cluster_horizontal API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['opensearchClusterId']
         resource_path = "/opensearchClusters/{opensearchClusterId}/actions/resizeHorizontal"
         method = "POST"
         operation_name = "resize_opensearch_cluster_horizontal"
@@ -1370,7 +1421,8 @@ class OpensearchClusterClient(object):
                 body=resize_opensearch_cluster_horizontal_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1380,7 +1432,8 @@ class OpensearchClusterClient(object):
                 body=resize_opensearch_cluster_horizontal_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def resize_opensearch_cluster_vertical(self, opensearch_cluster_id, resize_opensearch_cluster_vertical_details, **kwargs):
         """
@@ -1428,6 +1481,8 @@ class OpensearchClusterClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opensearch/resize_opensearch_cluster_vertical.py.html>`__ to see an example of how to use resize_opensearch_cluster_vertical API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['opensearchClusterId']
         resource_path = "/opensearchClusters/{opensearchClusterId}/actions/resizeVertical"
         method = "POST"
         operation_name = "resize_opensearch_cluster_vertical"
@@ -1484,7 +1539,8 @@ class OpensearchClusterClient(object):
                 body=resize_opensearch_cluster_vertical_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1494,7 +1550,8 @@ class OpensearchClusterClient(object):
                 body=resize_opensearch_cluster_vertical_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_opensearch_cluster(self, opensearch_cluster_id, update_opensearch_cluster_details, **kwargs):
         """
@@ -1535,6 +1592,8 @@ class OpensearchClusterClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opensearch/update_opensearch_cluster.py.html>`__ to see an example of how to use update_opensearch_cluster API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['opensearchClusterId']
         resource_path = "/opensearchClusters/{opensearchClusterId}"
         method = "PUT"
         operation_name = "update_opensearch_cluster"
@@ -1588,7 +1647,8 @@ class OpensearchClusterClient(object):
                 body=update_opensearch_cluster_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1598,4 +1658,5 @@ class OpensearchClusterClient(object):
                 body=update_opensearch_cluster_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

@@ -65,6 +65,9 @@ class ApplianceExportJobClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class ApplianceExportJobClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20171001',
             'service_endpoint_template': 'https://datatransfer.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -148,6 +153,8 @@ class ApplianceExportJobClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/change_appliance_export_job_compartment.py.html>`__ to see an example of how to use change_appliance_export_job_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['applianceExportJobId']
         resource_path = "/applianceExportJobs/{applianceExportJobId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_appliance_export_job_compartment"
@@ -204,7 +211,8 @@ class ApplianceExportJobClient(object):
                 body=change_appliance_export_job_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -214,7 +222,8 @@ class ApplianceExportJobClient(object):
                 body=change_appliance_export_job_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_appliance_export_job(self, create_appliance_export_job_details, **kwargs):
         """
@@ -253,6 +262,8 @@ class ApplianceExportJobClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/create_appliance_export_job.py.html>`__ to see an example of how to use create_appliance_export_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/applianceExportJobs"
         method = "POST"
         operation_name = "create_appliance_export_job"
@@ -297,7 +308,8 @@ class ApplianceExportJobClient(object):
                 response_type="ApplianceExportJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -307,7 +319,8 @@ class ApplianceExportJobClient(object):
                 response_type="ApplianceExportJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_appliance_export_job(self, appliance_export_job_id, **kwargs):
         """
@@ -350,6 +363,8 @@ class ApplianceExportJobClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/delete_appliance_export_job.py.html>`__ to see an example of how to use delete_appliance_export_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['applianceExportJobId']
         resource_path = "/applianceExportJobs/{applianceExportJobId}"
         method = "DELETE"
         operation_name = "delete_appliance_export_job"
@@ -405,7 +420,8 @@ class ApplianceExportJobClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -414,7 +430,8 @@ class ApplianceExportJobClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_appliance_export_job(self, appliance_export_job_id, **kwargs):
         """
@@ -446,6 +463,8 @@ class ApplianceExportJobClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/get_appliance_export_job.py.html>`__ to see an example of how to use get_appliance_export_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['applianceExportJobId']
         resource_path = "/applianceExportJobs/{applianceExportJobId}"
         method = "GET"
         operation_name = "get_appliance_export_job"
@@ -497,7 +516,8 @@ class ApplianceExportJobClient(object):
                 response_type="ApplianceExportJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -507,7 +527,8 @@ class ApplianceExportJobClient(object):
                 response_type="ApplianceExportJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_appliance_export_jobs(self, compartment_id, **kwargs):
         """
@@ -563,6 +584,8 @@ class ApplianceExportJobClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/list_appliance_export_jobs.py.html>`__ to see an example of how to use list_appliance_export_jobs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/applianceExportJobs"
         method = "GET"
         operation_name = "list_appliance_export_jobs"
@@ -624,7 +647,8 @@ class ApplianceExportJobClient(object):
                 response_type="list[ApplianceExportJobSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -634,7 +658,8 @@ class ApplianceExportJobClient(object):
                 response_type="list[ApplianceExportJobSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_appliance_export_job(self, appliance_export_job_id, update_appliance_export_job_details, **kwargs):
         """
@@ -673,6 +698,8 @@ class ApplianceExportJobClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dts/update_appliance_export_job.py.html>`__ to see an example of how to use update_appliance_export_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['applianceExportJobId']
         resource_path = "/applianceExportJobs/{applianceExportJobId}"
         method = "PUT"
         operation_name = "update_appliance_export_job"
@@ -727,7 +754,8 @@ class ApplianceExportJobClient(object):
                 response_type="ApplianceExportJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -738,4 +766,5 @@ class ApplianceExportJobClient(object):
                 response_type="ApplianceExportJob",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

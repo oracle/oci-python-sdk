@@ -66,6 +66,9 @@ class ManagementAgentClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -92,8 +95,10 @@ class ManagementAgentClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20200202',
             'service_endpoint_template': 'https://management-agent.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -141,6 +146,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/create_management_agent_install_key.py.html>`__ to see an example of how to use create_management_agent_install_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/managementAgentInstallKeys"
         method = "POST"
         operation_name = "create_management_agent_install_key"
@@ -185,7 +192,8 @@ class ManagementAgentClient(object):
                 response_type="ManagementAgentInstallKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -195,7 +203,8 @@ class ManagementAgentClient(object):
                 response_type="ManagementAgentInstallKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_management_agent(self, management_agent_id, **kwargs):
         """
@@ -233,6 +242,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/delete_management_agent.py.html>`__ to see an example of how to use delete_management_agent API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managementAgentId']
         resource_path = "/managementAgents/{managementAgentId}"
         method = "DELETE"
         operation_name = "delete_management_agent"
@@ -285,7 +296,8 @@ class ManagementAgentClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -294,7 +306,8 @@ class ManagementAgentClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_management_agent_install_key(self, management_agent_install_key_id, **kwargs):
         """
@@ -332,6 +345,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/delete_management_agent_install_key.py.html>`__ to see an example of how to use delete_management_agent_install_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managementAgentInstallKeyId']
         resource_path = "/managementAgentInstallKeys/{managementAgentInstallKeyId}"
         method = "DELETE"
         operation_name = "delete_management_agent_install_key"
@@ -384,7 +399,8 @@ class ManagementAgentClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -393,7 +409,8 @@ class ManagementAgentClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_work_request(self, work_request_id, **kwargs):
         """
@@ -431,6 +448,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/delete_work_request.py.html>`__ to see an example of how to use delete_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "delete_work_request"
@@ -483,7 +502,8 @@ class ManagementAgentClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -492,7 +512,8 @@ class ManagementAgentClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def deploy_plugins(self, deploy_plugins_details, **kwargs):
         """
@@ -530,6 +551,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/deploy_plugins.py.html>`__ to see an example of how to use deploy_plugins API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/managementAgents/actions/deployPlugins"
         method = "POST"
         operation_name = "deploy_plugins"
@@ -573,7 +596,8 @@ class ManagementAgentClient(object):
                 body=deploy_plugins_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -582,7 +606,8 @@ class ManagementAgentClient(object):
                 body=deploy_plugins_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_auto_upgradable_config(self, compartment_id, **kwargs):
         """
@@ -614,6 +639,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_auto_upgradable_config.py.html>`__ to see an example of how to use get_auto_upgradable_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/managementAgents/actions/getAutoUpgradableConfig"
         method = "GET"
         operation_name = "get_auto_upgradable_config"
@@ -660,7 +687,8 @@ class ManagementAgentClient(object):
                 response_type="AutoUpgradableConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -670,7 +698,8 @@ class ManagementAgentClient(object):
                 response_type="AutoUpgradableConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_management_agent(self, management_agent_id, **kwargs):
         """
@@ -701,6 +730,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_management_agent.py.html>`__ to see an example of how to use get_management_agent API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managementAgentId']
         resource_path = "/managementAgents/{managementAgentId}"
         method = "GET"
         operation_name = "get_management_agent"
@@ -752,7 +783,8 @@ class ManagementAgentClient(object):
                 response_type="ManagementAgent",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -762,7 +794,8 @@ class ManagementAgentClient(object):
                 response_type="ManagementAgent",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_management_agent_install_key(self, management_agent_install_key_id, **kwargs):
         """
@@ -793,6 +826,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_management_agent_install_key.py.html>`__ to see an example of how to use get_management_agent_install_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managementAgentInstallKeyId']
         resource_path = "/managementAgentInstallKeys/{managementAgentInstallKeyId}"
         method = "GET"
         operation_name = "get_management_agent_install_key"
@@ -844,7 +879,8 @@ class ManagementAgentClient(object):
                 response_type="ManagementAgentInstallKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -854,7 +890,8 @@ class ManagementAgentClient(object):
                 response_type="ManagementAgentInstallKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_management_agent_install_key_content(self, management_agent_install_key_id, **kwargs):
         """
@@ -888,6 +925,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_management_agent_install_key_content.py.html>`__ to see an example of how to use get_management_agent_install_key_content API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managementAgentInstallKeyId']
         resource_path = "/managementAgentInstallKeys/{managementAgentInstallKeyId}/content"
         method = "GET"
         operation_name = "get_management_agent_install_key_content"
@@ -946,7 +985,8 @@ class ManagementAgentClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -957,7 +997,8 @@ class ManagementAgentClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -988,6 +1029,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -1039,7 +1082,8 @@ class ManagementAgentClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1049,7 +1093,8 @@ class ManagementAgentClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_availability_histories(self, management_agent_id, **kwargs):
         """
@@ -1110,6 +1155,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_availability_histories.py.html>`__ to see an example of how to use list_availability_histories API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managementAgentId']
         resource_path = "/managementAgents/{managementAgentId}/availabilityHistories"
         method = "GET"
         operation_name = "list_availability_histories"
@@ -1192,7 +1239,8 @@ class ManagementAgentClient(object):
                 response_type="list[AvailabilityHistorySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1203,7 +1251,8 @@ class ManagementAgentClient(object):
                 response_type="list[AvailabilityHistorySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_management_agent_images(self, compartment_id, **kwargs):
         """
@@ -1270,6 +1319,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_management_agent_images.py.html>`__ to see an example of how to use list_management_agent_images API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/managementAgentImages"
         method = "GET"
         operation_name = "list_management_agent_images"
@@ -1361,7 +1412,8 @@ class ManagementAgentClient(object):
                 response_type="list[ManagementAgentImageSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1371,7 +1423,8 @@ class ManagementAgentClient(object):
                 response_type="list[ManagementAgentImageSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_management_agent_install_keys(self, compartment_id, **kwargs):
         """
@@ -1429,6 +1482,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_management_agent_install_keys.py.html>`__ to see an example of how to use list_management_agent_install_keys API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/managementAgentInstallKeys"
         method = "GET"
         operation_name = "list_management_agent_install_keys"
@@ -1510,7 +1565,8 @@ class ManagementAgentClient(object):
                 response_type="list[ManagementAgentInstallKeySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1520,7 +1576,8 @@ class ManagementAgentClient(object):
                 response_type="list[ManagementAgentInstallKeySummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_management_agent_plugins(self, compartment_id, **kwargs):
         """
@@ -1583,6 +1640,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_management_agent_plugins.py.html>`__ to see an example of how to use list_management_agent_plugins API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/managementAgentPlugins"
         method = "GET"
         operation_name = "list_management_agent_plugins"
@@ -1674,7 +1733,8 @@ class ManagementAgentClient(object):
                 response_type="list[ManagementAgentPluginSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1684,7 +1744,8 @@ class ManagementAgentClient(object):
                 response_type="list[ManagementAgentPluginSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_management_agents(self, compartment_id, **kwargs):
         """
@@ -1777,6 +1838,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_management_agents.py.html>`__ to see an example of how to use list_management_agents API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/managementAgents"
         method = "GET"
         operation_name = "list_management_agents"
@@ -1898,7 +1961,8 @@ class ManagementAgentClient(object):
                 response_type="list[ManagementAgentSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1908,7 +1972,8 @@ class ManagementAgentClient(object):
                 response_type="list[ManagementAgentSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1955,6 +2020,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -2033,7 +2100,8 @@ class ManagementAgentClient(object):
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2044,7 +2112,8 @@ class ManagementAgentClient(object):
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -2091,6 +2160,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -2169,7 +2240,8 @@ class ManagementAgentClient(object):
                 response_type="list[WorkRequestLogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2180,7 +2252,8 @@ class ManagementAgentClient(object):
                 response_type="list[WorkRequestLogEntry]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -2245,6 +2318,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -2335,7 +2410,8 @@ class ManagementAgentClient(object):
                 response_type="list[WorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2345,7 +2421,8 @@ class ManagementAgentClient(object):
                 response_type="list[WorkRequestSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def set_auto_upgradable_config(self, set_auto_upgradable_config_details, **kwargs):
         """
@@ -2384,6 +2461,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/set_auto_upgradable_config.py.html>`__ to see an example of how to use set_auto_upgradable_config API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/managementAgents/actions/setAutoUpgradableConfig"
         method = "POST"
         operation_name = "set_auto_upgradable_config"
@@ -2428,7 +2507,8 @@ class ManagementAgentClient(object):
                 response_type="AutoUpgradableConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2438,7 +2518,8 @@ class ManagementAgentClient(object):
                 response_type="AutoUpgradableConfig",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def summarize_management_agent_counts(self, compartment_id, group_by, **kwargs):
         """
@@ -2489,6 +2570,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/summarize_management_agent_counts.py.html>`__ to see an example of how to use summarize_management_agent_counts API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'groupBy']
         resource_path = "/managementAgentCounts"
         method = "GET"
         operation_name = "summarize_management_agent_counts"
@@ -2558,7 +2641,8 @@ class ManagementAgentClient(object):
                 response_type="ManagementAgentAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2568,7 +2652,8 @@ class ManagementAgentClient(object):
                 response_type="ManagementAgentAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def summarize_management_agent_plugin_counts(self, compartment_id, group_by, **kwargs):
         """
@@ -2611,6 +2696,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/summarize_management_agent_plugin_counts.py.html>`__ to see an example of how to use summarize_management_agent_plugin_counts API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'groupBy']
         resource_path = "/managementAgentPluginCounts"
         method = "GET"
         operation_name = "summarize_management_agent_plugin_counts"
@@ -2668,7 +2755,8 @@ class ManagementAgentClient(object):
                 response_type="ManagementAgentPluginAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2678,7 +2766,8 @@ class ManagementAgentClient(object):
                 response_type="ManagementAgentPluginAggregationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_management_agent(self, management_agent_id, update_management_agent_details, **kwargs):
         """
@@ -2726,6 +2815,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/update_management_agent.py.html>`__ to see an example of how to use update_management_agent API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managementAgentId']
         resource_path = "/managementAgents/{managementAgentId}"
         method = "PUT"
         operation_name = "update_management_agent"
@@ -2783,7 +2874,8 @@ class ManagementAgentClient(object):
                 response_type="ManagementAgent",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2794,7 +2886,8 @@ class ManagementAgentClient(object):
                 response_type="ManagementAgent",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_management_agent_install_key(self, management_agent_install_key_id, update_management_agent_install_key_details, **kwargs):
         """
@@ -2842,6 +2935,8 @@ class ManagementAgentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/update_management_agent_install_key.py.html>`__ to see an example of how to use update_management_agent_install_key API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managementAgentInstallKeyId']
         resource_path = "/managementAgentInstallKeys/{managementAgentInstallKeyId}"
         method = "PUT"
         operation_name = "update_management_agent_install_key"
@@ -2899,7 +2994,8 @@ class ManagementAgentClient(object):
                 response_type="ManagementAgentInstallKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2910,4 +3006,5 @@ class ManagementAgentClient(object):
                 response_type="ManagementAgentInstallKey",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

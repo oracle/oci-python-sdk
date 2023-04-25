@@ -110,7 +110,7 @@ class OrganizationSummary(object):
     def display_name(self):
         """
         Gets the display_name of this OrganizationSummary.
-        A display name for the organization.
+        A display name for the organization. Avoid entering confidential information.
 
 
         :return: The display_name of this OrganizationSummary.
@@ -122,7 +122,7 @@ class OrganizationSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this OrganizationSummary.
-        A display name for the organization.
+        A display name for the organization. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this OrganizationSummary.
@@ -230,7 +230,7 @@ class OrganizationSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this OrganizationSummary.
-        Date-time when this organization was created.
+        Date and time when the organization was created.
 
 
         :return: The time_created of this OrganizationSummary.
@@ -242,7 +242,7 @@ class OrganizationSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this OrganizationSummary.
-        Date-time when this organization was created.
+        Date and time when the organization was created.
 
 
         :param time_created: The time_created of this OrganizationSummary.
@@ -254,7 +254,7 @@ class OrganizationSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this OrganizationSummary.
-        Date-time when this organization was last updated.
+        Date and time when the organization was last updated.
 
 
         :return: The time_updated of this OrganizationSummary.
@@ -266,7 +266,7 @@ class OrganizationSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this OrganizationSummary.
-        Date-time when this organization was last updated.
+        Date and time when the organization was last updated.
 
 
         :param time_updated: The time_updated of this OrganizationSummary.

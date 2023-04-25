@@ -66,6 +66,9 @@ class DataCatalogClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -92,8 +95,10 @@ class DataCatalogClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20190325',
             'service_endpoint_template': 'https://datacatalog.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -154,6 +159,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/add_data_selector_patterns.py.html>`__ to see an example of how to use add_data_selector_patterns API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/addDataSelectorPatterns"
         method = "POST"
         operation_name = "add_data_selector_patterns"
@@ -212,7 +219,8 @@ class DataCatalogClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -223,7 +231,8 @@ class DataCatalogClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def associate_custom_property(self, catalog_id, type_key, associate_custom_property_details, **kwargs):
         """
@@ -274,6 +283,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/associate_custom_property.py.html>`__ to see an example of how to use associate_custom_property API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'typeKey']
         resource_path = "/catalogs/{catalogId}/types/{typeKey}/actions/associateCustomProperties"
         method = "POST"
         operation_name = "associate_custom_property"
@@ -332,7 +343,8 @@ class DataCatalogClient(object):
                 response_type="Type",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -343,7 +355,8 @@ class DataCatalogClient(object):
                 response_type="Type",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def attach_catalog_private_endpoint(self, attach_catalog_private_endpoint_details, catalog_id, **kwargs):
         """
@@ -391,6 +404,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/attach_catalog_private_endpoint.py.html>`__ to see an example of how to use attach_catalog_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}/actions/attachCatalogPrivateEndpoint"
         method = "POST"
         operation_name = "attach_catalog_private_endpoint"
@@ -447,7 +462,8 @@ class DataCatalogClient(object):
                 body=attach_catalog_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -457,7 +473,8 @@ class DataCatalogClient(object):
                 body=attach_catalog_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_catalog_compartment(self, change_catalog_compartment_details, catalog_id, **kwargs):
         """
@@ -498,6 +515,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/change_catalog_compartment.py.html>`__ to see an example of how to use change_catalog_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_catalog_compartment"
@@ -551,7 +570,8 @@ class DataCatalogClient(object):
                 body=change_catalog_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -561,7 +581,8 @@ class DataCatalogClient(object):
                 body=change_catalog_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_catalog_private_endpoint_compartment(self, change_catalog_private_endpoint_compartment_details, catalog_private_endpoint_id, **kwargs):
         """
@@ -602,6 +623,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/change_catalog_private_endpoint_compartment.py.html>`__ to see an example of how to use change_catalog_private_endpoint_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogPrivateEndpointId']
         resource_path = "/catalogPrivateEndpoints/{catalogPrivateEndpointId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_catalog_private_endpoint_compartment"
@@ -655,7 +678,8 @@ class DataCatalogClient(object):
                 body=change_catalog_private_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -665,7 +689,8 @@ class DataCatalogClient(object):
                 body=change_catalog_private_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_metastore_compartment(self, change_metastore_compartment_details, metastore_id, **kwargs):
         """
@@ -706,6 +731,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/change_metastore_compartment.py.html>`__ to see an example of how to use change_metastore_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['metastoreId']
         resource_path = "/metastores/{metastoreId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_metastore_compartment"
@@ -759,7 +786,8 @@ class DataCatalogClient(object):
                 body=change_metastore_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -769,7 +797,8 @@ class DataCatalogClient(object):
                 body=change_metastore_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_attribute(self, catalog_id, data_asset_key, entity_key, create_attribute_details, **kwargs):
         """
@@ -816,6 +845,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_attribute.py.html>`__ to see an example of how to use create_attribute API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'entityKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes"
         method = "POST"
         operation_name = "create_attribute"
@@ -873,7 +904,8 @@ class DataCatalogClient(object):
                 response_type="Attribute",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -884,7 +916,8 @@ class DataCatalogClient(object):
                 response_type="Attribute",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_attribute_tag(self, catalog_id, data_asset_key, entity_key, attribute_key, create_attribute_tag_details, **kwargs):
         """
@@ -934,6 +967,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_attribute_tag.py.html>`__ to see an example of how to use create_attribute_tag API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'entityKey', 'attributeKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes/{attributeKey}/tags"
         method = "POST"
         operation_name = "create_attribute_tag"
@@ -992,7 +1027,8 @@ class DataCatalogClient(object):
                 response_type="AttributeTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1003,7 +1039,8 @@ class DataCatalogClient(object):
                 response_type="AttributeTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_catalog(self, create_catalog_details, **kwargs):
         """
@@ -1042,6 +1079,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_catalog.py.html>`__ to see an example of how to use create_catalog API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/catalogs"
         method = "POST"
         operation_name = "create_catalog"
@@ -1085,7 +1124,8 @@ class DataCatalogClient(object):
                 body=create_catalog_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1094,7 +1134,8 @@ class DataCatalogClient(object):
                 body=create_catalog_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_catalog_private_endpoint(self, create_catalog_private_endpoint_details, **kwargs):
         """
@@ -1132,6 +1173,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_catalog_private_endpoint.py.html>`__ to see an example of how to use create_catalog_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/catalogPrivateEndpoints"
         method = "POST"
         operation_name = "create_catalog_private_endpoint"
@@ -1175,7 +1218,8 @@ class DataCatalogClient(object):
                 body=create_catalog_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1184,7 +1228,8 @@ class DataCatalogClient(object):
                 body=create_catalog_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_connection(self, catalog_id, data_asset_key, create_connection_details, **kwargs):
         """
@@ -1228,6 +1273,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_connection.py.html>`__ to see an example of how to use create_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections"
         method = "POST"
         operation_name = "create_connection"
@@ -1284,7 +1331,8 @@ class DataCatalogClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1295,7 +1343,8 @@ class DataCatalogClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_custom_property(self, catalog_id, namespace_id, create_custom_property_details, **kwargs):
         """
@@ -1339,6 +1388,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_custom_property.py.html>`__ to see an example of how to use create_custom_property API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'namespaceId']
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}/customProperties"
         method = "POST"
         operation_name = "create_custom_property"
@@ -1395,7 +1446,8 @@ class DataCatalogClient(object):
                 response_type="CustomProperty",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1406,7 +1458,8 @@ class DataCatalogClient(object):
                 response_type="CustomProperty",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_data_asset(self, catalog_id, create_data_asset_details, **kwargs):
         """
@@ -1447,6 +1500,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_data_asset.py.html>`__ to see an example of how to use create_data_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}/dataAssets"
         method = "POST"
         operation_name = "create_data_asset"
@@ -1502,7 +1557,8 @@ class DataCatalogClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1513,7 +1569,8 @@ class DataCatalogClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_data_asset_tag(self, catalog_id, data_asset_key, create_data_asset_tag_details, **kwargs):
         """
@@ -1557,6 +1614,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_data_asset_tag.py.html>`__ to see an example of how to use create_data_asset_tag API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/tags"
         method = "POST"
         operation_name = "create_data_asset_tag"
@@ -1613,7 +1672,8 @@ class DataCatalogClient(object):
                 response_type="DataAssetTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1624,7 +1684,8 @@ class DataCatalogClient(object):
                 response_type="DataAssetTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_entity(self, catalog_id, data_asset_key, create_entity_details, **kwargs):
         """
@@ -1668,6 +1729,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_entity.py.html>`__ to see an example of how to use create_entity API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities"
         method = "POST"
         operation_name = "create_entity"
@@ -1724,7 +1787,8 @@ class DataCatalogClient(object):
                 response_type="Entity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1735,7 +1799,8 @@ class DataCatalogClient(object):
                 response_type="Entity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_entity_tag(self, catalog_id, data_asset_key, entity_key, create_entity_tag_details, **kwargs):
         """
@@ -1782,6 +1847,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_entity_tag.py.html>`__ to see an example of how to use create_entity_tag API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'entityKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/tags"
         method = "POST"
         operation_name = "create_entity_tag"
@@ -1839,7 +1906,8 @@ class DataCatalogClient(object):
                 response_type="EntityTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1850,7 +1918,8 @@ class DataCatalogClient(object):
                 response_type="EntityTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_folder(self, catalog_id, data_asset_key, create_folder_details, **kwargs):
         """
@@ -1894,6 +1963,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_folder.py.html>`__ to see an example of how to use create_folder API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders"
         method = "POST"
         operation_name = "create_folder"
@@ -1950,7 +2021,8 @@ class DataCatalogClient(object):
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1961,7 +2033,8 @@ class DataCatalogClient(object):
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_folder_tag(self, catalog_id, data_asset_key, folder_key, create_folder_tag_details, **kwargs):
         """
@@ -2008,6 +2081,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_folder_tag.py.html>`__ to see an example of how to use create_folder_tag API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'folderKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders/{folderKey}/tags"
         method = "POST"
         operation_name = "create_folder_tag"
@@ -2065,7 +2140,8 @@ class DataCatalogClient(object):
                 response_type="FolderTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2076,7 +2152,8 @@ class DataCatalogClient(object):
                 response_type="FolderTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_glossary(self, catalog_id, create_glossary_details, **kwargs):
         """
@@ -2117,6 +2194,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_glossary.py.html>`__ to see an example of how to use create_glossary API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}/glossaries"
         method = "POST"
         operation_name = "create_glossary"
@@ -2172,7 +2251,8 @@ class DataCatalogClient(object):
                 response_type="Glossary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2183,7 +2263,8 @@ class DataCatalogClient(object):
                 response_type="Glossary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_job(self, catalog_id, create_job_details, **kwargs):
         """
@@ -2224,6 +2305,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_job.py.html>`__ to see an example of how to use create_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}/jobs"
         method = "POST"
         operation_name = "create_job"
@@ -2279,7 +2362,8 @@ class DataCatalogClient(object):
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2290,7 +2374,8 @@ class DataCatalogClient(object):
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_job_definition(self, catalog_id, create_job_definition_details, **kwargs):
         """
@@ -2331,6 +2416,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_job_definition.py.html>`__ to see an example of how to use create_job_definition API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}/jobDefinitions"
         method = "POST"
         operation_name = "create_job_definition"
@@ -2386,7 +2473,8 @@ class DataCatalogClient(object):
                 response_type="JobDefinition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2397,7 +2485,8 @@ class DataCatalogClient(object):
                 response_type="JobDefinition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_job_execution(self, catalog_id, job_key, create_job_execution_details, **kwargs):
         """
@@ -2441,6 +2530,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_job_execution.py.html>`__ to see an example of how to use create_job_execution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'jobKey']
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}/executions"
         method = "POST"
         operation_name = "create_job_execution"
@@ -2497,7 +2588,8 @@ class DataCatalogClient(object):
                 response_type="JobExecution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2508,7 +2600,8 @@ class DataCatalogClient(object):
                 response_type="JobExecution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_metastore(self, create_metastore_details, **kwargs):
         """
@@ -2546,6 +2639,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_metastore.py.html>`__ to see an example of how to use create_metastore API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/metastores"
         method = "POST"
         operation_name = "create_metastore"
@@ -2589,7 +2684,8 @@ class DataCatalogClient(object):
                 body=create_metastore_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2598,7 +2694,8 @@ class DataCatalogClient(object):
                 body=create_metastore_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_namespace(self, catalog_id, create_namespace_details, **kwargs):
         """
@@ -2639,6 +2736,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_namespace.py.html>`__ to see an example of how to use create_namespace API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}/namespaces"
         method = "POST"
         operation_name = "create_namespace"
@@ -2694,7 +2793,8 @@ class DataCatalogClient(object):
                 response_type="Namespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2705,7 +2805,8 @@ class DataCatalogClient(object):
                 response_type="Namespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_pattern(self, catalog_id, create_pattern_details, **kwargs):
         """
@@ -2746,6 +2847,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_pattern.py.html>`__ to see an example of how to use create_pattern API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}/patterns"
         method = "POST"
         operation_name = "create_pattern"
@@ -2801,7 +2904,8 @@ class DataCatalogClient(object):
                 response_type="Pattern",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2812,7 +2916,8 @@ class DataCatalogClient(object):
                 response_type="Pattern",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_term(self, catalog_id, glossary_key, create_term_details, **kwargs):
         """
@@ -2856,6 +2961,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_term.py.html>`__ to see an example of how to use create_term API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'glossaryKey']
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms"
         method = "POST"
         operation_name = "create_term"
@@ -2912,7 +3019,8 @@ class DataCatalogClient(object):
                 response_type="Term",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2923,7 +3031,8 @@ class DataCatalogClient(object):
                 response_type="Term",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_term_relationship(self, catalog_id, glossary_key, term_key, create_term_relationship_details, **kwargs):
         """
@@ -2970,6 +3079,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/create_term_relationship.py.html>`__ to see an example of how to use create_term_relationship API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'glossaryKey', 'termKey']
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}/termRelationships"
         method = "POST"
         operation_name = "create_term_relationship"
@@ -3027,7 +3138,8 @@ class DataCatalogClient(object):
                 response_type="TermRelationship",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3038,7 +3150,8 @@ class DataCatalogClient(object):
                 response_type="TermRelationship",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_attribute(self, catalog_id, data_asset_key, entity_key, attribute_key, **kwargs):
         """
@@ -3085,6 +3198,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_attribute.py.html>`__ to see an example of how to use delete_attribute API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'entityKey', 'attributeKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes/{attributeKey}"
         method = "DELETE"
         operation_name = "delete_attribute"
@@ -3140,7 +3255,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3149,7 +3265,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_attribute_tag(self, catalog_id, data_asset_key, entity_key, attribute_key, tag_key, **kwargs):
         """
@@ -3199,6 +3316,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_attribute_tag.py.html>`__ to see an example of how to use delete_attribute_tag API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'entityKey', 'attributeKey', 'tagKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes/{attributeKey}/tags/{tagKey}"
         method = "DELETE"
         operation_name = "delete_attribute_tag"
@@ -3255,7 +3374,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3264,7 +3384,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_catalog(self, catalog_id, **kwargs):
         """
@@ -3302,6 +3423,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_catalog.py.html>`__ to see an example of how to use delete_catalog API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}"
         method = "DELETE"
         operation_name = "delete_catalog"
@@ -3354,7 +3477,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3363,7 +3487,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_catalog_private_endpoint(self, catalog_private_endpoint_id, **kwargs):
         """
@@ -3401,6 +3526,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_catalog_private_endpoint.py.html>`__ to see an example of how to use delete_catalog_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogPrivateEndpointId']
         resource_path = "/catalogPrivateEndpoints/{catalogPrivateEndpointId}"
         method = "DELETE"
         operation_name = "delete_catalog_private_endpoint"
@@ -3453,7 +3580,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3462,7 +3590,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_connection(self, catalog_id, data_asset_key, connection_key, **kwargs):
         """
@@ -3506,6 +3635,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_connection.py.html>`__ to see an example of how to use delete_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'connectionKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}"
         method = "DELETE"
         operation_name = "delete_connection"
@@ -3560,7 +3691,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3569,7 +3701,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_custom_property(self, catalog_id, namespace_id, custom_property_key, **kwargs):
         """
@@ -3613,6 +3746,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_custom_property.py.html>`__ to see an example of how to use delete_custom_property API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'namespaceId', 'customPropertyKey']
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}/customProperties/{customPropertyKey}"
         method = "DELETE"
         operation_name = "delete_custom_property"
@@ -3667,7 +3802,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3676,7 +3812,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_data_asset(self, catalog_id, data_asset_key, **kwargs):
         """
@@ -3717,6 +3854,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_data_asset.py.html>`__ to see an example of how to use delete_data_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}"
         method = "DELETE"
         operation_name = "delete_data_asset"
@@ -3770,7 +3909,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3779,7 +3919,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_data_asset_tag(self, catalog_id, data_asset_key, tag_key, **kwargs):
         """
@@ -3823,6 +3964,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_data_asset_tag.py.html>`__ to see an example of how to use delete_data_asset_tag API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'tagKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/tags/{tagKey}"
         method = "DELETE"
         operation_name = "delete_data_asset_tag"
@@ -3877,7 +4020,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3886,7 +4030,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_entity(self, catalog_id, data_asset_key, entity_key, **kwargs):
         """
@@ -3930,6 +4075,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_entity.py.html>`__ to see an example of how to use delete_entity API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'entityKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}"
         method = "DELETE"
         operation_name = "delete_entity"
@@ -3984,7 +4131,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3993,7 +4141,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_entity_tag(self, catalog_id, data_asset_key, entity_key, tag_key, **kwargs):
         """
@@ -4040,6 +4189,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_entity_tag.py.html>`__ to see an example of how to use delete_entity_tag API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'entityKey', 'tagKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/tags/{tagKey}"
         method = "DELETE"
         operation_name = "delete_entity_tag"
@@ -4095,7 +4246,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4104,7 +4256,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_folder(self, catalog_id, data_asset_key, folder_key, **kwargs):
         """
@@ -4148,6 +4301,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_folder.py.html>`__ to see an example of how to use delete_folder API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'folderKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders/{folderKey}"
         method = "DELETE"
         operation_name = "delete_folder"
@@ -4202,7 +4357,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4211,7 +4367,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_folder_tag(self, catalog_id, data_asset_key, folder_key, tag_key, **kwargs):
         """
@@ -4258,6 +4415,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_folder_tag.py.html>`__ to see an example of how to use delete_folder_tag API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'folderKey', 'tagKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders/{folderKey}/tags/{tagKey}"
         method = "DELETE"
         operation_name = "delete_folder_tag"
@@ -4313,7 +4472,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4322,7 +4482,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_glossary(self, catalog_id, glossary_key, **kwargs):
         """
@@ -4363,6 +4524,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_glossary.py.html>`__ to see an example of how to use delete_glossary API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'glossaryKey']
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}"
         method = "DELETE"
         operation_name = "delete_glossary"
@@ -4416,7 +4579,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4425,7 +4589,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_job(self, catalog_id, job_key, **kwargs):
         """
@@ -4466,6 +4631,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_job.py.html>`__ to see an example of how to use delete_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'jobKey']
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}"
         method = "DELETE"
         operation_name = "delete_job"
@@ -4519,7 +4686,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4528,7 +4696,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_job_definition(self, catalog_id, job_definition_key, **kwargs):
         """
@@ -4569,6 +4738,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_job_definition.py.html>`__ to see an example of how to use delete_job_definition API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'jobDefinitionKey']
         resource_path = "/catalogs/{catalogId}/jobDefinitions/{jobDefinitionKey}"
         method = "DELETE"
         operation_name = "delete_job_definition"
@@ -4622,7 +4793,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4631,7 +4803,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_metastore(self, metastore_id, **kwargs):
         """
@@ -4669,6 +4842,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_metastore.py.html>`__ to see an example of how to use delete_metastore API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['metastoreId']
         resource_path = "/metastores/{metastoreId}"
         method = "DELETE"
         operation_name = "delete_metastore"
@@ -4721,7 +4896,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4730,7 +4906,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_namespace(self, catalog_id, namespace_id, **kwargs):
         """
@@ -4771,6 +4948,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_namespace.py.html>`__ to see an example of how to use delete_namespace API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'namespaceId']
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}"
         method = "DELETE"
         operation_name = "delete_namespace"
@@ -4824,7 +5003,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4833,7 +5013,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_pattern(self, catalog_id, pattern_key, **kwargs):
         """
@@ -4874,6 +5055,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_pattern.py.html>`__ to see an example of how to use delete_pattern API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'patternKey']
         resource_path = "/catalogs/{catalogId}/patterns/{patternKey}"
         method = "DELETE"
         operation_name = "delete_pattern"
@@ -4927,7 +5110,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4936,7 +5120,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_term(self, catalog_id, glossary_key, term_key, **kwargs):
         """
@@ -4980,6 +5165,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_term.py.html>`__ to see an example of how to use delete_term API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'glossaryKey', 'termKey']
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}"
         method = "DELETE"
         operation_name = "delete_term"
@@ -5034,7 +5221,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5043,7 +5231,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_term_relationship(self, catalog_id, glossary_key, term_key, term_relationship_key, **kwargs):
         """
@@ -5090,6 +5279,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/delete_term_relationship.py.html>`__ to see an example of how to use delete_term_relationship API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'glossaryKey', 'termKey', 'termRelationshipKey']
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}/termRelationships/{termRelationshipKey}"
         method = "DELETE"
         operation_name = "delete_term_relationship"
@@ -5145,7 +5336,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5154,7 +5346,8 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def detach_catalog_private_endpoint(self, detach_catalog_private_endpoint_details, catalog_id, **kwargs):
         """
@@ -5195,6 +5388,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/detach_catalog_private_endpoint.py.html>`__ to see an example of how to use detach_catalog_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}/actions/detachCatalogPrivateEndpoint"
         method = "POST"
         operation_name = "detach_catalog_private_endpoint"
@@ -5248,7 +5443,8 @@ class DataCatalogClient(object):
                 body=detach_catalog_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5258,7 +5454,8 @@ class DataCatalogClient(object):
                 body=detach_catalog_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def disassociate_custom_property(self, catalog_id, type_key, disassociate_custom_property_details, **kwargs):
         """
@@ -5309,6 +5506,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/disassociate_custom_property.py.html>`__ to see an example of how to use disassociate_custom_property API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'typeKey']
         resource_path = "/catalogs/{catalogId}/types/{typeKey}/actions/disassociateCustomProperties"
         method = "POST"
         operation_name = "disassociate_custom_property"
@@ -5367,7 +5566,8 @@ class DataCatalogClient(object):
                 response_type="Type",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5378,7 +5578,8 @@ class DataCatalogClient(object):
                 response_type="Type",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def expand_tree_for_glossary(self, catalog_id, glossary_key, **kwargs):
         """
@@ -5419,6 +5620,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/expand_tree_for_glossary.py.html>`__ to see an example of how to use expand_tree_for_glossary API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'glossaryKey']
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/actions/expandTree"
         method = "POST"
         operation_name = "expand_tree_for_glossary"
@@ -5476,7 +5679,8 @@ class DataCatalogClient(object):
                 response_type="list[GlossaryTreeElement]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5486,7 +5690,8 @@ class DataCatalogClient(object):
                 response_type="list[GlossaryTreeElement]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def export_glossary(self, catalog_id, glossary_key, **kwargs):
         """
@@ -5530,6 +5735,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/export_glossary.py.html>`__ to see an example of how to use export_glossary API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'glossaryKey']
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/actions/export"
         method = "POST"
         operation_name = "export_glossary"
@@ -5592,7 +5799,8 @@ class DataCatalogClient(object):
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5603,7 +5811,8 @@ class DataCatalogClient(object):
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_attribute(self, catalog_id, data_asset_key, entity_key, attribute_key, **kwargs):
         """
@@ -5651,6 +5860,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_attribute.py.html>`__ to see an example of how to use get_attribute API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'entityKey', 'attributeKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes/{attributeKey}"
         method = "GET"
         operation_name = "get_attribute"
@@ -5724,7 +5935,8 @@ class DataCatalogClient(object):
                 response_type="Attribute",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5735,7 +5947,8 @@ class DataCatalogClient(object):
                 response_type="Attribute",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_attribute_tag(self, catalog_id, data_asset_key, entity_key, attribute_key, tag_key, **kwargs):
         """
@@ -5783,6 +5996,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_attribute_tag.py.html>`__ to see an example of how to use get_attribute_tag API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'entityKey', 'attributeKey', 'tagKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes/{attributeKey}/tags/{tagKey}"
         method = "GET"
         operation_name = "get_attribute_tag"
@@ -5855,7 +6070,8 @@ class DataCatalogClient(object):
                 response_type="AttributeTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5866,7 +6082,8 @@ class DataCatalogClient(object):
                 response_type="AttributeTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_catalog(self, catalog_id, **kwargs):
         """
@@ -5897,6 +6114,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_catalog.py.html>`__ to see an example of how to use get_catalog API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}"
         method = "GET"
         operation_name = "get_catalog"
@@ -5950,7 +6169,8 @@ class DataCatalogClient(object):
                 response_type="Catalog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5960,7 +6180,8 @@ class DataCatalogClient(object):
                 response_type="Catalog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_catalog_private_endpoint(self, catalog_private_endpoint_id, **kwargs):
         """
@@ -5991,6 +6212,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_catalog_private_endpoint.py.html>`__ to see an example of how to use get_catalog_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogPrivateEndpointId']
         resource_path = "/catalogPrivateEndpoints/{catalogPrivateEndpointId}"
         method = "GET"
         operation_name = "get_catalog_private_endpoint"
@@ -6044,7 +6267,8 @@ class DataCatalogClient(object):
                 response_type="CatalogPrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6054,7 +6278,8 @@ class DataCatalogClient(object):
                 response_type="CatalogPrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_connection(self, catalog_id, data_asset_key, connection_key, **kwargs):
         """
@@ -6096,6 +6321,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_connection.py.html>`__ to see an example of how to use get_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'connectionKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}"
         method = "GET"
         operation_name = "get_connection"
@@ -6166,7 +6393,8 @@ class DataCatalogClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6177,7 +6405,8 @@ class DataCatalogClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_custom_property(self, catalog_id, namespace_id, custom_property_key, **kwargs):
         """
@@ -6219,6 +6448,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_custom_property.py.html>`__ to see an example of how to use get_custom_property API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'namespaceId', 'customPropertyKey']
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}/customProperties/{customPropertyKey}"
         method = "GET"
         operation_name = "get_custom_property"
@@ -6289,7 +6520,8 @@ class DataCatalogClient(object):
                 response_type="CustomProperty",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6300,7 +6532,8 @@ class DataCatalogClient(object):
                 response_type="CustomProperty",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_data_asset(self, catalog_id, data_asset_key, **kwargs):
         """
@@ -6339,6 +6572,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_data_asset.py.html>`__ to see an example of how to use get_data_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}"
         method = "GET"
         operation_name = "get_data_asset"
@@ -6408,7 +6643,8 @@ class DataCatalogClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6419,7 +6655,8 @@ class DataCatalogClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_data_asset_tag(self, catalog_id, data_asset_key, tag_key, **kwargs):
         """
@@ -6461,6 +6698,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_data_asset_tag.py.html>`__ to see an example of how to use get_data_asset_tag API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'tagKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/tags/{tagKey}"
         method = "GET"
         operation_name = "get_data_asset_tag"
@@ -6531,7 +6770,8 @@ class DataCatalogClient(object):
                 response_type="DataAssetTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6542,7 +6782,8 @@ class DataCatalogClient(object):
                 response_type="DataAssetTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_entity(self, catalog_id, data_asset_key, entity_key, **kwargs):
         """
@@ -6587,6 +6828,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_entity.py.html>`__ to see an example of how to use get_entity API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'entityKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}"
         method = "GET"
         operation_name = "get_entity"
@@ -6659,7 +6902,8 @@ class DataCatalogClient(object):
                 response_type="Entity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6670,7 +6914,8 @@ class DataCatalogClient(object):
                 response_type="Entity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_entity_tag(self, catalog_id, data_asset_key, entity_key, tag_key, **kwargs):
         """
@@ -6715,6 +6960,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_entity_tag.py.html>`__ to see an example of how to use get_entity_tag API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'entityKey', 'tagKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/tags/{tagKey}"
         method = "GET"
         operation_name = "get_entity_tag"
@@ -6786,7 +7033,8 @@ class DataCatalogClient(object):
                 response_type="EntityTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6797,7 +7045,8 @@ class DataCatalogClient(object):
                 response_type="EntityTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_folder(self, catalog_id, data_asset_key, folder_key, **kwargs):
         """
@@ -6842,6 +7091,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_folder.py.html>`__ to see an example of how to use get_folder API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'folderKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders/{folderKey}"
         method = "GET"
         operation_name = "get_folder"
@@ -6914,7 +7165,8 @@ class DataCatalogClient(object):
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6925,7 +7177,8 @@ class DataCatalogClient(object):
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_folder_tag(self, catalog_id, data_asset_key, folder_key, tag_key, **kwargs):
         """
@@ -6970,6 +7223,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_folder_tag.py.html>`__ to see an example of how to use get_folder_tag API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'folderKey', 'tagKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders/{folderKey}/tags/{tagKey}"
         method = "GET"
         operation_name = "get_folder_tag"
@@ -7041,7 +7296,8 @@ class DataCatalogClient(object):
                 response_type="FolderTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7052,7 +7308,8 @@ class DataCatalogClient(object):
                 response_type="FolderTag",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_glossary(self, catalog_id, glossary_key, **kwargs):
         """
@@ -7091,6 +7348,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_glossary.py.html>`__ to see an example of how to use get_glossary API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'glossaryKey']
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}"
         method = "GET"
         operation_name = "get_glossary"
@@ -7160,7 +7419,8 @@ class DataCatalogClient(object):
                 response_type="Glossary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7171,7 +7431,8 @@ class DataCatalogClient(object):
                 response_type="Glossary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_job(self, catalog_id, job_key, **kwargs):
         """
@@ -7210,6 +7471,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_job.py.html>`__ to see an example of how to use get_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'jobKey']
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}"
         method = "GET"
         operation_name = "get_job"
@@ -7279,7 +7542,8 @@ class DataCatalogClient(object):
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7290,7 +7554,8 @@ class DataCatalogClient(object):
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_job_definition(self, catalog_id, job_definition_key, **kwargs):
         """
@@ -7329,6 +7594,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_job_definition.py.html>`__ to see an example of how to use get_job_definition API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'jobDefinitionKey']
         resource_path = "/catalogs/{catalogId}/jobDefinitions/{jobDefinitionKey}"
         method = "GET"
         operation_name = "get_job_definition"
@@ -7398,7 +7665,8 @@ class DataCatalogClient(object):
                 response_type="JobDefinition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7409,7 +7677,8 @@ class DataCatalogClient(object):
                 response_type="JobDefinition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_job_execution(self, catalog_id, job_key, job_execution_key, **kwargs):
         """
@@ -7451,6 +7720,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_job_execution.py.html>`__ to see an example of how to use get_job_execution API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'jobKey', 'jobExecutionKey']
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}/executions/{jobExecutionKey}"
         method = "GET"
         operation_name = "get_job_execution"
@@ -7521,7 +7792,8 @@ class DataCatalogClient(object):
                 response_type="JobExecution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7532,7 +7804,8 @@ class DataCatalogClient(object):
                 response_type="JobExecution",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_job_log(self, catalog_id, job_key, job_execution_key, job_log_key, **kwargs):
         """
@@ -7577,6 +7850,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_job_log.py.html>`__ to see an example of how to use get_job_log API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'jobKey', 'jobExecutionKey', 'jobLogKey']
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}/executions/{jobExecutionKey}/logs/{jobLogKey}"
         method = "GET"
         operation_name = "get_job_log"
@@ -7648,7 +7923,8 @@ class DataCatalogClient(object):
                 response_type="JobLog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7659,7 +7935,8 @@ class DataCatalogClient(object):
                 response_type="JobLog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_job_metrics(self, catalog_id, job_key, job_execution_key, job_metrics_key, **kwargs):
         """
@@ -7704,6 +7981,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_job_metrics.py.html>`__ to see an example of how to use get_job_metrics API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'jobKey', 'jobExecutionKey', 'jobMetricsKey']
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}/executions/{jobExecutionKey}/metrics/{jobMetricsKey}"
         method = "GET"
         operation_name = "get_job_metrics"
@@ -7775,7 +8054,8 @@ class DataCatalogClient(object):
                 response_type="JobMetric",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7786,7 +8066,8 @@ class DataCatalogClient(object):
                 response_type="JobMetric",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_metastore(self, metastore_id, **kwargs):
         """
@@ -7817,6 +8098,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_metastore.py.html>`__ to see an example of how to use get_metastore API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['metastoreId']
         resource_path = "/metastores/{metastoreId}"
         method = "GET"
         operation_name = "get_metastore"
@@ -7870,7 +8153,8 @@ class DataCatalogClient(object):
                 response_type="Metastore",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7880,7 +8164,8 @@ class DataCatalogClient(object):
                 response_type="Metastore",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_namespace(self, catalog_id, namespace_id, **kwargs):
         """
@@ -7919,6 +8204,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_namespace.py.html>`__ to see an example of how to use get_namespace API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'namespaceId']
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}"
         method = "GET"
         operation_name = "get_namespace"
@@ -7988,7 +8275,8 @@ class DataCatalogClient(object):
                 response_type="Namespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7999,7 +8287,8 @@ class DataCatalogClient(object):
                 response_type="Namespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_pattern(self, catalog_id, pattern_key, **kwargs):
         """
@@ -8038,6 +8327,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_pattern.py.html>`__ to see an example of how to use get_pattern API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'patternKey']
         resource_path = "/catalogs/{catalogId}/patterns/{patternKey}"
         method = "GET"
         operation_name = "get_pattern"
@@ -8107,7 +8398,8 @@ class DataCatalogClient(object):
                 response_type="Pattern",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8118,7 +8410,8 @@ class DataCatalogClient(object):
                 response_type="Pattern",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_term(self, catalog_id, glossary_key, term_key, **kwargs):
         """
@@ -8160,6 +8453,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_term.py.html>`__ to see an example of how to use get_term API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'glossaryKey', 'termKey']
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}"
         method = "GET"
         operation_name = "get_term"
@@ -8230,7 +8525,8 @@ class DataCatalogClient(object):
                 response_type="Term",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8241,7 +8537,8 @@ class DataCatalogClient(object):
                 response_type="Term",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_term_relationship(self, catalog_id, glossary_key, term_key, term_relationship_key, **kwargs):
         """
@@ -8286,6 +8583,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_term_relationship.py.html>`__ to see an example of how to use get_term_relationship API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'glossaryKey', 'termKey', 'termRelationshipKey']
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}/termRelationships/{termRelationshipKey}"
         method = "GET"
         operation_name = "get_term_relationship"
@@ -8357,7 +8656,8 @@ class DataCatalogClient(object):
                 response_type="TermRelationship",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8368,7 +8668,8 @@ class DataCatalogClient(object):
                 response_type="TermRelationship",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_type(self, catalog_id, type_key, **kwargs):
         """
@@ -8407,6 +8708,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_type.py.html>`__ to see an example of how to use get_type API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'typeKey']
         resource_path = "/catalogs/{catalogId}/types/{typeKey}"
         method = "GET"
         operation_name = "get_type"
@@ -8476,7 +8779,8 @@ class DataCatalogClient(object):
                 response_type="Type",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8487,7 +8791,8 @@ class DataCatalogClient(object):
                 response_type="Type",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -8518,6 +8823,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -8571,7 +8878,8 @@ class DataCatalogClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8581,7 +8889,8 @@ class DataCatalogClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def import_connection(self, catalog_id, data_asset_key, import_connection_details, **kwargs):
         """
@@ -8632,6 +8941,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/import_connection.py.html>`__ to see an example of how to use import_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/importConnection"
         method = "POST"
         operation_name = "import_connection"
@@ -8690,7 +9001,8 @@ class DataCatalogClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8701,7 +9013,8 @@ class DataCatalogClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def import_data_asset(self, catalog_id, data_asset_key, import_data_asset_details, import_type, **kwargs):
         """
@@ -8753,6 +9066,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/import_data_asset.py.html>`__ to see an example of how to use import_data_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'importType']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/import"
         method = "POST"
         operation_name = "import_data_asset"
@@ -8824,7 +9139,8 @@ class DataCatalogClient(object):
                 response_type="ImportDataAssetJobResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8836,7 +9152,8 @@ class DataCatalogClient(object):
                 response_type="ImportDataAssetJobResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def import_glossary(self, catalog_id, glossary_key, import_glossary_details, **kwargs):
         """
@@ -8883,6 +9200,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/import_glossary.py.html>`__ to see an example of how to use import_glossary API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'glossaryKey']
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/actions/import"
         method = "POST"
         operation_name = "import_glossary"
@@ -8945,7 +9264,8 @@ class DataCatalogClient(object):
                 body=import_glossary_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8956,7 +9276,8 @@ class DataCatalogClient(object):
                 body=import_glossary_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_aggregated_physical_entities(self, catalog_id, data_asset_key, entity_key, **kwargs):
         """
@@ -9022,6 +9343,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_aggregated_physical_entities.py.html>`__ to see an example of how to use list_aggregated_physical_entities API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'entityKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/actions/listAggregatedPhysicalEntities"
         method = "POST"
         operation_name = "list_aggregated_physical_entities"
@@ -9118,7 +9441,8 @@ class DataCatalogClient(object):
                 response_type="EntityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9129,7 +9453,8 @@ class DataCatalogClient(object):
                 response_type="EntityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_attribute_tags(self, catalog_id, data_asset_key, entity_key, attribute_key, **kwargs):
         """
@@ -9212,6 +9537,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_attribute_tags.py.html>`__ to see an example of how to use list_attribute_tags API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'entityKey', 'attributeKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes/{attributeKey}/tags"
         method = "GET"
         operation_name = "list_attribute_tags"
@@ -9324,7 +9651,8 @@ class DataCatalogClient(object):
                 response_type="AttributeTagCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9335,7 +9663,8 @@ class DataCatalogClient(object):
                 response_type="AttributeTagCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_attributes(self, catalog_id, data_asset_key, entity_key, **kwargs):
         """
@@ -9457,6 +9786,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_attributes.py.html>`__ to see an example of how to use list_attributes API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'entityKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes"
         method = "GET"
         operation_name = "list_attributes"
@@ -9592,7 +9923,8 @@ class DataCatalogClient(object):
                 response_type="AttributeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9603,7 +9935,8 @@ class DataCatalogClient(object):
                 response_type="AttributeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_catalog_private_endpoints(self, compartment_id, **kwargs):
         """
@@ -9658,6 +9991,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_catalog_private_endpoints.py.html>`__ to see an example of how to use list_catalog_private_endpoints API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/catalogPrivateEndpoints"
         method = "GET"
         operation_name = "list_catalog_private_endpoints"
@@ -9739,7 +10074,8 @@ class DataCatalogClient(object):
                 response_type="list[CatalogPrivateEndpointSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9749,7 +10085,8 @@ class DataCatalogClient(object):
                 response_type="list[CatalogPrivateEndpointSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_catalogs(self, compartment_id, **kwargs):
         """
@@ -9804,6 +10141,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_catalogs.py.html>`__ to see an example of how to use list_catalogs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/catalogs"
         method = "GET"
         operation_name = "list_catalogs"
@@ -9885,7 +10224,8 @@ class DataCatalogClient(object):
                 response_type="list[CatalogSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9895,7 +10235,8 @@ class DataCatalogClient(object):
                 response_type="list[CatalogSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_connections(self, catalog_id, data_asset_key, **kwargs):
         """
@@ -9990,6 +10331,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_connections.py.html>`__ to see an example of how to use list_connections API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections"
         method = "GET"
         operation_name = "list_connections"
@@ -10108,7 +10451,8 @@ class DataCatalogClient(object):
                 response_type="ConnectionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10119,7 +10463,8 @@ class DataCatalogClient(object):
                 response_type="ConnectionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_custom_properties(self, catalog_id, namespace_id, **kwargs):
         """
@@ -10213,6 +10558,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_custom_properties.py.html>`__ to see an example of how to use list_custom_properties API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'namespaceId']
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}/customProperties"
         method = "GET"
         operation_name = "list_custom_properties"
@@ -10345,7 +10692,8 @@ class DataCatalogClient(object):
                 response_type="CustomPropertyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10356,7 +10704,8 @@ class DataCatalogClient(object):
                 response_type="CustomPropertyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_data_asset_tags(self, catalog_id, data_asset_key, **kwargs):
         """
@@ -10433,6 +10782,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_data_asset_tags.py.html>`__ to see an example of how to use list_data_asset_tags API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/tags"
         method = "GET"
         operation_name = "list_data_asset_tags"
@@ -10543,7 +10894,8 @@ class DataCatalogClient(object):
                 response_type="DataAssetTagCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10554,7 +10906,8 @@ class DataCatalogClient(object):
                 response_type="DataAssetTagCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_data_assets(self, catalog_id, **kwargs):
         """
@@ -10641,6 +10994,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_data_assets.py.html>`__ to see an example of how to use list_data_assets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}/dataAssets"
         method = "GET"
         operation_name = "list_data_assets"
@@ -10756,7 +11111,8 @@ class DataCatalogClient(object):
                 response_type="DataAssetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10767,7 +11123,8 @@ class DataCatalogClient(object):
                 response_type="DataAssetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_derived_logical_entities(self, catalog_id, pattern_key, **kwargs):
         """
@@ -10836,6 +11193,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_derived_logical_entities.py.html>`__ to see an example of how to use list_derived_logical_entities API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'patternKey']
         resource_path = "/catalogs/{catalogId}/patterns/{patternKey}/actions/listDerivedLogicalEntities"
         method = "POST"
         operation_name = "list_derived_logical_entities"
@@ -10924,7 +11283,8 @@ class DataCatalogClient(object):
                 response_type="EntityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10935,7 +11295,8 @@ class DataCatalogClient(object):
                 response_type="EntityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_entities(self, catalog_id, data_asset_key, **kwargs):
         """
@@ -11064,6 +11425,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_entities.py.html>`__ to see an example of how to use list_entities API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities"
         method = "GET"
         operation_name = "list_entities"
@@ -11209,7 +11572,8 @@ class DataCatalogClient(object):
                 response_type="EntityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11220,7 +11584,8 @@ class DataCatalogClient(object):
                 response_type="EntityCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_entity_tags(self, catalog_id, data_asset_key, entity_key, **kwargs):
         """
@@ -11300,6 +11665,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_entity_tags.py.html>`__ to see an example of how to use list_entity_tags API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'entityKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/tags"
         method = "GET"
         operation_name = "list_entity_tags"
@@ -11411,7 +11778,8 @@ class DataCatalogClient(object):
                 response_type="EntityTagCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11422,7 +11790,8 @@ class DataCatalogClient(object):
                 response_type="EntityTagCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_folder_tags(self, catalog_id, data_asset_key, folder_key, **kwargs):
         """
@@ -11502,6 +11871,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_folder_tags.py.html>`__ to see an example of how to use list_folder_tags API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'folderKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders/{folderKey}/tags"
         method = "GET"
         operation_name = "list_folder_tags"
@@ -11613,7 +11984,8 @@ class DataCatalogClient(object):
                 response_type="FolderTagCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11624,7 +11996,8 @@ class DataCatalogClient(object):
                 response_type="FolderTagCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_folders(self, catalog_id, data_asset_key, **kwargs):
         """
@@ -11733,6 +12106,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_folders.py.html>`__ to see an example of how to use list_folders API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders"
         method = "GET"
         operation_name = "list_folders"
@@ -11866,7 +12241,8 @@ class DataCatalogClient(object):
                 response_type="FolderCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11877,7 +12253,8 @@ class DataCatalogClient(object):
                 response_type="FolderCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_glossaries(self, catalog_id, **kwargs):
         """
@@ -11958,6 +12335,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_glossaries.py.html>`__ to see an example of how to use list_glossaries API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}/glossaries"
         method = "GET"
         operation_name = "list_glossaries"
@@ -12069,7 +12448,8 @@ class DataCatalogClient(object):
                 response_type="GlossaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12080,7 +12460,8 @@ class DataCatalogClient(object):
                 response_type="GlossaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_job_definitions(self, catalog_id, **kwargs):
         """
@@ -12183,6 +12564,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_job_definitions.py.html>`__ to see an example of how to use list_job_definitions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}/jobDefinitions"
         method = "GET"
         operation_name = "list_job_definitions"
@@ -12320,7 +12703,8 @@ class DataCatalogClient(object):
                 response_type="JobDefinitionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12331,7 +12715,8 @@ class DataCatalogClient(object):
                 response_type="JobDefinitionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_job_executions(self, catalog_id, job_key, **kwargs):
         """
@@ -12448,6 +12833,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_job_executions.py.html>`__ to see an example of how to use list_job_executions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'jobKey']
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}/executions"
         method = "GET"
         operation_name = "list_job_executions"
@@ -12585,7 +12972,8 @@ class DataCatalogClient(object):
                 response_type="JobExecutionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12596,7 +12984,8 @@ class DataCatalogClient(object):
                 response_type="JobExecutionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_job_logs(self, catalog_id, job_key, job_execution_key, **kwargs):
         """
@@ -12678,6 +13067,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_job_logs.py.html>`__ to see an example of how to use list_job_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'jobKey', 'jobExecutionKey']
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}/executions/{jobExecutionKey}/logs"
         method = "GET"
         operation_name = "list_job_logs"
@@ -12789,7 +13180,8 @@ class DataCatalogClient(object):
                 response_type="JobLogCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12800,7 +13192,8 @@ class DataCatalogClient(object):
                 response_type="JobLogCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_job_metrics(self, catalog_id, job_key, job_execution_key, **kwargs):
         """
@@ -12903,6 +13296,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_job_metrics.py.html>`__ to see an example of how to use list_job_metrics API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'jobKey', 'jobExecutionKey']
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}/executions/{jobExecutionKey}/metrics"
         method = "GET"
         operation_name = "list_job_metrics"
@@ -13019,7 +13414,8 @@ class DataCatalogClient(object):
                 response_type="JobMetricCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13030,7 +13426,8 @@ class DataCatalogClient(object):
                 response_type="JobMetricCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_jobs(self, catalog_id, **kwargs):
         """
@@ -13153,6 +13550,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_jobs.py.html>`__ to see an example of how to use list_jobs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}/jobs"
         method = "GET"
         operation_name = "list_jobs"
@@ -13298,7 +13697,8 @@ class DataCatalogClient(object):
                 response_type="JobCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13309,7 +13709,8 @@ class DataCatalogClient(object):
                 response_type="JobCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_metastores(self, compartment_id, **kwargs):
         """
@@ -13364,6 +13765,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_metastores.py.html>`__ to see an example of how to use list_metastores API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/metastores"
         method = "GET"
         operation_name = "list_metastores"
@@ -13445,7 +13848,8 @@ class DataCatalogClient(object):
                 response_type="list[MetastoreSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13455,7 +13859,8 @@ class DataCatalogClient(object):
                 response_type="list[MetastoreSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_namespaces(self, catalog_id, **kwargs):
         """
@@ -13536,6 +13941,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_namespaces.py.html>`__ to see an example of how to use list_namespaces API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}/namespaces"
         method = "GET"
         operation_name = "list_namespaces"
@@ -13647,7 +14054,8 @@ class DataCatalogClient(object):
                 response_type="NamespaceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13658,7 +14066,8 @@ class DataCatalogClient(object):
                 response_type="NamespaceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_patterns(self, catalog_id, **kwargs):
         """
@@ -13739,6 +14148,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_patterns.py.html>`__ to see an example of how to use list_patterns API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}/patterns"
         method = "GET"
         operation_name = "list_patterns"
@@ -13850,7 +14261,8 @@ class DataCatalogClient(object):
                 response_type="PatternCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13861,7 +14273,8 @@ class DataCatalogClient(object):
                 response_type="PatternCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_rules(self, catalog_id, data_asset_key, entity_key, **kwargs):
         """
@@ -13961,6 +14374,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_rules.py.html>`__ to see an example of how to use list_rules API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'entityKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/rules"
         method = "GET"
         operation_name = "list_rules"
@@ -14094,7 +14509,8 @@ class DataCatalogClient(object):
                 response_type="RuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14105,7 +14521,8 @@ class DataCatalogClient(object):
                 response_type="RuleCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_tags(self, catalog_id, **kwargs):
         """
@@ -14170,6 +14587,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_tags.py.html>`__ to see an example of how to use list_tags API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}/tags"
         method = "GET"
         operation_name = "list_tags"
@@ -14273,7 +14692,8 @@ class DataCatalogClient(object):
                 response_type="TermCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14284,7 +14704,8 @@ class DataCatalogClient(object):
                 response_type="TermCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_term_relationships(self, catalog_id, glossary_key, term_key, **kwargs):
         """
@@ -14355,6 +14776,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_term_relationships.py.html>`__ to see an example of how to use list_term_relationships API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'glossaryKey', 'termKey']
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}/termRelationships"
         method = "GET"
         operation_name = "list_term_relationships"
@@ -14460,7 +14883,8 @@ class DataCatalogClient(object):
                 response_type="TermRelationshipCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14471,7 +14895,8 @@ class DataCatalogClient(object):
                 response_type="TermRelationshipCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_terms(self, catalog_id, glossary_key, **kwargs):
         """
@@ -14553,6 +14978,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_terms.py.html>`__ to see an example of how to use list_terms API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'glossaryKey']
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms"
         method = "GET"
         operation_name = "list_terms"
@@ -14672,7 +15099,8 @@ class DataCatalogClient(object):
                 response_type="TermCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14683,7 +15111,8 @@ class DataCatalogClient(object):
                 response_type="TermCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_types(self, catalog_id, **kwargs):
         """
@@ -14758,6 +15187,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_types.py.html>`__ to see an example of how to use list_types API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}/types"
         method = "GET"
         operation_name = "list_types"
@@ -14869,7 +15300,8 @@ class DataCatalogClient(object):
                 response_type="TypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14880,7 +15312,8 @@ class DataCatalogClient(object):
                 response_type="TypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -14927,6 +15360,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -15007,7 +15442,8 @@ class DataCatalogClient(object):
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15018,7 +15454,8 @@ class DataCatalogClient(object):
                 response_type="list[WorkRequestError]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -15065,6 +15502,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -15145,7 +15584,8 @@ class DataCatalogClient(object):
                 response_type="list[WorkRequestLog]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15156,7 +15596,8 @@ class DataCatalogClient(object):
                 response_type="list[WorkRequestLog]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -15193,6 +15634,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -15245,7 +15688,8 @@ class DataCatalogClient(object):
                 response_type="list[WorkRequest]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15255,7 +15699,8 @@ class DataCatalogClient(object):
                 response_type="list[WorkRequest]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def object_stats(self, catalog_id, **kwargs):
         """
@@ -15302,6 +15747,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/object_stats.py.html>`__ to see an example of how to use object_stats API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}/actions/objectStats"
         method = "POST"
         operation_name = "object_stats"
@@ -15382,7 +15829,8 @@ class DataCatalogClient(object):
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15393,7 +15841,8 @@ class DataCatalogClient(object):
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def parse_connection(self, catalog_id, data_asset_key, parse_connection_details, **kwargs):
         """
@@ -15440,6 +15889,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/parse_connection.py.html>`__ to see an example of how to use parse_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/parseConnection"
         method = "POST"
         operation_name = "parse_connection"
@@ -15503,7 +15954,8 @@ class DataCatalogClient(object):
                 response_type="list[ConnectionAliasSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15515,7 +15967,8 @@ class DataCatalogClient(object):
                 response_type="list[ConnectionAliasSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def process_recommendation(self, catalog_id, process_recommendation_details, **kwargs):
         """
@@ -15557,6 +16010,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/process_recommendation.py.html>`__ to see an example of how to use process_recommendation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}/actions/processRecommendation"
         method = "POST"
         operation_name = "process_recommendation"
@@ -15611,7 +16066,8 @@ class DataCatalogClient(object):
                 response_type="ProcessRecommendationDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15622,7 +16078,8 @@ class DataCatalogClient(object):
                 response_type="ProcessRecommendationDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def recommendations(self, catalog_id, recommendation_type, source_object_key, source_object_type, **kwargs):
         """
@@ -15673,6 +16130,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/recommendations.py.html>`__ to see an example of how to use recommendations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'recommendationType', 'sourceObjectKey', 'sourceObjectType']
         resource_path = "/catalogs/{catalogId}/actions/getRecommendations"
         method = "POST"
         operation_name = "recommendations"
@@ -15754,7 +16213,8 @@ class DataCatalogClient(object):
                 response_type="RecommendationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15765,7 +16225,8 @@ class DataCatalogClient(object):
                 response_type="RecommendationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def remove_data_selector_patterns(self, catalog_id, data_asset_key, data_selector_pattern_details, **kwargs):
         """
@@ -15816,6 +16277,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/remove_data_selector_patterns.py.html>`__ to see an example of how to use remove_data_selector_patterns API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/removeDataSelectorPatterns"
         method = "POST"
         operation_name = "remove_data_selector_patterns"
@@ -15874,7 +16337,8 @@ class DataCatalogClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15885,7 +16349,8 @@ class DataCatalogClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def search_criteria(self, catalog_id, **kwargs):
         """
@@ -15951,6 +16416,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/search_criteria.py.html>`__ to see an example of how to use search_criteria API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}/search"
         method = "POST"
         operation_name = "search_criteria"
@@ -16048,7 +16515,8 @@ class DataCatalogClient(object):
                 response_type="SearchResultCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16060,7 +16528,8 @@ class DataCatalogClient(object):
                 response_type="SearchResultCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def suggest_matches(self, catalog_id, input_text, **kwargs):
         """
@@ -16102,6 +16571,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/suggest_matches.py.html>`__ to see an example of how to use suggest_matches API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'inputText']
         resource_path = "/catalogs/{catalogId}/actions/suggest"
         method = "POST"
         operation_name = "suggest_matches"
@@ -16165,7 +16636,8 @@ class DataCatalogClient(object):
                 response_type="SuggestResults",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16176,7 +16648,8 @@ class DataCatalogClient(object):
                 response_type="SuggestResults",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def synchronous_export_data_asset(self, catalog_id, data_asset_key, synchronous_export_data_asset_details, export_type, **kwargs):
         """
@@ -16225,6 +16698,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/synchronous_export_data_asset.py.html>`__ to see an example of how to use synchronous_export_data_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'exportType']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/synchronousExport"
         method = "POST"
         operation_name = "synchronous_export_data_asset"
@@ -16294,7 +16769,8 @@ class DataCatalogClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16306,7 +16782,8 @@ class DataCatalogClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def test_connection(self, catalog_id, data_asset_key, connection_key, **kwargs):
         """
@@ -16350,6 +16827,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/test_connection.py.html>`__ to see an example of how to use test_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'connectionKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}/actions/test"
         method = "POST"
         operation_name = "test_connection"
@@ -16408,7 +16887,8 @@ class DataCatalogClient(object):
                 response_type="ValidateConnectionResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16418,7 +16898,8 @@ class DataCatalogClient(object):
                 response_type="ValidateConnectionResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_attribute(self, catalog_id, data_asset_key, entity_key, attribute_key, update_attribute_details, **kwargs):
         """
@@ -16468,6 +16949,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_attribute.py.html>`__ to see an example of how to use update_attribute API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'entityKey', 'attributeKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes/{attributeKey}"
         method = "PUT"
         operation_name = "update_attribute"
@@ -16525,7 +17008,8 @@ class DataCatalogClient(object):
                 response_type="Attribute",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16536,7 +17020,8 @@ class DataCatalogClient(object):
                 response_type="Attribute",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_catalog(self, catalog_id, update_catalog_details, **kwargs):
         """
@@ -16577,6 +17062,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_catalog.py.html>`__ to see an example of how to use update_catalog API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}"
         method = "PUT"
         operation_name = "update_catalog"
@@ -16631,7 +17118,8 @@ class DataCatalogClient(object):
                 response_type="Catalog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16642,7 +17130,8 @@ class DataCatalogClient(object):
                 response_type="Catalog",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_catalog_private_endpoint(self, catalog_private_endpoint_id, update_catalog_private_endpoint_details, **kwargs):
         """
@@ -16683,6 +17172,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_catalog_private_endpoint.py.html>`__ to see an example of how to use update_catalog_private_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogPrivateEndpointId']
         resource_path = "/catalogPrivateEndpoints/{catalogPrivateEndpointId}"
         method = "PUT"
         operation_name = "update_catalog_private_endpoint"
@@ -16736,7 +17227,8 @@ class DataCatalogClient(object):
                 body=update_catalog_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16746,7 +17238,8 @@ class DataCatalogClient(object):
                 body=update_catalog_private_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_connection(self, catalog_id, data_asset_key, connection_key, update_connection_details, **kwargs):
         """
@@ -16793,6 +17286,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_connection.py.html>`__ to see an example of how to use update_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'connectionKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}"
         method = "PUT"
         operation_name = "update_connection"
@@ -16849,7 +17344,8 @@ class DataCatalogClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16860,7 +17356,8 @@ class DataCatalogClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_custom_property(self, catalog_id, namespace_id, custom_property_key, update_custom_property_details, **kwargs):
         """
@@ -16907,6 +17404,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_custom_property.py.html>`__ to see an example of how to use update_custom_property API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'namespaceId', 'customPropertyKey']
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}/customProperties/{customPropertyKey}"
         method = "PUT"
         operation_name = "update_custom_property"
@@ -16963,7 +17462,8 @@ class DataCatalogClient(object):
                 response_type="CustomProperty",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16974,7 +17474,8 @@ class DataCatalogClient(object):
                 response_type="CustomProperty",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_data_asset(self, catalog_id, data_asset_key, update_data_asset_details, **kwargs):
         """
@@ -17018,6 +17519,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_data_asset.py.html>`__ to see an example of how to use update_data_asset API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}"
         method = "PUT"
         operation_name = "update_data_asset"
@@ -17073,7 +17576,8 @@ class DataCatalogClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17084,7 +17588,8 @@ class DataCatalogClient(object):
                 response_type="DataAsset",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_entity(self, catalog_id, data_asset_key, entity_key, update_entity_details, **kwargs):
         """
@@ -17131,6 +17636,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_entity.py.html>`__ to see an example of how to use update_entity API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'entityKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}"
         method = "PUT"
         operation_name = "update_entity"
@@ -17187,7 +17694,8 @@ class DataCatalogClient(object):
                 response_type="Entity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17198,7 +17706,8 @@ class DataCatalogClient(object):
                 response_type="Entity",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_folder(self, catalog_id, data_asset_key, folder_key, update_folder_details, **kwargs):
         """
@@ -17245,6 +17754,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_folder.py.html>`__ to see an example of how to use update_folder API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'folderKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders/{folderKey}"
         method = "PUT"
         operation_name = "update_folder"
@@ -17301,7 +17812,8 @@ class DataCatalogClient(object):
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17312,7 +17824,8 @@ class DataCatalogClient(object):
                 response_type="Folder",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_glossary(self, catalog_id, glossary_key, update_glossary_details, **kwargs):
         """
@@ -17356,6 +17869,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_glossary.py.html>`__ to see an example of how to use update_glossary API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'glossaryKey']
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}"
         method = "PUT"
         operation_name = "update_glossary"
@@ -17411,7 +17926,8 @@ class DataCatalogClient(object):
                 response_type="Glossary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17422,7 +17938,8 @@ class DataCatalogClient(object):
                 response_type="Glossary",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_job(self, catalog_id, job_key, update_job_details, **kwargs):
         """
@@ -17466,6 +17983,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_job.py.html>`__ to see an example of how to use update_job API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'jobKey']
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}"
         method = "PUT"
         operation_name = "update_job"
@@ -17521,7 +18040,8 @@ class DataCatalogClient(object):
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17532,7 +18052,8 @@ class DataCatalogClient(object):
                 response_type="Job",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_job_definition(self, catalog_id, job_definition_key, update_job_definition_details, **kwargs):
         """
@@ -17576,6 +18097,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_job_definition.py.html>`__ to see an example of how to use update_job_definition API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'jobDefinitionKey']
         resource_path = "/catalogs/{catalogId}/jobDefinitions/{jobDefinitionKey}"
         method = "PUT"
         operation_name = "update_job_definition"
@@ -17631,7 +18154,8 @@ class DataCatalogClient(object):
                 response_type="JobDefinition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17642,7 +18166,8 @@ class DataCatalogClient(object):
                 response_type="JobDefinition",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_metastore(self, metastore_id, update_metastore_details, **kwargs):
         """
@@ -17683,6 +18208,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_metastore.py.html>`__ to see an example of how to use update_metastore API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['metastoreId']
         resource_path = "/metastores/{metastoreId}"
         method = "PUT"
         operation_name = "update_metastore"
@@ -17737,7 +18264,8 @@ class DataCatalogClient(object):
                 response_type="Metastore",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17748,7 +18276,8 @@ class DataCatalogClient(object):
                 response_type="Metastore",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_namespace(self, catalog_id, namespace_id, update_namespace_details, **kwargs):
         """
@@ -17792,6 +18321,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_namespace.py.html>`__ to see an example of how to use update_namespace API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'namespaceId']
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}"
         method = "PUT"
         operation_name = "update_namespace"
@@ -17847,7 +18378,8 @@ class DataCatalogClient(object):
                 response_type="Namespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17858,7 +18390,8 @@ class DataCatalogClient(object):
                 response_type="Namespace",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_pattern(self, catalog_id, pattern_key, update_pattern_details, **kwargs):
         """
@@ -17902,6 +18435,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_pattern.py.html>`__ to see an example of how to use update_pattern API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'patternKey']
         resource_path = "/catalogs/{catalogId}/patterns/{patternKey}"
         method = "PUT"
         operation_name = "update_pattern"
@@ -17957,7 +18492,8 @@ class DataCatalogClient(object):
                 response_type="Pattern",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17968,7 +18504,8 @@ class DataCatalogClient(object):
                 response_type="Pattern",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_term(self, catalog_id, glossary_key, term_key, update_term_details, **kwargs):
         """
@@ -18015,6 +18552,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_term.py.html>`__ to see an example of how to use update_term API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'glossaryKey', 'termKey']
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}"
         method = "PUT"
         operation_name = "update_term"
@@ -18071,7 +18610,8 @@ class DataCatalogClient(object):
                 response_type="Term",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18082,7 +18622,8 @@ class DataCatalogClient(object):
                 response_type="Term",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_term_relationship(self, catalog_id, glossary_key, term_key, term_relationship_key, update_term_relationship_details, **kwargs):
         """
@@ -18132,6 +18673,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/update_term_relationship.py.html>`__ to see an example of how to use update_term_relationship API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'glossaryKey', 'termKey', 'termRelationshipKey']
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}/termRelationships/{termRelationshipKey}"
         method = "PUT"
         operation_name = "update_term_relationship"
@@ -18189,7 +18732,8 @@ class DataCatalogClient(object):
                 response_type="TermRelationship",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18200,7 +18744,8 @@ class DataCatalogClient(object):
                 response_type="TermRelationship",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def upload_credentials(self, catalog_id, data_asset_key, connection_key, upload_credentials_details, **kwargs):
         """
@@ -18254,6 +18799,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/upload_credentials.py.html>`__ to see an example of how to use upload_credentials API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'connectionKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}/actions/uploadCredentials"
         method = "POST"
         operation_name = "upload_credentials"
@@ -18313,7 +18860,8 @@ class DataCatalogClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18324,7 +18872,8 @@ class DataCatalogClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def users(self, catalog_id, **kwargs):
         """
@@ -18371,6 +18920,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/users.py.html>`__ to see an example of how to use users API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId']
         resource_path = "/catalogs/{catalogId}/actions/users"
         method = "POST"
         operation_name = "users"
@@ -18451,7 +19002,8 @@ class DataCatalogClient(object):
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18462,7 +19014,8 @@ class DataCatalogClient(object):
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def validate_connection(self, catalog_id, data_asset_key, validate_connection_details, **kwargs):
         """
@@ -18506,6 +19059,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/validate_connection.py.html>`__ to see an example of how to use validate_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey']
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/validateConnection"
         method = "POST"
         operation_name = "validate_connection"
@@ -18564,7 +19119,8 @@ class DataCatalogClient(object):
                 response_type="ValidateConnectionResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18575,7 +19131,8 @@ class DataCatalogClient(object):
                 response_type="ValidateConnectionResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def validate_pattern(self, catalog_id, pattern_key, validate_pattern_details, **kwargs):
         """
@@ -18619,6 +19176,8 @@ class DataCatalogClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/validate_pattern.py.html>`__ to see an example of how to use validate_pattern API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'patternKey']
         resource_path = "/catalogs/{catalogId}/patterns/{patternKey}/actions/validate"
         method = "POST"
         operation_name = "validate_pattern"
@@ -18677,7 +19236,8 @@ class DataCatalogClient(object):
                 response_type="ValidatePatternResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18688,4 +19248,5 @@ class DataCatalogClient(object):
                 response_type="ValidatePatternResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

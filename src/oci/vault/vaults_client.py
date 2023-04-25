@@ -65,6 +65,9 @@ class VaultsClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class VaultsClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20180608',
             'service_endpoint_template': 'https://vaults.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -144,6 +149,8 @@ class VaultsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/cancel_secret_deletion.py.html>`__ to see an example of how to use cancel_secret_deletion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['secretId']
         resource_path = "/secrets/{secretId}/actions/cancelDeletion"
         method = "POST"
         operation_name = "cancel_secret_deletion"
@@ -196,7 +203,8 @@ class VaultsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -205,7 +213,8 @@ class VaultsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_secret_version_deletion(self, secret_id, secret_version_number, **kwargs):
         """
@@ -248,6 +257,8 @@ class VaultsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/cancel_secret_version_deletion.py.html>`__ to see an example of how to use cancel_secret_version_deletion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['secretId', 'secretVersionNumber']
         resource_path = "/secrets/{secretId}/version/{secretVersionNumber}/actions/cancelDeletion"
         method = "POST"
         operation_name = "cancel_secret_version_deletion"
@@ -301,7 +312,8 @@ class VaultsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -310,7 +322,8 @@ class VaultsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_secret_compartment(self, secret_id, change_secret_compartment_details, **kwargs):
         """
@@ -366,6 +379,8 @@ class VaultsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/change_secret_compartment.py.html>`__ to see an example of how to use change_secret_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['secretId']
         resource_path = "/secrets/{secretId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_secret_compartment"
@@ -422,7 +437,8 @@ class VaultsClient(object):
                 body=change_secret_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -432,7 +448,8 @@ class VaultsClient(object):
                 body=change_secret_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_secret(self, create_secret_details, **kwargs):
         """
@@ -475,6 +492,8 @@ class VaultsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/create_secret.py.html>`__ to see an example of how to use create_secret API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/secrets"
         method = "POST"
         operation_name = "create_secret"
@@ -521,7 +540,8 @@ class VaultsClient(object):
                 response_type="Secret",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -531,7 +551,8 @@ class VaultsClient(object):
                 response_type="Secret",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_secret(self, secret_id, **kwargs):
         """
@@ -564,6 +585,8 @@ class VaultsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/get_secret.py.html>`__ to see an example of how to use get_secret API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['secretId']
         resource_path = "/secrets/{secretId}"
         method = "GET"
         operation_name = "get_secret"
@@ -617,7 +640,8 @@ class VaultsClient(object):
                 response_type="Secret",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -627,7 +651,8 @@ class VaultsClient(object):
                 response_type="Secret",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_secret_version(self, secret_id, secret_version_number, **kwargs):
         """
@@ -663,6 +688,8 @@ class VaultsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/get_secret_version.py.html>`__ to see an example of how to use get_secret_version API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['secretId', 'secretVersionNumber']
         resource_path = "/secrets/{secretId}/version/{secretVersionNumber}"
         method = "GET"
         operation_name = "get_secret_version"
@@ -717,7 +744,8 @@ class VaultsClient(object):
                 response_type="SecretVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -727,7 +755,8 @@ class VaultsClient(object):
                 response_type="SecretVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_secret_versions(self, secret_id, **kwargs):
         """
@@ -777,6 +806,8 @@ class VaultsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/list_secret_versions.py.html>`__ to see an example of how to use list_secret_versions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['secretId']
         resource_path = "/secrets/{secretId}/versions"
         method = "GET"
         operation_name = "list_secret_versions"
@@ -857,7 +888,8 @@ class VaultsClient(object):
                 response_type="list[SecretVersionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -868,7 +900,8 @@ class VaultsClient(object):
                 response_type="list[SecretVersionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_secrets(self, compartment_id, **kwargs):
         """
@@ -930,6 +963,8 @@ class VaultsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/list_secrets.py.html>`__ to see an example of how to use list_secrets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/secrets"
         method = "GET"
         operation_name = "list_secrets"
@@ -1013,7 +1048,8 @@ class VaultsClient(object):
                 response_type="list[SecretSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1023,7 +1059,8 @@ class VaultsClient(object):
                 response_type="list[SecretSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def schedule_secret_deletion(self, secret_id, schedule_secret_deletion_details, **kwargs):
         """
@@ -1067,6 +1104,8 @@ class VaultsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/schedule_secret_deletion.py.html>`__ to see an example of how to use schedule_secret_deletion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['secretId']
         resource_path = "/secrets/{secretId}/actions/scheduleDeletion"
         method = "POST"
         operation_name = "schedule_secret_deletion"
@@ -1120,7 +1159,8 @@ class VaultsClient(object):
                 body=schedule_secret_deletion_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1130,7 +1170,8 @@ class VaultsClient(object):
                 body=schedule_secret_deletion_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def schedule_secret_version_deletion(self, secret_id, secret_version_number, schedule_secret_version_deletion_details, **kwargs):
         """
@@ -1177,6 +1218,8 @@ class VaultsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/schedule_secret_version_deletion.py.html>`__ to see an example of how to use schedule_secret_version_deletion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['secretId', 'secretVersionNumber']
         resource_path = "/secrets/{secretId}/version/{secretVersionNumber}/actions/scheduleDeletion"
         method = "POST"
         operation_name = "schedule_secret_version_deletion"
@@ -1231,7 +1274,8 @@ class VaultsClient(object):
                 body=schedule_secret_version_deletion_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1241,7 +1285,8 @@ class VaultsClient(object):
                 body=schedule_secret_version_deletion_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_secret(self, secret_id, update_secret_details, **kwargs):
         """
@@ -1289,6 +1334,8 @@ class VaultsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/vault/update_secret.py.html>`__ to see an example of how to use update_secret API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['secretId']
         resource_path = "/secrets/{secretId}"
         method = "PUT"
         operation_name = "update_secret"
@@ -1343,7 +1390,8 @@ class VaultsClient(object):
                 response_type="Secret",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1354,4 +1402,5 @@ class VaultsClient(object):
                 response_type="Secret",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

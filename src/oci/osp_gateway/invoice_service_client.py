@@ -65,6 +65,9 @@ class InvoiceServiceClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class InvoiceServiceClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20191001',
             'service_endpoint_template': 'https://ospap.oracle.com',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -142,6 +147,8 @@ class InvoiceServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ospgateway/download_pdf_content.py.html>`__ to see an example of how to use download_pdf_content API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['internalInvoiceId', 'ospHomeRegion', 'compartmentId']
         resource_path = "/invoices/{internalInvoiceId}/actions/downloadPdfContent"
         method = "POST"
         operation_name = "download_pdf_content"
@@ -200,7 +207,8 @@ class InvoiceServiceClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -211,7 +219,8 @@ class InvoiceServiceClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_invoice(self, osp_home_region, compartment_id, internal_invoice_id, **kwargs):
         """
@@ -251,6 +260,8 @@ class InvoiceServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ospgateway/get_invoice.py.html>`__ to see an example of how to use get_invoice API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['internalInvoiceId', 'ospHomeRegion', 'compartmentId']
         resource_path = "/invoices/{internalInvoiceId}"
         method = "GET"
         operation_name = "get_invoice"
@@ -309,7 +320,8 @@ class InvoiceServiceClient(object):
                 response_type="Invoice",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -320,7 +332,8 @@ class InvoiceServiceClient(object):
                 response_type="Invoice",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_invoice_lines(self, osp_home_region, compartment_id, internal_invoice_id, **kwargs):
         """
@@ -366,6 +379,8 @@ class InvoiceServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ospgateway/list_invoice_lines.py.html>`__ to see an example of how to use list_invoice_lines API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['internalInvoiceId', 'ospHomeRegion', 'compartmentId']
         resource_path = "/invoices/{internalInvoiceId}/invoiceLines"
         method = "GET"
         operation_name = "list_invoice_lines"
@@ -428,7 +443,8 @@ class InvoiceServiceClient(object):
                 response_type="InvoiceLineCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -439,7 +455,8 @@ class InvoiceServiceClient(object):
                 response_type="InvoiceLineCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_invoices(self, osp_home_region, compartment_id, **kwargs):
         """
@@ -523,6 +540,8 @@ class InvoiceServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ospgateway/list_invoices.py.html>`__ to see an example of how to use list_invoices API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['ospHomeRegion', 'compartmentId']
         resource_path = "/invoices"
         method = "GET"
         operation_name = "list_invoices"
@@ -624,7 +643,8 @@ class InvoiceServiceClient(object):
                 response_type="InvoiceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -634,7 +654,8 @@ class InvoiceServiceClient(object):
                 response_type="InvoiceCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def pay_invoice(self, osp_home_region, internal_invoice_id, compartment_id, pay_invoice_details, **kwargs):
         """
@@ -688,6 +709,8 @@ class InvoiceServiceClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ospgateway/pay_invoice.py.html>`__ to see an example of how to use pay_invoice API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['internalInvoiceId', 'ospHomeRegion', 'compartmentId']
         resource_path = "/invoices/{internalInvoiceId}/actions/pay"
         method = "POST"
         operation_name = "pay_invoice"
@@ -752,7 +775,8 @@ class InvoiceServiceClient(object):
                 response_type="PayInvoiceReceipt",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -764,4 +788,5 @@ class InvoiceServiceClient(object):
                 response_type="PayInvoiceReceipt",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

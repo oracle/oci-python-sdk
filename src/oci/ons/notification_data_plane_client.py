@@ -66,6 +66,9 @@ class NotificationDataPlaneClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -92,8 +95,10 @@ class NotificationDataPlaneClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20181201',
             'service_endpoint_template': 'https://notification.{region}.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -158,6 +163,8 @@ class NotificationDataPlaneClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/change_subscription_compartment.py.html>`__ to see an example of how to use change_subscription_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subscriptionId']
         resource_path = "/subscriptions/{subscriptionId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_subscription_compartment"
@@ -214,7 +221,8 @@ class NotificationDataPlaneClient(object):
                 body=change_subscription_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -224,7 +232,8 @@ class NotificationDataPlaneClient(object):
                 body=change_subscription_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_subscription(self, create_subscription_details, **kwargs):
         """
@@ -269,6 +278,8 @@ class NotificationDataPlaneClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/create_subscription.py.html>`__ to see an example of how to use create_subscription API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/subscriptions"
         method = "POST"
         operation_name = "create_subscription"
@@ -313,7 +324,8 @@ class NotificationDataPlaneClient(object):
                 response_type="Subscription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -323,7 +335,8 @@ class NotificationDataPlaneClient(object):
                 response_type="Subscription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_subscription(self, subscription_id, **kwargs):
         """
@@ -364,6 +377,8 @@ class NotificationDataPlaneClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/delete_subscription.py.html>`__ to see an example of how to use delete_subscription API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subscriptionId']
         resource_path = "/subscriptions/{subscriptionId}"
         method = "DELETE"
         operation_name = "delete_subscription"
@@ -416,7 +431,8 @@ class NotificationDataPlaneClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -425,7 +441,8 @@ class NotificationDataPlaneClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_confirm_subscription(self, id, token, protocol, **kwargs):
         """
@@ -481,6 +498,8 @@ class NotificationDataPlaneClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/get_confirm_subscription.py.html>`__ to see an example of how to use get_confirm_subscription API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['id', 'token', 'protocol']
         resource_path = "/subscriptions/{id}/confirmation"
         method = "GET"
         operation_name = "get_confirm_subscription"
@@ -539,7 +558,8 @@ class NotificationDataPlaneClient(object):
                 response_type="ConfirmationResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -550,7 +570,8 @@ class NotificationDataPlaneClient(object):
                 response_type="ConfirmationResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_subscription(self, subscription_id, **kwargs):
         """
@@ -586,6 +607,8 @@ class NotificationDataPlaneClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/get_subscription.py.html>`__ to see an example of how to use get_subscription API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subscriptionId']
         resource_path = "/subscriptions/{subscriptionId}"
         method = "GET"
         operation_name = "get_subscription"
@@ -637,7 +660,8 @@ class NotificationDataPlaneClient(object):
                 response_type="Subscription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -647,7 +671,8 @@ class NotificationDataPlaneClient(object):
                 response_type="Subscription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_unsubscription(self, id, token, protocol, **kwargs):
         """
@@ -703,6 +728,8 @@ class NotificationDataPlaneClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/get_unsubscription.py.html>`__ to see an example of how to use get_unsubscription API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['id', 'token', 'protocol']
         resource_path = "/subscriptions/{id}/unsubscription"
         method = "GET"
         operation_name = "get_unsubscription"
@@ -761,7 +788,8 @@ class NotificationDataPlaneClient(object):
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -772,7 +800,8 @@ class NotificationDataPlaneClient(object):
                 response_type="str",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_subscriptions(self, compartment_id, **kwargs):
         """
@@ -823,6 +852,8 @@ class NotificationDataPlaneClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/list_subscriptions.py.html>`__ to see an example of how to use list_subscriptions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/subscriptions"
         method = "GET"
         operation_name = "list_subscriptions"
@@ -875,7 +906,8 @@ class NotificationDataPlaneClient(object):
                 response_type="list[SubscriptionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -885,7 +917,8 @@ class NotificationDataPlaneClient(object):
                 response_type="list[SubscriptionSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def publish_message(self, topic_id, message_details, **kwargs):
         """
@@ -952,6 +985,8 @@ class NotificationDataPlaneClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/publish_message.py.html>`__ to see an example of how to use publish_message API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['topicId']
         resource_path = "/topics/{topicId}/messages"
         method = "POST"
         operation_name = "publish_message"
@@ -1006,7 +1041,8 @@ class NotificationDataPlaneClient(object):
                 response_type="PublishResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1017,7 +1053,8 @@ class NotificationDataPlaneClient(object):
                 response_type="PublishResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def resend_subscription_confirmation(self, id, **kwargs):
         """
@@ -1053,6 +1090,8 @@ class NotificationDataPlaneClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/resend_subscription_confirmation.py.html>`__ to see an example of how to use resend_subscription_confirmation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['id']
         resource_path = "/subscriptions/{id}/resendConfirmation"
         method = "POST"
         operation_name = "resend_subscription_confirmation"
@@ -1104,7 +1143,8 @@ class NotificationDataPlaneClient(object):
                 response_type="Subscription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1114,7 +1154,8 @@ class NotificationDataPlaneClient(object):
                 response_type="Subscription",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_subscription(self, subscription_id, update_subscription_details, **kwargs):
         """
@@ -1158,6 +1199,8 @@ class NotificationDataPlaneClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ons/update_subscription.py.html>`__ to see an example of how to use update_subscription API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['subscriptionId']
         resource_path = "/subscriptions/{subscriptionId}"
         method = "PUT"
         operation_name = "update_subscription"
@@ -1212,7 +1255,8 @@ class NotificationDataPlaneClient(object):
                 response_type="UpdateSubscriptionDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1223,4 +1267,5 @@ class NotificationDataPlaneClient(object):
                 response_type="UpdateSubscriptionDetails",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

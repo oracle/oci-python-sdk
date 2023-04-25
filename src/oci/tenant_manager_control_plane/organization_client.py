@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class OrganizationClient(object):
     """
-    The Organizations API allows you to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and its resources.
+    Use the Organizations API to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and organization resources. For more information, see [Organization Management Overview](/iaas/Content/General/Concepts/organization_management_overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -65,6 +65,9 @@ class OrganizationClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class OrganizationClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20200801',
             'service_endpoint_template': 'https://organizations.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -110,7 +115,7 @@ class OrganizationClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            OCID of the compartment. Always a tenancy OCID.
 
         :param str organization_tenancy_id: (required)
             OCID of the child tenancy.
@@ -127,7 +132,7 @@ class OrganizationClient(object):
             server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            will be rejected.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -150,6 +155,8 @@ class OrganizationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/approve_organization_tenancy_for_transfer.py.html>`__ to see an example of how to use approve_organization_tenancy_for_transfer API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['organizationTenancyId', 'compartmentId']
         resource_path = "/organizationTenancies/{organizationTenancyId}/actions/approveForTransfer"
         method = "POST"
         operation_name = "approve_organization_tenancy_for_transfer"
@@ -212,7 +219,8 @@ class OrganizationClient(object):
                 response_type="OrganizationTenancy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -223,7 +231,8 @@ class OrganizationClient(object):
                 response_type="OrganizationTenancy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_child_tenancy(self, create_child_tenancy_details, **kwargs):
         """
@@ -238,7 +247,7 @@ class OrganizationClient(object):
             server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            will be rejected.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -261,6 +270,8 @@ class OrganizationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/create_child_tenancy.py.html>`__ to see an example of how to use create_child_tenancy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/childTenancies"
         method = "POST"
         operation_name = "create_child_tenancy"
@@ -304,7 +315,8 @@ class OrganizationClient(object):
                 body=create_child_tenancy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -313,7 +325,8 @@ class OrganizationClient(object):
                 body=create_child_tenancy_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_organization_tenancy(self, organization_tenancy_id, **kwargs):
         """
@@ -338,7 +351,7 @@ class OrganizationClient(object):
             server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            will be rejected.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -358,6 +371,8 @@ class OrganizationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/delete_organization_tenancy.py.html>`__ to see an example of how to use delete_organization_tenancy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['organizationTenancyId']
         resource_path = "/organizationTenancies/{organizationTenancyId}"
         method = "DELETE"
         operation_name = "delete_organization_tenancy"
@@ -413,7 +428,8 @@ class OrganizationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -422,7 +438,8 @@ class OrganizationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_organization(self, organization_id, **kwargs):
         """
@@ -453,6 +470,8 @@ class OrganizationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/get_organization.py.html>`__ to see an example of how to use get_organization API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['organizationId']
         resource_path = "/organizations/{organizationId}"
         method = "GET"
         operation_name = "get_organization"
@@ -504,7 +523,8 @@ class OrganizationClient(object):
                 response_type="Organization",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -514,7 +534,8 @@ class OrganizationClient(object):
                 response_type="Organization",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_organization_tenancy(self, organization_id, tenancy_id, **kwargs):
         """
@@ -548,6 +569,8 @@ class OrganizationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/get_organization_tenancy.py.html>`__ to see an example of how to use get_organization_tenancy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['organizationId', 'tenancyId']
         resource_path = "/organizations/{organizationId}/tenancies/{tenancyId}"
         method = "GET"
         operation_name = "get_organization_tenancy"
@@ -600,7 +623,8 @@ class OrganizationClient(object):
                 response_type="OrganizationTenancy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -610,7 +634,8 @@ class OrganizationClient(object):
                 response_type="OrganizationTenancy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_organization_tenancies(self, organization_id, **kwargs):
         """
@@ -647,6 +672,8 @@ class OrganizationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/list_organization_tenancies.py.html>`__ to see an example of how to use list_organization_tenancies API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['organizationId']
         resource_path = "/organizations/{organizationId}/tenancies"
         method = "GET"
         operation_name = "list_organization_tenancies"
@@ -707,7 +734,8 @@ class OrganizationClient(object):
                 response_type="OrganizationTenancyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -718,7 +746,8 @@ class OrganizationClient(object):
                 response_type="OrganizationTenancyCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_organizations(self, compartment_id, **kwargs):
         """
@@ -726,7 +755,7 @@ class OrganizationClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            OCID of the compartment. Always a tenancy OCID.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -755,6 +784,8 @@ class OrganizationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/list_organizations.py.html>`__ to see an example of how to use list_organizations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/organizations"
         method = "GET"
         operation_name = "list_organizations"
@@ -805,7 +836,8 @@ class OrganizationClient(object):
                 response_type="OrganizationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -815,11 +847,12 @@ class OrganizationClient(object):
                 response_type="OrganizationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def restore_organization_tenancy(self, organization_tenancy_id, **kwargs):
         """
-        An asynchronous API to restore tenancy.
+        An asynchronous API to restore a tenancy.
 
 
         :param str organization_tenancy_id: (required)
@@ -853,6 +886,8 @@ class OrganizationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/restore_organization_tenancy.py.html>`__ to see an example of how to use restore_organization_tenancy API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['organizationTenancyId']
         resource_path = "/organizationTenancies/{organizationTenancyId}/actions/restore"
         method = "POST"
         operation_name = "restore_organization_tenancy"
@@ -905,7 +940,8 @@ class OrganizationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -914,7 +950,8 @@ class OrganizationClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def unapprove_organization_tenancy_for_transfer(self, compartment_id, organization_tenancy_id, **kwargs):
         """
@@ -922,7 +959,7 @@ class OrganizationClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            OCID of the compartment. Always a tenancy OCID.
 
         :param str organization_tenancy_id: (required)
             OCID of the child tenancy.
@@ -939,7 +976,7 @@ class OrganizationClient(object):
             server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            will be rejected.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -962,6 +999,8 @@ class OrganizationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/unapprove_organization_tenancy_for_transfer.py.html>`__ to see an example of how to use unapprove_organization_tenancy_for_transfer API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['organizationTenancyId', 'compartmentId']
         resource_path = "/organizationTenancies/{organizationTenancyId}/actions/unapproveForTransfer"
         method = "POST"
         operation_name = "unapprove_organization_tenancy_for_transfer"
@@ -1024,7 +1063,8 @@ class OrganizationClient(object):
                 response_type="OrganizationTenancy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1035,11 +1075,12 @@ class OrganizationClient(object):
                 response_type="OrganizationTenancy",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_organization(self, organization_id, update_organization_details, **kwargs):
         """
-        Assign the default subscription to the organization.
+        Map the default subscription to the organization.
 
 
         :param str organization_id: (required)
@@ -1063,7 +1104,7 @@ class OrganizationClient(object):
             server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            will be rejected.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1083,6 +1124,8 @@ class OrganizationClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/update_organization.py.html>`__ to see an example of how to use update_organization API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['organizationId']
         resource_path = "/organizations/{organizationId}"
         method = "PUT"
         operation_name = "update_organization"
@@ -1139,7 +1182,8 @@ class OrganizationClient(object):
                 body=update_organization_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1149,4 +1193,5 @@ class OrganizationClient(object):
                 body=update_organization_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

@@ -1,0 +1,11 @@
+ExternalExadataInfrastructureDiscoverySummary
+=============================================
+
+.. currentmodule:: oci.database_management.models
+
+.. autoclass:: ExternalExadataInfrastructureDiscoverySummary
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

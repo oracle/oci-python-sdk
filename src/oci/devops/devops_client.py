@@ -65,6 +65,9 @@ class DevopsClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class DevopsClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20210630',
             'service_endpoint_template': 'https://devops.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -142,6 +147,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/approve_deployment.py.html>`__ to see an example of how to use approve_deployment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId']
         resource_path = "/deployments/{deploymentId}/actions/approve"
         method = "POST"
         operation_name = "approve_deployment"
@@ -201,7 +208,8 @@ class DevopsClient(object):
                 response_type="Deployment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -212,7 +220,8 @@ class DevopsClient(object):
                 response_type="Deployment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_build_run(self, cancel_build_run_details, build_run_id, **kwargs):
         """
@@ -252,6 +261,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/cancel_build_run.py.html>`__ to see an example of how to use cancel_build_run API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['buildRunId']
         resource_path = "/buildRuns/{buildRunId}/actions/cancel"
         method = "POST"
         operation_name = "cancel_build_run"
@@ -311,7 +322,8 @@ class DevopsClient(object):
                 response_type="BuildRun",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -322,7 +334,8 @@ class DevopsClient(object):
                 response_type="BuildRun",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_deployment(self, deployment_id, cancel_deployment_details, **kwargs):
         """
@@ -362,6 +375,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/cancel_deployment.py.html>`__ to see an example of how to use cancel_deployment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId']
         resource_path = "/deployments/{deploymentId}/actions/cancel"
         method = "POST"
         operation_name = "cancel_deployment"
@@ -421,7 +436,8 @@ class DevopsClient(object):
                 response_type="Deployment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -432,7 +448,8 @@ class DevopsClient(object):
                 response_type="Deployment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def cancel_scheduled_cascading_project_deletion(self, project_id, **kwargs):
         """
@@ -469,6 +486,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/cancel_scheduled_cascading_project_deletion.py.html>`__ to see an example of how to use cancel_scheduled_cascading_project_deletion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['projectId']
         resource_path = "/projects/{projectId}/actions/cancelScheduledCascadingProjectDeletion"
         method = "POST"
         operation_name = "cancel_scheduled_cascading_project_deletion"
@@ -526,7 +545,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -535,7 +555,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_project_compartment(self, project_id, change_project_compartment_details, **kwargs):
         """
@@ -575,6 +596,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/change_project_compartment.py.html>`__ to see an example of how to use change_project_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['projectId']
         resource_path = "/projects/{projectId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_project_compartment"
@@ -633,7 +656,8 @@ class DevopsClient(object):
                 body=change_project_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -643,7 +667,8 @@ class DevopsClient(object):
                 body=change_project_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_build_pipeline(self, create_build_pipeline_details, **kwargs):
         """
@@ -677,6 +702,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_build_pipeline.py.html>`__ to see an example of how to use create_build_pipeline API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/buildPipelines"
         method = "POST"
         operation_name = "create_build_pipeline"
@@ -723,7 +750,8 @@ class DevopsClient(object):
                 response_type="BuildPipeline",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -733,7 +761,8 @@ class DevopsClient(object):
                 response_type="BuildPipeline",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_build_pipeline_stage(self, create_build_pipeline_stage_details, **kwargs):
         """
@@ -767,6 +796,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_build_pipeline_stage.py.html>`__ to see an example of how to use create_build_pipeline_stage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/buildPipelineStages"
         method = "POST"
         operation_name = "create_build_pipeline_stage"
@@ -813,7 +844,8 @@ class DevopsClient(object):
                 response_type="BuildPipelineStage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -823,7 +855,8 @@ class DevopsClient(object):
                 response_type="BuildPipelineStage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_build_run(self, create_build_run_details, **kwargs):
         """
@@ -860,6 +893,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_build_run.py.html>`__ to see an example of how to use create_build_run API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/buildRuns"
         method = "POST"
         operation_name = "create_build_run"
@@ -908,7 +943,8 @@ class DevopsClient(object):
                 response_type="BuildRun",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -918,7 +954,8 @@ class DevopsClient(object):
                 response_type="BuildRun",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_connection(self, create_connection_details, **kwargs):
         """
@@ -952,6 +989,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_connection.py.html>`__ to see an example of how to use create_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/connections"
         method = "POST"
         operation_name = "create_connection"
@@ -998,7 +1037,8 @@ class DevopsClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1008,7 +1048,8 @@ class DevopsClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_deploy_artifact(self, create_deploy_artifact_details, **kwargs):
         """
@@ -1042,6 +1083,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_deploy_artifact.py.html>`__ to see an example of how to use create_deploy_artifact API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/deployArtifacts"
         method = "POST"
         operation_name = "create_deploy_artifact"
@@ -1088,7 +1131,8 @@ class DevopsClient(object):
                 response_type="DeployArtifact",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1098,7 +1142,8 @@ class DevopsClient(object):
                 response_type="DeployArtifact",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_deploy_environment(self, create_deploy_environment_details, **kwargs):
         """
@@ -1132,6 +1177,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_deploy_environment.py.html>`__ to see an example of how to use create_deploy_environment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/deployEnvironments"
         method = "POST"
         operation_name = "create_deploy_environment"
@@ -1178,7 +1225,8 @@ class DevopsClient(object):
                 response_type="DeployEnvironment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1188,7 +1236,8 @@ class DevopsClient(object):
                 response_type="DeployEnvironment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_deploy_pipeline(self, create_deploy_pipeline_details, **kwargs):
         """
@@ -1222,6 +1271,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_deploy_pipeline.py.html>`__ to see an example of how to use create_deploy_pipeline API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/deployPipelines"
         method = "POST"
         operation_name = "create_deploy_pipeline"
@@ -1268,7 +1319,8 @@ class DevopsClient(object):
                 response_type="DeployPipeline",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1278,7 +1330,8 @@ class DevopsClient(object):
                 response_type="DeployPipeline",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_deploy_stage(self, create_deploy_stage_details, **kwargs):
         """
@@ -1312,6 +1365,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_deploy_stage.py.html>`__ to see an example of how to use create_deploy_stage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/deployStages"
         method = "POST"
         operation_name = "create_deploy_stage"
@@ -1358,7 +1413,8 @@ class DevopsClient(object):
                 response_type="DeployStage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1368,7 +1424,8 @@ class DevopsClient(object):
                 response_type="DeployStage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_deployment(self, create_deployment_details, **kwargs):
         """
@@ -1402,6 +1459,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_deployment.py.html>`__ to see an example of how to use create_deployment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/deployments"
         method = "POST"
         operation_name = "create_deployment"
@@ -1448,7 +1507,8 @@ class DevopsClient(object):
                 response_type="Deployment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1458,7 +1518,8 @@ class DevopsClient(object):
                 response_type="Deployment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_project(self, create_project_details, **kwargs):
         """
@@ -1492,6 +1553,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_project.py.html>`__ to see an example of how to use create_project API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/projects"
         method = "POST"
         operation_name = "create_project"
@@ -1538,7 +1601,8 @@ class DevopsClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1548,7 +1612,8 @@ class DevopsClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_repository(self, create_repository_details, **kwargs):
         """
@@ -1582,6 +1647,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_repository.py.html>`__ to see an example of how to use create_repository API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/repositories"
         method = "POST"
         operation_name = "create_repository"
@@ -1628,7 +1695,8 @@ class DevopsClient(object):
                 response_type="Repository",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1638,7 +1706,8 @@ class DevopsClient(object):
                 response_type="Repository",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_trigger(self, create_trigger_details, **kwargs):
         """
@@ -1672,6 +1741,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/create_trigger.py.html>`__ to see an example of how to use create_trigger API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/triggers"
         method = "POST"
         operation_name = "create_trigger"
@@ -1718,7 +1789,8 @@ class DevopsClient(object):
                 response_type="TriggerCreateResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1728,7 +1800,8 @@ class DevopsClient(object):
                 response_type="TriggerCreateResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_build_pipeline(self, build_pipeline_id, **kwargs):
         """
@@ -1762,6 +1835,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_build_pipeline.py.html>`__ to see an example of how to use delete_build_pipeline API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['buildPipelineId']
         resource_path = "/buildPipelines/{buildPipelineId}"
         method = "DELETE"
         operation_name = "delete_build_pipeline"
@@ -1816,7 +1891,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1825,7 +1901,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_build_pipeline_stage(self, build_pipeline_stage_id, **kwargs):
         """
@@ -1859,6 +1936,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_build_pipeline_stage.py.html>`__ to see an example of how to use delete_build_pipeline_stage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['buildPipelineStageId']
         resource_path = "/buildPipelineStages/{buildPipelineStageId}"
         method = "DELETE"
         operation_name = "delete_build_pipeline_stage"
@@ -1913,7 +1992,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1922,7 +2002,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_connection(self, connection_id, **kwargs):
         """
@@ -1956,6 +2037,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_connection.py.html>`__ to see an example of how to use delete_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['connectionId']
         resource_path = "/connections/{connectionId}"
         method = "DELETE"
         operation_name = "delete_connection"
@@ -2010,7 +2093,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2019,7 +2103,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_deploy_artifact(self, deploy_artifact_id, **kwargs):
         """
@@ -2053,6 +2138,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_deploy_artifact.py.html>`__ to see an example of how to use delete_deploy_artifact API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deployArtifactId']
         resource_path = "/deployArtifacts/{deployArtifactId}"
         method = "DELETE"
         operation_name = "delete_deploy_artifact"
@@ -2107,7 +2194,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2116,7 +2204,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_deploy_environment(self, deploy_environment_id, **kwargs):
         """
@@ -2150,6 +2239,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_deploy_environment.py.html>`__ to see an example of how to use delete_deploy_environment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deployEnvironmentId']
         resource_path = "/deployEnvironments/{deployEnvironmentId}"
         method = "DELETE"
         operation_name = "delete_deploy_environment"
@@ -2204,7 +2295,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2213,7 +2305,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_deploy_pipeline(self, deploy_pipeline_id, **kwargs):
         """
@@ -2247,6 +2340,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_deploy_pipeline.py.html>`__ to see an example of how to use delete_deploy_pipeline API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deployPipelineId']
         resource_path = "/deployPipelines/{deployPipelineId}"
         method = "DELETE"
         operation_name = "delete_deploy_pipeline"
@@ -2301,7 +2396,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2310,7 +2406,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_deploy_stage(self, deploy_stage_id, **kwargs):
         """
@@ -2344,6 +2441,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_deploy_stage.py.html>`__ to see an example of how to use delete_deploy_stage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deployStageId']
         resource_path = "/deployStages/{deployStageId}"
         method = "DELETE"
         operation_name = "delete_deploy_stage"
@@ -2398,7 +2497,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2407,7 +2507,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_project(self, project_id, **kwargs):
         """
@@ -2441,6 +2542,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_project.py.html>`__ to see an example of how to use delete_project API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['projectId']
         resource_path = "/projects/{projectId}"
         method = "DELETE"
         operation_name = "delete_project"
@@ -2495,7 +2598,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2504,7 +2608,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_ref(self, repository_id, ref_name, **kwargs):
         """
@@ -2544,6 +2649,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_ref.py.html>`__ to see an example of how to use delete_ref API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId', 'refName']
         resource_path = "/repositories/{repositoryId}/refs/{refName}"
         method = "DELETE"
         operation_name = "delete_ref"
@@ -2602,7 +2709,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2611,7 +2719,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_repository(self, repository_id, **kwargs):
         """
@@ -2645,6 +2754,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_repository.py.html>`__ to see an example of how to use delete_repository API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId']
         resource_path = "/repositories/{repositoryId}"
         method = "DELETE"
         operation_name = "delete_repository"
@@ -2699,7 +2810,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2708,7 +2820,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_trigger(self, trigger_id, **kwargs):
         """
@@ -2742,6 +2855,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/delete_trigger.py.html>`__ to see an example of how to use delete_trigger API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['triggerId']
         resource_path = "/triggers/{triggerId}"
         method = "DELETE"
         operation_name = "delete_trigger"
@@ -2796,7 +2911,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2805,7 +2921,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_build_pipeline(self, build_pipeline_id, **kwargs):
         """
@@ -2836,6 +2953,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_build_pipeline.py.html>`__ to see an example of how to use get_build_pipeline API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['buildPipelineId']
         resource_path = "/buildPipelines/{buildPipelineId}"
         method = "GET"
         operation_name = "get_build_pipeline"
@@ -2889,7 +3008,8 @@ class DevopsClient(object):
                 response_type="BuildPipeline",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2899,7 +3019,8 @@ class DevopsClient(object):
                 response_type="BuildPipeline",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_build_pipeline_stage(self, build_pipeline_stage_id, **kwargs):
         """
@@ -2930,6 +3051,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_build_pipeline_stage.py.html>`__ to see an example of how to use get_build_pipeline_stage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['buildPipelineStageId']
         resource_path = "/buildPipelineStages/{buildPipelineStageId}"
         method = "GET"
         operation_name = "get_build_pipeline_stage"
@@ -2983,7 +3106,8 @@ class DevopsClient(object):
                 response_type="BuildPipelineStage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2993,7 +3117,8 @@ class DevopsClient(object):
                 response_type="BuildPipelineStage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_build_run(self, build_run_id, **kwargs):
         """
@@ -3024,6 +3149,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_build_run.py.html>`__ to see an example of how to use get_build_run API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['buildRunId']
         resource_path = "/buildRuns/{buildRunId}"
         method = "GET"
         operation_name = "get_build_run"
@@ -3077,7 +3204,8 @@ class DevopsClient(object):
                 response_type="BuildRun",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3087,7 +3215,8 @@ class DevopsClient(object):
                 response_type="BuildRun",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_commit(self, repository_id, commit_id, **kwargs):
         """
@@ -3121,6 +3250,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_commit.py.html>`__ to see an example of how to use get_commit API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId', 'commitId']
         resource_path = "/repositories/{repositoryId}/commits/{commitId}"
         method = "GET"
         operation_name = "get_commit"
@@ -3175,7 +3306,8 @@ class DevopsClient(object):
                 response_type="RepositoryCommit",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3185,7 +3317,8 @@ class DevopsClient(object):
                 response_type="RepositoryCommit",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_commit_diff(self, repository_id, target_version, **kwargs):
         """
@@ -3225,6 +3358,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_commit_diff.py.html>`__ to see an example of how to use get_commit_diff API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId', 'targetVersion']
         resource_path = "/repositories/{repositoryId}/diff"
         method = "GET"
         operation_name = "get_commit_diff"
@@ -3288,7 +3423,8 @@ class DevopsClient(object):
                 response_type="DiffResponse",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3299,7 +3435,8 @@ class DevopsClient(object):
                 response_type="DiffResponse",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_connection(self, connection_id, **kwargs):
         """
@@ -3330,6 +3467,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_connection.py.html>`__ to see an example of how to use get_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['connectionId']
         resource_path = "/connections/{connectionId}"
         method = "GET"
         operation_name = "get_connection"
@@ -3383,7 +3522,8 @@ class DevopsClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3393,7 +3533,8 @@ class DevopsClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_deploy_artifact(self, deploy_artifact_id, **kwargs):
         """
@@ -3424,6 +3565,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_deploy_artifact.py.html>`__ to see an example of how to use get_deploy_artifact API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deployArtifactId']
         resource_path = "/deployArtifacts/{deployArtifactId}"
         method = "GET"
         operation_name = "get_deploy_artifact"
@@ -3477,7 +3620,8 @@ class DevopsClient(object):
                 response_type="DeployArtifact",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3487,7 +3631,8 @@ class DevopsClient(object):
                 response_type="DeployArtifact",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_deploy_environment(self, deploy_environment_id, **kwargs):
         """
@@ -3518,6 +3663,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_deploy_environment.py.html>`__ to see an example of how to use get_deploy_environment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deployEnvironmentId']
         resource_path = "/deployEnvironments/{deployEnvironmentId}"
         method = "GET"
         operation_name = "get_deploy_environment"
@@ -3571,7 +3718,8 @@ class DevopsClient(object):
                 response_type="DeployEnvironment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3581,7 +3729,8 @@ class DevopsClient(object):
                 response_type="DeployEnvironment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_deploy_pipeline(self, deploy_pipeline_id, **kwargs):
         """
@@ -3612,6 +3761,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_deploy_pipeline.py.html>`__ to see an example of how to use get_deploy_pipeline API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deployPipelineId']
         resource_path = "/deployPipelines/{deployPipelineId}"
         method = "GET"
         operation_name = "get_deploy_pipeline"
@@ -3665,7 +3816,8 @@ class DevopsClient(object):
                 response_type="DeployPipeline",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3675,7 +3827,8 @@ class DevopsClient(object):
                 response_type="DeployPipeline",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_deploy_stage(self, deploy_stage_id, **kwargs):
         """
@@ -3706,6 +3859,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_deploy_stage.py.html>`__ to see an example of how to use get_deploy_stage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deployStageId']
         resource_path = "/deployStages/{deployStageId}"
         method = "GET"
         operation_name = "get_deploy_stage"
@@ -3759,7 +3914,8 @@ class DevopsClient(object):
                 response_type="DeployStage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3769,7 +3925,8 @@ class DevopsClient(object):
                 response_type="DeployStage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_deployment(self, deployment_id, **kwargs):
         """
@@ -3800,6 +3957,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_deployment.py.html>`__ to see an example of how to use get_deployment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId']
         resource_path = "/deployments/{deploymentId}"
         method = "GET"
         operation_name = "get_deployment"
@@ -3853,7 +4012,8 @@ class DevopsClient(object):
                 response_type="Deployment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3863,7 +4023,8 @@ class DevopsClient(object):
                 response_type="Deployment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_file_diff(self, repository_id, file_path, base_version, target_version, **kwargs):
         """
@@ -3906,6 +4067,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_file_diff.py.html>`__ to see an example of how to use get_file_diff API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId', 'filePath', 'baseVersion', 'targetVersion']
         resource_path = "/repositories/{repositoryId}/diffs/{filePath}"
         method = "GET"
         operation_name = "get_file_diff"
@@ -3969,7 +4132,8 @@ class DevopsClient(object):
                 response_type="FileDiffResponse",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3980,7 +4144,8 @@ class DevopsClient(object):
                 response_type="FileDiffResponse",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_mirror_record(self, repository_id, mirror_record_type, **kwargs):
         """
@@ -4018,6 +4183,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_mirror_record.py.html>`__ to see an example of how to use get_mirror_record API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId', 'mirrorRecordType']
         resource_path = "/repositories/{repositoryId}/mirrorRecords/{mirrorRecordType}"
         method = "GET"
         operation_name = "get_mirror_record"
@@ -4072,7 +4239,8 @@ class DevopsClient(object):
                 response_type="RepositoryMirrorRecord",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4082,7 +4250,8 @@ class DevopsClient(object):
                 response_type="RepositoryMirrorRecord",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_object(self, repository_id, **kwargs):
         """
@@ -4119,6 +4288,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_object.py.html>`__ to see an example of how to use get_object API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId']
         resource_path = "/repositories/{repositoryId}/object"
         method = "GET"
         operation_name = "get_object"
@@ -4181,7 +4352,8 @@ class DevopsClient(object):
                 response_type="RepositoryObject",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4192,7 +4364,8 @@ class DevopsClient(object):
                 response_type="RepositoryObject",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_object_content(self, repository_id, sha, **kwargs):
         """
@@ -4229,6 +4402,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_object_content.py.html>`__ to see an example of how to use get_object_content API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId', 'sha']
         resource_path = "/repositories/{repositoryId}/objects/{sha}/content"
         method = "GET"
         operation_name = "get_object_content"
@@ -4290,7 +4465,8 @@ class DevopsClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4301,7 +4477,8 @@ class DevopsClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_project(self, project_id, **kwargs):
         """
@@ -4332,6 +4509,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_project.py.html>`__ to see an example of how to use get_project API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['projectId']
         resource_path = "/projects/{projectId}"
         method = "GET"
         operation_name = "get_project"
@@ -4385,7 +4564,8 @@ class DevopsClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4395,7 +4575,8 @@ class DevopsClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_ref(self, repository_id, ref_name, **kwargs):
         """
@@ -4429,6 +4610,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_ref.py.html>`__ to see an example of how to use get_ref API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId', 'refName']
         resource_path = "/repositories/{repositoryId}/refs/{refName}"
         method = "GET"
         operation_name = "get_ref"
@@ -4483,7 +4666,8 @@ class DevopsClient(object):
                 response_type="RepositoryRef",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4493,7 +4677,8 @@ class DevopsClient(object):
                 response_type="RepositoryRef",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_repo_file_diff(self, repository_id, base_version, target_version, **kwargs):
         """
@@ -4536,6 +4721,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_repo_file_diff.py.html>`__ to see an example of how to use get_repo_file_diff API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId', 'baseVersion', 'targetVersion']
         resource_path = "/repositories/{repositoryId}/file/diffs"
         method = "GET"
         operation_name = "get_repo_file_diff"
@@ -4600,7 +4787,8 @@ class DevopsClient(object):
                 response_type="FileDiffResponse",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4611,7 +4799,8 @@ class DevopsClient(object):
                 response_type="FileDiffResponse",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_repo_file_lines(self, repository_id, revision, **kwargs):
         """
@@ -4654,6 +4843,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_repo_file_lines.py.html>`__ to see an example of how to use get_repo_file_lines API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId', 'revision']
         resource_path = "/repositories/{repositoryId}/file/lines"
         method = "GET"
         operation_name = "get_repo_file_lines"
@@ -4719,7 +4910,8 @@ class DevopsClient(object):
                 response_type="RepositoryFileLines",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4730,7 +4922,8 @@ class DevopsClient(object):
                 response_type="RepositoryFileLines",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_repository(self, repository_id, **kwargs):
         """
@@ -4766,6 +4959,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_repository.py.html>`__ to see an example of how to use get_repository API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId']
         resource_path = "/repositories/{repositoryId}"
         method = "GET"
         operation_name = "get_repository"
@@ -4834,7 +5029,8 @@ class DevopsClient(object):
                 response_type="Repository",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4845,7 +5041,8 @@ class DevopsClient(object):
                 response_type="Repository",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_repository_archive_content(self, repository_id, **kwargs):
         """
@@ -4882,6 +5079,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_repository_archive_content.py.html>`__ to see an example of how to use get_repository_archive_content API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId']
         resource_path = "/repositories/{repositoryId}/archive/content"
         method = "GET"
         operation_name = "get_repository_archive_content"
@@ -4944,7 +5143,8 @@ class DevopsClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4955,7 +5155,8 @@ class DevopsClient(object):
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_repository_file_lines(self, repository_id, file_path, revision, **kwargs):
         """
@@ -4998,6 +5199,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_repository_file_lines.py.html>`__ to see an example of how to use get_repository_file_lines API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId', 'filePath', 'revision']
         resource_path = "/repositories/{repositoryId}/files/{filePath}/lines"
         method = "GET"
         operation_name = "get_repository_file_lines"
@@ -5062,7 +5265,8 @@ class DevopsClient(object):
                 response_type="RepositoryFileLines",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5073,7 +5277,8 @@ class DevopsClient(object):
                 response_type="RepositoryFileLines",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_trigger(self, trigger_id, **kwargs):
         """
@@ -5104,6 +5309,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_trigger.py.html>`__ to see an example of how to use get_trigger API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['triggerId']
         resource_path = "/triggers/{triggerId}"
         method = "GET"
         operation_name = "get_trigger"
@@ -5157,7 +5364,8 @@ class DevopsClient(object):
                 response_type="Trigger",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5167,7 +5375,8 @@ class DevopsClient(object):
                 response_type="Trigger",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -5198,6 +5407,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -5251,7 +5462,8 @@ class DevopsClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5261,7 +5473,8 @@ class DevopsClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_authors(self, repository_id, **kwargs):
         """
@@ -5306,6 +5519,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_authors.py.html>`__ to see an example of how to use list_authors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId']
         resource_path = "/repositories/{repositoryId}/authors"
         method = "GET"
         operation_name = "list_authors"
@@ -5379,7 +5594,8 @@ class DevopsClient(object):
                 response_type="RepositoryAuthorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5390,7 +5606,8 @@ class DevopsClient(object):
                 response_type="RepositoryAuthorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_build_pipeline_stages(self, **kwargs):
         """
@@ -5451,6 +5668,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_build_pipeline_stages.py.html>`__ to see an example of how to use list_build_pipeline_stages API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/buildPipelineStages"
         method = "GET"
         operation_name = "list_build_pipeline_stages"
@@ -5537,7 +5756,8 @@ class DevopsClient(object):
                 response_type="BuildPipelineStageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5547,7 +5767,8 @@ class DevopsClient(object):
                 response_type="BuildPipelineStageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_build_pipelines(self, **kwargs):
         """
@@ -5608,6 +5829,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_build_pipelines.py.html>`__ to see an example of how to use list_build_pipelines API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/buildPipelines"
         method = "GET"
         operation_name = "list_build_pipelines"
@@ -5694,7 +5917,8 @@ class DevopsClient(object):
                 response_type="BuildPipelineCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5704,7 +5928,8 @@ class DevopsClient(object):
                 response_type="BuildPipelineCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_build_runs(self, **kwargs):
         """
@@ -5768,6 +5993,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_build_runs.py.html>`__ to see an example of how to use list_build_runs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/buildRuns"
         method = "GET"
         operation_name = "list_build_runs"
@@ -5856,7 +6083,8 @@ class DevopsClient(object):
                 response_type="BuildRunSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5866,7 +6094,8 @@ class DevopsClient(object):
                 response_type="BuildRunSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_commit_diffs(self, repository_id, base_version, target_version, **kwargs):
         """
@@ -5912,6 +6141,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_commit_diffs.py.html>`__ to see an example of how to use list_commit_diffs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId', 'baseVersion', 'targetVersion']
         resource_path = "/repositories/{repositoryId}/diffs"
         method = "GET"
         operation_name = "list_commit_diffs"
@@ -5978,7 +6209,8 @@ class DevopsClient(object):
                 response_type="DiffCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5989,7 +6221,8 @@ class DevopsClient(object):
                 response_type="DiffCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_commits(self, repository_id, **kwargs):
         """
@@ -6047,6 +6280,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_commits.py.html>`__ to see an example of how to use list_commits API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId']
         resource_path = "/repositories/{repositoryId}/commits"
         method = "GET"
         operation_name = "list_commits"
@@ -6123,7 +6358,8 @@ class DevopsClient(object):
                 response_type="RepositoryCommitCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6134,7 +6370,8 @@ class DevopsClient(object):
                 response_type="RepositoryCommitCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_connections(self, **kwargs):
         """
@@ -6200,6 +6437,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_connections.py.html>`__ to see an example of how to use list_connections API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/connections"
         method = "GET"
         operation_name = "list_connections"
@@ -6295,7 +6534,8 @@ class DevopsClient(object):
                 response_type="ConnectionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6305,7 +6545,8 @@ class DevopsClient(object):
                 response_type="ConnectionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_deploy_artifacts(self, **kwargs):
         """
@@ -6366,6 +6607,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_deploy_artifacts.py.html>`__ to see an example of how to use list_deploy_artifacts API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/deployArtifacts"
         method = "GET"
         operation_name = "list_deploy_artifacts"
@@ -6452,7 +6695,8 @@ class DevopsClient(object):
                 response_type="DeployArtifactCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6462,7 +6706,8 @@ class DevopsClient(object):
                 response_type="DeployArtifactCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_deploy_environments(self, **kwargs):
         """
@@ -6523,6 +6768,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_deploy_environments.py.html>`__ to see an example of how to use list_deploy_environments API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/deployEnvironments"
         method = "GET"
         operation_name = "list_deploy_environments"
@@ -6609,7 +6856,8 @@ class DevopsClient(object):
                 response_type="DeployEnvironmentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6619,7 +6867,8 @@ class DevopsClient(object):
                 response_type="DeployEnvironmentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_deploy_pipelines(self, **kwargs):
         """
@@ -6680,6 +6929,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_deploy_pipelines.py.html>`__ to see an example of how to use list_deploy_pipelines API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/deployPipelines"
         method = "GET"
         operation_name = "list_deploy_pipelines"
@@ -6766,7 +7017,8 @@ class DevopsClient(object):
                 response_type="DeployPipelineCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6776,7 +7028,8 @@ class DevopsClient(object):
                 response_type="DeployPipelineCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_deploy_stages(self, **kwargs):
         """
@@ -6837,6 +7090,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_deploy_stages.py.html>`__ to see an example of how to use list_deploy_stages API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/deployStages"
         method = "GET"
         operation_name = "list_deploy_stages"
@@ -6923,7 +7178,8 @@ class DevopsClient(object):
                 response_type="DeployStageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6933,7 +7189,8 @@ class DevopsClient(object):
                 response_type="DeployStageCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_deployments(self, **kwargs):
         """
@@ -7007,6 +7264,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_deployments.py.html>`__ to see an example of how to use list_deployments API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/deployments"
         method = "GET"
         operation_name = "list_deployments"
@@ -7099,7 +7358,8 @@ class DevopsClient(object):
                 response_type="DeploymentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7109,7 +7369,8 @@ class DevopsClient(object):
                 response_type="DeploymentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_mirror_records(self, repository_id, **kwargs):
         """
@@ -7151,6 +7412,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_mirror_records.py.html>`__ to see an example of how to use list_mirror_records API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId']
         resource_path = "/repositories/{repositoryId}/mirrorRecords"
         method = "GET"
         operation_name = "list_mirror_records"
@@ -7222,7 +7485,8 @@ class DevopsClient(object):
                 response_type="RepositoryMirrorRecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7233,7 +7497,8 @@ class DevopsClient(object):
                 response_type="RepositoryMirrorRecordCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_paths(self, repository_id, **kwargs):
         """
@@ -7293,6 +7558,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_paths.py.html>`__ to see an example of how to use list_paths API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId']
         resource_path = "/repositories/{repositoryId}/paths"
         method = "GET"
         operation_name = "list_paths"
@@ -7381,7 +7648,8 @@ class DevopsClient(object):
                 response_type="RepositoryPathCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7392,7 +7660,8 @@ class DevopsClient(object):
                 response_type="RepositoryPathCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_projects(self, compartment_id, **kwargs):
         """
@@ -7450,6 +7719,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_projects.py.html>`__ to see an example of how to use list_projects API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/projects"
         method = "GET"
         operation_name = "list_projects"
@@ -7533,7 +7804,8 @@ class DevopsClient(object):
                 response_type="ProjectCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7543,7 +7815,8 @@ class DevopsClient(object):
                 response_type="ProjectCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_refs(self, repository_id, **kwargs):
         """
@@ -7601,6 +7874,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_refs.py.html>`__ to see an example of how to use list_refs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId']
         resource_path = "/repositories/{repositoryId}/refs"
         method = "GET"
         operation_name = "list_refs"
@@ -7694,7 +7969,8 @@ class DevopsClient(object):
                 response_type="RepositoryRefCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7705,7 +7981,8 @@ class DevopsClient(object):
                 response_type="RepositoryRefCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_repositories(self, **kwargs):
         """
@@ -7766,6 +8043,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_repositories.py.html>`__ to see an example of how to use list_repositories API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/repositories"
         method = "GET"
         operation_name = "list_repositories"
@@ -7852,7 +8131,8 @@ class DevopsClient(object):
                 response_type="RepositoryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7862,7 +8142,8 @@ class DevopsClient(object):
                 response_type="RepositoryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_triggers(self, **kwargs):
         """
@@ -7923,6 +8204,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_triggers.py.html>`__ to see an example of how to use list_triggers API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/triggers"
         method = "GET"
         operation_name = "list_triggers"
@@ -8009,7 +8292,8 @@ class DevopsClient(object):
                 response_type="TriggerCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8019,7 +8303,8 @@ class DevopsClient(object):
                 response_type="TriggerCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -8066,6 +8351,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -8146,7 +8433,8 @@ class DevopsClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8157,7 +8445,8 @@ class DevopsClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -8204,6 +8493,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -8284,7 +8575,8 @@ class DevopsClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8295,7 +8587,8 @@ class DevopsClient(object):
                 response_type="WorkRequestLogEntryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -8356,6 +8649,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -8441,7 +8736,8 @@ class DevopsClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8451,7 +8747,8 @@ class DevopsClient(object):
                 response_type="WorkRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def mirror_repository(self, repository_id, **kwargs):
         """
@@ -8485,6 +8782,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/mirror_repository.py.html>`__ to see an example of how to use mirror_repository API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId']
         resource_path = "/repositories/{repositoryId}/actions/mirror"
         method = "POST"
         operation_name = "mirror_repository"
@@ -8539,7 +8838,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8548,7 +8848,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def put_repository_ref(self, repository_id, ref_name, put_repository_ref_details, **kwargs):
         """
@@ -8591,6 +8892,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/put_repository_ref.py.html>`__ to see an example of how to use put_repository_ref API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId', 'refName']
         resource_path = "/repositories/{repositoryId}/refs/{refName}"
         method = "PUT"
         operation_name = "put_repository_ref"
@@ -8651,7 +8954,8 @@ class DevopsClient(object):
                 response_type="RepositoryRef",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8662,7 +8966,8 @@ class DevopsClient(object):
                 response_type="RepositoryRef",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def schedule_cascading_project_deletion(self, project_id, **kwargs):
         """
@@ -8699,6 +9004,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/schedule_cascading_project_deletion.py.html>`__ to see an example of how to use schedule_cascading_project_deletion API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['projectId']
         resource_path = "/projects/{projectId}/actions/scheduleCascadingProjectDeletion"
         method = "POST"
         operation_name = "schedule_cascading_project_deletion"
@@ -8756,7 +9063,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8765,7 +9073,8 @@ class DevopsClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_build_pipeline(self, build_pipeline_id, update_build_pipeline_details, **kwargs):
         """
@@ -8802,6 +9111,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_build_pipeline.py.html>`__ to see an example of how to use update_build_pipeline API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['buildPipelineId']
         resource_path = "/buildPipelines/{buildPipelineId}"
         method = "PUT"
         operation_name = "update_build_pipeline"
@@ -8858,7 +9169,8 @@ class DevopsClient(object):
                 response_type="BuildPipeline",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8869,7 +9181,8 @@ class DevopsClient(object):
                 response_type="BuildPipeline",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_build_pipeline_stage(self, build_pipeline_stage_id, update_build_pipeline_stage_details, **kwargs):
         """
@@ -8906,6 +9219,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_build_pipeline_stage.py.html>`__ to see an example of how to use update_build_pipeline_stage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['buildPipelineStageId']
         resource_path = "/buildPipelineStages/{buildPipelineStageId}"
         method = "PUT"
         operation_name = "update_build_pipeline_stage"
@@ -8962,7 +9277,8 @@ class DevopsClient(object):
                 response_type="BuildPipelineStage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8973,7 +9289,8 @@ class DevopsClient(object):
                 response_type="BuildPipelineStage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_build_run(self, build_run_id, update_build_run_details, **kwargs):
         """
@@ -9010,6 +9327,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_build_run.py.html>`__ to see an example of how to use update_build_run API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['buildRunId']
         resource_path = "/buildRuns/{buildRunId}"
         method = "PUT"
         operation_name = "update_build_run"
@@ -9066,7 +9385,8 @@ class DevopsClient(object):
                 response_type="BuildRun",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9077,7 +9397,8 @@ class DevopsClient(object):
                 response_type="BuildRun",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_connection(self, connection_id, update_connection_details, **kwargs):
         """
@@ -9114,6 +9435,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_connection.py.html>`__ to see an example of how to use update_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['connectionId']
         resource_path = "/connections/{connectionId}"
         method = "PUT"
         operation_name = "update_connection"
@@ -9170,7 +9493,8 @@ class DevopsClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9181,7 +9505,8 @@ class DevopsClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_deploy_artifact(self, deploy_artifact_id, update_deploy_artifact_details, **kwargs):
         """
@@ -9218,6 +9543,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_deploy_artifact.py.html>`__ to see an example of how to use update_deploy_artifact API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deployArtifactId']
         resource_path = "/deployArtifacts/{deployArtifactId}"
         method = "PUT"
         operation_name = "update_deploy_artifact"
@@ -9274,7 +9601,8 @@ class DevopsClient(object):
                 response_type="DeployArtifact",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9285,7 +9613,8 @@ class DevopsClient(object):
                 response_type="DeployArtifact",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_deploy_environment(self, deploy_environment_id, update_deploy_environment_details, **kwargs):
         """
@@ -9322,6 +9651,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_deploy_environment.py.html>`__ to see an example of how to use update_deploy_environment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deployEnvironmentId']
         resource_path = "/deployEnvironments/{deployEnvironmentId}"
         method = "PUT"
         operation_name = "update_deploy_environment"
@@ -9378,7 +9709,8 @@ class DevopsClient(object):
                 response_type="DeployEnvironment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9389,7 +9721,8 @@ class DevopsClient(object):
                 response_type="DeployEnvironment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_deploy_pipeline(self, deploy_pipeline_id, update_deploy_pipeline_details, **kwargs):
         """
@@ -9426,6 +9759,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_deploy_pipeline.py.html>`__ to see an example of how to use update_deploy_pipeline API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deployPipelineId']
         resource_path = "/deployPipelines/{deployPipelineId}"
         method = "PUT"
         operation_name = "update_deploy_pipeline"
@@ -9482,7 +9817,8 @@ class DevopsClient(object):
                 response_type="DeployPipeline",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9493,7 +9829,8 @@ class DevopsClient(object):
                 response_type="DeployPipeline",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_deploy_stage(self, deploy_stage_id, update_deploy_stage_details, **kwargs):
         """
@@ -9530,6 +9867,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_deploy_stage.py.html>`__ to see an example of how to use update_deploy_stage API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deployStageId']
         resource_path = "/deployStages/{deployStageId}"
         method = "PUT"
         operation_name = "update_deploy_stage"
@@ -9586,7 +9925,8 @@ class DevopsClient(object):
                 response_type="DeployStage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9597,7 +9937,8 @@ class DevopsClient(object):
                 response_type="DeployStage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_deployment(self, deployment_id, update_deployment_details, **kwargs):
         """
@@ -9634,6 +9975,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_deployment.py.html>`__ to see an example of how to use update_deployment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId']
         resource_path = "/deployments/{deploymentId}"
         method = "PUT"
         operation_name = "update_deployment"
@@ -9690,7 +10033,8 @@ class DevopsClient(object):
                 response_type="Deployment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9701,7 +10045,8 @@ class DevopsClient(object):
                 response_type="Deployment",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_project(self, project_id, update_project_details, **kwargs):
         """
@@ -9738,6 +10083,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_project.py.html>`__ to see an example of how to use update_project API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['projectId']
         resource_path = "/projects/{projectId}"
         method = "PUT"
         operation_name = "update_project"
@@ -9794,7 +10141,8 @@ class DevopsClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9805,7 +10153,8 @@ class DevopsClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_repository(self, repository_id, update_repository_details, **kwargs):
         """
@@ -9842,6 +10191,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_repository.py.html>`__ to see an example of how to use update_repository API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['repositoryId']
         resource_path = "/repositories/{repositoryId}"
         method = "PUT"
         operation_name = "update_repository"
@@ -9898,7 +10249,8 @@ class DevopsClient(object):
                 response_type="Repository",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9909,7 +10261,8 @@ class DevopsClient(object):
                 response_type="Repository",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_trigger(self, trigger_id, update_trigger_details, **kwargs):
         """
@@ -9946,6 +10299,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/update_trigger.py.html>`__ to see an example of how to use update_trigger API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['triggerId']
         resource_path = "/triggers/{triggerId}"
         method = "PUT"
         operation_name = "update_trigger"
@@ -10002,7 +10357,8 @@ class DevopsClient(object):
                 response_type="Trigger",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10013,7 +10369,8 @@ class DevopsClient(object):
                 response_type="Trigger",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def validate_connection(self, connection_id, **kwargs):
         """
@@ -10050,6 +10407,8 @@ class DevopsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/validate_connection.py.html>`__ to see an example of how to use validate_connection API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['connectionId']
         resource_path = "/connections/{connectionId}/actions/validate"
         method = "POST"
         operation_name = "validate_connection"
@@ -10108,7 +10467,8 @@ class DevopsClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10118,4 +10478,5 @@ class DevopsClient(object):
                 response_type="Connection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

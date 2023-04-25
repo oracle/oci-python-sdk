@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OrganizationTenancy(object):
     """
-    The information about the OrganizationTenancy.
+    The information about the organization tenancy.
     """
 
     #: A constant which can be used with the lifecycle_state property of a OrganizationTenancy.
@@ -49,6 +49,14 @@ class OrganizationTenancy(object):
     #: This constant has a value of "NONE"
     ROLE_NONE = "NONE"
 
+    #: A constant which can be used with the governance_status property of a OrganizationTenancy.
+    #: This constant has a value of "OPTED_IN"
+    GOVERNANCE_STATUS_OPTED_IN = "OPTED_IN"
+
+    #: A constant which can be used with the governance_status property of a OrganizationTenancy.
+    #: This constant has a value of "OPTED_OUT"
+    GOVERNANCE_STATUS_OPTED_OUT = "OPTED_OUT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new OrganizationTenancy object with values from keyword arguments.
@@ -86,6 +94,12 @@ class OrganizationTenancy(object):
             The value to assign to the is_approved_for_transfer property of this OrganizationTenancy.
         :type is_approved_for_transfer: bool
 
+        :param governance_status:
+            The value to assign to the governance_status property of this OrganizationTenancy.
+            Allowed values for this property are: "OPTED_IN", "OPTED_OUT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type governance_status: str
+
         """
         self.swagger_types = {
             'tenancy_id': 'str',
@@ -94,7 +108,8 @@ class OrganizationTenancy(object):
             'role': 'str',
             'time_joined': 'datetime',
             'time_left': 'datetime',
-            'is_approved_for_transfer': 'bool'
+            'is_approved_for_transfer': 'bool',
+            'governance_status': 'str'
         }
 
         self.attribute_map = {
@@ -104,7 +119,8 @@ class OrganizationTenancy(object):
             'role': 'role',
             'time_joined': 'timeJoined',
             'time_left': 'timeLeft',
-            'is_approved_for_transfer': 'isApprovedForTransfer'
+            'is_approved_for_transfer': 'isApprovedForTransfer',
+            'governance_status': 'governanceStatus'
         }
 
         self._tenancy_id = None
@@ -114,6 +130,7 @@ class OrganizationTenancy(object):
         self._time_joined = None
         self._time_left = None
         self._is_approved_for_transfer = None
+        self._governance_status = None
 
     @property
     def tenancy_id(self):
@@ -167,7 +184,7 @@ class OrganizationTenancy(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this OrganizationTenancy.
-        Lifecycle state of the OrganizationTenancy.
+        Lifecycle state of the organization tenancy.
 
         Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "DELETED", "FAILED", "DELETING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -182,7 +199,7 @@ class OrganizationTenancy(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this OrganizationTenancy.
-        Lifecycle state of the OrganizationTenancy.
+        Lifecycle state of the organization tenancy.
 
 
         :param lifecycle_state: The lifecycle_state of this OrganizationTenancy.
@@ -197,7 +214,7 @@ class OrganizationTenancy(object):
     def role(self):
         """
         Gets the role of this OrganizationTenancy.
-        Role of the OrganizationTenancy.
+        Role of the organization tenancy.
 
         Allowed values for this property are: "PARENT", "CHILD", "NONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -212,7 +229,7 @@ class OrganizationTenancy(object):
     def role(self, role):
         """
         Sets the role of this OrganizationTenancy.
-        Role of the OrganizationTenancy.
+        Role of the organization tenancy.
 
 
         :param role: The role of this OrganizationTenancy.
@@ -227,7 +244,7 @@ class OrganizationTenancy(object):
     def time_joined(self):
         """
         Gets the time_joined of this OrganizationTenancy.
-        Date-time when this tenancy joined the organization.
+        Date and time when the tenancy joined the organization.
 
 
         :return: The time_joined of this OrganizationTenancy.
@@ -239,7 +256,7 @@ class OrganizationTenancy(object):
     def time_joined(self, time_joined):
         """
         Sets the time_joined of this OrganizationTenancy.
-        Date-time when this tenancy joined the organization.
+        Date and time when the tenancy joined the organization.
 
 
         :param time_joined: The time_joined of this OrganizationTenancy.
@@ -251,7 +268,7 @@ class OrganizationTenancy(object):
     def time_left(self):
         """
         Gets the time_left of this OrganizationTenancy.
-        Date-time when this tenancy left the organization.
+        Date and time when the tenancy left the organization.
 
 
         :return: The time_left of this OrganizationTenancy.
@@ -263,7 +280,7 @@ class OrganizationTenancy(object):
     def time_left(self, time_left):
         """
         Sets the time_left of this OrganizationTenancy.
-        Date-time when this tenancy left the organization.
+        Date and time when the tenancy left the organization.
 
 
         :param time_left: The time_left of this OrganizationTenancy.
@@ -275,7 +292,7 @@ class OrganizationTenancy(object):
     def is_approved_for_transfer(self):
         """
         Gets the is_approved_for_transfer of this OrganizationTenancy.
-        Flag to indicate the tenancy is approved for transfer to another organization.
+        Parameter to indicate the tenancy is approved for transfer to another organization.
 
 
         :return: The is_approved_for_transfer of this OrganizationTenancy.
@@ -287,13 +304,43 @@ class OrganizationTenancy(object):
     def is_approved_for_transfer(self, is_approved_for_transfer):
         """
         Sets the is_approved_for_transfer of this OrganizationTenancy.
-        Flag to indicate the tenancy is approved for transfer to another organization.
+        Parameter to indicate the tenancy is approved for transfer to another organization.
 
 
         :param is_approved_for_transfer: The is_approved_for_transfer of this OrganizationTenancy.
         :type: bool
         """
         self._is_approved_for_transfer = is_approved_for_transfer
+
+    @property
+    def governance_status(self):
+        """
+        **[Required]** Gets the governance_status of this OrganizationTenancy.
+        The governance status of the tenancy.
+
+        Allowed values for this property are: "OPTED_IN", "OPTED_OUT", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The governance_status of this OrganizationTenancy.
+        :rtype: str
+        """
+        return self._governance_status
+
+    @governance_status.setter
+    def governance_status(self, governance_status):
+        """
+        Sets the governance_status of this OrganizationTenancy.
+        The governance status of the tenancy.
+
+
+        :param governance_status: The governance_status of this OrganizationTenancy.
+        :type: str
+        """
+        allowed_values = ["OPTED_IN", "OPTED_OUT"]
+        if not value_allowed_none_or_none_sentinel(governance_status, allowed_values):
+            governance_status = 'UNKNOWN_ENUM_VALUE'
+        self._governance_status = governance_status
 
     def __repr__(self):
         return formatted_flat_dict(self)

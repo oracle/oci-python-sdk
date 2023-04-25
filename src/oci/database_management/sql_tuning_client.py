@@ -67,6 +67,9 @@ class SqlTuningClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -93,8 +96,10 @@ class SqlTuningClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20201101',
             'service_endpoint_template': 'https://dbmgmt.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -147,6 +152,8 @@ class SqlTuningClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/clone_sql_tuning_task.py.html>`__ to see an example of how to use clone_sql_tuning_task API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedDatabaseId']
         resource_path = "/managedDatabases/{managedDatabaseId}/actions/cloneSqlTuningTask"
         method = "POST"
         operation_name = "clone_sql_tuning_task"
@@ -202,7 +209,8 @@ class SqlTuningClient(object):
                 response_type="SqlTuningTaskReturn",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -213,7 +221,8 @@ class SqlTuningClient(object):
                 response_type="SqlTuningTaskReturn",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def drop_sql_tuning_task(self, managed_database_id, drop_sql_tuning_task_details, **kwargs):
         """
@@ -256,6 +265,8 @@ class SqlTuningClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/drop_sql_tuning_task.py.html>`__ to see an example of how to use drop_sql_tuning_task API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedDatabaseId']
         resource_path = "/managedDatabases/{managedDatabaseId}/actions/dropSqlTuningTask"
         method = "POST"
         operation_name = "drop_sql_tuning_task"
@@ -310,7 +321,8 @@ class SqlTuningClient(object):
                 body=drop_sql_tuning_task_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -320,7 +332,8 @@ class SqlTuningClient(object):
                 body=drop_sql_tuning_task_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_execution_plan_stats_comparision(self, managed_database_id, sql_tuning_advisor_task_id, sql_object_id, execution_id, **kwargs):
         """
@@ -370,6 +383,8 @@ class SqlTuningClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/get_execution_plan_stats_comparision.py.html>`__ to see an example of how to use get_execution_plan_stats_comparision API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedDatabaseId', 'sqlTuningAdvisorTaskId', 'sqlObjectId', 'executionId']
         resource_path = "/managedDatabases/{managedDatabaseId}/sqlTuningAdvisorTasks/{sqlTuningAdvisorTaskId}/executionPlanStatsComparision"
         method = "GET"
         operation_name = "get_execution_plan_stats_comparision"
@@ -429,7 +444,8 @@ class SqlTuningClient(object):
                 response_type="ExecutionPlanStatsComparision",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -440,7 +456,8 @@ class SqlTuningClient(object):
                 response_type="ExecutionPlanStatsComparision",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_sql_execution_plan(self, managed_database_id, sql_tuning_advisor_task_id, sql_object_id, attribute, **kwargs):
         """
@@ -488,6 +505,8 @@ class SqlTuningClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/get_sql_execution_plan.py.html>`__ to see an example of how to use get_sql_execution_plan API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedDatabaseId', 'sqlTuningAdvisorTaskId', 'sqlObjectId', 'attribute']
         resource_path = "/managedDatabases/{managedDatabaseId}/sqlTuningAdvisorTasks/{sqlTuningAdvisorTaskId}/sqlExecutionPlan"
         method = "GET"
         operation_name = "get_sql_execution_plan"
@@ -553,7 +572,8 @@ class SqlTuningClient(object):
                 response_type="SqlTuningAdvisorTaskSqlExecutionPlan",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -564,7 +584,8 @@ class SqlTuningClient(object):
                 response_type="SqlTuningAdvisorTaskSqlExecutionPlan",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_sql_tuning_advisor_task_summary_report(self, managed_database_id, sql_tuning_advisor_task_id, **kwargs):
         """
@@ -619,6 +640,8 @@ class SqlTuningClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/get_sql_tuning_advisor_task_summary_report.py.html>`__ to see an example of how to use get_sql_tuning_advisor_task_summary_report API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedDatabaseId', 'sqlTuningAdvisorTaskId']
         resource_path = "/managedDatabases/{managedDatabaseId}/sqlTuningAdvisorTasks/{sqlTuningAdvisorTaskId}/summaryReport"
         method = "GET"
         operation_name = "get_sql_tuning_advisor_task_summary_report"
@@ -693,7 +716,8 @@ class SqlTuningClient(object):
                 response_type="SqlTuningAdvisorTaskSummaryReport",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -704,7 +728,8 @@ class SqlTuningClient(object):
                 response_type="SqlTuningAdvisorTaskSummaryReport",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_sql_tuning_advisor_task_findings(self, managed_database_id, sql_tuning_advisor_task_id, **kwargs):
         """
@@ -782,6 +807,8 @@ class SqlTuningClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/list_sql_tuning_advisor_task_findings.py.html>`__ to see an example of how to use list_sql_tuning_advisor_task_findings API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedDatabaseId', 'sqlTuningAdvisorTaskId']
         resource_path = "/managedDatabases/{managedDatabaseId}/sqlTuningAdvisorTasks/{sqlTuningAdvisorTaskId}/findings"
         method = "GET"
         operation_name = "list_sql_tuning_advisor_task_findings"
@@ -887,7 +914,8 @@ class SqlTuningClient(object):
                 response_type="SqlTuningAdvisorTaskFindingCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -898,7 +926,8 @@ class SqlTuningClient(object):
                 response_type="SqlTuningAdvisorTaskFindingCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_sql_tuning_advisor_task_recommendations(self, managed_database_id, sql_tuning_advisor_task_id, sql_object_id, execution_id, **kwargs):
         """
@@ -964,6 +993,8 @@ class SqlTuningClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/list_sql_tuning_advisor_task_recommendations.py.html>`__ to see an example of how to use list_sql_tuning_advisor_task_recommendations API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedDatabaseId', 'sqlTuningAdvisorTaskId', 'sqlObjectId', 'executionId']
         resource_path = "/managedDatabases/{managedDatabaseId}/sqlTuningAdvisorTasks/{sqlTuningAdvisorTaskId}/recommendations"
         method = "GET"
         operation_name = "list_sql_tuning_advisor_task_recommendations"
@@ -1045,7 +1076,8 @@ class SqlTuningClient(object):
                 response_type="SqlTuningAdvisorTaskRecommendationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1056,7 +1088,8 @@ class SqlTuningClient(object):
                 response_type="SqlTuningAdvisorTaskRecommendationCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_sql_tuning_advisor_tasks(self, managed_database_id, **kwargs):
         """
@@ -1120,6 +1153,8 @@ class SqlTuningClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/list_sql_tuning_advisor_tasks.py.html>`__ to see an example of how to use list_sql_tuning_advisor_tasks API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedDatabaseId']
         resource_path = "/managedDatabases/{managedDatabaseId}/sqlTuningAdvisorTasks"
         method = "GET"
         operation_name = "list_sql_tuning_advisor_tasks"
@@ -1213,7 +1248,8 @@ class SqlTuningClient(object):
                 response_type="SqlTuningAdvisorTaskCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1224,7 +1260,8 @@ class SqlTuningClient(object):
                 response_type="SqlTuningAdvisorTaskCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_sql_tuning_sets(self, managed_database_id, **kwargs):
         """
@@ -1280,6 +1317,8 @@ class SqlTuningClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/list_sql_tuning_sets.py.html>`__ to see an example of how to use list_sql_tuning_sets API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedDatabaseId']
         resource_path = "/managedDatabases/{managedDatabaseId}/sqlTuningSets"
         method = "GET"
         operation_name = "list_sql_tuning_sets"
@@ -1362,7 +1401,8 @@ class SqlTuningClient(object):
                 response_type="SqlTuningSetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1373,7 +1413,8 @@ class SqlTuningClient(object):
                 response_type="SqlTuningSetCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def start_sql_tuning_task(self, managed_database_id, start_sql_tuning_task_details, **kwargs):
         """
@@ -1416,6 +1457,8 @@ class SqlTuningClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/start_sql_tuning_task.py.html>`__ to see an example of how to use start_sql_tuning_task API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedDatabaseId']
         resource_path = "/managedDatabases/{managedDatabaseId}/actions/startSqlTuningTask"
         method = "POST"
         operation_name = "start_sql_tuning_task"
@@ -1471,7 +1514,8 @@ class SqlTuningClient(object):
                 response_type="SqlTuningTaskReturn",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1482,4 +1526,5 @@ class SqlTuningClient(object):
                 response_type="SqlTuningTaskReturn",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

@@ -68,6 +68,9 @@ class AccessRequestsClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -94,8 +97,10 @@ class AccessRequestsClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20200630',
             'service_endpoint_template': 'https://operator-access-control.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -153,6 +158,8 @@ class AccessRequestsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/operatoraccesscontrol/approve_access_request.py.html>`__ to see an example of how to use approve_access_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['accessRequestId']
         resource_path = "/accessRequests/{accessRequestId}/action/approve"
         method = "POST"
         operation_name = "approve_access_request"
@@ -209,7 +216,8 @@ class AccessRequestsClient(object):
                 body=approve_access_request_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -219,7 +227,8 @@ class AccessRequestsClient(object):
                 body=approve_access_request_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_access_request(self, access_request_id, **kwargs):
         """
@@ -250,6 +259,8 @@ class AccessRequestsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/operatoraccesscontrol/get_access_request.py.html>`__ to see an example of how to use get_access_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['accessRequestId']
         resource_path = "/accessRequests/{accessRequestId}"
         method = "GET"
         operation_name = "get_access_request"
@@ -301,7 +312,8 @@ class AccessRequestsClient(object):
                 response_type="AccessRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -311,7 +323,8 @@ class AccessRequestsClient(object):
                 response_type="AccessRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def interaction_request(self, access_request_id, interaction_request_details, **kwargs):
         """
@@ -359,6 +372,8 @@ class AccessRequestsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/operatoraccesscontrol/interaction_request.py.html>`__ to see an example of how to use interaction_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['accessRequestId']
         resource_path = "/accessRequests/{accessRequestId}/action/interactionRequest"
         method = "POST"
         operation_name = "interaction_request"
@@ -416,7 +431,8 @@ class AccessRequestsClient(object):
                 response_type="AccessRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -427,7 +443,8 @@ class AccessRequestsClient(object):
                 response_type="AccessRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_access_request_histories(self, access_request_id, **kwargs):
         """
@@ -464,6 +481,8 @@ class AccessRequestsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/operatoraccesscontrol/list_access_request_histories.py.html>`__ to see an example of how to use list_access_request_histories API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['accessRequestId']
         resource_path = "/accessRequests/{accessRequestId}/history"
         method = "GET"
         operation_name = "list_access_request_histories"
@@ -524,7 +543,8 @@ class AccessRequestsClient(object):
                 response_type="AccessRequestHistoryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -535,7 +555,8 @@ class AccessRequestsClient(object):
                 response_type="AccessRequestHistoryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_access_requests(self, compartment_id, **kwargs):
         """
@@ -603,6 +624,8 @@ class AccessRequestsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/operatoraccesscontrol/list_access_requests.py.html>`__ to see an example of how to use list_access_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/accessRequests"
         method = "GET"
         operation_name = "list_access_requests"
@@ -688,7 +711,8 @@ class AccessRequestsClient(object):
                 response_type="AccessRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -698,7 +722,8 @@ class AccessRequestsClient(object):
                 response_type="AccessRequestCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_interactions(self, access_request_id, **kwargs):
         """
@@ -735,6 +760,8 @@ class AccessRequestsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/operatoraccesscontrol/list_interactions.py.html>`__ to see an example of how to use list_interactions API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['accessRequestId']
         resource_path = "/accessRequests/{accessRequestId}/interactions"
         method = "GET"
         operation_name = "list_interactions"
@@ -795,7 +822,8 @@ class AccessRequestsClient(object):
                 response_type="InteractionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -806,7 +834,8 @@ class AccessRequestsClient(object):
                 response_type="InteractionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def reject_access_request(self, access_request_id, reject_access_request_details, **kwargs):
         """
@@ -854,6 +883,8 @@ class AccessRequestsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/operatoraccesscontrol/reject_access_request.py.html>`__ to see an example of how to use reject_access_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['accessRequestId']
         resource_path = "/accessRequests/{accessRequestId}/action/reject"
         method = "POST"
         operation_name = "reject_access_request"
@@ -910,7 +941,8 @@ class AccessRequestsClient(object):
                 body=reject_access_request_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -920,7 +952,8 @@ class AccessRequestsClient(object):
                 body=reject_access_request_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def review_access_request(self, access_request_id, review_access_request_details, **kwargs):
         """
@@ -968,6 +1001,8 @@ class AccessRequestsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/operatoraccesscontrol/review_access_request.py.html>`__ to see an example of how to use review_access_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['accessRequestId']
         resource_path = "/accessRequests/{accessRequestId}/action/review"
         method = "POST"
         operation_name = "review_access_request"
@@ -1025,7 +1060,8 @@ class AccessRequestsClient(object):
                 response_type="AccessRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1036,7 +1072,8 @@ class AccessRequestsClient(object):
                 response_type="AccessRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def revoke_access_request(self, access_request_id, revoke_access_request_details, **kwargs):
         """
@@ -1084,6 +1121,8 @@ class AccessRequestsClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/operatoraccesscontrol/revoke_access_request.py.html>`__ to see an example of how to use revoke_access_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['accessRequestId']
         resource_path = "/accessRequests/{accessRequestId}/action/revoke"
         method = "POST"
         operation_name = "revoke_access_request"
@@ -1140,7 +1179,8 @@ class AccessRequestsClient(object):
                 body=revoke_access_request_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1150,4 +1190,5 @@ class AccessRequestsClient(object):
                 body=revoke_access_request_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

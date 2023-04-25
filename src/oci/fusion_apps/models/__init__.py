@@ -25,6 +25,7 @@ from .create_service_instance_details import CreateServiceInstanceDetails
 from .data_masking_activity import DataMaskingActivity
 from .data_masking_activity_collection import DataMaskingActivityCollection
 from .data_masking_activity_summary import DataMaskingActivitySummary
+from .environment_role import EnvironmentRole
 from .family_maintenance_policy import FamilyMaintenancePolicy
 from .faw_admin_info_details import FawAdminInfoDetails
 from .fusion_environment import FusionEnvironment
@@ -102,6 +103,7 @@ fusion_apps_type_mapping = {
     "DataMaskingActivity": DataMaskingActivity,
     "DataMaskingActivityCollection": DataMaskingActivityCollection,
     "DataMaskingActivitySummary": DataMaskingActivitySummary,
+    "EnvironmentRole": EnvironmentRole,
     "FamilyMaintenancePolicy": FamilyMaintenancePolicy,
     "FawAdminInfoDetails": FawAdminInfoDetails,
     "FusionEnvironment": FusionEnvironment,

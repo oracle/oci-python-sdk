@@ -39,6 +39,7 @@ Fusion Apps
     oci.fusion_apps.models.DataMaskingActivity
     oci.fusion_apps.models.DataMaskingActivityCollection
     oci.fusion_apps.models.DataMaskingActivitySummary
+    oci.fusion_apps.models.EnvironmentRole
     oci.fusion_apps.models.FamilyMaintenancePolicy
     oci.fusion_apps.models.FawAdminInfoDetails
     oci.fusion_apps.models.FusionEnvironment

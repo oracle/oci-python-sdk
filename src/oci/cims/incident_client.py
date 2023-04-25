@@ -65,6 +65,9 @@ class IncidentClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class IncidentClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20181231',
             'service_endpoint_template': 'https://incidentmanagement.{region}.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -139,6 +144,8 @@ class IncidentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cims/create_incident.py.html>`__ to see an example of how to use create_incident API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/v2/incidents"
         method = "POST"
         operation_name = "create_incident"
@@ -183,7 +190,8 @@ class IncidentClient(object):
                 response_type="Incident",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -193,7 +201,8 @@ class IncidentClient(object):
                 response_type="Incident",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_incident(self, incident_key, csi, ocid, **kwargs):
         """
@@ -236,6 +245,8 @@ class IncidentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cims/get_incident.py.html>`__ to see an example of how to use get_incident API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['incidentKey']
         resource_path = "/v2/incidents/{incidentKey}"
         method = "GET"
         operation_name = "get_incident"
@@ -293,7 +304,8 @@ class IncidentClient(object):
                 response_type="Incident",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -303,7 +315,8 @@ class IncidentClient(object):
                 response_type="Incident",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_status(self, source, ocid, **kwargs):
         """
@@ -340,6 +353,8 @@ class IncidentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cims/get_status.py.html>`__ to see an example of how to use get_status API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['source']
         resource_path = "/v2/incidents/status/{source}"
         method = "GET"
         operation_name = "get_status"
@@ -394,7 +409,8 @@ class IncidentClient(object):
                 response_type="Status",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -404,7 +420,8 @@ class IncidentClient(object):
                 response_type="Status",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_incident_resource_types(self, problem_type, compartment_id, csi, ocid, **kwargs):
         """
@@ -470,6 +487,8 @@ class IncidentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cims/list_incident_resource_types.py.html>`__ to see an example of how to use list_incident_resource_types API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['problemType', 'compartmentId']
         resource_path = "/v2/incidents/incidentResourceTypes"
         method = "GET"
         operation_name = "list_incident_resource_types"
@@ -545,7 +564,8 @@ class IncidentClient(object):
                 response_type="list[IncidentResourceType]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -555,7 +575,8 @@ class IncidentClient(object):
                 response_type="list[IncidentResourceType]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_incidents(self, csi, compartment_id, ocid, **kwargs):
         """
@@ -623,6 +644,8 @@ class IncidentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cims/list_incidents.py.html>`__ to see an example of how to use list_incidents API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/v2/incidents"
         method = "GET"
         operation_name = "list_incidents"
@@ -706,7 +729,8 @@ class IncidentClient(object):
                 response_type="list[IncidentSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -716,7 +740,8 @@ class IncidentClient(object):
                 response_type="list[IncidentSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_incident(self, incident_key, csi, update_incident_details, ocid, **kwargs):
         """
@@ -762,6 +787,8 @@ class IncidentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cims/update_incident.py.html>`__ to see an example of how to use update_incident API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['incidentKey']
         resource_path = "/v2/incidents/{incidentKey}"
         method = "PUT"
         operation_name = "update_incident"
@@ -820,7 +847,8 @@ class IncidentClient(object):
                 response_type="Incident",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -831,7 +859,8 @@ class IncidentClient(object):
                 response_type="Incident",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def validate_user(self, csi, ocid, **kwargs):
         """
@@ -871,6 +900,8 @@ class IncidentClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cims/validate_user.py.html>`__ to see an example of how to use validate_user API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/v2/incidents/user/validate"
         method = "GET"
         operation_name = "validate_user"
@@ -922,7 +953,8 @@ class IncidentClient(object):
                 response_type="ValidationResponse",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -932,4 +964,5 @@ class IncidentClient(object):
                 response_type="ValidationResponse",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

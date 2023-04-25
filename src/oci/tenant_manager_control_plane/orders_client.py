@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class OrdersClient(object):
     """
-    The Organizations API allows you to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and its resources.
+    Use the Organizations API to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and organization resources. For more information, see [Organization Management Overview](/iaas/Content/General/Concepts/organization_management_overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -65,6 +65,9 @@ class OrdersClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -91,8 +94,10 @@ class OrdersClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20200801',
             'service_endpoint_template': 'https://organizations.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -113,14 +118,14 @@ class OrdersClient(object):
             The information needed to activate an order in a tenancy.
 
         :param str activation_token: (required)
-            Activation Token containing an order ID. A JWT RFC 7519 formatted string.
+            Activation token containing an order ID. A JWT RFC 7519-formatted string.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request, so it can be retried in case of a timeout or
             server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            will be rejected.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -143,6 +148,8 @@ class OrdersClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/activate_order.py.html>`__ to see an example of how to use activate_order API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['activationToken']
         resource_path = "/orders/{activationToken}/actions/activate"
         method = "POST"
         operation_name = "activate_order"
@@ -197,7 +204,8 @@ class OrdersClient(object):
                 body=activate_order_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -207,15 +215,16 @@ class OrdersClient(object):
                 body=activate_order_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_order(self, activation_token, **kwargs):
         """
-        Returns the Order Details given by the order ID in the JWT.
+        Returns the order details given by the order ID in the JWT.
 
 
         :param str activation_token: (required)
-            Activation Token containing an order ID. A JWT RFC 7519 formatted string.
+            Activation token containing an order ID. A JWT RFC 7519-formatted string.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -238,6 +247,8 @@ class OrdersClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/tenantmanagercontrolplane/get_order.py.html>`__ to see an example of how to use get_order API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['activationToken']
         resource_path = "/orders/{activationToken}"
         method = "GET"
         operation_name = "get_order"
@@ -289,7 +300,8 @@ class OrdersClient(object):
                 response_type="Order",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -299,4 +311,5 @@ class OrdersClient(object):
                 response_type="Order",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

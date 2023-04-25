@@ -166,6 +166,10 @@ class FusionEnvironment(object):
             The value to assign to the system_name property of this FusionEnvironment.
         :type system_name: str
 
+        :param environment_role:
+            The value to assign to the environment_role property of this FusionEnvironment.
+        :type environment_role: oci.fusion_apps.models.EnvironmentRole
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this FusionEnvironment.
         :type freeform_tags: dict(str, str)
@@ -202,6 +206,7 @@ class FusionEnvironment(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'system_name': 'str',
+            'environment_role': 'EnvironmentRole',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -233,6 +238,7 @@ class FusionEnvironment(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'system_name': 'systemName',
+            'environment_role': 'environmentRole',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -263,6 +269,7 @@ class FusionEnvironment(object):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._system_name = None
+        self._environment_role = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -893,6 +900,26 @@ class FusionEnvironment(object):
         :type: str
         """
         self._system_name = system_name
+
+    @property
+    def environment_role(self):
+        """
+        Gets the environment_role of this FusionEnvironment.
+
+        :return: The environment_role of this FusionEnvironment.
+        :rtype: oci.fusion_apps.models.EnvironmentRole
+        """
+        return self._environment_role
+
+    @environment_role.setter
+    def environment_role(self, environment_role):
+        """
+        Sets the environment_role of this FusionEnvironment.
+
+        :param environment_role: The environment_role of this FusionEnvironment.
+        :type: oci.fusion_apps.models.EnvironmentRole
+        """
+        self._environment_role = environment_role
 
     @property
     def freeform_tags(self):

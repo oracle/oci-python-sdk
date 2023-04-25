@@ -208,7 +208,7 @@ class Organization(object):
     def default_ucm_subscription_id(self):
         """
         **[Required]** Gets the default_ucm_subscription_id of this Organization.
-        OCID of the default Universal Credits Model subscription. Any tenancy joining the organization will automatically get assigned this subscription if a subscription is not explictly assigned.
+        OCID of the default Universal Credits Model subscription. Any tenancy joining the organization will automatically get assigned this subscription, if a subscription is not explictly assigned.
 
 
         :return: The default_ucm_subscription_id of this Organization.
@@ -220,7 +220,7 @@ class Organization(object):
     def default_ucm_subscription_id(self, default_ucm_subscription_id):
         """
         Sets the default_ucm_subscription_id of this Organization.
-        OCID of the default Universal Credits Model subscription. Any tenancy joining the organization will automatically get assigned this subscription if a subscription is not explictly assigned.
+        OCID of the default Universal Credits Model subscription. Any tenancy joining the organization will automatically get assigned this subscription, if a subscription is not explictly assigned.
 
 
         :param default_ucm_subscription_id: The default_ucm_subscription_id of this Organization.
@@ -262,7 +262,7 @@ class Organization(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this Organization.
-        Date-time when this organization was created.
+        Date and time when the organization was created.
 
 
         :return: The time_created of this Organization.
@@ -274,7 +274,7 @@ class Organization(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Organization.
-        Date-time when this organization was created.
+        Date and time when the organization was created.
 
 
         :param time_created: The time_created of this Organization.
@@ -286,7 +286,7 @@ class Organization(object):
     def time_updated(self):
         """
         Gets the time_updated of this Organization.
-        Date-time when this organization was last updated.
+        Date and time when the organization was last updated.
 
 
         :return: The time_updated of this Organization.
@@ -298,7 +298,7 @@ class Organization(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this Organization.
-        Date-time when this organization was last updated.
+        Date and time when the organization was last updated.
 
 
         :param time_updated: The time_updated of this Organization.

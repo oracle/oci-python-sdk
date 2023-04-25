@@ -67,6 +67,9 @@ class AIServiceLanguageClient(object):
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
 
+        :param bool client_level_realm_specific_endpoint_template_enabled: (optional)
+            A boolean flag to indicate whether or not this client should be created with realm specific endpoint template enabled or disable. By default, this will be set as None.
+
         :param allow_control_chars: (optional)
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
@@ -93,8 +96,10 @@ class AIServiceLanguageClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20221001',
             'service_endpoint_template': 'https://language.aiservice.{region}.oci.{secondLevelDomain}',
+            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
-            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
+            'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
+            'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
@@ -144,6 +149,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/batch_detect_dominant_language.py.html>`__ to see an example of how to use batch_detect_dominant_language API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/actions/batchDetectDominantLanguage"
         method = "POST"
         operation_name = "batch_detect_dominant_language"
@@ -185,7 +192,8 @@ class AIServiceLanguageClient(object):
                 response_type="BatchDetectDominantLanguageResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -195,7 +203,8 @@ class AIServiceLanguageClient(object):
                 response_type="BatchDetectDominantLanguageResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def batch_detect_language_entities(self, batch_detect_language_entities_details, **kwargs):
         """
@@ -235,6 +244,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/batch_detect_language_entities.py.html>`__ to see an example of how to use batch_detect_language_entities API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/actions/batchDetectLanguageEntities"
         method = "POST"
         operation_name = "batch_detect_language_entities"
@@ -276,7 +287,8 @@ class AIServiceLanguageClient(object):
                 response_type="BatchDetectLanguageEntitiesResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -286,7 +298,8 @@ class AIServiceLanguageClient(object):
                 response_type="BatchDetectLanguageEntitiesResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def batch_detect_language_key_phrases(self, batch_detect_language_key_phrases_details, **kwargs):
         """
@@ -322,6 +335,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/batch_detect_language_key_phrases.py.html>`__ to see an example of how to use batch_detect_language_key_phrases API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/actions/batchDetectLanguageKeyPhrases"
         method = "POST"
         operation_name = "batch_detect_language_key_phrases"
@@ -363,7 +378,8 @@ class AIServiceLanguageClient(object):
                 response_type="BatchDetectLanguageKeyPhrasesResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -373,7 +389,8 @@ class AIServiceLanguageClient(object):
                 response_type="BatchDetectLanguageKeyPhrasesResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def batch_detect_language_pii_entities(self, batch_detect_language_pii_entities_details, **kwargs):
         """
@@ -409,6 +426,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/batch_detect_language_pii_entities.py.html>`__ to see an example of how to use batch_detect_language_pii_entities API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/actions/batchDetectLanguagePiiEntities"
         method = "POST"
         operation_name = "batch_detect_language_pii_entities"
@@ -450,7 +469,8 @@ class AIServiceLanguageClient(object):
                 response_type="BatchDetectLanguagePiiEntitiesResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -460,7 +480,8 @@ class AIServiceLanguageClient(object):
                 response_type="BatchDetectLanguagePiiEntitiesResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def batch_detect_language_sentiments(self, batch_detect_language_sentiments_details, **kwargs):
         """
@@ -512,6 +533,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/batch_detect_language_sentiments.py.html>`__ to see an example of how to use batch_detect_language_sentiments API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/actions/batchDetectLanguageSentiments"
         method = "POST"
         operation_name = "batch_detect_language_sentiments"
@@ -568,7 +591,8 @@ class AIServiceLanguageClient(object):
                 response_type="BatchDetectLanguageSentimentsResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -579,7 +603,8 @@ class AIServiceLanguageClient(object):
                 response_type="BatchDetectLanguageSentimentsResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def batch_detect_language_text_classification(self, batch_detect_language_text_classification_details, **kwargs):
         """
@@ -621,6 +646,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/batch_detect_language_text_classification.py.html>`__ to see an example of how to use batch_detect_language_text_classification API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/actions/batchDetectLanguageTextClassification"
         method = "POST"
         operation_name = "batch_detect_language_text_classification"
@@ -662,7 +689,8 @@ class AIServiceLanguageClient(object):
                 response_type="BatchDetectLanguageTextClassificationResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -672,7 +700,8 @@ class AIServiceLanguageClient(object):
                 response_type="BatchDetectLanguageTextClassificationResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def batch_language_translation(self, batch_language_translation_details, **kwargs):
         """
@@ -708,6 +737,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/batch_language_translation.py.html>`__ to see an example of how to use batch_language_translation API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/actions/batchLanguageTranslation"
         method = "POST"
         operation_name = "batch_language_translation"
@@ -749,7 +780,8 @@ class AIServiceLanguageClient(object):
                 response_type="BatchLanguageTranslationResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -759,7 +791,8 @@ class AIServiceLanguageClient(object):
                 response_type="BatchLanguageTranslationResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_endpoint_compartment(self, endpoint_id, change_endpoint_compartment_details, **kwargs):
         """
@@ -805,6 +838,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/change_endpoint_compartment.py.html>`__ to see an example of how to use change_endpoint_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['endpointId']
         resource_path = "/endpoints/{endpointId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_endpoint_compartment"
@@ -863,7 +898,8 @@ class AIServiceLanguageClient(object):
                 body=change_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -873,7 +909,8 @@ class AIServiceLanguageClient(object):
                 body=change_endpoint_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_model_compartment(self, model_id, change_model_compartment_details, **kwargs):
         """
@@ -919,6 +956,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/change_model_compartment.py.html>`__ to see an example of how to use change_model_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['modelId']
         resource_path = "/models/{modelId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_model_compartment"
@@ -977,7 +1016,8 @@ class AIServiceLanguageClient(object):
                 body=change_model_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -987,7 +1027,8 @@ class AIServiceLanguageClient(object):
                 body=change_model_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def change_project_compartment(self, project_id, change_project_compartment_details, **kwargs):
         """
@@ -1033,6 +1074,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/change_project_compartment.py.html>`__ to see an example of how to use change_project_compartment API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['projectId']
         resource_path = "/projects/{projectId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_project_compartment"
@@ -1091,7 +1134,8 @@ class AIServiceLanguageClient(object):
                 body=change_project_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1101,7 +1145,8 @@ class AIServiceLanguageClient(object):
                 body=change_project_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_endpoint(self, create_endpoint_details, **kwargs):
         """
@@ -1139,6 +1184,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/create_endpoint.py.html>`__ to see an example of how to use create_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/endpoints"
         method = "POST"
         operation_name = "create_endpoint"
@@ -1185,7 +1232,8 @@ class AIServiceLanguageClient(object):
                 response_type="Endpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1195,7 +1243,8 @@ class AIServiceLanguageClient(object):
                 response_type="Endpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_model(self, create_model_details, **kwargs):
         """
@@ -1233,6 +1282,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/create_model.py.html>`__ to see an example of how to use create_model API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/models"
         method = "POST"
         operation_name = "create_model"
@@ -1279,7 +1330,8 @@ class AIServiceLanguageClient(object):
                 response_type="Model",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1289,7 +1341,8 @@ class AIServiceLanguageClient(object):
                 response_type="Model",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def create_project(self, create_project_details, **kwargs):
         """
@@ -1327,6 +1380,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/create_project.py.html>`__ to see an example of how to use create_project API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/projects"
         method = "POST"
         operation_name = "create_project"
@@ -1373,7 +1428,8 @@ class AIServiceLanguageClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1383,7 +1439,8 @@ class AIServiceLanguageClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_endpoint(self, endpoint_id, **kwargs):
         """
@@ -1421,6 +1478,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/delete_endpoint.py.html>`__ to see an example of how to use delete_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['endpointId']
         resource_path = "/endpoints/{endpointId}"
         method = "DELETE"
         operation_name = "delete_endpoint"
@@ -1475,7 +1534,8 @@ class AIServiceLanguageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1484,7 +1544,8 @@ class AIServiceLanguageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_model(self, model_id, **kwargs):
         """
@@ -1522,6 +1583,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/delete_model.py.html>`__ to see an example of how to use delete_model API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['modelId']
         resource_path = "/models/{modelId}"
         method = "DELETE"
         operation_name = "delete_model"
@@ -1576,7 +1639,8 @@ class AIServiceLanguageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1585,7 +1649,8 @@ class AIServiceLanguageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def delete_project(self, project_id, **kwargs):
         """
@@ -1623,6 +1688,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/delete_project.py.html>`__ to see an example of how to use delete_project API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['projectId']
         resource_path = "/projects/{projectId}"
         method = "DELETE"
         operation_name = "delete_project"
@@ -1677,7 +1744,8 @@ class AIServiceLanguageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1686,7 +1754,8 @@ class AIServiceLanguageClient(object):
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def detect_dominant_language(self, detect_dominant_language_details, **kwargs):
         """
@@ -1725,6 +1794,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/detect_dominant_language.py.html>`__ to see an example of how to use detect_dominant_language API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/actions/detectDominantLanguage"
         method = "POST"
         operation_name = "detect_dominant_language"
@@ -1766,7 +1837,8 @@ class AIServiceLanguageClient(object):
                 response_type="DetectDominantLanguageResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1776,7 +1848,8 @@ class AIServiceLanguageClient(object):
                 response_type="DetectDominantLanguageResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def detect_language_entities(self, detect_language_entities_details, **kwargs):
         """
@@ -1820,6 +1893,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/detect_language_entities.py.html>`__ to see an example of how to use detect_language_entities API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/actions/detectLanguageEntities"
         method = "POST"
         operation_name = "detect_language_entities"
@@ -1877,7 +1952,8 @@ class AIServiceLanguageClient(object):
                 response_type="DetectLanguageEntitiesResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1888,7 +1964,8 @@ class AIServiceLanguageClient(object):
                 response_type="DetectLanguageEntitiesResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def detect_language_key_phrases(self, detect_language_key_phrases_details, **kwargs):
         """
@@ -1923,6 +2000,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/detect_language_key_phrases.py.html>`__ to see an example of how to use detect_language_key_phrases API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/actions/detectLanguageKeyPhrases"
         method = "POST"
         operation_name = "detect_language_key_phrases"
@@ -1964,7 +2043,8 @@ class AIServiceLanguageClient(object):
                 response_type="DetectLanguageKeyPhrasesResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1974,7 +2054,8 @@ class AIServiceLanguageClient(object):
                 response_type="DetectLanguageKeyPhrasesResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def detect_language_sentiments(self, detect_language_sentiments_details, **kwargs):
         """
@@ -2017,6 +2098,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/detect_language_sentiments.py.html>`__ to see an example of how to use detect_language_sentiments API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/actions/detectLanguageSentiments"
         method = "POST"
         operation_name = "detect_language_sentiments"
@@ -2058,7 +2141,8 @@ class AIServiceLanguageClient(object):
                 response_type="DetectLanguageSentimentsResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2068,7 +2152,8 @@ class AIServiceLanguageClient(object):
                 response_type="DetectLanguageSentimentsResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def detect_language_text_classification(self, detect_language_text_classification_details, **kwargs):
         """
@@ -2107,6 +2192,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/detect_language_text_classification.py.html>`__ to see an example of how to use detect_language_text_classification API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
         resource_path = "/actions/detectLanguageTextClassification"
         method = "POST"
         operation_name = "detect_language_text_classification"
@@ -2148,7 +2235,8 @@ class AIServiceLanguageClient(object):
                 response_type="DetectLanguageTextClassificationResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2158,7 +2246,8 @@ class AIServiceLanguageClient(object):
                 response_type="DetectLanguageTextClassificationResult",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_endpoint(self, endpoint_id, **kwargs):
         """
@@ -2189,6 +2278,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/get_endpoint.py.html>`__ to see an example of how to use get_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['endpointId']
         resource_path = "/endpoints/{endpointId}"
         method = "GET"
         operation_name = "get_endpoint"
@@ -2242,7 +2333,8 @@ class AIServiceLanguageClient(object):
                 response_type="Endpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2252,7 +2344,8 @@ class AIServiceLanguageClient(object):
                 response_type="Endpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_model(self, model_id, **kwargs):
         """
@@ -2283,6 +2376,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/get_model.py.html>`__ to see an example of how to use get_model API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['modelId']
         resource_path = "/models/{modelId}"
         method = "GET"
         operation_name = "get_model"
@@ -2336,7 +2431,8 @@ class AIServiceLanguageClient(object):
                 response_type="Model",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2346,7 +2442,8 @@ class AIServiceLanguageClient(object):
                 response_type="Model",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_project(self, project_id, **kwargs):
         """
@@ -2377,6 +2474,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/get_project.py.html>`__ to see an example of how to use get_project API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['projectId']
         resource_path = "/projects/{projectId}"
         method = "GET"
         operation_name = "get_project"
@@ -2430,7 +2529,8 @@ class AIServiceLanguageClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2440,7 +2540,8 @@ class AIServiceLanguageClient(object):
                 response_type="Project",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -2471,6 +2572,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
@@ -2524,7 +2627,8 @@ class AIServiceLanguageClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2534,7 +2638,8 @@ class AIServiceLanguageClient(object):
                 response_type="WorkRequest",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_endpoints(self, compartment_id, **kwargs):
         """
@@ -2602,6 +2707,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/list_endpoints.py.html>`__ to see an example of how to use list_endpoints API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/endpoints"
         method = "GET"
         operation_name = "list_endpoints"
@@ -2689,7 +2796,8 @@ class AIServiceLanguageClient(object):
                 response_type="EndpointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2699,7 +2807,8 @@ class AIServiceLanguageClient(object):
                 response_type="EndpointCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_evaluation_results(self, model_id, **kwargs):
         """
@@ -2736,6 +2845,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/list_evaluation_results.py.html>`__ to see an example of how to use list_evaluation_results API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['modelId']
         resource_path = "/models/{modelId}/evaluationResults"
         method = "GET"
         operation_name = "list_evaluation_results"
@@ -2798,7 +2909,8 @@ class AIServiceLanguageClient(object):
                 response_type="EvaluationResultCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2809,7 +2921,8 @@ class AIServiceLanguageClient(object):
                 response_type="EvaluationResultCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_models(self, compartment_id, **kwargs):
         """
@@ -2874,6 +2987,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/list_models.py.html>`__ to see an example of how to use list_models API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/models"
         method = "GET"
         operation_name = "list_models"
@@ -2959,7 +3074,8 @@ class AIServiceLanguageClient(object):
                 response_type="ModelCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2969,7 +3085,8 @@ class AIServiceLanguageClient(object):
                 response_type="ModelCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_projects(self, compartment_id, **kwargs):
         """
@@ -3031,6 +3148,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/list_projects.py.html>`__ to see an example of how to use list_projects API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/projects"
         method = "GET"
         operation_name = "list_projects"
@@ -3114,7 +3233,8 @@ class AIServiceLanguageClient(object):
                 response_type="ProjectCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3124,7 +3244,8 @@ class AIServiceLanguageClient(object):
                 response_type="ProjectCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -3171,6 +3292,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
@@ -3251,7 +3374,8 @@ class AIServiceLanguageClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3262,7 +3386,8 @@ class AIServiceLanguageClient(object):
                 response_type="WorkRequestErrorCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -3309,6 +3434,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['workRequestId']
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
@@ -3389,7 +3516,8 @@ class AIServiceLanguageClient(object):
                 response_type="WorkRequestLogCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3400,7 +3528,8 @@ class AIServiceLanguageClient(object):
                 response_type="WorkRequestLogCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -3453,6 +3582,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
@@ -3527,7 +3658,8 @@ class AIServiceLanguageClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3537,7 +3669,8 @@ class AIServiceLanguageClient(object):
                 response_type="WorkRequestSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_endpoint(self, endpoint_id, update_endpoint_details, **kwargs):
         """
@@ -3578,6 +3711,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/update_endpoint.py.html>`__ to see an example of how to use update_endpoint API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['endpointId']
         resource_path = "/endpoints/{endpointId}"
         method = "PUT"
         operation_name = "update_endpoint"
@@ -3633,7 +3768,8 @@ class AIServiceLanguageClient(object):
                 body=update_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3643,7 +3779,8 @@ class AIServiceLanguageClient(object):
                 body=update_endpoint_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_model(self, model_id, update_model_details, **kwargs):
         """
@@ -3684,6 +3821,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/update_model.py.html>`__ to see an example of how to use update_model API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['modelId']
         resource_path = "/models/{modelId}"
         method = "PUT"
         operation_name = "update_model"
@@ -3739,7 +3878,8 @@ class AIServiceLanguageClient(object):
                 body=update_model_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3749,7 +3889,8 @@ class AIServiceLanguageClient(object):
                 body=update_model_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
 
     def update_project(self, project_id, update_project_details, **kwargs):
         """
@@ -3790,6 +3931,8 @@ class AIServiceLanguageClient(object):
         :example:
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/update_project.py.html>`__ to see an example of how to use update_project API.
         """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['projectId']
         resource_path = "/projects/{projectId}"
         method = "PUT"
         operation_name = "update_project"
@@ -3845,7 +3988,8 @@ class AIServiceLanguageClient(object):
                 body=update_project_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3855,4 +3999,5 @@ class AIServiceLanguageClient(object):
                 body=update_project_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
-                api_reference_link=api_reference_link)
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)

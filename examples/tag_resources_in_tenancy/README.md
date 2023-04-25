@@ -53,7 +53,7 @@ Execute
 $ python3 tag_resources_in_tenancy.py --help
 
 usage: tag_resources_in_tenancy.py [-h] [-t CONFIG_PROFILE] [-p PROXY] [-cp COMPARTMENT] [-rg REGION] [-ip] [-dt] [-tag TAG] [-tagseperator TAGSEPERATOR]
-                                   [-action {add_defined,add_free,del_defined,del_free,list}] [-output {list,json,summary}] [-force] [-service SERVICE]
+                                   [-action {add_defined,add_free,del_defined,del_free,list}] [-output {list,json,summary}] [-service SERVICE]
                                    [-filter_by_name FILTER_BY_NAME]
 
 optional arguments:

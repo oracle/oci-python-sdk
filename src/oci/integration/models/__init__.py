@@ -7,6 +7,7 @@ from __future__ import absolute_import
 from .attachment_details import AttachmentDetails
 from .change_integration_instance_compartment_details import ChangeIntegrationInstanceCompartmentDetails
 from .change_integration_instance_network_endpoint_details import ChangeIntegrationInstanceNetworkEndpointDetails
+from .change_private_endpoint_outbound_connection_details import ChangePrivateEndpointOutboundConnectionDetails
 from .create_custom_endpoint_details import CreateCustomEndpointDetails
 from .create_integration_instance_details import CreateIntegrationInstanceDetails
 from .custom_endpoint_details import CustomEndpointDetails
@@ -14,6 +15,9 @@ from .idcs_info_details import IdcsInfoDetails
 from .integration_instance import IntegrationInstance
 from .integration_instance_summary import IntegrationInstanceSummary
 from .network_endpoint_details import NetworkEndpointDetails
+from .none_outbound_connection import NoneOutboundConnection
+from .outbound_connection import OutboundConnection
+from .private_endpoint_outbound_connection import PrivateEndpointOutboundConnection
 from .public_endpoint_details import PublicEndpointDetails
 from .update_custom_endpoint_details import UpdateCustomEndpointDetails
 from .update_integration_instance_details import UpdateIntegrationInstanceDetails
@@ -29,6 +33,7 @@ integration_type_mapping = {
     "AttachmentDetails": AttachmentDetails,
     "ChangeIntegrationInstanceCompartmentDetails": ChangeIntegrationInstanceCompartmentDetails,
     "ChangeIntegrationInstanceNetworkEndpointDetails": ChangeIntegrationInstanceNetworkEndpointDetails,
+    "ChangePrivateEndpointOutboundConnectionDetails": ChangePrivateEndpointOutboundConnectionDetails,
     "CreateCustomEndpointDetails": CreateCustomEndpointDetails,
     "CreateIntegrationInstanceDetails": CreateIntegrationInstanceDetails,
     "CustomEndpointDetails": CustomEndpointDetails,
@@ -36,6 +41,9 @@ integration_type_mapping = {
     "IntegrationInstance": IntegrationInstance,
     "IntegrationInstanceSummary": IntegrationInstanceSummary,
     "NetworkEndpointDetails": NetworkEndpointDetails,
+    "NoneOutboundConnection": NoneOutboundConnection,
+    "OutboundConnection": OutboundConnection,
+    "PrivateEndpointOutboundConnection": PrivateEndpointOutboundConnection,
     "PublicEndpointDetails": PublicEndpointDetails,
     "UpdateCustomEndpointDetails": UpdateCustomEndpointDetails,
     "UpdateIntegrationInstanceDetails": UpdateIntegrationInstanceDetails,
