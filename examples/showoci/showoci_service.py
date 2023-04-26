@@ -14874,6 +14874,7 @@ class ShowOCIDomains(object):
                 'aborted' in str(code).lower() or
                 'notfound' in str(code).lower() or
                 'closed connection' in str(code).lower() or
+                'accessdenied' in str(code).lower() or
                 code == 'Forbidden' or
                 code == 'TooManyRequests' or
                 code == 'NotAuthorizedOrNotFound' or
@@ -15145,6 +15146,8 @@ class ShowOCIDomains(object):
         except oci.exceptions.ServiceError as e:
             if self.__check_service_error(e.code):
                 self.__load_print_auth_warning()
+            elif self.__check_service_error(str(e)):
+                self.__load_print_auth_warning()
             else:
                 raise
         except oci.exceptions.RequestException as e:
@@ -15305,6 +15308,8 @@ class ShowOCIDomains(object):
         except oci.exceptions.ServiceError as e:
             if self.__check_service_error(e.code):
                 self.__load_print_auth_warning()
+            elif self.__check_service_error(str(e)):
+                self.__load_print_auth_warning()
             else:
                 raise
         except oci.exceptions.RequestException as e:
@@ -15439,6 +15444,8 @@ class ShowOCIDomains(object):
         except oci.exceptions.ServiceError as e:
             if self.__check_service_error(e.code):
                 self.__load_print_auth_warning()
+            elif self.__check_service_error(str(e)):
+                self.__load_print_auth_warning()
             else:
                 raise
         except oci.exceptions.RequestException as e:
@@ -15496,6 +15503,8 @@ class ShowOCIDomains(object):
 
         except oci.exceptions.ServiceError as e:
             if self.__check_service_error(e.code):
+                self.__load_print_auth_warning()
+            elif self.__check_service_error(str(e)):
                 self.__load_print_auth_warning()
             else:
                 raise
@@ -15627,6 +15636,8 @@ class ShowOCIDomains(object):
 
         except oci.exceptions.ServiceError as e:
             if self.__check_service_error(e.code):
+                self.__load_print_auth_warning()
+            elif self.__check_service_error(str(e)):
                 self.__load_print_auth_warning()
             else:
                 raise
