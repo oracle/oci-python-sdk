@@ -192,7 +192,7 @@ class SearchMonitoredResourcesDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this SearchMonitoredResourcesDetails.
-        Compartment Identifier `OCID`__
+        Compartment Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -206,7 +206,7 @@ class SearchMonitoredResourcesDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this SearchMonitoredResourcesDetails.
-        Compartment Identifier `OCID`__
+        Compartment Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -220,7 +220,7 @@ class SearchMonitoredResourcesDetails(object):
     def name(self):
         """
         Gets the name of this SearchMonitoredResourcesDetails.
-        A filter to return resources that match exact resource name
+        A filter to return resources that match exact resource name.
 
 
         :return: The name of this SearchMonitoredResourcesDetails.
@@ -232,7 +232,7 @@ class SearchMonitoredResourcesDetails(object):
     def name(self, name):
         """
         Sets the name of this SearchMonitoredResourcesDetails.
-        A filter to return resources that match exact resource name
+        A filter to return resources that match exact resource name.
 
 
         :param name: The name of this SearchMonitoredResourcesDetails.
@@ -268,7 +268,7 @@ class SearchMonitoredResourcesDetails(object):
     def type(self):
         """
         Gets the type of this SearchMonitoredResourcesDetails.
-        A filter to return resources that match resource type
+        A filter to return resources that match resource type.
 
 
         :return: The type of this SearchMonitoredResourcesDetails.
@@ -280,7 +280,7 @@ class SearchMonitoredResourcesDetails(object):
     def type(self, type):
         """
         Sets the type of this SearchMonitoredResourcesDetails.
-        A filter to return resources that match resource type
+        A filter to return resources that match resource type.
 
 
         :param type: The type of this SearchMonitoredResourcesDetails.
@@ -292,7 +292,7 @@ class SearchMonitoredResourcesDetails(object):
     def host_name(self):
         """
         Gets the host_name of this SearchMonitoredResourcesDetails.
-        A filter to return resources with host name match
+        A filter to return resources with host name match.
 
 
         :return: The host_name of this SearchMonitoredResourcesDetails.
@@ -304,7 +304,7 @@ class SearchMonitoredResourcesDetails(object):
     def host_name(self, host_name):
         """
         Sets the host_name of this SearchMonitoredResourcesDetails.
-        A filter to return resources with host name match
+        A filter to return resources with host name match.
 
 
         :param host_name: The host_name of this SearchMonitoredResourcesDetails.
@@ -318,8 +318,8 @@ class SearchMonitoredResourcesDetails(object):
         Gets the external_id of this SearchMonitoredResourcesDetails.
         External resource is any OCI resource identifier `OCID`__
         which is not a Stack Monitoring service resource.
-        Currently supports only following resource type identifiers - externalcontainerdatabase,
-        externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+        Currently supports only following resource types - Container database, non-container database,
+        pluggable database and OCI compute instance.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -335,8 +335,8 @@ class SearchMonitoredResourcesDetails(object):
         Sets the external_id of this SearchMonitoredResourcesDetails.
         External resource is any OCI resource identifier `OCID`__
         which is not a Stack Monitoring service resource.
-        Currently supports only following resource type identifiers - externalcontainerdatabase,
-        externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+        Currently supports only following resource types - Container database, non-container database,
+        pluggable database and OCI compute instance.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -350,7 +350,7 @@ class SearchMonitoredResourcesDetails(object):
     def host_name_contains(self):
         """
         Gets the host_name_contains of this SearchMonitoredResourcesDetails.
-        A filter to return resources with host name pattern
+        A filter to return resources with host name pattern.
 
 
         :return: The host_name_contains of this SearchMonitoredResourcesDetails.
@@ -362,7 +362,7 @@ class SearchMonitoredResourcesDetails(object):
     def host_name_contains(self, host_name_contains):
         """
         Sets the host_name_contains of this SearchMonitoredResourcesDetails.
-        A filter to return resources with host name pattern
+        A filter to return resources with host name pattern.
 
 
         :param host_name_contains: The host_name_contains of this SearchMonitoredResourcesDetails.
@@ -598,7 +598,9 @@ class SearchMonitoredResourcesDetails(object):
     def resource_time_zone(self):
         """
         Gets the resource_time_zone of this SearchMonitoredResourcesDetails.
-        Time zone in the form of tz database canonical zone ID.
+        Time zone in the form of tz database canonical zone ID. Specifies the preference with
+        a value that uses the IANA Time Zone Database format (x-obmcs-time-zone).
+        For example - America/Los_Angeles
 
 
         :return: The resource_time_zone of this SearchMonitoredResourcesDetails.
@@ -610,7 +612,9 @@ class SearchMonitoredResourcesDetails(object):
     def resource_time_zone(self, resource_time_zone):
         """
         Sets the resource_time_zone of this SearchMonitoredResourcesDetails.
-        Time zone in the form of tz database canonical zone ID.
+        Time zone in the form of tz database canonical zone ID. Specifies the preference with
+        a value that uses the IANA Time Zone Database format (x-obmcs-time-zone).
+        For example - America/Los_Angeles
 
 
         :param resource_time_zone: The resource_time_zone of this SearchMonitoredResourcesDetails.

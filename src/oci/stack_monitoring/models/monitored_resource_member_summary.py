@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MonitoredResourceMemberSummary(object):
     """
-    Monitored resource member
+    Monitored resource member details.
     """
 
     #: A constant which can be used with the lifecycle_state property of a MonitoredResourceMemberSummary.
@@ -66,6 +66,10 @@ class MonitoredResourceMemberSummary(object):
             The value to assign to the external_id property of this MonitoredResourceMemberSummary.
         :type external_id: str
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this MonitoredResourceMemberSummary.
+        :type compartment_id: str
+
         :param parent_id:
             The value to assign to the parent_id property of this MonitoredResourceMemberSummary.
         :type parent_id: str
@@ -96,6 +100,7 @@ class MonitoredResourceMemberSummary(object):
             'resource_type': 'str',
             'host_name': 'str',
             'external_id': 'str',
+            'compartment_id': 'str',
             'parent_id': 'str',
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -110,6 +115,7 @@ class MonitoredResourceMemberSummary(object):
             'resource_type': 'resourceType',
             'host_name': 'hostName',
             'external_id': 'externalId',
+            'compartment_id': 'compartmentId',
             'parent_id': 'parentId',
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
@@ -123,6 +129,7 @@ class MonitoredResourceMemberSummary(object):
         self._resource_type = None
         self._host_name = None
         self._external_id = None
+        self._compartment_id = None
         self._parent_id = None
         self._lifecycle_state = None
         self._freeform_tags = None
@@ -133,7 +140,9 @@ class MonitoredResourceMemberSummary(object):
     def resource_id(self):
         """
         Gets the resource_id of this MonitoredResourceMemberSummary.
-        Monitored resource identifier
+        Monitored resource identifier `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The resource_id of this MonitoredResourceMemberSummary.
@@ -145,7 +154,9 @@ class MonitoredResourceMemberSummary(object):
     def resource_id(self, resource_id):
         """
         Sets the resource_id of this MonitoredResourceMemberSummary.
-        Monitored resource identifier
+        Monitored resource identifier `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param resource_id: The resource_id of this MonitoredResourceMemberSummary.
@@ -157,7 +168,7 @@ class MonitoredResourceMemberSummary(object):
     def resource_name(self):
         """
         Gets the resource_name of this MonitoredResourceMemberSummary.
-        Monitored resource name
+        Monitored Resource Name.
 
 
         :return: The resource_name of this MonitoredResourceMemberSummary.
@@ -169,7 +180,7 @@ class MonitoredResourceMemberSummary(object):
     def resource_name(self, resource_name):
         """
         Sets the resource_name of this MonitoredResourceMemberSummary.
-        Monitored resource name
+        Monitored Resource Name.
 
 
         :param resource_name: The resource_name of this MonitoredResourceMemberSummary.
@@ -205,7 +216,7 @@ class MonitoredResourceMemberSummary(object):
     def resource_type(self):
         """
         Gets the resource_type of this MonitoredResourceMemberSummary.
-        Monitored resource type
+        Monitored Resource Type.
 
 
         :return: The resource_type of this MonitoredResourceMemberSummary.
@@ -217,7 +228,7 @@ class MonitoredResourceMemberSummary(object):
     def resource_type(self, resource_type):
         """
         Sets the resource_type of this MonitoredResourceMemberSummary.
-        Monitored resource type
+        Monitored Resource Type.
 
 
         :param resource_type: The resource_type of this MonitoredResourceMemberSummary.
@@ -229,7 +240,7 @@ class MonitoredResourceMemberSummary(object):
     def host_name(self):
         """
         Gets the host_name of this MonitoredResourceMemberSummary.
-        Monitored Resource Host
+        Monitored Resource Host Name.
 
 
         :return: The host_name of this MonitoredResourceMemberSummary.
@@ -241,7 +252,7 @@ class MonitoredResourceMemberSummary(object):
     def host_name(self, host_name):
         """
         Sets the host_name of this MonitoredResourceMemberSummary.
-        Monitored Resource Host
+        Monitored Resource Host Name.
 
 
         :param host_name: The host_name of this MonitoredResourceMemberSummary.
@@ -255,8 +266,8 @@ class MonitoredResourceMemberSummary(object):
         Gets the external_id of this MonitoredResourceMemberSummary.
         External resource is any OCI resource identifier `OCID`__
         which is not a Stack Monitoring service resource.
-        Currently supports only following resource type identifiers - externalcontainerdatabase,
-        externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+        Currently supports only following resource types - Container database, non-container database,
+        pluggable database and OCI compute instance.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -272,8 +283,8 @@ class MonitoredResourceMemberSummary(object):
         Sets the external_id of this MonitoredResourceMemberSummary.
         External resource is any OCI resource identifier `OCID`__
         which is not a Stack Monitoring service resource.
-        Currently supports only following resource type identifiers - externalcontainerdatabase,
-        externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+        Currently supports only following resource types - Container database, non-container database,
+        pluggable database and OCI compute instance.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -284,10 +295,40 @@ class MonitoredResourceMemberSummary(object):
         self._external_id = external_id
 
     @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this MonitoredResourceMemberSummary.
+        Compartment Identifier `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The compartment_id of this MonitoredResourceMemberSummary.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this MonitoredResourceMemberSummary.
+        Compartment Identifier `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param compartment_id: The compartment_id of this MonitoredResourceMemberSummary.
+        :type: str
+        """
+        self._compartment_id = compartment_id
+
+    @property
     def parent_id(self):
         """
         Gets the parent_id of this MonitoredResourceMemberSummary.
-        Parent monitored resource identifier
+        Parent monitored resource identifier `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The parent_id of this MonitoredResourceMemberSummary.
@@ -299,7 +340,9 @@ class MonitoredResourceMemberSummary(object):
     def parent_id(self, parent_id):
         """
         Sets the parent_id of this MonitoredResourceMemberSummary.
-        Parent monitored resource identifier
+        Parent monitored resource identifier `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param parent_id: The parent_id of this MonitoredResourceMemberSummary.

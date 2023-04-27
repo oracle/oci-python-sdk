@@ -51,7 +51,8 @@ class MonitoredResourceAliasCredential(object):
     def source(self):
         """
         **[Required]** Gets the source of this MonitoredResourceAliasCredential.
-        The source type and source name combination,delimited with (.) separator. Ex. {source type}.{source name} and source type max char limit is 63.
+        The source type and source name combination,delimited with (.) separator.
+        Example: {source type}.{source name} and source type max char limit is 63.
 
 
         :return: The source of this MonitoredResourceAliasCredential.
@@ -63,7 +64,8 @@ class MonitoredResourceAliasCredential(object):
     def source(self, source):
         """
         Sets the source of this MonitoredResourceAliasCredential.
-        The source type and source name combination,delimited with (.) separator. Ex. {source type}.{source name} and source type max char limit is 63.
+        The source type and source name combination,delimited with (.) separator.
+        Example: {source type}.{source name} and source type max char limit is 63.
 
 
         :param source: The source of this MonitoredResourceAliasCredential.

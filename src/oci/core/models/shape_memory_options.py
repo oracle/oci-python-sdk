@@ -40,13 +40,18 @@ class ShapeMemoryOptions(object):
             The value to assign to the max_per_ocpu_in_gbs property of this ShapeMemoryOptions.
         :type max_per_ocpu_in_gbs: float
 
+        :param max_per_numa_node_in_gbs:
+            The value to assign to the max_per_numa_node_in_gbs property of this ShapeMemoryOptions.
+        :type max_per_numa_node_in_gbs: float
+
         """
         self.swagger_types = {
             'min_in_g_bs': 'float',
             'max_in_g_bs': 'float',
             'default_per_ocpu_in_g_bs': 'float',
             'min_per_ocpu_in_gbs': 'float',
-            'max_per_ocpu_in_gbs': 'float'
+            'max_per_ocpu_in_gbs': 'float',
+            'max_per_numa_node_in_gbs': 'float'
         }
 
         self.attribute_map = {
@@ -54,7 +59,8 @@ class ShapeMemoryOptions(object):
             'max_in_g_bs': 'maxInGBs',
             'default_per_ocpu_in_g_bs': 'defaultPerOcpuInGBs',
             'min_per_ocpu_in_gbs': 'minPerOcpuInGBs',
-            'max_per_ocpu_in_gbs': 'maxPerOcpuInGBs'
+            'max_per_ocpu_in_gbs': 'maxPerOcpuInGBs',
+            'max_per_numa_node_in_gbs': 'maxPerNumaNodeInGBs'
         }
 
         self._min_in_g_bs = None
@@ -62,6 +68,7 @@ class ShapeMemoryOptions(object):
         self._default_per_ocpu_in_g_bs = None
         self._min_per_ocpu_in_gbs = None
         self._max_per_ocpu_in_gbs = None
+        self._max_per_numa_node_in_gbs = None
 
     @property
     def min_in_g_bs(self):
@@ -182,6 +189,30 @@ class ShapeMemoryOptions(object):
         :type: float
         """
         self._max_per_ocpu_in_gbs = max_per_ocpu_in_gbs
+
+    @property
+    def max_per_numa_node_in_gbs(self):
+        """
+        Gets the max_per_numa_node_in_gbs of this ShapeMemoryOptions.
+        The maximum amount of memory per NUMA node, in gigabytes.
+
+
+        :return: The max_per_numa_node_in_gbs of this ShapeMemoryOptions.
+        :rtype: float
+        """
+        return self._max_per_numa_node_in_gbs
+
+    @max_per_numa_node_in_gbs.setter
+    def max_per_numa_node_in_gbs(self, max_per_numa_node_in_gbs):
+        """
+        Sets the max_per_numa_node_in_gbs of this ShapeMemoryOptions.
+        The maximum amount of memory per NUMA node, in gigabytes.
+
+
+        :param max_per_numa_node_in_gbs: The max_per_numa_node_in_gbs of this ShapeMemoryOptions.
+        :type: float
+        """
+        self._max_per_numa_node_in_gbs = max_per_numa_node_in_gbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

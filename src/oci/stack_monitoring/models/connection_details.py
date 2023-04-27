@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConnectionDetails(object):
     """
-    Connection details to connect to the database. HostName, protocol, and port should be specified.
+    Connection details for the database.
     """
 
     #: A constant which can be used with the protocol property of a ConnectionDetails.
@@ -143,7 +143,9 @@ class ConnectionDetails(object):
     def connector_id(self):
         """
         Gets the connector_id of this ConnectionDetails.
-        Database connector Identifier
+        Database connector Identifier `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The connector_id of this ConnectionDetails.
@@ -155,7 +157,9 @@ class ConnectionDetails(object):
     def connector_id(self, connector_id):
         """
         Sets the connector_id of this ConnectionDetails.
-        Database connector Identifier
+        Database connector Identifier `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param connector_id: The connector_id of this ConnectionDetails.
@@ -215,7 +219,7 @@ class ConnectionDetails(object):
     def db_id(self):
         """
         Gets the db_id of this ConnectionDetails.
-        dbId of the database
+        dbId of the database.
 
 
         :return: The db_id of this ConnectionDetails.
@@ -227,7 +231,7 @@ class ConnectionDetails(object):
     def db_id(self, db_id):
         """
         Sets the db_id of this ConnectionDetails.
-        dbId of the database
+        dbId of the database.
 
 
         :param db_id: The db_id of this ConnectionDetails.
@@ -239,7 +243,7 @@ class ConnectionDetails(object):
     def ssl_secret_id(self):
         """
         Gets the ssl_secret_id of this ConnectionDetails.
-        SSL Secret Identifier for TCPS connector in OCI Vault`OCID`__
+        SSL Secret Identifier for TCPS connector in OCI Vault`OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -253,7 +257,7 @@ class ConnectionDetails(object):
     def ssl_secret_id(self, ssl_secret_id):
         """
         Sets the ssl_secret_id of this ConnectionDetails.
-        SSL Secret Identifier for TCPS connector in OCI Vault`OCID`__
+        SSL Secret Identifier for TCPS connector in OCI Vault`OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

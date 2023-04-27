@@ -44,6 +44,7 @@ from .node import Node
 from .node_error import NodeError
 from .node_eviction_node_pool_settings import NodeEvictionNodePoolSettings
 from .node_pool import NodePool
+from .node_pool_cycling_details import NodePoolCyclingDetails
 from .node_pool_node_config_details import NodePoolNodeConfigDetails
 from .node_pool_options import NodePoolOptions
 from .node_pool_placement_config_details import NodePoolPlacementConfigDetails
@@ -77,7 +78,6 @@ from .update_image_policy_config_details import UpdateImagePolicyConfigDetails
 from .update_node_pool_details import UpdateNodePoolDetails
 from .update_node_pool_node_config_details import UpdateNodePoolNodeConfigDetails
 from .update_node_shape_config_details import UpdateNodeShapeConfigDetails
-from .update_virtual_node_details import UpdateVirtualNodeDetails
 from .update_virtual_node_pool_details import UpdateVirtualNodePoolDetails
 from .virtual_node import VirtualNode
 from .virtual_node_pool import VirtualNodePool
@@ -132,6 +132,7 @@ container_engine_type_mapping = {
     "NodeError": NodeError,
     "NodeEvictionNodePoolSettings": NodeEvictionNodePoolSettings,
     "NodePool": NodePool,
+    "NodePoolCyclingDetails": NodePoolCyclingDetails,
     "NodePoolNodeConfigDetails": NodePoolNodeConfigDetails,
     "NodePoolOptions": NodePoolOptions,
     "NodePoolPlacementConfigDetails": NodePoolPlacementConfigDetails,
@@ -165,7 +166,6 @@ container_engine_type_mapping = {
     "UpdateNodePoolDetails": UpdateNodePoolDetails,
     "UpdateNodePoolNodeConfigDetails": UpdateNodePoolNodeConfigDetails,
     "UpdateNodeShapeConfigDetails": UpdateNodeShapeConfigDetails,
-    "UpdateVirtualNodeDetails": UpdateVirtualNodeDetails,
     "UpdateVirtualNodePoolDetails": UpdateVirtualNodePoolDetails,
     "VirtualNode": VirtualNode,
     "VirtualNodePool": VirtualNodePool,

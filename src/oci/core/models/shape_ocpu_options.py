@@ -28,19 +28,26 @@ class ShapeOcpuOptions(object):
             The value to assign to the max property of this ShapeOcpuOptions.
         :type max: float
 
+        :param max_per_numa_node:
+            The value to assign to the max_per_numa_node property of this ShapeOcpuOptions.
+        :type max_per_numa_node: float
+
         """
         self.swagger_types = {
             'min': 'float',
-            'max': 'float'
+            'max': 'float',
+            'max_per_numa_node': 'float'
         }
 
         self.attribute_map = {
             'min': 'min',
-            'max': 'max'
+            'max': 'max',
+            'max_per_numa_node': 'maxPerNumaNode'
         }
 
         self._min = None
         self._max = None
+        self._max_per_numa_node = None
 
     @property
     def min(self):
@@ -89,6 +96,30 @@ class ShapeOcpuOptions(object):
         :type: float
         """
         self._max = max
+
+    @property
+    def max_per_numa_node(self):
+        """
+        Gets the max_per_numa_node of this ShapeOcpuOptions.
+        The maximum number of cores available per NUMA node.
+
+
+        :return: The max_per_numa_node of this ShapeOcpuOptions.
+        :rtype: float
+        """
+        return self._max_per_numa_node
+
+    @max_per_numa_node.setter
+    def max_per_numa_node(self, max_per_numa_node):
+        """
+        Sets the max_per_numa_node of this ShapeOcpuOptions.
+        The maximum number of cores available per NUMA node.
+
+
+        :param max_per_numa_node: The max_per_numa_node of this ShapeOcpuOptions.
+        :type: float
+        """
+        self._max_per_numa_node = max_per_numa_node
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -1056,6 +1056,48 @@ def test_search_monitored_resources(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="inframondev_us_grp@oracle.com" jiraProject="APPMGMT" opsJiraProject="APPMGMT"
+def test_update_and_propagate_tags(testing_service_client):
+    if not testing_service_client.is_api_enabled('stack_monitoring', 'UpdateAndPropagateTags'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('stack_monitoring', util.camelize('stack_monitoring'), 'UpdateAndPropagateTags')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='stack_monitoring', api_name='UpdateAndPropagateTags')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.stack_monitoring.StackMonitoringClient(config, service_endpoint=service_endpoint)
+            response = client.update_and_propagate_tags(
+                monitored_resource_id=request.pop(util.camelize('monitoredResourceId')),
+                update_and_propagate_tags_details=request.pop(util.camelize('UpdateAndPropagateTagsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'stack_monitoring',
+            'UpdateAndPropagateTags',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_and_propagate_tags',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="inframondev_us_grp@oracle.com" jiraProject="APPMGMT" opsJiraProject="APPMGMT"
 def test_update_monitored_resource(testing_service_client):
     if not testing_service_client.is_api_enabled('stack_monitoring', 'UpdateMonitoredResource'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

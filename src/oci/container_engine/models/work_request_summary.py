@@ -42,6 +42,10 @@ class WorkRequestSummary(object):
     OPERATION_TYPE_NODEPOOL_RECONCILE = "NODEPOOL_RECONCILE"
 
     #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "NODEPOOL_CYCLING"
+    OPERATION_TYPE_NODEPOOL_CYCLING = "NODEPOOL_CYCLING"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
     #: This constant has a value of "WORKREQUEST_CANCEL"
     OPERATION_TYPE_WORKREQUEST_CANCEL = "WORKREQUEST_CANCEL"
 
@@ -112,7 +116,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CLUSTER_CREATE", "CLUSTER_UPDATE", "CLUSTER_DELETE", "NODEPOOL_CREATE", "NODEPOOL_UPDATE", "NODEPOOL_DELETE", "NODEPOOL_RECONCILE", "WORKREQUEST_CANCEL", "VIRTUALNODEPOOL_CREATE", "VIRTUALNODEPOOL_UPDATE", "VIRTUALNODEPOOL_DELETE", "VIRTUALNODE_DELETE", "ENABLE_ADDON", "UPDATE_ADDON", "DISABLE_ADDON", "RECONCILE_ADDON", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CLUSTER_CREATE", "CLUSTER_UPDATE", "CLUSTER_DELETE", "NODEPOOL_CREATE", "NODEPOOL_UPDATE", "NODEPOOL_DELETE", "NODEPOOL_RECONCILE", "NODEPOOL_CYCLING", "WORKREQUEST_CANCEL", "VIRTUALNODEPOOL_CREATE", "VIRTUALNODEPOOL_UPDATE", "VIRTUALNODEPOOL_DELETE", "VIRTUALNODE_DELETE", "ENABLE_ADDON", "UPDATE_ADDON", "DISABLE_ADDON", "RECONCILE_ADDON", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -204,7 +208,7 @@ class WorkRequestSummary(object):
         Gets the operation_type of this WorkRequestSummary.
         The type of work the work request is doing.
 
-        Allowed values for this property are: "CLUSTER_CREATE", "CLUSTER_UPDATE", "CLUSTER_DELETE", "NODEPOOL_CREATE", "NODEPOOL_UPDATE", "NODEPOOL_DELETE", "NODEPOOL_RECONCILE", "WORKREQUEST_CANCEL", "VIRTUALNODEPOOL_CREATE", "VIRTUALNODEPOOL_UPDATE", "VIRTUALNODEPOOL_DELETE", "VIRTUALNODE_DELETE", "ENABLE_ADDON", "UPDATE_ADDON", "DISABLE_ADDON", "RECONCILE_ADDON", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CLUSTER_CREATE", "CLUSTER_UPDATE", "CLUSTER_DELETE", "NODEPOOL_CREATE", "NODEPOOL_UPDATE", "NODEPOOL_DELETE", "NODEPOOL_RECONCILE", "NODEPOOL_CYCLING", "WORKREQUEST_CANCEL", "VIRTUALNODEPOOL_CREATE", "VIRTUALNODEPOOL_UPDATE", "VIRTUALNODEPOOL_DELETE", "VIRTUALNODE_DELETE", "ENABLE_ADDON", "UPDATE_ADDON", "DISABLE_ADDON", "RECONCILE_ADDON", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -223,7 +227,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CLUSTER_CREATE", "CLUSTER_UPDATE", "CLUSTER_DELETE", "NODEPOOL_CREATE", "NODEPOOL_UPDATE", "NODEPOOL_DELETE", "NODEPOOL_RECONCILE", "WORKREQUEST_CANCEL", "VIRTUALNODEPOOL_CREATE", "VIRTUALNODEPOOL_UPDATE", "VIRTUALNODEPOOL_DELETE", "VIRTUALNODE_DELETE", "ENABLE_ADDON", "UPDATE_ADDON", "DISABLE_ADDON", "RECONCILE_ADDON"]
+        allowed_values = ["CLUSTER_CREATE", "CLUSTER_UPDATE", "CLUSTER_DELETE", "NODEPOOL_CREATE", "NODEPOOL_UPDATE", "NODEPOOL_DELETE", "NODEPOOL_RECONCILE", "NODEPOOL_CYCLING", "WORKREQUEST_CANCEL", "VIRTUALNODEPOOL_CREATE", "VIRTUALNODEPOOL_UPDATE", "VIRTUALNODEPOOL_DELETE", "VIRTUALNODE_DELETE", "ENABLE_ADDON", "UPDATE_ADDON", "DISABLE_ADDON", "RECONCILE_ADDON"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

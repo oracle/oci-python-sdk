@@ -47,6 +47,10 @@ class CreateDiscoveryJobDetails(object):
             The value to assign to the discovery_details property of this CreateDiscoveryJobDetails.
         :type discovery_details: oci.stack_monitoring.models.DiscoveryDetails
 
+        :param should_propagate_tags_to_discovered_resources:
+            The value to assign to the should_propagate_tags_to_discovered_resources property of this CreateDiscoveryJobDetails.
+        :type should_propagate_tags_to_discovered_resources: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateDiscoveryJobDetails.
         :type freeform_tags: dict(str, str)
@@ -61,6 +65,7 @@ class CreateDiscoveryJobDetails(object):
             'discovery_client': 'str',
             'compartment_id': 'str',
             'discovery_details': 'DiscoveryDetails',
+            'should_propagate_tags_to_discovered_resources': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -70,6 +75,7 @@ class CreateDiscoveryJobDetails(object):
             'discovery_client': 'discoveryClient',
             'compartment_id': 'compartmentId',
             'discovery_details': 'discoveryDetails',
+            'should_propagate_tags_to_discovered_resources': 'shouldPropagateTagsToDiscoveredResources',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -78,6 +84,7 @@ class CreateDiscoveryJobDetails(object):
         self._discovery_client = None
         self._compartment_id = None
         self._discovery_details = None
+        self._should_propagate_tags_to_discovered_resources = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -180,6 +187,34 @@ class CreateDiscoveryJobDetails(object):
         :type: oci.stack_monitoring.models.DiscoveryDetails
         """
         self._discovery_details = discovery_details
+
+    @property
+    def should_propagate_tags_to_discovered_resources(self):
+        """
+        Gets the should_propagate_tags_to_discovered_resources of this CreateDiscoveryJobDetails.
+        If this parameter set to true, the specified tags will be applied
+        to all resources discovered in the current request.
+        Default is true.
+
+
+        :return: The should_propagate_tags_to_discovered_resources of this CreateDiscoveryJobDetails.
+        :rtype: bool
+        """
+        return self._should_propagate_tags_to_discovered_resources
+
+    @should_propagate_tags_to_discovered_resources.setter
+    def should_propagate_tags_to_discovered_resources(self, should_propagate_tags_to_discovered_resources):
+        """
+        Sets the should_propagate_tags_to_discovered_resources of this CreateDiscoveryJobDetails.
+        If this parameter set to true, the specified tags will be applied
+        to all resources discovered in the current request.
+        Default is true.
+
+
+        :param should_propagate_tags_to_discovered_resources: The should_propagate_tags_to_discovered_resources of this CreateDiscoveryJobDetails.
+        :type: bool
+        """
+        self._should_propagate_tags_to_discovered_resources = should_propagate_tags_to_discovered_resources
 
     @property
     def freeform_tags(self):

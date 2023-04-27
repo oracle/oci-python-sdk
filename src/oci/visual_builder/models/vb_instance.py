@@ -134,6 +134,22 @@ class VbInstance(object):
             The value to assign to the attachments property of this VbInstance.
         :type attachments: list[oci.visual_builder.models.AttachmentDetails]
 
+        :param service_nat_gateway_ip:
+            The value to assign to the service_nat_gateway_ip property of this VbInstance.
+        :type service_nat_gateway_ip: str
+
+        :param management_nat_gateway_ip:
+            The value to assign to the management_nat_gateway_ip property of this VbInstance.
+        :type management_nat_gateway_ip: str
+
+        :param service_vcn_id:
+            The value to assign to the service_vcn_id property of this VbInstance.
+        :type service_vcn_id: str
+
+        :param management_vcn_id:
+            The value to assign to the management_vcn_id property of this VbInstance.
+        :type management_vcn_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -153,7 +169,11 @@ class VbInstance(object):
             'alternate_custom_endpoints': 'list[CustomEndpointDetails]',
             'consumption_model': 'str',
             'idcs_info': 'IdcsInfoDetails',
-            'attachments': 'list[AttachmentDetails]'
+            'attachments': 'list[AttachmentDetails]',
+            'service_nat_gateway_ip': 'str',
+            'management_nat_gateway_ip': 'str',
+            'service_vcn_id': 'str',
+            'management_vcn_id': 'str'
         }
 
         self.attribute_map = {
@@ -174,7 +194,11 @@ class VbInstance(object):
             'alternate_custom_endpoints': 'alternateCustomEndpoints',
             'consumption_model': 'consumptionModel',
             'idcs_info': 'idcsInfo',
-            'attachments': 'attachments'
+            'attachments': 'attachments',
+            'service_nat_gateway_ip': 'serviceNatGatewayIp',
+            'management_nat_gateway_ip': 'managementNatGatewayIp',
+            'service_vcn_id': 'serviceVcnId',
+            'management_vcn_id': 'managementVcnId'
         }
 
         self._id = None
@@ -195,6 +219,10 @@ class VbInstance(object):
         self._consumption_model = None
         self._idcs_info = None
         self._attachments = None
+        self._service_nat_gateway_ip = None
+        self._management_nat_gateway_ip = None
+        self._service_vcn_id = None
+        self._management_vcn_id = None
 
     @property
     def id(self):
@@ -637,6 +665,102 @@ class VbInstance(object):
         :type: list[oci.visual_builder.models.AttachmentDetails]
         """
         self._attachments = attachments
+
+    @property
+    def service_nat_gateway_ip(self):
+        """
+        Gets the service_nat_gateway_ip of this VbInstance.
+        The NAT gateway IP address for the VB service VCN
+
+
+        :return: The service_nat_gateway_ip of this VbInstance.
+        :rtype: str
+        """
+        return self._service_nat_gateway_ip
+
+    @service_nat_gateway_ip.setter
+    def service_nat_gateway_ip(self, service_nat_gateway_ip):
+        """
+        Sets the service_nat_gateway_ip of this VbInstance.
+        The NAT gateway IP address for the VB service VCN
+
+
+        :param service_nat_gateway_ip: The service_nat_gateway_ip of this VbInstance.
+        :type: str
+        """
+        self._service_nat_gateway_ip = service_nat_gateway_ip
+
+    @property
+    def management_nat_gateway_ip(self):
+        """
+        Gets the management_nat_gateway_ip of this VbInstance.
+        The NAT gateway IP address for the VB management VCN
+
+
+        :return: The management_nat_gateway_ip of this VbInstance.
+        :rtype: str
+        """
+        return self._management_nat_gateway_ip
+
+    @management_nat_gateway_ip.setter
+    def management_nat_gateway_ip(self, management_nat_gateway_ip):
+        """
+        Sets the management_nat_gateway_ip of this VbInstance.
+        The NAT gateway IP address for the VB management VCN
+
+
+        :param management_nat_gateway_ip: The management_nat_gateway_ip of this VbInstance.
+        :type: str
+        """
+        self._management_nat_gateway_ip = management_nat_gateway_ip
+
+    @property
+    def service_vcn_id(self):
+        """
+        Gets the service_vcn_id of this VbInstance.
+        The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+
+
+        :return: The service_vcn_id of this VbInstance.
+        :rtype: str
+        """
+        return self._service_vcn_id
+
+    @service_vcn_id.setter
+    def service_vcn_id(self, service_vcn_id):
+        """
+        Sets the service_vcn_id of this VbInstance.
+        The Oracle Cloud ID (OCID) of the Visual Builder service VCN
+
+
+        :param service_vcn_id: The service_vcn_id of this VbInstance.
+        :type: str
+        """
+        self._service_vcn_id = service_vcn_id
+
+    @property
+    def management_vcn_id(self):
+        """
+        Gets the management_vcn_id of this VbInstance.
+        The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+
+
+        :return: The management_vcn_id of this VbInstance.
+        :rtype: str
+        """
+        return self._management_vcn_id
+
+    @management_vcn_id.setter
+    def management_vcn_id(self, management_vcn_id):
+        """
+        Sets the management_vcn_id of this VbInstance.
+        The Oracle Cloud ID (OCID) of the Visual Builder management VCN
+
+
+        :param management_vcn_id: The management_vcn_id of this VbInstance.
+        :type: str
+        """
+        self._management_vcn_id = management_vcn_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

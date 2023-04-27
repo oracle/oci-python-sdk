@@ -44,7 +44,7 @@ class AssociationDetails(object):
     def source_resource_id(self):
         """
         **[Required]** Gets the source_resource_id of this AssociationDetails.
-        Source Monitored Resource Identifier `OCID`__
+        Source Monitored Resource Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -58,7 +58,7 @@ class AssociationDetails(object):
     def source_resource_id(self, source_resource_id):
         """
         Sets the source_resource_id of this AssociationDetails.
-        Source Monitored Resource Identifier `OCID`__
+        Source Monitored Resource Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -72,7 +72,7 @@ class AssociationDetails(object):
     def association_type(self):
         """
         **[Required]** Gets the association_type of this AssociationDetails.
-        Association Type
+        Association Type.
 
 
         :return: The association_type of this AssociationDetails.
@@ -84,7 +84,7 @@ class AssociationDetails(object):
     def association_type(self, association_type):
         """
         Sets the association_type of this AssociationDetails.
-        Association Type
+        Association Type.
 
 
         :param association_type: The association_type of this AssociationDetails.
