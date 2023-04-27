@@ -72,14 +72,12 @@ class Rule(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Rule.
-            Allowed values for this property are: "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACTIVE", "DELETED"
         :type lifecycle_state: str
 
         :param kind:
             The value to assign to the kind property of this Rule.
-            Allowed values for this property are: "INGEST_TIME", "SAVED_SEARCH", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INGEST_TIME", "SAVED_SEARCH"
         :type kind: str
 
         :param display_name:
@@ -92,8 +90,7 @@ class Rule(object):
 
         :param last_execution_status:
             The value to assign to the last_execution_status property of this Rule.
-            Allowed values for this property are: "FAILED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "FAILED", "SUCCEEDED"
         :type last_execution_status: str
 
         :param time_last_executed:
@@ -331,8 +328,7 @@ class Rule(object):
         Gets the lifecycle_state of this Rule.
         The current state of the logging analytics rule.
 
-        Allowed values for this property are: "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACTIVE", "DELETED"
 
 
         :return: The lifecycle_state of this Rule.
@@ -352,7 +348,10 @@ class Rule(object):
         """
         allowed_values = ["ACTIVE", "DELETED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
-            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+            raise ValueError(
+                "Invalid value for `lifecycle_state`, must be None or one of {0}"
+                .format(allowed_values)
+            )
         self._lifecycle_state = lifecycle_state
 
     @property
@@ -361,8 +360,7 @@ class Rule(object):
         **[Required]** Gets the kind of this Rule.
         The kind of rule - either an ingest time rule or a scheduled task.
 
-        Allowed values for this property are: "INGEST_TIME", "SAVED_SEARCH", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INGEST_TIME", "SAVED_SEARCH"
 
 
         :return: The kind of this Rule.
@@ -382,7 +380,10 @@ class Rule(object):
         """
         allowed_values = ["INGEST_TIME", "SAVED_SEARCH"]
         if not value_allowed_none_or_none_sentinel(kind, allowed_values):
-            kind = 'UNKNOWN_ENUM_VALUE'
+            raise ValueError(
+                "Invalid value for `kind`, must be None or one of {0}"
+                .format(allowed_values)
+            )
         self._kind = kind
 
     @property
@@ -439,8 +440,7 @@ class Rule(object):
         Gets the last_execution_status of this Rule.
         The most recent task execution status.
 
-        Allowed values for this property are: "FAILED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "FAILED", "SUCCEEDED"
 
 
         :return: The last_execution_status of this Rule.
@@ -460,7 +460,10 @@ class Rule(object):
         """
         allowed_values = ["FAILED", "SUCCEEDED"]
         if not value_allowed_none_or_none_sentinel(last_execution_status, allowed_values):
-            last_execution_status = 'UNKNOWN_ENUM_VALUE'
+            raise ValueError(
+                "Invalid value for `last_execution_status`, must be None or one of {0}"
+                .format(allowed_values)
+            )
         self._last_execution_status = last_execution_status
 
     @property
