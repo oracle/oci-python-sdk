@@ -4,13 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.99.2 - TBD
+2.100.0 - 2023-05-02
 ====================
 
 Added
 -----
-* TBD
-
+* Support for calling Oracle Cloud Infrastructure services in the eu-jovanovac-1 region
+* Support for bring-your-own-license TLS and ORDS certificates in the Database service
+* Support for tags in the Stack Monitoring service
+* Support for GPU shapes for model deployments in the Data Science service
+* Support for returning networking details of instances in the Visual Builder service
+* Support for high-memory VMs in the Compute service
+* Support for integrating with the Integration Cloud service in the Process Automation service
+* Support for managing on-demand node upgrades in node pools in the Container Engine for Kubernetes service  
+ 
+Breaking
+--------
+* The model `UpdateVirtualNodeDetails` was removed from the Container Engine for Kubernetes service  
+ 
 ====================
 2.99.1 - 2023-04-25
 ====================
