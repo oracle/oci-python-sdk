@@ -18,6 +18,7 @@ Opa
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.opa.models.AttachmentDetails
     oci.opa.models.ChangeOpaInstanceCompartmentDetails
     oci.opa.models.CreateOpaInstanceDetails
     oci.opa.models.OpaInstance

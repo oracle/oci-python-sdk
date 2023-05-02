@@ -204,6 +204,14 @@ class CloudAutonomousVmCluster(object):
             The value to assign to the defined_tags property of this CloudAutonomousVmCluster.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param time_database_ssl_certificate_expires:
+            The value to assign to the time_database_ssl_certificate_expires property of this CloudAutonomousVmCluster.
+        :type time_database_ssl_certificate_expires: datetime
+
+        :param time_ords_certificate_expires:
+            The value to assign to the time_ords_certificate_expires property of this CloudAutonomousVmCluster.
+        :type time_ords_certificate_expires: datetime
+
         :param available_cpus:
             The value to assign to the available_cpus property of this CloudAutonomousVmCluster.
         :type available_cpus: float
@@ -272,6 +280,8 @@ class CloudAutonomousVmCluster(object):
             'scan_listener_port_non_tls': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'time_database_ssl_certificate_expires': 'datetime',
+            'time_ords_certificate_expires': 'datetime',
             'available_cpus': 'float',
             'reclaimable_cpus': 'float',
             'available_container_databases': 'int',
@@ -317,6 +327,8 @@ class CloudAutonomousVmCluster(object):
             'scan_listener_port_non_tls': 'scanListenerPortNonTls',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'time_database_ssl_certificate_expires': 'timeDatabaseSslCertificateExpires',
+            'time_ords_certificate_expires': 'timeOrdsCertificateExpires',
             'available_cpus': 'availableCpus',
             'reclaimable_cpus': 'reclaimableCpus',
             'available_container_databases': 'availableContainerDatabases',
@@ -361,6 +373,8 @@ class CloudAutonomousVmCluster(object):
         self._scan_listener_port_non_tls = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._time_database_ssl_certificate_expires = None
+        self._time_ords_certificate_expires = None
         self._available_cpus = None
         self._reclaimable_cpus = None
         self._available_container_databases = None
@@ -1287,6 +1301,54 @@ class CloudAutonomousVmCluster(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def time_database_ssl_certificate_expires(self):
+        """
+        Gets the time_database_ssl_certificate_expires of this CloudAutonomousVmCluster.
+        The date and time of Database SSL certificate expiration.
+
+
+        :return: The time_database_ssl_certificate_expires of this CloudAutonomousVmCluster.
+        :rtype: datetime
+        """
+        return self._time_database_ssl_certificate_expires
+
+    @time_database_ssl_certificate_expires.setter
+    def time_database_ssl_certificate_expires(self, time_database_ssl_certificate_expires):
+        """
+        Sets the time_database_ssl_certificate_expires of this CloudAutonomousVmCluster.
+        The date and time of Database SSL certificate expiration.
+
+
+        :param time_database_ssl_certificate_expires: The time_database_ssl_certificate_expires of this CloudAutonomousVmCluster.
+        :type: datetime
+        """
+        self._time_database_ssl_certificate_expires = time_database_ssl_certificate_expires
+
+    @property
+    def time_ords_certificate_expires(self):
+        """
+        Gets the time_ords_certificate_expires of this CloudAutonomousVmCluster.
+        The date and time of ORDS certificate expiration.
+
+
+        :return: The time_ords_certificate_expires of this CloudAutonomousVmCluster.
+        :rtype: datetime
+        """
+        return self._time_ords_certificate_expires
+
+    @time_ords_certificate_expires.setter
+    def time_ords_certificate_expires(self, time_ords_certificate_expires):
+        """
+        Sets the time_ords_certificate_expires of this CloudAutonomousVmCluster.
+        The date and time of ORDS certificate expiration.
+
+
+        :param time_ords_certificate_expires: The time_ords_certificate_expires of this CloudAutonomousVmCluster.
+        :type: datetime
+        """
+        self._time_ords_certificate_expires = time_ords_certificate_expires
 
     @property
     def available_cpus(self):

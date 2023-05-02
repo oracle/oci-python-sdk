@@ -4,6 +4,7 @@
 
 from __future__ import absolute_import
 
+from .attachment_details import AttachmentDetails
 from .change_opa_instance_compartment_details import ChangeOpaInstanceCompartmentDetails
 from .create_opa_instance_details import CreateOpaInstanceDetails
 from .opa_instance import OpaInstance
@@ -21,6 +22,7 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 
 # Maps type names to classes for opa services.
 opa_type_mapping = {
+    "AttachmentDetails": AttachmentDetails,
     "ChangeOpaInstanceCompartmentDetails": ChangeOpaInstanceCompartmentDetails,
     "CreateOpaInstanceDetails": CreateOpaInstanceDetails,
     "OpaInstance": OpaInstance,

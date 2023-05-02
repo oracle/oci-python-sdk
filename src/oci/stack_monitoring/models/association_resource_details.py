@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AssociationResourceDetails(object):
     """
-    Association Resource Details
+    Association Resource Details.
     """
 
     def __init__(self, **kwargs):
@@ -26,25 +26,32 @@ class AssociationResourceDetails(object):
             The value to assign to the type property of this AssociationResourceDetails.
         :type type: str
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this AssociationResourceDetails.
+        :type compartment_id: str
+
         """
         self.swagger_types = {
             'name': 'str',
-            'type': 'str'
+            'type': 'str',
+            'compartment_id': 'str'
         }
 
         self.attribute_map = {
             'name': 'name',
-            'type': 'type'
+            'type': 'type',
+            'compartment_id': 'compartmentId'
         }
 
         self._name = None
         self._type = None
+        self._compartment_id = None
 
     @property
     def name(self):
         """
         Gets the name of this AssociationResourceDetails.
-        Monitored Resource Name
+        Monitored Resource Name.
 
 
         :return: The name of this AssociationResourceDetails.
@@ -56,7 +63,7 @@ class AssociationResourceDetails(object):
     def name(self, name):
         """
         Sets the name of this AssociationResourceDetails.
-        Monitored Resource Name
+        Monitored Resource Name.
 
 
         :param name: The name of this AssociationResourceDetails.
@@ -68,7 +75,7 @@ class AssociationResourceDetails(object):
     def type(self):
         """
         Gets the type of this AssociationResourceDetails.
-        Monitored Resource Type
+        Monitored Resource Type.
 
 
         :return: The type of this AssociationResourceDetails.
@@ -80,13 +87,41 @@ class AssociationResourceDetails(object):
     def type(self, type):
         """
         Sets the type of this AssociationResourceDetails.
-        Monitored Resource Type
+        Monitored Resource Type.
 
 
         :param type: The type of this AssociationResourceDetails.
         :type: str
         """
         self._type = type
+
+    @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this AssociationResourceDetails.
+        Compartment Identifier `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The compartment_id of this AssociationResourceDetails.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this AssociationResourceDetails.
+        Compartment Identifier `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param compartment_id: The compartment_id of this AssociationResourceDetails.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -58,6 +58,10 @@ class AssociatedResourcesSummary(object):
             The value to assign to the type property of this AssociatedResourcesSummary.
         :type type: str
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this AssociatedResourcesSummary.
+        :type compartment_id: str
+
         :param host_name:
             The value to assign to the host_name property of this AssociatedResourcesSummary.
         :type host_name: str
@@ -86,6 +90,7 @@ class AssociatedResourcesSummary(object):
             'name': 'str',
             'display_name': 'str',
             'type': 'str',
+            'compartment_id': 'str',
             'host_name': 'str',
             'external_id': 'str',
             'management_agent_id': 'str',
@@ -98,6 +103,7 @@ class AssociatedResourcesSummary(object):
             'name': 'name',
             'display_name': 'displayName',
             'type': 'type',
+            'compartment_id': 'compartmentId',
             'host_name': 'hostName',
             'external_id': 'externalId',
             'management_agent_id': 'managementAgentId',
@@ -109,6 +115,7 @@ class AssociatedResourcesSummary(object):
         self._name = None
         self._display_name = None
         self._type = None
+        self._compartment_id = None
         self._host_name = None
         self._external_id = None
         self._management_agent_id = None
@@ -119,7 +126,7 @@ class AssociatedResourcesSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this AssociatedResourcesSummary.
-        The `OCID`__ of monitored resource.
+        Monitored resource identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -133,7 +140,7 @@ class AssociatedResourcesSummary(object):
     def id(self, id):
         """
         Sets the id of this AssociatedResourcesSummary.
-        The `OCID`__ of monitored resource.
+        Monitored resource identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -147,7 +154,7 @@ class AssociatedResourcesSummary(object):
     def name(self):
         """
         Gets the name of this AssociatedResourcesSummary.
-        Name of the monitored resource
+        Monitored Resource Name.
 
 
         :return: The name of this AssociatedResourcesSummary.
@@ -159,7 +166,7 @@ class AssociatedResourcesSummary(object):
     def name(self, name):
         """
         Sets the name of this AssociatedResourcesSummary.
-        Name of the monitored resource
+        Monitored Resource Name.
 
 
         :param name: The name of this AssociatedResourcesSummary.
@@ -195,7 +202,7 @@ class AssociatedResourcesSummary(object):
     def type(self):
         """
         Gets the type of this AssociatedResourcesSummary.
-        Type of the monitored resource
+        Monitored Resource Type.
 
 
         :return: The type of this AssociatedResourcesSummary.
@@ -207,7 +214,7 @@ class AssociatedResourcesSummary(object):
     def type(self, type):
         """
         Sets the type of this AssociatedResourcesSummary.
-        Type of the monitored resource
+        Monitored Resource Type.
 
 
         :param type: The type of this AssociatedResourcesSummary.
@@ -216,10 +223,38 @@ class AssociatedResourcesSummary(object):
         self._type = type
 
     @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this AssociatedResourcesSummary.
+        Compartment Identifier `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The compartment_id of this AssociatedResourcesSummary.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this AssociatedResourcesSummary.
+        Compartment Identifier `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param compartment_id: The compartment_id of this AssociatedResourcesSummary.
+        :type: str
+        """
+        self._compartment_id = compartment_id
+
+    @property
     def host_name(self):
         """
         Gets the host_name of this AssociatedResourcesSummary.
-        Resource Host Name
+        Monitored Resource Host Name.
 
 
         :return: The host_name of this AssociatedResourcesSummary.
@@ -231,7 +266,7 @@ class AssociatedResourcesSummary(object):
     def host_name(self, host_name):
         """
         Sets the host_name of this AssociatedResourcesSummary.
-        Resource Host Name
+        Monitored Resource Host Name.
 
 
         :param host_name: The host_name of this AssociatedResourcesSummary.
@@ -245,8 +280,8 @@ class AssociatedResourcesSummary(object):
         Gets the external_id of this AssociatedResourcesSummary.
         External resource is any OCI resource identifier `OCID`__
         which is not a Stack Monitoring service resource.
-        Currently supports only following resource type identifiers - externalcontainerdatabase,
-        externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+        Currently supports only following resource types - Container database, non-container database,
+        pluggable database and OCI compute instance.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -262,8 +297,8 @@ class AssociatedResourcesSummary(object):
         Sets the external_id of this AssociatedResourcesSummary.
         External resource is any OCI resource identifier `OCID`__
         which is not a Stack Monitoring service resource.
-        Currently supports only following resource type identifiers - externalcontainerdatabase,
-        externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+        Currently supports only following resource types - Container database, non-container database,
+        pluggable database and OCI compute instance.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -335,7 +370,7 @@ class AssociatedResourcesSummary(object):
     def associated_resources(self):
         """
         Gets the associated_resources of this AssociatedResourcesSummary.
-        List of associated monitored resources
+        List of associated monitored resources.
 
 
         :return: The associated_resources of this AssociatedResourcesSummary.
@@ -347,7 +382,7 @@ class AssociatedResourcesSummary(object):
     def associated_resources(self, associated_resources):
         """
         Sets the associated_resources of this AssociatedResourcesSummary.
-        List of associated monitored resources
+        List of associated monitored resources.
 
 
         :param associated_resources: The associated_resources of this AssociatedResourcesSummary.

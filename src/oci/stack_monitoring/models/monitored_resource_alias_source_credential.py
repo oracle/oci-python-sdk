@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MonitoredResourceAliasSourceCredential(object):
     """
-    Monitored Resource Alias Reference Source Credential
+    Monitored Resource Alias Reference Source Credential.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,9 @@ class MonitoredResourceAliasSourceCredential(object):
     def source(self):
         """
         **[Required]** Gets the source of this MonitoredResourceAliasSourceCredential.
-        The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
+        The source type and source name combination,delimited with (.) separator.
+        This refers to the pre-existing source which alias cred should point to.
+        Ex. {source type}.{source name} and source type max char limit is 63.
 
 
         :return: The source of this MonitoredResourceAliasSourceCredential.
@@ -63,7 +65,9 @@ class MonitoredResourceAliasSourceCredential(object):
     def source(self, source):
         """
         Sets the source of this MonitoredResourceAliasSourceCredential.
-        The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
+        The source type and source name combination,delimited with (.) separator.
+        This refers to the pre-existing source which alias cred should point to.
+        Ex. {source type}.{source name} and source type max char limit is 63.
 
 
         :param source: The source of this MonitoredResourceAliasSourceCredential.
@@ -75,7 +79,8 @@ class MonitoredResourceAliasSourceCredential(object):
     def name(self):
         """
         **[Required]** Gets the name of this MonitoredResourceAliasSourceCredential.
-        The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute binded credential name.
+        The name of the pre-existing source credential which alias cred should point to.
+        This should refer to the pre-existing source attribute which is bound to credential name.
 
 
         :return: The name of this MonitoredResourceAliasSourceCredential.
@@ -87,7 +92,8 @@ class MonitoredResourceAliasSourceCredential(object):
     def name(self, name):
         """
         Sets the name of this MonitoredResourceAliasSourceCredential.
-        The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute binded credential name.
+        The name of the pre-existing source credential which alias cred should point to.
+        This should refer to the pre-existing source attribute which is bound to credential name.
 
 
         :param name: The name of this MonitoredResourceAliasSourceCredential.
@@ -99,7 +105,8 @@ class MonitoredResourceAliasSourceCredential(object):
     def service(self):
         """
         **[Required]** Gets the service of this MonitoredResourceAliasSourceCredential.
-        The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+        The name of the service owning the credential.
+        Example: stack-monitoring or dbmgmt
 
 
         :return: The service of this MonitoredResourceAliasSourceCredential.
@@ -111,7 +118,8 @@ class MonitoredResourceAliasSourceCredential(object):
     def service(self, service):
         """
         Sets the service of this MonitoredResourceAliasSourceCredential.
-        The name of the service owning the credential. Ex stack-monitoring or dbmgmt
+        The name of the service owning the credential.
+        Example: stack-monitoring or dbmgmt
 
 
         :param service: The service of this MonitoredResourceAliasSourceCredential.

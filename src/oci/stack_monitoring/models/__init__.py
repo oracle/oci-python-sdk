@@ -44,6 +44,7 @@ from .search_associated_resources_details import SearchAssociatedResourcesDetail
 from .search_monitored_resource_associations_details import SearchMonitoredResourceAssociationsDetails
 from .search_monitored_resource_members_details import SearchMonitoredResourceMembersDetails
 from .search_monitored_resources_details import SearchMonitoredResourcesDetails
+from .update_and_propagate_tags_details import UpdateAndPropagateTagsDetails
 from .update_monitored_resource_details import UpdateMonitoredResourceDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
@@ -96,6 +97,7 @@ stack_monitoring_type_mapping = {
     "SearchMonitoredResourceAssociationsDetails": SearchMonitoredResourceAssociationsDetails,
     "SearchMonitoredResourceMembersDetails": SearchMonitoredResourceMembersDetails,
     "SearchMonitoredResourcesDetails": SearchMonitoredResourcesDetails,
+    "UpdateAndPropagateTagsDetails": UpdateAndPropagateTagsDetails,
     "UpdateMonitoredResourceDetails": UpdateMonitoredResourceDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,

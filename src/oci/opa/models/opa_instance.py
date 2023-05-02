@@ -162,6 +162,10 @@ class OpaInstance(object):
             The value to assign to the system_tags property of this OpaInstance.
         :type system_tags: dict(str, dict(str, object))
 
+        :param attachments:
+            The value to assign to the attachments property of this OpaInstance.
+        :type attachments: list[oci.opa.models.AttachmentDetails]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -182,7 +186,8 @@ class OpaInstance(object):
             'is_breakglass_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'attachments': 'list[AttachmentDetails]'
         }
 
         self.attribute_map = {
@@ -204,7 +209,8 @@ class OpaInstance(object):
             'is_breakglass_enabled': 'isBreakglassEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'attachments': 'attachments'
         }
 
         self._id = None
@@ -226,6 +232,7 @@ class OpaInstance(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._attachments = None
 
     @property
     def id(self):
@@ -712,6 +719,30 @@ class OpaInstance(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def attachments(self):
+        """
+        Gets the attachments of this OpaInstance.
+        A list of associated attachments to other services
+
+
+        :return: The attachments of this OpaInstance.
+        :rtype: list[oci.opa.models.AttachmentDetails]
+        """
+        return self._attachments
+
+    @attachments.setter
+    def attachments(self, attachments):
+        """
+        Sets the attachments of this OpaInstance.
+        A list of associated attachments to other services
+
+
+        :param attachments: The attachments of this OpaInstance.
+        :type: list[oci.opa.models.AttachmentDetails]
+        """
+        self._attachments = attachments
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PreExistingCredentials(MonitoredResourceCredential):
     """
-    Plain text credentials [indicated by the type property in CredentialStore].
+    Pre existing credentials [indicated by the type property in CredentialStore].
     """
 
     def __init__(self, **kwargs):

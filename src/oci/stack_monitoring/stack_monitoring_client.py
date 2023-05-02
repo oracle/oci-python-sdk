@@ -111,11 +111,13 @@ class StackMonitoringClient(object):
 
     def associate_monitored_resources(self, associate_monitored_resources_details, **kwargs):
         """
-        Create an association between two monitored resources.
+        Create an association between two monitored resources. Associations can be created
+        between resources from different compartments as long they are in same tenancy.
+        User should have required access in both the compartments.
 
 
         :param oci.stack_monitoring.models.AssociateMonitoredResourcesDetails associate_monitored_resources_details: (required)
-            Associate resources.
+            Details to create association between two resources.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -217,7 +219,8 @@ class StackMonitoringClient(object):
 
     def change_monitored_resource_compartment(self, monitored_resource_id, change_monitored_resource_compartment_details, **kwargs):
         """
-        Moves a MonitoredResource resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
+        Moves a monitored resource from one compartment to another.
+        When provided, If-Match is checked against ETag values of the resource.
 
 
         :param str monitored_resource_id: (required)
@@ -435,11 +438,13 @@ class StackMonitoringClient(object):
 
     def create_monitored_resource(self, create_monitored_resource_details, **kwargs):
         """
-        Creates a new monitored resource for the given resource type
+        Creates a new monitored resource for the given resource type with the details and submits
+        a work request for promoting the resource to agent. Once the resource is successfully
+        added to agent, resource state will be marked active.
 
 
         :param oci.stack_monitoring.models.CreateMonitoredResourceDetails create_monitored_resource_details: (required)
-            Details for the new Resource.
+            Details for the new monitored resource.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -646,7 +651,12 @@ class StackMonitoringClient(object):
 
     def delete_monitored_resource(self, monitored_resource_id, **kwargs):
         """
-        Deletes a monitored resource by identifier
+        Delete monitored resource by the given identifier `OCID`__.
+        By default, only the specified resource is deleted. If the parameter 'isDeleteMembers' is set to true,
+        then the member resources will be deleted too. If the operation fails partially, the deleted entries
+        will not be rolled back.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str monitored_resource_id: (required)
@@ -666,7 +676,8 @@ class StackMonitoringClient(object):
             particular request, please provide the request ID.
 
         :param bool is_delete_members: (optional)
-            A filter to delete the associated children or not for given resource.
+            If this query parameter is specified and set to true, all the member
+            resources will be deleted before deleting the specified resource.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -763,7 +774,8 @@ class StackMonitoringClient(object):
 
     def disable_external_database(self, monitored_resource_id, **kwargs):
         """
-        Disable external database resource monitoring.
+        Disable external database resource monitoring. All the references in DBaaS,
+        DBM and resource service will be deleted as part of this operation.
 
 
         :param str monitored_resource_id: (required)
@@ -1082,7 +1094,9 @@ class StackMonitoringClient(object):
 
     def get_monitored_resource(self, monitored_resource_id, **kwargs):
         """
-        Gets a monitored resource by identifier
+        Get monitored resource for the given identifier `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str monitored_resource_id: (required)
@@ -2064,7 +2078,8 @@ class StackMonitoringClient(object):
 
     def search_associated_resources(self, search_associated_resources_details, **kwargs):
         """
-        List associated monitored resources.
+        List all associated resources recursively up-to a specified level,
+        for the monitored resources of type specified.
 
 
         :param oci.stack_monitoring.models.SearchAssociatedResourcesDetails search_associated_resources_details: (required)
@@ -2224,11 +2239,11 @@ class StackMonitoringClient(object):
 
     def search_monitored_resource_associations(self, search_monitored_resource_associations_details, **kwargs):
         """
-        Returns a list of monitored resource associations.
+        Search associations in the given compartment based on the search criteria.
 
 
         :param oci.stack_monitoring.models.SearchMonitoredResourceAssociationsDetails search_monitored_resource_associations_details: (required)
-            Search Criteria for the listing the monitored resource associations.
+            Search criteria for listing monitored resource associations.
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a
@@ -2356,7 +2371,9 @@ class StackMonitoringClient(object):
 
     def search_monitored_resource_members(self, monitored_resource_id, search_monitored_resource_members_details, **kwargs):
         """
-        List resources which are members of the given monitored resource
+        List the member resources for the given monitored resource identifier `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str monitored_resource_id: (required)
@@ -2365,7 +2382,7 @@ class StackMonitoringClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.stack_monitoring.models.SearchMonitoredResourceMembersDetails search_monitored_resource_members_details: (required)
-            Search criteria for the listing the member monitored resources.
+            Search criteria for listing member monitored resources.
 
         :param str sort_by: (optional)
             If this query parameter is specified, the result is sorted by this query parameter value.
@@ -2533,11 +2550,11 @@ class StackMonitoringClient(object):
 
     def search_monitored_resources(self, search_monitored_resources_details, **kwargs):
         """
-        Returns a list of monitored resources.
+        Gets a list of all monitored resources in a compartment for the given search criteria.
 
 
         :param oci.stack_monitoring.models.SearchMonitoredResourcesDetails search_monitored_resources_details: (required)
-            Property Search Criteria for the listing the monitored resources.
+            Search Criteria for listing monitored resources.
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a
@@ -2691,9 +2708,141 @@ class StackMonitoringClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def update_and_propagate_tags(self, monitored_resource_id, update_and_propagate_tags_details, **kwargs):
+        """
+        Provided tags will be added or updated in the existing list of tags for the affected resources.
+        Resources to be updated are identified based on association types specified.
+        If association types not specified, then tags will be updated only for the resource identified by
+        the given monitored resource identifier `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param str monitored_resource_id: (required)
+            The `OCID`__ of monitored resource.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.stack_monitoring.models.UpdateAndPropagateTagsDetails update_and_propagate_tags_details: (required)
+            The tags to be updated.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/update_and_propagate_tags.py.html>`__ to see an example of how to use update_and_propagate_tags API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['monitoredResourceId']
+        resource_path = "/monitoredResources/{monitoredResourceId}/actions/updateAndPropagateTags"
+        method = "POST"
+        operation_name = "update_and_propagate_tags"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/UpdateAndPropagateTags"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_and_propagate_tags got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "monitoredResourceId": monitored_resource_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_and_propagate_tags_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_and_propagate_tags_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def update_monitored_resource(self, monitored_resource_id, update_monitored_resource_details, **kwargs):
         """
-        Updates the Monitored Resource
+        Update monitored resource by the given identifier `OCID`__.
+        Note that \"properties\" object, if specified, will entirely replace the existing object,
+        as part this operation.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str monitored_resource_id: (required)

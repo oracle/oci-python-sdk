@@ -10,8 +10,20 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MonitoredResourceAssociation(object):
     """
-    Association between two monitored resources.
+    Association details between two monitored resources.
     """
+
+    #: A constant which can be used with the category property of a MonitoredResourceAssociation.
+    #: This constant has a value of "SYSTEM"
+    CATEGORY_SYSTEM = "SYSTEM"
+
+    #: A constant which can be used with the category property of a MonitoredResourceAssociation.
+    #: This constant has a value of "USER_API"
+    CATEGORY_USER_API = "USER_API"
+
+    #: A constant which can be used with the category property of a MonitoredResourceAssociation.
+    #: This constant has a value of "USER_TAG_ASSOC"
+    CATEGORY_USER_TAG_ASSOC = "USER_TAG_ASSOC"
 
     def __init__(self, **kwargs):
         """
@@ -50,6 +62,12 @@ class MonitoredResourceAssociation(object):
             The value to assign to the time_created property of this MonitoredResourceAssociation.
         :type time_created: datetime
 
+        :param category:
+            The value to assign to the category property of this MonitoredResourceAssociation.
+            Allowed values for this property are: "SYSTEM", "USER_API", "USER_TAG_ASSOC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type category: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this MonitoredResourceAssociation.
         :type freeform_tags: dict(str, str)
@@ -72,6 +90,7 @@ class MonitoredResourceAssociation(object):
             'source_resource_details': 'AssociationResourceDetails',
             'destination_resource_details': 'AssociationResourceDetails',
             'time_created': 'datetime',
+            'category': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -86,6 +105,7 @@ class MonitoredResourceAssociation(object):
             'source_resource_details': 'sourceResourceDetails',
             'destination_resource_details': 'destinationResourceDetails',
             'time_created': 'timeCreated',
+            'category': 'category',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -99,6 +119,7 @@ class MonitoredResourceAssociation(object):
         self._source_resource_details = None
         self._destination_resource_details = None
         self._time_created = None
+        self._category = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -107,7 +128,7 @@ class MonitoredResourceAssociation(object):
     def association_type(self):
         """
         **[Required]** Gets the association_type of this MonitoredResourceAssociation.
-        Association Type
+        Association Type.
 
 
         :return: The association_type of this MonitoredResourceAssociation.
@@ -119,7 +140,7 @@ class MonitoredResourceAssociation(object):
     def association_type(self, association_type):
         """
         Sets the association_type of this MonitoredResourceAssociation.
-        Association Type
+        Association Type.
 
 
         :param association_type: The association_type of this MonitoredResourceAssociation.
@@ -131,7 +152,7 @@ class MonitoredResourceAssociation(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this MonitoredResourceAssociation.
-        Compartment Identifier `OCID`__
+        Compartment Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -145,7 +166,7 @@ class MonitoredResourceAssociation(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this MonitoredResourceAssociation.
-        Compartment Identifier `OCID`__
+        Compartment Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -159,7 +180,7 @@ class MonitoredResourceAssociation(object):
     def tenant_id(self):
         """
         **[Required]** Gets the tenant_id of this MonitoredResourceAssociation.
-        Tenancy Identifier `OCID`__
+        Tenancy Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -173,7 +194,7 @@ class MonitoredResourceAssociation(object):
     def tenant_id(self, tenant_id):
         """
         Sets the tenant_id of this MonitoredResourceAssociation.
-        Tenancy Identifier `OCID`__
+        Tenancy Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -187,7 +208,7 @@ class MonitoredResourceAssociation(object):
     def source_resource_id(self):
         """
         **[Required]** Gets the source_resource_id of this MonitoredResourceAssociation.
-        Source Monitored Resource Identifier `OCID`__
+        Source Monitored Resource Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -201,7 +222,7 @@ class MonitoredResourceAssociation(object):
     def source_resource_id(self, source_resource_id):
         """
         Sets the source_resource_id of this MonitoredResourceAssociation.
-        Source Monitored Resource Identifier `OCID`__
+        Source Monitored Resource Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -215,7 +236,7 @@ class MonitoredResourceAssociation(object):
     def destination_resource_id(self):
         """
         **[Required]** Gets the destination_resource_id of this MonitoredResourceAssociation.
-        Destination Monitored Resource Identifier `OCID`__
+        Destination Monitored Resource Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -229,7 +250,7 @@ class MonitoredResourceAssociation(object):
     def destination_resource_id(self, destination_resource_id):
         """
         Sets the destination_resource_id of this MonitoredResourceAssociation.
-        Destination Monitored Resource Identifier `OCID`__
+        Destination Monitored Resource Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -283,7 +304,7 @@ class MonitoredResourceAssociation(object):
     def time_created(self):
         """
         Gets the time_created of this MonitoredResourceAssociation.
-        The time when the association was created. An RFC3339 formatted datetime string
+        The time when the association was created. An RFC3339 formatted datetime string.
 
 
         :return: The time_created of this MonitoredResourceAssociation.
@@ -295,13 +316,49 @@ class MonitoredResourceAssociation(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this MonitoredResourceAssociation.
-        The time when the association was created. An RFC3339 formatted datetime string
+        The time when the association was created. An RFC3339 formatted datetime string.
 
 
         :param time_created: The time_created of this MonitoredResourceAssociation.
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def category(self):
+        """
+        Gets the category of this MonitoredResourceAssociation.
+        Association category. Possible values are:
+        - System created (SYSTEM),
+        - User created using API (USER_API)
+        - User created using tags (USER_TAG_ASSOC).
+
+        Allowed values for this property are: "SYSTEM", "USER_API", "USER_TAG_ASSOC", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The category of this MonitoredResourceAssociation.
+        :rtype: str
+        """
+        return self._category
+
+    @category.setter
+    def category(self, category):
+        """
+        Sets the category of this MonitoredResourceAssociation.
+        Association category. Possible values are:
+        - System created (SYSTEM),
+        - User created using API (USER_API)
+        - User created using tags (USER_TAG_ASSOC).
+
+
+        :param category: The category of this MonitoredResourceAssociation.
+        :type: str
+        """
+        allowed_values = ["SYSTEM", "USER_API", "USER_TAG_ASSOC"]
+        if not value_allowed_none_or_none_sentinel(category, allowed_values):
+            category = 'UNKNOWN_ENUM_VALUE'
+        self._category = category
 
     @property
     def freeform_tags(self):

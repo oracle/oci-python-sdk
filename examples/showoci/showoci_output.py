@@ -262,7 +262,7 @@ class ShowOCIOutput(object):
             for user in users:
                 last_login = ", Last Login = " + user['ext_user_state']['last_successful_login_date'] if user['ext_user_state']['last_successful_login_date'] else ""
                 mfa_enabled = "" if user['ext_mfa']['mfa_enabled_on'] == "False" else ", MFA Enabled"
-                print(self.taba + user['user_name'] + " (" + user['family_name'] + " " + user['given_name'] + ")" + mfa_enabled + last_login)
+                print(self.taba + str(user['user_name']) + " (" + str(user['family_name']) + " " + str(user['given_name']) + ")" + mfa_enabled + last_login)
 
                 if user['groups']:
                     print(self.tabs + "Groups   : " + ', '.join(x['display'] for x in user['groups']))
@@ -3594,6 +3594,9 @@ class ShowOCISummary(object):
     ##########################################################################
     def __summary_core_count(self, objects, object_name):
         try:
+            if not objects:
+                return
+
             if len(objects) == 0:
                 return
 

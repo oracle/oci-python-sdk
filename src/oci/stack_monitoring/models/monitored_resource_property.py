@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MonitoredResourceProperty(object):
     """
-    Property of monitored resource
+    Property of monitored resource.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class MonitoredResourceProperty(object):
     def name(self):
         """
         Gets the name of this MonitoredResourceProperty.
-        property name
+        Property Name.
 
 
         :return: The name of this MonitoredResourceProperty.
@@ -56,7 +56,7 @@ class MonitoredResourceProperty(object):
     def name(self, name):
         """
         Sets the name of this MonitoredResourceProperty.
-        property name
+        Property Name.
 
 
         :param name: The name of this MonitoredResourceProperty.
@@ -68,7 +68,7 @@ class MonitoredResourceProperty(object):
     def value(self):
         """
         Gets the value of this MonitoredResourceProperty.
-        property value
+        Property Value.
 
 
         :return: The value of this MonitoredResourceProperty.
@@ -80,7 +80,7 @@ class MonitoredResourceProperty(object):
     def value(self, value):
         """
         Sets the value of this MonitoredResourceProperty.
-        property value
+        Property Value.
 
 
         :param value: The value of this MonitoredResourceProperty.

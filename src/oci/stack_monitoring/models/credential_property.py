@@ -44,7 +44,8 @@ class CredentialProperty(object):
     def name(self):
         """
         **[Required]** Gets the name of this CredentialProperty.
-        The name of the credential property, should confirm with names of properties of this credential's type. Ex. For JMXCreds type , credential property name for weblogic user is 'Username'.
+        The name of the credential property, should confirm with names of properties of this credential's type.
+        Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
 
 
         :return: The name of this CredentialProperty.
@@ -56,7 +57,8 @@ class CredentialProperty(object):
     def name(self, name):
         """
         Sets the name of this CredentialProperty.
-        The name of the credential property, should confirm with names of properties of this credential's type. Ex. For JMXCreds type , credential property name for weblogic user is 'Username'.
+        The name of the credential property, should confirm with names of properties of this credential's type.
+        Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
 
 
         :param name: The name of this CredentialProperty.
@@ -68,7 +70,8 @@ class CredentialProperty(object):
     def value(self):
         """
         **[Required]** Gets the value of this CredentialProperty.
-        The value of the credential property name. Ex. For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
+        The value of the credential property name.
+        Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
 
 
         :return: The value of this CredentialProperty.
@@ -80,7 +83,8 @@ class CredentialProperty(object):
     def value(self, value):
         """
         Sets the value of this CredentialProperty.
-        The value of the credential property name. Ex. For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
+        The value of the credential property name.
+        Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
 
 
         :param value: The value of this CredentialProperty.

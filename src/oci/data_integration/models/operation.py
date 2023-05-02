@@ -33,8 +33,7 @@ class Operation(object):
 
         :param model_type:
             The value to assign to the model_type property of this Operation.
-            Allowed values for this property are: "PROCEDURE", "API", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROCEDURE", "API"
         :type model_type: str
 
         :param metadata:
@@ -77,8 +76,7 @@ class Operation(object):
         **[Required]** Gets the model_type of this Operation.
         The operation type.
 
-        Allowed values for this property are: "PROCEDURE", "API", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROCEDURE", "API"
 
 
         :return: The model_type of this Operation.
@@ -98,7 +96,10 @@ class Operation(object):
         """
         allowed_values = ["PROCEDURE", "API"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
-            model_type = 'UNKNOWN_ENUM_VALUE'
+            raise ValueError(
+                "Invalid value for `model_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
         self._model_type = model_type
 
     @property

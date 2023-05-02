@@ -37,7 +37,7 @@ class MonitoredResourceMembersCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this MonitoredResourceMembersCollection.
-        List of Members.
+        List of member resources.
 
 
         :return: The items of this MonitoredResourceMembersCollection.
@@ -49,7 +49,7 @@ class MonitoredResourceMembersCollection(object):
     def items(self, items):
         """
         Sets the items of this MonitoredResourceMembersCollection.
-        List of Members.
+        List of member resources.
 
 
         :param items: The items of this MonitoredResourceMembersCollection.

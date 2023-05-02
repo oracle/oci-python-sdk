@@ -75,7 +75,8 @@ class PlainTextCredentials(MonitoredResourceCredential):
     def properties(self):
         """
         **[Required]** Gets the properties of this PlainTextCredentials.
-        The credential properties list. Credential property values will be either in plain text format.
+        The credential properties list. Credential property values will be either
+        in plain text format or encrypted for encrypted credentials.
 
 
         :return: The properties of this PlainTextCredentials.
@@ -87,7 +88,8 @@ class PlainTextCredentials(MonitoredResourceCredential):
     def properties(self, properties):
         """
         Sets the properties of this PlainTextCredentials.
-        The credential properties list. Credential property values will be either in plain text format.
+        The credential properties list. Credential property values will be either
+        in plain text format or encrypted for encrypted credentials.
 
 
         :param properties: The properties of this PlainTextCredentials.

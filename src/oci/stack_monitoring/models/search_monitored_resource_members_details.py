@@ -44,7 +44,7 @@ class SearchMonitoredResourceMembersDetails(object):
     def destination_resource_id(self):
         """
         Gets the destination_resource_id of this SearchMonitoredResourceMembersDetails.
-        Destination Monitored Resource Identifier `OCID`__
+        Destination Monitored Resource Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -58,7 +58,7 @@ class SearchMonitoredResourceMembersDetails(object):
     def destination_resource_id(self, destination_resource_id):
         """
         Sets the destination_resource_id of this SearchMonitoredResourceMembersDetails.
-        Destination Monitored Resource Identifier `OCID`__
+        Destination Monitored Resource Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -72,7 +72,7 @@ class SearchMonitoredResourceMembersDetails(object):
     def limit_level(self):
         """
         Gets the limit_level of this SearchMonitoredResourceMembersDetails.
-        The field which determines the depth of hierarchy while searching for members
+        The field which determines the depth of hierarchy while searching for members.
 
 
         :return: The limit_level of this SearchMonitoredResourceMembersDetails.
@@ -84,7 +84,7 @@ class SearchMonitoredResourceMembersDetails(object):
     def limit_level(self, limit_level):
         """
         Sets the limit_level of this SearchMonitoredResourceMembersDetails.
-        The field which determines the depth of hierarchy while searching for members
+        The field which determines the depth of hierarchy while searching for members.
 
 
         :param limit_level: The limit_level of this SearchMonitoredResourceMembersDetails.

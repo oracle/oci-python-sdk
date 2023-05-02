@@ -58,6 +58,7 @@ Container Engine
     oci.container_engine.models.NodeError
     oci.container_engine.models.NodeEvictionNodePoolSettings
     oci.container_engine.models.NodePool
+    oci.container_engine.models.NodePoolCyclingDetails
     oci.container_engine.models.NodePoolNodeConfigDetails
     oci.container_engine.models.NodePoolOptions
     oci.container_engine.models.NodePoolPlacementConfigDetails
@@ -91,7 +92,6 @@ Container Engine
     oci.container_engine.models.UpdateNodePoolDetails
     oci.container_engine.models.UpdateNodePoolNodeConfigDetails
     oci.container_engine.models.UpdateNodeShapeConfigDetails
-    oci.container_engine.models.UpdateVirtualNodeDetails
     oci.container_engine.models.UpdateVirtualNodePoolDetails
     oci.container_engine.models.VirtualNode
     oci.container_engine.models.VirtualNodePool
