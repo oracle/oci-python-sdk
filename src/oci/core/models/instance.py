@@ -186,6 +186,10 @@ class Instance(object):
             The value to assign to the shape_config property of this Instance.
         :type shape_config: oci.core.models.InstanceShapeConfig
 
+        :param is_cross_numa_node:
+            The value to assign to the is_cross_numa_node property of this Instance.
+        :type is_cross_numa_node: bool
+
         :param source_details:
             The value to assign to the source_details property of this Instance.
         :type source_details: oci.core.models.InstanceSourceDetails
@@ -234,6 +238,7 @@ class Instance(object):
             'region': 'str',
             'shape': 'str',
             'shape_config': 'InstanceShapeConfig',
+            'is_cross_numa_node': 'bool',
             'source_details': 'InstanceSourceDetails',
             'system_tags': 'dict(str, dict(str, object))',
             'time_created': 'datetime',
@@ -265,6 +270,7 @@ class Instance(object):
             'region': 'region',
             'shape': 'shape',
             'shape_config': 'shapeConfig',
+            'is_cross_numa_node': 'isCrossNumaNode',
             'source_details': 'sourceDetails',
             'system_tags': 'systemTags',
             'time_created': 'timeCreated',
@@ -295,6 +301,7 @@ class Instance(object):
         self._region = None
         self._shape = None
         self._shape_config = None
+        self._is_cross_numa_node = None
         self._source_details = None
         self._system_tags = None
         self._time_created = None
@@ -963,6 +970,30 @@ class Instance(object):
         :type: oci.core.models.InstanceShapeConfig
         """
         self._shape_config = shape_config
+
+    @property
+    def is_cross_numa_node(self):
+        """
+        Gets the is_cross_numa_node of this Instance.
+        Whether the instance\u2019s OCPUs and memory are distributed across multiple NUMA nodes.
+
+
+        :return: The is_cross_numa_node of this Instance.
+        :rtype: bool
+        """
+        return self._is_cross_numa_node
+
+    @is_cross_numa_node.setter
+    def is_cross_numa_node(self, is_cross_numa_node):
+        """
+        Sets the is_cross_numa_node of this Instance.
+        Whether the instance\u2019s OCPUs and memory are distributed across multiple NUMA nodes.
+
+
+        :param is_cross_numa_node: The is_cross_numa_node of this Instance.
+        :type: bool
+        """
+        self._is_cross_numa_node = is_cross_numa_node
 
     @property
     def source_details(self):

@@ -118,7 +118,7 @@ class SearchMonitoredResourceAssociationsDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this SearchMonitoredResourceAssociationsDetails.
-        Compartment Identifier `OCID`__
+        Compartment Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -132,7 +132,7 @@ class SearchMonitoredResourceAssociationsDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this SearchMonitoredResourceAssociationsDetails.
-        Compartment Identifier `OCID`__
+        Compartment Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -146,7 +146,7 @@ class SearchMonitoredResourceAssociationsDetails(object):
     def source_resource_id(self):
         """
         Gets the source_resource_id of this SearchMonitoredResourceAssociationsDetails.
-        Source Monitored Resource Identifier `OCID`__
+        Source Monitored Resource Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -160,7 +160,7 @@ class SearchMonitoredResourceAssociationsDetails(object):
     def source_resource_id(self, source_resource_id):
         """
         Sets the source_resource_id of this SearchMonitoredResourceAssociationsDetails.
-        Source Monitored Resource Identifier `OCID`__
+        Source Monitored Resource Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -174,7 +174,7 @@ class SearchMonitoredResourceAssociationsDetails(object):
     def source_resource_name(self):
         """
         Gets the source_resource_name of this SearchMonitoredResourceAssociationsDetails.
-        Source Monitored Resource Name
+        Source Monitored Resource Name.
 
 
         :return: The source_resource_name of this SearchMonitoredResourceAssociationsDetails.
@@ -186,7 +186,7 @@ class SearchMonitoredResourceAssociationsDetails(object):
     def source_resource_name(self, source_resource_name):
         """
         Sets the source_resource_name of this SearchMonitoredResourceAssociationsDetails.
-        Source Monitored Resource Name
+        Source Monitored Resource Name.
 
 
         :param source_resource_name: The source_resource_name of this SearchMonitoredResourceAssociationsDetails.
@@ -198,7 +198,7 @@ class SearchMonitoredResourceAssociationsDetails(object):
     def source_resource_type(self):
         """
         Gets the source_resource_type of this SearchMonitoredResourceAssociationsDetails.
-        Source Monitored Resource Type
+        Source Monitored Resource Type.
 
 
         :return: The source_resource_type of this SearchMonitoredResourceAssociationsDetails.
@@ -210,7 +210,7 @@ class SearchMonitoredResourceAssociationsDetails(object):
     def source_resource_type(self, source_resource_type):
         """
         Sets the source_resource_type of this SearchMonitoredResourceAssociationsDetails.
-        Source Monitored Resource Type
+        Source Monitored Resource Type.
 
 
         :param source_resource_type: The source_resource_type of this SearchMonitoredResourceAssociationsDetails.
@@ -222,7 +222,7 @@ class SearchMonitoredResourceAssociationsDetails(object):
     def destination_resource_id(self):
         """
         Gets the destination_resource_id of this SearchMonitoredResourceAssociationsDetails.
-        Destination Monitored Resource Identifier `OCID`__
+        Destination Monitored Resource Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -236,7 +236,7 @@ class SearchMonitoredResourceAssociationsDetails(object):
     def destination_resource_id(self, destination_resource_id):
         """
         Sets the destination_resource_id of this SearchMonitoredResourceAssociationsDetails.
-        Destination Monitored Resource Identifier `OCID`__
+        Destination Monitored Resource Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -250,7 +250,7 @@ class SearchMonitoredResourceAssociationsDetails(object):
     def destination_resource_name(self):
         """
         Gets the destination_resource_name of this SearchMonitoredResourceAssociationsDetails.
-        Source Monitored Resource Name
+        Source Monitored Resource Name.
 
 
         :return: The destination_resource_name of this SearchMonitoredResourceAssociationsDetails.
@@ -262,7 +262,7 @@ class SearchMonitoredResourceAssociationsDetails(object):
     def destination_resource_name(self, destination_resource_name):
         """
         Sets the destination_resource_name of this SearchMonitoredResourceAssociationsDetails.
-        Source Monitored Resource Name
+        Source Monitored Resource Name.
 
 
         :param destination_resource_name: The destination_resource_name of this SearchMonitoredResourceAssociationsDetails.
@@ -274,7 +274,7 @@ class SearchMonitoredResourceAssociationsDetails(object):
     def destination_resource_type(self):
         """
         Gets the destination_resource_type of this SearchMonitoredResourceAssociationsDetails.
-        Source Monitored Resource Type
+        Source Monitored Resource Type.
 
 
         :return: The destination_resource_type of this SearchMonitoredResourceAssociationsDetails.
@@ -286,7 +286,7 @@ class SearchMonitoredResourceAssociationsDetails(object):
     def destination_resource_type(self, destination_resource_type):
         """
         Sets the destination_resource_type of this SearchMonitoredResourceAssociationsDetails.
-        Source Monitored Resource Type
+        Source Monitored Resource Type.
 
 
         :param destination_resource_type: The destination_resource_type of this SearchMonitoredResourceAssociationsDetails.
@@ -298,7 +298,7 @@ class SearchMonitoredResourceAssociationsDetails(object):
     def association_type(self):
         """
         Gets the association_type of this SearchMonitoredResourceAssociationsDetails.
-        Association type to be created between source and destination resources
+        Association type filter to search associated resources.
 
 
         :return: The association_type of this SearchMonitoredResourceAssociationsDetails.
@@ -310,7 +310,7 @@ class SearchMonitoredResourceAssociationsDetails(object):
     def association_type(self, association_type):
         """
         Sets the association_type of this SearchMonitoredResourceAssociationsDetails.
-        Association type to be created between source and destination resources
+        Association type filter to search associated resources.
 
 
         :param association_type: The association_type of this SearchMonitoredResourceAssociationsDetails.

@@ -93,7 +93,7 @@ class MonitoredResourceAssociationSummary(object):
     def association_type(self):
         """
         **[Required]** Gets the association_type of this MonitoredResourceAssociationSummary.
-        Association type to be created between source and destination resources
+        Association type between source and destination resources.
 
 
         :return: The association_type of this MonitoredResourceAssociationSummary.
@@ -105,7 +105,7 @@ class MonitoredResourceAssociationSummary(object):
     def association_type(self, association_type):
         """
         Sets the association_type of this MonitoredResourceAssociationSummary.
-        Association type to be created between source and destination resources
+        Association type between source and destination resources.
 
 
         :param association_type: The association_type of this MonitoredResourceAssociationSummary.
@@ -117,7 +117,7 @@ class MonitoredResourceAssociationSummary(object):
     def source_resource_id(self):
         """
         **[Required]** Gets the source_resource_id of this MonitoredResourceAssociationSummary.
-        Source Monitored Resource Identifier `OCID`__
+        Source Monitored Resource Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -131,7 +131,7 @@ class MonitoredResourceAssociationSummary(object):
     def source_resource_id(self, source_resource_id):
         """
         Sets the source_resource_id of this MonitoredResourceAssociationSummary.
-        Source Monitored Resource Identifier `OCID`__
+        Source Monitored Resource Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -145,7 +145,7 @@ class MonitoredResourceAssociationSummary(object):
     def destination_resource_id(self):
         """
         **[Required]** Gets the destination_resource_id of this MonitoredResourceAssociationSummary.
-        Destination Monitored Resource Identifier `OCID`__
+        Destination Monitored Resource Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -159,7 +159,7 @@ class MonitoredResourceAssociationSummary(object):
     def destination_resource_id(self, destination_resource_id):
         """
         Sets the destination_resource_id of this MonitoredResourceAssociationSummary.
-        Destination Monitored Resource Identifier `OCID`__
+        Destination Monitored Resource Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -173,7 +173,7 @@ class MonitoredResourceAssociationSummary(object):
     def time_created(self):
         """
         Gets the time_created of this MonitoredResourceAssociationSummary.
-        The time the the association was created. An RFC3339 formatted datetime string
+        The association creation time. An RFC3339 formatted datetime string.
 
 
         :return: The time_created of this MonitoredResourceAssociationSummary.
@@ -185,7 +185,7 @@ class MonitoredResourceAssociationSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this MonitoredResourceAssociationSummary.
-        The time the the association was created. An RFC3339 formatted datetime string
+        The association creation time. An RFC3339 formatted datetime string.
 
 
         :param time_created: The time_created of this MonitoredResourceAssociationSummary.

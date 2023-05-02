@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateMonitoredResourceDetails(object):
     """
-    The information about new monitored resource. The combination of monitored resource name and type should be unique across tenancy.
+    The information about new monitored resource to be created.
+    The combination of monitored resource name and type should be unique across tenancy.
     """
 
     def __init__(self, **kwargs):
@@ -66,6 +67,22 @@ class CreateMonitoredResourceDetails(object):
             The value to assign to the aliases property of this CreateMonitoredResourceDetails.
         :type aliases: oci.stack_monitoring.models.MonitoredResourceAliasCredential
 
+        :param additional_credentials:
+            The value to assign to the additional_credentials property of this CreateMonitoredResourceDetails.
+        :type additional_credentials: list[oci.stack_monitoring.models.MonitoredResourceCredential]
+
+        :param additional_aliases:
+            The value to assign to the additional_aliases property of this CreateMonitoredResourceDetails.
+        :type additional_aliases: list[oci.stack_monitoring.models.MonitoredResourceAliasCredential]
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateMonitoredResourceDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateMonitoredResourceDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -79,7 +96,11 @@ class CreateMonitoredResourceDetails(object):
             'properties': 'list[MonitoredResourceProperty]',
             'database_connection_details': 'ConnectionDetails',
             'credentials': 'MonitoredResourceCredential',
-            'aliases': 'MonitoredResourceAliasCredential'
+            'aliases': 'MonitoredResourceAliasCredential',
+            'additional_credentials': 'list[MonitoredResourceCredential]',
+            'additional_aliases': 'list[MonitoredResourceAliasCredential]',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -94,7 +115,11 @@ class CreateMonitoredResourceDetails(object):
             'properties': 'properties',
             'database_connection_details': 'databaseConnectionDetails',
             'credentials': 'credentials',
-            'aliases': 'aliases'
+            'aliases': 'aliases',
+            'additional_credentials': 'additionalCredentials',
+            'additional_aliases': 'additionalAliases',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._name = None
@@ -109,12 +134,16 @@ class CreateMonitoredResourceDetails(object):
         self._database_connection_details = None
         self._credentials = None
         self._aliases = None
+        self._additional_credentials = None
+        self._additional_aliases = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def name(self):
         """
         **[Required]** Gets the name of this CreateMonitoredResourceDetails.
-        Monitored resource name
+        Monitored Resource Name.
 
 
         :return: The name of this CreateMonitoredResourceDetails.
@@ -126,7 +155,7 @@ class CreateMonitoredResourceDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateMonitoredResourceDetails.
-        Monitored resource name
+        Monitored Resource Name.
 
 
         :param name: The name of this CreateMonitoredResourceDetails.
@@ -162,7 +191,7 @@ class CreateMonitoredResourceDetails(object):
     def type(self):
         """
         **[Required]** Gets the type of this CreateMonitoredResourceDetails.
-        Monitored resource type
+        Monitored Resource Type.
 
 
         :return: The type of this CreateMonitoredResourceDetails.
@@ -174,7 +203,7 @@ class CreateMonitoredResourceDetails(object):
     def type(self, type):
         """
         Sets the type of this CreateMonitoredResourceDetails.
-        Monitored resource type
+        Monitored Resource Type.
 
 
         :param type: The type of this CreateMonitoredResourceDetails.
@@ -186,7 +215,7 @@ class CreateMonitoredResourceDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateMonitoredResourceDetails.
-        Compartment Identifier `OCID`__
+        Compartment Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -200,7 +229,7 @@ class CreateMonitoredResourceDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateMonitoredResourceDetails.
-        Compartment Identifier `OCID`__
+        Compartment Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -214,7 +243,7 @@ class CreateMonitoredResourceDetails(object):
     def host_name(self):
         """
         Gets the host_name of this CreateMonitoredResourceDetails.
-        Host name of the monitored resource
+        Host name of the monitored resource.
 
 
         :return: The host_name of this CreateMonitoredResourceDetails.
@@ -226,7 +255,7 @@ class CreateMonitoredResourceDetails(object):
     def host_name(self, host_name):
         """
         Sets the host_name of this CreateMonitoredResourceDetails.
-        Host name of the monitored resource
+        Host name of the monitored resource.
 
 
         :param host_name: The host_name of this CreateMonitoredResourceDetails.
@@ -298,7 +327,9 @@ class CreateMonitoredResourceDetails(object):
     def resource_time_zone(self):
         """
         Gets the resource_time_zone of this CreateMonitoredResourceDetails.
-        Time zone in the form of tz database canonical zone ID.
+        Time zone in the form of tz database canonical zone ID. Specifies the preference with
+        a value that uses the IANA Time Zone Database format (x-obmcs-time-zone).
+        For example - America/Los_Angeles
 
 
         :return: The resource_time_zone of this CreateMonitoredResourceDetails.
@@ -310,7 +341,9 @@ class CreateMonitoredResourceDetails(object):
     def resource_time_zone(self, resource_time_zone):
         """
         Sets the resource_time_zone of this CreateMonitoredResourceDetails.
-        Time zone in the form of tz database canonical zone ID.
+        Time zone in the form of tz database canonical zone ID. Specifies the preference with
+        a value that uses the IANA Time Zone Database format (x-obmcs-time-zone).
+        For example - America/Los_Angeles
 
 
         :param resource_time_zone: The resource_time_zone of this CreateMonitoredResourceDetails.
@@ -322,7 +355,7 @@ class CreateMonitoredResourceDetails(object):
     def properties(self):
         """
         Gets the properties of this CreateMonitoredResourceDetails.
-        List of monitored resource properties
+        List of monitored resource properties.
 
 
         :return: The properties of this CreateMonitoredResourceDetails.
@@ -334,7 +367,7 @@ class CreateMonitoredResourceDetails(object):
     def properties(self, properties):
         """
         Sets the properties of this CreateMonitoredResourceDetails.
-        List of monitored resource properties
+        List of monitored resource properties.
 
 
         :param properties: The properties of this CreateMonitoredResourceDetails.
@@ -401,6 +434,126 @@ class CreateMonitoredResourceDetails(object):
         :type: oci.stack_monitoring.models.MonitoredResourceAliasCredential
         """
         self._aliases = aliases
+
+    @property
+    def additional_credentials(self):
+        """
+        Gets the additional_credentials of this CreateMonitoredResourceDetails.
+        List of MonitoredResourceCredentials. This property complements the existing
+        \"credentials\" property by allowing user to specify more than one credential.
+        If both \"credential\" and \"additionalCredentials\" are specified, union of the
+        values is used as list of credentials applicable for this resource.
+        If any duplicate found in the combined list of \"credentials\" and \"additionalCredentials\",
+        an error will be thrown.
+
+
+        :return: The additional_credentials of this CreateMonitoredResourceDetails.
+        :rtype: list[oci.stack_monitoring.models.MonitoredResourceCredential]
+        """
+        return self._additional_credentials
+
+    @additional_credentials.setter
+    def additional_credentials(self, additional_credentials):
+        """
+        Sets the additional_credentials of this CreateMonitoredResourceDetails.
+        List of MonitoredResourceCredentials. This property complements the existing
+        \"credentials\" property by allowing user to specify more than one credential.
+        If both \"credential\" and \"additionalCredentials\" are specified, union of the
+        values is used as list of credentials applicable for this resource.
+        If any duplicate found in the combined list of \"credentials\" and \"additionalCredentials\",
+        an error will be thrown.
+
+
+        :param additional_credentials: The additional_credentials of this CreateMonitoredResourceDetails.
+        :type: list[oci.stack_monitoring.models.MonitoredResourceCredential]
+        """
+        self._additional_credentials = additional_credentials
+
+    @property
+    def additional_aliases(self):
+        """
+        Gets the additional_aliases of this CreateMonitoredResourceDetails.
+        List of MonitoredResourceAliasCredentials. This property complements the existing
+        \"aliases\" property by allowing user to specify more than one credential alias.
+        If both \"aliases\" and \"additionalAliases\" are specified, union of the
+        values is used as list of aliases applicable for this resource.
+        If any duplicate found in the combined list of \"alias\" and \"additionalAliases\",
+        an error will be thrown.
+
+
+        :return: The additional_aliases of this CreateMonitoredResourceDetails.
+        :rtype: list[oci.stack_monitoring.models.MonitoredResourceAliasCredential]
+        """
+        return self._additional_aliases
+
+    @additional_aliases.setter
+    def additional_aliases(self, additional_aliases):
+        """
+        Sets the additional_aliases of this CreateMonitoredResourceDetails.
+        List of MonitoredResourceAliasCredentials. This property complements the existing
+        \"aliases\" property by allowing user to specify more than one credential alias.
+        If both \"aliases\" and \"additionalAliases\" are specified, union of the
+        values is used as list of aliases applicable for this resource.
+        If any duplicate found in the combined list of \"alias\" and \"additionalAliases\",
+        an error will be thrown.
+
+
+        :param additional_aliases: The additional_aliases of this CreateMonitoredResourceDetails.
+        :type: list[oci.stack_monitoring.models.MonitoredResourceAliasCredential]
+        """
+        self._additional_aliases = additional_aliases
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this CreateMonitoredResourceDetails.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :return: The freeform_tags of this CreateMonitoredResourceDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this CreateMonitoredResourceDetails.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :param freeform_tags: The freeform_tags of this CreateMonitoredResourceDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this CreateMonitoredResourceDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :return: The defined_tags of this CreateMonitoredResourceDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this CreateMonitoredResourceDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :param defined_tags: The defined_tags of this CreateMonitoredResourceDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

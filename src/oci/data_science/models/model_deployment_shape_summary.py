@@ -21,6 +21,14 @@ class ModelDeploymentShapeSummary(object):
     #: This constant has a value of "INTEL_SKYLAKE"
     SHAPE_SERIES_INTEL_SKYLAKE = "INTEL_SKYLAKE"
 
+    #: A constant which can be used with the shape_series property of a ModelDeploymentShapeSummary.
+    #: This constant has a value of "NVIDIA_GPU"
+    SHAPE_SERIES_NVIDIA_GPU = "NVIDIA_GPU"
+
+    #: A constant which can be used with the shape_series property of a ModelDeploymentShapeSummary.
+    #: This constant has a value of "LEGACY"
+    SHAPE_SERIES_LEGACY = "LEGACY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ModelDeploymentShapeSummary object with values from keyword arguments.
@@ -40,7 +48,7 @@ class ModelDeploymentShapeSummary(object):
 
         :param shape_series:
             The value to assign to the shape_series property of this ModelDeploymentShapeSummary.
-            Allowed values for this property are: "AMD_ROME", "INTEL_SKYLAKE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AMD_ROME", "INTEL_SKYLAKE", "NVIDIA_GPU", "LEGACY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type shape_series: str
 
@@ -142,7 +150,7 @@ class ModelDeploymentShapeSummary(object):
         **[Required]** Gets the shape_series of this ModelDeploymentShapeSummary.
         The family that the compute shape belongs to.
 
-        Allowed values for this property are: "AMD_ROME", "INTEL_SKYLAKE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AMD_ROME", "INTEL_SKYLAKE", "NVIDIA_GPU", "LEGACY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -161,7 +169,7 @@ class ModelDeploymentShapeSummary(object):
         :param shape_series: The shape_series of this ModelDeploymentShapeSummary.
         :type: str
         """
-        allowed_values = ["AMD_ROME", "INTEL_SKYLAKE"]
+        allowed_values = ["AMD_ROME", "INTEL_SKYLAKE", "NVIDIA_GPU", "LEGACY"]
         if not value_allowed_none_or_none_sentinel(shape_series, allowed_values):
             shape_series = 'UNKNOWN_ENUM_VALUE'
         self._shape_series = shape_series

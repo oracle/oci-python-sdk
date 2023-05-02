@@ -65,7 +65,7 @@ class SearchAssociatedResourcesDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this SearchAssociatedResourcesDetails.
-        Compartment Identifier `OCID`__
+        Compartment Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -79,7 +79,7 @@ class SearchAssociatedResourcesDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this SearchAssociatedResourcesDetails.
-        Compartment Identifier `OCID`__
+        Compartment Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -173,7 +173,7 @@ class SearchAssociatedResourcesDetails(object):
     def association_types(self):
         """
         Gets the association_types of this SearchAssociatedResourcesDetails.
-        List of association types to be searched for finding associated resources
+        Association types filter to be searched for finding associated resources.
 
 
         :return: The association_types of this SearchAssociatedResourcesDetails.
@@ -185,7 +185,7 @@ class SearchAssociatedResourcesDetails(object):
     def association_types(self, association_types):
         """
         Sets the association_types of this SearchAssociatedResourcesDetails.
-        List of association types to be searched for finding associated resources
+        Association types filter to be searched for finding associated resources.
 
 
         :param association_types: The association_types of this SearchAssociatedResourcesDetails.

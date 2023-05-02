@@ -28409,6 +28409,9 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
+        :param oci.database.models.RotateCloudAutonomousVmClusterOrdsCertsDetails rotate_cloud_autonomous_vm_cluster_ords_certs_details: (optional)
+            Request to rotate the Oracle REST Data Services (ORDS) certificates on Cloud Autonomous Exadata VM cluster.
+
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
@@ -28453,6 +28456,7 @@ class DatabaseClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "rotate_cloud_autonomous_vm_cluster_ords_certs_details",
             "opc_retry_token",
             "opc_request_id",
             "if_match"
@@ -28497,6 +28501,7 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
+                body=kwargs.get('rotate_cloud_autonomous_vm_cluster_ords_certs_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -28507,6 +28512,7 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
+                body=kwargs.get('rotate_cloud_autonomous_vm_cluster_ords_certs_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -28521,6 +28527,9 @@ class DatabaseClient(object):
             The Cloud VM cluster `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.database.models.RotateCloudAutonomousVmClusterSslCertsDetails rotate_cloud_autonomous_vm_cluster_ssl_certs_details: (optional)
+            Request to rotate the SSL certificates on Cloud Autonomous Exadata VM cluster.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -28566,6 +28575,7 @@ class DatabaseClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "rotate_cloud_autonomous_vm_cluster_ssl_certs_details",
             "opc_retry_token",
             "opc_request_id",
             "if_match"
@@ -28610,6 +28620,7 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
+                body=kwargs.get('rotate_cloud_autonomous_vm_cluster_ssl_certs_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -28620,6 +28631,7 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
+                body=kwargs.get('rotate_cloud_autonomous_vm_cluster_ssl_certs_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,

@@ -58,7 +58,7 @@ class AssociateMonitoredResourcesDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this AssociateMonitoredResourcesDetails.
-        Compartment Identifier `OCID`__
+        Compartment Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -72,7 +72,7 @@ class AssociateMonitoredResourcesDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this AssociateMonitoredResourcesDetails.
-        Compartment Identifier `OCID`__
+        Compartment Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -86,7 +86,7 @@ class AssociateMonitoredResourcesDetails(object):
     def association_type(self):
         """
         **[Required]** Gets the association_type of this AssociateMonitoredResourcesDetails.
-        Association type to be created between source and destination resources
+        Association type to be created between source and destination resources.
 
 
         :return: The association_type of this AssociateMonitoredResourcesDetails.
@@ -98,7 +98,7 @@ class AssociateMonitoredResourcesDetails(object):
     def association_type(self, association_type):
         """
         Sets the association_type of this AssociateMonitoredResourcesDetails.
-        Association type to be created between source and destination resources
+        Association type to be created between source and destination resources.
 
 
         :param association_type: The association_type of this AssociateMonitoredResourcesDetails.
@@ -110,7 +110,7 @@ class AssociateMonitoredResourcesDetails(object):
     def source_resource_id(self):
         """
         **[Required]** Gets the source_resource_id of this AssociateMonitoredResourcesDetails.
-        Source Monitored Resource Identifier `OCID`__
+        Source Monitored Resource Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -124,7 +124,7 @@ class AssociateMonitoredResourcesDetails(object):
     def source_resource_id(self, source_resource_id):
         """
         Sets the source_resource_id of this AssociateMonitoredResourcesDetails.
-        Source Monitored Resource Identifier `OCID`__
+        Source Monitored Resource Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -138,7 +138,7 @@ class AssociateMonitoredResourcesDetails(object):
     def destination_resource_id(self):
         """
         **[Required]** Gets the destination_resource_id of this AssociateMonitoredResourcesDetails.
-        Destination Monitored Resource Identifier `OCID`__
+        Destination Monitored Resource Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -152,7 +152,7 @@ class AssociateMonitoredResourcesDetails(object):
     def destination_resource_id(self, destination_resource_id):
         """
         Sets the destination_resource_id of this AssociateMonitoredResourcesDetails.
-        Destination Monitored Resource Identifier `OCID`__
+        Destination Monitored Resource Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

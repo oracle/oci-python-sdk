@@ -1,9 +1,9 @@
-UpdateVirtualNodeDetails
-========================
+NodePoolCyclingDetails
+======================
 
 .. currentmodule:: oci.container_engine.models
 
-.. autoclass:: UpdateVirtualNodeDetails
+.. autoclass:: NodePoolCyclingDetails
     :show-inheritance:
     :special-members: __init__
     :members:

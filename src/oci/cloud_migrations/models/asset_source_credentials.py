@@ -24,8 +24,7 @@ class AssetSourceCredentials(object):
 
         :param type:
             The value to assign to the type property of this AssetSourceCredentials.
-            Allowed values for this property are: "BASIC", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "BASIC"
         :type type: str
 
         :param secret_id:
@@ -52,8 +51,7 @@ class AssetSourceCredentials(object):
         **[Required]** Gets the type of this AssetSourceCredentials.
         Authentication type
 
-        Allowed values for this property are: "BASIC", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "BASIC"
 
 
         :return: The type of this AssetSourceCredentials.
@@ -73,7 +71,10 @@ class AssetSourceCredentials(object):
         """
         allowed_values = ["BASIC"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
-            type = 'UNKNOWN_ENUM_VALUE'
+            raise ValueError(
+                "Invalid value for `type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
         self._type = type
 
     @property

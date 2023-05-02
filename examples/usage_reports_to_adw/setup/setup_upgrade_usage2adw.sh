@@ -5,7 +5,7 @@
 #
 # Setup Upgrade for usage2adw
 # Written by Adi Zohar, October 2020-2023
-# Git Location = https://github.com/oracle/oci-python-sdk/tree/master/examples/usage_reports_to_adw
+# Git Location = https://raw.githubusercontent.com/oracle/oci-python-sdk/master/examples/usage_reports_to_adw
 #
 # If script fail, please add the policies and re-run
 #
@@ -57,7 +57,7 @@ export APPDIR=/home/opc/usage_reports_to_adw
 export CREDFILE=$APPDIR/config.user
 export LOG=/home/opc/upgrade.log
 export LOGDIR=$APPDIR/setup/log
-export GIT=https://github.com/oracle/oci-python-sdk/tree/master/examples/usage_reports_to_adw
+export GIT=https://raw.githubusercontent.com/oracle/oci-python-sdk/master/examples/usage_reports_to_adw
 
 cd $APPDIR
 mkdir -p $LOGDIR
@@ -181,7 +181,4 @@ echo "# Upgrade Completed at `date`" | tee -a $LOG
 echo "##################################################" | tee -a $LOG
 echo "Please run the application to upgrade schema:" | tee -a $LOG
 echo "/home/opc/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh" | tee -a $LOG
-echo ""
-echo "Please run ShowOCI upgrade is using ShowOCI:" | tee -a $LOG
-echo "bash -c '$(curl -L https://github.com/oracle/oci-python-sdk/tree/master/examples/showoci/showoci_upgrade.sh)'" | tee -a $LOG
 

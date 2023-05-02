@@ -58,6 +58,7 @@ Stack Monitoring
     oci.stack_monitoring.models.SearchMonitoredResourceAssociationsDetails
     oci.stack_monitoring.models.SearchMonitoredResourceMembersDetails
     oci.stack_monitoring.models.SearchMonitoredResourcesDetails
+    oci.stack_monitoring.models.UpdateAndPropagateTagsDetails
     oci.stack_monitoring.models.UpdateMonitoredResourceDetails
     oci.stack_monitoring.models.WorkRequest
     oci.stack_monitoring.models.WorkRequestError

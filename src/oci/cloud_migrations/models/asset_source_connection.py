@@ -48,8 +48,7 @@ class AssetSourceConnection(object):
 
         :param connection_type:
             The value to assign to the connection_type property of this AssetSourceConnection.
-            Allowed values for this property are: "DISCOVERY", "REPLICATION", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DISCOVERY", "REPLICATION"
         :type connection_type: str
 
         :param connector_id:
@@ -62,8 +61,7 @@ class AssetSourceConnection(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AssetSourceConnection.
-            Allowed values for this property are: "ACTIVE", "UPDATING", "NEEDS_ATTENTION", "DELETED", "CREATING", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACTIVE", "UPDATING", "NEEDS_ATTENTION", "DELETED", "CREATING"
         :type lifecycle_state: str
 
         :param lifecycle_details:
@@ -99,8 +97,7 @@ class AssetSourceConnection(object):
         **[Required]** Gets the connection_type of this AssetSourceConnection.
         The type of connection for an asset source.
 
-        Allowed values for this property are: "DISCOVERY", "REPLICATION", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DISCOVERY", "REPLICATION"
 
 
         :return: The connection_type of this AssetSourceConnection.
@@ -120,7 +117,10 @@ class AssetSourceConnection(object):
         """
         allowed_values = ["DISCOVERY", "REPLICATION"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
-            connection_type = 'UNKNOWN_ENUM_VALUE'
+            raise ValueError(
+                "Invalid value for `connection_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
         self._connection_type = connection_type
 
     @property
@@ -181,8 +181,7 @@ class AssetSourceConnection(object):
         **[Required]** Gets the lifecycle_state of this AssetSourceConnection.
         The current state of the connection.
 
-        Allowed values for this property are: "ACTIVE", "UPDATING", "NEEDS_ATTENTION", "DELETED", "CREATING", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACTIVE", "UPDATING", "NEEDS_ATTENTION", "DELETED", "CREATING"
 
 
         :return: The lifecycle_state of this AssetSourceConnection.
@@ -202,7 +201,10 @@ class AssetSourceConnection(object):
         """
         allowed_values = ["ACTIVE", "UPDATING", "NEEDS_ATTENTION", "DELETED", "CREATING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
-            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+            raise ValueError(
+                "Invalid value for `lifecycle_state`, must be None or one of {0}"
+                .format(allowed_values)
+            )
         self._lifecycle_state = lifecycle_state
 
     @property

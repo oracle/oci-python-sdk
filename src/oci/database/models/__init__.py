@@ -275,6 +275,8 @@ from .restore_autonomous_database_details import RestoreAutonomousDatabaseDetail
 from .restore_database_details import RestoreDatabaseDetails
 from .rotate_autonomous_vm_cluster_ords_certs_details import RotateAutonomousVmClusterOrdsCertsDetails
 from .rotate_autonomous_vm_cluster_ssl_certs_details import RotateAutonomousVmClusterSslCertsDetails
+from .rotate_cloud_autonomous_vm_cluster_ords_certs_details import RotateCloudAutonomousVmClusterOrdsCertsDetails
+from .rotate_cloud_autonomous_vm_cluster_ssl_certs_details import RotateCloudAutonomousVmClusterSslCertsDetails
 from .scan_details import ScanDetails
 from .scheduled_operation_details import ScheduledOperationDetails
 from .self_mount_details import SelfMountDetails
@@ -602,6 +604,8 @@ database_type_mapping = {
     "RestoreDatabaseDetails": RestoreDatabaseDetails,
     "RotateAutonomousVmClusterOrdsCertsDetails": RotateAutonomousVmClusterOrdsCertsDetails,
     "RotateAutonomousVmClusterSslCertsDetails": RotateAutonomousVmClusterSslCertsDetails,
+    "RotateCloudAutonomousVmClusterOrdsCertsDetails": RotateCloudAutonomousVmClusterOrdsCertsDetails,
+    "RotateCloudAutonomousVmClusterSslCertsDetails": RotateCloudAutonomousVmClusterSslCertsDetails,
     "ScanDetails": ScanDetails,
     "ScheduledOperationDetails": ScheduledOperationDetails,
     "SelfMountDetails": SelfMountDetails,

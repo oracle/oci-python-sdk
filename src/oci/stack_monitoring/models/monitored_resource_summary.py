@@ -154,7 +154,7 @@ class MonitoredResourceSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this MonitoredResourceSummary.
-        The `OCID`__ of monitored resource.
+        Monitored resource identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -168,7 +168,7 @@ class MonitoredResourceSummary(object):
     def id(self, id):
         """
         Sets the id of this MonitoredResourceSummary.
-        The `OCID`__ of monitored resource.
+        Monitored resource identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -182,7 +182,7 @@ class MonitoredResourceSummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this MonitoredResourceSummary.
-        Name of the monitored resource
+        Monitored Resource Name.
 
 
         :return: The name of this MonitoredResourceSummary.
@@ -194,7 +194,7 @@ class MonitoredResourceSummary(object):
     def name(self, name):
         """
         Sets the name of this MonitoredResourceSummary.
-        Name of the monitored resource
+        Monitored Resource Name.
 
 
         :param name: The name of this MonitoredResourceSummary.
@@ -230,7 +230,7 @@ class MonitoredResourceSummary(object):
     def type(self):
         """
         **[Required]** Gets the type of this MonitoredResourceSummary.
-        Type of the monitored resource
+        Monitored Resource Type.
 
 
         :return: The type of this MonitoredResourceSummary.
@@ -242,7 +242,7 @@ class MonitoredResourceSummary(object):
     def type(self, type):
         """
         Sets the type of this MonitoredResourceSummary.
-        Type of the monitored resource
+        Monitored Resource Type.
 
 
         :param type: The type of this MonitoredResourceSummary.
@@ -254,7 +254,7 @@ class MonitoredResourceSummary(object):
     def host_name(self):
         """
         Gets the host_name of this MonitoredResourceSummary.
-        Resource Host Name
+        Monitored Resource Host Name.
 
 
         :return: The host_name of this MonitoredResourceSummary.
@@ -266,7 +266,7 @@ class MonitoredResourceSummary(object):
     def host_name(self, host_name):
         """
         Sets the host_name of this MonitoredResourceSummary.
-        Resource Host Name
+        Monitored Resource Host Name.
 
 
         :param host_name: The host_name of this MonitoredResourceSummary.
@@ -280,8 +280,6 @@ class MonitoredResourceSummary(object):
         Gets the external_id of this MonitoredResourceSummary.
         External resource is any OCI resource identifier `OCID`__
         which is not a Stack Monitoring service resource.
-        Currently supports only following resource type identifiers - externalcontainerdatabase,
-        externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -297,8 +295,6 @@ class MonitoredResourceSummary(object):
         Sets the external_id of this MonitoredResourceSummary.
         External resource is any OCI resource identifier `OCID`__
         which is not a Stack Monitoring service resource.
-        Currently supports only following resource type identifiers - externalcontainerdatabase,
-        externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -340,7 +336,7 @@ class MonitoredResourceSummary(object):
     def time_created(self):
         """
         Gets the time_created of this MonitoredResourceSummary.
-        Monitored resource creation time. An RFC3339 formatted datetime string
+        Monitored resource creation time. An RFC3339 formatted datetime string.
 
 
         :return: The time_created of this MonitoredResourceSummary.
@@ -352,7 +348,7 @@ class MonitoredResourceSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this MonitoredResourceSummary.
-        Monitored resource creation time. An RFC3339 formatted datetime string
+        Monitored resource creation time. An RFC3339 formatted datetime string.
 
 
         :param time_created: The time_created of this MonitoredResourceSummary.
@@ -364,7 +360,7 @@ class MonitoredResourceSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this MonitoredResourceSummary.
-        Monitored resource updation time. An RFC3339 formatted datetime string
+        Monitored resource update time. An RFC3339 formatted datetime string.
 
 
         :return: The time_updated of this MonitoredResourceSummary.
@@ -376,7 +372,7 @@ class MonitoredResourceSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this MonitoredResourceSummary.
-        Monitored resource updation time. An RFC3339 formatted datetime string
+        Monitored resource update time. An RFC3339 formatted datetime string.
 
 
         :param time_updated: The time_updated of this MonitoredResourceSummary.
@@ -418,7 +414,7 @@ class MonitoredResourceSummary(object):
     def properties(self):
         """
         Gets the properties of this MonitoredResourceSummary.
-        List of monitored resource properties
+        List of monitored resource properties.
 
 
         :return: The properties of this MonitoredResourceSummary.
@@ -430,7 +426,7 @@ class MonitoredResourceSummary(object):
     def properties(self, properties):
         """
         Sets the properties of this MonitoredResourceSummary.
-        List of monitored resource properties
+        List of monitored resource properties.
 
 
         :param properties: The properties of this MonitoredResourceSummary.

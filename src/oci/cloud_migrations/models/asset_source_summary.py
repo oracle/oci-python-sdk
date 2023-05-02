@@ -56,8 +56,7 @@ class AssetSourceSummary(object):
 
         :param type:
             The value to assign to the type property of this AssetSourceSummary.
-            Allowed values for this property are: "VMWARE", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VMWARE"
         :type type: str
 
         :param id:
@@ -78,8 +77,7 @@ class AssetSourceSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AssetSourceSummary.
-            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING", "NEEDS_ATTENTION"
         :type lifecycle_state: str
 
         :param lifecycle_details:
@@ -183,8 +181,7 @@ class AssetSourceSummary(object):
         **[Required]** Gets the type of this AssetSourceSummary.
         The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
 
-        Allowed values for this property are: "VMWARE", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VMWARE"
 
 
         :return: The type of this AssetSourceSummary.
@@ -204,7 +201,10 @@ class AssetSourceSummary(object):
         """
         allowed_values = ["VMWARE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
-            type = 'UNKNOWN_ENUM_VALUE'
+            raise ValueError(
+                "Invalid value for `type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
         self._type = type
 
     @property
@@ -323,8 +323,7 @@ class AssetSourceSummary(object):
         **[Required]** Gets the lifecycle_state of this AssetSourceSummary.
         The current state of the asset source.
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING", "NEEDS_ATTENTION"
 
 
         :return: The lifecycle_state of this AssetSourceSummary.
@@ -344,7 +343,10 @@ class AssetSourceSummary(object):
         """
         allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING", "NEEDS_ATTENTION"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
-            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+            raise ValueError(
+                "Invalid value for `lifecycle_state`, must be None or one of {0}"
+                .format(allowed_values)
+            )
         self._lifecycle_state = lifecycle_state
 
     @property

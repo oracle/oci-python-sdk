@@ -10,7 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MonitoredResource(object):
     """
-    The information about monitored resource.
+    The response object for create monitored resource and get monitored resource operations.
+    This contains information about the monitored resource. Credentials and credential aliases attributes
+    will be returned as null due to security reasons.
     """
 
     #: A constant which can be used with the lifecycle_state property of a MonitoredResource.
@@ -196,7 +198,7 @@ class MonitoredResource(object):
     def id(self):
         """
         **[Required]** Gets the id of this MonitoredResource.
-        The `OCID`__ of monitored resource.
+        Monitored resource identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -210,7 +212,7 @@ class MonitoredResource(object):
     def id(self, id):
         """
         Sets the id of this MonitoredResource.
-        The `OCID`__ of monitored resource.
+        Monitored resource identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -272,7 +274,7 @@ class MonitoredResource(object):
     def type(self):
         """
         **[Required]** Gets the type of this MonitoredResource.
-        Monitored resource type
+        Monitored Resource Type.
 
 
         :return: The type of this MonitoredResource.
@@ -284,7 +286,7 @@ class MonitoredResource(object):
     def type(self, type):
         """
         Sets the type of this MonitoredResource.
-        Monitored resource type
+        Monitored Resource Type.
 
 
         :param type: The type of this MonitoredResource.
@@ -296,7 +298,7 @@ class MonitoredResource(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this MonitoredResource.
-        Compartment Identifier `OCID`__
+        Compartment Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -310,7 +312,7 @@ class MonitoredResource(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this MonitoredResource.
-        Compartment Identifier `OCID`__
+        Compartment Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -324,7 +326,7 @@ class MonitoredResource(object):
     def tenant_id(self):
         """
         **[Required]** Gets the tenant_id of this MonitoredResource.
-        Tenancy Identifier `OCID`__
+        Tenancy Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -338,7 +340,7 @@ class MonitoredResource(object):
     def tenant_id(self, tenant_id):
         """
         Sets the tenant_id of this MonitoredResource.
-        Tenancy Identifier `OCID`__
+        Tenancy Identifier `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -376,10 +378,10 @@ class MonitoredResource(object):
     def external_id(self):
         """
         Gets the external_id of this MonitoredResource.
-        External resource is any OCI resource identifier `OCID`__
-        which is not a Stack Monitoring service resource.
-        Currently supports only following resource type identifiers - externalcontainerdatabase,
-        externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+        The external resource identifier `OCID`__.
+        External resource is any OCI resource which is not a Stack Monitoring service resource.
+        Currently supports only following resource types - Container database, non-container database,
+        pluggable database and OCI compute instance.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -393,10 +395,10 @@ class MonitoredResource(object):
     def external_id(self, external_id):
         """
         Sets the external_id of this MonitoredResource.
-        External resource is any OCI resource identifier `OCID`__
-        which is not a Stack Monitoring service resource.
-        Currently supports only following resource type identifiers - externalcontainerdatabase,
-        externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+        The external resource identifier `OCID`__.
+        External resource is any OCI resource which is not a Stack Monitoring service resource.
+        Currently supports only following resource types - Container database, non-container database,
+        pluggable database and OCI compute instance.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -462,7 +464,10 @@ class MonitoredResource(object):
     def time_created(self):
         """
         Gets the time_created of this MonitoredResource.
-        The time the the resource was created. An RFC3339 formatted datetime string
+        The date and time when the monitored resource was created, expressed in
+        `RFC 3339`__ timestamp format.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this MonitoredResource.
@@ -474,7 +479,10 @@ class MonitoredResource(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this MonitoredResource.
-        The time the the resource was created. An RFC3339 formatted datetime string
+        The date and time when the monitored resource was created, expressed in
+        `RFC 3339`__ timestamp format.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this MonitoredResource.
@@ -486,7 +494,10 @@ class MonitoredResource(object):
     def time_updated(self):
         """
         Gets the time_updated of this MonitoredResource.
-        The time the the resource was updated. An RFC3339 formatted datetime string
+        The date and time when the monitored resource was last updated, expressed in
+        `RFC 3339`__ timestamp format.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_updated of this MonitoredResource.
@@ -498,7 +509,10 @@ class MonitoredResource(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this MonitoredResource.
-        The time the the resource was updated. An RFC3339 formatted datetime string
+        The date and time when the monitored resource was last updated, expressed in
+        `RFC 3339`__ timestamp format.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_updated: The time_updated of this MonitoredResource.
@@ -540,7 +554,7 @@ class MonitoredResource(object):
     def properties(self):
         """
         Gets the properties of this MonitoredResource.
-        List of monitored resource properties
+        List of monitored resource properties.
 
 
         :return: The properties of this MonitoredResource.
@@ -552,7 +566,7 @@ class MonitoredResource(object):
     def properties(self, properties):
         """
         Sets the properties of this MonitoredResource.
-        List of monitored resource properties
+        List of monitored resource properties.
 
 
         :param properties: The properties of this MonitoredResource.

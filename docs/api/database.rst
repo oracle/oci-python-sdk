@@ -289,6 +289,8 @@ Database
     oci.database.models.RestoreDatabaseDetails
     oci.database.models.RotateAutonomousVmClusterOrdsCertsDetails
     oci.database.models.RotateAutonomousVmClusterSslCertsDetails
+    oci.database.models.RotateCloudAutonomousVmClusterOrdsCertsDetails
+    oci.database.models.RotateCloudAutonomousVmClusterSslCertsDetails
     oci.database.models.ScanDetails
     oci.database.models.ScheduledOperationDetails
     oci.database.models.SelfMountDetails

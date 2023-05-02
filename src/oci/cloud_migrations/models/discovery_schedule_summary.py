@@ -40,8 +40,7 @@ class DiscoveryScheduleSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DiscoveryScheduleSummary.
-            Allowed values for this property are: "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACTIVE", "DELETED"
         :type lifecycle_state: str
 
         :param lifecycle_details:
@@ -194,8 +193,7 @@ class DiscoveryScheduleSummary(object):
         **[Required]** Gets the lifecycle_state of this DiscoveryScheduleSummary.
         Current state of the discovery schedule.
 
-        Allowed values for this property are: "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACTIVE", "DELETED"
 
 
         :return: The lifecycle_state of this DiscoveryScheduleSummary.
@@ -215,7 +213,10 @@ class DiscoveryScheduleSummary(object):
         """
         allowed_values = ["ACTIVE", "DELETED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
-            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+            raise ValueError(
+                "Invalid value for `lifecycle_state`, must be None or one of {0}"
+                .format(allowed_values)
+            )
         self._lifecycle_state = lifecycle_state
 
     @property

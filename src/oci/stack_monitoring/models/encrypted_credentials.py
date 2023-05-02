@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class EncryptedCredentials(MonitoredResourceCredential):
     """
-    Encypted credentials [indicated by the type property in CredentialStore].
+    Encrypted credentials [indicated by the type property in CredentialStore].
     """
 
     def __init__(self, **kwargs):
@@ -82,7 +82,8 @@ class EncryptedCredentials(MonitoredResourceCredential):
     def key_id(self):
         """
         **[Required]** Gets the key_id of this EncryptedCredentials.
-        The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+        The master key should be created in OCI Vault owned by the client of this API.
+        The user should have permission to access the vault key.
 
 
         :return: The key_id of this EncryptedCredentials.
@@ -94,7 +95,8 @@ class EncryptedCredentials(MonitoredResourceCredential):
     def key_id(self, key_id):
         """
         Sets the key_id of this EncryptedCredentials.
-        The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+        The master key should be created in OCI Vault owned by the client of this API.
+        The user should have permission to access the vault key.
 
 
         :param key_id: The key_id of this EncryptedCredentials.

@@ -29,6 +29,14 @@ class WorkRequestSummary(object):
     #: This constant has a value of "MOVE_OPA_INSTANCE"
     OPERATION_TYPE_MOVE_OPA_INSTANCE = "MOVE_OPA_INSTANCE"
 
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_OPA_INSTANCE_ATTACHMENT"
+    OPERATION_TYPE_CREATE_OPA_INSTANCE_ATTACHMENT = "CREATE_OPA_INSTANCE_ATTACHMENT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_OPA_INSTANCE_ATTACHMENT"
+    OPERATION_TYPE_DELETE_OPA_INSTANCE_ATTACHMENT = "DELETE_OPA_INSTANCE_ATTACHMENT"
+
     #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -64,7 +72,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_OPA_INSTANCE", "UPDATE_OPA_INSTANCE", "DELETE_OPA_INSTANCE", "MOVE_OPA_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_OPA_INSTANCE", "UPDATE_OPA_INSTANCE", "DELETE_OPA_INSTANCE", "MOVE_OPA_INSTANCE", "CREATE_OPA_INSTANCE_ATTACHMENT", "DELETE_OPA_INSTANCE_ATTACHMENT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -143,7 +151,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         Type of the work request
 
-        Allowed values for this property are: "CREATE_OPA_INSTANCE", "UPDATE_OPA_INSTANCE", "DELETE_OPA_INSTANCE", "MOVE_OPA_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_OPA_INSTANCE", "UPDATE_OPA_INSTANCE", "DELETE_OPA_INSTANCE", "MOVE_OPA_INSTANCE", "CREATE_OPA_INSTANCE_ATTACHMENT", "DELETE_OPA_INSTANCE_ATTACHMENT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -162,7 +170,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_OPA_INSTANCE", "UPDATE_OPA_INSTANCE", "DELETE_OPA_INSTANCE", "MOVE_OPA_INSTANCE"]
+        allowed_values = ["CREATE_OPA_INSTANCE", "UPDATE_OPA_INSTANCE", "DELETE_OPA_INSTANCE", "MOVE_OPA_INSTANCE", "CREATE_OPA_INSTANCE_ATTACHMENT", "DELETE_OPA_INSTANCE_ATTACHMENT"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
