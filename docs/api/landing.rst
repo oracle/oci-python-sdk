@@ -51,7 +51,6 @@ API Reference
 * :doc:`Dashboard Group <dashboard_service/client/oci.dashboard_service.DashboardGroupClient>`
 * :doc:`Dashx Apis <management_dashboard/client/oci.management_dashboard.DashxApisClient>`
 * :doc:`Data Catalog <data_catalog/client/oci.data_catalog.DataCatalogClient>`
-* :doc:`Data Connectivity Management <data_connectivity/client/oci.data_connectivity.DataConnectivityManagementClient>`
 * :doc:`Data Flow <data_flow/client/oci.data_flow.DataFlowClient>`
 * :doc:`Data Integration <data_integration/client/oci.data_integration.DataIntegrationClient>`
 * :doc:`Data Labeling <data_labeling_service_dataplane/client/oci.data_labeling_service_dataplane.DataLabelingClient>`
@@ -118,7 +117,6 @@ API Reference
 * :doc:`Mysqlaas <mysql/client/oci.mysql.MysqlaasClient>`
 * :doc:`Network Firewall <network_firewall/client/oci.network_firewall.NetworkFirewallClient>`
 * :doc:`Network Load Balancer <network_load_balancer/client/oci.network_load_balancer.NetworkLoadBalancerClient>`
-* :doc:`Network Validation <data_connectivity/client/oci.data_connectivity.NetworkValidationClient>`
 * :doc:`Nosql <nosql/client/oci.nosql.NosqlClient>`
 * :doc:`Notification Control Plane <ons/client/oci.ons.NotificationControlPlaneClient>`
 * :doc:`Notification Data Plane <ons/client/oci.ons.NotificationDataPlaneClient>`
@@ -255,7 +253,6 @@ API Reference
     core
     dashboard_service
     data_catalog
-    data_connectivity
     data_flow
     data_integration
     data_labeling_service
