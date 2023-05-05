@@ -11,6 +11,19 @@ Added
 -----
 * TBD
 
+Breaking
+--------
+* The Data Connectivity service was removed.
+* The property `type` in the `DiscoveryDetails` model in the Application Migration service was fixed to no longer support `UNKNOWN_ENUM_VALUE`. Instead, a `ValueError` will be raised if this property is assigned a value that it does not support.
+* The property `protocol` in the `IdentityProvider` model in the Identity Data Plane service was fixed to no longer support `UNKNOWN_ENUM_VALUE`. Instead, a `ValueError` will be raised if this property is assigned a value that it does not support.
+* The properties `lifecycle_state`, `kind`, and `last_execution_status` in the `Rule` model in the Log Analytics service were fixed to no longer support `UNKNOWN_ENUM_VALUE`. Instead, a `ValueError` will be raised if these properties are assigned a value that they do not support.
+* The properties `type` and `lifecycle_state` in the `Parameter` model in the Digital Assistant service were fixed to no longer support `UNKNOWN_ENUM_VALUE`. Instead, a `ValueError` will be raised if these properties are assigned a value that they do not support.
+* The property `model_type` in the `AbstractField`, `ConnectionDetails`, `Filter`, `Operation`, and `Source` models in the Data Integration service was fixed to no longer support `UNKNOWN_ENUM_VALUE`. Instead, a `ValueError` will be raised if this property is assigned a value that it does not support.
+* The property `baseline_ocpu_utilization` in the `LaunchInstanceShapeConfigDetails` model in the Compute service was fixed to no longer support `UNKNOWN_ENUM_VALUE`. Instead, a `ValueError` will be raised if this property is assigned a value that it does not support.
+* The property `type` in the `AssetSource`, `AssetSourceCredentials`, and `AssetSourceSummary` models in the Cloud Migration service was fixed to no longer support `UNKNOWN_ENUM_VALUE`. Instead, a `ValueError` will be raised if this property is assigned a value that it does not support.
+* The property `lifecycle_state` in the `AssetSource`, `AssetSourceConnection`, `AssetSourceSummary`, `DiscoverySchedule`, and `DiscoveryScheduleSummary` models in the Cloud Migration service was fixed to no longer support `UNKNOWN_ENUM_VALUE`. Instead, a `ValueError` will be raised if this property is assigned a value that it does not support.
+* The property `connection_type` in the `AssetSourceConnection` model in the Cloud Migration Service was fixed to no longer support `UNKNOWN_ENUM_VALUE`. Instead, a `ValueError` will be raised if this property is assigned a value that it does not support.
+
 ====================
 2.100.0 - 2023-05-02
 ====================
