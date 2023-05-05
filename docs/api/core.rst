@@ -306,6 +306,7 @@ Core Services
     oci.core.models.InstanceConfigurationAutotunePolicy
     oci.core.models.InstanceConfigurationAvailabilityConfig
     oci.core.models.InstanceConfigurationBlockVolumeDetails
+    oci.core.models.InstanceConfigurationBlockVolumeReplicaDetails
     oci.core.models.InstanceConfigurationCreateVnicDetails
     oci.core.models.InstanceConfigurationCreateVolumeDetails
     oci.core.models.InstanceConfigurationDetachedVolumeAutotunePolicy

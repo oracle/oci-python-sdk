@@ -286,6 +286,7 @@ from .instance_configuration_attach_volume_details import InstanceConfigurationA
 from .instance_configuration_autotune_policy import InstanceConfigurationAutotunePolicy
 from .instance_configuration_availability_config import InstanceConfigurationAvailabilityConfig
 from .instance_configuration_block_volume_details import InstanceConfigurationBlockVolumeDetails
+from .instance_configuration_block_volume_replica_details import InstanceConfigurationBlockVolumeReplicaDetails
 from .instance_configuration_create_vnic_details import InstanceConfigurationCreateVnicDetails
 from .instance_configuration_create_volume_details import InstanceConfigurationCreateVolumeDetails
 from .instance_configuration_detached_volume_autotune_policy import InstanceConfigurationDetachedVolumeAutotunePolicy
@@ -820,6 +821,7 @@ core_type_mapping = {
     "InstanceConfigurationAutotunePolicy": InstanceConfigurationAutotunePolicy,
     "InstanceConfigurationAvailabilityConfig": InstanceConfigurationAvailabilityConfig,
     "InstanceConfigurationBlockVolumeDetails": InstanceConfigurationBlockVolumeDetails,
+    "InstanceConfigurationBlockVolumeReplicaDetails": InstanceConfigurationBlockVolumeReplicaDetails,
     "InstanceConfigurationCreateVnicDetails": InstanceConfigurationCreateVnicDetails,
     "InstanceConfigurationCreateVolumeDetails": InstanceConfigurationCreateVolumeDetails,
     "InstanceConfigurationDetachedVolumeAutotunePolicy": InstanceConfigurationDetachedVolumeAutotunePolicy,

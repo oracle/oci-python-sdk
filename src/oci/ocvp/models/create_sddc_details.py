@@ -143,6 +143,10 @@ class CreateSddcDetails(object):
             The value to assign to the capacity_reservation_id property of this CreateSddcDetails.
         :type capacity_reservation_id: str
 
+        :param datastores:
+            The value to assign to the datastores property of this CreateSddcDetails.
+        :type datastores: list[oci.ocvp.models.DatastoreInfo]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateSddcDetails.
         :type freeform_tags: dict(str, str)
@@ -180,6 +184,7 @@ class CreateSddcDetails(object):
             'initial_host_ocpu_count': 'float',
             'is_shielded_instance_enabled': 'bool',
             'capacity_reservation_id': 'str',
+            'datastores': 'list[DatastoreInfo]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -212,6 +217,7 @@ class CreateSddcDetails(object):
             'initial_host_ocpu_count': 'initialHostOcpuCount',
             'is_shielded_instance_enabled': 'isShieldedInstanceEnabled',
             'capacity_reservation_id': 'capacityReservationId',
+            'datastores': 'datastores',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -243,6 +249,7 @@ class CreateSddcDetails(object):
         self._initial_host_ocpu_count = None
         self._is_shielded_instance_enabled = None
         self._capacity_reservation_id = None
+        self._datastores = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -462,7 +469,8 @@ class CreateSddcDetails(object):
     def is_hcx_enabled(self):
         """
         Gets the is_hcx_enabled of this CreateSddcDetails.
-        Indicates whether to enable HCX for this SDDC.
+        For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC.
+        For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
 
 
         :return: The is_hcx_enabled of this CreateSddcDetails.
@@ -474,7 +482,8 @@ class CreateSddcDetails(object):
     def is_hcx_enabled(self, is_hcx_enabled):
         """
         Sets the is_hcx_enabled of this CreateSddcDetails.
-        Indicates whether to enable HCX for this SDDC.
+        For SDDC with dense compute shapes, this parameter indicates whether to enable HCX Advanced for this SDDC.
+        For SDDC with standard compute shapes, this parameter is equivalent to `isHcxEnterpriseEnabled`.
 
 
         :param is_hcx_enabled: The is_hcx_enabled of this CreateSddcDetails.
@@ -1019,6 +1028,32 @@ class CreateSddcDetails(object):
         :type: str
         """
         self._capacity_reservation_id = capacity_reservation_id
+
+    @property
+    def datastores(self):
+        """
+        Gets the datastores of this CreateSddcDetails.
+        A list of datastore info for the SDDC.
+        This value is required only when `initialHostShapeName` is a standard shape.
+
+
+        :return: The datastores of this CreateSddcDetails.
+        :rtype: list[oci.ocvp.models.DatastoreInfo]
+        """
+        return self._datastores
+
+    @datastores.setter
+    def datastores(self, datastores):
+        """
+        Sets the datastores of this CreateSddcDetails.
+        A list of datastore info for the SDDC.
+        This value is required only when `initialHostShapeName` is a standard shape.
+
+
+        :param datastores: The datastores of this CreateSddcDetails.
+        :type: list[oci.ocvp.models.DatastoreInfo]
+        """
+        self._datastores = datastores
 
     @property
     def freeform_tags(self):

@@ -32,16 +32,30 @@ class DisasterRecoveryConfiguration(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type disaster_recovery_type: str
 
+        :param time_snapshot_standby_enabled_till:
+            The value to assign to the time_snapshot_standby_enabled_till property of this DisasterRecoveryConfiguration.
+        :type time_snapshot_standby_enabled_till: datetime
+
+        :param is_snapshot_standby:
+            The value to assign to the is_snapshot_standby property of this DisasterRecoveryConfiguration.
+        :type is_snapshot_standby: bool
+
         """
         self.swagger_types = {
-            'disaster_recovery_type': 'str'
+            'disaster_recovery_type': 'str',
+            'time_snapshot_standby_enabled_till': 'datetime',
+            'is_snapshot_standby': 'bool'
         }
 
         self.attribute_map = {
-            'disaster_recovery_type': 'disasterRecoveryType'
+            'disaster_recovery_type': 'disasterRecoveryType',
+            'time_snapshot_standby_enabled_till': 'timeSnapshotStandbyEnabledTill',
+            'is_snapshot_standby': 'isSnapshotStandby'
         }
 
         self._disaster_recovery_type = None
+        self._time_snapshot_standby_enabled_till = None
+        self._is_snapshot_standby = None
 
     @property
     def disaster_recovery_type(self):
@@ -76,6 +90,54 @@ class DisasterRecoveryConfiguration(object):
         if not value_allowed_none_or_none_sentinel(disaster_recovery_type, allowed_values):
             disaster_recovery_type = 'UNKNOWN_ENUM_VALUE'
         self._disaster_recovery_type = disaster_recovery_type
+
+    @property
+    def time_snapshot_standby_enabled_till(self):
+        """
+        Gets the time_snapshot_standby_enabled_till of this DisasterRecoveryConfiguration.
+        Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+
+
+        :return: The time_snapshot_standby_enabled_till of this DisasterRecoveryConfiguration.
+        :rtype: datetime
+        """
+        return self._time_snapshot_standby_enabled_till
+
+    @time_snapshot_standby_enabled_till.setter
+    def time_snapshot_standby_enabled_till(self, time_snapshot_standby_enabled_till):
+        """
+        Sets the time_snapshot_standby_enabled_till of this DisasterRecoveryConfiguration.
+        Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+
+
+        :param time_snapshot_standby_enabled_till: The time_snapshot_standby_enabled_till of this DisasterRecoveryConfiguration.
+        :type: datetime
+        """
+        self._time_snapshot_standby_enabled_till = time_snapshot_standby_enabled_till
+
+    @property
+    def is_snapshot_standby(self):
+        """
+        Gets the is_snapshot_standby of this DisasterRecoveryConfiguration.
+        Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+
+
+        :return: The is_snapshot_standby of this DisasterRecoveryConfiguration.
+        :rtype: bool
+        """
+        return self._is_snapshot_standby
+
+    @is_snapshot_standby.setter
+    def is_snapshot_standby(self, is_snapshot_standby):
+        """
+        Sets the is_snapshot_standby of this DisasterRecoveryConfiguration.
+        Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+
+
+        :param is_snapshot_standby: The is_snapshot_standby of this DisasterRecoveryConfiguration.
+        :type: bool
+        """
+        self._is_snapshot_standby = is_snapshot_standby
 
     def __repr__(self):
         return formatted_flat_dict(self)

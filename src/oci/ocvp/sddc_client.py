@@ -575,6 +575,7 @@ class SddcClient(object):
     def downgrade_hcx(self, downgrade_hcx_details, sddc_id, **kwargs):
         """
         Downgrade the specified SDDC from HCX Enterprise to HCX Advanced.
+        SDDC with standard compute shapes will always use HCX Enterprise if HCX is enabled and cannot be downgraded.
         Downgrading from HCX Enterprise to HCX Advanced reduces the number of provided license keys from 10 to 3.
         Downgrade remains in a `PENDING` state until the end of the current billing cycle. You can use :func:`cancel_downgrade_hcx`
         to cancel the downgrade while it's still in a `PENDING` state.
@@ -1137,6 +1138,9 @@ class SddcClient(object):
             Unique identifier for the request. If you need to contact Oracle about a particular
             request, please provide the request ID.
 
+        :param str host_shape_name: (optional)
+            A filter to return only resources that match or support the given ESXi host shape.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1168,7 +1172,8 @@ class SddcClient(object):
             "retry_strategy",
             "limit",
             "page",
-            "opc_request_id"
+            "opc_request_id",
+            "host_shape_name"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1178,7 +1183,8 @@ class SddcClient(object):
         query_params = {
             "compartmentId": compartment_id,
             "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
+            "page": kwargs.get("page", missing),
+            "hostShapeName": kwargs.get("host_shape_name", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

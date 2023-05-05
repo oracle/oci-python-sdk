@@ -3,6 +3,7 @@ API Reference
 
 .. rubric:: Service Clients
 
+* :doc:`Access Governance Cp <access_governance_cp/client/oci.access_governance_cp.AccessGovernanceCPClient>`
 * :doc:`Access Requests <operator_access_control/client/oci.operator_access_control.AccessRequestsClient>`
 * :doc:`Account <marketplace/client/oci.marketplace.AccountClient>`
 * :doc:`Ai Service Document <ai_document/client/oci.ai_document.AIServiceDocumentClient>`
@@ -219,6 +220,7 @@ API Reference
     :hidden:
     :maxdepth: 5
 
+    access_governance_cp
     adm
     ai_anomaly_detection
     ai_document

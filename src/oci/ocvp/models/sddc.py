@@ -280,6 +280,10 @@ class Sddc(object):
             The value to assign to the capacity_reservation_id property of this Sddc.
         :type capacity_reservation_id: str
 
+        :param datastores:
+            The value to assign to the datastores property of this Sddc.
+        :type datastores: list[oci.ocvp.models.DatastoreSummary]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Sddc.
         :type freeform_tags: dict(str, str)
@@ -342,6 +346,7 @@ class Sddc(object):
             'initial_host_ocpu_count': 'float',
             'is_shielded_instance_enabled': 'bool',
             'capacity_reservation_id': 'str',
+            'datastores': 'list[DatastoreSummary]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -399,6 +404,7 @@ class Sddc(object):
             'initial_host_ocpu_count': 'initialHostOcpuCount',
             'is_shielded_instance_enabled': 'isShieldedInstanceEnabled',
             'capacity_reservation_id': 'capacityReservationId',
+            'datastores': 'datastores',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -455,6 +461,7 @@ class Sddc(object):
         self._initial_host_ocpu_count = None
         self._is_shielded_instance_enabled = None
         self._capacity_reservation_id = None
+        self._datastores = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -1972,7 +1979,7 @@ class Sddc(object):
     def upgrade_licenses(self):
         """
         Gets the upgrade_licenses of this Sddc.
-        The vSphere licenses to be used when upgrade SDDC.
+        The vSphere licenses to use when upgrading the SDDC.
 
 
         :return: The upgrade_licenses of this Sddc.
@@ -1984,7 +1991,7 @@ class Sddc(object):
     def upgrade_licenses(self, upgrade_licenses):
         """
         Sets the upgrade_licenses of this Sddc.
-        The vSphere licenses to be used when upgrade SDDC.
+        The vSphere licenses to use when upgrading the SDDC.
 
 
         :param upgrade_licenses: The upgrade_licenses of this Sddc.
@@ -1996,7 +2003,7 @@ class Sddc(object):
     def vsphere_upgrade_guide(self):
         """
         Gets the vsphere_upgrade_guide of this Sddc.
-        The link of guidance to upgrade vSphere.
+        The link to guidance for upgrading vSphere.
 
 
         :return: The vsphere_upgrade_guide of this Sddc.
@@ -2008,7 +2015,7 @@ class Sddc(object):
     def vsphere_upgrade_guide(self, vsphere_upgrade_guide):
         """
         Sets the vsphere_upgrade_guide of this Sddc.
-        The link of guidance to upgrade vSphere.
+        The link to guidance for upgrading vSphere.
 
 
         :param vsphere_upgrade_guide: The vsphere_upgrade_guide of this Sddc.
@@ -2020,7 +2027,7 @@ class Sddc(object):
     def vsphere_upgrade_objects(self):
         """
         Gets the vsphere_upgrade_objects of this Sddc.
-        The links of binary objects needed for upgrade vSphere.
+        The links to binary objects needed to upgrade vSphere.
 
 
         :return: The vsphere_upgrade_objects of this Sddc.
@@ -2032,7 +2039,7 @@ class Sddc(object):
     def vsphere_upgrade_objects(self, vsphere_upgrade_objects):
         """
         Sets the vsphere_upgrade_objects of this Sddc.
-        The links of binary objects needed for upgrade vSphere.
+        The links to binary objects needed to upgrade vSphere.
 
 
         :param vsphere_upgrade_objects: The vsphere_upgrade_objects of this Sddc.
@@ -2141,6 +2148,30 @@ class Sddc(object):
         :type: str
         """
         self._capacity_reservation_id = capacity_reservation_id
+
+    @property
+    def datastores(self):
+        """
+        Gets the datastores of this Sddc.
+        Datastores used for the Sddc.
+
+
+        :return: The datastores of this Sddc.
+        :rtype: list[oci.ocvp.models.DatastoreSummary]
+        """
+        return self._datastores
+
+    @datastores.setter
+    def datastores(self, datastores):
+        """
+        Sets the datastores of this Sddc.
+        Datastores used for the Sddc.
+
+
+        :param datastores: The datastores of this Sddc.
+        :type: list[oci.ocvp.models.DatastoreSummary]
+        """
+        self._datastores = datastores
 
     @property
     def freeform_tags(self):

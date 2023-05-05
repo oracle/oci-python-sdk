@@ -169,3 +169,5 @@
 ^src/oci/recovery/.*\.py$
 ^src/oci/vbs_inst/.*\.py$
 ^src/oci/identity_domains/.*\.py$
+
+^src/oci/access_governance_cp/.*\.py$
