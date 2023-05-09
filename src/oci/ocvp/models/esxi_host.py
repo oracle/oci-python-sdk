@@ -684,7 +684,7 @@ class EsxiHost(object):
     def vmware_software_version(self):
         """
         **[Required]** Gets the vmware_software_version of this EsxiHost.
-        The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+        The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
 
 
         :return: The vmware_software_version of this EsxiHost.
@@ -696,7 +696,7 @@ class EsxiHost(object):
     def vmware_software_version(self, vmware_software_version):
         """
         Sets the vmware_software_version of this EsxiHost.
-        The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+        The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
 
 
         :param vmware_software_version: The vmware_software_version of this EsxiHost.

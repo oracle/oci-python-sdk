@@ -31,6 +31,10 @@ class InstanceConfigurationInstanceSourceViaImageDetails(InstanceConfigurationIn
             The value to assign to the image_id property of this InstanceConfigurationInstanceSourceViaImageDetails.
         :type image_id: str
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this InstanceConfigurationInstanceSourceViaImageDetails.
+        :type kms_key_id: str
+
         :param boot_volume_vpus_per_gb:
             The value to assign to the boot_volume_vpus_per_gb property of this InstanceConfigurationInstanceSourceViaImageDetails.
         :type boot_volume_vpus_per_gb: int
@@ -40,6 +44,7 @@ class InstanceConfigurationInstanceSourceViaImageDetails(InstanceConfigurationIn
             'source_type': 'str',
             'boot_volume_size_in_gbs': 'int',
             'image_id': 'str',
+            'kms_key_id': 'str',
             'boot_volume_vpus_per_gb': 'int'
         }
 
@@ -47,12 +52,14 @@ class InstanceConfigurationInstanceSourceViaImageDetails(InstanceConfigurationIn
             'source_type': 'sourceType',
             'boot_volume_size_in_gbs': 'bootVolumeSizeInGBs',
             'image_id': 'imageId',
+            'kms_key_id': 'kmsKeyId',
             'boot_volume_vpus_per_gb': 'bootVolumeVpusPerGB'
         }
 
         self._source_type = None
         self._boot_volume_size_in_gbs = None
         self._image_id = None
+        self._kms_key_id = None
         self._boot_volume_vpus_per_gb = None
         self._source_type = 'image'
 
@@ -105,6 +112,30 @@ class InstanceConfigurationInstanceSourceViaImageDetails(InstanceConfigurationIn
         :type: str
         """
         self._image_id = image_id
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this InstanceConfigurationInstanceSourceViaImageDetails.
+        The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+
+
+        :return: The kms_key_id of this InstanceConfigurationInstanceSourceViaImageDetails.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this InstanceConfigurationInstanceSourceViaImageDetails.
+        The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+
+
+        :param kms_key_id: The kms_key_id of this InstanceConfigurationInstanceSourceViaImageDetails.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     @property
     def boot_volume_vpus_per_gb(self):

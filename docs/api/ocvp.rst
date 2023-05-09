@@ -25,6 +25,8 @@ Ocvp
     oci.ocvp.models.ChangeSddcCompartmentDetails
     oci.ocvp.models.CreateEsxiHostDetails
     oci.ocvp.models.CreateSddcDetails
+    oci.ocvp.models.DatastoreInfo
+    oci.ocvp.models.DatastoreSummary
     oci.ocvp.models.DowngradeHcxDetails
     oci.ocvp.models.EsxiHost
     oci.ocvp.models.EsxiHostCollection

@@ -127,6 +127,7 @@ from .create_external_pluggable_database_details import CreateExternalPluggableD
 from .create_key_store_details import CreateKeyStoreDetails
 from .create_nfs_backup_destination_details import CreateNFSBackupDestinationDetails
 from .create_new_database_details import CreateNewDatabaseDetails
+from .create_oneoff_patch_details import CreateOneoffPatchDetails
 from .create_pluggable_database_details import CreatePluggableDatabaseDetails
 from .create_recovery_appliance_backup_destination_details import CreateRecoveryApplianceBackupDestinationDetails
 from .create_refreshable_autonomous_database_clone_details import CreateRefreshableAutonomousDatabaseCloneDetails
@@ -181,6 +182,7 @@ from .db_version_summary import DbVersionSummary
 from .deregister_autonomous_database_data_safe_details import DeregisterAutonomousDatabaseDataSafeDetails
 from .disaster_recovery_configuration import DisasterRecoveryConfiguration
 from .disk_performance_details import DiskPerformanceDetails
+from .download_oneoff_patch import DownloadOneoffPatch
 from .enable_database_management_details import EnableDatabaseManagementDetails
 from .enable_external_container_database_database_management_details import EnableExternalContainerDatabaseDatabaseManagementDetails
 from .enable_external_container_database_stack_monitoring_details import EnableExternalContainerDatabaseStackMonitoringDetails
@@ -249,6 +251,8 @@ from .mount_type_details import MountTypeDetails
 from .network_bonding_mode_details import NetworkBondingModeDetails
 from .node_details import NodeDetails
 from .ocp_us import OCPUs
+from .oneoff_patch import OneoffPatch
+from .oneoff_patch_summary import OneoffPatchSummary
 from .operations_insights_config import OperationsInsightsConfig
 from .patch import Patch
 from .patch_details import PatchDetails
@@ -312,6 +316,7 @@ from .update_history_entry import UpdateHistoryEntry
 from .update_history_entry_summary import UpdateHistoryEntrySummary
 from .update_key_store_details import UpdateKeyStoreDetails
 from .update_maintenance_run_details import UpdateMaintenanceRunDetails
+from .update_oneoff_patch_details import UpdateOneoffPatchDetails
 from .update_pluggable_database_details import UpdatePluggableDatabaseDetails
 from .update_summary import UpdateSummary
 from .update_vm_cluster_details import UpdateVmClusterDetails
@@ -456,6 +461,7 @@ database_type_mapping = {
     "CreateKeyStoreDetails": CreateKeyStoreDetails,
     "CreateNFSBackupDestinationDetails": CreateNFSBackupDestinationDetails,
     "CreateNewDatabaseDetails": CreateNewDatabaseDetails,
+    "CreateOneoffPatchDetails": CreateOneoffPatchDetails,
     "CreatePluggableDatabaseDetails": CreatePluggableDatabaseDetails,
     "CreateRecoveryApplianceBackupDestinationDetails": CreateRecoveryApplianceBackupDestinationDetails,
     "CreateRefreshableAutonomousDatabaseCloneDetails": CreateRefreshableAutonomousDatabaseCloneDetails,
@@ -510,6 +516,7 @@ database_type_mapping = {
     "DeregisterAutonomousDatabaseDataSafeDetails": DeregisterAutonomousDatabaseDataSafeDetails,
     "DisasterRecoveryConfiguration": DisasterRecoveryConfiguration,
     "DiskPerformanceDetails": DiskPerformanceDetails,
+    "DownloadOneoffPatch": DownloadOneoffPatch,
     "EnableDatabaseManagementDetails": EnableDatabaseManagementDetails,
     "EnableExternalContainerDatabaseDatabaseManagementDetails": EnableExternalContainerDatabaseDatabaseManagementDetails,
     "EnableExternalContainerDatabaseStackMonitoringDetails": EnableExternalContainerDatabaseStackMonitoringDetails,
@@ -578,6 +585,8 @@ database_type_mapping = {
     "NetworkBondingModeDetails": NetworkBondingModeDetails,
     "NodeDetails": NodeDetails,
     "OCPUs": OCPUs,
+    "OneoffPatch": OneoffPatch,
+    "OneoffPatchSummary": OneoffPatchSummary,
     "OperationsInsightsConfig": OperationsInsightsConfig,
     "Patch": Patch,
     "PatchDetails": PatchDetails,
@@ -641,6 +650,7 @@ database_type_mapping = {
     "UpdateHistoryEntrySummary": UpdateHistoryEntrySummary,
     "UpdateKeyStoreDetails": UpdateKeyStoreDetails,
     "UpdateMaintenanceRunDetails": UpdateMaintenanceRunDetails,
+    "UpdateOneoffPatchDetails": UpdateOneoffPatchDetails,
     "UpdatePluggableDatabaseDetails": UpdatePluggableDatabaseDetails,
     "UpdateSummary": UpdateSummary,
     "UpdateVmClusterDetails": UpdateVmClusterDetails,

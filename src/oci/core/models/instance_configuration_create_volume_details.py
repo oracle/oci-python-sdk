@@ -30,6 +30,14 @@ class InstanceConfigurationCreateVolumeDetails(object):
             The value to assign to the compartment_id property of this InstanceConfigurationCreateVolumeDetails.
         :type compartment_id: str
 
+        :param is_auto_tune_enabled:
+            The value to assign to the is_auto_tune_enabled property of this InstanceConfigurationCreateVolumeDetails.
+        :type is_auto_tune_enabled: bool
+
+        :param block_volume_replicas:
+            The value to assign to the block_volume_replicas property of this InstanceConfigurationCreateVolumeDetails.
+        :type block_volume_replicas: list[oci.core.models.InstanceConfigurationBlockVolumeReplicaDetails]
+
         :param defined_tags:
             The value to assign to the defined_tags property of this InstanceConfigurationCreateVolumeDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -67,6 +75,8 @@ class InstanceConfigurationCreateVolumeDetails(object):
             'availability_domain': 'str',
             'backup_policy_id': 'str',
             'compartment_id': 'str',
+            'is_auto_tune_enabled': 'bool',
+            'block_volume_replicas': 'list[InstanceConfigurationBlockVolumeReplicaDetails]',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -81,6 +91,8 @@ class InstanceConfigurationCreateVolumeDetails(object):
             'availability_domain': 'availabilityDomain',
             'backup_policy_id': 'backupPolicyId',
             'compartment_id': 'compartmentId',
+            'is_auto_tune_enabled': 'isAutoTuneEnabled',
+            'block_volume_replicas': 'blockVolumeReplicas',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
@@ -94,6 +106,8 @@ class InstanceConfigurationCreateVolumeDetails(object):
         self._availability_domain = None
         self._backup_policy_id = None
         self._compartment_id = None
+        self._is_auto_tune_enabled = None
+        self._block_volume_replicas = None
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
@@ -180,6 +194,58 @@ class InstanceConfigurationCreateVolumeDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def is_auto_tune_enabled(self):
+        """
+        Gets the is_auto_tune_enabled of this InstanceConfigurationCreateVolumeDetails.
+        Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated.
+        Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+
+
+        :return: The is_auto_tune_enabled of this InstanceConfigurationCreateVolumeDetails.
+        :rtype: bool
+        """
+        return self._is_auto_tune_enabled
+
+    @is_auto_tune_enabled.setter
+    def is_auto_tune_enabled(self, is_auto_tune_enabled):
+        """
+        Sets the is_auto_tune_enabled of this InstanceConfigurationCreateVolumeDetails.
+        Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated.
+        Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+
+
+        :param is_auto_tune_enabled: The is_auto_tune_enabled of this InstanceConfigurationCreateVolumeDetails.
+        :type: bool
+        """
+        self._is_auto_tune_enabled = is_auto_tune_enabled
+
+    @property
+    def block_volume_replicas(self):
+        """
+        Gets the block_volume_replicas of this InstanceConfigurationCreateVolumeDetails.
+        The list of block volume replicas to be enabled for this volume
+        in the specified destination availability domains.
+
+
+        :return: The block_volume_replicas of this InstanceConfigurationCreateVolumeDetails.
+        :rtype: list[oci.core.models.InstanceConfigurationBlockVolumeReplicaDetails]
+        """
+        return self._block_volume_replicas
+
+    @block_volume_replicas.setter
+    def block_volume_replicas(self, block_volume_replicas):
+        """
+        Sets the block_volume_replicas of this InstanceConfigurationCreateVolumeDetails.
+        The list of block volume replicas to be enabled for this volume
+        in the specified destination availability domains.
+
+
+        :param block_volume_replicas: The block_volume_replicas of this InstanceConfigurationCreateVolumeDetails.
+        :type: list[oci.core.models.InstanceConfigurationBlockVolumeReplicaDetails]
+        """
+        self._block_volume_replicas = block_volume_replicas
 
     @property
     def defined_tags(self):

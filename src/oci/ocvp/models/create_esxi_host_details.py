@@ -430,11 +430,12 @@ class CreateEsxiHostDetails(object):
         Gets the non_upgraded_esxi_host_id of this CreateEsxiHostDetails.
         The `OCID`__ of the ESXi host that
         will be upgraded. This is an optional parameter. If this parameter
-        is specified, an ESXi host with new version will be created to replace the
-        original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly
-        created Esxi host.
+        is specified, an ESXi host with the new software version is created to replace the
+        original one, and the `nonUpgradedEsxiHostId` field is updated in the newly
+        created Esxi host. See `Upgrading VMware Software`__ for more information.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/VMware/Concepts/upgrade.htm
 
 
         :return: The non_upgraded_esxi_host_id of this CreateEsxiHostDetails.
@@ -448,11 +449,12 @@ class CreateEsxiHostDetails(object):
         Sets the non_upgraded_esxi_host_id of this CreateEsxiHostDetails.
         The `OCID`__ of the ESXi host that
         will be upgraded. This is an optional parameter. If this parameter
-        is specified, an ESXi host with new version will be created to replace the
-        original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly
-        created Esxi host.
+        is specified, an ESXi host with the new software version is created to replace the
+        original one, and the `nonUpgradedEsxiHostId` field is updated in the newly
+        created Esxi host. See `Upgrading VMware Software`__ for more information.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/VMware/Concepts/upgrade.htm
 
 
         :param non_upgraded_esxi_host_id: The non_upgraded_esxi_host_id of this CreateEsxiHostDetails.

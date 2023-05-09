@@ -141,6 +141,7 @@ Database
     oci.database.models.CreateKeyStoreDetails
     oci.database.models.CreateNFSBackupDestinationDetails
     oci.database.models.CreateNewDatabaseDetails
+    oci.database.models.CreateOneoffPatchDetails
     oci.database.models.CreatePluggableDatabaseDetails
     oci.database.models.CreateRecoveryApplianceBackupDestinationDetails
     oci.database.models.CreateRefreshableAutonomousDatabaseCloneDetails
@@ -195,6 +196,7 @@ Database
     oci.database.models.DeregisterAutonomousDatabaseDataSafeDetails
     oci.database.models.DisasterRecoveryConfiguration
     oci.database.models.DiskPerformanceDetails
+    oci.database.models.DownloadOneoffPatch
     oci.database.models.EnableDatabaseManagementDetails
     oci.database.models.EnableExternalContainerDatabaseDatabaseManagementDetails
     oci.database.models.EnableExternalContainerDatabaseStackMonitoringDetails
@@ -263,6 +265,8 @@ Database
     oci.database.models.NetworkBondingModeDetails
     oci.database.models.NodeDetails
     oci.database.models.OCPUs
+    oci.database.models.OneoffPatch
+    oci.database.models.OneoffPatchSummary
     oci.database.models.OperationsInsightsConfig
     oci.database.models.Patch
     oci.database.models.PatchDetails
@@ -326,6 +330,7 @@ Database
     oci.database.models.UpdateHistoryEntrySummary
     oci.database.models.UpdateKeyStoreDetails
     oci.database.models.UpdateMaintenanceRunDetails
+    oci.database.models.UpdateOneoffPatchDetails
     oci.database.models.UpdatePluggableDatabaseDetails
     oci.database.models.UpdateSummary
     oci.database.models.UpdateVmClusterDetails

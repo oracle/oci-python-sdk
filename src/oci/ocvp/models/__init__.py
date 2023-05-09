@@ -7,6 +7,8 @@ from __future__ import absolute_import
 from .change_sddc_compartment_details import ChangeSddcCompartmentDetails
 from .create_esxi_host_details import CreateEsxiHostDetails
 from .create_sddc_details import CreateSddcDetails
+from .datastore_info import DatastoreInfo
+from .datastore_summary import DatastoreSummary
 from .downgrade_hcx_details import DowngradeHcxDetails
 from .esxi_host import EsxiHost
 from .esxi_host_collection import EsxiHostCollection
@@ -38,6 +40,8 @@ ocvp_type_mapping = {
     "ChangeSddcCompartmentDetails": ChangeSddcCompartmentDetails,
     "CreateEsxiHostDetails": CreateEsxiHostDetails,
     "CreateSddcDetails": CreateSddcDetails,
+    "DatastoreInfo": DatastoreInfo,
+    "DatastoreSummary": DatastoreSummary,
     "DowngradeHcxDetails": DowngradeHcxDetails,
     "EsxiHost": EsxiHost,
     "EsxiHostCollection": EsxiHostCollection,
