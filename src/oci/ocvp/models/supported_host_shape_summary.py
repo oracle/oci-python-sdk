@@ -98,6 +98,10 @@ class SupportedHostShapeSummary(object):
             The value to assign to the is_support_shielded_instances property of this SupportedHostShapeSummary.
         :type is_support_shielded_instances: bool
 
+        :param is_support_monthly_sku:
+            The value to assign to the is_support_monthly_sku property of this SupportedHostShapeSummary.
+        :type is_support_monthly_sku: bool
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -108,7 +112,8 @@ class SupportedHostShapeSummary(object):
             'supported_sddc_types': 'list[str]',
             'supported_vmware_software_versions': 'list[str]',
             'description': 'str',
-            'is_support_shielded_instances': 'bool'
+            'is_support_shielded_instances': 'bool',
+            'is_support_monthly_sku': 'bool'
         }
 
         self.attribute_map = {
@@ -120,7 +125,8 @@ class SupportedHostShapeSummary(object):
             'supported_sddc_types': 'supportedSddcTypes',
             'supported_vmware_software_versions': 'supportedVmwareSoftwareVersions',
             'description': 'description',
-            'is_support_shielded_instances': 'isSupportShieldedInstances'
+            'is_support_shielded_instances': 'isSupportShieldedInstances',
+            'is_support_monthly_sku': 'isSupportMonthlySku'
         }
 
         self._name = None
@@ -132,6 +138,7 @@ class SupportedHostShapeSummary(object):
         self._supported_vmware_software_versions = None
         self._description = None
         self._is_support_shielded_instances = None
+        self._is_support_monthly_sku = None
 
     @property
     def name(self):
@@ -360,6 +367,30 @@ class SupportedHostShapeSummary(object):
         :type: bool
         """
         self._is_support_shielded_instances = is_support_shielded_instances
+
+    @property
+    def is_support_monthly_sku(self):
+        """
+        Gets the is_support_monthly_sku of this SupportedHostShapeSummary.
+        Whether the shape supports \"MONTH\" SKU.
+
+
+        :return: The is_support_monthly_sku of this SupportedHostShapeSummary.
+        :rtype: bool
+        """
+        return self._is_support_monthly_sku
+
+    @is_support_monthly_sku.setter
+    def is_support_monthly_sku(self, is_support_monthly_sku):
+        """
+        Sets the is_support_monthly_sku of this SupportedHostShapeSummary.
+        Whether the shape supports \"MONTH\" SKU.
+
+
+        :param is_support_monthly_sku: The is_support_monthly_sku of this SupportedHostShapeSummary.
+        :type: bool
+        """
+        self._is_support_monthly_sku = is_support_monthly_sku
 
     def __repr__(self):
         return formatted_flat_dict(self)

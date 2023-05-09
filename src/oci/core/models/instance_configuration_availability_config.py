@@ -26,6 +26,10 @@ class InstanceConfigurationAvailabilityConfig(object):
         Initializes a new InstanceConfigurationAvailabilityConfig object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param is_live_migration_preferred:
+            The value to assign to the is_live_migration_preferred property of this InstanceConfigurationAvailabilityConfig.
+        :type is_live_migration_preferred: bool
+
         :param recovery_action:
             The value to assign to the recovery_action property of this InstanceConfigurationAvailabilityConfig.
             Allowed values for this property are: "RESTORE_INSTANCE", "STOP_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
@@ -34,14 +38,45 @@ class InstanceConfigurationAvailabilityConfig(object):
 
         """
         self.swagger_types = {
+            'is_live_migration_preferred': 'bool',
             'recovery_action': 'str'
         }
 
         self.attribute_map = {
+            'is_live_migration_preferred': 'isLiveMigrationPreferred',
             'recovery_action': 'recoveryAction'
         }
 
+        self._is_live_migration_preferred = None
         self._recovery_action = None
+
+    @property
+    def is_live_migration_preferred(self):
+        """
+        Gets the is_live_migration_preferred of this InstanceConfigurationAvailabilityConfig.
+        Whether to live migrate supported VM instances to a healthy physical VM host without
+        disrupting running instances during infrastructure maintenance events. If null, Oracle
+        chooses the best option for migrating the VM during infrastructure maintenance events.
+
+
+        :return: The is_live_migration_preferred of this InstanceConfigurationAvailabilityConfig.
+        :rtype: bool
+        """
+        return self._is_live_migration_preferred
+
+    @is_live_migration_preferred.setter
+    def is_live_migration_preferred(self, is_live_migration_preferred):
+        """
+        Sets the is_live_migration_preferred of this InstanceConfigurationAvailabilityConfig.
+        Whether to live migrate supported VM instances to a healthy physical VM host without
+        disrupting running instances during infrastructure maintenance events. If null, Oracle
+        chooses the best option for migrating the VM during infrastructure maintenance events.
+
+
+        :param is_live_migration_preferred: The is_live_migration_preferred of this InstanceConfigurationAvailabilityConfig.
+        :type: bool
+        """
+        self._is_live_migration_preferred = is_live_migration_preferred
 
     @property
     def recovery_action(self):

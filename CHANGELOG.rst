@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.101.0 - 2023-05-09
+====================
+
+Added
+-----
+* Support for the Access Governance service
+* Support for creating, updating, listing and downloading one-off patches in the Database service
+* Support for changing disaster recovery configurations of remote autonomous databases in the Database service
+* Support for scheduling automatic backups in the Database service
+* Support for provisioning Software-Defined Data Centers (SDDCs) using standard bare metal shapes, with Block Storage as the datastore, in the VMWare Solution service
+* Support for parity with the configuration options of the Compute service in the Compute Autoscaling service
+ 
+Breaking
+--------
+* The Data Connectivity Management service was removed from the SDK
+ 
+====================
 2.100.0 - 2023-05-02
 ====================
 

@@ -64,6 +64,82 @@ class DbBackupConfig(object):
     #: This constant has a value of "SLOT_TWELVE"
     AUTO_BACKUP_WINDOW_SLOT_TWELVE = "SLOT_TWELVE"
 
+    #: A constant which can be used with the auto_full_backup_window property of a DbBackupConfig.
+    #: This constant has a value of "SLOT_ONE"
+    AUTO_FULL_BACKUP_WINDOW_SLOT_ONE = "SLOT_ONE"
+
+    #: A constant which can be used with the auto_full_backup_window property of a DbBackupConfig.
+    #: This constant has a value of "SLOT_TWO"
+    AUTO_FULL_BACKUP_WINDOW_SLOT_TWO = "SLOT_TWO"
+
+    #: A constant which can be used with the auto_full_backup_window property of a DbBackupConfig.
+    #: This constant has a value of "SLOT_THREE"
+    AUTO_FULL_BACKUP_WINDOW_SLOT_THREE = "SLOT_THREE"
+
+    #: A constant which can be used with the auto_full_backup_window property of a DbBackupConfig.
+    #: This constant has a value of "SLOT_FOUR"
+    AUTO_FULL_BACKUP_WINDOW_SLOT_FOUR = "SLOT_FOUR"
+
+    #: A constant which can be used with the auto_full_backup_window property of a DbBackupConfig.
+    #: This constant has a value of "SLOT_FIVE"
+    AUTO_FULL_BACKUP_WINDOW_SLOT_FIVE = "SLOT_FIVE"
+
+    #: A constant which can be used with the auto_full_backup_window property of a DbBackupConfig.
+    #: This constant has a value of "SLOT_SIX"
+    AUTO_FULL_BACKUP_WINDOW_SLOT_SIX = "SLOT_SIX"
+
+    #: A constant which can be used with the auto_full_backup_window property of a DbBackupConfig.
+    #: This constant has a value of "SLOT_SEVEN"
+    AUTO_FULL_BACKUP_WINDOW_SLOT_SEVEN = "SLOT_SEVEN"
+
+    #: A constant which can be used with the auto_full_backup_window property of a DbBackupConfig.
+    #: This constant has a value of "SLOT_EIGHT"
+    AUTO_FULL_BACKUP_WINDOW_SLOT_EIGHT = "SLOT_EIGHT"
+
+    #: A constant which can be used with the auto_full_backup_window property of a DbBackupConfig.
+    #: This constant has a value of "SLOT_NINE"
+    AUTO_FULL_BACKUP_WINDOW_SLOT_NINE = "SLOT_NINE"
+
+    #: A constant which can be used with the auto_full_backup_window property of a DbBackupConfig.
+    #: This constant has a value of "SLOT_TEN"
+    AUTO_FULL_BACKUP_WINDOW_SLOT_TEN = "SLOT_TEN"
+
+    #: A constant which can be used with the auto_full_backup_window property of a DbBackupConfig.
+    #: This constant has a value of "SLOT_ELEVEN"
+    AUTO_FULL_BACKUP_WINDOW_SLOT_ELEVEN = "SLOT_ELEVEN"
+
+    #: A constant which can be used with the auto_full_backup_window property of a DbBackupConfig.
+    #: This constant has a value of "SLOT_TWELVE"
+    AUTO_FULL_BACKUP_WINDOW_SLOT_TWELVE = "SLOT_TWELVE"
+
+    #: A constant which can be used with the auto_full_backup_day property of a DbBackupConfig.
+    #: This constant has a value of "SUNDAY"
+    AUTO_FULL_BACKUP_DAY_SUNDAY = "SUNDAY"
+
+    #: A constant which can be used with the auto_full_backup_day property of a DbBackupConfig.
+    #: This constant has a value of "MONDAY"
+    AUTO_FULL_BACKUP_DAY_MONDAY = "MONDAY"
+
+    #: A constant which can be used with the auto_full_backup_day property of a DbBackupConfig.
+    #: This constant has a value of "TUESDAY"
+    AUTO_FULL_BACKUP_DAY_TUESDAY = "TUESDAY"
+
+    #: A constant which can be used with the auto_full_backup_day property of a DbBackupConfig.
+    #: This constant has a value of "WEDNESDAY"
+    AUTO_FULL_BACKUP_DAY_WEDNESDAY = "WEDNESDAY"
+
+    #: A constant which can be used with the auto_full_backup_day property of a DbBackupConfig.
+    #: This constant has a value of "THURSDAY"
+    AUTO_FULL_BACKUP_DAY_THURSDAY = "THURSDAY"
+
+    #: A constant which can be used with the auto_full_backup_day property of a DbBackupConfig.
+    #: This constant has a value of "FRIDAY"
+    AUTO_FULL_BACKUP_DAY_FRIDAY = "FRIDAY"
+
+    #: A constant which can be used with the auto_full_backup_day property of a DbBackupConfig.
+    #: This constant has a value of "SATURDAY"
+    AUTO_FULL_BACKUP_DAY_SATURDAY = "SATURDAY"
+
     #: A constant which can be used with the backup_deletion_policy property of a DbBackupConfig.
     #: This constant has a value of "DELETE_IMMEDIATELY"
     BACKUP_DELETION_POLICY_DELETE_IMMEDIATELY = "DELETE_IMMEDIATELY"
@@ -91,6 +167,22 @@ class DbBackupConfig(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type auto_backup_window: str
 
+        :param auto_full_backup_window:
+            The value to assign to the auto_full_backup_window property of this DbBackupConfig.
+            Allowed values for this property are: "SLOT_ONE", "SLOT_TWO", "SLOT_THREE", "SLOT_FOUR", "SLOT_FIVE", "SLOT_SIX", "SLOT_SEVEN", "SLOT_EIGHT", "SLOT_NINE", "SLOT_TEN", "SLOT_ELEVEN", "SLOT_TWELVE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type auto_full_backup_window: str
+
+        :param auto_full_backup_day:
+            The value to assign to the auto_full_backup_day property of this DbBackupConfig.
+            Allowed values for this property are: "SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type auto_full_backup_day: str
+
+        :param run_immediate_full_backup:
+            The value to assign to the run_immediate_full_backup property of this DbBackupConfig.
+        :type run_immediate_full_backup: bool
+
         :param backup_destination_details:
             The value to assign to the backup_destination_details property of this DbBackupConfig.
         :type backup_destination_details: list[oci.database.models.BackupDestinationDetails]
@@ -106,6 +198,9 @@ class DbBackupConfig(object):
             'auto_backup_enabled': 'bool',
             'recovery_window_in_days': 'int',
             'auto_backup_window': 'str',
+            'auto_full_backup_window': 'str',
+            'auto_full_backup_day': 'str',
+            'run_immediate_full_backup': 'bool',
             'backup_destination_details': 'list[BackupDestinationDetails]',
             'backup_deletion_policy': 'str'
         }
@@ -114,6 +209,9 @@ class DbBackupConfig(object):
             'auto_backup_enabled': 'autoBackupEnabled',
             'recovery_window_in_days': 'recoveryWindowInDays',
             'auto_backup_window': 'autoBackupWindow',
+            'auto_full_backup_window': 'autoFullBackupWindow',
+            'auto_full_backup_day': 'autoFullBackupDay',
+            'run_immediate_full_backup': 'runImmediateFullBackup',
             'backup_destination_details': 'backupDestinationDetails',
             'backup_deletion_policy': 'backupDeletionPolicy'
         }
@@ -121,6 +219,9 @@ class DbBackupConfig(object):
         self._auto_backup_enabled = None
         self._recovery_window_in_days = None
         self._auto_backup_window = None
+        self._auto_full_backup_window = None
+        self._auto_full_backup_day = None
+        self._run_immediate_full_backup = None
         self._backup_destination_details = None
         self._backup_deletion_policy = None
 
@@ -209,6 +310,94 @@ class DbBackupConfig(object):
         if not value_allowed_none_or_none_sentinel(auto_backup_window, allowed_values):
             auto_backup_window = 'UNKNOWN_ENUM_VALUE'
         self._auto_backup_window = auto_backup_window
+
+    @property
+    def auto_full_backup_window(self):
+        """
+        Gets the auto_full_backup_window of this DbBackupConfig.
+        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).
+
+        Example: `SLOT_TWO`
+
+        Allowed values for this property are: "SLOT_ONE", "SLOT_TWO", "SLOT_THREE", "SLOT_FOUR", "SLOT_FIVE", "SLOT_SIX", "SLOT_SEVEN", "SLOT_EIGHT", "SLOT_NINE", "SLOT_TEN", "SLOT_ELEVEN", "SLOT_TWELVE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The auto_full_backup_window of this DbBackupConfig.
+        :rtype: str
+        """
+        return self._auto_full_backup_window
+
+    @auto_full_backup_window.setter
+    def auto_full_backup_window(self, auto_full_backup_window):
+        """
+        Sets the auto_full_backup_window of this DbBackupConfig.
+        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).
+
+        Example: `SLOT_TWO`
+
+
+        :param auto_full_backup_window: The auto_full_backup_window of this DbBackupConfig.
+        :type: str
+        """
+        allowed_values = ["SLOT_ONE", "SLOT_TWO", "SLOT_THREE", "SLOT_FOUR", "SLOT_FIVE", "SLOT_SIX", "SLOT_SEVEN", "SLOT_EIGHT", "SLOT_NINE", "SLOT_TEN", "SLOT_ELEVEN", "SLOT_TWELVE"]
+        if not value_allowed_none_or_none_sentinel(auto_full_backup_window, allowed_values):
+            auto_full_backup_window = 'UNKNOWN_ENUM_VALUE'
+        self._auto_full_backup_window = auto_full_backup_window
+
+    @property
+    def auto_full_backup_day(self):
+        """
+        Gets the auto_full_backup_day of this DbBackupConfig.
+        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+
+        Allowed values for this property are: "SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The auto_full_backup_day of this DbBackupConfig.
+        :rtype: str
+        """
+        return self._auto_full_backup_day
+
+    @auto_full_backup_day.setter
+    def auto_full_backup_day(self, auto_full_backup_day):
+        """
+        Sets the auto_full_backup_day of this DbBackupConfig.
+        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+
+
+        :param auto_full_backup_day: The auto_full_backup_day of this DbBackupConfig.
+        :type: str
+        """
+        allowed_values = ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"]
+        if not value_allowed_none_or_none_sentinel(auto_full_backup_day, allowed_values):
+            auto_full_backup_day = 'UNKNOWN_ENUM_VALUE'
+        self._auto_full_backup_day = auto_full_backup_day
+
+    @property
+    def run_immediate_full_backup(self):
+        """
+        Gets the run_immediate_full_backup of this DbBackupConfig.
+        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+
+
+        :return: The run_immediate_full_backup of this DbBackupConfig.
+        :rtype: bool
+        """
+        return self._run_immediate_full_backup
+
+    @run_immediate_full_backup.setter
+    def run_immediate_full_backup(self, run_immediate_full_backup):
+        """
+        Sets the run_immediate_full_backup of this DbBackupConfig.
+        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+
+
+        :param run_immediate_full_backup: The run_immediate_full_backup of this DbBackupConfig.
+        :type: bool
+        """
+        self._run_immediate_full_backup = run_immediate_full_backup
 
     @property
     def backup_destination_details(self):

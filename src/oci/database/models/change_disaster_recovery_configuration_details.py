@@ -31,16 +31,30 @@ class ChangeDisasterRecoveryConfigurationDetails(object):
             Allowed values for this property are: "ADG", "BACKUP_BASED"
         :type disaster_recovery_type: str
 
+        :param time_snapshot_standby_enabled_till:
+            The value to assign to the time_snapshot_standby_enabled_till property of this ChangeDisasterRecoveryConfigurationDetails.
+        :type time_snapshot_standby_enabled_till: datetime
+
+        :param is_snapshot_standby:
+            The value to assign to the is_snapshot_standby property of this ChangeDisasterRecoveryConfigurationDetails.
+        :type is_snapshot_standby: bool
+
         """
         self.swagger_types = {
-            'disaster_recovery_type': 'str'
+            'disaster_recovery_type': 'str',
+            'time_snapshot_standby_enabled_till': 'datetime',
+            'is_snapshot_standby': 'bool'
         }
 
         self.attribute_map = {
-            'disaster_recovery_type': 'disasterRecoveryType'
+            'disaster_recovery_type': 'disasterRecoveryType',
+            'time_snapshot_standby_enabled_till': 'timeSnapshotStandbyEnabledTill',
+            'is_snapshot_standby': 'isSnapshotStandby'
         }
 
         self._disaster_recovery_type = None
+        self._time_snapshot_standby_enabled_till = None
+        self._is_snapshot_standby = None
 
     @property
     def disaster_recovery_type(self):
@@ -77,6 +91,54 @@ class ChangeDisasterRecoveryConfigurationDetails(object):
                 .format(allowed_values)
             )
         self._disaster_recovery_type = disaster_recovery_type
+
+    @property
+    def time_snapshot_standby_enabled_till(self):
+        """
+        Gets the time_snapshot_standby_enabled_till of this ChangeDisasterRecoveryConfigurationDetails.
+        Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+
+
+        :return: The time_snapshot_standby_enabled_till of this ChangeDisasterRecoveryConfigurationDetails.
+        :rtype: datetime
+        """
+        return self._time_snapshot_standby_enabled_till
+
+    @time_snapshot_standby_enabled_till.setter
+    def time_snapshot_standby_enabled_till(self, time_snapshot_standby_enabled_till):
+        """
+        Sets the time_snapshot_standby_enabled_till of this ChangeDisasterRecoveryConfigurationDetails.
+        Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+
+
+        :param time_snapshot_standby_enabled_till: The time_snapshot_standby_enabled_till of this ChangeDisasterRecoveryConfigurationDetails.
+        :type: datetime
+        """
+        self._time_snapshot_standby_enabled_till = time_snapshot_standby_enabled_till
+
+    @property
+    def is_snapshot_standby(self):
+        """
+        Gets the is_snapshot_standby of this ChangeDisasterRecoveryConfigurationDetails.
+        Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+
+
+        :return: The is_snapshot_standby of this ChangeDisasterRecoveryConfigurationDetails.
+        :rtype: bool
+        """
+        return self._is_snapshot_standby
+
+    @is_snapshot_standby.setter
+    def is_snapshot_standby(self, is_snapshot_standby):
+        """
+        Sets the is_snapshot_standby of this ChangeDisasterRecoveryConfigurationDetails.
+        Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+
+
+        :param is_snapshot_standby: The is_snapshot_standby of this ChangeDisasterRecoveryConfigurationDetails.
+        :type: bool
+        """
+        self._is_snapshot_standby = is_snapshot_standby
 
     def __repr__(self):
         return formatted_flat_dict(self)

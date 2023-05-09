@@ -41,7 +41,6 @@ import argparse
 import datetime
 import sys
 import os
-import deepcopy
 
 
 ##########################################################################
@@ -438,17 +437,12 @@ def connect_to_object_storage():
 
     # get signer
     config, signer = create_signer(cmd.config_file, cmd.config_profile, cmd.is_instance_principals, cmd.is_delegation_token)
-    config_destination = copy.deepcopy(config)
-    
+
     # assign region from config file
     if not source_region:
         source_region = config['region']
-    else:
-        config['region'] = source_region
     if not destination_region:
         destination_region = config['region']
-    else:
-        config_destination['region'] = destination_region
 
     try:
         # connect to source region
@@ -469,6 +463,8 @@ def connect_to_object_storage():
     try:
         # connect to destination object storage
         print("\nConnecting to Object Storage Service for destination region - " + destination_region)
+        config_destination = config
+        config_destination['region'] = destination_region
         object_storage_client_dest = oci.object_storage.ObjectStorageClient(config_destination, signer=signer)
         if cmd.proxy:
             object_storage_client_dest.base_client.session.proxies = {'https': cmd.proxy}
