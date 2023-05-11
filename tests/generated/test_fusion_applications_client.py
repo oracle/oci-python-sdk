@@ -326,6 +326,48 @@ def test_create_refresh_activity(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="fa-control-plane_us_grp@oracle.com" jiraProject="FACP" opsJiraProject="FACP"
+def test_create_service_attachment(testing_service_client):
+    if not testing_service_client.is_api_enabled('fusion_apps', 'CreateServiceAttachment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('fusion_apps', util.camelize('fusion_applications'), 'CreateServiceAttachment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='fusion_apps', api_name='CreateServiceAttachment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.fusion_apps.FusionApplicationsClient(config, service_endpoint=service_endpoint)
+            response = client.create_service_attachment(
+                create_service_attachment_details=request.pop(util.camelize('CreateServiceAttachmentDetails')),
+                fusion_environment_id=request.pop(util.camelize('fusionEnvironmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'fusion_apps',
+            'CreateServiceAttachment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'create_service_attachment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="fa-control-plane_us_grp@oracle.com" jiraProject="FACP" opsJiraProject="FACP"
 def test_delete_fusion_environment(testing_service_client):
     if not testing_service_client.is_api_enabled('fusion_apps', 'DeleteFusionEnvironment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -486,6 +528,48 @@ def test_delete_refresh_activity(testing_service_client):
             result,
             service_error,
             'delete_refresh_activity',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="fa-control-plane_us_grp@oracle.com" jiraProject="FACP" opsJiraProject="FACP"
+def test_delete_service_attachment(testing_service_client):
+    if not testing_service_client.is_api_enabled('fusion_apps', 'DeleteServiceAttachment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('fusion_apps', util.camelize('fusion_applications'), 'DeleteServiceAttachment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='fusion_apps', api_name='DeleteServiceAttachment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.fusion_apps.FusionApplicationsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_service_attachment(
+                fusion_environment_id=request.pop(util.camelize('fusionEnvironmentId')),
+                service_attachment_id=request.pop(util.camelize('serviceAttachmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'fusion_apps',
+            'DeleteServiceAttachment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_service_attachment',
             True,
             False
         )
@@ -1741,6 +1825,48 @@ def test_update_refresh_activity(testing_service_client):
             result,
             service_error,
             'refreshActivity',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="fa-control-plane_us_grp@oracle.com" jiraProject="FACP" opsJiraProject="FACP"
+def test_verify_service_attachment(testing_service_client):
+    if not testing_service_client.is_api_enabled('fusion_apps', 'VerifyServiceAttachment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('fusion_apps', util.camelize('fusion_applications'), 'VerifyServiceAttachment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='fusion_apps', api_name='VerifyServiceAttachment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.fusion_apps.FusionApplicationsClient(config, service_endpoint=service_endpoint)
+            response = client.verify_service_attachment(
+                verify_service_attachment_details=request.pop(util.camelize('VerifyServiceAttachmentDetails')),
+                fusion_environment_id=request.pop(util.camelize('fusionEnvironmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'fusion_apps',
+            'VerifyServiceAttachment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'verify_service_attachment',
             False,
             False
         )
