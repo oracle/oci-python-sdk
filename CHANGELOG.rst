@@ -4,13 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.101.1 - TBD
+2.102.0 - 2023-05-16
 ====================
 
 Added
 -----
-* TBD
-
+* Support for self-service integration in the Fusion Apps as a Service service
+ 
+Breaking
+--------
+* The models `AttachExistingInstanceDetails`, `CreateNewInstanceDetails`, `CreateOicServiceInstanceDetails`, `CreateServiceInstanceDetails`, `FawAdminInfoDetails` and `CreateOaxServiceInstanceDetails` were removed from the Fusion Apps as a Service service
+* The property `action` was removed from the `ServiceAttachment` model in the Fusion Apps as a Service service
+* The property `action` was removed from the `CreateServiceAttachmentDetails` model in the Fusion Apps as a Service service
+ 
 ====================
 2.101.0 - 2023-05-09
 ====================
