@@ -66,10 +66,6 @@ class ServiceAttachment(object):
             The value to assign to the id property of this ServiceAttachment.
         :type id: str
 
-        :param action:
-            The value to assign to the action property of this ServiceAttachment.
-        :type action: str
-
         :param compartment_id:
             The value to assign to the compartment_id property of this ServiceAttachment.
         :type compartment_id: str
@@ -121,7 +117,6 @@ class ServiceAttachment(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'action': 'str',
             'compartment_id': 'str',
             'service_instance_id': 'str',
             'display_name': 'str',
@@ -137,7 +132,6 @@ class ServiceAttachment(object):
 
         self.attribute_map = {
             'id': 'id',
-            'action': 'action',
             'compartment_id': 'compartmentId',
             'service_instance_id': 'serviceInstanceId',
             'display_name': 'displayName',
@@ -152,7 +146,6 @@ class ServiceAttachment(object):
         }
 
         self._id = None
-        self._action = None
         self._compartment_id = None
         self._service_instance_id = None
         self._display_name = None
@@ -188,30 +181,6 @@ class ServiceAttachment(object):
         :type: str
         """
         self._id = id
-
-    @property
-    def action(self):
-        """
-        Gets the action of this ServiceAttachment.
-        Action
-
-
-        :return: The action of this ServiceAttachment.
-        :rtype: str
-        """
-        return self._action
-
-    @action.setter
-    def action(self, action):
-        """
-        Sets the action of this ServiceAttachment.
-        Action
-
-
-        :param action: The action of this ServiceAttachment.
-        :type: str
-        """
-        self._action = action
 
     @property
     def compartment_id(self):
