@@ -8,7 +8,6 @@ from .action import Action
 from .admin_user_collection import AdminUserCollection
 from .admin_user_summary import AdminUserSummary
 from .allow_rule import AllowRule
-from .attach_existing_instance_details import AttachExistingInstanceDetails
 from .capabilities import Capabilities
 from .change_fusion_environment_compartment_details import ChangeFusionEnvironmentCompartmentDetails
 from .change_fusion_environment_family_compartment_details import ChangeFusionEnvironmentFamilyCompartmentDetails
@@ -16,18 +15,13 @@ from .create_data_masking_activity_details import CreateDataMaskingActivityDetai
 from .create_fusion_environment_admin_user_details import CreateFusionEnvironmentAdminUserDetails
 from .create_fusion_environment_details import CreateFusionEnvironmentDetails
 from .create_fusion_environment_family_details import CreateFusionEnvironmentFamilyDetails
-from .create_new_instance_details import CreateNewInstanceDetails
-from .create_oax_service_instance_details import CreateOaxServiceInstanceDetails
-from .create_oic_service_instance_details import CreateOicServiceInstanceDetails
 from .create_refresh_activity_details import CreateRefreshActivityDetails
 from .create_service_attachment_details import CreateServiceAttachmentDetails
-from .create_service_instance_details import CreateServiceInstanceDetails
 from .data_masking_activity import DataMaskingActivity
 from .data_masking_activity_collection import DataMaskingActivityCollection
 from .data_masking_activity_summary import DataMaskingActivitySummary
 from .environment_role import EnvironmentRole
 from .family_maintenance_policy import FamilyMaintenancePolicy
-from .faw_admin_info_details import FawAdminInfoDetails
 from .fusion_environment import FusionEnvironment
 from .fusion_environment_collection import FusionEnvironmentCollection
 from .fusion_environment_family import FusionEnvironmentFamily
@@ -70,6 +64,7 @@ from .update_fusion_environment_details import UpdateFusionEnvironmentDetails
 from .update_fusion_environment_family_details import UpdateFusionEnvironmentFamilyDetails
 from .update_refresh_activity_details import UpdateRefreshActivityDetails
 from .upgrade_action import UpgradeAction
+from .verify_service_attachment_details import VerifyServiceAttachmentDetails
 from .vertex_action import VertexAction
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
@@ -86,7 +81,6 @@ fusion_apps_type_mapping = {
     "AdminUserCollection": AdminUserCollection,
     "AdminUserSummary": AdminUserSummary,
     "AllowRule": AllowRule,
-    "AttachExistingInstanceDetails": AttachExistingInstanceDetails,
     "Capabilities": Capabilities,
     "ChangeFusionEnvironmentCompartmentDetails": ChangeFusionEnvironmentCompartmentDetails,
     "ChangeFusionEnvironmentFamilyCompartmentDetails": ChangeFusionEnvironmentFamilyCompartmentDetails,
@@ -94,18 +88,13 @@ fusion_apps_type_mapping = {
     "CreateFusionEnvironmentAdminUserDetails": CreateFusionEnvironmentAdminUserDetails,
     "CreateFusionEnvironmentDetails": CreateFusionEnvironmentDetails,
     "CreateFusionEnvironmentFamilyDetails": CreateFusionEnvironmentFamilyDetails,
-    "CreateNewInstanceDetails": CreateNewInstanceDetails,
-    "CreateOaxServiceInstanceDetails": CreateOaxServiceInstanceDetails,
-    "CreateOicServiceInstanceDetails": CreateOicServiceInstanceDetails,
     "CreateRefreshActivityDetails": CreateRefreshActivityDetails,
     "CreateServiceAttachmentDetails": CreateServiceAttachmentDetails,
-    "CreateServiceInstanceDetails": CreateServiceInstanceDetails,
     "DataMaskingActivity": DataMaskingActivity,
     "DataMaskingActivityCollection": DataMaskingActivityCollection,
     "DataMaskingActivitySummary": DataMaskingActivitySummary,
     "EnvironmentRole": EnvironmentRole,
     "FamilyMaintenancePolicy": FamilyMaintenancePolicy,
-    "FawAdminInfoDetails": FawAdminInfoDetails,
     "FusionEnvironment": FusionEnvironment,
     "FusionEnvironmentCollection": FusionEnvironmentCollection,
     "FusionEnvironmentFamily": FusionEnvironmentFamily,
@@ -148,6 +137,7 @@ fusion_apps_type_mapping = {
     "UpdateFusionEnvironmentFamilyDetails": UpdateFusionEnvironmentFamilyDetails,
     "UpdateRefreshActivityDetails": UpdateRefreshActivityDetails,
     "UpgradeAction": UpgradeAction,
+    "VerifyServiceAttachmentDetails": VerifyServiceAttachmentDetails,
     "VertexAction": VertexAction,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,

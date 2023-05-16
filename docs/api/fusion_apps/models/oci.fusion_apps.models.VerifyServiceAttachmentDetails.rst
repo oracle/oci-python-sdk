@@ -1,9 +1,9 @@
-CreateServiceInstanceDetails
-============================
+VerifyServiceAttachmentDetails
+==============================
 
 .. currentmodule:: oci.fusion_apps.models
 
-.. autoclass:: CreateServiceInstanceDetails
+.. autoclass:: VerifyServiceAttachmentDetails
     :show-inheritance:
     :special-members: __init__
     :members:

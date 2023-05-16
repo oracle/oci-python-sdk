@@ -22,7 +22,6 @@ Fusion Apps
     oci.fusion_apps.models.AdminUserCollection
     oci.fusion_apps.models.AdminUserSummary
     oci.fusion_apps.models.AllowRule
-    oci.fusion_apps.models.AttachExistingInstanceDetails
     oci.fusion_apps.models.Capabilities
     oci.fusion_apps.models.ChangeFusionEnvironmentCompartmentDetails
     oci.fusion_apps.models.ChangeFusionEnvironmentFamilyCompartmentDetails
@@ -30,18 +29,13 @@ Fusion Apps
     oci.fusion_apps.models.CreateFusionEnvironmentAdminUserDetails
     oci.fusion_apps.models.CreateFusionEnvironmentDetails
     oci.fusion_apps.models.CreateFusionEnvironmentFamilyDetails
-    oci.fusion_apps.models.CreateNewInstanceDetails
-    oci.fusion_apps.models.CreateOaxServiceInstanceDetails
-    oci.fusion_apps.models.CreateOicServiceInstanceDetails
     oci.fusion_apps.models.CreateRefreshActivityDetails
     oci.fusion_apps.models.CreateServiceAttachmentDetails
-    oci.fusion_apps.models.CreateServiceInstanceDetails
     oci.fusion_apps.models.DataMaskingActivity
     oci.fusion_apps.models.DataMaskingActivityCollection
     oci.fusion_apps.models.DataMaskingActivitySummary
     oci.fusion_apps.models.EnvironmentRole
     oci.fusion_apps.models.FamilyMaintenancePolicy
-    oci.fusion_apps.models.FawAdminInfoDetails
     oci.fusion_apps.models.FusionEnvironment
     oci.fusion_apps.models.FusionEnvironmentCollection
     oci.fusion_apps.models.FusionEnvironmentFamily
@@ -84,6 +78,7 @@ Fusion Apps
     oci.fusion_apps.models.UpdateFusionEnvironmentFamilyDetails
     oci.fusion_apps.models.UpdateRefreshActivityDetails
     oci.fusion_apps.models.UpgradeAction
+    oci.fusion_apps.models.VerifyServiceAttachmentDetails
     oci.fusion_apps.models.VertexAction
     oci.fusion_apps.models.WorkRequest
     oci.fusion_apps.models.WorkRequestError

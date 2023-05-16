@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.102.0 - 2023-05-16
+====================
+
+Added
+-----
+* Support for self-service integration in the Fusion Apps as a Service service
+ 
+Breaking
+--------
+* The models `AttachExistingInstanceDetails`, `CreateNewInstanceDetails`, `CreateOicServiceInstanceDetails`, `CreateServiceInstanceDetails`, `FawAdminInfoDetails` and `CreateOaxServiceInstanceDetails` were removed from the Fusion Apps as a Service service
+* The property `action` was removed from the `ServiceAttachment` model in the Fusion Apps as a Service service
+* The property `action` was removed from the `CreateServiceAttachmentDetails` model in the Fusion Apps as a Service service
+ 
+====================
 2.101.0 - 2023-05-09
 ====================
 
@@ -37,7 +51,16 @@ Added
  
 Breaking
 --------
-* The model `UpdateVirtualNodeDetails` was removed from the Container Engine for Kubernetes service  
+* The model `UpdateVirtualNodeDetails` was removed from the Container Engine for Kubernetes service
+* The property `type` in the `DiscoveryDetails` model in the Application Migration service was fixed to no longer support `UNKNOWN_ENUM_VALUE`. Instead, a `ValueError` will be raised if this property is assigned a value that it does not support.
+* The property `protocol` in the `IdentityProvider` model in the Identity Data Plane service was fixed to no longer support `UNKNOWN_ENUM_VALUE`. Instead, a `ValueError` will be raised if this property is assigned a value that it does not support.
+* The properties `lifecycle_state`, `kind`, and `last_execution_status` in the `Rule` model in the Log Analytics service were fixed to no longer support `UNKNOWN_ENUM_VALUE`. Instead, a `ValueError` will be raised if these properties are assigned a value that they do not support.
+* The properties `type` and `lifecycle_state` in the `Parameter` model in the Digital Assistant service were fixed to no longer support `UNKNOWN_ENUM_VALUE`. Instead, a `ValueError` will be raised if these properties are assigned a value that they do not support.
+* The property `model_type` in the `AbstractField`, `ConnectionDetails`, `Filter`, `Operation`, and `Source` models in the Data Integration service was fixed to no longer support `UNKNOWN_ENUM_VALUE`. Instead, a `ValueError` will be raised if this property is assigned a value that it does not support.
+* The property `baseline_ocpu_utilization` in the `LaunchInstanceShapeConfigDetails` model in the Compute service was fixed to no longer support `UNKNOWN_ENUM_VALUE`. Instead, a `ValueError` will be raised if this property is assigned a value that it does not support.
+* The property `type` in the `AssetSource`, `AssetSourceCredentials`, and `AssetSourceSummary` models in the Cloud Migration service was fixed to no longer support `UNKNOWN_ENUM_VALUE`. Instead, a `ValueError` will be raised if this property is assigned a value that it does not support.
+* The property `lifecycle_state` in the `AssetSource`, `AssetSourceConnection`, `AssetSourceSummary`, `DiscoverySchedule`, and `DiscoveryScheduleSummary` models in the Cloud Migration service was fixed to no longer support `UNKNOWN_ENUM_VALUE`. Instead, a `ValueError` will be raised if this property is assigned a value that it does not support.
+* The property `connection_type` in the `AssetSourceConnection` model in the Cloud Migration Service was fixed to no longer support `UNKNOWN_ENUM_VALUE`. Instead, a `ValueError` will be raised if this property is assigned a value that it does not support.
  
 ====================
 2.99.1 - 2023-04-25
