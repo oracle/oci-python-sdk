@@ -49,8 +49,6 @@ The file name for each usage report is appended with an automatically incrementi
 
 More information can be found at https://docs.cloud.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm
 
-## Step by Step Installation Using Oracle Cloud Marketplace
-Please check step by step guide - [step_by_step_marketplace.md](step_by_step_marketplace.md)
 
 ## Step by Step Installation Guide
 Please check step by step guide - [step_by_step_installation.md](step_by_step_installation.md)
