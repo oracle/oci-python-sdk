@@ -1,9 +1,9 @@
-LogIncludedSearch
-=================
+ExternalDownstream
+==================
 
-.. currentmodule:: oci.logging.models
+.. currentmodule:: oci.dns.models
 
-.. autoclass:: LogIncludedSearch
+.. autoclass:: ExternalDownstream
     :show-inheritance:
     :special-members: __init__
     :members:

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateLogSavedSearchDetails(object):
     """
-    A log saved search that can be used to save and share a given search result.
+    A LogSavedSearch that can be used to save and share a given search result.
     """
 
     def __init__(self, **kwargs):

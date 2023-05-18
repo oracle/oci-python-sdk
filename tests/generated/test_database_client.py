@@ -33,7 +33,7 @@ def vcr_fixture(request):
             yield
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_activate_exadata_infrastructure(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ActivateExadataInfrastructure'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -75,7 +75,7 @@ def test_activate_exadata_infrastructure(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACS" opsJiraProject="DBAASEXACS"
 def test_add_storage_capacity_cloud_exadata_infrastructure(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'AddStorageCapacityCloudExadataInfrastructure'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -116,7 +116,7 @@ def test_add_storage_capacity_cloud_exadata_infrastructure(testing_service_clien
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_add_storage_capacity_exadata_infrastructure(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'AddStorageCapacityExadataInfrastructure'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -157,7 +157,7 @@ def test_add_storage_capacity_exadata_infrastructure(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACS" opsJiraProject="DBAASEXACS"
 def test_add_virtual_machine_to_cloud_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'AddVirtualMachineToCloudVmCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -199,7 +199,7 @@ def test_add_virtual_machine_to_cloud_vm_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_add_virtual_machine_to_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'AddVirtualMachineToVmCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -241,7 +241,7 @@ def test_add_virtual_machine_to_vm_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_autonomous_database_manual_refresh(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'AutonomousDatabaseManualRefresh'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -283,7 +283,7 @@ def test_autonomous_database_manual_refresh(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_cancel_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CancelBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -324,7 +324,7 @@ def test_cancel_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_change_autonomous_container_database_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeAutonomousContainerDatabaseCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -366,7 +366,7 @@ def test_change_autonomous_container_database_compartment(testing_service_client
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_change_autonomous_database_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeAutonomousDatabaseCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -408,7 +408,7 @@ def test_change_autonomous_database_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_change_autonomous_exadata_infrastructure_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeAutonomousExadataInfrastructureCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -450,7 +450,7 @@ def test_change_autonomous_exadata_infrastructure_compartment(testing_service_cl
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_change_autonomous_vm_cluster_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeAutonomousVmClusterCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -492,7 +492,7 @@ def test_change_autonomous_vm_cluster_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_change_backup_destination_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeBackupDestinationCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -534,7 +534,7 @@ def test_change_backup_destination_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_change_cloud_autonomous_vm_cluster_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeCloudAutonomousVmClusterCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -576,7 +576,7 @@ def test_change_cloud_autonomous_vm_cluster_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACS" opsJiraProject="DBAASEXACS"
 def test_change_cloud_exadata_infrastructure_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeCloudExadataInfrastructureCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -618,7 +618,7 @@ def test_change_cloud_exadata_infrastructure_compartment(testing_service_client)
         )
 
 
-# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACS" opsJiraProject="DBAASEXACS"
 def test_change_cloud_vm_cluster_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeCloudVmClusterCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -660,7 +660,7 @@ def test_change_cloud_vm_cluster_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_change_database_software_image_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeDatabaseSoftwareImageCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -702,7 +702,7 @@ def test_change_database_software_image_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_change_dataguard_role(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeDataguardRole'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -744,7 +744,7 @@ def test_change_dataguard_role(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_change_db_system_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeDbSystemCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -786,7 +786,7 @@ def test_change_db_system_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_change_disaster_recovery_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeDisasterRecoveryConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -828,7 +828,7 @@ def test_change_disaster_recovery_configuration(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_change_exadata_infrastructure_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeExadataInfrastructureCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -870,7 +870,7 @@ def test_change_exadata_infrastructure_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_change_external_container_database_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeExternalContainerDatabaseCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -912,7 +912,7 @@ def test_change_external_container_database_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_change_external_non_container_database_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeExternalNonContainerDatabaseCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -954,7 +954,7 @@ def test_change_external_non_container_database_compartment(testing_service_clie
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_change_external_pluggable_database_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeExternalPluggableDatabaseCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -996,7 +996,7 @@ def test_change_external_pluggable_database_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_change_key_store_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeKeyStoreCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1038,7 +1038,7 @@ def test_change_key_store_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_change_oneoff_patch_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeOneoffPatchCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1080,7 +1080,7 @@ def test_change_oneoff_patch_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_change_vm_cluster_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeVmClusterCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1122,7 +1122,7 @@ def test_change_vm_cluster_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_check_external_database_connector_connection_status(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CheckExternalDatabaseConnectorConnectionStatus'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1163,7 +1163,7 @@ def test_check_external_database_connector_connection_status(testing_service_cli
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_complete_external_backup_job(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CompleteExternalBackupJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1205,7 +1205,7 @@ def test_complete_external_backup_job(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_configure_autonomous_database_vault_key(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ConfigureAutonomousDatabaseVaultKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1247,7 +1247,7 @@ def test_configure_autonomous_database_vault_key(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_convert_to_pdb(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ConvertToPdb'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1289,7 +1289,7 @@ def test_convert_to_pdb(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_create_application_vip(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateApplicationVip'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1330,7 +1330,7 @@ def test_create_application_vip(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_create_autonomous_container_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateAutonomousContainerDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1371,7 +1371,7 @@ def test_create_autonomous_container_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_create_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1412,7 +1412,7 @@ def test_create_autonomous_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_create_autonomous_database_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateAutonomousDatabaseBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1453,7 +1453,7 @@ def test_create_autonomous_database_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_create_autonomous_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateAutonomousVmCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1494,7 +1494,7 @@ def test_create_autonomous_vm_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_create_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1535,7 +1535,7 @@ def test_create_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_create_backup_destination(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateBackupDestination'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1576,7 +1576,7 @@ def test_create_backup_destination(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_create_cloud_autonomous_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateCloudAutonomousVmCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1617,7 +1617,7 @@ def test_create_cloud_autonomous_vm_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACS" opsJiraProject="DBAASEXACS"
 def test_create_cloud_exadata_infrastructure(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateCloudExadataInfrastructure'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1658,7 +1658,7 @@ def test_create_cloud_exadata_infrastructure(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACS" opsJiraProject="DBAASEXACS"
 def test_create_cloud_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateCloudVmCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1699,7 +1699,7 @@ def test_create_cloud_vm_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_create_console_connection(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateConsoleConnection'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1741,7 +1741,7 @@ def test_create_console_connection(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_create_data_guard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateDataGuardAssociation'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1783,7 +1783,7 @@ def test_create_data_guard_association(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_create_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1824,7 +1824,7 @@ def test_create_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_create_database_software_image(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateDatabaseSoftwareImage'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1865,7 +1865,7 @@ def test_create_database_software_image(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_create_db_home(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateDbHome'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1906,7 +1906,7 @@ def test_create_db_home(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_create_exadata_infrastructure(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateExadataInfrastructure'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1947,7 +1947,7 @@ def test_create_exadata_infrastructure(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_create_external_backup_job(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateExternalBackupJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1988,7 +1988,7 @@ def test_create_external_backup_job(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_create_external_container_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateExternalContainerDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2029,7 +2029,7 @@ def test_create_external_container_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_create_external_database_connector(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateExternalDatabaseConnector'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2070,7 +2070,7 @@ def test_create_external_database_connector(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_create_external_non_container_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateExternalNonContainerDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2111,7 +2111,7 @@ def test_create_external_non_container_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_create_external_pluggable_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateExternalPluggableDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2152,7 +2152,7 @@ def test_create_external_pluggable_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_create_key_store(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateKeyStore'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2193,7 +2193,7 @@ def test_create_key_store(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_create_oneoff_patch(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateOneoffPatch'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2234,7 +2234,7 @@ def test_create_oneoff_patch(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_create_pluggable_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreatePluggableDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2275,7 +2275,7 @@ def test_create_pluggable_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_create_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateVmCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2316,7 +2316,7 @@ def test_create_vm_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_create_vm_cluster_network(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateVmClusterNetwork'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2358,7 +2358,7 @@ def test_create_vm_cluster_network(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_db_node_action(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DbNodeAction'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2400,7 +2400,7 @@ def test_db_node_action(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_delete_application_vip(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteApplicationVip'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2441,7 +2441,7 @@ def test_delete_application_vip(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_delete_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2482,7 +2482,7 @@ def test_delete_autonomous_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_delete_autonomous_database_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteAutonomousDatabaseBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2523,7 +2523,7 @@ def test_delete_autonomous_database_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_delete_autonomous_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteAutonomousVmCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2564,7 +2564,7 @@ def test_delete_autonomous_vm_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_delete_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2605,7 +2605,7 @@ def test_delete_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_delete_backup_destination(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteBackupDestination'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2646,7 +2646,7 @@ def test_delete_backup_destination(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_delete_cloud_autonomous_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteCloudAutonomousVmCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2687,7 +2687,7 @@ def test_delete_cloud_autonomous_vm_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACS" opsJiraProject="DBAASEXACS"
 def test_delete_cloud_exadata_infrastructure(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteCloudExadataInfrastructure'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2728,7 +2728,7 @@ def test_delete_cloud_exadata_infrastructure(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACS" opsJiraProject="DBAASEXACS"
 def test_delete_cloud_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteCloudVmCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2769,7 +2769,7 @@ def test_delete_cloud_vm_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_delete_console_connection(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteConsoleConnection'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2811,7 +2811,7 @@ def test_delete_console_connection(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_delete_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2852,7 +2852,7 @@ def test_delete_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_delete_database_software_image(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteDatabaseSoftwareImage'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2893,7 +2893,7 @@ def test_delete_database_software_image(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_delete_db_home(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteDbHome'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2934,7 +2934,7 @@ def test_delete_db_home(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_delete_exadata_infrastructure(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteExadataInfrastructure'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2975,7 +2975,7 @@ def test_delete_exadata_infrastructure(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_delete_external_container_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteExternalContainerDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3016,7 +3016,7 @@ def test_delete_external_container_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_delete_external_database_connector(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteExternalDatabaseConnector'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3057,7 +3057,7 @@ def test_delete_external_database_connector(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_delete_external_non_container_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteExternalNonContainerDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3098,7 +3098,7 @@ def test_delete_external_non_container_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_delete_external_pluggable_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteExternalPluggableDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3139,7 +3139,7 @@ def test_delete_external_pluggable_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_delete_key_store(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteKeyStore'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3180,7 +3180,7 @@ def test_delete_key_store(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_delete_oneoff_patch(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteOneoffPatch'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3221,7 +3221,7 @@ def test_delete_oneoff_patch(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_delete_pluggable_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeletePluggableDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3262,7 +3262,7 @@ def test_delete_pluggable_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_delete_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteVmCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3303,7 +3303,7 @@ def test_delete_vm_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_delete_vm_cluster_network(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeleteVmClusterNetwork'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3345,7 +3345,7 @@ def test_delete_vm_cluster_network(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_deregister_autonomous_database_data_safe(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DeregisterAutonomousDatabaseDataSafe'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3386,7 +3386,7 @@ def test_deregister_autonomous_database_data_safe(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_disable_autonomous_database_management(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DisableAutonomousDatabaseManagement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3427,7 +3427,7 @@ def test_disable_autonomous_database_management(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_disable_autonomous_database_operations_insights(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DisableAutonomousDatabaseOperationsInsights'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3468,7 +3468,7 @@ def test_disable_autonomous_database_operations_insights(testing_service_client)
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_disable_database_management(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DisableDatabaseManagement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3509,7 +3509,7 @@ def test_disable_database_management(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_disable_external_container_database_database_management(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DisableExternalContainerDatabaseDatabaseManagement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3550,7 +3550,7 @@ def test_disable_external_container_database_database_management(testing_service
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_disable_external_container_database_stack_monitoring(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DisableExternalContainerDatabaseStackMonitoring'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3591,7 +3591,7 @@ def test_disable_external_container_database_stack_monitoring(testing_service_cl
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_disable_external_non_container_database_database_management(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DisableExternalNonContainerDatabaseDatabaseManagement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3632,7 +3632,7 @@ def test_disable_external_non_container_database_database_management(testing_ser
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_disable_external_non_container_database_operations_insights(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DisableExternalNonContainerDatabaseOperationsInsights'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3673,7 +3673,7 @@ def test_disable_external_non_container_database_operations_insights(testing_ser
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_disable_external_non_container_database_stack_monitoring(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DisableExternalNonContainerDatabaseStackMonitoring'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3714,7 +3714,7 @@ def test_disable_external_non_container_database_stack_monitoring(testing_servic
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_disable_external_pluggable_database_database_management(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DisableExternalPluggableDatabaseDatabaseManagement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3755,7 +3755,7 @@ def test_disable_external_pluggable_database_database_management(testing_service
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_disable_external_pluggable_database_operations_insights(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DisableExternalPluggableDatabaseOperationsInsights'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3796,7 +3796,7 @@ def test_disable_external_pluggable_database_operations_insights(testing_service
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_disable_external_pluggable_database_stack_monitoring(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DisableExternalPluggableDatabaseStackMonitoring'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3837,7 +3837,7 @@ def test_disable_external_pluggable_database_stack_monitoring(testing_service_cl
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_disable_pluggable_database_management(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DisablePluggableDatabaseManagement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3878,7 +3878,7 @@ def test_disable_pluggable_database_management(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_download_exadata_infrastructure_config_file(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DownloadExadataInfrastructureConfigFile'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3919,7 +3919,7 @@ def test_download_exadata_infrastructure_config_file(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_download_oneoff_patch(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DownloadOneoffPatch'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3960,7 +3960,7 @@ def test_download_oneoff_patch(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_download_validation_report(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DownloadValidationReport'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4002,7 +4002,7 @@ def test_download_validation_report(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_download_vm_cluster_network_config_file(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DownloadVmClusterNetworkConfigFile'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4044,7 +4044,7 @@ def test_download_vm_cluster_network_config_file(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_enable_autonomous_database_management(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'EnableAutonomousDatabaseManagement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4085,7 +4085,7 @@ def test_enable_autonomous_database_management(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_enable_autonomous_database_operations_insights(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'EnableAutonomousDatabaseOperationsInsights'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4126,7 +4126,7 @@ def test_enable_autonomous_database_operations_insights(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_enable_database_management(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'EnableDatabaseManagement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4168,7 +4168,7 @@ def test_enable_database_management(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_enable_external_container_database_database_management(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'EnableExternalContainerDatabaseDatabaseManagement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4210,7 +4210,7 @@ def test_enable_external_container_database_database_management(testing_service_
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_enable_external_container_database_stack_monitoring(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'EnableExternalContainerDatabaseStackMonitoring'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4252,7 +4252,7 @@ def test_enable_external_container_database_stack_monitoring(testing_service_cli
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_enable_external_non_container_database_database_management(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'EnableExternalNonContainerDatabaseDatabaseManagement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4294,7 +4294,7 @@ def test_enable_external_non_container_database_database_management(testing_serv
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_enable_external_non_container_database_operations_insights(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'EnableExternalNonContainerDatabaseOperationsInsights'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4336,7 +4336,7 @@ def test_enable_external_non_container_database_operations_insights(testing_serv
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_enable_external_non_container_database_stack_monitoring(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'EnableExternalNonContainerDatabaseStackMonitoring'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4378,7 +4378,7 @@ def test_enable_external_non_container_database_stack_monitoring(testing_service
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_enable_external_pluggable_database_database_management(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'EnableExternalPluggableDatabaseDatabaseManagement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4420,7 +4420,7 @@ def test_enable_external_pluggable_database_database_management(testing_service_
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_enable_external_pluggable_database_operations_insights(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'EnableExternalPluggableDatabaseOperationsInsights'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4462,7 +4462,7 @@ def test_enable_external_pluggable_database_operations_insights(testing_service_
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_enable_external_pluggable_database_stack_monitoring(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'EnableExternalPluggableDatabaseStackMonitoring'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4504,7 +4504,7 @@ def test_enable_external_pluggable_database_stack_monitoring(testing_service_cli
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_enable_pluggable_database_management(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'EnablePluggableDatabaseManagement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4546,7 +4546,7 @@ def test_enable_pluggable_database_management(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_fail_over_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'FailOverAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4587,7 +4587,7 @@ def test_fail_over_autonomous_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_failover_autonomous_container_database_dataguard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'FailoverAutonomousContainerDatabaseDataguardAssociation'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4629,7 +4629,7 @@ def test_failover_autonomous_container_database_dataguard_association(testing_se
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_failover_data_guard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'FailoverDataGuardAssociation'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4672,7 +4672,7 @@ def test_failover_data_guard_association(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_generate_autonomous_database_wallet(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GenerateAutonomousDatabaseWallet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4714,7 +4714,7 @@ def test_generate_autonomous_database_wallet(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_generate_recommended_vm_cluster_network(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GenerateRecommendedVmClusterNetwork'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4756,7 +4756,7 @@ def test_generate_recommended_vm_cluster_network(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_application_vip(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetApplicationVip'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4797,7 +4797,7 @@ def test_get_application_vip(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_get_autonomous_container_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetAutonomousContainerDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4838,7 +4838,7 @@ def test_get_autonomous_container_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_get_autonomous_container_database_dataguard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetAutonomousContainerDatabaseDataguardAssociation'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4880,7 +4880,7 @@ def test_get_autonomous_container_database_dataguard_association(testing_service
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_get_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4921,7 +4921,7 @@ def test_get_autonomous_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_get_autonomous_database_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetAutonomousDatabaseBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4962,7 +4962,7 @@ def test_get_autonomous_database_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_get_autonomous_database_dataguard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetAutonomousDatabaseDataguardAssociation'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5004,7 +5004,7 @@ def test_get_autonomous_database_dataguard_association(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_get_autonomous_database_regional_wallet(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetAutonomousDatabaseRegionalWallet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5044,7 +5044,7 @@ def test_get_autonomous_database_regional_wallet(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_get_autonomous_database_wallet(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetAutonomousDatabaseWallet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5085,7 +5085,7 @@ def test_get_autonomous_database_wallet(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_get_autonomous_exadata_infrastructure(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetAutonomousExadataInfrastructure'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5126,7 +5126,7 @@ def test_get_autonomous_exadata_infrastructure(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_get_autonomous_patch(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetAutonomousPatch'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5167,7 +5167,7 @@ def test_get_autonomous_patch(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_autonomous_virtual_machine(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetAutonomousVirtualMachine'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5208,7 +5208,7 @@ def test_get_autonomous_virtual_machine(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_get_autonomous_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetAutonomousVmCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5249,7 +5249,7 @@ def test_get_autonomous_vm_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5290,7 +5290,7 @@ def test_get_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_get_backup_destination(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetBackupDestination'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5331,7 +5331,7 @@ def test_get_backup_destination(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_get_cloud_autonomous_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetCloudAutonomousVmCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5372,7 +5372,7 @@ def test_get_cloud_autonomous_vm_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACS" opsJiraProject="DBAASEXACS"
 def test_get_cloud_exadata_infrastructure(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetCloudExadataInfrastructure'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5413,7 +5413,7 @@ def test_get_cloud_exadata_infrastructure(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACS" opsJiraProject="DBAASEXACS"
 def test_get_cloud_exadata_infrastructure_unallocated_resources(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetCloudExadataInfrastructureUnallocatedResources'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5454,7 +5454,7 @@ def test_get_cloud_exadata_infrastructure_unallocated_resources(testing_service_
         )
 
 
-# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACS" opsJiraProject="DBAASEXACS"
 def test_get_cloud_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetCloudVmCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5495,7 +5495,7 @@ def test_get_cloud_vm_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_cloud_vm_cluster_iorm_config(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetCloudVmClusterIormConfig'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5536,7 +5536,7 @@ def test_get_cloud_vm_cluster_iorm_config(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_cloud_vm_cluster_update(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetCloudVmClusterUpdate'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5578,7 +5578,7 @@ def test_get_cloud_vm_cluster_update(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_cloud_vm_cluster_update_history_entry(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetCloudVmClusterUpdateHistoryEntry'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5620,7 +5620,7 @@ def test_get_cloud_vm_cluster_update_history_entry(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_console_connection(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetConsoleConnection'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5662,7 +5662,7 @@ def test_get_console_connection(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_data_guard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDataGuardAssociation'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5704,7 +5704,7 @@ def test_get_data_guard_association(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5745,7 +5745,7 @@ def test_get_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_database_software_image(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDatabaseSoftwareImage'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5786,7 +5786,7 @@ def test_get_database_software_image(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_database_upgrade_history_entry(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDatabaseUpgradeHistoryEntry'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5828,7 +5828,7 @@ def test_get_database_upgrade_history_entry(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_db_home(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDbHome'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5869,7 +5869,7 @@ def test_get_db_home(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_db_home_patch(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDbHomePatch'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5911,7 +5911,7 @@ def test_get_db_home_patch(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_db_home_patch_history_entry(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDbHomePatchHistoryEntry'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5953,7 +5953,7 @@ def test_get_db_home_patch_history_entry(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_db_node(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDbNode'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5994,7 +5994,7 @@ def test_get_db_node(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_db_server(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDbServer'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6036,7 +6036,7 @@ def test_get_db_server(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_db_system(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDbSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6077,7 +6077,7 @@ def test_get_db_system(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_db_system_patch(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDbSystemPatch'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6119,7 +6119,7 @@ def test_get_db_system_patch(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_db_system_patch_history_entry(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDbSystemPatchHistoryEntry'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6161,7 +6161,7 @@ def test_get_db_system_patch_history_entry(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_db_system_upgrade_history_entry(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetDbSystemUpgradeHistoryEntry'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6203,7 +6203,7 @@ def test_get_db_system_upgrade_history_entry(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_get_exadata_infrastructure(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetExadataInfrastructure'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6244,7 +6244,7 @@ def test_get_exadata_infrastructure(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_exadata_infrastructure_ocpus(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetExadataInfrastructureOcpus'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6285,7 +6285,48 @@ def test_get_exadata_infrastructure_ocpus(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
+def test_get_exadata_infrastructure_un_allocated_resources(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetExadataInfrastructureUnAllocatedResources'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetExadataInfrastructureUnAllocatedResources')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetExadataInfrastructureUnAllocatedResources')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_exadata_infrastructure_un_allocated_resources(
+                exadata_infrastructure_id=request.pop(util.camelize('exadataInfrastructureId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetExadataInfrastructureUnAllocatedResources',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'exadataInfrastructureUnAllocatedResources',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_exadata_iorm_config(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetExadataIormConfig'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6326,7 +6367,7 @@ def test_get_exadata_iorm_config(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_external_backup_job(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetExternalBackupJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6367,7 +6408,7 @@ def test_get_external_backup_job(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_external_container_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetExternalContainerDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6408,7 +6449,7 @@ def test_get_external_container_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_external_database_connector(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetExternalDatabaseConnector'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6449,7 +6490,7 @@ def test_get_external_database_connector(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_external_non_container_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetExternalNonContainerDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6490,7 +6531,7 @@ def test_get_external_non_container_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_external_pluggable_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetExternalPluggableDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6531,7 +6572,7 @@ def test_get_external_pluggable_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_infrastructure_target_versions(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetInfrastructureTargetVersions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6572,7 +6613,7 @@ def test_get_infrastructure_target_versions(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_get_key_store(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetKeyStore'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6613,7 +6654,7 @@ def test_get_key_store(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_get_maintenance_run(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetMaintenanceRun'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6654,7 +6695,7 @@ def test_get_maintenance_run(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_get_maintenance_run_history(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetMaintenanceRunHistory'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6695,7 +6736,7 @@ def test_get_maintenance_run_history(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_oneoff_patch(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetOneoffPatch'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6736,7 +6777,7 @@ def test_get_oneoff_patch(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_pdb_conversion_history_entry(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetPdbConversionHistoryEntry'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6778,7 +6819,7 @@ def test_get_pdb_conversion_history_entry(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_pluggable_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetPluggableDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6819,7 +6860,7 @@ def test_get_pluggable_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_get_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetVmCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6860,7 +6901,7 @@ def test_get_vm_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_get_vm_cluster_network(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetVmClusterNetwork'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6902,7 +6943,7 @@ def test_get_vm_cluster_network(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_vm_cluster_patch(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetVmClusterPatch'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6944,7 +6985,7 @@ def test_get_vm_cluster_patch(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_vm_cluster_patch_history_entry(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetVmClusterPatchHistoryEntry'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6986,7 +7027,7 @@ def test_get_vm_cluster_patch_history_entry(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_vm_cluster_update(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetVmClusterUpdate'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7028,7 +7069,7 @@ def test_get_vm_cluster_update(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_get_vm_cluster_update_history_entry(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetVmClusterUpdateHistoryEntry'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7070,7 +7111,7 @@ def test_get_vm_cluster_update_history_entry(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_launch_autonomous_exadata_infrastructure(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'LaunchAutonomousExadataInfrastructure'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7111,7 +7152,7 @@ def test_launch_autonomous_exadata_infrastructure(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_launch_db_system(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'LaunchDbSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7152,7 +7193,7 @@ def test_launch_db_system(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_application_vips(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListApplicationVips'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7218,7 +7259,7 @@ def test_list_application_vips(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_list_autonomous_container_database_dataguard_associations(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousContainerDatabaseDataguardAssociations'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7281,7 +7322,7 @@ def test_list_autonomous_container_database_dataguard_associations(testing_servi
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_autonomous_container_database_versions(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousContainerDatabaseVersions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7347,7 +7388,7 @@ def test_list_autonomous_container_database_versions(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_list_autonomous_container_databases(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousContainerDatabases'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7410,7 +7451,7 @@ def test_list_autonomous_container_databases(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_list_autonomous_database_backups(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousDatabaseBackups'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7470,7 +7511,7 @@ def test_list_autonomous_database_backups(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_autonomous_database_character_sets(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousDatabaseCharacterSets'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7510,7 +7551,7 @@ def test_list_autonomous_database_character_sets(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_list_autonomous_database_clones(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousDatabaseClones'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7576,7 +7617,7 @@ def test_list_autonomous_database_clones(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_list_autonomous_database_dataguard_associations(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousDatabaseDataguardAssociations'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7639,7 +7680,7 @@ def test_list_autonomous_database_dataguard_associations(testing_service_client)
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_list_autonomous_database_refreshable_clones(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousDatabaseRefreshableClones'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7702,7 +7743,7 @@ def test_list_autonomous_database_refreshable_clones(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_list_autonomous_databases(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousDatabases'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7765,7 +7806,7 @@ def test_list_autonomous_databases(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_autonomous_db_preview_versions(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousDbPreviewVersions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7828,7 +7869,7 @@ def test_list_autonomous_db_preview_versions(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_autonomous_db_versions(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousDbVersions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7891,7 +7932,7 @@ def test_list_autonomous_db_versions(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_list_autonomous_exadata_infrastructure_shapes(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousExadataInfrastructureShapes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7957,7 +7998,7 @@ def test_list_autonomous_exadata_infrastructure_shapes(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_list_autonomous_exadata_infrastructures(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousExadataInfrastructures'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -8020,7 +8061,7 @@ def test_list_autonomous_exadata_infrastructures(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_autonomous_virtual_machines(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousVirtualMachines'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -8086,7 +8127,7 @@ def test_list_autonomous_virtual_machines(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_list_autonomous_vm_clusters(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousVmClusters'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -8149,7 +8190,7 @@ def test_list_autonomous_vm_clusters(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_list_backup_destination(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListBackupDestination'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -8212,7 +8253,7 @@ def test_list_backup_destination(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_backups(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListBackups'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -8272,7 +8313,7 @@ def test_list_backups(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_list_cloud_autonomous_vm_clusters(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListCloudAutonomousVmClusters'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -8335,7 +8376,7 @@ def test_list_cloud_autonomous_vm_clusters(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACS" opsJiraProject="DBAASEXACS"
 def test_list_cloud_exadata_infrastructures(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListCloudExadataInfrastructures'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -8398,7 +8439,7 @@ def test_list_cloud_exadata_infrastructures(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_cloud_vm_cluster_update_history_entries(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListCloudVmClusterUpdateHistoryEntries'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -8461,7 +8502,7 @@ def test_list_cloud_vm_cluster_update_history_entries(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_cloud_vm_cluster_updates(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListCloudVmClusterUpdates'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -8524,7 +8565,7 @@ def test_list_cloud_vm_cluster_updates(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACS" opsJiraProject="DBAASEXACS"
 def test_list_cloud_vm_clusters(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListCloudVmClusters'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -8587,7 +8628,7 @@ def test_list_cloud_vm_clusters(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_console_connections(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListConsoleConnections'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -8628,7 +8669,7 @@ def test_list_console_connections(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_container_database_patches(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListContainerDatabasePatches'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -8694,7 +8735,7 @@ def test_list_container_database_patches(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_data_guard_associations(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDataGuardAssociations'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -8757,7 +8798,7 @@ def test_list_data_guard_associations(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_database_software_images(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDatabaseSoftwareImages'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -8820,7 +8861,7 @@ def test_list_database_software_images(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_database_upgrade_history_entries(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDatabaseUpgradeHistoryEntries'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -8883,7 +8924,7 @@ def test_list_database_upgrade_history_entries(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_databases(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDatabases'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -8946,7 +8987,7 @@ def test_list_databases(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_db_home_patch_history_entries(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbHomePatchHistoryEntries'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -9009,7 +9050,7 @@ def test_list_db_home_patch_history_entries(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_db_home_patches(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbHomePatches'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -9072,7 +9113,7 @@ def test_list_db_home_patches(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_db_homes(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbHomes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -9135,7 +9176,7 @@ def test_list_db_homes(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_db_nodes(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbNodes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -9198,7 +9239,7 @@ def test_list_db_nodes(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_db_servers(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbServers'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -9264,7 +9305,7 @@ def test_list_db_servers(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_db_system_compute_performances(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbSystemComputePerformances'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -9304,7 +9345,7 @@ def test_list_db_system_compute_performances(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_db_system_patch_history_entries(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbSystemPatchHistoryEntries'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -9367,7 +9408,7 @@ def test_list_db_system_patch_history_entries(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_db_system_patches(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbSystemPatches'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -9430,7 +9471,7 @@ def test_list_db_system_patches(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_db_system_shapes(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbSystemShapes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -9493,7 +9534,7 @@ def test_list_db_system_shapes(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_db_system_storage_performances(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbSystemStoragePerformances'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -9534,7 +9575,7 @@ def test_list_db_system_storage_performances(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_db_system_upgrade_history_entries(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbSystemUpgradeHistoryEntries'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -9597,7 +9638,7 @@ def test_list_db_system_upgrade_history_entries(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_db_systems(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbSystems'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -9660,7 +9701,7 @@ def test_list_db_systems(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_db_versions(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbVersions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -9723,7 +9764,7 @@ def test_list_db_versions(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_list_exadata_infrastructures(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListExadataInfrastructures'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -9786,7 +9827,7 @@ def test_list_exadata_infrastructures(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_external_container_databases(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListExternalContainerDatabases'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -9849,7 +9890,7 @@ def test_list_external_container_databases(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_external_database_connectors(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListExternalDatabaseConnectors'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -9915,7 +9956,7 @@ def test_list_external_database_connectors(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_external_non_container_databases(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListExternalNonContainerDatabases'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -9978,7 +10019,7 @@ def test_list_external_non_container_databases(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_external_pluggable_databases(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListExternalPluggableDatabases'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -10041,7 +10082,7 @@ def test_list_external_pluggable_databases(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_flex_components(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListFlexComponents'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -10104,7 +10145,7 @@ def test_list_flex_components(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_gi_versions(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListGiVersions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -10167,7 +10208,7 @@ def test_list_gi_versions(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_list_key_stores(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListKeyStores'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -10230,7 +10271,7 @@ def test_list_key_stores(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_list_maintenance_run_history(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListMaintenanceRunHistory'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -10293,7 +10334,7 @@ def test_list_maintenance_run_history(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_list_maintenance_runs(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListMaintenanceRuns'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -10356,7 +10397,7 @@ def test_list_maintenance_runs(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_oneoff_patches(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListOneoffPatches'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -10419,7 +10460,7 @@ def test_list_oneoff_patches(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_pdb_conversion_history_entries(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListPdbConversionHistoryEntries'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -10482,7 +10523,7 @@ def test_list_pdb_conversion_history_entries(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_pluggable_databases(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListPluggableDatabases'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -10542,7 +10583,7 @@ def test_list_pluggable_databases(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_list_vm_cluster_networks(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListVmClusterNetworks'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -10608,7 +10649,7 @@ def test_list_vm_cluster_networks(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_vm_cluster_patch_history_entries(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListVmClusterPatchHistoryEntries'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -10671,7 +10712,7 @@ def test_list_vm_cluster_patch_history_entries(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_vm_cluster_patches(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListVmClusterPatches'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -10734,7 +10775,7 @@ def test_list_vm_cluster_patches(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_vm_cluster_update_history_entries(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListVmClusterUpdateHistoryEntries'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -10797,7 +10838,7 @@ def test_list_vm_cluster_update_history_entries(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_list_vm_cluster_updates(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListVmClusterUpdates'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -10860,7 +10901,7 @@ def test_list_vm_cluster_updates(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_list_vm_clusters(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListVmClusters'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -10923,7 +10964,7 @@ def test_list_vm_clusters(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_local_clone_pluggable_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'LocalClonePluggableDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -10965,7 +11006,7 @@ def test_local_clone_pluggable_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_migrate_exadata_db_system_resource_model(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'MigrateExadataDbSystemResourceModel'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11006,7 +11047,7 @@ def test_migrate_exadata_db_system_resource_model(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_migrate_vault_key(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'MigrateVaultKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11048,7 +11089,7 @@ def test_migrate_vault_key(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_modify_database_management(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ModifyDatabaseManagement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11090,7 +11131,7 @@ def test_modify_database_management(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_modify_pluggable_database_management(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ModifyPluggableDatabaseManagement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11132,7 +11173,7 @@ def test_modify_pluggable_database_management(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_register_autonomous_database_data_safe(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RegisterAutonomousDatabaseDataSafe'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11173,7 +11214,7 @@ def test_register_autonomous_database_data_safe(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_reinstate_autonomous_container_database_dataguard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ReinstateAutonomousContainerDatabaseDataguardAssociation'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11215,7 +11256,7 @@ def test_reinstate_autonomous_container_database_dataguard_association(testing_s
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_reinstate_data_guard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ReinstateDataGuardAssociation'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11258,7 +11299,7 @@ def test_reinstate_data_guard_association(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_remote_clone_pluggable_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RemoteClonePluggableDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11300,7 +11341,7 @@ def test_remote_clone_pluggable_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACS" opsJiraProject="DBAASEXACS"
 def test_remove_virtual_machine_from_cloud_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RemoveVirtualMachineFromCloudVmCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11342,7 +11383,7 @@ def test_remove_virtual_machine_from_cloud_vm_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_remove_virtual_machine_from_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RemoveVirtualMachineFromVmCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11384,7 +11425,7 @@ def test_remove_virtual_machine_from_vm_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_resize_vm_cluster_network(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ResizeVmClusterNetwork'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11427,7 +11468,7 @@ def test_resize_vm_cluster_network(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_restart_autonomous_container_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RestartAutonomousContainerDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11468,7 +11509,7 @@ def test_restart_autonomous_container_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_restart_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RestartAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11509,7 +11550,7 @@ def test_restart_autonomous_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_restore_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RestoreAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11551,7 +11592,7 @@ def test_restore_autonomous_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_restore_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RestoreDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11593,7 +11634,7 @@ def test_restore_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_rotate_autonomous_container_database_encryption_key(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RotateAutonomousContainerDatabaseEncryptionKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11634,7 +11675,7 @@ def test_rotate_autonomous_container_database_encryption_key(testing_service_cli
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_rotate_autonomous_database_encryption_key(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RotateAutonomousDatabaseEncryptionKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11675,7 +11716,7 @@ def test_rotate_autonomous_database_encryption_key(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_rotate_autonomous_vm_cluster_ords_certs(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RotateAutonomousVmClusterOrdsCerts'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11717,7 +11758,7 @@ def test_rotate_autonomous_vm_cluster_ords_certs(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_rotate_autonomous_vm_cluster_ssl_certs(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RotateAutonomousVmClusterSslCerts'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11759,7 +11800,7 @@ def test_rotate_autonomous_vm_cluster_ssl_certs(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_rotate_cloud_autonomous_vm_cluster_ords_certs(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RotateCloudAutonomousVmClusterOrdsCerts'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11800,7 +11841,7 @@ def test_rotate_cloud_autonomous_vm_cluster_ords_certs(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_rotate_cloud_autonomous_vm_cluster_ssl_certs(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RotateCloudAutonomousVmClusterSslCerts'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11841,7 +11882,7 @@ def test_rotate_cloud_autonomous_vm_cluster_ssl_certs(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_rotate_ords_certs(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RotateOrdsCerts'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11882,7 +11923,7 @@ def test_rotate_ords_certs(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_rotate_ssl_certs(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RotateSslCerts'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11923,7 +11964,7 @@ def test_rotate_ssl_certs(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_rotate_vault_key(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RotateVaultKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11964,7 +12005,7 @@ def test_rotate_vault_key(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_scan_external_container_database_pluggable_databases(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ScanExternalContainerDatabasePluggableDatabases'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12006,7 +12047,7 @@ def test_scan_external_container_database_pluggable_databases(testing_service_cl
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_shrink_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ShrinkAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12047,7 +12088,7 @@ def test_shrink_autonomous_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_start_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'StartAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12088,7 +12129,7 @@ def test_start_autonomous_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_start_pluggable_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'StartPluggableDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12129,7 +12170,7 @@ def test_start_pluggable_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_stop_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'StopAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12170,7 +12211,7 @@ def test_stop_autonomous_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_stop_pluggable_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'StopPluggableDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12211,7 +12252,7 @@ def test_stop_pluggable_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_switchover_autonomous_container_database_dataguard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'SwitchoverAutonomousContainerDatabaseDataguardAssociation'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12253,7 +12294,7 @@ def test_switchover_autonomous_container_database_dataguard_association(testing_
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_switchover_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'SwitchoverAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12294,7 +12335,7 @@ def test_switchover_autonomous_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_switchover_data_guard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'SwitchoverDataGuardAssociation'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12337,7 +12378,7 @@ def test_switchover_data_guard_association(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_terminate_autonomous_container_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'TerminateAutonomousContainerDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12378,7 +12419,7 @@ def test_terminate_autonomous_container_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_terminate_autonomous_exadata_infrastructure(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'TerminateAutonomousExadataInfrastructure'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12419,7 +12460,7 @@ def test_terminate_autonomous_exadata_infrastructure(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_terminate_db_system(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'TerminateDbSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12460,7 +12501,7 @@ def test_terminate_db_system(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_update_autonomous_container_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateAutonomousContainerDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12502,7 +12543,7 @@ def test_update_autonomous_container_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_update_autonomous_container_database_dataguard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateAutonomousContainerDatabaseDataguardAssociation'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12545,7 +12586,7 @@ def test_update_autonomous_container_database_dataguard_association(testing_serv
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_update_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateAutonomousDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12587,7 +12628,7 @@ def test_update_autonomous_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_update_autonomous_database_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateAutonomousDatabaseBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12629,7 +12670,7 @@ def test_update_autonomous_database_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_update_autonomous_database_regional_wallet(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateAutonomousDatabaseRegionalWallet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12670,7 +12711,7 @@ def test_update_autonomous_database_regional_wallet(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBS" opsJiraProject="DBAASADBS"
 def test_update_autonomous_database_wallet(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateAutonomousDatabaseWallet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12712,7 +12753,7 @@ def test_update_autonomous_database_wallet(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_update_autonomous_exadata_infrastructure(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateAutonomousExadataInfrastructure'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12754,7 +12795,7 @@ def test_update_autonomous_exadata_infrastructure(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_update_autonomous_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateAutonomousVmCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12796,7 +12837,7 @@ def test_update_autonomous_vm_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_update_backup_destination(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateBackupDestination'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12838,7 +12879,7 @@ def test_update_backup_destination(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_update_cloud_autonomous_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateCloudAutonomousVmCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12880,7 +12921,7 @@ def test_update_cloud_autonomous_vm_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACS" opsJiraProject="DBAASEXACS"
 def test_update_cloud_exadata_infrastructure(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateCloudExadataInfrastructure'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12922,7 +12963,7 @@ def test_update_cloud_exadata_infrastructure(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACS" opsJiraProject="DBAASEXACS"
 def test_update_cloud_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateCloudVmCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -12964,7 +13005,7 @@ def test_update_cloud_vm_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_update_cloud_vm_cluster_iorm_config(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateCloudVmClusterIormConfig'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -13006,7 +13047,7 @@ def test_update_cloud_vm_cluster_iorm_config(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_update_data_guard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateDataGuardAssociation'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -13049,7 +13090,7 @@ def test_update_data_guard_association(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_update_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -13091,7 +13132,7 @@ def test_update_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_update_database_software_image(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateDatabaseSoftwareImage'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -13133,7 +13174,7 @@ def test_update_database_software_image(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_update_db_home(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateDbHome'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -13175,7 +13216,7 @@ def test_update_db_home(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_update_db_system(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateDbSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -13217,7 +13258,7 @@ def test_update_db_system(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_update_exadata_infrastructure(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateExadataInfrastructure'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -13259,7 +13300,7 @@ def test_update_exadata_infrastructure(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_update_exadata_iorm_config(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateExadataIormConfig'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -13301,7 +13342,7 @@ def test_update_exadata_iorm_config(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_update_external_container_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateExternalContainerDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -13343,7 +13384,7 @@ def test_update_external_container_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_update_external_database_connector(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateExternalDatabaseConnector'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -13385,7 +13426,7 @@ def test_update_external_database_connector(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_update_external_non_container_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateExternalNonContainerDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -13427,7 +13468,7 @@ def test_update_external_non_container_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_update_external_pluggable_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateExternalPluggableDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -13469,7 +13510,7 @@ def test_update_external_pluggable_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_update_key_store(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateKeyStore'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -13511,7 +13552,7 @@ def test_update_key_store(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASADBD" opsJiraProject="DBAASADBD"
 def test_update_maintenance_run(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateMaintenanceRun'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -13553,7 +13594,7 @@ def test_update_maintenance_run(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_update_oneoff_patch(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateOneoffPatch'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -13595,7 +13636,7 @@ def test_update_oneoff_patch(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_update_pluggable_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdatePluggableDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -13637,7 +13678,7 @@ def test_update_pluggable_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_update_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateVmCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -13679,7 +13720,7 @@ def test_update_vm_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_update_vm_cluster_network(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateVmClusterNetwork'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -13722,7 +13763,7 @@ def test_update_vm_cluster_network(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_upgrade_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpgradeDatabase'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -13764,7 +13805,7 @@ def test_upgrade_database(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_upgrade_db_system(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpgradeDbSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -13806,7 +13847,7 @@ def test_upgrade_db_system(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAASEXACC" opsJiraProject="EXACCCP"
 def test_validate_vm_cluster_network(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ValidateVmClusterNetwork'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

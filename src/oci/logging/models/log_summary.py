@@ -449,7 +449,7 @@ class LogSummary(object):
     def retention_duration(self):
         """
         Gets the retention_duration of this LogSummary.
-        Log retention duration in 30-day increments (30, 60, 90 and so on).
+        Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
 
 
         :return: The retention_duration of this LogSummary.
@@ -461,7 +461,7 @@ class LogSummary(object):
     def retention_duration(self, retention_duration):
         """
         Sets the retention_duration of this LogSummary.
-        Log retention duration in 30-day increments (30, 60, 90 and so on).
+        Log retention duration in 30-day increments (30, 60, 90 and so on until 180).
 
 
         :param retention_duration: The retention_duration of this LogSummary.

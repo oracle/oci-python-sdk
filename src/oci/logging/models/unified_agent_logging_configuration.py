@@ -53,7 +53,9 @@ class UnifiedAgentLoggingConfiguration(UnifiedAgentServiceConfigurationDetails):
     @property
     def sources(self):
         """
-        Gets the sources of this UnifiedAgentLoggingConfiguration.
+        **[Required]** Gets the sources of this UnifiedAgentLoggingConfiguration.
+        Logging source object.
+
 
         :return: The sources of this UnifiedAgentLoggingConfiguration.
         :rtype: list[oci.logging.models.UnifiedAgentLoggingSource]
@@ -64,6 +66,8 @@ class UnifiedAgentLoggingConfiguration(UnifiedAgentServiceConfigurationDetails):
     def sources(self, sources):
         """
         Sets the sources of this UnifiedAgentLoggingConfiguration.
+        Logging source object.
+
 
         :param sources: The sources of this UnifiedAgentLoggingConfiguration.
         :type: list[oci.logging.models.UnifiedAgentLoggingSource]
@@ -73,7 +77,7 @@ class UnifiedAgentLoggingConfiguration(UnifiedAgentServiceConfigurationDetails):
     @property
     def destination(self):
         """
-        Gets the destination of this UnifiedAgentLoggingConfiguration.
+        **[Required]** Gets the destination of this UnifiedAgentLoggingConfiguration.
 
         :return: The destination of this UnifiedAgentLoggingConfiguration.
         :rtype: oci.logging.models.UnifiedAgentLoggingDestination

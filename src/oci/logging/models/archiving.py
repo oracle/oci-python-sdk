@@ -37,7 +37,7 @@ class Archiving(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this Archiving.
-        True if archiving enabled. This field is now decrecated, you should use cloud flow to enable archiving.
+        True if archiving enabled. This field is now deprecated, you should use Service Connector Hub to enable archiving.
 
 
         :return: The is_enabled of this Archiving.
@@ -49,7 +49,7 @@ class Archiving(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this Archiving.
-        True if archiving enabled. This field is now decrecated, you should use cloud flow to enable archiving.
+        True if archiving enabled. This field is now deprecated, you should use Service Connector Hub to enable archiving.
 
 
         :param is_enabled: The is_enabled of this Archiving.

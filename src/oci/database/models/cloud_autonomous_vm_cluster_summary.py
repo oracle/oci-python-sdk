@@ -244,6 +244,10 @@ class CloudAutonomousVmClusterSummary(object):
             The value to assign to the memory_per_oracle_compute_unit_in_gbs property of this CloudAutonomousVmClusterSummary.
         :type memory_per_oracle_compute_unit_in_gbs: int
 
+        :param db_servers:
+            The value to assign to the db_servers property of this CloudAutonomousVmClusterSummary.
+        :type db_servers: list[str]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -289,7 +293,8 @@ class CloudAutonomousVmClusterSummary(object):
             'available_autonomous_data_storage_size_in_tbs': 'float',
             'autonomous_data_storage_size_in_tbs': 'float',
             'db_node_storage_size_in_gbs': 'int',
-            'memory_per_oracle_compute_unit_in_gbs': 'int'
+            'memory_per_oracle_compute_unit_in_gbs': 'int',
+            'db_servers': 'list[str]'
         }
 
         self.attribute_map = {
@@ -336,7 +341,8 @@ class CloudAutonomousVmClusterSummary(object):
             'available_autonomous_data_storage_size_in_tbs': 'availableAutonomousDataStorageSizeInTBs',
             'autonomous_data_storage_size_in_tbs': 'autonomousDataStorageSizeInTBs',
             'db_node_storage_size_in_gbs': 'dbNodeStorageSizeInGBs',
-            'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs'
+            'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs',
+            'db_servers': 'dbServers'
         }
 
         self._id = None
@@ -383,6 +389,7 @@ class CloudAutonomousVmClusterSummary(object):
         self._autonomous_data_storage_size_in_tbs = None
         self._db_node_storage_size_in_gbs = None
         self._memory_per_oracle_compute_unit_in_gbs = None
+        self._db_servers = None
 
     @property
     def id(self):
@@ -1530,7 +1537,9 @@ class CloudAutonomousVmClusterSummary(object):
     def memory_per_oracle_compute_unit_in_gbs(self):
         """
         Gets the memory_per_oracle_compute_unit_in_gbs of this CloudAutonomousVmClusterSummary.
-        The amount of memory (in GBs) enabled per each CPU core.
+        The amount of memory (in GBs) enabled per OCPU or ECPU. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
+
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
 
         :return: The memory_per_oracle_compute_unit_in_gbs of this CloudAutonomousVmClusterSummary.
@@ -1542,13 +1551,43 @@ class CloudAutonomousVmClusterSummary(object):
     def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
         """
         Sets the memory_per_oracle_compute_unit_in_gbs of this CloudAutonomousVmClusterSummary.
-        The amount of memory (in GBs) enabled per each CPU core.
+        The amount of memory (in GBs) enabled per OCPU or ECPU. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
+
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
 
         :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this CloudAutonomousVmClusterSummary.
         :type: int
         """
         self._memory_per_oracle_compute_unit_in_gbs = memory_per_oracle_compute_unit_in_gbs
+
+    @property
+    def db_servers(self):
+        """
+        Gets the db_servers of this CloudAutonomousVmClusterSummary.
+        The list of `OCIDs`__ of the Db servers.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The db_servers of this CloudAutonomousVmClusterSummary.
+        :rtype: list[str]
+        """
+        return self._db_servers
+
+    @db_servers.setter
+    def db_servers(self, db_servers):
+        """
+        Sets the db_servers of this CloudAutonomousVmClusterSummary.
+        The list of `OCIDs`__ of the Db servers.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param db_servers: The db_servers of this CloudAutonomousVmClusterSummary.
+        :type: list[str]
+        """
+        self._db_servers = db_servers
 
     def __repr__(self):
         return formatted_flat_dict(self)

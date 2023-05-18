@@ -60,7 +60,9 @@ class UnifiedAgentTailLogSource(UnifiedAgentLoggingSource):
     @property
     def paths(self):
         """
-        Gets the paths of this UnifiedAgentTailLogSource.
+        **[Required]** Gets the paths of this UnifiedAgentTailLogSource.
+        Absolute paths for log source files. Wildcard can be used.
+
 
         :return: The paths of this UnifiedAgentTailLogSource.
         :rtype: list[str]
@@ -71,6 +73,8 @@ class UnifiedAgentTailLogSource(UnifiedAgentLoggingSource):
     def paths(self, paths):
         """
         Sets the paths of this UnifiedAgentTailLogSource.
+        Absolute paths for log source files. Wildcard can be used.
+
 
         :param paths: The paths of this UnifiedAgentTailLogSource.
         :type: list[str]

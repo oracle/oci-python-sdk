@@ -45,6 +45,7 @@ from .autonomous_patch_summary import AutonomousPatchSummary
 from .autonomous_virtual_machine import AutonomousVirtualMachine
 from .autonomous_virtual_machine_summary import AutonomousVirtualMachineSummary
 from .autonomous_vm_cluster import AutonomousVmCluster
+from .autonomous_vm_cluster_resource_details import AutonomousVmClusterResourceDetails
 from .autonomous_vm_cluster_summary import AutonomousVmClusterSummary
 from .backup import Backup
 from .backup_destination import BackupDestination
@@ -202,6 +203,7 @@ from .exadata_db_system_migration_summary import ExadataDbSystemMigrationSummary
 from .exadata_infrastructure import ExadataInfrastructure
 from .exadata_infrastructure_contact import ExadataInfrastructureContact
 from .exadata_infrastructure_summary import ExadataInfrastructureSummary
+from .exadata_infrastructure_un_allocated_resources import ExadataInfrastructureUnAllocatedResources
 from .exadata_iorm_config import ExadataIormConfig
 from .exadata_iorm_config_update_details import ExadataIormConfigUpdateDetails
 from .external_backup_job import ExternalBackupJob
@@ -379,6 +381,7 @@ database_type_mapping = {
     "AutonomousVirtualMachine": AutonomousVirtualMachine,
     "AutonomousVirtualMachineSummary": AutonomousVirtualMachineSummary,
     "AutonomousVmCluster": AutonomousVmCluster,
+    "AutonomousVmClusterResourceDetails": AutonomousVmClusterResourceDetails,
     "AutonomousVmClusterSummary": AutonomousVmClusterSummary,
     "Backup": Backup,
     "BackupDestination": BackupDestination,
@@ -536,6 +539,7 @@ database_type_mapping = {
     "ExadataInfrastructure": ExadataInfrastructure,
     "ExadataInfrastructureContact": ExadataInfrastructureContact,
     "ExadataInfrastructureSummary": ExadataInfrastructureSummary,
+    "ExadataInfrastructureUnAllocatedResources": ExadataInfrastructureUnAllocatedResources,
     "ExadataIormConfig": ExadataIormConfig,
     "ExadataIormConfigUpdateDetails": ExadataIormConfigUpdateDetails,
     "ExternalBackupJob": ExternalBackupJob,

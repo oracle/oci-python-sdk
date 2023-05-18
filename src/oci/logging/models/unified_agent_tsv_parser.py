@@ -21,7 +21,7 @@ class UnifiedAgentTsvParser(UnifiedAgentParser):
 
         :param parser_type:
             The value to assign to the parser_type property of this UnifiedAgentTsvParser.
-            Allowed values for this property are: "AUDITD", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK"
+            Allowed values for this property are: "AUDITD", "CRI", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK"
         :type parser_type: str
 
         :param field_time_key:
@@ -103,6 +103,8 @@ class UnifiedAgentTsvParser(UnifiedAgentParser):
     def delimiter(self):
         """
         Gets the delimiter of this UnifiedAgentTsvParser.
+        tsv delimiter.
+
 
         :return: The delimiter of this UnifiedAgentTsvParser.
         :rtype: str
@@ -113,6 +115,8 @@ class UnifiedAgentTsvParser(UnifiedAgentParser):
     def delimiter(self, delimiter):
         """
         Sets the delimiter of this UnifiedAgentTsvParser.
+        tsv delimiter.
+
 
         :param delimiter: The delimiter of this UnifiedAgentTsvParser.
         :type: str
@@ -122,7 +126,9 @@ class UnifiedAgentTsvParser(UnifiedAgentParser):
     @property
     def keys(self):
         """
-        Gets the keys of this UnifiedAgentTsvParser.
+        **[Required]** Gets the keys of this UnifiedAgentTsvParser.
+        tsv keys.
+
 
         :return: The keys of this UnifiedAgentTsvParser.
         :rtype: list[str]
@@ -133,6 +139,8 @@ class UnifiedAgentTsvParser(UnifiedAgentParser):
     def keys(self, keys):
         """
         Sets the keys of this UnifiedAgentTsvParser.
+        tsv keys.
+
 
         :param keys: The keys of this UnifiedAgentTsvParser.
         :type: list[str]

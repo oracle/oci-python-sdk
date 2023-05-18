@@ -1,9 +1,9 @@
-LogIncludedSearchSummaryCollection
-==================================
+UnifiedAgentCriParser
+=====================
 
 .. currentmodule:: oci.logging.models
 
-.. autoclass:: LogIncludedSearchSummaryCollection
+.. autoclass:: UnifiedAgentCriParser
     :show-inheritance:
     :special-members: __init__
     :members:

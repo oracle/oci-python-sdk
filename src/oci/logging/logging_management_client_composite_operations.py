@@ -234,7 +234,7 @@ class LoggingManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.logging.models.CreateLogSavedSearchDetails create_log_saved_search_details: (required)
-            Specification of the Saved Search to create
+            Specification of the saved search to create.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.logging.models.LogSavedSearch.lifecycle_state`
@@ -410,7 +410,7 @@ class LoggingManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str log_saved_search_id: (required)
-            OCID of the logSavedSearch
+            OCID of the logSavedSearch.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.logging.models.LogSavedSearch.lifecycle_state`
@@ -647,7 +647,7 @@ class LoggingManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str log_saved_search_id: (required)
-            OCID of the logSavedSearch
+            OCID of the logSavedSearch.
 
         :param oci.logging.models.UpdateLogSavedSearchDetails update_log_saved_search_details: (required)
             Updates to the saved search.

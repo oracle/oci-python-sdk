@@ -491,6 +491,48 @@ def test_create_zone(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
+def test_create_zone_from_zone_file(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'CreateZoneFromZoneFile'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'CreateZoneFromZoneFile')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='CreateZoneFromZoneFile')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.create_zone_from_zone_file(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                create_zone_from_zone_file_details=request.pop(util.camelize('CreateZoneFromZoneFileDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'CreateZoneFromZoneFile',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'zone',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_delete_domain_records(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'DeleteDomainRecords'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
