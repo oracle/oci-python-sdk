@@ -76,11 +76,17 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
         else:
             self.logger.disabled = True
 
+        # If user sends in custom retry strategy use that, else use INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY
+        if kwargs.get('retry_strategy'):
+            self.retry_strategy = kwargs['retry_strategy']
+        else:
+            self.retry_strategy = INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY
+
         try:
             self.leaf_certificate_retriever = UrlBasedCertificateRetriever(
                 certificate_url=self.LEAF_CERTIFICATE_URL,
                 private_key_url=self.LEAF_CERTIFICATE_PRIVATE_KEY_URL,
-                retry_strategy=INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY,
+                retry_strategy=self.retry_strategy,
                 headers=self.METADATA_AUTH_HEADERS,
                 log_requests=kwargs.get('log_requests'))
         except (HTTPError, ConnectTimeout) as e:
@@ -93,7 +99,7 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
                 self.leaf_certificate_retriever = UrlBasedCertificateRetriever(
                     certificate_url=self.LEAF_CERTIFICATE_URL,
                     private_key_url=self.LEAF_CERTIFICATE_PRIVATE_KEY_URL,
-                    retry_strategy=INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY,
+                    retry_strategy=self.retry_strategy,
                     headers=self.METADATA_AUTH_HEADERS)
             else:
                 if not e.args:
@@ -103,7 +109,7 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
 
         self.intermediate_certificate_retriever = UrlBasedCertificateRetriever(
             certificate_url=self.INTERMEDIATE_CERTIFICATE_URL,
-            retry_strategy=INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY,
+            retry_strategy=self.retry_strategy,
             headers=self.METADATA_AUTH_HEADERS)
         self.session_key_supplier = SessionKeySupplier()
         self.tenancy_id = auth_utils.get_tenancy_id_from_certificate(self.leaf_certificate_retriever.get_certificate_as_certificate())

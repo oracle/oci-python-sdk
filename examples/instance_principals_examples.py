@@ -7,6 +7,13 @@ import oci
 compartment_id = '<your compartment id here>'
 
 # By default this will hit the auth service in the region returned by http://169.254.169.254/opc/v2/instance/region on the instance.
+#
+# To customize timeouts while retrieving certificates from identity, you can now provide a custom retry strategy
+# while creating the signer. For example:
+#
+# custom_strategy = oci.retry.RetryStrategyBuilder().add_max_attempts(4).get_retry_strategy()
+# signer_kwargs = {'retry_strategy': custom_strategy}
+# signer = oci.auth.signers.InstancePrincipalsSecurityTokenSigner(**signer_kwargs)
 signer = oci.auth.signers.InstancePrincipalsSecurityTokenSigner()
 
 # In the base case, configuration does not need to be provided as the region and tenancy are obtained from the InstancePrincipalsSecurityTokenSigner

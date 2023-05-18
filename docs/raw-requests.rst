@@ -60,6 +60,16 @@ An Instance Principals-based signer can be created as follows:
     import oci
     signer = oci.auth.signers.InstancePrincipalsSecurityTokenSigner()
 
+To customize timeouts while retrieving certificates from identity, you can now provide a custom retry strategy while creating the signer:
+
+.. code-block:: python
+
+    import oci
+
+    custom_strategy = oci.retry.RetryStrategyBuilder().add_max_attempts(4).get_retry_strategy()
+    signer_kwargs = {'retry_strategy': custom_strategy}
+    signer = oci.auth.signers.InstancePrincipalsSecurityTokenSigner(**signer_kwargs)
+
 ==================
  Using the Signer
 ==================
