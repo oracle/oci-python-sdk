@@ -4,13 +4,29 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.102.1 - TBD
+2.103.0 - 2023-05-23
 ====================
 
 Added
 -----
-* TBD
-
+* Support for CRI-O parsing in the Logging service
+* Support for retrieving the resource availability domain when getting Exadata infrastructure or VM clusters in the Database service
+* Support for specifying database servers when creating dedicated autonomous databases in the Database service
+* Support for secondary egress zones in the DNS service
+ 
+Breaking
+--------
+* The models `LogIncludedSearch`, `LogIncludedSearchSummary`, `LogIncludedSearchSummaryCollection`, `LogIncludedSearch`, `LogIncludedSearchSummary` and `LogIncludedSearchSummaryCollection` were removed in the Logging service
+* The property `keys` was made required in the `UnifiedAgentCsvParser` and `UnifiedAgentTsvParser` models in the Logging service
+* The property `patterns` was made required in the `UnifiedAgentGrokParser` and `UnifiedAgentMultilineGrokParser` models in the Logging service
+* The properties `sources` and `destination` were made required in the `UnifiedAgentLoggingConfiguration` model in the Logging service
+* The property `format` was made required in the `UnifiedAgentMultilineParser` model in the Logging service
+* The property `expression` was made required in the `UnifiedAgentRegexParser` model in the Logging service
+* The property `paths` was made required in the `UnifiedAgentTailLogSource` model in the Logging service
+* The property `channels` was made required in the `UnifiedAgentWindowsEventSource` model in the Logging service
+* The operations `get_log_included_search` and `list_log_included_searches` were removed from the `LoggingManagementClient` in the Logging service
+* A new required property `external_downstreams` was added in the `zone` model in the DNS service
+ 
 ====================
 2.102.0 - 2023-05-16
 ====================
