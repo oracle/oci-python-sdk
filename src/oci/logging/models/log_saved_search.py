@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LogSavedSearch(object):
     """
-    A log saved search that can be used to save and share a given search result.
+    A LogSavedSearch that can be used to save and share a given search result.
     """
 
     #: A constant which can be used with the lifecycle_state property of a LogSavedSearch.

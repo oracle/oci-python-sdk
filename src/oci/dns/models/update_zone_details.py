@@ -32,22 +32,29 @@ class UpdateZoneDetails(object):
             The value to assign to the external_masters property of this UpdateZoneDetails.
         :type external_masters: list[oci.dns.models.ExternalMaster]
 
+        :param external_downstreams:
+            The value to assign to the external_downstreams property of this UpdateZoneDetails.
+        :type external_downstreams: list[oci.dns.models.ExternalDownstream]
+
         """
         self.swagger_types = {
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'external_masters': 'list[ExternalMaster]'
+            'external_masters': 'list[ExternalMaster]',
+            'external_downstreams': 'list[ExternalDownstream]'
         }
 
         self.attribute_map = {
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'external_masters': 'externalMasters'
+            'external_masters': 'externalMasters',
+            'external_downstreams': 'externalDownstreams'
         }
 
         self._freeform_tags = None
         self._defined_tags = None
         self._external_masters = None
+        self._external_downstreams = None
 
     @property
     def freeform_tags(self):
@@ -146,6 +153,32 @@ class UpdateZoneDetails(object):
         :type: list[oci.dns.models.ExternalMaster]
         """
         self._external_masters = external_masters
+
+    @property
+    def external_downstreams(self):
+        """
+        Gets the external_downstreams of this UpdateZoneDetails.
+        External secondary servers for the zone.
+        This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+
+
+        :return: The external_downstreams of this UpdateZoneDetails.
+        :rtype: list[oci.dns.models.ExternalDownstream]
+        """
+        return self._external_downstreams
+
+    @external_downstreams.setter
+    def external_downstreams(self, external_downstreams):
+        """
+        Sets the external_downstreams of this UpdateZoneDetails.
+        External secondary servers for the zone.
+        This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+
+
+        :param external_downstreams: The external_downstreams of this UpdateZoneDetails.
+        :type: list[oci.dns.models.ExternalDownstream]
+        """
+        self._external_downstreams = external_downstreams
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -33,7 +33,7 @@ class UnifiedJSONParser(UnifiedAgentParser):
 
         :param parser_type:
             The value to assign to the parser_type property of this UnifiedJSONParser.
-            Allowed values for this property are: "AUDITD", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AUDITD", "CRI", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type parser_type: str
 
@@ -118,6 +118,8 @@ class UnifiedJSONParser(UnifiedAgentParser):
     def time_type(self):
         """
         Gets the time_type of this UnifiedJSONParser.
+        Time type of JSON parser.
+
         Allowed values for this property are: "FLOAT", "UNIXTIME", "STRING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
@@ -131,6 +133,8 @@ class UnifiedJSONParser(UnifiedAgentParser):
     def time_type(self, time_type):
         """
         Sets the time_type of this UnifiedJSONParser.
+        Time type of JSON parser.
+
 
         :param time_type: The time_type of this UnifiedJSONParser.
         :type: str
@@ -144,6 +148,8 @@ class UnifiedJSONParser(UnifiedAgentParser):
     def time_format(self):
         """
         Gets the time_format of this UnifiedJSONParser.
+        Process time value using the specified format.
+
 
         :return: The time_format of this UnifiedJSONParser.
         :rtype: str
@@ -154,6 +160,8 @@ class UnifiedJSONParser(UnifiedAgentParser):
     def time_format(self, time_format):
         """
         Sets the time_format of this UnifiedJSONParser.
+        Process time value using the specified format.
+
 
         :param time_format: The time_format of this UnifiedJSONParser.
         :type: str

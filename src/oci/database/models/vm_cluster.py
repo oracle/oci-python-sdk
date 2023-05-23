@@ -154,6 +154,10 @@ class VmCluster(object):
             The value to assign to the db_servers property of this VmCluster.
         :type db_servers: list[str]
 
+        :param availability_domain:
+            The value to assign to the availability_domain property of this VmCluster.
+        :type availability_domain: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this VmCluster.
         :type freeform_tags: dict(str, str)
@@ -192,6 +196,7 @@ class VmCluster(object):
             'ssh_public_keys': 'list[str]',
             'license_model': 'str',
             'db_servers': 'list[str]',
+            'availability_domain': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'data_collection_options': 'DataCollectionOptions'
@@ -222,6 +227,7 @@ class VmCluster(object):
             'ssh_public_keys': 'sshPublicKeys',
             'license_model': 'licenseModel',
             'db_servers': 'dbServers',
+            'availability_domain': 'availabilityDomain',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'data_collection_options': 'dataCollectionOptions'
@@ -251,6 +257,7 @@ class VmCluster(object):
         self._ssh_public_keys = None
         self._license_model = None
         self._db_servers = None
+        self._availability_domain = None
         self._freeform_tags = None
         self._defined_tags = None
         self._data_collection_options = None
@@ -866,6 +873,30 @@ class VmCluster(object):
         :type: list[str]
         """
         self._db_servers = db_servers
+
+    @property
+    def availability_domain(self):
+        """
+        Gets the availability_domain of this VmCluster.
+        The name of the availability domain that the VM cluster is located in.
+
+
+        :return: The availability_domain of this VmCluster.
+        :rtype: str
+        """
+        return self._availability_domain
+
+    @availability_domain.setter
+    def availability_domain(self, availability_domain):
+        """
+        Sets the availability_domain of this VmCluster.
+        The name of the availability domain that the VM cluster is located in.
+
+
+        :param availability_domain: The availability_domain of this VmCluster.
+        :type: str
+        """
+        self._availability_domain = availability_domain
 
     @property
     def freeform_tags(self):

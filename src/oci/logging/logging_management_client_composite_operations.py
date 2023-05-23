@@ -234,7 +234,7 @@ class LoggingManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.logging.models.CreateLogSavedSearchDetails create_log_saved_search_details: (required)
-            Specification of the Saved Search to create
+            Specification of the saved search to create.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.logging.models.LogSavedSearch.lifecycle_state`
@@ -410,7 +410,7 @@ class LoggingManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str log_saved_search_id: (required)
-            OCID of the logSavedSearch
+            OCID of the logSavedSearch.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.logging.models.LogSavedSearch.lifecycle_state`
@@ -438,11 +438,19 @@ class LoggingManagementClientCompositeOperations(object):
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
+            if ("succeed_on_not_found" in waiter_kwargs) and (waiter_kwargs["succeed_on_not_found"] is False):
+                self.client.base_client.logger.warning("The waiter kwarg succeed_on_not_found was passed as False for the delete composite operation delete_log_saved_search, this would result in the operation to fail if the resource is not found! Please, do not pass this kwarg if this was not intended")
+            else:
+                """
+                If the user does not send in this value, we set it to True by default.
+                We are doing this because during a delete resource scenario and waiting on its state, the service can
+                return a 404 NOT FOUND exception as the resource was deleted and a get on its state would fail
+                """
+                waiter_kwargs["succeed_on_not_found"] = True
             waiter_result = oci.wait_until(
                 self.client,
                 initial_get_result,  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
-                succeed_on_not_found=True,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
@@ -639,7 +647,7 @@ class LoggingManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str log_saved_search_id: (required)
-            OCID of the logSavedSearch
+            OCID of the logSavedSearch.
 
         :param oci.logging.models.UpdateLogSavedSearchDetails update_log_saved_search_details: (required)
             Updates to the saved search.

@@ -21,7 +21,7 @@ class UnifiedAgentGrokParser(UnifiedAgentParser):
 
         :param parser_type:
             The value to assign to the parser_type property of this UnifiedAgentGrokParser.
-            Allowed values for this property are: "AUDITD", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK"
+            Allowed values for this property are: "AUDITD", "CRI", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK"
         :type parser_type: str
 
         :param field_time_key:
@@ -110,6 +110,8 @@ class UnifiedAgentGrokParser(UnifiedAgentParser):
     def grok_name_key(self):
         """
         Gets the grok_name_key of this UnifiedAgentGrokParser.
+        grok name key.
+
 
         :return: The grok_name_key of this UnifiedAgentGrokParser.
         :rtype: str
@@ -120,6 +122,8 @@ class UnifiedAgentGrokParser(UnifiedAgentParser):
     def grok_name_key(self, grok_name_key):
         """
         Sets the grok_name_key of this UnifiedAgentGrokParser.
+        grok name key.
+
 
         :param grok_name_key: The grok_name_key of this UnifiedAgentGrokParser.
         :type: str
@@ -130,6 +134,8 @@ class UnifiedAgentGrokParser(UnifiedAgentParser):
     def grok_failure_key(self):
         """
         Gets the grok_failure_key of this UnifiedAgentGrokParser.
+        grok failure key.
+
 
         :return: The grok_failure_key of this UnifiedAgentGrokParser.
         :rtype: str
@@ -140,6 +146,8 @@ class UnifiedAgentGrokParser(UnifiedAgentParser):
     def grok_failure_key(self, grok_failure_key):
         """
         Sets the grok_failure_key of this UnifiedAgentGrokParser.
+        grok failure key.
+
 
         :param grok_failure_key: The grok_failure_key of this UnifiedAgentGrokParser.
         :type: str
@@ -149,7 +157,9 @@ class UnifiedAgentGrokParser(UnifiedAgentParser):
     @property
     def patterns(self):
         """
-        Gets the patterns of this UnifiedAgentGrokParser.
+        **[Required]** Gets the patterns of this UnifiedAgentGrokParser.
+        grok pattern object.
+
 
         :return: The patterns of this UnifiedAgentGrokParser.
         :rtype: list[oci.logging.models.GrokPattern]
@@ -160,6 +170,8 @@ class UnifiedAgentGrokParser(UnifiedAgentParser):
     def patterns(self, patterns):
         """
         Sets the patterns of this UnifiedAgentGrokParser.
+        grok pattern object.
+
 
         :param patterns: The patterns of this UnifiedAgentGrokParser.
         :type: list[oci.logging.models.GrokPattern]

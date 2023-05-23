@@ -21,7 +21,7 @@ class UnifiedAgentRegexParser(UnifiedAgentParser):
 
         :param parser_type:
             The value to assign to the parser_type property of this UnifiedAgentRegexParser.
-            Allowed values for this property are: "AUDITD", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK"
+            Allowed values for this property are: "AUDITD", "CRI", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK"
         :type parser_type: str
 
         :param field_time_key:
@@ -102,7 +102,9 @@ class UnifiedAgentRegexParser(UnifiedAgentParser):
     @property
     def expression(self):
         """
-        Gets the expression of this UnifiedAgentRegexParser.
+        **[Required]** Gets the expression of this UnifiedAgentRegexParser.
+        Regex pattern.
+
 
         :return: The expression of this UnifiedAgentRegexParser.
         :rtype: str
@@ -113,6 +115,8 @@ class UnifiedAgentRegexParser(UnifiedAgentParser):
     def expression(self, expression):
         """
         Sets the expression of this UnifiedAgentRegexParser.
+        Regex pattern.
+
 
         :param expression: The expression of this UnifiedAgentRegexParser.
         :type: str
@@ -123,6 +127,8 @@ class UnifiedAgentRegexParser(UnifiedAgentParser):
     def time_format(self):
         """
         Gets the time_format of this UnifiedAgentRegexParser.
+        Time format.
+
 
         :return: The time_format of this UnifiedAgentRegexParser.
         :rtype: str
@@ -133,6 +139,8 @@ class UnifiedAgentRegexParser(UnifiedAgentParser):
     def time_format(self, time_format):
         """
         Sets the time_format of this UnifiedAgentRegexParser.
+        Time format.
+
 
         :param time_format: The time_format of this UnifiedAgentRegexParser.
         :type: str

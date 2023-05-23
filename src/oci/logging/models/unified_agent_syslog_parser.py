@@ -41,7 +41,7 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
 
         :param parser_type:
             The value to assign to the parser_type property of this UnifiedAgentSyslogParser.
-            Allowed values for this property are: "AUDITD", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AUDITD", "CRI", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type parser_type: str
 
@@ -156,6 +156,8 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
     def time_format(self):
         """
         Gets the time_format of this UnifiedAgentSyslogParser.
+        Time format.
+
 
         :return: The time_format of this UnifiedAgentSyslogParser.
         :rtype: str
@@ -166,6 +168,8 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
     def time_format(self, time_format):
         """
         Sets the time_format of this UnifiedAgentSyslogParser.
+        Time format.
+
 
         :param time_format: The time_format of this UnifiedAgentSyslogParser.
         :type: str
@@ -176,6 +180,8 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
     def rfc5424_time_format(self):
         """
         Gets the rfc5424_time_format of this UnifiedAgentSyslogParser.
+        rfc5424 time format.
+
 
         :return: The rfc5424_time_format of this UnifiedAgentSyslogParser.
         :rtype: str
@@ -186,6 +192,8 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
     def rfc5424_time_format(self, rfc5424_time_format):
         """
         Sets the rfc5424_time_format of this UnifiedAgentSyslogParser.
+        rfc5424 time format.
+
 
         :param rfc5424_time_format: The rfc5424_time_format of this UnifiedAgentSyslogParser.
         :type: str
@@ -196,6 +204,8 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
     def message_format(self):
         """
         Gets the message_format of this UnifiedAgentSyslogParser.
+        Message format of syslog.
+
         Allowed values for this property are: "RFC3164", "RFC5424", "AUTO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
@@ -209,6 +219,8 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
     def message_format(self, message_format):
         """
         Sets the message_format of this UnifiedAgentSyslogParser.
+        Message format of syslog.
+
 
         :param message_format: The message_format of this UnifiedAgentSyslogParser.
         :type: str
@@ -222,6 +234,8 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
     def is_with_priority(self):
         """
         Gets the is_with_priority of this UnifiedAgentSyslogParser.
+        With priority or not.
+
 
         :return: The is_with_priority of this UnifiedAgentSyslogParser.
         :rtype: bool
@@ -232,6 +246,8 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
     def is_with_priority(self, is_with_priority):
         """
         Sets the is_with_priority of this UnifiedAgentSyslogParser.
+        With priority or not.
+
 
         :param is_with_priority: The is_with_priority of this UnifiedAgentSyslogParser.
         :type: bool
@@ -242,6 +258,8 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
     def is_support_colonless_ident(self):
         """
         Gets the is_support_colonless_ident of this UnifiedAgentSyslogParser.
+        Support colonless ident or not.
+
 
         :return: The is_support_colonless_ident of this UnifiedAgentSyslogParser.
         :rtype: bool
@@ -252,6 +270,8 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
     def is_support_colonless_ident(self, is_support_colonless_ident):
         """
         Sets the is_support_colonless_ident of this UnifiedAgentSyslogParser.
+        Support colonless ident or not.
+
 
         :param is_support_colonless_ident: The is_support_colonless_ident of this UnifiedAgentSyslogParser.
         :type: bool
@@ -262,6 +282,8 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
     def syslog_parser_type(self):
         """
         Gets the syslog_parser_type of this UnifiedAgentSyslogParser.
+        Syslog parser type.
+
         Allowed values for this property are: "STRING", "REGEXP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
@@ -275,6 +297,8 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
     def syslog_parser_type(self, syslog_parser_type):
         """
         Sets the syslog_parser_type of this UnifiedAgentSyslogParser.
+        Syslog parser type.
+
 
         :param syslog_parser_type: The syslog_parser_type of this UnifiedAgentSyslogParser.
         :type: str

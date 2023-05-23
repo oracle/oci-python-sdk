@@ -35,6 +35,7 @@ DNS
     oci.dns.models.CreateZoneBaseDetails
     oci.dns.models.CreateZoneDetails
     oci.dns.models.DynectMigrationDetails
+    oci.dns.models.ExternalDownstream
     oci.dns.models.ExternalMaster
     oci.dns.models.MigrationReplacement
     oci.dns.models.Nameserver

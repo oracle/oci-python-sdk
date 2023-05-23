@@ -18,6 +18,10 @@ class UnifiedAgentParser(object):
     PARSER_TYPE_AUDITD = "AUDITD"
 
     #: A constant which can be used with the parser_type property of a UnifiedAgentParser.
+    #: This constant has a value of "CRI"
+    PARSER_TYPE_CRI = "CRI"
+
+    #: A constant which can be used with the parser_type property of a UnifiedAgentParser.
     #: This constant has a value of "JSON"
     PARSER_TYPE_JSON = "JSON"
 
@@ -80,6 +84,7 @@ class UnifiedAgentParser(object):
         * :class:`~oci.logging.models.UnifiedAgentRegexParser`
         * :class:`~oci.logging.models.UnifiedAgentMultilineParser`
         * :class:`~oci.logging.models.UnifiedAgentTsvParser`
+        * :class:`~oci.logging.models.UnifiedAgentCriParser`
         * :class:`~oci.logging.models.UnifiedAgentApacheErrorParser`
         * :class:`~oci.logging.models.UnifiedAgentMsgpackParser`
         * :class:`~oci.logging.models.UnifiedAgentCsvParser`
@@ -88,7 +93,7 @@ class UnifiedAgentParser(object):
 
         :param parser_type:
             The value to assign to the parser_type property of this UnifiedAgentParser.
-            Allowed values for this property are: "AUDITD", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AUDITD", "CRI", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type parser_type: str
 
@@ -190,6 +195,9 @@ class UnifiedAgentParser(object):
         if type == 'TSV':
             return 'UnifiedAgentTsvParser'
 
+        if type == 'CRI':
+            return 'UnifiedAgentCriParser'
+
         if type == 'APACHE_ERROR':
             return 'UnifiedAgentApacheErrorParser'
 
@@ -207,7 +215,7 @@ class UnifiedAgentParser(object):
         **[Required]** Gets the parser_type of this UnifiedAgentParser.
         Type of fluent parser.
 
-        Allowed values for this property are: "AUDITD", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AUDITD", "CRI", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -226,7 +234,7 @@ class UnifiedAgentParser(object):
         :param parser_type: The parser_type of this UnifiedAgentParser.
         :type: str
         """
-        allowed_values = ["AUDITD", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK"]
+        allowed_values = ["AUDITD", "CRI", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK"]
         if not value_allowed_none_or_none_sentinel(parser_type, allowed_values):
             parser_type = 'UNKNOWN_ENUM_VALUE'
         self._parser_type = parser_type
@@ -260,6 +268,26 @@ class UnifiedAgentParser(object):
         """
         Gets the types of this UnifiedAgentParser.
         Specify types for converting a field into another type.
+        For example,
+          With this configuration:
+              <parse>
+                @type csv
+                keys time,host,req_id,user
+                time_key time
+              </parse>
+
+          This incoming event:
+            \"2013/02/28 12:00:00,192.168.0.1,111,-\"
+
+          is parsed as:
+            1362020400 (2013/02/28/ 12:00:00)
+
+            record:
+            {
+              \"host\"   : \"192.168.0.1\",
+              \"req_id\" : \"111\",
+              \"user\"   : \"-\"
+            }
 
 
         :return: The types of this UnifiedAgentParser.
@@ -272,6 +300,26 @@ class UnifiedAgentParser(object):
         """
         Sets the types of this UnifiedAgentParser.
         Specify types for converting a field into another type.
+        For example,
+          With this configuration:
+              <parse>
+                @type csv
+                keys time,host,req_id,user
+                time_key time
+              </parse>
+
+          This incoming event:
+            \"2013/02/28 12:00:00,192.168.0.1,111,-\"
+
+          is parsed as:
+            1362020400 (2013/02/28/ 12:00:00)
+
+            record:
+            {
+              \"host\"   : \"192.168.0.1\",
+              \"req_id\" : \"111\",
+              \"user\"   : \"-\"
+            }
 
 
         :param types: The types of this UnifiedAgentParser.

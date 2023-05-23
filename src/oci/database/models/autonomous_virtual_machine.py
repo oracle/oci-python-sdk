@@ -100,6 +100,10 @@ class AutonomousVirtualMachine(object):
             The value to assign to the defined_tags property of this AutonomousVirtualMachine.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param cloud_autonomous_vm_cluster_id:
+            The value to assign to the cloud_autonomous_vm_cluster_id property of this AutonomousVirtualMachine.
+        :type cloud_autonomous_vm_cluster_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -114,7 +118,8 @@ class AutonomousVirtualMachine(object):
             'compartment_id': 'str',
             'autonomous_vm_cluster_id': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'cloud_autonomous_vm_cluster_id': 'str'
         }
 
         self.attribute_map = {
@@ -130,7 +135,8 @@ class AutonomousVirtualMachine(object):
             'compartment_id': 'compartmentId',
             'autonomous_vm_cluster_id': 'autonomousVmClusterId',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'cloud_autonomous_vm_cluster_id': 'cloudAutonomousVmClusterId'
         }
 
         self._id = None
@@ -146,6 +152,7 @@ class AutonomousVirtualMachine(object):
         self._autonomous_vm_cluster_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._cloud_autonomous_vm_cluster_id = None
 
     @property
     def id(self):
@@ -496,6 +503,34 @@ class AutonomousVirtualMachine(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def cloud_autonomous_vm_cluster_id(self):
+        """
+        Gets the cloud_autonomous_vm_cluster_id of this AutonomousVirtualMachine.
+        The `OCID`__ of the Cloud Autonomous VM Cluster associated with the Autonomous Virtual Machine.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The cloud_autonomous_vm_cluster_id of this AutonomousVirtualMachine.
+        :rtype: str
+        """
+        return self._cloud_autonomous_vm_cluster_id
+
+    @cloud_autonomous_vm_cluster_id.setter
+    def cloud_autonomous_vm_cluster_id(self, cloud_autonomous_vm_cluster_id):
+        """
+        Sets the cloud_autonomous_vm_cluster_id of this AutonomousVirtualMachine.
+        The `OCID`__ of the Cloud Autonomous VM Cluster associated with the Autonomous Virtual Machine.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param cloud_autonomous_vm_cluster_id: The cloud_autonomous_vm_cluster_id of this AutonomousVirtualMachine.
+        :type: str
+        """
+        self._cloud_autonomous_vm_cluster_id = cloud_autonomous_vm_cluster_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

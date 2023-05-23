@@ -21,7 +21,7 @@ class UnifiedAgentMultilineGrokParser(UnifiedAgentParser):
 
         :param parser_type:
             The value to assign to the parser_type property of this UnifiedAgentMultilineGrokParser.
-            Allowed values for this property are: "AUDITD", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK"
+            Allowed values for this property are: "AUDITD", "CRI", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK"
         :type parser_type: str
 
         :param field_time_key:
@@ -117,6 +117,8 @@ class UnifiedAgentMultilineGrokParser(UnifiedAgentParser):
     def grok_name_key(self):
         """
         Gets the grok_name_key of this UnifiedAgentMultilineGrokParser.
+        grok name key.
+
 
         :return: The grok_name_key of this UnifiedAgentMultilineGrokParser.
         :rtype: str
@@ -127,6 +129,8 @@ class UnifiedAgentMultilineGrokParser(UnifiedAgentParser):
     def grok_name_key(self, grok_name_key):
         """
         Sets the grok_name_key of this UnifiedAgentMultilineGrokParser.
+        grok name key.
+
 
         :param grok_name_key: The grok_name_key of this UnifiedAgentMultilineGrokParser.
         :type: str
@@ -137,6 +141,8 @@ class UnifiedAgentMultilineGrokParser(UnifiedAgentParser):
     def grok_failure_key(self):
         """
         Gets the grok_failure_key of this UnifiedAgentMultilineGrokParser.
+        grok failure key.
+
 
         :return: The grok_failure_key of this UnifiedAgentMultilineGrokParser.
         :rtype: str
@@ -147,6 +153,8 @@ class UnifiedAgentMultilineGrokParser(UnifiedAgentParser):
     def grok_failure_key(self, grok_failure_key):
         """
         Sets the grok_failure_key of this UnifiedAgentMultilineGrokParser.
+        grok failure key.
+
 
         :param grok_failure_key: The grok_failure_key of this UnifiedAgentMultilineGrokParser.
         :type: str
@@ -157,6 +165,8 @@ class UnifiedAgentMultilineGrokParser(UnifiedAgentParser):
     def multi_line_start_regexp(self):
         """
         Gets the multi_line_start_regexp of this UnifiedAgentMultilineGrokParser.
+        Multiline start regexp pattern.
+
 
         :return: The multi_line_start_regexp of this UnifiedAgentMultilineGrokParser.
         :rtype: str
@@ -167,6 +177,8 @@ class UnifiedAgentMultilineGrokParser(UnifiedAgentParser):
     def multi_line_start_regexp(self, multi_line_start_regexp):
         """
         Sets the multi_line_start_regexp of this UnifiedAgentMultilineGrokParser.
+        Multiline start regexp pattern.
+
 
         :param multi_line_start_regexp: The multi_line_start_regexp of this UnifiedAgentMultilineGrokParser.
         :type: str
@@ -176,7 +188,9 @@ class UnifiedAgentMultilineGrokParser(UnifiedAgentParser):
     @property
     def patterns(self):
         """
-        Gets the patterns of this UnifiedAgentMultilineGrokParser.
+        **[Required]** Gets the patterns of this UnifiedAgentMultilineGrokParser.
+        grok pattern object.
+
 
         :return: The patterns of this UnifiedAgentMultilineGrokParser.
         :rtype: list[oci.logging.models.GrokPattern]
@@ -187,6 +201,8 @@ class UnifiedAgentMultilineGrokParser(UnifiedAgentParser):
     def patterns(self, patterns):
         """
         Sets the patterns of this UnifiedAgentMultilineGrokParser.
+        grok pattern object.
+
 
         :param patterns: The patterns of this UnifiedAgentMultilineGrokParser.
         :type: list[oci.logging.models.GrokPattern]

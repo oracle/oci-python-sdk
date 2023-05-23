@@ -253,7 +253,7 @@ class WorkRequest(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this WorkRequest.
-        The work request\u2019s compartment OCID.
+        The work request's compartment OCID.
 
 
         :return: The compartment_id of this WorkRequest.
@@ -265,7 +265,7 @@ class WorkRequest(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this WorkRequest.
-        The work request\u2019s compartment OCID.
+        The work request's compartment OCID.
 
 
         :param compartment_id: The compartment_id of this WorkRequest.

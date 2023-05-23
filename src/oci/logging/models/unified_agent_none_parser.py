@@ -21,7 +21,7 @@ class UnifiedAgentNoneParser(UnifiedAgentParser):
 
         :param parser_type:
             The value to assign to the parser_type property of this UnifiedAgentNoneParser.
-            Allowed values for this property are: "AUDITD", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK"
+            Allowed values for this property are: "AUDITD", "CRI", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK"
         :type parser_type: str
 
         :param field_time_key:
@@ -96,6 +96,8 @@ class UnifiedAgentNoneParser(UnifiedAgentParser):
     def message_key(self):
         """
         Gets the message_key of this UnifiedAgentNoneParser.
+        Specifies the field name to contain logs.
+
 
         :return: The message_key of this UnifiedAgentNoneParser.
         :rtype: str
@@ -106,6 +108,8 @@ class UnifiedAgentNoneParser(UnifiedAgentParser):
     def message_key(self, message_key):
         """
         Sets the message_key of this UnifiedAgentNoneParser.
+        Specifies the field name to contain logs.
+
 
         :param message_key: The message_key of this UnifiedAgentNoneParser.
         :type: str

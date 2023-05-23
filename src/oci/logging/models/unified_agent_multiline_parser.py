@@ -21,7 +21,7 @@ class UnifiedAgentMultilineParser(UnifiedAgentParser):
 
         :param parser_type:
             The value to assign to the parser_type property of this UnifiedAgentMultilineParser.
-            Allowed values for this property are: "AUDITD", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK"
+            Allowed values for this property are: "AUDITD", "CRI", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK"
         :type parser_type: str
 
         :param field_time_key:
@@ -103,6 +103,8 @@ class UnifiedAgentMultilineParser(UnifiedAgentParser):
     def format_firstline(self):
         """
         Gets the format_firstline of this UnifiedAgentMultilineParser.
+        First line pattern format.
+
 
         :return: The format_firstline of this UnifiedAgentMultilineParser.
         :rtype: str
@@ -113,6 +115,8 @@ class UnifiedAgentMultilineParser(UnifiedAgentParser):
     def format_firstline(self, format_firstline):
         """
         Sets the format_firstline of this UnifiedAgentMultilineParser.
+        First line pattern format.
+
 
         :param format_firstline: The format_firstline of this UnifiedAgentMultilineParser.
         :type: str
@@ -122,7 +126,9 @@ class UnifiedAgentMultilineParser(UnifiedAgentParser):
     @property
     def format(self):
         """
-        Gets the format of this UnifiedAgentMultilineParser.
+        **[Required]** Gets the format of this UnifiedAgentMultilineParser.
+        Mutiline pattern format.
+
 
         :return: The format of this UnifiedAgentMultilineParser.
         :rtype: list[str]
@@ -133,6 +139,8 @@ class UnifiedAgentMultilineParser(UnifiedAgentParser):
     def format(self, format):
         """
         Sets the format of this UnifiedAgentMultilineParser.
+        Mutiline pattern format.
+
 
         :param format: The format of this UnifiedAgentMultilineParser.
         :type: list[str]

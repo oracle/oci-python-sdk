@@ -75,7 +75,7 @@ class Category(object):
     def display_name(self):
         """
         Gets the display_name of this Category.
-        Category display name.
+        Category display name. Avoid entering confidential information.
 
 
         :return: The display_name of this Category.
@@ -87,7 +87,7 @@ class Category(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Category.
-        Category display name.
+        Category display name. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this Category.

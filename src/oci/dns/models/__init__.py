@@ -21,6 +21,7 @@ from .create_view_details import CreateViewDetails
 from .create_zone_base_details import CreateZoneBaseDetails
 from .create_zone_details import CreateZoneDetails
 from .dynect_migration_details import DynectMigrationDetails
+from .external_downstream import ExternalDownstream
 from .external_master import ExternalMaster
 from .migration_replacement import MigrationReplacement
 from .nameserver import Nameserver
@@ -99,6 +100,7 @@ dns_type_mapping = {
     "CreateZoneBaseDetails": CreateZoneBaseDetails,
     "CreateZoneDetails": CreateZoneDetails,
     "DynectMigrationDetails": DynectMigrationDetails,
+    "ExternalDownstream": ExternalDownstream,
     "ExternalMaster": ExternalMaster,
     "MigrationReplacement": MigrationReplacement,
     "Nameserver": Nameserver,

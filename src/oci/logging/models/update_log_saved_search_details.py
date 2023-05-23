@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateLogSavedSearchDetails(object):
     """
-    The update details to update a log saved search.
+    The update details to update a LogSavedSearch.
     """
 
     def __init__(self, **kwargs):
