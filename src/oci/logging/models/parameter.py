@@ -25,6 +25,14 @@ class Parameter(object):
     #: This constant has a value of "boolean"
     TYPE_BOOLEAN = "boolean"
 
+    #: A constant which can be used with the type property of a Parameter.
+    #: This constant has a value of "ENUM_STRING"
+    TYPE_ENUM_STRING = "ENUM_STRING"
+
+    #: A constant which can be used with the type property of a Parameter.
+    #: This constant has a value of "RQS_FILTER"
+    TYPE_RQS_FILTER = "RQS_FILTER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Parameter object with values from keyword arguments.
@@ -34,11 +42,19 @@ class Parameter(object):
             The value to assign to the name property of this Parameter.
         :type name: str
 
+        :param display_name:
+            The value to assign to the display_name property of this Parameter.
+        :type display_name: str
+
         :param type:
             The value to assign to the type property of this Parameter.
-            Allowed values for this property are: "integer", "string", "boolean", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "integer", "string", "boolean", "ENUM_STRING", "RQS_FILTER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
+
+        :param rqs_type:
+            The value to assign to the rqs_type property of this Parameter.
+        :type rqs_type: str
 
         :param pattern:
             The value to assign to the pattern property of this Parameter.
@@ -47,18 +63,24 @@ class Parameter(object):
         """
         self.swagger_types = {
             'name': 'str',
+            'display_name': 'str',
             'type': 'str',
+            'rqs_type': 'str',
             'pattern': 'str'
         }
 
         self.attribute_map = {
             'name': 'name',
+            'display_name': 'displayName',
             'type': 'type',
+            'rqs_type': 'rqsType',
             'pattern': 'pattern'
         }
 
         self._name = None
+        self._display_name = None
         self._type = None
+        self._rqs_type = None
         self._pattern = None
 
     @property
@@ -86,12 +108,38 @@ class Parameter(object):
         self._name = name
 
     @property
+    def display_name(self):
+        """
+        Gets the display_name of this Parameter.
+        The user-friendly display name. This must be unique within the enclosing resource,
+        and it's changeable. Avoid entering confidential information.
+
+
+        :return: The display_name of this Parameter.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """
+        Sets the display_name of this Parameter.
+        The user-friendly display name. This must be unique within the enclosing resource,
+        and it's changeable. Avoid entering confidential information.
+
+
+        :param display_name: The display_name of this Parameter.
+        :type: str
+        """
+        self._display_name = display_name
+
+    @property
     def type(self):
         """
         **[Required]** Gets the type of this Parameter.
-        Parameter type. One of integer, string, boolean.
+        Parameter type.
 
-        Allowed values for this property are: "integer", "string", "boolean", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "integer", "string", "boolean", "ENUM_STRING", "RQS_FILTER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -104,16 +152,40 @@ class Parameter(object):
     def type(self, type):
         """
         Sets the type of this Parameter.
-        Parameter type. One of integer, string, boolean.
+        Parameter type.
 
 
         :param type: The type of this Parameter.
         :type: str
         """
-        allowed_values = ["integer", "string", "boolean"]
+        allowed_values = ["integer", "string", "boolean", "ENUM_STRING", "RQS_FILTER"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
+
+    @property
+    def rqs_type(self):
+        """
+        Gets the rqs_type of this Parameter.
+        Parameter rqsType if applicable.
+
+
+        :return: The rqs_type of this Parameter.
+        :rtype: str
+        """
+        return self._rqs_type
+
+    @rqs_type.setter
+    def rqs_type(self, rqs_type):
+        """
+        Sets the rqs_type of this Parameter.
+        Parameter rqsType if applicable.
+
+
+        :param rqs_type: The rqs_type of this Parameter.
+        :type: str
+        """
+        self._rqs_type = rqs_type
 
     @property
     def pattern(self):

@@ -76,6 +76,10 @@ class CreateZoneDetails(CreateZoneBaseDetails):
             The value to assign to the external_masters property of this CreateZoneDetails.
         :type external_masters: list[oci.dns.models.ExternalMaster]
 
+        :param external_downstreams:
+            The value to assign to the external_downstreams property of this CreateZoneDetails.
+        :type external_downstreams: list[oci.dns.models.ExternalDownstream]
+
         """
         self.swagger_types = {
             'migration_source': 'str',
@@ -86,7 +90,8 @@ class CreateZoneDetails(CreateZoneBaseDetails):
             'zone_type': 'str',
             'view_id': 'str',
             'scope': 'str',
-            'external_masters': 'list[ExternalMaster]'
+            'external_masters': 'list[ExternalMaster]',
+            'external_downstreams': 'list[ExternalDownstream]'
         }
 
         self.attribute_map = {
@@ -98,7 +103,8 @@ class CreateZoneDetails(CreateZoneBaseDetails):
             'zone_type': 'zoneType',
             'view_id': 'viewId',
             'scope': 'scope',
-            'external_masters': 'externalMasters'
+            'external_masters': 'externalMasters',
+            'external_downstreams': 'externalDownstreams'
         }
 
         self._migration_source = None
@@ -110,6 +116,7 @@ class CreateZoneDetails(CreateZoneBaseDetails):
         self._view_id = None
         self._scope = None
         self._external_masters = None
+        self._external_downstreams = None
         self._migration_source = 'NONE'
 
     @property
@@ -227,6 +234,32 @@ class CreateZoneDetails(CreateZoneBaseDetails):
         :type: list[oci.dns.models.ExternalMaster]
         """
         self._external_masters = external_masters
+
+    @property
+    def external_downstreams(self):
+        """
+        Gets the external_downstreams of this CreateZoneDetails.
+        External secondary servers for the zone.
+        This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+
+
+        :return: The external_downstreams of this CreateZoneDetails.
+        :rtype: list[oci.dns.models.ExternalDownstream]
+        """
+        return self._external_downstreams
+
+    @external_downstreams.setter
+    def external_downstreams(self, external_downstreams):
+        """
+        Sets the external_downstreams of this CreateZoneDetails.
+        External secondary servers for the zone.
+        This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+
+
+        :param external_downstreams: The external_downstreams of this CreateZoneDetails.
+        :type: list[oci.dns.models.ExternalDownstream]
+        """
+        self._external_downstreams = external_downstreams
 
     def __repr__(self):
         return formatted_flat_dict(self)

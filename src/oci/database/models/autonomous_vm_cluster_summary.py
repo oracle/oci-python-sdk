@@ -749,7 +749,9 @@ class AutonomousVmClusterSummary(object):
     def memory_per_oracle_compute_unit_in_gbs(self):
         """
         Gets the memory_per_oracle_compute_unit_in_gbs of this AutonomousVmClusterSummary.
-        The amount of memory (in GBs) to be enabled per each CPU core.
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
+
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
 
         :return: The memory_per_oracle_compute_unit_in_gbs of this AutonomousVmClusterSummary.
@@ -761,7 +763,9 @@ class AutonomousVmClusterSummary(object):
     def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
         """
         Sets the memory_per_oracle_compute_unit_in_gbs of this AutonomousVmClusterSummary.
-        The amount of memory (in GBs) to be enabled per each CPU core.
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
+
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
 
         :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this AutonomousVmClusterSummary.
@@ -1315,7 +1319,7 @@ class AutonomousVmClusterSummary(object):
     def time_database_ssl_certificate_expires(self):
         """
         Gets the time_database_ssl_certificate_expires of this AutonomousVmClusterSummary.
-        The date and time of Database SSL certificate expiration.
+        The date and time of the Database SSL certificate expiration.
 
 
         :return: The time_database_ssl_certificate_expires of this AutonomousVmClusterSummary.
@@ -1327,7 +1331,7 @@ class AutonomousVmClusterSummary(object):
     def time_database_ssl_certificate_expires(self, time_database_ssl_certificate_expires):
         """
         Sets the time_database_ssl_certificate_expires of this AutonomousVmClusterSummary.
-        The date and time of Database SSL certificate expiration.
+        The date and time of the Database SSL certificate expiration.
 
 
         :param time_database_ssl_certificate_expires: The time_database_ssl_certificate_expires of this AutonomousVmClusterSummary.
@@ -1339,7 +1343,7 @@ class AutonomousVmClusterSummary(object):
     def time_ords_certificate_expires(self):
         """
         Gets the time_ords_certificate_expires of this AutonomousVmClusterSummary.
-        The date and time of ORDS certificate expiration.
+        The date and time of the ORDS certificate expiration.
 
 
         :return: The time_ords_certificate_expires of this AutonomousVmClusterSummary.
@@ -1351,7 +1355,7 @@ class AutonomousVmClusterSummary(object):
     def time_ords_certificate_expires(self, time_ords_certificate_expires):
         """
         Sets the time_ords_certificate_expires of this AutonomousVmClusterSummary.
-        The date and time of ORDS certificate expiration.
+        The date and time of the ORDS certificate expiration.
 
 
         :param time_ords_certificate_expires: The time_ords_certificate_expires of this AutonomousVmClusterSummary.

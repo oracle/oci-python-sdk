@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeLogSavedSearchCompartmentDetails(object):
     """
-    Contains details indicating which compartment the resource should move to
+    Contains details indicating which compartment the resource should move to.
     """
 
     def __init__(self, **kwargs):

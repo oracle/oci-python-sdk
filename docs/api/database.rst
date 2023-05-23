@@ -59,6 +59,7 @@ Database
     oci.database.models.AutonomousVirtualMachine
     oci.database.models.AutonomousVirtualMachineSummary
     oci.database.models.AutonomousVmCluster
+    oci.database.models.AutonomousVmClusterResourceDetails
     oci.database.models.AutonomousVmClusterSummary
     oci.database.models.Backup
     oci.database.models.BackupDestination
@@ -216,6 +217,7 @@ Database
     oci.database.models.ExadataInfrastructure
     oci.database.models.ExadataInfrastructureContact
     oci.database.models.ExadataInfrastructureSummary
+    oci.database.models.ExadataInfrastructureUnAllocatedResources
     oci.database.models.ExadataIormConfig
     oci.database.models.ExadataIormConfigUpdateDetails
     oci.database.models.ExternalBackupJob

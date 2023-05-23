@@ -529,7 +529,7 @@ class AutonomousContainerDatabase(object):
     def db_name(self):
         """
         Gets the db_name of this AutonomousContainerDatabase.
-        The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
 
 
         :return: The db_name of this AutonomousContainerDatabase.
@@ -541,7 +541,7 @@ class AutonomousContainerDatabase(object):
     def db_name(self, db_name):
         """
         Sets the db_name of this AutonomousContainerDatabase.
-        The database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, must start with an alphabetic character and followed by 1 to 7 alphanumeric characters.
+        The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
 
 
         :param db_name: The db_name of this AutonomousContainerDatabase.

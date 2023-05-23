@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RotateAutonomousVmClusterSslCertsDetails(object):
     """
-    The details for configuring the ORDS certificates on Autonomous VM Cluster
+    Details for configuring the ORDS certificates on Autonomous Exadata VM Cluster
     """
 
     #: A constant which can be used with the certificate_generation_type property of a RotateAutonomousVmClusterSslCertsDetails.
@@ -67,7 +67,7 @@ class RotateAutonomousVmClusterSslCertsDetails(object):
     def certificate_generation_type(self):
         """
         **[Required]** Gets the certificate_generation_type of this RotateAutonomousVmClusterSslCertsDetails.
-        Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
+        Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring your own certificate.
 
         Allowed values for this property are: "SYSTEM", "BYOC"
 
@@ -81,7 +81,7 @@ class RotateAutonomousVmClusterSslCertsDetails(object):
     def certificate_generation_type(self, certificate_generation_type):
         """
         Sets the certificate_generation_type of this RotateAutonomousVmClusterSslCertsDetails.
-        Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
+        Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring your own certificate.
 
 
         :param certificate_generation_type: The certificate_generation_type of this RotateAutonomousVmClusterSslCertsDetails.

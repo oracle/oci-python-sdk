@@ -53,7 +53,9 @@ class UnifiedAgentWindowsEventSource(UnifiedAgentLoggingSource):
     @property
     def channels(self):
         """
-        Gets the channels of this UnifiedAgentWindowsEventSource.
+        **[Required]** Gets the channels of this UnifiedAgentWindowsEventSource.
+        Windows event log channels.
+
 
         :return: The channels of this UnifiedAgentWindowsEventSource.
         :rtype: list[str]
@@ -64,6 +66,8 @@ class UnifiedAgentWindowsEventSource(UnifiedAgentLoggingSource):
     def channels(self, channels):
         """
         Sets the channels of this UnifiedAgentWindowsEventSource.
+        Windows event log channels.
+
 
         :param channels: The channels of this UnifiedAgentWindowsEventSource.
         :type: list[str]

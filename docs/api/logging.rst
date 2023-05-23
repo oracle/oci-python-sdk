@@ -34,9 +34,6 @@ Logging
     oci.logging.models.Log
     oci.logging.models.LogGroup
     oci.logging.models.LogGroupSummary
-    oci.logging.models.LogIncludedSearch
-    oci.logging.models.LogIncludedSearchSummary
-    oci.logging.models.LogIncludedSearchSummaryCollection
     oci.logging.models.LogSavedSearch
     oci.logging.models.LogSavedSearchSummary
     oci.logging.models.LogSavedSearchSummaryCollection
@@ -53,6 +50,7 @@ Logging
     oci.logging.models.UnifiedAgentConfiguration
     oci.logging.models.UnifiedAgentConfigurationCollection
     oci.logging.models.UnifiedAgentConfigurationSummary
+    oci.logging.models.UnifiedAgentCriParser
     oci.logging.models.UnifiedAgentCsvParser
     oci.logging.models.UnifiedAgentGrokParser
     oci.logging.models.UnifiedAgentLoggingConfiguration

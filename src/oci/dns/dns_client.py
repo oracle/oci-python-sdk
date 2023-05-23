@@ -12,6 +12,7 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
+from oci.util import back_up_body_calculate_stream_content_length, is_content_length_calculable_by_req_util
 from .models import dns_type_mapping
 missing = Sentinel("Missing")
 
@@ -1573,6 +1574,151 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_zone_details,
+                response_type="Zone",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def create_zone_from_zone_file(self, compartment_id, create_zone_from_zone_file_details, **kwargs):
+        """
+        Creates a new zone from a zone file in the specified compartment. Not supported for private zones.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment the resource belongs to.
+
+        :param stream create_zone_from_zone_file_details: (required)
+            The zone file contents.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param str view_id: (optional)
+            The OCID of the view the resource is associated with.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+        :param int buffer_limit: (optional)
+            A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
+            If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
+
+            The buffer_limit parameter is used when the stream object does not have a `seek`, `tell`, or `fileno` property for the Python Request library to calculate out the content length.
+            If buffer_limit is not passed, then the buffer_limit will be defaulted to 100MB.
+            Large streams can cause the process to freeze, consider passing in content-length for large streams instead.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dns.models.Zone`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/create_zone_from_zone_file.py.html>`__ to see an example of how to use create_zone_from_zone_file API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
+        resource_path = "/actions/createZoneFromZoneFile"
+        method = "POST"
+        operation_name = "create_zone_from_zone_file"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/CreateZoneFromZoneFile"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "buffer_limit",
+            "opc_request_id",
+            "scope",
+            "view_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_zone_from_zone_file got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "scope": kwargs.get("scope", missing),
+            "viewId": kwargs.get("view_id", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
+        try:
+            create_zone_from_zone_file_details
+        except NameError:
+            create_zone_from_zone_file_details = kwargs.get("create_zone_from_zone_file_details", missing)
+
+        if create_zone_from_zone_file_details is not missing and create_zone_from_zone_file_details is not None:
+            if (not isinstance(create_zone_from_zone_file_details, (six.binary_type, six.string_types)) and
+                    not hasattr(create_zone_from_zone_file_details, "read")):
+                raise TypeError('The body must be a string, bytes, or provide a read() method.')
+
+            if hasattr(create_zone_from_zone_file_details, 'fileno') and hasattr(create_zone_from_zone_file_details, 'name') and create_zone_from_zone_file_details.name != '<stdin>':
+                if requests.utils.super_len(create_zone_from_zone_file_details) == 0:
+                    header_params['Content-Length'] = '0'
+
+            # If content length is not given and stream object have no 'fileno' and is not a string or bytes, try to calculate content length
+            elif 'Content-Length' not in header_params and not is_content_length_calculable_by_req_util(create_zone_from_zone_file_details):
+                calculated_obj = back_up_body_calculate_stream_content_length(create_zone_from_zone_file_details, kwargs.get("buffer_limit"))
+                header_params['Content-Length'] = calculated_obj["content_length"]
+                create_zone_from_zone_file_details = calculated_obj["byte_content"]
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=create_zone_from_zone_file_details,
+                response_type="Zone",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=create_zone_from_zone_file_details,
                 response_type="Zone",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,

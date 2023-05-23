@@ -20,9 +20,6 @@ from .group_association_details import GroupAssociationDetails
 from .log import Log
 from .log_group import LogGroup
 from .log_group_summary import LogGroupSummary
-from .log_included_search import LogIncludedSearch
-from .log_included_search_summary import LogIncludedSearchSummary
-from .log_included_search_summary_collection import LogIncludedSearchSummaryCollection
 from .log_saved_search import LogSavedSearch
 from .log_saved_search_summary import LogSavedSearchSummary
 from .log_saved_search_summary_collection import LogSavedSearchSummaryCollection
@@ -39,6 +36,7 @@ from .unified_agent_auditd_parser import UnifiedAgentAuditdParser
 from .unified_agent_configuration import UnifiedAgentConfiguration
 from .unified_agent_configuration_collection import UnifiedAgentConfigurationCollection
 from .unified_agent_configuration_summary import UnifiedAgentConfigurationSummary
+from .unified_agent_cri_parser import UnifiedAgentCriParser
 from .unified_agent_csv_parser import UnifiedAgentCsvParser
 from .unified_agent_grok_parser import UnifiedAgentGrokParser
 from .unified_agent_logging_configuration import UnifiedAgentLoggingConfiguration
@@ -85,9 +83,6 @@ logging_type_mapping = {
     "Log": Log,
     "LogGroup": LogGroup,
     "LogGroupSummary": LogGroupSummary,
-    "LogIncludedSearch": LogIncludedSearch,
-    "LogIncludedSearchSummary": LogIncludedSearchSummary,
-    "LogIncludedSearchSummaryCollection": LogIncludedSearchSummaryCollection,
     "LogSavedSearch": LogSavedSearch,
     "LogSavedSearchSummary": LogSavedSearchSummary,
     "LogSavedSearchSummaryCollection": LogSavedSearchSummaryCollection,
@@ -104,6 +99,7 @@ logging_type_mapping = {
     "UnifiedAgentConfiguration": UnifiedAgentConfiguration,
     "UnifiedAgentConfigurationCollection": UnifiedAgentConfigurationCollection,
     "UnifiedAgentConfigurationSummary": UnifiedAgentConfigurationSummary,
+    "UnifiedAgentCriParser": UnifiedAgentCriParser,
     "UnifiedAgentCsvParser": UnifiedAgentCsvParser,
     "UnifiedAgentGrokParser": UnifiedAgentGrokParser,
     "UnifiedAgentLoggingConfiguration": UnifiedAgentLoggingConfiguration,

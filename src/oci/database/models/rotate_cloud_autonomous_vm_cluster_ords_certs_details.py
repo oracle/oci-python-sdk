@@ -67,7 +67,7 @@ class RotateCloudAutonomousVmClusterOrdsCertsDetails(object):
     def certificate_generation_type(self):
         """
         **[Required]** Gets the certificate_generation_type of this RotateCloudAutonomousVmClusterOrdsCertsDetails.
-        Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
+        Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring your own certificate.
 
         Allowed values for this property are: "SYSTEM", "BYOC"
 
@@ -81,7 +81,7 @@ class RotateCloudAutonomousVmClusterOrdsCertsDetails(object):
     def certificate_generation_type(self, certificate_generation_type):
         """
         Sets the certificate_generation_type of this RotateCloudAutonomousVmClusterOrdsCertsDetails.
-        Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
+        Specify SYSTEM to use Oracle-managed certificates. Specify BYOC when you want to bring your own certificate.
 
 
         :param certificate_generation_type: The certificate_generation_type of this RotateCloudAutonomousVmClusterOrdsCertsDetails.
