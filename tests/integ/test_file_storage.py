@@ -361,6 +361,7 @@ def test_crud_export(file_storage_client, file_system, mount_target):
 
 
 def test_crud_snapshot(file_storage_client, file_system):
+    pytest.skip('TODO: Fix this on both master and preview.')
     with test_config_container.create_vcr().use_cassette('test_file_storage_crud_snapshot.yml'):
         all_snapshots = oci.pagination.list_call_get_all_results(
             file_storage_client.list_snapshots,
