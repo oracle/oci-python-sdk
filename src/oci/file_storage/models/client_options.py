@@ -163,7 +163,7 @@ class ClientOptions(object):
         """
         Gets the access of this ClientOptions.
         Type of access to grant clients using the file system
-        through this export. If unspecified defaults to `READ_ONLY`.
+        through this export. If unspecified defaults to `READ_WRITE`.
 
         Allowed values for this property are: "READ_WRITE", "READ_ONLY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -179,7 +179,7 @@ class ClientOptions(object):
         """
         Sets the access of this ClientOptions.
         Type of access to grant clients using the file system
-        through this export. If unspecified defaults to `READ_ONLY`.
+        through this export. If unspecified defaults to `READ_WRITE`.
 
 
         :param access: The access of this ClientOptions.

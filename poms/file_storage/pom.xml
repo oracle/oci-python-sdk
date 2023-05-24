@@ -136,7 +136,7 @@
       <dependency>
         <groupId>com.oracle.pic.ffsw</groupId>
         <artifactId>fss-api-spec</artifactId>
-        <version>0.0.121</version>
+        <version>0.0.131</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

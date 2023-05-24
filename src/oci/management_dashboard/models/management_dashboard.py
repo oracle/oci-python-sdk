@@ -132,6 +132,10 @@ class ManagementDashboard(object):
             The value to assign to the drilldown_config property of this ManagementDashboard.
         :type drilldown_config: list[object]
 
+        :param features_config:
+            The value to assign to the features_config property of this ManagementDashboard.
+        :type features_config: object
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ManagementDashboard.
         :type freeform_tags: dict(str, str)
@@ -169,6 +173,7 @@ class ManagementDashboard(object):
             'lifecycle_state': 'str',
             'parameters_config': 'list[object]',
             'drilldown_config': 'list[object]',
+            'features_config': 'object',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -201,6 +206,7 @@ class ManagementDashboard(object):
             'lifecycle_state': 'lifecycleState',
             'parameters_config': 'parametersConfig',
             'drilldown_config': 'drilldownConfig',
+            'features_config': 'featuresConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -232,6 +238,7 @@ class ManagementDashboard(object):
         self._lifecycle_state = None
         self._parameters_config = None
         self._drilldown_config = None
+        self._features_config = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -599,7 +606,7 @@ class ManagementDashboard(object):
     def metadata_version(self):
         """
         **[Required]** Gets the metadata_version of this ManagementDashboard.
-        Version of the metadata.
+        The version of the metadata defined in the API. This is maintained and enforced by dashboard server. Currently it is 2.0.
 
 
         :return: The metadata_version of this ManagementDashboard.
@@ -611,7 +618,7 @@ class ManagementDashboard(object):
     def metadata_version(self, metadata_version):
         """
         Sets the metadata_version of this ManagementDashboard.
-        Version of the metadata.
+        The version of the metadata defined in the API. This is maintained and enforced by dashboard server. Currently it is 2.0.
 
 
         :param metadata_version: The metadata_version of this ManagementDashboard.
@@ -888,6 +895,30 @@ class ManagementDashboard(object):
         :type: list[object]
         """
         self._drilldown_config = drilldown_config
+
+    @property
+    def features_config(self):
+        """
+        Gets the features_config of this ManagementDashboard.
+        Contains configuration for enabling features.
+
+
+        :return: The features_config of this ManagementDashboard.
+        :rtype: object
+        """
+        return self._features_config
+
+    @features_config.setter
+    def features_config(self, features_config):
+        """
+        Sets the features_config of this ManagementDashboard.
+        Contains configuration for enabling features.
+
+
+        :param features_config: The features_config of this ManagementDashboard.
+        :type: object
+        """
+        self._features_config = features_config
 
     @property
     def freeform_tags(self):

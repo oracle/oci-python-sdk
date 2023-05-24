@@ -184,6 +184,7 @@ from .deregister_autonomous_database_data_safe_details import DeregisterAutonomo
 from .disaster_recovery_configuration import DisasterRecoveryConfiguration
 from .disk_performance_details import DiskPerformanceDetails
 from .download_oneoff_patch import DownloadOneoffPatch
+from .dr_scan_details import DrScanDetails
 from .enable_database_management_details import EnableDatabaseManagementDetails
 from .enable_external_container_database_database_management_details import EnableExternalContainerDatabaseDatabaseManagementDetails
 from .enable_external_container_database_stack_monitoring_details import EnableExternalContainerDatabaseStackMonitoringDetails
@@ -520,6 +521,7 @@ database_type_mapping = {
     "DisasterRecoveryConfiguration": DisasterRecoveryConfiguration,
     "DiskPerformanceDetails": DiskPerformanceDetails,
     "DownloadOneoffPatch": DownloadOneoffPatch,
+    "DrScanDetails": DrScanDetails,
     "EnableDatabaseManagementDetails": EnableDatabaseManagementDetails,
     "EnableExternalContainerDatabaseDatabaseManagementDetails": EnableExternalContainerDatabaseDatabaseManagementDetails,
     "EnableExternalContainerDatabaseStackMonitoringDetails": EnableExternalContainerDatabaseStackMonitoringDetails,

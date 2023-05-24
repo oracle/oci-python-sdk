@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class NetworkBondingModeDetails(object):
     """
-    Details of bonding mode for Client and Backup networks of an Exadata infrastructure.
+    Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
     """
 
     #: A constant which can be used with the client_network_bonding_mode property of a NetworkBondingModeDetails.
@@ -29,6 +29,14 @@ class NetworkBondingModeDetails(object):
     #: This constant has a value of "LACP"
     BACKUP_NETWORK_BONDING_MODE_LACP = "LACP"
 
+    #: A constant which can be used with the dr_network_bonding_mode property of a NetworkBondingModeDetails.
+    #: This constant has a value of "ACTIVE_BACKUP"
+    DR_NETWORK_BONDING_MODE_ACTIVE_BACKUP = "ACTIVE_BACKUP"
+
+    #: A constant which can be used with the dr_network_bonding_mode property of a NetworkBondingModeDetails.
+    #: This constant has a value of "LACP"
+    DR_NETWORK_BONDING_MODE_LACP = "LACP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new NetworkBondingModeDetails object with values from keyword arguments.
@@ -46,19 +54,28 @@ class NetworkBondingModeDetails(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type backup_network_bonding_mode: str
 
+        :param dr_network_bonding_mode:
+            The value to assign to the dr_network_bonding_mode property of this NetworkBondingModeDetails.
+            Allowed values for this property are: "ACTIVE_BACKUP", "LACP", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type dr_network_bonding_mode: str
+
         """
         self.swagger_types = {
             'client_network_bonding_mode': 'str',
-            'backup_network_bonding_mode': 'str'
+            'backup_network_bonding_mode': 'str',
+            'dr_network_bonding_mode': 'str'
         }
 
         self.attribute_map = {
             'client_network_bonding_mode': 'clientNetworkBondingMode',
-            'backup_network_bonding_mode': 'backupNetworkBondingMode'
+            'backup_network_bonding_mode': 'backupNetworkBondingMode',
+            'dr_network_bonding_mode': 'drNetworkBondingMode'
         }
 
         self._client_network_bonding_mode = None
         self._backup_network_bonding_mode = None
+        self._dr_network_bonding_mode = None
 
     @property
     def client_network_bonding_mode(self):
@@ -119,6 +136,36 @@ class NetworkBondingModeDetails(object):
         if not value_allowed_none_or_none_sentinel(backup_network_bonding_mode, allowed_values):
             backup_network_bonding_mode = 'UNKNOWN_ENUM_VALUE'
         self._backup_network_bonding_mode = backup_network_bonding_mode
+
+    @property
+    def dr_network_bonding_mode(self):
+        """
+        Gets the dr_network_bonding_mode of this NetworkBondingModeDetails.
+        The network bonding mode for the Exadata infrastructure.
+
+        Allowed values for this property are: "ACTIVE_BACKUP", "LACP", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The dr_network_bonding_mode of this NetworkBondingModeDetails.
+        :rtype: str
+        """
+        return self._dr_network_bonding_mode
+
+    @dr_network_bonding_mode.setter
+    def dr_network_bonding_mode(self, dr_network_bonding_mode):
+        """
+        Sets the dr_network_bonding_mode of this NetworkBondingModeDetails.
+        The network bonding mode for the Exadata infrastructure.
+
+
+        :param dr_network_bonding_mode: The dr_network_bonding_mode of this NetworkBondingModeDetails.
+        :type: str
+        """
+        allowed_values = ["ACTIVE_BACKUP", "LACP"]
+        if not value_allowed_none_or_none_sentinel(dr_network_bonding_mode, allowed_values):
+            dr_network_bonding_mode = 'UNKNOWN_ENUM_VALUE'
+        self._dr_network_bonding_mode = dr_network_bonding_mode
 
     def __repr__(self):
         return formatted_flat_dict(self)

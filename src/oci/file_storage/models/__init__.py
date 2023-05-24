@@ -5,11 +5,13 @@
 from __future__ import absolute_import
 
 from .change_file_system_compartment_details import ChangeFileSystemCompartmentDetails
+from .change_filesystem_snapshot_policy_compartment_details import ChangeFilesystemSnapshotPolicyCompartmentDetails
 from .change_mount_target_compartment_details import ChangeMountTargetCompartmentDetails
 from .change_replication_compartment_details import ChangeReplicationCompartmentDetails
 from .client_options import ClientOptions
 from .create_export_details import CreateExportDetails
 from .create_file_system_details import CreateFileSystemDetails
+from .create_filesystem_snapshot_policy_details import CreateFilesystemSnapshotPolicyDetails
 from .create_mount_target_details import CreateMountTargetDetails
 from .create_replication_details import CreateReplicationDetails
 from .create_snapshot_details import CreateSnapshotDetails
@@ -19,6 +21,8 @@ from .export_set_summary import ExportSetSummary
 from .export_summary import ExportSummary
 from .file_system import FileSystem
 from .file_system_summary import FileSystemSummary
+from .filesystem_snapshot_policy import FilesystemSnapshotPolicy
+from .filesystem_snapshot_policy_summary import FilesystemSnapshotPolicySummary
 from .mount_target import MountTarget
 from .mount_target_summary import MountTargetSummary
 from .replication import Replication
@@ -27,11 +31,13 @@ from .replication_summary import ReplicationSummary
 from .replication_target import ReplicationTarget
 from .replication_target_summary import ReplicationTargetSummary
 from .snapshot import Snapshot
+from .snapshot_schedule import SnapshotSchedule
 from .snapshot_summary import SnapshotSummary
 from .source_details import SourceDetails
 from .update_export_details import UpdateExportDetails
 from .update_export_set_details import UpdateExportSetDetails
 from .update_file_system_details import UpdateFileSystemDetails
+from .update_filesystem_snapshot_policy_details import UpdateFilesystemSnapshotPolicyDetails
 from .update_mount_target_details import UpdateMountTargetDetails
 from .update_replication_details import UpdateReplicationDetails
 from .update_snapshot_details import UpdateSnapshotDetails
@@ -39,11 +45,13 @@ from .update_snapshot_details import UpdateSnapshotDetails
 # Maps type names to classes for file_storage services.
 file_storage_type_mapping = {
     "ChangeFileSystemCompartmentDetails": ChangeFileSystemCompartmentDetails,
+    "ChangeFilesystemSnapshotPolicyCompartmentDetails": ChangeFilesystemSnapshotPolicyCompartmentDetails,
     "ChangeMountTargetCompartmentDetails": ChangeMountTargetCompartmentDetails,
     "ChangeReplicationCompartmentDetails": ChangeReplicationCompartmentDetails,
     "ClientOptions": ClientOptions,
     "CreateExportDetails": CreateExportDetails,
     "CreateFileSystemDetails": CreateFileSystemDetails,
+    "CreateFilesystemSnapshotPolicyDetails": CreateFilesystemSnapshotPolicyDetails,
     "CreateMountTargetDetails": CreateMountTargetDetails,
     "CreateReplicationDetails": CreateReplicationDetails,
     "CreateSnapshotDetails": CreateSnapshotDetails,
@@ -53,6 +61,8 @@ file_storage_type_mapping = {
     "ExportSummary": ExportSummary,
     "FileSystem": FileSystem,
     "FileSystemSummary": FileSystemSummary,
+    "FilesystemSnapshotPolicy": FilesystemSnapshotPolicy,
+    "FilesystemSnapshotPolicySummary": FilesystemSnapshotPolicySummary,
     "MountTarget": MountTarget,
     "MountTargetSummary": MountTargetSummary,
     "Replication": Replication,
@@ -61,11 +71,13 @@ file_storage_type_mapping = {
     "ReplicationTarget": ReplicationTarget,
     "ReplicationTargetSummary": ReplicationTargetSummary,
     "Snapshot": Snapshot,
+    "SnapshotSchedule": SnapshotSchedule,
     "SnapshotSummary": SnapshotSummary,
     "SourceDetails": SourceDetails,
     "UpdateExportDetails": UpdateExportDetails,
     "UpdateExportSetDetails": UpdateExportSetDetails,
     "UpdateFileSystemDetails": UpdateFileSystemDetails,
+    "UpdateFilesystemSnapshotPolicyDetails": UpdateFilesystemSnapshotPolicyDetails,
     "UpdateMountTargetDetails": UpdateMountTargetDetails,
     "UpdateReplicationDetails": UpdateReplicationDetails,
     "UpdateSnapshotDetails": UpdateSnapshotDetails

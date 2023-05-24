@@ -21,6 +21,10 @@ class VmNetworkDetails(object):
     #: This constant has a value of "BACKUP"
     NETWORK_TYPE_BACKUP = "BACKUP"
 
+    #: A constant which can be used with the network_type property of a VmNetworkDetails.
+    #: This constant has a value of "DISASTER_RECOVERY"
+    NETWORK_TYPE_DISASTER_RECOVERY = "DISASTER_RECOVERY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new VmNetworkDetails object with values from keyword arguments.
@@ -32,7 +36,7 @@ class VmNetworkDetails(object):
 
         :param network_type:
             The value to assign to the network_type property of this VmNetworkDetails.
-            Allowed values for this property are: "CLIENT", "BACKUP", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CLIENT", "BACKUP", "DISASTER_RECOVERY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type network_type: str
 
@@ -108,7 +112,7 @@ class VmNetworkDetails(object):
         **[Required]** Gets the network_type of this VmNetworkDetails.
         The network type.
 
-        Allowed values for this property are: "CLIENT", "BACKUP", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CLIENT", "BACKUP", "DISASTER_RECOVERY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -127,7 +131,7 @@ class VmNetworkDetails(object):
         :param network_type: The network_type of this VmNetworkDetails.
         :type: str
         """
-        allowed_values = ["CLIENT", "BACKUP"]
+        allowed_values = ["CLIENT", "BACKUP", "DISASTER_RECOVERY"]
         if not value_allowed_none_or_none_sentinel(network_type, allowed_values):
             network_type = 'UNKNOWN_ENUM_VALUE'
         self._network_type = network_type

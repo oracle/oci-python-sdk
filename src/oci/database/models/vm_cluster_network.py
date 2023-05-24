@@ -98,6 +98,10 @@ class VmClusterNetwork(object):
             The value to assign to the vm_networks property of this VmClusterNetwork.
         :type vm_networks: list[oci.database.models.VmNetworkDetails]
 
+        :param dr_scans:
+            The value to assign to the dr_scans property of this VmClusterNetwork.
+        :type dr_scans: list[oci.database.models.DrScanDetails]
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this VmClusterNetwork.
             Allowed values for this property are: "CREATING", "REQUIRES_VALIDATION", "VALIDATING", "VALIDATED", "VALIDATION_FAILED", "UPDATING", "ALLOCATED", "TERMINATING", "TERMINATED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
@@ -131,6 +135,7 @@ class VmClusterNetwork(object):
             'dns': 'list[str]',
             'ntp': 'list[str]',
             'vm_networks': 'list[VmNetworkDetails]',
+            'dr_scans': 'list[DrScanDetails]',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'lifecycle_details': 'str',
@@ -148,6 +153,7 @@ class VmClusterNetwork(object):
             'dns': 'dns',
             'ntp': 'ntp',
             'vm_networks': 'vmNetworks',
+            'dr_scans': 'drScans',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'lifecycle_details': 'lifecycleDetails',
@@ -164,6 +170,7 @@ class VmClusterNetwork(object):
         self._dns = None
         self._ntp = None
         self._vm_networks = None
+        self._dr_scans = None
         self._lifecycle_state = None
         self._time_created = None
         self._lifecycle_details = None
@@ -401,6 +408,30 @@ class VmClusterNetwork(object):
         :type: list[oci.database.models.VmNetworkDetails]
         """
         self._vm_networks = vm_networks
+
+    @property
+    def dr_scans(self):
+        """
+        Gets the dr_scans of this VmClusterNetwork.
+        The SCAN details for DR network
+
+
+        :return: The dr_scans of this VmClusterNetwork.
+        :rtype: list[oci.database.models.DrScanDetails]
+        """
+        return self._dr_scans
+
+    @dr_scans.setter
+    def dr_scans(self, dr_scans):
+        """
+        Sets the dr_scans of this VmClusterNetwork.
+        The SCAN details for DR network
+
+
+        :param dr_scans: The dr_scans of this VmClusterNetwork.
+        :type: list[oci.database.models.DrScanDetails]
+        """
+        self._dr_scans = dr_scans
 
     @property
     def lifecycle_state(self):

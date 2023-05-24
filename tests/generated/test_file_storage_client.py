@@ -76,6 +76,48 @@ def test_change_file_system_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_change_filesystem_snapshot_policy_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'ChangeFilesystemSnapshotPolicyCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'ChangeFilesystemSnapshotPolicyCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='ChangeFilesystemSnapshotPolicyCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.change_filesystem_snapshot_policy_compartment(
+                filesystem_snapshot_policy_id=request.pop(util.camelize('filesystemSnapshotPolicyId')),
+                change_filesystem_snapshot_policy_compartment_details=request.pop(util.camelize('ChangeFilesystemSnapshotPolicyCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'ChangeFilesystemSnapshotPolicyCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_filesystem_snapshot_policy_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_change_mount_target_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'ChangeMountTargetCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -236,6 +278,47 @@ def test_create_file_system(testing_service_client):
             result,
             service_error,
             'fileSystem',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_create_filesystem_snapshot_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'CreateFilesystemSnapshotPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'CreateFilesystemSnapshotPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='CreateFilesystemSnapshotPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.create_filesystem_snapshot_policy(
+                create_filesystem_snapshot_policy_details=request.pop(util.camelize('CreateFilesystemSnapshotPolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'CreateFilesystemSnapshotPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'filesystemSnapshotPolicy',
             False,
             False
         )
@@ -441,6 +524,47 @@ def test_delete_file_system(testing_service_client):
             result,
             service_error,
             'delete_file_system',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_delete_filesystem_snapshot_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'DeleteFilesystemSnapshotPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'DeleteFilesystemSnapshotPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='DeleteFilesystemSnapshotPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.delete_filesystem_snapshot_policy(
+                filesystem_snapshot_policy_id=request.pop(util.camelize('filesystemSnapshotPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'DeleteFilesystemSnapshotPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_filesystem_snapshot_policy',
             True,
             False
         )
@@ -769,6 +893,47 @@ def test_get_file_system(testing_service_client):
             result,
             service_error,
             'fileSystem',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_get_filesystem_snapshot_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'GetFilesystemSnapshotPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'GetFilesystemSnapshotPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='GetFilesystemSnapshotPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.get_filesystem_snapshot_policy(
+                filesystem_snapshot_policy_id=request.pop(util.camelize('filesystemSnapshotPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'GetFilesystemSnapshotPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'filesystemSnapshotPolicy',
             False,
             False
         )
@@ -1131,6 +1296,72 @@ def test_list_file_systems(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_list_filesystem_snapshot_policies(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'ListFilesystemSnapshotPolicies'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'ListFilesystemSnapshotPolicies')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='ListFilesystemSnapshotPolicies')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.list_filesystem_snapshot_policies(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                availability_domain=request.pop(util.camelize('availabilityDomain')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_filesystem_snapshot_policies(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    availability_domain=request.pop(util.camelize('availabilityDomain')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_filesystem_snapshot_policies(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        availability_domain=request.pop(util.camelize('availabilityDomain')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'ListFilesystemSnapshotPolicies',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'filesystemSnapshotPolicySummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_list_mount_targets(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'ListMountTargets'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1349,7 +1580,6 @@ def test_list_snapshots(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.list_snapshots(
-                file_system_id=request.pop(util.camelize('fileSystemId')),
                 retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
@@ -1358,7 +1588,6 @@ def test_list_snapshots(testing_service_client):
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_snapshots(
-                    file_system_id=request.pop(util.camelize('fileSystemId')),
                     page=next_page,
                     retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
@@ -1369,7 +1598,6 @@ def test_list_snapshots(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_snapshots(
-                        file_system_id=request.pop(util.camelize('fileSystemId')),
                         page=next_response.headers[prev_page],
                         retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
@@ -1388,6 +1616,88 @@ def test_list_snapshots(testing_service_client):
             'snapshotSummary',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_pause_filesystem_snapshot_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'PauseFilesystemSnapshotPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'PauseFilesystemSnapshotPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='PauseFilesystemSnapshotPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.pause_filesystem_snapshot_policy(
+                filesystem_snapshot_policy_id=request.pop(util.camelize('filesystemSnapshotPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'PauseFilesystemSnapshotPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'filesystemSnapshotPolicy',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_unpause_filesystem_snapshot_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'UnpauseFilesystemSnapshotPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'UnpauseFilesystemSnapshotPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='UnpauseFilesystemSnapshotPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.unpause_filesystem_snapshot_policy(
+                filesystem_snapshot_policy_id=request.pop(util.camelize('filesystemSnapshotPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'UnpauseFilesystemSnapshotPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'filesystemSnapshotPolicy',
+            False,
+            False
         )
 
 
@@ -1512,6 +1822,48 @@ def test_update_file_system(testing_service_client):
             result,
             service_error,
             'fileSystem',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_update_filesystem_snapshot_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'UpdateFilesystemSnapshotPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'UpdateFilesystemSnapshotPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='UpdateFilesystemSnapshotPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.update_filesystem_snapshot_policy(
+                filesystem_snapshot_policy_id=request.pop(util.camelize('filesystemSnapshotPolicyId')),
+                update_filesystem_snapshot_policy_details=request.pop(util.camelize('UpdateFilesystemSnapshotPolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'UpdateFilesystemSnapshotPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'filesystemSnapshotPolicy',
             False,
             False
         )
