@@ -19,11 +19,13 @@ File Storage
     :template: autosummary/model_class.rst
 
     oci.file_storage.models.ChangeFileSystemCompartmentDetails
+    oci.file_storage.models.ChangeFilesystemSnapshotPolicyCompartmentDetails
     oci.file_storage.models.ChangeMountTargetCompartmentDetails
     oci.file_storage.models.ChangeReplicationCompartmentDetails
     oci.file_storage.models.ClientOptions
     oci.file_storage.models.CreateExportDetails
     oci.file_storage.models.CreateFileSystemDetails
+    oci.file_storage.models.CreateFilesystemSnapshotPolicyDetails
     oci.file_storage.models.CreateMountTargetDetails
     oci.file_storage.models.CreateReplicationDetails
     oci.file_storage.models.CreateSnapshotDetails
@@ -33,6 +35,8 @@ File Storage
     oci.file_storage.models.ExportSummary
     oci.file_storage.models.FileSystem
     oci.file_storage.models.FileSystemSummary
+    oci.file_storage.models.FilesystemSnapshotPolicy
+    oci.file_storage.models.FilesystemSnapshotPolicySummary
     oci.file_storage.models.MountTarget
     oci.file_storage.models.MountTargetSummary
     oci.file_storage.models.Replication
@@ -41,11 +45,13 @@ File Storage
     oci.file_storage.models.ReplicationTarget
     oci.file_storage.models.ReplicationTargetSummary
     oci.file_storage.models.Snapshot
+    oci.file_storage.models.SnapshotSchedule
     oci.file_storage.models.SnapshotSummary
     oci.file_storage.models.SourceDetails
     oci.file_storage.models.UpdateExportDetails
     oci.file_storage.models.UpdateExportSetDetails
     oci.file_storage.models.UpdateFileSystemDetails
+    oci.file_storage.models.UpdateFilesystemSnapshotPolicyDetails
     oci.file_storage.models.UpdateMountTargetDetails
     oci.file_storage.models.UpdateReplicationDetails
     oci.file_storage.models.UpdateSnapshotDetails

@@ -90,6 +90,10 @@ class UpdateManagementDashboardDetails(object):
             The value to assign to the parameters_config property of this UpdateManagementDashboardDetails.
         :type parameters_config: list[object]
 
+        :param features_config:
+            The value to assign to the features_config property of this UpdateManagementDashboardDetails.
+        :type features_config: object
+
         :param drilldown_config:
             The value to assign to the drilldown_config property of this UpdateManagementDashboardDetails.
         :type drilldown_config: list[object]
@@ -122,6 +126,7 @@ class UpdateManagementDashboardDetails(object):
             'type': 'str',
             'is_favorite': 'bool',
             'parameters_config': 'list[object]',
+            'features_config': 'object',
             'drilldown_config': 'list[object]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -146,6 +151,7 @@ class UpdateManagementDashboardDetails(object):
             'type': 'type',
             'is_favorite': 'isFavorite',
             'parameters_config': 'parametersConfig',
+            'features_config': 'featuresConfig',
             'drilldown_config': 'drilldownConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -169,6 +175,7 @@ class UpdateManagementDashboardDetails(object):
         self._type = None
         self._is_favorite = None
         self._parameters_config = None
+        self._features_config = None
         self._drilldown_config = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -201,7 +208,7 @@ class UpdateManagementDashboardDetails(object):
     def provider_name(self):
         """
         Gets the provider_name of this UpdateManagementDashboardDetails.
-        Name of the service (for example, Logging Analytics) that owns the dashboard.
+        The user friendly name of the service (for example, Logging Analytics) that owns the dashboard.
 
 
         :return: The provider_name of this UpdateManagementDashboardDetails.
@@ -213,7 +220,7 @@ class UpdateManagementDashboardDetails(object):
     def provider_name(self, provider_name):
         """
         Sets the provider_name of this UpdateManagementDashboardDetails.
-        Name of the service (for example, Logging Analytics) that owns the dashboard.
+        The user friendly name of the service (for example, Logging Analytics) that owns the dashboard.
 
 
         :param provider_name: The provider_name of this UpdateManagementDashboardDetails.
@@ -225,7 +232,7 @@ class UpdateManagementDashboardDetails(object):
     def provider_version(self):
         """
         Gets the provider_version of this UpdateManagementDashboardDetails.
-        Version of the service that owns the dashboard.
+        The version of the metadata of the provider. This is useful for provider to version its features and metadata. Any newly created saved search (or dashboard) should use providerVersion 3.0.0.
 
 
         :return: The provider_version of this UpdateManagementDashboardDetails.
@@ -237,7 +244,7 @@ class UpdateManagementDashboardDetails(object):
     def provider_version(self, provider_version):
         """
         Sets the provider_version of this UpdateManagementDashboardDetails.
-        Version of the service that owns the dashboard.
+        The version of the metadata of the provider. This is useful for provider to version its features and metadata. Any newly created saved search (or dashboard) should use providerVersion 3.0.0.
 
 
         :param provider_version: The provider_version of this UpdateManagementDashboardDetails.
@@ -393,7 +400,7 @@ class UpdateManagementDashboardDetails(object):
     def metadata_version(self):
         """
         Gets the metadata_version of this UpdateManagementDashboardDetails.
-        Version of the metadata.
+        The version of the metadata defined in the API. This is maintained and enforced by dashboard server. Currently it is 2.0.
 
 
         :return: The metadata_version of this UpdateManagementDashboardDetails.
@@ -405,7 +412,7 @@ class UpdateManagementDashboardDetails(object):
     def metadata_version(self, metadata_version):
         """
         Sets the metadata_version of this UpdateManagementDashboardDetails.
-        Version of the metadata.
+        The version of the metadata defined in the API. This is maintained and enforced by dashboard server. Currently it is 2.0.
 
 
         :param metadata_version: The metadata_version of this UpdateManagementDashboardDetails.
@@ -604,6 +611,30 @@ class UpdateManagementDashboardDetails(object):
         :type: list[object]
         """
         self._parameters_config = parameters_config
+
+    @property
+    def features_config(self):
+        """
+        Gets the features_config of this UpdateManagementDashboardDetails.
+        Contains configuration for enabling features.
+
+
+        :return: The features_config of this UpdateManagementDashboardDetails.
+        :rtype: object
+        """
+        return self._features_config
+
+    @features_config.setter
+    def features_config(self, features_config):
+        """
+        Sets the features_config of this UpdateManagementDashboardDetails.
+        Contains configuration for enabling features.
+
+
+        :param features_config: The features_config of this UpdateManagementDashboardDetails.
+        :type: object
+        """
+        self._features_config = features_config
 
     @property
     def drilldown_config(self):

@@ -138,6 +138,10 @@ class ManagementSavedSearchSummary(object):
             The value to assign to the parameters_config property of this ManagementSavedSearchSummary.
         :type parameters_config: list[object]
 
+        :param features_config:
+            The value to assign to the features_config property of this ManagementSavedSearchSummary.
+        :type features_config: object
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ManagementSavedSearchSummary.
         :type freeform_tags: dict(str, str)
@@ -170,6 +174,7 @@ class ManagementSavedSearchSummary(object):
             'widget_vm': 'str',
             'lifecycle_state': 'str',
             'parameters_config': 'list[object]',
+            'features_config': 'object',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -197,6 +202,7 @@ class ManagementSavedSearchSummary(object):
             'widget_vm': 'widgetVM',
             'lifecycle_state': 'lifecycleState',
             'parameters_config': 'parametersConfig',
+            'features_config': 'featuresConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -223,6 +229,7 @@ class ManagementSavedSearchSummary(object):
         self._widget_vm = None
         self._lifecycle_state = None
         self._parameters_config = None
+        self._features_config = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -350,7 +357,7 @@ class ManagementSavedSearchSummary(object):
     def provider_version(self):
         """
         **[Required]** Gets the provider_version of this ManagementSavedSearchSummary.
-        Version of the service that owns this saved search.
+        The version of the metadata of the provider. This is useful for provider to version its features and metadata. Any newly created saved search (or dashboard) should use providerVersion 3.0.0.
 
 
         :return: The provider_version of this ManagementSavedSearchSummary.
@@ -362,7 +369,7 @@ class ManagementSavedSearchSummary(object):
     def provider_version(self, provider_version):
         """
         Sets the provider_version of this ManagementSavedSearchSummary.
-        Version of the service that owns this saved search.
+        The version of the metadata of the provider. This is useful for provider to version its features and metadata. Any newly created saved search (or dashboard) should use providerVersion 3.0.0.
 
 
         :param provider_version: The provider_version of this ManagementSavedSearchSummary.
@@ -374,7 +381,7 @@ class ManagementSavedSearchSummary(object):
     def provider_name(self):
         """
         **[Required]** Gets the provider_name of this ManagementSavedSearchSummary.
-        Name of the service (for example, Logging Analytics) that owns the saved search.
+        The user friendly name of the service (for example, Logging Analytics) that owns the saved search.
 
 
         :return: The provider_name of this ManagementSavedSearchSummary.
@@ -386,7 +393,7 @@ class ManagementSavedSearchSummary(object):
     def provider_name(self, provider_name):
         """
         Sets the provider_name of this ManagementSavedSearchSummary.
-        Name of the service (for example, Logging Analytics) that owns the saved search.
+        The user friendly name of the service (for example, Logging Analytics) that owns the saved search.
 
 
         :param provider_name: The provider_name of this ManagementSavedSearchSummary.
@@ -476,7 +483,7 @@ class ManagementSavedSearchSummary(object):
     def ui_config(self):
         """
         **[Required]** Gets the ui_config of this ManagementSavedSearchSummary.
-        JSON that contains user interface options.
+        It defines the visualization type of the widget saved search, the UI options of that visualization type, the binding of data to the visualization.
 
 
         :return: The ui_config of this ManagementSavedSearchSummary.
@@ -488,7 +495,7 @@ class ManagementSavedSearchSummary(object):
     def ui_config(self, ui_config):
         """
         Sets the ui_config of this ManagementSavedSearchSummary.
-        JSON that contains user interface options.
+        It defines the visualization type of the widget saved search, the UI options of that visualization type, the binding of data to the visualization.
 
 
         :param ui_config: The ui_config of this ManagementSavedSearchSummary.
@@ -500,7 +507,7 @@ class ManagementSavedSearchSummary(object):
     def data_config(self):
         """
         **[Required]** Gets the data_config of this ManagementSavedSearchSummary.
-        Array of JSON that contain data source options.
+        It defines how data is fetched. A functional saved search needs a valid dataConfig. See examples on how it can be constructed for various data sources.
 
 
         :return: The data_config of this ManagementSavedSearchSummary.
@@ -512,7 +519,7 @@ class ManagementSavedSearchSummary(object):
     def data_config(self, data_config):
         """
         Sets the data_config of this ManagementSavedSearchSummary.
-        Array of JSON that contain data source options.
+        It defines how data is fetched. A functional saved search needs a valid dataConfig. See examples on how it can be constructed for various data sources.
 
 
         :param data_config: The data_config of this ManagementSavedSearchSummary.
@@ -524,7 +531,7 @@ class ManagementSavedSearchSummary(object):
     def created_by(self):
         """
         **[Required]** Gets the created_by of this ManagementSavedSearchSummary.
-        User who created the saved search.
+        The principle id of the user that created this saved search. This is automatically managed by the system. In OCI the value is ignored. In EM it can skipped or otherwise it is ignored in both create and update API and system automatically sets its value.
 
 
         :return: The created_by of this ManagementSavedSearchSummary.
@@ -536,7 +543,7 @@ class ManagementSavedSearchSummary(object):
     def created_by(self, created_by):
         """
         Sets the created_by of this ManagementSavedSearchSummary.
-        User who created the saved search.
+        The principle id of the user that created this saved search. This is automatically managed by the system. In OCI the value is ignored. In EM it can skipped or otherwise it is ignored in both create and update API and system automatically sets its value.
 
 
         :param created_by: The created_by of this ManagementSavedSearchSummary.
@@ -548,7 +555,7 @@ class ManagementSavedSearchSummary(object):
     def updated_by(self):
         """
         **[Required]** Gets the updated_by of this ManagementSavedSearchSummary.
-        User who updated the saved search.
+        The principle id of the user that updated this saved search
 
 
         :return: The updated_by of this ManagementSavedSearchSummary.
@@ -560,7 +567,7 @@ class ManagementSavedSearchSummary(object):
     def updated_by(self, updated_by):
         """
         Sets the updated_by of this ManagementSavedSearchSummary.
-        User who updated the saved search.
+        The principle id of the user that updated this saved search
 
 
         :param updated_by: The updated_by of this ManagementSavedSearchSummary.
@@ -644,7 +651,7 @@ class ManagementSavedSearchSummary(object):
     def metadata_version(self):
         """
         **[Required]** Gets the metadata_version of this ManagementSavedSearchSummary.
-        Version of the metadata.
+        The version of the metadata defined in the API. This is maintained and enforced by dashboard server. Currently it is 2.0.
 
 
         :return: The metadata_version of this ManagementSavedSearchSummary.
@@ -656,7 +663,7 @@ class ManagementSavedSearchSummary(object):
     def metadata_version(self, metadata_version):
         """
         Sets the metadata_version of this ManagementSavedSearchSummary.
-        Version of the metadata.
+        The version of the metadata defined in the API. This is maintained and enforced by dashboard server. Currently it is 2.0.
 
 
         :param metadata_version: The metadata_version of this ManagementSavedSearchSummary.
@@ -668,7 +675,7 @@ class ManagementSavedSearchSummary(object):
     def widget_template(self):
         """
         **[Required]** Gets the widget_template of this ManagementSavedSearchSummary.
-        Reference to the HTML file of the widget.
+        The UI template that the saved search uses to render itself.
 
 
         :return: The widget_template of this ManagementSavedSearchSummary.
@@ -680,7 +687,7 @@ class ManagementSavedSearchSummary(object):
     def widget_template(self, widget_template):
         """
         Sets the widget_template of this ManagementSavedSearchSummary.
-        Reference to the HTML file of the widget.
+        The UI template that the saved search uses to render itself.
 
 
         :param widget_template: The widget_template of this ManagementSavedSearchSummary.
@@ -692,7 +699,7 @@ class ManagementSavedSearchSummary(object):
     def widget_vm(self):
         """
         **[Required]** Gets the widget_vm of this ManagementSavedSearchSummary.
-        Reference to the view model of the widget.
+        The View Model that the saved search uses to render itself.
 
 
         :return: The widget_vm of this ManagementSavedSearchSummary.
@@ -704,7 +711,7 @@ class ManagementSavedSearchSummary(object):
     def widget_vm(self, widget_vm):
         """
         Sets the widget_vm of this ManagementSavedSearchSummary.
-        Reference to the view model of the widget.
+        The View Model that the saved search uses to render itself.
 
 
         :param widget_vm: The widget_vm of this ManagementSavedSearchSummary.
@@ -716,7 +723,7 @@ class ManagementSavedSearchSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this ManagementSavedSearchSummary.
-        Current lifecycle state of the saved search.
+        OCI lifecycle status. This is automatically managed by the system.
 
         Allowed values for this property are: "ACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -731,7 +738,7 @@ class ManagementSavedSearchSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ManagementSavedSearchSummary.
-        Current lifecycle state of the saved search.
+        OCI lifecycle status. This is automatically managed by the system.
 
 
         :param lifecycle_state: The lifecycle_state of this ManagementSavedSearchSummary.
@@ -765,6 +772,30 @@ class ManagementSavedSearchSummary(object):
         :type: list[object]
         """
         self._parameters_config = parameters_config
+
+    @property
+    def features_config(self):
+        """
+        Gets the features_config of this ManagementSavedSearchSummary.
+        Contains configuration for enabling features.
+
+
+        :return: The features_config of this ManagementSavedSearchSummary.
+        :rtype: object
+        """
+        return self._features_config
+
+    @features_config.setter
+    def features_config(self, features_config):
+        """
+        Sets the features_config of this ManagementSavedSearchSummary.
+        Contains configuration for enabling features.
+
+
+        :param features_config: The features_config of this ManagementSavedSearchSummary.
+        :type: object
+        """
+        self._features_config = features_config
 
     @property
     def freeform_tags(self):

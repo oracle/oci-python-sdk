@@ -115,6 +115,10 @@ class FileSystem(object):
             The value to assign to the replication_target_id property of this FileSystem.
         :type replication_target_id: str
 
+        :param filesystem_snapshot_policy_id:
+            The value to assign to the filesystem_snapshot_policy_id property of this FileSystem.
+        :type filesystem_snapshot_policy_id: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -132,7 +136,8 @@ class FileSystem(object):
             'is_hydrated': 'bool',
             'lifecycle_details': 'str',
             'is_targetable': 'bool',
-            'replication_target_id': 'str'
+            'replication_target_id': 'str',
+            'filesystem_snapshot_policy_id': 'str'
         }
 
         self.attribute_map = {
@@ -151,7 +156,8 @@ class FileSystem(object):
             'is_hydrated': 'isHydrated',
             'lifecycle_details': 'lifecycleDetails',
             'is_targetable': 'isTargetable',
-            'replication_target_id': 'replicationTargetId'
+            'replication_target_id': 'replicationTargetId',
+            'filesystem_snapshot_policy_id': 'filesystemSnapshotPolicyId'
         }
 
         self._availability_domain = None
@@ -170,6 +176,7 @@ class FileSystem(object):
         self._lifecycle_details = None
         self._is_targetable = None
         self._replication_target_id = None
+        self._filesystem_snapshot_policy_id = None
 
     @property
     def availability_domain(self):
@@ -648,6 +655,36 @@ class FileSystem(object):
         :type: str
         """
         self._replication_target_id = replication_target_id
+
+    @property
+    def filesystem_snapshot_policy_id(self):
+        """
+        Gets the filesystem_snapshot_policy_id of this FileSystem.
+        The `OCID`__ of the associated file system snapshot policy, which
+        controls the frequency of snapshot creation and retention period of the taken snapshots.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The filesystem_snapshot_policy_id of this FileSystem.
+        :rtype: str
+        """
+        return self._filesystem_snapshot_policy_id
+
+    @filesystem_snapshot_policy_id.setter
+    def filesystem_snapshot_policy_id(self, filesystem_snapshot_policy_id):
+        """
+        Sets the filesystem_snapshot_policy_id of this FileSystem.
+        The `OCID`__ of the associated file system snapshot policy, which
+        controls the frequency of snapshot creation and retention period of the taken snapshots.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param filesystem_snapshot_policy_id: The filesystem_snapshot_policy_id of this FileSystem.
+        :type: str
+        """
+        self._filesystem_snapshot_policy_id = filesystem_snapshot_policy_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

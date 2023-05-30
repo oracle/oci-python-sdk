@@ -297,7 +297,7 @@ class ManagementDashboardTileDetails(object):
     def ui_config(self):
         """
         **[Required]** Gets the ui_config of this ManagementDashboardTileDetails.
-        JSON that contains user interface options.
+        It defines the visualization type of the widget saved search, the UI options of that visualization type, the binding of data to the visualization.
 
 
         :return: The ui_config of this ManagementDashboardTileDetails.
@@ -309,7 +309,7 @@ class ManagementDashboardTileDetails(object):
     def ui_config(self, ui_config):
         """
         Sets the ui_config of this ManagementDashboardTileDetails.
-        JSON that contains user interface options.
+        It defines the visualization type of the widget saved search, the UI options of that visualization type, the binding of data to the visualization.
 
 
         :param ui_config: The ui_config of this ManagementDashboardTileDetails.
@@ -321,7 +321,7 @@ class ManagementDashboardTileDetails(object):
     def data_config(self):
         """
         **[Required]** Gets the data_config of this ManagementDashboardTileDetails.
-        Array of JSON that contain data source options.
+        It defines how data is fetched. A functional saved search needs a valid dataConfig. See examples on how it can be constructed for various data sources.
 
 
         :return: The data_config of this ManagementDashboardTileDetails.
@@ -333,7 +333,7 @@ class ManagementDashboardTileDetails(object):
     def data_config(self, data_config):
         """
         Sets the data_config of this ManagementDashboardTileDetails.
-        Array of JSON that contain data source options.
+        It defines how data is fetched. A functional saved search needs a valid dataConfig. See examples on how it can be constructed for various data sources.
 
 
         :param data_config: The data_config of this ManagementDashboardTileDetails.

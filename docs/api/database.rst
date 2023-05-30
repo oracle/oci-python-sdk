@@ -198,6 +198,7 @@ Database
     oci.database.models.DisasterRecoveryConfiguration
     oci.database.models.DiskPerformanceDetails
     oci.database.models.DownloadOneoffPatch
+    oci.database.models.DrScanDetails
     oci.database.models.EnableDatabaseManagementDetails
     oci.database.models.EnableExternalContainerDatabaseDatabaseManagementDetails
     oci.database.models.EnableExternalContainerDatabaseStackMonitoringDetails

@@ -21,6 +21,10 @@ class InfoForNetworkGenDetails(object):
     #: This constant has a value of "BACKUP"
     NETWORK_TYPE_BACKUP = "BACKUP"
 
+    #: A constant which can be used with the network_type property of a InfoForNetworkGenDetails.
+    #: This constant has a value of "DISASTER_RECOVERY"
+    NETWORK_TYPE_DISASTER_RECOVERY = "DISASTER_RECOVERY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new InfoForNetworkGenDetails object with values from keyword arguments.
@@ -28,7 +32,7 @@ class InfoForNetworkGenDetails(object):
 
         :param network_type:
             The value to assign to the network_type property of this InfoForNetworkGenDetails.
-            Allowed values for this property are: "CLIENT", "BACKUP"
+            Allowed values for this property are: "CLIENT", "BACKUP", "DISASTER_RECOVERY"
         :type network_type: str
 
         :param vlan_id:
@@ -90,7 +94,7 @@ class InfoForNetworkGenDetails(object):
         **[Required]** Gets the network_type of this InfoForNetworkGenDetails.
         The network type.
 
-        Allowed values for this property are: "CLIENT", "BACKUP"
+        Allowed values for this property are: "CLIENT", "BACKUP", "DISASTER_RECOVERY"
 
 
         :return: The network_type of this InfoForNetworkGenDetails.
@@ -108,7 +112,7 @@ class InfoForNetworkGenDetails(object):
         :param network_type: The network_type of this InfoForNetworkGenDetails.
         :type: str
         """
-        allowed_values = ["CLIENT", "BACKUP"]
+        allowed_values = ["CLIENT", "BACKUP", "DISASTER_RECOVERY"]
         if not value_allowed_none_or_none_sentinel(network_type, allowed_values):
             raise ValueError(
                 "Invalid value for `network_type`, must be None or one of {0}"

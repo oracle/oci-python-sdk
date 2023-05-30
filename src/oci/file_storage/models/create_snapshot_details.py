@@ -26,6 +26,10 @@ class CreateSnapshotDetails(object):
             The value to assign to the name property of this CreateSnapshotDetails.
         :type name: str
 
+        :param expiration_time:
+            The value to assign to the expiration_time property of this CreateSnapshotDetails.
+        :type expiration_time: datetime
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateSnapshotDetails.
         :type freeform_tags: dict(str, str)
@@ -38,6 +42,7 @@ class CreateSnapshotDetails(object):
         self.swagger_types = {
             'file_system_id': 'str',
             'name': 'str',
+            'expiration_time': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -45,12 +50,14 @@ class CreateSnapshotDetails(object):
         self.attribute_map = {
             'file_system_id': 'fileSystemId',
             'name': 'name',
+            'expiration_time': 'expirationTime',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._file_system_id = None
         self._name = None
+        self._expiration_time = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -117,6 +124,30 @@ class CreateSnapshotDetails(object):
         :type: str
         """
         self._name = name
+
+    @property
+    def expiration_time(self):
+        """
+        Gets the expiration_time of this CreateSnapshotDetails.
+        The time when this snapshot will be deleted.
+
+
+        :return: The expiration_time of this CreateSnapshotDetails.
+        :rtype: datetime
+        """
+        return self._expiration_time
+
+    @expiration_time.setter
+    def expiration_time(self, expiration_time):
+        """
+        Sets the expiration_time of this CreateSnapshotDetails.
+        The time when this snapshot will be deleted.
+
+
+        :param expiration_time: The expiration_time of this CreateSnapshotDetails.
+        :type: datetime
+        """
+        self._expiration_time = expiration_time
 
     @property
     def freeform_tags(self):

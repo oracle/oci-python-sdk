@@ -107,6 +107,10 @@ class UpdateManagementSavedSearchDetails(object):
             The value to assign to the parameters_config property of this UpdateManagementSavedSearchDetails.
         :type parameters_config: list[object]
 
+        :param features_config:
+            The value to assign to the features_config property of this UpdateManagementSavedSearchDetails.
+        :type features_config: object
+
         :param drilldown_config:
             The value to assign to the drilldown_config property of this UpdateManagementSavedSearchDetails.
         :type drilldown_config: list[object]
@@ -137,6 +141,7 @@ class UpdateManagementSavedSearchDetails(object):
             'widget_template': 'str',
             'widget_vm': 'str',
             'parameters_config': 'list[object]',
+            'features_config': 'object',
             'drilldown_config': 'list[object]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -159,6 +164,7 @@ class UpdateManagementSavedSearchDetails(object):
             'widget_template': 'widgetTemplate',
             'widget_vm': 'widgetVM',
             'parameters_config': 'parametersConfig',
+            'features_config': 'featuresConfig',
             'drilldown_config': 'drilldownConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -180,6 +186,7 @@ class UpdateManagementSavedSearchDetails(object):
         self._widget_template = None
         self._widget_vm = None
         self._parameters_config = None
+        self._features_config = None
         self._drilldown_config = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -236,7 +243,7 @@ class UpdateManagementSavedSearchDetails(object):
     def provider_version(self):
         """
         Gets the provider_version of this UpdateManagementSavedSearchDetails.
-        Version of the service that owns this saved search.
+        The version of the metadata of the provider. This is useful for provider to version its features and metadata. Any newly created saved search (or dashboard) should use providerVersion 3.0.0.
 
 
         :return: The provider_version of this UpdateManagementSavedSearchDetails.
@@ -248,7 +255,7 @@ class UpdateManagementSavedSearchDetails(object):
     def provider_version(self, provider_version):
         """
         Sets the provider_version of this UpdateManagementSavedSearchDetails.
-        Version of the service that owns this saved search.
+        The version of the metadata of the provider. This is useful for provider to version its features and metadata. Any newly created saved search (or dashboard) should use providerVersion 3.0.0.
 
 
         :param provider_version: The provider_version of this UpdateManagementSavedSearchDetails.
@@ -260,7 +267,7 @@ class UpdateManagementSavedSearchDetails(object):
     def provider_name(self):
         """
         Gets the provider_name of this UpdateManagementSavedSearchDetails.
-        Name of the service (for example, Logging Analytics) that owns the saved search.
+        The user friendly name of the service (for example, Logging Analytics) that owns the saved search.
 
 
         :return: The provider_name of this UpdateManagementSavedSearchDetails.
@@ -272,7 +279,7 @@ class UpdateManagementSavedSearchDetails(object):
     def provider_name(self, provider_name):
         """
         Sets the provider_name of this UpdateManagementSavedSearchDetails.
-        Name of the service (for example, Logging Analytics) that owns the saved search.
+        The user friendly name of the service (for example, Logging Analytics) that owns the saved search.
 
 
         :param provider_name: The provider_name of this UpdateManagementSavedSearchDetails.
@@ -412,7 +419,7 @@ class UpdateManagementSavedSearchDetails(object):
     def ui_config(self):
         """
         Gets the ui_config of this UpdateManagementSavedSearchDetails.
-        JSON that contains user interface options.
+        It defines the visualization type of the widget saved search, the UI options of that visualization type, the binding of data to the visualization.
 
 
         :return: The ui_config of this UpdateManagementSavedSearchDetails.
@@ -424,7 +431,7 @@ class UpdateManagementSavedSearchDetails(object):
     def ui_config(self, ui_config):
         """
         Sets the ui_config of this UpdateManagementSavedSearchDetails.
-        JSON that contains user interface options.
+        It defines the visualization type of the widget saved search, the UI options of that visualization type, the binding of data to the visualization.
 
 
         :param ui_config: The ui_config of this UpdateManagementSavedSearchDetails.
@@ -436,7 +443,7 @@ class UpdateManagementSavedSearchDetails(object):
     def data_config(self):
         """
         Gets the data_config of this UpdateManagementSavedSearchDetails.
-        Array of JSON that contain data source options.
+        It defines how data is fetched. A functional saved search needs a valid dataConfig. See examples on how it can be constructed for various data sources.
 
 
         :return: The data_config of this UpdateManagementSavedSearchDetails.
@@ -448,7 +455,7 @@ class UpdateManagementSavedSearchDetails(object):
     def data_config(self, data_config):
         """
         Sets the data_config of this UpdateManagementSavedSearchDetails.
-        Array of JSON that contain data source options.
+        It defines how data is fetched. A functional saved search needs a valid dataConfig. See examples on how it can be constructed for various data sources.
 
 
         :param data_config: The data_config of this UpdateManagementSavedSearchDetails.
@@ -484,7 +491,7 @@ class UpdateManagementSavedSearchDetails(object):
     def metadata_version(self):
         """
         Gets the metadata_version of this UpdateManagementSavedSearchDetails.
-        Version of the metadata.
+        The version of the metadata defined in the API. This is maintained and enforced by dashboard server. Currently it is 2.0.
 
 
         :return: The metadata_version of this UpdateManagementSavedSearchDetails.
@@ -496,7 +503,7 @@ class UpdateManagementSavedSearchDetails(object):
     def metadata_version(self, metadata_version):
         """
         Sets the metadata_version of this UpdateManagementSavedSearchDetails.
-        Version of the metadata.
+        The version of the metadata defined in the API. This is maintained and enforced by dashboard server. Currently it is 2.0.
 
 
         :param metadata_version: The metadata_version of this UpdateManagementSavedSearchDetails.
@@ -508,7 +515,7 @@ class UpdateManagementSavedSearchDetails(object):
     def widget_template(self):
         """
         Gets the widget_template of this UpdateManagementSavedSearchDetails.
-        Reference to the HTML file of the widget.
+        The UI template that the saved search uses to render itself.
 
 
         :return: The widget_template of this UpdateManagementSavedSearchDetails.
@@ -520,7 +527,7 @@ class UpdateManagementSavedSearchDetails(object):
     def widget_template(self, widget_template):
         """
         Sets the widget_template of this UpdateManagementSavedSearchDetails.
-        Reference to the HTML file of the widget.
+        The UI template that the saved search uses to render itself.
 
 
         :param widget_template: The widget_template of this UpdateManagementSavedSearchDetails.
@@ -532,7 +539,7 @@ class UpdateManagementSavedSearchDetails(object):
     def widget_vm(self):
         """
         Gets the widget_vm of this UpdateManagementSavedSearchDetails.
-        Reference to the view model of the widget.
+        The View Model that the saved search uses to render itself.
 
 
         :return: The widget_vm of this UpdateManagementSavedSearchDetails.
@@ -544,7 +551,7 @@ class UpdateManagementSavedSearchDetails(object):
     def widget_vm(self, widget_vm):
         """
         Sets the widget_vm of this UpdateManagementSavedSearchDetails.
-        Reference to the view model of the widget.
+        The View Model that the saved search uses to render itself.
 
 
         :param widget_vm: The widget_vm of this UpdateManagementSavedSearchDetails.
@@ -575,6 +582,30 @@ class UpdateManagementSavedSearchDetails(object):
         :type: list[object]
         """
         self._parameters_config = parameters_config
+
+    @property
+    def features_config(self):
+        """
+        Gets the features_config of this UpdateManagementSavedSearchDetails.
+        Contains configuration for enabling features.
+
+
+        :return: The features_config of this UpdateManagementSavedSearchDetails.
+        :rtype: object
+        """
+        return self._features_config
+
+    @features_config.setter
+    def features_config(self, features_config):
+        """
+        Sets the features_config of this UpdateManagementSavedSearchDetails.
+        Contains configuration for enabling features.
+
+
+        :param features_config: The features_config of this UpdateManagementSavedSearchDetails.
+        :type: object
+        """
+        self._features_config = features_config
 
     @property
     def drilldown_config(self):
