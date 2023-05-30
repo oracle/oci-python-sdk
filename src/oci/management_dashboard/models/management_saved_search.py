@@ -138,6 +138,10 @@ class ManagementSavedSearch(object):
             The value to assign to the parameters_config property of this ManagementSavedSearch.
         :type parameters_config: list[object]
 
+        :param features_config:
+            The value to assign to the features_config property of this ManagementSavedSearch.
+        :type features_config: object
+
         :param drilldown_config:
             The value to assign to the drilldown_config property of this ManagementSavedSearch.
         :type drilldown_config: list[object]
@@ -174,6 +178,7 @@ class ManagementSavedSearch(object):
             'widget_vm': 'str',
             'lifecycle_state': 'str',
             'parameters_config': 'list[object]',
+            'features_config': 'object',
             'drilldown_config': 'list[object]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -202,6 +207,7 @@ class ManagementSavedSearch(object):
             'widget_vm': 'widgetVM',
             'lifecycle_state': 'lifecycleState',
             'parameters_config': 'parametersConfig',
+            'features_config': 'featuresConfig',
             'drilldown_config': 'drilldownConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -229,6 +235,7 @@ class ManagementSavedSearch(object):
         self._widget_vm = None
         self._lifecycle_state = None
         self._parameters_config = None
+        self._features_config = None
         self._drilldown_config = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -483,7 +490,7 @@ class ManagementSavedSearch(object):
     def ui_config(self):
         """
         **[Required]** Gets the ui_config of this ManagementSavedSearch.
-        JSON that contains user interface options.
+        It defines the visualization type of the widget saved search, the UI options of that visualization type, the binding of data to the visualization.
 
 
         :return: The ui_config of this ManagementSavedSearch.
@@ -495,7 +502,7 @@ class ManagementSavedSearch(object):
     def ui_config(self, ui_config):
         """
         Sets the ui_config of this ManagementSavedSearch.
-        JSON that contains user interface options.
+        It defines the visualization type of the widget saved search, the UI options of that visualization type, the binding of data to the visualization.
 
 
         :param ui_config: The ui_config of this ManagementSavedSearch.
@@ -507,7 +514,7 @@ class ManagementSavedSearch(object):
     def data_config(self):
         """
         **[Required]** Gets the data_config of this ManagementSavedSearch.
-        Array of JSON that contain data source options.
+        It defines how data is fetched. A functional saved search needs a valid dataConfig. See examples on how it can be constructed for various data sources.
 
 
         :return: The data_config of this ManagementSavedSearch.
@@ -519,7 +526,7 @@ class ManagementSavedSearch(object):
     def data_config(self, data_config):
         """
         Sets the data_config of this ManagementSavedSearch.
-        Array of JSON that contain data source options.
+        It defines how data is fetched. A functional saved search needs a valid dataConfig. See examples on how it can be constructed for various data sources.
 
 
         :param data_config: The data_config of this ManagementSavedSearch.
@@ -531,7 +538,7 @@ class ManagementSavedSearch(object):
     def created_by(self):
         """
         **[Required]** Gets the created_by of this ManagementSavedSearch.
-        User who created the saved search.
+        The principle id of the user that created this saved search. This is automatically managed by the system. In OCI the value is ignored. In EM it can skipped or otherwise it is ignored in both create and update API and system automatically sets its value.
 
 
         :return: The created_by of this ManagementSavedSearch.
@@ -543,7 +550,7 @@ class ManagementSavedSearch(object):
     def created_by(self, created_by):
         """
         Sets the created_by of this ManagementSavedSearch.
-        User who created the saved search.
+        The principle id of the user that created this saved search. This is automatically managed by the system. In OCI the value is ignored. In EM it can skipped or otherwise it is ignored in both create and update API and system automatically sets its value.
 
 
         :param created_by: The created_by of this ManagementSavedSearch.
@@ -555,7 +562,7 @@ class ManagementSavedSearch(object):
     def updated_by(self):
         """
         **[Required]** Gets the updated_by of this ManagementSavedSearch.
-        User who updated the saved search.
+        The principle id of the user that updated this saved search.
 
 
         :return: The updated_by of this ManagementSavedSearch.
@@ -567,7 +574,7 @@ class ManagementSavedSearch(object):
     def updated_by(self, updated_by):
         """
         Sets the updated_by of this ManagementSavedSearch.
-        User who updated the saved search.
+        The principle id of the user that updated this saved search.
 
 
         :param updated_by: The updated_by of this ManagementSavedSearch.
@@ -651,7 +658,7 @@ class ManagementSavedSearch(object):
     def metadata_version(self):
         """
         **[Required]** Gets the metadata_version of this ManagementSavedSearch.
-        Version of the metadata.
+        The version of the metadata defined in the API. This is maintained and enforced by dashboard server. Currently it is 2.0.
 
 
         :return: The metadata_version of this ManagementSavedSearch.
@@ -663,7 +670,7 @@ class ManagementSavedSearch(object):
     def metadata_version(self, metadata_version):
         """
         Sets the metadata_version of this ManagementSavedSearch.
-        Version of the metadata.
+        The version of the metadata defined in the API. This is maintained and enforced by dashboard server. Currently it is 2.0.
 
 
         :param metadata_version: The metadata_version of this ManagementSavedSearch.
@@ -675,7 +682,7 @@ class ManagementSavedSearch(object):
     def widget_template(self):
         """
         **[Required]** Gets the widget_template of this ManagementSavedSearch.
-        Reference to the HTML file of the widget.
+        The UI template that the saved search uses to render itself.
 
 
         :return: The widget_template of this ManagementSavedSearch.
@@ -687,7 +694,7 @@ class ManagementSavedSearch(object):
     def widget_template(self, widget_template):
         """
         Sets the widget_template of this ManagementSavedSearch.
-        Reference to the HTML file of the widget.
+        The UI template that the saved search uses to render itself.
 
 
         :param widget_template: The widget_template of this ManagementSavedSearch.
@@ -699,7 +706,7 @@ class ManagementSavedSearch(object):
     def widget_vm(self):
         """
         **[Required]** Gets the widget_vm of this ManagementSavedSearch.
-        Reference to the view model of the widget.
+        The View Model that the saved search uses to render itself.
 
 
         :return: The widget_vm of this ManagementSavedSearch.
@@ -711,7 +718,7 @@ class ManagementSavedSearch(object):
     def widget_vm(self, widget_vm):
         """
         Sets the widget_vm of this ManagementSavedSearch.
-        Reference to the view model of the widget.
+        The View Model that the saved search uses to render itself.
 
 
         :param widget_vm: The widget_vm of this ManagementSavedSearch.
@@ -723,7 +730,7 @@ class ManagementSavedSearch(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this ManagementSavedSearch.
-        State of dashboard.
+        OCI lifecycle status. This is automatically managed by the system.
 
         Allowed values for this property are: "ACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -738,7 +745,7 @@ class ManagementSavedSearch(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ManagementSavedSearch.
-        State of dashboard.
+        OCI lifecycle status. This is automatically managed by the system.
 
 
         :param lifecycle_state: The lifecycle_state of this ManagementSavedSearch.
@@ -772,6 +779,30 @@ class ManagementSavedSearch(object):
         :type: list[object]
         """
         self._parameters_config = parameters_config
+
+    @property
+    def features_config(self):
+        """
+        Gets the features_config of this ManagementSavedSearch.
+        Contains configuration for enabling features.
+
+
+        :return: The features_config of this ManagementSavedSearch.
+        :rtype: object
+        """
+        return self._features_config
+
+    @features_config.setter
+    def features_config(self, features_config):
+        """
+        Sets the features_config of this ManagementSavedSearch.
+        Contains configuration for enabling features.
+
+
+        :param features_config: The features_config of this ManagementSavedSearch.
+        :type: object
+        """
+        self._features_config = features_config
 
     @property
     def drilldown_config(self):

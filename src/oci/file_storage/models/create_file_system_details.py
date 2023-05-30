@@ -46,6 +46,10 @@ class CreateFileSystemDetails(object):
             The value to assign to the source_snapshot_id property of this CreateFileSystemDetails.
         :type source_snapshot_id: str
 
+        :param filesystem_snapshot_policy_id:
+            The value to assign to the filesystem_snapshot_policy_id property of this CreateFileSystemDetails.
+        :type filesystem_snapshot_policy_id: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -54,7 +58,8 @@ class CreateFileSystemDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'kms_key_id': 'str',
-            'source_snapshot_id': 'str'
+            'source_snapshot_id': 'str',
+            'filesystem_snapshot_policy_id': 'str'
         }
 
         self.attribute_map = {
@@ -64,7 +69,8 @@ class CreateFileSystemDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'kms_key_id': 'kmsKeyId',
-            'source_snapshot_id': 'sourceSnapshotId'
+            'source_snapshot_id': 'sourceSnapshotId',
+            'filesystem_snapshot_policy_id': 'filesystemSnapshotPolicyId'
         }
 
         self._availability_domain = None
@@ -74,6 +80,7 @@ class CreateFileSystemDetails(object):
         self._defined_tags = None
         self._kms_key_id = None
         self._source_snapshot_id = None
+        self._filesystem_snapshot_policy_id = None
 
     @property
     def availability_domain(self):
@@ -286,6 +293,40 @@ class CreateFileSystemDetails(object):
         :type: str
         """
         self._source_snapshot_id = source_snapshot_id
+
+    @property
+    def filesystem_snapshot_policy_id(self):
+        """
+        Gets the filesystem_snapshot_policy_id of this CreateFileSystemDetails.
+        The `OCID`__ of the associated file system snapshot policy, which
+        controls the frequency of snapshot creation and retention period of the taken snapshots.
+
+        May be unset as a blank value.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The filesystem_snapshot_policy_id of this CreateFileSystemDetails.
+        :rtype: str
+        """
+        return self._filesystem_snapshot_policy_id
+
+    @filesystem_snapshot_policy_id.setter
+    def filesystem_snapshot_policy_id(self, filesystem_snapshot_policy_id):
+        """
+        Sets the filesystem_snapshot_policy_id of this CreateFileSystemDetails.
+        The `OCID`__ of the associated file system snapshot policy, which
+        controls the frequency of snapshot creation and retention period of the taken snapshots.
+
+        May be unset as a blank value.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param filesystem_snapshot_policy_id: The filesystem_snapshot_policy_id of this CreateFileSystemDetails.
+        :type: str
+        """
+        self._filesystem_snapshot_policy_id = filesystem_snapshot_policy_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -98,6 +98,14 @@ class Snapshot(object):
             The value to assign to the defined_tags property of this Snapshot.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param expiration_time:
+            The value to assign to the expiration_time property of this Snapshot.
+        :type expiration_time: datetime
+
+        :param filesystem_snapshot_policy_id:
+            The value to assign to the filesystem_snapshot_policy_id property of this Snapshot.
+        :type filesystem_snapshot_policy_id: str
+
         """
         self.swagger_types = {
             'file_system_id': 'str',
@@ -111,7 +119,9 @@ class Snapshot(object):
             'is_clone_source': 'bool',
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'expiration_time': 'datetime',
+            'filesystem_snapshot_policy_id': 'str'
         }
 
         self.attribute_map = {
@@ -126,7 +136,9 @@ class Snapshot(object):
             'is_clone_source': 'isCloneSource',
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'expiration_time': 'expirationTime',
+            'filesystem_snapshot_policy_id': 'filesystemSnapshotPolicyId'
         }
 
         self._file_system_id = None
@@ -141,6 +153,8 @@ class Snapshot(object):
         self._lifecycle_details = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._expiration_time = None
+        self._filesystem_snapshot_policy_id = None
 
     @property
     def file_system_id(self):
@@ -525,6 +539,58 @@ class Snapshot(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def expiration_time(self):
+        """
+        Gets the expiration_time of this Snapshot.
+        The time when this snapshot will be deleted.
+
+
+        :return: The expiration_time of this Snapshot.
+        :rtype: datetime
+        """
+        return self._expiration_time
+
+    @expiration_time.setter
+    def expiration_time(self, expiration_time):
+        """
+        Sets the expiration_time of this Snapshot.
+        The time when this snapshot will be deleted.
+
+
+        :param expiration_time: The expiration_time of this Snapshot.
+        :type: datetime
+        """
+        self._expiration_time = expiration_time
+
+    @property
+    def filesystem_snapshot_policy_id(self):
+        """
+        Gets the filesystem_snapshot_policy_id of this Snapshot.
+        The `OCID`__ of the file system snapshot policy that created this snapshot.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The filesystem_snapshot_policy_id of this Snapshot.
+        :rtype: str
+        """
+        return self._filesystem_snapshot_policy_id
+
+    @filesystem_snapshot_policy_id.setter
+    def filesystem_snapshot_policy_id(self, filesystem_snapshot_policy_id):
+        """
+        Sets the filesystem_snapshot_policy_id of this Snapshot.
+        The `OCID`__ of the file system snapshot policy that created this snapshot.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param filesystem_snapshot_policy_id: The filesystem_snapshot_policy_id of this Snapshot.
+        :type: str
+        """
+        self._filesystem_snapshot_policy_id = filesystem_snapshot_policy_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

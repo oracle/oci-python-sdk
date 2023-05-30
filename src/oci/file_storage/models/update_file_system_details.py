@@ -34,25 +34,32 @@ class UpdateFileSystemDetails(object):
             The value to assign to the kms_key_id property of this UpdateFileSystemDetails.
         :type kms_key_id: str
 
+        :param filesystem_snapshot_policy_id:
+            The value to assign to the filesystem_snapshot_policy_id property of this UpdateFileSystemDetails.
+        :type filesystem_snapshot_policy_id: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'kms_key_id': 'str'
+            'kms_key_id': 'str',
+            'filesystem_snapshot_policy_id': 'str'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'kms_key_id': 'kmsKeyId'
+            'kms_key_id': 'kmsKeyId',
+            'filesystem_snapshot_policy_id': 'filesystemSnapshotPolicyId'
         }
 
         self._display_name = None
         self._freeform_tags = None
         self._defined_tags = None
         self._kms_key_id = None
+        self._filesystem_snapshot_policy_id = None
 
     @property
     def display_name(self):
@@ -189,6 +196,40 @@ class UpdateFileSystemDetails(object):
         :type: str
         """
         self._kms_key_id = kms_key_id
+
+    @property
+    def filesystem_snapshot_policy_id(self):
+        """
+        Gets the filesystem_snapshot_policy_id of this UpdateFileSystemDetails.
+        The `OCID`__ of the associated file system snapshot policy, which
+        controls the frequency of snapshot creation and retention period of the taken snapshots.
+
+        If string is empty, the policy reference (if any) would be removed.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The filesystem_snapshot_policy_id of this UpdateFileSystemDetails.
+        :rtype: str
+        """
+        return self._filesystem_snapshot_policy_id
+
+    @filesystem_snapshot_policy_id.setter
+    def filesystem_snapshot_policy_id(self, filesystem_snapshot_policy_id):
+        """
+        Sets the filesystem_snapshot_policy_id of this UpdateFileSystemDetails.
+        The `OCID`__ of the associated file system snapshot policy, which
+        controls the frequency of snapshot creation and retention period of the taken snapshots.
+
+        If string is empty, the policy reference (if any) would be removed.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param filesystem_snapshot_policy_id: The filesystem_snapshot_policy_id of this UpdateFileSystemDetails.
+        :type: str
+        """
+        self._filesystem_snapshot_policy_id = filesystem_snapshot_policy_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

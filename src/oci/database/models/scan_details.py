@@ -88,7 +88,8 @@ class ScanDetails(object):
     @property
     def port(self):
         """
-        **[Required]** Gets the port of this ScanDetails.
+        Gets the port of this ScanDetails.
+        **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port.
         The SCAN TCPIP port. Default is 1521.
 
 
@@ -101,6 +102,7 @@ class ScanDetails(object):
     def port(self, port):
         """
         Sets the port of this ScanDetails.
+        **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port.
         The SCAN TCPIP port. Default is 1521.
 
 

@@ -90,6 +90,10 @@ class ManagementDashboardSummary(object):
             The value to assign to the type property of this ManagementDashboardSummary.
         :type type: str
 
+        :param features_config:
+            The value to assign to the features_config property of this ManagementDashboardSummary.
+        :type features_config: object
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ManagementDashboardSummary.
             Allowed values for this property are: "ACTIVE", 'UNKNOWN_ENUM_VALUE'.
@@ -123,6 +127,7 @@ class ManagementDashboardSummary(object):
             'screen_image': 'str',
             'nls': 'object',
             'type': 'str',
+            'features_config': 'object',
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -146,6 +151,7 @@ class ManagementDashboardSummary(object):
             'screen_image': 'screenImage',
             'nls': 'nls',
             'type': 'type',
+            'features_config': 'featuresConfig',
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -168,6 +174,7 @@ class ManagementDashboardSummary(object):
         self._screen_image = None
         self._nls = None
         self._type = None
+        self._features_config = None
         self._lifecycle_state = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -320,7 +327,7 @@ class ManagementDashboardSummary(object):
     def provider_name(self):
         """
         **[Required]** Gets the provider_name of this ManagementDashboardSummary.
-        Name of the service (for example, Logging Analytics) that owns the dashboard.
+        The user friendly name of the service (for example, Logging Analytics) that owns the dashboard.
 
 
         :return: The provider_name of this ManagementDashboardSummary.
@@ -332,7 +339,7 @@ class ManagementDashboardSummary(object):
     def provider_name(self, provider_name):
         """
         Sets the provider_name of this ManagementDashboardSummary.
-        Name of the service (for example, Logging Analytics) that owns the dashboard.
+        The user friendly name of the service (for example, Logging Analytics) that owns the dashboard.
 
 
         :param provider_name: The provider_name of this ManagementDashboardSummary.
@@ -344,7 +351,7 @@ class ManagementDashboardSummary(object):
     def provider_version(self):
         """
         **[Required]** Gets the provider_version of this ManagementDashboardSummary.
-        Version of the service that owns the dashboard.
+        The version of the metadata of the provider. This is useful for provider to version its features and metadata. Any newly created saved search (or dashboard) should use providerVersion 3.0.0.
 
 
         :return: The provider_version of this ManagementDashboardSummary.
@@ -356,7 +363,7 @@ class ManagementDashboardSummary(object):
     def provider_version(self, provider_version):
         """
         Sets the provider_version of this ManagementDashboardSummary.
-        Version of the service that owns the dashboard.
+        The version of the metadata of the provider. This is useful for provider to version its features and metadata. Any newly created saved search (or dashboard) should use providerVersion 3.0.0.
 
 
         :param provider_version: The provider_version of this ManagementDashboardSummary.
@@ -488,7 +495,7 @@ class ManagementDashboardSummary(object):
     def metadata_version(self):
         """
         **[Required]** Gets the metadata_version of this ManagementDashboardSummary.
-        Version of the metadata.
+        The version of the metadata defined in the API. This is maintained and enforced by dashboard server. Currently it is 2.0.
 
 
         :return: The metadata_version of this ManagementDashboardSummary.
@@ -500,7 +507,7 @@ class ManagementDashboardSummary(object):
     def metadata_version(self, metadata_version):
         """
         Sets the metadata_version of this ManagementDashboardSummary.
-        Version of the metadata.
+        The version of the metadata defined in the API. This is maintained and enforced by dashboard server. Currently it is 2.0.
 
 
         :param metadata_version: The metadata_version of this ManagementDashboardSummary.
@@ -579,6 +586,30 @@ class ManagementDashboardSummary(object):
         :type: str
         """
         self._type = type
+
+    @property
+    def features_config(self):
+        """
+        Gets the features_config of this ManagementDashboardSummary.
+        Contains configuration for enabling features.
+
+
+        :return: The features_config of this ManagementDashboardSummary.
+        :rtype: object
+        """
+        return self._features_config
+
+    @features_config.setter
+    def features_config(self, features_config):
+        """
+        Sets the features_config of this ManagementDashboardSummary.
+        Contains configuration for enabling features.
+
+
+        :param features_config: The features_config of this ManagementDashboardSummary.
+        :type: object
+        """
+        self._features_config = features_config
 
     @property
     def lifecycle_state(self):

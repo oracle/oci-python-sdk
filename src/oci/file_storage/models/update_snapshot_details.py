@@ -26,19 +26,26 @@ class UpdateSnapshotDetails(object):
             The value to assign to the defined_tags property of this UpdateSnapshotDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param expiration_time:
+            The value to assign to the expiration_time property of this UpdateSnapshotDetails.
+        :type expiration_time: datetime
+
         """
         self.swagger_types = {
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'expiration_time': 'datetime'
         }
 
         self.attribute_map = {
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'expiration_time': 'expirationTime'
         }
 
         self._freeform_tags = None
         self._defined_tags = None
+        self._expiration_time = None
 
     @property
     def freeform_tags(self):
@@ -105,6 +112,34 @@ class UpdateSnapshotDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def expiration_time(self):
+        """
+        Gets the expiration_time of this UpdateSnapshotDetails.
+        The UTC time when this snapshot will be deleted. To remove the expiration time, set this field to the minimum date-time value using Date(0).
+
+        Example: `Thu Jan 01 01:00:00 GMT 1970`
+
+
+        :return: The expiration_time of this UpdateSnapshotDetails.
+        :rtype: datetime
+        """
+        return self._expiration_time
+
+    @expiration_time.setter
+    def expiration_time(self, expiration_time):
+        """
+        Sets the expiration_time of this UpdateSnapshotDetails.
+        The UTC time when this snapshot will be deleted. To remove the expiration time, set this field to the minimum date-time value using Date(0).
+
+        Example: `Thu Jan 01 01:00:00 GMT 1970`
+
+
+        :param expiration_time: The expiration_time of this UpdateSnapshotDetails.
+        :type: datetime
+        """
+        self._expiration_time = expiration_time
 
     def __repr__(self):
         return formatted_flat_dict(self)

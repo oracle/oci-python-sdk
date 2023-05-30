@@ -78,6 +78,10 @@ class SnapshotSummary(object):
             The value to assign to the snapshot_time property of this SnapshotSummary.
         :type snapshot_time: datetime
 
+        :param expiration_time:
+            The value to assign to the expiration_time property of this SnapshotSummary.
+        :type expiration_time: datetime
+
         :param provenance_id:
             The value to assign to the provenance_id property of this SnapshotSummary.
         :type provenance_id: str
@@ -107,6 +111,7 @@ class SnapshotSummary(object):
             'time_created': 'datetime',
             'snapshot_type': 'str',
             'snapshot_time': 'datetime',
+            'expiration_time': 'datetime',
             'provenance_id': 'str',
             'is_clone_source': 'bool',
             'lifecycle_details': 'str',
@@ -122,6 +127,7 @@ class SnapshotSummary(object):
             'time_created': 'timeCreated',
             'snapshot_type': 'snapshotType',
             'snapshot_time': 'snapshotTime',
+            'expiration_time': 'expirationTime',
             'provenance_id': 'provenanceId',
             'is_clone_source': 'isCloneSource',
             'lifecycle_details': 'lifecycleDetails',
@@ -136,6 +142,7 @@ class SnapshotSummary(object):
         self._time_created = None
         self._snapshot_type = None
         self._snapshot_time = None
+        self._expiration_time = None
         self._provenance_id = None
         self._is_clone_source = None
         self._lifecycle_details = None
@@ -367,6 +374,30 @@ class SnapshotSummary(object):
         :type: datetime
         """
         self._snapshot_time = snapshot_time
+
+    @property
+    def expiration_time(self):
+        """
+        Gets the expiration_time of this SnapshotSummary.
+        The time when this snapshot will be deleted.
+
+
+        :return: The expiration_time of this SnapshotSummary.
+        :rtype: datetime
+        """
+        return self._expiration_time
+
+    @expiration_time.setter
+    def expiration_time(self, expiration_time):
+        """
+        Sets the expiration_time of this SnapshotSummary.
+        The time when this snapshot will be deleted.
+
+
+        :param expiration_time: The expiration_time of this SnapshotSummary.
+        :type: datetime
+        """
+        self._expiration_time = expiration_time
 
     @property
     def provenance_id(self):

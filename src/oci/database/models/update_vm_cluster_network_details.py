@@ -34,6 +34,10 @@ class UpdateVmClusterNetworkDetails(object):
             The value to assign to the vm_networks property of this UpdateVmClusterNetworkDetails.
         :type vm_networks: list[oci.database.models.VmNetworkDetails]
 
+        :param dr_scans:
+            The value to assign to the dr_scans property of this UpdateVmClusterNetworkDetails.
+        :type dr_scans: list[oci.database.models.DrScanDetails]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateVmClusterNetworkDetails.
         :type freeform_tags: dict(str, str)
@@ -48,6 +52,7 @@ class UpdateVmClusterNetworkDetails(object):
             'dns': 'list[str]',
             'ntp': 'list[str]',
             'vm_networks': 'list[VmNetworkDetails]',
+            'dr_scans': 'list[DrScanDetails]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -57,6 +62,7 @@ class UpdateVmClusterNetworkDetails(object):
             'dns': 'dns',
             'ntp': 'ntp',
             'vm_networks': 'vmNetworks',
+            'dr_scans': 'drScans',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -65,6 +71,7 @@ class UpdateVmClusterNetworkDetails(object):
         self._dns = None
         self._ntp = None
         self._vm_networks = None
+        self._dr_scans = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -163,6 +170,30 @@ class UpdateVmClusterNetworkDetails(object):
         :type: list[oci.database.models.VmNetworkDetails]
         """
         self._vm_networks = vm_networks
+
+    @property
+    def dr_scans(self):
+        """
+        Gets the dr_scans of this UpdateVmClusterNetworkDetails.
+        The SCAN details for DR network
+
+
+        :return: The dr_scans of this UpdateVmClusterNetworkDetails.
+        :rtype: list[oci.database.models.DrScanDetails]
+        """
+        return self._dr_scans
+
+    @dr_scans.setter
+    def dr_scans(self, dr_scans):
+        """
+        Sets the dr_scans of this UpdateVmClusterNetworkDetails.
+        The SCAN details for DR network
+
+
+        :param dr_scans: The dr_scans of this UpdateVmClusterNetworkDetails.
+        :type: list[oci.database.models.DrScanDetails]
+        """
+        self._dr_scans = dr_scans
 
     @property
     def freeform_tags(self):
