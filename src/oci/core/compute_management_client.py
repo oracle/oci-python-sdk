@@ -733,6 +733,10 @@ class ComputeManagementClient(object):
         Creates a cluster network. For more information about cluster networks, see
         `Managing Cluster Networks`__.
 
+        To determine whether capacity is available for a specific shape before you create a cluster network,
+        use the :func:`create_compute_capacity_report`
+        operation.
+
         __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
 
 
@@ -917,6 +921,10 @@ class ComputeManagementClient(object):
     def create_instance_pool(self, create_instance_pool_details, **kwargs):
         """
         Creates an instance pool.
+
+        To determine whether capacity is available for a specific shape before you create an instance pool,
+        use the :func:`create_compute_capacity_report`
+        operation.
 
 
         :param oci.core.models.CreateInstancePoolDetails create_instance_pool_details: (required)
@@ -1779,6 +1787,10 @@ class ComputeManagementClient(object):
         provide these parameters when you create an instance from the instance configuration.
         For more information, see the :class:`InstanceConfiguration`
         resource.
+
+        To determine whether capacity is available for a specific shape before you create an instance,
+        use the :func:`create_compute_capacity_report`
+        operation.
 
 
         :param str instance_configuration_id: (required)

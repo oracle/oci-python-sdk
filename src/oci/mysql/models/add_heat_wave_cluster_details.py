@@ -26,19 +26,26 @@ class AddHeatWaveClusterDetails(object):
             The value to assign to the cluster_size property of this AddHeatWaveClusterDetails.
         :type cluster_size: int
 
+        :param is_lakehouse_enabled:
+            The value to assign to the is_lakehouse_enabled property of this AddHeatWaveClusterDetails.
+        :type is_lakehouse_enabled: bool
+
         """
         self.swagger_types = {
             'shape_name': 'str',
-            'cluster_size': 'int'
+            'cluster_size': 'int',
+            'is_lakehouse_enabled': 'bool'
         }
 
         self.attribute_map = {
             'shape_name': 'shapeName',
-            'cluster_size': 'clusterSize'
+            'cluster_size': 'clusterSize',
+            'is_lakehouse_enabled': 'isLakehouseEnabled'
         }
 
         self._shape_name = None
         self._cluster_size = None
+        self._is_lakehouse_enabled = None
 
     @property
     def shape_name(self):
@@ -91,6 +98,30 @@ class AddHeatWaveClusterDetails(object):
         :type: int
         """
         self._cluster_size = cluster_size
+
+    @property
+    def is_lakehouse_enabled(self):
+        """
+        Gets the is_lakehouse_enabled of this AddHeatWaveClusterDetails.
+        Enable/disable Lakehouse for the HeatWave cluster.
+
+
+        :return: The is_lakehouse_enabled of this AddHeatWaveClusterDetails.
+        :rtype: bool
+        """
+        return self._is_lakehouse_enabled
+
+    @is_lakehouse_enabled.setter
+    def is_lakehouse_enabled(self, is_lakehouse_enabled):
+        """
+        Sets the is_lakehouse_enabled of this AddHeatWaveClusterDetails.
+        Enable/disable Lakehouse for the HeatWave cluster.
+
+
+        :param is_lakehouse_enabled: The is_lakehouse_enabled of this AddHeatWaveClusterDetails.
+        :type: bool
+        """
+        self._is_lakehouse_enabled = is_lakehouse_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

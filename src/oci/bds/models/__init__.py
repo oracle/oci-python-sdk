@@ -9,6 +9,7 @@ from .add_auto_scale_policy_details import AddAutoScalePolicyDetails
 from .add_auto_scaling_configuration_details import AddAutoScalingConfigurationDetails
 from .add_block_storage_details import AddBlockStorageDetails
 from .add_cloud_sql_details import AddCloudSqlDetails
+from .add_kafka_details import AddKafkaDetails
 from .add_metric_based_horizontal_scaling_policy_details import AddMetricBasedHorizontalScalingPolicyDetails
 from .add_metric_based_vertical_scaling_policy_details import AddMetricBasedVerticalScalingPolicyDetails
 from .add_schedule_based_horizontal_scaling_policy_details import AddScheduleBasedHorizontalScalingPolicyDetails
@@ -55,6 +56,7 @@ from .patch_history_summary import PatchHistorySummary
 from .patch_summary import PatchSummary
 from .remove_auto_scaling_configuration_details import RemoveAutoScalingConfigurationDetails
 from .remove_cloud_sql_details import RemoveCloudSqlDetails
+from .remove_kafka_details import RemoveKafkaDetails
 from .remove_node_details import RemoveNodeDetails
 from .restart_node_details import RestartNodeDetails
 from .schedule_based_horizontal_scaling_policy_details import ScheduleBasedHorizontalScalingPolicyDetails
@@ -88,6 +90,7 @@ bds_type_mapping = {
     "AddAutoScalingConfigurationDetails": AddAutoScalingConfigurationDetails,
     "AddBlockStorageDetails": AddBlockStorageDetails,
     "AddCloudSqlDetails": AddCloudSqlDetails,
+    "AddKafkaDetails": AddKafkaDetails,
     "AddMetricBasedHorizontalScalingPolicyDetails": AddMetricBasedHorizontalScalingPolicyDetails,
     "AddMetricBasedVerticalScalingPolicyDetails": AddMetricBasedVerticalScalingPolicyDetails,
     "AddScheduleBasedHorizontalScalingPolicyDetails": AddScheduleBasedHorizontalScalingPolicyDetails,
@@ -134,6 +137,7 @@ bds_type_mapping = {
     "PatchSummary": PatchSummary,
     "RemoveAutoScalingConfigurationDetails": RemoveAutoScalingConfigurationDetails,
     "RemoveCloudSqlDetails": RemoveCloudSqlDetails,
+    "RemoveKafkaDetails": RemoveKafkaDetails,
     "RemoveNodeDetails": RemoveNodeDetails,
     "RestartNodeDetails": RestartNodeDetails,
     "ScheduleBasedHorizontalScalingPolicyDetails": ScheduleBasedHorizontalScalingPolicyDetails,

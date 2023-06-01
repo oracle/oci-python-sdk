@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.zdmcs</groupId>
         <artifactId>zdmcs-spec</artifactId>
-        <version>0.6.28-preview</version>
+        <version>0.6.40-preview</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

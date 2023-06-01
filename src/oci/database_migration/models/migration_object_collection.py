@@ -22,16 +22,23 @@ class MigrationObjectCollection(object):
             The value to assign to the items property of this MigrationObjectCollection.
         :type items: list[oci.database_migration.models.MigrationObjectSummary]
 
+        :param csv_text:
+            The value to assign to the csv_text property of this MigrationObjectCollection.
+        :type csv_text: str
+
         """
         self.swagger_types = {
-            'items': 'list[MigrationObjectSummary]'
+            'items': 'list[MigrationObjectSummary]',
+            'csv_text': 'str'
         }
 
         self.attribute_map = {
-            'items': 'items'
+            'items': 'items',
+            'csv_text': 'csvText'
         }
 
         self._items = None
+        self._csv_text = None
 
     @property
     def items(self):
@@ -56,6 +63,30 @@ class MigrationObjectCollection(object):
         :type: list[oci.database_migration.models.MigrationObjectSummary]
         """
         self._items = items
+
+    @property
+    def csv_text(self):
+        """
+        Gets the csv_text of this MigrationObjectCollection.
+        Database objects to exclude/include from migration in CSV format. The items field will be ignored if this field is not null.
+
+
+        :return: The csv_text of this MigrationObjectCollection.
+        :rtype: str
+        """
+        return self._csv_text
+
+    @csv_text.setter
+    def csv_text(self, csv_text):
+        """
+        Sets the csv_text of this MigrationObjectCollection.
+        Database objects to exclude/include from migration in CSV format. The items field will be ignored if this field is not null.
+
+
+        :param csv_text: The csv_text of this MigrationObjectCollection.
+        :type: str
+        """
+        self._csv_text = csv_text
 
     def __repr__(self):
         return formatted_flat_dict(self)

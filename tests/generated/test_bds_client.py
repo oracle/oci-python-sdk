@@ -203,6 +203,48 @@ def test_add_cloud_sql(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_add_kafka(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'AddKafka'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'AddKafka')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='AddKafka')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.add_kafka(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                add_kafka_details=request.pop(util.camelize('AddKafkaDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'AddKafka',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'add_kafka',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
 def test_add_worker_nodes(testing_service_client):
     if not testing_service_client.is_api_enabled('bds', 'AddWorkerNodes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1520,6 +1562,48 @@ def test_remove_cloud_sql(testing_service_client):
             result,
             service_error,
             'remove_cloud_sql',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_remove_kafka(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'RemoveKafka'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'RemoveKafka')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='RemoveKafka')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.remove_kafka(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                remove_kafka_details=request.pop(util.camelize('RemoveKafkaDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'RemoveKafka',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'remove_kafka',
             False,
             False
         )

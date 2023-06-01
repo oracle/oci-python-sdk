@@ -394,6 +394,10 @@ class UpdateInstanceDetails(object):
         can enumerate all available shapes and determine image compatibility by calling
         :func:`list_shapes`.
 
+        To determine whether capacity is available for a specific shape before you change the shape of an instance,
+        use the :func:`create_compute_capacity_report`
+        operation.
+
         If the instance is running when you change the shape, the instance is rebooted.
 
         Example: `VM.Standard2.1`
@@ -422,6 +426,10 @@ class UpdateInstanceDetails(object):
         The new shape must be compatible with the image that was used to launch the instance. You
         can enumerate all available shapes and determine image compatibility by calling
         :func:`list_shapes`.
+
+        To determine whether capacity is available for a specific shape before you change the shape of an instance,
+        use the :func:`create_compute_capacity_report`
+        operation.
 
         If the instance is running when you change the shape, the instance is rebooted.
 

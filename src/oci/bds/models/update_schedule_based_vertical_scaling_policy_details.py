@@ -79,6 +79,8 @@ class UpdateScheduleBasedVerticalScalingPolicyDetails(UpdateAutoScalePolicyDetai
     def schedule_details(self):
         """
         Gets the schedule_details of this UpdateScheduleBasedVerticalScalingPolicyDetails.
+        Details of a vertical scaling schedule.
+
 
         :return: The schedule_details of this UpdateScheduleBasedVerticalScalingPolicyDetails.
         :rtype: list[oci.bds.models.VerticalScalingScheduleDetails]
@@ -89,6 +91,8 @@ class UpdateScheduleBasedVerticalScalingPolicyDetails(UpdateAutoScalePolicyDetai
     def schedule_details(self, schedule_details):
         """
         Sets the schedule_details of this UpdateScheduleBasedVerticalScalingPolicyDetails.
+        Details of a vertical scaling schedule.
+
 
         :param schedule_details: The schedule_details of this UpdateScheduleBasedVerticalScalingPolicyDetails.
         :type: list[oci.bds.models.VerticalScalingScheduleDetails]

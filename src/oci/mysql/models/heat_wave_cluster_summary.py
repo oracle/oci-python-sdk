@@ -26,6 +26,10 @@ class HeatWaveClusterSummary(object):
             The value to assign to the cluster_size property of this HeatWaveClusterSummary.
         :type cluster_size: int
 
+        :param is_lakehouse_enabled:
+            The value to assign to the is_lakehouse_enabled property of this HeatWaveClusterSummary.
+        :type is_lakehouse_enabled: bool
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this HeatWaveClusterSummary.
         :type lifecycle_state: str
@@ -42,6 +46,7 @@ class HeatWaveClusterSummary(object):
         self.swagger_types = {
             'shape_name': 'str',
             'cluster_size': 'int',
+            'is_lakehouse_enabled': 'bool',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime'
@@ -50,6 +55,7 @@ class HeatWaveClusterSummary(object):
         self.attribute_map = {
             'shape_name': 'shapeName',
             'cluster_size': 'clusterSize',
+            'is_lakehouse_enabled': 'isLakehouseEnabled',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
@@ -57,6 +63,7 @@ class HeatWaveClusterSummary(object):
 
         self._shape_name = None
         self._cluster_size = None
+        self._is_lakehouse_enabled = None
         self._lifecycle_state = None
         self._time_created = None
         self._time_updated = None
@@ -112,6 +119,30 @@ class HeatWaveClusterSummary(object):
         :type: int
         """
         self._cluster_size = cluster_size
+
+    @property
+    def is_lakehouse_enabled(self):
+        """
+        Gets the is_lakehouse_enabled of this HeatWaveClusterSummary.
+        Lakehouse enabled status for the HeatWave cluster.
+
+
+        :return: The is_lakehouse_enabled of this HeatWaveClusterSummary.
+        :rtype: bool
+        """
+        return self._is_lakehouse_enabled
+
+    @is_lakehouse_enabled.setter
+    def is_lakehouse_enabled(self, is_lakehouse_enabled):
+        """
+        Sets the is_lakehouse_enabled of this HeatWaveClusterSummary.
+        Lakehouse enabled status for the HeatWave cluster.
+
+
+        :param is_lakehouse_enabled: The is_lakehouse_enabled of this HeatWaveClusterSummary.
+        :type: bool
+        """
+        self._is_lakehouse_enabled = is_lakehouse_enabled
 
     @property
     def lifecycle_state(self):

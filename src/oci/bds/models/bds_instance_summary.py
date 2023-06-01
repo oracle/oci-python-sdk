@@ -54,6 +54,10 @@ class BdsInstanceSummary(object):
             The value to assign to the is_cloud_sql_configured property of this BdsInstanceSummary.
         :type is_cloud_sql_configured: bool
 
+        :param is_kafka_configured:
+            The value to assign to the is_kafka_configured property of this BdsInstanceSummary.
+        :type is_kafka_configured: bool
+
         :param cluster_profile:
             The value to assign to the cluster_profile property of this BdsInstanceSummary.
         :type cluster_profile: str
@@ -81,6 +85,7 @@ class BdsInstanceSummary(object):
             'is_high_availability': 'bool',
             'is_secure': 'bool',
             'is_cloud_sql_configured': 'bool',
+            'is_kafka_configured': 'bool',
             'cluster_profile': 'str',
             'time_created': 'datetime',
             'freeform_tags': 'dict(str, str)',
@@ -97,6 +102,7 @@ class BdsInstanceSummary(object):
             'is_high_availability': 'isHighAvailability',
             'is_secure': 'isSecure',
             'is_cloud_sql_configured': 'isCloudSqlConfigured',
+            'is_kafka_configured': 'isKafkaConfigured',
             'cluster_profile': 'clusterProfile',
             'time_created': 'timeCreated',
             'freeform_tags': 'freeformTags',
@@ -112,6 +118,7 @@ class BdsInstanceSummary(object):
         self._is_high_availability = None
         self._is_secure = None
         self._is_cloud_sql_configured = None
+        self._is_kafka_configured = None
         self._cluster_profile = None
         self._time_created = None
         self._freeform_tags = None
@@ -332,6 +339,30 @@ class BdsInstanceSummary(object):
         :type: bool
         """
         self._is_cloud_sql_configured = is_cloud_sql_configured
+
+    @property
+    def is_kafka_configured(self):
+        """
+        **[Required]** Gets the is_kafka_configured of this BdsInstanceSummary.
+        Boolean flag specifying whether Kafka is configured or not.
+
+
+        :return: The is_kafka_configured of this BdsInstanceSummary.
+        :rtype: bool
+        """
+        return self._is_kafka_configured
+
+    @is_kafka_configured.setter
+    def is_kafka_configured(self, is_kafka_configured):
+        """
+        Sets the is_kafka_configured of this BdsInstanceSummary.
+        Boolean flag specifying whether Kafka is configured or not.
+
+
+        :param is_kafka_configured: The is_kafka_configured of this BdsInstanceSummary.
+        :type: bool
+        """
+        self._is_kafka_configured = is_kafka_configured
 
     @property
     def cluster_profile(self):
