@@ -4,12 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.104.1 - TBD
+2.104.1 - 2023-06-06
 ====================
 
 Added
 -----
-* TBD
+* Support for calling Oracle Cloud Infrastructure services in the eu-madrid-2 region
+* Support for bulk include/exclude of migration objects in the Database Migration service
+* Support for Kafka cluster profiles, including dedicated Kafka broker nodes, in the Big Data service
+* Support for MySQL HeatWave Lakehouse in the MySQL Database service
+* Support for capacity reports in the Compute service
 
 ====================
 2.104.0 - 2023-05-30
