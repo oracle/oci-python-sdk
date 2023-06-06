@@ -196,6 +196,10 @@ class UpdateClusterNetworkInstancePoolDetails(object):
         Gets the size of this UpdateClusterNetworkInstancePoolDetails.
         The number of instances that should be in the instance pool.
 
+        To determine whether capacity is available for a specific shape before you resize an instance pool,
+        use the :func:`create_compute_capacity_report`
+        operation.
+
 
         :return: The size of this UpdateClusterNetworkInstancePoolDetails.
         :rtype: int
@@ -207,6 +211,10 @@ class UpdateClusterNetworkInstancePoolDetails(object):
         """
         Sets the size of this UpdateClusterNetworkInstancePoolDetails.
         The number of instances that should be in the instance pool.
+
+        To determine whether capacity is available for a specific shape before you resize an instance pool,
+        use the :func:`create_compute_capacity_report`
+        operation.
 
 
         :param size: The size of this UpdateClusterNetworkInstancePoolDetails.

@@ -58,6 +58,10 @@ class HeatWaveCluster(object):
             The value to assign to the cluster_size property of this HeatWaveCluster.
         :type cluster_size: int
 
+        :param is_lakehouse_enabled:
+            The value to assign to the is_lakehouse_enabled property of this HeatWaveCluster.
+        :type is_lakehouse_enabled: bool
+
         :param cluster_nodes:
             The value to assign to the cluster_nodes property of this HeatWaveCluster.
         :type cluster_nodes: list[oci.mysql.models.HeatWaveNode]
@@ -85,6 +89,7 @@ class HeatWaveCluster(object):
             'db_system_id': 'str',
             'shape_name': 'str',
             'cluster_size': 'int',
+            'is_lakehouse_enabled': 'bool',
             'cluster_nodes': 'list[HeatWaveNode]',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
@@ -96,6 +101,7 @@ class HeatWaveCluster(object):
             'db_system_id': 'dbSystemId',
             'shape_name': 'shapeName',
             'cluster_size': 'clusterSize',
+            'is_lakehouse_enabled': 'isLakehouseEnabled',
             'cluster_nodes': 'clusterNodes',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
@@ -106,6 +112,7 @@ class HeatWaveCluster(object):
         self._db_system_id = None
         self._shape_name = None
         self._cluster_size = None
+        self._is_lakehouse_enabled = None
         self._cluster_nodes = None
         self._lifecycle_state = None
         self._lifecycle_details = None
@@ -187,6 +194,30 @@ class HeatWaveCluster(object):
         :type: int
         """
         self._cluster_size = cluster_size
+
+    @property
+    def is_lakehouse_enabled(self):
+        """
+        Gets the is_lakehouse_enabled of this HeatWaveCluster.
+        Lakehouse enabled status for the HeatWave cluster.
+
+
+        :return: The is_lakehouse_enabled of this HeatWaveCluster.
+        :rtype: bool
+        """
+        return self._is_lakehouse_enabled
+
+    @is_lakehouse_enabled.setter
+    def is_lakehouse_enabled(self, is_lakehouse_enabled):
+        """
+        Sets the is_lakehouse_enabled of this HeatWaveCluster.
+        Lakehouse enabled status for the HeatWave cluster.
+
+
+        :param is_lakehouse_enabled: The is_lakehouse_enabled of this HeatWaveCluster.
+        :type: bool
+        """
+        self._is_lakehouse_enabled = is_lakehouse_enabled
 
     @property
     def cluster_nodes(self):

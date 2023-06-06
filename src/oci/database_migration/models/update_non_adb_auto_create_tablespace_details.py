@@ -13,6 +13,14 @@ class UpdateNonADBAutoCreateTablespaceDetails(UpdateTargetTypeTablespaceDetails)
     Migration tablespace settings valid for NON-ADB target type using auto create feature.
     """
 
+    #: A constant which can be used with the block_size_in_kbs property of a UpdateNonADBAutoCreateTablespaceDetails.
+    #: This constant has a value of "SIZE_8K"
+    BLOCK_SIZE_IN_KBS_SIZE_8_K = "SIZE_8K"
+
+    #: A constant which can be used with the block_size_in_kbs property of a UpdateNonADBAutoCreateTablespaceDetails.
+    #: This constant has a value of "SIZE_16K"
+    BLOCK_SIZE_IN_KBS_SIZE_16_K = "SIZE_16K"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateNonADBAutoCreateTablespaceDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database_migration.models.UpdateNonADBAutoCreateTablespaceDetails.target_type` attribute
@@ -36,25 +44,33 @@ class UpdateNonADBAutoCreateTablespaceDetails(UpdateTargetTypeTablespaceDetails)
             The value to assign to the extend_size_in_mbs property of this UpdateNonADBAutoCreateTablespaceDetails.
         :type extend_size_in_mbs: int
 
+        :param block_size_in_kbs:
+            The value to assign to the block_size_in_kbs property of this UpdateNonADBAutoCreateTablespaceDetails.
+            Allowed values for this property are: "SIZE_8K", "SIZE_16K"
+        :type block_size_in_kbs: str
+
         """
         self.swagger_types = {
             'target_type': 'str',
             'is_auto_create': 'bool',
             'is_big_file': 'bool',
-            'extend_size_in_mbs': 'int'
+            'extend_size_in_mbs': 'int',
+            'block_size_in_kbs': 'str'
         }
 
         self.attribute_map = {
             'target_type': 'targetType',
             'is_auto_create': 'isAutoCreate',
             'is_big_file': 'isBigFile',
-            'extend_size_in_mbs': 'extendSizeInMBs'
+            'extend_size_in_mbs': 'extendSizeInMBs',
+            'block_size_in_kbs': 'blockSizeInKBs'
         }
 
         self._target_type = None
         self._is_auto_create = None
         self._is_big_file = None
         self._extend_size_in_mbs = None
+        self._block_size_in_kbs = None
         self._target_type = 'NON_ADB_AUTOCREATE'
 
     @property
@@ -128,6 +144,38 @@ class UpdateNonADBAutoCreateTablespaceDetails(UpdateTargetTypeTablespaceDetails)
         :type: int
         """
         self._extend_size_in_mbs = extend_size_in_mbs
+
+    @property
+    def block_size_in_kbs(self):
+        """
+        Gets the block_size_in_kbs of this UpdateNonADBAutoCreateTablespaceDetails.
+        Size of Oracle database blocks in KB.
+
+        Allowed values for this property are: "SIZE_8K", "SIZE_16K"
+
+
+        :return: The block_size_in_kbs of this UpdateNonADBAutoCreateTablespaceDetails.
+        :rtype: str
+        """
+        return self._block_size_in_kbs
+
+    @block_size_in_kbs.setter
+    def block_size_in_kbs(self, block_size_in_kbs):
+        """
+        Sets the block_size_in_kbs of this UpdateNonADBAutoCreateTablespaceDetails.
+        Size of Oracle database blocks in KB.
+
+
+        :param block_size_in_kbs: The block_size_in_kbs of this UpdateNonADBAutoCreateTablespaceDetails.
+        :type: str
+        """
+        allowed_values = ["SIZE_8K", "SIZE_16K"]
+        if not value_allowed_none_or_none_sentinel(block_size_in_kbs, allowed_values):
+            raise ValueError(
+                "Invalid value for `block_size_in_kbs`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._block_size_in_kbs = block_size_in_kbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

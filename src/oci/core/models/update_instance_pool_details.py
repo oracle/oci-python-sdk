@@ -232,6 +232,10 @@ class UpdateInstancePoolDetails(object):
         Gets the size of this UpdateInstancePoolDetails.
         The number of instances that should be in the instance pool.
 
+        To determine whether capacity is available for a specific shape before you resize an instance pool,
+        use the :func:`create_compute_capacity_report`
+        operation.
+
 
         :return: The size of this UpdateInstancePoolDetails.
         :rtype: int
@@ -243,6 +247,10 @@ class UpdateInstancePoolDetails(object):
         """
         Sets the size of this UpdateInstancePoolDetails.
         The number of instances that should be in the instance pool.
+
+        To determine whether capacity is available for a specific shape before you resize an instance pool,
+        use the :func:`create_compute_capacity_report`
+        operation.
 
 
         :param size: The size of this UpdateInstancePoolDetails.

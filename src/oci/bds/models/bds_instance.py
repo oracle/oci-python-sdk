@@ -97,6 +97,10 @@ class BdsInstance(object):
     #: This constant has a value of "TRINO"
     CLUSTER_PROFILE_TRINO = "TRINO"
 
+    #: A constant which can be used with the cluster_profile property of a BdsInstance.
+    #: This constant has a value of "KAFKA"
+    CLUSTER_PROFILE_KAFKA = "KAFKA"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BdsInstance object with values from keyword arguments.
@@ -137,6 +141,10 @@ class BdsInstance(object):
         :param is_cloud_sql_configured:
             The value to assign to the is_cloud_sql_configured property of this BdsInstance.
         :type is_cloud_sql_configured: bool
+
+        :param is_kafka_configured:
+            The value to assign to the is_kafka_configured property of this BdsInstance.
+        :type is_kafka_configured: bool
 
         :param network_config:
             The value to assign to the network_config property of this BdsInstance.
@@ -188,7 +196,7 @@ class BdsInstance(object):
 
         :param cluster_profile:
             The value to assign to the cluster_profile property of this BdsInstance.
-            Allowed values for this property are: "HADOOP_EXTENDED", "HADOOP", "HIVE", "SPARK", "HBASE", "TRINO", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "HADOOP_EXTENDED", "HADOOP", "HIVE", "SPARK", "HBASE", "TRINO", "KAFKA", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type cluster_profile: str
 
@@ -202,6 +210,7 @@ class BdsInstance(object):
             'is_high_availability': 'bool',
             'is_secure': 'bool',
             'is_cloud_sql_configured': 'bool',
+            'is_kafka_configured': 'bool',
             'network_config': 'NetworkConfig',
             'cluster_details': 'ClusterDetails',
             'nodes': 'list[Node]',
@@ -226,6 +235,7 @@ class BdsInstance(object):
             'is_high_availability': 'isHighAvailability',
             'is_secure': 'isSecure',
             'is_cloud_sql_configured': 'isCloudSqlConfigured',
+            'is_kafka_configured': 'isKafkaConfigured',
             'network_config': 'networkConfig',
             'cluster_details': 'clusterDetails',
             'nodes': 'nodes',
@@ -249,6 +259,7 @@ class BdsInstance(object):
         self._is_high_availability = None
         self._is_secure = None
         self._is_cloud_sql_configured = None
+        self._is_kafka_configured = None
         self._network_config = None
         self._cluster_details = None
         self._nodes = None
@@ -466,6 +477,30 @@ class BdsInstance(object):
         :type: bool
         """
         self._is_cloud_sql_configured = is_cloud_sql_configured
+
+    @property
+    def is_kafka_configured(self):
+        """
+        **[Required]** Gets the is_kafka_configured of this BdsInstance.
+        Boolean flag specifying whether or not Kafka should be configured.
+
+
+        :return: The is_kafka_configured of this BdsInstance.
+        :rtype: bool
+        """
+        return self._is_kafka_configured
+
+    @is_kafka_configured.setter
+    def is_kafka_configured(self, is_kafka_configured):
+        """
+        Sets the is_kafka_configured of this BdsInstance.
+        Boolean flag specifying whether or not Kafka should be configured.
+
+
+        :param is_kafka_configured: The is_kafka_configured of this BdsInstance.
+        :type: bool
+        """
+        self._is_kafka_configured = is_kafka_configured
 
     @property
     def network_config(self):
@@ -753,7 +788,7 @@ class BdsInstance(object):
         Gets the cluster_profile of this BdsInstance.
         Profile of the Big Data Service cluster.
 
-        Allowed values for this property are: "HADOOP_EXTENDED", "HADOOP", "HIVE", "SPARK", "HBASE", "TRINO", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "HADOOP_EXTENDED", "HADOOP", "HIVE", "SPARK", "HBASE", "TRINO", "KAFKA", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -772,7 +807,7 @@ class BdsInstance(object):
         :param cluster_profile: The cluster_profile of this BdsInstance.
         :type: str
         """
-        allowed_values = ["HADOOP_EXTENDED", "HADOOP", "HIVE", "SPARK", "HBASE", "TRINO"]
+        allowed_values = ["HADOOP_EXTENDED", "HADOOP", "HIVE", "SPARK", "HBASE", "TRINO", "KAFKA"]
         if not value_allowed_none_or_none_sentinel(cluster_profile, allowed_values):
             cluster_profile = 'UNKNOWN_ENUM_VALUE'
         self._cluster_profile = cluster_profile

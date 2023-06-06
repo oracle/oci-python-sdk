@@ -46,6 +46,8 @@ class DayBasedVerticalScalingScheduleDetails(VerticalScalingScheduleDetails):
     def time_and_vertical_scaling_config(self):
         """
         Gets the time_and_vertical_scaling_config of this DayBasedVerticalScalingScheduleDetails.
+        Time of day and vertical scaling configuration
+
 
         :return: The time_and_vertical_scaling_config of this DayBasedVerticalScalingScheduleDetails.
         :rtype: list[oci.bds.models.TimeAndVerticalScalingConfig]
@@ -56,6 +58,8 @@ class DayBasedVerticalScalingScheduleDetails(VerticalScalingScheduleDetails):
     def time_and_vertical_scaling_config(self, time_and_vertical_scaling_config):
         """
         Sets the time_and_vertical_scaling_config of this DayBasedVerticalScalingScheduleDetails.
+        Time of day and vertical scaling configuration
+
 
         :param time_and_vertical_scaling_config: The time_and_vertical_scaling_config of this DayBasedVerticalScalingScheduleDetails.
         :type: list[oci.bds.models.TimeAndVerticalScalingConfig]

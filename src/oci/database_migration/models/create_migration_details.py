@@ -79,6 +79,10 @@ class CreateMigrationDetails(object):
             The value to assign to the include_objects property of this CreateMigrationDetails.
         :type include_objects: list[oci.database_migration.models.DatabaseObject]
 
+        :param csv_text:
+            The value to assign to the csv_text property of this CreateMigrationDetails.
+        :type csv_text: str
+
         :param golden_gate_details:
             The value to assign to the golden_gate_details property of this CreateMigrationDetails.
         :type golden_gate_details: oci.database_migration.models.CreateGoldenGateDetails
@@ -110,6 +114,7 @@ class CreateMigrationDetails(object):
             'advisor_settings': 'CreateAdvisorSettings',
             'exclude_objects': 'list[DatabaseObject]',
             'include_objects': 'list[DatabaseObject]',
+            'csv_text': 'str',
             'golden_gate_details': 'CreateGoldenGateDetails',
             'vault_details': 'CreateVaultDetails',
             'freeform_tags': 'dict(str, str)',
@@ -130,6 +135,7 @@ class CreateMigrationDetails(object):
             'advisor_settings': 'advisorSettings',
             'exclude_objects': 'excludeObjects',
             'include_objects': 'includeObjects',
+            'csv_text': 'csvText',
             'golden_gate_details': 'goldenGateDetails',
             'vault_details': 'vaultDetails',
             'freeform_tags': 'freeformTags',
@@ -149,6 +155,7 @@ class CreateMigrationDetails(object):
         self._advisor_settings = None
         self._exclude_objects = None
         self._include_objects = None
+        self._csv_text = None
         self._golden_gate_details = None
         self._vault_details = None
         self._freeform_tags = None
@@ -459,6 +466,30 @@ class CreateMigrationDetails(object):
         :type: list[oci.database_migration.models.DatabaseObject]
         """
         self._include_objects = include_objects
+
+    @property
+    def csv_text(self):
+        """
+        Gets the csv_text of this CreateMigrationDetails.
+        Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+
+
+        :return: The csv_text of this CreateMigrationDetails.
+        :rtype: str
+        """
+        return self._csv_text
+
+    @csv_text.setter
+    def csv_text(self, csv_text):
+        """
+        Sets the csv_text of this CreateMigrationDetails.
+        Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
+
+
+        :param csv_text: The csv_text of this CreateMigrationDetails.
+        :type: str
+        """
+        self._csv_text = csv_text
 
     @property
     def golden_gate_details(self):

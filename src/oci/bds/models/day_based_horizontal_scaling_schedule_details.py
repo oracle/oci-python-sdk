@@ -46,6 +46,8 @@ class DayBasedHorizontalScalingScheduleDetails(HorizontalScalingScheduleDetails)
     def time_and_horizontal_scaling_config(self):
         """
         Gets the time_and_horizontal_scaling_config of this DayBasedHorizontalScalingScheduleDetails.
+        Time of day and horizontal scaling configuration.
+
 
         :return: The time_and_horizontal_scaling_config of this DayBasedHorizontalScalingScheduleDetails.
         :rtype: list[oci.bds.models.TimeAndHorizontalScalingConfig]
@@ -56,6 +58,8 @@ class DayBasedHorizontalScalingScheduleDetails(HorizontalScalingScheduleDetails)
     def time_and_horizontal_scaling_config(self, time_and_horizontal_scaling_config):
         """
         Sets the time_and_horizontal_scaling_config of this DayBasedHorizontalScalingScheduleDetails.
+        Time of day and horizontal scaling configuration.
+
 
         :param time_and_horizontal_scaling_config: The time_and_horizontal_scaling_config of this DayBasedHorizontalScalingScheduleDetails.
         :type: list[oci.bds.models.TimeAndHorizontalScalingConfig]

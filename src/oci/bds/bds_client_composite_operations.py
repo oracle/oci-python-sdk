@@ -190,6 +190,47 @@ class BdsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def add_kafka_and_wait_for_state(self, bds_instance_id, add_kafka_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.bds.BdsClient.add_kafka` and waits for the :py:class:`~oci.bds.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str bds_instance_id: (required)
+            The OCID of the cluster.
+
+        :param oci.bds.models.AddKafkaDetails add_kafka_details: (required)
+            Details of the Kafka broker nodes to employ to enable the service.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.bds.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.bds.BdsClient.add_kafka`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.add_kafka(bds_instance_id, add_kafka_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def add_worker_nodes_and_wait_for_state(self, bds_instance_id, add_worker_nodes_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.bds.BdsClient.add_worker_nodes` and waits for the :py:class:`~oci.bds.models.WorkRequest`
@@ -725,6 +766,47 @@ class BdsClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.remove_cloud_sql(bds_instance_id, remove_cloud_sql_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def remove_kafka_and_wait_for_state(self, bds_instance_id, remove_kafka_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.bds.BdsClient.remove_kafka` and waits for the :py:class:`~oci.bds.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str bds_instance_id: (required)
+            The OCID of the cluster.
+
+        :param oci.bds.models.RemoveKafkaDetails remove_kafka_details: (required)
+            Details for the Kafka capability.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.bds.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.bds.BdsClient.remove_kafka`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.remove_kafka(bds_instance_id, remove_kafka_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
 

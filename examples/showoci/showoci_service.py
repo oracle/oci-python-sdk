@@ -34,8 +34,8 @@ import platform
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "23.04.18"
-    oci_compatible_version = "2.98.0"
+    version = "23.05.22"
+    oci_compatible_version = "2.101.0"
 
     ##########################################################################
     # Global Constants
@@ -4464,6 +4464,8 @@ class ShowOCIService(object):
                         'shape_max_vnic_attachments': 0,
                         'shape_networking_bandwidth_in_gbps': 0,
                         'shape_processor_description': "",
+                        'shape_local_disks_total_size_in_gbs': "",
+                        'shape_baseline_ocpu_utilization': "",
                         'console_vnc_connection_string': "",
                         'image': "Unknown",
                         'image_os': "Unknown",
@@ -4473,7 +4475,47 @@ class ShowOCIService(object):
                         'agent_plugin_config': [],
                         'agent_plugin_status': [],
                         'metadata': arr.metadata,
+                        'is_live_migration_preferred': "",
+                        'recovery_action': "",
+                        'launch_boot_volume_type': '',
+                        'launch_firmware': '',
+                        'launch_network_type': '',
+                        'launch_remote_data_volume_type': '',
+                        'launch_is_pv_encryption_in_transit_enabled': '',
+                        'launch_is_consistent_volume_naming_enabled': '',
+                        'platform_type': '',
+                        'platform_is_secure_boot_enabled': '',
+                        'platform_is_trusted_platform_module_enabled': '',
+                        'platform_is_measured_boot_enabled': '',
+                        'platform_is_memory_encryption_enabled': '',
+                        'capacity_reservation_id': str(arr.capacity_reservation_id),
+                        'dedicated_vm_host_id': str(arr.dedicated_vm_host_id),
+                        'ipxe_script': str(arr.ipxe_script),
+                        'launch_mode': str(arr.launch_mode),
+                        'is_cross_numa_node': str(arr.is_cross_numa_node),
                         'extended_metadata': arr.extended_metadata}
+
+                    if arr.launch_options:
+                        val['launch_boot_volume_type'] = str(arr.launch_options.boot_volume_type) if arr.launch_options.boot_volume_type else ""
+                        val['launch_firmware'] = str(arr.launch_options.firmware) if arr.launch_options.firmware else ""
+                        val['launch_network_type'] = str(arr.launch_options.network_type) if arr.launch_options.network_type else ""
+                        val['launch_remote_data_volume_type'] = str(arr.launch_options.remote_data_volume_type) if arr.launch_options.remote_data_volume_type else ""
+                        val['launch_is_pv_encryption_in_transit_enabled'] = str(arr.launch_options.is_pv_encryption_in_transit_enabled) if arr.launch_options.is_pv_encryption_in_transit_enabled else ""
+                        val['launch_is_consistent_volume_naming_enabled'] = str(arr.launch_options.is_consistent_volume_naming_enabled) if arr.launch_options.is_consistent_volume_naming_enabled else ""
+
+                    if arr.instance_options:
+                        val['are_legacy_imds_endpoints_disabled'] = str(arr.instance_options.are_legacy_imds_endpoints_disabled) if arr.instance_options.are_legacy_imds_endpoints_disabled else ""
+
+                    if arr.platform_config:
+                        val['platform_type'] = str(arr.platform_config.type) if arr.platform_config.type else ""
+                        val['platform_is_secure_boot_enabled'] = str(arr.platform_config.is_secure_boot_enabled) if arr.platform_config.is_secure_boot_enabled else ""
+                        val['platform_is_trusted_platform_module_enabled'] = str(arr.platform_config.is_trusted_platform_module_enabled) if arr.platform_config.is_trusted_platform_module_enabled else ""
+                        val['platform_is_measured_boot_enabled'] = str(arr.platform_config.is_measured_boot_enabled) if arr.platform_config.is_measured_boot_enabled else ""
+                        val['platform_is_memory_encryption_enabled'] = str(arr.platform_config.is_memory_encryption_enabled) if arr.platform_config.is_memory_encryption_enabled else ""
+
+                    if arr.availability_config:
+                        val['is_live_migration_preferred'] = str(arr.availability_config.is_live_migration_preferred) if arr.availability_config.is_live_migration_preferred else ""
+                        val['recovery_action'] = str(arr.availability_config.recovery_action) if arr.availability_config.recovery_action else ""
 
                     # agent_config
                     if arr.agent_config:
@@ -4524,14 +4566,16 @@ class ShowOCIService(object):
                         sc = arr.shape_config
                         val['shape_storage_tb'] = sc.local_disks_total_size_in_gbs / 1000 if sc.local_disks_total_size_in_gbs else 0
                         val['shape_ocpu'] = sc.ocpus
+                        val['shape_baseline_ocpu_utilization'] = str(sc.baseline_ocpu_utilization) if sc.baseline_ocpu_utilization else ""
                         val['shape_memory_gb'] = sc.memory_in_gbs
-                        val['shape_gpu_description'] = str(sc.gpu_description)
-                        val['shape_gpus'] = str(sc.gpus)
-                        val['shape_local_disk_description'] = str(sc.local_disk_description)
-                        val['shape_local_disks'] = str(sc.local_disks)
+                        val['shape_gpu_description'] = str(sc.gpu_description) if sc.gpu_description else ""
+                        val['shape_gpus'] = str(sc.gpus) if sc.gpus else ""
+                        val['shape_local_disk_description'] = str(sc.local_disk_description) if sc.local_disk_description else ""
+                        val['shape_local_disks'] = str(sc.local_disks) if sc.local_disks else ""
+                        val['shape_local_disks_total_size_in_gbs'] = str(sc.local_disks_total_size_in_gbs) if sc.local_disks_total_size_in_gbs else ""
                         val['shape_max_vnic_attachments'] = sc.max_vnic_attachments
                         val['shape_networking_bandwidth_in_gbps'] = sc.networking_bandwidth_in_gbps
-                        val['shape_processor_description'] = str(sc.processor_description)
+                        val['shape_processor_description'] = str(sc.processor_description) if sc.processor_description else ""
 
                     # if PaaS compartment assign Paas Image
                     if self.__if_managed_paas_compartment(compartment['name']):
@@ -7556,10 +7600,10 @@ class ShowOCIService(object):
                              'max_db_node_storage_in_g_bs': str(dbs.max_db_node_storage_in_g_bs),
                              'data_storage_size_in_tbs': str(dbs.data_storage_size_in_tbs),
                              'max_data_storage_in_t_bs': str(dbs.max_data_storage_in_t_bs),
-                             'storage_count': str(dbs.storage_count),
+                             'storage_count': str(dbs.storage_count) if dbs.storage_count else "",
+                             'compute_count': str(dbs.compute_count) if dbs.compute_count else "",
                              'additional_storage_count': str(dbs.additional_storage_count),
                              'activated_storage_count': str(dbs.activated_storage_count),
-                             'compute_count': str(dbs.compute_count),
                              'cloud_control_plane_server1': str(dbs.cloud_control_plane_server1),
                              'cloud_control_plane_server2': str(dbs.cloud_control_plane_server2),
                              'netmask': str(dbs.netmask),
@@ -7939,8 +7983,8 @@ class ShowOCIService(object):
                              'lifecycle_state': str(dbs.lifecycle_state),
                              'lifecycle_details': str(dbs.lifecycle_details),
                              'availability_domain': str(dbs.availability_domain),
-                             'compute_count': str(dbs.compute_count),
-                             'storage_count': str(dbs.storage_count),
+                             'storage_count': str(dbs.storage_count) if dbs.storage_count else "",
+                             'compute_count': str(dbs.compute_count) if dbs.compute_count else "",
                              'total_storage_size_in_gbs': str(dbs.total_storage_size_in_gbs),
                              'available_storage_size_in_gbs': str(dbs.available_storage_size_in_gbs),
                              'compartment_name': str(compartment['name']),
@@ -7971,6 +8015,12 @@ class ShowOCIService(object):
                                 value['shape_ocpu'] = dbs.compute_count * 50
                                 value['shape_storage_tb'] = dbs.storage_count * 49.5
                                 value['shape_memory_gb'] = dbs.compute_count * 720
+
+                        if dbs.shape == "Exadata.X9M":
+                            if dbs.compute_count != "2" or dbs.storage_count != "3":
+                                value['shape_ocpu'] = dbs.compute_count * 126
+                                value['shape_storage_tb'] = dbs.storage_count * 64
+                                value['shape_memory_gb'] = dbs.compute_count * 1300
 
                     # add the data
                     cnt += 1
@@ -12220,7 +12270,6 @@ class ShowOCIService(object):
     #
     # OCI Classes used:
     #
-    # oci.data_connectivity.DataConnectivityManagementClient
     # oci.data_catalog.DataCatalogClient
     # oci.data_science.DataScienceClient
     # oci.data_flow.DataFlowClient
@@ -12233,7 +12282,6 @@ class ShowOCIService(object):
             print("Data and AI Services...")
 
             # clients
-            dcmr_client = oci.data_connectivity.DataConnectivityManagementClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
             ds_client = oci.data_science.DataScienceClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
             dc_client = oci.data_catalog.DataCatalogClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
             df_client = oci.data_flow.DataFlowClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
@@ -12248,7 +12296,6 @@ class ShowOCIService(object):
                 oda_client.base_client.session.proxies = {'https': self.flags.proxy}
                 bds_client.base_client.session.proxies = {'https': self.flags.proxy}
                 di_client.base_client.session.proxies = {'https': self.flags.proxy}
-                dcmr_client.base_client.session.proxies = {'https': self.flags.proxy}
 
             # reference to compartments
             compartments = self.get_compartment()
@@ -12266,7 +12313,6 @@ class ShowOCIService(object):
             data_ai = self.data[self.C_DATA_AI]
 
             # append the data
-            data_ai[self.C_DATA_AI_DCREGISTRY] += self.__load_data_ai_dcregistry(dcmr_client, compartments)
             data_ai[self.C_DATA_AI_CATALOG] += self.__load_data_ai_catalog(dc_client, compartments)
             data_ai[self.C_DATA_AI_FLOW] += self.__load_data_ai_flow(df_client, compartments)
             data_ai[self.C_DATA_AI_SCIENCE] += self.__load_data_ai_science(ds_client, compartments)
@@ -12281,83 +12327,6 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_data_ai_main", e)
-
-    ##########################################################################
-    # __load_data_ai_catalog
-    ##########################################################################
-    def __load_data_ai_dcregistry(self, dc_client, compartments):
-
-        data = []
-        cnt = 0
-        start_time = time.time()
-
-        try:
-            self.__load_print_status("Data Connection Registry")
-
-            # loop on all compartments
-            for compartment in compartments:
-
-                # skip managed paas compartment
-                if self.__if_managed_paas_compartment(compartment['name']):
-                    print(".", end="")
-                    continue
-
-                array = []
-                try:
-                    array = oci.pagination.list_call_get_all_results(
-                        dc_client.list_registries,
-                        compartment['id'],
-                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
-                    ).data
-
-                except oci.exceptions.ServiceError as e:
-                    if self.__check_service_error(e.code):
-                        self.__load_print_auth_warning(increase_warning=False)
-                        continue
-                    raise
-                except oci.exceptions.ConnectTimeout:
-                    self.__load_print_auth_warning()
-                    continue
-
-                print(".", end="")
-
-                # arr = oci.data_connectivity.models.RegistrySummaryCollection
-                for arr in array:
-                    if not self.check_lifecycle_state_active(arr.lifecycle_state):
-                        continue
-
-                    val = {
-                        'id': str(arr.id),
-                        'description': str(arr.description),
-                        'display_name': str(arr.display_name),
-                        'time_created': str(arr.time_created),
-                        'time_updated': str(arr.time_updated),
-                        'updated_by': str(arr.updated_by),
-                        'lifecycle_state': str(arr.lifecycle_state),
-                        'state_message': str(arr.state_message),
-                        'sum_info': "Data Conn Registry",
-                        'sum_size_gb': str("1"),
-                        'compartment_name': str(compartment['name']),
-                        'compartment_path': str(compartment['path']),
-                        'compartment_id': str(compartment['id']),
-                        'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
-                        'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
-                        'region_name': str(self.config['region'])}
-
-                    # add the data
-                    cnt += 1
-                    data.append(val)
-
-            self.__load_print_cnt(cnt, start_time)
-            return data
-
-        except oci.exceptions.RequestException as e:
-            if self.__check_request_error(e):
-                return data
-            raise
-        except Exception as e:
-            self.__print_error("__load_data_ai_dcregistry", e)
-            return data
 
     ##########################################################################
     # __load_data_ai_catalog
