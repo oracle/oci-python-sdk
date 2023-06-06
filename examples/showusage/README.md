@@ -8,7 +8,7 @@ Output is printer friendly.
 [cost analysis](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/costanalysisoverview.htm) 
 and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm) features should be used instead.**
 
-**Developed by Adi Zohar, 2021**
+**Developed by Adi Zohar, 2021-2023**
 
 ## Modules Included:  
 - oci.identity.IdentityClient            
@@ -81,7 +81,7 @@ optional arguments:
   -ds DATE_START     Start Date - format YYYY-MM-DD
   -de DATE_END       End Date - format YYYY-MM-DD, (Not Inclusive)
   -days DAYS         Add Days Combined with Start Date (de is ignored if specified)
-  -report REPORT     Report Type = PRODUCT / DAILY / ALL ( Default = ALL )
+  -report REPORT     Report Type = PRODUCT / DAILY / REGION / ALL ( Default = ALL )
 
 
 ```

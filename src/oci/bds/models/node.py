@@ -74,6 +74,10 @@ class Node(object):
     NODE_TYPE_COMPUTE_ONLY_WORKER = "COMPUTE_ONLY_WORKER"
 
     #: A constant which can be used with the node_type property of a Node.
+    #: This constant has a value of "KAFKA_BROKER"
+    NODE_TYPE_KAFKA_BROKER = "KAFKA_BROKER"
+
+    #: A constant which can be used with the node_type property of a Node.
     #: This constant has a value of "BURSTING"
     NODE_TYPE_BURSTING = "BURSTING"
 
@@ -102,7 +106,7 @@ class Node(object):
 
         :param node_type:
             The value to assign to the node_type property of this Node.
-            Allowed values for this property are: "MASTER", "EDGE", "UTILITY", "WORKER", "COMPUTE_ONLY_WORKER", "BURSTING", "CLOUD_SQL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "MASTER", "EDGE", "UTILITY", "WORKER", "COMPUTE_ONLY_WORKER", "KAFKA_BROKER", "BURSTING", "CLOUD_SQL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type node_type: str
 
@@ -315,7 +319,7 @@ class Node(object):
         **[Required]** Gets the node_type of this Node.
         Cluster node type.
 
-        Allowed values for this property are: "MASTER", "EDGE", "UTILITY", "WORKER", "COMPUTE_ONLY_WORKER", "BURSTING", "CLOUD_SQL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "MASTER", "EDGE", "UTILITY", "WORKER", "COMPUTE_ONLY_WORKER", "KAFKA_BROKER", "BURSTING", "CLOUD_SQL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -334,7 +338,7 @@ class Node(object):
         :param node_type: The node_type of this Node.
         :type: str
         """
-        allowed_values = ["MASTER", "EDGE", "UTILITY", "WORKER", "COMPUTE_ONLY_WORKER", "BURSTING", "CLOUD_SQL"]
+        allowed_values = ["MASTER", "EDGE", "UTILITY", "WORKER", "COMPUTE_ONLY_WORKER", "KAFKA_BROKER", "BURSTING", "CLOUD_SQL"]
         if not value_allowed_none_or_none_sentinel(node_type, allowed_values):
             node_type = 'UNKNOWN_ENUM_VALUE'
         self._node_type = node_type

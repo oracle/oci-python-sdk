@@ -19,7 +19,7 @@
 #   -ds date     - Start Date in YYYY-MM-DD format
 #   -de date     - End Date in YYYY-MM-DD format (Not Inclusive)
 #   -ld days     - Add Days Combined with Start Date (de is ignored if specified)
-#   -report type - Report Type = PRODUCT, DAILY
+#   -report type - Report Type = PRODUCT, DAILY, REGION
 #
 #
 ##########################################################################
@@ -56,7 +56,7 @@ import oci
 import os
 import platform
 
-version = "2021.10.07"
+version = "2023.05.16"
 
 
 ##########################################################################
@@ -297,6 +297,135 @@ def usage_daily_product(usageClient, tenant_id, time_usage_started, time_usage_e
 
 
 ##########################################################################
+# Usage Daily by Region
+##########################################################################
+def usage_daily_region(usageClient, tenant_id, time_usage_started, time_usage_ended):
+
+    try:
+        # oci.usage_api.models.RequestSummarizedUsagesDetails
+        requestSummarizedUsagesDetails = oci.usage_api.models.RequestSummarizedUsagesDetails(
+            tenant_id=tenant_id,
+            granularity='DAILY',
+            query_type='COST',
+            group_by=['region'],
+            time_usage_started=time_usage_started.strftime('%Y-%m-%dT%H:%M:%SZ'),
+            time_usage_ended=time_usage_ended.strftime('%Y-%m-%dT%H:%M:%SZ')
+        )
+
+        # usageClient.request_summarized_usages
+        request_summarized_usages = usageClient.request_summarized_usages(
+            requestSummarizedUsagesDetails,
+            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+        )
+
+        ################################
+        # Add all data to array data
+        ################################
+        data = []
+        min_date = None
+        max_date = None
+        currency = ""
+        for item in request_summarized_usages.data.items:
+            data.append({
+                'region': item.region,
+                'cost': item.computed_amount if item.computed_amount else 0,
+                'quantity': item.computed_quantity if item.computed_quantity else 0,
+                'currency': item.currency,
+                'time_usage_started': item.time_usage_started,
+                'time_usage_ended': item.time_usage_ended
+            })
+            if item.currency:
+                currency = item.currency
+            if not min_date or item.time_usage_started < min_date:
+                min_date = item.time_usage_started
+            if not max_date or item.time_usage_started > max_date:
+                max_date = item.time_usage_started
+
+        ################################
+        # Grouped Dict
+        ################################
+        gdata = {}
+        for item in data:
+            region = item['region']
+            if region not in gdata:
+                gdata[region] = {'cost': item['cost'], 'quantity': item['quantity'], 'currency': item['currency']}
+            else:
+                gdata[region]['cost'] += item['cost']
+                gdata[region]['quantity'] += item['quantity']
+
+        ################################
+        # Compact based on SKUs
+        ################################
+        col = {
+            'region': 15,
+            'quantity': 14,
+            'days': 10,
+            'cost': 13,
+            'month': 13,
+            'year': 13
+        }
+
+        days = (max_date - min_date).days + 1
+
+        product_header = "Region Summary for " + min_date.strftime('%m/%d/%Y') + " - " + max_date.strftime('%m/%d/%Y') + " in " + currency
+        print_header(product_header, 3)
+        print("")
+        print(
+            "Region".ljust(col['region']) +
+            " Days".rjust(col['days']) +
+            " Quantity".rjust(col['quantity']) +
+            " Cost".rjust(col['cost']) +
+            " Month-31".rjust(col['month']) +
+            " Year".rjust(col['year'])
+        )
+
+        print(
+            "".ljust(col['region'], '=') +
+            " ".ljust(col['days'], '=') +
+            " ".ljust(col['quantity'], '=') +
+            " ".ljust(col['cost'], '=') +
+            " ".ljust(col['month'], '=') +
+            " ".ljust(col['year'], '=')
+        )
+
+        total = 0
+        for item_key in sorted(gdata, key=lambda x: gdata[x]['cost']):
+            item = gdata[item_key]
+            if item['cost'] == 0:
+                continue
+            total += item['cost']
+            line = item_key.ljust(col['region'])
+            line += "{:8,.0f}".format(days).rjust(col['days'])
+            line += "{:8,.1f}".format(item['quantity']).rjust(col['quantity'])
+            line += "{:8,.1f}".format(item['cost']).rjust(col['cost'])
+            line += "{:9,.0f}".format(item['cost'] / days * 31).rjust(col['month'])
+            line += "{:9,.0f}".format(item['cost'] / days * 365).rjust(col['year'])
+            print(line)
+
+        # Total
+        print(
+            "".ljust(col['region'], '=') +
+            " ".ljust(col['days'], '=') +
+            " ".ljust(col['quantity'], '=') +
+            " ".ljust(col['cost'], '=') +
+            " ".ljust(col['month'], '=') +
+            " ".ljust(col['year'], '=')
+        )
+        print(
+            "Total ".ljust(col['region'] + col['days'] + col['quantity']) +
+            " {:8,.1f}".format(total).rjust(col['cost']) +
+            " {:9,.0f}".format(total / days * 31).rjust(col['month']) +
+            " {:9,.0f}".format(total / days * 365).rjust(col['year'])
+        )
+
+    except oci.exceptions.ServiceError as e:
+        print("\nService Error at 'usage_daily_region' - " + str(e))
+
+    except Exception as e:
+        print("\nException Error at 'usage_daily_region' - " + str(e))
+
+
+##########################################################################
 # Usage Daily Summary
 ##########################################################################
 def usage_daily_summary(usageClient, tenant_id, time_usage_started, time_usage_ended):
@@ -424,14 +553,14 @@ def main():
     parser.add_argument("-ds", default=None, dest='date_start', help="Start Date - format YYYY-MM-DD", type=valid_date_type)
     parser.add_argument("-de", default=None, dest='date_end', help="End Date - format YYYY-MM-DD, (Not Inclusive)", type=valid_date_type)
     parser.add_argument("-days", default=None, dest='days', help="Add Days Combined with Start Date (de is ignored if specified)", type=int)
-    parser.add_argument("-report", default="ALL", dest='report', help="Report Type = PRODUCT / DAILY / ALL ( Default = ALL )")
+    parser.add_argument("-report", default="ALL", dest='report', help="Report Type = PRODUCT / DAILY / REGION / ALL ( Default = ALL )")
     cmd = parser.parse_args()
 
     if len(sys.argv) < 2:
         parser.print_help()
         return
 
-    if not cmd.report or not (cmd.report == "DAILY" or cmd.report == "PRODUCT" or cmd.report == "ALL"):
+    if not cmd.report or not (cmd.report == "DAILY" or cmd.report == "PRODUCT" or cmd.report == "REGION" or cmd.report == "ALL"):
 
         parser.print_help()
         print("")
@@ -555,6 +684,9 @@ def main():
 
         if report_type == 'PRODUCT' or report_type == 'ALL':
             usage_daily_product(usage_client, tenant_id, time_usage_started, time_usage_ended)
+
+        if report_type == 'REGION' or report_type == 'ALL':
+            usage_daily_region(usage_client, tenant_id, time_usage_started, time_usage_ended)
 
     except Exception as e:
         raise RuntimeError("\nError at main function - " + str(e))

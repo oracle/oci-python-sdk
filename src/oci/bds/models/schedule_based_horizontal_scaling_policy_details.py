@@ -96,6 +96,8 @@ class ScheduleBasedHorizontalScalingPolicyDetails(AutoScalePolicyDetails):
     def schedule_details(self):
         """
         Gets the schedule_details of this ScheduleBasedHorizontalScalingPolicyDetails.
+        Details of a horizontal scaling schedule.
+
 
         :return: The schedule_details of this ScheduleBasedHorizontalScalingPolicyDetails.
         :rtype: list[oci.bds.models.HorizontalScalingScheduleDetails]
@@ -106,6 +108,8 @@ class ScheduleBasedHorizontalScalingPolicyDetails(AutoScalePolicyDetails):
     def schedule_details(self, schedule_details):
         """
         Sets the schedule_details of this ScheduleBasedHorizontalScalingPolicyDetails.
+        Details of a horizontal scaling schedule.
+
 
         :param schedule_details: The schedule_details of this ScheduleBasedHorizontalScalingPolicyDetails.
         :type: list[oci.bds.models.HorizontalScalingScheduleDetails]

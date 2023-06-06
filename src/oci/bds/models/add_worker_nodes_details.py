@@ -25,6 +25,10 @@ class AddWorkerNodesDetails(object):
     #: This constant has a value of "EDGE"
     NODE_TYPE_EDGE = "EDGE"
 
+    #: A constant which can be used with the node_type property of a AddWorkerNodesDetails.
+    #: This constant has a value of "KAFKA_BROKER"
+    NODE_TYPE_KAFKA_BROKER = "KAFKA_BROKER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AddWorkerNodesDetails object with values from keyword arguments.
@@ -40,7 +44,7 @@ class AddWorkerNodesDetails(object):
 
         :param node_type:
             The value to assign to the node_type property of this AddWorkerNodesDetails.
-            Allowed values for this property are: "WORKER", "COMPUTE_ONLY_WORKER", "EDGE"
+            Allowed values for this property are: "WORKER", "COMPUTE_ONLY_WORKER", "EDGE", "KAFKA_BROKER"
         :type node_type: str
 
         :param shape:
@@ -135,7 +139,7 @@ class AddWorkerNodesDetails(object):
         **[Required]** Gets the node_type of this AddWorkerNodesDetails.
         Worker node types, can either be Worker Data node or Compute only worker node.
 
-        Allowed values for this property are: "WORKER", "COMPUTE_ONLY_WORKER", "EDGE"
+        Allowed values for this property are: "WORKER", "COMPUTE_ONLY_WORKER", "EDGE", "KAFKA_BROKER"
 
 
         :return: The node_type of this AddWorkerNodesDetails.
@@ -153,7 +157,7 @@ class AddWorkerNodesDetails(object):
         :param node_type: The node_type of this AddWorkerNodesDetails.
         :type: str
         """
-        allowed_values = ["WORKER", "COMPUTE_ONLY_WORKER", "EDGE"]
+        allowed_values = ["WORKER", "COMPUTE_ONLY_WORKER", "EDGE", "KAFKA_BROKER"]
         if not value_allowed_none_or_none_sentinel(node_type, allowed_values):
             raise ValueError(
                 "Invalid value for `node_type`, must be None or one of {0}"

@@ -13,10 +13,24 @@ class Replicat(object):
     Parameters for Replicat processes.
     """
 
+    #: A constant which can be used with the performance_profile property of a Replicat.
+    #: This constant has a value of "LOW"
+    PERFORMANCE_PROFILE_LOW = "LOW"
+
+    #: A constant which can be used with the performance_profile property of a Replicat.
+    #: This constant has a value of "HIGH"
+    PERFORMANCE_PROFILE_HIGH = "HIGH"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Replicat object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param performance_profile:
+            The value to assign to the performance_profile property of this Replicat.
+            Allowed values for this property are: "LOW", "HIGH", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type performance_profile: str
 
         :param map_parallelism:
             The value to assign to the map_parallelism property of this Replicat.
@@ -32,20 +46,53 @@ class Replicat(object):
 
         """
         self.swagger_types = {
+            'performance_profile': 'str',
             'map_parallelism': 'int',
             'min_apply_parallelism': 'int',
             'max_apply_parallelism': 'int'
         }
 
         self.attribute_map = {
+            'performance_profile': 'performanceProfile',
             'map_parallelism': 'mapParallelism',
             'min_apply_parallelism': 'minApplyParallelism',
             'max_apply_parallelism': 'maxApplyParallelism'
         }
 
+        self._performance_profile = None
         self._map_parallelism = None
         self._min_apply_parallelism = None
         self._max_apply_parallelism = None
+
+    @property
+    def performance_profile(self):
+        """
+        Gets the performance_profile of this Replicat.
+        Replicat performance.
+
+        Allowed values for this property are: "LOW", "HIGH", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The performance_profile of this Replicat.
+        :rtype: str
+        """
+        return self._performance_profile
+
+    @performance_profile.setter
+    def performance_profile(self, performance_profile):
+        """
+        Sets the performance_profile of this Replicat.
+        Replicat performance.
+
+
+        :param performance_profile: The performance_profile of this Replicat.
+        :type: str
+        """
+        allowed_values = ["LOW", "HIGH"]
+        if not value_allowed_none_or_none_sentinel(performance_profile, allowed_values):
+            performance_profile = 'UNKNOWN_ENUM_VALUE'
+        self._performance_profile = performance_profile
 
     @property
     def map_parallelism(self):

@@ -18,7 +18,7 @@ from showoci_service import ShowOCIService, ShowOCIFlags
 
 
 class ShowOCIData(object):
-    version = "23.04.18"
+    version = "23.05.22"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -132,7 +132,7 @@ class ShowOCIData(object):
         data = {
             'program': "showoci.py",
             'author': "Adi Zohar",
-            'contributers': "Olaf Heimburger",
+            'contributers': "",
             'disclaimer': "This is not an official Oracle application, it is not supported by Oracle. It should NOT be used for utilization calculation purposes. If you run into issues using this, please file an issue at https://github.com/oracle/oci-python-sdk/issues rather than contacting support",
             'config_file': self.service.flags.config_file,
             'config_profile': self.service.flags.config_section,
@@ -1792,6 +1792,8 @@ class ShowOCIData(object):
                     'shape_max_vnic_attachments': instance['shape_max_vnic_attachments'],
                     'shape_networking_bandwidth_in_gbps': instance['shape_networking_bandwidth_in_gbps'],
                     'shape_processor_description': instance['shape_processor_description'],
+                    'shape_baseline_ocpu_utilization': instance['shape_baseline_ocpu_utilization'],
+                    'shape_local_disks_total_size_in_gbs': instance['shape_local_disks_total_size_in_gbs'],
                     'display_name': instance['display_name'],
                     'compartment_name': instance['compartment_name'],
                     'compartment_path': instance['compartment_path'],
@@ -1808,6 +1810,24 @@ class ShowOCIData(object):
                     'freeform_tags': instance['freeform_tags'],
                     'metadata': instance['metadata'],
                     'extended_metadata': instance['extended_metadata'],
+                    'is_live_migration_preferred': instance['is_live_migration_preferred'],
+                    'recovery_action': instance['recovery_action'],
+                    'launch_boot_volume_type': instance['launch_boot_volume_type'],
+                    'launch_firmware': instance['launch_firmware'],
+                    'launch_network_type': instance['launch_network_type'],
+                    'launch_remote_data_volume_type': instance['launch_remote_data_volume_type'],
+                    'launch_is_pv_encryption_in_transit_enabled': instance['launch_is_pv_encryption_in_transit_enabled'],
+                    'launch_is_consistent_volume_naming_enabled': instance['launch_is_consistent_volume_naming_enabled'],
+                    'platform_type': instance['platform_type'],
+                    'platform_is_secure_boot_enabled': instance['platform_is_secure_boot_enabled'],
+                    'platform_is_trusted_platform_module_enabled': instance['platform_is_trusted_platform_module_enabled'],
+                    'platform_is_measured_boot_enabled': instance['platform_is_measured_boot_enabled'],
+                    'platform_is_memory_encryption_enabled': instance['platform_is_memory_encryption_enabled'],
+                    'capacity_reservation_id': instance['capacity_reservation_id'],
+                    'dedicated_vm_host_id': instance['dedicated_vm_host_id'],
+                    'ipxe_script': instance['ipxe_script'],
+                    'launch_mode': instance['launch_mode'],
+                    'is_cross_numa_node': instance['is_cross_numa_node'],
                     'logs': self.service.get_logging_log(instance['id'])}
 
                 # boot volumes attachments
@@ -4168,11 +4188,6 @@ class ShowOCIData(object):
             dc = self.service.search_multi_items(self.service.C_DATA_AI, self.service.C_DATA_AI_CATALOG, 'region_name', region_name, 'compartment_id', compartment['id'])
             if dc:
                 data_ai['data_catalog'] = dc
-
-            # Data Connectivity Registry
-            dc = self.service.search_multi_items(self.service.C_DATA_AI, self.service.C_DATA_AI_DCREGISTRY, 'region_name', region_name, 'compartment_id', compartment['id'])
-            if dc:
-                data_ai['data_connectivity_registry'] = dc
 
             # Data Integration
             di = self.service.search_multi_items(self.service.C_DATA_AI, self.service.C_DATA_AI_DI, 'region_name', region_name, 'compartment_id', compartment['id'])

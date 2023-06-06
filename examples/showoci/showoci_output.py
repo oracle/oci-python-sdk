@@ -20,7 +20,7 @@ import csv
 
 
 class ShowOCIOutput(object):
-    version = "23.04.18"
+    version = "23.05.22"
 
     ##########################################################################
     # spaces for align
@@ -2419,13 +2419,6 @@ class ShowOCIOutput(object):
             if not data_ai:
                 return
 
-            # Data Conn Registry
-            if 'data_connectivity_registry' in data_ai:
-                self.print_header("Data Conn. Registry", 2)
-                for val in data_ai['data_connectivity_registry']:
-                    print(self.taba + val['display_name'] + ", (" + val['description'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
-                print("")
-
             # Data Catalog
             if 'data_catalog' in data_ai:
                 self.print_header("Data Catalog", 2)
@@ -2546,7 +2539,11 @@ class ShowOCIOutput(object):
                     print(self.taba + instance['name'])
 
                 if instance['shape_ocpu'] > 0:
-                    print(self.tabs2 + "Shape: Ocpus: " + str(instance['shape_ocpu']) + ", Memory: " + str(instance['shape_memory_gb']) + "GB, Local Storage: " + str(instance['shape_storage_tb']) + "TB, Processor: " + str(instance['shape_processor_description']))
+                    burstable = (", Burstable Baseline: " + str(instance['shape_baseline_ocpu_utilization'])) if instance['shape_baseline_ocpu_utilization'] else ""
+                    gpu = (", GPUs: " + str(instance['shape_gpus']) + " " + str(instance['shape_gpu_description'])) if instance['shape_gpus'] else ""
+                    local_storage = (", Local Storage: " + str(instance['shape_storage_tb']) + "TB") if instance['shape_storage_tb'] else ""
+                    print(self.tabs2 + "Shape: Ocpus: " + str(instance['shape_ocpu']) + ", Memory: " + str(instance['shape_memory_gb']) + "GB" + burstable + ", Processor: " + str(instance['shape_processor_description']))
+                    print(self.tabs2 + "       NetBW: " + str(instance['shape_networking_bandwidth_in_gbps']) + ", Max Vnics: " + str(instance['shape_max_vnic_attachments']) + local_storage + gpu)
 
                 if 'availability_domain' in instance and 'fault_domain' in instance:
                     print(self.tabs2 + "AD   : " + instance['availability_domain'] + " - " + instance['fault_domain'])
@@ -2557,6 +2554,8 @@ class ShowOCIOutput(object):
 
                 if 'image' in instance:
                     print(self.tabs2 + "Img  : " + instance['image'] + " (" + instance['image_os'] + ")")
+
+                print(self.tabs2 + "Mig  : Live Migration Preferred: " + (instance['is_live_migration_preferred'] if instance['is_live_migration_preferred'] else "Default") + ", Recovery Action: " + instance['recovery_action'])
 
                 if 'boot_volume' in instance:
                     for bv in instance['boot_volume']:
@@ -3147,12 +3146,6 @@ class ShowOCISummary(object):
                 array = [x for x in data_ai['data_integration'] if x['lifecycle_state'] == 'ACTIVE']
                 self.__summary_core_size(array)
                 array = [x for x in data_ai['data_integration'] if x['lifecycle_state'] != 'ACTIVE']
-                self.__summary_core_size(array, add_info="Stopped ")
-
-            if 'data_connectivity_registry' in data_ai:
-                array = [x for x in data_ai['data_connectivity_registry'] if x['lifecycle_state'] == 'ACTIVE']
-                self.__summary_core_size(array)
-                array = [x for x in data_ai['data_connectivity_registry'] if x['lifecycle_state'] != 'ACTIVE']
                 self.__summary_core_size(array, add_info="Stopped ")
 
         except Exception as e:
@@ -3947,7 +3940,6 @@ class ShowOCICSV(object):
     csv_data_science = []
     csv_data_flow = []
     csv_data_catalog = []
-    csv_data_conn_registgry = []
     csv_data_integration = []
     start_time = ""
     csv_add_date_field = True
@@ -4064,7 +4056,6 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("data_science", self.csv_data_science)
             self.__export_to_csv_file("data_flow", self.csv_data_flow)
             self.__export_to_csv_file("data_catalog", self.csv_data_catalog)
-            self.__export_to_csv_file("data_conn_registry", self.csv_data_conn_registgry)
             self.__export_to_csv_file("data_integration", self.csv_data_integration)
             self.__export_to_csv_file("digital_assistance", self.csv_data_ai_oda)
             self.__export_to_csv_file("big_data_service", self.csv_data_ai_bds)
@@ -6410,8 +6401,15 @@ class ShowOCICSV(object):
                         'primary_vcn': "",
                         'primary_subnet': "",
                         'shape': instance['shape'],
+                        'is_live_migration_preferred': instance['is_live_migration_preferred'],
+                        'recovery_action': instance['recovery_action'],
                         'ocpus': instance['shape_ocpu'],
                         'memory_gb': instance['shape_memory_gb'],
+                        'baseline_ocpu_utilization': instance['shape_baseline_ocpu_utilization'],
+                        'gpus': instance['shape_gpus'],
+                        'gpu_description': instance['shape_gpu_description'],
+                        'max_vnic_attachments': instance['shape_max_vnic_attachments'],
+                        'networking_bandwidth_in_gbps': instance['shape_networking_bandwidth_in_gbps'],
                         'local_storage_tb': instance['shape_storage_tb'],
                         'public_ips': str(', '.join(x['details']['public_ip'] for x in instance['vnic'])),
                         'private_ips': str(', '.join(x['details']['private_ip'] for x in instance['vnic'])),
@@ -7840,9 +7838,6 @@ class ShowOCICSV(object):
             if 'data_catalog' in data:
                 self.__csv_data_catalog(region_name, data['data_catalog'])
 
-            if 'data_connectivity_registry' in data:
-                self.__csv_data_conn_registry(region_name, data['data_connectivity_registry'])
-
             if 'data_integration' in data:
                 self.__csv_data_integration(region_name, data['data_integration'])
 
@@ -7983,40 +7978,6 @@ class ShowOCICSV(object):
 
         except Exception as e:
             self.__print_error("__csv_data_catalog", e)
-
-    ##########################################################################
-    # Data Connectivity registry
-    ##########################################################################
-    def __csv_data_conn_registry(self, region_name, services):
-        try:
-
-            if len(services) == 0:
-                return
-
-            if services:
-                for ar in services:
-
-                    data = {
-                        'region_name': region_name,
-                        'compartment_name': ar['compartment_name'],
-                        'compartment_path': ar['compartment_path'],
-                        'name': ar['display_name'],
-                        'description': ar['description'],
-                        'time_created': ar['time_created'][0:16],
-                        'time_updated': ar['time_updated'][0:16],
-                        'updated_by': ar['updated_by'],
-                        'lifecycle_state': ar['lifecycle_state'],
-                        'state_message': ar['state_message'],
-                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
-                        'defined_tags': self.__get_defined_tags(ar['defined_tags']),
-                        'conn_id': ar['id'],
-                        'id': ar['compartment_name'] + ":" + ar['id']
-                    }
-
-                    self.csv_data_conn_registgry.append(data)
-
-        except Exception as e:
-            self.__print_error("__csv_data_conn_registry", e)
 
     ##########################################################################
     # Data Integration

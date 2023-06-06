@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
+=====================
+23.05.23 - 23.05.23
+=====================
+* Added Instance Parameters - Burstable, Launch options and more
+* Removed Data Connectivity per SDK breaking
+
+=====================
+23.05.02 - 23.05.02
+=====================
+* Added live migration flag to compute
 
 =====================
 23.04.18 - 23.04.18

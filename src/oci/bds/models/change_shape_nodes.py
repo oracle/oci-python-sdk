@@ -66,6 +66,14 @@ class ChangeShapeNodes(object):
             The value to assign to the edge_shape_config property of this ChangeShapeNodes.
         :type edge_shape_config: oci.bds.models.ShapeConfigDetails
 
+        :param kafka_broker:
+            The value to assign to the kafka_broker property of this ChangeShapeNodes.
+        :type kafka_broker: str
+
+        :param kafka_broker_shape_config:
+            The value to assign to the kafka_broker_shape_config property of this ChangeShapeNodes.
+        :type kafka_broker_shape_config: oci.bds.models.ShapeConfigDetails
+
         """
         self.swagger_types = {
             'worker': 'str',
@@ -79,7 +87,9 @@ class ChangeShapeNodes(object):
             'cloudsql': 'str',
             'cloudsql_shape_config': 'ShapeConfigDetails',
             'edge': 'str',
-            'edge_shape_config': 'ShapeConfigDetails'
+            'edge_shape_config': 'ShapeConfigDetails',
+            'kafka_broker': 'str',
+            'kafka_broker_shape_config': 'ShapeConfigDetails'
         }
 
         self.attribute_map = {
@@ -94,7 +104,9 @@ class ChangeShapeNodes(object):
             'cloudsql': 'cloudsql',
             'cloudsql_shape_config': 'cloudsqlShapeConfig',
             'edge': 'edge',
-            'edge_shape_config': 'edgeShapeConfig'
+            'edge_shape_config': 'edgeShapeConfig',
+            'kafka_broker': 'kafkaBroker',
+            'kafka_broker_shape_config': 'kafkaBrokerShapeConfig'
         }
 
         self._worker = None
@@ -109,6 +121,8 @@ class ChangeShapeNodes(object):
         self._cloudsql_shape_config = None
         self._edge = None
         self._edge_shape_config = None
+        self._kafka_broker = None
+        self._kafka_broker_shape_config = None
 
     @property
     def worker(self):
@@ -373,6 +387,50 @@ class ChangeShapeNodes(object):
         :type: oci.bds.models.ShapeConfigDetails
         """
         self._edge_shape_config = edge_shape_config
+
+    @property
+    def kafka_broker(self):
+        """
+        Gets the kafka_broker of this ChangeShapeNodes.
+        Change shape of Kafka Broker nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+
+
+        :return: The kafka_broker of this ChangeShapeNodes.
+        :rtype: str
+        """
+        return self._kafka_broker
+
+    @kafka_broker.setter
+    def kafka_broker(self, kafka_broker):
+        """
+        Sets the kafka_broker of this ChangeShapeNodes.
+        Change shape of Kafka Broker nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+
+
+        :param kafka_broker: The kafka_broker of this ChangeShapeNodes.
+        :type: str
+        """
+        self._kafka_broker = kafka_broker
+
+    @property
+    def kafka_broker_shape_config(self):
+        """
+        Gets the kafka_broker_shape_config of this ChangeShapeNodes.
+
+        :return: The kafka_broker_shape_config of this ChangeShapeNodes.
+        :rtype: oci.bds.models.ShapeConfigDetails
+        """
+        return self._kafka_broker_shape_config
+
+    @kafka_broker_shape_config.setter
+    def kafka_broker_shape_config(self, kafka_broker_shape_config):
+        """
+        Sets the kafka_broker_shape_config of this ChangeShapeNodes.
+
+        :param kafka_broker_shape_config: The kafka_broker_shape_config of this ChangeShapeNodes.
+        :type: oci.bds.models.ShapeConfigDetails
+        """
+        self._kafka_broker_shape_config = kafka_broker_shape_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

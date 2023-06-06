@@ -23,6 +23,7 @@ Bds
     oci.bds.models.AddAutoScalingConfigurationDetails
     oci.bds.models.AddBlockStorageDetails
     oci.bds.models.AddCloudSqlDetails
+    oci.bds.models.AddKafkaDetails
     oci.bds.models.AddMetricBasedHorizontalScalingPolicyDetails
     oci.bds.models.AddMetricBasedVerticalScalingPolicyDetails
     oci.bds.models.AddScheduleBasedHorizontalScalingPolicyDetails
@@ -69,6 +70,7 @@ Bds
     oci.bds.models.PatchSummary
     oci.bds.models.RemoveAutoScalingConfigurationDetails
     oci.bds.models.RemoveCloudSqlDetails
+    oci.bds.models.RemoveKafkaDetails
     oci.bds.models.RemoveNodeDetails
     oci.bds.models.RestartNodeDetails
     oci.bds.models.ScheduleBasedHorizontalScalingPolicyDetails

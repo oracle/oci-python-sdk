@@ -13,6 +13,14 @@ class NonADBAutoCreateTablespaceDetails(TargetTypeTablespaceDetails):
     Migration tablespace settings valid for NON-ADB target type using auto create feature.
     """
 
+    #: A constant which can be used with the block_size_in_kbs property of a NonADBAutoCreateTablespaceDetails.
+    #: This constant has a value of "SIZE_8K"
+    BLOCK_SIZE_IN_KBS_SIZE_8_K = "SIZE_8K"
+
+    #: A constant which can be used with the block_size_in_kbs property of a NonADBAutoCreateTablespaceDetails.
+    #: This constant has a value of "SIZE_16K"
+    BLOCK_SIZE_IN_KBS_SIZE_16_K = "SIZE_16K"
+
     def __init__(self, **kwargs):
         """
         Initializes a new NonADBAutoCreateTablespaceDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database_migration.models.NonADBAutoCreateTablespaceDetails.target_type` attribute
@@ -21,7 +29,8 @@ class NonADBAutoCreateTablespaceDetails(TargetTypeTablespaceDetails):
 
         :param target_type:
             The value to assign to the target_type property of this NonADBAutoCreateTablespaceDetails.
-            Allowed values for this property are: "ADB_S_REMAP", "ADB_D_REMAP", "ADB_D_AUTOCREATE", "NON_ADB_REMAP", "NON_ADB_AUTOCREATE"
+            Allowed values for this property are: "ADB_S_REMAP", "ADB_D_REMAP", "ADB_D_AUTOCREATE", "NON_ADB_REMAP", "NON_ADB_AUTOCREATE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type target_type: str
 
         :param is_auto_create:
@@ -36,25 +45,34 @@ class NonADBAutoCreateTablespaceDetails(TargetTypeTablespaceDetails):
             The value to assign to the extend_size_in_mbs property of this NonADBAutoCreateTablespaceDetails.
         :type extend_size_in_mbs: int
 
+        :param block_size_in_kbs:
+            The value to assign to the block_size_in_kbs property of this NonADBAutoCreateTablespaceDetails.
+            Allowed values for this property are: "SIZE_8K", "SIZE_16K", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type block_size_in_kbs: str
+
         """
         self.swagger_types = {
             'target_type': 'str',
             'is_auto_create': 'bool',
             'is_big_file': 'bool',
-            'extend_size_in_mbs': 'int'
+            'extend_size_in_mbs': 'int',
+            'block_size_in_kbs': 'str'
         }
 
         self.attribute_map = {
             'target_type': 'targetType',
             'is_auto_create': 'isAutoCreate',
             'is_big_file': 'isBigFile',
-            'extend_size_in_mbs': 'extendSizeInMBs'
+            'extend_size_in_mbs': 'extendSizeInMBs',
+            'block_size_in_kbs': 'blockSizeInKBs'
         }
 
         self._target_type = None
         self._is_auto_create = None
         self._is_big_file = None
         self._extend_size_in_mbs = None
+        self._block_size_in_kbs = None
         self._target_type = 'NON_ADB_AUTOCREATE'
 
     @property
@@ -128,6 +146,36 @@ class NonADBAutoCreateTablespaceDetails(TargetTypeTablespaceDetails):
         :type: int
         """
         self._extend_size_in_mbs = extend_size_in_mbs
+
+    @property
+    def block_size_in_kbs(self):
+        """
+        Gets the block_size_in_kbs of this NonADBAutoCreateTablespaceDetails.
+        Size of Oracle database blocks in KB.
+
+        Allowed values for this property are: "SIZE_8K", "SIZE_16K", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The block_size_in_kbs of this NonADBAutoCreateTablespaceDetails.
+        :rtype: str
+        """
+        return self._block_size_in_kbs
+
+    @block_size_in_kbs.setter
+    def block_size_in_kbs(self, block_size_in_kbs):
+        """
+        Sets the block_size_in_kbs of this NonADBAutoCreateTablespaceDetails.
+        Size of Oracle database blocks in KB.
+
+
+        :param block_size_in_kbs: The block_size_in_kbs of this NonADBAutoCreateTablespaceDetails.
+        :type: str
+        """
+        allowed_values = ["SIZE_8K", "SIZE_16K"]
+        if not value_allowed_none_or_none_sentinel(block_size_in_kbs, allowed_values):
+            block_size_in_kbs = 'UNKNOWN_ENUM_VALUE'
+        self._block_size_in_kbs = block_size_in_kbs
 
     def __repr__(self):
         return formatted_flat_dict(self)
