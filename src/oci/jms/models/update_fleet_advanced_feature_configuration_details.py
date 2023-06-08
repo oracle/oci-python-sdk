@@ -10,8 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateFleetAdvancedFeatureConfigurationDetails(object):
     """
-    Details object containing advanced feature configurations to be updated
-    Ensure that the namespace and bucket storage are created prior to turning on the JfrRecording or CryptoEventAnalysis feature
+    Details object containing advanced feature configurations to be updated.
+    Ensure that the namespace and bucket storage are created prior to turning on the JfrRecording or CryptoEventAnalysis feature.
     """
 
     def __init__(self, **kwargs):
@@ -43,6 +43,14 @@ class UpdateFleetAdvancedFeatureConfigurationDetails(object):
             The value to assign to the jfr_recording property of this UpdateFleetAdvancedFeatureConfigurationDetails.
         :type jfr_recording: oci.jms.models.JfrRecording
 
+        :param performance_tuning_analysis:
+            The value to assign to the performance_tuning_analysis property of this UpdateFleetAdvancedFeatureConfigurationDetails.
+        :type performance_tuning_analysis: oci.jms.models.PerformanceTuningAnalysis
+
+        :param java_migration_analysis:
+            The value to assign to the java_migration_analysis property of this UpdateFleetAdvancedFeatureConfigurationDetails.
+        :type java_migration_analysis: oci.jms.models.JavaMigrationAnalysis
+
         """
         self.swagger_types = {
             'analytic_namespace': 'str',
@@ -50,7 +58,9 @@ class UpdateFleetAdvancedFeatureConfigurationDetails(object):
             'lcm': 'Lcm',
             'crypto_event_analysis': 'CryptoEventAnalysis',
             'advanced_usage_tracking': 'AdvancedUsageTracking',
-            'jfr_recording': 'JfrRecording'
+            'jfr_recording': 'JfrRecording',
+            'performance_tuning_analysis': 'PerformanceTuningAnalysis',
+            'java_migration_analysis': 'JavaMigrationAnalysis'
         }
 
         self.attribute_map = {
@@ -59,7 +69,9 @@ class UpdateFleetAdvancedFeatureConfigurationDetails(object):
             'lcm': 'lcm',
             'crypto_event_analysis': 'cryptoEventAnalysis',
             'advanced_usage_tracking': 'advancedUsageTracking',
-            'jfr_recording': 'jfrRecording'
+            'jfr_recording': 'jfrRecording',
+            'performance_tuning_analysis': 'performanceTuningAnalysis',
+            'java_migration_analysis': 'javaMigrationAnalysis'
         }
 
         self._analytic_namespace = None
@@ -68,12 +80,14 @@ class UpdateFleetAdvancedFeatureConfigurationDetails(object):
         self._crypto_event_analysis = None
         self._advanced_usage_tracking = None
         self._jfr_recording = None
+        self._performance_tuning_analysis = None
+        self._java_migration_analysis = None
 
     @property
     def analytic_namespace(self):
         """
         Gets the analytic_namespace of this UpdateFleetAdvancedFeatureConfigurationDetails.
-        Namespace for the fleet advanced feature
+        Namespace for the Fleet advanced feature.
 
 
         :return: The analytic_namespace of this UpdateFleetAdvancedFeatureConfigurationDetails.
@@ -85,7 +99,7 @@ class UpdateFleetAdvancedFeatureConfigurationDetails(object):
     def analytic_namespace(self, analytic_namespace):
         """
         Sets the analytic_namespace of this UpdateFleetAdvancedFeatureConfigurationDetails.
-        Namespace for the fleet advanced feature
+        Namespace for the Fleet advanced feature.
 
 
         :param analytic_namespace: The analytic_namespace of this UpdateFleetAdvancedFeatureConfigurationDetails.
@@ -97,7 +111,7 @@ class UpdateFleetAdvancedFeatureConfigurationDetails(object):
     def analytic_bucket_name(self):
         """
         Gets the analytic_bucket_name of this UpdateFleetAdvancedFeatureConfigurationDetails.
-        Bucket name required to store jfr and related data
+        Bucket name required to store JFR and related data.
 
 
         :return: The analytic_bucket_name of this UpdateFleetAdvancedFeatureConfigurationDetails.
@@ -109,7 +123,7 @@ class UpdateFleetAdvancedFeatureConfigurationDetails(object):
     def analytic_bucket_name(self, analytic_bucket_name):
         """
         Sets the analytic_bucket_name of this UpdateFleetAdvancedFeatureConfigurationDetails.
-        Bucket name required to store jfr and related data
+        Bucket name required to store JFR and related data.
 
 
         :param analytic_bucket_name: The analytic_bucket_name of this UpdateFleetAdvancedFeatureConfigurationDetails.
@@ -196,6 +210,46 @@ class UpdateFleetAdvancedFeatureConfigurationDetails(object):
         :type: oci.jms.models.JfrRecording
         """
         self._jfr_recording = jfr_recording
+
+    @property
+    def performance_tuning_analysis(self):
+        """
+        Gets the performance_tuning_analysis of this UpdateFleetAdvancedFeatureConfigurationDetails.
+
+        :return: The performance_tuning_analysis of this UpdateFleetAdvancedFeatureConfigurationDetails.
+        :rtype: oci.jms.models.PerformanceTuningAnalysis
+        """
+        return self._performance_tuning_analysis
+
+    @performance_tuning_analysis.setter
+    def performance_tuning_analysis(self, performance_tuning_analysis):
+        """
+        Sets the performance_tuning_analysis of this UpdateFleetAdvancedFeatureConfigurationDetails.
+
+        :param performance_tuning_analysis: The performance_tuning_analysis of this UpdateFleetAdvancedFeatureConfigurationDetails.
+        :type: oci.jms.models.PerformanceTuningAnalysis
+        """
+        self._performance_tuning_analysis = performance_tuning_analysis
+
+    @property
+    def java_migration_analysis(self):
+        """
+        Gets the java_migration_analysis of this UpdateFleetAdvancedFeatureConfigurationDetails.
+
+        :return: The java_migration_analysis of this UpdateFleetAdvancedFeatureConfigurationDetails.
+        :rtype: oci.jms.models.JavaMigrationAnalysis
+        """
+        return self._java_migration_analysis
+
+    @java_migration_analysis.setter
+    def java_migration_analysis(self, java_migration_analysis):
+        """
+        Sets the java_migration_analysis of this UpdateFleetAdvancedFeatureConfigurationDetails.
+
+        :param java_migration_analysis: The java_migration_analysis of this UpdateFleetAdvancedFeatureConfigurationDetails.
+        :type: oci.jms.models.JavaMigrationAnalysis
+        """
+        self._java_migration_analysis = java_migration_analysis
 
     def __repr__(self):
         return formatted_flat_dict(self)

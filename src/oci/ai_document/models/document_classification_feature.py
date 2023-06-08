@@ -28,19 +28,26 @@ class DocumentClassificationFeature(DocumentFeature):
             The value to assign to the max_results property of this DocumentClassificationFeature.
         :type max_results: int
 
+        :param model_id:
+            The value to assign to the model_id property of this DocumentClassificationFeature.
+        :type model_id: str
+
         """
         self.swagger_types = {
             'feature_type': 'str',
-            'max_results': 'int'
+            'max_results': 'int',
+            'model_id': 'str'
         }
 
         self.attribute_map = {
             'feature_type': 'featureType',
-            'max_results': 'maxResults'
+            'max_results': 'maxResults',
+            'model_id': 'modelId'
         }
 
         self._feature_type = None
         self._max_results = None
+        self._model_id = None
         self._feature_type = 'DOCUMENT_CLASSIFICATION'
 
     @property
@@ -66,6 +73,30 @@ class DocumentClassificationFeature(DocumentFeature):
         :type: int
         """
         self._max_results = max_results
+
+    @property
+    def model_id(self):
+        """
+        Gets the model_id of this DocumentClassificationFeature.
+        The custom model ID.
+
+
+        :return: The model_id of this DocumentClassificationFeature.
+        :rtype: str
+        """
+        return self._model_id
+
+    @model_id.setter
+    def model_id(self, model_id):
+        """
+        Sets the model_id of this DocumentClassificationFeature.
+        The custom model ID.
+
+
+        :param model_id: The model_id of this DocumentClassificationFeature.
+        :type: str
+        """
+        self._model_id = model_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

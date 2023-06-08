@@ -160,6 +160,22 @@ class EsxiHostSummary(object):
             The value to assign to the host_ocpu_count property of this EsxiHostSummary.
         :type host_ocpu_count: float
 
+        :param billing_donor_host_id:
+            The value to assign to the billing_donor_host_id property of this EsxiHostSummary.
+        :type billing_donor_host_id: str
+
+        :param swap_billing_host_id:
+            The value to assign to the swap_billing_host_id property of this EsxiHostSummary.
+        :type swap_billing_host_id: str
+
+        :param is_billing_continuation_in_progress:
+            The value to assign to the is_billing_continuation_in_progress property of this EsxiHostSummary.
+        :type is_billing_continuation_in_progress: bool
+
+        :param is_billing_swapping_in_progress:
+            The value to assign to the is_billing_swapping_in_progress property of this EsxiHostSummary.
+        :type is_billing_swapping_in_progress: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this EsxiHostSummary.
         :type freeform_tags: dict(str, str)
@@ -190,6 +206,10 @@ class EsxiHostSummary(object):
             'compute_availability_domain': 'str',
             'host_shape_name': 'str',
             'host_ocpu_count': 'float',
+            'billing_donor_host_id': 'str',
+            'swap_billing_host_id': 'str',
+            'is_billing_continuation_in_progress': 'bool',
+            'is_billing_swapping_in_progress': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -215,6 +235,10 @@ class EsxiHostSummary(object):
             'compute_availability_domain': 'computeAvailabilityDomain',
             'host_shape_name': 'hostShapeName',
             'host_ocpu_count': 'hostOcpuCount',
+            'billing_donor_host_id': 'billingDonorHostId',
+            'swap_billing_host_id': 'swapBillingHostId',
+            'is_billing_continuation_in_progress': 'isBillingContinuationInProgress',
+            'is_billing_swapping_in_progress': 'isBillingSwappingInProgress',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -239,6 +263,10 @@ class EsxiHostSummary(object):
         self._compute_availability_domain = None
         self._host_shape_name = None
         self._host_ocpu_count = None
+        self._billing_donor_host_id = None
+        self._swap_billing_host_id = None
+        self._is_billing_continuation_in_progress = None
+        self._is_billing_swapping_in_progress = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -823,6 +851,110 @@ class EsxiHostSummary(object):
         :type: float
         """
         self._host_ocpu_count = host_ocpu_count
+
+    @property
+    def billing_donor_host_id(self):
+        """
+        Gets the billing_donor_host_id of this EsxiHostSummary.
+        The `OCID`__ of the deleted ESXi Host with LeftOver billing cycle.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The billing_donor_host_id of this EsxiHostSummary.
+        :rtype: str
+        """
+        return self._billing_donor_host_id
+
+    @billing_donor_host_id.setter
+    def billing_donor_host_id(self, billing_donor_host_id):
+        """
+        Sets the billing_donor_host_id of this EsxiHostSummary.
+        The `OCID`__ of the deleted ESXi Host with LeftOver billing cycle.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param billing_donor_host_id: The billing_donor_host_id of this EsxiHostSummary.
+        :type: str
+        """
+        self._billing_donor_host_id = billing_donor_host_id
+
+    @property
+    def swap_billing_host_id(self):
+        """
+        Gets the swap_billing_host_id of this EsxiHostSummary.
+        The `OCID`__ of the active ESXi Host to swap billing with current host.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The swap_billing_host_id of this EsxiHostSummary.
+        :rtype: str
+        """
+        return self._swap_billing_host_id
+
+    @swap_billing_host_id.setter
+    def swap_billing_host_id(self, swap_billing_host_id):
+        """
+        Sets the swap_billing_host_id of this EsxiHostSummary.
+        The `OCID`__ of the active ESXi Host to swap billing with current host.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param swap_billing_host_id: The swap_billing_host_id of this EsxiHostSummary.
+        :type: str
+        """
+        self._swap_billing_host_id = swap_billing_host_id
+
+    @property
+    def is_billing_continuation_in_progress(self):
+        """
+        Gets the is_billing_continuation_in_progress of this EsxiHostSummary.
+        Indicates whether this host is in the progress of billing continuation.
+
+
+        :return: The is_billing_continuation_in_progress of this EsxiHostSummary.
+        :rtype: bool
+        """
+        return self._is_billing_continuation_in_progress
+
+    @is_billing_continuation_in_progress.setter
+    def is_billing_continuation_in_progress(self, is_billing_continuation_in_progress):
+        """
+        Sets the is_billing_continuation_in_progress of this EsxiHostSummary.
+        Indicates whether this host is in the progress of billing continuation.
+
+
+        :param is_billing_continuation_in_progress: The is_billing_continuation_in_progress of this EsxiHostSummary.
+        :type: bool
+        """
+        self._is_billing_continuation_in_progress = is_billing_continuation_in_progress
+
+    @property
+    def is_billing_swapping_in_progress(self):
+        """
+        Gets the is_billing_swapping_in_progress of this EsxiHostSummary.
+        Indicates whether this host is in the progress of swapping billing.
+
+
+        :return: The is_billing_swapping_in_progress of this EsxiHostSummary.
+        :rtype: bool
+        """
+        return self._is_billing_swapping_in_progress
+
+    @is_billing_swapping_in_progress.setter
+    def is_billing_swapping_in_progress(self, is_billing_swapping_in_progress):
+        """
+        Sets the is_billing_swapping_in_progress of this EsxiHostSummary.
+        Indicates whether this host is in the progress of swapping billing.
+
+
+        :param is_billing_swapping_in_progress: The is_billing_swapping_in_progress of this EsxiHostSummary.
+        :type: bool
+        """
+        self._is_billing_swapping_in_progress = is_billing_swapping_in_progress
 
     @property
     def freeform_tags(self):

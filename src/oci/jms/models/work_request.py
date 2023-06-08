@@ -52,6 +52,14 @@ class WorkRequest(object):
     OPERATION_TYPE_REQUEST_CRYPTO_EVENT_ANALYSIS = "REQUEST_CRYPTO_EVENT_ANALYSIS"
 
     #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "REQUEST_PERFORMANCE_TUNING_ANALYSIS"
+    OPERATION_TYPE_REQUEST_PERFORMANCE_TUNING_ANALYSIS = "REQUEST_PERFORMANCE_TUNING_ANALYSIS"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "REQUEST_JAVA_MIGRATION_ANALYSIS"
+    OPERATION_TYPE_REQUEST_JAVA_MIGRATION_ANALYSIS = "REQUEST_JAVA_MIGRATION_ANALYSIS"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
     #: This constant has a value of "SCAN_JAVA_SERVER_USAGE"
     OPERATION_TYPE_SCAN_JAVA_SERVER_USAGE = "SCAN_JAVA_SERVER_USAGE"
 
@@ -90,7 +98,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -197,7 +205,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         The asynchronous operation tracked by this work request.
 
-        Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -216,7 +224,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE"]
+        allowed_values = ["CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
@@ -285,7 +293,7 @@ class WorkRequest(object):
         **[Required]** Gets the compartment_id of this WorkRequest.
         The `OCID`__ of the compartment that contains the work request. Work requests should be scoped to
         the same compartment as the resource the work request affects. If the work request affects multiple resources,
-        and those resources are not in the same compartment, it is up to the service team to pick the primary
+        and those resources aren't in the same compartment, it's up to the service team to pick the primary
         resource whose compartment should be used.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
@@ -302,7 +310,7 @@ class WorkRequest(object):
         Sets the compartment_id of this WorkRequest.
         The `OCID`__ of the compartment that contains the work request. Work requests should be scoped to
         the same compartment as the resource the work request affects. If the work request affects multiple resources,
-        and those resources are not in the same compartment, it is up to the service team to pick the primary
+        and those resources aren't in the same compartment, it's up to the service team to pick the primary
         resource whose compartment should be used.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm

@@ -45,6 +45,10 @@ class SupportedHostShapeSummary(object):
     #: This constant has a value of "REFRESH_HCX_LICENSE_STATUS"
     SUPPORTED_OPERATIONS_REFRESH_HCX_LICENSE_STATUS = "REFRESH_HCX_LICENSE_STATUS"
 
+    #: A constant which can be used with the supported_operations property of a SupportedHostShapeSummary.
+    #: This constant has a value of "SWAP_BILLING"
+    SUPPORTED_OPERATIONS_SWAP_BILLING = "SWAP_BILLING"
+
     #: A constant which can be used with the supported_sddc_types property of a SupportedHostShapeSummary.
     #: This constant has a value of "PRODUCTION"
     SUPPORTED_SDDC_TYPES_PRODUCTION = "PRODUCTION"
@@ -64,7 +68,7 @@ class SupportedHostShapeSummary(object):
 
         :param supported_operations:
             The value to assign to the supported_operations property of this SupportedHostShapeSummary.
-            Allowed values for items in this list are: "CREATE_SDDC", "DELETE_SDDC", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "CREATE_SDDC", "DELETE_SDDC", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", "SWAP_BILLING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type supported_operations: list[str]
 
@@ -170,7 +174,7 @@ class SupportedHostShapeSummary(object):
         **[Required]** Gets the supported_operations of this SupportedHostShapeSummary.
         The operations where you can use the shape. The operations can be CREATE_SDDC or CREATE_ESXI_HOST.
 
-        Allowed values for items in this list are: "CREATE_SDDC", "DELETE_SDDC", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "CREATE_SDDC", "DELETE_SDDC", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", "SWAP_BILLING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -189,7 +193,7 @@ class SupportedHostShapeSummary(object):
         :param supported_operations: The supported_operations of this SupportedHostShapeSummary.
         :type: list[str]
         """
-        allowed_values = ["CREATE_SDDC", "DELETE_SDDC", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS"]
+        allowed_values = ["CREATE_SDDC", "DELETE_SDDC", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", "SWAP_BILLING"]
         if supported_operations:
             supported_operations[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in supported_operations]
         self._supported_operations = supported_operations

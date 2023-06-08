@@ -13,8 +13,15 @@ from .redeemable_user_collection import RedeemableUserCollection
 from .redeemable_user_summary import RedeemableUserSummary
 from .redemption_collection import RedemptionCollection
 from .redemption_summary import RedemptionSummary
+from .resource_quotum_collection import ResourceQuotumCollection
+from .resource_quotum_summary import ResourceQuotumSummary
+from .resource_summary import ResourceSummary
+from .resources_collection import ResourcesCollection
 from .reward_collection import RewardCollection
 from .reward_details import RewardDetails
+from .sku_products import SkuProducts
+from .usage_limit_collection import UsageLimitCollection
+from .usage_limit_summary import UsageLimitSummary
 
 # Maps type names to classes for usage services.
 usage_type_mapping = {
@@ -27,6 +34,13 @@ usage_type_mapping = {
     "RedeemableUserSummary": RedeemableUserSummary,
     "RedemptionCollection": RedemptionCollection,
     "RedemptionSummary": RedemptionSummary,
+    "ResourceQuotumCollection": ResourceQuotumCollection,
+    "ResourceQuotumSummary": ResourceQuotumSummary,
+    "ResourceSummary": ResourceSummary,
+    "ResourcesCollection": ResourcesCollection,
     "RewardCollection": RewardCollection,
-    "RewardDetails": RewardDetails
+    "RewardDetails": RewardDetails,
+    "SkuProducts": SkuProducts,
+    "UsageLimitCollection": UsageLimitCollection,
+    "UsageLimitSummary": UsageLimitSummary
 }

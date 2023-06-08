@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CryptoAnalysisResultCollection(object):
     """
-    List of Crypto Event Analysis results.
+    List of Crypto event analysis results.
     """
 
     def __init__(self, **kwargs):

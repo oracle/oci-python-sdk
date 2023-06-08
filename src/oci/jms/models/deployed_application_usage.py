@@ -200,7 +200,7 @@ class DeployedApplicationUsage(object):
     def is_clustered(self):
         """
         Gets the is_clustered of this DeployedApplicationUsage.
-        Whether or not deployed application is clustered.
+        Whether or not the deployed application is clustered.
 
 
         :return: The is_clustered of this DeployedApplicationUsage.
@@ -212,7 +212,7 @@ class DeployedApplicationUsage(object):
     def is_clustered(self, is_clustered):
         """
         Sets the is_clustered of this DeployedApplicationUsage.
-        Whether or not deployed application is clustered.
+        Whether or not the deployed application is clustered.
 
 
         :param is_clustered: The is_clustered of this DeployedApplicationUsage.
@@ -224,7 +224,7 @@ class DeployedApplicationUsage(object):
     def approximate_java_server_instance_count(self):
         """
         Gets the approximate_java_server_instance_count of this DeployedApplicationUsage.
-        The approximate count of Java server instances running the deployed application.
+        The approximate count of Java Server instances running the deployed application.
 
 
         :return: The approximate_java_server_instance_count of this DeployedApplicationUsage.
@@ -236,7 +236,7 @@ class DeployedApplicationUsage(object):
     def approximate_java_server_instance_count(self, approximate_java_server_instance_count):
         """
         Sets the approximate_java_server_instance_count of this DeployedApplicationUsage.
-        The approximate count of Java server instances running the deployed application.
+        The approximate count of Java Server instances running the deployed application.
 
 
         :param approximate_java_server_instance_count: The approximate_java_server_instance_count of this DeployedApplicationUsage.

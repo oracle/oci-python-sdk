@@ -14,6 +14,10 @@ class JavaServerInstanceUsage(object):
     """
 
     #: A constant which can be used with the jvm_security_status property of a JavaServerInstanceUsage.
+    #: This constant has a value of "EARLY_ACCESS"
+    JVM_SECURITY_STATUS_EARLY_ACCESS = "EARLY_ACCESS"
+
+    #: A constant which can be used with the jvm_security_status property of a JavaServerInstanceUsage.
     #: This constant has a value of "UNKNOWN"
     JVM_SECURITY_STATUS_UNKNOWN = "UNKNOWN"
 
@@ -84,7 +88,7 @@ class JavaServerInstanceUsage(object):
 
         :param jvm_security_status:
             The value to assign to the jvm_security_status property of this JavaServerInstanceUsage.
-            Allowed values for this property are: "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EARLY_ACCESS", "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type jvm_security_status: str
 
@@ -198,7 +202,7 @@ class JavaServerInstanceUsage(object):
     def fleet_id(self):
         """
         **[Required]** Gets the fleet_id of this JavaServerInstanceUsage.
-        The `OCID`__ of the related fleet.
+        The `OCID`__ of the related Fleet.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -212,7 +216,7 @@ class JavaServerInstanceUsage(object):
     def fleet_id(self, fleet_id):
         """
         Sets the fleet_id of this JavaServerInstanceUsage.
-        The `OCID`__ of the related fleet.
+        The `OCID`__ of the related Fleet.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -472,7 +476,7 @@ class JavaServerInstanceUsage(object):
         Gets the jvm_security_status of this JavaServerInstanceUsage.
         The security status of the Java Runtime.
 
-        Allowed values for this property are: "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EARLY_ACCESS", "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -491,7 +495,7 @@ class JavaServerInstanceUsage(object):
         :param jvm_security_status: The jvm_security_status of this JavaServerInstanceUsage.
         :type: str
         """
-        allowed_values = ["UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED"]
+        allowed_values = ["EARLY_ACCESS", "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED"]
         if not value_allowed_none_or_none_sentinel(jvm_security_status, allowed_values):
             jvm_security_status = 'UNKNOWN_ENUM_VALUE'
         self._jvm_security_status = jvm_security_status

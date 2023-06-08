@@ -29,6 +29,14 @@ class MacsManagedCloudHostInsight(HostInsight):
     #: This constant has a value of "ZLINUX"
     PLATFORM_TYPE_ZLINUX = "ZLINUX"
 
+    #: A constant which can be used with the platform_type property of a MacsManagedCloudHostInsight.
+    #: This constant has a value of "WINDOWS"
+    PLATFORM_TYPE_WINDOWS = "WINDOWS"
+
+    #: A constant which can be used with the platform_type property of a MacsManagedCloudHostInsight.
+    #: This constant has a value of "AIX"
+    PLATFORM_TYPE_AIX = "AIX"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MacsManagedCloudHostInsight object with values from keyword arguments. The default value of the :py:attr:`~oci.opsi.models.MacsManagedCloudHostInsight.entity_source` attribute
@@ -115,7 +123,7 @@ class MacsManagedCloudHostInsight(HostInsight):
 
         :param platform_type:
             The value to assign to the platform_type property of this MacsManagedCloudHostInsight.
-            Allowed values for this property are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type platform_type: str
 
@@ -277,11 +285,11 @@ class MacsManagedCloudHostInsight(HostInsight):
         """
         Gets the platform_type of this MacsManagedCloudHostInsight.
         Platform type.
-        Supported platformType(s) for MACS-managed external host insight: [LINUX].
+        Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
         Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-        Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
 
-        Allowed values for this property are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -295,15 +303,15 @@ class MacsManagedCloudHostInsight(HostInsight):
         """
         Sets the platform_type of this MacsManagedCloudHostInsight.
         Platform type.
-        Supported platformType(s) for MACS-managed external host insight: [LINUX].
+        Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
         Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-        Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
 
 
         :param platform_type: The platform_type of this MacsManagedCloudHostInsight.
         :type: str
         """
-        allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX"]
+        allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"]
         if not value_allowed_none_or_none_sentinel(platform_type, allowed_values):
             platform_type = 'UNKNOWN_ENUM_VALUE'
         self._platform_type = platform_type

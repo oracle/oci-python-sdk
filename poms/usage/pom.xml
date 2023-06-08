@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.pic.usage</groupId>
         <artifactId>usage-proxy-spec</artifactId>
-        <version>0.0.16</version>
+        <version>0.0.24</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

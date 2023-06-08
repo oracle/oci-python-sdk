@@ -63,6 +63,7 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/oci_control_center/pom.xml</module>
     <module>poms/access_governance_cp/pom.xml</module>
     <module>poms/identity_domains/pom.xml</module>
     <module>poms/vbs_inst/pom.xml</module>

@@ -13,6 +13,42 @@ class PostInstallationActionSettings(object):
     List of available post actions you can execute after the successful Java installation.
     """
 
+    #: A constant which can be used with the global_logging_level property of a PostInstallationActionSettings.
+    #: This constant has a value of "ALL"
+    GLOBAL_LOGGING_LEVEL_ALL = "ALL"
+
+    #: A constant which can be used with the global_logging_level property of a PostInstallationActionSettings.
+    #: This constant has a value of "SEVERE"
+    GLOBAL_LOGGING_LEVEL_SEVERE = "SEVERE"
+
+    #: A constant which can be used with the global_logging_level property of a PostInstallationActionSettings.
+    #: This constant has a value of "WARNING"
+    GLOBAL_LOGGING_LEVEL_WARNING = "WARNING"
+
+    #: A constant which can be used with the global_logging_level property of a PostInstallationActionSettings.
+    #: This constant has a value of "INFO"
+    GLOBAL_LOGGING_LEVEL_INFO = "INFO"
+
+    #: A constant which can be used with the global_logging_level property of a PostInstallationActionSettings.
+    #: This constant has a value of "CONFIG"
+    GLOBAL_LOGGING_LEVEL_CONFIG = "CONFIG"
+
+    #: A constant which can be used with the global_logging_level property of a PostInstallationActionSettings.
+    #: This constant has a value of "FINE"
+    GLOBAL_LOGGING_LEVEL_FINE = "FINE"
+
+    #: A constant which can be used with the global_logging_level property of a PostInstallationActionSettings.
+    #: This constant has a value of "FINER"
+    GLOBAL_LOGGING_LEVEL_FINER = "FINER"
+
+    #: A constant which can be used with the global_logging_level property of a PostInstallationActionSettings.
+    #: This constant has a value of "FINEST"
+    GLOBAL_LOGGING_LEVEL_FINEST = "FINEST"
+
+    #: A constant which can be used with the global_logging_level property of a PostInstallationActionSettings.
+    #: This constant has a value of "OFF"
+    GLOBAL_LOGGING_LEVEL_OFF = "OFF"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PostInstallationActionSettings object with values from keyword arguments.
@@ -30,22 +66,45 @@ class PostInstallationActionSettings(object):
             The value to assign to the minimum_key_size_settings property of this PostInstallationActionSettings.
         :type minimum_key_size_settings: oci.jms.models.MinimumKeySizeSettings
 
+        :param add_logging_handler:
+            The value to assign to the add_logging_handler property of this PostInstallationActionSettings.
+        :type add_logging_handler: bool
+
+        :param global_logging_level:
+            The value to assign to the global_logging_level property of this PostInstallationActionSettings.
+            Allowed values for this property are: "ALL", "SEVERE", "WARNING", "INFO", "CONFIG", "FINE", "FINER", "FINEST", "OFF", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type global_logging_level: str
+
+        :param proxies:
+            The value to assign to the proxies property of this PostInstallationActionSettings.
+        :type proxies: oci.jms.models.Proxies
+
         """
         self.swagger_types = {
             'disabled_tls_versions': 'list[TlsVersions]',
             'should_replace_certificates_operating_system': 'bool',
-            'minimum_key_size_settings': 'MinimumKeySizeSettings'
+            'minimum_key_size_settings': 'MinimumKeySizeSettings',
+            'add_logging_handler': 'bool',
+            'global_logging_level': 'str',
+            'proxies': 'Proxies'
         }
 
         self.attribute_map = {
             'disabled_tls_versions': 'disabledTlsVersions',
             'should_replace_certificates_operating_system': 'shouldReplaceCertificatesOperatingSystem',
-            'minimum_key_size_settings': 'minimumKeySizeSettings'
+            'minimum_key_size_settings': 'minimumKeySizeSettings',
+            'add_logging_handler': 'addLoggingHandler',
+            'global_logging_level': 'globalLoggingLevel',
+            'proxies': 'proxies'
         }
 
         self._disabled_tls_versions = None
         self._should_replace_certificates_operating_system = None
         self._minimum_key_size_settings = None
+        self._add_logging_handler = None
+        self._global_logging_level = None
+        self._proxies = None
 
     @property
     def disabled_tls_versions(self):
@@ -79,7 +138,7 @@ class PostInstallationActionSettings(object):
         Gets the should_replace_certificates_operating_system of this PostInstallationActionSettings.
         Restores JDK root certificates with the certificates that are available in the operating system.
         The following action is supported by the field:
-        - Replace JDK root certificates with a list provided by the operating system
+        - Replace JDK root certificates with a list provided by the operating system.
 
 
         :return: The should_replace_certificates_operating_system of this PostInstallationActionSettings.
@@ -93,7 +152,7 @@ class PostInstallationActionSettings(object):
         Sets the should_replace_certificates_operating_system of this PostInstallationActionSettings.
         Restores JDK root certificates with the certificates that are available in the operating system.
         The following action is supported by the field:
-        - Replace JDK root certificates with a list provided by the operating system
+        - Replace JDK root certificates with a list provided by the operating system.
 
 
         :param should_replace_certificates_operating_system: The should_replace_certificates_operating_system of this PostInstallationActionSettings.
@@ -120,6 +179,80 @@ class PostInstallationActionSettings(object):
         :type: oci.jms.models.MinimumKeySizeSettings
         """
         self._minimum_key_size_settings = minimum_key_size_settings
+
+    @property
+    def add_logging_handler(self):
+        """
+        Gets the add_logging_handler of this PostInstallationActionSettings.
+        Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+
+
+        :return: The add_logging_handler of this PostInstallationActionSettings.
+        :rtype: bool
+        """
+        return self._add_logging_handler
+
+    @add_logging_handler.setter
+    def add_logging_handler(self, add_logging_handler):
+        """
+        Sets the add_logging_handler of this PostInstallationActionSettings.
+        Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+
+
+        :param add_logging_handler: The add_logging_handler of this PostInstallationActionSettings.
+        :type: bool
+        """
+        self._add_logging_handler = add_logging_handler
+
+    @property
+    def global_logging_level(self):
+        """
+        Gets the global_logging_level of this PostInstallationActionSettings.
+        Sets the logging level in logging.properties file.
+
+        Allowed values for this property are: "ALL", "SEVERE", "WARNING", "INFO", "CONFIG", "FINE", "FINER", "FINEST", "OFF", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The global_logging_level of this PostInstallationActionSettings.
+        :rtype: str
+        """
+        return self._global_logging_level
+
+    @global_logging_level.setter
+    def global_logging_level(self, global_logging_level):
+        """
+        Sets the global_logging_level of this PostInstallationActionSettings.
+        Sets the logging level in logging.properties file.
+
+
+        :param global_logging_level: The global_logging_level of this PostInstallationActionSettings.
+        :type: str
+        """
+        allowed_values = ["ALL", "SEVERE", "WARNING", "INFO", "CONFIG", "FINE", "FINER", "FINEST", "OFF"]
+        if not value_allowed_none_or_none_sentinel(global_logging_level, allowed_values):
+            global_logging_level = 'UNKNOWN_ENUM_VALUE'
+        self._global_logging_level = global_logging_level
+
+    @property
+    def proxies(self):
+        """
+        Gets the proxies of this PostInstallationActionSettings.
+
+        :return: The proxies of this PostInstallationActionSettings.
+        :rtype: oci.jms.models.Proxies
+        """
+        return self._proxies
+
+    @proxies.setter
+    def proxies(self, proxies):
+        """
+        Sets the proxies of this PostInstallationActionSettings.
+
+        :param proxies: The proxies of this PostInstallationActionSettings.
+        :type: oci.jms.models.Proxies
+        """
+        self._proxies = proxies
 
     def __repr__(self):
         return formatted_flat_dict(self)

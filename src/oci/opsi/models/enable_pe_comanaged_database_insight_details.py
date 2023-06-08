@@ -40,6 +40,10 @@ class EnablePeComanagedDatabaseInsightDetails(EnableDatabaseInsightDetails):
             The value to assign to the credential_details property of this EnablePeComanagedDatabaseInsightDetails.
         :type credential_details: oci.opsi.models.CredentialDetails
 
+        :param connection_details:
+            The value to assign to the connection_details property of this EnablePeComanagedDatabaseInsightDetails.
+        :type connection_details: oci.opsi.models.PeComanagedDatabaseConnectionDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this EnablePeComanagedDatabaseInsightDetails.
         :type freeform_tags: dict(str, str)
@@ -59,6 +63,7 @@ class EnablePeComanagedDatabaseInsightDetails(EnableDatabaseInsightDetails):
             'opsi_private_endpoint_id': 'str',
             'service_name': 'str',
             'credential_details': 'CredentialDetails',
+            'connection_details': 'PeComanagedDatabaseConnectionDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -70,6 +75,7 @@ class EnablePeComanagedDatabaseInsightDetails(EnableDatabaseInsightDetails):
             'opsi_private_endpoint_id': 'opsiPrivateEndpointId',
             'service_name': 'serviceName',
             'credential_details': 'credentialDetails',
+            'connection_details': 'connectionDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -80,6 +86,7 @@ class EnablePeComanagedDatabaseInsightDetails(EnableDatabaseInsightDetails):
         self._opsi_private_endpoint_id = None
         self._service_name = None
         self._credential_details = None
+        self._connection_details = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -184,6 +191,26 @@ class EnablePeComanagedDatabaseInsightDetails(EnableDatabaseInsightDetails):
         :type: oci.opsi.models.CredentialDetails
         """
         self._credential_details = credential_details
+
+    @property
+    def connection_details(self):
+        """
+        Gets the connection_details of this EnablePeComanagedDatabaseInsightDetails.
+
+        :return: The connection_details of this EnablePeComanagedDatabaseInsightDetails.
+        :rtype: oci.opsi.models.PeComanagedDatabaseConnectionDetails
+        """
+        return self._connection_details
+
+    @connection_details.setter
+    def connection_details(self, connection_details):
+        """
+        Sets the connection_details of this EnablePeComanagedDatabaseInsightDetails.
+
+        :param connection_details: The connection_details of this EnablePeComanagedDatabaseInsightDetails.
+        :type: oci.opsi.models.PeComanagedDatabaseConnectionDetails
+        """
+        self._connection_details = connection_details
 
     @property
     def freeform_tags(self):

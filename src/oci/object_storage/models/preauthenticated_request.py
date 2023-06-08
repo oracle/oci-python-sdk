@@ -96,6 +96,10 @@ class PreauthenticatedRequest(object):
             The value to assign to the time_created property of this PreauthenticatedRequest.
         :type time_created: datetime
 
+        :param full_path:
+            The value to assign to the full_path property of this PreauthenticatedRequest.
+        :type full_path: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -105,7 +109,8 @@ class PreauthenticatedRequest(object):
             'bucket_listing_action': 'str',
             'access_type': 'str',
             'time_expires': 'datetime',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'full_path': 'str'
         }
 
         self.attribute_map = {
@@ -116,7 +121,8 @@ class PreauthenticatedRequest(object):
             'bucket_listing_action': 'bucketListingAction',
             'access_type': 'accessType',
             'time_expires': 'timeExpires',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'full_path': 'fullPath'
         }
 
         self._id = None
@@ -127,6 +133,7 @@ class PreauthenticatedRequest(object):
         self._access_type = None
         self._time_expires = None
         self._time_created = None
+        self._full_path = None
 
     @property
     def id(self):
@@ -351,6 +358,30 @@ class PreauthenticatedRequest(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def full_path(self):
+        """
+        Gets the full_path of this PreauthenticatedRequest.
+        The full Path for the object.
+
+
+        :return: The full_path of this PreauthenticatedRequest.
+        :rtype: str
+        """
+        return self._full_path
+
+    @full_path.setter
+    def full_path(self, full_path):
+        """
+        Sets the full_path of this PreauthenticatedRequest.
+        The full Path for the object.
+
+
+        :param full_path: The full_path of this PreauthenticatedRequest.
+        :type: str
+        """
+        self._full_path = full_path
 
     def __repr__(self):
         return formatted_flat_dict(self)

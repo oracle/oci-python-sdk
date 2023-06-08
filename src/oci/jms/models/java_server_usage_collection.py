@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class JavaServerUsageCollection(object):
     """
-    Results of an Java Server usage search.  Contains Java Server usage items.
+    Results of a Java Server usage search. Contains Java Server usage items.
     """
 
     def __init__(self, **kwargs):

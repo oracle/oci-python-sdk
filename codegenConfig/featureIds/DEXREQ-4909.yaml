@@ -1,0 +1,18 @@
+# Add whitelisted feature ids here. Please include a comment describing what the feature is.
+# Example:
+# whitelisted:
+#   # comment
+#   - udx-123
+#   # comment
+#   - udx-456
+whitelisted:
+  - udx-21315-aj-5864
+  - udx-21315-aj-7189
+  - udx-21315-aj-9481
+  - udx-21315-aj-9844
+  - udx-21315-aj-9943
+  - udx-21315-aj-10043
+  - udx-21315-aj-10557
+  - udx-21315-aj-10845
+  - udx-21315-aj-10980
+  - udx-21315-aj-11490

@@ -45,6 +45,10 @@ class WorkRequest(object):
     #: This constant has a value of "REFRESH_HCX_LICENSE_STATUS"
     OPERATION_TYPE_REFRESH_HCX_LICENSE_STATUS = "REFRESH_HCX_LICENSE_STATUS"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "SWAP_BILLING"
+    OPERATION_TYPE_SWAP_BILLING = "SWAP_BILLING"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -76,7 +80,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_SDDC", "DELETE_SDDC", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_SDDC", "DELETE_SDDC", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", "SWAP_BILLING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -155,7 +159,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         The asynchronous operation tracked by this work request.
 
-        Allowed values for this property are: "CREATE_SDDC", "DELETE_SDDC", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_SDDC", "DELETE_SDDC", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", "SWAP_BILLING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -174,7 +178,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_SDDC", "DELETE_SDDC", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS"]
+        allowed_values = ["CREATE_SDDC", "DELETE_SDDC", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", "SWAP_BILLING"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

@@ -37,7 +37,7 @@ class AdvancedUsageTracking(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this AdvancedUsageTracking.
-        AdvancedUsageTracking flag to store enabled or disabled status
+        AdvancedUsageTracking flag to store enabled or disabled status.
 
 
         :return: The is_enabled of this AdvancedUsageTracking.
@@ -49,7 +49,7 @@ class AdvancedUsageTracking(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this AdvancedUsageTracking.
-        AdvancedUsageTracking flag to store enabled or disabled status
+        AdvancedUsageTracking flag to store enabled or disabled status.
 
 
         :param is_enabled: The is_enabled of this AdvancedUsageTracking.

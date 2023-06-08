@@ -41,6 +41,10 @@ class CredentialByVault(CredentialDetails):
             The value to assign to the password_secret_id property of this CredentialByVault.
         :type password_secret_id: str
 
+        :param wallet_secret_id:
+            The value to assign to the wallet_secret_id property of this CredentialByVault.
+        :type wallet_secret_id: str
+
         :param role:
             The value to assign to the role property of this CredentialByVault.
             Allowed values for this property are: "NORMAL", 'UNKNOWN_ENUM_VALUE'.
@@ -53,6 +57,7 @@ class CredentialByVault(CredentialDetails):
             'credential_type': 'str',
             'user_name': 'str',
             'password_secret_id': 'str',
+            'wallet_secret_id': 'str',
             'role': 'str'
         }
 
@@ -61,6 +66,7 @@ class CredentialByVault(CredentialDetails):
             'credential_type': 'credentialType',
             'user_name': 'userName',
             'password_secret_id': 'passwordSecretId',
+            'wallet_secret_id': 'walletSecretId',
             'role': 'role'
         }
 
@@ -68,6 +74,7 @@ class CredentialByVault(CredentialDetails):
         self._credential_type = None
         self._user_name = None
         self._password_secret_id = None
+        self._wallet_secret_id = None
         self._role = None
         self._credential_type = 'CREDENTIALS_BY_VAULT'
 
@@ -122,6 +129,34 @@ class CredentialByVault(CredentialDetails):
         :type: str
         """
         self._password_secret_id = password_secret_id
+
+    @property
+    def wallet_secret_id(self):
+        """
+        Gets the wallet_secret_id of this CredentialByVault.
+        The `OCID`__ of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The wallet_secret_id of this CredentialByVault.
+        :rtype: str
+        """
+        return self._wallet_secret_id
+
+    @wallet_secret_id.setter
+    def wallet_secret_id(self, wallet_secret_id):
+        """
+        Sets the wallet_secret_id of this CredentialByVault.
+        The `OCID`__ of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param wallet_secret_id: The wallet_secret_id of this CredentialByVault.
+        :type: str
+        """
+        self._wallet_secret_id = wallet_secret_id
 
     @property
     def role(self):

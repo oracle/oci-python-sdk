@@ -43,22 +43,43 @@ class NewInstallationSite(object):
             Allowed values for this property are: "JDK", "JRE", "SERVER_JRE"
         :type artifact_content_type: str
 
+        :param installation_path:
+            The value to assign to the installation_path property of this NewInstallationSite.
+        :type installation_path: str
+
+        :param headless_mode:
+            The value to assign to the headless_mode property of this NewInstallationSite.
+        :type headless_mode: bool
+
+        :param force_install:
+            The value to assign to the force_install property of this NewInstallationSite.
+        :type force_install: bool
+
         """
         self.swagger_types = {
             'managed_instance_id': 'str',
             'release_version': 'str',
-            'artifact_content_type': 'str'
+            'artifact_content_type': 'str',
+            'installation_path': 'str',
+            'headless_mode': 'bool',
+            'force_install': 'bool'
         }
 
         self.attribute_map = {
             'managed_instance_id': 'managedInstanceId',
             'release_version': 'releaseVersion',
-            'artifact_content_type': 'artifactContentType'
+            'artifact_content_type': 'artifactContentType',
+            'installation_path': 'installationPath',
+            'headless_mode': 'headlessMode',
+            'force_install': 'forceInstall'
         }
 
         self._managed_instance_id = None
         self._release_version = None
         self._artifact_content_type = None
+        self._installation_path = None
+        self._headless_mode = None
+        self._force_install = None
 
     @property
     def managed_instance_id(self):
@@ -143,6 +164,78 @@ class NewInstallationSite(object):
                 .format(allowed_values)
             )
         self._artifact_content_type = artifact_content_type
+
+    @property
+    def installation_path(self):
+        """
+        Gets the installation_path of this NewInstallationSite.
+        Custom path to install new Java installation site.
+
+
+        :return: The installation_path of this NewInstallationSite.
+        :rtype: str
+        """
+        return self._installation_path
+
+    @installation_path.setter
+    def installation_path(self, installation_path):
+        """
+        Sets the installation_path of this NewInstallationSite.
+        Custom path to install new Java installation site.
+
+
+        :param installation_path: The installation_path of this NewInstallationSite.
+        :type: str
+        """
+        self._installation_path = installation_path
+
+    @property
+    def headless_mode(self):
+        """
+        Gets the headless_mode of this NewInstallationSite.
+        Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+
+
+        :return: The headless_mode of this NewInstallationSite.
+        :rtype: bool
+        """
+        return self._headless_mode
+
+    @headless_mode.setter
+    def headless_mode(self, headless_mode):
+        """
+        Sets the headless_mode of this NewInstallationSite.
+        Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+
+
+        :param headless_mode: The headless_mode of this NewInstallationSite.
+        :type: bool
+        """
+        self._headless_mode = headless_mode
+
+    @property
+    def force_install(self):
+        """
+        Gets the force_install of this NewInstallationSite.
+        Forces the installation request even if a more recent release is already present in the host.
+
+
+        :return: The force_install of this NewInstallationSite.
+        :rtype: bool
+        """
+        return self._force_install
+
+    @force_install.setter
+    def force_install(self, force_install):
+        """
+        Sets the force_install of this NewInstallationSite.
+        Forces the installation request even if a more recent release is already present in the host.
+
+
+        :param force_install: The force_install of this NewInstallationSite.
+        :type: bool
+        """
+        self._force_install = force_install
 
     def __repr__(self):
         return formatted_flat_dict(self)
