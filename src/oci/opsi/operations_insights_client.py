@@ -9850,11 +9850,11 @@ class OperationsInsightsClient(object):
 
         :param list[str] platform_type: (optional)
             Filter by one or more platform types.
-            Supported platformType(s) for MACS-managed external host insight: [LINUX].
+            Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
             Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
 
-            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX"
+            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -9980,7 +9980,7 @@ class OperationsInsightsClient(object):
                 "list_host_configurations got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX"]
+            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
@@ -10095,11 +10095,11 @@ class OperationsInsightsClient(object):
 
         :param list[str] platform_type: (optional)
             Filter by one or more platform types.
-            Supported platformType(s) for MACS-managed external host insight: [LINUX].
+            Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
             Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
 
-            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX"
+            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -10208,7 +10208,7 @@ class OperationsInsightsClient(object):
                     )
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX"]
+            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
@@ -10323,11 +10323,11 @@ class OperationsInsightsClient(object):
 
         :param list[str] platform_type: (optional)
             Filter by one or more platform types.
-            Supported platformType(s) for MACS-managed external host insight: [LINUX].
+            Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
             Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
 
-            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX"
+            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"
 
         :param str exadata_insight_id: (optional)
             `OCID`__ of exadata insight resource.
@@ -10421,7 +10421,7 @@ class OperationsInsightsClient(object):
                 "list_hosted_entities got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX"]
+            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
@@ -20480,11 +20480,11 @@ class OperationsInsightsClient(object):
 
         :param list[str] platform_type: (optional)
             Filter by one or more platform types.
-            Supported platformType(s) for MACS-managed external host insight: [LINUX].
+            Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
             Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
 
-            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX"
+            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"
 
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
@@ -20629,7 +20629,7 @@ class OperationsInsightsClient(object):
                 "summarize_host_insight_resource_capacity_trend got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX"]
+            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
@@ -20760,11 +20760,11 @@ class OperationsInsightsClient(object):
 
         :param list[str] platform_type: (optional)
             Filter by one or more platform types.
-            Supported platformType(s) for MACS-managed external host insight: [LINUX].
+            Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
             Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
 
-            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX"
+            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"
 
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
@@ -20933,7 +20933,7 @@ class OperationsInsightsClient(object):
                 "summarize_host_insight_resource_forecast_trend got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX"]
+            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
@@ -21068,11 +21068,11 @@ class OperationsInsightsClient(object):
 
         :param list[str] platform_type: (optional)
             Filter by one or more platform types.
-            Supported platformType(s) for MACS-managed external host insight: [LINUX].
+            Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
             Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
 
-            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX"
+            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"
 
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
@@ -21231,7 +21231,7 @@ class OperationsInsightsClient(object):
                 "summarize_host_insight_resource_statistics got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX"]
+            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
@@ -21360,11 +21360,11 @@ class OperationsInsightsClient(object):
 
         :param list[str] platform_type: (optional)
             Filter by one or more platform types.
-            Supported platformType(s) for MACS-managed external host insight: [LINUX].
+            Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
             Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
 
-            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX"
+            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"
 
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
@@ -21483,7 +21483,7 @@ class OperationsInsightsClient(object):
                 "summarize_host_insight_resource_usage got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX"]
+            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
@@ -21590,11 +21590,11 @@ class OperationsInsightsClient(object):
 
         :param list[str] platform_type: (optional)
             Filter by one or more platform types.
-            Supported platformType(s) for MACS-managed external host insight: [LINUX].
+            Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
             Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
 
-            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX"
+            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"
 
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
@@ -21721,7 +21721,7 @@ class OperationsInsightsClient(object):
                 "summarize_host_insight_resource_usage_trend got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX"]
+            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
@@ -21842,11 +21842,11 @@ class OperationsInsightsClient(object):
 
         :param list[str] platform_type: (optional)
             Filter by one or more platform types.
-            Supported platformType(s) for MACS-managed external host insight: [LINUX].
+            Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
             Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
 
-            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX"
+            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"
 
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
@@ -21973,7 +21973,7 @@ class OperationsInsightsClient(object):
                 "summarize_host_insight_resource_utilization_insight got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX"]
+            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(

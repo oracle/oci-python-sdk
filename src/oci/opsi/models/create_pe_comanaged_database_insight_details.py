@@ -72,6 +72,10 @@ class CreatePeComanagedDatabaseInsightDetails(CreateDatabaseInsightDetails):
             The value to assign to the credential_details property of this CreatePeComanagedDatabaseInsightDetails.
         :type credential_details: oci.opsi.models.CredentialDetails
 
+        :param connection_details:
+            The value to assign to the connection_details property of this CreatePeComanagedDatabaseInsightDetails.
+        :type connection_details: oci.opsi.models.PeComanagedDatabaseConnectionDetails
+
         :param deployment_type:
             The value to assign to the deployment_type property of this CreatePeComanagedDatabaseInsightDetails.
             Allowed values for this property are: "VIRTUAL_MACHINE", "BARE_METAL", "EXACS"
@@ -93,6 +97,7 @@ class CreatePeComanagedDatabaseInsightDetails(CreateDatabaseInsightDetails):
             'dbm_private_endpoint_id': 'str',
             'service_name': 'str',
             'credential_details': 'CredentialDetails',
+            'connection_details': 'PeComanagedDatabaseConnectionDetails',
             'deployment_type': 'str',
             'system_tags': 'dict(str, dict(str, object))'
         }
@@ -108,6 +113,7 @@ class CreatePeComanagedDatabaseInsightDetails(CreateDatabaseInsightDetails):
             'dbm_private_endpoint_id': 'dbmPrivateEndpointId',
             'service_name': 'serviceName',
             'credential_details': 'credentialDetails',
+            'connection_details': 'connectionDetails',
             'deployment_type': 'deploymentType',
             'system_tags': 'systemTags'
         }
@@ -122,6 +128,7 @@ class CreatePeComanagedDatabaseInsightDetails(CreateDatabaseInsightDetails):
         self._dbm_private_endpoint_id = None
         self._service_name = None
         self._credential_details = None
+        self._connection_details = None
         self._deployment_type = None
         self._system_tags = None
         self._entity_source = 'PE_COMANAGED_DATABASE'
@@ -277,6 +284,26 @@ class CreatePeComanagedDatabaseInsightDetails(CreateDatabaseInsightDetails):
         :type: oci.opsi.models.CredentialDetails
         """
         self._credential_details = credential_details
+
+    @property
+    def connection_details(self):
+        """
+        Gets the connection_details of this CreatePeComanagedDatabaseInsightDetails.
+
+        :return: The connection_details of this CreatePeComanagedDatabaseInsightDetails.
+        :rtype: oci.opsi.models.PeComanagedDatabaseConnectionDetails
+        """
+        return self._connection_details
+
+    @connection_details.setter
+    def connection_details(self, connection_details):
+        """
+        Sets the connection_details of this CreatePeComanagedDatabaseInsightDetails.
+
+        :param connection_details: The connection_details of this CreatePeComanagedDatabaseInsightDetails.
+        :type: oci.opsi.models.PeComanagedDatabaseConnectionDetails
+        """
+        self._connection_details = connection_details
 
     @property
     def deployment_type(self):

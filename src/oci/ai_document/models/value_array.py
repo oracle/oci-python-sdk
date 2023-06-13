@@ -75,6 +75,8 @@ class ValueArray(FieldValue):
     def items(self):
         """
         **[Required]** Gets the items of this ValueArray.
+        The array of values.
+
 
         :return: The items of this ValueArray.
         :rtype: list[oci.ai_document.models.DocumentField]
@@ -85,6 +87,8 @@ class ValueArray(FieldValue):
     def items(self, items):
         """
         Sets the items of this ValueArray.
+        The array of values.
+
 
         :param items: The items of this ValueArray.
         :type: list[oci.ai_document.models.DocumentField]

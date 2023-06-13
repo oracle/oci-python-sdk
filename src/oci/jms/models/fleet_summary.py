@@ -285,7 +285,7 @@ class FleetSummary(object):
         """
         **[Required]** Gets the approximate_jre_count of this FleetSummary.
         The approximate count of all unique Java Runtimes in the Fleet in the past seven days.
-        This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 
 
         :return: The approximate_jre_count of this FleetSummary.
@@ -298,7 +298,7 @@ class FleetSummary(object):
         """
         Sets the approximate_jre_count of this FleetSummary.
         The approximate count of all unique Java Runtimes in the Fleet in the past seven days.
-        This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 
 
         :param approximate_jre_count: The approximate_jre_count of this FleetSummary.
@@ -311,7 +311,7 @@ class FleetSummary(object):
         """
         **[Required]** Gets the approximate_installation_count of this FleetSummary.
         The approximate count of all unique Java Installations in the Fleet in the past seven days.
-        This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 
 
         :return: The approximate_installation_count of this FleetSummary.
@@ -324,7 +324,7 @@ class FleetSummary(object):
         """
         Sets the approximate_installation_count of this FleetSummary.
         The approximate count of all unique Java Installations in the Fleet in the past seven days.
-        This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 
 
         :param approximate_installation_count: The approximate_installation_count of this FleetSummary.
@@ -337,7 +337,7 @@ class FleetSummary(object):
         """
         **[Required]** Gets the approximate_application_count of this FleetSummary.
         The approximate count of all unique applications in the Fleet in the past seven days.
-        This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 
 
         :return: The approximate_application_count of this FleetSummary.
@@ -350,7 +350,7 @@ class FleetSummary(object):
         """
         Sets the approximate_application_count of this FleetSummary.
         The approximate count of all unique applications in the Fleet in the past seven days.
-        This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 
 
         :param approximate_application_count: The approximate_application_count of this FleetSummary.
@@ -363,7 +363,7 @@ class FleetSummary(object):
         """
         **[Required]** Gets the approximate_managed_instance_count of this FleetSummary.
         The approximate count of all unique managed instances in the Fleet in the past seven days.
-        This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 
 
         :return: The approximate_managed_instance_count of this FleetSummary.
@@ -376,7 +376,7 @@ class FleetSummary(object):
         """
         Sets the approximate_managed_instance_count of this FleetSummary.
         The approximate count of all unique managed instances in the Fleet in the past seven days.
-        This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 
 
         :param approximate_managed_instance_count: The approximate_managed_instance_count of this FleetSummary.
@@ -389,7 +389,7 @@ class FleetSummary(object):
         """
         **[Required]** Gets the approximate_java_server_count of this FleetSummary.
         The approximate count of all unique Java servers in the Fleet in the past seven days.
-        This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 
 
         :return: The approximate_java_server_count of this FleetSummary.
@@ -402,7 +402,7 @@ class FleetSummary(object):
         """
         Sets the approximate_java_server_count of this FleetSummary.
         The approximate count of all unique Java servers in the Fleet in the past seven days.
-        This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 
 
         :param approximate_java_server_count: The approximate_java_server_count of this FleetSummary.
@@ -454,7 +454,7 @@ class FleetSummary(object):
     def is_advanced_features_enabled(self):
         """
         Gets the is_advanced_features_enabled of this FleetSummary.
-        Whether or not advanced features are enabled in this fleet.
+        Whether or not advanced features are enabled in this Fleet.
         This flag is true if any one of the advanced features is turned on.
 
 
@@ -467,7 +467,7 @@ class FleetSummary(object):
     def is_advanced_features_enabled(self, is_advanced_features_enabled):
         """
         Sets the is_advanced_features_enabled of this FleetSummary.
-        Whether or not advanced features are enabled in this fleet.
+        Whether or not advanced features are enabled in this Fleet.
         This flag is true if any one of the advanced features is turned on.
 
 
@@ -568,7 +568,7 @@ class FleetSummary(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this FleetSummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`. (See `Managing Tags and Tag Namespaces`__.)
 
         __ https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm
@@ -583,7 +583,7 @@ class FleetSummary(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this FleetSummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`. (See `Managing Tags and Tag Namespaces`__.)
 
         __ https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm

@@ -43,6 +43,10 @@ class UpdateEsxiHostDetails(object):
             Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"
         :type next_sku: str
 
+        :param billing_donor_host_id:
+            The value to assign to the billing_donor_host_id property of this UpdateEsxiHostDetails.
+        :type billing_donor_host_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateEsxiHostDetails.
         :type freeform_tags: dict(str, str)
@@ -55,6 +59,7 @@ class UpdateEsxiHostDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'next_sku': 'str',
+            'billing_donor_host_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -62,12 +67,14 @@ class UpdateEsxiHostDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'next_sku': 'nextSku',
+            'billing_donor_host_id': 'billingDonorHostId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._display_name = None
         self._next_sku = None
+        self._billing_donor_host_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -136,6 +143,34 @@ class UpdateEsxiHostDetails(object):
                 .format(allowed_values)
             )
         self._next_sku = next_sku
+
+    @property
+    def billing_donor_host_id(self):
+        """
+        Gets the billing_donor_host_id of this UpdateEsxiHostDetails.
+        The `OCID`__ of the deleted ESXi Host with LeftOver billing cycle.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The billing_donor_host_id of this UpdateEsxiHostDetails.
+        :rtype: str
+        """
+        return self._billing_donor_host_id
+
+    @billing_donor_host_id.setter
+    def billing_donor_host_id(self, billing_donor_host_id):
+        """
+        Sets the billing_donor_host_id of this UpdateEsxiHostDetails.
+        The `OCID`__ of the deleted ESXi Host with LeftOver billing cycle.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param billing_donor_host_id: The billing_donor_host_id of this UpdateEsxiHostDetails.
+        :type: str
+        """
+        self._billing_donor_host_id = billing_donor_host_id
 
     @property
     def freeform_tags(self):

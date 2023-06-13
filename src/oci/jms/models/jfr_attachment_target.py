@@ -10,9 +10,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class JfrAttachmentTarget(object):
     """
-    The target to collect JFR data. A target is a managed instance, with options to further limit to specific application and/or Java runtime.
+    The target to collect JFR data. A target is a managed instance, with options to further limit to specific application and/or Java Runtime.
     When the applicationKey isn't specified, then all applications are selected.
-    When the jreKey isn't specified, then all supported Java runtime versions are selected.
+    When the jreKey isn't specified, then all supported Java Runtime versions are selected.
+    When the applicationInstallationKey isn't specified, then all application installations are selected.
+    Keys applicationKey and applicationInstallationKey are mutually exclusive.
     """
 
     def __init__(self, **kwargs):
@@ -28,6 +30,10 @@ class JfrAttachmentTarget(object):
             The value to assign to the application_key property of this JfrAttachmentTarget.
         :type application_key: str
 
+        :param application_installation_key:
+            The value to assign to the application_installation_key property of this JfrAttachmentTarget.
+        :type application_installation_key: str
+
         :param jre_key:
             The value to assign to the jre_key property of this JfrAttachmentTarget.
         :type jre_key: str
@@ -36,17 +42,20 @@ class JfrAttachmentTarget(object):
         self.swagger_types = {
             'managed_instance_id': 'str',
             'application_key': 'str',
+            'application_installation_key': 'str',
             'jre_key': 'str'
         }
 
         self.attribute_map = {
             'managed_instance_id': 'managedInstanceId',
             'application_key': 'applicationKey',
+            'application_installation_key': 'applicationInstallationKey',
             'jre_key': 'jreKey'
         }
 
         self._managed_instance_id = None
         self._application_key = None
+        self._application_installation_key = None
         self._jre_key = None
 
     @property
@@ -77,7 +86,7 @@ class JfrAttachmentTarget(object):
     def application_key(self):
         """
         Gets the application_key of this JfrAttachmentTarget.
-        Unique key that identify the application for JFR data collection.
+        Unique key that identifies the application for JFR data collection.
 
 
         :return: The application_key of this JfrAttachmentTarget.
@@ -89,13 +98,37 @@ class JfrAttachmentTarget(object):
     def application_key(self, application_key):
         """
         Sets the application_key of this JfrAttachmentTarget.
-        Unique key that identify the application for JFR data collection.
+        Unique key that identifies the application for JFR data collection.
 
 
         :param application_key: The application_key of this JfrAttachmentTarget.
         :type: str
         """
         self._application_key = application_key
+
+    @property
+    def application_installation_key(self):
+        """
+        Gets the application_installation_key of this JfrAttachmentTarget.
+        Unique key that identifies the application installation for JFR data collection.
+
+
+        :return: The application_installation_key of this JfrAttachmentTarget.
+        :rtype: str
+        """
+        return self._application_installation_key
+
+    @application_installation_key.setter
+    def application_installation_key(self, application_installation_key):
+        """
+        Sets the application_installation_key of this JfrAttachmentTarget.
+        Unique key that identifies the application installation for JFR data collection.
+
+
+        :param application_installation_key: The application_installation_key of this JfrAttachmentTarget.
+        :type: str
+        """
+        self._application_installation_key = application_installation_key
 
     @property
     def jre_key(self):

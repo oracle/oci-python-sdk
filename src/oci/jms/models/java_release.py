@@ -14,6 +14,10 @@ class JavaRelease(object):
     """
 
     #: A constant which can be used with the security_status property of a JavaRelease.
+    #: This constant has a value of "EARLY_ACCESS"
+    SECURITY_STATUS_EARLY_ACCESS = "EARLY_ACCESS"
+
+    #: A constant which can be used with the security_status property of a JavaRelease.
     #: This constant has a value of "UNKNOWN"
     SECURITY_STATUS_UNKNOWN = "UNKNOWN"
 
@@ -92,7 +96,7 @@ class JavaRelease(object):
 
         :param security_status:
             The value to assign to the security_status property of this JavaRelease.
-            Allowed values for this property are: "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EARLY_ACCESS", "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type security_status: str
 
@@ -276,7 +280,7 @@ class JavaRelease(object):
         **[Required]** Gets the security_status of this JavaRelease.
         The security status of the Java version.
 
-        Allowed values for this property are: "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EARLY_ACCESS", "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -295,7 +299,7 @@ class JavaRelease(object):
         :param security_status: The security_status of this JavaRelease.
         :type: str
         """
-        allowed_values = ["UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED"]
+        allowed_values = ["EARLY_ACCESS", "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED"]
         if not value_allowed_none_or_none_sentinel(security_status, allowed_values):
             security_status = 'UNKNOWN_ENUM_VALUE'
         self._security_status = security_status

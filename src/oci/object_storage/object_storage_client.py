@@ -19,7 +19,7 @@ missing = Sentinel("Missing")
 
 class ObjectStorageClient(object):
     """
-    Common set of Object Storage and Archive Storage APIs for managing buckets, objects, and related resources.
+    Use Object Storage and Archive Storage APIs to manage buckets, objects, and related resources.
     For more information, see [Overview of Object Storage](/Content/Object/Concepts/objectstorageoverview.htm) and
     [Overview of Archive Storage](/Content/Archive/Concepts/archivestorageoverview.htm).
     """
@@ -97,7 +97,8 @@ class ObjectStorageClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/',
             'service_endpoint_template': 'https://objectstorage.{region}.{secondLevelDomain}',
-            'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
+            'endpoint_service_name': 'objectstorage',
+            'service_endpoint_template_per_realm': { 'oc1': 'https://{namespaceName+Dot}objectstorage.{region}.oci.customer-oci.com' },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
             'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),
             'client_level_realm_specific_endpoint_template_enabled': kwargs.get('client_level_realm_specific_endpoint_template_enabled')

@@ -269,7 +269,7 @@ class LibraryUsage(object):
     def approximate_java_server_instance_count(self):
         """
         Gets the approximate_java_server_instance_count of this LibraryUsage.
-        The approximate count of Java server instances using the library.
+        The approximate count of Java Server instances using the library.
 
 
         :return: The approximate_java_server_instance_count of this LibraryUsage.
@@ -281,7 +281,7 @@ class LibraryUsage(object):
     def approximate_java_server_instance_count(self, approximate_java_server_instance_count):
         """
         Sets the approximate_java_server_instance_count of this LibraryUsage.
-        The approximate count of Java server instances using the library.
+        The approximate count of Java Server instances using the library.
 
 
         :param approximate_java_server_instance_count: The approximate_java_server_instance_count of this LibraryUsage.

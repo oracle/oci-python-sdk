@@ -37,7 +37,7 @@ class JfrRecording(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this JfrRecording.
-        JfrRecording flag to store enabled or disabled status
+        JfrRecording flag to store enabled or disabled status.
 
 
         :return: The is_enabled of this JfrRecording.
@@ -49,7 +49,7 @@ class JfrRecording(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this JfrRecording.
-        JfrRecording flag to store enabled or disabled status
+        JfrRecording flag to store enabled or disabled status.
 
 
         :param is_enabled: The is_enabled of this JfrRecording.

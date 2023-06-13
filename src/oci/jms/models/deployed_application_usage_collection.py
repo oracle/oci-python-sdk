@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DeployedApplicationUsageCollection(object):
     """
-    Results of a deployed application usage search.  Contains deployed application usage items.
+    Results of a deployed application usage search. Contains deployed application usage items.
     """
 
     def __init__(self, **kwargs):

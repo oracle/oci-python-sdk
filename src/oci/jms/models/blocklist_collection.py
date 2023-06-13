@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BlocklistCollection(object):
     """
-    Results of a blocklist search. Contains Blocklist records.
+    Results of a blocklist search that contain Blocklist records.
     """
 
     def __init__(self, **kwargs):

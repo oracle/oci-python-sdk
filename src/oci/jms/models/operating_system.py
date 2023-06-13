@@ -185,7 +185,7 @@ class OperatingSystem(object):
     def managed_instance_count(self):
         """
         Gets the managed_instance_count of this OperatingSystem.
-        Number of instances running the operating system
+        Number of instances running the operating system.
 
 
         :return: The managed_instance_count of this OperatingSystem.
@@ -197,7 +197,7 @@ class OperatingSystem(object):
     def managed_instance_count(self, managed_instance_count):
         """
         Sets the managed_instance_count of this OperatingSystem.
-        Number of instances running the operating system
+        Number of instances running the operating system.
 
 
         :param managed_instance_count: The managed_instance_count of this OperatingSystem.

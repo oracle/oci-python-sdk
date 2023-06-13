@@ -430,8 +430,8 @@ class CryptoAnalysisResultSummary(object):
         """
         **[Required]** Gets the non_compliant_finding_count of this CryptoAnalysisResultSummary.
         Total number of non-compliant findings with the analysis. A non-compliant finding means the
-        application won't work properly with the changes introduced by the crypto roadmap version
-        used the the analysis.
+        application won't work properly with the changes introduced by the Crypto Roadmap version
+        used by the analysis.
 
 
         :return: The non_compliant_finding_count of this CryptoAnalysisResultSummary.
@@ -444,8 +444,8 @@ class CryptoAnalysisResultSummary(object):
         """
         Sets the non_compliant_finding_count of this CryptoAnalysisResultSummary.
         Total number of non-compliant findings with the analysis. A non-compliant finding means the
-        application won't work properly with the changes introduced by the crypto roadmap version
-        used the the analysis.
+        application won't work properly with the changes introduced by the Crypto Roadmap version
+        used by the analysis.
 
 
         :param non_compliant_finding_count: The non_compliant_finding_count of this CryptoAnalysisResultSummary.

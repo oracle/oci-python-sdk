@@ -50,6 +50,14 @@ class BlocklistEntry(object):
     OPERATION_REQUEST_CRYPTO_EVENT_ANALYSIS = "REQUEST_CRYPTO_EVENT_ANALYSIS"
 
     #: A constant which can be used with the operation property of a BlocklistEntry.
+    #: This constant has a value of "REQUEST_PERFORMANCE_TUNING_ANALYSIS"
+    OPERATION_REQUEST_PERFORMANCE_TUNING_ANALYSIS = "REQUEST_PERFORMANCE_TUNING_ANALYSIS"
+
+    #: A constant which can be used with the operation property of a BlocklistEntry.
+    #: This constant has a value of "REQUEST_JAVA_MIGRATION_ANALYSIS"
+    OPERATION_REQUEST_JAVA_MIGRATION_ANALYSIS = "REQUEST_JAVA_MIGRATION_ANALYSIS"
+
+    #: A constant which can be used with the operation property of a BlocklistEntry.
     #: This constant has a value of "SCAN_JAVA_SERVER_USAGE"
     OPERATION_SCAN_JAVA_SERVER_USAGE = "SCAN_JAVA_SERVER_USAGE"
 
@@ -64,7 +72,7 @@ class BlocklistEntry(object):
 
         :param operation:
             The value to assign to the operation property of this BlocklistEntry.
-            Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation: str
 
@@ -92,7 +100,7 @@ class BlocklistEntry(object):
         **[Required]** Gets the operation of this BlocklistEntry.
         The operation type.
 
-        Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -111,7 +119,7 @@ class BlocklistEntry(object):
         :param operation: The operation of this BlocklistEntry.
         :type: str
         """
-        allowed_values = ["CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE"]
+        allowed_values = ["CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE"]
         if not value_allowed_none_or_none_sentinel(operation, allowed_values):
             operation = 'UNKNOWN_ENUM_VALUE'
         self._operation = operation
